@@ -1,0 +1,5 @@
+import Erdos993GapBridge.ConnectedTripleBridge
+import Erdos993GapBridge.TreePLC4Recovered
+
+#print axioms Erdos993GapBridge.three_twoSets_union_four_has_two_intersections
+#print axioms Erdos993GapBridge.tree_plc4_of_card_ge_27
