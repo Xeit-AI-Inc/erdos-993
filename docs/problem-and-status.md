@@ -7,7 +7,7 @@ of cardinality `k`, and let `alpha(G)` be the largest such cardinality. The
 independent-set sequence is
 
 ```text
-(i_0(G), i_1(G), ..., i_alpha(G)(G)).
+(i_0(G), i_1(G), ..., i_alpha(G)).
 ```
 
 A finite sequence is weakly unimodal if it weakly increases to at least one
@@ -31,8 +31,11 @@ As of this repository's 2026-08-29 release, both targets remain open in the
 research record. No verified counterexample, complete proof, or formal
 independence result has been found.
 
-The strongest included local theorem proves strict log-concavity at rank four
-for finite trees of order at least 27. It leaves other early ranks unresolved.
+The strongest included graph theorem proves strict log-concavity at rank four
+for finite trees of order at least 27. The latest completed experiment also
+isolates the remaining first-recovery capacity gap as a specific
+neighborhood-shadow inequality and verifies two auxiliary interface theorems.
+The shadow inequality itself remains unproved.
 
 ## Why Log-Concavity Is Not The Whole Problem
 

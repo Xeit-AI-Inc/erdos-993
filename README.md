@@ -22,12 +22,12 @@ a finite forest.
 - a precise account of the problem and current research boundary;
 - governed mathematical results and explicit open obligations;
 - a public description of the multi-agent Mathematical Solver DRE method;
-- a reproducible Lean 4 project for the strongest currently published formal
-  result in this research line;
+- reproducible Lean 4 projects for the currently published formal results in
+  this research line;
 - provenance and evidence rules that separate proof, computation, and
   conjecture.
 
-## Strongest Formal Result Currently Included
+## Formal Results Currently Included
 
 For every finite nonempty simple tree `T` with at least 27 vertices,
 
@@ -41,9 +41,15 @@ log-concavity result at rank four. It does **not** prove unimodality at every
 rank and does not solve Erdős #993.
 
 The package also includes the auxiliary inequalities and finite-set bridge used
-in the rank-four result. Other governed results from the larger internal
-lineage are summarized in [Current results](docs/results.md), but are not all
-part of this initial Lean publication copy.
+in the rank-four result. A second package adds two governed auxiliary results:
+
+- descent persists in a strictly positive adjacent-log-concave finite natural
+  sequence; and
+- the finite occurrence interface, an **assumed** capacity inequality, and a
+  strict normalized deficit imply a contradiction.
+
+The second result does not prove the capacity inequality. The exact open
+obligation is described in [Current results](docs/results.md).
 
 ## Verify The Lean Package
 
@@ -70,10 +76,11 @@ The expected transitive axioms are `propext`, `Classical.choice`, and
 - [Open research roadmap](docs/roadmap.md)
 - [References](docs/references.md)
 - [Lean package](proofs/lean/gap-bridge/README.md)
+- [Rooted residual-profile Lean package](proofs/lean/rooted-residual-profile/README.md)
 
 ## Repository Status
 
-This is an initial public research release. The internal sealed experiment
+This is a curated public research release. The internal sealed experiment
 lineage is substantially larger than this repository. Only artifacts that are
 appropriate for public verification and collaboration are published here.
 

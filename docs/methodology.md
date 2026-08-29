@@ -45,10 +45,10 @@ Every public claim is assigned one of four levels:
 
 The levels are not interchangeable.
 
-## Current Run Totals
+## Latest Completed Run
 
-Across four terminal research runs, the internal lineage completed 24 DRE
-cycles comprising 216 search routes, 432 critiques, 72 adjudications, and 24
-neutral syntheses. The governed lineage contains 27 Lean declarations. This
-repository publishes a curated formal subset rather than the raw operational
-record.
+The rooted residual-profile experiment completed eight cycles comprising 72
+isolated search routes, 144 critiques, 24 adjudications, eight neutral
+syntheses, and eight Lean gates. Its terminal verdict remained `still_open`.
+This repository publishes a curated formal and evidentiary subset rather than
+the raw operational record.

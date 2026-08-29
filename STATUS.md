@@ -21,7 +21,15 @@ No formal-independence candidate has been identified.
   corpus.
 - For every finite nonempty simple tree of order at least 27,
   `i_4(T)^2 > i_3(T) i_5(T)` is Lean-verified and included here.
-- No exact non-unimodal tree or forest witness was found in the governed runs.
+- The minimum-order first-recovery capacity gap has been reduced exactly to
+  the neighborhood-shadow inequality `a|X| <= b|N(X)|` at the selected
+  threshold. That inequality remains open.
+- Two auxiliary interface theorems are Lean-verified and included here; neither
+  is a tree or forest theorem.
+- No descent-recovery witness was found among all 522,959 nonisomorphic trees
+  through order 19.
+- No non-unimodal witness was found among all 310,782 disconnected forest
+  isomorphism types through order 18.
 
 ## Claim Boundary
 
@@ -33,5 +41,6 @@ The following do not count as a solution:
 - log-concavity or unimodality of a proper family;
 - generic sequence-convolution arguments that ignore graph realizability;
 - an LLM-generated proof without independent mathematical and formal review.
+- a conditional formal theorem whose load-bearing inequality is a hypothesis.
 
 The public status must be updated before any claim is described as current.

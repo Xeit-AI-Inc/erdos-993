@@ -2,10 +2,15 @@
 
 ## Tree Target
 
-Prove a plateau-safe early-rank one-crossing theorem beyond the verified
-large-order rank-four comparison, or construct an exact finite tree witness.
-The promising direction is a rooted, distribution-valued invariant that
-tracks available extensions rather than only total coefficient values.
+Prove or refute the first-recovery neighborhood-shadow inequality
+
+```text
+a|X_(t_*)| <= b|N(X_(t_*))|.
+```
+
+The derivation must use actual minimum-order first-recovery history, include
+the `t_*=0` case, and avoid assuming the recovery sign it is meant to exclude.
+A verified finite tree witness remains an alternative resolution.
 
 ## Forest Target
 
@@ -32,6 +37,10 @@ frontier merely because they are easier to encode.
 
 - Can the distribution of available extensions satisfy a preserved
   single-crossing order under rooted tree composition?
+- Can proper-tree minimality produce a direct incidence injection proving the
+  first-recovery neighborhood-shadow inequality?
+- Is there an exact minimum-history-compatible witness refuting that shadow
+  inequality?
 - Can a first forbidden descent-then-rise be transferred to a proper rooted
   subtree, contradicting minimality?
 - Can the positive residual witness be excluded using branch structure?

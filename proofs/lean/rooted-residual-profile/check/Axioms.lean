@@ -1,0 +1,4 @@
+import Erdos993RootedResidualProfile
+
+#print axioms LeanProof.positiveLogConcave_descent_persists
+#print axioms Erdos993C8U1.tail_contradiction_from_occurrence_interface
