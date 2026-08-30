@@ -47,8 +47,14 @@ The levels are not interchangeable.
 
 ## Latest Completed Run
 
-The rooted residual-profile experiment completed eight cycles comprising 72
-isolated search routes, 144 critiques, 24 adjudications, eight neutral
-syntheses, and eight Lean gates. Its terminal verdict remained `still_open`.
-This repository publishes a curated formal and evidentiary subset rather than
-the raw operational record.
+The proof-gap completion experiment completed twelve alternating Terra/Sol
+xhigh cycles. Each cycle retained the same isolated search, criticism,
+adjudication, neutral-synthesis, and governed Lean topology. The terminal
+verdict remained `still_open` for TREE, FOREST, TRANSFER, and Erdős #993.
+
+The final Lean gate admitted four exact restricted candidates. One theorem,
+the marked-extension charge identity, passed pinned kernel, axiom, and
+independent fidelity review. One compiled candidate failed statement fidelity,
+and two candidates stopped without source. The repository publishes the one
+verified theorem, bounded computation sources, and scope-controlled research
+summary rather than raw operational returns.

@@ -1,6 +1,6 @@
 # Research Status
 
-Last updated: 2026-08-29
+Last updated: 2026-08-30
 
 ## Headline Problems
 
@@ -26,8 +26,14 @@ No formal-independence candidate has been identified.
   threshold. That inequality remains open.
 - Two auxiliary interface theorems are Lean-verified and included here; neither
   is a tree or forest theorem.
+- The marked-extension one-mark, unordered two-mark, and aggregate charge
+  identities are Lean-verified for the explicitly defined residual `R_spec`.
+- An independently audited informal theorem confines any
+  `Delta_4<0<Delta_5` tree of order at least 12 to orders 13 through 32.
 - No descent-recovery witness was found among all 522,959 nonisomorphic trees
   through order 19.
+- Complete, independently checked certificates find no recovery among all
+  823,065 trees of order 20 or all 2,144,505 trees of order 21.
 - No non-unimodal witness was found among all 310,782 disconnected forest
   isomorphism types through order 18.
 
@@ -42,5 +48,7 @@ The following do not count as a solution:
 - generic sequence-convolution arguments that ignore graph realizability;
 - an LLM-generated proof without independent mathematical and formal review.
 - a conditional formal theorem whose load-bearing inequality is a hypothesis.
+- an exact aggregate charge identity without a bridge to the run residual or
+  a theorem controlling the sign of its local charges.
 
 The public status must be updated before any claim is described as current.

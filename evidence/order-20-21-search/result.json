@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "result_date": "2026-08-30",
+  "evidence_level": "bounded_replayable_computation",
+  "scope": "all nonisomorphic finite trees of orders 20 and 21",
+  "recovery_definition": "there exist p<q with i_(p+1)<i_p, weak nonincrease from p+1 through q, and i_(q+1)>i_q",
+  "result": "NO_RECOVERY",
+  "orders": {
+    "20": {
+      "canonical_tree_count": 823065,
+      "recovery_count": 0,
+      "cayley_orbit_mass": "262144000000000000000000",
+      "required_mass": "20^18",
+      "certificate_sha256": "1ec9d0d68d919dbf4d2199da1da51fbe296d6dc262fe27b825e859ed3cf5e44c",
+      "certificate_bytes": 293040572
+    },
+    "21": {
+      "canonical_tree_count": 2144505,
+      "recovery_count": 0,
+      "cayley_orbit_mass": "13248496640331026125580781",
+      "required_mass": "21^19",
+      "certificate_sha256": "e1a24ec2774a96e68df2f79887ff2cd32022ecb72fb46834849fbe56f4259e90",
+      "certificate_bytes": 783764626
+    }
+  },
+  "sources": {
+    "generate_certificate.cpp": "e1aefaa0a239acce7f49c12d808a7cf6a53b9c94cb644b070d95027e60858668",
+    "independent_checker.cpp": "7d0a9e3231525cf6f8c7a18bec2231476b38f8f53e06ae4ca570ce44ecc61ae4"
+  },
+  "original_environment": {
+    "compiler": "Apple clang 21.0.0",
+    "operating_system": "Darwin 25.5.0 arm64"
+  },
+  "full_csv_certificates_in_repository": false,
+  "nonconclusions": [
+    "No claim is made beyond orders 20 and 21.",
+    "A finite null search does not prove TREE, FOREST, TRANSFER, or Erdős #993.",
+    "The search does not prove that every larger tree lacks a recovery."
+  ]
+}

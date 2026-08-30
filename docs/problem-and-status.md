@@ -27,7 +27,7 @@ sequences are not closed under convolution.
 
 ## Current Boundary
 
-As of this repository's 2026-08-29 release, both targets remain open in the
+As of this repository's 2026-08-30 release, both targets remain open in the
 research record. No verified counterexample, complete proof, or formal
 independence result has been found.
 
@@ -36,6 +36,11 @@ for finite trees of order at least 27. The latest completed experiment also
 isolates the remaining first-recovery capacity gap as a specific
 neighborhood-shadow inequality and verifies two auxiliary interface theorems.
 The shadow inequality itself remains unproved.
+
+The latest proof-gap completion experiment independently narrows the specific
+condition `i_5<i_4<i_6` to orders 13 through 32. Complete searches exclude a
+descent followed by recovery at orders 20 and 21, but the other orders in that
+band and the general first-recovery problem remain open.
 
 ## Why Log-Concavity Is Not The Whole Problem
 

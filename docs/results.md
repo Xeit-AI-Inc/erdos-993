@@ -56,8 +56,73 @@ proves only the downstream contradiction once that hypothesis is supplied.
   checked with no non-unimodal witness.
 - An actual-factor replay checked 2,555,012 states and 10,394,520 order-14
   products, plus the stated hub-spider products, with no recovery.
+- Complete center-code certificates cover all 823,065 nonisomorphic trees of
+  order 20 and all 2,144,505 of order 21. Both contain zero recovery rows, and
+  an independent implementation regenerated the carriers and checked every
+  row. The sources and exact hashes are published under
+  [`evidence/order-20-21-search`](../evidence/order-20-21-search/README.md).
 
 These computations exclude finite ranges and tested mechanisms only.
+
+## Proof-Gap Completion Update
+
+Write `Delta_r(T)=i_(r+1)(T)-i_r(T)` in `Int`. The completed twelve-cycle
+experiment established the following restricted results.
+
+### Audited informal order band
+
+If a finite tree has order at least 12 and satisfies
+
+```text
+Delta_4(T) < 0 < Delta_5(T),
+```
+
+then its order lies between 13 and 32. More precisely, if `mu(T)` is the
+minimum cardinality of a maximal independent set, then `2<=mu(T)<=8` and the
+surviving order is below the corresponding threshold
+
+```text
+N_2=17, N_3=20, N_4=23, N_5=26,
+N_6=28, N_7=31, N_8=34.
+```
+
+This is an independently audited informal theorem, not a Lean theorem. It
+does not exclude the remaining orders 13 through 32.
+
+The terminal DRE synthesis also accepted at internal informal scope that
+`i_4(T)>i_3(T)` for every tree of order at least 12, excluding the associated
+`q=5,p=3` branch. Its final formalization audit did not reify the order-eight
+base and leaf-restoration sublemmas, so this repository does not present it as
+a formally verified theorem.
+
+### Verified marked-extension identity
+
+For an independent `(r-1)`-set `X`, let `e_X` count its available extension
+vertices and let `m_X` count the edges in the induced extension residual
+`R_spec(T,X)`. The included Lean theorem proves
+
+```text
+sum_X e_X = r i_r(T),
+sum_X (choose(e_X,2)-m_X) = choose(r+1,2)i_(r+1)(T),
+sum_X [e_X(e_X-r-2)-2m_X] = r(r+1)Delta_r(T).
+```
+
+At a positive `Delta_r`, the aggregate charge is positive. Therefore at least
+one specified residual has positive charge. The theorem does not identify a
+different operational residual, control each local sign, or supply the missing
+descent to a smaller recovery tree.
+
+### Refuted mechanisms
+
+Two attractive routes fail exactly:
+
+- the proposed actual-factor moment threshold is a positive multiple of the
+  next coefficient difference and therefore reverses direction at a strict
+  recovery; and
+- universal nonpositive terminal residual charge is incompatible with the
+  positive aggregate at every instantiated specified recovery carrier.
+
+These are refutations of proof mechanisms, not counterexamples to Erdős #993.
 
 ## Other Governed Progress In The Research Line
 

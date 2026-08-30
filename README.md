@@ -51,6 +51,20 @@ in the rank-four result. A second package adds two governed auxiliary results:
 The second result does not prove the capacity inequality. The exact open
 obligation is described in [Current results](docs/results.md).
 
+A third package verifies the exact marked-extension counting theorem. For the
+specified induced extension residual `R_spec`, it proves the one-mark,
+unordered two-mark, and aggregate charge identities. This is an auxiliary
+identity, not a sign theorem or a first-recovery contradiction.
+
+## Latest Research Boundary
+
+The completed twelve-cycle proof-gap experiment narrowed a possible
+rank-four-to-rank-five recovery to tree orders `13..32`, produced complete
+no-recovery certificates at orders 20 and 21, and identified positive terminal
+residual charge as necessary under the specified residual construction. It
+also refuted two proposed universal proof mechanisms. These advances do not
+close the remaining finite band or any all-order headline.
+
 ## Verify The Lean Package
 
 Install [elan](https://github.com/leanprover/elan), then run:
@@ -77,6 +91,8 @@ The expected transitive axioms are `propext`, `Classical.choice`, and
 - [References](docs/references.md)
 - [Lean package](proofs/lean/gap-bridge/README.md)
 - [Rooted residual-profile Lean package](proofs/lean/rooted-residual-profile/README.md)
+- [Marked-extension charge Lean package](proofs/lean/marked-extension-charge/README.md)
+- [Order-20/21 computational evidence](evidence/order-20-21-search/README.md)
 
 ## Repository Status
 

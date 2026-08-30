@@ -13,3 +13,5 @@ Current packages:
   theorem and dependencies.
 - [`rooted-residual-profile`](lean/rooted-residual-profile/README.md): two
   auxiliary no-recovery and occurrence-interface theorems.
+- [`marked-extension-charge`](lean/marked-extension-charge/README.md): exact
+  one-mark, two-mark, and aggregate residual-charge identities.

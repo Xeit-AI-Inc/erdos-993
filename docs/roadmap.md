@@ -2,7 +2,15 @@
 
 ## Tree Target
 
-Prove or refute the first-recovery neighborhood-shadow inequality
+The sharpest current concrete entries are:
+
+1. eliminate or exhibit `Delta_4<0<Delta_5` inside the residual order band
+   `13..32`;
+2. construct a connectivity-preserving descent from a positive-charge
+   specified residual to a smaller tree carrying a complete first-recovery
+   history, or prove that no such descent is possible;
+3. prove a same-leaf pendant selector across the two required ranks; and
+4. prove or refute the first-recovery neighborhood-shadow inequality
 
 ```text
 a|X_(t_*)| <= b|N(X_(t_*))|.
@@ -44,5 +52,9 @@ frontier merely because they are easier to encode.
 - Can a first forbidden descent-then-rise be transferred to a proper rooted
   subtree, contradicting minimality?
 - Can the positive residual witness be excluded using branch structure?
+- Can positive residual charge force a smaller connected recovery carrier
+  without silently replacing the operational residual by `R_spec`?
+- Can the finite `13..32` band be closed by a structural enumeration whose
+  output is a proof object rather than only a null search?
 - What additional state is necessary for convolution without reintroducing a
   circular definition?

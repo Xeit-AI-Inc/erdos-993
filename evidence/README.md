@@ -9,5 +9,9 @@ source packets, raw model transcripts, and noncanonical duplicate returns.
   Lean build, kernel, and axiom checks for the initial publication.
 - [`verification-2026-08-29-rooted-residual-profile.md`](verification-2026-08-29-rooted-residual-profile.md)
   records the fresh verification of the added auxiliary package.
+- [`verification-2026-08-30-proof-gap-completion.md`](verification-2026-08-30-proof-gap-completion.md)
+  records the marked-extension kernel check and order-20/21 replay.
+- [`order-20-21-search`](order-20-21-search/README.md) contains the exact
+  generator, independent checker, and machine-readable bounded result.
 - [`source-hashes.sha256`](source-hashes.sha256) binds the published Lean
-  package and its toolchain metadata.
+  packages, computation sources, and toolchain metadata.

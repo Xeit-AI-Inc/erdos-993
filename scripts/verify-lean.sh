@@ -21,5 +21,7 @@ verify_project() {
 verify_project "$ROOT/proofs/lean/gap-bridge" "Erdos993GapBridge"
 verify_project "$ROOT/proofs/lean/rooted-residual-profile" \
   "Erdos993RootedResidualProfile"
+verify_project "$ROOT/proofs/lean/marked-extension-charge" \
+  "Erdos993MarkedExtensionCharge"
 
 echo "All Lean builds, kernel checks, and axiom checks passed."
