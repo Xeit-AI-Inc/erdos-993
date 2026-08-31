@@ -1,0 +1,10 @@
+import C6U101C6U103
+
+#print axioms C6U101C6U103.FinitePartialLabelledRootedTree.attachGraph_isTree
+#print axioms C6U101C6U103.commonFreshening_exists
+#print axioms C6U101C6U103.TreeExpr.evaluateWith_freshIso
+#print axioms C6U101C6U103.observe_wellDefined
+#print axioms C6U101C6U103.contextual_target_lossless
+#print axioms C6U101C6U103.contextual_congruence_right
+#print axioms C6U101C6U103.contextual_congruence_left
+#print axioms C6U101C6U103.C6_U1_01_C6_U1_03

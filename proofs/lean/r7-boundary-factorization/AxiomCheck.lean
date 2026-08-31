@@ -1,0 +1,3 @@
+import C8U2BoundaryFactorization
+
+#print axioms C8U2BoundaryFactorization.componentwise_boundary_factorization

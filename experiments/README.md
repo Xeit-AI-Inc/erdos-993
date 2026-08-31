@@ -7,3 +7,8 @@ mirrored here.
 
 Every published experiment must include its scope, source, replay command,
 result, limitations, and hashes.
+
+- [r6 NR-foundation summary](r6-nr-foundation.md): computation-grade terminal
+  record; no public theorem package.
+- [r7 joint-shadow-incidence summary](r7-joint-shadow-incidence.md): twelve
+  reproducible auxiliary or conditional Lean packages and their boundaries.

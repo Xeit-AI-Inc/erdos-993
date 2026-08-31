@@ -1,0 +1,11 @@
+name = "c8U2BoundaryFactorization"
+version = "0.1.0"
+defaultTargets = ["C8U2BoundaryFactorization"]
+
+[[lean_lib]]
+name = "C8U2BoundaryFactorization"
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "905b95818eb32af7874a58b427f50c1711a5e96c"

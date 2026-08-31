@@ -1,0 +1,5 @@
+import C4U1Attachment.Main
+
+#print axioms C4U1Attachment.rootedTree_attachment_transition
+#print axioms C4U1Attachment.rootedTree_attachment_coefficients
+

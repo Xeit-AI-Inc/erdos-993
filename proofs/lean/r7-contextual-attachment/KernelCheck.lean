@@ -1,0 +1,14 @@
+import C6U101C6U103
+
+#check C6U101C6U103.PartialLabel
+#check C6U101C6U103.FinitePartialLabelledRootedTree
+#check C6U101C6U103.CommonFreshening
+#check C6U101C6U103.commonFreshening_exists
+#check C6U101C6U103.FinitePartialLabelledRootedTree.FreshIso
+#check C6U101C6U103.TreeExpr.Context.plug_comp
+#check C6U101C6U103.TreeExpr.evaluateWith_freshIso
+#check C6U101C6U103.observe_wellDefined
+#check C6U101C6U103.contextual_target_lossless
+#check C6U101C6U103.contextual_congruence_right
+#check C6U101C6U103.contextual_congruence_left
+#check C6U101C6U103.C6_U1_01_C6_U1_03

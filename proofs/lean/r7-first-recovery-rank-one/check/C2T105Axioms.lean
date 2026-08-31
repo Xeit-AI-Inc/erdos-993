@@ -1,0 +1,3 @@
+import Erdos993MarkedExtensionCharge.C2T105
+
+#print axioms C2T105.no_first_recovery_at_one

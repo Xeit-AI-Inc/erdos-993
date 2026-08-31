@@ -1,6 +1,6 @@
 # Research Status
 
-Last updated: 2026-08-30
+Last updated: 2026-08-31
 
 ## Headline Problems
 
@@ -28,6 +28,18 @@ No formal-independence candidate has been identified.
   is a tree or forest theorem.
 - The marked-extension one-mark, unordered two-mark, and aggregate charge
   identities are Lean-verified for the explicitly defined residual `R_spec`.
+- Code's completed r6 corpus is governed at computation grade under its own
+  rubric and is explicitly not `formally_verified`; it supplies no public
+  headline theorem or Lean package in this release.
+- The completed r7 joint-shadow-incidence run has twelve exact
+  kernel-checked, axiom-checked, fidelity-reviewed auxiliary or conditional
+  candidates. Its public packages preserve their narrow scopes; none is a
+  TREE, FOREST, TRANSFER, counterexample, or Erdős #993 theorem.
+- r7 verifies no plateau-safe first recovery beginning at rank one; excludes
+  first recovery in the proper labelled families `D_(1,m)` and `D_(2,m)`;
+  and preserves exact rooted-attachment, two-leaf, containment, boundary, and
+  fixed-component identities. Its endpoint, coupling, and context results
+  retain their stated antecedents.
 - An independently audited informal theorem confines any
   `Delta_4<0<Delta_5` tree of order at least 12 to orders 13 through 32.
 - No descent-recovery witness was found among all 522,959 nonisomorphic trees
@@ -50,5 +62,7 @@ The following do not count as a solution:
 - a conditional formal theorem whose load-bearing inequality is a hypothesis.
 - an exact aggregate charge identity without a bridge to the run residual or
   a theorem controlling the sign of its local charges.
+- a computation-grade corpus that its governing rubric classifies as not
+  `formally_verified`.
 
 The public status must be updated before any claim is described as current.

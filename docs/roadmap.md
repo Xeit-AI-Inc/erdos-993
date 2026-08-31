@@ -20,6 +20,11 @@ The derivation must use actual minimum-order first-recovery history, include
 the `t_*=0` case, and avoid assuming the recovery sign it is meant to exclude.
 A verified finite tree witness remains an alternative resolution.
 
+The r7 exclusions remove the rank-one start and the two published proper
+double-broom families from this search. Its two-leaf and containment identities
+also fix the algebra that a future joint same-leaf argument must respect; they
+do not provide the missing strict aggregate inequalities or leaf selection.
+
 ## Forest Target
 
 Resolve the component-minimal two-defect system using actual tree structure,
@@ -40,6 +45,12 @@ Construct a noncircular parameter-carrying class that:
 Formalize new statements only after an informal proof closes a load-bearing
 obligation. Auxiliary identities should not displace the central mathematical
 frontier merely because they are easier to encode.
+
+The next formalization-worthy target is a normalized, attachment-sensitive
+paired-incidence inequality that controls containment multiplicity, unmatched
+rows, component loss, and acyclicity. The r7 component selector theorem is a
+fixed-component characterization only; it does not supply selector existence,
+synchronization, or forest recovery.
 
 ## Immediate Research Questions
 

@@ -1,0 +1,6 @@
+import C8U3Selector
+
+#print axioms C8U3Selector.independentCountNat_sum
+#print axioms C8U3Selector.delta_sum_identity
+#print axioms C8U3Selector.fixedComponentIdentity
+#print axioms C8U3Selector.componentSelectorCharacterization

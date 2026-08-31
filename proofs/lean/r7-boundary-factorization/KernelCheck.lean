@@ -1,0 +1,4 @@
+import C8U2BoundaryFactorization
+
+#check C8U2BoundaryFactorization.componentwise_boundary_factorization
+#print C8U2BoundaryFactorization.componentwise_boundary_factorization

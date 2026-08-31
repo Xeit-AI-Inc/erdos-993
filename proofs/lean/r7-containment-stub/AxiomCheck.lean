@@ -1,0 +1,3 @@
+import C8T3ContainmentStub
+
+#print axioms C8T3ContainmentStub.containment_stub_theorem

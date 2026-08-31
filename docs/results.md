@@ -48,6 +48,39 @@ The accompanying Lean package verifies:
 The second theorem takes the load-bearing capacity inequality as `hMult`; it
 proves only the downstream contradiction once that hypothesis is supplied.
 
+## 2026-08-31 r6/r7 Update
+
+The completed Code r6 NR-foundation experiment is represented here as a
+provenance-backed computation-grade record only. Its terminal controller
+record says that its Lean-gated corpus is not `formally_verified` under the
+r6 rubric. Accordingly, this release publishes no r6 theorem package and
+does not use r6 to upgrade any formal claim.
+
+The completed r7 joint-shadow-incidence experiment contributes twelve exact
+kernel-checked, axiom-checked, fidelity-reviewed declarations. Every one is
+auxiliary or conditional, and none is a headline theorem. The reproducible
+packages establish:
+
+- no plateau-safe first recovery beginning at rank one in a finite nonempty
+  labelled tree;
+- first-recovery exclusion for the proper labelled families `D_(1,m)` and
+  `D_(2,m)`;
+- exact rooted attachment transitions and coefficient formulas through degree
+  five;
+- a conditional endpoint-sign implication and a conditional finite-coupling
+  diagonal consequence;
+- conditional common-freshening and contextual congruence infrastructure, and
+  an explicit pair of rooted trees with equal degree-five signature but
+  unequal `i_6`;
+- exact two-leaf four-class, containment/stub, component-boundary, and
+  fixed-component selector identities.
+
+The endpoint and coupling declarations retain their displayed antecedents.
+The selector characterization does not prove a nonempty common selector, and
+the structural identities do not establish a strict same-leaf inequality.
+The complete package list, declarations, source hashes, and scope boundaries
+are in the [r7 provenance record](../evidence/verification-2026-08-31-r6-r7.md).
+
 ## Bounded Exclusions
 
 - All 522,959 nonisomorphic trees through order 19 were checked with no

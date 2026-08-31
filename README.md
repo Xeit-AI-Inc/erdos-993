@@ -56,14 +56,24 @@ specified induced extension residual `R_spec`, it proves the one-mark,
 unordered two-mark, and aggregate charge identities. This is an auxiliary
 identity, not a sign theorem or a first-recovery contradiction.
 
+The 2026-08-31 update adds twelve separately reproducible Lean projects from
+the completed joint-shadow-incidence run. They verify exact auxiliary or
+conditional statements only: no first recovery at rank one, two proper
+double-broom exclusions, rooted attachment and context infrastructure,
+conditional endpoint and coupling bridges, a finite rooted countercertificate,
+and four exact incidence/component identities. None is a TREE, FOREST,
+TRANSFER, counterexample, or Erdős #993 theorem.
+
 ## Latest Research Boundary
 
-The completed twelve-cycle proof-gap experiment narrowed a possible
-rank-four-to-rank-five recovery to tree orders `13..32`, produced complete
-no-recovery certificates at orders 20 and 21, and identified positive terminal
-residual charge as necessary under the specified residual construction. It
-also refuted two proposed universal proof mechanisms. These advances do not
-close the remaining finite band or any all-order headline.
+The completed r6 and r7 experiments both leave TREE, FOREST, and TRANSFER
+open. Under r6's own rubric, its Lean-gated corpus is computation grade only
+and is explicitly not `formally_verified`. The r7 packages meet the stated
+kernel, axiom, and fidelity checks at their narrow scopes, but none is a
+headline theorem. The earlier proof-gap experiment narrowed a possible
+rank-four-to-rank-five recovery to tree orders `13..32` and produced complete
+no-recovery certificates at orders 20 and 21. These advances do not close the
+remaining finite band or any all-order headline.
 
 ## Verify The Lean Package
 
@@ -92,6 +102,8 @@ The expected transitive axioms are `propext`, `Classical.choice`, and
 - [Lean package](proofs/lean/gap-bridge/README.md)
 - [Rooted residual-profile Lean package](proofs/lean/rooted-residual-profile/README.md)
 - [Marked-extension charge Lean package](proofs/lean/marked-extension-charge/README.md)
+- [r7 auxiliary and conditional Lean packages](proofs/lean/r7-first-recovery-rank-one/README.md)
+- [2026-08-31 provenance record](evidence/verification-2026-08-31-r6-r7.md)
 - [Order-20/21 computational evidence](evidence/order-20-21-search/README.md)
 
 ## Repository Status

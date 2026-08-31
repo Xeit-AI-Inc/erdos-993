@@ -1,0 +1,4 @@
+import C8T3ContainmentStub
+
+#check C8T3ContainmentStub.containment_stub_theorem
+#print C8T3ContainmentStub.containment_stub_theorem

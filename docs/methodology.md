@@ -45,16 +45,22 @@ Every public claim is assigned one of four levels:
 
 The levels are not interchangeable.
 
-## Latest Completed Run
+## Latest Completed Runs
 
-The proof-gap completion experiment completed twelve alternating Terra/Sol
-xhigh cycles. Each cycle retained the same isolated search, criticism,
-adjudication, neutral-synthesis, and governed Lean topology. The terminal
-verdict remained `still_open` for TREE, FOREST, TRANSFER, and Erdős #993.
+The Code r6 NR-foundation run and the r7 joint-shadow-incidence run both
+completed at their authorized nine-cycle ceilings on 2026-08-31. Their terminal
+verdicts leave TREE, FOREST, TRANSFER, and Erdős #993 open.
 
-The final Lean gate admitted four exact restricted candidates. One theorem,
-the marked-extension charge identity, passed pinned kernel, axiom, and
-independent fidelity review. One compiled candidate failed statement fidelity,
-and two candidates stopped without source. The repository publishes the one
-verified theorem, bounded computation sources, and scope-controlled research
-summary rather than raw operational returns.
+r6's controller records a governed 18-object Lean corpus across seven passing
+gate stages, but its own rubric caps that corpus at computation grade and
+states that nothing is `formally_verified`. The public record preserves that
+classification rather than translating a build history into theorem credit.
+
+r7 admitted twelve exact auxiliary or conditional candidates through the full
+formal gate: independent informal audit, pinned build, kernel and axiom
+inspection, forbidden-token scan, and statement-fidelity review. Two Cycle 8
+candidates had disclosed dependency-setup incidents; their unchanged sources
+and clean local supervisor replays passed, while the public provenance record
+keeps the process qualification distinct from mathematical verification. The
+repository publishes reproducible source packages and narrow scope boundaries,
+not operational returns.
