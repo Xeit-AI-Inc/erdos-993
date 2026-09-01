@@ -42,6 +42,10 @@ The terminal record narrows the load-bearing work to representation fidelity,
 noncircular endpoint signs, and a strict common-leaf overlap. Replayed finite
 exclusions remain bounded evidence only and do not prove a universal claim.
 
+The current proof shape, including the developed opening, load-bearing
+same-leaf gap, and conditional minimum-counterexample ending, is summarized in
+the [dated proof architecture note](../docs/proof-architecture-status-2026-09-01.md).
+
 Two Cycle 12 nominees remain blocked future work. They are not included as
 verified theorems or proof artifacts in this repository.
 

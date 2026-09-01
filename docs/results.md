@@ -107,6 +107,10 @@ blocked future work and are not published as verified Lean theorems.
 See the [r8 experiment summary](../experiments/r8-extension-profile-same-leaf.md)
 and [verification record](../evidence/verification-2026-09-01-r8.md).
 
+For a linear account of the intended minimum-counterexample proof, including
+which portions form its beginning, unresolved middle, and conditional ending,
+see the [proof architecture status note](proof-architecture-status-2026-09-01.md).
+
 ## Bounded Exclusions
 
 - All 522,959 nonisomorphic trees through order 19 were checked with no

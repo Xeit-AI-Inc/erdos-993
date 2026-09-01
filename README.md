@@ -107,6 +107,7 @@ The expected transitive axioms are `propext`, `Classical.choice`, and
 
 - [Problem and status](docs/problem-and-status.md)
 - [Current results](docs/results.md)
+- [Proof architecture status, 2026-09-01](docs/proof-architecture-status-2026-09-01.md)
 - [Research methodology](docs/methodology.md)
 - [Evidence policy](docs/evidence-policy.md)
 - [Open research roadmap](docs/roadmap.md)
