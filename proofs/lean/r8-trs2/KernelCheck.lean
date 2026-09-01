@@ -1,0 +1,4 @@
+import ManagedC8U104
+
+#check Erdos993C8U1.trs2_iff_adjacentLogConcave
+#check Erdos993C8U1.trs2_convolutionClosure

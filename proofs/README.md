@@ -22,3 +22,14 @@ Current packages:
   factorization, and fixed-component selector characterization. See
   [`r7-first-recovery-rank-one`](lean/r7-first-recovery-rank-one/README.md)
   and the [provenance record](../evidence/verification-2026-08-31-r6-r7.md).
+- Seven r8 projects covering eight verified auxiliary declarations: extension
+  splitting, extension-profile specialization, an exact decoder obstruction,
+  abstract SCP convolution closure, two-leaf deletion symmetry, a
+  positive-rank boundary, and the two TRS2 declarations. See
+  [`r8-extension-set-bridge`](lean/r8-extension-set-bridge/README.md),
+  [`r8-extension-profile-specialization`](lean/r8-extension-profile-specialization/README.md),
+  [`r8-rbag-decoder-obstruction`](lean/r8-rbag-decoder-obstruction/README.md),
+  [`r8-scp-convolution`](lean/r8-scp-convolution/README.md),
+  [`r8-two-leaf-deletion`](lean/r8-two-leaf-deletion/README.md),
+  [`r8-positive-rank-boundary`](lean/r8-positive-rank-boundary/README.md),
+  and [`r8-trs2`](lean/r8-trs2/README.md).

@@ -14,6 +14,9 @@ source packets, raw model transcripts, and noncanonical duplicate returns.
 - [`verification-2026-08-31-r6-r7.md`](verification-2026-08-31-r6-r7.md)
   binds the r6/r7 update to terminal source artifacts and the twelve r7
   package sources.
+- [`verification-2026-09-01-r8.md`](verification-2026-09-01-r8.md) binds the
+  terminal r8 record to its seven public Lean packages and eight auxiliary
+  declarations.
 - [`order-20-21-search`](order-20-21-search/README.md) contains the exact
   generator, independent checker, and machine-readable bounded result.
 - [`source-hashes.sha256`](source-hashes.sha256) binds the published Lean

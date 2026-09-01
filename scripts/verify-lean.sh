@@ -51,5 +51,19 @@ verify_project "$ROOT/proofs/lean/r7-boundary-factorization" \
   "C8U2BoundaryFactorization" "KernelCheck.lean" "AxiomCheck.lean"
 verify_project "$ROOT/proofs/lean/r7-component-selector" "C8U3Selector" \
   "KernelCheck.lean" "AxiomCheck.lean"
+verify_project "$ROOT/proofs/lean/r8-extension-set-bridge" "E1ExtensionSplit" \
+  "KernelCheck.lean" "AxiomCheck.lean"
+verify_project "$ROOT/proofs/lean/r8-extension-profile-specialization" "C1F1Rep01" \
+  "KernelCheck.lean" "AxiomCheck.lean"
+verify_project "$ROOT/proofs/lean/r8-rbag-decoder-obstruction" "C2F1" \
+  "KernelCheck.lean" "AxiomCheck.lean"
+verify_project "$ROOT/proofs/lean/r8-scp-convolution" "C2U203" \
+  "KernelCheck.lean" "AxiomCheck.lean"
+verify_project "$ROOT/proofs/lean/r8-two-leaf-deletion" "C4F305" \
+  "KernelCheck.lean" "AxiomCheck.lean"
+verify_project "$ROOT/proofs/lean/r8-positive-rank-boundary" "LeanProof" \
+  "KernelCheck.lean" "AxiomCheck.lean"
+verify_project "$ROOT/proofs/lean/r8-trs2" "ManagedC8U104" \
+  "KernelCheck.lean" "AxiomCheck.lean"
 
 echo "All Lean builds, kernel checks, and axiom checks passed."

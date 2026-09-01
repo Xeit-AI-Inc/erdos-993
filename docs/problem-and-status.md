@@ -27,7 +27,7 @@ sequences are not closed under convolution.
 
 ## Current Boundary
 
-As of this repository's 2026-08-31 release, both targets remain open in the
+As of this repository's 2026-09-01 release, both targets remain open in the
 research record. No verified counterexample, complete proof, or formal
 independence result has been found.
 
@@ -42,13 +42,20 @@ condition `i_5<i_4<i_6` to orders 13 through 32. Complete searches exclude a
 descent followed by recovery at orders 20 and 21, but the other orders in that
 band and the general first-recovery problem remain open.
 
-Two later completed experiments do not change that boundary. Code's r6
+Three later completed experiments do not change that boundary. Code's r6
 corpus is computation grade under its own rubric, explicitly not
 `formally_verified`. The r7 joint-shadow-incidence run has twelve exact
 kernel-checked and fidelity-reviewed auxiliary or conditional declarations;
 they exclude rank-one first recovery and establish several exact local or
 component identities, but none supplies the strict joint inequality, carrier,
 or transfer argument needed for a headline target.
+
+The later r8 extension-profile and same-leaf run also leaves TREE, FOREST,
+TRANSFER, and the literal counterexample target open. Its eight formally
+verified declarations have exact auxiliary scopes: representation bridges,
+fixed-state obstructions, a two-leaf symmetry, a positive-rank boundary, and
+abstract sequence characterizations or closure. No declaration proves that a
+tree independence sequence satisfies the abstract sequence hypotheses.
 
 ## Why Log-Concavity Is Not The Whole Problem
 

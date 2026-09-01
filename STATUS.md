@@ -1,6 +1,6 @@
 # Research Status
 
-Last updated: 2026-08-31
+Last updated: 2026-09-01
 
 ## Headline Problems
 
@@ -40,6 +40,11 @@ No formal-independence candidate has been identified.
   and preserves exact rooted-attachment, two-leaf, containment, boundary, and
   fixed-component identities. Its endpoint, coupling, and context results
   retain their stated antecedents.
+- The completed r8 extension-profile and same-leaf experiment has eight
+  kernel-checked, axiom-checked, fidelity-reviewed auxiliary declarations in
+  seven public Lean packages. They establish exact bridges, state
+  obstructions, symmetry, legality, and abstract sequence results only; none
+  proves a headline target or a tree-membership premise for an abstract class.
 - An independently audited informal theorem confines any
   `Delta_4<0<Delta_5` tree of order at least 12 to orders 13 through 32.
 - No descent-recovery witness was found among all 522,959 nonisomorphic trees
@@ -64,5 +69,7 @@ The following do not count as a solution:
   a theorem controlling the sign of its local charges.
 - a computation-grade corpus that its governing rubric classifies as not
   `formally_verified`.
+- an abstract convolution theorem without a realizability-aware proof that
+  tree independence sequences satisfy its hypotheses.
 
 The public status must be updated before any claim is described as current.

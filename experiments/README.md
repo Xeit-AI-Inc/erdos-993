@@ -12,3 +12,6 @@ result, limitations, and hashes.
   record; no public theorem package.
 - [r7 joint-shadow-incidence summary](r7-joint-shadow-incidence.md): twelve
   reproducible auxiliary or conditional Lean packages and their boundaries.
+- [r8 extension-profile and same-leaf summary](r8-extension-profile-same-leaf.md):
+  terminal twelve-cycle record, eight verified auxiliary declarations, and the
+  remaining strict-overlap and representation obligations.

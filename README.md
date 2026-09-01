@@ -64,6 +64,13 @@ conditional endpoint and coupling bridges, a finite rooted countercertificate,
 and four exact incidence/component identities. None is a TREE, FOREST,
 TRANSFER, counterexample, or Erdős #993 theorem.
 
+The 2026-09-01 r8 update adds seven Lean projects for eight governed auxiliary
+declarations: extension-set splitting, extension-profile specialization, a
+fixed-state decoder obstruction, abstract convolution closure results,
+two-leaf deletion symmetry, and a positive-rank boundary. These are exact
+narrow results only. They do not prove TREE, FOREST, TRANSFER, a
+counterexample, or Erdős #993.
+
 ## Latest Research Boundary
 
 The completed r6 and r7 experiments both leave TREE, FOREST, and TRANSFER
@@ -74,6 +81,11 @@ headline theorem. The earlier proof-gap experiment narrowed a possible
 rank-four-to-rank-five recovery to tree orders `13..32` and produced complete
 no-recovery certificates at orders 20 and 21. These advances do not close the
 remaining finite band or any all-order headline.
+
+The completed r8 extension-profile and same-leaf experiment also leaves all
+four headline targets open. Its eight verified declarations are auxiliary; the
+remaining universal route needs representation fidelity, noncircular endpoint
+signs, and a strict common-leaf overlap.
 
 ## Verify The Lean Package
 
@@ -104,6 +116,8 @@ The expected transitive axioms are `propext`, `Classical.choice`, and
 - [Marked-extension charge Lean package](proofs/lean/marked-extension-charge/README.md)
 - [r7 auxiliary and conditional Lean packages](proofs/lean/r7-first-recovery-rank-one/README.md)
 - [2026-08-31 provenance record](evidence/verification-2026-08-31-r6-r7.md)
+- [r8 experiment summary](experiments/r8-extension-profile-same-leaf.md)
+- [2026-09-01 r8 verification record](evidence/verification-2026-09-01-r8.md)
 - [Order-20/21 computational evidence](evidence/order-20-21-search/README.md)
 
 ## Repository Status

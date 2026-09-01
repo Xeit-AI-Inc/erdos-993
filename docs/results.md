@@ -81,6 +81,32 @@ the structural identities do not establish a strict same-leaf inequality.
 The complete package list, declarations, source hashes, and scope boundaries
 are in the [r7 provenance record](../evidence/verification-2026-08-31-r6-r7.md).
 
+## 2026-09-01 r8 Extension-Profile And Same-Leaf Update
+
+The terminal r8 experiment contributes eight governed formally verified
+auxiliary declarations in seven public packages. Their exact scopes are:
+
+- an extension-set cardinality bridge under labelled graph disjoint union;
+- recovery of independent-set coefficients by evaluating an encoded
+  extension-profile variable at one;
+- a fixed five-label obstruction to a universal decoder for the exact
+  `R_bag` state;
+- closure of an abstract universal-preserver predicate under convolution;
+- endpoint-deletion isomorphism, coefficient equality, and difference
+  equality for an exact two-leaf tree;
+- a positive-rank and carrier-bound legality consequence of the displayed
+  minimum-first-recovery hypothesis; and
+- a route-local `TRS2` characterization by adjacent log-concavity and a
+  closure theorem for abstract finitely supported sequences.
+
+No result establishes a strict common-leaf inequality, proves that a tree
+independence sequence belongs to `SCP` or `TRS2`, provides a realizable
+transfer class, or changes any headline status. The two Cycle 12 nominees are
+blocked future work and are not published as verified Lean theorems.
+
+See the [r8 experiment summary](../experiments/r8-extension-profile-same-leaf.md)
+and [verification record](../evidence/verification-2026-09-01-r8.md).
+
 ## Bounded Exclusions
 
 - All 522,959 nonisomorphic trees through order 19 were checked with no
