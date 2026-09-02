@@ -35,11 +35,16 @@ after every invocation, zero drift. Six `governed` closures, two
 | `cycles/cycle-5/lean/C5-LEAN-GATE.md` | `584d37da19dcdda841c77f1eb817ade0a0cda11b4fe9eb5a50e20e83c24413f4` |
 | `cycles/cycle-6/lean/C6-M2-GATE.md` | `97908fff9320656d230ec57ad7f594c633eccf956388eeee05771730a2f2f563` |
 
-Public Lean package export for the six governed closures is a planned
-follow-up curation in the `proofs/lean/` r8 package format (standalone lake
-project + kernel and axiom check drivers per package); until it lands, the
-grades above are claims about the sealed source run, not about files in
-this repository.
+The six governed closures are exported as standalone Lean packages under
+`proofs/lean/r9-*` (r8 package format: lake project pinned to Lean 4.32.2
+and Mathlib `905b95818eb32af7874a58b427f50c1711a5e96c`, with KernelCheck and
+AxiomCheck drivers). Every module is byte-identical to its sealed gated
+source (per-module SHA-256 tables in each package README); at export, all
+six packages compiled at the pin against the read-only cache (manifest
+`52a4d73c…`, asserted unchanged before and after) and every checked
+declaration's axioms are within `[propext, Classical.choice, Quot.sound]`.
+Severance and narrowing caveats from the source gate records travel on each
+package README and bind consumers.
 
 ## Order-20 Census (`erdos-993-order20-census-2026-09-02`)
 

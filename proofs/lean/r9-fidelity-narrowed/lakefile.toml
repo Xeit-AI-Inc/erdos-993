@@ -1,0 +1,23 @@
+name = "FidelityProofs"
+version = "0.1.0"
+defaultTargets = ["FidelityProofs"]
+
+[[lean_lib]]
+name = "Definitions"
+
+[[lean_lib]]
+name = "Contracts"
+
+[[lean_lib]]
+name = "Fidelity"
+
+[[lean_lib]]
+name = "FidelityContracts"
+
+[[lean_lib]]
+name = "FidelityProofs"
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "905b95818eb32af7874a58b427f50c1711a5e96c"

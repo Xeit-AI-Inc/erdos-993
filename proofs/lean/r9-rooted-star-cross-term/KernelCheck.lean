@@ -1,0 +1,4 @@
+import LeanProof
+
+#check @RootedStarCrossTerm.centerRootedK13_crossTerm_certificate
+#check @RootedStarCrossTerm.rootedStarMinorRanks

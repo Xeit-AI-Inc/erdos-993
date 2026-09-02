@@ -1,0 +1,5 @@
+import C12FreshRootSectors.FreshRootSectors
+
+#print axioms Erdos993.C12.FreshRootSectors.attachGraph_isTree
+#print axioms Erdos993.C12.FreshRootSectors.attachGraph_degree_eq_one_iff
+#print axioms Erdos993.C12.FreshRootSectors.lean_c12_t1_fresh_root_sectors

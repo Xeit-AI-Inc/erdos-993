@@ -1,0 +1,4 @@
+import LeanProof
+
+#print axioms RootedStarCrossTerm.centerRootedK13_crossTerm_certificate
+#print axioms RootedStarCrossTerm.rootedStarMinorRanks

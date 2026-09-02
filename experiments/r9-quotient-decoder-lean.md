@@ -60,4 +60,5 @@ digests and balance censuses; dual independent critic rebuilds with
 byte-identical `.olean` under a declared invocation form; pinned read-only
 Mathlib cache verified before and after every invocation, zero drift.
 Source digests are bound in
-`evidence/verification-2026-09-02-three-engine.md`.
+`evidence/verification-2026-09-02-three-engine.md`. The six governed
+closures are exported as standalone Lean packages under `proofs/lean/r9-*`.

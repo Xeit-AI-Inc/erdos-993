@@ -33,3 +33,25 @@ Current packages:
   [`r8-two-leaf-deletion`](lean/r8-two-leaf-deletion/README.md),
   [`r8-positive-rank-boundary`](lean/r8-positive-rank-boundary/README.md),
   and [`r8-trs2`](lean/r8-trs2/README.md).
+
+## r9 packages (2026-09-02)
+
+Six standalone packages export the r9 quotient-decoder formalization run's
+governed closures, each with kernel and axiom check drivers and sealed-source
+digests in its README:
+
+- `r9-fresh-root-sectors` — graph-level treehood and degree classification of
+  the fresh-root attachment graph.
+- `r9-rooted-star-cross-term` — the center-rooted K_{1,3} linked-cross-term
+  certificate with the minor-rank interval identity.
+- `r9-quotient-decoder` — representative independence, recursion congruence,
+  and decoder/attachment descent (severance caveat in its README binds).
+- `r9-e3-double-count` — the repaired double-count module (governed as a
+  module, not severable below it).
+- `r9-fidelity-narrowed` — the eight-constituent narrowed fidelity
+  sub-statement (the full row does NOT close; residues named).
+- `r9-m3-narrowed` — the support-marker transport half (residues named;
+  the registered hypothesis is sufficient, not necessary).
+
+None of these proves a headline target. Grades are the source run's rubric
+grades (`governed`), not `formally_verified`.
