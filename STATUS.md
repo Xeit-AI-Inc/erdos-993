@@ -1,6 +1,6 @@
 # Research Status
 
-Last updated: 2026-09-01
+Last updated: 2026-09-02
 
 ## Headline Problems
 
@@ -53,6 +53,35 @@ No formal-independence candidate has been identified.
   823,065 trees of order 20 or all 2,144,505 trees of order 21.
 - No non-unimodal witness was found among all 310,782 disconnected forest
   isomorphism types through order 18.
+- The 2026-09-02 order-20 census scanned all 823,065 order-20 trees (and the
+  full ladder of 1,343,736 classes at orders 14 through 20) under a frozen,
+  published byte protocol with dual enumeration, dual coefficient
+  derivation, and a byte-identical fresh-process replay: zero
+  first-recovery, B4, leaf-profile Split/Cross/Obstruction, and
+  negative-total-adjacent-minor hits. Orders 14 through 17 reproduce the
+  prior sealed census streams byte-exactly, making orders 14 through 20 one
+  authenticated contiguous exclusion frontier. Any literal first-recovery
+  counterexample has order at least 21, at bounded computational tier.
+- No tree through order 20 has a non-log-concave independence sequence
+  (zero negative total adjacent minors), superseding the earlier
+  single-implementation scan through order 18 at a stronger evidence tier.
+  The TRS2 witness search domain therefore starts at order 21.
+- The completed r9 PAIR-G4/endpoint-strictness experiment (16 cycles,
+  authority stop) verified a governed closest-corridor theorem: under
+  endpoint guards, support-fibre constancy, and zero diagonal mass, a
+  minimum counterexample carries a distinct closest p-/q-favorable support
+  pair on a unique positive-length path with endpoint sign restrictions and
+  internal nonfavorability. Nineteen governed auxiliary declarations were
+  added; eight unguarded inference mechanisms are excluded at exact scope
+  with certificates. The endpoint and diagonal obligations remain open.
+- The completed r9 quotient-decoder formalization run gated the dependent
+  quotient decoder core, a narrowed encoder-decoder fidelity sub-statement,
+  and a narrowed marker-transport half at `governed` under its rubric
+  (Lean 4.32.2 kernel, pinned Mathlib, independent fidelity review), with
+  the marker recurrence and representation-sufficiency questions closed at
+  `proved_informal` with named residues. Two frozen contract rows were
+  kernel-refuted and repaired inside the run. None of this is
+  `formally_verified` and none is a headline theorem.
 
 ## Claim Boundary
 
