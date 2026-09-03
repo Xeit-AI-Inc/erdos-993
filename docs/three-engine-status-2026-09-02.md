@@ -13,7 +13,7 @@ them.
 | 2 — G1/G2 endpoint strict units | **Open — active front** |
 | 3 — Dependent quotient decoder formalization | Complete to authorized ceiling; exact-statement residues named |
 | 4 — Order-20 census | **Complete** (zero hits, full receipts) |
-| 5 — TRS2 witness question | **Partial — active front** (witness search domain now starts at order 21) |
+| 5 — TRS2 witness question | **Discharged to its conditional ceiling (r10, 2026-09-03)** — one open proposition remains; see addendum |
 | 6 — Lean debt | **Complete** (all items `governed`) |
 
 ## The Three Named Targets Now At The Front
@@ -53,3 +53,22 @@ them.
 No result here is a headline theorem. Bounded computation is evidence,
 never proof. Narrowed closures are not closures of their full rows. See
 `evidence/verification-2026-09-02-three-engine.md` for source bindings.
+
+## Addendum (2026-09-03): Workstream 5's Terminal State
+
+The r10 run closed workstream 5 at its ceiling. Four governed Lean
+packages now form one kernel-checked chain ending at the conditional
+transfer theorem — if every component tree's independence sequence is
+TRS2, the forest's is (`proofs/lean/r10-*`; summary at
+`experiments/r10-trs2-bt-closure.md`). The condition is the point: the
+hypothesis is exactly the open universal tree-TRS2 question, so no
+headline target moves. The run also closed its own search program by
+measurement (closure candidates weaker than TRS2 are unfalsifiable
+through order 20; every measured stronger candidate failed on 34–98% of
+trees; the cross-term counterexample trail carries a strictly positive
+compensation margin everywhere it fires). What remains on this axis is
+one proposition, statable in one line of Lean against governed objects;
+the blocked-root subtraction obstruction identified in the original
+workstream analysis still stands against a convolution-only induction.
+Workstreams 1 and 2 (the corridor transport lemma; the strict endpoint
+units) are unchanged and remain the open fronts.
