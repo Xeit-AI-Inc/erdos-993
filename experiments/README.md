@@ -27,3 +27,7 @@ result, limitations, and hashes.
   order-20 trees under a frozen byte protocol with dual enumeration, dual
   derivation, and byte-identical replay; zero hits on every predicate; the
   authenticated exclusion frontier now runs contiguously through order 20.
+- [r10 TRS2 B_T-closure summary](r10-trs2-bt-closure.md): six-cycle run with
+  two controller study interludes; four governed packages forming one chain
+  ending at the conditional transfer-to-forest theorem; the invariant-search
+  program closed by measurement with a stated re-entry condition.

@@ -55,3 +55,23 @@ digests in its README:
 
 None of these proves a headline target. Grades are the source run's rubric
 grades (`governed`), not `formally_verified`.
+
+## r10 packages (2026-09-03)
+
+Four packages exporting the r10 TRS2 B_T-closure run's governed chain, each
+with kernel and axiom check drivers and sealed-source digests in its README:
+
+- `r10-extension-profile-recurrences` — the three-state extension-profile
+  recurrences, proved against an independent ground-truth model.
+- `r10-nnseq-admission` — a tree's independence sequence as an abstract
+  `NNSeq` term, with the TRS2 characterization discharged for it (neither
+  side asserted).
+- `r10-coefficient-correspondence` — the kernel-level identification
+  joining the admission term to the recurrence polynomial.
+- `r10-transfer-to-forest` — **the conditional transfer theorem: if every
+  component tree's sequence is TRS2, the forest's is.** The hypothesis is
+  exactly the open universal tree-TRS2 question; the package closes no
+  headline problem.
+
+Grades are the source run's rubric grades (`governed`), not
+`formally_verified`.

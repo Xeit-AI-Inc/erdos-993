@@ -1,6 +1,6 @@
 # Research Status
 
-Last updated: 2026-09-02
+Last updated: 2026-09-03
 
 ## Headline Problems
 
@@ -74,6 +74,21 @@ No formal-independence candidate has been identified.
   internal nonfavorability. Nineteen governed auxiliary declarations were
   added; eight unguarded inference mechanisms are excluded at exact scope
   with certificates. The endpoint and diagonal obligations remain open.
+- The completed r10 TRS2 run exported four governed Lean packages forming
+  one kernel-checked chain: the extension-profile recurrences (proved
+  against an independent ground-truth model), the admission of a tree's
+  independence sequence as an abstract nonnegative sequence term, the
+  coefficient correspondence joining the two, and a CONDITIONAL
+  transfer-to-forest theorem — if every component tree's sequence is TRS2
+  then the forest's is — via the r8 convolution closure. The condition is
+  the point: the hypothesis is exactly the open universal tree-TRS2
+  question, and the theorem asserts the implication, never its antecedent.
+  The run also closed its own search program by measurement: closure
+  candidates weaker than TRS2 are unfalsifiable through order 20, every
+  measured stronger candidate failed on 34-98% of trees, and the
+  linked-cross-term counterexample trail carries a strictly positive
+  compensation margin on all firing instances at orders <= 17. None of
+  this is a headline theorem and none is `formally_verified`.
 - The completed r9 quotient-decoder formalization run gated the dependent
   quotient decoder core, a narrowed encoder-decoder fidelity sub-statement,
   and a narrowed marker-transport half at `governed` under its rubric
