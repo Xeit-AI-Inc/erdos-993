@@ -12,6 +12,11 @@ Last updated: 2026-09-03 (universal-tree-TRS2 erratum)
 
 No formal-independence candidate has been identified.
 
+The consolidated orientation document — the conjecture, the full proof path
+with per-step status, the claim/fence/obligation tables, strategy verdicts,
+and next-phase priorities — is the
+[master proof ledger (2026-09-04)](docs/master-proof-ledger-2026-09-04.md).
+
 ## Erratum of Record (2026-09-03)
 
 Earlier versions of this file and of several companion documents called
