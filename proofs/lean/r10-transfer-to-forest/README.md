@@ -27,3 +27,19 @@ Mathlib + independent dual critic rebuilds + adversarial mutants). NOT
 `formally_verified` under that rubric. This package does not prove TREE,
 FOREST, TRANSFER, a counterexample, or Erdős #993, and no bounded zero
 cited anywhere in its lineage is universal evidence.
+
+## Erratum note (2026-09-03)
+
+The universal form of this theorem's hypothesis — every finite tree's
+independence sequence is TRS2 — is **refuted**: tree TRS2 is exactly
+log-concavity of the raw independence sequence (this repository's
+`r8-trs2` equivalence theorem), and Kadrawi–Levit exhibit non-log-concave
+trees from order 26 (arXiv:2305.01784; replayable check under
+`evidence/kl-order26-trs2-witness/`). The theorem itself is unaffected —
+it asserts the implication, never its antecedent — but it cannot carry a
+universal tree result to forests. Its correct use is per-forest with the
+premise verified per component, which yields at bounded computational
+tier: every forest whose components all have at most 25 vertices has a
+log-concave, hence weakly unimodal, independence sequence; a minimal
+forest counterexample to unimodality must contain a component of order at
+least 26. See `docs/erratum-2026-09-03-universal-tree-trs2.md`.

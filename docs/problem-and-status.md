@@ -39,8 +39,14 @@ The shadow inequality itself remains unproved.
 
 The latest proof-gap completion experiment independently narrows the specific
 condition `i_5<i_4<i_6` to orders 13 through 32. Complete searches exclude a
-descent followed by recovery at orders 20 and 21, but the other orders in that
-band and the general first-recovery problem remain open.
+descent followed by recovery at orders 20 and 21, and published exhaustive
+unimodality verification for all trees through order 29 (external
+computation, cited not reproduced) leaves only orders 30 through 32 of that
+band unresolved; the general first-recovery problem remains open. Separately,
+universal log-concavity of tree independence sequences (equivalently,
+universal tree TRS2) is refuted at order 26 — see the
+[erratum](erratum-2026-09-03-universal-tree-trs2.md) — without affecting any
+headline unimodality status.
 
 Three later completed experiments do not change that boundary. Code's r6
 corpus is computation grade under its own rubric, explicitly not

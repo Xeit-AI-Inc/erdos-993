@@ -5,7 +5,10 @@
 The sharpest current concrete entries are:
 
 1. eliminate or exhibit `Delta_4<0<Delta_5` inside the residual order band
-   `13..32`;
+   `13..32` — published exhaustive unimodality verification for all trees
+   through order 29 (external computation, cited not reproduced) narrows
+   the residual band to `30..32`, so importing verified receipts for those
+   three orders would close this branch entirely;
 2. construct a connectivity-preserving descent from a positive-charge
    specified residual to a smaller tree carrying a complete first-recovery
    history, or prove that no such descent is possible;
@@ -69,3 +72,18 @@ synchronization, or forest recovery.
   output is a proof object rather than only a null search?
 - What additional state is necessary for convolution without reintroducing a
   circular definition?
+
+## Retired Directions (2026-09-03)
+
+Universal tree TRS2 — equivalently, universal log-concavity of tree
+independence sequences — is refuted at order 26 and is retired as a proof
+target, together with any invariant search whose conclusion is universal
+tree TRS2. See the
+[erratum](erratum-2026-09-03-universal-tree-trs2.md). Every future
+transfer invariant must be tested against the order-26 Kadrawi–Levit
+witness family
+([`evidence/kl-order26-trs2-witness`](../evidence/kl-order26-trs2-witness/README.md))
+before proof search: it must hold on those trees (they are unimodal) while
+remaining strong enough to survive convolution. The open transfer question
+is now exactly this: a class strictly between log-concavity and
+unimodality, convolution-stable, containing all tree sequences.

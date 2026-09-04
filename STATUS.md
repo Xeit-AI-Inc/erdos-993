@@ -1,6 +1,6 @@
 # Research Status
 
-Last updated: 2026-09-03 (r11 update)
+Last updated: 2026-09-03 (universal-tree-TRS2 erratum)
 
 ## Headline Problems
 
@@ -11,6 +11,18 @@ Last updated: 2026-09-03 (r11 update)
 | A noncircular convolution-closed transfer class carries the tree result to forests | Open | A realizability-aware class satisfying all required closure and implication properties |
 
 No formal-independence candidate has been identified.
+
+## Erratum of Record (2026-09-03)
+
+Earlier versions of this file and of several companion documents called
+universal tree TRS2 an open question and recommended a structural proof of
+it. That status was wrong: tree TRS2 is exactly log-concavity of the raw
+independence sequence (by this repository's own kernel-checked equivalence
+theorem), and universal tree log-concavity is refuted at order 26 by
+Kadrawi–Levit — reference 4 of this repository's bibliography. The witnesses
+are unimodal, so no headline status changes. See the
+[erratum](docs/erratum-2026-09-03-universal-tree-trs2.md) and the replayable
+[witness evidence](evidence/kl-order26-trs2-witness/README.md).
 
 ## Verified Progress
 
@@ -65,7 +77,11 @@ No formal-independence candidate has been identified.
 - No tree through order 20 has a non-log-concave independence sequence
   (zero negative total adjacent minors), superseding the earlier
   single-implementation scan through order 18 at a stronger evidence tier.
-  The TRS2 witness search domain therefore starts at order 21.
+  This bounded zero is fully consistent with the known refutation: the first
+  non-log-concave trees have order 26 (Kadrawi–Levit; see the
+  [erratum](docs/erratum-2026-09-03-universal-tree-trs2.md)), so the census
+  horizon ended six vertices below the first witness. Universal tree TRS2 is
+  refuted, not open, and is retired as a search target.
 - The completed r9 PAIR-G4/endpoint-strictness experiment (16 cycles,
   authority stop) verified a governed closest-corridor theorem: under
   endpoint guards, support-fibre constancy, and zero diagonal mass, a
@@ -97,9 +113,13 @@ No formal-independence candidate has been identified.
   independence sequence as an abstract nonnegative sequence term, the
   coefficient correspondence joining the two, and a CONDITIONAL
   transfer-to-forest theorem — if every component tree's sequence is TRS2
-  then the forest's is — via the r8 convolution closure. The condition is
-  the point: the hypothesis is exactly the open universal tree-TRS2
-  question, and the theorem asserts the implication, never its antecedent.
+  then the forest's is — via the r8 convolution closure. The theorem asserts
+  the implication, never its antecedent — and the antecedent's universal
+  form is REFUTED at order 26 (see the
+  [erratum](docs/erratum-2026-09-03-universal-tree-trs2.md)): the theorem's
+  correct use is per-forest with the premise verified per component, which
+  yields the bounded corollary that every forest whose components all have
+  at most 25 vertices is unimodal.
   The run also closed its own search program by measurement: closure
   candidates weaker than TRS2 are unfalsifiable through order 20, every
   measured stronger candidate failed on 34-98% of trees, and the

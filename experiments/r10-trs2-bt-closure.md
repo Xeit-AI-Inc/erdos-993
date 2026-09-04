@@ -2,6 +2,14 @@
 
 Completed: 2026-09-03
 
+> **ERRATUM (2026-09-03).** This page's original "What Remains" section
+> called universal tree TRS2 an open proposition needing a structural proof.
+> That is wrong: universal tree TRS2 is **refuted** — it is exactly universal
+> tree log-concavity, false from order 26 (Kadrawi–Levit). All Lean theorems
+> below remain valid at their stated conditional scope. See the
+> [erratum of record](../docs/erratum-2026-09-03-universal-tree-trs2.md) and
+> the [witness evidence](../evidence/kl-order26-trs2-witness/README.md).
+
 ## Terminal State
 
 The six-cycle r10 experiment `erdos-993-math-dre-20260902-r10-trs2-bt-closure`
@@ -29,7 +37,7 @@ Four governed packages forming one kernel-checked chain, exported to
 | `r10-extension-profile-recurrences` | The Included/Available/Blocked extension-profile recurrences, proved against an independent ground-truth model | Theorems about the `RTree` model; nothing about TRS2 |
 | `r10-nnseq-admission` | A tree's independence sequence as an abstract `NNSeq` term; the TRS2 ⟺ adjacent-log-concavity characterization discharged for it | Asserts neither side of the biconditional |
 | `r10-coefficient-correspondence` | The coefficient identification joining the admission term to the recurrence polynomial | Joins two constructions in the kernel; asserts no sequence property |
-| `r10-transfer-to-forest` | **`transfer_to_forest`: if every component tree's sequence is TRS2, the forest's is** — the forest product decomposition composed with the r8 convolution closure | **CONDITIONAL. The hypothesis is exactly the open universal tree-TRS2 question. Closes no headline problem** |
+| `r10-transfer-to-forest` | **`transfer_to_forest`: if every component tree's sequence is TRS2, the forest's is** — the forest product decomposition composed with the r8 convolution closure | **CONDITIONAL. The universal form of the hypothesis is refuted at order 26 (see erratum); correct use is per-forest with the premise verified per component. Closes no headline problem** |
 
 ## Measured Negative Results
 
@@ -53,15 +61,24 @@ patience, and the receipts travel:
   all 104,678 firing instances at orders ≤ 17; the compensation identity
   is a definition unpacked, not a mechanism.
 
-## What Remains
+## What Remains (corrected 2026-09-03)
 
-Exactly one proposition on this line: universal tree-TRS2 (the hypothesis
-of the exported conditional theorem), now statable in one line of Lean
-against governed objects. Bounded computation cannot decide it, and the
-run's own receipts bound what invariant search can contribute below order
-21 (nothing). A successor needs a structural proof idea; the blocked-root
-subtraction obstruction identified in the program's earlier analysis still
-bars the convolution-only induction.
+The original text here called universal tree-TRS2 an open proposition
+needing a structural proof idea. **It is refuted**: tree TRS2 is exactly
+log-concavity of the raw independence sequence, false from order 26 by
+Kadrawi–Levit's witnesses, which are unimodal — so nothing about the
+headline problems changes, but the universal branch is closed negatively
+and retired. The run's measured "pincer" (weak candidates unfalsifiable
+through order 20, strong candidates failing broadly) was an artifact of
+searching entirely below the first known failure order.
+
+What genuinely survives from this line: the conditional theorem with its
+bounded corollary (forests whose components all have ≤ 25 vertices are
+unimodal; a minimal forest counterexample contains a component of order
+≥ 26), the governed formal infrastructure, and a standing requirement that
+any future transfer invariant be tested against the order-26 witness family
+before proof search. See the
+[erratum](../docs/erratum-2026-09-03-universal-tree-trs2.md).
 
 ## Integrity
 

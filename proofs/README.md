@@ -69,9 +69,11 @@ with kernel and axiom check drivers and sealed-source digests in its README:
 - `r10-coefficient-correspondence` — the kernel-level identification
   joining the admission term to the recurrence polynomial.
 - `r10-transfer-to-forest` — **the conditional transfer theorem: if every
-  component tree's sequence is TRS2, the forest's is.** The hypothesis is
-  exactly the open universal tree-TRS2 question; the package closes no
-  headline problem.
+  component tree's sequence is TRS2, the forest's is.** The universal form
+  of the hypothesis is refuted at order 26 (see
+  [the erratum](../docs/erratum-2026-09-03-universal-tree-trs2.md)); the
+  theorem's correct use is per-forest with the premise verified per
+  component. The package closes no headline problem.
 
 Grades are the source run's rubric grades (`governed`), not
 `formally_verified`.

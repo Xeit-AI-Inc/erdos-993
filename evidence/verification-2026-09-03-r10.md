@@ -59,7 +59,11 @@ bound above (`E10-DETERMINATION.md`).
 Nothing in this update proves or refutes TREE, FOREST, or TRANSFER;
 exhibits a counterexample; or establishes independence. The headline
 export is a CONDITIONAL theorem whose hypothesis — every tree's sequence
-is TRS2 — is precisely the open universal branch of the tree-TRS2
-obligation. Grades named `governed` are the source run's rubric grades and
+is TRS2 — was described here at publication time as "the open universal
+branch of the tree-TRS2 obligation." **[Corrected 2026-09-03: that
+universal branch is refuted at order 26; see
+`../docs/erratum-2026-09-03-universal-tree-trs2.md`. The verification
+statements in this record — digests, compilation, axioms, grades — are
+unaffected.]** Grades named `governed` are the source run's rubric grades and
 are not `formally_verified`. Zero-hit searches cited in the run's lineage
 are bounded evidence and never universal evidence.

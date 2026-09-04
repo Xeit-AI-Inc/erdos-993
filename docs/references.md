@@ -12,7 +12,12 @@ This is a starting bibliography, not a claim of worldwide completeness.
    Polynomials of Trees," [arXiv:2101.06744](https://arxiv.org/abs/2101.06744).
 4. Ohr Kadrawi and Vadim E. Levit, "The independence polynomial of trees is not
    always log-concave starting from order 26,"
-   [arXiv:2305.01784](https://arxiv.org/abs/2305.01784).
+   [arXiv:2305.01784](https://arxiv.org/abs/2305.01784). *This paper refutes
+   universal tree TRS2 (see the
+   [erratum](erratum-2026-09-03-universal-tree-trs2.md)); its order-26
+   witness family is a mandatory adversarial fixture for every proposed
+   transfer invariant
+   ([replayable check](../evidence/kl-order26-trs2-witness/README.md)).*
 5. Thomas F. Bloom, [Erdős Problem #993](https://www.erdosproblems.com/993).
 
 Claims taken from preprints or computational reports must retain that source

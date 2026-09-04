@@ -13,7 +13,7 @@ them.
 | 2 — G1/G2 endpoint strict units | **Open — active front** |
 | 3 — Dependent quotient decoder formalization | Complete to authorized ceiling; exact-statement residues named |
 | 4 — Order-20 census | **Complete** (zero hits, full receipts) |
-| 5 — TRS2 witness question | **Discharged to its conditional ceiling (r10, 2026-09-03)** — one open proposition remains; see addendum |
+| 5 — TRS2 witness question | **Closed negatively (erratum, 2026-09-03)** — universal tree TRS2 is refuted at order 26; the conditional theorem stands; see the correction addendum |
 | 6 — Lean debt | **Complete** (all items `governed`) |
 
 ## The Three Named Targets Now At The Front
@@ -60,15 +60,37 @@ The r10 run closed workstream 5 at its ceiling. Four governed Lean
 packages now form one kernel-checked chain ending at the conditional
 transfer theorem — if every component tree's independence sequence is
 TRS2, the forest's is (`proofs/lean/r10-*`; summary at
-`experiments/r10-trs2-bt-closure.md`). The condition is the point: the
-hypothesis is exactly the open universal tree-TRS2 question, so no
-headline target moves. The run also closed its own search program by
+`experiments/r10-trs2-bt-closure.md`). The condition is the point — the
+theorem asserts the implication, never its antecedent — and no headline
+target moves. **[Corrected 2026-09-03: the original text here called the
+universal antecedent "the open universal tree-TRS2 question." It is not
+open; it is refuted at order 26 — see the correction addendum at the end
+of this document.]** The run also closed its own search program by
 measurement (closure candidates weaker than TRS2 are unfalsifiable
 through order 20; every measured stronger candidate failed on 34–98% of
 trees; the cross-term counterexample trail carries a strictly positive
-compensation margin everywhere it fires). What remains on this axis is
-one proposition, statable in one line of Lean against governed objects;
-the blocked-root subtraction obstruction identified in the original
-workstream analysis still stands against a convolution-only induction.
+compensation margin everywhere it fires). **[Corrected 2026-09-03: the
+original text here said one open proposition remained on this axis. That
+proposition is refuted — nothing remains open on the universal-TRS2 axis;
+the blocked-root subtraction obstruction is moot for a refuted target.]**
 Workstreams 1 and 2 (the corridor transport lemma; the strict endpoint
 units) are unchanged and remain the open fronts.
+
+## Correction Addendum (2026-09-03): Universal Tree TRS2 Is Refuted
+
+The 09-03 addendum above described workstream 5's residue as "one
+proposition, statable in one line of Lean," needing "a structural proof
+idea." That framing was wrong. Tree TRS2 is exactly log-concavity of the
+raw independence sequence (kernel-checked equivalence, `r8-trs2`), and
+universal tree log-concavity is refuted from order 26 by Kadrawi–Levit
+(arXiv:2305.01784, reference 4 of `references.md`): T(3,4,4) fails at
+rank 13 with deficit −378 while remaining unimodal. The universal branch
+is therefore closed negatively; the search-program "pincer" the r10 run
+measured was an artifact of probing entirely below order 26. The
+conditional `transfer_to_forest` theorem stands, with the bounded
+corollary that every forest whose components all have at most 25 vertices
+is unimodal. Workstreams 1 and 2 are unaffected — the corridor program
+assumes log-concavity nowhere, and the r11 ingredient targets hold on all
+tested order-26-to-32 witnesses. Full details:
+`erratum-2026-09-03-universal-tree-trs2.md`; replayable witness:
+`../evidence/kl-order26-trs2-witness/`.
