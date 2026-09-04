@@ -31,3 +31,7 @@ result, limitations, and hashes.
   two controller study interludes; four governed packages forming one chain
   ending at the conditional transfer-to-forest theorem; the invariant-search
   program closed by measurement with a stated re-entry condition.
+- [r11 corridor-transport summary](r11-corridor-transport.md): six-cycle
+  run with two controller study interludes; four governed packages ending
+  at kernel-checked reductions of two open ingredient conjectures to one
+  named missing lemma; the corridor obligation remains open, narrowed.

@@ -75,3 +75,22 @@ with kernel and axiom check drivers and sealed-source digests in its README:
 
 Grades are the source run's rubric grades (`governed`), not
 `formally_verified`.
+
+## r11 packages (2026-09-03)
+
+Four packages exporting the r11 corridor-transport run's governed chain —
+nested snapshots of one growing module, each byte-identical to its gate's
+awarded source:
+
+- `r11-corridor-interface` — the corridor ingredient vocabulary over the
+  ground-truth model.
+- `r11-corridor-interface-extended` — 24 exact identities incl. the
+  generalized vertex-deletion identity.
+- `r11-bridge-predicate` — the empirically live bridge predicate, made
+  statable in the kernel (defined, not proved).
+- `r11-ingredient-reductions` — **kernel-checked Iff reductions of the two
+  ingredient conjectures to one named missing lemma.** Neither conjecture
+  is proved, refuted, or asserted.
+
+Grades are the source run's rubric grades (`governed`), not
+`formally_verified`.

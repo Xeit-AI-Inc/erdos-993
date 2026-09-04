@@ -1,6 +1,6 @@
 # Research Status
 
-Last updated: 2026-09-03
+Last updated: 2026-09-03 (r11 update)
 
 ## Headline Problems
 
@@ -74,6 +74,23 @@ No formal-independence candidate has been identified.
   internal nonfavorability. Nineteen governed auxiliary declarations were
   added; eight unguarded inference mechanisms are excluded at exact scope
   with certificates. The endpoint and diagonal obligations remain open.
+- The completed r11 corridor-transport run exported four governed Lean
+  packages (nested snapshots of one module): the corridor ingredient
+  vocabulary, the generalized vertex-deletion identity layer, the bridge
+  predicate (defined, not proved), and kernel-checked Iff reductions of
+  two exact ingredient conjectures — a favorable support above the
+  crossing boundary forces a negative whole-vertex deletion effect, and
+  leaf deletion drops the crossing index by at most one — to a single
+  named missing lemma each; the two residuals are the same missing tool
+  (a tree-vs-derived-forest Delta-sequence comparison at
+  crossing-index-positioned ranks). Neither conjecture is proved or
+  refuted; exhaustive search through order 18 found no counterexample and
+  that bounded zero is cited as nothing. The prior program's transport
+  lemma carries an adjudicated disjunct-level negative: two of its three
+  defining phrases were never operationalized in the sealed corpus, and
+  the third is cut against by exhaustive measurement (leaf crossing
+  indices never spread by 2 or more through order 20). None of this is a
+  headline theorem and none is `formally_verified`.
 - The completed r10 TRS2 run exported four governed Lean packages forming
   one kernel-checked chain: the extension-profile recurrences (proved
   against an independent ground-truth model), the admission of a tree's
