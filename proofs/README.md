@@ -96,3 +96,18 @@ awarded source:
 
 Grades are the source run's rubric grades (`governed`), not
 `formally_verified`.
+
+## r12 packages (2026-09-05)
+
+Four packages exporting the r12 Δ-comparison run's governed slate, each
+with kernel and axiom check drivers; assembly receipts with per-file
+digest tables at [`lean/R12-ASSEMBLY-RECEIPTS.md`](lean/R12-ASSEMBLY-RECEIPTS.md):
+
+- `r12-p1-convolution` — **`P1_NNSeq`: Toeplitz2 ∗ unimodal = unimodal** (abstract NNSeq scope; K–G attribution, primary text unconfirmed).
+- `r12-reduction-identities` — the corrected combined identity and its witnessed-leaf conditional corollary (hypothesis fails on 26,082 enumerated instances; disclosed on its face).
+- `r12-composition` — **(α) ∧ (β) ⟹ THEOREM (A) in full**; the hypotheses are unproved proof targets; BR-FACT-1 root stratum included.
+- `r12-deg2-reduction` — (α) at `deg(s)=2` ⟺ `AmbientTargetDeg2` (open); the award is for the reduction.
+
+None of these proves a headline target; `AlphaTarget`/`BetaTarget` are
+unproved hypotheses wherever they appear. Grades are the source run's
+rubric grades (`governed`), not `formally_verified`.

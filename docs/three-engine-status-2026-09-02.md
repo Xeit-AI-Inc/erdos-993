@@ -94,3 +94,28 @@ assumes log-concavity nowhere, and the r11 ingredient targets hold on all
 tested order-26-to-32 witnesses. Full details:
 `erratum-2026-09-03-universal-tree-trs2.md`; replayable witness:
 `../evidence/kl-order26-trs2-witness/`.
+
+
+## CLOSING ADDENDUM (2026-09-05): this document is superseded
+
+The September split this document recorded has run its course, and the
+**Master Proof Ledger** ([`master-proof-ledger-2026-09-04.md`](master-proof-ledger-2026-09-04.md), updated 2026-09-05)
+is now the program's orientation document of record. Final workstream
+dispositions on this document's own axes:
+
+- **WS1 (PAIR-G4):** advanced through two further sealed runs. r11
+  (2026-09-03) reduced the corridor's operable content to two ingredient
+  conjectures via governed kernel Iffs; r12 (2026-09-04) split the missing
+  tool into the (α)/(β) inequality targets, proved at `governed` that
+  **(α) ∧ (β) ⟹ THEOREM (A) in full**, and reduced (α) on the
+  `deg(s)=2` stratum — carrying ≥ 99.3% of all exceptional mass — to one
+  open statement (`AmbientTargetDeg2`). Ledger obligations O2/O3/O12 ([summary](../experiments/r12-delta-comparison.md)).
+- **WS2 (strict units):** unchanged by r11/r12; an r13 charter for Codex
+  was prepared 2026-09-04 (dispatch at Ashton's discretion).
+- **WS3, WS4, WS6:** complete, as recorded above; the census frontier for
+  the r12 targets now extends through order 21.
+- **WS5:** closed negatively per the correction addendum; the conditional
+  transfer theorem gained its convolution companion in r12's `P1_NNSeq`
+  (`governed`), closing ledger obligation O6.
+
+No further addenda will be made here; deltas accrue in the ledger.

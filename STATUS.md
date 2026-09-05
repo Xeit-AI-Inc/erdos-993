@@ -1,6 +1,6 @@
 # Research Status
 
-Last updated: 2026-09-03 (universal-tree-TRS2 erratum)
+Last updated: 2026-09-05 (r12 export)
 
 ## Headline Problems
 
@@ -30,6 +30,18 @@ are unimodal, so no headline status changes. See the
 [witness evidence](evidence/kl-order26-trs2-witness/README.md).
 
 ## Verified Progress
+
+- The completed r12 Δ-comparison run exported four governed packages: the
+  `P1_NNSeq` convolution lemma (Toeplitz2 ∗ unimodal = unimodal, stronger
+  than its classical attribution requires); the corrected reduction
+  identities; the composition slate — **if the two named inequality
+  targets (α), (β) hold then THEOREM (A) holds in full** (the targets are
+  unproved hypotheses); and the reduction of (α) at `deg(s)=2` to the
+  single open statement `AmbientTargetDeg2`. Zero counterexamples to the
+  targets across all trees through order 21, adversarial families, and the
+  Kadrawi–Levit fixtures — bounded evidence, never universal. See
+  [the experiment summary](experiments/r12-delta-comparison.md) and
+  [the master ledger](docs/master-proof-ledger-2026-09-04.md).
 
 - The decreasing terminal band for finite forests is formalized in the included
   Lean dependency chain.

@@ -1,0 +1,14 @@
+name = "R12Composition"
+version = "0.1.0"
+defaultTargets = ["R12C4T", "R12C4TAdj"]
+
+[[lean_lib]]
+name = "R12C4T"
+
+[[lean_lib]]
+name = "R12C4TAdj"
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "905b95818eb32af7874a58b427f50c1711a5e96c"

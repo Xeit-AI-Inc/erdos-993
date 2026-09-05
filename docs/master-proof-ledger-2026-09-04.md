@@ -6,6 +6,12 @@ document; where this ledger and any sealed record differ, the sealed record
 governs. This is the jumping-off point for the next phase, to begin once the
 DRE control improvements (post-TRS2-erratum) are in force.
 
+
+**Updated 2026-09-05 (r12 deltas).** The r12 Δ-comparison run (six cycles,
+closed 2026-09-04) refined S4's operable content, delivered P1 at
+`governed` (closing O6), and added four governed packages; deltas are
+edited in place below and cross-referenced to the r12 run's closing record (internal archive; public summary at [`experiments/r12-delta-comparison.md`](../experiments/r12-delta-comparison.md)).
+
 Grade vocabulary, ascending: `computation` < `proved_informal` < `RG` <
 `governed` < `formally_verified` (never awarded). `PROPOSED` marks statements
 this ledger derives or imports that no run has yet gated — they are work
@@ -154,7 +160,20 @@ guards and support-fibre constancy:
 **The single named missing tool: a comparison theorem between a tree's
 Δ-sequence and that of a derived forest (`T∖N[s]`; `T−{v,w_v}`) at ranks
 positioned by the parent's crossing index.** Prove it and both ingredients
-follow by already-governed reductions. Refute (A) or (B) by witness (order
+follow by already-governed reductions.
+
+**r12 refinement (2026-09-05).** The tool is now exact and split: prove
+**(α)** the `k_A = 1` slack inequality and **(β)** the `k_A ≥ 2` condition
+inequality, and **THEOREM (A) follows in full** by the governed r12
+composition (`adj_TheoremA_of_alpha_beta`) — every favorable support is
+leaf-witnessed by definition. (α) at `deg(s) = 2` — the stratum carrying
+≥ 99.3% of all exceptional mass through order 21 — is further reduced, at
+`governed`, to ONE open statement (`AmbientTargetDeg2`) about the single
+derived forest `T∖N[v]`, reachable by fence-legal means under the run's
+completed Q1–Q6 boundary rulings. Adjudicated negatives at exact scope:
+branch-decomposition is fence-blocked at `deg(s) ≥ 3`; the P1
+convolution-side route cannot be universal; the corrected sufficient
+condition is permanently leaky (not a reduction). Refute (A) or (B) by witness (order
 ≥ 19; both hold on all Kadrawi–Levit trees through order 32) and the
 corridor program reshapes. Neither ingredient, even proved, closes S4 by
 itself — they are the operable content the transport argument would consume.
@@ -235,6 +254,10 @@ Statuses as of 2026-09-04. "governed" = Lean kernel at the pinned toolchain
 | C11 | Double brooms D(1,m), D(2,m) unimodal; assorted r7 exclusions (first-recovery rank one, endpoint-sign, four-class, …) | governed | r7 |
 | C12 | Decoder core; encoder–decoder fidelity (narrowed); marker transport (narrowed) | governed (narrowed scope) | r9-Claude |
 | C13 | `i_4 > i_3` for trees of order ≥ 12 (excludes the (q,p)=(5,3) branch) | internal informal only — NOT reified | proof-gap run |
+| C14 | `P1_NNSeq`: Toeplitz2 ∗ unimodal = unimodal (NNSeq scope; interval-support hypothesis unused) — attribution: Keilson–Gerber (1971), primary text unconfirmed | governed | r12 |
+| C15 | The corrected combined identity `a_s(p) = a_v(p) + (b_v(p) − Bgen_s(p−1))` and its witnessed-leaf conditional corollary | governed | r12 |
+| C16 | The composition slate: (α) ∧ (β) ⟹ THEOREM (A) in full (hypotheses unproved) | governed | r12 |
+| C17 | (α) at `deg(s)=2` ⟺-reduced to `AmbientTargetDeg2`; BR-FACT-1 root stratum | governed | r12 |
 
 ### Settled negative (fences — do not reopen without a new guard/representation)
 
@@ -259,10 +282,10 @@ Statuses as of 2026-09-04. "governed" = Lean kernel at the pinned toolchain
 |---|---|---|---|
 | O1 | **OB-G1/OB-G2** — strict endpoint signs `D_p > 0`, `D_q < 0` | OPEN (WS2) | one strict unit from first-recovery history: exploit surplus p-sets from `i_{p+1} < i_p`, or the unmatched-mass comparison; all static witnesses fenced (F9) |
 | O2 | **OB-PAIR-G4 → OB-G3** — the common leaf, `Q > 0` | OPEN, decisive (WS1) | contradict Q=0 support-disjointness via the corridor; operable content = O3 |
-| O3 | **The Δ-comparison tool** — tree vs derived forest (`T∖N[s]`, `T−{v,w_v}`) at crossing-index-positioned ranks | OPEN, named, exactly specified | prove ⟹ (A)+(B) follow by C8; refute (A)/(B) by witness at order ≥ 19 ⟹ decisive event |
+| O3 | **The Δ-comparison targets, refined by r12:** (α) the `k_A=1` slack inequality; (β) the `k_A≥2` condition inequality; at `deg(s)=2`, (α) ⟺ `AmbientTargetDeg2` | OPEN — the program's sharpest objects | prove ⟹ (A) IN FULL by C16; refute by witness at order ≥ 22 (≤ 21 exhausted) ⟹ decisive event; the `deg(s)=2` stratum is fence-legal under the r12 Q1–Q6 rulings |
 | O4 | **OB-K4 descent, formalized** | proved_informal | order-eight base + leaf-restoration sublemmas never reified (with C13) |
 | O5 | **TRANSFER, reshaped** — the invariant class between LC and unimodality | OPEN | candidates must pass K–L fixtures; F10, F12 bind |
-| O6 | **P1: Keilson–Gerber import** — LC ∗ unimodal = unimodal | PROPOSED | verify source, prove informal, formalize; unlocks §3c bounds incl. forest-order ≥ 52 |
+| O6 | ~~P1 import~~ — **CLOSED at `governed` (r12, stronger form C14)**; §3c corollaries now follow by one composition with the cited K–L ≤25 computation — gating them is a successor's short task | CLOSED | primary-text citation upgrade remains an open documentary item |
 | O7 | Semantic-adequacy residual — the bridge correspondence as a Lean lemma (r11 E3) | OPEN (two-thirds done) | state and prove, or record exact obstruction |
 | O8 | C7-BRIDGE measurement registration | registered for successor | capability rows exist |
 | O9 | Close the `Δ_4<0<Δ_5` band 30..32 | OPEN, cheap | import order-30–32 verification receipts at declared provenance, or enumerate structurally (roadmap) |
@@ -285,11 +308,12 @@ Statuses as of 2026-09-04. "governed" = Lean kernel at the pinned toolchain
 | Special-class results (brooms, spiders, caterpillars, …) | supporting | ours + literature; no route to universality by class union |
 
 **Priority for the next phase** (once the DRE controls are in force):
-**O3 first** (exactly specified, kernel-ready interfaces, both outcomes
-compound), **O6/P1 second** (days, not weeks; converts the erratum into
-new bounded ground and a sharper TRANSFER), **O1 third** (the other half
-of the middle; smallest missing object — one strict unit), O9 as a cheap
-branch closure, O5 as the long game with its new fixture discipline.
+**O12 first** (`AmbientTargetDeg2` — one statement, fence-legal, carrying
+≥99.3% of the exceptional mass; (α) at `deg(s)=2` follows by a governed
+reduction, then (A) needs only (β) and the `deg(s)≥3` slice of (α)),
+**O1 second** (the strict unit; Codex's r13 charter), the §3c corollary
+gating as a short task (O6's unlock), O9 as a cheap branch closure, O5 as
+the long game under fixture discipline.
 
 ---
 
@@ -302,14 +326,15 @@ branch closure, O5 as the long game with its new fixture discipline.
 | Zero FR / Split / Cross / Obstruction / B4 / negative-total-minor hits | ≤ 20 (239.7M pair instances) | ours, sealed census |
 | All forests unimodal | ≤ 18 (310,782 disconnected types) | ours |
 | All trees log-concave | ≤ 25 | Kadrawi–Levit (external); first failures at 26, replayable under [`evidence/kl-order26-trs2-witness`](../evidence/kl-order26-trs2-witness/README.md) |
-| r11 ingredients (A), (B) hold | all trees ≤ 18 exhaustive; K–L family through 32 targeted | ours |
+| r12 targets (α), (β) hold | ALL trees ≤ 21 exhaustive (2.14M at 21) + 1,908 adversarial + K–L fixtures 26–34 | ours, r12 sealed |
+| r11 ingredients (A), (B) hold | all trees ≤ 18 exhaustive; K–L family through 32 targeted | ours — artifact of record: [`evidence/kl-order26-trs2-witness/witness-report.json`](../evidence/kl-order26-trs2-witness/witness-report.json) (commit 21797c0; r11_theorem_A/B_violations empty on T(3,4,4)…T(3,5,6)+controls), independently reproduced by r12 C1-H fixtures (n=26–34) and the r12 C1 adjudicator |
 | Ingredient-level identity battery | ~1.6M–6.4M instances per object | ours, capability-certified harnesses |
 
 ---
 
 ## 7. Formal Asset Inventory
 
-36 published Lean packages (`proofs/lean/`, public repo, all `governed` at
+40 published Lean packages (`proofs/lean/`, public repo, all `governed` at
 the pin Lean 4.32.2 / pinned Mathlib, axioms within
 `[propext, Classical.choice, Quot.sound]`, sorry-free):
 
@@ -326,6 +351,9 @@ the pin Lean 4.32.2 / pinned Mathlib, axioms within
   correspondence → `transfer_to_forest` (conditional; erratum note attached).
 - **r11 chain (4):** corridor interface → extended identities → bridge
   predicate (defined, not proved) → ingredient reductions (the two Iffs).
+- **r12 chain (4):** P1 convolution lemma → corrected reduction identities
+  → the (α)∧(β)⟹(A) composition slate → the deg(s)=2 reduction to
+  `AmbientTargetDeg2`.
 - **Corridor theorem** (r9 Codex run) + 19 auxiliaries; **gap-bridge**
   (`i_4² > i_3·i_5`, order ≥ 27); marked-extension-charge; rooted-residual
   profile.

@@ -35,3 +35,5 @@ result, limitations, and hashes.
   run with two controller study interludes; four governed packages ending
   at kernel-checked reductions of two open ingredient conjectures to one
   named missing lemma; the corridor obligation remains open, narrowed.
+
+- [r12 Δ-comparison](r12-delta-comparison.md) — six cycles, closed 2026-09-04: the composition slate, P1, the corrected identities, the deg(s)=2 reduction; honest failure on the (α)/(β) targets at exact scope.
