@@ -1,6 +1,6 @@
 # Research Status
 
-Last updated: 2026-09-05 (r12 export)
+Last updated: 2026-09-05 (r13 update)
 
 ## Headline Problems
 
@@ -30,6 +30,16 @@ are unimodal, so no headline status changes. See the
 [witness evidence](evidence/kl-order26-trs2-witness/README.md).
 
 ## Verified Progress
+
+- The completed r13 strict-endpoint run (six cycles, hard ceiling stop)
+  proved neither endpoint sign and exports no Lean packages; its
+  contribution is a refinement of record: the p-side obstruction fails
+  first at substantive history-definedness, the q-side at
+  proof-independent selected-occurrence identity, each with retained exact
+  support lemmas and one new mechanism-scope refutation. It also
+  established that no qualifying order-30/31/32 verification receipts
+  exist in the program's corpus. See
+  [the experiment summary](experiments/r13-g1-g2-strict-endpoint.md).
 
 - The completed r12 Δ-comparison run exported four governed packages: the
   `P1_NNSeq` convolution lemma (Toeplitz2 ∗ unimodal = unimodal, stronger

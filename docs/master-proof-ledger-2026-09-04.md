@@ -7,6 +7,14 @@ governs. This is the jumping-off point for the next phase, to begin once the
 DRE control improvements (post-TRS2-erratum) are in force.
 
 
+**Updated 2026-09-05 (r12 + r13 deltas).** r13 (Codex, six cycles, hard
+ceiling stop, closed 2026-09-05) refined O1 into named first-failure
+sub-obstructions with a retained exact support layer; no endpoint, headline,
+or fence status changed, and no Lean gate triggered. r13's LEDGER-DELTAS
+proposals were reconciled into this document by the controller on 2026-09-05
+under separate authority (the run itself correctly fail-closed on ledger
+drift: it consumed digest `e2c8851b…`, later observed `f0fbb28e…`, and
+quarantined rather than reconciling).
 **Updated 2026-09-05 (r12 deltas).** The r12 Δ-comparison run (six cycles,
 closed 2026-09-04) refined S4's operable content, delivered P1 at
 `governed` (closing O6), and added four governed packages; deltas are
@@ -280,7 +288,7 @@ Statuses as of 2026-09-04. "governed" = Lean kernel at the pinned toolchain
 
 | # | Obligation | Status | Blocked by / next test |
 |---|---|---|---|
-| O1 | **OB-G1/OB-G2** — strict endpoint signs `D_p > 0`, `D_q < 0` | OPEN (WS2) | one strict unit from first-recovery history: exploit surplus p-sets from `i_{p+1} < i_p`, or the unmatched-mass comparison; all static witnesses fenced (F9) |
+| O1 | **OB-G1/OB-G2** — strict endpoint signs `D_p > 0`, `D_q < 0` | OPEN (WS2) — **r13-refined (2026-09-05)** | The strict unit must come from first-recovery history; all static witnesses fenced (F9), and r13 rejected static history *carriage* as not substantive history use. First failures, named: the **p-chain** is open first at **substantive history-definedness** (a genuinely history-responsive operation must be defined before totality; strictness may not come from PB-X, endpoint strictness, cardinality, surplus, saturation, or matching existence); the **q-chain** is open first at **proof-independent selected-`m₀` occurrence identity and exact typed binding** (Q1 gates Q2 coverage/commutation, which gates Q3 cross-rank comparison). Retained exact support layer (run-local E1; scopes bind): minimal p-Hall-deficient family structure; exchange-cut carrier; zero-cost deletion bijection with `Δ_p = 0` endpoint; leaf-tagged Γ normal form with fixed-`A` zero; repaired per-leaf phase lemma; conditional augmentation schema (interface uninstantiated). New mechanism-scope refutation: the unguarded one-move charge (labelled K₁,₃, q = 2). Successor entry conditions: the r13 successor handoff (internal archive; public summary at [`experiments/r13-g1-g2-strict-endpoint.md`](../experiments/r13-g1-g2-strict-endpoint.md)) |
 | O2 | **OB-PAIR-G4 → OB-G3** — the common leaf, `Q > 0` | OPEN, decisive (WS1) | contradict Q=0 support-disjointness via the corridor; operable content = O3 |
 | O3 | **The Δ-comparison targets, refined by r12:** (α) the `k_A=1` slack inequality; (β) the `k_A≥2` condition inequality; at `deg(s)=2`, (α) ⟺ `AmbientTargetDeg2` | OPEN — the program's sharpest objects | prove ⟹ (A) IN FULL by C16; refute by witness at order ≥ 22 (≤ 21 exhausted) ⟹ decisive event; the `deg(s)=2` stratum is fence-legal under the r12 Q1–Q6 rulings |
 | O4 | **OB-K4 descent, formalized** | proved_informal | order-eight base + leaf-restoration sublemmas never reified (with C13) |
@@ -288,7 +296,7 @@ Statuses as of 2026-09-04. "governed" = Lean kernel at the pinned toolchain
 | O6 | ~~P1 import~~ — **CLOSED at `governed` (r12, stronger form C14)**; §3c corollaries now follow by one composition with the cited K–L ≤25 computation — gating them is a successor's short task | CLOSED | primary-text citation upgrade remains an open documentary item |
 | O7 | Semantic-adequacy residual — the bridge correspondence as a Lean lemma (r11 E3) | OPEN (two-thirds done) | state and prove, or record exact obstruction |
 | O8 | C7-BRIDGE measurement registration | registered for successor | capability rows exist |
-| O9 | Close the `Δ_4<0<Δ_5` band 30..32 | OPEN, cheap | import order-30–32 verification receipts at declared provenance, or enumerate structurally (roadmap) |
+| O9 | Close the `Δ_4<0<Δ_5` band 30..32 | OPEN — **receipts not yet sourced (r13, 2026-09-05)** | r13 searched its authorized corpus and found NO qualifying order-30/31/32 receipts: public verification reaches 29; the through-32 claim is private and unverified. Requires explicit source authorization — declared-provenance reproduction receipts per order, or an independently authorized structural enumeration; self-reports and bounded zeros do not qualify |
 | O10 | M2 / REP-G4 completion (representation-transport residues) | proved_informal, residues named | full-scope decoder chain if PAIR-G4 goes inductive |
 | O11 | Lean debt, residual | small | interval-bound conversion; fresh-root treehood; `∂_y` receipt |
 

@@ -37,3 +37,4 @@ result, limitations, and hashes.
   named missing lemma; the corridor obligation remains open, narrowed.
 
 - [r12 Δ-comparison](r12-delta-comparison.md) — six cycles, closed 2026-09-04: the composition slate, P1, the corrected identities, the deg(s)=2 reduction; honest failure on the (α)/(β) targets at exact scope.
+- [r13 G1/G2 strict endpoint](r13-g1-g2-strict-endpoint.md) — six cycles, ceiling stop 2026-09-05: no endpoint proved, no packages; O1 refined to named first-failure sub-obstructions with a retained exact support layer.
