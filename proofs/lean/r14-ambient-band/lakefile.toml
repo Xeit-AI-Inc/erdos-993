@@ -1,0 +1,26 @@
+name = "R14AmbientBand"
+version = "0.1.0"
+defaultTargets = ["R12C6T", "R14C1F", "R14C2T", "R14C3T", "R14C4T", "Check"]
+
+[[lean_lib]]
+name = "R12C6T"
+
+[[lean_lib]]
+name = "R14C1F"
+
+[[lean_lib]]
+name = "R14C2T"
+
+[[lean_lib]]
+name = "R14C3T"
+
+[[lean_lib]]
+name = "R14C4T"
+
+[[lean_lib]]
+name = "Check"
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "905b95818eb32af7874a58b427f50c1711a5e96c"

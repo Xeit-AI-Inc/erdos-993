@@ -1,6 +1,6 @@
 # Research Status
 
-Last updated: 2026-09-05 (r13 update)
+Last updated: 2026-09-05 (r14 export)
 
 ## Headline Problems
 
@@ -30,6 +30,15 @@ are unimodal, so no headline status changes. See the
 [witness evidence](evidence/kl-order26-trs2-witness/README.md).
 
 ## Verified Progress
+
+- The completed r14 run did not prove its target (`AmbientTargetDeg2`) and
+  exported three governed packages that narrow it strictly: **the band
+  theorem** `2 ≤ p ∧ |U| ≤ 2p−3 ⟹ D ≤ 0` (premise-free, seven
+  elaborations across four parties), the adopted `G2wide` surface pinning
+  the open obligation to exactly `G2 ∧ |U| ≥ 2p−2`, the completed
+  reduction/perimeter chain, and the forest-corollary dichotomy with
+  premise-labelled floors 26/27/52. See
+  [the experiment summary](experiments/r14-ambient-target.md).
 
 - The completed r13 strict-endpoint run (six cycles, hard ceiling stop)
   proved neither endpoint sign and exports no Lean packages; its

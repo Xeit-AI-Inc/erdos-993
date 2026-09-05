@@ -111,3 +111,15 @@ digest tables at [`lean/R12-ASSEMBLY-RECEIPTS.md`](lean/R12-ASSEMBLY-RECEIPTS.md
 None of these proves a headline target; `AlphaTarget`/`BetaTarget` are
 unproved hypotheses wherever they appear. Grades are the source run's
 rubric grades (`governed`), not `formally_verified`.
+
+## r14 packages (2026-09-05)
+
+Three packages exporting the r14 run's award slate; assembly receipts at
+[`lean/R14-ASSEMBLY-RECEIPTS.md`](lean/R14-ASSEMBLY-RECEIPTS.md):
+
+- `r14-ambient-band` — **the band theorem** (premise-free) + the adopted `G2wide` surface; the target itself remains OPEN on `G2 ∧ |U| ≥ 2p−2`.
+- `r14-reduction-perimeter` — the completed S1-folded reduction + premise-free perimeter (implications; neither side asserted).
+- `r14-forest-dichotomy` — the dichotomy chain; Premise K external and on the face; floors 26/27/52 premise-labelled.
+
+None proves a headline target. Grades are the source run's rubric grades,
+not `formally_verified`.

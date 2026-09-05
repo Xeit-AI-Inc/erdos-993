@@ -1,0 +1,32 @@
+name = "R14ForestDichotomy"
+version = "0.1.0"
+defaultTargets = ["Erdos993C8U1Base", "Convolution", "ExtensionProfile", "NNSeqAdmission", "Forest", "R12C2P", "R14C1P", "R14C2P"]
+
+[[lean_lib]]
+name = "Erdos993C8U1Base"
+
+[[lean_lib]]
+name = "Convolution"
+
+[[lean_lib]]
+name = "ExtensionProfile"
+
+[[lean_lib]]
+name = "NNSeqAdmission"
+
+[[lean_lib]]
+name = "Forest"
+
+[[lean_lib]]
+name = "R12C2P"
+
+[[lean_lib]]
+name = "R14C1P"
+
+[[lean_lib]]
+name = "R14C2P"
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "905b95818eb32af7874a58b427f50c1711a5e96c"
