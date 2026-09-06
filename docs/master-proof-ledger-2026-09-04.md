@@ -7,6 +7,20 @@ governs. This is the jumping-off point for the next phase, to begin once the
 DRE control improvements (post-TRS2-erratum) are in force.
 
 
+**Updated 2026-09-06 (r15 + r16 + order-22 census deltas).** Three records
+reconciled by the controller under separate authority (both runs correctly
+quarantined ledger drift and filed proposals): **r15** (Codex, nine
+cycles, authority ceiling) — (β) neither proved nor refuted; the exact
+normalization `b_v(p) − Bgen_s(p−1) = g_p − g_{p−1}` governed in Lean
+(a guarded coefficient-descent framing); support-degree 1 closed by
+equality, degree 2 closed through `p ≤ 6`; C13 proved informally; six
+governed auxiliaries. **r16** — the IDENTIFICATION CONSTRUCTOR exists at
+general scope (RG, seven-leg register, not-a-shim under a written
+five-head criterion) and the INTEGRATION lands: the r14 `G1wide`
+conclusion now rests on premise set exactly {Premise K, K-SCOPE}.
+**The order-22 census** (Ashton's write authority): the authenticated
+frontier extends to orders 14–22, byte-identical replay, ZERO decisive
+events — (α)/(β)/AmbientTargetDeg2 witnesses now have order ≥ 23.
 **Updated 2026-09-05 (r12 + r13 + r14 deltas).** r14 (six cycles, upgraded
 model schedule, closed 2026-09-05) did not prove `AmbientTargetDeg2` but
 closed its entire `|U| ≤ 2p−3` band premise-free at RG (seven-leg
@@ -28,7 +42,7 @@ quarantined rather than reconciling).
 **Updated 2026-09-05 (r12 deltas).** The r12 Δ-comparison run (six cycles,
 closed 2026-09-04) refined S4's operable content, delivered P1 at
 `governed` (closing O6), and added four governed packages; deltas are
-edited in place below and cross-referenced to the r12 run's closing record (internal archive; public summary at [`experiments/r12-delta-comparison.md`](../experiments/r12-delta-comparison.md)).
+edited in place below and cross-referenced to the r12 run's closing record (public summary at [`experiments/r12-delta-comparison.md`](../experiments/r12-delta-comparison.md)).
 
 Grade vocabulary, ascending: `computation` < `proved_informal` < `RG` <
 `governed` < `formally_verified` (never awarded). `PROPOSED` marks statements
@@ -76,7 +90,7 @@ External anchors:
   forests through **18**.
 
 **Consequently: a minimal TREE counterexample has order ≥ 30 (external tier)
-/ ≥ 22 (our receipts); a minimal FOREST counterexample contains a component
+/ ≥ 23 (our receipts, order-22 census 2026-09-06); a minimal FOREST counterexample contains a component
 of order ≥ 26.** Bounded computation is evidence, never proof.
 
 ---
@@ -271,7 +285,9 @@ Statuses as of 2026-09-04. "governed" = Lean kernel at the pinned toolchain
 | C10 | Audited band: any tree with `Δ_4 < 0 < Δ_5` has order 13–32, with μ-thresholds `N_2..N_8 = 17,20,23,26,28,31,34` | proved_informal (audited) | proof-gap run |
 | C11 | Double brooms D(1,m), D(2,m) unimodal; assorted r7 exclusions (first-recovery rank one, endpoint-sign, four-class, …) | governed | r7 |
 | C12 | Decoder core; encoder–decoder fidelity (narrowed); marker transport (narrowed) | governed (narrowed scope) | r9-Claude |
-| C13 | `i_4 > i_3` for trees of order ≥ 12 (excludes the (q,p)=(5,3) branch) | internal informal only — NOT reified | proof-gap run |
+| C13 | `i_4 > i_3` for trees of order ≥ 12 (excludes the (q,p)=(5,3) branch) | **proved_informal (r15, 2026-09-06)** — upgraded from unreified-internal; Lean formalization still open (O4) | proof-gap run; r15 |
+| C18 | The identification constructor (general scope, not-a-shim under the five-head criterion) + the integration: the r14 `G1wide` conclusion on premise set exactly {Premise K, K-SCOPE} | RG (7-leg/5-seat register) | r16 |
+| C19 | The (β) normalization `b_v(p) − Bgen_s(p−1) = g_p − g_{p−1}` + inequality equivalence; the component-extension bound `Δ_c(T) ≤ 0 ⟹ 1 ≤ c ∧ m ≤ 3c−2`; the support-degree-2 gap reduction | governed (auxiliary scope) | r15 |
 | C14 | `P1_NNSeq`: Toeplitz2 ∗ unimodal = unimodal (NNSeq scope; interval-support hypothesis unused) — attribution: Keilson–Gerber (1971), primary text unconfirmed | governed | r12 |
 | C15 | The corrected combined identity `a_s(p) = a_v(p) + (b_v(p) − Bgen_s(p−1))` and its witnessed-leaf conditional corollary | governed | r12 |
 | C16 | The composition slate: (α) ∧ (β) ⟹ THEOREM (A) in full (hypotheses unproved) | governed | r12 |
@@ -298,9 +314,9 @@ Statuses as of 2026-09-04. "governed" = Lean kernel at the pinned toolchain
 
 | # | Obligation | Status | Blocked by / next test |
 |---|---|---|---|
-| O1 | **OB-G1/OB-G2** — strict endpoint signs `D_p > 0`, `D_q < 0` | OPEN (WS2) — **r13-refined (2026-09-05)** | The strict unit must come from first-recovery history; all static witnesses fenced (F9), and r13 rejected static history *carriage* as not substantive history use. First failures, named: the **p-chain** is open first at **substantive history-definedness** (a genuinely history-responsive operation must be defined before totality; strictness may not come from PB-X, endpoint strictness, cardinality, surplus, saturation, or matching existence); the **q-chain** is open first at **proof-independent selected-`m₀` occurrence identity and exact typed binding** (Q1 gates Q2 coverage/commutation, which gates Q3 cross-rank comparison). Retained exact support layer (run-local E1; scopes bind): minimal p-Hall-deficient family structure; exchange-cut carrier; zero-cost deletion bijection with `Δ_p = 0` endpoint; leaf-tagged Γ normal form with fixed-`A` zero; repaired per-leaf phase lemma; conditional augmentation schema (interface uninstantiated). New mechanism-scope refutation: the unguarded one-move charge (labelled K₁,₃, q = 2). Successor entry conditions: the r13 successor handoff (internal archive; public summary at [`experiments/r13-g1-g2-strict-endpoint.md`](../experiments/r13-g1-g2-strict-endpoint.md)) |
+| O1 | **OB-G1/OB-G2** — strict endpoint signs `D_p > 0`, `D_q < 0` | OPEN (WS2) — **r13-refined (2026-09-05)** | The strict unit must come from first-recovery history; all static witnesses fenced (F9), and r13 rejected static history *carriage* as not substantive history use. First failures, named: the **p-chain** is open first at **substantive history-definedness** (a genuinely history-responsive operation must be defined before totality; strictness may not come from PB-X, endpoint strictness, cardinality, surplus, saturation, or matching existence); the **q-chain** is open first at **proof-independent selected-`m₀` occurrence identity and exact typed binding** (Q1 gates Q2 coverage/commutation, which gates Q3 cross-rank comparison). Retained exact support layer (run-local E1; scopes bind): minimal p-Hall-deficient family structure; exchange-cut carrier; zero-cost deletion bijection with `Δ_p = 0` endpoint; leaf-tagged Γ normal form with fixed-`A` zero; repaired per-leaf phase lemma; conditional augmentation schema (interface uninstantiated). New mechanism-scope refutation: the unguarded one-move charge (labelled K₁,₃, q = 2). Successor entry conditions: the r13 successor handoff (public summary at [`experiments/r13-g1-g2-strict-endpoint.md`](../experiments/r13-g1-g2-strict-endpoint.md)) |
 | O2 | **OB-PAIR-G4 → OB-G3** — the common leaf, `Q > 0` | OPEN, decisive (WS1) | contradict Q=0 support-disjointness via the corridor; operable content = O3 |
-| O3 | **The Δ-comparison targets, refined by r12:** (α) the `k_A=1` slack inequality; (β) the `k_A≥2` condition inequality; at `deg(s)=2`, (α) ⟺ `AmbientTargetDeg2` | OPEN — the program's sharpest objects | prove ⟹ (A) IN FULL by C16; refute by witness at order ≥ 22 (≤ 21 exhausted) ⟹ decisive event; the `deg(s)=2` stratum is fence-legal under the r12 Q1–Q6 rulings; **r14 (D2):** the deg-2 open content is exactly the O12 row; the unimodality sign route refuted by exhibition at bounded scope; whether some underived composition bounds `D ≤ H−1` on `G2 ∧ |U| ≥ 2p−2` remains OPEN — an absence of derivation, not an impossibility |
+| O3 | **The Δ-comparison targets, refined by r12:** (α) the `k_A=1` slack inequality; (β) the `k_A≥2` condition inequality; at `deg(s)=2`, (α) ⟺ `AmbientTargetDeg2` | OPEN — the program's sharpest objects | prove ⟹ (A) IN FULL by C16; refute by witness at order ≥ 22 (≤ 21 exhausted) ⟹ decisive event; the `deg(s)=2` stratum is fence-legal under the r12 Q1–Q6 rulings; **r14 (D2):** the deg-2 open content is exactly the O12 row; the unimodality sign route refuted by exhibition at bounded scope; whether some underived composition bounds `D ≤ H−1` on `G2 ∧ |U| ≥ 2p−2` remains OPEN — an absence of derivation, not an impossibility; **r15 (2026-09-06):** (β) normalized to a guarded coefficient-descent theorem (C19); support-degree 1 CLOSED by equality, degree 2 closed through `p ≤ 6` (`p ≥ 7` and degree ≥ 3 open); named next routes: the full-root-subset rank-transfer theorem and the common-field correlation theorem (r15 internal reconciliation; public summary at [`experiments/r15-beta-condition.md`](../experiments/r15-beta-condition.md)) |
 | O4 | **OB-K4 descent, formalized** | proved_informal | order-eight base + leaf-restoration sublemmas never reified (with C13) |
 | O5 | **TRANSFER, reshaped** — the invariant class between LC and unimodality | OPEN | candidates must pass K–L fixtures; F10, F12 bind |
 | O6 | ~~P1 import~~ — CLOSED at `governed` (r12); **corollary gating DONE (r14, D3):** FOR-COR-II the dichotomy of record; premise-free items at RG at abstract scope; Premise-K items premise-on-face; floors 26/27/52 premise-labelled ("52" only for the all-components-unimodal disjunct) | CLOSED | documentary: Radcliffe named via the K–L primary text (r14 C1); the [26] primary reference and the Keilson–Gerber primary text remain unretrieved |
@@ -309,7 +325,7 @@ Statuses as of 2026-09-04. "governed" = Lean kernel at the pinned toolchain
 | O9 | Close the `Δ_4<0<Δ_5` band 30..32 | OPEN — **receipts not yet sourced (r13, 2026-09-05)** | r13 searched its authorized corpus and found NO qualifying order-30/31/32 receipts: public verification reaches 29; the through-32 claim is private and unverified. Requires explicit source authorization — declared-provenance reproduction receipts per order, or an independently authorized structural enumeration; self-reports and bounded zeros do not qualify |
 | O10 | M2 / REP-G4 completion (representation-transport residues) | proved_informal, residues named | full-scope decoder chain if PAIR-G4 goes inductive |
 | O11 | Lean debt, residual | small | interval-bound conversion; fresh-root treehood; `∂_y` receipt |
-| O12 | **`AmbientTargetDeg2`** — the r12 C6 residue, **r14-refined (2026-09-05)** | OPEN — strictly narrowed | Reduction of record completed at RG (r14 C3); successor surface `ambientTargetDeg2_of_G1wide_G2wide` ADOPTED (r14 C4 Q2); **the entire band `2 ≤ p ∧ |U| ≤ 2p−3 ⟹ D ≤ 0` closed premise-free at RG** (`residual_nonpos_of_card_le_band`; seven elaborations, four parties); S1/S4/S5 discharged inside the surface; the G1 side closes only under Premise K + K-SCOPE + the identification premise. **The open obligation is exactly `HG2` on `G2 ∧ |U| ≥ 2p−2`**, signature `AMB-CTREX-D2`, blocking facts BF-1..3 (r14 FC-R14-10); new premise-free constraint: any deg-2 counterexample has `n ≥ 2x(T)+3` (a proof-obligation narrowing, never a search restriction). Gating items: order-22 census provenance and the identification constructor — **both authorized by Ashton 2026-09-05**, in execution |
+| O12 | **`AmbientTargetDeg2`** — the r12 C6 residue, **r14-refined (2026-09-05)** | OPEN — strictly narrowed | Reduction of record completed at RG (r14 C3); successor surface `ambientTargetDeg2_of_G1wide_G2wide` ADOPTED (r14 C4 Q2); **the entire band `2 ≤ p ∧ |U| ≤ 2p−3 ⟹ D ≤ 0` closed premise-free at RG** (`residual_nonpos_of_card_le_band`; seven elaborations, four parties); S1/S4/S5 discharged inside the surface; the G1 side closes only under Premise K + K-SCOPE + the identification premise. **The open obligation is exactly `HG2` on `G2 ∧ |U| ≥ 2p−2`**, signature `AMB-CTREX-D2`, blocking facts BF-1..3 (r14 FC-R14-10); new premise-free constraint: any deg-2 counterexample has `n ≥ 2x(T)+3` (a proof-obligation narrowing, never a search restriction). Gating items: order-22 census provenance and the identification constructor — **both EXECUTED (2026-09-06):** the census extends the frontier to order 22 (witnesses ≥ 23); the constructor EXISTS (C18) and the G1 side is upgraded to premise-carrying-BY-CONSTRUCTION — the open obligation is unchanged and exactly `HG2` on `G2 ∧ |U| ≥ 2p−2` |
 | O13 | `EXCEPTIONAL-SHAPE-1` sufficiency; `C7BBgenBound` RESERVED (r12 Q6: identity substrate legal, inequality core not) | OPEN | r12 residue register; **r14 (D4):** sufficiency-side and instrument outputs gated at proved_informal/computation — NEC-1 necessary-at-exhaustive-scope, killed as an equivalence; no sufficient structural condition from measured data; the `x(U)=p−1` observation documented at exact scope, explanation refused (F1/F2-adjacent) |
 
 ---
@@ -355,7 +371,7 @@ the long game under fixture discipline.
 
 ## 7. Formal Asset Inventory
 
-43 published Lean packages (`proofs/lean/`, public repo, all `governed` at
+46 published Lean packages (`proofs/lean/`, public repo, all `governed` at
 the pin Lean 4.32.2 / pinned Mathlib, axioms within
 `[propext, Classical.choice, Quot.sound]`, sorry-free):
 
@@ -378,6 +394,9 @@ the pin Lean 4.32.2 / pinned Mathlib, axioms within
 - **r14 chain (3):** the ambient band slate (the band theorem + the adopted
   `G2wide` surface, 13 declarations) → the reduction/perimeter module →
   the forest-corollary dichotomy chain.
+- **r15 (1):** the (β) descent auxiliaries (six governed declarations).
+- **r16 chain (2):** the identification constructor → the integration
+  ({Premise K, K-SCOPE} premise set).
 - **Corridor theorem** (r9 Codex run) + 19 auxiliaries; **gap-bridge**
   (`i_4² > i_3·i_5`, order ≥ 27); marked-extension-charge; rooted-residual
   profile.
@@ -407,6 +426,16 @@ controls before the next run consumes this ledger:
    K–L fixtures mandatory in every invariant harness.
 6. Ceiling honesty unchanged: nothing graded `formally_verified`; bounded
    zeros are evidence of nothing; conditional faces undetachable.
+
+**Enacted 2026-09-05.** Items 1, 2, and 5 are now mechanical: this
+program's claim identities live in `CLAIM-IDENTITY.json` beside this file
+(seeded from the forensic audit's corrected status ledger and the §4 fence
+table), and every run's obligation and terminal ledgers are checked against
+it with `skills/mathematical-solver-dre-controller/scripts/lint_claim_status.py`
+before dispatch and at closeout (controller playbook v0.4, "Claim-ledger
+controls"). Items 3, 4, and 6 are mandatory controller steps in the same
+playbook section. A refuted claim reopened without a written distinction now
+blocks the run rather than costing it six cycles.
 
 ---
 

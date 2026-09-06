@@ -123,3 +123,14 @@ Three packages exporting the r14 run's award slate; assembly receipts at
 
 None proves a headline target. Grades are the source run's rubric grades,
 not `formally_verified`.
+
+## r15/r16 packages (2026-09-06)
+
+Assembly receipts at [`lean/R15R16-ASSEMBLY-RECEIPTS.md`](lean/R15R16-ASSEMBLY-RECEIPTS.md):
+
+- `r15-beta-descent` — the six governed (β)-line auxiliaries incl. the guarded coefficient-descent normalization; (β) itself neither proved nor refuted.
+- `r16-constructor` — **the identification constructor at general scope** (not a shim under a written five-head criterion); discharges the r14 identification premise only.
+- `r16-integration` — **the r14 `G1wide` conclusion on premise set exactly {Premise K, K-SCOPE}**; `AmbientTargetDeg2` remains open on `HG2`.
+
+None proves a headline target. Grades are the source runs' rubric grades,
+not `formally_verified`.

@@ -39,3 +39,5 @@ result, limitations, and hashes.
 - [r12 Δ-comparison](r12-delta-comparison.md) — six cycles, closed 2026-09-04: the composition slate, P1, the corrected identities, the deg(s)=2 reduction; honest failure on the (α)/(β) targets at exact scope.
 - [r13 G1/G2 strict endpoint](r13-g1-g2-strict-endpoint.md) — six cycles, ceiling stop 2026-09-05: no endpoint proved, no packages; O1 refined to named first-failure sub-obstructions with a retained exact support layer.
 - [r14 AmbientTargetDeg2](r14-ambient-target.md) — six cycles, closed 2026-09-05: target not proved; the band closed premise-free and the open obligation strictly narrowed; three packages.
+- [r15 (β) condition](r15-beta-condition.md) — nine cycles, ceiling stop 2026-09-06: (β) open; normalized to guarded coefficient-descent; degree-1 closed, degree-2 through p ≤ 6; C13 proved informally.
+- [r16 identification constructor](r16-identification-constructor.md) — six cycles, closed 2026-09-06: the constructor exists at general scope; the r14 G1wide premise set reduced to {Premise K, K-SCOPE}.

@@ -1,6 +1,6 @@
 # Research Status
 
-Last updated: 2026-09-05 (r14 export)
+Last updated: 2026-09-06 (r15 + r16 + order-22 census)
 
 ## Headline Problems
 
@@ -30,6 +30,19 @@ are unimodal, so no headline status changes. See the
 [witness evidence](evidence/kl-order26-trs2-witness/README.md).
 
 ## Verified Progress
+
+- The completed r16 run delivered the **identification constructor** at
+  general scope (not a shim, under a written criterion) and its
+  integration: the r14 `G1wide` conclusion now rests on premise set
+  exactly {Premise K, K-SCOPE}. The completed r15 run normalized (β) to a
+  guarded coefficient-descent theorem, closed support-degree 1 by equality
+  and degree 2 through `p ≤ 6`, and proved `i_4 > i_3` (order ≥ 12)
+  informally. The order-22 census extends the authenticated frontier to
+  orders 14–22 with byte-identical replay and zero decisive events — all
+  literal witnesses now have order ≥ 23. See
+  [r16](experiments/r16-identification-constructor.md),
+  [r15](experiments/r15-beta-condition.md), and
+  [the census record](evidence/order22-census-2026-09-06.md).
 
 - The completed r14 run did not prove its target (`AmbientTargetDeg2`) and
   exported three governed packages that narrow it strictly: **the band

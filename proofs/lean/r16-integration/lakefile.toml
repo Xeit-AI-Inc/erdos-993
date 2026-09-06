@@ -1,0 +1,97 @@
+name = "R16Integration"
+version = "0.1.0"
+defaultTargets = ["Erdos993C8U1Base", "Convolution", "R12C2P", "R14C1P", "R12C6T", "R14C1F", "R14C2T", "R14C3P", "R14C3T", "R14C4T", "ExtensionProfile", "NNSeqAdmission", "Forest", "R16C2Base", "R16C2T", "R16C2P", "R16C3N", "R16C3T", "R16C3P", "R16C4T", "CheckT3", "CheckP3", "CheckT4", "CheckP4"]
+
+# Shared world-neutral base chain (already-published, byte-identical to
+# proofs/lean/r14-forest-dichotomy).
+[[lean_lib]]
+name = "Erdos993C8U1Base"
+
+[[lean_lib]]
+name = "Convolution"
+
+[[lean_lib]]
+name = "R12C2P"
+
+[[lean_lib]]
+name = "R14C1P"
+
+# T-lineage (already-published, byte-identical to proofs/lean/r14-ambient-band).
+[[lean_lib]]
+name = "R12C6T"
+
+[[lean_lib]]
+name = "R14C1F"
+
+[[lean_lib]]
+name = "R14C2T"
+
+# T-lineage bridge (vendored fresh; gated original from the sealed
+# erdos-993-ambient-target-dre-2026-09-05 cycle-3 R14C3-P/bridge tree; same
+# bytes as proofs/lean/r16-constructor).
+[[lean_lib]]
+name = "R14C3P"
+
+# T-lineage extension (already-published, byte-identical to
+# proofs/lean/r14-ambient-band) — the ADOPTED r14 surface this route wires.
+[[lean_lib]]
+name = "R14C3T"
+
+[[lean_lib]]
+name = "R14C4T"
+
+# P-lineage (already-published, byte-identical to proofs/lean/r14-forest-dichotomy).
+[[lean_lib]]
+name = "ExtensionProfile"
+
+[[lean_lib]]
+name = "NNSeqAdmission"
+
+[[lean_lib]]
+name = "Forest"
+
+# The sealed r16 C2 route modules (GATE-R16-KEYSTONE), vendored fresh; same
+# bytes as proofs/lean/r16-constructor.
+[[lean_lib]]
+name = "R16C2Base"
+
+[[lean_lib]]
+name = "R16C2T"
+
+[[lean_lib]]
+name = "R16C2P"
+
+# The sealed r16 C3 route modules (GATE-R16-CONSTRUCTOR), vendored fresh;
+# same bytes as proofs/lean/r16-constructor. R16C3N neutral; R16C3T carries
+# packGeneral_lawful; R16C3P carries lawIVPrime_components.
+[[lean_lib]]
+name = "R16C3N"
+
+[[lean_lib]]
+name = "R16C3T"
+
+[[lean_lib]]
+name = "R16C3P"
+
+# The ONE new route module (cycle 4, T-world only): the integration theorem
+# with premise set exactly {Premise K, K-SCOPE}.
+[[lean_lib]]
+name = "R16C4T"
+
+# Axiom-audit modules of record, one per world side, cycles 3 and 4.
+[[lean_lib]]
+name = "CheckT3"
+
+[[lean_lib]]
+name = "CheckP3"
+
+[[lean_lib]]
+name = "CheckT4"
+
+[[lean_lib]]
+name = "CheckP4"
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "905b95818eb32af7874a58b427f50c1711a5e96c"
