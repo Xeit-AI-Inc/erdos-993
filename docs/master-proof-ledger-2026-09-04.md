@@ -1,11 +1,41 @@
 # Erdős #993 — Master Proof Ledger
 
-**Date: 2026-09-04.** Public copy of the program's master ledger (canonical
-copy in the internal research archive). Supersedes the 2026-09-01 gap map as the program's orientation
+**Date: 2026-09-04. Prepared by Claude (Fable 5) within the internal research OS at Ashton's
+direction.** Supersedes the 2026-09-01 gap map as the program's orientation
 document; where this ledger and any sealed record differ, the sealed record
 governs. This is the jumping-off point for the next phase, to begin once the
 DRE control improvements (post-TRS2-erratum) are in force.
 
+
+**Updated 2026-09-06, second update — THE (β) REFUTATION (r17) and the r18 close.**
+**DECISIVE EVENT: (β) IS REFUTED.** The r17-β run (Codex) produced the
+exact order-243 counterexample `R17-BETA-CE-ORDER243-STAR60` (star-60
+tree: root `y`, arm `y–s–v`, sixty 3-leaf stars; `x(T)=87`, `p=90`,
+`K_A=3`, `a_v(90)<0`, `b_v(90) − Bgen_s(89) = +2.935…×10^51 > 0`), with
+dual independent reviews and neutral adjudication (terminal refutation
+at exact reproducible-counterexample scope; Lean headline WITHHELD
+pending the frozen formalization target `RTree.BetaCounterexample T60
+v 90`). **Independently verified by this controller** (independent tree
+rebuild + DP; every exact integer matched;
+`the r18 controller verification receipt (internal archive)`).
+Consequence: the chartered composition (α) ∧ (β) ⟹ (A) (C16) can no
+longer deliver THEOREM (A); C16 stands as a true implication with a
+refuted antecedent leg. The path to (A) requires a repaired (β′) at a
+scope respecting the witness, or a new route. Registered monotone-safe
+in `CLAIM-IDENTITY.json` (`E993-BETA-TARGET` REFUTED,
+smallest_witness_order 243). **r18 (five cycles, honest stop at the C5
+close, this controller):** `HG2` on `G2 ∧ |U| ≥ 2p−2` is OPEN and
+unmoved in either direction (27,466+ instances, zero decisive events);
+banked: `HG2Faithful` (RG — the governed HG2 antecedent transcribed
+structure-carrying, definitionally equal by `rfl`, with a
+kernel-checked interchangeability theorem), the Exchange Lemma
+(tree-level VERIFIED + abstract-sequence RG), the quadratic floor, the
+every-`e` deepening obstruction with `D(p,0) = Cat(p−1)` PROVED, the
+exact non-universality of the (★L)-sufficiency mechanism (firing
+criterion `2H ≥ (p+2)·D + 2`), the `H/D` landscape to order 17,603
+(record 3.0406…), and the vocabulary-insufficiency theorems for
+`sign(a_s(p))`. Both engines' registry fail-closed pins caught each
+other's writes as drift; nothing unverified was consumed.
 
 **Updated 2026-09-06 (r15 + r16 + order-22 census deltas).** Three records
 reconciled by the controller under separate authority (both runs correctly
@@ -42,7 +72,7 @@ quarantined rather than reconciling).
 **Updated 2026-09-05 (r12 deltas).** The r12 Δ-comparison run (six cycles,
 closed 2026-09-04) refined S4's operable content, delivered P1 at
 `governed` (closing O6), and added four governed packages; deltas are
-edited in place below and cross-referenced to the r12 run's closing record (public summary at [`experiments/r12-delta-comparison.md`](../experiments/r12-delta-comparison.md)).
+edited in place below and cross-referenced to the run's closing record.
 
 Grade vocabulary, ascending: `computation` < `proved_informal` < `RG` <
 `governed` < `formally_verified` (never awarded). `PROPOSED` marks statements
@@ -215,7 +245,7 @@ itself — they are the operable content the transport argument would consume.
 The classical route is **dead**: "all trees log-concave ⟹ products
 log-concave ⟹ forests unimodal" fails at its first premise (order 26).
 Universal tree TRS2 is refuted and retired; see
-[the erratum](erratum-2026-09-03-universal-tree-trs2.md).
+`docs/erratum-2026-09-03-universal-tree-trs2.md` (public repo).
 
 What stands, governed: `TRS2` convolution closure; `transfer_to_forest`
 (all components TRS2 ⟹ forest TRS2) — correct use is per-forest with the
@@ -290,7 +320,7 @@ Statuses as of 2026-09-04. "governed" = Lean kernel at the pinned toolchain
 | C19 | The (β) normalization `b_v(p) − Bgen_s(p−1) = g_p − g_{p−1}` + inequality equivalence; the component-extension bound `Δ_c(T) ≤ 0 ⟹ 1 ≤ c ∧ m ≤ 3c−2`; the support-degree-2 gap reduction | governed (auxiliary scope) | r15 |
 | C14 | `P1_NNSeq`: Toeplitz2 ∗ unimodal = unimodal (NNSeq scope; interval-support hypothesis unused) — attribution: Keilson–Gerber (1971), primary text unconfirmed | governed | r12 |
 | C15 | The corrected combined identity `a_s(p) = a_v(p) + (b_v(p) − Bgen_s(p−1))` and its witnessed-leaf conditional corollary | governed | r12 |
-| C16 | The composition slate: (α) ∧ (β) ⟹ THEOREM (A) in full (hypotheses unproved) | governed | r12 |
+| C16 | The composition slate: (α) ∧ (β) ⟹ THEOREM (A) in full | governed (implication only) | r12; **antecedent leg (β) REFUTED by the r17 order-243 witness (2026-09-06)** — the implication stands, the chartered path through it is dead |
 | C17 | (α) at `deg(s)=2` ⟺-reduced to `AmbientTargetDeg2`; BR-FACT-1 root stratum | governed | r12 |
 
 ### Settled negative (fences — do not reopen without a new guard/representation)
@@ -314,9 +344,9 @@ Statuses as of 2026-09-04. "governed" = Lean kernel at the pinned toolchain
 
 | # | Obligation | Status | Blocked by / next test |
 |---|---|---|---|
-| O1 | **OB-G1/OB-G2** — strict endpoint signs `D_p > 0`, `D_q < 0` | OPEN (WS2) — **r13-refined (2026-09-05)** | The strict unit must come from first-recovery history; all static witnesses fenced (F9), and r13 rejected static history *carriage* as not substantive history use. First failures, named: the **p-chain** is open first at **substantive history-definedness** (a genuinely history-responsive operation must be defined before totality; strictness may not come from PB-X, endpoint strictness, cardinality, surplus, saturation, or matching existence); the **q-chain** is open first at **proof-independent selected-`m₀` occurrence identity and exact typed binding** (Q1 gates Q2 coverage/commutation, which gates Q3 cross-rank comparison). Retained exact support layer (run-local E1; scopes bind): minimal p-Hall-deficient family structure; exchange-cut carrier; zero-cost deletion bijection with `Δ_p = 0` endpoint; leaf-tagged Γ normal form with fixed-`A` zero; repaired per-leaf phase lemma; conditional augmentation schema (interface uninstantiated). New mechanism-scope refutation: the unguarded one-move charge (labelled K₁,₃, q = 2). Successor entry conditions: the r13 successor handoff (public summary at [`experiments/r13-g1-g2-strict-endpoint.md`](../experiments/r13-g1-g2-strict-endpoint.md)) |
+| O1 | **OB-G1/OB-G2** — strict endpoint signs `D_p > 0`, `D_q < 0` | OPEN (WS2) — **r13-refined (2026-09-05)** | The strict unit must come from first-recovery history; all static witnesses fenced (F9), and r13 rejected static history *carriage* as not substantive history use. First failures, named: the **p-chain** is open first at **substantive history-definedness** (a genuinely history-responsive operation must be defined before totality; strictness may not come from PB-X, endpoint strictness, cardinality, surplus, saturation, or matching existence); the **q-chain** is open first at **proof-independent selected-`m₀` occurrence identity and exact typed binding** (Q1 gates Q2 coverage/commutation, which gates Q3 cross-rank comparison). Retained exact support layer (run-local E1; scopes bind): minimal p-Hall-deficient family structure; exchange-cut carrier; zero-cost deletion bijection with `Δ_p = 0` endpoint; leaf-tagged Γ normal form with fixed-`A` zero; repaired per-leaf phase lemma; conditional augmentation schema (interface uninstantiated). New mechanism-scope refutation: the unguarded one-move charge (labelled K₁,₃, q = 2). Successor entry conditions: r13 `SUCCESSOR-HANDOFF.md` |
 | O2 | **OB-PAIR-G4 → OB-G3** — the common leaf, `Q > 0` | OPEN, decisive (WS1) | contradict Q=0 support-disjointness via the corridor; operable content = O3 |
-| O3 | **The Δ-comparison targets, refined by r12:** (α) the `k_A=1` slack inequality; (β) the `k_A≥2` condition inequality; at `deg(s)=2`, (α) ⟺ `AmbientTargetDeg2` | OPEN — the program's sharpest objects | prove ⟹ (A) IN FULL by C16; refute by witness at order ≥ 22 (≤ 21 exhausted) ⟹ decisive event; the `deg(s)=2` stratum is fence-legal under the r12 Q1–Q6 rulings; **r14 (D2):** the deg-2 open content is exactly the O12 row; the unimodality sign route refuted by exhibition at bounded scope; whether some underived composition bounds `D ≤ H−1` on `G2 ∧ |U| ≥ 2p−2` remains OPEN — an absence of derivation, not an impossibility; **r15 (2026-09-06):** (β) normalized to a guarded coefficient-descent theorem (C19); support-degree 1 CLOSED by equality, degree 2 closed through `p ≤ 6` (`p ≥ 7` and degree ≥ 3 open); named next routes: the full-root-subset rank-transfer theorem and the common-field correlation theorem (r15 internal reconciliation; public summary at [`experiments/r15-beta-condition.md`](../experiments/r15-beta-condition.md)) |
+| O3 | **The Δ-comparison targets, refined by r12:** (α) the `k_A=1` slack inequality; (β) the `k_A≥2` condition inequality; at `deg(s)=2`, (α) ⟺ `AmbientTargetDeg2` | OPEN — the program's sharpest objects | prove ⟹ (A) IN FULL by C16; refute by witness at order ≥ 22 (≤ 21 exhausted) ⟹ decisive event; the `deg(s)=2` stratum is fence-legal under the r12 Q1–Q6 rulings; **r14 (D2):** the deg-2 open content is exactly the O12 row; the unimodality sign route refuted by exhibition at bounded scope; whether some underived composition bounds `D ≤ H−1` on `G2 ∧ |U| ≥ 2p−2` remains OPEN — an absence of derivation, not an impossibility; **r15 (2026-09-06):** (β) normalized to a guarded coefficient-descent theorem (C19); support-degree 1 CLOSED by equality, degree 2 closed through `p ≤ 6` (`p ≥ 7` and degree ≥ 3 open); named next routes: the full-root-subset rank-transfer theorem and the common-field correlation theorem (r15 FINAL-RECONCILIATION) ; **r17 (2026-09-06): (β) REFUTED** at universal scope and at the degree-2/`p ≥ 7` stratum by the exact order-243 witness (controller-verified); the O3 open content is now (α) ALONE — the `k_A=1` slack inequality, whose `deg(s)=2` content is exactly O12 — plus the strategic question of a repaired (β′) respecting the witness |
 | O4 | **OB-K4 descent, formalized** | proved_informal | order-eight base + leaf-restoration sublemmas never reified (with C13) |
 | O5 | **TRANSFER, reshaped** — the invariant class between LC and unimodality | OPEN | candidates must pass K–L fixtures; F10, F12 bind |
 | O6 | ~~P1 import~~ — CLOSED at `governed` (r12); **corollary gating DONE (r14, D3):** FOR-COR-II the dichotomy of record; premise-free items at RG at abstract scope; Premise-K items premise-on-face; floors 26/27/52 premise-labelled ("52" only for the all-components-unimodal disjunct) | CLOSED | documentary: Radcliffe named via the K–L primary text (r14 C1); the [26] primary reference and the Keilson–Gerber primary text remain unretrieved |
@@ -325,7 +355,7 @@ Statuses as of 2026-09-04. "governed" = Lean kernel at the pinned toolchain
 | O9 | Close the `Δ_4<0<Δ_5` band 30..32 | OPEN — **receipts not yet sourced (r13, 2026-09-05)** | r13 searched its authorized corpus and found NO qualifying order-30/31/32 receipts: public verification reaches 29; the through-32 claim is private and unverified. Requires explicit source authorization — declared-provenance reproduction receipts per order, or an independently authorized structural enumeration; self-reports and bounded zeros do not qualify |
 | O10 | M2 / REP-G4 completion (representation-transport residues) | proved_informal, residues named | full-scope decoder chain if PAIR-G4 goes inductive |
 | O11 | Lean debt, residual | small | interval-bound conversion; fresh-root treehood; `∂_y` receipt |
-| O12 | **`AmbientTargetDeg2`** — the r12 C6 residue, **r14-refined (2026-09-05)** | OPEN — strictly narrowed | Reduction of record completed at RG (r14 C3); successor surface `ambientTargetDeg2_of_G1wide_G2wide` ADOPTED (r14 C4 Q2); **the entire band `2 ≤ p ∧ |U| ≤ 2p−3 ⟹ D ≤ 0` closed premise-free at RG** (`residual_nonpos_of_card_le_band`; seven elaborations, four parties); S1/S4/S5 discharged inside the surface; the G1 side closes only under Premise K + K-SCOPE + the identification premise. **The open obligation is exactly `HG2` on `G2 ∧ |U| ≥ 2p−2`**, signature `AMB-CTREX-D2`, blocking facts BF-1..3 (r14 FC-R14-10); new premise-free constraint: any deg-2 counterexample has `n ≥ 2x(T)+3` (a proof-obligation narrowing, never a search restriction). Gating items: order-22 census provenance and the identification constructor — **both EXECUTED (2026-09-06):** the census extends the frontier to order 22 (witnesses ≥ 23); the constructor EXISTS (C18) and the G1 side is upgraded to premise-carrying-BY-CONSTRUCTION — the open obligation is unchanged and exactly `HG2` on `G2 ∧ |U| ≥ 2p−2` |
+| O12 | **`AmbientTargetDeg2`** — the r12 C6 residue, **r14-refined (2026-09-05)** | OPEN — strictly narrowed | Reduction of record completed at RG (r14 C3); successor surface `ambientTargetDeg2_of_G1wide_G2wide` ADOPTED (r14 C4 Q2); **the entire band `2 ≤ p ∧ |U| ≤ 2p−3 ⟹ D ≤ 0` closed premise-free at RG** (`residual_nonpos_of_card_le_band`; seven elaborations, four parties); S1/S4/S5 discharged inside the surface; the G1 side closes only under Premise K + K-SCOPE + the identification premise. **The open obligation is exactly `HG2` on `G2 ∧ |U| ≥ 2p−2`**, signature `AMB-CTREX-D2`, blocking facts BF-1..3 (r14 FC-R14-10); new premise-free constraint: any deg-2 counterexample has `n ≥ 2x(T)+3` (a proof-obligation narrowing, never a search restriction). Gating items: order-22 census provenance and the identification constructor — **both EXECUTED (2026-09-06):** the census extends the frontier to order 22 (witnesses ≥ 23); the constructor EXISTS (C18) and the G1 side is upgraded to premise-carrying-BY-CONSTRUCTION — the open obligation is unchanged and exactly `HG2` on `G2 ∧ |U| ≥ 2p−2` ; **r18 (2026-09-06, five cycles, honest stop):** `HG2` unmoved in either direction; `HG2Faithful` RG (rfl-definitional transcription + kernel-checked interchangeability); (★L)-sufficiency proved NON-universal (exact firing criterion `2H ≥ (p+2)·D+2`, edgeless-U star-hub scope); `H/D` landscape mapped to order 17,603 (record 3.0406…, no approach to 1 found; the orders-303/1263 anchors corrected into the closed S4 stratum); `sign(a_s(p))` proved not a function of `(|U|, crossIdx(U))` + leg hypotheses (legs-only and legs+`combined<0`, order ≥ 23 witnesses); successor entry: r18 FINAL-RECONCILIATION §6 — re-draw the path to (A) first |
 | O13 | `EXCEPTIONAL-SHAPE-1` sufficiency; `C7BBgenBound` RESERVED (r12 Q6: identity substrate legal, inequality core not) | OPEN | r12 residue register; **r14 (D4):** sufficiency-side and instrument outputs gated at proved_informal/computation — NEC-1 necessary-at-exhaustive-scope, killed as an equivalence; no sufficient structural condition from measured data; the `x(U)=p−1` observation documented at exact scope, explanation refused (F1/F2-adjacent) |
 
 ---
@@ -361,10 +391,10 @@ the long game under fixture discipline.
 | All trees unimodal | ≤ 21 | ours: authenticated 14–20 frontier (823,065 order-20 classes; frozen byte contract, digest `ba891179…`) + order-21 center-code certificates (2,144,505 trees, independently regenerated) |
 | Zero FR / Split / Cross / Obstruction / B4 / negative-total-minor hits | ≤ 20 (239.7M pair instances) | ours, sealed census |
 | All forests unimodal | ≤ 18 (310,782 disconnected types) | ours |
-| All trees log-concave | ≤ 25 | Kadrawi–Levit (external); first failures at 26, replayable under [`evidence/kl-order26-trs2-witness`](../evidence/kl-order26-trs2-witness/README.md) |
+| All trees log-concave | ≤ 25 | Kadrawi–Levit (external); first failures at 26, replayable in our evidence dir |
 | r12 targets (α), (β) hold | ALL trees ≤ 21 exhaustive (2.14M at 21) + 1,908 adversarial + K–L fixtures 26–34 | ours, r12 sealed |
 | `AmbientTargetDeg2` holds | ≤ 21 exhaustive (r12) + r14 targeted to order 46 incl. the first measured G2 cells (orders 22–29) | ours, r14 sealed |
-| r11 ingredients (A), (B) hold | all trees ≤ 18 exhaustive; K–L family through 32 targeted | ours — artifact of record: [`evidence/kl-order26-trs2-witness/witness-report.json`](../evidence/kl-order26-trs2-witness/witness-report.json) (commit 21797c0; r11_theorem_A/B_violations empty on T(3,4,4)…T(3,5,6)+controls), independently reproduced by r12 C1-H fixtures (n=26–34) and the r12 C1 adjudicator |
+| r11 ingredients (A), (B) hold | all trees ≤ 18 exhaustive; K–L family through 32 targeted | ours — artifact of record: public repo `evidence/kl-order26-trs2-witness/witness-report.json` (commit 21797c0; r11_theorem_A/B_violations empty on T(3,4,4)…T(3,5,6)+controls), independently reproduced by r12 C1-H fixtures (n=26–34) and the r12 C1 adjudicator |
 | Ingredient-level identity battery | ~1.6M–6.4M instances per object | ours, capability-certified harnesses |
 
 ---
@@ -409,7 +439,8 @@ Public mirror: `github.com/Xeit-AI-Inc/erdos-993` (through commit
 
 ## 8. Process Preconditions for the Next Phase
 
-Binding lessons from the TRS2 forensic record (the program's internal forensic audit; public summary in [the erratum](erratum-2026-09-03-universal-tree-trs2.md)), to be enacted as DRE
+Binding lessons from the TRS2 forensic record (Codex audit,
+`../erdos-993-literature-route-audit-2026-09-03/`), to be enacted as DRE
 controls before the next run consumes this ledger:
 
 1. Canonical claim identity with alias sets; **monotone refutation
@@ -431,7 +462,7 @@ controls before the next run consumes this ledger:
 program's claim identities live in `CLAIM-IDENTITY.json` beside this file
 (seeded from the forensic audit's corrected status ledger and the §4 fence
 table), and every run's obligation and terminal ledgers are checked against
-it with `skills/mathematical-solver-dre-controller/scripts/lint_claim_status.py`
+it with `the claim-status lint (internal tooling)`
 before dispatch and at closeout (controller playbook v0.4, "Claim-ledger
 controls"). Items 3, 4, and 6 are mandatory controller steps in the same
 playbook section. A refuted claim reopened without a written distinction now
@@ -446,10 +477,10 @@ tree-no-recovery; 08-29 proof-gap completion; r8 extension-profile-same-leaf
 (08-31, `OBLIGATIONS.csv` 67 rows); r9 PAIR-G4 (Codex, 16 cycles,
 `FINAL-RECONCILIATION.md`); r9 quotient-decoder; order-20 census (09-02);
 r10 TRS2 B_T-closure (09-02, + erratum 09-03); r11 corridor transport
-(09-03). Status docs: `THREE-ENGINE-STATUS-2026-09-02.md` (as corrected);
+(09-03); r17-β beta-remainder (Codex, 09-06, decisive event + SUCCESSOR-HANDOFF); r18 HG2 (09-06, five cycles, honest stop, TERMINAL-SEAL be5cb06f…). Status docs: `THREE-ENGINE-STATUS-2026-09-02.md` (as corrected);
 the 09-01 gap map (superseded by this ledger); the public repo's
 `STATUS.md`, `docs/erratum-2026-09-03-universal-tree-trs2.md`,
-`docs/roadmap.md`. The internal TRS2 forensic audit governs §8; its public summary is in the erratum.
+`docs/roadmap.md`. The TRS2 forensic audit governs §8.
 
 *Headline targets TREE, FOREST, TRANSFER, COUNTEREXAMPLE: ALL OPEN.
 Nothing in this ledger moves them; its purpose is to make the distance
