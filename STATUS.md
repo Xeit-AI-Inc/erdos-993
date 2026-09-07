@@ -1,6 +1,6 @@
 # Research Status
 
-Last updated: 2026-09-06 (r15 + r16 + order-22 census)
+Last updated: 2026-09-06 (the (β) refutation + the r18 HG2 close)
 
 ## Headline Problems
 
@@ -29,7 +29,37 @@ are unimodal, so no headline status changes. See the
 [erratum](docs/erratum-2026-09-03-universal-tree-trs2.md) and the replayable
 [witness evidence](evidence/kl-order26-trs2-witness/README.md).
 
+## Decisive Event (2026-09-06): the (β) condition is refuted
+
+The program's (β) target — for every leaf `v` with support `s` and rank
+`p` with `k_A ≥ 2` and `a_v(p) < 0`, the condition `b_v(p) ≤
+Bgen_s(p−1)` — is **refuted at universal scope** by an exact order-243
+counterexample (a star-60 tree at `p = 90`, `K_A = 3`), found by the r17
+run, neutrally adjudicated at exact reproducible-counterexample scope,
+and independently verified end-to-end by the r18 controller. The
+chartered composition (α) ∧ (β) ⟹ (A) can therefore no longer deliver
+the headline theorem; the [master proof
+ledger](docs/master-proof-ledger-2026-09-04.md) records the re-drawn
+path. The headline targets themselves (tree/forest unimodality) are
+untouched — the witness's independence sequence is not at issue, only
+the (β) proof strategy. Kernel verification of the witness against its
+frozen Lean contract is in progress. See
+[r17](experiments/r17-beta-remainder.md).
+
 ## Verified Progress
+
+- The completed r18 run (five cycles, honest stop by pre-committed
+  stop-test) left `HG2` — the surviving obligation on
+  `G2 ∧ |U| ≥ 2p−2` — open and unmoved, and banked: the `HG2Faithful`
+  transcription at RG (definitional by `rfl`, kernel-checked
+  interchangeability; `proofs/lean/r18-hg2-faithful`), the Exchange
+  Lemma (tree-level verified; abstract counting form at RG with scope
+  caveats; `proofs/lean/r18-exchange-lemma-seq`), the proved Catalan
+  base `D(p,0) = Cat(p−1)` of the deepening obstruction, the exact
+  non-universality of the (★L)-sufficiency mechanism (firing criterion
+  `2H ≥ (p+2)·D + 2`), the `H/D` landscape to order 17,603, and the
+  vocabulary-insufficiency theorems. See
+  [r18](experiments/r18-hg2.md).
 
 - The completed r16 run delivered the **identification constructor** at
   general scope (not a shim, under a written criterion) and its
