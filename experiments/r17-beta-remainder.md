@@ -28,8 +28,10 @@ then produced the **exact order-243 counterexample**
   every stated integer matched).
 - **Honest boundary:** the Lean headline was correctly WITHHELD at close
   (formalization prepared, not kernel-verified); the frozen target is
-  `Order243.T60_not_BetaTarget : ¬ RTree.BetaTarget`. Kernel verification
-  is in progress as the program's current cleanup item.
+  `Order243.T60_not_BetaTarget : ¬ RTree.BetaTarget`. KERNEL-VERIFIED 2026-09-07 and awarded
+  `governed` (controller closeout; independent fidelity review
+  PASS-WITH-NOTES; D9 scope caveat on ordinary-tree phrasings):
+  `proofs/lean/r17-order243-beta-counterexample`.
 
 **Consequence:** `E993-BETA-TARGET` is REFUTED at universal scope and at
 the degree-2 / `p ≥ 7` stratum (registered monotone-safe,

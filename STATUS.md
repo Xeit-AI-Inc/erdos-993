@@ -42,8 +42,11 @@ the headline theorem; the [master proof
 ledger](docs/master-proof-ledger-2026-09-04.md) records the re-drawn
 path. The headline targets themselves (tree/forest unimodality) are
 untouched — the witness's independence sequence is not at issue, only
-the (β) proof strategy. Kernel verification of the witness against its
-frozen Lean contract is in progress. See
+the (β) proof strategy. The witness is now KERNEL-VERIFIED against its frozen Lean
+contract and awarded `governed` under the full gate ladder (independent
+hostile fidelity review PASS-WITH-NOTES; the D9 model-to-ordinary-trees
+bridge remains open and its caveat rides on ordinary-tree phrasings) —
+see [the package](proofs/lean/r17-order243-beta-counterexample/README.md). See
 [r17](experiments/r17-beta-remainder.md).
 
 ## Verified Progress

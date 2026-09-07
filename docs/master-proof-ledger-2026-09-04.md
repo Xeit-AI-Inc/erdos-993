@@ -23,7 +23,13 @@ longer deliver THEOREM (A); C16 stands as a true implication with a
 refuted antecedent leg. The path to (A) requires a repaired (β′) at a
 scope respecting the witness, or a new route. Registered monotone-safe
 in `CLAIM-IDENTITY.json` (`E993-BETA-TARGET` REFUTED,
-smallest_witness_order 243). **r18 (five cycles, honest stop at the C5
+smallest_witness_order 243). **KERNEL-VERIFIED AND AWARDED `governed`
+(2026-09-07):** `Order243.T60_not_BetaTarget : ¬ RTree.BetaTarget` at the
+pin, axioms exactly the approved three, statement hash equal to the
+frozen contract, independent hostile fidelity review PASS-WITH-NOTES.
+Scope: (β) over the governed `RTree` model; the D9 semantic-adequacy
+bridge to ordinary finite trees remains open and the caveat rides on
+every ordinary-tree phrasing. **r18 (five cycles, honest stop at the C5
 close, this controller):** `HG2` on `G2 ∧ |U| ≥ 2p−2` is OPEN and
 unmoved in either direction (27,466+ instances, zero decisive events);
 banked: `HG2Faithful` (RG — the governed HG2 antecedent transcribed
