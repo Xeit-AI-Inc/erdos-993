@@ -1,6 +1,6 @@
 # Research Status
 
-Last updated: 2026-09-06 (the (β) refutation + the r18 HG2 close)
+Last updated: 2026-09-07 (two new exploration lanes after the (β) refutation)
 
 ## Headline Problems
 
@@ -48,6 +48,23 @@ hostile fidelity review PASS-WITH-NOTES; the D9 model-to-ordinary-trees
 bridge remains open and its caveat rides on ordinary-tree phrasings) —
 see [the package](proofs/lean/r17-order243-beta-counterexample/README.md). See
 [r17](experiments/r17-beta-remainder.md).
+
+## Current Lanes (opened 2026-09-07)
+
+- **Aggregated (β′)** (active): on the very order-243 witness that
+  refuted (β), the leaf-aggregated form survives by three orders of
+  magnitude — the pointwise violation drowns in sibling slack. The
+  candidate `E993-BETA-AGG` (favorable-leaf aggregate nonpositive) is
+  registered OPEN on exhaustive orders ≤ 22 plus adversarial families;
+  its per-support-fibre variant is already refuted by an exact order-91
+  witness. Cycle 1 isolated three live theorem mechanisms.
+- **Unimodality certificates** (closed, one day): the fixed-window
+  certificate strategy is dead **by proof** — any sound scheme's window
+  grows at least like |α − 2·mode|, linear on paths. The surviving
+  graded conjecture (slope ≤ 1/5) holds exhaustively through order 22
+  but saturates there; the run's residue seeds the mode-synchronization
+  pair-invariant program. See
+  [the summary](experiments/unimodal-certificates-2026-09-07.md).
 
 ## Verified Progress
 

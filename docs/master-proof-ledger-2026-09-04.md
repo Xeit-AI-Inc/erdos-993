@@ -7,6 +7,37 @@ governs. This is the jumping-off point for the next phase, to begin once the
 DRE control improvements (post-TRS2-erratum) are in force.
 
 
+**Updated 2026-09-07 — the next phase opens: two exploration lanes.**
+Following the 2026-09-07 strategy assessment, two lanes launched under
+skill v0.5 (stop gates recordable, unarmed through the first third).
+**Lane 1 (Codex, active): the AGGREGATED (β′)** — run
+`erdos-993-beta-aggregate-dre-2026-09-07`. Seed: on the order-243
+witness itself the leaf-aggregate `Σ_v [b_v − Bgen_{s_v}] = −1.06×10⁵⁷
+≤ 0` (the pointwise violation drowns in sibling slack; r18-controller
+probe). Registered: `E993-BETA-AGG` (OPEN — for every governed RTree
+and `p ≥ x(T)+2`, the favorable-leaf aggregate is nonpositive;
+exhaustive orders ≤ 22 + fixtures + 1,620 adversarial star-hub
+families, no positive aggregate) and `E993-BETA-AGG-SUPPORT` (REFUTED
+— per-support-fibre variant killed by an exact order-91 star-hub
+witness). Cycle-1 synthesis: partial, no decisive event; three live
+theorem mechanisms isolated (Delete/Retag Hall relation,
+coefficient-local transport/cuts, first-crossing/orbit sign control).
+**Lane 2 (Claude, CLOSED same day): unimodality certificates** — run
+`erdos-993-unimodal-certificates-2026-09-07` (sealed `c04f33f2…`).
+Its one PROOF, `E993-CERT-WINDOW-LB`: no fixed-window
+symmetric-unimodal certificate scheme exists for trees — any sound
+scheme's window obeys `S(T) ≥ |α − 2·mode(T)|`, linear on paths.
+Surviving measured conjecture `E993-LAMBDA2-CONJ` (OPEN): the graded
+box certificate at slack 2, slope ≤ 1/5 — exhaustive through order 22
+(7.77M trees, zero violations) but SATURATED at 22 by three
+near-corona trees (max S rises to 4); tight where first tested, most
+likely to break at ≥ 23; strictly stronger than unimodality.
+Strategic residue feeding the pair-invariant program: the mode never
+retreats under leaf or closed-neighborhood deletion (steps in {0,1});
+convolution controls centres while unimodality is decided at modes,
+and for trees these drift apart linearly; disjoint-union closure
+`S(T₁⊔T₂) ≤ max(S₁,S₂)+1` unfalsified.
+
 **Updated 2026-09-06, second update — THE (β) REFUTATION (r17) and the r18 close.**
 **DECISIVE EVENT: (β) IS REFUTED.** The r17-β run (Codex) produced the
 exact order-243 counterexample `R17-BETA-CE-ORDER243-STAR60` (star-60
@@ -378,6 +409,9 @@ Statuses as of 2026-09-04. "governed" = Lean kernel at the pinned toolchain
 | Forest structure route (§3c) | **new, cheap opening** | P1 ⟹ ≥2 big non-LC components; attacks FOREST semi-independently of S4 |
 | Exhaustive/targeted computation | supporting | decisive only via witness; horizons in §6; falsifiers must probe beyond-horizon fixtures |
 | Special-class results (brooms, spiders, caterpillars, …) | supporting | ours + literature; no route to universality by class union |
+| Fixed-window unimodality certificates | **dead (by proof)** | `E993-CERT-WINDOW-LB`: window ≥ \|α−2·mode\|, linear on paths |
+| Aggregated (β′) leaf-orbit descent | **active** — Codex lane | `E993-BETA-AGG` OPEN; support-fibre variant refuted (order 91) |
+| Graded box certificate (Λ₂ ≤ 1/5) / mode-synchronization pair invariant | **open conjecture + design target** | `E993-LAMBDA2-CONJ` measured to 22 (saturated); pair-invariant program is the successor of the certificate lane |
 
 **Priority for the next phase** (once the DRE controls are in force):
 **O12 first** (`AmbientTargetDeg2` — one statement, fence-legal, carrying
