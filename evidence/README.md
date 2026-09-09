@@ -17,6 +17,10 @@ source packets, raw model transcripts, and noncanonical duplicate returns.
 - [`verification-2026-09-01-r8.md`](verification-2026-09-01-r8.md) binds the
   terminal r8 record to its seven public Lean packages and eight auxiliary
   declarations.
+- [`verification-2026-09-09-r19.md`](verification-2026-09-09-r19.md) binds the
+  terminal r19 close to its manifest, ledger, and all 25 auxiliary theorem-
+  contract, kernel, and statement-fidelity receipt digests. The corresponding
+  Lean source projects are not exported in this release.
 - [`order-20-21-search`](order-20-21-search/README.md) contains the exact
   generator, independent checker, and machine-readable bounded result.
 - [`source-hashes.sha256`](source-hashes.sha256) binds the published Lean

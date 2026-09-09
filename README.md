@@ -87,6 +87,13 @@ four headline targets open. Its eight verified declarations are auxiliary; the
 remaining universal route needs representation fidelity, noncircular endpoint
 signs, and a strict common-leaf overlap.
 
+The completed r19 aggregated β′ experiment likewise leaves every headline
+target open. It ran all nine authorized cycles, formally verified 25 narrow
+auxiliary declarations, and reduced its best surviving route to arbitrary
+multi-base compensation in a fixed Delete/Retag Hall relation. The aggregate
+claim itself is neither proved nor refuted. Three tempting transport and
+provenance mechanisms are now excluded at exact scope.
+
 ## Verify The Lean Package
 
 Install [elan](https://github.com/leanprover/elan), then run:
@@ -118,6 +125,8 @@ The expected transitive axioms are `propext`, `Classical.choice`, and
 - [r7 auxiliary and conditional Lean packages](proofs/lean/r7-first-recovery-rank-one/README.md)
 - [2026-08-31 provenance record](evidence/verification-2026-08-31-r6-r7.md)
 - [r8 experiment summary](experiments/r8-extension-profile-same-leaf.md)
+- [r19 aggregated β′ experiment](experiments/r19-beta-aggregate.md)
+- [2026-09-09 r19 verification record](evidence/verification-2026-09-09-r19.md)
 - [2026-09-01 r8 verification record](evidence/verification-2026-09-01-r8.md)
 - [Order-20/21 computational evidence](evidence/order-20-21-search/README.md)
 

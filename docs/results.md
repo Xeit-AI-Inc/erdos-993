@@ -111,6 +111,34 @@ For a linear account of the intended minimum-counterexample proof, including
 which portions form its beginning, unresolved middle, and conditional ending,
 see the [proof architecture status note](proof-architecture-status-2026-09-01.md).
 
+## r19 Aggregated Beta-Prime Update
+
+The pointwise beta condition is refuted, but its favorable-leaf aggregate
+remains an open candidate. The completed nine-cycle r19 experiment found no
+positive complete aggregate in its exact bounded batteries and no universal
+proof.
+
+The run's strongest structural result is a fixed Delete/Retag Hall reduction.
+Exact local cut facts, one-block compensation, a high-rank conditional Hall
+theorem, and a minimal deficient-core normal form reduce the live route to one
+of two outcomes:
+
+1. prove uniform compensation for arbitrary active-base subsets; or
+2. exhibit an exact governed deficient cut with the complete aggregate data
+   from the same row.
+
+Cycles 1-8 formally verified 25 auxiliary Lean declarations at exact
+algebraic, finite-combinatorial, or conditional scope. Their contract, kernel,
+and fidelity digests are in the
+[r19 verification record](../evidence/verification-2026-09-09-r19.md). The
+source projects are not part of this public release. Cycle 9 made no formal
+award after one fidelity failure and two exhausted repaired kernel builds.
+
+The run also refuted three universal mechanisms: literal-leaf-preserving
+connected strict-prune totality, support-locked literal-label corridor
+advance, and exact support-preserving unit transport. These exclusions do not
+refute the aggregate claim or Erdos #993.
+
 ## Bounded Exclusions
 
 - All 522,959 nonisomorphic trees through order 19 were checked with no

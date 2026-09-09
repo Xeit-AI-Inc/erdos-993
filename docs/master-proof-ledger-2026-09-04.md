@@ -7,21 +7,36 @@ governs. This is the jumping-off point for the next phase, to begin once the
 DRE control improvements (post-TRS2-erratum) are in force.
 
 
-**Updated 2026-09-07 — the next phase opens: two exploration lanes.**
-Following the 2026-09-07 strategy assessment, two lanes launched under
-skill v0.5 (stop gates recordable, unarmed through the first third).
-**Lane 1 (Codex, active): the AGGREGATED (β′)** — run
-`erdos-993-beta-aggregate-dre-2026-09-07`. Seed: on the order-243
-witness itself the leaf-aggregate `Σ_v [b_v − Bgen_{s_v}] = −1.06×10⁵⁷
-≤ 0` (the pointwise violation drowns in sibling slack; r18-controller
-probe). Registered: `E993-BETA-AGG` (OPEN — for every governed RTree
-and `p ≥ x(T)+2`, the favorable-leaf aggregate is nonpositive;
-exhaustive orders ≤ 22 + fixtures + 1,620 adversarial star-hub
-families, no positive aggregate) and `E993-BETA-AGG-SUPPORT` (REFUTED
-— per-support-fibre variant killed by an exact order-91 star-hub
-witness). Cycle-1 synthesis: partial, no decisive event; three live
-theorem mechanisms isolated (Delete/Retag Hall relation,
-coefficient-local transport/cuts, first-crossing/orbit sign control).
+**Updated 2026-09-09 — r19 AGGREGATED (β′) completed at the nine-cycle
+hard ceiling.** Run `erdos-993-beta-aggregate-dre-2026-09-07` completed all
+nine authorized DRE cycles (81 isolated routes, 162 admitted critic seats, 27
+adjudications, nine neutral syntheses, and nine governed Stage 7 gates).
+`E993-BETA-AGG` remains **OPEN**: no universal proof and no exact governed row
+with positive complete favorable-leaf aggregate. The run formally verified 25
+auxiliary Lean declarations across Cycles 1–8; Cycle 9 made no award and
+stopped fail-closed after one fidelity failure and two exhausted repaired
+kernel builds. The strongest structural advance is the fixed Delete/Retag
+Hall reduction: its unresolved core is now a uniform compensation inequality
+for arbitrary active-base subsets, or an exact governed deficient cut with
+complete same-row aggregate data. Cycle 9 added exact bounded evidence on 24
+mixed terminal-fan lollipop trees and 1,019 ranks (zero positive complete
+aggregates; five positive marked margins; maximum `S_F=-4964`). It also
+registered three exact-scope mechanism refutations: literal-leaf-preserving
+connected strict-prune totality, support-locked literal-label corridor
+advance, and universal exact support-preserving unit transport. These fences
+do **not** refute the global aggregate, PAIR-G4, TREE, FOREST, TRANSFER, or
+Erdős #993. Terminal manifest seal: `c8cb79a4…`; terminal mathematical verdict:
+`still_open`.
+
+**Updated 2026-09-07 — the two exploration lanes opened.** Following the
+2026-09-07 strategy assessment, two lanes launched under skill v0.5 (stop
+gates recordable, unarmed through the first third). **Lane 1 (Codex, now
+CLOSED at the 2026-09-09 hard ceiling): the AGGREGATED (β′)** — seed: on the
+order-243 witness itself the leaf-aggregate
+`Σ_v [b_v − Bgen_{s_v}] = −1.06×10⁵⁷ ≤ 0`; the pointwise violation drowns in
+sibling slack. Registered: `E993-BETA-AGG` (OPEN) and
+`E993-BETA-AGG-SUPPORT` (REFUTED by an exact order-91 star-hub witness). The
+terminal r19 update above supersedes the earlier Cycle-1 snapshot.
 **Lane 2 (Claude, CLOSED same day): unimodality certificates** — run
 `erdos-993-unimodal-certificates-2026-09-07` (sealed `c04f33f2…`).
 Its one PROOF, `E993-CERT-WINDOW-LB`: no fixed-window
@@ -112,9 +127,13 @@ closed 2026-09-04) refined S4's operable content, delivered P1 at
 edited in place below and cross-referenced to the run's closing record.
 
 Grade vocabulary, ascending: `computation` < `proved_informal` < `RG` <
-`governed` < `formally_verified` (never awarded). `PROPOSED` marks statements
-this ledger derives or imports that no run has yet gated — they are work
-items, not results.
+`governed` < `formally_verified`. The last grade was not awarded in the older
+lineage summarized below; r19 awarded it only to exact auxiliary declarations
+that completed theorem-contract, independent informal audit, pinned Lean
+kernel/axiom verification, source-immutability, and independent statement-
+fidelity gates. It never upgrades a declaration beyond its stated scope.
+`PROPOSED` marks statements this ledger derives or imports that no run has yet
+gated — they are work items, not results.
 
 ---
 
@@ -359,6 +378,7 @@ Statuses as of 2026-09-04. "governed" = Lean kernel at the pinned toolchain
 | C15 | The corrected combined identity `a_s(p) = a_v(p) + (b_v(p) − Bgen_s(p−1))` and its witnessed-leaf conditional corollary | governed | r12 |
 | C16 | The composition slate: (α) ∧ (β) ⟹ THEOREM (A) in full | governed (implication only) | r12; **antecedent leg (β) REFUTED by the r17 order-243 witness (2026-09-06)** — the implication stands, the chartered path through it is dead |
 | C17 | (α) at `deg(s)=2` ⟺-reduced to `AmbientTargetDeg2`; BR-FACT-1 root stratum | governed | r12 |
+| C20 | r19 aggregate-β′ auxiliary layer: 25 exact algebraic, finite-combinatorial, or conditional Lean declarations, including finite transport/Hall reductions, covariance decompositions, fixed-family identities, base-rank reduction, high-rank Hall, conditional descent, and local Retag saturation | formally_verified (auxiliary scope only) | r19 Cycles 1–8; public receipt index |
 
 ### Settled negative (fences — do not reopen without a new guard/representation)
 
@@ -376,6 +396,9 @@ Statuses as of 2026-09-04. "governed" = Lean kernel at the pinned toolchain
 | F10 | Convolution-only induction through the blocked-root state | B_T difference-of-products obstruction (Verity) |
 | F11 | The transport lemma as originally chartered (3 disjuncts) | r11 adjudicated disjunct-level negative |
 | F12 | Closure candidates weaker than TRS2 tested below order 26; ~12 stronger designs | r10 HC-9 pincer (now understood: first LC failures at 26) |
+| F13 | A connected strict deletion can preserve every literal original leaf of every nonbase target-root state | r19 Cycle 9 exact mechanism refutation (`E993-R19-ROOT-SAFE-PRUNE-TOTALITY`) |
+| F14 | Support locking can coexist with literal-label-preserving advance along every positive-length support corridor | r19 Cycle 9 exact mechanism refutation (`E993-R19-SUPPORT-LOCKED-CORRIDOR-ADVANCE`) |
+| F15 | Every governed base-rank row admits exact support-preserving unit-token transport | r19 Cycle 9 order-91 mechanism witness (`E993-R19-SUPPORT-PRESERVING-UNIT-TRANSPORT`); cross-support transport remains open |
 
 ### Open obligations (the actual work)
 
@@ -394,6 +417,7 @@ Statuses as of 2026-09-04. "governed" = Lean kernel at the pinned toolchain
 | O11 | Lean debt, residual | small | interval-bound conversion; fresh-root treehood; `∂_y` receipt |
 | O12 | **`AmbientTargetDeg2`** — the r12 C6 residue, **r14-refined (2026-09-05)** | OPEN — strictly narrowed | Reduction of record completed at RG (r14 C3); successor surface `ambientTargetDeg2_of_G1wide_G2wide` ADOPTED (r14 C4 Q2); **the entire band `2 ≤ p ∧ |U| ≤ 2p−3 ⟹ D ≤ 0` closed premise-free at RG** (`residual_nonpos_of_card_le_band`; seven elaborations, four parties); S1/S4/S5 discharged inside the surface; the G1 side closes only under Premise K + K-SCOPE + the identification premise. **The open obligation is exactly `HG2` on `G2 ∧ |U| ≥ 2p−2`**, signature `AMB-CTREX-D2`, blocking facts BF-1..3 (r14 FC-R14-10); new premise-free constraint: any deg-2 counterexample has `n ≥ 2x(T)+3` (a proof-obligation narrowing, never a search restriction). Gating items: order-22 census provenance and the identification constructor — **both EXECUTED (2026-09-06):** the census extends the frontier to order 22 (witnesses ≥ 23); the constructor EXISTS (C18) and the G1 side is upgraded to premise-carrying-BY-CONSTRUCTION — the open obligation is unchanged and exactly `HG2` on `G2 ∧ |U| ≥ 2p−2` ; **r18 (2026-09-06, five cycles, honest stop):** `HG2` unmoved in either direction; `HG2Faithful` RG (rfl-definitional transcription + kernel-checked interchangeability); (★L)-sufficiency proved NON-universal (exact firing criterion `2H ≥ (p+2)·D+2`, edgeless-U star-hub scope); `H/D` landscape mapped to order 17,603 (record 3.0406…, no approach to 1 found; the orders-303/1263 anchors corrected into the closed S4 stratum); `sign(a_s(p))` proved not a function of `(|U|, crossIdx(U))` + leg hypotheses (legs-only and legs+`combined<0`, order ≥ 23 witnesses); successor entry: r18 FINAL-RECONCILIATION §6 — re-draw the path to (A) first |
 | O13 | `EXCEPTIONAL-SHAPE-1` sufficiency; `C7BBgenBound` RESERVED (r12 Q6: identity substrate legal, inequality core not) | OPEN | r12 residue register; **r14 (D4):** sufficiency-side and instrument outputs gated at proved_informal/computation — NEC-1 necessary-at-exhaustive-scope, killed as an equivalence; no sufficient structural condition from measured data; the `x(U)=p−1` observation documented at exact scope, explanation refused (F1/F2-adjacent) |
+| O14 | **`E993-BETA-AGG` (aggregated β′)** — for every governed `RTree` and `p ≥ x(T)+2`, the sum of `b_v(p)-Bgen_{s_v}(p-1)` over favorable original leaves is nonpositive | OPEN after r19's nine-cycle hard ceiling | No positive complete aggregate in the authorized exact batteries, but bounded zeros are not proof. Sharpest successor: `E993-R19-FIXED-GAMMA-HALL`, reduced to uniform compensation for arbitrary active-base subsets or an exact governed deficient cut carrying complete same-row aggregate data. The per-support-fibre variant is REFUTED and must not be reopened. |
 
 ---
 
@@ -410,16 +434,16 @@ Statuses as of 2026-09-04. "governed" = Lean kernel at the pinned toolchain
 | Exhaustive/targeted computation | supporting | decisive only via witness; horizons in §6; falsifiers must probe beyond-horizon fixtures |
 | Special-class results (brooms, spiders, caterpillars, …) | supporting | ours + literature; no route to universality by class union |
 | Fixed-window unimodality certificates | **dead (by proof)** | `E993-CERT-WINDOW-LB`: window ≥ \|α−2·mode\|, linear on paths |
-| Aggregated (β′) leaf-orbit descent | **active** — Codex lane | `E993-BETA-AGG` OPEN; support-fibre variant refuted (order 91) |
+| Aggregated (β′) leaf-orbit descent | **r19 closed at hard ceiling; claim remains OPEN** | 25 exact auxiliary declarations banked; support-fibre variant refuted (order 91); sharpest surviving route is arbitrary multi-base Delete/Retag Hall compensation |
 | Graded box certificate (Λ₂ ≤ 1/5) / mode-synchronization pair invariant | **open conjecture + design target** | `E993-LAMBDA2-CONJ` measured to 22 (saturated); pair-invariant program is the successor of the certificate lane |
 
-**Priority for the next phase** (once the DRE controls are in force):
-**O12 first** (`AmbientTargetDeg2` — one statement, fence-legal, carrying
-≥99.3% of the exceptional mass; (α) at `deg(s)=2` follows by a governed
-reduction, then (A) needs only (β) and the `deg(s)≥3` slice of (α)),
-**O1 second** (the strict unit; Codex's r13 charter), the §3c corollary
-gating as a short task (O6's unlock), O9 as a cheap branch closure, O5 as
-the long game under fixture discipline.
+**Priority for the next phase:** the pointwise (β) path is dead, so do not
+resume the old O12→(α)∧(β) composition as though both legs were available.
+For the repaired β′ line, attack **O14 first** at the exact arbitrary
+multi-base Delete/Retag Hall cut, with an authenticated relation and complete
+same-row aggregate data. Keep **O1/O2** as the independent strict-endpoint and
+same-leaf main line, O9 as a cheap finite-band closure, and O5 as the long
+transfer game under mandatory K–L fixture discipline.
 
 ---
 
@@ -436,6 +460,7 @@ the long game under fixture discipline.
 | `AmbientTargetDeg2` holds | ≤ 21 exhaustive (r12) + r14 targeted to order 46 incl. the first measured G2 cells (orders 22–29) | ours, r14 sealed |
 | r11 ingredients (A), (B) hold | all trees ≤ 18 exhaustive; K–L family through 32 targeted | ours — artifact of record: public repo `evidence/kl-order26-trs2-witness/witness-report.json` (commit 21797c0; r11_theorem_A/B_violations empty on T(3,4,4)…T(3,5,6)+controls), independently reproduced by r12 C1-H fixtures (n=26–34) and the r12 C1 adjudicator |
 | Ingredient-level identity battery | ~1.6M–6.4M instances per object | ours, capability-certified harnesses |
+| No positive complete `E993-BETA-AGG` row | exhaustive trees ≤ 22, K–L fixtures 26–34, `T_m` through `m=1000` (778,993 eligible ranks), 1,024 heterogeneous two-hub configurations (13,996 eligible ranks), 4,540 graft/prune trees, and the Cycle 9 24-tree/1,019-rank terminal-fan lollipop battery | ours, r19 sealed; bounded evidence only |
 
 ---
 
@@ -471,9 +496,16 @@ the pin Lean 4.32.2 / pinned Mathlib, axioms within
   (`i_4² > i_3·i_5`, order ≥ 27); marked-extension-charge; rooted-residual
   profile.
 
+The r19 internal run additionally contains 25 `formally_verified` auxiliary
+declarations from Cycles 1–8. Their terminal receipt index is public, but their
+source projects are not counted among the 46 public packages in this section
+until a separate byte-for-byte package export is completed. None proves the
+aggregate claim or a headline target.
+
 Toolchain pin and cache-manifest discipline: see any package README.
-Public mirror: `github.com/Xeit-AI-Inc/erdos-993` (through commit
-`21797c0`, which includes the TRS2 erratum and the K–L witness evidence).
+Public mirror: `github.com/Xeit-AI-Inc/erdos-993`; use its Git history for the
+exact published revision. The internal sealed experiment remains the authority
+for artifacts not explicitly exported there.
 
 ---
 
@@ -495,8 +527,9 @@ controls before the next run consumes this ledger:
    declares one needed.
 5. Census/falsifier horizons checked against smallest-known-witness orders;
    K–L fixtures mandatory in every invariant harness.
-6. Ceiling honesty unchanged: nothing graded `formally_verified`; bounded
-   zeros are evidence of nothing; conditional faces undetachable.
+6. Ceiling honesty unchanged: formal verification never escapes the exact
+   contracted declaration; bounded zeros prove no universal claim; conditional
+   faces remain undetachable.
 
 **Enacted 2026-09-05.** Items 1, 2, and 5 are now mechanical: this
 program's claim identities live in `CLAIM-IDENTITY.json` beside this file

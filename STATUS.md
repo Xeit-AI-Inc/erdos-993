@@ -1,6 +1,6 @@
 # Research Status
 
-Last updated: 2026-09-07 (two new exploration lanes after the (β) refutation)
+Last updated: 2026-09-09 (r19 aggregated β′ terminal close)
 
 ## Headline Problems
 
@@ -49,15 +49,19 @@ bridge remains open and its caveat rides on ordinary-tree phrasings) —
 see [the package](proofs/lean/r17-order243-beta-counterexample/README.md). See
 [r17](experiments/r17-beta-remainder.md).
 
-## Current Lanes (opened 2026-09-07)
+## Current Lanes
 
-- **Aggregated (β′)** (active): on the very order-243 witness that
+- **Aggregated (β′)** (r19 closed at the nine-cycle hard ceiling; claim
+  remains open): on the very order-243 witness that
   refuted (β), the leaf-aggregated form survives by three orders of
   magnitude — the pointwise violation drowns in sibling slack. The
   candidate `E993-BETA-AGG` (favorable-leaf aggregate nonpositive) is
-  registered OPEN on exhaustive orders ≤ 22 plus adversarial families;
-  its per-support-fibre variant is already refuted by an exact order-91
-  witness. Cycle 1 isolated three live theorem mechanisms.
+  still OPEN after all nine cycles and substantial exact batteries; its
+  per-support-fibre variant is refuted by an exact order-91 witness. The run
+  formally verified 25 auxiliary declarations, added three exact mechanism
+  fences, and reduced the sharpest surviving route to arbitrary multi-base
+  compensation in a fixed Delete/Retag Hall relation. No headline target
+  moved. See [r19](experiments/r19-beta-aggregate.md).
 - **Unimodality certificates** (closed, one day): the fixed-window
   certificate strategy is dead **by proof** — any sound scheme's window
   grows at least like |α − 2·mode|, linear on paths. The surviving
@@ -67,6 +71,18 @@ see [the package](proofs/lean/r17-order243-beta-counterexample/README.md). See
   [the summary](experiments/unimodal-certificates-2026-09-07.md).
 
 ## Verified Progress
+
+- The completed r19 run executed all nine authorized cycles. It found no
+  positive complete aggregate in the authorized exact batteries and no
+  universal proof. Its strongest advance is an exact fixed Delete/Retag Hall
+  reduction whose remaining core is a uniform arbitrary multi-base
+  compensation inequality or a governed deficient cut with complete same-row
+  aggregate data. Cycles 1–8 formally verified 25 narrow auxiliary Lean
+  declarations; Cycle 9 correctly made no award. Three universal mechanisms
+  are now fenced: literal-leaf-preserving strict-prune totality, support-locked
+  literal-label corridor advance, and exact support-preserving unit transport.
+  These are mechanism refutations, not counterexamples to aggregated β′ or
+  Erdős #993. See [the receipt index](evidence/verification-2026-09-09-r19.md).
 
 - The completed r18 run (five cycles, honest stop by pre-committed
   stop-test) left `HG2` — the surviving obligation on

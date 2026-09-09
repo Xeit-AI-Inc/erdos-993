@@ -41,3 +41,7 @@ result, limitations, and hashes.
 - [r14 AmbientTargetDeg2](r14-ambient-target.md) — six cycles, closed 2026-09-05: target not proved; the band closed premise-free and the open obligation strictly narrowed; three packages.
 - [r15 (β) condition](r15-beta-condition.md) — nine cycles, ceiling stop 2026-09-06: (β) open; normalized to guarded coefficient-descent; degree-1 closed, degree-2 through p ≤ 6; C13 proved informally.
 - [r16 identification constructor](r16-identification-constructor.md) — six cycles, closed 2026-09-06: the constructor exists at general scope; the r14 G1wide premise set reduced to {Premise K, K-SCOPE}.
+- [r17 beta remainder](r17-beta-remainder.md) — decisive order-243 refutation of the pointwise beta target, later kernel-verified at its governed `RTree` scope.
+- [r18 HG2](r18-hg2.md) — five-cycle honest stop: HG2 remained open; faithful transcription, exchange, deepening, and vocabulary-obstruction results banked at their exact scopes.
+- [r19 aggregated beta-prime](r19-beta-aggregate.md) — nine-cycle hard-ceiling close: aggregate remains open; 25 formally verified auxiliaries, three exact mechanism fences, and the fixed Delete/Retag Hall bottleneck isolated.
+- [Unimodality certificates](unimodal-certificates-2026-09-07.md) — fixed-window certificate strategy refuted by proof; a graded mode-synchronization direction remains open.

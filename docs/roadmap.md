@@ -4,16 +4,20 @@
 
 The sharpest current concrete entries are:
 
-1. eliminate or exhibit `Delta_4<0<Delta_5` inside the residual order band
+1. resolve the r19 fixed Delete/Retag Hall bottleneck for aggregated beta:
+   authenticate the exact relation and either prove uniform compensation for
+   arbitrary active-base subsets or produce a governed deficient cut carrying
+   complete same-row aggregate data;
+2. eliminate or exhibit `Delta_4<0<Delta_5` inside the residual order band
    `13..32` — published exhaustive unimodality verification for all trees
    through order 29 (external computation, cited not reproduced) narrows
    the residual band to `30..32`, so importing verified receipts for those
    three orders would close this branch entirely;
-2. construct a connectivity-preserving descent from a positive-charge
+3. construct a connectivity-preserving descent from a positive-charge
    specified residual to a smaller tree carrying a complete first-recovery
    history, or prove that no such descent is possible;
-3. prove a same-leaf pendant selector across the two required ranks; and
-4. prove or refute the first-recovery neighborhood-shadow inequality
+4. prove a same-leaf pendant selector across the two required ranks; and
+5. prove or refute the first-recovery neighborhood-shadow inequality
 
 ```text
 a|X_(t_*)| <= b|N(X_(t_*))|.
@@ -68,6 +72,10 @@ synchronization, or forest recovery.
 - Can the positive residual witness be excluded using branch structure?
 - Can positive residual charge force a smaller connected recovery carrier
   without silently replacing the operational residual by `R_spec`?
+- Can arbitrary active-base subsets in the fixed Delete/Retag relation be
+  compensated uniformly, including collisions and active-base absorption?
+- If not, can a deficient Hall cut be realized together with a positive
+  complete favorable-leaf aggregate in the same governed row?
 - Can the finite `13..32` band be closed by a structural enumeration whose
   output is a proof object rather than only a null search?
 - What additional state is necessary for convolution without reintroducing a
