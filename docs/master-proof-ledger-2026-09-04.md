@@ -7,6 +7,32 @@ governs. This is the jumping-off point for the next phase, to begin once the
 DRE control improvements (post-TRS2-erratum) are in force.
 
 
+**Updated 2026-09-12 — r21/r22 O14 multibase-Hall lineage completed at the
+nine-cycle ceiling.** Parent run
+`erdos-993-math-dre-20260910-r21-o14-multibase-hall` completed three semantic
+cycles and stopped at its Cycle 3 Lean exact-binding boundary. Continuation
+`erdos-993-math-dre-20260911-r22-o14-multibase-hall-continuation` freshly
+repaired that unchanged conditional theorem, then completed Cycles 4–9 under
+the expanded seven-T/seven-F/seven-U topology. Across the combined lineage:
+189 routes, 378 isolated critics, 27 adjudications, nine neutral syntheses,
+and nine formally verified Stage 7 awards. The awards isolate exact generic
+multibase collision decomposition, fixed-carrier deletion monotonicity,
+pair-collision capacity, minimal deficient-core structure, an abstract
+tree-incidence obstruction family, and fixed-weight Möbius uniqueness. They
+do **not** supply the missing governed Delete/Retag realization or prove Hall.
+`E993-BETA-AGG` and `E993-R19-FIXED-GAMMA-HALL` therefore remain **OPEN**.
+The serial prerequisite is now one authority-anchored, source-complete,
+same-byte governed semantic package binding formation/admission, literal
+Delete/Retag data, all cuts, coefficients, and independent Hall and aggregate
+evaluators. After that binding, a proof must derive a formation-specific
+payment, correction/global-cancellation argument, or full-demand-cut bridge;
+an authenticated deficient cut or positive complete aggregate would instead
+be decisive negative evidence at its exact scope. The Cycle 9 uniqueness
+theorem forces weights `+1,-1,+1` on pairs, triples, and the four-set, so an
+unaugmented all-subcut representation cannot be a termwise nonnegative Hall
+payment. Terminal manifest seal: `6da39c0b…`; terminal verdict:
+`terminal_ceiling_stop`, not proof, refutation, or plateau.
+
 **Updated 2026-09-09 — r19 AGGREGATED (β′) completed at the nine-cycle
 hard ceiling.** Run `erdos-993-beta-aggregate-dre-2026-09-07` completed all
 nine authorized DRE cycles (81 isolated routes, 162 admitted critic seats, 27
@@ -379,6 +405,7 @@ Statuses as of 2026-09-04. "governed" = Lean kernel at the pinned toolchain
 | C16 | The composition slate: (α) ∧ (β) ⟹ THEOREM (A) in full | governed (implication only) | r12; **antecedent leg (β) REFUTED by the r17 order-243 witness (2026-09-06)** — the implication stands, the chartered path through it is dead |
 | C17 | (α) at `deg(s)=2` ⟺-reduced to `AmbientTargetDeg2`; BR-FACT-1 root stratum | governed | r12 |
 | C20 | r19 aggregate-β′ auxiliary layer: 25 exact algebraic, finite-combinatorial, or conditional Lean declarations, including finite transport/Hall reductions, covariance decompositions, fixed-family identities, base-rank reduction, high-rank Hall, conditional descent, and local Retag saturation | formally_verified (auxiliary scope only) | r19 Cycles 1–8; public receipt index |
+| C21 | r21/r22 fixed-Gamma-Hall auxiliary layer: nine formally verified Stage 7 awards across the combined nine-cycle lineage — inclusion-minimal Hall deficiency, ordinary shadow identities, the repaired conditional component-residual theorem, multibase collision decomposition, pure-deletion collision monotonicity, pair-collision capacity, the strengthened minimal-core theorem, the endpoint-incidence tree obstruction family, and four-fibre Möbius-weight uniqueness | formally_verified (auxiliary scope only; Cycle 7 strengthens/repackages the parent minimal-deficiency idea, so these are nine artifacts rather than nine independent mathematical claims) | r21 Cycles 1–2; r22 pre-Cycle 4 and Cycles 4–9; public receipt index |
 
 ### Settled negative (fences — do not reopen without a new guard/representation)
 
@@ -417,7 +444,7 @@ Statuses as of 2026-09-04. "governed" = Lean kernel at the pinned toolchain
 | O11 | Lean debt, residual | small | interval-bound conversion; fresh-root treehood; `∂_y` receipt |
 | O12 | **`AmbientTargetDeg2`** — the r12 C6 residue, **r14-refined (2026-09-05)** | OPEN — strictly narrowed | Reduction of record completed at RG (r14 C3); successor surface `ambientTargetDeg2_of_G1wide_G2wide` ADOPTED (r14 C4 Q2); **the entire band `2 ≤ p ∧ |U| ≤ 2p−3 ⟹ D ≤ 0` closed premise-free at RG** (`residual_nonpos_of_card_le_band`; seven elaborations, four parties); S1/S4/S5 discharged inside the surface; the G1 side closes only under Premise K + K-SCOPE + the identification premise. **The open obligation is exactly `HG2` on `G2 ∧ |U| ≥ 2p−2`**, signature `AMB-CTREX-D2`, blocking facts BF-1..3 (r14 FC-R14-10); new premise-free constraint: any deg-2 counterexample has `n ≥ 2x(T)+3` (a proof-obligation narrowing, never a search restriction). Gating items: order-22 census provenance and the identification constructor — **both EXECUTED (2026-09-06):** the census extends the frontier to order 22 (witnesses ≥ 23); the constructor EXISTS (C18) and the G1 side is upgraded to premise-carrying-BY-CONSTRUCTION — the open obligation is unchanged and exactly `HG2` on `G2 ∧ |U| ≥ 2p−2` ; **r18 (2026-09-06, five cycles, honest stop):** `HG2` unmoved in either direction; `HG2Faithful` RG (rfl-definitional transcription + kernel-checked interchangeability); (★L)-sufficiency proved NON-universal (exact firing criterion `2H ≥ (p+2)·D+2`, edgeless-U star-hub scope); `H/D` landscape mapped to order 17,603 (record 3.0406…, no approach to 1 found; the orders-303/1263 anchors corrected into the closed S4 stratum); `sign(a_s(p))` proved not a function of `(|U|, crossIdx(U))` + leg hypotheses (legs-only and legs+`combined<0`, order ≥ 23 witnesses); successor entry: r18 FINAL-RECONCILIATION §6 — re-draw the path to (A) first |
 | O13 | `EXCEPTIONAL-SHAPE-1` sufficiency; `C7BBgenBound` RESERVED (r12 Q6: identity substrate legal, inequality core not) | OPEN | r12 residue register; **r14 (D4):** sufficiency-side and instrument outputs gated at proved_informal/computation — NEC-1 necessary-at-exhaustive-scope, killed as an equivalence; no sufficient structural condition from measured data; the `x(U)=p−1` observation documented at exact scope, explanation refused (F1/F2-adjacent) |
-| O14 | **`E993-BETA-AGG` (aggregated β′)** — for every governed `RTree` and `p ≥ x(T)+2`, the sum of `b_v(p)-Bgen_{s_v}(p-1)` over favorable original leaves is nonpositive | OPEN after r19's nine-cycle hard ceiling | No positive complete aggregate in the authorized exact batteries, but bounded zeros are not proof. Sharpest successor: `E993-R19-FIXED-GAMMA-HALL`, reduced to uniform compensation for arbitrary active-base subsets or an exact governed deficient cut carrying complete same-row aggregate data. The per-support-fibre variant is REFUTED and must not be reopened. |
+| O14 | **`E993-BETA-AGG` (aggregated β′)** — for every governed `RTree` and `p ≥ x(T)+2`, the sum of `b_v(p)-Bgen_{s_v}(p-1)` over favorable original leaves is nonpositive | OPEN after the r21/r22 nine-cycle multibase-Hall continuation | The generic Hall algebra is sharply decomposed, but no source-complete governed Delete/Retag row or universal constructor binds all theorem data to the actual formation. Earliest honest successor: build that authority-anchored same-byte semantic package; then prove a formation-specific payment `C(S) ≤ A(S)`, add correction/global-cancellation terms overcoming the forced negative triple Möbius coefficient, or derive a full-demand-cut bridge. An authenticated deficient cut or positive complete aggregate is the alternative decisive event. The per-support-fibre variant is REFUTED and must not be reopened. |
 
 ---
 
@@ -434,16 +461,18 @@ Statuses as of 2026-09-04. "governed" = Lean kernel at the pinned toolchain
 | Exhaustive/targeted computation | supporting | decisive only via witness; horizons in §6; falsifiers must probe beyond-horizon fixtures |
 | Special-class results (brooms, spiders, caterpillars, …) | supporting | ours + literature; no route to universality by class union |
 | Fixed-window unimodality certificates | **dead (by proof)** | `E993-CERT-WINDOW-LB`: window ≥ \|α−2·mode\|, linear on paths |
-| Aggregated (β′) leaf-orbit descent | **r19 closed at hard ceiling; claim remains OPEN** | 25 exact auxiliary declarations banked; support-fibre variant refuted (order 91); sharpest surviving route is arbitrary multi-base Delete/Retag Hall compensation |
+| Aggregated (β′) leaf-orbit descent | **r21/r22 completed the nine-cycle multibase-Hall continuation; claim remains OPEN** | r19's 25 auxiliaries plus nine r21/r22 formal awards now isolate collision, deficient-core, and signed-payment structure; source-complete governed binding remains the serial prerequisite; support-fibre variant remains refuted (order 91) |
 | Graded box certificate (Λ₂ ≤ 1/5) / mode-synchronization pair invariant | **open conjecture + design target** | `E993-LAMBDA2-CONJ` measured to 22 (saturated); pair-invariant program is the successor of the certificate lane |
 
 **Priority for the next phase:** the pointwise (β) path is dead, so do not
 resume the old O12→(α)∧(β) composition as though both legs were available.
-For the repaired β′ line, attack **O14 first** at the exact arbitrary
-multi-base Delete/Retag Hall cut, with an authenticated relation and complete
-same-row aggregate data. Keep **O1/O2** as the independent strict-endpoint and
-same-leaf main line, O9 as a cheap finite-band closure, and O5 as the long
-transfer game under mandatory K–L fixture discipline.
+For the repaired β′ line, attack **O14 first** by constructing one
+authority-anchored, source-complete, same-byte governed semantic package for
+the exact arbitrary multi-base Delete/Retag relation. Only then apply the
+banked generic Lean results to a formation-specific payment, corrected signed
+payment, or full-demand-cut bridge. Keep **O1/O2** as the independent
+strict-endpoint and same-leaf main line, O9 as a cheap finite-band closure,
+and O5 as the long transfer game under mandatory K–L fixture discipline.
 
 ---
 
@@ -501,6 +530,17 @@ declarations from Cycles 1–8. Their terminal receipt index is public, but thei
 source projects are not counted among the 46 public packages in this section
 until a separate byte-for-byte package export is completed. None proves the
 aggregate claim or a headline target.
+
+The combined r21/r22 O14 continuation adds nine `formally_verified` Stage 7
+artifacts at exact auxiliary scope. Two belong to r21, one is r22's fresh
+repair of r21's blocked Cycle 3 candidate, and six come from r22 Cycles 4–9.
+Cycle 7 strengthens/repackages the parent minimal-deficiency result, so the
+artifact count must not be mistaken for nine independent theorems. The public
+receipt index binds every contract, kernel, fidelity, and terminal digest;
+the source projects are not counted among the 46 public packages until a
+separate byte-for-byte export is completed. None authenticates the governed
+Delete/Retag relation or proves Hall, the aggregate claim, or a headline
+target.
 
 Toolchain pin and cache-manifest discipline: see any package README.
 Public mirror: `github.com/Xeit-AI-Inc/erdos-993`; use its Git history for the

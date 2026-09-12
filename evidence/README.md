@@ -21,6 +21,11 @@ source packets, raw model transcripts, and noncanonical duplicate returns.
   terminal r19 close to its manifest, ledger, and all 25 auxiliary theorem-
   contract, kernel, and statement-fidelity receipt digests. The corresponding
   Lean source projects are not exported in this release.
+- [`verification-2026-09-12-r21-r22.md`](verification-2026-09-12-r21-r22.md)
+  binds the combined nine-cycle O14 multibase-Hall lineage to both terminal
+  manifests and all nine auxiliary theorem-contract, kernel, and
+  statement-fidelity receipt digests. The corresponding Lean source projects
+  are not exported in this release.
 - [`order-20-21-search`](order-20-21-search/README.md) contains the exact
   generator, independent checker, and machine-readable bounded result.
 - [`source-hashes.sha256`](source-hashes.sha256) binds the published Lean

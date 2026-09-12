@@ -44,4 +44,6 @@ result, limitations, and hashes.
 - [r17 beta remainder](r17-beta-remainder.md) — decisive order-243 refutation of the pointwise beta target, later kernel-verified at its governed `RTree` scope.
 - [r18 HG2](r18-hg2.md) — five-cycle honest stop: HG2 remained open; faithful transcription, exchange, deepening, and vocabulary-obstruction results banked at their exact scopes.
 - [r19 aggregated beta-prime](r19-beta-aggregate.md) — nine-cycle hard-ceiling close: aggregate remains open; 25 formally verified auxiliaries, three exact mechanism fences, and the fixed Delete/Retag Hall bottleneck isolated.
+- [r21 O14 multibase-Hall parent](r21-o14-multibase-hall.md) — three semantic cycles; two formal auxiliary awards; fail-closed Cycle 3 exact-binding stop, later repaired in r22.
+- [r22 O14 multibase-Hall continuation](r22-o14-multibase-hall-continuation.md) — Cycles 4–9 completed; six new formal auxiliary awards plus the repaired pre-Cycle 4 theorem; aggregate and fixed-Gamma Hall remain open at the hard ceiling.
 - [Unimodality certificates](unimodal-certificates-2026-09-07.md) — fixed-window certificate strategy refuted by proof; a graded mode-synchronization direction remains open.

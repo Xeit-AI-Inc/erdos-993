@@ -139,6 +139,37 @@ connected strict-prune totality, support-locked literal-label corridor
 advance, and exact support-preserving unit transport. These exclusions do not
 refute the aggregate claim or Erdos #993.
 
+## r21/r22 O14 Multibase-Hall Update
+
+The r21 parent and r22 continuation completed one combined nine-cycle
+lineage. The parent isolated the exact cutwise compensation target and
+verified two generic auxiliaries before stopping fail-closed at a Cycle 3
+exact-binding defect. The continuation formally repaired that unchanged
+conditional theorem, then completed Cycles 4–9.
+
+The combined formal record contains nine workflow awards at exact auxiliary
+scope. Its principal mathematical advances are:
+
+- global signed slack equals active-base slice slack minus cross-base
+  collision, with exact full-fibre boundary corrections;
+- fixed-data collision is monotone under pure source deletion;
+- unordered distinct-base pair overlap bounds targetwise collision;
+- nonempty inclusion-minimal deficient cuts have deficit one and unchanged
+  neighborhood after any one source deletion;
+- tree incidence alone does not rule out such a deficient core; and
+- exact fixed weights on every subcut of a four-element fibre are forced to
+  be `+1` on pairs, `-1` on triples, and `+1` on the four-set.
+
+The last fact rules out the unaugmented all-subcut representation as a
+termwise nonnegative Hall payment. It does not rule out corrected payments or
+global cancellation.
+
+Neither run supplied the source-complete governed binding needed to apply the
+generic theorems to the actual Delete/Retag construction. Consequently
+`E993-R19-FIXED-GAMMA-HALL` and `E993-BETA-AGG` remain open, and no headline
+status changes. See the [r22 summary](../experiments/r22-o14-multibase-hall-continuation.md)
+and [verification record](../evidence/verification-2026-09-12-r21-r22.md).
+
 ## Bounded Exclusions
 
 - All 522,959 nonisomorphic trees through order 19 were checked with no

@@ -94,6 +94,16 @@ multi-base compensation in a fixed Delete/Retag Hall relation. The aggregate
 claim itself is neither proved nor refuted. Three tempting transport and
 provenance mechanisms are now excluded at exact scope.
 
+The r21/r22 O14 multibase-Hall lineage then completed nine more semantic
+cycles with the expanded 21-route topology. It formally verified nine
+workflow artifacts at exact auxiliary scope, sharpening collision,
+minimal-deficiency, tree-incidence, and signed-payment structure. The work
+also shows why a tree-shaped incidence relation alone cannot exclude a
+minimal Hall defect and why an unaugmented all-subcut payment cannot remain
+termwise nonnegative. The aggregate and fixed-Gamma Hall claims remain open;
+the missing serial prerequisite is a source-complete governed binding of the
+actual Delete/Retag relation.
+
 ## Verify The Lean Package
 
 Install [elan](https://github.com/leanprover/elan), then run:
@@ -127,6 +137,9 @@ The expected transitive axioms are `propext`, `Classical.choice`, and
 - [r8 experiment summary](experiments/r8-extension-profile-same-leaf.md)
 - [r19 aggregated β′ experiment](experiments/r19-beta-aggregate.md)
 - [2026-09-09 r19 verification record](evidence/verification-2026-09-09-r19.md)
+- [r21 O14 multibase-Hall parent](experiments/r21-o14-multibase-hall.md)
+- [r22 O14 multibase-Hall continuation](experiments/r22-o14-multibase-hall-continuation.md)
+- [2026-09-12 r21/r22 verification record](evidence/verification-2026-09-12-r21-r22.md)
 - [2026-09-01 r8 verification record](evidence/verification-2026-09-01-r8.md)
 - [Order-20/21 computational evidence](evidence/order-20-21-search/README.md)
 

@@ -1,6 +1,6 @@
 # Research Status
 
-Last updated: 2026-09-09 (r19 aggregated β′ terminal close)
+Last updated: 2026-09-12 (r21/r22 O14 multibase-Hall terminal close)
 
 ## Headline Problems
 
@@ -51,17 +51,21 @@ see [the package](proofs/lean/r17-order243-beta-counterexample/README.md). See
 
 ## Current Lanes
 
-- **Aggregated (β′)** (r19 closed at the nine-cycle hard ceiling; claim
-  remains open): on the very order-243 witness that
+- **Aggregated (β′)** (r21/r22 multibase-Hall continuation closed at the
+  combined nine-cycle hard ceiling; claim remains open): on the very
+  order-243 witness that
   refuted (β), the leaf-aggregated form survives by three orders of
   magnitude — the pointwise violation drowns in sibling slack. The
   candidate `E993-BETA-AGG` (favorable-leaf aggregate nonpositive) is
-  still OPEN after all nine cycles and substantial exact batteries; its
+  still OPEN after r19 and the r21/r22 continuation; its
   per-support-fibre variant is refuted by an exact order-91 witness. The run
-  formally verified 25 auxiliary declarations, added three exact mechanism
-  fences, and reduced the sharpest surviving route to arbitrary multi-base
-  compensation in a fixed Delete/Retag Hall relation. No headline target
-  moved. See [r19](experiments/r19-beta-aggregate.md).
+  lineage has formally verified 25 r19 auxiliaries and nine r21/r22 workflow
+  artifacts, while adding exact mechanism and representation fences. The
+  sharpest surviving route now starts by binding the actual fixed Delete/Retag
+  relation, every cut, and same-byte Hall and aggregate evaluators in one
+  source-complete governed package. No headline target moved. See
+  [r19](experiments/r19-beta-aggregate.md) and
+  [r22](experiments/r22-o14-multibase-hall-continuation.md).
 - **Unimodality certificates** (closed, one day): the fixed-window
   certificate strategy is dead **by proof** — any sound scheme's window
   grows at least like |α − 2·mode|, linear on paths. The surviving
@@ -71,6 +75,20 @@ see [the package](proofs/lean/r17-order243-beta-counterexample/README.md). See
   [the summary](experiments/unimodal-certificates-2026-09-07.md).
 
 ## Verified Progress
+
+- The combined r21/r22 O14 lineage completed all nine semantic cycles under
+  the 21-route/42-critic topology. It formally verified nine Stage 7 artifacts
+  at exact auxiliary scope. The new structure includes exact multibase
+  collision decomposition, deletion monotonicity at fixed data, pair-collision
+  capacity, a strengthened minimal-deficient-core theorem, a universal
+  tree-incidence obstruction family, and four-fibre Möbius-weight uniqueness.
+  The last two results exclude tree-shape-only contradiction and unaugmented
+  termwise-nonnegative payment routes. They are not governed Delete/Retag
+  counterexamples and do not prove Hall or aggregated beta. The serial gap is
+  an authenticated source-complete governed binding of the target relation.
+  See [r21](experiments/r21-o14-multibase-hall.md),
+  [r22](experiments/r22-o14-multibase-hall-continuation.md), and the
+  [receipt index](evidence/verification-2026-09-12-r21-r22.md).
 
 - The completed r19 run executed all nine authorized cycles. It found no
   positive complete aggregate in the authorized exact batteries and no
@@ -267,5 +285,10 @@ The following do not count as a solution:
   `formally_verified`.
 - an abstract convolution theorem without a realizability-aware proof that
   tree independence sequences satisfy its hypotheses.
+- a generic finite-relation Hall identity, minimal-deficiency theorem, or
+  incidence obstruction without a source-complete binding to the actual
+  governed Delete/Retag construction.
+- a signed exact subset representation whose negative coefficients have not
+  been controlled by correction terms or global cancellation.
 
 The public status must be updated before any claim is described as current.

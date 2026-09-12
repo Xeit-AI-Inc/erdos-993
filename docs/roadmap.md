@@ -4,10 +4,14 @@
 
 The sharpest current concrete entries are:
 
-1. resolve the r19 fixed Delete/Retag Hall bottleneck for aggregated beta:
-   authenticate the exact relation and either prove uniform compensation for
-   arbitrary active-base subsets or produce a governed deficient cut carrying
-   complete same-row aggregate data;
+1. resolve the r21/r22 fixed Delete/Retag Hall bottleneck for aggregated beta:
+   first construct one authority-anchored, source-complete, same-byte governed
+   package binding formation/admission, literal carriers and maps, every cut,
+   coefficients, and independent Hall and complete-aggregate evaluators; then
+   prove a formation-specific collision payment, a correction/global-
+   cancellation theorem handling negative Möbius coefficients, or a
+   full-demand-cut bridge — alternatively, produce an authenticated deficient
+   cut or positive complete aggregate from the same row;
 2. eliminate or exhibit `Delta_4<0<Delta_5` inside the residual order band
    `13..32` — published exhaustive unimodality verification for all trees
    through order 29 (external computation, cited not reproduced) narrows
@@ -74,6 +78,13 @@ synchronization, or forest recovery.
   without silently replacing the operational residual by `R_spec`?
 - Can arbitrary active-base subsets in the fixed Delete/Retag relation be
   compensated uniformly, including collisions and active-base absorption?
+- Which formation-specific correction term or global cancellation controls
+  the forced negative triple coefficient in the exact four-fibre subset
+  representation?
+- Can the exact endpoint-incidence obstruction family be excluded from the
+  governed relation by a source-backed formation invariant that is stronger
+  than finiteness, connectedness, acyclicity, deficit one, and absence of
+  private neighbors?
 - If not, can a deficient Hall cut be realized together with a positive
   complete favorable-leaf aggregate in the same governed row?
 - Can the finite `13..32` band be closed by a structural enumeration whose
