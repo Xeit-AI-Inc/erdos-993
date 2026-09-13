@@ -626,6 +626,15 @@ vocabularies refuted and fenced; the adjudicated s=−1 family map.
 **Open at close:** TREE / FOREST / TRANSFER / COUNTEREXAMPLE (all
 target rows untouched, either direction); all five OB-R20-* obligations
 (substance in terminal dispositions); P-CASE-I; the (1,1) cell (never
-observed, 47.76M objects — a bounded zero, evidence of nothing); A3b
-(Ashton-gated status decision, named open). Successor entry:
-`FINAL-RECONCILIATION.md` §4/§7 of the run.
+observed, 47.76M objects — a bounded zero, evidence of nothing).
+Successor entry: `FINAL-RECONCILIATION.md` §4/§7 of the run.
+
+**A3b EXECUTED 2026-09-13, post-close, on Ashton's CLAIM-DISTINCTIONS
+approval:** the BROOM-DOMINATION L2 link's status moved MEASURED →
+PROVED — the unconditional prose-rule theorem (5,460/5,460 exhaustive,
+no hypotheses) transfers to the composite's leftmost-max reading via the
+registered coincidence corollary on its positive-log-concave domain
+(link L4). The convention distinction is carried in full on the row's
+certificate; the standalone restricted Lemma B* is unchanged. Registry
+`d09bd77d…` (79 claims), lint exit 0; recorded as the one authorized
+post-seal registry act in the R20-TERMINAL seal's dated addendum.
