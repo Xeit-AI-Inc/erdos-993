@@ -26,6 +26,10 @@ source packets, raw model transcripts, and noncanonical duplicate returns.
   manifests and all nine auxiliary theorem-contract, kernel, and
   statement-fidelity receipt digests. The corresponding Lean source projects
   are not exported in this release.
+- [`verification-2026-09-13-r23.md`](verification-2026-09-13-r23.md) binds
+  the one-cycle actual-tree Delete/Retag run, its exact T22 Hall witness, and
+  the narrow public Lean arithmetic certificate to the sealed terminal
+  artifacts.
 - [`order-20-21-search`](order-20-21-search/README.md) contains the exact
   generator, independent checker, and machine-readable bounded result.
 - [`source-hashes.sha256`](source-hashes.sha256) binds the published Lean

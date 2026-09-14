@@ -100,9 +100,19 @@ workflow artifacts at exact auxiliary scope, sharpening collision,
 minimal-deficiency, tree-incidence, and signed-payment structure. The work
 also shows why a tree-shaped incidence relation alone cannot exclude a
 minimal Hall defect and why an unaugmented all-subcut payment cannot remain
-termwise nonnegative. The aggregate and fixed-Gamma Hall claims remain open;
-the missing serial prerequisite is a source-complete governed binding of the
-actual Delete/Retag relation.
+termwise nonnegative. At the r21/r22 close, both the aggregate and fixed-Gamma
+Hall claims remained open; the next run therefore constructed the literal
+ordinary-tree relation while preserving the governed-model fidelity fence.
+
+The r23 actual-tree experiment supplied that literal ordinary-tree
+construction and found a decisive limitation: universal all-cut Hall is false
+for the frozen literal relation. On `T_22,p=34`, a source cut exceeds a target
+container for its entire neighborhood by `14226520737620288370`, while the
+same row's complete favorable-leaf aggregate remains negative. This refutes
+the literal Hall mechanism, not aggregated beta-prime. The next aggregate
+route must prove direct full demand or total signed cancellation without
+requiring every proper cut to expand. The broader governed-RTree Hall claim
+remains open pending the same-byte model bridge.
 
 ## Verify The Lean Package
 
@@ -140,6 +150,9 @@ The expected transitive axioms are `propext`, `Classical.choice`, and
 - [r21 O14 multibase-Hall parent](experiments/r21-o14-multibase-hall.md)
 - [r22 O14 multibase-Hall continuation](experiments/r22-o14-multibase-hall-continuation.md)
 - [2026-09-12 r21/r22 verification record](evidence/verification-2026-09-12-r21-r22.md)
+- [r23 actual-tree Delete/Retag experiment](experiments/r23-delete-retag-actual-tree.md)
+- [2026-09-13 r23 verification record](evidence/verification-2026-09-13-r23.md)
+- [r23 T22 arithmetic certificate](proofs/lean/r23-t22-arithmetic-certificate/README.md)
 - [2026-09-01 r8 verification record](evidence/verification-2026-09-01-r8.md)
 - [Order-20/21 computational evidence](evidence/order-20-21-search/README.md)
 

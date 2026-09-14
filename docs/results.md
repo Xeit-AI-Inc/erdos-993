@@ -170,6 +170,38 @@ generic theorems to the actual Delete/Retag construction. Consequently
 status changes. See the [r22 summary](../experiments/r22-o14-multibase-hall-continuation.md)
 and [verification record](../evidence/verification-2026-09-12-r21-r22.md).
 
+## r23 Actual-Tree Delete/Retag Update
+
+The r23 experiment reconstructed the literal ordinary-tree source and target
+sets and established, at independently criticized informal-proof tier, the
+exact tagged identity
+
+```text
+|P|-|N| = S(T,p).
+```
+
+It also proved the conditional chain
+
+```text
+Hall => |P|<=|N| <=> S(T,p)<=0.
+```
+
+Universal Hall for the literal relation is false. On eligible `T_22,p=34`, a
+center-free source cut has size `1020660578375268831042`, while its complete
+neighborhood lies in a target container of size
+`1006434057637648542672`. The Hall deficit is
+`14226520737620288370`. The same row's complete favorable-leaf aggregate is
+`-498754180547001418536`, so this is not a counterexample to aggregated
+beta-prime.
+
+The new scoped claim
+`E993-R23-LITERAL-ACTUAL-TREE-FIXED-GAMMA-HALL` is refuted. Canonical
+`E993-R19-FIXED-GAMMA-HALL` remains open over the governed RTree model until
+the same-byte model bridge is proved. Lean formally verifies the frozen
+arithmetic comparison only, not the graph/counting bridge. See the
+[r23 summary](../experiments/r23-delete-retag-actual-tree.md) and
+[verification record](../evidence/verification-2026-09-13-r23.md).
+
 ## Bounded Exclusions
 
 - All 522,959 nonisomorphic trees through order 19 were checked with no

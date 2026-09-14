@@ -4,14 +4,13 @@
 
 The sharpest current concrete entries are:
 
-1. resolve the r21/r22 fixed Delete/Retag Hall bottleneck for aggregated beta:
-   first construct one authority-anchored, source-complete, same-byte governed
-   package binding formation/admission, literal carriers and maps, every cut,
-   coefficients, and independent Hall and complete-aggregate evaluators; then
-   prove a formation-specific collision payment, a correction/global-
-   cancellation theorem handling negative Möbius coefficients, or a
-   full-demand-cut bridge — alternatively, produce an authenticated deficient
-   cut or positive complete aggregate from the same row;
+1. attack aggregated beta through direct full demand
+   `|P|<=|N| <=> S(T,p)<=0`, not universal all-cut Hall for the frozen literal
+   relation, which r23 refutes. Seek signed cancellation, recurrence, aggregate
+   mass transport, or a tree-derived total-capacity theorem, with the T22 and
+   T60 Hall-deficient/aggregate-negative rows as mandatory controls. Complete
+   the same-byte ordinary-tree/governed-RTree bridge in parallel before
+   transferring the literal refutation to the canonical governed claim;
 2. eliminate or exhibit `Delta_4<0<Delta_5` inside the residual order band
    `13..32` — published exhaustive unimodality verification for all trees
    through order 29 (external computation, cited not reproduced) narrows
@@ -76,8 +75,8 @@ synchronization, or forest recovery.
 - Can the positive residual witness be excluded using branch structure?
 - Can positive residual charge force a smaller connected recovery carrier
   without silently replacing the operational residual by `R_spec`?
-- Can arbitrary active-base subsets in the fixed Delete/Retag relation be
-  compensated uniformly, including collisions and active-base absorption?
+- Can total source demand in the fixed Delete/Retag construction be
+  compensated even though some proper cuts are Hall-deficient?
 - Which formation-specific correction term or global cancellation controls
   the forced negative triple coefficient in the exact four-fibre subset
   representation?

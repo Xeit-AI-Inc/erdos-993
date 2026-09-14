@@ -65,5 +65,7 @@ verify_project "$ROOT/proofs/lean/r8-positive-rank-boundary" "LeanProof" \
   "KernelCheck.lean" "AxiomCheck.lean"
 verify_project "$ROOT/proofs/lean/r8-trs2" "ManagedC8U104" \
   "KernelCheck.lean" "AxiomCheck.lean"
+verify_project "$ROOT/proofs/lean/r23-t22-arithmetic-certificate" \
+  "Erdos993R23" "check/KernelCheck.lean" "check/AxiomCheck.lean"
 
 echo "All Lean builds, kernel checks, and axiom checks passed."

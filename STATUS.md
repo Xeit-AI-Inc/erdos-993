@@ -1,6 +1,6 @@
 # Research Status
 
-Last updated: 2026-09-12 (r21/r22 O14 multibase-Hall terminal close)
+Last updated: 2026-09-13 (r23 actual-tree Delete/Retag decisive close)
 
 ## Headline Problems
 
@@ -51,21 +51,24 @@ see [the package](proofs/lean/r17-order243-beta-counterexample/README.md). See
 
 ## Current Lanes
 
-- **Aggregated (β′)** (r21/r22 multibase-Hall continuation closed at the
-  combined nine-cycle hard ceiling; claim remains open): on the very
+- **Aggregated (β′)** (r23 closed after one full cycle on a decisive
+  literal-Hall refutation; aggregate claim remains open): on the very
   order-243 witness that
   refuted (β), the leaf-aggregated form survives by three orders of
   magnitude — the pointwise violation drowns in sibling slack. The
   candidate `E993-BETA-AGG` (favorable-leaf aggregate nonpositive) is
   still OPEN after r19 and the r21/r22 continuation; its
   per-support-fibre variant is refuted by an exact order-91 witness. The run
-  lineage has formally verified 25 r19 auxiliaries and nine r21/r22 workflow
-  artifacts, while adding exact mechanism and representation fences. The
-  sharpest surviving route now starts by binding the actual fixed Delete/Retag
-  relation, every cut, and same-byte Hall and aggregate evaluators in one
-  source-complete governed package. No headline target moved. See
+  lineage has formally verified 25 r19 auxiliaries, nine r21/r22 workflow
+  artifacts, and one r23 closed arithmetic certificate. r23 reconstructed the
+  literal ordinary-tree relation and found an exact T22 cut with Hall deficit
+  `14226520737620288370`; the same row's complete aggregate is negative. The
+  sharpest surviving route is therefore direct full demand or aggregate
+  cancellation, not universal all-cut Hall. The same-byte governed-RTree
+  bridge remains independently open. No headline target moved. See
   [r19](experiments/r19-beta-aggregate.md) and
-  [r22](experiments/r22-o14-multibase-hall-continuation.md).
+  [r22](experiments/r22-o14-multibase-hall-continuation.md), and
+  [r23](experiments/r23-delete-retag-actual-tree.md).
 - **Unimodality certificates** (closed, one day): the fixed-window
   certificate strategy is dead **by proof** — any sound scheme's window
   grows at least like |α − 2·mode|, linear on paths. The surviving
@@ -75,6 +78,16 @@ see [the package](proofs/lean/r17-order243-beta-counterexample/README.md). See
   [the summary](experiments/unimodal-certificates-2026-09-07.md).
 
 ## Verified Progress
+
+- The r23 actual-tree experiment completed one full 30-route/60-critic cycle
+  and stopped correctly on a decisive exact-scope refutation. It established
+  the tagged coefficient/cardinality identity and Hall-to-aggregate implication
+  at independently criticized informal-proof tier. The literal ordinary-tree
+  relation fails Hall on eligible `T_22,p=34`, while the complete aggregate is
+  negative. Lean formally verifies only the closed arithmetic comparison of
+  the two cut-size formulas. The governed-RTree Hall claim and complete
+  aggregate remain open. See [r23](experiments/r23-delete-retag-actual-tree.md)
+  and its [verification record](evidence/verification-2026-09-13-r23.md).
 
 - The combined r21/r22 O14 lineage completed all nine semantic cycles under
   the 21-route/42-critic topology. It formally verified nine Stage 7 artifacts

@@ -1202,8 +1202,26 @@
    "alias_patterns": [
     "GENERAL-L-DOMINATION"
    ]
+  },
+  {
+   "claim_key": "E993-R23-LITERAL-ACTUAL-TREE-FIXED-GAMMA-HALL",
+   "statement": "For every eligible finite ordinary tree and rank in the r23 semantic contract, the literal fixed Delete/Retag relation Gamma_actual satisfies Hall's subset inequality.",
+   "scope": "Literal ordinary-tree instantiation fixed by the r23 semantic contract; not every legacy governed RTree encoding. A changed or enlarged relation is a different claim.",
+   "status": "REFUTED",
+   "smallest_witness_order": 91,
+   "certificate": "r23 Cycle 1 exact T22 witness at p=34: all 67 original leaves are favorable; the center-free source cut X has size 1020660578375268831042 and its literal Delete/Retag neighborhood is contained in Y of size 1006434057637648542672, giving excess 14226520737620288370. The same row has complete favorable-leaf aggregate -498754180547001418536, so this refutes Hall but not E993-BETA-AGG. The actual-tree counting bridge is exact informal proof plus independently replayed computation; Lean certifies only the frozen arithmetic Z(22,33)<Z(22,34). Canonical E993-R19-FIXED-GAMMA-HALL remains OPEN pending the same-byte ordinary-tree/governed-RTree bridge.",
+   "aliases": [
+    "r23 literal actual-tree fixed-Gamma Hall",
+    "literal ordinary-tree Delete/Retag Hall",
+    "Gamma_actual ordinary-tree Hall"
+   ],
+   "alias_patterns": [
+    "r23.*literal.*fixed[- ]Gamma Hall",
+    "literal ordinary[- ]tree.*Delete/Retag.*Hall",
+    "Gamma_actual.*ordinary[- ]tree.*Hall"
+   ]
   }
  ],
- "last_updated": "2026-09-09",
- "update_note": "r19 terminal closeout: appended three exact-scope REFUTED mechanism fences for literal-leaf strict-prune totality, support-locked corridor advance, and support-preserving unit-token transport; no existing claim status changed"
+ "last_updated": "2026-09-13",
+ "update_note": "r23 terminal closeout: registered the literal ordinary-tree fixed Delete/Retag Hall claim as REFUTED by the exact order-91 T22 deficient cut. The broader governed-RTree E993-R19-FIXED-GAMMA-HALL and E993-BETA-AGG remain OPEN; no existing claim status changed."
 }

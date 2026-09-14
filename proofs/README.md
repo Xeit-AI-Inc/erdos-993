@@ -134,3 +134,10 @@ Assembly receipts at [`lean/R15R16-ASSEMBLY-RECEIPTS.md`](lean/R15R16-ASSEMBLY-R
 
 None proves a headline target. Grades are the source runs' rubric grades,
 not `formally_verified`.
+
+## r23 package (2026-09-13)
+
+- [`r23-t22-arithmetic-certificate`](lean/r23-t22-arithmetic-certificate/README.md)
+  exports the byte-identical r23 Lean source and its contracted closed
+  arithmetic certificate. It does not formalize the T22 graph/counting bridge
+  or the literal Hall refutation.
