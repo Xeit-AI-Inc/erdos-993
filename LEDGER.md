@@ -8,6 +8,13 @@ DRE control improvements (post-TRS2-erratum) are in force.
 
 Shareable page: https://claude.ai/code/artifact/74353648-001e-4820-9758-0b2143c1bee6
 
+**Updated 2026-09-17 — r23b (the sibling construction/verification run,
+`erdos-993-delete-retag-actual-dre-2026-09-13`) closed after all six authorized
+cycles: correspondence discharged to one named residual (O16), every cut-based
+strengthening of the aggregate refuted (F16, F17), paths closed, TYPE-2-DIRECT
+proved, §6 battery closed; `E993-R23-TAG-CLOSED-CUT-HALL` registered REFUTED;
+Horn B of record with the transfer as O15. See the r23b section at the end.**
+
 **Updated 2026-09-13 — r23 actual-tree Delete/Retag experiment terminated on
 a decisive Hall refutation.** Run
 `erdos-993-math-dre-20260913-r23-delete-retag-actual-tree` completed one full
@@ -452,6 +459,7 @@ Statuses as of 2026-09-04. "governed" = Lean kernel at the pinned toolchain
 | F14 | Support locking can coexist with literal-label-preserving advance along every positive-length support corridor | r19 Cycle 9 exact mechanism refutation (`E993-R19-SUPPORT-LOCKED-CORRIDOR-ADVANCE`) |
 | F15 | Every governed base-rank row admits exact support-preserving unit-token transport | r19 Cycle 9 order-91 mechanism witness (`E993-R19-SUPPORT-PRESERVING-UNIT-TRANSPORT`); cross-support transport remains open |
 | F16 | Universal all-cut Hall for the literal ordinary-tree fixed Delete/Retag relation | r23 exact eligible `T_22,p=34` center-free cut; deficit `14226520737620288370`; the same row's complete aggregate is negative, so only the Hall mechanism is refuted |
+| F17 | Universal tag-closed-cut Hall for the literal ordinary-tree fixed Delete/Retag relation (the last cut-based strengthening of the aggregate; all-cut, Delete-only, and tag-closed are now all refuted) | r23b exact `CB(8,92)` (order 1567, `p=492=x+2`) tag-closed singleton cut `G={v}`; deficit `≥ C(736,491)·2^491 − C(736,490)·2^490 > 0` (347 digits); the same row's complete aggregate `S` is negative (351 digits); the arm inequality is kernel-checked in Lean; `E993-R23-TAG-CLOSED-CUT-HALL` REFUTED |
 
 ### Open obligations (the actual work)
 
@@ -470,7 +478,9 @@ Statuses as of 2026-09-04. "governed" = Lean kernel at the pinned toolchain
 | O11 | Lean debt, residual | small | interval-bound conversion; fresh-root treehood; `∂_y` receipt |
 | O12 | **`AmbientTargetDeg2`** — the r12 C6 residue, **r14-refined (2026-09-05)** | OPEN — strictly narrowed | Reduction of record completed at RG (r14 C3); successor surface `ambientTargetDeg2_of_G1wide_G2wide` ADOPTED (r14 C4 Q2); **the entire band `2 ≤ p ∧ |U| ≤ 2p−3 ⟹ D ≤ 0` closed premise-free at RG** (`residual_nonpos_of_card_le_band`; seven elaborations, four parties); S1/S4/S5 discharged inside the surface; the G1 side closes only under Premise K + K-SCOPE + the identification premise. **The open obligation is exactly `HG2` on `G2 ∧ |U| ≥ 2p−2`**, signature `AMB-CTREX-D2`, blocking facts BF-1..3 (r14 FC-R14-10); new premise-free constraint: any deg-2 counterexample has `n ≥ 2x(T)+3` (a proof-obligation narrowing, never a search restriction). Gating items: order-22 census provenance and the identification constructor — **both EXECUTED (2026-09-06):** the census extends the frontier to order 22 (witnesses ≥ 23); the constructor EXISTS (C18) and the G1 side is upgraded to premise-carrying-BY-CONSTRUCTION — the open obligation is unchanged and exactly `HG2` on `G2 ∧ |U| ≥ 2p−2` ; **r18 (2026-09-06, five cycles, honest stop):** `HG2` unmoved in either direction; `HG2Faithful` RG (rfl-definitional transcription + kernel-checked interchangeability); (★L)-sufficiency proved NON-universal (exact firing criterion `2H ≥ (p+2)·D+2`, edgeless-U star-hub scope); `H/D` landscape mapped to order 17,603 (record 3.0406…, no approach to 1 found; the orders-303/1263 anchors corrected into the closed S4 stratum); `sign(a_s(p))` proved not a function of `(|U|, crossIdx(U))` + leg hypotheses (legs-only and legs+`combined<0`, order ≥ 23 witnesses); successor entry: r18 FINAL-RECONCILIATION §6 — re-draw the path to (A) first |
 | O13 | `EXCEPTIONAL-SHAPE-1` sufficiency; `C7BBgenBound` RESERVED (r12 Q6: identity substrate legal, inequality core not) | OPEN | r12 residue register; **r14 (D4):** sufficiency-side and instrument outputs gated at proved_informal/computation — NEC-1 necessary-at-exhaustive-scope, killed as an equivalence; no sufficient structural condition from measured data; the `x(U)=p−1` observation documented at exact scope, explanation refused (F1/F2-adjacent) |
-| O14 | **`E993-BETA-AGG` (aggregated β′)** — for every governed `RTree` and `p ≥ x(T)+2`, the sum of `b_v(p)-Bgen_{s_v}(p-1)` over favorable original leaves is nonpositive | OPEN after r23; literal ordinary-tree all-cut Hall is REFUTED | r23 established the exact tagged identity `|P|-|N|=S` and found T22/T60 rows where proper-cut Hall fails while the complete aggregate is negative. The next proof must target direct full demand `|P|<=|N|`, equivalently the aggregate sign, through signed cancellation, recurrence, mass transport, or total-capacity structure that does not assume all-cut Hall. The same-byte ordinary-tree/governed-RTree bridge remains independently open. The pointwise and support-fibre variants are REFUTED and must not be reopened. |
+| O14 | **`E993-BETA-AGG` (aggregated β′)** — for every governed `RTree` and `p ≥ x(T)+2`, the sum of `b_v(p)-Bgen_{s_v}(p-1)` over favorable original leaves is nonpositive | OPEN after r23; literal ordinary-tree all-cut Hall is REFUTED | r23 established the exact tagged identity `|P|-|N|=S` and found T22/T60 rows where proper-cut Hall fails while the complete aggregate is negative. The next proof must target direct full demand `|P|<=|N|`, equivalently the aggregate sign, through signed cancellation, recurrence, mass transport, or total-capacity structure that does not assume all-cut Hall. The same-byte ordinary-tree/governed-RTree bridge remains independently open. The pointwise and support-fibre variants are REFUTED and must not be reopened. **r23b (2026-09-17):** every cut-based strengthening of the aggregate is now refuted by exact witnesses (orders 91 and 1567) — the surviving open object at literal scope IS the per-row demand `|P|≤|N|`; structural progress on it: paths CLOSED at governed scope, stars characterized, THEOREM TYPE-2-DIRECT (`g_v = Δ_{p−2}(K_v)` at `deg(s_v)=2`) unconditional, LEMMA F3-1 sharp, the CB-arm criterion `g_arm>0 ⇔ 2(jk−p+2)>p−1` proved; branch-point peels reduce to the open question itself. Object of record: the r23 ordinary-tree object (Horn B). |
+| O15 | **Universal ordinary-tree/governed-RTree transfer (`RTree.semanticAdequacyTarget`)** — Horn A: prove that the r23 ordinary-tree restatement is adequate for every governed RTree, so r23/r23b actual-tree results become instances of `E993-R19-FIXED-GAMMA-HALL`/`E993-R19-R2-HALL-UNIVERSAL` | OPEN (named at the r23b close; Horn B is the object of record meanwhile) | Per-instance adequacy is `decide`-dischargeable (r8 precedent); the universal statement is unattempted. Substantially more tractable after r23b: the relation-family transport lemmas (C,P,N via induce and the realization equivalence) are sorry-free and the three abstract bridge corollaries are proved; the single remaining piece of the bridge is O16. |
+| O16 | **`induce_ofSimpleGraph` graph-object coherence** — lift the proved adjacency-level induce transport to full graph-object form (a `Finset`→`Fin` bijection) | OPEN — the one named residual of r23b's correspondence (R-1..R-5 otherwise discharged) | Precisely isolated in r23b C6-T2 (`R23B-C6-T2-02`); Lean bookkeeping of known shape, not a mathematical gap. Closing it completes the transport bridge that O15 rests on. |
 
 ---
 
@@ -579,6 +589,19 @@ generic finite Hall-cut lemmas, but only the closed arithmetic declaration is
 bound by the terminal theorem contract and independent fidelity receipt. It
 does not formalize the T22 graph/counting bridge or the actual-tree Hall
 refutation.
+
+The r23b release (the sibling construction/verification run, six cycles, closed
+2026-09-17) adds the terminal Lean consolidation: one merged project at Lean
+4.32.2 / Mathlib `905b9581…` — 370 non-internal constants, `sorryAx` on exactly
+two disclosed open fixture lemmas (`indepOn_card`, `indepOn_insert_card`),
+`native_decide` on exactly the two sealed CB(1,2) lemmas with a kernel-`decide`
+restatement added — carrying the six relation-family transport lemmas (C, P, N
+via `Graph.induce` and the `ofSimpleGraph` realization equivalence), the three
+abstract bridge corollaries that repair the `_actual` theorems, the R-3/R-4/R-5
+induce-side and activity-filter transports, the kernel-checked witness arm
+inequality, and an 18-family honest fidelity-label table. Published as
+`verified`, never `formally_verified`, per that run's ceiling-honesty contract;
+the one residual is O16.
 
 Toolchain pin and cache-manifest discipline: see any package README.
 Public mirror: `github.com/Xeit-AI-Inc/erdos-993`; use its Git history for the
@@ -701,3 +724,47 @@ closed `Z(22,33)<Z(22,34)` arithmetic certificate. It does not certify the
 explicit tree, leaf/favorability enumeration, cut/container correspondence,
 or headline Hall refutation. Terminal manifest SHA-256:
 `d166a2e3ee5f50225813a97adef10882950d2d43fddf61d382b436c4e2eaba89`.
+
+## r23b — actual-tree Delete/Retag construction & verification (erdos-993-delete-retag-actual-dre-2026-09-13), CLOSED 2026-09-17
+
+The sibling of the r23 math-DRE above: this run owned construction, semantic
+correspondence, and trustworthy verification (SOLUTION-CONTRACT §1) and ran all
+six authorized cycles — C1–C2 at 18/9/3/1, C3–C4 at 18/36/3/1, C5–C6 at the
+traditional 9/18/3/1 — 31–58 faces per cycle, SHA-256 canonical-JSON sealing
+between every stage, a Fable 5.1 mid-run check after C3, and Ashton-gated
+cycle stops. Terminal STOP-TEST: unanimous PASS. **§9 final status: specific
+unresolved correspondence debt** (O16), with everything else discharged.
+
+**Registered results.** `E993-R23-TAG-CLOSED-CUT-HALL` **REFUTED** at order
+1567 (F17): the last cut-based strengthening of the aggregate falls, so the
+surviving open object at literal scope is the O14 per-row demand `|P|≤|N|`
+itself. Structural results on that demand, at exact scopes: the path family
+CLOSED at governed scope; stars characterized (`g_v ≤ 0 ⇔ p ≥ ⌈m/2⌉`); THEOREM
+TYPE-2-DIRECT unconditional at `deg(s_v)=2`; LEMMA F3-1 (hot ⇒ `E ≥ p`) sharp;
+the corrected CB-arm criterion proved in Lean; the C4 identity family
+(`def(full-cut)=S+Σμ`; `def(G)=Σ_G(g_v+μ_v)−export(G)`; `R⊆D`) sustained under
+hostile census. Correspondence: the six relation-family transport lemmas and the
+three abstract bridge corollaries are sorry-free at the pin; R-1..R-5 discharged;
+O16 is the one residual. The §6 mandatory battery is closed (order-26
+Kadrawi–Levit non-LC trees — TRS2 refuted at order 26 with no LC/size gate;
+order-243 T60; coefficient tails; every standing control) by falsifiable
+instruments with two independent evaluators.
+
+**Object of record (Ashton, 2026-09-17): Horn B** — the r23 ordinary-tree object
+is the definition of record; the two governed-RTree rows stay OPEN on their own
+terms and the universal transfer is O15. O14 (`E993-BETA-AGG`) remains OPEN — it
+is the mathematics agent's lane; this run never claims O14 or universal `S≤0`,
+and nothing is graded `formally_verified`.
+
+**Terminal ledger:** 208 adjudicated rows over six cycles (`R23B-*`; 13/50/37/19/49/40),
+zero collisions, explicit supersession chains (the W4 chain
+C3-F4→C4-F1→C4-T5-02→C5-U1-04; the correspondence chain
+C4-T3-01→C5-T2-02/03→C6-T1/T2). Process record: every route-tier fault was
+process/disclosure-tier with the underlying mathematics verified in every
+instance; ZFM intact across all faces; the C6-T2 seal-overwrite/`lake clean`
+incident was controller-verified zero-integrity-loss. The controller model
+changed mid-C6 (Fable 5 → Opus 4.8 → Fable 5.1 at close), recorded on the
+gate. Public mirror: `runs/r23b-delete-retag-actual-dre-2026-09-13/`,
+`experiments/r23b-delete-retag-construction-verification.md`,
+`proofs/lean/r23b-terminal-consolidation/`. Sealed authority: the internal run's
+`control/TERMINAL-SEAL.json` (`de715137…`).

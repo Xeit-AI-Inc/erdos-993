@@ -1,0 +1,55 @@
+{
+  "schema": "verityos.math.claim-distinctions.v1",
+  "run": "erdos-993-delete-retag-actual-dre-2026-09-13",
+  "distinctions": [
+    {
+      "row_id": "R20-C1-PHISTAR-CLOSURE",
+      "claim_key": "E993-PAIR-PHISTAR",
+      "distinction": "not_same_claim: the imported r20 terminal row is the CLOSURE obligation E993-PAIR-PHISTAR-CLOSURE (a distinct registry key, status OPEN), not the soundness claim E993-PAIR-PHISTAR (VERIFIED at the repaired exact form). The match is an alias-pattern false positive: the row's prose cites Phi* while asserting only the closure. No status regresses.",
+      "approved_by": "controller Fable 5, 2026-09-13 (pattern false positive; both keys exist separately in the registry; FLAGGED FOR ASHTON REVIEW at the C1 gate record)"
+    },
+    {
+      "row_id": "R20-C2-ALLLEAF-WINDOW",
+      "claim_key": "E993-PAIR-C1-IMPLIES-TARGET",
+      "distinction": "not_same_claim: the imported r20 terminal row is E993-PAIR-ALLLEAF-WINDOW (a distinct registry key, status OPEN/measured), not E993-PAIR-C1-IMPLIES-TARGET (VERIFIED). The match is an alias-pattern false positive on the substring 'last_mode' inside the window inequality text. No status regresses.",
+      "approved_by": "controller Fable 5, 2026-09-13 (pattern false positive; both keys exist separately in the registry; FLAGGED FOR ASHTON REVIEW at the C1 gate record)"
+    },
+    {
+      "row_id": "R23B-C4-F1-01 (registered as E993-R23-TAG-CLOSED-CUT-HALL)",
+      "claim_key": "E993-R19-FIXED-GAMMA-HALL",
+      "distinction": "not_same_claim: E993-R23-TAG-CLOSED-CUT-HALL is a REFUTED MECHANISM claim (universal tag-closed-cut Hall for the literal Delete/Retag relation on ordinary finite trees; exact witness CB(8,92), order 1567, S<0 on the same row). E993-R19-FIXED-GAMMA-HALL is the OPEN TARGET-tier claim stated on governed RTrees. The reverse-census hit is the r19 row's own alias_pattern 'Delete/Retag.*Hall' matching the new row's statement — an alias-pattern adjacency, not an identity of claims. Different object (ordinary tree vs governed RTree), different tier (mechanism vs target), different status. No status regresses; REFUTED never regresses to OPEN.",
+      "approved_by": "Ashton, 2026-09-17 ('Go ahead and do that' — approving the controller's stated recommendation: register RC-18 with distinctions, W4 alias stripped, retroactive order-91 entry, Horn B of record + Horn A as named obligation); applied by controller Claude (Fable 5.1) at the r23b terminal close"
+    },
+    {
+      "row_id": "R23B-C4-F1-01 (registered as E993-R23-TAG-CLOSED-CUT-HALL)",
+      "claim_key": "E993-R19-R2-HALL-UNIVERSAL",
+      "distinction": "not_same_claim: the reverse-census hit is the r19 row's alias_pattern 'R2.*Hall.*universal' matching prose in the new row's certificate field (which mentions the universal Hall mechanism family). The radius-two Hall certificate is a distinct OPEN governed-RTree claim; the new row refutes the tag-closed-cut mechanism only. Pattern false positive on certificate text; no status regresses.",
+      "approved_by": "Ashton, 2026-09-17 ('Go ahead and do that' — approving the controller's stated recommendation: register RC-18 with distinctions, W4 alias stripped, retroactive order-91 entry, Horn B of record + Horn A as named obligation); applied by controller Claude (Fable 5.1) at the r23b terminal close"
+    },
+    {
+      "row_id": "R23B-C4-F1-01 (registered as E993-R23-TAG-CLOSED-CUT-HALL)",
+      "claim_key": "E993-TGT-TREE",
+      "distinction": "not_same_claim: the reverse-census hit is the program-target row's bare alias 'TREE' matching the word 'tree' in the new row's scope field. The TREE headline (weak unimodality of every finite tree) is the program's OPEN target; the new row is a refuted mechanism. Pattern false positive on a bare-word alias (the same class as the R20 entries above); no status regresses. Registrar note: the bare alias 'TREE' on E993-TGT-TREE matches essentially every tree-scoped row and is a candidate for tightening at Ashton's discretion.",
+      "approved_by": "Ashton, 2026-09-17 ('Go ahead and do that' — approving the controller's stated recommendation: register RC-18 with distinctions, W4 alias stripped, retroactive order-91 entry, Horn B of record + Horn A as named obligation); applied by controller Claude (Fable 5.1) at the r23b terminal close"
+    },
+    {
+      "row_id": "(retroactive back-fill) E993-R23-LITERAL-ACTUAL-TREE-FIXED-GAMMA-HALL",
+      "claim_key": "E993-R19-FIXED-GAMMA-HALL",
+      "distinction": "not_same_claim (RETROACTIVE): the already-registered order-91 REFUTED row (Codex r23 math-DRE close, 2026-09-13) carries the IDENTICAL 'Delete/Retag.*Hall' adjacency to the OPEN governed-RTree target with no prior distinction entry. The r23b census (CRIT-U1-F, CRIT-U1-T, ADJ-U C5, C6-U1, four hit-for-hit agreements) established the precedent was an unpatched instance of the same hazard class, not a justification for leaving new instances unpatched. Back-filled so the alias-hazard class is closed for both mechanism refutations. Same reasoning as entry E1; no status regresses.",
+      "approved_by": "Ashton, 2026-09-17 ('Go ahead and do that' — approving the controller's stated recommendation: register RC-18 with distinctions, W4 alias stripped, retroactive order-91 entry, Horn B of record + Horn A as named obligation); applied by controller Claude (Fable 5.1) at the r23b terminal close"
+    },
+    {
+      "row_id": "HORN-B-OF-RECORD (r23b terminal close)",
+      "claim_key": "E993-R19-FIXED-GAMMA-HALL; E993-R19-R2-HALL-UNIVERSAL",
+      "distinction": "object_of_record decision (Ashton, 2026-09-17): HORN B — the r23 ordinary-tree object (SEMANTIC-CONTRACT §2–3 of erdos-993-delete-retag-actual-dre-2026-09-13) is the definition of record for O14 (E993-BETA-AGG) and for every r23/r23b actual-tree result; those results stand fully established for that object. The two governed-RTree rows named here remain OPEN on their own terms. HORN A — the universal transfer RTree.semanticAdequacyTarget (per-instance decide-dischargeable, universal statement unattempted) — is NOT abandoned: it is registered as a named open obligation (LEDGER.md r23b section; evidence/obligations.csv), made more tractable by the C6 transport lemmas (R-1..R-5 discharged) whose one residual (induce_ofSimpleGraph graph-object coherence, Finset->Fin) is the last piece of exactly that bridge. Neither r19 row's status changes.",
+      "approved_by": "Ashton, 2026-09-17 ('Go ahead and do that' — approving the controller's stated recommendation: register RC-18 with distinctions, W4 alias stripped, retroactive order-91 entry, Horn B of record + Horn A as named obligation); applied by controller Claude (Fable 5.1) at the r23b terminal close"
+    },
+    {
+      "row_id": "W4-ALIAS-COLLISION (resolved)",
+      "claim_key": "E993-R23-TAG-CLOSED-CUT-HALL",
+      "distinction": "collision_defused: the run-internal label 'W4' and pattern '\\\\bW4\\\\b' were REMOVED from the registered row's aliases/alias_patterns before registration. 'W4' is r23b-internal vocabulary matching nine run-internal ledger rows (R23B-C3-F4-01/-01a, R23B-C4-F1-01, -F3-01, -F4-01, -T5-01, -T5-02, -T6-01, -U5-01); with the alias absent the registered row can never match a W4-vocabulary row, so the named escalation trigger cannot fire. The descriptive aliases ('universal tag-closed-cut Hall theorem', 'tag-closed Hall') are retained as the claim's identifying names. Post-registration nine-row census re-run per the watch item: no registry-side adjacency (the registry carries no W4 vocabulary).",
+      "approved_by": "Ashton, 2026-09-17 ('Go ahead and do that' — approving the controller's stated recommendation: register RC-18 with distinctions, W4 alias stripped, retroactive order-91 entry, Horn B of record + Horn A as named obligation); applied by controller Claude (Fable 5.1) at the r23b terminal close"
+    }
+  ],
+  "last_updated": "2026-09-17 (r23b terminal close: +6 entries, Ashton-approved)"
+}

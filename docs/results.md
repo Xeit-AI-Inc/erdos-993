@@ -302,3 +302,13 @@ The research also eliminated broad classes of tempting approaches, including:
 
 These failures narrow the useful frontier toward tree-specific early-rank
 structure and realizability-aware forest convolution.
+
+## r23b (2026-09-17): the Delete/Retag correspondence discharged to one residual
+
+Every cut-based strengthening of the aggregate is now refuted by exact witnesses
+(orders 91 and 1567), so the surviving open object at literal scope is the O14
+per-row demand `|P| ≤ |N|` itself. On it: paths closed at governed scope, stars
+characterized, TYPE-2-DIRECT proved unconditional, LEMMA F3-1 sharp, the CB-arm
+criterion proved in Lean. The relation-family transport lemmas and abstract
+bridge corollaries are sorry-free; one named residual (O16) remains. Object of
+record: the ordinary-tree object (Horn B), with the universal transfer as O15.

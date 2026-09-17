@@ -1,0 +1,16 @@
+name = "r23_c6t3_terminal"
+defaultTargets = ["R23Groundwork", "C5T3Fixture", "TerminalAxiomsReport"]
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "905b95818eb32af7874a58b427f50c1711a5e96c"
+
+[[lean_lib]]
+name = "R23Groundwork"
+
+[[lean_lib]]
+name = "C5T3Fixture"
+
+[[lean_lib]]
+name = "TerminalAxiomsReport"

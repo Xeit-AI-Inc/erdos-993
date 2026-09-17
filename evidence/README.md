@@ -34,3 +34,4 @@ source packets, raw model transcripts, and noncanonical duplicate returns.
   generator, independent checker, and machine-readable bounded result.
 - [`source-hashes.sha256`](source-hashes.sha256) binds the published Lean
   packages, computation sources, and toolchain metadata.
+- `verification-2026-09-17-r23b.md` — r23b (sibling construction/verification run) terminal verification record.

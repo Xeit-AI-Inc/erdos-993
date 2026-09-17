@@ -1,6 +1,6 @@
 # Research Status
 
-Last updated: 2026-09-13 (r23 actual-tree Delete/Retag decisive close)
+Last updated: 2026-09-17 (r23b actual-tree Delete/Retag construction & verification — six-cycle terminal close; see the r23b section of the master ledger)
 
 ## Headline Problems
 
