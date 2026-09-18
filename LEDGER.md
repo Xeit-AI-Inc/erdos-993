@@ -478,7 +478,7 @@ Statuses as of 2026-09-04. "governed" = Lean kernel at the pinned toolchain
 | O11 | Lean debt, residual | small | interval-bound conversion; fresh-root treehood; `∂_y` receipt |
 | O12 | **`AmbientTargetDeg2`** — the r12 C6 residue, **r14-refined (2026-09-05)** | OPEN — strictly narrowed | Reduction of record completed at RG (r14 C3); successor surface `ambientTargetDeg2_of_G1wide_G2wide` ADOPTED (r14 C4 Q2); **the entire band `2 ≤ p ∧ |U| ≤ 2p−3 ⟹ D ≤ 0` closed premise-free at RG** (`residual_nonpos_of_card_le_band`; seven elaborations, four parties); S1/S4/S5 discharged inside the surface; the G1 side closes only under Premise K + K-SCOPE + the identification premise. **The open obligation is exactly `HG2` on `G2 ∧ |U| ≥ 2p−2`**, signature `AMB-CTREX-D2`, blocking facts BF-1..3 (r14 FC-R14-10); new premise-free constraint: any deg-2 counterexample has `n ≥ 2x(T)+3` (a proof-obligation narrowing, never a search restriction). Gating items: order-22 census provenance and the identification constructor — **both EXECUTED (2026-09-06):** the census extends the frontier to order 22 (witnesses ≥ 23); the constructor EXISTS (C18) and the G1 side is upgraded to premise-carrying-BY-CONSTRUCTION — the open obligation is unchanged and exactly `HG2` on `G2 ∧ |U| ≥ 2p−2` ; **r18 (2026-09-06, five cycles, honest stop):** `HG2` unmoved in either direction; `HG2Faithful` RG (rfl-definitional transcription + kernel-checked interchangeability); (★L)-sufficiency proved NON-universal (exact firing criterion `2H ≥ (p+2)·D+2`, edgeless-U star-hub scope); `H/D` landscape mapped to order 17,603 (record 3.0406…, no approach to 1 found; the orders-303/1263 anchors corrected into the closed S4 stratum); `sign(a_s(p))` proved not a function of `(|U|, crossIdx(U))` + leg hypotheses (legs-only and legs+`combined<0`, order ≥ 23 witnesses); successor entry: r18 FINAL-RECONCILIATION §6 — re-draw the path to (A) first |
 | O13 | `EXCEPTIONAL-SHAPE-1` sufficiency; `C7BBgenBound` RESERVED (r12 Q6: identity substrate legal, inequality core not) | OPEN | r12 residue register; **r14 (D4):** sufficiency-side and instrument outputs gated at proved_informal/computation — NEC-1 necessary-at-exhaustive-scope, killed as an equivalence; no sufficient structural condition from measured data; the `x(U)=p−1` observation documented at exact scope, explanation refused (F1/F2-adjacent) |
-| O14 | **`E993-BETA-AGG` (aggregated β′)** — for every governed `RTree` and `p ≥ x(T)+2`, the sum of `b_v(p)-Bgen_{s_v}(p-1)` over favorable original leaves is nonpositive | OPEN after r23; literal ordinary-tree all-cut Hall is REFUTED | r23 established the exact tagged identity `|P|-|N|=S` and found T22/T60 rows where proper-cut Hall fails while the complete aggregate is negative. The next proof must target direct full demand `|P|<=|N|`, equivalently the aggregate sign, through signed cancellation, recurrence, mass transport, or total-capacity structure that does not assume all-cut Hall. The same-byte ordinary-tree/governed-RTree bridge remains independently open. The pointwise and support-fibre variants are REFUTED and must not be reopened. **r23b (2026-09-17):** every cut-based strengthening of the aggregate is now refuted by exact witnesses (orders 91 and 1567) — the surviving open object at literal scope IS the per-row demand `|P|≤|N|`; structural progress on it: paths CLOSED at governed scope, stars characterized, THEOREM TYPE-2-DIRECT (`g_v = Δ_{p−2}(K_v)` at `deg(s_v)=2`) unconditional, LEMMA F3-1 sharp, the CB-arm criterion `g_arm>0 ⇔ 2(jk−p+2)>p−1` proved; branch-point peels reduce to the open question itself. Object of record: the r23 ordinary-tree object (Horn B). |
+| O14 | **`E993-BETA-AGG` (aggregated β′)** — for every governed `RTree` and `p ≥ x(T)+2`, the sum of `b_v(p)-Bgen_{s_v}(p-1)` over favorable original leaves is nonpositive | OPEN after r23; literal ordinary-tree all-cut Hall is REFUTED | r23 established the exact tagged identity `|P|-|N|=S` and found T22/T60 rows where proper-cut Hall fails while the complete aggregate is negative. The next proof must target direct full demand `|P|<=|N|`, equivalently the aggregate sign, through signed cancellation, recurrence, mass transport, or total-capacity structure that does not assume all-cut Hall. The same-byte ordinary-tree/governed-RTree bridge remains independently open. The pointwise and support-fibre variants are REFUTED and must not be reopened. **r23b (2026-09-17):** every cut-based strengthening of the aggregate is now refuted by exact witnesses (orders 91 and 1567) — the surviving open object at literal scope IS the per-row demand `|P|≤|N|`; structural progress on it: paths CLOSED at governed scope, stars characterized, THEOREM TYPE-2-DIRECT (`g_v = Δ_{p−2}(K_v)` at `deg(s_v)=2`) unconditional, LEMMA F3-1 sharp, the CB-arm criterion `g_arm>0 ⇔ 2(jk−p+2)>p−1` proved; branch-point peels reduce to the open question itself. Object of record: the r23 ordinary-tree object (Horn B). **r24 (2026-09-18, six cycles, direct favorable-leaf aggregate DRE):** literal `S(T,p) ≤ 0` remains OPEN with no positive complete eligible row anywhere (orders ≤ 16 exhaustive, residual class to order 17, every designed family, ~4.9M stratum rows); the top-rank residual identity `(RI)` is now formally verified in the governed workflow (`C5-LA1`, composed with the Cycle 4 selector collapse `C4-LA1`), and its top-rank case `(RC)` is proved on the flat residual subclass (`S = −ℓ(ℓ−2)−k₂(ℓ−4) ≤ −16`) and on the whole `T_m` family (`S(T_m,α−1) = −9m²−6m+1 < 0`) but is otherwise exactly as open as after r24 Cycle 4; the non-strict per-support sign `g_s(p) ≤ 0` is proved on the `K₂`/exceptional-`P₃` PSC-terminal strata (critic-attributed); the `T_m` lower band is non-empty for every `m ≥ 30` of either parity (correcting r24's own Cycle 5 record) and its domination is reduced to the coefficient monotonicity of one explicit polynomial. Transport untouched. |
 | O15 | **Universal ordinary-tree/governed-RTree transfer (`RTree.semanticAdequacyTarget`)** — Horn A: prove that the r23 ordinary-tree restatement is adequate for every governed RTree, so r23/r23b actual-tree results become instances of `E993-R19-FIXED-GAMMA-HALL`/`E993-R19-R2-HALL-UNIVERSAL` | OPEN (named at the r23b close; Horn B is the object of record meanwhile) | Per-instance adequacy is `decide`-dischargeable (r8 precedent); the universal statement is unattempted. Substantially more tractable after r23b: the relation-family transport lemmas (C,P,N via induce and the realization equivalence) are sorry-free and the three abstract bridge corollaries are proved; the single remaining piece of the bridge is O16. |
 | O16 | **`induce_ofSimpleGraph` graph-object coherence** — lift the proved adjacency-level induce transport to full graph-object form (a `Finset`→`Fin` bijection) | OPEN — the one named residual of r23b's correspondence (R-1..R-5 otherwise discharged) | Precisely isolated in r23b C6-T2 (`R23B-C6-T2-02`); Lean bookkeeping of known shape, not a mathematical gap. Closing it completes the transport bridge that O15 rests on. |
 
@@ -602,6 +602,8 @@ induce-side and activity-filter transports, the kernel-checked witness arm
 inequality, and an 18-family honest fidelity-label table. Published as
 `verified`, never `formally_verified`, per that run's ceiling-honesty contract;
 the one residual is O16.
+
+The r24 release (direct favorable-leaf aggregate DRE, `erdos-993-direct-favorable-leaf-aggregate-dre-2026-09-14`, Cycles 1–4 Codex, Cycles 5–6 Claude Fable 5.1, closed 2026-09-18) adds two governed-workflow Lean packages at the same pin, axioms exactly `[propext, Classical.choice, Quot.sound]`, no `sorry`/`admit`/`native_decide`, each with a frozen theorem contract, an independent informal proof-integrity audit, a kernel/axiom receipt, and an independent statement-fidelity attestation: `C4LA1.topRankSelectorCollapse` (every leaf of a finite tree with `α ≥ 2` is strictly favorable at `p = α−1`) and `C5LA1.topRankResidualIdentity` (on the residual class — every leaf in every maximum independent set — with `x(G)+2 ≤ α−1`, the equality `S(G,α−1) = ℓ·M − Σ_{B∈I_{α−1}} (|B∩L| − Σ_{s∈B} λ(s))`). Internal grade `formally_verified`; public projection `verified`. Equalities and a per-leaf strict selector only: no sign of `S`, no `(RC)`, no transport, no headline. Two Cycle 4 award groups (`C4-LA2` `T_m` sign bundle, `C4-LA3` PSC-terminal classification) remain `blocked` on missing semantic bridges; Cycle 6 attempted no award. Public mirror: `proofs/lean/r24-c4-top-rank-selector-collapse/`, `proofs/lean/r24-c5-top-rank-residual-identity/`.
 
 Toolchain pin and cache-manifest discipline: see any package README.
 Public mirror: `github.com/Xeit-AI-Inc/erdos-993`; use its Git history for the
@@ -768,3 +770,76 @@ gate. Public mirror: `runs/r23b-delete-retag-actual-dre-2026-09-13/`,
 `experiments/r23b-delete-retag-construction-verification.md`,
 `proofs/lean/r23b-terminal-consolidation/`. Sealed authority: the internal run's
 `control/TERMINAL-SEAL.json` (`de715137…`).
+
+## r24 — direct favorable-leaf aggregate DRE (erdos-993-direct-favorable-leaf-aggregate-dre-2026-09-14), CLOSED 2026-09-18
+
+The mathematics agent's lane after r23: attack the literal complete
+favorable-original-leaf aggregate `S(T,p) = Σ_{v∈F}(b_v − B_v) ≤ 0` on the live
+window `x(T)+2 ≤ p < α(T)` directly (signed cancellation, recurrence, mass
+transport, total capacity), with `E993-BETA-AGG` at governed scope and transport
+kept separate. Six cycles: Cycles 1–4 under Codex (36/72/3/1 per cycle; paused
+2026-09-15), Cycles 5–6 under Claude Fable 5.1 by Ashton's handover of
+2026-09-17 at the Code standard 9/18/3/1 (Sonnet 5 xhigh routes, Opus 5 high
+critics/adjudicators/synthesis/reviewers), every stage sealed by canonical-JSON
+SHA-256 manifests, Cycle 6 terminal by Ashton's ceiling of 6, closed with the
+controller's independent evaluation (`TERMINAL-EVALUATION.md`). Stop gate:
+no decisive event, no plateau; `continue: no` records the boundary.
+
+**Headline faces, unchanged:** literal aggregate OPEN; `(RC)` (its top-rank
+residual case) exactly as open as after Cycle 4; transport `not_established`
+(never attempted); O14 OPEN; Erdős #993 unresolved. No positive complete
+eligible aggregate exists anywhere in the evidence (orders ≤ 16 exhaustive,
+71,075 rows at orders 15–16 with the mechanism value tight — `g_v = 0` on ~10%
+of rows; the eligible top-rank residual class censused to order 17, 16,424
+trees, zero violations; every designed family; ~4.9M stratum rows). Every
+positive object found is a positive summand inside a negative aggregate (T22
+`+212336130412243110`, T60 `+2.935…×10⁵¹`), a zero summand, or an ineligible row.
+
+**Formally verified (governed workflow):** `C4-LA1` top-rank selector collapse;
+`C5-LA1` the top-rank residual identity `(RI)` composed with it (§7). Public
+projection `verified`.
+
+**Exact informal theorems, new (route-attributed):** the flat residual sign
+law `S(T,α−1) = −ℓ(ℓ−2) − k₂(ℓ−4) ≤ −16` on the flat subclass of the eligible
+top-rank residual class (1.77% of the class, declining); the universal failure
+of the reduced upper guard for every leaf-deleting reduction on the residual
+class (so F1's minimum-positive-row reducer cannot reach it by leaf deletion;
+support-only and rank-shifted reductions pass the upper guard and remain open).
+**Critic-attributed (Stage 4 products, adjudicator-replayed, not independently
+re-proved):** `S(T_m, α−1) = −9m² − 6m + 1 < 0` for every `m ≥ 1` — the
+top-rank `(RC)` on the whole `T_m` family, two independent derivations,
+controller-verified against the frozen evaluator (`−4487` at T22, `−32759` at
+T60); the non-strict per-support sign `g_s(p) ≤ 0` on the `K₂`-core and
+exceptional-`P₃` PSC-terminal strata via `x(T) ≥ ⌈(α−3)/2⌉` (strictness
+computational; the decorated `P₄` provably out of reach; the run's
+highest-value Lean target); the whole-class three-family expansion of
+`S(T,α−1)` whose family-(I) weights flip from order 9 (the crux of `(RC)`);
+the exact reduction `S(T_m,q+2) = w_{q+1} − w_q` localizing `T_m` band
+domination to three named lemmas, with the width law `x_m = ⌊13m/9⌋+1`
+(`m ≥ 30`, asymptotic ratio 1/18); support deletion preserves `α` on the
+residual class. **Refuted/retired:** a singleton-witness "payment" lemma
+(r23's registered left-totality with an inert hypothesis; map non-injective);
+a "cancellation-free" falsifier (the star family); several "infeasible"
+census debts (reproduced in seconds).
+
+**Record corrections carried into this ledger:** the r24 Cycle 5 statement
+that the `T_m` lower band is non-empty only for even `m ≥ 22` is false — it is
+empty exactly for `m ≤ 21` and `m ∈ {23,25,27,29}` and non-empty for every
+`m ≥ 30` of either parity (width 2 at `m = 38`); a dozen certification
+literals were struck at adjudication (distinct-row counts that were evaluation
+counts; "no positive summand" claims contradicted by the sealed controls;
+wall-clock digests). Terminal debt register: 35 items
+(`cycles/cycle-6/stage6/SYNTHESIS.md`), four permanent (frozen guarded PSC
+move relation; canonical literal-tree representation; eligibility-qualified
+`(RC)`; transport). Earliest honest resume, if ever authorized: the
+lower interior window (never searched; the only region with positive
+mechanism values), the signing of the three-family expansion, and an
+independent re-proof then formalization of the `K₂`/`P₃` stratum theorem.
+
+**Registry:** no new claim; the 81-claim registry (`96aa33d3…`) is unchanged;
+the four REFUTED claims stay REFUTED. Public mirror:
+`runs/r24-direct-favorable-leaf-aggregate-dre-2026-09-14/`,
+`experiments/r24-direct-favorable-leaf-aggregate.md`,
+`evidence/verification-2026-09-18-r24.md`, the two `proofs/lean/r24-*`
+packages. Sealed authority: the internal run's `RUN-TERMINAL-MANIFEST.json`
+(`36335bc4fd7194dc9b1b3aab78c7cd81bb4553f786a527e45c42d65ec390e939`).

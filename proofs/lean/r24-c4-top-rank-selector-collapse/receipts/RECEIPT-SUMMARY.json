@@ -1,0 +1,34 @@
+{
+ "declaration": "C4LA1.topRankSelectorCollapse",
+ "kernel_verdict": "verified",
+ "checks": {
+  "axiom_policy": "passed",
+  "axiom_probe": "passed",
+  "execution_sandbox": "passed",
+  "incomplete_proof_scan": "passed",
+  "path_containment": "passed",
+  "pinned_project": "passed",
+  "project_build": "passed",
+  "single_file": "passed",
+  "source_immutable": "passed",
+  "toolchain": "passed",
+  "unsafe_execution_scan": "passed"
+ },
+ "reported_axioms": [
+  "Classical.choice",
+  "Quot.sound",
+  "propext"
+ ],
+ "source_sha256": "e2bc48690fe44b769687461ac8bfad867b6710cca93c6de81bd1ac7ad05d253a",
+ "theorem_contract_sha256": "9faa81ad73f1dec562b84a8c9a3173ff2b1565ff4b3f80c350d6f297d3358090",
+ "kernel_receipt_sha256": "760881ace78c6f74ae1c2f1252bbc9c3f4887c4c5360cd92ea445d5c9310644c",
+ "fidelity_receipt_sha256": "9f5b6985e797d5a2046d4c72683b0cff6b4da96f2ea4395d19baeecf679c8f2f",
+ "fidelity_verdict": "passed",
+ "verification_report_status": "formally_verified",
+ "verification_report_sha256": "f4aea6a1e6086198bf1a45378289527744f040aaec7abf0927803c1f94fb0a20",
+ "lean_toolchain": "leanprover/lean4:v4.32.2",
+ "mathlib_revision": "905b95818eb32af7874a58b427f50c1711a5e96c",
+ "internal_grade": "formally_verified (governed lean-proof-workflow)",
+ "public_projection": "verified",
+ "note": "Full receipts live in the sealed internal run; absolute paths are omitted here. Recompute the source digest from source/LeanProof/Main.lean."
+}

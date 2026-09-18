@@ -1,0 +1,185 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "c4-la1-top-rank-selector-collapse-v1",
+  "theorem": {
+    "title": "C4-LA1 Top-Rank Selector Collapse for Finite Literal Ordinary Trees",
+    "informal_statement": "For every finite literal ordinary tree T with alpha(T) at least 2, every leaf v is strictly favorable at p = alpha(T)-1; equivalently, i_alpha(T)(T-v) is strictly less than i_(alpha(T)-1)(T-v)."
+  },
+  "formulation_status": {
+    "status": "established",
+    "evidence": [
+      "Award capsule semantic seal c481fe2755552a0f66e0c4c74009556b2cf62644c92051e02458e3fd967ad3b6 verified with all eight file digests and byte counts.",
+      "The retained F7 theorem and both critiques establish the exact literal finite-tree selector collapse; Stage 5 adjudication and Stage 6 synthesis award this theorem without the aggregate-sign conclusion.",
+      "INFORMAL-PROOF.md records the source-bound direct injection proof and all scope exclusions."
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-independence-number",
+      "description": "alpha(T), the maximum cardinality of an independent vertex set of T.",
+      "lean_name": "SimpleGraph.indepNum",
+      "dependencies": ["domain-finite-simple-graph"]
+    },
+    {
+      "id": "def-graph-leaf",
+      "description": "A vertex v is a leaf of T exactly when there exists a unique u adjacent to v.",
+      "lean_name": "C4LA1.IsGraphLeaf",
+      "dependencies": ["domain-finite-simple-graph", "domain-vertex"]
+    },
+    {
+      "id": "def-vertex-deletion-coefficient",
+      "description": "i_k(T-v), the number of independent k-subsets of the original finite vertex type that avoid v.",
+      "lean_name": "C4LA1.vertexDeletionIndepSetCount",
+      "dependencies": ["domain-adjacency-decision", "domain-finite-simple-graph", "domain-vertex"]
+    },
+    {
+      "id": "def-forward-difference",
+      "description": "The integer forward difference i_(p+1)(T-v) - i_p(T-v).",
+      "lean_name": "C4LA1.vertexDeletionForwardDifference",
+      "dependencies": ["def-vertex-deletion-coefficient"]
+    },
+    {
+      "id": "def-favorable",
+      "description": "A leaf v is favorable at p exactly when the vertex-deletion forward difference is strictly negative.",
+      "lean_name": "C4LA1.IsFavorableAt",
+      "dependencies": ["def-forward-difference"]
+    },
+    {
+      "id": "def-top-rank",
+      "description": "The top interior rank p is alpha(T)-1 in Nat.",
+      "lean_name": "Nat.sub",
+      "dependencies": ["def-independence-number"]
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-vertex-type",
+      "description": "An arbitrary finite vertex type with decidable equality.",
+      "lean_type": "V : Type* with [Fintype V] [DecidableEq V]",
+      "dependencies": []
+    },
+    {
+      "id": "domain-finite-simple-graph",
+      "description": "An arbitrary finite simple graph on V; the tree property is a separate theorem hypothesis.",
+      "lean_type": "G : SimpleGraph V",
+      "dependencies": ["domain-vertex-type"]
+    },
+    {
+      "id": "domain-adjacency-decision",
+      "description": "Decidable adjacency data used only to compute finite independent-set coefficients.",
+      "lean_type": "[DecidableRel G.Adj]",
+      "dependencies": ["domain-finite-simple-graph"]
+    },
+    {
+      "id": "domain-vertex",
+      "description": "An arbitrary original vertex of G.",
+      "lean_type": "v : V",
+      "dependencies": ["domain-finite-simple-graph", "domain-vertex-type"]
+    }
+  ],
+  "quantifiers": [
+    {"binder": "V", "kind": "forall", "domain_id": "domain-vertex-type"},
+    {"binder": "G", "kind": "forall", "domain_id": "domain-finite-simple-graph"},
+    {"binder": "adjacencyDecision", "kind": "forall", "domain_id": "domain-adjacency-decision"},
+    {"binder": "v", "kind": "forall", "domain_id": "domain-vertex"}
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-tree",
+      "statement": "G is a connected acyclic simple graph, i.e. G.IsTree.",
+      "dependencies": ["domain-finite-simple-graph"]
+    },
+    {
+      "id": "hyp-alpha-lower-bound",
+      "statement": "2 <= G.indepNum.",
+      "dependencies": ["def-independence-number"]
+    },
+    {
+      "id": "hyp-leaf",
+      "statement": "v is a leaf of G in the unique-neighbor sense.",
+      "dependencies": ["def-graph-leaf"]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion-top-rank-selector-collapse",
+    "statement": "v is favorable at G.indepNum - 1, equivalently the integer forward difference i_alpha(G)(G-v) - i_(alpha(G)-1)(G-v) is strictly negative.",
+    "dependencies": ["def-favorable", "def-top-rank", "hyp-alpha-lower-bound", "hyp-leaf", "hyp-tree"]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {"id": "def-independence-number", "kind": "definition"},
+      {"id": "def-graph-leaf", "kind": "definition"},
+      {"id": "def-vertex-deletion-coefficient", "kind": "definition"},
+      {"id": "def-forward-difference", "kind": "definition"},
+      {"id": "def-favorable", "kind": "definition"},
+      {"id": "def-top-rank", "kind": "definition"},
+      {"id": "domain-vertex-type", "kind": "domain"},
+      {"id": "domain-finite-simple-graph", "kind": "domain"},
+      {"id": "domain-adjacency-decision", "kind": "domain"},
+      {"id": "domain-vertex", "kind": "domain"},
+      {"id": "hyp-tree", "kind": "hypothesis"},
+      {"id": "hyp-alpha-lower-bound", "kind": "hypothesis"},
+      {"id": "hyp-leaf", "kind": "hypothesis"},
+      {"id": "conclusion-top-rank-selector-collapse", "kind": "conclusion"}
+    ],
+    "edges": [
+      {"from": "domain-finite-simple-graph", "to": "def-independence-number"},
+      {"from": "domain-finite-simple-graph", "to": "def-graph-leaf"},
+      {"from": "domain-vertex", "to": "def-graph-leaf"},
+      {"from": "domain-adjacency-decision", "to": "def-vertex-deletion-coefficient"},
+      {"from": "domain-finite-simple-graph", "to": "def-vertex-deletion-coefficient"},
+      {"from": "domain-vertex", "to": "def-vertex-deletion-coefficient"},
+      {"from": "def-vertex-deletion-coefficient", "to": "def-forward-difference"},
+      {"from": "def-forward-difference", "to": "def-favorable"},
+      {"from": "def-independence-number", "to": "def-top-rank"},
+      {"from": "domain-vertex-type", "to": "domain-finite-simple-graph"},
+      {"from": "domain-finite-simple-graph", "to": "domain-adjacency-decision"},
+      {"from": "domain-finite-simple-graph", "to": "domain-vertex"},
+      {"from": "domain-vertex-type", "to": "domain-vertex"},
+      {"from": "domain-finite-simple-graph", "to": "hyp-tree"},
+      {"from": "def-independence-number", "to": "hyp-alpha-lower-bound"},
+      {"from": "def-graph-leaf", "to": "hyp-leaf"},
+      {"from": "def-favorable", "to": "conclusion-top-rank-selector-collapse"},
+      {"from": "def-top-rank", "to": "conclusion-top-rank-selector-collapse"},
+      {"from": "hyp-alpha-lower-bound", "to": "conclusion-top-rank-selector-collapse"},
+      {"from": "hyp-leaf", "to": "conclusion-top-rank-selector-collapse"},
+      {"from": "hyp-tree", "to": "conclusion-top-rank-selector-collapse"}
+    ]
+  },
+  "permitted_axioms": ["Classical.choice", "propext", "Quot.sound"],
+  "constructivity": {
+    "required": false,
+    "policy": "explicit_axiom_allowlist",
+    "rationale": "The finite statement is classical in this implementation because Mathlib's independence number and finite family selections are noncomputable; only the explicitly listed standard Lean axioms may appear in the kernel dependency report."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "C4LA1.topRankSelectorCollapse",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "(G : SimpleGraph V) [DecidableRel G.Adj] (_hTree : G.IsTree) (hAlpha : 2 ≤ G.indepNum) (v : V) (hvLeaf : IsGraphLeaf G v) : IsFavorableAt G v (G.indepNum - 1)",
+    "expected_statement_sha256": "f813035a1746753b30cc21544541c6538e84c75a738633d0ef504000cd7256ce"
+  },
+  "source_materials": [
+    {
+      "id": "source-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "sha256": "fc5e48d9ebe6cd32192c2f0c1937fa724da18314c8ce1168d4037183b7e06fed",
+      "role": "reference"
+    },
+    {
+      "id": "source-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "sha256": "0801e6cbb455c349a204419400df6e80ef7be3d16e915d57ea3b5299f3a42418",
+      "role": "theorem_intent"
+    }
+  ]
+}

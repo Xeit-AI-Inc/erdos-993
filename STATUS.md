@@ -1,6 +1,6 @@
 # Research Status
 
-Last updated: 2026-09-17 (r23b actual-tree Delete/Retag construction & verification — six-cycle terminal close; see the r23b section of the master ledger)
+Last updated: 2026-09-18 (r24 direct favorable-leaf aggregate DRE — six-cycle terminal close; see the r24 section of the master ledger)
 
 ## Headline Problems
 
@@ -69,6 +69,18 @@ see [the package](proofs/lean/r17-order243-beta-counterexample/README.md). See
   [r19](experiments/r19-beta-aggregate.md) and
   [r22](experiments/r22-o14-multibase-hall-continuation.md), and
   [r23](experiments/r23-delete-retag-actual-tree.md).
+- **Direct favorable-leaf aggregate (r24, closed 2026-09-18 at the six-cycle
+  ceiling):** the literal aggregate `S(T,p) ≤ 0` on `x(T)+2 ≤ p < α(T)`
+  remains OPEN with no positive complete eligible row anywhere (orders ≤ 16
+  exhaustive; the top-rank residual class to order 17; every designed family).
+  Verified: the top-rank selector collapse and the top-rank residual identity
+  `(RI)` (two Lean packages, published `verified`). `(RC)`, the top-rank case,
+  is proved on the flat residual subclass and on the whole `T_m` family
+  (`S(T_m,α−1) = −9m²−6m+1`), otherwise exactly as open as before; the
+  non-strict per-support sign is proved on the `K₂`/exceptional-`P₃`
+  PSC-terminal strata (critic-attributed). Transport untouched. See
+  [r24](experiments/r24-direct-favorable-leaf-aggregate.md) and the
+  35-item terminal debt register.
 - **Unimodality certificates** (closed, one day): the fixed-window
   certificate strategy is dead **by proof** — any sound scheme's window
   grows at least like |α − 2·mode|, linear on paths. The surviving

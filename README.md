@@ -153,6 +153,12 @@ The expected transitive axioms are `propext`, `Classical.choice`, and
 - [r23 actual-tree Delete/Retag experiment](experiments/r23-delete-retag-actual-tree.md)
 - [2026-09-13 r23 verification record](evidence/verification-2026-09-13-r23.md)
 - [r23 T22 arithmetic certificate](proofs/lean/r23-t22-arithmetic-certificate/README.md)
+- [r23b actual-tree Delete/Retag construction & verification](experiments/r23b-delete-retag-construction-verification.md)
+- [2026-09-17 r23b verification record](evidence/verification-2026-09-17-r23b.md)
+- [r24 direct favorable-leaf aggregate DRE (six cycles, terminal)](experiments/r24-direct-favorable-leaf-aggregate.md)
+- [2026-09-18 r24 verification record](evidence/verification-2026-09-18-r24.md)
+- [r24 top-rank selector collapse Lean package](proofs/lean/r24-c4-top-rank-selector-collapse/README.md)
+- [r24 top-rank residual identity Lean package](proofs/lean/r24-c5-top-rank-residual-identity/README.md)
 - [2026-09-01 r8 verification record](evidence/verification-2026-09-01-r8.md)
 - [Order-20/21 computational evidence](evidence/order-20-21-search/README.md)
 

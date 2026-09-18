@@ -1,0 +1,27 @@
+# r24-c5-top-rank-residual-identity
+
+Declaration `C5LA1.topRankResidualIdentity`, exported byte-for-byte from the sealed internal run
+`erdos-993-direct-favorable-leaf-aggregate-dre-2026-09-14` (see
+[`experiments/r24-direct-favorable-leaf-aggregate.md`](../../../experiments/r24-direct-favorable-leaf-aggregate.md)).
+Cycle 5 award `C5-LA1` (Claude Fable 5.1 controller; Sonnet 5 formalizer; Opus 5 independent auditor and fidelity reviewer). Reuses the eight C4LA1 fragments byte-for-byte (the reused theorem re-keyworded `lemma`, a Lean 4 macro for `theorem`). A Cycle 6 critic's kernel-checked scratch probe shows `hTree` and `hEligible` are removable; the award of record keeps the four-hypothesis fence.
+
+Statement:
+
+```lean
+(G : SimpleGraph V) [DecidableRel G.Adj] (hTree : G.IsTree) (hAlpha : 2 ≤ G.indepNum) (hEligible : crossingIndex G + 2 ≤ G.indepNum - 1) (hResidual : ∀ v, C4LA1.IsGraphLeaf G v → ∀ S : Finset V, G.IsIndepSet (S : Set V) → S.card = G.indepNum → v ∈ S) : aggregate G (G.indepNum - 1) = ((leafSet G).card * indepSetCount G ∅ G.indepNum : Int) - ∑ B ∈ indepSetsAvoiding G ∅ (G.indepNum - 1), (((B ∩ leafSet G).card : Int) - ∑ s ∈ B, (leafDegree G s : Int))
+```
+
+Toolchain: Lean `leanprover/lean4:v4.32.2`, Mathlib
+`905b95818eb32af7874a58b427f50c1711a5e96c` (pinned in `source/lakefile.toml`
+and `source/lake-manifest.json`; the package cache is not shipped — bind a
+local Mathlib checkout at that revision, never `lake update`). Axioms exactly
+`[propext, Classical.choice, Quot.sound]`; no `sorry`/`admit`/`native_decide`.
+Governed workflow: frozen theorem contract (`THEOREM-CONTRACT.yaml`, rendered
+`THEOREM-CONTRACT.md`), independent informal proof-integrity audit
+(`INFORMAL-AUDIT.md`; the formalizer's `INFORMAL-PROOF.md`), kernel/axiom
+receipt and independent statement-fidelity attestation (`FIDELITY-REVIEW.md`),
+canonical close (`VERIFICATION-REPORT.md`). Digests and verdicts are in
+`receipts/RECEIPT-SUMMARY.json`; full receipts stay in the sealed internal run.
+Internal grade `formally_verified`; published as `verified`. Claim boundary:
+Lean kernel validity plus independent statement fidelity — nothing about the
+aggregate sign, `(RC)`, transport, `E993-BETA-AGG`, or Erdős #993.

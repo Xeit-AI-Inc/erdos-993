@@ -1,0 +1,564 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "c5-la1-top-rank-residual-identity-v1",
+  "theorem": {
+    "title": "C5-LA1 Top-Rank Residual Identity for Finite Literal Ordinary Trees (F7 Collapse Composed With (RI))",
+    "informal_statement": "For every finite simple graph G on a finite vertex type with decidable equality and decidable adjacency, if G is a tree, 2 <= G.indepNum, x(G)+2 <= G.indepNum-1, and every leaf of G belongs to every maximum independent set of G, then with p = G.indepNum-1, L the leaf set, ell = |L|, M = i_alpha(G), and lambda(s) the number of leaf neighbours of s (zero off supports), the equality S(G,p) = ell*M - sum_{B in I_p(G)} (|B intersect L| - sum_{s in B} lambda(s)) holds. This composes the verified F7 selector collapse (which discharges the favorable-filter-equals-leaf-set step) with the (RI) double-counting identity; it asserts no (RC) content, no inequality, and no sign claim."
+  },
+  "formulation_status": {
+    "status": "established",
+    "evidence": [
+      "Award capsule semantic seal bf8fc6c041176f7a11c1d502cb45161e84b4878c87cb93a0efb47707b14df52e verified with all 9 listed file digests and byte counts.",
+      "Cycle 5 Stage 6 synthesis (cycles/cycle-5/stage6/SYNTHESIS.md, section 'Lean awards') awards TOP-RANK-RESIDUAL-IDENTITY (F7 collapse composed with (RI)) at exactly this statement, with hyp-tree, hyp-alpha, hyp-eligible, hyp-residual all load-bearing in the terminal declaration.",
+      "The base award F7 (C4LA1.topRankSelectorCollapse) is independently kernel- and fidelity-verified (runs/lean-2026-09-15-c4-top-rank-selector-collapse/), digests re-verified in this run's CAPSULE-VERIFICATION.json.",
+      "INFORMAL-PROOF.md records the source-bound proof: the leaf-deletion bijection (i_p(H_v)=M), the support-deletion vanishing (i_p(R_v)=0), and the two double-counting identities, all derived from hyp-residual and the general (hResidual-free) leaf/support insertion bijections.",
+      "Controller ruling (recorded in control/C5-STAGE7-FORMALIZER-BRIEF.md section 2 and reproduced in INFORMAL-PROOF.md): hyp-eligible is not used by the proof but is mandatory in the terminal statement, and requires a def-crossing-index node for x(G) even though the seven-node list quoted from the Stage 4 T critic omitted it; the synthesis's exact statement governs over that omission."
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-independence-number",
+      "description": "alpha(G), the maximum cardinality of an independent vertex set of G.",
+      "lean_name": "SimpleGraph.indepNum",
+      "dependencies": [
+        "domain-finite-simple-graph"
+      ]
+    },
+    {
+      "id": "def-graph-leaf",
+      "description": "A vertex v is a leaf of G exactly when there exists a unique u adjacent to v.",
+      "lean_name": "C4LA1.IsGraphLeaf",
+      "dependencies": [
+        "domain-finite-simple-graph",
+        "domain-vertex"
+      ]
+    },
+    {
+      "id": "def-vertex-deletion-coefficient",
+      "description": "i_k(G-v), the number of independent k-subsets of the original finite vertex type that avoid v (F7 convention, reused unchanged).",
+      "lean_name": "C4LA1.vertexDeletionIndepSetCount",
+      "dependencies": [
+        "domain-adjacency-decision",
+        "domain-finite-simple-graph",
+        "domain-vertex"
+      ]
+    },
+    {
+      "id": "def-forward-difference",
+      "description": "The integer forward difference i_(p+1)(G-v) - i_p(G-v).",
+      "lean_name": "C4LA1.vertexDeletionForwardDifference",
+      "dependencies": [
+        "def-vertex-deletion-coefficient"
+      ]
+    },
+    {
+      "id": "def-favorable",
+      "description": "A leaf v is favorable at p exactly when the vertex-deletion forward difference is strictly negative.",
+      "lean_name": "C4LA1.IsFavorableAt",
+      "dependencies": [
+        "def-forward-difference"
+      ]
+    },
+    {
+      "id": "def-top-rank",
+      "description": "The top interior rank p is alpha(G)-1 in Nat.",
+      "lean_name": "Nat.sub",
+      "dependencies": [
+        "def-independence-number"
+      ]
+    },
+    {
+      "id": "def-support",
+      "description": "The unique support (neighbour) s_v of an original leaf v, realised by classical choice over the unique-neighbour witness; unconstrained off the leaf set.",
+      "lean_name": "C5LA1.support",
+      "dependencies": [
+        "def-graph-leaf",
+        "domain-vertex"
+      ]
+    },
+    {
+      "id": "def-leaf-set",
+      "description": "L(G), the finite set of original leaves of G.",
+      "lean_name": "C5LA1.leafSet",
+      "dependencies": [
+        "def-graph-leaf"
+      ]
+    },
+    {
+      "id": "def-leaf-degree",
+      "description": "lambda(s), the number of leaves of G adjacent to s; zero for s that support no leaf.",
+      "lean_name": "C5LA1.leafDegree",
+      "dependencies": [
+        "def-leaf-set",
+        "domain-adjacency-decision"
+      ]
+    },
+    {
+      "id": "def-h-del",
+      "description": "H_v = G - {v, s_v}, realised as the two-element deletion set {v, support G v} used by the vertex-deletion coefficient convention.",
+      "lean_name": "C5LA1.H",
+      "dependencies": [
+        "def-support"
+      ]
+    },
+    {
+      "id": "def-r-del",
+      "description": "R_v = G - N[s_v], realised as the deletion set insert (support G v) (neighborFinset (support G v)), i.e. the closed neighbourhood of the leaf's support.",
+      "lean_name": "C5LA1.R",
+      "dependencies": [
+        "def-support",
+        "domain-adjacency-decision"
+      ]
+    },
+    {
+      "id": "def-indep-sets-card",
+      "description": "I_k(G-D): independent k-subsets of the original finite vertex type avoiding a finite deletion set D, generalising def-vertex-deletion-coefficient to an arbitrary deletion set; underlies the derived helpers indepSetCount and forwardDifferenceDel used internally, and I_p(G) is this family at D = the empty set.",
+      "lean_name": "C5LA1.indepSetsAvoiding",
+      "dependencies": [
+        "domain-adjacency-decision",
+        "domain-finite-simple-graph"
+      ]
+    },
+    {
+      "id": "def-aggregate",
+      "description": "S(G,p) = sum over the favorable filter of the leaf set of (b_v - B_v), where b_v and B_v are the (p-1)-rank forward differences of the H_v- and R_v-avoiding coefficients.",
+      "lean_name": "C5LA1.aggregate",
+      "dependencies": [
+        "def-leaf-set",
+        "def-favorable",
+        "def-h-del",
+        "def-r-del",
+        "def-indep-sets-card"
+      ]
+    },
+    {
+      "id": "def-crossing-index",
+      "description": "x(G), the least k with the whole-graph forward difference Delta_k(G) < 0; exists unconditionally because Delta_alpha(G) = -i_alpha(G) < 0 (a maximum independent set of size alpha(G) always exists). Required by hyp-eligible per the controller ruling recorded in the informal proof.",
+      "lean_name": "C5LA1.crossingIndex",
+      "dependencies": [
+        "def-indep-sets-card",
+        "def-independence-number"
+      ]
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-vertex-type",
+      "description": "An arbitrary finite vertex type with decidable equality.",
+      "lean_type": "V : Type* with [Fintype V] [DecidableEq V]",
+      "dependencies": []
+    },
+    {
+      "id": "domain-finite-simple-graph",
+      "description": "An arbitrary finite simple graph on V; the tree property is a separate theorem hypothesis.",
+      "lean_type": "G : SimpleGraph V",
+      "dependencies": [
+        "domain-vertex-type"
+      ]
+    },
+    {
+      "id": "domain-adjacency-decision",
+      "description": "Decidable adjacency data used only to compute finite independent-set coefficients.",
+      "lean_type": "[DecidableRel G.Adj]",
+      "dependencies": [
+        "domain-finite-simple-graph"
+      ]
+    },
+    {
+      "id": "domain-vertex",
+      "description": "An arbitrary original vertex of G, used internally by def-graph-leaf, def-support, and the leaf/support machinery (not independently quantified at the theorem's top level; leaves are universally ranged over via def-leaf-set and hyp-residual).",
+      "lean_type": "v : V",
+      "dependencies": [
+        "domain-finite-simple-graph",
+        "domain-vertex-type"
+      ]
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "V",
+      "kind": "forall",
+      "domain_id": "domain-vertex-type"
+    },
+    {
+      "binder": "G",
+      "kind": "forall",
+      "domain_id": "domain-finite-simple-graph"
+    },
+    {
+      "binder": "adjacencyDecision",
+      "kind": "forall",
+      "domain_id": "domain-adjacency-decision"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-tree",
+      "statement": "G is a connected acyclic simple graph, i.e. G.IsTree.",
+      "dependencies": [
+        "domain-finite-simple-graph"
+      ]
+    },
+    {
+      "id": "hyp-alpha",
+      "statement": "2 <= G.indepNum.",
+      "dependencies": [
+        "def-independence-number"
+      ]
+    },
+    {
+      "id": "hyp-eligible",
+      "statement": "x(G) + 2 <= G.indepNum - 1, i.e. crossingIndex G + 2 <= G.indepNum - 1. Not used by the proof; mandatory in the terminal declaration per the controller ruling.",
+      "dependencies": [
+        "def-crossing-index",
+        "def-top-rank"
+      ]
+    },
+    {
+      "id": "hyp-residual",
+      "statement": "Every leaf of G belongs to every maximum independent set of G: for every leaf v and every independent S with S.card = G.indepNum, v is in S.",
+      "dependencies": [
+        "def-graph-leaf",
+        "def-independence-number"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion-top-rank-residual-identity",
+    "statement": "aggregate G (G.indepNum-1) = ((leafSet G).card * indepSetCount(G, empty, G.indepNum) : Int) - sum_{B in indepSetsAvoiding G empty (G.indepNum-1)} ( (B intersect leafSet G).card - sum_{s in B} leafDegree G s ), i.e. the literal (RI) identity composed with the F7 collapse. An equality; never weakened to or accompanied by an inequality or sign claim.",
+    "dependencies": [
+      "def-aggregate",
+      "def-leaf-set",
+      "def-indep-sets-card",
+      "def-leaf-degree",
+      "def-independence-number",
+      "def-top-rank",
+      "hyp-tree",
+      "hyp-alpha",
+      "hyp-eligible",
+      "hyp-residual"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "def-independence-number",
+        "kind": "definition"
+      },
+      {
+        "id": "def-graph-leaf",
+        "kind": "definition"
+      },
+      {
+        "id": "def-vertex-deletion-coefficient",
+        "kind": "definition"
+      },
+      {
+        "id": "def-forward-difference",
+        "kind": "definition"
+      },
+      {
+        "id": "def-favorable",
+        "kind": "definition"
+      },
+      {
+        "id": "def-top-rank",
+        "kind": "definition"
+      },
+      {
+        "id": "def-support",
+        "kind": "definition"
+      },
+      {
+        "id": "def-leaf-set",
+        "kind": "definition"
+      },
+      {
+        "id": "def-leaf-degree",
+        "kind": "definition"
+      },
+      {
+        "id": "def-h-del",
+        "kind": "definition"
+      },
+      {
+        "id": "def-r-del",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indep-sets-card",
+        "kind": "definition"
+      },
+      {
+        "id": "def-aggregate",
+        "kind": "definition"
+      },
+      {
+        "id": "def-crossing-index",
+        "kind": "definition"
+      },
+      {
+        "id": "domain-vertex-type",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-finite-simple-graph",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-adjacency-decision",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-vertex",
+        "kind": "domain"
+      },
+      {
+        "id": "hyp-tree",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-alpha",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-eligible",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-residual",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion-top-rank-residual-identity",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "def-aggregate",
+        "to": "conclusion-top-rank-residual-identity"
+      },
+      {
+        "from": "def-crossing-index",
+        "to": "hyp-eligible"
+      },
+      {
+        "from": "def-favorable",
+        "to": "def-aggregate"
+      },
+      {
+        "from": "def-forward-difference",
+        "to": "def-favorable"
+      },
+      {
+        "from": "def-graph-leaf",
+        "to": "def-leaf-set"
+      },
+      {
+        "from": "def-graph-leaf",
+        "to": "def-support"
+      },
+      {
+        "from": "def-graph-leaf",
+        "to": "hyp-residual"
+      },
+      {
+        "from": "def-h-del",
+        "to": "def-aggregate"
+      },
+      {
+        "from": "def-indep-sets-card",
+        "to": "conclusion-top-rank-residual-identity"
+      },
+      {
+        "from": "def-indep-sets-card",
+        "to": "def-aggregate"
+      },
+      {
+        "from": "def-indep-sets-card",
+        "to": "def-crossing-index"
+      },
+      {
+        "from": "def-independence-number",
+        "to": "conclusion-top-rank-residual-identity"
+      },
+      {
+        "from": "def-independence-number",
+        "to": "def-crossing-index"
+      },
+      {
+        "from": "def-independence-number",
+        "to": "def-top-rank"
+      },
+      {
+        "from": "def-independence-number",
+        "to": "hyp-alpha"
+      },
+      {
+        "from": "def-independence-number",
+        "to": "hyp-residual"
+      },
+      {
+        "from": "def-leaf-degree",
+        "to": "conclusion-top-rank-residual-identity"
+      },
+      {
+        "from": "def-leaf-set",
+        "to": "conclusion-top-rank-residual-identity"
+      },
+      {
+        "from": "def-leaf-set",
+        "to": "def-aggregate"
+      },
+      {
+        "from": "def-leaf-set",
+        "to": "def-leaf-degree"
+      },
+      {
+        "from": "def-r-del",
+        "to": "def-aggregate"
+      },
+      {
+        "from": "def-support",
+        "to": "def-h-del"
+      },
+      {
+        "from": "def-support",
+        "to": "def-r-del"
+      },
+      {
+        "from": "def-top-rank",
+        "to": "conclusion-top-rank-residual-identity"
+      },
+      {
+        "from": "def-top-rank",
+        "to": "hyp-eligible"
+      },
+      {
+        "from": "def-vertex-deletion-coefficient",
+        "to": "def-forward-difference"
+      },
+      {
+        "from": "domain-adjacency-decision",
+        "to": "def-indep-sets-card"
+      },
+      {
+        "from": "domain-adjacency-decision",
+        "to": "def-leaf-degree"
+      },
+      {
+        "from": "domain-adjacency-decision",
+        "to": "def-r-del"
+      },
+      {
+        "from": "domain-adjacency-decision",
+        "to": "def-vertex-deletion-coefficient"
+      },
+      {
+        "from": "domain-finite-simple-graph",
+        "to": "def-graph-leaf"
+      },
+      {
+        "from": "domain-finite-simple-graph",
+        "to": "def-indep-sets-card"
+      },
+      {
+        "from": "domain-finite-simple-graph",
+        "to": "def-independence-number"
+      },
+      {
+        "from": "domain-finite-simple-graph",
+        "to": "def-vertex-deletion-coefficient"
+      },
+      {
+        "from": "domain-finite-simple-graph",
+        "to": "domain-adjacency-decision"
+      },
+      {
+        "from": "domain-finite-simple-graph",
+        "to": "domain-vertex"
+      },
+      {
+        "from": "domain-finite-simple-graph",
+        "to": "hyp-tree"
+      },
+      {
+        "from": "domain-vertex",
+        "to": "def-graph-leaf"
+      },
+      {
+        "from": "domain-vertex",
+        "to": "def-support"
+      },
+      {
+        "from": "domain-vertex",
+        "to": "def-vertex-deletion-coefficient"
+      },
+      {
+        "from": "domain-vertex-type",
+        "to": "domain-finite-simple-graph"
+      },
+      {
+        "from": "domain-vertex-type",
+        "to": "domain-vertex"
+      },
+      {
+        "from": "hyp-alpha",
+        "to": "conclusion-top-rank-residual-identity"
+      },
+      {
+        "from": "hyp-eligible",
+        "to": "conclusion-top-rank-residual-identity"
+      },
+      {
+        "from": "hyp-residual",
+        "to": "conclusion-top-rank-residual-identity"
+      },
+      {
+        "from": "hyp-tree",
+        "to": "conclusion-top-rank-residual-identity"
+      }
+    ]
+  },
+  "permitted_axioms": [
+    "Classical.choice",
+    "propext",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "explicit_axiom_allowlist",
+    "rationale": "The finite statement is classical in this implementation because Mathlib's independence number, the leaf-support choice function, the leaf-set filter, and the aggregate's favorable filter are noncomputable; only the explicitly listed standard Lean axioms may appear in the kernel dependency report."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "C5LA1.topRankResidualIdentity",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "(G : SimpleGraph V) [DecidableRel G.Adj] (hTree : G.IsTree) (hAlpha : 2 ≤ G.indepNum) (hEligible : crossingIndex G + 2 ≤ G.indepNum - 1) (hResidual : ∀ v, C4LA1.IsGraphLeaf G v → ∀ S : Finset V, G.IsIndepSet (S : Set V) → S.card = G.indepNum → v ∈ S) : aggregate G (G.indepNum - 1) = ((leafSet G).card * indepSetCount G ∅ G.indepNum : Int) - ∑ B ∈ indepSetsAvoiding G ∅ (G.indepNum - 1), (((B ∩ leafSet G).card : Int) - ∑ s ∈ B, (leafDegree G s : Int))",
+    "expected_statement_sha256": "4713d55cf0cdbb1763946e8ddf35d337e396c63b78104b0fd1bd8935acaaa2b6"
+  },
+  "source_materials": [
+    {
+      "id": "source-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "sha256": "0fb38e743c7705757e96cb49e1f09e7c93129a13035eefee118e6c508cba20f0",
+      "role": "reference"
+    },
+    {
+      "id": "source-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "sha256": "dd0e4e774d75bfc567b47ebad48631148327b96da3a8ed4995072461b65df9a9",
+      "role": "theorem_intent"
+    }
+  ]
+}
