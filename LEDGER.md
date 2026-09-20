@@ -1,5 +1,7 @@
 # Erdős #993 — Master Proof Ledger
 
+**Updated 2026-09-20 — the G1 large-residual experiment completed all three authorized cycles.** Three exact Lean contracts close ordinary G1 at `p<=5`, the first wide band, and the third wide band. The all-rank order-`2r+4` forest crossing theorem is new to this lineage. Unrestricted G1, TREE, FOREST, TRANSFER and aggregate beta-prime remain OPEN. The merged registry now has 288 identities; all 81 pre-existing master objects are preserved. See the G1 close section at the end.
+
 **Date: 2026-09-04. Prepared by Claude (Fable 5) within VerityOS at Ashton's
 direction.** Supersedes the 2026-09-01 gap map as the program's orientation
 document; where this ledger and any sealed record differ, the sealed record
@@ -843,3 +845,37 @@ the four REFUTED claims stay REFUTED. Public mirror:
 `evidence/verification-2026-09-18-r24.md`, the two `proofs/lean/r24-*`
 packages. Sealed authority: the internal run's `RUN-TERMINAL-MANIFEST.json`
 (`36335bc4fd7194dc9b1b3aab78c7cd81bb4553f786a527e45c42d65ec390e939`).
+
+## G1 large-residual DRE — three cycles, CLOSED 2026-09-20
+
+Run `erdos-993-g1-large-residual-dre-2026-09-13` completed all three cycles authorized by the amended hard cap. It used three T, three F and three U searchers per cycle (Sol xhigh), followed by 18 cross-orientation critics, three origin adjudicators and one neutral synthesis (Astra xhigh); formal production and independent audits used Astra xhigh. There is no Cycle 4. Final source manifest: `b4b7fdbf03f64940398034668099bea5a062192e35366fea730db9c92baece77`.
+
+The target was the **ordinary G1wide residual-sign face**, not the master chain's `OB-G1` strict-endpoint obligation. For an ordinary tree `T`, original leaf `v`, degree-two support `s`, other neighbor `g`, residual `U=T-(N_T[v] union N_T[g])`, and `p=x(T)+1`, it retains negative Gamma, `2p-3<|U|`, and `x(U)<p-2`, and seeks `Delta_(p-2)(U)<=0`. The original graph's neighborhoods, integer zero extension, and first strict descent are fixed. Unrestricted ordinary G1 and the governed-RTree target remain OPEN.
+
+### Formal additions at exact scope
+
+Three completed contracts support six separately registered formal consequence identities. The public packages carry byte-identical Main sources and pinned configurations; original contract, kernel, axiom, informal-audit, fidelity and close receipts accompany them.
+
+| Cycle | Verified mathematical content | Canonical keys |
+|---|---|---|
+| C1 | For forests in the low-rank wide/crossing regime, `p<=5` forces `p=5`, the path on eight vertices, and `Delta_3=-15`; hence ordinary G1 for `p<=5` | `E993-G1-ORDINARY-PLE5-CLASSIFICATION-AND-SIGN` |
+| C2 | For every finite simple graph of order `2r+2`, `r>=1`, positive `Delta_r` iff at most one edge; the exceptional graphs have strictly positive differences through rank `r`; ordinary G1 at `|U|=2p-2` | `E993-GRAPH-FIRST-WIDE-SHARP-CLASSIFICATION`, `E993-GRAPH-FIRST-WIDE-CROSSING-SIGN`, `E993-ORDINARY-G1-FIRST-WIDE-SLICE` |
+| C3 | For every finite forest, `r>=1`, `|F|=2r+4` and `x(F)<r` imply `Delta_r(F)<=0`; ordinary G1 at `|U|=2p` | `E993-FOREST-THIRD-WIDE-CROSSING-SIGN`, `E993-ORDINARY-G1-THIRD-WIDE-SLICE` |
+
+C3 uses an actual forest matching/vertex-cover dichotomy: five disjoint edges are handled by independent-set incidence certificates; a cover of size at most four is handled by an exact fiber partition and Catalan difference bounds. The final source registers 187 entries, with 135 exact entries reused from C2 and 52 additions. It assumes neither universal log-concavity nor unimodality. All three gates used Lean 4.32.2, Mathlib `905b95818eb32af7874a58b427f50c1711a5e96c`, and only `propext`, `Classical.choice`, `Quot.sound`. C3's fresh fidelity audit passed; zero governed repair attempts were used.
+
+### Remaining boundary and excluded mechanisms
+
+The second wide band `|U|=2p-1` retains its source-dependent informal grade. Combined with the formal bands and the retained path-forest result, a possible ordinary G1 counterexample necessarily has `p>=6`, `|U|>=2p+1`, residual maximum degree at least three, and strict residual recovery. This is a mixed-grade necessary region, not a new fully formalized conjunction or a counterexample existence claim.
+
+Raw edge-addition monotonicity, the factor-two negative-margin bound, pointwise addability control, and every-vertex/prescribed-center SR2 strengthenings are refuted at their stated scopes. The factor-one average inequality, existential same-vertex deletion alignment, and unrestricted recovery lifting remain open. The exact joint SR2 condition is `Delta_r(F)<=B_v<=0` for the **same** vertex, with `B_v=Delta_(r-1)(F-N[v])`; marginal signs do not establish it.
+
+Fixed-residual common-connector padding has a proved root-uniform upper limitation: once `h>=2r+3+(r+1)max(0,-Delta_r(F)-Delta_(r-1)(F))`, its required ambient first-descent guard fails. The recovery-restricted universal rescue statement remains open; an actual recovering forest is required for a nonvacuous refutation. The known sibling Hall examples keep their later ranks: `CB(8,92)` at `p=492` has a positive arm cut and negative complete aggregate, while G1 rank `p=491` fails strict crossing. No Hall or aggregate counterexample is silently recast as a G1 or unimodality counterexample.
+
+### Canonical registration and strategic consequence
+
+By Ashton's explicit publication instruction, all **81 pre-existing master claim objects are preserved exactly**, including r23b's later Horn-B scope clarifications and tag-closed-cut wording. The 207 additional identities from the complete G1 lineage are imported at their accepted statuses and grades. The master now contains **288 claims: 143 VERIFIED, 84 REFUTED, 24 CONDITIONAL, 37 OPEN**. These are identities, not a count of new theorems. The six G1 formal consequences do not replace or recount the older program's formal asset inventory. Shared-key wording or aliases in the sealed run remain historical run-local records; they do not overwrite the live master.
+
+The run accounts for 285 final synthesis outputs, 456 source occurrences, and 1,944 rows across 31 inherited views. Source-only, auxiliary, proper-subclaim and witness-against relations retain their distinctions. Six historical replay qualifications remain visible. Canonical publication lint preserves the prior master and source-run terminal dispositions. The internal experiment seals remain unchanged.
+
+TREE, FOREST, TRANSFER, unrestricted G1, literal complete aggregate and governed `E993-BETA-AGG` remain OPEN. The high-impact next work is a uniform matching/cover argument beyond finitely many width bands; global favorable-leaf cancellation on the general residual class, with lower-interior full-row falsification; and an exact ordinary-graph implication chain that exposes semantic and forest-composition gaps. This is substantial partial progress, with no justified completion percentage or near-term solution prediction. No mathematical novelty is claimed by registration.

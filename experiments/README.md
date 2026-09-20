@@ -49,3 +49,5 @@ result, limitations, and hashes.
 - [r23 actual-tree Delete/Retag](r23-delete-retag-actual-tree.md) — one full 30-route/60-critic cycle; decisive refutation of literal ordinary-tree all-cut Hall; complete aggregate and governed-RTree bridge remain open; one narrow Lean arithmetic certificate.
 - [Unimodality certificates](unimodal-certificates-2026-09-07.md) — fixed-window certificate strategy refuted by proof; a graded mode-synchronization direction remains open.
 - [r23b actual-tree Delete/Retag construction & verification](r23b-delete-retag-construction-verification.md) — six cycles; correspondence discharged to one named residual (O16); tag-closed-cut Hall refuted at order 1567 (F17) so the O14 per-row demand is the surviving object; paths closed, TYPE-2-DIRECT proved; §6 battery closed; Horn B of record with the transfer as O15.
+
+- [G1 large-residual experiment](g1-large-residual-dre-2026-09-13.md): three-cycle close, formal low-rank and first/third-wide graph results, explicit mechanism refutations and remaining unbounded region.

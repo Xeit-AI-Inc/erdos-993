@@ -1,0 +1,1487 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "erdos-993-g1-c2s-l1-first-wide-20260920-v1",
+  "theorem": {
+    "title": "Sharp first-wide classification and exceptional positivity history for ordinary finite graphs, with the literal G1 first-wide corollary",
+    "informal_statement": "For every finite ordinary simple graph G and natural r>=1 with |V(G)|=2r+2, Delta_r(G)>0 iff G has at most one edge, and those exceptional graphs have Delta_k>0 for all 0<=k<=r. Consequently every frozen ordinary G1 tuple with |U|=2p-2 has Delta_(p-2)(U)<=0."
+  },
+  "formulation_status": {
+    "status": "open",
+    "evidence": [
+      "SOURCE/intake/C2-LEAN-SELECTION-v1.json selects C2S-L1 and requires all three outputs; this producer proposal does not freeze or verify the formulation.",
+      "SOURCE/intake/PROOFS.md Common definitions and Candidate L1 supply the elementary graph proof; the fresh independent informal audit and all formal gates remain controller-owned and pending from this phase. No known counterexample is asserted.",
+      "C1 source is reused only by unchanged source-fragment replay with fresh kernel checking. Its archived terminal theorem and report do not certify this successor."
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-simple-graph",
+      "lean_name": "SimpleGraph",
+      "description": "Ordinary undirected loopless graph on an arbitrary vertex type, with no RTree or special graph encoding.",
+      "dependencies": []
+    },
+    {
+      "id": "def-forest",
+      "lean_name": "SimpleGraph.IsAcyclic",
+      "description": "No cyclic walk satisfies IsCycle. Forests may be disconnected and empty.",
+      "dependencies": [
+        "def-simple-graph"
+      ]
+    },
+    {
+      "id": "def-tree",
+      "lean_name": "SimpleGraph.IsTree",
+      "description": "Connected, nonempty, acyclic ordinary graph.",
+      "dependencies": [
+        "def-forest"
+      ]
+    },
+    {
+      "id": "def-count",
+      "lean_name": "Erdos993G1.indepCount",
+      "description": "i_k(F)=(Nat.card {S : Finset V // F.IsNIndepSet k S}:Z). IsNIndepSet means pairwise nonadjacency of distinct members and S.card=k. These are actual subsets counted once. Finite V gives i0=1 even for the empty graph and zero beyond the independence number.",
+      "dependencies": [
+        "def-simple-graph"
+      ]
+    },
+    {
+      "id": "def-coeff",
+      "lean_name": "Erdos993G1.coeff",
+      "description": "For integer k, coeff F k = if 0<=k then indepCount F k.toNat else 0. Negative indices vanish; indices past support vanish by actual subset cardinality.",
+      "dependencies": [
+        "def-count"
+      ]
+    },
+    {
+      "id": "def-delta",
+      "lean_name": "Erdos993G1.delta",
+      "description": "For integer k, delta F k = coeff F (k+1)-coeff F k in Z; delta(-1)=1 for finite F.",
+      "dependencies": [
+        "def-coeff"
+      ]
+    },
+    {
+      "id": "def-first-descent",
+      "lean_name": "Erdos993G1.firstDescent",
+      "description": "x(F)=sInf {k:N | delta F (k:Z)<0}. Prove this set nonempty for every finite F via a maximum independent set and its following zero coefficient. This is the first strict descent, not a global maximizer or a plateau.",
+      "dependencies": [
+        "def-delta"
+      ]
+    },
+    {
+      "id": "def-order",
+      "lean_name": "Nat.card",
+      "description": "|F| is Nat.card of its actual finite vertex type. Induced graph order is the cardinality of the actual survivor subtype.",
+      "dependencies": [
+        "def-simple-graph"
+      ]
+    },
+    {
+      "id": "def-degree",
+      "lean_name": "Erdos993G1.vertexDegree",
+      "description": "vertexDegree T v=Nat.card (T.neighborSet v), the number of original graph neighbors. Degree one and adjacency to s identify the leaf's unique neighbor.",
+      "dependencies": [
+        "def-simple-graph"
+      ]
+    },
+    {
+      "id": "def-neighborhood",
+      "lean_name": "Erdos993G1.closedNeighborhood",
+      "description": "closedNeighborhood T v={w | w=v or T.Adj v w}; all neighborhoods in the target use the ORIGINAL T.",
+      "dependencies": [
+        "def-simple-graph"
+      ]
+    },
+    {
+      "id": "def-deletion",
+      "lean_name": "Erdos993G1.deleteVerts",
+      "description": "deleteVerts F S = F.induce S-complement, on {w:V // w notin S}, with inherited original adjacency.",
+      "dependencies": [
+        "def-simple-graph"
+      ]
+    },
+    {
+      "id": "def-ambient-a",
+      "lean_name": "Erdos993G1.ambientA",
+      "description": "A=deleteVerts T (closedNeighborhood T v), namely T-N_T[v].",
+      "dependencies": [
+        "def-neighborhood",
+        "def-deletion"
+      ]
+    },
+    {
+      "id": "def-ambient-h",
+      "lean_name": "Erdos993G1.ambientH",
+      "description": "H=deleteVerts T (closedNeighborhood T v union {g}), exactly the unchanged flattened survivor graph. Replayed original Deletion lemmas prove its graph isomorphism to deleting the surviving original g from A; no new graph-identification hypothesis is added.",
+      "dependencies": [
+        "def-neighborhood",
+        "def-deletion"
+      ]
+    },
+    {
+      "id": "def-residual",
+      "lean_name": "Erdos993G1.residual",
+      "description": "U=deleteVerts T (closedNeighborhood T v union closedNeighborhood T g), exactly the original survivor subtype with adjacency inherited from T. Both neighborhoods are evaluated in original T. This ordinary graph is instantiated directly in the first-wide theorem; no RTree transport is claimed.",
+      "dependencies": [
+        "def-neighborhood",
+        "def-deletion"
+      ]
+    },
+    {
+      "id": "def-residual-order",
+      "lean_name": "Erdos993G1.residualOrder",
+      "description": "Nat.card {w:V // w notin closedNeighborhood T v union closedNeighborhood T g}, exactly the vertex count of U.",
+      "dependencies": [
+        "def-residual",
+        "def-order"
+      ]
+    },
+    {
+      "id": "def-g1-guards",
+      "lean_name": "Erdos993G1.ordinaryG1Guards",
+      "description": "Exactly the unchanged ten-part conjunction: T.IsTree; vertexDegree T v=1; T.Adj v s; vertexDegree T s=2; T.Adj s g; g!=v; p=firstDescent T+1; delta (ambientA T v) (p:Z)+delta (ambientH T v g) ((p:Z)-1)<0; natural 2*p-3<residualOrder T v g; firstDescent (residual T v g)<natural p-2. Every structural and numerical guard is retained. The selected corollary adds only residualOrder=natural 2*p-2. No upper rank/size bound, LC, unimodality, count identity premise or RTree premise is introduced.",
+      "dependencies": [
+        "def-tree",
+        "def-degree",
+        "def-first-descent",
+        "def-ambient-a",
+        "def-ambient-h",
+        "def-residual",
+        "def-residual-order",
+        "def-delta"
+      ]
+    },
+    {
+      "id": "def-edge-count",
+      "lean_name": "Nat.card G.edgeSet",
+      "description": "The natural cardinality of the subtype of Sym2 V consisting of the actual unordered edges of the finite ordinary graph G. Looplessness ensures two distinct endpoints; at most one means exactly zero or one actual edge. Internal edgeFinset cardinal representations require a proved bridge. No replacement count parameter is quantified.",
+      "dependencies": [
+        "def-simple-graph"
+      ]
+    },
+    {
+      "id": "def-stratum",
+      "lean_name": "Erdos993G1.FirstWide.stratum",
+      "description": "Planned noncomputable def under Fintype X: stratum G M k j = (G.indepSetFinset k).filter (fun S => (S inter M).card=j), constructed with classical decidability. Counts only actual independent k-subsets. Requires no old lemma in its definition body; exact text and insertion context are in PLAN.md. Used only inside the proof, absent from terminal hypotheses.",
+      "dependencies": [
+        "def-simple-graph",
+        "def-count"
+      ]
+    },
+    {
+      "id": "def-binom-coeff",
+      "lean_name": "Erdos993G1.FirstWide.binomCoeff",
+      "description": "Planned def binomCoeff (n:Nat) (k:Int):Int := if 0<=k then (n.choose k.toNat:Int) else 0. Negative integer ranks vanish, while Nat.choose gives zero above n. This arithmetic auxiliary must be identified with actual graph counts by proved subset bijections; it does not replace indepCount/coeff. Exact text is in PLAN.md.",
+      "dependencies": []
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-classification-vertices",
+      "lean_type": "Type u",
+      "description": "V is an arbitrary vertex type, independently universally bound in the sharp classification conjunct. Universe u is arbitrary.",
+      "dependencies": [
+        "def-simple-graph"
+      ]
+    },
+    {
+      "id": "domain-classification-finite",
+      "lean_type": "Finite V",
+      "description": "Finiteness of the entire vertex type V; Fintype and decidable instances are chosen internally as needed and are not extra mathematical hypotheses.",
+      "dependencies": [
+        "domain-classification-vertices"
+      ]
+    },
+    {
+      "id": "domain-classification-graph",
+      "lean_type": "SimpleGraph V",
+      "description": "An arbitrary ordinary simple graph on V. Treehood is required only by ordinaryG1Guards in the corollary.",
+      "dependencies": [
+        "domain-classification-vertices",
+        "def-simple-graph"
+      ]
+    },
+    {
+      "id": "domain-history-vertices",
+      "lean_type": "Type u",
+      "description": "W is an arbitrary vertex type, independently universally bound in the complete exceptional history conjunct. Universe u is arbitrary.",
+      "dependencies": [
+        "def-simple-graph"
+      ]
+    },
+    {
+      "id": "domain-history-finite",
+      "lean_type": "Finite W",
+      "description": "Finiteness of the entire vertex type W; Fintype and decidable instances are chosen internally as needed and are not extra mathematical hypotheses.",
+      "dependencies": [
+        "domain-history-vertices"
+      ]
+    },
+    {
+      "id": "domain-history-graph",
+      "lean_type": "SimpleGraph W",
+      "description": "An arbitrary ordinary simple graph on W. Treehood is required only by ordinaryG1Guards in the corollary.",
+      "dependencies": [
+        "domain-history-vertices",
+        "def-simple-graph"
+      ]
+    },
+    {
+      "id": "domain-tree-vertices",
+      "lean_type": "Type u",
+      "description": "X is an arbitrary vertex type, independently universally bound in the ordinary G1 corollary conjunct. Universe u is arbitrary.",
+      "dependencies": [
+        "def-simple-graph"
+      ]
+    },
+    {
+      "id": "domain-tree-finite",
+      "lean_type": "Finite X",
+      "description": "Finiteness of the entire vertex type X; Fintype and decidable instances are chosen internally as needed and are not extra mathematical hypotheses.",
+      "dependencies": [
+        "domain-tree-vertices"
+      ]
+    },
+    {
+      "id": "domain-tree-graph",
+      "lean_type": "SimpleGraph X",
+      "description": "An arbitrary ordinary simple graph on X. Treehood is required only by ordinaryG1Guards in the corollary.",
+      "dependencies": [
+        "domain-tree-vertices",
+        "def-simple-graph"
+      ]
+    },
+    {
+      "id": "domain-rank",
+      "lean_type": "ℕ",
+      "description": "r, rH and p range over natural numbers. The first two outputs explicitly assume rank>=1. The corollary quantifies every p; the unchanged crossing guard proves p>=3. All displayed p subtraction in guards and size equality is truncated natural subtraction.",
+      "dependencies": []
+    },
+    {
+      "id": "domain-history-index",
+      "lean_type": "ℕ",
+      "description": "k ranges over every natural index including zero; k<=rH is the sole predecessor-index restriction and is an implication hypothesis inside the history output.",
+      "dependencies": []
+    },
+    {
+      "id": "domain-tuple-vertex",
+      "lean_type": "X",
+      "description": "v,s,g are original ambient vertices: the leaf, its unique support, and the other support neighbor are identified by the unchanged guard.",
+      "dependencies": [
+        "domain-tree-vertices"
+      ]
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "V",
+      "kind": "forall",
+      "domain_id": "domain-classification-vertices"
+    },
+    {
+      "binder": "finiteV",
+      "kind": "forall",
+      "domain_id": "domain-classification-finite"
+    },
+    {
+      "binder": "G",
+      "kind": "forall",
+      "domain_id": "domain-classification-graph"
+    },
+    {
+      "binder": "r",
+      "kind": "forall",
+      "domain_id": "domain-rank"
+    },
+    {
+      "binder": "W",
+      "kind": "forall",
+      "domain_id": "domain-history-vertices"
+    },
+    {
+      "binder": "finiteW",
+      "kind": "forall",
+      "domain_id": "domain-history-finite"
+    },
+    {
+      "binder": "H",
+      "kind": "forall",
+      "domain_id": "domain-history-graph"
+    },
+    {
+      "binder": "rH",
+      "kind": "forall",
+      "domain_id": "domain-rank"
+    },
+    {
+      "binder": "k",
+      "kind": "forall",
+      "domain_id": "domain-history-index"
+    },
+    {
+      "binder": "X",
+      "kind": "forall",
+      "domain_id": "domain-tree-vertices"
+    },
+    {
+      "binder": "finiteX",
+      "kind": "forall",
+      "domain_id": "domain-tree-finite"
+    },
+    {
+      "binder": "T",
+      "kind": "forall",
+      "domain_id": "domain-tree-graph"
+    },
+    {
+      "binder": "v",
+      "kind": "forall",
+      "domain_id": "domain-tuple-vertex"
+    },
+    {
+      "binder": "s",
+      "kind": "forall",
+      "domain_id": "domain-tuple-vertex"
+    },
+    {
+      "binder": "g",
+      "kind": "forall",
+      "domain_id": "domain-tuple-vertex"
+    },
+    {
+      "binder": "p",
+      "kind": "forall",
+      "domain_id": "domain-rank"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-classification-rank",
+      "statement": "In the first conjunct: 1<=r.",
+      "dependencies": [
+        "domain-rank"
+      ]
+    },
+    {
+      "id": "hyp-classification-order",
+      "statement": "In the first conjunct: Nat.card V = 2*r+2. No forest, crossing or other structural restriction.",
+      "dependencies": [
+        "domain-classification-finite",
+        "def-order",
+        "domain-rank"
+      ]
+    },
+    {
+      "id": "hyp-history-rank",
+      "statement": "In the second conjunct: 1<=rH.",
+      "dependencies": [
+        "domain-rank"
+      ]
+    },
+    {
+      "id": "hyp-history-order",
+      "statement": "In the second conjunct: Nat.card W = 2*rH+2.",
+      "dependencies": [
+        "domain-history-finite",
+        "def-order",
+        "domain-rank"
+      ]
+    },
+    {
+      "id": "hyp-history-edges",
+      "statement": "In the second conjunct only: Nat.card H.edgeSet<=1. This is the exceptional case whose positivity history is concluded; it is not a premise of the sharp iff.",
+      "dependencies": [
+        "domain-history-graph",
+        "def-edge-count"
+      ]
+    },
+    {
+      "id": "hyp-history-index",
+      "statement": "For each natural k in the second conjunct: k<=rH, including k=0 and k=rH.",
+      "dependencies": [
+        "domain-history-index",
+        "domain-rank"
+      ]
+    },
+    {
+      "id": "hyp-g1-tuple",
+      "statement": "In the third conjunct: Erdos993G1.ordinaryG1Guards T v s g p, with every original structural and numerical component unchanged.",
+      "dependencies": [
+        "domain-tree-finite",
+        "domain-tree-graph",
+        "domain-tuple-vertex",
+        "domain-rank",
+        "def-g1-guards"
+      ]
+    },
+    {
+      "id": "hyp-g1-first-wide-order",
+      "statement": "In the third conjunct only: residualOrder T v g = 2*p-2 in Nat. With p>=3 proved from the crossing guard, r=p-2 satisfies r>=1 and the actual residual vertex order is 2*r+2.",
+      "dependencies": [
+        "def-residual-order",
+        "domain-rank"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "Three separately universal outputs: (1) Every finite ordinary simple G of order 2*r+2 at every natural r>=1 has 0<delta G (r:Int) iff Nat.card G.edgeSet<=1. (2) Every such exceptional graph has 0<delta H (k:Int) at every natural k<=rH, including both endpoints. (3) Every literal ordinaryG1Guards tuple with actual residualOrder=natural 2*p-2 has delta (residual T v g) ((p:Int)-2)<=0. All graph/incidence/binomial identifications are proved internally by the closed N0-N13 plan; none is an unproved hypothesis. All three outputs, fresh source replay/kernel checking, independent informal/fidelity gates and controller closeout are success conditions. No upper rank bound, forest-unimodality result, scalar replacement theorem or RTree claim is concluded.",
+    "dependencies": [
+      "hyp-classification-rank",
+      "hyp-classification-order",
+      "hyp-history-rank",
+      "hyp-history-order",
+      "hyp-history-edges",
+      "hyp-history-index",
+      "hyp-g1-tuple",
+      "hyp-g1-first-wide-order",
+      "domain-classification-graph",
+      "def-delta",
+      "def-edge-count",
+      "def-first-descent",
+      "def-residual"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "def-simple-graph",
+        "kind": "definition"
+      },
+      {
+        "id": "def-forest",
+        "kind": "definition"
+      },
+      {
+        "id": "def-tree",
+        "kind": "definition"
+      },
+      {
+        "id": "def-count",
+        "kind": "definition"
+      },
+      {
+        "id": "def-coeff",
+        "kind": "definition"
+      },
+      {
+        "id": "def-delta",
+        "kind": "definition"
+      },
+      {
+        "id": "def-first-descent",
+        "kind": "definition"
+      },
+      {
+        "id": "def-order",
+        "kind": "definition"
+      },
+      {
+        "id": "def-degree",
+        "kind": "definition"
+      },
+      {
+        "id": "def-neighborhood",
+        "kind": "definition"
+      },
+      {
+        "id": "def-deletion",
+        "kind": "definition"
+      },
+      {
+        "id": "def-ambient-a",
+        "kind": "definition"
+      },
+      {
+        "id": "def-ambient-h",
+        "kind": "definition"
+      },
+      {
+        "id": "def-residual",
+        "kind": "definition"
+      },
+      {
+        "id": "def-residual-order",
+        "kind": "definition"
+      },
+      {
+        "id": "def-g1-guards",
+        "kind": "definition"
+      },
+      {
+        "id": "def-edge-count",
+        "kind": "definition"
+      },
+      {
+        "id": "def-stratum",
+        "kind": "definition"
+      },
+      {
+        "id": "def-binom-coeff",
+        "kind": "definition"
+      },
+      {
+        "id": "domain-classification-vertices",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-classification-finite",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-classification-graph",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-history-vertices",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-history-finite",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-history-graph",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-tree-vertices",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-tree-finite",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-tree-graph",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-rank",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-history-index",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-tuple-vertex",
+        "kind": "domain"
+      },
+      {
+        "id": "hyp-classification-rank",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-classification-order",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-history-rank",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-history-order",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-history-edges",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-history-index",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-g1-tuple",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-g1-first-wide-order",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "def-simple-graph",
+        "to": "def-forest"
+      },
+      {
+        "from": "def-forest",
+        "to": "def-tree"
+      },
+      {
+        "from": "def-simple-graph",
+        "to": "def-count"
+      },
+      {
+        "from": "def-count",
+        "to": "def-coeff"
+      },
+      {
+        "from": "def-coeff",
+        "to": "def-delta"
+      },
+      {
+        "from": "def-delta",
+        "to": "def-first-descent"
+      },
+      {
+        "from": "def-simple-graph",
+        "to": "def-order"
+      },
+      {
+        "from": "def-simple-graph",
+        "to": "def-degree"
+      },
+      {
+        "from": "def-simple-graph",
+        "to": "def-neighborhood"
+      },
+      {
+        "from": "def-simple-graph",
+        "to": "def-deletion"
+      },
+      {
+        "from": "def-neighborhood",
+        "to": "def-ambient-a"
+      },
+      {
+        "from": "def-deletion",
+        "to": "def-ambient-a"
+      },
+      {
+        "from": "def-neighborhood",
+        "to": "def-ambient-h"
+      },
+      {
+        "from": "def-deletion",
+        "to": "def-ambient-h"
+      },
+      {
+        "from": "def-neighborhood",
+        "to": "def-residual"
+      },
+      {
+        "from": "def-deletion",
+        "to": "def-residual"
+      },
+      {
+        "from": "def-residual",
+        "to": "def-residual-order"
+      },
+      {
+        "from": "def-order",
+        "to": "def-residual-order"
+      },
+      {
+        "from": "def-tree",
+        "to": "def-g1-guards"
+      },
+      {
+        "from": "def-degree",
+        "to": "def-g1-guards"
+      },
+      {
+        "from": "def-first-descent",
+        "to": "def-g1-guards"
+      },
+      {
+        "from": "def-ambient-a",
+        "to": "def-g1-guards"
+      },
+      {
+        "from": "def-ambient-h",
+        "to": "def-g1-guards"
+      },
+      {
+        "from": "def-residual",
+        "to": "def-g1-guards"
+      },
+      {
+        "from": "def-residual-order",
+        "to": "def-g1-guards"
+      },
+      {
+        "from": "def-delta",
+        "to": "def-g1-guards"
+      },
+      {
+        "from": "def-simple-graph",
+        "to": "def-edge-count"
+      },
+      {
+        "from": "def-simple-graph",
+        "to": "def-stratum"
+      },
+      {
+        "from": "def-count",
+        "to": "def-stratum"
+      },
+      {
+        "from": "def-simple-graph",
+        "to": "domain-classification-vertices"
+      },
+      {
+        "from": "domain-classification-vertices",
+        "to": "domain-classification-finite"
+      },
+      {
+        "from": "domain-classification-vertices",
+        "to": "domain-classification-graph"
+      },
+      {
+        "from": "def-simple-graph",
+        "to": "domain-classification-graph"
+      },
+      {
+        "from": "def-simple-graph",
+        "to": "domain-history-vertices"
+      },
+      {
+        "from": "domain-history-vertices",
+        "to": "domain-history-finite"
+      },
+      {
+        "from": "domain-history-vertices",
+        "to": "domain-history-graph"
+      },
+      {
+        "from": "def-simple-graph",
+        "to": "domain-history-graph"
+      },
+      {
+        "from": "def-simple-graph",
+        "to": "domain-tree-vertices"
+      },
+      {
+        "from": "domain-tree-vertices",
+        "to": "domain-tree-finite"
+      },
+      {
+        "from": "domain-tree-vertices",
+        "to": "domain-tree-graph"
+      },
+      {
+        "from": "def-simple-graph",
+        "to": "domain-tree-graph"
+      },
+      {
+        "from": "domain-tree-vertices",
+        "to": "domain-tuple-vertex"
+      },
+      {
+        "from": "domain-rank",
+        "to": "hyp-classification-rank"
+      },
+      {
+        "from": "domain-classification-finite",
+        "to": "hyp-classification-order"
+      },
+      {
+        "from": "def-order",
+        "to": "hyp-classification-order"
+      },
+      {
+        "from": "domain-rank",
+        "to": "hyp-classification-order"
+      },
+      {
+        "from": "domain-rank",
+        "to": "hyp-history-rank"
+      },
+      {
+        "from": "domain-history-finite",
+        "to": "hyp-history-order"
+      },
+      {
+        "from": "def-order",
+        "to": "hyp-history-order"
+      },
+      {
+        "from": "domain-rank",
+        "to": "hyp-history-order"
+      },
+      {
+        "from": "domain-history-graph",
+        "to": "hyp-history-edges"
+      },
+      {
+        "from": "def-edge-count",
+        "to": "hyp-history-edges"
+      },
+      {
+        "from": "domain-history-index",
+        "to": "hyp-history-index"
+      },
+      {
+        "from": "domain-rank",
+        "to": "hyp-history-index"
+      },
+      {
+        "from": "domain-tree-finite",
+        "to": "hyp-g1-tuple"
+      },
+      {
+        "from": "domain-tree-graph",
+        "to": "hyp-g1-tuple"
+      },
+      {
+        "from": "domain-tuple-vertex",
+        "to": "hyp-g1-tuple"
+      },
+      {
+        "from": "domain-rank",
+        "to": "hyp-g1-tuple"
+      },
+      {
+        "from": "def-g1-guards",
+        "to": "hyp-g1-tuple"
+      },
+      {
+        "from": "def-residual-order",
+        "to": "hyp-g1-first-wide-order"
+      },
+      {
+        "from": "domain-rank",
+        "to": "hyp-g1-first-wide-order"
+      },
+      {
+        "from": "hyp-classification-rank",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-classification-order",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-history-rank",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-history-order",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-history-edges",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-history-index",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-g1-tuple",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-g1-first-wide-order",
+        "to": "conclusion"
+      },
+      {
+        "from": "domain-classification-graph",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-delta",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-edge-count",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-first-descent",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-residual",
+        "to": "conclusion"
+      }
+    ]
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "explicit_axiom_allowlist",
+    "rationale": "Finite subset/edge cardinality, the existing natural infimum and internal classical finite graph decidability may use the three authorized standard Lean axioms. The actual incidence and graph-count bridges are proof obligations, not permitted axioms. No sorry, admit, sorryAx, native_decide or mathematical assumption beyond the stated hypotheses is allowed."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "Erdos993G1.firstWideClassificationHistoryAndG1",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem Erdos993G1.firstWideClassificationHistoryAndG1 :\n    (∀ (V : Type u) [finiteV : Finite V] (G : SimpleGraph V) (r : ℕ),\n      1 ≤ r →\n      Nat.card V = 2 * r + 2 →\n      (0 < Erdos993G1.delta G (r : ℤ) ↔ Nat.card G.edgeSet ≤ 1)) ∧\n    (∀ (W : Type u) [finiteW : Finite W] (H : SimpleGraph W) (rH : ℕ),\n      1 ≤ rH →\n      Nat.card W = 2 * rH + 2 →\n      Nat.card H.edgeSet ≤ 1 →\n      ∀ (k : ℕ), k ≤ rH → 0 < Erdos993G1.delta H (k : ℤ)) ∧\n    (∀ (X : Type u) [finiteX : Finite X] (T : SimpleGraph X)\n      (v s g : X) (p : ℕ),\n      Erdos993G1.ordinaryG1Guards T v s g p →\n      Erdos993G1.residualOrder T v g = 2 * p - 2 →\n      Erdos993G1.delta (Erdos993G1.residual T v g) ((p : ℤ) - 2) ≤ 0)",
+    "expected_statement_sha256": "ee2b961c4adf032f3e6e1a77ccdfa01557ce47ce91db21dc6824615859be64c7"
+  },
+  "source_materials": [
+    {
+      "id": "source-intake",
+      "path": "EVIDENCE/INTAKE.json",
+      "role": "theorem_intent",
+      "sha256": "b79b546c55d568920403ab8e0131663e7a4983a0906ae7db81531f54b00ecafe"
+    },
+    {
+      "id": "source-proofs",
+      "path": "SOURCE/intake/PROOFS.md",
+      "role": "reference",
+      "sha256": "3fd80e3e8079682bbc76c07012999b9e4c8a8064459f605eec79abcbdafc3ecc"
+    },
+    {
+      "id": "source-candidate",
+      "path": "SOURCE/intake/LEAN-CANDIDATES.json",
+      "role": "theorem_intent",
+      "sha256": "3a63e821739de7615ede2c0135a88f0108accbca02f49f595b1588cd7a092780"
+    },
+    {
+      "id": "source-ordinary-contract",
+      "path": "SOURCE/intake/SOLUTION-CONTRACT.md",
+      "role": "hypothesis_authority",
+      "sha256": "27ce75bfbc2933de8ffcfa69b7680836aa9241c713110a068c705b1e348681c3"
+    },
+    {
+      "id": "source-selection",
+      "path": "SOURCE/intake/C2-LEAN-SELECTION-v1.json",
+      "role": "theorem_intent",
+      "sha256": "56bafb94c6ed98a32f2222f1a430db71164fd6a0906b6f162a1321445ec3e6ac"
+    },
+    {
+      "id": "source-c1-contract",
+      "path": "SOURCE/intake/C1/THEOREM-CONTRACT.yaml",
+      "role": "definition_authority",
+      "sha256": "7b82ab6422d309aa8493dbaa4e4c07dbc097c29d6207f8a2ecb60d0e85c1f686"
+    },
+    {
+      "id": "source-c1-main",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Main.lean",
+      "role": "definition_authority",
+      "sha256": "32ac508e828f7bccd484acec90b3cb7ea75a0449bd9ee4ff20e8b535566bee85"
+    },
+    {
+      "id": "source-c1-state",
+      "path": "SOURCE/intake/C1/FORMALIZATION-STATE.json",
+      "role": "reference",
+      "sha256": "cb4ba4cf8ce6ce552ef2620e25159ab53fe0e78e527bd16b548e48bfdaaae143"
+    },
+    {
+      "id": "source-c1-report-historical-only",
+      "path": "SOURCE/intake/C1/VERIFICATION-REPORT.json",
+      "role": "reference",
+      "sha256": "8eed9173ca235c187e0fce5655c0a33b498ad43a19ff379f654d2e49ec9c65de"
+    },
+    {
+      "id": "source-api-map",
+      "path": "SOURCE/intake/preflight/API-MAP.md",
+      "role": "reference",
+      "sha256": "8a2452bd7164711b07fadb313ce599469f4910b783ef170d6b37110f7b91d96d"
+    },
+    {
+      "id": "source-api-integration",
+      "path": "SOURCE/intake/preflight/API-INTEGRATION.md",
+      "role": "reference",
+      "sha256": "b169509f94647e3b9b3015072769f00552346eacd9c88f7ca79901cf9001bdde"
+    },
+    {
+      "id": "source-plan",
+      "path": "SOURCE/producer/PLAN.md",
+      "role": "reference",
+      "sha256": "24a02c47093bc5e891a09b3252d38a6c7788bdb03b1b1ef335797aab76664df9"
+    },
+    {
+      "id": "source-c1-fragment-0001",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0001-definition-Erdos993G1-indepCount.lean.fragment",
+      "role": "definition_authority",
+      "sha256": "858f5de3d80b67c1390e828786f252d3d6d020b7311b0039071e14bd1407c4a9"
+    },
+    {
+      "id": "source-c1-fragment-0002",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0002-definition-Erdos993G1-coeff.lean.fragment",
+      "role": "definition_authority",
+      "sha256": "92ee6695ec9af348314ae6543d4102a54df31fa504644e0a0f386d6b81bd44cd"
+    },
+    {
+      "id": "source-c1-fragment-0003",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0003-definition-Erdos993G1-delta.lean.fragment",
+      "role": "definition_authority",
+      "sha256": "b34fa17ed22bb7174290541832e4f5abe5ec3e5ea329b7ab516d5b2db76eb201"
+    },
+    {
+      "id": "source-c1-fragment-0004",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0004-definition-Erdos993G1-firstDescent.lean.fragment",
+      "role": "definition_authority",
+      "sha256": "313f419876bd7051ace88951c422a36bde99b098190313d6954d65d888befd99"
+    },
+    {
+      "id": "source-c1-fragment-0005",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0005-definition-Erdos993G1-vertexDegree.lean.fragment",
+      "role": "definition_authority",
+      "sha256": "0abc03201f8e96696be3a79d027d32bf1b282c722165cf63bf228b01ed59d555"
+    },
+    {
+      "id": "source-c1-fragment-0006",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0006-definition-Erdos993G1-closedNeighborhood.lean.fragment",
+      "role": "definition_authority",
+      "sha256": "589a193da9846f7dfa34a178b346f3466b219affcd372591acccba327bc5c9a3"
+    },
+    {
+      "id": "source-c1-fragment-0007",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0007-definition-Erdos993G1-deleteVerts.lean.fragment",
+      "role": "definition_authority",
+      "sha256": "8044160bd96993004323eaebfb80e42820d15779af6158f7906dd76e79c61378"
+    },
+    {
+      "id": "source-c1-fragment-0008",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0008-definition-Erdos993G1-ambientA.lean.fragment",
+      "role": "definition_authority",
+      "sha256": "b504fd5411779932120471f20ba7398be72724b13e87404b5b6ad5a7df9a3a55"
+    },
+    {
+      "id": "source-c1-fragment-0009",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0009-definition-Erdos993G1-ambientH.lean.fragment",
+      "role": "definition_authority",
+      "sha256": "0c426523e170fbac06f689b2cbcb0d97f5ee5bdd220162360724a82b4c7fe0be"
+    },
+    {
+      "id": "source-c1-fragment-0010",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0010-definition-Erdos993G1-residual.lean.fragment",
+      "role": "definition_authority",
+      "sha256": "8ed38df1b3849e3213fd89fae58371f9982b84585b2a180e44dc62857cd71d7e"
+    },
+    {
+      "id": "source-c1-fragment-0011",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0011-definition-Erdos993G1-residualOrder.lean.fragment",
+      "role": "definition_authority",
+      "sha256": "f78b693e38755673f5859f82b106377d6e270f5001ef539f0bc8704ac2287450"
+    },
+    {
+      "id": "source-c1-fragment-0012",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0012-definition-Erdos993G1-ordinaryG1Guards.lean.fragment",
+      "role": "definition_authority",
+      "sha256": "d2845e8dec482006b4613d96fb63af68333d7ee29c1ceba51751342ec01a07ed"
+    },
+    {
+      "id": "source-c1-fragment-0013",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0013-lemma-Erdos993G1-isNIndepSet_zero_iff.lean.fragment",
+      "role": "reference",
+      "sha256": "9df9b861d801c09b5ab131b483e26dacc5056eb6ffb7867c7523a51e8ed843fb"
+    },
+    {
+      "id": "source-c1-fragment-0014",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0014-lemma-Erdos993G1-isNIndepSet_one_iff.lean.fragment",
+      "role": "reference",
+      "sha256": "b12f77f59d3690c92c7c8bada90d9b4c5f1449b5b17c2e5574308cfbf54a0536"
+    },
+    {
+      "id": "source-c1-fragment-0015",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0015-lemma-Erdos993G1-indepCount_eq_card_indepSetFinset.lean.fragment",
+      "role": "reference",
+      "sha256": "4c59444af666076a0ce8c355415235545a1d9c97ae721113599f63dcfb489a31"
+    },
+    {
+      "id": "source-c1-fragment-0016",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0016-lemma-Erdos993G1-indepCount_nonneg.lean.fragment",
+      "role": "reference",
+      "sha256": "d5a62e3c3455c4d50f47db7e930f327551be59af8aaf1acfb08fff9a88e86136"
+    },
+    {
+      "id": "source-c1-fragment-0017",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0017-lemma-Erdos993G1-indepCount_zero.lean.fragment",
+      "role": "reference",
+      "sha256": "acffad838916a1b13c96fef7c654f39104b03af428110c4da5e9d500b0e07674"
+    },
+    {
+      "id": "source-c1-fragment-0018",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0018-lemma-Erdos993G1-indepCount_one.lean.fragment",
+      "role": "reference",
+      "sha256": "2c3536cb34ec79e12b8147cd94b40ec4f4c21269c2fc1c9efd90a558e487a31e"
+    },
+    {
+      "id": "source-c1-fragment-0019",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0019-lemma-Erdos993G1-indepCount_eq_zero_of_indepNum_lt.lean.fragment",
+      "role": "reference",
+      "sha256": "123be264ea42836f1785056098a62c5d48fa1d801d8b6a9393f0f5b0f96e0bb6"
+    },
+    {
+      "id": "source-c1-fragment-0020",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0020-lemma-Erdos993G1-indepCount_indepNum_pos.lean.fragment",
+      "role": "reference",
+      "sha256": "c554d650c08283f9a98deb95737d52a97e95ae100d09a228280fd7cd658e6202"
+    },
+    {
+      "id": "source-c1-fragment-0021",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0021-lemma-Erdos993G1-coeff_nat.lean.fragment",
+      "role": "reference",
+      "sha256": "03f00ca029c7e10a6278ad907c2d6e5891668cdff802ec6768f9f93e51ed47f7"
+    },
+    {
+      "id": "source-c1-fragment-0022",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0022-lemma-Erdos993G1-coeff_of_neg.lean.fragment",
+      "role": "reference",
+      "sha256": "bcf669545ab3401ca5ba88ac2a8cf77144df87049057892e19b7f7728b3174fc"
+    },
+    {
+      "id": "source-c1-fragment-0023",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0023-lemma-Erdos993G1-delta_nat.lean.fragment",
+      "role": "reference",
+      "sha256": "a7a02236294541ef40fa02c9d9f0dd02052d13536f6523f462e2d5b96ff04f9e"
+    },
+    {
+      "id": "source-c1-fragment-0024",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0024-lemma-Erdos993G1-delta_zero.lean.fragment",
+      "role": "reference",
+      "sha256": "c43a89269ad4d7bad8f5c8faa0222710d3815a826516edd0955a80bef67ebcb8"
+    },
+    {
+      "id": "source-c1-fragment-0025",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0025-lemma-Erdos993G1-delta_neg_one.lean.fragment",
+      "role": "reference",
+      "sha256": "bfc4d805f6742022ecad22b2e0a4815d4b9dbdf74ee1a0c0d9029447718946dc"
+    },
+    {
+      "id": "source-c1-fragment-0026",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0026-lemma-Erdos993G1-descentSet_nonempty.lean.fragment",
+      "role": "reference",
+      "sha256": "a350a656e5d6dc22c0ce9c46cfdf112a3e20b1d02183576c24f5e68684fb6e37"
+    },
+    {
+      "id": "source-c1-fragment-0027",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0027-lemma-Erdos993G1-delta_firstDescent_neg.lean.fragment",
+      "role": "reference",
+      "sha256": "89b0cab7b8771183c2d0b5ac70403180c74b49b516232480839218649f06509c"
+    },
+    {
+      "id": "source-c1-fragment-0028",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0028-lemma-Erdos993G1-delta_nonneg_of_lt_firstDescent.lean.fragment",
+      "role": "reference",
+      "sha256": "3392871c932e55446fbc42daf9e9c43a4e1cb08354049e72cb027cb6d19bf932"
+    },
+    {
+      "id": "source-c1-fragment-0029",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0029-lemma-Erdos993G1-firstDescent_le_of_delta_neg.lean.fragment",
+      "role": "reference",
+      "sha256": "28265626e5cf310d23d33068a703ee3331532a0e2606bec2f98f236af0c037d9"
+    },
+    {
+      "id": "source-c1-fragment-0030",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0030-lemma-Erdos993G1-isNIndepSet_map_iso.lean.fragment",
+      "role": "reference",
+      "sha256": "bd57ae9ed83550b3ae866881446b3f65e474c92abf31958c2ec9fceb1ecebea4"
+    },
+    {
+      "id": "source-c1-fragment-0031",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0031-lemma-Erdos993G1-indepCount_iso.lean.fragment",
+      "role": "reference",
+      "sha256": "f71434b13438181169e26ebd673578c3c4195847c1f0e972ecc94516cacde2c6"
+    },
+    {
+      "id": "source-c1-fragment-0032",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0032-lemma-Erdos993G1-coeff_iso.lean.fragment",
+      "role": "reference",
+      "sha256": "3631b58dff1d09b36ceb6d30994a98a373baa90c430e6b6848fce34a00f7c1a9"
+    },
+    {
+      "id": "source-c1-fragment-0033",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0033-lemma-Erdos993G1-delta_iso.lean.fragment",
+      "role": "reference",
+      "sha256": "6827baaeefaade9988a5b47db939fb51b758021e44a3205b90ae8ca504f80599"
+    },
+    {
+      "id": "source-c1-fragment-0034",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0034-lemma-Erdos993G1-firstDescent_iso.lean.fragment",
+      "role": "reference",
+      "sha256": "f953a9d539a63b112ee6ea9442f78bdee854281e3ae2a6ab9c778bea34fe54dc"
+    },
+    {
+      "id": "source-c1-fragment-0035",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0035-lemma-Erdos993G1-vertexDegree_eq_degree.lean.fragment",
+      "role": "reference",
+      "sha256": "1d25716bb2cfa9c9539a083cbf0540c1058822084e51f30235b21366df7eec48"
+    },
+    {
+      "id": "source-c1-fragment-0036",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0036-lemma-Erdos993G1-deleteVerts_isAcyclic.lean.fragment",
+      "role": "reference",
+      "sha256": "fa008ac82c212d1670b3452bfae66fd9cdc7d0daf5cf0730113bca4db67f24d6"
+    },
+    {
+      "id": "source-c1-fragment-0037",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0037-lemma-Erdos993G1-residual_isAcyclic.lean.fragment",
+      "role": "reference",
+      "sha256": "171132e213d52d4989b295159e09daa1eaaf63f1c17c19916ef0fd2154c70202"
+    },
+    {
+      "id": "source-c1-fragment-0038",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0038-lemma-Erdos993G1-residualOrder_eq_card.lean.fragment",
+      "role": "reference",
+      "sha256": "849a5567c708fcc6b316d35358f7d832501d64d77ea0e18262b92d5a4e589d95"
+    },
+    {
+      "id": "source-c1-fragment-0039",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0039-lemma-Erdos993G1-isNIndepSet_pair_iff.lean.fragment",
+      "role": "reference",
+      "sha256": "c7fe22b14d4127788420f1fc872c6908e1c8e03d5089db1a4512366a1c6011cd"
+    },
+    {
+      "id": "source-c1-fragment-0040",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0040-lemma-Erdos993G1-sym2_toFinset_injective.lean.fragment",
+      "role": "reference",
+      "sha256": "b6bb80d1fc0be2dc048f714854ea2d7ae9649fbceb0e5bbffbd1fae3d1947acd"
+    },
+    {
+      "id": "source-c1-fragment-0041",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0041-lemma-Erdos993G1-indepSetFinset_two_eq.lean.fragment",
+      "role": "reference",
+      "sha256": "39a4bb3841ed900d0110289548de64819de9508cc2754cd12dd313c2afe30cc8"
+    },
+    {
+      "id": "source-c1-fragment-0042",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0042-lemma-Erdos993G1-indepCount_two_add_edges.lean.fragment",
+      "role": "reference",
+      "sha256": "a01f026068c216985f79412914a708de863f8d52ac60d7369e2b85a21c58c014"
+    },
+    {
+      "id": "source-c1-fragment-0043",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0043-lemma-Erdos993G1-indepSetFinset_eq_filter_powersetCard.lean.fragment",
+      "role": "reference",
+      "sha256": "ec9d1ede162d82ed94a34a38672bad65fc69ea0b778b5162ae78c5fec73a5628"
+    },
+    {
+      "id": "source-c1-fragment-0044",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0044-lemma-Erdos993G1-card_nonindep_pairs.lean.fragment",
+      "role": "reference",
+      "sha256": "96c84ad8516cd9224be112085b17e6b4dceb988fd19ce9e39ffaad28a4804cbc"
+    },
+    {
+      "id": "source-c1-fragment-0045",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0045-lemma-Erdos993G1-sum_card_filter_swap.lean.fragment",
+      "role": "reference",
+      "sha256": "db506bda8bc6b666134551b5bc0fd50e22daf1b537ec59f21be1da84eb4ffe98"
+    },
+    {
+      "id": "source-c1-fragment-0046",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0046-lemma-Erdos993G1-sum_nonindep_pair_incidence.lean.fragment",
+      "role": "reference",
+      "sha256": "da829ee128471804d3016cd47dc81dc700c969ffe760cdfe792d805388f36292"
+    },
+    {
+      "id": "source-c1-fragment-0047",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0047-lemma-Erdos993G1-sum_indep_indicator.lean.fragment",
+      "role": "reference",
+      "sha256": "e8656c5832d89388faa9e5fbe465d97c9212944d86545795e43360d7cf446d54"
+    },
+    {
+      "id": "source-c1-fragment-0048",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0048-lemma-Erdos993G1-triple_local_identity.lean.fragment",
+      "role": "reference",
+      "sha256": "1987228dfddb76922331fd7897112e6fbb9500d655adc833b004028ebafcd53d"
+    },
+    {
+      "id": "source-c1-fragment-0049",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0049-lemma-Erdos993G1-indepSetFinset_three_incidence.lean.fragment",
+      "role": "reference",
+      "sha256": "80322d36a50c5f8eedef153e69e935eaf0bebd0f6e842e96267c37f5a18cb932"
+    },
+    {
+      "id": "source-c1-fragment-0050",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0050-lemma-Erdos993G1-indepCount_three_incidence.lean.fragment",
+      "role": "reference",
+      "sha256": "3adc3e522766311fc9fcd178eccb3be21853afe0f6f45f08e276fee0469da6e6"
+    },
+    {
+      "id": "source-c1-fragment-0051",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0051-lemma-Erdos993G1-sum_triple_centered_neighbor_pairs.lean.fragment",
+      "role": "reference",
+      "sha256": "5d6d13f96ef2b45f6ff273927629e027fd51f7516517e36611d6551eb587a326"
+    },
+    {
+      "id": "source-c1-fragment-0052",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0052-lemma-Erdos993G1-indepCount_three_add_edge_incidence.lean.fragment",
+      "role": "reference",
+      "sha256": "b398a1f04b7b79977e8c1fc91c4eff3e3af0fec8c9def9962f181c902fe781da"
+    },
+    {
+      "id": "source-c1-fragment-0053",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0053-lemma-Erdos993G1-pathEight_indepCount_three.lean.fragment",
+      "role": "reference",
+      "sha256": "0e29db059505f864e12c75ec433be8e57e84a96d1e97e6398d27fb771cca9bdd"
+    },
+    {
+      "id": "source-c1-fragment-0054",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0054-lemma-Erdos993G1-pathEight_indepCount_four.lean.fragment",
+      "role": "reference",
+      "sha256": "f9906c059d315b180581ede34ccec23534348d14c27029f28598cc0ccd0cb0c0"
+    },
+    {
+      "id": "source-c1-fragment-0055",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0055-lemma-Erdos993G1-pathEight_delta_three.lean.fragment",
+      "role": "reference",
+      "sha256": "0c20bb8db1477bcbdfafbf318f9399d38469e5bca9071fe57a29f54b76a338df"
+    },
+    {
+      "id": "source-c1-fragment-0056",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0056-lemma-Erdos993G1-forest_card_edges_add_components.lean.fragment",
+      "role": "reference",
+      "sha256": "0c2fc141909dd6efa072639e3071ed6f5e6b14787697f3dd2ee2579560bb017f"
+    },
+    {
+      "id": "source-c1-fragment-0057",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0057-lemma-Erdos993G1-components_card_pos_of_card_pos.lean.fragment",
+      "role": "reference",
+      "sha256": "bd55e00b7dabf7179733a98d36feec04246ff14e0711a9213ddea4545442ebba"
+    },
+    {
+      "id": "source-c1-fragment-0058",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0058-lemma-Erdos993G1-connected_of_components_card_eq_one.lean.fragment",
+      "role": "reference",
+      "sha256": "d1fa40fce26c4bacfa1c0213caf51f70364e8df2ff028548f79d089919d34f6a"
+    },
+    {
+      "id": "source-c1-fragment-0059",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0059-lemma-Erdos993G1-PathClassification-longestPath_support_closed.lean.fragment",
+      "role": "reference",
+      "sha256": "eb014ed9e3bba006ccd1bfec10b3c8919996695ec39461ac245621e58d2bc87f"
+    },
+    {
+      "id": "source-c1-fragment-0060",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0060-lemma-Erdos993G1-PathClassification-longestPath_spanning.lean.fragment",
+      "role": "reference",
+      "sha256": "36b63e828d4fb832735cac7939db6767d6c1bda373c2c2e1903de4ee5e0d00bf"
+    },
+    {
+      "id": "source-c1-fragment-0061",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0061-lemma-Erdos993G1-PathClassification-tree_maxDegreeTwo_iso_pathGraph_card.lean.fragment",
+      "role": "reference",
+      "sha256": "29ac2e202882dce5f177871f54ca5f2de2b04889ab0c3c813bc2c99d6e75d30b"
+    },
+    {
+      "id": "source-c1-fragment-0062",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0062-lemma-Erdos993G1-PathClassification-tree_order_eight_maxDegreeTwo_iso_pathGraph.lean.fragment",
+      "role": "reference",
+      "sha256": "532fc845394e40f375e4dfd3b0fe4d6cb419a03f6e0ce849a7f2ede4000acc3b"
+    },
+    {
+      "id": "source-c1-fragment-0063",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0063-lemma-Erdos993G1-lowRankArithmetic.lean.fragment",
+      "role": "reference",
+      "sha256": "46e31bf020e3711e0bf5e2bb3f54ba1fbb1136760a2b4b25fab8b5c6c69dfa95"
+    },
+    {
+      "id": "source-c1-fragment-0064",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0064-lemma-Erdos993G1-degreeDefect_nonneg.lean.fragment",
+      "role": "reference",
+      "sha256": "36d264dd1540fb3c551965bb8704a04e73dffb2748e1497c1638b7d3407c7d8e"
+    },
+    {
+      "id": "source-c1-fragment-0065",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0065-lemma-Erdos993G1-degreeDefect_eq_zero_iff.lean.fragment",
+      "role": "reference",
+      "sha256": "53d6ffa1551d55b391d6ca657b12f47e7be6bc8842ecb9e8ae7528700baed7d9"
+    },
+    {
+      "id": "source-c1-fragment-0066",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0066-lemma-Erdos993G1-degreeChoose_sum_lower.lean.fragment",
+      "role": "reference",
+      "sha256": "32408765453e657cc5f7832829d929966472874f342ca4c81d8899d5d346784e"
+    },
+    {
+      "id": "source-c1-fragment-0067",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0067-lemma-Erdos993G1-degreeChoose_sum_equality.lean.fragment",
+      "role": "reference",
+      "sha256": "69a77469b5e1465d40f99e5c096dad7b2a81bc1de12f0b88b6971afc3ef62763"
+    },
+    {
+      "id": "source-c1-fragment-0068",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0068-lemma-Erdos993G1-scaledChooseTwo.lean.fragment",
+      "role": "reference",
+      "sha256": "c526653f5ce4c90392e252c3e28e6ce164135670fdd12d5664f120646f2671d8"
+    },
+    {
+      "id": "source-c1-fragment-0069",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0069-lemma-Erdos993G1-scaledChooseThree.lean.fragment",
+      "role": "reference",
+      "sha256": "bcef58787034fa165d746e7fa2a863cc1a20b351dafb9951cc1178ad9b01fc1b"
+    },
+    {
+      "id": "source-c1-fragment-0070",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0070-lemma-Erdos993G1-lowRankForestClassification_of_count_identities.lean.fragment",
+      "role": "reference",
+      "sha256": "220e0b030714563a8724d6ffb5c60b4f9e242de52a313d58cf04fe1d2a8e6bfc"
+    },
+    {
+      "id": "source-c1-fragment-0071",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0071-lemma-Erdos993G1-Deletion-deleteVerts_union_iso.lean.fragment",
+      "role": "reference",
+      "sha256": "84567459ae6e5bc695dfa19c17afc6bb310c8826f9edac168b186ef817a46594"
+    },
+    {
+      "id": "source-c1-fragment-0072",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0072-lemma-Erdos993G1-Deletion-ambientH_iso_delete_ambientA.lean.fragment",
+      "role": "reference",
+      "sha256": "769b68f49bb5a60a0b07c05242ca0c137d2384e08b8244b46302a6ebf4c54759"
+    },
+    {
+      "id": "source-c1-fragment-0073",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0073-lemma-Erdos993G1-Deletion-original_residual_deletion_set_eq.lean.fragment",
+      "role": "reference",
+      "sha256": "8e7124c437efa47597a6ff309c3511759132571e7f6e12f8c10af4890b741a42"
+    },
+    {
+      "id": "source-c1-fragment-0074",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0074-lemma-Erdos993G1-Deletion-residual_iso_delete_ambientH.lean.fragment",
+      "role": "reference",
+      "sha256": "36d14d97e9d35db700fda92549e71479c33ef1c5144afedcd7f7c30dafcf9ffd"
+    },
+    {
+      "id": "source-c1-fragment-0075",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0075-lemma-Erdos993G1-Deletion-other_support_neighbor_survives.lean.fragment",
+      "role": "reference",
+      "sha256": "759d52f4d9f8cfa0ac2ee0493e3e1ff7003954d01a5e8ce54da8fa6bbb7a4dbd"
+    },
+    {
+      "id": "source-c1-fragment-0076",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0076-lemma-Erdos993G1-Deletion-ambientH_iso_delete_typed_survivor.lean.fragment",
+      "role": "reference",
+      "sha256": "ea96d8a8c373dc902349ab1bbe029041639fc399ea5006f88346305fea97a1fe"
+    },
+    {
+      "id": "source-c1-fragment-0077",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0077-lemma-Erdos993G1-Deletion-leaf_ambientH_iso_delete_typed_survivor.lean.fragment",
+      "role": "reference",
+      "sha256": "5e04878ee268c444211ced7b140695f5d81c75d0207a1892d19938d73463f14a"
+    },
+    {
+      "id": "source-c1-fragment-0078",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0078-lemma-Erdos993G1-lowRankForestClassification.lean.fragment",
+      "role": "reference",
+      "sha256": "87931db520d541292d805b40c26e574756d1edcc5ddecaa17dc0939e6fb593dc"
+    },
+    {
+      "id": "source-c1-fragment-0079",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0079-lemma-Erdos993G1-ordinaryG1_lowRank.lean.fragment",
+      "role": "reference",
+      "sha256": "6f43a8c7ebe501315351076f7f437f0d0620934a9696bba3efdb0c3a30c2f054"
+    },
+    {
+      "id": "source-c1-fragment-0080",
+      "path": "SOURCE/intake/C1/LeanProject/LeanProof/Snippets/0080-theorem-Erdos993G1-lowRankForestClassificationAndG1.lean.fragment",
+      "role": "reference",
+      "sha256": "9ad3ce50b53fbcd53097b6f616c07d6b178cfee02fd2cd58b993e6ffcce42266"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # Research Status
 
-Last updated: 2026-09-18 (r24 direct favorable-leaf aggregate DRE — six-cycle terminal close; see the r24 section of the master ledger)
+Last updated: 2026-09-20 (G1 large-residual DRE: three completed cycles; master ledger and public proof packages reconciled)
 
 ## Headline Problems
 
@@ -16,6 +16,12 @@ The consolidated orientation document — the conjecture, the full proof path
 with per-step status, the claim/fence/obligation tables, strategy verdicts,
 and next-phase priorities — is the
 [master proof ledger (2026-09-04)](docs/master-proof-ledger-2026-09-04.md).
+
+## G1 residual-sign progress, 2026-09-20
+
+Three completed formal contracts establish the ordinary `p<=5` case, the first wide band `|U|=2p-2`, and the third wide band `|U|=2p`. C3 proves the underlying order-`2r+4` forest crossing theorem at every natural rank `r>=1`. This is the residual G1wide argument, not the older `OB-G1` strict-endpoint obligation. The second band remains informal; the combined remaining-region exclusion has mixed grades.
+
+Unrestricted ordinary G1, its governed-RTree counterpart, and every headline target remain open. The master now contains 288 identities (143 VERIFIED, 84 REFUTED, 24 CONDITIONAL, 37 OPEN), preserving all 81 prior master objects. Six newly registered formal consequence identities come from this three-contract lineage; the number is not the entire program's formal asset count. See [the experiment](experiments/g1-large-residual-dre-2026-09-13.md), [verification](evidence/verification-2026-09-20-g1.md), and [assessment](docs/assessment-2026-09-20.md).
 
 ## Erratum of Record (2026-09-03)
 

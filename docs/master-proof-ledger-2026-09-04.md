@@ -1,27 +1,41 @@
 # Erdős #993 — Master Proof Ledger
 
-**Date: 2026-09-04. Prepared by Claude (Fable 5) within the internal research OS at Ashton's
+**Updated 2026-09-20 — the G1 large-residual experiment completed all three authorized cycles.** Three exact Lean contracts close ordinary G1 at `p<=5`, the first wide band, and the third wide band. The all-rank order-`2r+4` forest crossing theorem is new to this lineage. Unrestricted G1, TREE, FOREST, TRANSFER and aggregate beta-prime remain OPEN. The merged registry now has 288 identities; all 81 pre-existing master objects are preserved. See the G1 close section at the end.
+
+**Date: 2026-09-04. Prepared by Claude (Fable 5) within VerityOS at Ashton's
 direction.** Supersedes the 2026-09-01 gap map as the program's orientation
 document; where this ledger and any sealed record differ, the sealed record
 governs. This is the jumping-off point for the next phase, to begin once the
 DRE control improvements (post-TRS2-erratum) are in force.
 
+Shareable page: https://claude.ai/code/artifact/74353648-001e-4820-9758-0b2143c1bee6
+
+**Updated 2026-09-17 — r23b (the sibling construction/verification run,
+`erdos-993-delete-retag-actual-dre-2026-09-13`) closed after all six authorized
+cycles: correspondence discharged to one named residual (O16), every cut-based
+strengthening of the aggregate refuted (F16, F17), paths closed, TYPE-2-DIRECT
+proved, §6 battery closed; `E993-R23-TAG-CLOSED-CUT-HALL` registered REFUTED;
+Horn B of record with the transfer as O15. See the r23b section at the end.**
 
 **Updated 2026-09-13 — r23 actual-tree Delete/Retag experiment terminated on
-a decisive Hall refutation.** The run completed one full 30-route/60-critic
-cycle, three portfolio adjudications, neutral synthesis, and its governed Lean
-gate. The literal ordinary-tree construction satisfies the exact tagged
-identity `|P|-|N|=S(T,p)`, and Hall implies the weaker full-demand aggregate
-sign. But Hall is false for the frozen literal relation: on eligible
-`T_22,p=34`, a center-free cut has source size
-`1020660578375268831042`, neighborhood contained in a target set of size
+a decisive Hall refutation.** Run
+`erdos-993-math-dre-20260913-r23-delete-retag-actual-tree` completed one full
+30-route/60-critic cycle, three portfolio adjudications, neutral synthesis,
+and its governed Lean gate. The literal ordinary-tree source/target
+construction and tagged identity `|P|-|N|=S(T,p)` were established at
+informal-proof tier. Hall implies the weaker exact full-demand face
+`|P|<=|N| <=> S(T,p)<=0`, but Hall itself is false for the frozen literal
+relation: on eligible `T_22,p=34`, the center-free cut has
+`|X|=1020660578375268831042`, neighborhood contained in a target set of size
 `1006434057637648542672`, and deficit `14226520737620288370`. The same row's
-complete aggregate is `-498754180547001418536`, so aggregated beta-prime is
-not refuted. `E993-R23-LITERAL-ACTUAL-TREE-FIXED-GAMMA-HALL` is registered
-**REFUTED** at literal ordinary-tree scope. Canonical governed-RTree
-`E993-R19-FIXED-GAMMA-HALL` remains **OPEN** pending the same-byte model
-bridge. Lean certifies only the closed arithmetic comparison, not the
-graph/counting bridge or headline Hall refutation.
+complete aggregate is `-498754180547001418536`, so the result separates and
+does not refute `E993-BETA-AGG`. Claim
+`E993-R23-LITERAL-ACTUAL-TREE-FIXED-GAMMA-HALL` is registered **REFUTED** at
+literal ordinary-tree scope. Canonical governed-RTree
+`E993-R19-FIXED-GAMMA-HALL` remains **OPEN** until the same-byte model bridge
+is proved. Lean formally verifies only the closed arithmetic certificate
+`Z(22,33)<Z(22,34)`, not the graph/counting bridge or headline refutation.
+Cycles 2–9 were correctly not started after the decisive event.
 
 **Updated 2026-09-12 — r21/r22 O14 multibase-Hall lineage completed at the
 nine-cycle ceiling.** Parent run
@@ -48,6 +62,8 @@ theorem forces weights `+1,-1,+1` on pairs, triples, and the four-set, so an
 unaugmented all-subcut representation cannot be a termwise nonnegative Hall
 payment. Terminal manifest seal: `6da39c0b…`; terminal verdict:
 `terminal_ceiling_stop`, not proof, refutation, or plateau.
+Curated public release: `Xeit-AI-Inc/erdos-993` commit
+`2d6ff91d6cd4b6210288a4d8b8811acf2b25146c` (2026-09-12).
 
 **Updated 2026-09-09 — r19 AGGREGATED (β′) completed at the nine-cycle
 hard ceiling.** Run `erdos-993-beta-aggregate-dre-2026-09-07` completed all
@@ -68,7 +84,8 @@ connected strict-prune totality, support-locked literal-label corridor
 advance, and universal exact support-preserving unit transport. These fences
 do **not** refute the global aggregate, PAIR-G4, TREE, FOREST, TRANSFER, or
 Erdős #993. Terminal manifest seal: `c8cb79a4…`; terminal mathematical verdict:
-`still_open`.
+`still_open`. Curated public release: `Xeit-AI-Inc/erdos-993` commit
+`428318c` (2026-09-09).
 
 **Updated 2026-09-07 — the two exploration lanes opened.** Following the
 2026-09-07 strategy assessment, two lanes launched under skill v0.5 (stop
@@ -105,7 +122,7 @@ at exact reproducible-counterexample scope; Lean headline WITHHELD
 pending the frozen formalization target `RTree.BetaCounterexample T60
 v 90`). **Independently verified by this controller** (independent tree
 rebuild + DP; every exact integer matched;
-`the r18 controller verification receipt (internal archive)`).
+`erdos-993-hg2-dre-2026-09-06/control/beta-order243-verification/`).
 Consequence: the chartered composition (α) ∧ (β) ⟹ (A) (C16) can no
 longer deliver THEOREM (A); C16 stands as a true implication with a
 refuted antecedent leg. The path to (A) requires a repaired (β′) at a
@@ -420,9 +437,9 @@ Statuses as of 2026-09-04. "governed" = Lean kernel at the pinned toolchain
 | C15 | The corrected combined identity `a_s(p) = a_v(p) + (b_v(p) − Bgen_s(p−1))` and its witnessed-leaf conditional corollary | governed | r12 |
 | C16 | The composition slate: (α) ∧ (β) ⟹ THEOREM (A) in full | governed (implication only) | r12; **antecedent leg (β) REFUTED by the r17 order-243 witness (2026-09-06)** — the implication stands, the chartered path through it is dead |
 | C17 | (α) at `deg(s)=2` ⟺-reduced to `AmbientTargetDeg2`; BR-FACT-1 root stratum | governed | r12 |
-| C20 | r19 aggregate-β′ auxiliary layer: 25 exact algebraic, finite-combinatorial, or conditional Lean declarations, including finite transport/Hall reductions, covariance decompositions, fixed-family identities, base-rank reduction, high-rank Hall, conditional descent, and local Retag saturation | formally_verified (auxiliary scope only) | r19 Cycles 1–8; public receipt index |
-| C21 | r21/r22 fixed-Gamma-Hall auxiliary layer: nine formally verified Stage 7 awards across the combined nine-cycle lineage — inclusion-minimal Hall deficiency, ordinary shadow identities, the repaired conditional component-residual theorem, multibase collision decomposition, pure-deletion collision monotonicity, pair-collision capacity, the strengthened minimal-core theorem, the endpoint-incidence tree obstruction family, and four-fibre Möbius-weight uniqueness | formally_verified (auxiliary scope only; Cycle 7 strengthens/repackages the parent minimal-deficiency idea, so these are nine artifacts rather than nine independent mathematical claims) | r21 Cycles 1–2; r22 pre-Cycle 4 and Cycles 4–9; public receipt index |
-| C22 | r23 closed arithmetic certificate: the two frozen T22 no-center cut formulas evaluate to `Z(22,34)=1020660578375268831042` and `Z(22,33)=1006434057637648542672`, with strict inequality | formally_verified (arithmetic certificate only; no T22 graph/counting bridge or headline Hall refutation) | r23 Cycle 1 public package and verification record |
+| C20 | r19 aggregate-β′ auxiliary layer: 25 exact algebraic, finite-combinatorial, or conditional Lean declarations, including finite transport/Hall reductions, covariance decompositions, fixed-family identities, base-rank reduction, high-rank Hall, conditional descent, and local Retag saturation | formally_verified (auxiliary scope only) | r19 Cycles 1–8; receipt index in r19 Stage 7 records |
+| C21 | r21/r22 fixed-Gamma-Hall auxiliary layer: nine formally verified Stage 7 awards across the combined nine-cycle lineage — inclusion-minimal Hall deficiency, ordinary shadow identities, the repaired conditional component-residual theorem, multibase collision decomposition, pure-deletion collision monotonicity, pair-collision capacity, the strengthened minimal-core theorem, the endpoint-incidence tree obstruction family, and four-fibre Möbius-weight uniqueness | formally_verified (auxiliary scope only; Cycle 7 strengthens/repackages the parent minimal-deficiency idea, so these are nine artifacts rather than nine independent mathematical claims) | r21 Cycles 1–2; r22 pre-Cycle 4 and Cycles 4–9; r22 terminal Stage 7 manifests |
+| C22 | r23 closed arithmetic certificate: the two frozen T22 no-center cut formulas evaluate to `Z(22,34)=1020660578375268831042` and `Z(22,33)=1006434057637648542672`, with strict inequality | formally_verified (arithmetic certificate only; no T22 graph/counting bridge or headline Hall refutation) | r23 Cycle 1 Stage 7 theorem contract, kernel receipt, and fidelity receipt |
 
 ### Settled negative (fences — do not reopen without a new guard/representation)
 
@@ -444,6 +461,7 @@ Statuses as of 2026-09-04. "governed" = Lean kernel at the pinned toolchain
 | F14 | Support locking can coexist with literal-label-preserving advance along every positive-length support corridor | r19 Cycle 9 exact mechanism refutation (`E993-R19-SUPPORT-LOCKED-CORRIDOR-ADVANCE`) |
 | F15 | Every governed base-rank row admits exact support-preserving unit-token transport | r19 Cycle 9 order-91 mechanism witness (`E993-R19-SUPPORT-PRESERVING-UNIT-TRANSPORT`); cross-support transport remains open |
 | F16 | Universal all-cut Hall for the literal ordinary-tree fixed Delete/Retag relation | r23 exact eligible `T_22,p=34` center-free cut; deficit `14226520737620288370`; the same row's complete aggregate is negative, so only the Hall mechanism is refuted |
+| F17 | Universal tag-closed-cut Hall for the literal ordinary-tree fixed Delete/Retag relation (the last cut-based strengthening of the aggregate; all-cut, Delete-only, and tag-closed are now all refuted) | r23b exact `CB(8,92)` (order 1567, `p=492=x+2`) tag-closed singleton cut `G={v}`; deficit `≥ C(736,491)·2^491 − C(736,490)·2^490 > 0` (347 digits); the same row's complete aggregate `S` is negative (351 digits); the arm inequality is kernel-checked in Lean; `E993-R23-TAG-CLOSED-CUT-HALL` REFUTED |
 
 ### Open obligations (the actual work)
 
@@ -462,7 +480,9 @@ Statuses as of 2026-09-04. "governed" = Lean kernel at the pinned toolchain
 | O11 | Lean debt, residual | small | interval-bound conversion; fresh-root treehood; `∂_y` receipt |
 | O12 | **`AmbientTargetDeg2`** — the r12 C6 residue, **r14-refined (2026-09-05)** | OPEN — strictly narrowed | Reduction of record completed at RG (r14 C3); successor surface `ambientTargetDeg2_of_G1wide_G2wide` ADOPTED (r14 C4 Q2); **the entire band `2 ≤ p ∧ |U| ≤ 2p−3 ⟹ D ≤ 0` closed premise-free at RG** (`residual_nonpos_of_card_le_band`; seven elaborations, four parties); S1/S4/S5 discharged inside the surface; the G1 side closes only under Premise K + K-SCOPE + the identification premise. **The open obligation is exactly `HG2` on `G2 ∧ |U| ≥ 2p−2`**, signature `AMB-CTREX-D2`, blocking facts BF-1..3 (r14 FC-R14-10); new premise-free constraint: any deg-2 counterexample has `n ≥ 2x(T)+3` (a proof-obligation narrowing, never a search restriction). Gating items: order-22 census provenance and the identification constructor — **both EXECUTED (2026-09-06):** the census extends the frontier to order 22 (witnesses ≥ 23); the constructor EXISTS (C18) and the G1 side is upgraded to premise-carrying-BY-CONSTRUCTION — the open obligation is unchanged and exactly `HG2` on `G2 ∧ |U| ≥ 2p−2` ; **r18 (2026-09-06, five cycles, honest stop):** `HG2` unmoved in either direction; `HG2Faithful` RG (rfl-definitional transcription + kernel-checked interchangeability); (★L)-sufficiency proved NON-universal (exact firing criterion `2H ≥ (p+2)·D+2`, edgeless-U star-hub scope); `H/D` landscape mapped to order 17,603 (record 3.0406…, no approach to 1 found; the orders-303/1263 anchors corrected into the closed S4 stratum); `sign(a_s(p))` proved not a function of `(|U|, crossIdx(U))` + leg hypotheses (legs-only and legs+`combined<0`, order ≥ 23 witnesses); successor entry: r18 FINAL-RECONCILIATION §6 — re-draw the path to (A) first |
 | O13 | `EXCEPTIONAL-SHAPE-1` sufficiency; `C7BBgenBound` RESERVED (r12 Q6: identity substrate legal, inequality core not) | OPEN | r12 residue register; **r14 (D4):** sufficiency-side and instrument outputs gated at proved_informal/computation — NEC-1 necessary-at-exhaustive-scope, killed as an equivalence; no sufficient structural condition from measured data; the `x(U)=p−1` observation documented at exact scope, explanation refused (F1/F2-adjacent) |
-| O14 | **`E993-BETA-AGG` (aggregated β′)** — for every governed `RTree` and `p ≥ x(T)+2`, the sum of `b_v(p)-Bgen_{s_v}(p-1)` over favorable original leaves is nonpositive | OPEN after r23; literal ordinary-tree all-cut Hall is REFUTED | r23 established `|P|-|N|=S` and found T22/T60 rows where proper-cut Hall fails while the complete aggregate is negative. The next proof must target direct full demand `|P|<=|N|`, equivalently the aggregate sign, through signed cancellation, recurrence, mass transport, or total-capacity structure that does not assume all-cut Hall. The same-byte ordinary-tree/governed-RTree bridge remains independently open. The pointwise and support-fibre variants are REFUTED and must not be reopened. |
+| O14 | **`E993-BETA-AGG` (aggregated β′)** — for every governed `RTree` and `p ≥ x(T)+2`, the sum of `b_v(p)-Bgen_{s_v}(p-1)` over favorable original leaves is nonpositive | OPEN after r23; literal ordinary-tree all-cut Hall is REFUTED | r23 established the exact tagged identity `|P|-|N|=S` and found T22/T60 rows where proper-cut Hall fails while the complete aggregate is negative. The next proof must target direct full demand `|P|<=|N|`, equivalently the aggregate sign, through signed cancellation, recurrence, mass transport, or total-capacity structure that does not assume all-cut Hall. The same-byte ordinary-tree/governed-RTree bridge remains independently open. The pointwise and support-fibre variants are REFUTED and must not be reopened. **r23b (2026-09-17):** every cut-based strengthening of the aggregate is now refuted by exact witnesses (orders 91 and 1567) — the surviving open object at literal scope IS the per-row demand `|P|≤|N|`; structural progress on it: paths CLOSED at governed scope, stars characterized, THEOREM TYPE-2-DIRECT (`g_v = Δ_{p−2}(K_v)` at `deg(s_v)=2`) unconditional, LEMMA F3-1 sharp, the CB-arm criterion `g_arm>0 ⇔ 2(jk−p+2)>p−1` proved; branch-point peels reduce to the open question itself. Object of record: the r23 ordinary-tree object (Horn B). **r24 (2026-09-18, six cycles, direct favorable-leaf aggregate DRE):** literal `S(T,p) ≤ 0` remains OPEN with no positive complete eligible row anywhere (orders ≤ 16 exhaustive, residual class to order 17, every designed family, ~4.9M stratum rows); the top-rank residual identity `(RI)` is now formally verified in the governed workflow (`C5-LA1`, composed with the Cycle 4 selector collapse `C4-LA1`), and its top-rank case `(RC)` is proved on the flat residual subclass (`S = −ℓ(ℓ−2)−k₂(ℓ−4) ≤ −16`) and on the whole `T_m` family (`S(T_m,α−1) = −9m²−6m+1 < 0`) but is otherwise exactly as open as after r24 Cycle 4; the non-strict per-support sign `g_s(p) ≤ 0` is proved on the `K₂`/exceptional-`P₃` PSC-terminal strata (critic-attributed); the `T_m` lower band is non-empty for every `m ≥ 30` of either parity (correcting r24's own Cycle 5 record) and its domination is reduced to the coefficient monotonicity of one explicit polynomial. Transport untouched. |
+| O15 | **Universal ordinary-tree/governed-RTree transfer (`RTree.semanticAdequacyTarget`)** — Horn A: prove that the r23 ordinary-tree restatement is adequate for every governed RTree, so r23/r23b actual-tree results become instances of `E993-R19-FIXED-GAMMA-HALL`/`E993-R19-R2-HALL-UNIVERSAL` | OPEN (named at the r23b close; Horn B is the object of record meanwhile) | Per-instance adequacy is `decide`-dischargeable (r8 precedent); the universal statement is unattempted. Substantially more tractable after r23b: the relation-family transport lemmas (C,P,N via induce and the realization equivalence) are sorry-free and the three abstract bridge corollaries are proved; the single remaining piece of the bridge is O16. |
+| O16 | **`induce_ofSimpleGraph` graph-object coherence** — lift the proved adjacency-level induce transport to full graph-object form (a `Finset`→`Fin` bijection) | OPEN — the one named residual of r23b's correspondence (R-1..R-5 otherwise discharged) | Precisely isolated in r23b C6-T2 (`R23B-C6-T2-02`); Lean bookkeeping of known shape, not a mathematical gap. Closing it completes the transport bridge that O15 rests on. |
 
 ---
 
@@ -572,6 +592,21 @@ bound by the terminal theorem contract and independent fidelity receipt. It
 does not formalize the T22 graph/counting bridge or the actual-tree Hall
 refutation.
 
+The r23b release (the sibling construction/verification run, six cycles, closed
+2026-09-17) adds the terminal Lean consolidation: one merged project at Lean
+4.32.2 / Mathlib `905b9581…` — 370 non-internal constants, `sorryAx` on exactly
+two disclosed open fixture lemmas (`indepOn_card`, `indepOn_insert_card`),
+`native_decide` on exactly the two sealed CB(1,2) lemmas with a kernel-`decide`
+restatement added — carrying the six relation-family transport lemmas (C, P, N
+via `Graph.induce` and the `ofSimpleGraph` realization equivalence), the three
+abstract bridge corollaries that repair the `_actual` theorems, the R-3/R-4/R-5
+induce-side and activity-filter transports, the kernel-checked witness arm
+inequality, and an 18-family honest fidelity-label table. Published as
+`verified`, never `formally_verified`, per that run's ceiling-honesty contract;
+the one residual is O16.
+
+The r24 release (direct favorable-leaf aggregate DRE, `erdos-993-direct-favorable-leaf-aggregate-dre-2026-09-14`, Cycles 1–4 Codex, Cycles 5–6 Claude Fable 5.1, closed 2026-09-18) adds two governed-workflow Lean packages at the same pin, axioms exactly `[propext, Classical.choice, Quot.sound]`, no `sorry`/`admit`/`native_decide`, each with a frozen theorem contract, an independent informal proof-integrity audit, a kernel/axiom receipt, and an independent statement-fidelity attestation: `C4LA1.topRankSelectorCollapse` (every leaf of a finite tree with `α ≥ 2` is strictly favorable at `p = α−1`) and `C5LA1.topRankResidualIdentity` (on the residual class — every leaf in every maximum independent set — with `x(G)+2 ≤ α−1`, the equality `S(G,α−1) = ℓ·M − Σ_{B∈I_{α−1}} (|B∩L| − Σ_{s∈B} λ(s))`). Internal grade `formally_verified`; public projection `verified`. Equalities and a per-leaf strict selector only: no sign of `S`, no `(RC)`, no transport, no headline. Two Cycle 4 award groups (`C4-LA2` `T_m` sign bundle, `C4-LA3` PSC-terminal classification) remain `blocked` on missing semantic bridges; Cycle 6 attempted no award. Public mirror: `proofs/lean/r24-c4-top-rank-selector-collapse/`, `proofs/lean/r24-c5-top-rank-residual-identity/`.
+
 Toolchain pin and cache-manifest discipline: see any package README.
 Public mirror: `github.com/Xeit-AI-Inc/erdos-993`; use its Git history for the
 exact published revision. The internal sealed experiment remains the authority
@@ -605,7 +640,7 @@ controls before the next run consumes this ledger:
 program's claim identities live in `CLAIM-IDENTITY.json` beside this file
 (seeded from the forensic audit's corrected status ledger and the §4 fence
 table), and every run's obligation and terminal ledgers are checked against
-it with `the claim-status lint (internal tooling)`
+it with `skills/mathematical-solver-dre-controller/scripts/lint_claim_status.py`
 before dispatch and at closeout (controller playbook v0.4, "Claim-ledger
 controls"). Items 3, 4, and 6 are mandatory controller steps in the same
 playbook section. A refuted claim reopened without a written distinction now
@@ -631,15 +666,216 @@ exact.*
 
 ---
 
+## r20 — the pair-invariant DRE (erdos-993-pair-invariant-dre-2026-09-07), CLOSED 2026-09-13
+
+Nine cycles, the full contract ceiling; zero decisive events; zero
+fabricated mathematics C3–C9; registry closed at 79 claims
+(`4147a111…`), lint exit 0 at all nine gates. Terminal seal
+`2803d9ec13042eec…`.
+
+**Headline results registered:** THE GENERATION THEOREM
+(`E993-PAIR-GENERATION-THEOREM` — the realizable triples are exactly the
+two-law closure of a single atom, all orders; generative, not
+recognitional); the Broom/general-L domination family with the
+M(l)=Γ(l)+1 closed form (empty residue); the margin identities and the
+(1,1)-cell reduction of leaf-mark window preservation; the K₂-graft
+conditional preservation theorem (single premise P-CASE-I, final
+standing R20C9-ADJ-F §4); the repaired edge-join/branch-factorization
+laws; eleven Lean RG awards (93 axiom-clean declarations). Two R2
+vocabularies refuted and fenced; the adjudicated s=−1 family map.
+
+**Open at close:** TREE / FOREST / TRANSFER / COUNTEREXAMPLE (all
+target rows untouched, either direction); all five OB-R20-* obligations
+(substance in terminal dispositions); P-CASE-I; the (1,1) cell (never
+observed, 47.76M objects — a bounded zero, evidence of nothing).
+Successor entry: `FINAL-RECONCILIATION.md` §4/§7 of the run.
+
+**A3b EXECUTED 2026-09-13, post-close, on Ashton's CLAIM-DISTINCTIONS
+approval:** the BROOM-DOMINATION L2 link's status moved MEASURED →
+PROVED — the unconditional prose-rule theorem (5,460/5,460 exhaustive,
+no hypotheses) transfers to the composite's leftmost-max reading via the
+registered coincidence corollary on its positive-log-concave domain
+(link L4). The convention distinction is carried in full on the row's
+certificate; the standalone restricted Lemma B* is unchanged. Registry
+`d09bd77d…` (79 claims), lint exit 0; recorded as the one authorized
+post-seal registry act in the R20-TERMINAL seal's dated addendum.
+
+---
+
 ## r23 — actual-tree Delete/Retag correspondence, CLOSED 2026-09-13
 
-One complete cycle under the 10-T/10-F/10-U topology, followed by 60 isolated
-critics, three portfolio adjudications, neutral synthesis, and one governed
-Lean gate. Terminal reason: `TERMINAL_DECISIVE_EVENT`, not a budget stop.
+One complete DRE cycle under the authorized 10-T/10-F/10-U topology; 30
+admitted routes, 60 admitted isolated critics after one clean replay, three
+portfolio adjudications, one neutral synthesis, and one governed Lean gate.
+Terminal reason: `TERMINAL_DECISIVE_EVENT`, not a budget stop.
 
-`E993-R23-LITERAL-ACTUAL-TREE-FIXED-GAMMA-HALL` is **REFUTED** by the exact
-eligible T22 center-free deficient cut. The broader governed-RTree claim and
-the complete aggregate remain **OPEN**. Lean formally verifies only the
-closed arithmetic comparison of the two frozen cut-size formulas. See the
-[r23 summary](../experiments/r23-delete-retag-actual-tree.md) and
-[verification record](../evidence/verification-2026-09-13-r23.md).
+**Registered result:**
+`E993-R23-LITERAL-ACTUAL-TREE-FIXED-GAMMA-HALL` is **REFUTED** at literal
+ordinary-tree scope by the exact eligible T22 center-free deficient cut.
+This is a new scoped identity, not a semantic reopening or status change of
+canonical `E993-R19-FIXED-GAMMA-HALL`. The latter remains **OPEN** pending the
+same-byte ordinary-tree/governed-RTree fidelity bridge.
+
+**Retained proof package:** occurrence-set/cardinality correspondence,
+original-leaf tagged disjoint unions, literal target typing and eligible-row
+left-totality, exact endpoint multiplicities, and
+`Hall => |P|<=|N| <=> S(T,p)<=0` are proved informally after independent
+criticism. The converse fails on T22. `E993-BETA-AGG` remains **OPEN** because
+the complete T22 aggregate is negative.
+
+**Formal ceiling:** Lean 4.32.2 / Mathlib `905b9581…` formally verifies the
+closed `Z(22,33)<Z(22,34)` arithmetic certificate. It does not certify the
+explicit tree, leaf/favorability enumeration, cut/container correspondence,
+or headline Hall refutation. Terminal manifest SHA-256:
+`d166a2e3ee5f50225813a97adef10882950d2d43fddf61d382b436c4e2eaba89`.
+
+## r23b — actual-tree Delete/Retag construction & verification (erdos-993-delete-retag-actual-dre-2026-09-13), CLOSED 2026-09-17
+
+The sibling of the r23 math-DRE above: this run owned construction, semantic
+correspondence, and trustworthy verification (SOLUTION-CONTRACT §1) and ran all
+six authorized cycles — C1–C2 at 18/9/3/1, C3–C4 at 18/36/3/1, C5–C6 at the
+traditional 9/18/3/1 — 31–58 faces per cycle, SHA-256 canonical-JSON sealing
+between every stage, a Fable 5.1 mid-run check after C3, and Ashton-gated
+cycle stops. Terminal STOP-TEST: unanimous PASS. **§9 final status: specific
+unresolved correspondence debt** (O16), with everything else discharged.
+
+**Registered results.** `E993-R23-TAG-CLOSED-CUT-HALL` **REFUTED** at order
+1567 (F17): the last cut-based strengthening of the aggregate falls, so the
+surviving open object at literal scope is the O14 per-row demand `|P|≤|N|`
+itself. Structural results on that demand, at exact scopes: the path family
+CLOSED at governed scope; stars characterized (`g_v ≤ 0 ⇔ p ≥ ⌈m/2⌉`); THEOREM
+TYPE-2-DIRECT unconditional at `deg(s_v)=2`; LEMMA F3-1 (hot ⇒ `E ≥ p`) sharp;
+the corrected CB-arm criterion proved in Lean; the C4 identity family
+(`def(full-cut)=S+Σμ`; `def(G)=Σ_G(g_v+μ_v)−export(G)`; `R⊆D`) sustained under
+hostile census. Correspondence: the six relation-family transport lemmas and the
+three abstract bridge corollaries are sorry-free at the pin; R-1..R-5 discharged;
+O16 is the one residual. The §6 mandatory battery is closed (order-26
+Kadrawi–Levit non-LC trees — TRS2 refuted at order 26 with no LC/size gate;
+order-243 T60; coefficient tails; every standing control) by falsifiable
+instruments with two independent evaluators.
+
+**Object of record (Ashton, 2026-09-17): Horn B** — the r23 ordinary-tree object
+is the definition of record; the two governed-RTree rows stay OPEN on their own
+terms and the universal transfer is O15. O14 (`E993-BETA-AGG`) remains OPEN — it
+is the mathematics agent's lane; this run never claims O14 or universal `S≤0`,
+and nothing is graded `formally_verified`.
+
+**Terminal ledger:** 208 adjudicated rows over six cycles (`R23B-*`; 13/50/37/19/49/40),
+zero collisions, explicit supersession chains (the W4 chain
+C3-F4→C4-F1→C4-T5-02→C5-U1-04; the correspondence chain
+C4-T3-01→C5-T2-02/03→C6-T1/T2). Process record: every route-tier fault was
+process/disclosure-tier with the underlying mathematics verified in every
+instance; ZFM intact across all faces; the C6-T2 seal-overwrite/`lake clean`
+incident was controller-verified zero-integrity-loss. The controller model
+changed mid-C6 (Fable 5 → Opus 4.8 → Fable 5.1 at close), recorded on the
+gate. Public mirror: `runs/r23b-delete-retag-actual-dre-2026-09-13/`,
+`experiments/r23b-delete-retag-construction-verification.md`,
+`proofs/lean/r23b-terminal-consolidation/`. Sealed authority: the internal run's
+`control/TERMINAL-SEAL.json` (`de715137…`).
+
+## r24 — direct favorable-leaf aggregate DRE (erdos-993-direct-favorable-leaf-aggregate-dre-2026-09-14), CLOSED 2026-09-18
+
+The mathematics agent's lane after r23: attack the literal complete
+favorable-original-leaf aggregate `S(T,p) = Σ_{v∈F}(b_v − B_v) ≤ 0` on the live
+window `x(T)+2 ≤ p < α(T)` directly (signed cancellation, recurrence, mass
+transport, total capacity), with `E993-BETA-AGG` at governed scope and transport
+kept separate. Six cycles: Cycles 1–4 under Codex (36/72/3/1 per cycle; paused
+2026-09-15), Cycles 5–6 under Claude Fable 5.1 by Ashton's handover of
+2026-09-17 at the Code standard 9/18/3/1 (Sonnet 5 xhigh routes, Opus 5 high
+critics/adjudicators/synthesis/reviewers), every stage sealed by canonical-JSON
+SHA-256 manifests, Cycle 6 terminal by Ashton's ceiling of 6, closed with the
+controller's independent evaluation (`TERMINAL-EVALUATION.md`). Stop gate:
+no decisive event, no plateau; `continue: no` records the boundary.
+
+**Headline faces, unchanged:** literal aggregate OPEN; `(RC)` (its top-rank
+residual case) exactly as open as after Cycle 4; transport `not_established`
+(never attempted); O14 OPEN; Erdős #993 unresolved. No positive complete
+eligible aggregate exists anywhere in the evidence (orders ≤ 16 exhaustive,
+71,075 rows at orders 15–16 with the mechanism value tight — `g_v = 0` on ~10%
+of rows; the eligible top-rank residual class censused to order 17, 16,424
+trees, zero violations; every designed family; ~4.9M stratum rows). Every
+positive object found is a positive summand inside a negative aggregate (T22
+`+212336130412243110`, T60 `+2.935…×10⁵¹`), a zero summand, or an ineligible row.
+
+**Formally verified (governed workflow):** `C4-LA1` top-rank selector collapse;
+`C5-LA1` the top-rank residual identity `(RI)` composed with it (§7). Public
+projection `verified`.
+
+**Exact informal theorems, new (route-attributed):** the flat residual sign
+law `S(T,α−1) = −ℓ(ℓ−2) − k₂(ℓ−4) ≤ −16` on the flat subclass of the eligible
+top-rank residual class (1.77% of the class, declining); the universal failure
+of the reduced upper guard for every leaf-deleting reduction on the residual
+class (so F1's minimum-positive-row reducer cannot reach it by leaf deletion;
+support-only and rank-shifted reductions pass the upper guard and remain open).
+**Critic-attributed (Stage 4 products, adjudicator-replayed, not independently
+re-proved):** `S(T_m, α−1) = −9m² − 6m + 1 < 0` for every `m ≥ 1` — the
+top-rank `(RC)` on the whole `T_m` family, two independent derivations,
+controller-verified against the frozen evaluator (`−4487` at T22, `−32759` at
+T60); the non-strict per-support sign `g_s(p) ≤ 0` on the `K₂`-core and
+exceptional-`P₃` PSC-terminal strata via `x(T) ≥ ⌈(α−3)/2⌉` (strictness
+computational; the decorated `P₄` provably out of reach; the run's
+highest-value Lean target); the whole-class three-family expansion of
+`S(T,α−1)` whose family-(I) weights flip from order 9 (the crux of `(RC)`);
+the exact reduction `S(T_m,q+2) = w_{q+1} − w_q` localizing `T_m` band
+domination to three named lemmas, with the width law `x_m = ⌊13m/9⌋+1`
+(`m ≥ 30`, asymptotic ratio 1/18); support deletion preserves `α` on the
+residual class. **Refuted/retired:** a singleton-witness "payment" lemma
+(r23's registered left-totality with an inert hypothesis; map non-injective);
+a "cancellation-free" falsifier (the star family); several "infeasible"
+census debts (reproduced in seconds).
+
+**Record corrections carried into this ledger:** the r24 Cycle 5 statement
+that the `T_m` lower band is non-empty only for even `m ≥ 22` is false — it is
+empty exactly for `m ≤ 21` and `m ∈ {23,25,27,29}` and non-empty for every
+`m ≥ 30` of either parity (width 2 at `m = 38`); a dozen certification
+literals were struck at adjudication (distinct-row counts that were evaluation
+counts; "no positive summand" claims contradicted by the sealed controls;
+wall-clock digests). Terminal debt register: 35 items
+(`cycles/cycle-6/stage6/SYNTHESIS.md`), four permanent (frozen guarded PSC
+move relation; canonical literal-tree representation; eligibility-qualified
+`(RC)`; transport). Earliest honest resume, if ever authorized: the
+lower interior window (never searched; the only region with positive
+mechanism values), the signing of the three-family expansion, and an
+independent re-proof then formalization of the `K₂`/`P₃` stratum theorem.
+
+**Registry:** no new claim; the 81-claim registry (`96aa33d3…`) is unchanged;
+the four REFUTED claims stay REFUTED. Public mirror:
+`runs/r24-direct-favorable-leaf-aggregate-dre-2026-09-14/`,
+`experiments/r24-direct-favorable-leaf-aggregate.md`,
+`evidence/verification-2026-09-18-r24.md`, the two `proofs/lean/r24-*`
+packages. Sealed authority: the internal run's `RUN-TERMINAL-MANIFEST.json`
+(`36335bc4fd7194dc9b1b3aab78c7cd81bb4553f786a527e45c42d65ec390e939`).
+
+## G1 large-residual DRE — three cycles, CLOSED 2026-09-20
+
+Run `erdos-993-g1-large-residual-dre-2026-09-13` completed all three cycles authorized by the amended hard cap. It used three T, three F and three U searchers per cycle (Sol xhigh), followed by 18 cross-orientation critics, three origin adjudicators and one neutral synthesis (Astra xhigh); formal production and independent audits used Astra xhigh. There is no Cycle 4. Final source manifest: `b4b7fdbf03f64940398034668099bea5a062192e35366fea730db9c92baece77`.
+
+The target was the **ordinary G1wide residual-sign face**, not the master chain's `OB-G1` strict-endpoint obligation. For an ordinary tree `T`, original leaf `v`, degree-two support `s`, other neighbor `g`, residual `U=T-(N_T[v] union N_T[g])`, and `p=x(T)+1`, it retains negative Gamma, `2p-3<|U|`, and `x(U)<p-2`, and seeks `Delta_(p-2)(U)<=0`. The original graph's neighborhoods, integer zero extension, and first strict descent are fixed. Unrestricted ordinary G1 and the governed-RTree target remain OPEN.
+
+### Formal additions at exact scope
+
+Three completed contracts support six separately registered formal consequence identities. The public packages carry byte-identical Main sources and pinned configurations; original contract, kernel, axiom, informal-audit, fidelity and close receipts accompany them.
+
+| Cycle | Verified mathematical content | Canonical keys |
+|---|---|---|
+| C1 | For forests in the low-rank wide/crossing regime, `p<=5` forces `p=5`, the path on eight vertices, and `Delta_3=-15`; hence ordinary G1 for `p<=5` | `E993-G1-ORDINARY-PLE5-CLASSIFICATION-AND-SIGN` |
+| C2 | For every finite simple graph of order `2r+2`, `r>=1`, positive `Delta_r` iff at most one edge; the exceptional graphs have strictly positive differences through rank `r`; ordinary G1 at `|U|=2p-2` | `E993-GRAPH-FIRST-WIDE-SHARP-CLASSIFICATION`, `E993-GRAPH-FIRST-WIDE-CROSSING-SIGN`, `E993-ORDINARY-G1-FIRST-WIDE-SLICE` |
+| C3 | For every finite forest, `r>=1`, `|F|=2r+4` and `x(F)<r` imply `Delta_r(F)<=0`; ordinary G1 at `|U|=2p` | `E993-FOREST-THIRD-WIDE-CROSSING-SIGN`, `E993-ORDINARY-G1-THIRD-WIDE-SLICE` |
+
+C3 uses an actual forest matching/vertex-cover dichotomy: five disjoint edges are handled by independent-set incidence certificates; a cover of size at most four is handled by an exact fiber partition and Catalan difference bounds. The final source registers 187 entries, with 135 exact entries reused from C2 and 52 additions. It assumes neither universal log-concavity nor unimodality. All three gates used Lean 4.32.2, Mathlib `905b95818eb32af7874a58b427f50c1711a5e96c`, and only `propext`, `Classical.choice`, `Quot.sound`. C3's fresh fidelity audit passed; zero governed repair attempts were used.
+
+### Remaining boundary and excluded mechanisms
+
+The second wide band `|U|=2p-1` retains its source-dependent informal grade. Combined with the formal bands and the retained path-forest result, a possible ordinary G1 counterexample necessarily has `p>=6`, `|U|>=2p+1`, residual maximum degree at least three, and strict residual recovery. This is a mixed-grade necessary region, not a new fully formalized conjunction or a counterexample existence claim.
+
+Raw edge-addition monotonicity, the factor-two negative-margin bound, pointwise addability control, and every-vertex/prescribed-center SR2 strengthenings are refuted at their stated scopes. The factor-one average inequality, existential same-vertex deletion alignment, and unrestricted recovery lifting remain open. The exact joint SR2 condition is `Delta_r(F)<=B_v<=0` for the **same** vertex, with `B_v=Delta_(r-1)(F-N[v])`; marginal signs do not establish it.
+
+Fixed-residual common-connector padding has a proved root-uniform upper limitation: once `h>=2r+3+(r+1)max(0,-Delta_r(F)-Delta_(r-1)(F))`, its required ambient first-descent guard fails. The recovery-restricted universal rescue statement remains open; an actual recovering forest is required for a nonvacuous refutation. The known sibling Hall examples keep their later ranks: `CB(8,92)` at `p=492` has a positive arm cut and negative complete aggregate, while G1 rank `p=491` fails strict crossing. No Hall or aggregate counterexample is silently recast as a G1 or unimodality counterexample.
+
+### Canonical registration and strategic consequence
+
+By Ashton's explicit publication instruction, all **81 pre-existing master claim objects are preserved exactly**, including r23b's later Horn-B scope clarifications and tag-closed-cut wording. The 207 additional identities from the complete G1 lineage are imported at their accepted statuses and grades. The master now contains **288 claims: 143 VERIFIED, 84 REFUTED, 24 CONDITIONAL, 37 OPEN**. These are identities, not a count of new theorems. The six G1 formal consequences do not replace or recount the older program's formal asset inventory. Shared-key wording or aliases in the sealed run remain historical run-local records; they do not overwrite the live master.
+
+The run accounts for 285 final synthesis outputs, 456 source occurrences, and 1,944 rows across 31 inherited views. Source-only, auxiliary, proper-subclaim and witness-against relations retain their distinctions. Six historical replay qualifications remain visible. Canonical publication lint preserves the prior master and source-run terminal dispositions. The internal experiment seals remain unchanged.
+
+TREE, FOREST, TRANSFER, unrestricted G1, literal complete aggregate and governed `E993-BETA-AGG` remain OPEN. The high-impact next work is a uniform matching/cover argument beyond finitely many width bands; global favorable-leaf cancellation on the general residual class, with lower-interior full-row falsification; and an exact ordinary-graph implication chain that exposes semantic and forest-composition gaps. This is substantial partial progress, with no justified completion percentage or near-term solution prediction. No mathematical novelty is claimed by registration.

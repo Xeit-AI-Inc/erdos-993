@@ -1,0 +1,13 @@
+# Public G1 reconciliation
+
+The source experiment completed all three authorized cycles with a formally verified C3 theorem. Its final manifest is `b4b7fdbf03f64940398034668099bea5a062192e35366fea730db9c92baece77`. Publication changes no sealed source artifact and creates no new mathematical award.
+
+The source run registered 288 claim identities and accounted for all 285 synthesis outputs, 456 source occurrences and 1,944 inherited rows. Six historical source-replay qualifications, the distinction between witnesses and universals, exact scope restrictions, and separate formal/informal/computational grades remain part of that record. Its six formal consequence keys come from three contracts; two belong to the new C3 conjunction.
+
+The live master had 81 claims. Publication preserves every one of those claim objects exactly, including the later r23b Horn-B scope clarifications and tag-closed-cut wording and aliases. All shared claim statuses agree. The 207 remaining source-run identities are added at their accepted grades. The resulting master has 143 VERIFIED, 84 REFUTED, 24 CONDITIONAL and 37 OPEN claims. The source-run alternative wording for shared identities remains in `CLAIM-IDENTITY.run-local.json`; it does not replace the master. An identity count is not a theorem count or a novelty claim.
+
+The root-reviewed format repair from the source close is preserved in its internal evidence: a full old-registry CSV projection supplies explicit IDs to the unchanged canonical linter, and two exact-identity sibling rows gain canonical-key notes in a derived current view. Original rows, statuses, grades and aliases were preserved. The public canonical terminal and obligation tables use explicit canonical IDs. Publication lint checks them against both all old master dispositions and the complete source terminal claim view, with zero findings and warnings.
+
+The original report is reproduced with relative publication links adapted. Its proof text and scope qualifications are unchanged. The public proof Main files and project pins are byte-identical. Original receipts remain source-bound; fresh public builds, kernel checks and axiom probes verify the release copies. The public packages are not a replay of every original DRE or workflow step, and the original sealed manifests refer to more evidence than this curated release contains.
+
+Unrestricted ordinary G1, governed-RTree G1, literal full aggregate, governed beta-prime, TREE, FOREST and TRANSFER remain open. Further mathematical cycles require new authorization. See [the assessment](../../docs/assessment-2026-09-20.md) for the three proposed priorities.

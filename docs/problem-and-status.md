@@ -27,15 +27,9 @@ sequences are not closed under convolution.
 
 ## Current Boundary
 
-As of this repository's 2026-09-01 release, both targets remain open in the
-research record. No verified counterexample, complete proof, or formal
-independence result has been found.
+As of the 2026-09-20 G1 release, both headline targets remain open in this research record. No verified counterexample, complete proof, or formal independence result has been found.
 
-The strongest included graph theorem proves strict log-concavity at rank four
-for finite trees of order at least 27. The latest completed experiment also
-isolates the remaining first-recovery capacity gap as a specific
-neighborhood-shadow inequality and verifies two auxiliary interface theorems.
-The shadow inequality itself remains unproved.
+The current graph theorems include the rank-four local log-concavity result and the new all-rank order-`2r+4` forest crossing theorem: an earlier strict descent implies `Delta_r<=0` on that exact order band. Three G1 packages close the ordinary `p<=5` case and two exact residual-size bands. Unrestricted G1, the complete favorable-leaf aggregate, and forest transfer remain open. See [current results](results.md) and [the assessment](assessment-2026-09-20.md).
 
 The latest proof-gap completion experiment independently narrows the specific
 condition `i_5<i_4<i_6` to orders 13 through 32. Complete searches exclude a

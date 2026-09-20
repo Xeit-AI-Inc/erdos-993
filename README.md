@@ -17,6 +17,12 @@ of size `k`. The problem asks whether
 is weakly unimodal whenever `G` is a finite tree, and likewise whenever `G` is
 a finite forest.
 
+## 2026-09-20: G1 three-cycle results
+
+The completed [G1 large-residual experiment](experiments/g1-large-residual-dre-2026-09-13.md) adds three reproducible Lean packages. For a finite forest `F`, `r>=1`, order `2r+4`, and first strict descent before `r`, Cycle 3 proves `i_(r+1)(F)<=i_r(F)`. This gives ordinary G1 at residual order `|U|=2p`, alongside the earlier formal `p<=5` and `|U|=2p-2` cases. The intervening `|U|=2p-1` case remains informal with named dependencies.
+
+Unrestricted G1 and Erdős #993 remain open. Read the [verification record](evidence/verification-2026-09-20-g1.md), [full report](runs/g1-large-residual-dre-2026-09-13/REPORT.md), and [assessment and three research priorities](docs/assessment-2026-09-20.md). Run `./scripts/verify-g1-lean.sh` to reproduce the new packages.
+
 ## What This Repository Contains
 
 - a precise account of the problem and current research boundary;

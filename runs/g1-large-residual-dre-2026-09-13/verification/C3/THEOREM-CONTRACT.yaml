@@ -1,0 +1,844 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "erdos-993-g1-c3s-l1-third-wide-20260920-v2",
+  "theorem": {
+    "title": "Third-band finite-forest crossing theorem and literal ordinary G1 residual-order 2p consequence",
+    "informal_statement": "for every finite ordinary forest F and natural r>=1, |V(F)|=2r+4 and x(F)<r imply Delta_r(F)<=0. Consequently, for every finite ordinary tree T, leaf v, its unique neighbor s of degree two and other neighbor g, with A=T-N_T[v], H=A-g, U=T-(N_T[v] union N_T[g]), p=x(T)+1, Gamma=Delta_p(A)+Delta_(p-1)(H)<0, 2p-3<|U|, x(U)<p-2, and |U|=2p, one has Delta_(p-2)(U)<=0. Every count is an actual independent-set cardinality of that same U. This is an ordinary graph theorem, with no RTree transport."
+  },
+  "formulation_status": {
+    "status": "open",
+    "evidence": [
+      "C3S-L1 is a complete informal graph candidate; this proposal is not a validated contract or a formal award.",
+      "The exact two-output statement follows the selected candidate. The earlier controller three-output provisional note is not the contract; its additional matching theorem is an internal supporting lemma.",
+      "Controller alternate direct-incidence and forest-certificate sources are explicitly separate from the DRE synthesis and require the independent informal audit. No unseen graph/count assumption is introduced.",
+      "The unchanged C2 prefix is replayed as source only, with a fresh kernel check. Its old terminal theorem is excluded and its old receipts are not transferred."
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-simple-graph",
+      "lean_name": "SimpleGraph",
+      "description": "Ordinary undirected loopless graph on an arbitrary vertex type, with no RTree or special graph encoding.",
+      "dependencies": []
+    },
+    {
+      "id": "def-forest",
+      "lean_name": "SimpleGraph.IsAcyclic",
+      "description": "No cyclic walk satisfies IsCycle. Forests may be disconnected and empty.",
+      "dependencies": [
+        "def-simple-graph"
+      ]
+    },
+    {
+      "id": "def-tree",
+      "lean_name": "SimpleGraph.IsTree",
+      "description": "Connected, nonempty, acyclic ordinary graph.",
+      "dependencies": [
+        "def-forest"
+      ]
+    },
+    {
+      "id": "def-count",
+      "lean_name": "Erdos993G1.indepCount",
+      "description": "i_k(F)=(Nat.card {S : Finset V // F.IsNIndepSet k S}:Z). IsNIndepSet means pairwise nonadjacency of distinct members and S.card=k. These are actual subsets counted once. Finite V gives i0=1 even for the empty graph and zero beyond the independence number.",
+      "dependencies": [
+        "def-simple-graph"
+      ]
+    },
+    {
+      "id": "def-coeff",
+      "lean_name": "Erdos993G1.coeff",
+      "description": "For integer k, coeff F k = if 0<=k then indepCount F k.toNat else 0. Negative indices vanish; indices past support vanish by actual subset cardinality.",
+      "dependencies": [
+        "def-count"
+      ]
+    },
+    {
+      "id": "def-delta",
+      "lean_name": "Erdos993G1.delta",
+      "description": "For integer k, delta F k = coeff F (k+1)-coeff F k in Z; delta(-1)=1 for finite F.",
+      "dependencies": [
+        "def-coeff"
+      ]
+    },
+    {
+      "id": "def-first-descent",
+      "lean_name": "Erdos993G1.firstDescent",
+      "description": "x(F)=sInf {k:N | delta F (k:Z)<0}. Prove this set nonempty for every finite F via a maximum independent set and its following zero coefficient. This is the first strict descent, not a global maximizer or a plateau.",
+      "dependencies": [
+        "def-delta"
+      ]
+    },
+    {
+      "id": "def-order",
+      "lean_name": "Nat.card",
+      "description": "|F| is Nat.card of its actual finite vertex type. Induced graph order is the cardinality of the actual survivor subtype.",
+      "dependencies": [
+        "def-simple-graph"
+      ]
+    },
+    {
+      "id": "def-degree",
+      "lean_name": "Erdos993G1.vertexDegree",
+      "description": "vertexDegree T v=Nat.card (T.neighborSet v), the number of original graph neighbors. Degree one and adjacency to s identify the leaf's unique neighbor.",
+      "dependencies": [
+        "def-simple-graph"
+      ]
+    },
+    {
+      "id": "def-neighborhood",
+      "lean_name": "Erdos993G1.closedNeighborhood",
+      "description": "closedNeighborhood T v={w | w=v or T.Adj v w}; all neighborhoods in the target use the ORIGINAL T.",
+      "dependencies": [
+        "def-simple-graph"
+      ]
+    },
+    {
+      "id": "def-deletion",
+      "lean_name": "Erdos993G1.deleteVerts",
+      "description": "deleteVerts F S = F.induce S-complement, on {w:V // w notin S}, with inherited original adjacency.",
+      "dependencies": [
+        "def-simple-graph"
+      ]
+    },
+    {
+      "id": "def-ambient-a",
+      "lean_name": "Erdos993G1.ambientA",
+      "description": "A=deleteVerts T (closedNeighborhood T v), namely T-N_T[v].",
+      "dependencies": [
+        "def-neighborhood",
+        "def-deletion"
+      ]
+    },
+    {
+      "id": "def-ambient-h",
+      "lean_name": "Erdos993G1.ambientH",
+      "description": "H=deleteVerts T (closedNeighborhood T v union {g}), exactly the original flattened survivor graph. Existing replayed Deletion lemmas identify it with deleting the surviving original g from A. No new graph-identification hypothesis is added.",
+      "dependencies": [
+        "def-neighborhood",
+        "def-deletion"
+      ]
+    },
+    {
+      "id": "def-residual",
+      "lean_name": "Erdos993G1.residual",
+      "description": "U=deleteVerts T (closedNeighborhood T v union closedNeighborhood T g), the actual survivor subtype with original T adjacency. Both neighborhoods are evaluated in T. Induced acyclicity and exact survivor order instantiate the forest theorem directly. No RTree transport is claimed.",
+      "dependencies": [
+        "def-neighborhood",
+        "def-deletion"
+      ]
+    },
+    {
+      "id": "def-residual-order",
+      "lean_name": "Erdos993G1.residualOrder",
+      "description": "Nat.card {w:V // w notin closedNeighborhood T v union closedNeighborhood T g}, exactly the vertex count of U.",
+      "dependencies": [
+        "def-residual",
+        "def-order"
+      ]
+    },
+    {
+      "id": "def-g1-guards",
+      "lean_name": "Erdos993G1.ordinaryG1Guards",
+      "description": "The unchanged ten-part conjunction: T.IsTree; vertexDegree T v=1; T.Adj v s; vertexDegree T s=2; T.Adj s g; g!=v; p=firstDescent T+1; delta (ambientA T v) (p:Z)+delta (ambientH T v g) ((p:Z)-1)<0; natural 2*p-3<residualOrder T v g; firstDescent (residual T v g)<natural p-2. Every original guard is retained. The selected corollary adds only residualOrder=2*p. No LC, matching, vertex-cover, count-identity or RTree premise is added.",
+      "dependencies": [
+        "def-tree",
+        "def-degree",
+        "def-first-descent",
+        "def-ambient-a",
+        "def-ambient-h",
+        "def-residual",
+        "def-residual-order",
+        "def-delta"
+      ]
+    },
+    {
+      "id": "def-stratum",
+      "lean_name": "Erdos993G1.FirstWide.stratum",
+      "description": "The unchanged C2 noncomputable auxiliary under Fintype X: stratum G M k j filters actual G.indepSetFinset k by (S inter M).card=j. Arbitrary endpoint set M is derived internally from an injective actual edge certificate. This auxiliary is absent from terminal hypotheses.",
+      "dependencies": [
+        "def-simple-graph",
+        "def-count"
+      ]
+    },
+    {
+      "id": "def-binom-coeff",
+      "lean_name": "Erdos993G1.FirstWide.binomCoeff",
+      "description": "The unchanged C2 auxiliary binomCoeff (n:Nat) (k:Int):Int is if 0<=k then (n.choose k.toNat:Int) else 0. Natural choose gives zero above n. A proved actual-cover subset bijection connects this arithmetic auxiliary to graph counts. It does not replace indepCount or coeff.",
+      "dependencies": []
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-forest-vertices",
+      "lean_type": "Type u",
+      "description": "Arbitrary forest vertex type in an arbitrary universe.",
+      "dependencies": [
+        "def-simple-graph"
+      ]
+    },
+    {
+      "id": "domain-forest-finite",
+      "lean_type": "Finite V",
+      "description": "Finiteness of the actual vertex type; Fintype and decidability are chosen internally.",
+      "dependencies": [
+        "domain-forest-vertices"
+      ]
+    },
+    {
+      "id": "domain-forest-graph",
+      "lean_type": "SimpleGraph V",
+      "description": "An arbitrary ordinary simple graph on V, explicitly assumed acyclic in the forest clause.",
+      "dependencies": [
+        "domain-forest-vertices",
+        "def-simple-graph"
+      ]
+    },
+    {
+      "id": "domain-tree-vertices",
+      "lean_type": "Type u",
+      "description": "Arbitrary independently bound ambient tree vertex type.",
+      "dependencies": [
+        "def-simple-graph"
+      ]
+    },
+    {
+      "id": "domain-tree-finite",
+      "lean_type": "Finite X",
+      "description": "Finiteness of the actual ambient vertex type.",
+      "dependencies": [
+        "domain-tree-vertices"
+      ]
+    },
+    {
+      "id": "domain-tree-graph",
+      "lean_type": "SimpleGraph X",
+      "description": "Ordinary ambient graph; the original G1 guards require treehood.",
+      "dependencies": [
+        "domain-tree-vertices",
+        "def-simple-graph"
+      ]
+    },
+    {
+      "id": "domain-tuple-vertex",
+      "lean_type": "X",
+      "description": "v,s,g are original ambient vertices, fixed by the original leaf and degree-two support guards.",
+      "dependencies": [
+        "domain-tree-vertices"
+      ]
+    },
+    {
+      "id": "domain-rank",
+      "lean_type": "ℕ",
+      "description": "r and p are natural. The first output assumes r>=1; the G1 output quantifies every p and derives p>=3 from strict crossing. Subtractions in the guards are natural; delta arguments are integer.",
+      "dependencies": []
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "V",
+      "kind": "forall",
+      "domain_id": "domain-forest-vertices"
+    },
+    {
+      "binder": "finiteV",
+      "kind": "forall",
+      "domain_id": "domain-forest-finite"
+    },
+    {
+      "binder": "F",
+      "kind": "forall",
+      "domain_id": "domain-forest-graph"
+    },
+    {
+      "binder": "r",
+      "kind": "forall",
+      "domain_id": "domain-rank"
+    },
+    {
+      "binder": "X",
+      "kind": "forall",
+      "domain_id": "domain-tree-vertices"
+    },
+    {
+      "binder": "finiteX",
+      "kind": "forall",
+      "domain_id": "domain-tree-finite"
+    },
+    {
+      "binder": "T",
+      "kind": "forall",
+      "domain_id": "domain-tree-graph"
+    },
+    {
+      "binder": "v",
+      "kind": "forall",
+      "domain_id": "domain-tuple-vertex"
+    },
+    {
+      "binder": "s",
+      "kind": "forall",
+      "domain_id": "domain-tuple-vertex"
+    },
+    {
+      "binder": "g",
+      "kind": "forall",
+      "domain_id": "domain-tuple-vertex"
+    },
+    {
+      "binder": "p",
+      "kind": "forall",
+      "domain_id": "domain-rank"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-forest",
+      "statement": "First conjunct: F.IsAcyclic. Disconnected forests are included.",
+      "dependencies": [
+        "domain-forest-graph",
+        "def-forest"
+      ]
+    },
+    {
+      "id": "hyp-rank",
+      "statement": "First conjunct: 1<=r. No upper rank bound.",
+      "dependencies": [
+        "domain-rank"
+      ]
+    },
+    {
+      "id": "hyp-order",
+      "statement": "First conjunct: Nat.card V=2*r+4.",
+      "dependencies": [
+        "domain-forest-finite",
+        "domain-rank",
+        "def-order"
+      ]
+    },
+    {
+      "id": "hyp-crossing",
+      "statement": "First conjunct: firstDescent F<r, with the first STRICT negative difference.",
+      "dependencies": [
+        "domain-forest-graph",
+        "domain-rank",
+        "def-first-descent"
+      ]
+    },
+    {
+      "id": "hyp-g1",
+      "statement": "Second conjunct: ordinaryG1Guards T v s g p, exactly the existing ten original structural and numerical guards.",
+      "dependencies": [
+        "domain-tree-finite",
+        "domain-tree-graph",
+        "domain-tuple-vertex",
+        "domain-rank",
+        "def-g1-guards"
+      ]
+    },
+    {
+      "id": "hyp-g1-order",
+      "statement": "Second conjunct: residualOrder T v g=2*p. Derived p>=3 gives r=p-2>=1 and actual residual order 2*r+4.",
+      "dependencies": [
+        "def-residual-order",
+        "domain-rank"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "Both separately universal actual-graph conclusions are required: (1) Every finite forest of order 2*r+4 at natural r>=1 with firstDescent<r has delta_r<=0. (2) Every full ordinary G1 tuple whose original residual order is 2*p has delta_(p-2) of that same residual <=0. The actual graph/count/deletion bridges, cover partition and prehistory, five-edge incidence and all-r weight identities, and forest structural split are proved internally. No extra mathematical premise, RTree transport, unrestricted G1 theorem or new claim of novelty is concluded.",
+    "dependencies": [
+      "hyp-forest",
+      "hyp-rank",
+      "hyp-order",
+      "hyp-crossing",
+      "hyp-g1",
+      "hyp-g1-order",
+      "def-delta",
+      "def-residual"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "def-simple-graph",
+        "kind": "definition"
+      },
+      {
+        "id": "def-forest",
+        "kind": "definition"
+      },
+      {
+        "id": "def-tree",
+        "kind": "definition"
+      },
+      {
+        "id": "def-count",
+        "kind": "definition"
+      },
+      {
+        "id": "def-coeff",
+        "kind": "definition"
+      },
+      {
+        "id": "def-delta",
+        "kind": "definition"
+      },
+      {
+        "id": "def-first-descent",
+        "kind": "definition"
+      },
+      {
+        "id": "def-order",
+        "kind": "definition"
+      },
+      {
+        "id": "def-degree",
+        "kind": "definition"
+      },
+      {
+        "id": "def-neighborhood",
+        "kind": "definition"
+      },
+      {
+        "id": "def-deletion",
+        "kind": "definition"
+      },
+      {
+        "id": "def-ambient-a",
+        "kind": "definition"
+      },
+      {
+        "id": "def-ambient-h",
+        "kind": "definition"
+      },
+      {
+        "id": "def-residual",
+        "kind": "definition"
+      },
+      {
+        "id": "def-residual-order",
+        "kind": "definition"
+      },
+      {
+        "id": "def-g1-guards",
+        "kind": "definition"
+      },
+      {
+        "id": "def-stratum",
+        "kind": "definition"
+      },
+      {
+        "id": "def-binom-coeff",
+        "kind": "definition"
+      },
+      {
+        "id": "domain-forest-vertices",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-forest-finite",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-forest-graph",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-tree-vertices",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-tree-finite",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-tree-graph",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-tuple-vertex",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-rank",
+        "kind": "domain"
+      },
+      {
+        "id": "hyp-forest",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-rank",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-order",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-crossing",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-g1",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-g1-order",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "def-simple-graph",
+        "to": "def-forest"
+      },
+      {
+        "from": "def-forest",
+        "to": "def-tree"
+      },
+      {
+        "from": "def-simple-graph",
+        "to": "def-count"
+      },
+      {
+        "from": "def-count",
+        "to": "def-coeff"
+      },
+      {
+        "from": "def-coeff",
+        "to": "def-delta"
+      },
+      {
+        "from": "def-delta",
+        "to": "def-first-descent"
+      },
+      {
+        "from": "def-simple-graph",
+        "to": "def-order"
+      },
+      {
+        "from": "def-simple-graph",
+        "to": "def-degree"
+      },
+      {
+        "from": "def-simple-graph",
+        "to": "def-neighborhood"
+      },
+      {
+        "from": "def-simple-graph",
+        "to": "def-deletion"
+      },
+      {
+        "from": "def-neighborhood",
+        "to": "def-ambient-a"
+      },
+      {
+        "from": "def-deletion",
+        "to": "def-ambient-a"
+      },
+      {
+        "from": "def-neighborhood",
+        "to": "def-ambient-h"
+      },
+      {
+        "from": "def-deletion",
+        "to": "def-ambient-h"
+      },
+      {
+        "from": "def-neighborhood",
+        "to": "def-residual"
+      },
+      {
+        "from": "def-deletion",
+        "to": "def-residual"
+      },
+      {
+        "from": "def-residual",
+        "to": "def-residual-order"
+      },
+      {
+        "from": "def-order",
+        "to": "def-residual-order"
+      },
+      {
+        "from": "def-tree",
+        "to": "def-g1-guards"
+      },
+      {
+        "from": "def-degree",
+        "to": "def-g1-guards"
+      },
+      {
+        "from": "def-first-descent",
+        "to": "def-g1-guards"
+      },
+      {
+        "from": "def-ambient-a",
+        "to": "def-g1-guards"
+      },
+      {
+        "from": "def-ambient-h",
+        "to": "def-g1-guards"
+      },
+      {
+        "from": "def-residual",
+        "to": "def-g1-guards"
+      },
+      {
+        "from": "def-residual-order",
+        "to": "def-g1-guards"
+      },
+      {
+        "from": "def-delta",
+        "to": "def-g1-guards"
+      },
+      {
+        "from": "def-simple-graph",
+        "to": "def-stratum"
+      },
+      {
+        "from": "def-count",
+        "to": "def-stratum"
+      },
+      {
+        "from": "def-simple-graph",
+        "to": "domain-forest-vertices"
+      },
+      {
+        "from": "domain-forest-vertices",
+        "to": "domain-forest-finite"
+      },
+      {
+        "from": "domain-forest-vertices",
+        "to": "domain-forest-graph"
+      },
+      {
+        "from": "def-simple-graph",
+        "to": "domain-forest-graph"
+      },
+      {
+        "from": "def-simple-graph",
+        "to": "domain-tree-vertices"
+      },
+      {
+        "from": "domain-tree-vertices",
+        "to": "domain-tree-finite"
+      },
+      {
+        "from": "domain-tree-vertices",
+        "to": "domain-tree-graph"
+      },
+      {
+        "from": "def-simple-graph",
+        "to": "domain-tree-graph"
+      },
+      {
+        "from": "domain-tree-vertices",
+        "to": "domain-tuple-vertex"
+      },
+      {
+        "from": "domain-forest-graph",
+        "to": "hyp-forest"
+      },
+      {
+        "from": "def-forest",
+        "to": "hyp-forest"
+      },
+      {
+        "from": "domain-rank",
+        "to": "hyp-rank"
+      },
+      {
+        "from": "domain-forest-finite",
+        "to": "hyp-order"
+      },
+      {
+        "from": "domain-rank",
+        "to": "hyp-order"
+      },
+      {
+        "from": "def-order",
+        "to": "hyp-order"
+      },
+      {
+        "from": "domain-forest-graph",
+        "to": "hyp-crossing"
+      },
+      {
+        "from": "domain-rank",
+        "to": "hyp-crossing"
+      },
+      {
+        "from": "def-first-descent",
+        "to": "hyp-crossing"
+      },
+      {
+        "from": "domain-tree-finite",
+        "to": "hyp-g1"
+      },
+      {
+        "from": "domain-tree-graph",
+        "to": "hyp-g1"
+      },
+      {
+        "from": "domain-tuple-vertex",
+        "to": "hyp-g1"
+      },
+      {
+        "from": "domain-rank",
+        "to": "hyp-g1"
+      },
+      {
+        "from": "def-g1-guards",
+        "to": "hyp-g1"
+      },
+      {
+        "from": "def-residual-order",
+        "to": "hyp-g1-order"
+      },
+      {
+        "from": "domain-rank",
+        "to": "hyp-g1-order"
+      },
+      {
+        "from": "hyp-forest",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-rank",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-order",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-crossing",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-g1",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-g1-order",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-delta",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-residual",
+        "to": "conclusion"
+      }
+    ]
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "explicit_axiom_allowlist",
+    "rationale": "Finite graph decidability, actual subset cardinalities and the existing firstDescent definition may use only the three standard approved axioms. No sorry, admit, sorryAx, native_decide or mathematical assumption beyond the displayed hypotheses is permitted."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "Erdos993G1.thirdWideForestAndG1",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem Erdos993G1.thirdWideForestAndG1 :\n    (∀ (V : Type u) [finiteV : Finite V] (F : SimpleGraph V) (r : ℕ),\n      F.IsAcyclic →\n      1 ≤ r →\n      Nat.card V = 2 * r + 4 →\n      Erdos993G1.firstDescent F < r →\n      Erdos993G1.delta F (r : ℤ) ≤ 0) ∧\n    (∀ (X : Type u) [finiteX : Finite X] (T : SimpleGraph X)\n      (v s g : X) (p : ℕ),\n      Erdos993G1.ordinaryG1Guards T v s g p →\n      Erdos993G1.residualOrder T v g = 2 * p →\n      Erdos993G1.delta (Erdos993G1.residual T v g) ((p : ℤ) - 2) ≤ 0)",
+    "expected_statement_sha256": "0e1934325eb994ee389feea3cabcf3f7f01664d242e11c4280c76a9d47c059d4"
+  },
+  "source_materials": [
+    {
+      "id": "source-synthesis-synthesis-md",
+      "path": "SOURCE/intake/synthesis/SYNTHESIS.md",
+      "role": "reference",
+      "sha256": "ba5380fb429fe322d2a362c7724edbc824fe7e51c48622b89b82b32ca03f66e3"
+    },
+    {
+      "id": "source-synthesis-proofs-md",
+      "path": "SOURCE/intake/synthesis/PROOFS.md",
+      "role": "theorem_intent",
+      "sha256": "4dd97736cd5a7d9118011b0d242bc18c013457910d1f734a7ac0c566e9cdf17d"
+    },
+    {
+      "id": "source-synthesis-lean-candidates-json",
+      "path": "SOURCE/intake/synthesis/LEAN-CANDIDATES.json",
+      "role": "theorem_intent",
+      "sha256": "7b83f8909a955d5dd0235e045e977caf485a46e625ac4bcafa8a2239fe839568"
+    },
+    {
+      "id": "source-synthesis-candidate-proof-lineage-json",
+      "path": "SOURCE/intake/synthesis/CANDIDATE-PROOF-LINEAGE.json",
+      "role": "reference",
+      "sha256": "2b175483baecbe73684f37fee9d77616e443a002e2d999f83354b4da7a8d5e91"
+    },
+    {
+      "id": "source-target",
+      "path": "SOURCE/intake/SOLUTION-CONTRACT.md",
+      "role": "hypothesis_authority",
+      "sha256": "27ce75bfbc2933de8ffcfa69b7680836aa9241c713110a068c705b1e348681c3"
+    },
+    {
+      "id": "source-c2-main",
+      "path": "SOURCE/intake/C2/LeanProject/LeanProof/Main.lean",
+      "role": "definition_authority",
+      "sha256": "beabf73950968ea22e71fb7b02a946eb849b7cdce3a0541fa80a59f7bc485d89"
+    },
+    {
+      "id": "source-c2-registry",
+      "path": "SOURCE/intake/C2/FORMALIZATION-STATE.json",
+      "role": "reference",
+      "sha256": "fdd9a99ee731e5652c2a5ba9341a49ecd0a875001e2d97a79a019eaa9c125338"
+    },
+    {
+      "id": "source-controller-direct-five-matching-proof-v1-md",
+      "path": "SOURCE/intake/controller/C3-CONTROLLER-LEAN-BRIDGE/DIRECT-FIVE-MATCHING-PROOF-v1.md",
+      "role": "reference",
+      "sha256": "5b50466ea0cf5e2caadf9dfb7b50b7b3eaf8fb3fec40dbf41ed26b560c225c27"
+    },
+    {
+      "id": "source-controller-integer-weight-addendum-v1-md",
+      "path": "SOURCE/intake/controller/C3-CONTROLLER-LEAN-BRIDGE/INTEGER-WEIGHT-ADDENDUM-v1.md",
+      "role": "reference",
+      "sha256": "338c34905ee53def2b1e84ce1aefdea3513ad0231045579195405581c8d58352"
+    },
+    {
+      "id": "source-controller-forest-matching-cover-proof-v1-md",
+      "path": "SOURCE/intake/controller/C3-CONTROLLER-LEAN-BRIDGE/FOREST-MATCHING-COVER-PROOF-v1.md",
+      "role": "reference",
+      "sha256": "2c2cec463992b428fa07f2c3103f29c8e4ce7fe7c00c696b86a9bc799da0f52b"
+    },
+    {
+      "id": "source-controller-matching5-integer-weights-v1-json",
+      "path": "SOURCE/intake/controller/C3-CONTROLLER-LEAN-BRIDGE/matching5-integer-weights-v1.json",
+      "role": "reference",
+      "sha256": "b92857e51315693502f2f172d945cf160b0f4b6a8e1cda99946f175728411ffd"
+    },
+    {
+      "id": "source-forest-certificate",
+      "path": "SOURCE/intake/controller/C3-CONTROLLER-FOREST-CERTIFICATE/PROOF.md",
+      "role": "reference",
+      "sha256": "3d4b27aba816369ee27bc4bf9c31983691d5b0b95c964667eefbb47adf1fbab5"
+    }
+  ]
+}

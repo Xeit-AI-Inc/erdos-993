@@ -141,3 +141,7 @@ not `formally_verified`.
   exports the byte-identical r23 Lean source and its contracted closed
   arithmetic certificate. It does not formalize the T22 graph/counting bridge
   or the literal Hall refutation.
+
+## G1 packages (2026-09-20)
+
+Three exact governed contracts: [C1 low rank](lean/g1-c1-low-rank/README.md), [C2 first wide band](lean/g1-c2-first-wide/README.md), and [C3 third wide band](lean/g1-c3-third-wide/README.md). They use actual graph counts and retain all statement guards. Run `./scripts/verify-g1-lean.sh`; see [the verification record](../evidence/verification-2026-09-20-g1.md). Unrestricted G1 and all headline targets remain open.

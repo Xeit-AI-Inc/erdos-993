@@ -1,2 +1,9 @@
 # Preserve the byte-identical governed r23 Lean source, including its terminal blank line.
 proofs/lean/r23-t22-arithmetic-certificate/Erdos993R23.lean whitespace=-blank-at-eof
+
+# Preserve the exact governed G1 sources and original CSV bytes; no normalization.
+proofs/lean/g1-c1-low-rank/LeanProof/Main.lean -text whitespace=-blank-at-eof
+proofs/lean/g1-c2-first-wide/LeanProof/Main.lean -text whitespace=-blank-at-eof
+proofs/lean/g1-c3-third-wide/LeanProof/Main.lean -text whitespace=-blank-at-eof,-blank-at-eol
+runs/g1-large-residual-dre-2026-09-13/TERMINAL-LEDGER.csv -text whitespace=cr-at-eol
+runs/g1-large-residual-dre-2026-09-13/OBLIGATIONS-C3-FINAL.csv -text whitespace=cr-at-eol

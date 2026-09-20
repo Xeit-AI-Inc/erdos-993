@@ -1,107 +1,35 @@
 # Open Research Roadmap
 
-## Tree Target
+Updated after the three-cycle G1 close on 2026-09-20 and the completed r23b/r24 siblings. TREE, FOREST, TRANSFER, unrestricted G1 and aggregated beta-prime remain open. The [current assessment](assessment-2026-09-20.md) explains the following priorities and the limits of any forecast.
 
-The sharpest current concrete entries are:
+## 1. A uniform structural residual theorem
 
-1. attack aggregated beta through direct full demand
-   `|P|<=|N| <=> S(T,p)<=0`, not universal all-cut Hall for the frozen literal
-   relation, which r23 refutes. Seek signed cancellation, recurrence, aggregate
-   mass transport, or a tree-derived total-capacity theorem, with the T22 and
-   T60 Hall-deficient/aggregate-negative rows as mandatory controls. Complete
-   the same-byte ordinary-tree/governed-RTree bridge in parallel before
-   transferring the literal refutation to the canonical governed claim;
-2. eliminate or exhibit `Delta_4<0<Delta_5` inside the residual order band
-   `13..32` — published exhaustive unimodality verification for all trees
-   through order 29 (external computation, cited not reproduced) narrows
-   the residual band to `30..32`, so importing verified receipts for those
-   three orders would close this branch entirely;
-3. construct a connectivity-preserving descent from a positive-charge
-   specified residual to a smaller tree carrying a complete first-recovery
-   history, or prove that no such descent is possible;
-4. prove a same-leaf pendant selector across the two required ranks; and
-5. prove or refute the first-recovery neighborhood-shadow inequality
+Extend the actual matching/cover and cover-fiber arguments beyond fixed values of `d=|F|-2r`. The new formal theorem closes `d=4` under strict crossing; earlier work closes the first wide band formally and the intervening band informally. The next case `|F|=2r+5` is a diagnostic, not a substitute for an argument controlling unbounded excess.
 
-```text
-a|X_(t_*)| <= b|N(X_(t_*))|.
-```
+A useful result would prove unrestricted ordinary G1, prove a uniform forest no-recovery theorem, or reduce the remaining configurations to a rigorously smaller structural class. Keep all first-descent and original-neighborhood guards. The failed six-edge comparator, raw edge-monotonicity and pointwise addability mechanisms remain excluded. See [the G1 experiment](../experiments/g1-large-residual-dre-2026-09-13.md).
 
-The derivation must use actual minimum-order first-recovery history, include
-the `t_*=0` case, and avoid assuming the recovery sign it is meant to exclude.
-A verified finite tree witness remains an alternative resolution.
+## 2. Complete aggregate cancellation
 
-The r7 exclusions remove the rank-one start and the two published proper
-double-broom families from this search. Its two-leaf and containment identities
-also fix the algebra that a future joint same-leaf argument must respect; they
-do not provide the missing strict aggregate inequalities or leaf selection.
+Prove direct full demand or the complete favorable-leaf sum `S(T,p)<=0` on its actual eligible rank window. Universal all-cut Hall and tag-closed-cut Hall are false. A positive summand or deficient proper cut does not refute the complete sum.
 
-## Forest Target
+The most concrete proof entry is the signed top-rank residual identity from r24. Close its weighted lower bound for general non-flat residual trees, accounting for the sign-changing terms of the three-family expansion. Keep the flat class, `T_m`, and terminal `K2`/`P3` results at their existing grades and use them as controls. A focused lower-interior-window search for a positive **complete eligible row** should accompany this argument. See [r24](../experiments/r24-direct-favorable-leaf-aggregate.md).
 
-Resolve the component-minimal two-defect system using actual tree structure,
-or produce an exact disconnected witness. Generic sequence convolution is too
-broad because it loses graph realizability.
+## 3. Exact reduction to the original graph problem
 
-## Transfer Target
+State and check the complete conditional implication from named remaining hypotheses to ordinary TREE and FOREST. Preserve the distinction between residual G1wide and the master chain's strict-endpoint `OB-G1`, between first-descent ranks and global modes, and between ordinary graphs and the governed RTree representation.
 
-Construct a noncircular parameter-carrying class that:
+Resolve the needed ordinary/governed semantic correspondence and the genuine forest-composition problem. Tree unimodality alone is insufficient for generic convolution. A proposed graph-realizable transfer class must contain all tree sequences, survive disjoint union, and imply unimodality without assuming universal log-concavity or simply restating the target. A direct uniform forest argument could bypass this transfer route.
 
-1. contains every tree independence vector;
-2. is closed under finite convolution;
-3. directly implies weak unimodality; and
-4. is easier to verify than the target conjecture itself.
+## What would count as progress
 
-## Formalization Target
+Prioritize a uniform inequality, a proved reduction of the remaining class, a closed end-to-end conditional theorem exposing the actual gaps, or an exact counterexample satisfying every guard. Formalize an informal proof once it closes a load-bearing obligation. More auxiliary identities or undirected null censuses should not displace these tasks.
 
-Formalize new statements only after an informal proof closes a load-bearing
-obligation. Auxiliary identities should not displace the central mathematical
-frontier merely because they are easier to encode.
+The source-dependent mixed-grade G1 exclusions leave possible counterexamples only at `p>=6`, residual order at least `2p+1`, branching, and strict residual recovery. These necessary conditions do not assert existence or sufficiency. Fixed-residual padding has a proved root-uniform limit; it cannot rescue ambient history indefinitely.
 
-The next formalization-worthy target is a normalized, attachment-sensitive
-paired-incidence inequality that controls containment multiplicity, unmatched
-rows, component loss, and acyclicity. The r7 component selector theorem is a
-fixed-component characterization only; it does not supply selector existence,
-synchronization, or forest recovery.
+The older finite rank-four recovery band and strict endpoint/same-leaf obligations remain recorded in the [master ledger](master-proof-ledger-2026-09-04.md). Finite computational horizons retain their provenance and do not become all-order theorems.
 
-## Immediate Research Questions
+## Permanent exclusions
 
-- Can the distribution of available extensions satisfy a preserved
-  single-crossing order under rooted tree composition?
-- Can proper-tree minimality produce a direct incidence injection proving the
-  first-recovery neighborhood-shadow inequality?
-- Is there an exact minimum-history-compatible witness refuting that shadow
-  inequality?
-- Can a first forbidden descent-then-rise be transferred to a proper rooted
-  subtree, contradicting minimality?
-- Can the positive residual witness be excluded using branch structure?
-- Can positive residual charge force a smaller connected recovery carrier
-  without silently replacing the operational residual by `R_spec`?
-- Can total source demand in the fixed Delete/Retag construction be
-  compensated even though some proper cuts are Hall-deficient?
-- Which formation-specific correction term or global cancellation controls
-  the forced negative triple coefficient in the exact four-fibre subset
-  representation?
-- Can the exact endpoint-incidence obstruction family be excluded from the
-  governed relation by a source-backed formation invariant that is stronger
-  than finiteness, connectedness, acyclicity, deficit one, and absence of
-  private neighbors?
-- If not, can a deficient Hall cut be realized together with a positive
-  complete favorable-leaf aggregate in the same governed row?
-- Can the finite `13..32` band be closed by a structural enumeration whose
-  output is a proof object rather than only a null search?
-- What additional state is necessary for convolution without reintroducing a
-  circular definition?
+Universal tree TRS2 and universal tree log-concavity are refuted; see [the erratum](erratum-2026-09-03-universal-tree-trs2.md). Any future invariant must survive the known non-log-concave but unimodal trees. The literal Hall refutations do not automatically transport to a different governed model, and neither they nor the refuted pointwise beta statement resolve aggregate beta-prime or Erdős #993.
 
-## Retired Directions (2026-09-03)
-
-Universal tree TRS2 — equivalently, universal log-concavity of tree
-independence sequences — is refuted at order 26 and is retired as a proof
-target, together with any invariant search whose conclusion is universal
-tree TRS2. See the
-[erratum](erratum-2026-09-03-universal-tree-trs2.md). Every future
-transfer invariant must be tested against the order-26 Kadrawi–Levit
-witness family
-([`evidence/kl-order26-trs2-witness`](../evidence/kl-order26-trs2-witness/README.md))
-before proof search: it must hold on those trees (they are unimodal) while
-remaining strong enough to survive convolution. The open transfer question
-is now exactly this: a class strictly between log-concavity and
-unimodality, convolution-stable, containing all tree sequences.
+This roadmap is prospective. The three-cycle G1 experiment is closed; additional research cycles require new authorization.

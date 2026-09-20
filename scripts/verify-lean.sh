@@ -68,4 +68,6 @@ verify_project "$ROOT/proofs/lean/r8-trs2" "ManagedC8U104" \
 verify_project "$ROOT/proofs/lean/r23-t22-arithmetic-certificate" \
   "Erdos993R23" "check/KernelCheck.lean" "check/AxiomCheck.lean"
 
+"$ROOT/scripts/verify-g1-lean.sh"
+
 echo "All Lean builds, kernel checks, and axiom checks passed."

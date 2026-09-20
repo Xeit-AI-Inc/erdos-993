@@ -1,0 +1,101 @@
+{
+  "schema_version": "erdos993.g1.publication-verification.v1",
+  "date": "2026-09-20",
+  "source_run": "erdos-993-g1-large-residual-dre-2026-09-13",
+  "source_final_manifest_sha256": "b4b7fdbf03f64940398034668099bea5a062192e35366fea730db9c92baece77",
+  "source_hash_manifest_sha256": "fb51d835e2ffea06d17bd3004c1e7d984ac8be95490bcc65e99a47462237d874",
+  "original_governed_status": "formally_verified",
+  "public_reproduction": {
+    "all_passed": true,
+    "packages": [
+      {
+        "cycle": "C1",
+        "package": "g1-c1-low-rank",
+        "theorem": "Erdos993G1.lowRankForestClassificationAndG1",
+        "source_sha256": "32ac508e828f7bccd484acec90b3cb7ea75a0449bd9ee4ff20e8b535566bee85",
+        "build_passed": true,
+        "kernel_passed": true,
+        "axioms_passed": true,
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "source_unchanged": true
+      },
+      {
+        "cycle": "C2",
+        "package": "g1-c2-first-wide",
+        "theorem": "Erdos993G1.firstWideClassificationHistoryAndG1",
+        "source_sha256": "beabf73950968ea22e71fb7b02a946eb849b7cdce3a0541fa80a59f7bc485d89",
+        "build_passed": true,
+        "kernel_passed": true,
+        "axioms_passed": true,
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "source_unchanged": true
+      },
+      {
+        "cycle": "C3",
+        "package": "g1-c3-third-wide",
+        "theorem": "Erdos993G1.thirdWideForestAndG1",
+        "source_sha256": "aa517ebc678c552e4533ddd4c37e8b57bc3db0d58cdc91ef08f4e94c9fda1ca4",
+        "build_passed": true,
+        "kernel_passed": true,
+        "axioms_passed": true,
+        "axioms": [
+          "Classical.choice",
+          "Quot.sound",
+          "propext"
+        ],
+        "source_unchanged": true
+      }
+    ],
+    "scope": "Fresh public-package reproduction checks; original contract and fidelity awards remain bound to source runs"
+  },
+  "master_merge": {
+    "old_claims_preserved": 81,
+    "additional_claims": 207,
+    "total": 288,
+    "all_shared_statuses_equal": true
+  },
+  "source_sealed_files_rehashed": 5931,
+  "new_research_cycles": 0,
+  "content_checks": {
+    "files": 87,
+    "json_csv_valid": true,
+    "source_hashes_valid": true,
+    "master_81_objects_preserved": true,
+    "master_ledger_copies_equal": true,
+    "new_link_errors": [],
+    "inherited_link_errors": [],
+    "credential_pattern_findings": [],
+    "shell_syntax_passed": true,
+    "git_diff_check_passed": true
+  },
+  "claim_lint": {
+    "identity_claims": 288,
+    "finding_count": 0,
+    "warning_count": 0
+  },
+  "published_entrypoint": {
+    "path": "scripts/verify-g1-lean.sh",
+    "sha256": "13206c10eda213d00a815228bd480e88485095dd667f3cf312e715df69883ef1",
+    "executed": true,
+    "passed": true
+  },
+  "merged_master_sha256": {
+    "CLAIM-IDENTITY.json": "8b464065d5845d12744472b6083523b914a34a8bb7f342dfd892cdcae8bfba20",
+    "LEDGER.md": "728da6ab8e47a9829ff551c5ebf6b6f993e67269b48ef334031296800ab79af7"
+  },
+  "original_run_files_modified": false,
+  "source_byte_preservation": {
+    "exact_path_gitattributes": true,
+    "original_csv_crlf_preserved": true,
+    "sealed_lean_whitespace_preserved": true,
+    "source_bytes_changed": false
+  }
+}

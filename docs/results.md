@@ -1,5 +1,17 @@
 # Current Results
 
+## G1 large-residual results, 2026-09-20
+
+| Scope | Verified result |
+|---|---|
+| Ordinary G1, `p<=5` | Residual sign is nonpositive; the associated low-rank forest regime is classified |
+| Finite simple graphs, `|G|=2r+2`, `r>=1` | Positive `Delta_r` iff at most one edge; exceptional graphs have strictly positive differences through `r` |
+| Ordinary G1, `|U|=2p-2` | Residual sign is nonpositive |
+| Finite forests, `|F|=2r+4`, `r>=1`, `x(F)<r` | `Delta_r(F)<=0` |
+| Ordinary G1, `|U|=2p` | Residual sign is nonpositive |
+
+These are the exact consequences of three governed contracts, published in three byte-identical Lean source packages. No unrestricted G1, TREE, FOREST or TRANSFER conclusion is awarded. The second wide band is retained at its informal grade. See [the experiment summary](../experiments/g1-large-residual-dre-2026-09-13.md), [verification record](../evidence/verification-2026-09-20-g1.md), and [current assessment](assessment-2026-09-20.md).
+
 ## Included Formal Result
 
 For every finite nonempty simple tree `T` with `|V(T)| >= 27`,
