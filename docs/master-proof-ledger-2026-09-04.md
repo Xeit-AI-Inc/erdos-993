@@ -959,7 +959,7 @@ cells; `D_unimodal_peak`; every mechanism named in the six syntheses' refuted li
 appended to `E993-C3-FOREST-FOURTH-WIDE-CROSSING-SIGN`, whose status is unchanged pending
 Ashton's ruling). 72 r25 identities are imported additively at their accepted
 statuses and grades: the master now contains 360 identities
-(204 VERIFIED, 88 REFUTED, 26 CONDITIONAL, 42 OPEN) — registry statuses at explicit
+(205 VERIFIED, 88 REFUTED, 26 CONDITIONAL, 41 OPEN) — registry statuses at explicit
 evidence grades, not a count of theorems. Two synthesis compositions and two registration
 candidates are stated in the run and NOT registered (they await an isolated second read).
 The vendored Galvin paper is excluded from every published artifact. No mathematical

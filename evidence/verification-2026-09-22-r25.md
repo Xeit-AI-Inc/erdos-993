@@ -39,11 +39,11 @@ sealed internal run. This record is the release's digest inventory, not a new th
 and no public rebuild was run at release (the internal kernel receipts bind the shipped
 sources byte-exactly).
 
-The master merge preserves all 288 prior claim objects exactly (one note appended to
-`E993-C3-FOREST-FOURTH-WIDE-CROSSING-SIGN`, whose status is unchanged pending Ashton's
-ruling) and imports 72 r25 identities at their accepted statuses and grades. Canonical lint
+The master merge preserves all 288 prior claim objects (one status change on Ashton's explicit ruling:
+`E993-C3-FOREST-FOURTH-WIDE-CROSSING-SIGN` OPEN → VERIFIED at `proved_informal`, the r25
+band closure being its statement of record) and imports 72 r25 identities at their accepted statuses and grades. Canonical lint
 passes with zero findings and zero warnings against the run's obligations ledger. The
-totals are 204 VERIFIED, 88 REFUTED, 26 CONDITIONAL and 42 OPEN — registry statuses at
+totals are 205 VERIFIED, 88 REFUTED, 26 CONDITIONAL and 41 OPEN — registry statuses at
 their explicit evidence grades, not a count of theorems; thirteen r25 identities carry the
 internal `formally_verified` grade.
 

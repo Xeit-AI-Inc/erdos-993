@@ -35182,12 +35182,14 @@
     },
     {
       "alias_patterns": [],
-      "aliases": [],
+      "aliases": [
+        "E993-R25-FOURTH-BAND-CLOSE-ALL-R"
+      ],
       "claim_key": "E993-C3-FOREST-FOURTH-WIDE-CROSSING-SIGN",
       "evidence_grade": "open_unresolved_no_formal_award",
       "formal_award": false,
       "novelty_claimed": false,
-      "scope": "Ordinary finite forests; exact next order only. A failed six-edge comparator and finite seven-edge/random-tree checks do not decide this theorem. || r25 (2026-09-22): the d = 5 diagnostic band is closed informally for EVERY r as the run-local E993-R25-FOURTH-BAND-CLOSE-ALL-R (proved_informal, fixed-band, graded at its weakest link; eight inputs of which three are formally verified: E993-R25-FOURTH-BAND-SEVEN-EDGE-MATCHING-SIGN, E993-R25-BAND-CARRY-STEP-HALL, E993-R25-CARD5-JOINT-BUDGET-CELLS at their stated ranks). This master object's status is preserved unchanged by the additive publication convention; whether it moves to VERIFIED at proved_informal is Ashton's explicit ruling.",
+      "scope": "Ordinary finite forests; exact next order only. A failed six-edge comparator and finite seven-edge/random-tree checks do not decide this theorem. || r25 (2026-09-22): see certificate — status moved to VERIFIED at proved_informal on Ashton's explicit ruling; the additive-publication hold recorded earlier is discharged.",
       "source_occurrence_links": [
         {
           "identity_review": {
@@ -35218,7 +35220,7 @@
         }
       ],
       "statement": "For every finite ordinary forest F and natural r>=1, |V(F)|=2r+5 and x(F)<r imply Delta_r(F)<=0.",
-      "status": "OPEN",
+      "status": "VERIFIED",
       "terminal_evidence": [
         {
           "path": "cycles/cycle-3/stage6/C3-SYNTHESIS/CLAIMS.json",
@@ -35278,7 +35280,8 @@
             "sha256": "00ff9ed1decfe8b1793c92ca9dd34e727e7f8bcdd0171471a124b2319218b387"
           }
         }
-      ]
+      ],
+      "certificate": "proved_informal, fixed-band d = 5, graded at its weakest link — moved OPEN -> VERIFIED on Ashton's explicit ruling of 2026-09-22 at the r25 publication. Statement of record and evidence: the run-local E993-R25-FOURTH-BAND-CLOSE-ALL-R (same theorem: for every finite forest F and r >= 1, |V(F)| = 2r+5 and x(F) < r imply Delta_r(F) <= 0), closed for EVERY r on eight inputs all derived in-run, three of them formally verified (E993-R25-FOURTH-BAND-SEVEN-EDGE-MATCHING-SIGN; E993-R25-BAND-CARRY-STEP-HALL; E993-R25-CARD5-JOINT-BUDGET-CELLS at their stated ranks), the rest proved_informal with attribution (seat F3's cover-half algebra and carry-step derivation; the five-cell finite part critic-derived; the arithmetic tail seat U2 with critic repairs; the window reduction, Koenig range and Corollary F at d = 5 from the Cycle 1-4 record); reconciled by the r25 adjudicators and syntheses of Cycles 3-6. A count of formal inputs is not a grade. Not a uniform statement; no status transfer to Tier 1, Tier 2, FOREST, TREE, TRANSFER or Erdos #993. Run: erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (terminal manifest 6bc912aecd177802c0c07b1990158afd27dc65131ed4dc8fb234ec1f8effdb44)."
     },
     {
       "claim_key": "E993-R25-UNR-FOREST-WIDE",
@@ -36198,7 +36201,7 @@
     }
   ],
   "last_updated": "2026-09-22",
-  "update_note": "r25 publication (2026-09-22): 72 run-local identities of erdos-993-uniform-residual-no-recovery-dre-2026-09-20 imported additively at their accepted statuses and grades (13 of them at the formally_verified grade from twelve governed Lean awards; every informal result with grade and attribution on its face); all 288 prior master objects preserved (one note appended). Statuses are registry statuses at their explicit evidence grades, not a count of theorems.",
+  "update_note": "r25 publication (2026-09-22): 72 run-local identities of erdos-993-uniform-residual-no-recovery-dre-2026-09-20 imported additively at their accepted statuses and grades (13 of them at the formally_verified grade from twelve governed Lean awards; every informal result with grade and attribution on its face); all 288 prior master objects preserved (one note appended). Statuses are registry statuses at their explicit evidence grades, not a count of theorems. || 2026-09-22 (Ashton's ruling): E993-C3-FOREST-FOURTH-WIDE-CROSSING-SIGN OPEN -> VERIFIED at proved_informal (the r25 diagnostic-band closure).",
   "g1_publication": {
     "source_run": "erdos-993-g1-large-residual-dre-2026-09-13",
     "source_registry_sha256": "bceaa933993f5294db482a89b57a59f470a7de1fa6b51f2ce3c46227f59300eb",
