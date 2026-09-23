@@ -1,0 +1,1252 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "c6-la3-c6-matching-all-index-coefficientwise-v1",
+  "theorem": {
+    "title": "Coefficientwise nonnegativity of N_j for every j <= m (award group C6-LA3, clause (a) of E993-R25-MATCHING-ALL-INDEX-DUAL-POSITIVITY)",
+    "informal_statement": "Coefficientwise-in-t nonnegativity of the certificate-dual polynomial N_j, for EVERY index j <= m (clause (a) only of E993-R25-MATCHING-ALL-INDEX-DUAL-POSITIVITY). For every m, K, d : Nat with K + d = 2m and the chartered region 3d <= 2m+2: for every j <= m, the Polynomial Z object Nj K m j = sum_{i<=j} (K+1-2i) * 2^i * C(m,i) * A_i(t) * B_i(t) (A_i(t) = prod_{l<i}(t+K+1-l), B_i(t) = prod_{i<l<=j}(t+l)) has every coefficient >= 0. Uniform in d, m AND j; no horizon, no census; no ν, τ, x(F) < r anywhere; no SimpleGraph, indepCount, delta, or firstDescent occurs anywhere in the corpus -- the sixth award's PStatement and P_holds_critic_general are imported byte-identically and never re-proved. The rank substitution t = r - K: since the Polynomial Z statement is substitution-free, coefficientwise nonnegativity implies 0 <= (Nj K m j).eval t for every integer t >= 0, in particular at t = r - K for every r >= K; on the region m <= K+1 (region_le), so r >= K already implies the standing condition r >= m-1 that E993-R25-CLAMPED-DUAL-DOMINATION needs. No Lean identifier in this project mentions r. SCOPE (mandatory fences): this discharges CLAUSE (a) ONLY of E993-R25-MATCHING-ALL-INDEX-DUAL-POSITIVITY; clause (b) (mu_j^g(t) >= 0, denominator positivity, clamp persistence) is formalised NOWHERE, so the registered claim as a whole stays proved_informal -- 'the coefficientwise positivity lemma is formal' must never be shortened to 'the all-index dual positivity claim is formal'. The j = m instance IS the sufficiency half of the separately registered E993-R25-MATCHING-CERTIFICATE-POSITIVITY-IFF (Q_{m,d} = m! * N_m); two registry keys, not one. The CONVERSE half of that iff is NOT formalised. This bears NOT AT ALL on E993-R25-MATCHING-BRANCH-UNIFORM-SIGN, which stays OPEN. The region 3d <= 2m+2 is exactly sharp (off-region witness (m,d) = (1,2): N_1 = -t-1) -- evidence, not on the theorem's own face. No graph, forest, G1 tuple, tier, FOREST, TREE, TRANSFER or Erdos #993 statement occurs anywhere. Attribution: seat U1 for the apparatus and the j = m assembly; the general-j lift critic-attributed jointly to C-U1-T and C-U1-F (independently); the imported sixth award's induction step is C-U1-F (primary, toolkit-free)/C-U1-T (induction-principle scaffold) of Cycle 5, already on that award's own face."
+  },
+  "formulation_status": {
+    "status": "established",
+    "evidence": [
+      "cycles/cycle-6/stage6/SYNTHESIS.md :: ## Lean awards :: Dispatch 3",
+      "cycles/cycle-6/stage6/SYNTHESIS.md :: ## Exact established results :: A1",
+      "cycles/cycle-6/stage5/adjudicators/U/ADJUDICATION.md :: ## Lean readiness :: Contract-ready group 2",
+      "cycles/cycle-6/stage4/critics/U1/F/CRITIQUE.md :: F2",
+      "cycles/cycle-6/stage4/critics/U1/T/CRITIQUE.md :: F1",
+      "cycles/cycle-6/stage3/returns/U1/RETURN.md :: The exact Lean statement of the target theorem"
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-pstatement",
+      "description": "The imported sixth award's scalar arithmetic-core statement (P), Nat.descFactorial form; imported byte-identically, never re-proved.",
+      "lean_name": "ErdosR25.E1ArithmeticCore.PStatement",
+      "dependencies": [
+        "domain-nat"
+      ]
+    },
+    {
+      "id": "def-afac",
+      "description": "A_i(t) = prod_{l=0}^{i-1} (t + K + 1 - l), as a Polynomial Z.",
+      "lean_name": "ErdosR25.E1CoeffWise.Afac",
+      "dependencies": [
+        "domain-nat",
+        "domain-poly"
+      ]
+    },
+    {
+      "id": "def-bfac",
+      "description": "B_i(t) = prod_{l=i+1}^{j} (t + l), as a Polynomial Z, for outer bound j.",
+      "lean_name": "ErdosR25.E1CoeffWise.Bfac",
+      "dependencies": [
+        "domain-nat",
+        "domain-poly"
+      ]
+    },
+    {
+      "id": "def-ishard",
+      "description": "An index i is hard when its N_j coefficient K+1-2i would be negative.",
+      "lean_name": "ErdosR25.E1CoeffWise.IsHard",
+      "dependencies": [
+        "domain-nat"
+      ]
+    },
+    {
+      "id": "def-partner",
+      "description": "The reflection partner of index i: K+1-i.",
+      "lean_name": "ErdosR25.E1CoeffWise.partner",
+      "dependencies": [
+        "domain-nat"
+      ]
+    },
+    {
+      "id": "def-wcoef",
+      "description": "W_i up to the positive common factor (j+1)! (dropped, irrelevant to sign): 2^i * C(m,i).",
+      "lean_name": "ErdosR25.E1CoeffWise.Wcoef",
+      "dependencies": [
+        "domain-nat"
+      ]
+    },
+    {
+      "id": "def-njterm",
+      "description": "The i-th raw summand of N_j: (K+1-2i) * W_i * A_i(t) * B_i(t).",
+      "lean_name": "ErdosR25.E1CoeffWise.NjTerm",
+      "dependencies": [
+        "domain-nat",
+        "domain-poly",
+        "def-afac",
+        "def-bfac",
+        "def-wcoef"
+      ]
+    },
+    {
+      "id": "def-nj",
+      "description": "N_j itself, as a Polynomial Z-valued object: sum_{i=0}^{j} (K+1-2i) W_i A_i(t) B_i(t).",
+      "lean_name": "ErdosR25.E1CoeffWise.Nj",
+      "dependencies": [
+        "domain-nat",
+        "domain-poly",
+        "def-njterm"
+      ]
+    },
+    {
+      "id": "def-coeffnonneg",
+      "description": "Coefficientwise nonnegativity of a Polynomial Z. RENAMED from the seat's Nonneg (repair 1): collides with Mathlib's root Nonneg namespace.",
+      "lean_name": "ErdosR25.E1CoeffWise.CoeffNonneg",
+      "dependencies": [
+        "domain-poly"
+      ]
+    },
+    {
+      "id": "def-discriminant-factorization",
+      "description": "Award part 1: the discriminant 9d^2+12(m+1)d-12(m+1)^2 factors as 3*(3d-2(m+1))*(d+2(m+1)). Pure ring identity, seat U1.",
+      "lean_name": "ErdosR25.E1ArithmeticCore.discriminant_factorization",
+      "dependencies": [
+        "domain-int"
+      ]
+    },
+    {
+      "id": "def-discriminant-in-k-matches-in-d",
+      "description": "The discriminant substituting K=2m-d into the (K,m) form equals the (m,d) form. Pure ring identity, seat U1.",
+      "lean_name": "ErdosR25.E1ArithmeticCore.discriminant_in_K_matches_in_d",
+      "dependencies": [
+        "domain-int"
+      ]
+    },
+    {
+      "id": "def-discriminant-nonpos-iff",
+      "description": "Award part 2: two-sided region characterisation, discriminant <= 0 iff 3d <= 2m+2, for m,d >= 0. Seat U1.",
+      "lean_name": "ErdosR25.E1ArithmeticCore.discriminant_nonpos_iff",
+      "dependencies": [
+        "domain-int",
+        "def-discriminant-factorization"
+      ]
+    },
+    {
+      "id": "def-s-quadratic-nonneg",
+      "description": "Discriminant <= 0 implies the quadratic form 3n^2-3Kn+C is a sum-of-squares nonnegative. Seat U1.",
+      "lean_name": "ErdosR25.E1ArithmeticCore.S_quadratic_nonneg_of_discriminant_nonpos",
+      "dependencies": [
+        "domain-int"
+      ]
+    },
+    {
+      "id": "def-s-holds-of-discriminant-nonpos",
+      "description": "Step (S) in its multiplicative form, from the discriminant hypothesis. Seat U1.",
+      "lean_name": "ErdosR25.E1ArithmeticCore.S_holds_of_discriminant_nonpos",
+      "dependencies": [
+        "domain-int",
+        "def-s-quadratic-nonneg"
+      ]
+    },
+    {
+      "id": "def-s-holds-on-region",
+      "description": "Award part 3: step (S) holds at every integer n on the region 3d <= 2m+2. Seat U1.",
+      "lean_name": "ErdosR25.E1ArithmeticCore.S_holds_on_region",
+      "dependencies": [
+        "domain-int",
+        "def-discriminant-nonpos-iff",
+        "def-discriminant-in-k-matches-in-d",
+        "def-s-holds-of-discriminant-nonpos"
+      ]
+    },
+    {
+      "id": "def-p-base-s1",
+      "description": "Base case s=1 (K even); the region hypothesis is literally 3(c+1) >= 2m+2. Seat U1.",
+      "lean_name": "ErdosR25.E1ArithmeticCore.P_base_s1",
+      "dependencies": [
+        "def-pstatement"
+      ]
+    },
+    {
+      "id": "def-p-base-s2",
+      "description": "Base case s=2 (K odd); region 3d<=2m+2 rearranges to 4m <= 6c+5. Seat U1.",
+      "lean_name": "ErdosR25.E1ArithmeticCore.P_base_s2",
+      "dependencies": [
+        "def-pstatement"
+      ]
+    },
+    {
+      "id": "def-p-induction-step-critic",
+      "description": "PRIMARY induction step, CRITIC-ATTRIBUTED (C-U1-F, Cycle 5), toolkit-free: (P) at a hard index n implies (P) at n+1, given (S).",
+      "lean_name": "ErdosR25.E1ArithmeticCore.P_induction_step_critic",
+      "dependencies": [
+        "def-pstatement",
+        "def-s-holds-of-discriminant-nonpos"
+      ]
+    },
+    {
+      "id": "def-p-holds-critic",
+      "description": "Induction-principle scaffold, CRITIC-ATTRIBUTED (C-U1-T, Cycle 5): Nat.le_induction over (K+3)/2 <= j <= m with the parity split at the base, calling the PRIMARY toolkit-free step.",
+      "lean_name": "ErdosR25.E1ArithmeticCore.P_holds_critic",
+      "dependencies": [
+        "def-pstatement",
+        "def-discriminant-nonpos-iff",
+        "def-discriminant-in-k-matches-in-d",
+        "def-p-base-s1",
+        "def-p-base-s2",
+        "def-p-induction-step-critic"
+      ]
+    },
+    {
+      "id": "def-p-holds-critic-general",
+      "description": "Award part 4, CRITIC-ATTRIBUTED (C-U1-T, Cycle 5): the m <= K+1 hypothesis is shown redundant given K <= 2m and the region.",
+      "lean_name": "ErdosR25.E1ArithmeticCore.P_holds_critic_general",
+      "dependencies": [
+        "def-p-holds-critic"
+      ]
+    },
+    {
+      "id": "def-matchingdual-scalarcore-award",
+      "description": "The imported sixth award's own terminal conjunction (parts 1-4), imported byte-identically and never re-proved; re-registered here as a non-terminal lemma (tooling constraint: exactly one terminal theorem per project).",
+      "lean_name": "ErdosR25.E1ArithmeticCore.matchingDual_scalarCore_award",
+      "dependencies": [
+        "def-discriminant-factorization",
+        "def-discriminant-nonpos-iff",
+        "def-s-holds-on-region",
+        "def-p-holds-critic-general"
+      ]
+    },
+    {
+      "id": "def-afac-split",
+      "description": "Splitting Afac at an intermediate index i' <= i.",
+      "lean_name": "ErdosR25.E1CoeffWise.Afac_split",
+      "dependencies": [
+        "def-afac"
+      ]
+    },
+    {
+      "id": "def-bfac-split",
+      "description": "Splitting Bfac at an intermediate index i' <= i <= j.",
+      "lean_name": "ErdosR25.E1CoeffWise.Bfac_split",
+      "dependencies": [
+        "def-bfac"
+      ]
+    },
+    {
+      "id": "def-extra-eq",
+      "description": "The two 'extra factor' blocks produced by splitting Afac and Bfac at a hard/easy pair coincide as polynomials (reindexing l -> K+1-l).",
+      "lean_name": "ErdosR25.E1CoeffWise.extra_eq",
+      "dependencies": [
+        "domain-nat",
+        "domain-poly"
+      ]
+    },
+    {
+      "id": "def-reflection-identity-poly",
+      "description": "The reflection identity as a genuine Polynomial Z equation: A_i(t)B_i(t) = A_i'(t)B_i'(t) for a hard/easy pair.",
+      "lean_name": "ErdosR25.E1CoeffWise.reflection_identity_poly",
+      "dependencies": [
+        "def-afac-split",
+        "def-bfac-split",
+        "def-extra-eq"
+      ]
+    },
+    {
+      "id": "def-region-le",
+      "description": "The region fact, derived not assumed: K+d=2m and 3d<=2m+2 give m <= K+1.",
+      "lean_name": "ErdosR25.E1CoeffWise.region_le",
+      "dependencies": [
+        "domain-nat"
+      ]
+    },
+    {
+      "id": "def-partner-spec",
+      "description": "The pairing bijection's defining properties: for hard i <= m, partner K i < i, <= m, easy, and sums with i to K+1.",
+      "lean_name": "ErdosR25.E1CoeffWise.partner_spec",
+      "dependencies": [
+        "def-region-le",
+        "def-ishard",
+        "def-partner"
+      ]
+    },
+    {
+      "id": "def-partner-injon",
+      "description": "partner K is injective on hard indices, both bounded by K+1.",
+      "lean_name": "ErdosR25.E1CoeffWise.partner_injOn",
+      "dependencies": [
+        "def-partner"
+      ]
+    },
+    {
+      "id": "def-term-sign",
+      "description": "The term-sign lemma: on a hard/easy pair, W_i <= W_i', importing PStatement (never re-derived).",
+      "lean_name": "ErdosR25.E1CoeffWise.term_sign",
+      "dependencies": [
+        "def-pstatement",
+        "def-wcoef"
+      ]
+    },
+    {
+      "id": "def-coeffnonneg-add",
+      "description": "Closure of CoeffNonneg under +. RENAMED from Nonneg.add (repair 1); flattened to avoid the registrar's leaf-matching constraint on dotted names.",
+      "lean_name": "ErdosR25.E1CoeffWise.CoeffNonneg_add",
+      "dependencies": [
+        "def-coeffnonneg"
+      ]
+    },
+    {
+      "id": "def-coeffnonneg-zero",
+      "description": "CoeffNonneg 0. RENAMED from Nonneg.zero (repair 1).",
+      "lean_name": "ErdosR25.E1CoeffWise.CoeffNonneg_zero",
+      "dependencies": [
+        "def-coeffnonneg"
+      ]
+    },
+    {
+      "id": "def-coeffnonneg-sum",
+      "description": "Closure of CoeffNonneg under finite Finset.sum. RENAMED from Nonneg.sum (repair 1).",
+      "lean_name": "ErdosR25.E1CoeffWise.CoeffNonneg_sum",
+      "dependencies": [
+        "def-coeffnonneg"
+      ]
+    },
+    {
+      "id": "def-coeffnonneg-mul",
+      "description": "Closure of CoeffNonneg under *. RENAMED from Nonneg.mul (repair 1).",
+      "lean_name": "ErdosR25.E1CoeffWise.CoeffNonneg_mul",
+      "dependencies": [
+        "def-coeffnonneg"
+      ]
+    },
+    {
+      "id": "def-coeffnonneg-one",
+      "description": "CoeffNonneg 1. RENAMED from Nonneg.one (repair 1).",
+      "lean_name": "ErdosR25.E1CoeffWise.CoeffNonneg_one",
+      "dependencies": [
+        "def-coeffnonneg"
+      ]
+    },
+    {
+      "id": "def-coeffnonneg-prod",
+      "description": "Closure of CoeffNonneg under finite Finset.prod. RENAMED from Nonneg.prod (repair 1).",
+      "lean_name": "ErdosR25.E1CoeffWise.CoeffNonneg_prod",
+      "dependencies": [
+        "def-coeffnonneg-mul",
+        "def-coeffnonneg-one"
+      ]
+    },
+    {
+      "id": "def-coeffnonneg-smul",
+      "description": "Closure of CoeffNonneg under nonneg scalar smul. RENAMED from Nonneg.smul (repair 1).",
+      "lean_name": "ErdosR25.E1CoeffWise.CoeffNonneg_smul",
+      "dependencies": [
+        "def-coeffnonneg"
+      ]
+    },
+    {
+      "id": "def-nonneglinfac",
+      "description": "X + C x is CoeffNonneg for x : Nat cast into Z.",
+      "lean_name": "ErdosR25.E1CoeffWise.NonnegLinFac",
+      "dependencies": [
+        "def-coeffnonneg"
+      ]
+    },
+    {
+      "id": "def-nonnegbfacfn",
+      "description": "Bfac j i is always CoeffNonneg.",
+      "lean_name": "ErdosR25.E1CoeffWise.NonnegBfacFn",
+      "dependencies": [
+        "def-bfac",
+        "def-coeffnonneg-prod",
+        "def-nonneglinfac"
+      ]
+    },
+    {
+      "id": "def-nonnegafacfn",
+      "description": "Afac K i is CoeffNonneg provided i <= K+1.",
+      "lean_name": "ErdosR25.E1CoeffWise.NonnegAfacFn",
+      "dependencies": [
+        "def-afac",
+        "def-coeffnonneg-prod",
+        "def-nonneglinfac"
+      ]
+    },
+    {
+      "id": "def-nonnegeasyterm",
+      "description": "Each unpaired-easy term of N_j is CoeffNonneg.",
+      "lean_name": "ErdosR25.E1CoeffWise.NonnegEasyTerm",
+      "dependencies": [
+        "def-njterm",
+        "def-ishard",
+        "def-coeffnonneg-smul",
+        "def-nonnegafacfn",
+        "def-nonnegbfacfn",
+        "def-coeffnonneg-mul"
+      ]
+    },
+    {
+      "id": "def-nonnegpairedblock",
+      "description": "Each paired hard/easy block of N_j is CoeffNonneg (the term-sign lemma made polynomial).",
+      "lean_name": "ErdosR25.E1CoeffWise.NonnegPairedBlock",
+      "dependencies": [
+        "def-njterm",
+        "def-reflection-identity-poly",
+        "def-term-sign",
+        "def-coeffnonneg-smul",
+        "def-nonnegafacfn",
+        "def-nonnegbfacfn",
+        "def-coeffnonneg-mul"
+      ]
+    },
+    {
+      "id": "def-nj-nonneg",
+      "description": "Seat U1's j = m assembly: CoeffNonneg (Nj K m m) on the chartered region.",
+      "lean_name": "ErdosR25.E1CoeffWise.Nj_nonneg",
+      "dependencies": [
+        "def-nj",
+        "def-region-le",
+        "def-ishard",
+        "def-partner",
+        "def-partner-spec",
+        "def-partner-injon",
+        "def-coeffnonneg-add",
+        "def-coeffnonneg-sum",
+        "def-nonnegeasyterm",
+        "def-nonnegpairedblock",
+        "def-p-holds-critic-general"
+      ]
+    },
+    {
+      "id": "def-partner-mem-range",
+      "description": "CRITIC-ATTRIBUTED jointly to C-U1-T and C-U1-F: the partner of a hard index i <= j always lies in Finset.range (j+1).",
+      "lean_name": "ErdosR25.E1CoeffWise.partner_mem_range",
+      "dependencies": [
+        "def-partner-spec"
+      ]
+    },
+    {
+      "id": "def-nj-nonneg-general",
+      "description": "CRITIC-ATTRIBUTED jointly to C-U1-T and C-U1-F: CoeffNonneg (Nj K m j) for EVERY j <= m on the chartered region.",
+      "lean_name": "ErdosR25.E1CoeffWise.Nj_nonneg_general",
+      "dependencies": [
+        "def-nj",
+        "def-region-le",
+        "def-partner-spec",
+        "def-partner-injon",
+        "def-coeffnonneg-add",
+        "def-coeffnonneg-sum",
+        "def-nonnegeasyterm",
+        "def-nonnegpairedblock",
+        "def-p-holds-critic-general"
+      ]
+    },
+    {
+      "id": "def-nj-nonneg-is-instance",
+      "description": "The seat's j = m theorem recovered as the j := m instance of Nj_nonneg_general.",
+      "lean_name": "ErdosR25.E1CoeffWise.Nj_nonneg_is_instance",
+      "dependencies": [
+        "def-nj-nonneg-general"
+      ]
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-nat",
+      "description": "The naturals, for m, K, d, i, j, n and the region hypotheses.",
+      "lean_type": "ℕ",
+      "dependencies": []
+    },
+    {
+      "id": "domain-int",
+      "description": "The integers, for the sixth award's discriminant/(S) parts (m, d, n there).",
+      "lean_type": "ℤ",
+      "dependencies": []
+    },
+    {
+      "id": "domain-poly",
+      "description": "Polynomial Z, the ring in which A_i, B_i, N_j live.",
+      "lean_type": "Polynomial ℤ",
+      "dependencies": []
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "m",
+      "kind": "forall",
+      "domain_id": "domain-nat"
+    },
+    {
+      "binder": "K",
+      "kind": "forall",
+      "domain_id": "domain-nat"
+    },
+    {
+      "binder": "d",
+      "kind": "forall",
+      "domain_id": "domain-nat"
+    },
+    {
+      "binder": "j",
+      "kind": "forall",
+      "domain_id": "domain-nat"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-hkd",
+      "statement": "K + d = 2 * m",
+      "dependencies": [
+        "domain-nat"
+      ]
+    },
+    {
+      "id": "hyp-hregion",
+      "statement": "3 * d ≤ 2 * m + 2",
+      "dependencies": [
+        "domain-nat"
+      ]
+    },
+    {
+      "id": "hyp-hjm",
+      "statement": "j ≤ m",
+      "dependencies": [
+        "domain-nat"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "CoeffNonneg (Nj K m j)",
+    "dependencies": [
+      "hyp-hkd",
+      "hyp-hregion",
+      "hyp-hjm",
+      "def-nj-nonneg-general"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "def-pstatement",
+        "kind": "definition"
+      },
+      {
+        "id": "def-afac",
+        "kind": "definition"
+      },
+      {
+        "id": "def-bfac",
+        "kind": "definition"
+      },
+      {
+        "id": "def-ishard",
+        "kind": "definition"
+      },
+      {
+        "id": "def-partner",
+        "kind": "definition"
+      },
+      {
+        "id": "def-wcoef",
+        "kind": "definition"
+      },
+      {
+        "id": "def-njterm",
+        "kind": "definition"
+      },
+      {
+        "id": "def-nj",
+        "kind": "definition"
+      },
+      {
+        "id": "def-coeffnonneg",
+        "kind": "definition"
+      },
+      {
+        "id": "def-discriminant-factorization",
+        "kind": "definition"
+      },
+      {
+        "id": "def-discriminant-in-k-matches-in-d",
+        "kind": "definition"
+      },
+      {
+        "id": "def-discriminant-nonpos-iff",
+        "kind": "definition"
+      },
+      {
+        "id": "def-s-quadratic-nonneg",
+        "kind": "definition"
+      },
+      {
+        "id": "def-s-holds-of-discriminant-nonpos",
+        "kind": "definition"
+      },
+      {
+        "id": "def-s-holds-on-region",
+        "kind": "definition"
+      },
+      {
+        "id": "def-p-base-s1",
+        "kind": "definition"
+      },
+      {
+        "id": "def-p-base-s2",
+        "kind": "definition"
+      },
+      {
+        "id": "def-p-induction-step-critic",
+        "kind": "definition"
+      },
+      {
+        "id": "def-p-holds-critic",
+        "kind": "definition"
+      },
+      {
+        "id": "def-p-holds-critic-general",
+        "kind": "definition"
+      },
+      {
+        "id": "def-matchingdual-scalarcore-award",
+        "kind": "definition"
+      },
+      {
+        "id": "def-afac-split",
+        "kind": "definition"
+      },
+      {
+        "id": "def-bfac-split",
+        "kind": "definition"
+      },
+      {
+        "id": "def-extra-eq",
+        "kind": "definition"
+      },
+      {
+        "id": "def-reflection-identity-poly",
+        "kind": "definition"
+      },
+      {
+        "id": "def-region-le",
+        "kind": "definition"
+      },
+      {
+        "id": "def-partner-spec",
+        "kind": "definition"
+      },
+      {
+        "id": "def-partner-injon",
+        "kind": "definition"
+      },
+      {
+        "id": "def-term-sign",
+        "kind": "definition"
+      },
+      {
+        "id": "def-coeffnonneg-add",
+        "kind": "definition"
+      },
+      {
+        "id": "def-coeffnonneg-zero",
+        "kind": "definition"
+      },
+      {
+        "id": "def-coeffnonneg-sum",
+        "kind": "definition"
+      },
+      {
+        "id": "def-coeffnonneg-mul",
+        "kind": "definition"
+      },
+      {
+        "id": "def-coeffnonneg-one",
+        "kind": "definition"
+      },
+      {
+        "id": "def-coeffnonneg-prod",
+        "kind": "definition"
+      },
+      {
+        "id": "def-coeffnonneg-smul",
+        "kind": "definition"
+      },
+      {
+        "id": "def-nonneglinfac",
+        "kind": "definition"
+      },
+      {
+        "id": "def-nonnegbfacfn",
+        "kind": "definition"
+      },
+      {
+        "id": "def-nonnegafacfn",
+        "kind": "definition"
+      },
+      {
+        "id": "def-nonnegeasyterm",
+        "kind": "definition"
+      },
+      {
+        "id": "def-nonnegpairedblock",
+        "kind": "definition"
+      },
+      {
+        "id": "def-nj-nonneg",
+        "kind": "definition"
+      },
+      {
+        "id": "def-partner-mem-range",
+        "kind": "definition"
+      },
+      {
+        "id": "def-nj-nonneg-general",
+        "kind": "definition"
+      },
+      {
+        "id": "def-nj-nonneg-is-instance",
+        "kind": "definition"
+      },
+      {
+        "id": "domain-nat",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-int",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-poly",
+        "kind": "domain"
+      },
+      {
+        "id": "hyp-hkd",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-hregion",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-hjm",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "domain-nat",
+        "to": "def-pstatement"
+      },
+      {
+        "from": "domain-nat",
+        "to": "def-afac"
+      },
+      {
+        "from": "domain-poly",
+        "to": "def-afac"
+      },
+      {
+        "from": "domain-nat",
+        "to": "def-bfac"
+      },
+      {
+        "from": "domain-poly",
+        "to": "def-bfac"
+      },
+      {
+        "from": "domain-nat",
+        "to": "def-ishard"
+      },
+      {
+        "from": "domain-nat",
+        "to": "def-partner"
+      },
+      {
+        "from": "domain-nat",
+        "to": "def-wcoef"
+      },
+      {
+        "from": "domain-nat",
+        "to": "def-njterm"
+      },
+      {
+        "from": "domain-poly",
+        "to": "def-njterm"
+      },
+      {
+        "from": "def-afac",
+        "to": "def-njterm"
+      },
+      {
+        "from": "def-bfac",
+        "to": "def-njterm"
+      },
+      {
+        "from": "def-wcoef",
+        "to": "def-njterm"
+      },
+      {
+        "from": "domain-nat",
+        "to": "def-nj"
+      },
+      {
+        "from": "domain-poly",
+        "to": "def-nj"
+      },
+      {
+        "from": "def-njterm",
+        "to": "def-nj"
+      },
+      {
+        "from": "domain-poly",
+        "to": "def-coeffnonneg"
+      },
+      {
+        "from": "domain-int",
+        "to": "def-discriminant-factorization"
+      },
+      {
+        "from": "domain-int",
+        "to": "def-discriminant-in-k-matches-in-d"
+      },
+      {
+        "from": "domain-int",
+        "to": "def-discriminant-nonpos-iff"
+      },
+      {
+        "from": "def-discriminant-factorization",
+        "to": "def-discriminant-nonpos-iff"
+      },
+      {
+        "from": "domain-int",
+        "to": "def-s-quadratic-nonneg"
+      },
+      {
+        "from": "domain-int",
+        "to": "def-s-holds-of-discriminant-nonpos"
+      },
+      {
+        "from": "def-s-quadratic-nonneg",
+        "to": "def-s-holds-of-discriminant-nonpos"
+      },
+      {
+        "from": "domain-int",
+        "to": "def-s-holds-on-region"
+      },
+      {
+        "from": "def-discriminant-nonpos-iff",
+        "to": "def-s-holds-on-region"
+      },
+      {
+        "from": "def-discriminant-in-k-matches-in-d",
+        "to": "def-s-holds-on-region"
+      },
+      {
+        "from": "def-s-holds-of-discriminant-nonpos",
+        "to": "def-s-holds-on-region"
+      },
+      {
+        "from": "def-pstatement",
+        "to": "def-p-base-s1"
+      },
+      {
+        "from": "def-pstatement",
+        "to": "def-p-base-s2"
+      },
+      {
+        "from": "def-pstatement",
+        "to": "def-p-induction-step-critic"
+      },
+      {
+        "from": "def-s-holds-of-discriminant-nonpos",
+        "to": "def-p-induction-step-critic"
+      },
+      {
+        "from": "def-pstatement",
+        "to": "def-p-holds-critic"
+      },
+      {
+        "from": "def-discriminant-nonpos-iff",
+        "to": "def-p-holds-critic"
+      },
+      {
+        "from": "def-discriminant-in-k-matches-in-d",
+        "to": "def-p-holds-critic"
+      },
+      {
+        "from": "def-p-base-s1",
+        "to": "def-p-holds-critic"
+      },
+      {
+        "from": "def-p-base-s2",
+        "to": "def-p-holds-critic"
+      },
+      {
+        "from": "def-p-induction-step-critic",
+        "to": "def-p-holds-critic"
+      },
+      {
+        "from": "def-p-holds-critic",
+        "to": "def-p-holds-critic-general"
+      },
+      {
+        "from": "def-discriminant-factorization",
+        "to": "def-matchingdual-scalarcore-award"
+      },
+      {
+        "from": "def-discriminant-nonpos-iff",
+        "to": "def-matchingdual-scalarcore-award"
+      },
+      {
+        "from": "def-s-holds-on-region",
+        "to": "def-matchingdual-scalarcore-award"
+      },
+      {
+        "from": "def-p-holds-critic-general",
+        "to": "def-matchingdual-scalarcore-award"
+      },
+      {
+        "from": "def-afac",
+        "to": "def-afac-split"
+      },
+      {
+        "from": "def-bfac",
+        "to": "def-bfac-split"
+      },
+      {
+        "from": "domain-nat",
+        "to": "def-extra-eq"
+      },
+      {
+        "from": "domain-poly",
+        "to": "def-extra-eq"
+      },
+      {
+        "from": "def-afac-split",
+        "to": "def-reflection-identity-poly"
+      },
+      {
+        "from": "def-bfac-split",
+        "to": "def-reflection-identity-poly"
+      },
+      {
+        "from": "def-extra-eq",
+        "to": "def-reflection-identity-poly"
+      },
+      {
+        "from": "domain-nat",
+        "to": "def-region-le"
+      },
+      {
+        "from": "def-region-le",
+        "to": "def-partner-spec"
+      },
+      {
+        "from": "def-ishard",
+        "to": "def-partner-spec"
+      },
+      {
+        "from": "def-partner",
+        "to": "def-partner-spec"
+      },
+      {
+        "from": "def-partner",
+        "to": "def-partner-injon"
+      },
+      {
+        "from": "def-pstatement",
+        "to": "def-term-sign"
+      },
+      {
+        "from": "def-wcoef",
+        "to": "def-term-sign"
+      },
+      {
+        "from": "def-coeffnonneg",
+        "to": "def-coeffnonneg-add"
+      },
+      {
+        "from": "def-coeffnonneg",
+        "to": "def-coeffnonneg-zero"
+      },
+      {
+        "from": "def-coeffnonneg",
+        "to": "def-coeffnonneg-sum"
+      },
+      {
+        "from": "def-coeffnonneg",
+        "to": "def-coeffnonneg-mul"
+      },
+      {
+        "from": "def-coeffnonneg",
+        "to": "def-coeffnonneg-one"
+      },
+      {
+        "from": "def-coeffnonneg-mul",
+        "to": "def-coeffnonneg-prod"
+      },
+      {
+        "from": "def-coeffnonneg-one",
+        "to": "def-coeffnonneg-prod"
+      },
+      {
+        "from": "def-coeffnonneg",
+        "to": "def-coeffnonneg-smul"
+      },
+      {
+        "from": "def-coeffnonneg",
+        "to": "def-nonneglinfac"
+      },
+      {
+        "from": "def-bfac",
+        "to": "def-nonnegbfacfn"
+      },
+      {
+        "from": "def-coeffnonneg-prod",
+        "to": "def-nonnegbfacfn"
+      },
+      {
+        "from": "def-nonneglinfac",
+        "to": "def-nonnegbfacfn"
+      },
+      {
+        "from": "def-afac",
+        "to": "def-nonnegafacfn"
+      },
+      {
+        "from": "def-coeffnonneg-prod",
+        "to": "def-nonnegafacfn"
+      },
+      {
+        "from": "def-nonneglinfac",
+        "to": "def-nonnegafacfn"
+      },
+      {
+        "from": "def-njterm",
+        "to": "def-nonnegeasyterm"
+      },
+      {
+        "from": "def-ishard",
+        "to": "def-nonnegeasyterm"
+      },
+      {
+        "from": "def-coeffnonneg-smul",
+        "to": "def-nonnegeasyterm"
+      },
+      {
+        "from": "def-nonnegafacfn",
+        "to": "def-nonnegeasyterm"
+      },
+      {
+        "from": "def-nonnegbfacfn",
+        "to": "def-nonnegeasyterm"
+      },
+      {
+        "from": "def-coeffnonneg-mul",
+        "to": "def-nonnegeasyterm"
+      },
+      {
+        "from": "def-njterm",
+        "to": "def-nonnegpairedblock"
+      },
+      {
+        "from": "def-reflection-identity-poly",
+        "to": "def-nonnegpairedblock"
+      },
+      {
+        "from": "def-term-sign",
+        "to": "def-nonnegpairedblock"
+      },
+      {
+        "from": "def-coeffnonneg-smul",
+        "to": "def-nonnegpairedblock"
+      },
+      {
+        "from": "def-nonnegafacfn",
+        "to": "def-nonnegpairedblock"
+      },
+      {
+        "from": "def-nonnegbfacfn",
+        "to": "def-nonnegpairedblock"
+      },
+      {
+        "from": "def-coeffnonneg-mul",
+        "to": "def-nonnegpairedblock"
+      },
+      {
+        "from": "def-nj",
+        "to": "def-nj-nonneg"
+      },
+      {
+        "from": "def-region-le",
+        "to": "def-nj-nonneg"
+      },
+      {
+        "from": "def-ishard",
+        "to": "def-nj-nonneg"
+      },
+      {
+        "from": "def-partner",
+        "to": "def-nj-nonneg"
+      },
+      {
+        "from": "def-partner-spec",
+        "to": "def-nj-nonneg"
+      },
+      {
+        "from": "def-partner-injon",
+        "to": "def-nj-nonneg"
+      },
+      {
+        "from": "def-coeffnonneg-add",
+        "to": "def-nj-nonneg"
+      },
+      {
+        "from": "def-coeffnonneg-sum",
+        "to": "def-nj-nonneg"
+      },
+      {
+        "from": "def-nonnegeasyterm",
+        "to": "def-nj-nonneg"
+      },
+      {
+        "from": "def-nonnegpairedblock",
+        "to": "def-nj-nonneg"
+      },
+      {
+        "from": "def-p-holds-critic-general",
+        "to": "def-nj-nonneg"
+      },
+      {
+        "from": "def-partner-spec",
+        "to": "def-partner-mem-range"
+      },
+      {
+        "from": "def-nj",
+        "to": "def-nj-nonneg-general"
+      },
+      {
+        "from": "def-region-le",
+        "to": "def-nj-nonneg-general"
+      },
+      {
+        "from": "def-partner-spec",
+        "to": "def-nj-nonneg-general"
+      },
+      {
+        "from": "def-partner-injon",
+        "to": "def-nj-nonneg-general"
+      },
+      {
+        "from": "def-coeffnonneg-add",
+        "to": "def-nj-nonneg-general"
+      },
+      {
+        "from": "def-coeffnonneg-sum",
+        "to": "def-nj-nonneg-general"
+      },
+      {
+        "from": "def-nonnegeasyterm",
+        "to": "def-nj-nonneg-general"
+      },
+      {
+        "from": "def-nonnegpairedblock",
+        "to": "def-nj-nonneg-general"
+      },
+      {
+        "from": "def-p-holds-critic-general",
+        "to": "def-nj-nonneg-general"
+      },
+      {
+        "from": "def-nj-nonneg-general",
+        "to": "def-nj-nonneg-is-instance"
+      },
+      {
+        "from": "domain-nat",
+        "to": "hyp-hkd"
+      },
+      {
+        "from": "domain-nat",
+        "to": "hyp-hregion"
+      },
+      {
+        "from": "domain-nat",
+        "to": "hyp-hjm"
+      },
+      {
+        "from": "hyp-hkd",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-hregion",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-hjm",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-nj-nonneg-general",
+        "to": "conclusion"
+      }
+    ]
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "classical_allowed",
+    "rationale": "Most registered declarations depend on Classical.choice (inherited via Finset.filter/Finset.image decidability instances resolved by `classical` and via Nat.le_induction machinery in the imported award), as this project's own kernel-verification receipt and whole-namespace axiom sweep confirm. A minority (IsHard, partner -- pure Nat definitions/comparisons) depend on no axioms at all, and several (PStatement, Wcoef, discriminant_factorization, discriminant_in_K_matches_in_d, P_base_s1, region_le, partner_spec, partner_injOn, partner_mem_range) depend on propext/[propext, Quot.sound] only. Axioms are restricted to exactly propext, Classical.choice, Quot.sound (kernel-checked; EVIDENCE/axiom-check-all-declarations.txt, all 46 declarations)."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "ErdosR25.E1CoeffWise.Nj_nonneg_all_index",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem Nj_nonneg_all_index {m K d : ℕ} (hKd : K + d = 2 * m)\n    (hregion : 3 * d ≤ 2 * m + 2) :\n    ∀ j ≤ m, CoeffNonneg (Nj K m j)",
+    "expected_statement_sha256": "96b34976948db682ff3e8dec69af2964c801d38237cf9e7a0ae4683789952600"
+  },
+  "source_materials": [
+    {
+      "id": "source-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "sha256": "9e243c0816708f847a5ece0adce665ddeb1c1a299d13262cbedbd288e6a3ac0b",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "source-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "sha256": "422a5456aee85ec202f22925bca85d52fc7cb4f1765dea85dc2d675ee3e6cc23",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-originating-seat-u1-main",
+      "path": "SOURCE/originating-seat-U1-Main.lean",
+      "sha256": "b48681d57f9a48b0dca0e0c20d77f77ef0aa94fba2be9c30652b87708aeac858",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-originating-award-scalarcoreimport",
+      "path": "SOURCE/originating-award-ScalarCoreImport.lean",
+      "sha256": "55d57358e046e0159a8e890bc1725b11fd4aba12e405453ad2eda41cc6c974e3",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-originating-critic-u1-f-criticf",
+      "path": "SOURCE/originating-critic-U1-F-CriticF.lean",
+      "sha256": "9be79746ae38cfeb768425a69ac977b18410dbe1064ca3d920c76f8918416b8c",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-originating-critic-u1-t-criticgeneralj",
+      "path": "SOURCE/originating-critic-U1-T-CriticGeneralJ.lean",
+      "sha256": "1cf0e97e356e99bd4312c99e5b99e95d19214a702e969ce0fd441616835749cb",
+      "role": "definition_authority"
+    }
+  ]
+}

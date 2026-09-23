@@ -1,0 +1,226 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "c3-la1-catalan-gap-monotone-ratio-v1",
+  "theorem": {
+    "title": "Catalan-dominance gap: monotone ratio, base propagation, and the tau>=8 ceiling",
+    "informal_statement": "For the Catalan-dominance gap Gamma(tau,k) = catalan(k+1) - sum_{j=1}^{tau} C(tau,j)*(catalan(k-j) if j<=k else 0) (catalan Mathlib's Catalan-number function, the guard an integer zero-extension convention of record): (1) for every tau>=1 and k>=tau, Gamma(tau,k)*catalan(k+2) < Gamma(tau,k+1)*catalan(k+1) (the ratio Gamma(tau,k)/catalan(k+1) strictly increases in k, stated denominator-free); (2) hence from any base 0<Gamma(tau,K) with tau<=K, 0<Gamma(tau,k) for every k>=K; (3) with the seven explicit bases K(1..7) = 0,2,3,4,6,12,70, i.e. Gamma(tau,k)>0 for every k>=K(tau) at tau=1..7; and (4) Gamma(tau,k)<0 for every tau>=8 and k>=tau. A theorem about Catalan integers, uniform in tau with explicit thresholds. Not a graph theorem; not fixed-band; not uniform in d (d does not occur)."
+  },
+  "formulation_status": {
+    "status": "established",
+    "evidence": [
+      "Compiled and kernel-verified in this run: Lean 4.32.2 / Mathlib 905b95818eb32af7874a58b427f50c1711a5e96c, foreground `lake build` exit 0, 38/38 declarations report exactly [propext, Classical.choice, Quot.sound] under #print axioms, no sorry/admit/native_decide (RECEIPTS/kernel-verification.json).",
+      "Every numeric literal (K(1..7), the six minimality witnesses, C(142,71)'s digit count) independently reconfirmed by exact-integer Python (EVIDENCE/generate_gamma_witnesses.py).",
+      "The originating seat's independent compiled fragment reports the same 33/33-declaration axiom-clean result over the shared component lemmas (cycles/cycle-3/stage6/SYNTHESIS.md, '## Lean awards', Award group 1)."
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-gamma",
+      "description": "The Catalan-dominance gap: Gamma tau k = catalan(k+1) - sum over j in [1,tau] of C(tau,j) * (catalan(k-j) if j<=k else 0). noncomputable def. The `if j<=k then .. else 0` guard is the integer zero-extension convention of record (SEMANTIC-CONTRACT.md), not derived from SOLUTION-CONTRACT-ADDENDUM-1.md SS A2, which is silent for k<j; the guard is what decides K(1)=0.",
+      "lean_name": "Erdos993G1.U3.Gamma",
+      "dependencies": []
+    },
+    {
+      "id": "def-catalan",
+      "description": "Mathlib's Catalan-number function.",
+      "lean_name": "catalan",
+      "dependencies": []
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-tau",
+      "description": "tau : the naturals.",
+      "lean_type": "ℕ",
+      "dependencies": []
+    },
+    {
+      "id": "domain-k",
+      "description": "k : the naturals (rank).",
+      "lean_type": "ℕ",
+      "dependencies": []
+    },
+    {
+      "id": "domain-basek",
+      "description": "K : the naturals (a base rank).",
+      "lean_type": "ℕ",
+      "dependencies": []
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "tau",
+      "kind": "forall",
+      "domain_id": "domain-tau"
+    },
+    {
+      "binder": "k",
+      "kind": "forall",
+      "domain_id": "domain-k"
+    },
+    {
+      "binder": "K",
+      "kind": "forall",
+      "domain_id": "domain-basek"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-tau-lb",
+      "statement": "1 <= tau. Load-bearing in three of the four conjuncts (monotone_ratio, gamma_pos_of_base, and each gamma_pos_i); the tau>=8 ceiling conjunct instead carries the strictly stronger 8<=tau. 25 violations of the denominator-free monotonicity occur at k<tau if this hypothesis is dropped.",
+      "dependencies": [
+        "domain-tau"
+      ]
+    },
+    {
+      "id": "hyp-rank-order",
+      "statement": "tau<=k (monotone_ratio, tau>=8 ceiling), or tau<=K<=k (gamma_pos_of_base), or the seven explicit K(tau)<=k instances (gamma_pos_1..7). Load-bearing, not decorative: `hk : tau<=k` (or K<=k) is necessary for Gamma_unfold's domain and for the monotone-ratio proof.",
+      "dependencies": [
+        "domain-tau",
+        "domain-k",
+        "domain-basek"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "catalanGap_monotone_ratio_award: the explicit four-part conjunction (monotone_ratio) AND (gamma_pos_of_base) AND (gamma_pos_1 AND ... AND gamma_pos_7) AND (gamma_neg_of_ge_eight), exactly as stated in lean_binding.expected_statement.",
+    "dependencies": [
+      "def-gamma",
+      "def-catalan",
+      "domain-tau",
+      "domain-k",
+      "domain-basek",
+      "hyp-tau-lb",
+      "hyp-rank-order"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "def-gamma",
+        "kind": "definition"
+      },
+      {
+        "id": "def-catalan",
+        "kind": "definition"
+      },
+      {
+        "id": "domain-tau",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-k",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-basek",
+        "kind": "domain"
+      },
+      {
+        "id": "hyp-tau-lb",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-rank-order",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "domain-tau",
+        "to": "hyp-tau-lb"
+      },
+      {
+        "from": "domain-tau",
+        "to": "hyp-rank-order"
+      },
+      {
+        "from": "domain-k",
+        "to": "hyp-rank-order"
+      },
+      {
+        "from": "domain-basek",
+        "to": "hyp-rank-order"
+      },
+      {
+        "from": "def-gamma",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-catalan",
+        "to": "conclusion"
+      },
+      {
+        "from": "domain-tau",
+        "to": "conclusion"
+      },
+      {
+        "from": "domain-k",
+        "to": "conclusion"
+      },
+      {
+        "from": "domain-basek",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-tau-lb",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-rank-order",
+        "to": "conclusion"
+      }
+    ]
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "classical_allowed",
+    "rationale": "Depends on Mathlib lemmas (e.g. Finset.sum machinery, Nat.centralBinom facts) that use propext, Classical.choice and Quot.sound in their own derivations, as is standard for Mathlib; this project introduces no axiom beyond that closure. Verified by #print axioms on every declaration (RECEIPTS/kernel-verification.json, EVIDENCE/axioms.txt)."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "Erdos993G1.U3.catalanGap_monotone_ratio_award",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "    (∀ τ k : ℕ, 1 ≤ τ → τ ≤ k →\n        Gamma τ k * (catalan (k + 2) : ℤ) < Gamma τ (k + 1) * (catalan (k + 1) : ℤ)) ∧\n    (∀ τ K : ℕ, 1 ≤ τ → τ ≤ K → 0 < Gamma τ K → ∀ k : ℕ, K ≤ k → 0 < Gamma τ k) ∧\n    ((∀ k, 0 ≤ k → 0 < Gamma 1 k) ∧ (∀ k, 2 ≤ k → 0 < Gamma 2 k) ∧\n     (∀ k, 3 ≤ k → 0 < Gamma 3 k) ∧ (∀ k, 4 ≤ k → 0 < Gamma 4 k) ∧\n     (∀ k, 6 ≤ k → 0 < Gamma 5 k) ∧ (∀ k, 12 ≤ k → 0 < Gamma 6 k) ∧\n     (∀ k, 70 ≤ k → 0 < Gamma 7 k)) ∧\n    (∀ τ k : ℕ, 8 ≤ τ → τ ≤ k → Gamma τ k < 0)",
+    "expected_statement_sha256": "67fe40be210430be9bca214b0ee022a910d2cb95c5149819fe6e4c9b93d7773f"
+  },
+  "source_materials": [
+    {
+      "id": "source-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "sha256": "5dca79e4b81568c23949ca70b33d546d4d185b0a627dc0d2e6413974e47fbace",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "source-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "sha256": "a2e7f7917fee0efaa6b74819c7f394ca528c6ed609f57c7c28111b8761a5bc59",
+      "role": "reference"
+    },
+    {
+      "id": "source-originating-project",
+      "path": "EVIDENCE/originating-source/Main.lean",
+      "sha256": "e5785f1c707e28fc4190a159ac8f5d5b10914ce619857c821bdd28db9fe43a18",
+      "role": "definition_authority"
+    }
+  ]
+}

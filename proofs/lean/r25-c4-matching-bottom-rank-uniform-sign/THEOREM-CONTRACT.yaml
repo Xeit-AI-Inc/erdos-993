@@ -1,0 +1,354 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "c4-la1-bottom-rank-uniform-matching-sign-v1",
+  "theorem": {
+    "title": "Bottom-rank uniform matching sign (award group C4-LA1)",
+    "informal_statement": "For every d >= 3, every finite type X, every finite simple graph G on X with Nat.card X = 3*d, and every matching of size m(d) = (3*d+1)/2 - 1 in G (realised by an injective f : Fin m(d) x Bool -> X with G.Adj (f (i,false)) (f (i,true)) for every i), Erdos993G1.delta G (d : Z) <= 0, where delta/coeff/indepCount are the G1 definitions counting actual independent-set sizes with integer zero extension. No crossing hypothesis, no acyclicity, no cover; uniform in d with no horizon; rank r = d and order 3*d only."
+  },
+  "formulation_status": {
+    "status": "established",
+    "evidence": [
+      "cycles/cycle-4/stage6/SYNTHESIS.md :: ## Lean awards :: Award group 1",
+      "cycles/cycle-4/stage5/adjudicators/U/ADJUDICATION.md :: ## Lean readiness :: Candidate B",
+      "cycles/cycle-4/stage4/critics/U4/T/CRITIQUE.md :: Independent re-derivation (7)",
+      "cycles/cycle-4/stage4/critics/U4/F/CRITIQUE.md :: Independent re-derivation",
+      "cycles/cycle-4/stage3/returns/U4/RETURN.md :: Part (A)"
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-indepcount",
+      "description": "Actual independent k-subset count of a finite simple graph, cast to Z.",
+      "lean_name": "Erdos993G1.indepCount",
+      "dependencies": []
+    },
+    {
+      "id": "def-coeff",
+      "description": "Integer zero-extension of indepCount to negative Z indices.",
+      "lean_name": "Erdos993G1.coeff",
+      "dependencies": [
+        "def-indepcount"
+      ]
+    },
+    {
+      "id": "def-delta",
+      "description": "First difference of coeff: Delta_k = i_{k+1} - i_k.",
+      "lean_name": "Erdos993G1.delta",
+      "dependencies": [
+        "def-coeff"
+      ]
+    },
+    {
+      "id": "def-stratum",
+      "description": "The stratum S(k,j): independent k-sets meeting a fixed finset M in exactly j elements.",
+      "lean_name": "Erdos993G1.FirstWide.stratum",
+      "dependencies": []
+    },
+    {
+      "id": "def-outside-incidence",
+      "description": "Outside-incidence bound at (r,j) for any M with |M| = 2m; the only place d/K enters.",
+      "lean_name": "Erdos993G1.UniformMatching.matching_outside_incidence",
+      "dependencies": [
+        "def-stratum"
+      ]
+    },
+    {
+      "id": "def-inside-incidence",
+      "description": "Inside-incidence bound at (r,j) for M = image of an injective m-matching f.",
+      "lean_name": "Erdos993G1.UniformMatching.matching_inside_incidence",
+      "dependencies": [
+        "def-stratum"
+      ]
+    },
+    {
+      "id": "def-partition",
+      "description": "The stratum partition i_k = sum over j in range(m+1) of |S(k,j)|.",
+      "lean_name": "Erdos993G1.UniformMatching.matching_stratum_partition",
+      "dependencies": [
+        "def-stratum"
+      ]
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-x",
+      "description": "The vertex type, an arbitrary finite type.",
+      "lean_type": "Type u",
+      "dependencies": []
+    },
+    {
+      "id": "domain-graph",
+      "description": "A finite simple graph on X.",
+      "lean_type": "SimpleGraph X",
+      "dependencies": [
+        "domain-x"
+      ]
+    },
+    {
+      "id": "domain-matching",
+      "description": "An injective function realising a matching of size m(d).",
+      "lean_type": "Fin ((3 * d + 1) / 2 - 1) x Bool -> X",
+      "dependencies": [
+        "domain-x"
+      ]
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "X",
+      "kind": "forall",
+      "domain_id": "domain-x"
+    },
+    {
+      "binder": "d",
+      "kind": "forall",
+      "domain_id": "domain-x"
+    },
+    {
+      "binder": "G",
+      "kind": "forall",
+      "domain_id": "domain-graph"
+    },
+    {
+      "binder": "f",
+      "kind": "forall",
+      "domain_id": "domain-matching"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-finite",
+      "statement": "X is Finite.",
+      "dependencies": [
+        "domain-x"
+      ]
+    },
+    {
+      "id": "hyp-d-ge-3",
+      "statement": "3 <= d.",
+      "dependencies": []
+    },
+    {
+      "id": "hyp-order",
+      "statement": "Nat.card X = 3 * d.",
+      "dependencies": [
+        "domain-x",
+        "hyp-d-ge-3"
+      ]
+    },
+    {
+      "id": "hyp-injective",
+      "statement": "f is Function.Injective.",
+      "dependencies": [
+        "domain-matching"
+      ]
+    },
+    {
+      "id": "hyp-adjacent",
+      "statement": "For every i, G.Adj (f (i, false)) (f (i, true)) -- the images form a matching of size m(d) = (3*d+1)/2 - 1.",
+      "dependencies": [
+        "domain-graph",
+        "domain-matching",
+        "hyp-injective"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "Erdos993G1.delta G (d : Z) <= 0.",
+    "dependencies": [
+      "def-delta",
+      "hyp-order",
+      "hyp-adjacent",
+      "hyp-finite"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "def-indepcount",
+        "kind": "definition"
+      },
+      {
+        "id": "def-coeff",
+        "kind": "definition"
+      },
+      {
+        "id": "def-delta",
+        "kind": "definition"
+      },
+      {
+        "id": "def-stratum",
+        "kind": "definition"
+      },
+      {
+        "id": "def-outside-incidence",
+        "kind": "definition"
+      },
+      {
+        "id": "def-inside-incidence",
+        "kind": "definition"
+      },
+      {
+        "id": "def-partition",
+        "kind": "definition"
+      },
+      {
+        "id": "domain-x",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-graph",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-matching",
+        "kind": "domain"
+      },
+      {
+        "id": "hyp-finite",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-d-ge-3",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-order",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-injective",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-adjacent",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "def-coeff",
+        "to": "def-delta"
+      },
+      {
+        "from": "def-delta",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-indepcount",
+        "to": "def-coeff"
+      },
+      {
+        "from": "def-stratum",
+        "to": "def-inside-incidence"
+      },
+      {
+        "from": "def-stratum",
+        "to": "def-outside-incidence"
+      },
+      {
+        "from": "def-stratum",
+        "to": "def-partition"
+      },
+      {
+        "from": "domain-graph",
+        "to": "hyp-adjacent"
+      },
+      {
+        "from": "domain-matching",
+        "to": "hyp-adjacent"
+      },
+      {
+        "from": "domain-matching",
+        "to": "hyp-injective"
+      },
+      {
+        "from": "domain-x",
+        "to": "domain-graph"
+      },
+      {
+        "from": "domain-x",
+        "to": "domain-matching"
+      },
+      {
+        "from": "domain-x",
+        "to": "hyp-finite"
+      },
+      {
+        "from": "domain-x",
+        "to": "hyp-order"
+      },
+      {
+        "from": "hyp-adjacent",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-d-ge-3",
+        "to": "hyp-order"
+      },
+      {
+        "from": "hyp-finite",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-injective",
+        "to": "hyp-adjacent"
+      },
+      {
+        "from": "hyp-order",
+        "to": "conclusion"
+      }
+    ]
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "classical_allowed",
+    "rationale": "indepCount/coeff/delta/stratum are noncomputable (Nat.card, classical filtering); the [Finite X] to [Fintype X] bridge uses classical + Fintype.ofFinite exactly as the formally verified Cycle 1 award does. Axioms are restricted to exactly propext, Classical.choice, Quot.sound (kernel-checked)."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "Erdos993G1.UniformMatching.bottomRank_delta_nonpos",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem bottomRank_delta_nonpos {X : Type u} [Finite X] (d : ℕ) (hd : 3 ≤ d) (G : SimpleGraph X) (hn : Nat.card X = 3 * d) (f : Fin ((3 * d + 1) / 2 - 1) × Bool → X) (hf : Function.Injective f) (he : ∀ i, G.Adj (f (i, false)) (f (i, true))) : Erdos993G1.delta G (d : ℤ) ≤ 0",
+    "expected_statement_sha256": "d753f988e3315dfbb39a7d2aa0ac10c689740308f893918656de9b0f5efd80c5"
+  },
+  "source_materials": [
+    {
+      "id": "source-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "sha256": "617db49f8e7745d28cdab0b35bbb71fb14e4dc7df76b3e729f080a7ae907ed3f",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "source-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "sha256": "6946e2e80985d02262870e4bfe547a8d2d0bac8e7c8e485aada62a45c31b6629",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-originating-fragment",
+      "path": "SOURCE/originating-fragment-Main.lean",
+      "sha256": "aad2a9e783442927112843601a896834148a978baf9b9b30383c280517680ce6",
+      "role": "definition_authority"
+    }
+  ]
+}

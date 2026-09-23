@@ -614,6 +614,8 @@ for artifacts not explicitly exported there.
 
 ---
 
+**r25 Lean packages (2026-09-22).** Twelve governed packages under `proofs/lean/r25-*`, each with its frozen contract, informal proof, independent informal audit, fidelity review, verification report and receipt summary; Lean `v4.32.2`, Mathlib `905b95818eb32af7874a58b427f50c1711a5e96c`; axioms exactly `propext`, `Classical.choice`, `Quot.sound`. Internal grade `formally_verified`; published as `verified`. Scopes are the exact contract statements and nothing wider.
+
 ## 8. Process Preconditions for the Next Phase
 
 Binding lessons from the TRS2 forensic record (Codex audit,
@@ -879,3 +881,94 @@ By Ashton's explicit publication instruction, all **81 pre-existing master claim
 The run accounts for 285 final synthesis outputs, 456 source occurrences, and 1,944 rows across 31 inherited views. Source-only, auxiliary, proper-subclaim and witness-against relations retain their distinctions. Six historical replay qualifications remain visible. Canonical publication lint preserves the prior master and source-run terminal dispositions. The internal experiment seals remain unchanged.
 
 TREE, FOREST, TRANSFER, unrestricted G1, literal complete aggregate and governed `E993-BETA-AGG` remain OPEN. The high-impact next work is a uniform matching/cover argument beyond finitely many width bands; global favorable-leaf cancellation on the general residual class, with lower-interior full-row falsification; and an exact ordinary-graph implication chain that exposes semantic and forest-composition gaps. This is substantial partial progress, with no justified completion percentage or near-term solution prediction. No mathematical novelty is claimed by registration.
+
+## r25 — uniform residual no-recovery DRE (erdos-993-uniform-residual-no-recovery-dre-2026-09-20), CLOSED 2026-09-22
+
+The mathematics agent's lane after G1: extend the G1 matching/vertex-cover method toward a
+uniform-in-`d` residual no-recovery argument (Tier 1 `E993-R25-UNR-FOREST-WIDE`: forests of
+order `≥ 2r+2` with first strict descent `x(F) < r` have `Δ_r(F) ≤ 0`; Tier 2
+`E993-G1WIDE-NO-SIZE-CAP`; Tier 3 matching/cover schemas with thresholds `m(d) = ⌈3d/2⌉−1`,
+`c(d) = min(d,5)`; the diagnostic band `d = 5`). Six cycles under Claude Fable 5.1 as
+controller at 12 routes / 24 critics / 3 adjudicators / 1 synthesis per cycle (routes Sonnet
+5 from Cycle 4 on by Ashton's ruling; Opus 5 elsewhere), governed Lean gates, every stage
+sealed by canonical-JSON SHA-256 manifests, terminal manifest `6bc912aecd177802c0c07b1990158afd27dc65131ed4dc8fb234ec1f8effdb44`, closed by the
+chartered controller review (`control/CONTROLLER-REVIEW-C6.md` in the run).
+
+**Charter outcome (the admitted terminal synthesis, adopted by the controller):** another
+fixed-band result, together with refutations that fence the method; not a uniform advance
+in the charter's sense; not a proved structural reduction of the remaining class. Every
+headline — Tier 1, Tier 2, every Tier 3 schema, FOREST, TREE, TRANSFER, Erdős #993 — ends
+OPEN. No recovering forest exists anywhere in six cycles of evidence. **Closing G1 alone
+does not solve Erdős #993.**
+
+**Formally verified (governed workflow; `verified` in this schema; twelve awards, thirteen registry identities):**
+
+| Cycle | Award | Terminal declaration | Registry identity | Main source |
+|---|---|---|---|---|
+| C1 | `C1-LA1` | `Erdos993G1.FourthWideMatching.sevenMatching_delta_nonpos` | `E993-R25-FOURTH-BAND-SEVEN-EDGE-MATCHING-SIGN` | `c1061ca67ff78acd…` |
+| C1 | `C1-LA2` | `Erdos993G1.C1LA2.perfectMatching_delta_nonpos` | `E993-R25-PERFECT-MATCHING-EVEN-EXCESS-SIGN` | `15c8f7f19e9754f7…` |
+| C3 | `C3-LA1` | `Erdos993G1.U3.catalanGap_monotone_ratio_award` | `E993-R25-CATALAN-GAP-MONOTONE-RATIO` | `f1243faf4e0d9275…` |
+| C4 | `C4-LA1` | `Erdos993G1.UniformMatching.bottomRank_delta_nonpos` | `E993-R25-MATCHING-BOTTOM-RANK-UNIFORM-SIGN` | `827a0c45190bde25…` |
+| C4 | `C4-LA2` | `Erdos993G1.ForestOrderBound.forest_descent_order_bound` | `E993-R25-FOREST-DESCENT-ORDER-BOUND-SHARP` | `736eb9dfb6ba82b0…` |
+| C5 | `C5-LA1` | `ErdosR25.E1ArithmeticCore.matchingDual_scalarCore_award` | `E993-R25-MATCHING-DUAL-SCALAR-CORE` | `55d57358e046e015…` |
+| C6 | `C6-LA1` | `Erdos993G1.ForestDelta2.forest_delta_two_pos_ge_nine` | `E993-R25-FOREST-DELTA2-POS-ORDER-9` | `de002193e6322583…` |
+| C6 | `C6-LA2` | `ErdosR25BandCarryStep.bandCarryStepHall` | `E993-R25-BAND-CARRY-STEP-HALL` | `8770a6c5d0198fbe…` |
+| C6 | `C6-LA3` | `ErdosR25.E1CoeffWise.Nj_nonneg_all_index` | `E993-R25-MATCHING-ALL-INDEX-COEFFICIENTWISE-NONNEG` | `6e23d5e7aec5959d…` |
+| C6 | `C6-LA4` | `ErdosR25C6U2.bdStepSign_interiorPeak_award` | `E993-R25-D-ROW-STEP-SIGN-LAW`, `E993-R25-BD-INTERIOR-PEAK-CATALAN-BOUND` | `9be947ce127b2198…` |
+| C6 | `C6-LA5` | `Erdos993G1.ThirdWide.card5_cells_and_cover_catalan_award` | `E993-R25-CARD5-JOINT-BUDGET-CELLS`, `E993-R25-CARD5-COVER-CATALAN-BOUND` | `f47ef6b4fcad0658…` |
+| C6 | `C6-LA6` | `ErdosR25T2.candidateD_argmin` | `(scope update) E993-R25-FOREST-ORDER-BOUND-SHARPENED` | `eacfd4ce67289a65…` |
+
+Every award: Lean `leanprover/lean4:v4.32.2`, Mathlib `905b95818eb32af7874a58b427f50c1711a5e96c`,
+axioms exactly `propext`, `Classical.choice`, `Quot.sound`, no `sorry`/`admit`/`native_decide`;
+frozen theorem contract, independent informal proof-integrity audit, kernel receipt,
+independent statement-fidelity attestation (`match`), canonical close. Scopes are exact and
+narrow: two fixed-band `d = 5` matching results; one theorem about Catalan integers uniform
+in `τ` with thresholds `K(1..7) = 0,2,3,4,6,12,70`; one uniform-in-`d` bottom-rank matching
+theorem at rank `r = d` ONLY; one sharp forest order bound uniform in `k` (`Δ_k < 0 ⟹
+|V| ≤ (k+1)²`); the scalar core of the dual positivity; the uniform-in-order forest threshold
+`Δ₂ > 0` (order `≥ 9`); the `d = 5` band's cover-fiber/Hall carry step (graph-general given
+`ν = τ = 6`); coefficientwise nonnegativity of the certificate dual `N_j` for every `j ≤ m`
+(clause (a) only; the registered all-index claim as a whole stays informal); the `D`-row
+step-sign law and interior peak bound (fixed-band arithmetic); the five `τ ≤ 5` small-rank
+cells on actual forests (fixed-cell, four new, top rank only) and the card-5 cover Catalan
+bound; the argmin step of the sharpened order bound (integer binomials). **None is a
+uniform-in-`d` no-recovery statement.** Attribution travels on every face: four of the six
+Cycle 6 awards are critic-attributed in whole or in their load-bearing step, and the run
+records for the seventh consecutive cycle that its grade-moving advances were critic- or
+adjudicator-derived.
+
+**Informal results of record (grade and attribution on every registry face):** the `d = 5`
+band closed for every `r` (`proved_informal`, weakest link, three formal inputs — a count of
+inputs is not a grade); `c(d) = min(d,5)` for forests (FALSE for graphs); Corollary F at
+`d = 2..11`, a proved SHARP ceiling (refuted at `d = 12` with explicit forests); the matching
+branch at `r = d` (formal) and `r ≥ K(d)` (informal), the band `d < r < K(d)` bounded
+computation to `d ≤ 400` with Region I proved and the `d = 3` top-cell theorem (a grade
+change, not a closure of the live cell `(3,4)`); Hunter's spanning-tree inequality proved
+in-run; the `K₁`-addition target closed unconditionally at `x ≤ 4`, its `x = 5` residue
+exactly forests of order 22–25 with at least three branch vertices; the `k = 5` order ceiling
+25; thin trees `τ ≤ 9` (unconditional) and `τ ≤ 11` (conditional) free of log-concavity
+failures, `τ = 12` open at three strata of order 26; the `(7,7,15)` full-census minimum
+`−1,612,675` complete; the pendant cap `Σp ≤ 40` over all 1,082 classes; the Tier 2 residue
+exactly every `d' ≥ 6` plus the cell `(3,6)`.
+
+**Refuted (never reopen):** the cover diagonal `c(d) = d` at every `d ≥ 6` (nine explicit
+witnesses); Corollary F's extension to `d = 12`; single-hub extremality at three exhaustive
+cells; `D_unimodal_peak`; every mechanism named in the six syntheses' refuted lists.
+
+**Canonical registration.** All 288 prior master identities are preserved exactly (one note
+appended to `E993-C3-FOREST-FOURTH-WIDE-CROSSING-SIGN`, whose status is unchanged pending
+Ashton's ruling). 72 r25 identities are imported additively at their accepted
+statuses and grades: the master now contains 360 identities
+(204 VERIFIED, 88 REFUTED, 26 CONDITIONAL, 42 OPEN) — registry statuses at explicit
+evidence grades, not a count of theorems. Two synthesis compositions and two registration
+candidates are stated in the run and NOT registered (they await an isolated second read).
+The vendored Galvin paper is excluded from every published artifact. No mathematical
+novelty is claimed by registration.
+
+**Strategic consequence.** The method produces theorems band by band and rank by rank; its
+one uniform-in-`d` theorem is at the bottom rank alone. The obstruction is located exactly:
+Region II of the matching band (margin binding at the band top, decaying like `0.3/d`) and
+the refuted cover diagonal above `τ = 5`. A successor needs an argument at the band top, not
+a horizon sweep, and a `d`-uniform cover mechanism above `τ = 5`, which nothing in this run
+supplies. The `Bd` tail's top-level statement is one focused Lean cycle from a fourth formal
+band input (open nodes named in the run).

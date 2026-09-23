@@ -35187,7 +35187,7 @@
       "evidence_grade": "open_unresolved_no_formal_award",
       "formal_award": false,
       "novelty_claimed": false,
-      "scope": "Ordinary finite forests; exact next order only. A failed six-edge comparator and finite seven-edge/random-tree checks do not decide this theorem.",
+      "scope": "Ordinary finite forests; exact next order only. A failed six-edge comparator and finite seven-edge/random-tree checks do not decide this theorem. || r25 (2026-09-22): the d = 5 diagnostic band is closed informally for EVERY r as the run-local E993-R25-FOURTH-BAND-CLOSE-ALL-R (proved_informal, fixed-band, graded at its weakest link; eight inputs of which three are formally verified: E993-R25-FOURTH-BAND-SEVEN-EDGE-MATCHING-SIGN, E993-R25-BAND-CARRY-STEP-HALL, E993-R25-CARD5-JOINT-BUDGET-CELLS at their stated ranks). This master object's status is preserved unchanged by the additive publication convention; whether it moves to VERIFIED at proved_informal is Ashton's explicit ruling.",
       "source_occurrence_links": [
         {
           "identity_review": {
@@ -35279,10 +35279,926 @@
           }
         }
       ]
+    },
+    {
+      "claim_key": "E993-R25-UNR-FOREST-WIDE",
+      "statement": "For every finite forest F and natural r>=1 with |V(F)|>=2r+2 and x(F)<r, Delta_r(F)<=0",
+      "scope": "all finite forests including disconnected ones; ranks r<=(|V(F)|-2)/2 (excess d>=2); proper subclaim of E993-TGT-FOREST — a proof of this claim is a proof of forest weak unimodality below half the order",
+      "status": "OPEN",
+      "smallest_witness_order": null,
+      "certificate": "none; OPEN. Formally verified bands: d=2 (E993-GRAPH-FIRST-WIDE-CROSSING-SIGN, all graphs), d=4 (E993-FOREST-THIRD-WIDE-CROSSING-SIGN); d=3 informal; d=5 OPEN || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-20).",
+      "aliases": [
+        "uniform forest no-recovery",
+        "uniform residual no-recovery theorem for actual forests",
+        "forest crossing theorem uniform in the excess"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-MATCHING-BRANCH-UNIFORM-SIGN",
+      "statement": "For every finite simple graph G of order 2r+d with a matching of size at least m(d), Delta_r(G)<=0 — schema with an explicit threshold function m(d); each concrete instantiation registers its own key",
+      "scope": "all finite simple graphs; bare (no crossing hypothesis) unless the instantiation states x(G)<r; d>=0",
+      "status": "OPEN",
+      "smallest_witness_order": null,
+      "certificate": "none; OPEN schema. Fixed points: d=2 needs >=2 edges (C2); d=4 five disjoint edges (C3). Fences: matching>=3 insufficient at d=3 (E993-FOREST-D3-BARE-MATCHING3-SIGN); six edges insufficient at d=5 (E993-C3-FOURTH-BAND-SIX-EDGE-COMPARATOR-SIGN) || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-20; updated 2026-09-22 (Cycle 6 terminal close); run notes: [cycle6_note] Band convention of record: 79,600 inclusive cells / 79,202 strict cells / 79,202 consecutive pairs at d <= 400; the inclusive sweep's bottom rank r = d lies outside d < r < K(d) and is owned by the formally verified E993-R25-MATCHING-BOTTOM-RANK-UNIFORM-SIGN (no claim transferred). At d = 3 the one-step lemma and top-cell attainment are THEOREMS (seat T1's Region I result covers rank 3's whole window; beta_cell(3,1) = 7/12 < 3/4 = beta_cell(3,2); both T1 critics; T adjudicator) — a d = 3 GRADE CHANGE, NOT a closure of the live cell (3,4), which still needs the j = r+1 constraint and a uniform top-cell margin bound; the schema stays OPEN. See E993-R25-MATCHING-BAND-REGION-DOMINATION and E993-R25-MATCHING-BAND-ABSORBING-RESIDUE. cycles/cycle-6/stage6/SYNTHESIS.md (4b9cc572...) R2(vi); cycles/cycle-6/stage5/adjudicators/T/ADJUDICATION.md (a1172bab...).).",
+      "aliases": [
+        "parameterized matching-branch sign theorem",
+        "uniform matching estimate"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-COVER-BRANCH-UNIFORM-PREHISTORY",
+      "statement": "For every finite forest F of order 2r+d with vertex-cover number at most c(d), Delta_k(F)>0 for every natural k<r, hence x(F)>=r — schema with an explicit threshold function c(d)",
+      "scope": "finite forests (graph variants register separately); d>=0",
+      "status": "OPEN",
+      "smallest_witness_order": null,
+      "certificate": "none; OPEN schema. Fixed point: d=4, cover<=4 (C3 cover-fiber partition + Catalan gap 4,6,4,1). Fence: cover<=3 at d=3 does not force pre-r increase (E993-GRAPH-COVER3-STRICT-PRE-R-INCREASE) || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-20).",
+      "aliases": [
+        "parameterized cover-fiber prehistory theorem",
+        "uniform cover-branch inequality"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-WINDOW-REDUCTION",
+      "statement": "Every counterexample to E993-R25-UNR-FOREST-WIDE (respectively to E993-G1WIDE-NO-SIZE-CAP) has matching number in the explicit window [c(d)+1, m(d)-1] and x<r, with m and c the proved threshold functions",
+      "scope": "reduction theorem; its value is the exact width m(d)-c(d)-1 of the window and any further shrinkage from the G1 guards",
+      "status": "OPEN",
+      "smallest_witness_order": null,
+      "certificate": "none; OPEN || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-20).",
+      "aliases": [
+        "excess-window reduction",
+        "matching-number window reduction of the remaining G1 residual class"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-G1-AMBIENT-COUPLING",
+      "statement": "Under the ten ordinary G1 guards, exact couplings between the residual sequence of U and the ambient first descent derived from I(A)=I(H)+z*I(U) and I(T)=(1+z)I(A)+z*I(H), and every consequent reduction of the residual class",
+      "scope": "exact ordinary G1 tuples; original neighborhoods; p=x(T)+1",
+      "status": "OPEN",
+      "smallest_witness_order": null,
+      "certificate": "none; OPEN. The two identities are elementary and must be re-proved when used || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-20).",
+      "aliases": [
+        "G1 ambient coupling identities",
+        "negative-Gamma leverage on the residual"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-PERFECT-MATCHING-EVEN-EXCESS-SIGN",
+      "statement": "For every finite simple graph G on a vertex type of cardinality 2m carrying a perfect matching (an injective f : Fin m x Bool -> X with G.Adj (f (i,false)) (f (i,true)) for every i), and every natural r with 2m <= 3r+1, Delta_r(G) <= 0. Equivalently, with d = 2m-2r (even), a perfect-matching graph of order 2r+d with 3d <= 2m+2 has Delta_r <= 0.",
+      "scope": "All finite simple graphs WITH a perfect matching; uniform over EVEN excess d only (the hypothesis forces d = 2(m-r)); says nothing about graphs without a perfect matching (not Tier 3a E993-R25-MATCHING-BRANCH-UNIFORM-SIGN); no sharpness claim (the mK_2 sharpness is a comparator fact); no transfer to firstDescent/x(G), forests, residuals, G1 tuples, Tier 1, Tier 2, the diagnostic band, FOREST, TREE, TRANSFER, E993-BETA-AGG or Erdos #993. Claim-identity separation: E993-G1-MATCHING-COMPARATOR-SUFFICIENT is CONDITIONAL in the master registry and is NOT refuted; this theorem is an unconditional statement about actual graphs with a perfect matching and does not instantiate that comparator conditional.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "runs/lean-2026-09-20-c1-perfect-matching-uniform-sign/ (governed lean-proof-workflow; VERIFICATION-REPORT.json status formally_verified; terminal declaration Erdos993G1.C1LA2.perfectMatching_delta_nonpos; axioms propext, Classical.choice, Quot.sound; informal audit passed; fidelity match) || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-20).",
+      "aliases": [
+        "perfect-matching uniform sign lemma",
+        "Cycle 1 award group B",
+        "C1-LA2"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-FOURTH-BAND-SEVEN-EDGE-MATCHING-SIGN",
+      "statement": "For every finite simple graph G on a vertex type of cardinality 2r+5 carrying seven pairwise disjoint edges (an injective f : Fin 7 x Bool -> X with G.Adj (f (i,false)) (f (i,true)) for every i), and every natural r >= 1, Delta_r(G) <= 0. Fixed-band result at excess d = 5 (the fourth band), named as fixed-band.",
+      "scope": "All finite simple graphs of order 2r+5 with a 7-matching; BARE (no crossing hypothesis, no acyclicity, no forest hypothesis); non-strict sign at rank r only; no sharpness claim (E993-C3-FOURTH-BAND-SIX-EDGE-COMPARATOR-SIGN REFUTED fixes m = 6 as the failing boundary and is confirmed, not disturbed); not the Tier 3a schema E993-R25-MATCHING-BRANCH-UNIFORM-SIGN (one band; the (m,d)-uniform closed form is open); no closure of the crossing-conditioned diagnostic band E993-C3-FOREST-FOURTH-WIDE-CROSSING-SIGN; no transfer to firstDescent/x(G), forests, residuals, G1 tuples, Tier 1, Tier 2, FOREST, TREE, TRANSFER, E993-BETA-AGG or Erdos #993; no claim about log-concavity, TRS2 or real-rootedness. Claim-identity separation: E993-G1-MATCHING-COMPARATOR-SUFFICIENT stays CONDITIONAL; the comparator (1+2z)^m(1+z)^(n-2m) is nowhere a proof device here.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "runs/lean-2026-09-20-c1-d5-seven-matching-sign/ (governed lean-proof-workflow; VERIFICATION-REPORT.json formally_verified; terminal declaration Erdos993G1.FourthWideMatching.sevenMatching_delta_nonpos; 27 registered fragments mirroring C3 entries 154-164 with Fin 7, M.card = 14, order 2r+5, re-centring t = r-9, integer certificate with slack on a_0..a_3 and small-rank cases r = 5..8; axioms propext, Classical.choice, Quot.sound; informal audit passed; fidelity match) || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21).",
+      "aliases": [
+        "fixed-band d=5 seven-matching sign theorem",
+        "fourth-band seven-edge matching sign",
+        "Cycle 1 award group A",
+        "C1-LA1"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-COVER-DIAGONAL-D6-SIGN",
+      "statement": "For every forest F of order 2r+6 with vertex-cover number tau(F) <= 6, Delta_k(F) > 0 for every natural k < r (equivalently x(F) >= r) — the cover branch at the diagonal tau = d = 6.",
+      "scope": "Finite forests; d = 6; the strict and the weak consequent both fail at r = 9, 10 (orders 24, 26); Cycle 3 status update: the (6,6) cells r = 6,7,8,11,12 are closed (exhaustive; r = 6,7,8 also parametrisation-free by direct enumeration), so c(6) = 5 exactly stands.",
+      "status": "REFUTED",
+      "smallest_witness_order": 24,
+      "certificate": "Order-24 tree (one hub adjacent to six cover vertices carrying 2,3,3,3,3,3 leaves): tau = nu = 6, r = 9, x = 8 < r, Delta_8 = -78, Delta_9 = -15167 (not a recovering forest); second witness order 26, r = 10, Delta_9 = -235. Found by Cycle 2 critics C-T2-U and C-T2-F (independently), controller-verified with an independent DP; adjudicated T (cycles/cycle-2/stage5/adjudicators/T/ADJUDICATION.md). Hence c(6) = 5 exactly, given the theorem c(d) = min(d,5). || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21; updated 2026-09-21 (Cycle 3 close)).",
+      "aliases": [
+        "cover-6 diagonal at excess 6",
+        "c(6) = 6"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-COVER-DIAGONAL-D7-SIGN",
+      "statement": "For every forest F of order 2r+7 with vertex-cover number tau(F) <= 7, Delta_k(F) > 0 for every natural k < r (equivalently x(F) >= r) — the cover branch at the diagonal tau = d = 7 (the (7,7) cells of the Cycle 1 conjecture c(d) = min(d,7)).",
+      "scope": "Finite forests; d = 7; refuted for r = 8..33 (orders 23..73); the strict and the weak consequent both fail. Cycle 3 status update (registry status update, not an award): the (7,7) cells at r = 34..70 are CLOSED — the decision is over the cell predicate as control/C2-REFUTATION-WITNESSES.json defines it (the sign of Delta_{r-1}), exhaustive per cell over the complete cover-shape parametrisation conditional on the structure lemma (seat F1, four independent instruments, arithmetic certificate); the extension from Delta_{r-1} to the registered consequent Delta_k > 0 for every k < r at all 45 surviving cells (1,986 rank decisions, zero exceptions) is critic-attributed to C-F1-U; positivity at r >= 71 follows from the registered Catalan dominance Gamma(7,k) > 0 for k >= K(7) = 70. The 73-cell census entering Cycle 4 is 45 closed / 28 refuted / 0 undetermined.",
+      "status": "REFUTED",
+      "smallest_witness_order": 23,
+      "certificate": "Order-23 trees: exact cell minimum Delta_7 = -202 attained by two classes; the registered (7,7,r) cell minima -202, -1,035, -4,333, -17,458, -52,899, -163,075, -509,875 at r = 8..14 are canonical full-census values; the cover-edge stratum minima are +280 at r = 8 and -214 at r = 9. Cycle 6 (critic-attributed C-T4-F, independently C-T4-U; isolated second read q1 = complete, cycles/cycle-6/stage5/second-read/T-BUNDLE/SECOND-READ.md (b97906c0...; q1 complete, q2 confirmed_with_repairs)): the (7,7,15) FULL-CENSUS minimum is -1,612,675, COMPLETE over the order-derived box (0 <= Sum p <= 2r-K, proved from |V| = 2r+7 alone; the interval-minimum pruning proved sound), attained by the connector-only single hub with p == 3 (order 37, nu = tau = 7, x = 14, Delta_14 = -1,612,675, Delta_15 = -32,006,037); the cover-edge stratum minimum is -614,281 (F[C] = {0,1} plus an arity-6 connector; margin 998,394 above the census minimum); the >= 2-low-slot stratum's own minimum is -168,481 (1,444,194 above); the 28,111,996 nu = 7 configurations at order 23 and 3,441,872,494 at r = 15 reproduce. Domination of the cover-edge stratum by the connector-only stratum holds exhaustively at every r = 8..18 (C-T4-F; certificate at r = 16, 17, 18). The former wording 'exact within the connector-only stratum (128 classes), NOT a full-census cell minimum' is SUPERSEDED. 1,082 is the live census total; it is forbidden only as the denominator of the connector-only residue. This is a finite fact about named cells: NOT extremality at tau = 7 in any form; E993-R25-SINGLE-HUB-NOT-UNIFORMLY-WORST remains REFUTED at three exhaustive cells. cycles/cycle-6/stage6/SYNTHESIS.md (4b9cc572...) R2(iii),(vii); cycles/cycle-6/stage5/adjudicators/T/ADJUDICATION.md (a1172bab...). || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21; updated 2026-09-22 (Cycle 6 terminal close); run notes: [cycle4_note] Cycle 4: exact (7,7,r) cell minima -4,333, -17,458, -52,899, -163,075, -509,875 at r = 10..14 (C-T3-U exhaustive; C-T3-F concurs at r = 10, 11); (6,7) cells closed at the full predicate for r = 3..15 with min Delta_{r-1} > 0 for r = 3..20; the NCAP = 12 box is lossless by proof (E993-R25-CERTIFICATE-TAIL-ARGMAX-AND-BOX), so the 37 cells at r = 34..70 stand on an argument; c(7) in {5,6} and the 45/28/0 census unchanged.).",
+      "aliases": [
+        "E993-R25-COVER7-D7-WINDOW-REFUTATION",
+        "cover-7 diagonal at excess 7",
+        "c(7) = 7"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-COVER-THRESHOLD-MIN-D-5-FOREST",
+      "statement": "For every finite forest F of order 2r+d (d >= 2, r >= 2) with vertex-cover number tau(F) <= min(d,5), Delta_k(F) > 0 for every natural k < r (hence x(F) >= r). The threshold c(d) = min(d,5) cannot be raised to the diagonal at any d >= 6 (E993-R25-COVER-DIAGONAL-D6-SIGN, -D7-SIGN, and the forests d*K_{1,3} for d >= 8) and equals 5 exactly at d = 6.",
+      "scope": "Finite forests only (false for graphs: a 13-vertex graph with tau = 5 has x = 3 < r = 4). Informal theorem: general-tau cover-fiber partition + Catalan dominance for k >= K(tau) (K(1..5) = 0,2,3,4,6) + closure of the small-rank cells. Cycle 5 reconciliation (controller erratum): the finite residue collapses to FIVE cells, all at tau = 5, all at r = k+1, at orders 9, 11, 13, 15, 17 — the order-9 cell (k = 1) is discharged by frozen ENTRY 175 (forest_delta_one_pos); the cell whose cover hypothesis is vacuous is (3,2,11); the reduction is exact, not merely sufficient (E993-R25-BINOMIAL-DIFFERENCE-CATALAN-CEILING). Corrected cell minima of record: min Delta_{r-1} = 39, 56, 56, 43 at orders 11, 13, 15, 17 (and min Delta_1 = 19 at order 9). The honest accounting of the Cycle 5 advance is 11 -> 5 exceptional cells, never '8 -> 5'. The general half's algebra is now DERIVED (E993-R25-BAND-CARRY-STEP-HALL, E993-R25-BINOMIAL-DIFFERENCE-CATALAN-CEILING) and its finite check is critic-derived and adjudicator-verified, NOT the seat's. Acyclicity is load-bearing exactly at the five tau = 5 cells and nowhere else (the 13-vertex general-graph counterexample sits at the identical cell). Not formally verified.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "cycles/cycle-1/stage5/adjudicators/T/ADJUDICATION.md (c(d) = min(d,5) theorem, guard k < r), cycles/cycle-2/stage5/adjudicators/{T,U}/ADJUDICATION.md (sharpness; K(tau)-1 cell rule), cycles/cycle-2/stage6/SYNTHESIS.md (C2-1, C2-14). Evidence grade proved_informal, adjudicator-verified, no formal award. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21; updated 2026-09-22 (Cycle 6 terminal close); run notes: [cycle4_note] Cycle 4: the four tau = 5 cells are mathematically settled over ALL forests: (3,2,11) cover hypothesis vacuous; (4,3,13) true cover-free (min Delta_3 = +45 over all 3,658 forests of order 13; cover-free threshold order 12, sharp); (5,4,15) and (6,5,17) cover-ESSENTIAL (P_15: Delta_4 = -33, tau = 7; P_17: Delta_5 = -363, tau = 8). Only the Lean formalization is open; the transcribed card-4 cover/Catalan chain cannot compose at card 5. [cycle5_note] Five-versus-four cells reconciled: the scope's five is correct; the Cycle 4 note's four omitted the order-9 cell. Cycle 5 Lean route: the LP-dual certificate for the two cover-essential cells is formalised twice (E993-R25-CARD5-JOINT-BUDGET-CELLS); assembly plumbing and the padding lemma remain; the card-5 lemma named cover_rank_bound must be renamed (collision with frozen ENTRY 170). [cycle6_note] The general-graph Delta_3 = -8 figure at the 13-vertex tau = 5 cell is a WITNESS, not a cell minimum (tau = 5 graphs with Delta_3 = -9 and -10 exist; C-U3-F). Cycle 6 Lean: the five tau = 5 cells are kernel-checked at their top rank only (E993-R25-CARD5-JOINT-BUDGET-CELLS, formally_verified); the lower ranks k < r-1 remain informal; this claim's grade is unchanged. The synthesis's Composition S1 (the tau <= 5 branch at every excess d >= 5, with the Gamma-route residue empty at d >= 7, two census-closed cells at d = 6, five kernel-checked cells at d = 5) is the d >= 5 instance of THIS claim — it raises no status and is stated in the Cycle 6 synthesis, not registered (gate ruling 8). cycles/cycle-6/stage6/SYNTHESIS.md (4b9cc572...) R2(x), R4.).",
+      "aliases": [
+        "forest cover threshold min(d,5)",
+        "cover branch theorem"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-MATCHING-CERTIFICATE-POSITIVITY-IFF",
+      "statement": "For all natural m >= 1 and 0 <= d <= 2m, the cleared decision polynomial Q_{m,d}(t) of the stratified matching-incidence certificate (recursion eps_0 = 0, eps_{j+1} = (j+1)[(K+1-2j) + eps_j (t+j)] / [2(m-j)(t+K+1-j)], K = 2m-d, Q := eps_m (t+m) - (d-1)) has non-negative coefficients if and only if 3d <= 2m+2; its leading coefficient is m! 3^(m-1) (2m-3d+3).",
+      "scope": "Pure algebra of the certificate system; the unconstrained relaxation of certificate feasibility (the greedy dual has negative multipliers for d >= 7), so it does NOT by itself prove E993-R25-MATCHING-BRANCH-UNIFORM-SIGN; certificate existence still requires a dual-sign lemma. Critic-attributed (Cycle 2 critic C-U3-T), verified step by step by the U adjudicator.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "cycles/cycle-2/stage4/critics/U3/T/CRITIQUE.md (proof: closed form, reflection identity G_i = G_{K+1-i}, window-reflection pairing + AM-GM producing 3d <= 2m+2; converse from the negative leading coefficient; boundary family (3j,2j+1) by [t^(m-1)]Q = -4m m! 3^(m-3)); cycles/cycle-2/stage5/adjudicators/U/ADJUDICATION.md (E8, verified); cycles/cycle-2/stage6/SYNTHESIS.md (C2-4). Evidence grade proved_informal, critic-attributed, adjudicator-verified, no formal award. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21; updated 2026-09-21 (Cycle 4 close); run notes: [cycle4_note] Cycle 4 reading of the 'd >= 7' annotation (synthesis reconciliation; 3,689 cells, 3,541 clamped, 3,433 interior-clamped, zero negative mu): it concerns the UNCLAMPED chain's lambda-multipliers, whose first interior negativity inside the region is at exactly d = 7, and it is repaired by the registered clamp. Statement and 'iff' untouched.).",
+      "aliases": [
+        "Q_{m,d} coefficientwise positivity iff 3d <= 2m+2",
+        "matching-certificate decision polynomial theorem"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-CATALAN-GAP-MONOTONE-RATIO",
+      "statement": "Let Gamma(tau,k) = Cat_{k+1} - sum_{j=1}^{tau} C(tau,j) Cat_{k-j} with Cat_{k-j} := 0 for j > k (integer zero-extension convention of record). For all 1 <= tau <= k: Gamma(tau,k) Cat_{k+2} < Gamma(tau,k+1) Cat_{k+1} (the ratio Gamma(tau,k)/Cat_{k+1} is strictly increasing in k >= tau); positivity propagates from any base K >= tau; Gamma(tau,k) > 0 for all k >= K(tau) with K(1..7) = 0,2,3,4,6,12,70 (sufficiency half); and Gamma(tau,k) < 0 for all tau >= 8, k >= tau.",
+      "scope": "A theorem about Catalan integers, uniform in tau with explicit thresholds; NOT a graph theorem, NOT fixed-band, not uniform in d (d absent); never to be packaged as c(d) = min(d,5); no transfer to forests, covers, matchings, Delta_k, x(F), any tier, FOREST, TREE, TRANSFER or Erdos #993. Alias (not dependency): the tau = 4 positivity unfolds to frozen ENTRY 149 Erdos993G1.ThirdWide.catalan_gap_pos.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "Stage 7 governed lean-proof-workflow run runs/lean-2026-09-21-c3-catalan-gap-monotone-ratio: formally_verified (kernel + informal audit + fidelity match); see cycles/cycle-3/stage7/LEAN-GATE-CLOSEOUT.md || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21).",
+      "aliases": [
+        "monotone-ratio lemma (general tau)",
+        "Catalan dominance thresholds K(1..7)",
+        "U-C3-03 obligation (1)"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-STRATUM-DEPTH-COROLLARY-F",
+      "statement": "For every d in {2,...,11}, every r with 2r-1 >= tau = d+1, and every forest F of order 2r+d with tau(F) = nu(F) = d+1: Delta_k(F) >= 0 at every k <= r-2, hence x(F) >= r-1.",
+      "scope": "Forests; the tau = nu = d+1 stratum; PARAMETERIZED OVER A FINITE d-RANGE d in {2,...,11}, never uniform in d. d <= 11 is a PROVED SHARP ceiling at k = r-2 (Cycle 5): the tau = 12 joint budget is strictly positive at all 37 live ranks r = 7..43 (critic-established C-F2-T, C-F2-U; F-adjudicator-verified) and tau = 13 fails at nine consecutive ranks (E993-R25-STRATUM-COROLLARY-F-D12-REFUTED). Two horizons ride on the sharpness and are on the face: (a) the degree cap — the sweep enumerates profiles with d_c <= 6 while the edge budget permits about 2r+11; stability attained at Dmax = 10, not proved; the provable cap is 2r-2k+2 (= 6 at k = r-2); (b) the r > 600 per-fiber tail carried on E993-R25-CATALAN-DOMINANCE-RANK-R-MINUS-2. x(F) < r is NOT a hypothesis; the finite-census half at d = 5, 6 is deleted (Cycle 4). Corrected Lean feasibility pricing (Cycle 5): 71 non-vacuous layer-1 cells, 195,189 sorted profiles at cap 6, worst cell 6,188; layer 2 1,185 at cap 8; largest kernel Nat 25 digits (C(85,42)) — NOT a responsible single-close Stage 7 contract; its arithmetic spine is the responsible sub-statement.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal; joint cross-fiber budget critic-derived (C-F1-T: tau = 3..11 at every rank k <= r-2; C-F1-U: adds the union bound rho_S <= sum d_c); the F adjudicator replayed both to the digit and closed the last live cell (tau = 12, d = 11, r = 7, order 25) at +2013 by complete profile enumeration (cycles/cycle-4/stage5/adjudicators/F/ADJUDICATION.md (1d3c997b...)); cycles/cycle-4/stage6/SYNTHESIS.md (2c23c6ea...) S8. Cycle 3 record: d <= 6 with a census half (critic C-F4-T). || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21; updated 2026-09-22 (Cycle 5 close)).",
+      "aliases": [
+        "Corollary F",
+        "tau = d+1 forces x >= r-1"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-CATALAN-DOMINANCE-RANK-R-MINUS-2",
+      "statement": "On forests with vertex cover C, |C| = tau, the rank-(r-2) analogue of the registered rank-(r-1) Catalan-dominance criterion: Delta_{r-2}(F) >= 0 for all r >= R(tau) whenever (5/4)^tau - 1 < 16 (tau <= 12), with exact thresholds R(3..12) = 2,2,5,6,7,8,10,12,19,44 and upward closure in r; the empty fiber contributes exactly Cat_r at rank r-2.",
+      "scope": "Forests; tau <= 12; an extension of E993-GRAPH-VERTEX-COVER-DELTA-PARTITION and E993-BINOMIAL-DIFFERENCE-CATALAN-FLOOR to one rank lower, not a new object; tau = 13 never holds (scanned to r = 400).",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal, critic-attributed (C-F4-T), adjudicator-verified; thresholds reproduced by the synthesis (cycles/cycle-3/stage6/SYNTHESIS.md (3678ec24...) C2). || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21; updated 2026-09-21 (Cycle 4 close); run notes: [cycle4_note] Cycle 4: the per-fiber Catalan criterion does NOT govern the joint budget (bounded evidence at tau = 13), so the tau <= 12 ceiling is a computation horizon of the per-fiber method, not a proved ceiling.).",
+      "aliases": [
+        "Theorem D (rank r-2 Catalan dominance)"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-FOURTH-BAND-CLOSE-R-LE-260",
+      "statement": "For every forest F with |V(F)| = 2r+5, x(F) < r and r <= 260: Delta_r(F) <= 0.",
+      "scope": "The d = 5 diagnostic band E993-C3-FOREST-FOURTH-WIDE-CROSSING-SIGN for r <= 260 (every forest of order <= 525); open for r >= 261 on exactly Lemma (L)'s three recorded tail repairs (a fourth singular family of D(b,m) at m = -1 located). Composed at the synthesis; grade is the weakest link.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal (cycles/cycle-3/stage6/SYNTHESIS.md (3678ec24...) A1): d = 5 window reduction (cover half E993-R25-COVER-THRESHOLD-MIN-D-5-FOREST, matching half E993-R25-FOURTH-BAND-SEVEN-EDGE-MATCHING-SIGN formally verified, Koenig) + Corollary F at d = 5 (x = r-1 exactly) + Lemma (L)'s top-rank step Bd(r,r) < 0 on 6 <= r <= 260 (closed-form reconstruction by C-U1-T and C-U1-F, adjudicator-verified) + complete enumeration of the nu = tau = 6 class at r = 4,5 + emptiness for r <= 3. x(F) < r is load-bearing. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21; updated 2026-09-21 (Cycle 4 close); run notes: [cycle4_note] Cycle 4: superseded by E993-R25-FOURTH-BAND-CLOSE-ALL-R; kept as the historical record. The r <= 260 claim is run-local only ('VERIFIED in both registries' is struck wherever it appears).).",
+      "aliases": [
+        "diagnostic band closed to r = 260",
+        "A1"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-MATCHING-CERTIFICATE-SOUNDNESS",
+      "statement": "If nonnegative rationals lambda_j (j = 0..m), mu_j (j = 0..m-1) make coef_b(j) >= 1 on every alive b_j and coef_a(j) <= 1 on every alive a_j (coef_b(j) = lambda_j (r+1-j) + j mu_{j-1}, coef_a(j) = lambda_j (r+j-K) + 2(m-j) mu_j, K = 2m-d), then Delta_r(G) <= 0 for every finite simple graph G of order 2r+d carrying a matching of size m.",
+      "scope": "Unconditional in (m,d,r); bare (no crossing, no acyclicity); needs the N/Z reconciliation (negative r+j-K occurs exactly where a_j = 0) made explicit by critic C-T2-F.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal (seat T2; re-derived by both critics; cycles/cycle-3/stage5/adjudicators/T/ADJUDICATION.md (297ba12d...); cycles/cycle-3/stage6/SYNTHESIS.md (3678ec24...) B1). || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21; updated 2026-09-21 (Cycle 4 close); run notes: [cycle4_note] Cycle 4: 'unconditional in (m,d,r)' needs no correction; the standing state's open entry on the primal generalised incidence lemmas means 'open in Lean at general (m,d)' (now supplied in Lean by E993-R25-GENERALISED-MD-INCIDENCE).).",
+      "aliases": [
+        "Certificate Soundness Lemma"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-MATCHING-BOTTOM-RANK-UNIFORM-SIGN",
+      "statement": "For every d >= 3 and every finite simple graph G of order 3d carrying a matching of size m(d) = ceil(3d/2)-1: Delta_d(G) <= 0, by an explicit nonnegative rational certificate.",
+      "scope": "Rank r = d only; order 3d only; uniform in d with no horizon; bare; all finite simple graphs. UNCONDITIONAL since the Cycle 4 close (its sole registered conditionality, the generalised (m,d) incidence lemmas, is discharged: E993-R25-GENERALISED-MD-INCIDENCE). NOT the Tier 3a schema E993-R25-MATCHING-BRANCH-UNIFORM-SIGN; nothing at any rank other than r = d, nothing about d < r < K(d) or r >= K(d); no transfer to firstDescent/x(G), forests, residuals, G1 tuples, Tier 1, Tier 2, the diagnostic band, FOREST, TREE, TRANSFER or Erdos #993; no sharpness claim beyond the recorded comparator fact that m(d)-1 edges fail (fences lifted from the award run's INFORMAL-PROOF.md section 12, as the fidelity reviewer directs, because theorem-contract/v1 has no scope field). The terminal-margin literals 3/(d^2-4) (even d) and 1/(d-1) (odd d) are corroborated only under the reading 'relative slack on the binding a-row'; no definition of record for 'terminal margin' exists, so the literals are dropped from the statement and excluded from any award.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "Stage 7 governed lean-proof-workflow run runs/lean-2026-09-21-c4-bottom-rank-uniform-matching-sign: formally_verified (kernel + informal audit + fidelity match); cycles/cycle-4/stage7/LEAN-GATE-CLOSEOUT.md. Informal: proved_informal; primal incidence family seat U4; the r = d dual critic-attributed jointly to C-U4-T and C-U4-F (identical vector on the even branch, two distinct vectors on the odd branch), U-adjudicator-verified against the full column system at d = 3..400 (cycles/cycle-4/stage5/adjudicators/U/ADJUDICATION.md (7caece0f...)); cycles/cycle-4/stage6/SYNTHESIS.md (2c23c6ea...) S3, award group 1. Earlier record: critic C-T2-U, Cycle 3. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21; updated 2026-09-21 (Cycle 4 close)).",
+      "aliases": [
+        "r = d matching theorem",
+        "B2"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-CLAMPED-DUAL-DOMINATION",
+      "statement": "For m >= 1, t >= 0, K = 2m-d, r = t+K >= m-1: every nonnegative feasible dual (lambda, mu) of the reduced C1/C2 system satisfies mu_j <= mu_j^g at every j (the clamped greedy chain dominates), so mu_j^g < 0 certifies infeasibility; a genuine clamp at j forces j > (2m+2)/3 and persists to j = m-1 with mu_{m-1}^g = 1/2; at m = ceil(3d/2)-1, m(t+m) > 2(d-1) for every d >= 1, t >= 0; the reduced system plus the closing inequality is exactly the full column system.",
+      "scope": "Algebraic dual side only; the existence of a fully nonnegative greedy dual is NOT established beyond bounded evidence (coefficientwise d <= 70 at every t; an index prefix t-uniformly at every d); the seat's Theorem 1 as stated is false outside 3d <= 2m+2 (counterexamples (1,4,2), (3,4,0)).",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal (seat T1 for domination, persistence and the bound; C-T1-F for LP fidelity of the dual side); cycles/cycle-3/stage5/adjudicators/T/ADJUDICATION.md (297ba12d...); cycles/cycle-3/stage6/SYNTHESIS.md (3678ec24...) B3, B4, F10. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21; updated 2026-09-21 (Cycle 4 close); run notes: [cycle4_note] Cycle 4: the scope sentence that existence of a fully nonnegative greedy dual is 'NOT established beyond bounded evidence (coefficientwise d <= 70 ...)' is SUPERSEDED by E993-R25-MATCHING-ALL-INDEX-DUAL-POSITIVITY.).",
+      "aliases": [
+        "T1 Theorems 1(domination)/3a/3b",
+        "B3",
+        "B4"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-COVER-CELL-DRIFT-CRITERION",
+      "statement": "For a forest F with tau(F) = nu(F) = tau and |V(F)| = 2r+d, r > tau: Delta_{r-1}(F) < 0 iff drift_r(F) > (d - tau + 1)/2, where drift_r = N_r/D_r is the finite-rank weighted drift over the cover fibers; drift_r -> drift(F) = alpha(F)/2 - mu(F) as r -> infinity with the skeleton fixed, so the limiting threshold is (d - tau + 1)/2.",
+      "scope": "Hypothesis r > tau is load-bearing (|T| = r reachable when r <= tau); form II is E993-GRAPH-VERTEX-COVER-DELTA-PARTITION at k = r-1 verbatim, form I adds Pascal; not a Lean target.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal (seat F1, twice independently re-derived; cycles/cycle-3/stage5/adjudicators/F/ADJUDICATION.md (504cfa41...); cycles/cycle-3/stage6/SYNTHESIS.md (3678ec24...) C3). || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21).",
+      "aliases": [
+        "F1 exact criterion"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-DRIFT-CEILING",
+      "statement": "For every finite forest F with tau(F) = tau: lim_r drift_r(F) = drift(F) < lambda*(tau), the unique positive root of lambda 4^lambda = ((5/4)^tau - 1)/(2 e ln 2); lambda*(6) = 0.41827085570..., lambda*(7) = 0.50000257126957..., lambda*(8) = 0.58500851234...; lambda*(tau) > 1/2 iff (5/4)^tau - 1 > 2 e ln 2 iff tau >= 7.",
+      "scope": "A bound on the LIMITING drift, never a finite-rank bound (drift_r is undefined at r <= tau and exceeds drift by Theta(1/r)); closes no cell by itself; carries the Addendum A2 relation; strictness by C-F1-T's irrationality argument.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal (seat F1; cycles/cycle-3/stage5/adjudicators/F/ADJUDICATION.md (504cfa41...); cycles/cycle-3/stage6/SYNTHESIS.md (3678ec24...) C4, both amendments mandatory). || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21).",
+      "aliases": [
+        "F1 drift ceiling"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-DRIFT-SUP-TAU-7",
+      "statement": "sup{ drift(F) : F a finite forest with tau(F) = 7 } < 1/2.",
+      "scope": "tau = 7 only; strictly stronger than the ceiling at tau = 7 (where it is inconclusive by 2.57e-6); closes F1's knife edge.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal, critic-attributed (C-F1-U: tail lemma at M = 12 plus exhaustive maximum -474217/8388608 over 19,448 multisets, controls at tau = 6, 8), adjudicator-verified (cycles/cycle-3/stage5/adjudicators/F/ADJUDICATION.md (504cfa41...); cycles/cycle-3/stage6/SYNTHESIS.md (3678ec24...) C5). || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21).",
+      "aliases": [
+        "C5"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-DISJOINT-UNION-FIRST-DESCENT-LOWER-BOUND",
+      "statement": "For all finite simple graphs G, H: x(G u H) >= max(x(G), x(H)).",
+      "scope": "All finite simple graphs; two lines from I(G u H) = I(G) I(H) and nonnegativity of coefficients; NOT the fenced convolution closure (no closure property of a sequence class is assumed). Corollary: x(G u K1) >= x(G) (the T4 seat's form, on forests).",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal, critic-attributed (C-T4-U), adjudicator-verified (cycles/cycle-3/stage5/adjudicators/T/ADJUDICATION.md (297ba12d...); cycles/cycle-3/stage6/SYNTHESIS.md (3678ec24...) D1). || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21).",
+      "aliases": [
+        "T4 isolated-vertex lower bound (corollary)",
+        "D1"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-DRIFT-PADDING-INVARIANCE",
+      "statement": "drift(F) = alpha(F)/2 - mu(F), with alpha = deg I(F) and mu = I'(1)/I(1), is additive over disjoint union for every finite graph and drift(K1) = 0; hence drift(F u mK1) = drift(F) for every m.",
+      "scope": "Padding invariance ONLY: no near-miss, threshold or Delta_r-proximity claim (drift is provably not a near-miss statistic: forests with equal drift have opposite signs of Delta_r at the same order and rank).",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal (seat F3 Theorem 1 with alpha read as deg I; cycles/cycle-3/stage5/adjudicators/F/ADJUDICATION.md (504cfa41...); cycles/cycle-3/stage6/SYNTHESIS.md (3678ec24...) D4). || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21).",
+      "aliases": [
+        "F3 Theorem 1"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-SINGLE-HUB-NOT-UNIFORMLY-WORST",
+      "statement": "The conjecture 'a single hub of degree tau is the worst skeleton at k = r-1' is false: at (tau,d,r) = (7,7,8) the exhaustive minimum of Delta_7 over every single-hub skeleton (any arity, any leaf partition, any isolated padding; 111 of 1,002 arity classes have tau = nu = 7) is +699 (arms (3,2,2,2,2,2,2)) while the cell minimum over all forests is -202; at (7,7,9) the single-hub minimum is -252 (arms (3,3,3,2,2,2,2)) while the cell minimum is -1035.",
+      "scope": "Refutes the uniform single-hub-worst statement at THREE exhaustive cells: (7,7,8), (7,7,9) and (7,7,10) (single-hub minimum -4,320 against the cell minimum -4,333; unconditional); no wording beyond three exhaustive cells.",
+      "status": "REFUTED",
+      "smallest_witness_order": 23,
+      "certificate": "Exact finite computation with exhibited witnesses (seat T3; extended by C-T3-F and C-T3-U; cycles/cycle-3/stage5/adjudicators/T/ADJUDICATION.md (297ba12d...); cycles/cycle-3/stage6/SYNTHESIS.md (3678ec24...) F3). || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21; updated 2026-09-21 (Cycle 4 close)).",
+      "aliases": [
+        "single-hub worst-case conjecture"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-MATCHING-ALL-INDEX-DUAL-POSITIVITY",
+      "statement": "For every m >= 1 and every d >= 0 with 3d <= 2m+2, the unclamped polynomials N_j(t) of the stratified matching-incidence certificate's greedy dual are coefficientwise nonnegative for every j <= m; consequently mu_j^g(t) >= 0 for every j = 0..m-1 and every real t >= 0, for the unclamped chain and, via clamp persistence, for the true clamped chain.",
+      "scope": "Pure algebra of the certificate system on the region 3d <= 2m+2; every j <= m; real t >= 0; no horizon. DISCLOSURE: an extension of the registered j = m reflection-pairing mechanism (E993-R25-MATCHING-CERTIFICATE-POSITIVITY-IFF), not a new mechanism. nu, tau and x(F) < r enter nowhere. Supersedes the 'dual existence is bounded evidence (d <= 70)' wording of the Cycle 4 gate ruling 5 for the nonnegativity half.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal; critic-derived: C-T1-U (coefficientwise: closed form, reflection identity, inequality (P) whose base case is literally 3d <= 2m+2, discriminant factorisation 3(3d-2(m+1))(d+2(m+1))) and C-T1-F (pointwise endpoint reduction, a different dependency, carried separately); T-adjudicator-verified on an independent instrument (cycles/cycle-4/stage5/adjudicators/T/ADJUDICATION.md (ecf43c7a...) E1); second-reader-confirmed (cycles/cycle-4/stage5/second-read/E2/SECOND-READ.md (4e4edb02...)); cycles/cycle-4/stage6/SYNTHESIS.md (2c23c6ea...) S1. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21 (Cycle 4 close); updated 2026-09-22 (Cycle 6 terminal close); run notes: [cycle6_note] Clause (a) (coefficientwise nonnegativity for every j <= m) is formally verified as E993-R25-MATCHING-ALL-INDEX-COEFFICIENTWISE-NONNEG (formally_verified); clause (b) is formalised nowhere; THIS CLAIM AS A WHOLE STAYS proved_informal. Alias of record: Q_{m,d} = m! N_m, so the j = m instance is the sufficiency half of E993-R25-MATCHING-CERTIFICATE-POSITIVITY-IFF (both U1 critics; U adjudicator). cycles/cycle-6/stage6/SYNTHESIS.md (4b9cc572...) R1.).",
+      "aliases": [
+        "E1",
+        "S1",
+        "all-index greedy-dual positivity",
+        "T-C4-01"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-MATCHING-LARGE-RANK-SIGN",
+      "statement": "For every d >= 2 and every r >= K(d) = 2 m(d) - d (= 2d-2 for even d, 2d-1 for odd d), every finite simple graph G of order 2r+d carrying a matching of size at least m(d) = ceil(3d/2)-1 satisfies Delta_r(G) <= 0.",
+      "scope": "All finite simple graphs; bare (x(G) < r not assumed); an instantiation of the OPEN Tier 3a schema E993-R25-MATCHING-BRANCH-UNIFORM-SIGN, which STAYS OPEN (the band d < r < K(d) is not covered). Owned slices, not new: d = 2 (C2 fixed point), d = 4 (E993-C3-GRAPH-MATCHING5-THIRD-BAND-SIGN), d = 5 (E993-R25-FOURTH-BAND-SEVEN-EDGE-MATCHING-SIGN, formally verified); new content d = 3 and every d >= 6. m(d) cannot be lowered on comparators (d = 2..40); K(d) is NOT sharp (the comparator's sign turns d-1 ranks lower). No transfer to Tier 1, Tier 2, forests/G1 tuples, FOREST, TREE, TRANSFER or Erdos #993.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal; adjudicator-identified composition (T; cycles/cycle-4/stage5/adjudicators/T/ADJUDICATION.md (ecf43c7a...) E2) of E993-R25-MATCHING-ALL-INDEX-DUAL-POSITIVITY with E993-R25-MATCHING-CERTIFICATE-SOUNDNESS, E993-R25-MATCHING-CERTIFICATE-POSITIVITY-IFF (unclamped branch) and E993-R25-CLAMPED-DUAL-DOMINATION (clamped branch, the dominant case for d >= 7); independently second-read, e2_verdict confirmed_with_repairs (cycles/cycle-4/stage5/second-read/E2/SECOND-READ.md (4e4edb02...)). Two recorded repairs to the argument, not the statement: the equality coef_a(j) = 1 for j <= m-1 holds by construction and what the positivity lemma supplies is mu_j >= 0 (the dual's admissibility); the generalised incidence lemmas are not in its informal DAG. cycles/cycle-4/stage6/SYNTHESIS.md (2c23c6ea...) S2. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21 (Cycle 4 close)).",
+      "aliases": [
+        "E2",
+        "S2",
+        "large-rank matching-branch sign"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-FOREST-DESCENT-ORDER-BOUND-SHARP",
+      "statement": "For every finite forest G on n vertices and every integer k >= 1: Delta_k(G) < 0 implies n <= (k+1)^2 (a fortiori n <= k^2+3k).",
+      "scope": "All finite forests including disconnected ones; every k >= 1; uniform, no horizon. Uses only e(G) <= n-1, the level-one Bonferroni bound and quadratic algebra; nu, tau, d, x(F) < r enter nowhere. Tight at k = 1 only (true maxima 4, 8, 11, 15 at k = 1..4): no tightness wording and no linear ceiling claimed. NOT a no-recovery statement (its contrapositive yields Delta_k >= 0, the opposite sign); no transfer to Tier 1, the K1-addition target, NR1, FOREST, TREE, TRANSFER or Erdos #993; never bundled with the x <= 4 closure.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "Stage 7 governed lean-proof-workflow run runs/lean-2026-09-21-c4-forest-descent-order-bound: formally_verified (kernel + informal audit + fidelity match); cycles/cycle-4/stage7/LEAN-GATE-CLOSEOUT.md. Informal: the k^2+3k form is seat T4's; the sharp (k+1)^2 form is critic-attributed jointly to C-T4-F and C-T4-U (independent derivations); T-adjudicator-verified (cycles/cycle-4/stage5/adjudicators/T/ADJUDICATION.md (ecf43c7a...) E3); cycles/cycle-4/stage6/SYNTHESIS.md (2c23c6ea...) S4, award group 2. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21 (Cycle 4 close)).",
+      "aliases": [
+        "E3",
+        "S4",
+        "forest descent order bound"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-RECOVERY-LOGCONCAVITY-NECESSARY",
+      "statement": "For every finite graph F: if x(F) < r and Delta_r(F) > 0 then the independence sequence of F has a log-concavity failure at some rank k in (x(F), r].",
+      "scope": "Every finite graph (acyclicity enters at no step); NECESSARY, never sufficient (398 in-window failures exist in one spider family and none is a recovery; every in-window failure found in the multi-arm Kadrawi-Levit-type family sits at tau >= 21).",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal; critic-attributed (C-F3-T); F-adjudicator-verified and scope-extended (cycles/cycle-4/stage5/adjudicators/F/ADJUDICATION.md (1d3c997b...)); cycles/cycle-4/stage6/SYNTHESIS.md (2c23c6ea...) S5. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21 (Cycle 4 close)).",
+      "aliases": [
+        "S5",
+        "recovery necessary condition"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-RANK-R-MINUS-2-HALL-INVARIANCE",
+      "statement": "PER-FIBER statement: at rank r-2 the per-fiber worst term at fiber size s is attained at rho_S in {2s+3, 2s+4} with value -Cat_{r-2-s}, clearing the Hall floor by s+3, so Hall-restricting the per-fiber domain leaves every per-fiber threshold R(tau) unchanged, uniformly in s and r.",
+      "scope": "Per-fiber only (the scope word is mandatory): it does NOT govern the joint cross-fiber budget, under which R_joint(tau) = 2 for tau = 3..11 (see E993-R25-STRATUM-DEPTH-COROLLARY-F).",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal; seat F1; F-adjudicator-verified; the seat's route-level refutation built on it was overturned (cycles/cycle-4/stage5/adjudicators/F/ADJUDICATION.md (1d3c997b...)); cycles/cycle-4/stage6/SYNTHESIS.md (2c23c6ea...) S6. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21 (Cycle 4 close)).",
+      "aliases": [
+        "S6 first half"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-PER-FIBER-BUDGET-UPWARD-CLOSURE",
+      "statement": "PF(tau,r,r-2)/Cat_r is strictly increasing in r for r >= tau+2 with limit 1 - ((5/4)^tau - 1)/16, so a finite exact check to max(R(tau), tau+2) proves upward closure of the per-fiber budget in r.",
+      "scope": "Per-fiber budget; tau = 3..13 computed.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal; critic-attributed (C-F1-T); F-adjudicator-verified (cycles/cycle-4/stage5/adjudicators/F/ADJUDICATION.md (1d3c997b...)); cycles/cycle-4/stage6/SYNTHESIS.md (2c23c6ea...) S6. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21 (Cycle 4 close)).",
+      "aliases": [
+        "S6 second half"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-CERTIFICATE-TAIL-ARGMAX-AND-BOX",
+      "statement": "For the cover-cell arithmetic certificate: [phi_t]^+ (phi_t(n) = W(n,t)(n-2t-c)) is unimodal with a non-increasing tail; its real maximiser is n* = 2t+c+1 exactly (the correction term is identically zero) and its integer argmax set is {2t+c+1, 2t+c+2}; a cap N on n_T is lossless iff 2t+c+1 <= N; and for singleton entries beyond any finite cap, g_t(S-1) >= g_t(S) whenever a_t <= S-1, which at entries >= 13 reads tau <= 10-c.",
+      "scope": "Holds at (6,6), (7,7), (7,8); consequence: the NCAP = 12 box of the Cycle 3 certificate (which caps the SINGLETON entries, not n_T) is lossless at every census cell, so its 37 (7,7) cells at r = 34..70 stand by argument rather than scan.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal; Steps 1-2 seat F4; closed form critic-corrected (C-F4-T, C-F4-U); the box argument is a controller computation (scratchpad/c4-controller-f4-box/: exact recomputation at caps 12 and 18, identical maxima at 73/73 cells) graded correct by the F adjudicator after replay, an independent instrument at caps 12 and 20, and an analytic derivation (cycles/cycle-4/stage5/adjudicators/F/ADJUDICATION.md (1d3c997b...)); cycles/cycle-4/stage6/SYNTHESIS.md (2c23c6ea...) S7. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21 (Cycle 4 close)).",
+      "aliases": [
+        "S7",
+        "lossless box"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-BD-TAIL-NEGATIVE",
+      "statement": "With D(b,m) = C(b,m+1) - 2C(b,m) + C(b,m-1) (zero-extended) and the RANGED Bd(r,r) = D(2r-1,r) + sum_{a=1}^{6} C(6,a) max(0, max_{0 <= b <= 2r-1-a} D(b,r-a)): Bd(r,r) < 0 for every integer r >= 6 (and Bd(r,r) >= 0 exactly at r in {2,3,4,5}).",
+      "scope": "Binomial integers; no graph content; threshold sharp; the range b <= 2r-1-a (Konig/Hall) is load-bearing (the unranged object is >= 0 on r in [2,33]). Finite residue after the critics' strengthening: r in [6,49]; no registered predecessor in its DAG.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal; seat U1 with three written-proof repairs (the region 0 <= b <= m-1; Lemma 3.2 Case-2 threshold m^2(m+1) <= 16*2^(m/2) from m = 17; Lemma 4.1 index CB(n)/CB(n+1) = A(n)) and the [6,49] strengthening critic-attributed jointly to C-U1-T and C-U1-F; U-adjudicator-verified (cycles/cycle-4/stage5/adjudicators/U/ADJUDICATION.md (7caece0f...)); cycles/cycle-4/stage6/SYNTHESIS.md (2c23c6ea...) S9. Lean: refused this cycle (13,596 kernel evaluations at ~1e26 without native_decide); the alias bridge M_a(r) <= Cat_(r-1-a) for r >= 15 is a Cycle 5 route. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21 (Cycle 4 close); updated 2026-09-22 (Cycle 6 terminal close); run notes: [cycle5_note] The recorded finite residue r in [6,49] is SUPERSEDED: r >= 15 is a theorem with no computational residue (E993-R25-MA-CATALAN-COMPARISON) and r in [6,14] is 900 exact evaluations, largest |D| = 1,485,800, kernel-decidable without native_decide. Second, Lean-lighter DAG: Bd(r,r) <= -Gamma(6,r-1) with the formally verified Gamma(6,k) > 0 (k >= 12) as its only non-elementary input. Cycle 6 terminal Stage 7 candidate B (the flagship) — in the CORRECTED form (E993-R25-D-ROW-STEP-SIGN-LAW), never the seat's false D_unimodal_peak. cycles/cycle-5/stage6/SYNTHESIS.md (dfa5bddc...) R21. [cycle6_note] Definition of record for any Lean statement: C-U2-F's integer-rank MaR/BdRR (BdRR 4 = 48, BdRR 5 = 33, BdRR 6 = -16, BdRR 10 = -14406 proved inside Lean; the [6,14] layer BdRR r < 0 kernel-decided by plain decide, maxRecDepth ~8000 at r = 13, 14) — NOT C-U2-T's N-truncated MaR0 (BdRR 4 = 42; divergence confined to r in {2,3,4}, harmless for the r >= 6 target, fatal for fixed-point validation; C-U2-T's BdRR_four_nat_reading is the honest record of the trap). The top-level statement for every r >= 6 was NOT funded at the terminal close: open nodes 8-lift / 9 (the tail clause is not a blanket non-positivity: D(100,1) = 4751 > 0) / 10 (M_a <= Cat at r >= 15) / g_c as Nat.find, and the two critics' completed halves sit in incompatible definitional frames. Grade unchanged (proved_informal). The step-sign law and the interior peak bound are formally verified separately (E993-R25-D-ROW-STEP-SIGN-LAW, E993-R25-BD-INTERIOR-PEAK-CATALAN-BOUND). cycles/cycle-6/stage6/SYNTHESIS.md (4b9cc572...) R2(iv), 'Not fundable'; cycles/cycle-6/stage5/adjudicators/U/ADJUDICATION.md (9624e817...).).",
+      "aliases": [
+        "S9",
+        "Lemma (L) tail",
+        "Bd(r,r) < 0"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-GENERALISED-MD-INCIDENCE",
+      "statement": "For a finite simple graph of order 2r+d with a fixed matching on 2m vertices (K = 2m-d) and strata a_j, b_j of independent r- and (r+1)-sets meeting the matching's vertex set in j vertices: (r+1-j) b_j <= (r+j-K) a_j (outside incidence) and (j+1) b_{j+1} <= 2(m-j) a_j (inside incidence), with the partition over j <= m, three emptiness facts, N and Z forms and the re-centring at j <= K+1.",
+      "scope": "d <= 2m; j <= K+1 on the re-centring. The informal half is a RE-DERIVATION of material inside E993-R25-MATCHING-CERTIFICATE-SOUNDNESS's proof; the Lean half (12 new declarations, namespace Erdos993G1.UniformMatching) is new and kernel-clean with the permitted axioms.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "Seat U4 (Lean, scratchpad/c4-U4; rebuilt and axiom-audited by the U adjudicator); independent derivations by C-U4-F (1,239,542 exact graph checks; fourteen frozen statement types recovered) and C-U4-T (sixteen transcribed statements discharged); cycles/cycle-4/stage5/adjudicators/U/ADJUDICATION.md (7caece0f...); cycles/cycle-4/stage6/SYNTHESIS.md (2c23c6ea...). || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21 (Cycle 4 close)).",
+      "aliases": [
+        "generalised (m,d) incidence lemmas"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-FOREST-DELTA2-POS-ORDER-9",
+      "statement": "0 < Delta_2(F) for every finite forest F of order >= 9; the threshold is sharp (P_8 has Delta_2 = -1).",
+      "scope": "Forests; rank 2 only. ADJACENCY ON ITS FACE: the general-graph analogue E993-GRAPH-COVER3-STRICT-PRE-R-INCREASE is REFUTED (order-9 plateau witness containing a cycle); that refutation does not touch the forest lemma — acyclicity is load-bearing.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "formally_verified (governed lean-proof-workflow run runs/lean-2026-09-22-c6-forest-delta2-order-9: kernel + independent informal audit + independent fidelity match; cycles/cycle-6/stage7/LEAN-GATE-CLOSEOUT.md; award C6-LA1). Terminal declaration Erdos993G1.ForestDelta2.forest_delta_two_pos_ge_nine ([Finite X]; IsAcyclic; 9 <= Nat.card X; 0 < delta F 2) with the quantitative lemma forest_delta_two_lower (n^3 - 12n^2 + 35n - 30 <= 6 Delta_2 for n >= 5, exact at n = 5..14), on 25 byte-transcribed frozen G1 entries; NO enumeration at any order. CRITIC-ATTRIBUTED jointly to C-U4-T (contract form, quantitative cubic) and C-U4-F (component-corrected bound; ENTRY-176 instance) on the frozen project's own lemmas; seat U4 framed the question and settled the decide question. A forest THRESHOLD theorem, never 'the run's first unconditional forest theorem'; not a sharpening of E993-R25-FOREST-DESCENT-ORDER-BOUND-SHARP (an order bound is a different object); strict generalisation of frozen ENTRY 176. cycles/cycle-6/stage6/SYNTHESIS.md (4b9cc572...) Dispatch 1; cycles/cycle-6/stage5/adjudicators/U/ADJUDICATION.md (9624e817...). || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21 (Cycle 4 close); updated 2026-09-22 (Cycle 6 terminal close)).",
+      "aliases": [
+        "forest_delta_two_pos_ge_nine"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-CLAMPED-GREEDY-OPTIMALITY",
+      "statement": "In the reduced C1/C2 column system of the matching certificate, the clamped-greedy chain maximises mu_j pointwise among nonnegative feasible partial assignments; hence the certificate system at (d,r) is feasible if and only if clamped-greedy is.",
+      "scope": "The reduced C1/C2 column system; turns the small-rank band sweep (d in [3,300], r in [d, K(d)-1], 44,700 cells) from a witness search into a decision procedure — still bounded computation.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal; critic-attributed (C-T2-F); T-adjudicator-verified (cycles/cycle-4/stage5/adjudicators/T/ADJUDICATION.md (ecf43c7a...)); cycles/cycle-4/stage6/SYNTHESIS.md (2c23c6ea...) B1. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21 (Cycle 4 close); updated 2026-09-22 (Cycle 5 close); run notes: [cycle5_note] The j = r+1 column lies outside the reduced C1/C2 system and is separately discharged: the alive b-constraint (r+1) t_P >= 2(m-r) exists whenever m > r, is formed by neither the recursion, the optimality induction nor the shipped generator, holds with zero failures at every band cell with d <= 400 (79,600 cells), and is proved on the binding band-bottom family with exact slacks 1 + 3/(d^2-4) (even d) and 1 + 1/(d-1) (odd d). No registered statement is impeached. Critic-derived (C-T1-U); adjudicator-confirmed (cycles/cycle-5/stage5/adjudicators/T/ADJUDICATION.md (7faae7a9...)); cycles/cycle-5/stage6/SYNTHESIS.md (dfa5bddc...) R20.).",
+      "aliases": [
+        "greedy-optimality lemma"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-ALIVE-WINDOW",
+      "statement": "For a graph of order 2r+d with a fixed matching of m edges and K = 2m-d: a_j != 0 implies j in [max(0,K-r), min(m,r)] and b_j != 0 implies j in [max(0,K-r+1), min(m,r+1)].",
+      "scope": "Elementary; unconditional in d; fixes the small-rank band's upper endpoint at K(d)-1 (the lower endpoint r = d is C-T2-F's cardinality/award account).",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal; seat T2 with both critics' repaired proof (cycles/cycle-4/stage5/adjudicators/T/ADJUDICATION.md (ecf43c7a...) E5); cycles/cycle-4/stage6/SYNTHESIS.md (2c23c6ea...). || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21 (Cycle 4 close)).",
+      "aliases": [
+        "alive-window lemma"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-NR1-DECOMPOSITION",
+      "statement": "NR1 (Delta_{x(F)+1}(F) <= 0 for forests) is the union of the registered VERIFIED E993-INDEPENDENCE-POSITIVE-DELTA-SIZE on orders <= 2x+3 with the single rank r = x(F)+1 of Tier 1 on orders >= 2x+4; hence Tier 1 implies NR1 implies x(G + K1) <= x(G)+1.",
+      "scope": "A reduction in honest conditional form; the two bands are complementary; prices the T-C4-04 residue at exactly one rank of Tier 1.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal; critic-attributed (C-T4-U); T-adjudicator-verified (cycles/cycle-4/stage5/adjudicators/T/ADJUDICATION.md (ecf43c7a...)); cycles/cycle-4/stage6/SYNTHESIS.md (2c23c6ea...). || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21 (Cycle 4 close)).",
+      "aliases": [
+        "NR1 decomposition"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-KADDITION-CLOSURE-X-LE-4",
+      "statement": "x(G + K1) <= x(G)+1 for every finite forest G with x(G) <= 4 (no order bound in the hypothesis).",
+      "scope": "Fixed-rank, named as such: x(G + K1) <= x(G)+1 for every finite forest G with x(G) <= 4, no order bound in the hypothesis. CONDITIONAL -> VERIFIED at the Cycle 5 close: both former dependencies addressed — Hunter's spanning-tree inequality PROVED in-run (E993-R25-HUNTER-SPANNING-TREE-INEQUALITY) and the un-replayed finite scan replaced by E993-R25-SECOND-ORDER-TWO-SIDED-CEILING, whose parameter space is proved complete (Delta_4 < 0 implies |V| <= 19 < 21). Remaining input named on its face: the order-<= 21 in-run forest census (8,355,831 classes; established in Cycle 4, replayed byte-identically by both Cycle 4 critics; not re-run in Cycle 5). Smallest open rank x = 5, residue orders 22-29 (about 1.9e10 classes).",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal; critic-derived (C-T3-U's composition, C-T3-F concurring); Hunter's half seat-derived (T3); T adjudicator re-derived end to end (cycles/cycle-5/stage5/adjudicators/T/ADJUDICATION.md (7faae7a9...)); cycles/cycle-5/stage6/SYNTHESIS.md (dfa5bddc...) R16. Cycle 4 record: critic C-T4-F, CONDITIONAL on two dependencies. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21 (Cycle 4 close); updated 2026-09-22 (Cycle 5 close)).",
+      "aliases": [
+        "K1-addition closure x <= 4"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-FOURTH-BAND-CLOSE-ALL-R",
+      "statement": "For every finite forest F and natural r >= 1: |V(F)| = 2r+5 and x(F) < r imply Delta_r(F) <= 0.",
+      "scope": "FIXED-BAND d = 5 (the diagnostic band E993-C3-FOREST-FOURTH-WIDE-CROSSING-SIGN), every r; x(F) < r load-bearing. Composed at the Cycle 4 synthesis from eight inputs; graded at the weakest link. TWO LINKS CARRIED FROM THE RECORD WITHOUT A CYCLE 4 RE-DERIVATION: the cover-fiber/Hall bound Delta_k - Delta_{k-1} <= Bd(r,k) on the nu = tau = 6 class, and the general half of c(5) = 5. Supersedes E993-R25-FOURTH-BAND-CLOSE-R-LE-260 (kept as the historical record). Consequence stated exactly and no further: Tier 1's remaining region is the excesses d >= 6. Not awarded (no input beyond the matching half is formalised).",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal (cycles/cycle-4/stage6/SYNTHESIS.md (2c23c6ea...) Composition B): window reduction; cover half c(5) = 5 (registered, proved_informal); matching half E993-R25-FOURTH-BAND-SEVEN-EDGE-MATCHING-SIGN (formally verified); Konig range b <= 2r-1-a (critic-attributed C-F2-T, C-F2-U); Corollary F at d = 5 (now from the extended E993-R25-STRATUM-DEPTH-COROLLARY-F); the cover-fiber/Hall bound (Cycle 3 record); E993-R25-BD-TAIL-NEGATIVE; exhaustive r <= 5 (0 / 585 / 7,469 class members, one crossing instance at x = 4 with Delta_5 = -235). || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21 (Cycle 4 close)).",
+      "aliases": [
+        "diagnostic band closed for every r",
+        "Composition B"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-MATCHING-DUAL-SCALAR-CORE",
+      "statement": "For all natural m, K with K <= 2m and 3(2m-K) <= 2m+2, and every hard index n (K+1 < 2n, n <= m): descFactorial(n, s) >= 2^s * descFactorial(m+n-K-1, s) with s = 2n-K-1 (inequality (P) at every hard index, both parities of K); together with the discriminant factorisation 9d^2 + 12(m+1)d - 12(m+1)^2 = 3(3d - 2(m+1))(d + 2(m+1)) for d = 2m-K, the two-sided characterisation (the discriminant is <= 0 iff 3d <= 2m+2, for m, d >= 0), and step (S): (n+1)(K+1-n) >= 4(m+n-K)(m-n) on the region.",
+      "scope": "Pure arithmetic of the stratified matching-incidence certificate's greedy dual; uniform in (m,d) on the region and in the index; no horizon; m and d are numerals; no SimpleGraph, Delta_k or indepCount occurs; nu, tau and x(F) < r enter nowhere. EXCLUDED: it is the SCALAR core and does NOT raise E993-R25-MATCHING-ALL-INDEX-DUAL-POSITIVITY (whose object is coefficientwise-in-t nonnegativity of N_j); not the large-rank theorem; not the Tier 3a schema; no statement about any graph, forest, G1 tuple, tier, FOREST, TREE, TRANSFER or Erdos #993; no sharpness claim; no certificate-existence claim for any graph.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "Stage 7 governed lean-proof-workflow run runs/lean-2026-09-22-c5-matching-dual-scalar-core: formally_verified (kernel + informal audit + fidelity match); cycles/cycle-5/stage7/LEAN-GATE-CLOSEOUT.md. Informal DAG closed and every node kernel-checked before dispatch: definitions, discriminant lemmas, (S) and both base cases seat U1; the induction step and the induction principle CRITIC-ATTRIBUTED (C-U1-F toolkit-free, C-U1-T independently), rebuilt and audited by the U adjudicator (cycles/cycle-5/stage5/adjudicators/U/ADJUDICATION.md (dff3a726...)); cycles/cycle-5/stage6/SYNTHESIS.md (dfa5bddc...) AWARD GROUP A. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 5 close)).",
+      "aliases": [
+        "scalar core of the positivity lemma",
+        "inequality (P) at every hard index",
+        "U-C5-01 arithmetic core"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-G1-RESIDUAL-D5-SLICE",
+      "statement": "Every exact ordinary G1 tuple (T,v,s,g,p) satisfying the ten guards, with U = T - (N_T[v] u N_T[g]) in the original closed neighbourhoods and residual order |U| = 2p+1 (residual excess d' = 5), satisfies Delta_{p-2}(U) <= 0.",
+      "scope": "FIXED-SLICE d' = 5 only; registered by the equation |U| = 2p+1. Finiteness of U comes from guard 9 (not guard 1); p >= 3 comes from guard 10 alone; guard 10 is exactly the band hypothesis x(U) < p-2 and is load-bearing (3,206 of 264,648 guard-1-to-9 tuples with |U| = 2p+1 have Delta_{p-2}(U) > 0); guards 2-8 inert. The slice is EMPTY for p-2 <= 4 as a theorem and settled exhaustively at p-2 = 5 without the band, so the informal band E993-R25-FOURTH-BAND-CLOSE-ALL-R is load-bearing only at p-2 >= 6. No part of the grade may be sourced to E993-R25-FOURTH-BAND-SEVEN-EDGE-MATCHING-SIGN alone. With the registered d' = 2 and d' = 4 slices and E993-R25-G1-RESIDUAL-D3-SLICE, the Tier 2 residue is every d' >= 6 plus the single cell p = 6 at d' = 3. E993-G1WIDE-NO-SIZE-CAP stays OPEN (uniform in |U|; nothing bounds d' above); no status transfer to any tier.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal, capped by the band's weakest link. Composition first stated by the Cycle 4 synthesis (Composition C); independent controller-commissioned second read confirmed_with_repairs (cycles/cycle-5/stage5/second-read/COMPOSITION-C/SECOND-READ.md (4ffa57d4...): guards read literally from the frozen Lean; canonical census 265,749 = 224,403 pointed classes reproduced; 893 d' = 5 tuples / 793 classes all passing); registered on the Cycle 5 synthesis's ruling (cycles/cycle-5/stage6/SYNTHESIS.md (dfa5bddc...) R1). || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 5 close)).",
+      "aliases": [
+        "Composition C",
+        "d' = 5 Tier 2 slice"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-BAND-CARRY-STEP-HALL",
+      "statement": "For every finite simple graph F of order 2r+5 with a vertex cover C, |C| = 6, and nu(F) = 6: Delta_k(F) - Delta_{k-1}(F) <= Bd(r,k) for every integer k, with Bd the RANGED object Bd(r,k) = D(2r-1,k) + sum_{a=1}^{6} C(6,a) max(0, max_{0 <= b <= 2r-1-a} D(b,k-a)).",
+      "scope": "nu enters once (the numeric equality producing the C -> B bijection); tau = 6 fixes C(6,a) and |B| = 2r-1; d = 5 enters only through the order; x(F) < r enters nowhere; acyclicity enters nowhere; nu = tau is proved load-bearing by an explicit nu < tau control. No horizon. The graph-theoretic carry step of the d = 5 band's closure, now DERIVED (it was carried from the Cycle 3 record in Cycle 4).",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "formally_verified (governed lean-proof-workflow run runs/lean-2026-09-22-c6-band-carry-step-hall(-repair-1): kernel + independent informal audit + independent fidelity match; cycles/cycle-6/stage7/LEAN-GATE-CLOSEOUT.md; award C6-LA2). Terminal declaration ErdosR25BandCarryStep.bandCarryStepHall (order 2r+5; vertex cover C of card 6; matching M with 12 vertices — hypothesis sets equivalent to nu = tau = 6; every integer k; RANGED Bd with range b <= 2r-1-a load-bearing; r >= 4 derived inside the proof; acyclicity nowhere). CRITIC-ATTRIBUTED to C-F3-T and C-F3-U for ALL THREE declarations (cover-fiber partition identity; Koenig saturation lemma; the composition), on seat F3's unmodified clamp lemma and arithmetic layer; two independent Lean proofs before the governed run. FIXED-BAND d = 5: a SECOND formally verified INPUT of E993-R25-FOURTH-BAND-CLOSE-ALL-R, NOT a closure — that composition stays proved_informal at its weakest link; progress toward no tier. Node (i) is in substance the first Lean proof of the registered E993-GRAPH-VERTEX-COVER-DELTA-PARTITION (differenced form). cycles/cycle-6/stage6/SYNTHESIS.md (4b9cc572...) Dispatch 2; cycles/cycle-6/stage5/adjudicators/F/ADJUDICATION.md (4160cfe0...). || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 5 close); updated 2026-09-22 (Cycle 6 terminal close)).",
+      "aliases": [
+        "cover-fiber/Hall carry step",
+        "Composition B input 6"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-BINOMIAL-DIFFERENCE-CATALAN-CEILING",
+      "statement": "With E(n,k) = C(n,k+1) - C(n,k) (zero-extended): for every k >= 0 and every n >= 2k+2, E(n,k) >= Cat_{k+1}, with equality exactly at n = 2k+2, and E(.,k) strictly increasing on n >= 2k+2.",
+      "scope": "Binomial/Catalan integers; no graph content. (The return's 'increment > 0 for n >= 2k-1' is wrong: exactly 0 at n = 2k-1; strictness begins at n = 2k.) Reduces the exceptional cells of c(5) = 5's general half from eight (three at tau = 4, five at tau = 5) to the five tau = 5 cells by algebra.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal; seat F3 (Lemma T); verified independently by both F3 critics and the F adjudicator (k = 0..79, n = 2k+2..2k+41; 0 violations; equality 80/80); cycles/cycle-5/stage6/SYNTHESIS.md (dfa5bddc...) R3. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 5 close); updated 2026-09-22 (Cycle 6 terminal close); run notes: [cycle6_note] Scope note only (the rank-isolation reduction is NOT registered as drafted): the monotonicity clause makes the Gamma-route verification at fixed (tau, d) a single minimal-rank cell per k, uniformly for tau <= d+3 (sharpened hypothesis, C-F4-T); a two-line corollary of this claim (C-F4-U). cycles/cycle-6/stage6/SYNTHESIS.md (4b9cc572...) R3 'DO NOT REGISTER'.).",
+      "aliases": [
+        "Lemma T"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-G1-RESIDUAL-D3-SLICE",
+      "statement": "Every exact ordinary G1 tuple satisfying the ten guards with residual order |U| = 2p-1 (residual excess d' = 3) satisfies Delta_{p-2}(U) <= 0, for every p >= 3.",
+      "scope": "FIXED-SLICE d' = 3 only. Theorem-grade at every p except p = 6, where it is bounded computation inherited from the matching band's live cell (d,r) = (3,4). Forest-restricted and LITERATURE-FREE: U is a forest; at d = 3 the window is empty (c(3) = 3, m(3) = 4), so tau(U) <= 3 (the registered VERIFIED E993-R25-COVER-THRESHOLD-MIN-D-5-FOREST at d = 3, strict and uniform) and tau(U) >= 4 (the run's own matching branch at nu >= m(3) = 4) are exhaustive — the Basit-Galvin (2021) Theorem 3 dependency is DISCHARGED for this slice at every rank; the graph-general E993-GRAPH-SECOND-WIDE-CROSSING-SIGN still carries it and any citation of it must. Guard 10 is x(U) < p-2 verbatim. No transfer to Tier 2.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal (bounded computation at p = 6); seat T4's chartered deliverable (the dependency trace residualExcess_three_sign_of_external_d3 -> E993-GRAPH-SECOND-WIDE-CROSSING-SIGN -> E993-GRAPH-COVER-TAIL-CERTIFICATE -> Basit-Galvin, used only in the vc >= 4 branch); both halves re-proved uniformly by both T4 critics (Delta_k >= Gamma(3,k) > 0 for k >= 3, a conjunct of the formally verified Catalan award; k = 1 by the forest edge bound; k = 2 by a case analysis at n = 9); T adjudicator verified (cycles/cycle-5/stage5/adjudicators/T/ADJUDICATION.md (7faae7a9...)); cycles/cycle-5/stage6/SYNTHESIS.md (dfa5bddc...) R4. The seat's own 'new gap' was an alias breach (gate ruling 9) of the registered cover theorem. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 5 close)).",
+      "aliases": [
+        "d' = 3 Tier 2 slice",
+        "Basit-Galvin discharge"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-HUNTER-SPANNING-TREE-INEQUALITY",
+      "statement": "For finite sets A_1..A_m and any spanning tree T on the index set: |union A_i| <= sum |A_i| - sum_{(i,j) in T} |A_i n A_j|.",
+      "scope": "General set systems; no graph, no horizon; no source vendored — proved in-run.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal; seat T3 (seat-derived); the T adjudicator read the induction line by line and brute-forced 2,410,945 system/tree pairs (cycles/cycle-5/stage5/adjudicators/T/ADJUDICATION.md (7faae7a9...)); C-T3-F 5,157,120 exhaustive pairs; C-T3-U 66,519; cycles/cycle-5/stage6/SYNTHESIS.md (dfa5bddc...) R5. Discharges the first named dependency of E993-R25-KADDITION-CLOSURE-X-LE-4. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 5 close)).",
+      "aliases": [
+        "Hunter's inequality (in-run proof)"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-SECOND-ORDER-TWO-SIDED-CEILING",
+      "statement": "For every finite forest G: Delta_4(G) < 0 implies |V(G)| <= 19, and Delta_5(G) < 0 implies |V(G)| <= 29.",
+      "scope": "FIXED-RANK (k = 4, 5), named as such; the (e, c_e, degree multiset) parameter space is PROVED complete (a proved superset); the tail is supplied by the formally verified (k+1)^2 award. NOT a no-recovery statement. Composed with the order-<= 21 in-run census this closes rank x = 4 of the K1-addition target and narrows x = 5 to orders 22-29.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal; critic-derived (C-T3-U, C-T3-F: the second Bonferroni inequality on i_k plus Theorem C below, exact DP over the parameter space; ceilings 4, 8, 12, 19, 29, 40, 53, 69 at k = 1..8); the T adjudicator built the certificate independently and reproduced every margin at k = 4, 5 (cycles/cycle-5/stage5/adjudicators/T/ADJUDICATION.md (7faae7a9...)); cycles/cycle-5/stage6/SYNTHESIS.md (dfa5bddc...) R6. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 5 close)).",
+      "aliases": [
+        "two-sided second-order ceiling"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-FOREST-ORDER-BOUND-SHARPENED",
+      "statement": "For every finite forest G and every k >= 2: Delta_k(G) < 0 implies |V(G)| <= k^2 + k + 3 (with N*(1) = 4).",
+      "scope": "Forests; uniform in k >= 2 (N*(1) = 4). Strictly sharper than the formally verified (k+1)^2 by exactly k-2 for k >= 3; never a weaker sibling and never 'improving the award'. The formerly named-open step — the argmin at e = n-1, c_e = 1 minimising H(n,k,e,min(e,n-e)) — was PROVED unconditionally in Cycle 6 by seat T2 (closed form W(e+1) - W(e) = -(1+delta) C(n-4,k-2) - C(n-4,k-1), delta >= -1, n >= 4 tight) and kernel-checked (formally_verified for award C6-LA6: ErdosR25T2.candidateD_argmin, an INTEGER statement about zero-extended binomials with no graph token; the c_e = 1 bridge critic-attributed to C-T2-F); this is a SCOPE UPDATE, explicitly NOT a grade change of this claim — the full graph theorem's assembly (N12; binding node N3, the maximum-weight auxiliary spanning tree over the line graph; the tree-ordering bridge of Hunter's inequality; an explicit e = 0 node) is unformalised. Hunter's inequality is Cycle 5 seat T3's (E993-R25-HUNTER-SPANNING-TREE-INEQUALITY), not T1's. Seat T2's section 5 states the two boundary-order sign tests INVERTED and is struck (control/C6-CONTROLLER-ADDENDUM-T2-S5.md); the true facts: H - C < 0 at n = k^2+k+3 and > 0 at n = k^2+k+4 for every k >= 2 tested.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal with one named open step; seat T3's computation; closed form and termination critic-derived (C-T3-U, C-T3-F); T adjudicator recomputed k = 1..12 (cycles/cycle-5/stage5/adjudicators/T/ADJUDICATION.md (7faae7a9...)); cycles/cycle-5/stage6/SYNTHESIS.md (dfa5bddc...) R7. Cycle 6 terminal Stage 7 candidate D. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 5 close); updated 2026-09-22 (Cycle 6 terminal close); run notes: [cycle6_note] Grade unchanged at proved_informal, now with NO named-open step in the informal proof. cycles/cycle-6/stage6/SYNTHESIS.md (4b9cc572...) R2(i), Dispatch 6; cycles/cycle-6/stage5/adjudicators/T/ADJUDICATION.md (a1172bab...); cycles/cycle-6/stage5/second-read/T-BUNDLE/SECOND-READ.md (b97906c0...; q1 complete, q2 confirmed_with_repairs) (Q2).).",
+      "aliases": [
+        "N*(k) = k^2+k+3",
+        "sharpened forest order bound"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-MA-CATALAN-COMPARISON",
+      "statement": "M_a(r) := max_{0 <= b <= 2r-1-a} D(b, r-a) satisfies M_a(r) <= Cat_{r-1-a} for a = 1..6 and every r >= 15, with no computational residue; r >= 15 is sharp (M_6(14) = 3230 > Cat_7 = 429).",
+      "scope": "Binomial/Catalan integers; fixed-band d = 5 through the range 2r-1; uniform in r; never uniform in d. With Cat_r - sum_{a=1}^{6} C(6,a) Cat_{r-1-a} = Gamma(6,r-1) and the formally verified Gamma(6,k) > 0 for k >= 12, the Bd tail becomes a corollary of a registered formal award for r >= 15.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "theorem, proved_informal, no horizon; seat U2 (the chain: boundary, tail, interior); the two repairs critic-derived jointly (C-U2-T, C-U2-F: the unimodality lemma's hidden hypothesis removed by the difference form; the six-pair residue removed by closed form for every m >= 9 / (**) for m >= 7); U adjudicator replayed end to end to r = 400 and the repairs to m = 60,000 (cycles/cycle-5/stage5/adjudicators/U/ADJUDICATION.md (dff3a726...)); cycles/cycle-5/stage6/SYNTHESIS.md (dfa5bddc...) R8. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 5 close)).",
+      "aliases": [
+        "Bd tail via the Catalan gap",
+        "U-C5-02"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-D-ROW-STEP-SIGN-LAW",
+      "statement": "With h(g) = D(2m-g, m): m(2m-g)(h(g+1) - h(g)) = C(2m-g, m-1)(2m - g^2 + g) for 0 <= g < m, hence sign(h(g+1) - h(g)) = sign(2m - g^2 + g) with no hypothesis on N(g); and the integral peak bracket N(g_c) <= 4 g_c - 5 at the argmax g_c.",
+      "scope": "Arithmetic of the integer function g -> D(2m-g, m). The name must not be read as unimodality of any independence sequence: proved from a sign identity, importing no shape premise on any i_k. No horizon. The seat's drafted Lean contract D_unimodal_peak (bracket g_c^2 - g_c < 2m+2) is a FALSE proposition (true at 28 of 399 values) and must never be dispatched.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "formally_verified (governed lean-proof-workflow run runs/lean-2026-09-22-c6-bd-step-sign-interior-peak: kernel + independent informal audit + independent fidelity match; cycles/cycle-6/stage7/LEAN-GATE-CLOSEOUT.md; award C6-LA4). Both conjuncts kernel-checked as the registered lemmas D_step_sign (ENTRY 24 of the run; 1 <= m, g < m; no hypothesis on N(g)) and peak_bracket_integral (ENTRY 15) inside the award project whose terminal is ErdosR25C6U2.bdStepSign_interiorPeak_award; the alias to this registered statement (both conjuncts verbatim) stated by the synthesis and re-confirmed by the controller against this statement before dispatch. Cycle 5 critic attribution PRESERVED (C-U2-T, C-U2-F); node 2b compiled independently by C-U2-F and C-U2-T; seat U2 for nodes 1, 2a, 4, 5, 6, 7. Fixed-band d = 5 arithmetic; the object is the integer function g -> D(2m-g, m), never a shape premise on any i_k; D_unimodal_peak exists nowhere as a declaration or shape (its name occurs only inside the negative fence text). Raises nothing else — not E993-R25-BD-TAIL-NEGATIVE. cycles/cycle-6/stage6/SYNTHESIS.md (4b9cc572...) Dispatch 4; cycles/cycle-6/stage5/adjudicators/U/ADJUDICATION.md (9624e817...). || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 5 close); updated 2026-09-22 (Cycle 6 terminal close)).",
+      "aliases": [
+        "D-row step sign law"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-FOREST-DELTA3-THRESHOLD-ORDER-12",
+      "statement": "Delta_3(F) > 0 for every finite forest F of order >= 12; sharp at 11, where P_11 is the unique minimiser (Delta_3 = -14).",
+      "scope": "FIXED-RANK (k = 3), uniform in order, no horizon; nu, tau enter nowhere; acyclicity at exactly two points; x(F) < r never assumed (x >= 4 is a corollary). Registered as the FIRST PROOF of an in-run recorded statement (the threshold was recorded in Cycle 4), NOT as a new statement and NEVER as a sharpening of E993-R25-FOREST-DESCENT-ORDER-BOUND-SHARP. The excess reading is a translation of a fixed-rank fact, not a d-band result. Proof: the pendant-vertex identity Delta_k(F) = Delta_k(F-v) + Delta_{k-1}(F-v-u) for a leaf v with neighbour u, an induction (Lemma D2's edgeless-forest case repaired), and exhaustive bases; the order-12 base is unnecessary (an exhaustive base at order 8, 76 classes, suffices with Lemma D1).",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal; seat U3 (mechanism and proof); the edgeless repair and the uniqueness critic-derived (both U3 critics); the pendant identity kernel-checked twice by the critics (C-U3-F pendant_identity/pendant_delta; C-U3-T pendant_identity_draft); U adjudicator verified (cycles/cycle-5/stage5/adjudicators/U/ADJUDICATION.md (dff3a726...)); cycles/cycle-5/stage6/SYNTHESIS.md (dfa5bddc...) R10. Population counts in the return were duplicate-inflated x47-x1,708 (struck; the enumeration was complete). || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 5 close)).",
+      "aliases": [
+        "Delta_3 forest threshold",
+        "U-C5-03"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-CARD5-JOINT-BUDGET-CELLS",
+      "statement": "For every finite forest of order 15 with tau <= 5: Delta_4 >= +21 > 0; of order 17 with tau <= 5: Delta_5 >= +42 > 0; and by the same argument all five registered tau = 5 cells close with +9, +5, +9, +21, +42 at orders 9, 11, 13, 15, 17. Operative form: the affine certificate f(d) >= 42 - 14d on the cross-degree profile, exactly tight at both chartered cells.",
+      "scope": "FIXED-CELL (one (r,k,order) triple each), not uniform in d; tau <= 5 load-bearing and cover-essential at orders 15 and 17 only; the constraint sum crossdeg <= order - 1 is LOAD-BEARING (removing it degenerates the refinement exactly to the size-only bound -18/-14); the unstated padding lemma (tau <= 5 implies a card-5 cover exists) is required. Carries the ballot identity: the size-only card-5 bound at the top-rank cell IS Gamma(5,k) identically, so K(5) = 6 and 'size-only closes from order 19 up' are one fact and the small-rank list is exactly k in {1..5}. A second, non-census derivation of instances of the registered VERIFIED E993-R25-COVER-THRESHOLD-MIN-D-5-FOREST, whose status it does NOT change. True cell minima by exhaustive census: +56 (order 15), +43 (order 17).",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "formally_verified (governed lean-proof-workflow run runs/lean-2026-09-22-c6-card5-cells-and-cover-catalan(-repair-1): kernel + independent informal audit + independent fidelity match; cycles/cycle-6/stage7/LEAN-GATE-CLOSEOUT.md; award C6-LA5). The five cells kernel-checked on actual SimpleGraph forests (IsAcyclic; Fintype.card X = 9/11/13/15/17; a Finset cover of card <= 5): cell_9 (9 <= delta F 1), cell_11 (5 <= delta F 2), cell_13 (9 <= delta F 3), cell_15 (21 <= delta F 4), cell_17 (42 <= delta F 5), inside the terminal Erdos993G1.ThirdWide.card5_cells_and_cover_catalan_award; acyclicity enters at exactly one declaration (budget_bound). FIXED-CELL (one (r,k,order) triple each, top rank k = r-1 only). MANDATORY DISCLOSURES: cell_9's positivity content is already frozen ENTRY 175 more generally, so the delivered novelty is FOUR cells; the cover hypothesis is vacuous at orders 9 and 11 (nu <= 5 = tau by Koenig for order <= 11) and cover-essential only at 15 and 17; the bounds are far from sharp at four cells (true minima 19/39/56/56/43); NO Lean object in this run discharges the lower ranks k < r-1, so E993-R25-COVER-THRESHOLD-MIN-D-5-FOREST is not discharged; never c(d) = min(d,5) in Lean; never a tier statement. Attribution: seat U3 (Lean assembly, padding lemma); the LP-dual certificate and the five-cell reach critic-derived in Cycle 5 (C-U4-T, C-U4-F). cycles/cycle-6/stage6/SYNTHESIS.md (4b9cc572...) Dispatch 5; cycles/cycle-6/stage5/adjudicators/U/ADJUDICATION.md (9624e817...). || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 5 close); updated 2026-09-22 (Cycle 6 terminal close); run notes: [cycle6_note] Order-13 population corrected: 3,073 forests with tau <= 5 (3,658 is the TOTAL order-13 forest class count); 153/710 coincide with the totals because the hypothesis is vacuous there; 10,648 and 29,915 are the tau <= 5 populations at 15 and 17 (U adjudicator). cycles/cycle-6/stage6/SYNTHESIS.md (4b9cc572...) R2(v).).",
+      "aliases": [
+        "tau = 5 small-rank closure",
+        "U-C5-04"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-PENDANT-CAP-TAU-7",
+      "statement": "The minimum of Delta_{r-1} over the padding simplex of any connector-only (7,7,r) skeleton is attained at some pendant vector p with sum p <= 45, uniformly in r.",
+      "scope": "The (7,7,r) cells, ALL 1,082 skeleton classes (128 connector-only + 954 cover-edge; F[C] = empty is used nowhere), uniformly in r. Criterion of record: a Pascal term is <= 0 exactly when n_S <= 2(r-1-t) - 1 (equivalently |B n N(S)| >= 2|S|+3), NOT n_S <= 2(r-1-t) - 2 (sufficient only); through the same termination argument the constant of record is Sum p <= 40 = max_t (2t+2)(8-t), NOT 45 (both critics C-T4-F and C-T4-U independently; T adjudicator verified the arithmetic; both constants are attained by cell-valid configurations, so 40 is the method's exact ceiling). The order-derived padding box 0 <= Sum p <= 2r-K already makes the cap vacuous at r = 15; it binds only at large r. A load-bearing step supplied by C-T4-U: the greedy move stays inside the cell (p_{c*} >= 6 keeps the SDR, so nu = tau = 7 survives). The Cycle 5 attribution (C-T2-U) is not reopened. No 'extremality at tau = 7' reading.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal; critic-derived (C-T2-U: an exact per-subset Pascal criterion for the pendant -> isolated move); T adjudicator checked the Pascal step and the termination bound by hand (cycles/cycle-5/stage5/adjudicators/T/ADJUDICATION.md (7faae7a9...)); the 1,346-move check accepted on shipped evidence; cycles/cycle-5/stage6/SYNTHESIS.md (dfa5bddc...) R12. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 5 close); updated 2026-09-22 (Cycle 6 terminal close); run notes: [cycle6_note] cycles/cycle-6/stage6/SYNTHESIS.md (4b9cc572...) R2(ii); cycles/cycle-6/stage5/adjudicators/T/ADJUDICATION.md (a1172bab...).).",
+      "aliases": [
+        "pendant cap at tau = 7"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-THIN-TREE-LOGCONCAVE-TAU-LE-9",
+      "statement": "No thin tree (skeleton on <= 2 tau - 1 vertices plus at most one pendant leaf per cover vertex) with cover number tau <= 9 has a log-concavity failure at any rank; a fortiori none has an in-window failure and none recovers.",
+      "scope": "Unconditional, no horizon: the band of orders 2 tau .. 3 tau - 1 is forced, so the case analysis is complete (orders <= 25 by the registered census; the remainder by exhaustive sweep).",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal; critic-derived (C-F4-U; the low band also C-F4-T); F adjudicator reproduced two rows by brute force and the whole above-25 slice (cycles/cycle-5/stage5/adjudicators/F/ADJUDICATION.md (bb87445f...)); cycles/cycle-5/stage6/SYNTHESIS.md (dfa5bddc...) R13. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 5 close)).",
+      "aliases": [
+        "thin trees tau <= 9 log-concave"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-THIN-TREE-LOGCONCAVE-TAU-LE-10",
+      "statement": "No thin tree with cover number tau <= 10 has a log-concavity failure at any rank.",
+      "scope": "CONDITIONAL on the registered order-<= 25 census (E993-UNIV-TREE-TRS2, smallest_witness_order 26), which must travel on its face; the sweep above order 25 is exhaustive (729,303 classes at tau = 10, reproduced by both critics).",
+      "status": "CONDITIONAL",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal modulo the named census; critic-derived (C-F4-U); cycles/cycle-5/stage6/SYNTHESIS.md (dfa5bddc...) R14. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 5 close)).",
+      "aliases": [
+        "thin trees tau <= 10 log-concave"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-THIN-TREE-TOP-ORDER-CLASSIFICATION",
+      "statement": "For every tau >= 2, the thin trees of cover number exactly tau and order exactly 3 tau - 1 are exactly the once-subdivided free trees on tau vertices with one pendant leaf per original vertex; the correspondence is a bijection of isomorphism classes, so there are exactly t(tau) of them.",
+      "scope": "Unconditional, structural, no horizon (reproduces the seat's top-order row 6, 11, 23, 47, 106 and predicts 235 / 551 / 1301; 235 confirmed at tau = 11 by both critics).",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal; critic-derived (C-F4-U; C-F4-T derived the same closed form independently); F adjudicator verified at tau = 4..11 (cycles/cycle-5/stage5/adjudicators/F/ADJUDICATION.md (bb87445f...)); cycles/cycle-5/stage6/SYNTHESIS.md (dfa5bddc...) R15 (Theorem C). || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 5 close)).",
+      "aliases": [
+        "thin-tree top-order classification"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-THIN-FOREST-NO-RECOVERY-TAU-LE-10",
+      "statement": "Every forest all of whose components are thin trees with cover number tau <= 10 is log-concave at every rank, hence has no recovery at any rank.",
+      "scope": "Rests on the two VERIFIED TRS2 claims (log-concavity is closed under convolution) and inherits E993-R25-THIN-TREE-LOGCONCAVE-TAU-LE-10's conditionality on the order-<= 25 census.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal with the named input; critic-derived (C-F4-T); cycles/cycle-5/stage6/SYNTHESIS.md (dfa5bddc...) R15 (forest corollary). || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 5 close)).",
+      "aliases": [
+        "thin forests tau <= 10 no recovery"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-STRATUM-COROLLARY-F-D12-REFUTED",
+      "statement": "The extension of E993-R25-STRATUM-DEPTH-COROLLARY-F beyond d <= 11 to d = 12 (tau = nu = 13) is FALSE at k = r-2 for every r in {20,...,28}, with explicit witness forests at every one of those nine ranks (e.g. r = 25: order 62, uniform cover-degree 4, Delta_23 = -192,621,735,920; r = 20: order 52, Delta_18 = -442,663,386); on the witnesses x(F) = r-2, so the conclusion x(F) >= r-1 also fails; neither recovers.",
+      "scope": "Witness-backed refutation of an EXTENSION beyond a registered scope; the registered claim (d in {2,...,11}) is untouched and not impeached. The k = r-2 qualifier is mandatory. NO Tier 1 contact: the witnesses are unimodal and log-concave with Delta_r < 0. The failure widens with d (negative band r = 21..261 at tau = 14; open past r = 400 at tau = 15..20); the onset threshold is r >= (tau(D-1)+2)/2. r = 19 at tau = 13 stays OPEN (>= +89,857,131 under two controlled null searches; exhaustive over the single-hub family: +405,520,555).",
+      "status": "REFUTED",
+      "smallest_witness_order": 52,
+      "certificate": "Exact witnesses: seat F2 for r = 20, 25; r = 21..28 critic-attributed (C-F2-T closed-form single-hub family attaining the joint bound to the digit; C-F2-U exhaustive profiles); both witnesses rebuilt from edge lists by both critics with independent code and by the F adjudicator (the r = 25 witness from the closed form alone) (cycles/cycle-5/stage5/adjudicators/F/ADJUDICATION.md (bb87445f...)); cycles/cycle-5/stage6/SYNTHESIS.md (dfa5bddc...) R19. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 5 close)).",
+      "aliases": [
+        "Corollary F fails at d = 12",
+        "F-C5-02 refutation"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-MATCHING-ALL-INDEX-COEFFICIENTWISE-NONNEG",
+      "statement": "For all naturals m, K, d with K + d = 2m and 3d <= 2m+2, the certificate-dual polynomial N_j(t) is coefficientwise nonnegative for EVERY j <= m (clause (a) of E993-R25-MATCHING-ALL-INDEX-DUAL-POSITIVITY).",
+      "scope": "Uniform in d, m and j; no horizon; no graph object; nu, tau, x(F) < r nowhere; the region 3d <= 2m+2 is exactly sharp (off-region witness (m,d) = (1,2): N_1 = -t-1). Substitution t = r - K. EXCLUDED: clause (b) of the parent claim (mu_j^g(t) >= 0, denominator positivity, clamp persistence) is formalised nowhere, so the parent stays proved_informal and 'the coefficientwise positivity lemma is formal' must never be shortened to 'the all-index dual positivity claim is formal'; the j = m instance IS the sufficiency half of E993-R25-MATCHING-CERTIFICATE-POSITIVITY-IFF (Q_{m,d} = m! N_m; two registry keys); the converse half is not formalised; bears not at all on E993-R25-MATCHING-BRANCH-UNIFORM-SIGN (OPEN).",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "formally_verified (governed lean-proof-workflow run runs/lean-2026-09-22-c6-matching-all-index-coefficientwise: kernel + independent informal audit + independent fidelity match; cycles/cycle-6/stage7/LEAN-GATE-CLOSEOUT.md; award C6-LA3). Terminal declaration ErdosR25.E1CoeffWise.Nj_nonneg_all_index (Nonneg renamed CoeffNonneg); the sixth award imported byte-identically. Attribution: seat U1 for the polynomial apparatus and the j = m assembly; the general-j lift CRITIC-ATTRIBUTED jointly to C-U1-T and C-U1-F (independently; the seat's stated obstruction did not exist). Documentation erratum on the award's face: the contract's def-wcoef description and INFORMAL-PROOF sections 1/7 give the dropped common factor as (j+1)! 'equivalently m! at j = m' — mutually inconsistent; the correct literal is j! (Q_{m,d} = m! N_m), and the Lean reproduces the correct object (fidelity reviewer). cycles/cycle-6/stage6/SYNTHESIS.md (4b9cc572...) Dispatch 3; cycles/cycle-6/stage5/adjudicators/U/ADJUDICATION.md (9624e817...). || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 6 terminal close)).",
+      "aliases": [
+        "coefficientwise positivity lemma (all j)",
+        "clause (a) of the all-index dual positivity",
+        "U-C6-01 award"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-BD-INTERIOR-PEAK-CATALAN-BOUND",
+      "statement": "For all naturals m, g with 7 <= m, g <= m, 2m <= g^2 - g and (g-1)^2 - (g-1) < 2m: D(2m-g, m) <= Cat_{m-1}, with D(b,m) = C(b,m+1) - 2C(b,m) + C(b,m-1) over the integers, zero-extended.",
+      "scope": "Parameterized in m with the explicit threshold 7 <= m (load-bearing: fails below); the maximiser is supplied as a WITNESS of the two bracket inequalities and never asserted to exist (exactly one witness g per m). Fixed-band d = 5 arithmetic ingredient; no graph content; 'the step-sign law and interior peak bound', never 'the band's tail'; raises neither E993-R25-BD-TAIL-NEGATIVE nor E993-R25-FOURTH-BAND-CLOSE-ALL-R.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "formally_verified (governed lean-proof-workflow run runs/lean-2026-09-22-c6-bd-step-sign-interior-peak: kernel + independent informal audit + independent fidelity match; cycles/cycle-6/stage7/LEAN-GATE-CLOSEOUT.md; award C6-LA4). Second conjunct of the terminal ErdosR25C6U2.bdStepSign_interiorPeak_award (interior_peak_le_cat, node 8 core). New content with no registered predecessor; CRITIC-ATTRIBUTED to C-U2-F on seat U2's nodes 1, 2a, 4, 5, 6, 7. cycles/cycle-6/stage6/SYNTHESIS.md (4b9cc572...) Dispatch 4; cycles/cycle-6/stage5/adjudicators/U/ADJUDICATION.md (9624e817...). || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 6 terminal close)).",
+      "aliases": [
+        "interior_peak_le_cat",
+        "node 8 core of the Bd tail DAG"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-CARD5-COVER-CATALAN-BOUND",
+      "statement": "For every finite simple graph F on n+5 vertices with a vertex cover C of card 5 and every natural k: C(n,k+1) - C(n,k) - 5 Cat_{k-1} - 10 Cat_{k-2} - 10 Cat_{k-3} - 5 Cat_{k-4} - Cat_{k-5} <= Delta_k(F) (each Catalan term present only when its index is >= 0), together with the six-term telescoping identity for Gamma(5,k).",
+      "scope": "Parameterized in (n,k); unconditional (no floor hypothesis); the card-5 analogue of frozen ENTRY 179 (card 4), consuming the renamed cover_rank_bound_five (the frozen ENTRY 170 collision resolved). EXCLUDED: Gamma(5,k) > 0 for k >= 6 (catalan_gap5_pos) is an instance of the formally verified E993-R25-CATALAN-GAP-MONOTONE-RATIO at tau = 5 and is NOT registered as new; not c(d) = min(d,5); not a tier statement.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "formally_verified (governed lean-proof-workflow run runs/lean-2026-09-22-c6-card5-cells-and-cover-catalan(-repair-1): kernel + independent informal audit + independent fidelity match; cycles/cycle-6/stage7/LEAN-GATE-CLOSEOUT.md; award C6-LA5). Statement (b) of the terminal Erdos993G1.ThirdWide.card5_cells_and_cover_catalan_award (cover_catalan_bound_five; catalan_gap5_identity). CRITIC-ATTRIBUTED to C-U3-F (unconditional form and transcription closure), with C-U3-T independently for the identity and the conditional form; the six coefficients are forced by back-substitution, not searched. cycles/cycle-6/stage6/SYNTHESIS.md (4b9cc572...) Dispatch 5; cycles/cycle-6/stage5/adjudicators/U/ADJUDICATION.md (9624e817...). || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 6 terminal close)).",
+      "aliases": [
+        "cover_catalan_bound_five",
+        "card-5 Catalan gap bound"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-RANK5-CEILING-SHARPENED-TO-25",
+      "statement": "For every finite forest F: Delta_5(F) < 0 implies |V(F)| <= 25; equivalently every finite forest on >= 26 vertices has Delta_5(F) >= 0.",
+      "scope": "FIXED-RANK k = 5. An ORDER BOUND (contrapositive Delta_5 >= 0), never a no-recovery statement, never bundled with the x <= 4 closure. Composition on its face: orders 26-29 proved in-run over a proved-complete (e, c_e, degree multiset) superset including disconnected forests, every (e, c_e) != (n-1, 1) and the edgeless case; n >= 30 composed with the registered rank-5 ceiling 29 (whose tail is the formal (k+1)^2 = 36 for n >= 37 plus the second-order certificate for 30 <= n <= 36). STRUCTURAL REPAIR (second read): the chain 36 -> 33 -> 29 -> 25 is a numerically decreasing sequence, not a derivation chain — k^2+k+3 = 33 is NOT on the derivation path of 25. Named dependencies: the classical second- and third-order Bonferroni inequalities; E993-R25-HUNTER-SPANNING-TREE-INEQUALITY (proved_informal, Cycle 5 seat T3); the AM-GM substitution; kappa(n,k) >= 0. Residue for x = 5 on orders 22-25: forests with at least THREE branch vertices (E993-R25-RANK5-TWO-BRANCH-EXACTNESS-ORDERS-22-29).",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal; seat T3 (Theorem E via Theorem D + a joint Pareto-frontier DP); reproduced digit for digit by both T3 critics by literal exhaustion of every admissible degree multiset (-9,527 / -8,598 / -6,139 / -3,738 / +578 / +9,435 / +24,767 / +41,513 at n = 22..29) and by the isolated second reader (cycles/cycle-6/stage5/second-read/T-BUNDLE/SECOND-READ.md (b97906c0...; q1 complete, q2 confirmed_with_repairs), Q2 confirmed_with_repairs); cycles/cycle-6/stage5/adjudicators/T/ADJUDICATION.md (a1172bab...); cycles/cycle-6/stage6/SYNTHESIS.md (4b9cc572...) R3. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 6 terminal close)).",
+      "aliases": [
+        "Theorem E",
+        "k = 5 order ceiling 25"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-FOREST-THIRD-ORDER-BONFERRONI-BOUND",
+      "statement": "Theorem D: the third-order Bonferroni bound on the number of independent k-sets of a triangle-free graph in terms of (n, e, c_e, degree multiset), with the AM-GM substitution and kappa(n,k) >= 0 (sole exception (5,4)).",
+      "scope": "Holds for EVERY triangle-free graph — acyclicity is used only through triangle-freeness (C-T3-U), which is why the chartered lever under-delivers; alone it is WEAKER than the second-order certificate at every relevant order (loose on near-star profiles) and is useful only in the joint Pareto combination.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal; seat T3 (statement and proof); triangle-free scope CRITIC-ATTRIBUTED to C-T3-U; triple identities re-derived by both T3 critics; cycles/cycle-6/stage5/adjudicators/T/ADJUDICATION.md (a1172bab...); cycles/cycle-6/stage6/SYNTHESIS.md (4b9cc572...) R3. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 6 terminal close)).",
+      "aliases": [
+        "Theorem D"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-RANK5-TWO-BRANCH-EXACTNESS-ORDERS-22-29",
+      "statement": "Every finite forest of order 22-29 with at most two branch vertices (vertices of degree >= 3) has Delta_5 >= 0.",
+      "scope": "Bounded computation, COMPLETE on the named finite class: 20,108,361 isomorphism classes / 19,955,812 Delta_5 evaluations, zero violations, with a positive-detection control and an AHU completeness control; the two-hub tree sub-family at orders 22-25 is 227,966 classes (58,648 / 86,660 / 126,677 / 183,325 structures per C-T3-F's count). SUPERSEDES any spider candidate (the seat's spider enumeration covers connected spanning trees only, 15,650 distinct classes, its '10,738' struck). Consequence: the x = 5 residue of the K1-addition target is exactly the forests of order 22-25 with at least three branch vertices.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "bounded computation (complete finite class); CRITIC-ATTRIBUTED to C-T3-U, corroborated by C-T3-F; cycles/cycle-6/stage5/adjudicators/T/ADJUDICATION.md (a1172bab...); cycles/cycle-6/stage6/SYNTHESIS.md (4b9cc572...) R3. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 6 terminal close)).",
+      "aliases": [
+        "two-branch-vertex exactness"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-THIN-TREE-LOGCONCAVE-TAU-LE-11",
+      "statement": "No thin tree with cover number tau <= 11 has a log-concavity failure at any rank.",
+      "scope": "Thin = at most one pendant leaf per cover vertex; order in [2tau, 3tau-1] exactly (order 33 = 3tau is outside the band). CONDITIONAL on the registered order-<= 25 census (E993-UNIV-TREE-TRS2, orders 22-25 at tau = 11) and on Cycle 5 critic C-F4-T's orders 27-32 (unreplicated in Cycle 6); order 26 is Cycle 6's exhaustive sweep (336,219 skeletons, 10,601,172 attachment instances, 1,178,732 distinct thin classes, zero failures), reproduced to the unit orbit-free by both F1 critics; orders 32 (235 classes) and 35 at tau = 12 (551) closed by C-F1-U. Successor of E993-R25-THIN-TREE-LOGCONCAVE-TAU-LE-10.",
+      "status": "CONDITIONAL",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal modulo the named census and the named Cycle 5 critic sweep; seat F1 (order 26); both F1 critics independently; cycles/cycle-6/stage5/adjudicators/F/ADJUDICATION.md (4160cfe0...); cycles/cycle-6/stage6/SYNTHESIS.md (4b9cc572...) R3. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 6 terminal close)).",
+      "aliases": [
+        "thin trees tau <= 11"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-THIN-FOREST-NO-RECOVERY-TAU-LE-11",
+      "statement": "Every forest all of whose components are thin trees with tau <= 11 is log-concave at every rank and has no recovery at any rank.",
+      "scope": "Via E993-TRS2-IFF-ALC and E993-TRS2-CONVOLUTION-CLOSURE with the POSITIVE-INTERVAL-SUPPORT hypothesis and E993-TRANSFER-TO-FOREST's per-component discipline on its face; inherits E993-R25-THIN-TREE-LOGCONCAVE-TAU-LE-11's conditionality. Successor of E993-R25-THIN-FOREST-NO-RECOVERY-TAU-LE-10; NOT a scope note on E993-R25-RECOVERY-LOGCONCAVITY-NECESSARY. The in-window question at tau = 12 stays open at exactly h in {6,7,8} of order 26 (764,513 skeletons; the two known tau = 12 log-concavity failures T(3,4,4) (h = 3, rank 13, -378) and W2 (h = 4, rank 13, -68) are out of window; padding either with isolated vertices to m <= 3000, K2 blocks or each other yields no in-window failure); the standing in-window minimum tau = 21 is unchanged.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal with the named inputs; seat F1's Debt conclusion, corrected by both F1 critics (alias to the registered tau <= 10 keys; h = 9, 10, 11 closed independently by both; h = 8 to 58.8% by C-F1-U); cycles/cycle-6/stage5/adjudicators/F/ADJUDICATION.md (4160cfe0...); cycles/cycle-6/stage6/SYNTHESIS.md (4b9cc572...) R3. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 6 terminal close)).",
+      "aliases": [
+        "thin forests tau <= 11"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-SINGLE-HUB-HALL-EQUIVALENCE",
+      "statement": "For a single-hub structure whose hub touches every cover vertex, Hall-admissibility of the leaf profile holds if and only if at most one cover vertex has zero private leaves.",
+      "scope": "Necessary AND sufficient (Hall + the Koenig-Ore deficiency half); the hypothesis that the hub touches all of C is load-bearing; verified exhaustively over all 80,321 profiles at r = 19, tau = 13 (0 mismatches), superseding the seat's 4,000 random trials. The single-hub sub-family of the (r = 19, tau = 13) cell is positive at EVERY k <= 17 (12,199 admissible profiles, minimum +405,520,555), and the (3,4^12) profile is label-feasible exactly at r = 20; the cell itself stays OPEN (no proof, no witness; the hyperforest floor +89,857,131 is an attained value, not a proved floor).",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal; CRITIC-ATTRIBUTED to C-F2-T (general form), re-derived by C-F2-U; seat F2 stated the instance form; cycles/cycle-6/stage5/adjudicators/F/ADJUDICATION.md (4160cfe0...); cycles/cycle-6/stage6/SYNTHESIS.md (4b9cc572...) R3. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 6 terminal close)).",
+      "aliases": [
+        "Hall characterisation of single-hub profiles"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-SURPLUS-COVER-EDGE-BUDGET",
+      "statement": "On the tau = nu stratum with cover C: the hub surplus sigma and the number e_C of cover-internal edges satisfy sigma + e_C <= tau - 1.",
+      "scope": "Structural; turns the seat's assumed e_C = 0 into a budget fact (cover edges and hub surplus draw on one budget).",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal; jointly CRITIC-ATTRIBUTED (C-F2-T, C-F2-U); cycles/cycle-6/stage5/adjudicators/F/ADJUDICATION.md (4160cfe0...); cycles/cycle-6/stage6/SYNTHESIS.md (4b9cc572...) R3. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 6 terminal close)).",
+      "aliases": [
+        "sigma + e_C <= tau - 1"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-STRATUM-DEGREE-LE-3-POSITIVE",
+      "statement": "On the tau = nu stratum in the uniform single-hub family with cover degree D <= 3: Delta_{r-2} > 0 at every feasible r.",
+      "scope": "Exact sign decomposition at k = r-2, term by term (not a scan). The asymptotic criterion G(tau,D) = 2 + (1/2)[(3-D) tau q (1+q)^(tau-1) + (1+q)^tau - 1], q = 2^(1-D), predicting that the tau = 15..20 bands at D = 4 never close (G(tau,4) < 0) and explaining the late tau = 14 closure (G(14,4) = +0.055), is a DERIVATION, not a theorem (its Gaussian-ratio limit step carries no error bound).",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal; CRITIC-ATTRIBUTED to C-F2-U; cycles/cycle-6/stage5/adjudicators/F/ADJUDICATION.md (4160cfe0...); cycles/cycle-6/stage6/SYNTHESIS.md (4b9cc572...) R3. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 6 terminal close)).",
+      "aliases": [
+        "D <= 3 positivity"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-STRATUM-BAND-TAU-D-FACTS",
+      "statement": "Negative bands of Delta_{r-2} on the uniform single-hub family indexed by (tau, D): tau = 13, D = 4: r = 21..28 (closes); tau = 14, D = 4: r = 22..261 (closes; strictly positive to r = 3,000, non-negative at spot checks to 131,072; D = 4 is the only negative degree slice at tau = 14); tau = 15..20, D = 4: open to r <= 3,000; tau = 17, D = 5: r = 35..89 (closes) — the first evidence that a tau >= 15 band can close.",
+      "scope": "BOUNDED COMPUTATION at the named horizons on the uniform single-hub family at fixed D (k = r-2 only) — not the joint bound, not general forests. The seat's tau = 14 'stress test' is VOID (its move set preserves the leaf total, confining it to a hyperplane the D = 4 band cannot reach; inside the band it reports positive against a negative truth) and carries no evidence; the closure conclusion stands on the critics' replacement evidence only. The onset threshold of record is r >= (3 tau + 2)/2.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "bounded computation; seat F2 (the tau = 14 band and the tau = 15..20 openness to r <= 1,500), extended and corrected by both F2 critics (C-F2-T: exhaustive single-hub multiset test at eight ranks 262-400; the (tau,D) sweep; C-F2-U: to r = 3,000); cycles/cycle-6/stage5/adjudicators/F/ADJUDICATION.md (4160cfe0...); cycles/cycle-6/stage6/SYNTHESIS.md (4b9cc572...) R3. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 6 terminal close)).",
+      "aliases": [
+        "(tau, D) negative bands"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-COVER-DIAGONAL-D6-RESIDUE-COMPLETE",
+      "statement": "Complete isomorphism-class census minima of Delta_{r-1} on the (d, tau, r) cells (6,6,3) +65, (6,6,4) +116, (6,6,5) +154, (7,7,4) +209, (7,7,5) +342 (all positive), completing the (6,6) diagonal residue at 8 closed / 2 refuted / 0 undetermined; and, on the theorem's own hypothesis tau <= 5, the two d = 6 cells (orders 10 and 12) closed by complete census: min Delta_1 = +26 over all 329 forests of order 10 and min Delta_2 = +66 over the 1,516 forests of order 12 with tau <= 5.",
+      "scope": "Bounded computation, complete on the named finite classes; the seat's bounded-probe minima (+75, +164, +279, +294, +623) are superseded; the seat's two-hub null search had an order-arithmetic bug (repaired minima +149, +245). The breaking cell of the slack argument on the diagonal, (6,6,9) order 24 Delta_8 = -78, is the REGISTERED D6-SIGN witness (a disclosed replay, not a new refutation). The 'order 9 vacuous' sentence is FALSE (min Delta_1 = +19 over 153 forests). The tau <= 5 Gamma-residue count by excess with s*(tau) and Lemma H's uniqueness half are STATED by the synthesis and NOT registered (they await an isolated second read).",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "bounded computation (complete finite classes); CRITIC-ATTRIBUTED to C-F4-T and C-F4-U independently; cycles/cycle-6/stage5/adjudicators/F/ADJUDICATION.md (4160cfe0...); cycles/cycle-6/stage6/SYNTHESIS.md (4b9cc572...) R3. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 6 terminal close)).",
+      "aliases": [
+        "(6,6) diagonal residue 8/2/0"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-MATCHING-BAND-REGION-DOMINATION",
+      "statement": "On the clamped-greedy certificate of the matching band d < r < K(d): with E_j = 2m+2-3j the recursion's drift term, Region I = {j : E_j > 0} and Region II = {j : E_j <= 0} exactly, and floor((K+1)/2) = K-d+1 for both parities; on Region I the clamp never bites, pointwise stratum domination holds STRICTLY (via the leak identity), and H3 (beta_cell <= sigma_{alpha+1} < 1) is a theorem; at d = 3 rank 3's whole window {3} lies in Region I, so the one-step lemma beta_cell(3,2) = 3/4 > 7/12 = beta_cell(3,1) and top-cell attainment are THEOREMS at d = 3; rank (r-1)'s whole window lies in Region I iff d is odd and r = d+1 (199 of 79,202 pairs at d <= 400).",
+      "scope": "The absolute-stratum closed form sigma_j(r) is identical to the registered (P,Q,alpha,i) recursion (7,080 cells). Region II is exactly {E_j <= 0}; the exact requirement there is jQ >= rho_j jP + (rho_j - 1)E_j (a free slack (rho_j - 1)|E_j|); the multiplicative strengthening Q >= rho_j P is REFUTED (661 witnesses at d <= 70, worst (6,8,7)); the seat's 'two refuted strengthenings' are one inequality; the seat's 'argmin always just inside Region II' is FALSE at d in {3,5,7,9}; the requirement's margin binds at the band top and decays like ~0.3/d, and the safety ratio's minimum ~1.4865 at (200,203,202) sits at the band BOTTOM (the critics use reciprocal rho conventions — never mix them). The d = 3 result is a grade change, NOT a closure of the live cell (3,4); the schema stays OPEN.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "proved_informal; seat T1 (the closed form, the Region I proof, the exact localisation); the strictness, the E_j characterisation, H3 as a theorem and the d = 3 theorem CRITIC-ATTRIBUTED (C-T1-F and C-T1-U independently); cycles/cycle-6/stage5/adjudicators/T/ADJUDICATION.md (a1172bab...); cycles/cycle-6/stage6/SYNTHESIS.md (4b9cc572...) R3. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 6 terminal close)).",
+      "aliases": [
+        "Region I domination",
+        "d = 3 top-cell theorem"
+      ],
+      "alias_patterns": []
+    },
+    {
+      "claim_key": "E993-R25-MATCHING-BAND-ABSORBING-RESIDUE",
+      "statement": "Of the 18,546,203 pointwise stratum comparisons of the matching band at d <= 400, 10,626,202 lie in Region I (theorem), and of the 7,920,001 Region-II steps 6,773,496 are absorbed (phi = 0 is absorbing in Region II); the genuinely open residue is 1,146,505 steps (6.2%), with zero violations of strict per-cell monotonicity over all 79,202 consecutive band pairs.",
+      "scope": "BOUNDED COMPUTATION at the attained horizon d <= 400 (seat T1's populations reproduced exactly by both critics); extending the horizon by sweeping is not a route. What closing the residue would give: top-cell attainment as a theorem, which with the j = r+1 constraint and a uniform top-cell margin bound closes the band d < r < K(d), the live cell (3,4) and the last open rank of the d' = 3 slice.",
+      "status": "VERIFIED",
+      "smallest_witness_order": null,
+      "certificate": "bounded computation; seat T1; CRITIC-ATTRIBUTED partition of the residue (C-T1-U) with C-T1-F's horizon corrections (the seat's d <= 100 literal is d <= 80); cycles/cycle-6/stage5/adjudicators/T/ADJUDICATION.md (a1172bab...); cycles/cycle-6/stage6/SYNTHESIS.md (4b9cc572...) R3. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 6 terminal close)).",
+      "aliases": [
+        "1,146,505-step residue"
+      ],
+      "alias_patterns": []
     }
   ],
-  "last_updated": "2026-09-20",
-  "update_note": "Authorized publication of the completed three-cycle G1 large-residual lineage. All 81 existing master claim objects are unchanged, including later r23b Horn-B scope clarifications and tag-closed wording. Imported 207 additional run-local identities at their exact recorded grades; 288 total. Six formal consequence identities come from three G1 contracts; this is not the total inventory of historical formal assets. TREE, FOREST, TRANSFER, unrestricted G1 and aggregated beta-prime remain open.",
+  "last_updated": "2026-09-22",
+  "update_note": "r25 publication (2026-09-22): 72 run-local identities of erdos-993-uniform-residual-no-recovery-dre-2026-09-20 imported additively at their accepted statuses and grades (13 of them at the formally_verified grade from twelve governed Lean awards; every informal result with grade and attribution on its face); all 288 prior master objects preserved (one note appended). Statuses are registry statuses at their explicit evidence grades, not a count of theorems.",
   "g1_publication": {
     "source_run": "erdos-993-g1-large-residual-dre-2026-09-13",
     "source_registry_sha256": "bceaa933993f5294db482a89b57a59f470a7de1fa6b51f2ce3c46227f59300eb",
@@ -35291,5 +36207,12 @@
     "added_identities": 207,
     "source_wording_for_shared_keys_retained_in_run_only": true,
     "novelty_claimed": false
+  },
+  "r25_publication": {
+    "run": "erdos-993-uniform-residual-no-recovery-dre-2026-09-20",
+    "terminal_manifest": "6bc912aecd177802c0c07b1990158afd27dc65131ed4dc8fb234ec1f8effdb44",
+    "imported": 72,
+    "formally_verified_awards": 12,
+    "date": "2026-09-22"
   }
 }

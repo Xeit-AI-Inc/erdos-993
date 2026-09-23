@@ -17,6 +17,10 @@ of size `k`. The problem asks whether
 is weakly unimodal whenever `G` is a finite tree, and likewise whenever `G` is
 a finite forest.
 
+## 2026-09-22: r25 six-cycle terminal close
+
+The completed [r25 uniform residual no-recovery experiment](experiments/r25-uniform-residual-no-recovery.md) adds twelve reproducible Lean packages at exact, narrow scopes — fixed-band `d = 5` matching and carry-step results, a Catalan-gap theorem, a uniform-in-`d` bottom-rank matching sign at rank `r = d` only, a sharp forest order bound `Δ_k < 0 ⟹ |V| ≤ (k+1)²`, the uniform-in-order forest threshold `Δ₂ > 0` (order ≥ 9), coefficientwise positivity of the certificate dual for every index, and the five `τ ≤ 5` small-rank cells on actual forests — and 72 registered identities. Every headline stays open; no recovering forest exists anywhere in the evidence; the charter outcome is another fixed-band result plus method-fencing refutations, not a uniform advance. Read the [verification record](evidence/verification-2026-09-22-r25.md) and the [terminal controller review](runs/r25-uniform-residual-no-recovery-dre-2026-09-20/CONTROLLER-REVIEW-C6.md).
+
 ## 2026-09-20: G1 three-cycle results
 
 The completed [G1 large-residual experiment](experiments/g1-large-residual-dre-2026-09-13.md) adds three reproducible Lean packages. For a finite forest `F`, `r>=1`, order `2r+4`, and first strict descent before `r`, Cycle 3 proves `i_(r+1)(F)<=i_r(F)`. This gives ordinary G1 at residual order `|U|=2p`, alongside the earlier formal `p<=5` and `|U|=2p-2` cases. The intervening `|U|=2p-1` case remains informal with named dependencies.
@@ -165,6 +169,20 @@ The expected transitive axioms are `propext`, `Classical.choice`, and
 - [2026-09-18 r24 verification record](evidence/verification-2026-09-18-r24.md)
 - [r24 top-rank selector collapse Lean package](proofs/lean/r24-c4-top-rank-selector-collapse/README.md)
 - [r24 top-rank residual identity Lean package](proofs/lean/r24-c5-top-rank-residual-identity/README.md)
+- [r25 uniform residual no-recovery DRE (six cycles, terminal)](experiments/r25-uniform-residual-no-recovery.md)
+- [2026-09-22 r25 verification record](evidence/verification-2026-09-22-r25.md)
+- [r25-c1-fourth-band-seven-edge-matching-sign Lean package](proofs/lean/r25-c1-fourth-band-seven-edge-matching-sign/README.md)
+- [r25-c1-perfect-matching-even-excess-sign Lean package](proofs/lean/r25-c1-perfect-matching-even-excess-sign/README.md)
+- [r25-c3-catalan-gap-monotone-ratio Lean package](proofs/lean/r25-c3-catalan-gap-monotone-ratio/README.md)
+- [r25-c4-matching-bottom-rank-uniform-sign Lean package](proofs/lean/r25-c4-matching-bottom-rank-uniform-sign/README.md)
+- [r25-c4-forest-descent-order-bound-sharp Lean package](proofs/lean/r25-c4-forest-descent-order-bound-sharp/README.md)
+- [r25-c5-matching-dual-scalar-core Lean package](proofs/lean/r25-c5-matching-dual-scalar-core/README.md)
+- [r25-c6-forest-delta2-pos-order-9 Lean package](proofs/lean/r25-c6-forest-delta2-pos-order-9/README.md)
+- [r25-c6-band-carry-step-hall Lean package](proofs/lean/r25-c6-band-carry-step-hall/README.md)
+- [r25-c6-matching-all-index-coefficientwise-nonneg Lean package](proofs/lean/r25-c6-matching-all-index-coefficientwise-nonneg/README.md)
+- [r25-c6-bd-step-sign-and-interior-peak Lean package](proofs/lean/r25-c6-bd-step-sign-and-interior-peak/README.md)
+- [r25-c6-card5-cells-and-cover-catalan-bound Lean package](proofs/lean/r25-c6-card5-cells-and-cover-catalan-bound/README.md)
+- [r25-c6-sharpened-order-bound-argmin Lean package](proofs/lean/r25-c6-sharpened-order-bound-argmin/README.md)
 - [2026-09-01 r8 verification record](evidence/verification-2026-09-01-r8.md)
 - [Order-20/21 computational evidence](evidence/order-20-21-search/README.md)
 

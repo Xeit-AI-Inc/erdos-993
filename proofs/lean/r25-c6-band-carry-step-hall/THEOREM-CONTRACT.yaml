@@ -1,0 +1,298 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "c6-la2-c6-band-carry-step-hall-v1",
+  "theorem": {
+    "title": "Band carry step, Hall-admissible form (award group C6-LA2, E993-R25-BAND-CARRY-STEP-HALL, critic-attributed)",
+    "informal_statement": "For every finite simple graph F of order 2r+5 with a vertex cover C, |C| = 6, and a matching M with M.verts.ncard = 12 (i.e. nu(F) = tau(F) = 6, packaged as the matching itself since the proof consumes the saturating injection C -> B, not merely its cardinality): Delta_k(F) - Delta_{k-1}(F) <= Bd(r,k) for every integer k, with Bd the RANGED object (range b <= 2r-1-a; the range is load-bearing). This award uses the seat's own definitions (namespace ErdosR25BandCarryStep: choose [renamed from the seat's C, mandatory repair (3)], E, D, Mclamped, Bd, indepCount, coeff, delta, nonCover, bFinset) which re-declare the G1 semantics for this project, checked against SEMANTIC-CONTRACT.md (integer zero extension; the RANGED Bd). The frozen G1 project is not imported. MANDATORY FENCES (fail-closed, never silently weakened): FIXED-BAND d = 5, named as such -- d enters only through the order 2r+5; x(F) < r enters nowhere; acyclicity enters nowhere (graph-general given nu = tau, positively evidenced by a genuinely cyclic instance in EVIDENCE/verify_band_carry_step_hall.py); Bd is the RANGED object and the range is load-bearing; r >= 4 is derived inside the proof (from M.verts.ncard = 12 <= Fintype.card V = 2r+5), not assumed. An award here gives E993-R25-FOURTH-BAND-CLOSE-ALL-R a SECOND formally verified INPUT -- not a closure; that composition stays proved_informal at its weakest link; the arithmetic tail (E993-R25-BD-TAIL-NEGATIVE), the general half of c(5) = 5, Corollary F at d = 5 and the finite part are untouched; it is progress toward NO tier and resolves no headline. Node (i) (coverFiberPartitionIdentity) is, in substance, the first Lean proof of the registered E993-GRAPH-VERTEX-COVER-DELTA-PARTITION (differenced form, equivalent to the undifferenced node (i) under integer zero extension); this is recorded on the award's face and is not itself a new registration by this formalizer. ATTRIBUTION (travels on the award's face, mandatory repair (5)): critic-attributed to C-F3-T and C-F3-U for ALL THREE theorem-level declarations (node (i) coverFiberPartitionIdentity, node (ii) konigSaturation, the composition bandCarryStepHall), on seat F3's unmodified clamp_lemma and Arithmetic.lean; precedent: E993-R25-MATCHING-DUAL-SCALAR-CORE's critic-attributed induction step. Hypotheses, exactly as bound: V a fintype vertex type with decidable equality; F a simple graph on V with decidable adjacency; r a natural number with Fintype.card V = 2*r+5; C a finset vertex cover of F with C.card = 6; M a matching subgraph of F with M.verts.ncard = 12; k ranges over all integers."
+  },
+  "formulation_status": {
+    "status": "established",
+    "evidence": [
+      "cycles/cycle-6/stage6/SYNTHESIS.md :: ## Lean awards :: Dispatch 2 -- E993-R25-BAND-CARRY-STEP-HALL (critic-attributed)",
+      "cycles/cycle-6/stage6/SYNTHESIS.md :: ## Exact established results :: B1. The band carry step",
+      "cycles/cycle-6/stage5/adjudicators/F/ADJUDICATION.md :: ## Lean readiness :: Contract-ready: the band carry step",
+      "cycles/cycle-6/stage4/critics/F3/T/CRITIQUE.md :: ## Attacks and findings :: E. Both open nodes and the composed target are provable, and I proved them",
+      "cycles/cycle-6/stage4/critics/F3/U/CRITIQUE.md :: ## Attacks and findings :: A. The decisive finding: all three sorry'ed statements are provable, and I proved them",
+      "cycles/cycle-6/stage3/returns/F3/RETURN.md :: What this route actually derives and delivers"
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-choose",
+      "description": "Zero-extended binomial coefficient. RENAMED from the seat's `C` to `choose` (mandatory repair (3)): the seat's binomial `C` shadowed the cover binder `C` used throughout the graph layer; the binomial is renamed so the theorem statement's binder `C` stays exactly as the award's exact form requires.",
+      "lean_name": "ErdosR25BandCarryStep.choose",
+      "dependencies": ["domain-int"]
+    },
+    {
+      "id": "def-e",
+      "description": "E(n,k) = choose(n,k+1) - choose(n,k), the empty-fiber/edgeless difference of the run's symbol table.",
+      "lean_name": "ErdosR25BandCarryStep.E",
+      "dependencies": ["def-choose"]
+    },
+    {
+      "id": "def-d",
+      "description": "D(b,m) = choose(b,m+1) - 2*choose(b,m) + choose(b,m-1), the second difference.",
+      "lean_name": "ErdosR25BandCarryStep.D",
+      "dependencies": ["def-choose"]
+    },
+    {
+      "id": "def-cap-term",
+      "description": "The clamped, always-nonnegative per-b term max(0, D(b,m)), viewed in ℕ.",
+      "lean_name": "ErdosR25BandCarryStep.capTerm",
+      "dependencies": ["def-d"]
+    },
+    {
+      "id": "def-m-clamped",
+      "description": "Mclamped r a m = max(0, max_{0 <= b <= 2r-1-a} D(b,m)); 0 by convention on the empty range a > 2r-1. The RANGED object; the range is load-bearing.",
+      "lean_name": "ErdosR25BandCarryStep.Mclamped",
+      "dependencies": ["def-cap-term"]
+    },
+    {
+      "id": "def-bd",
+      "description": "The RANGED Bd(r,k), character-for-character the object of record (control/C4-CONTROLLER-ERRATA.json erratum C4-E-c): Bd(r,k) = D(2r-1,k) + sum_{a=1}^{6} choose(6,a) * Mclamped(r,a,k-a).",
+      "lean_name": "ErdosR25BandCarryStep.Bd",
+      "dependencies": ["def-d", "def-m-clamped"]
+    },
+    {
+      "id": "def-indep-count",
+      "description": "indepCount F k = Nat.card of the IsNIndepSet k subtype, the G1 definition quoted verbatim from SEMANTIC-CONTRACT.md.",
+      "lean_name": "ErdosR25BandCarryStep.indepCount",
+      "dependencies": ["domain-graph"]
+    },
+    {
+      "id": "def-coeff",
+      "description": "coeff F k = indepCount F k for k >= 0, 0 otherwise (integer zero extension).",
+      "lean_name": "ErdosR25BandCarryStep.coeff",
+      "dependencies": ["def-indep-count"]
+    },
+    {
+      "id": "def-delta",
+      "description": "delta F k = coeff F (k+1) - coeff F k; this is Delta_k(F) of the run's symbol table.",
+      "lean_name": "ErdosR25BandCarryStep.delta",
+      "dependencies": ["def-coeff"]
+    },
+    {
+      "id": "def-non-cover",
+      "description": "nonCover C = Finset.univ \\ C, the non-cover side B.",
+      "lean_name": "ErdosR25BandCarryStep.nonCover",
+      "dependencies": ["domain-graph"]
+    },
+    {
+      "id": "def-b-finset",
+      "description": "bFinset C S = nonCover C \\ (S.biUnion neighborFinset), i.e. b_S = |B \\ N(S)| in the original graph F.",
+      "lean_name": "ErdosR25BandCarryStep.bFinset",
+      "dependencies": ["def-non-cover"]
+    },
+    {
+      "id": "def-partner",
+      "description": "The M-matching partner of v (junk value v if unmatched). The ONLY declaration in this project elaborated under a local Classical.propDecidable instance (mandatory repair (4); see constructivity.rationale below for the full resolution), scoped to exactly this definition via a `section PartnerConstruction ... end PartnerConstruction` block that closes immediately afterward.",
+      "lean_name": "ErdosR25BandCarryStep.partner",
+      "dependencies": ["domain-graph"]
+    },
+    {
+      "id": "def-clamp-lemma",
+      "description": "General, graph-free Finset-sum bound: a sum over a finset t of size <= n, every term <= a nonnegative B, is bounded by n*B. Seat F3's Arithmetic.lean, carried unmodified. Not graph-theoretic; not proposed for registration (alias check).",
+      "lean_name": "ErdosR25BandCarryStep.clamp_lemma",
+      "dependencies": ["domain-int"]
+    },
+    {
+      "id": "def-d-eq-diff-e",
+      "description": "D is the second difference of choose(b,.): D(b,m) = E(b,m) - E(b,m-1). Seat F3's Arithmetic.lean, carried unmodified (modulo the repair-(3) rename of the binomial it calls).",
+      "lean_name": "ErdosR25BandCarryStep.D_eq_diff_E",
+      "dependencies": ["def-d", "def-e"]
+    },
+    {
+      "id": "def-cover-fiber-partition-identity",
+      "description": "Node (i): for ANY finite simple graph and ANY vertex cover C, coeff F k = sum over independent S subseteq C of choose(b_S, k - |S|). No nu = tau needed. Critic-attributed to C-F3-T (PRIMARY construction re-derived in this project).",
+      "lean_name": "ErdosR25BandCarryStep.coverFiberPartitionIdentity",
+      "dependencies": ["def-choose", "def-coeff", "def-b-finset", "domain-graph"]
+    },
+    {
+      "id": "def-konig-saturation",
+      "description": "Node (ii): given a matching M with M.verts.ncard = 2*|C| (packaging nu = tau = |C|), every S subseteq C satisfies b_S <= |B| - |S| (the Hall condition). The ONLY place nu = tau enters. Critic-attributed to C-F3-T.",
+      "lean_name": "ErdosR25BandCarryStep.konigSaturation",
+      "dependencies": ["def-b-finset", "def-non-cover", "def-partner", "domain-graph"]
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-int",
+      "description": "The integers, for the arithmetic layer (choose, E, D, capTerm, Mclamped, Bd, clamp_lemma).",
+      "lean_type": "ℤ",
+      "dependencies": []
+    },
+    {
+      "id": "domain-graph",
+      "description": "Finite simple graphs V with [Fintype V] [DecidableEq V], and F : SimpleGraph V with [DecidableRel F.Adj], for the graph layer.",
+      "lean_type": "SimpleGraph V",
+      "dependencies": []
+    }
+  ],
+  "quantifiers": [
+    {"binder": "V", "kind": "forall", "domain_id": "domain-graph"},
+    {"binder": "F", "kind": "forall", "domain_id": "domain-graph"},
+    {"binder": "r", "kind": "forall", "domain_id": "domain-int"},
+    {"binder": "C", "kind": "forall", "domain_id": "domain-graph"},
+    {"binder": "M", "kind": "forall", "domain_id": "domain-graph"},
+    {"binder": "k", "kind": "forall", "domain_id": "domain-int"}
+  ],
+  "hypotheses": [],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "theorem bandCarryStepHall {V : Type u} [Fintype V] [DecidableEq V] {F : SimpleGraph V} [DecidableRel F.Adj] (r : ℕ) (hcard : Fintype.card V = 2 * r + 5) (C : Finset V) (hC : F.IsVertexCover (↑C : Set V)) (hCcard : C.card = 6) (M : F.Subgraph) (hM : M.IsMatching) (hMcard : M.verts.ncard = 12) (k : ℤ) : delta F k - delta F (k - 1) ≤ Bd r k",
+    "dependencies": ["domain-graph", "domain-int", "def-cover-fiber-partition-identity", "def-konig-saturation", "def-clamp-lemma", "def-bd", "def-delta", "def-d-eq-diff-e"]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {"id": "domain-int", "kind": "domain"},
+      {"id": "domain-graph", "kind": "domain"},
+      {"id": "def-choose", "kind": "definition"},
+      {"id": "def-e", "kind": "definition"},
+      {"id": "def-d", "kind": "definition"},
+      {"id": "def-cap-term", "kind": "definition"},
+      {"id": "def-m-clamped", "kind": "definition"},
+      {"id": "def-bd", "kind": "definition"},
+      {"id": "def-indep-count", "kind": "definition"},
+      {"id": "def-coeff", "kind": "definition"},
+      {"id": "def-delta", "kind": "definition"},
+      {"id": "def-non-cover", "kind": "definition"},
+      {"id": "def-b-finset", "kind": "definition"},
+      {"id": "def-partner", "kind": "definition"},
+      {"id": "def-clamp-lemma", "kind": "definition"},
+      {"id": "def-d-eq-diff-e", "kind": "definition"},
+      {"id": "def-cover-fiber-partition-identity", "kind": "definition"},
+      {"id": "def-konig-saturation", "kind": "definition"},
+      {"id": "conclusion", "kind": "conclusion"}
+    ],
+    "edges": [
+      {"from": "domain-int", "to": "def-choose"},
+      {"from": "def-choose", "to": "def-e"},
+      {"from": "def-choose", "to": "def-d"},
+      {"from": "def-d", "to": "def-cap-term"},
+      {"from": "def-cap-term", "to": "def-m-clamped"},
+      {"from": "def-d", "to": "def-bd"},
+      {"from": "def-m-clamped", "to": "def-bd"},
+      {"from": "domain-graph", "to": "def-indep-count"},
+      {"from": "def-indep-count", "to": "def-coeff"},
+      {"from": "def-coeff", "to": "def-delta"},
+      {"from": "domain-graph", "to": "def-non-cover"},
+      {"from": "def-non-cover", "to": "def-b-finset"},
+      {"from": "domain-graph", "to": "def-partner"},
+      {"from": "domain-int", "to": "def-clamp-lemma"},
+      {"from": "def-d", "to": "def-d-eq-diff-e"},
+      {"from": "def-e", "to": "def-d-eq-diff-e"},
+      {"from": "def-choose", "to": "def-cover-fiber-partition-identity"},
+      {"from": "def-coeff", "to": "def-cover-fiber-partition-identity"},
+      {"from": "def-b-finset", "to": "def-cover-fiber-partition-identity"},
+      {"from": "domain-graph", "to": "def-cover-fiber-partition-identity"},
+      {"from": "def-b-finset", "to": "def-konig-saturation"},
+      {"from": "def-non-cover", "to": "def-konig-saturation"},
+      {"from": "def-partner", "to": "def-konig-saturation"},
+      {"from": "domain-graph", "to": "def-konig-saturation"},
+      {"from": "domain-graph", "to": "conclusion"},
+      {"from": "domain-int", "to": "conclusion"},
+      {"from": "def-cover-fiber-partition-identity", "to": "conclusion"},
+      {"from": "def-konig-saturation", "to": "conclusion"},
+      {"from": "def-clamp-lemma", "to": "conclusion"},
+      {"from": "def-bd", "to": "conclusion"},
+      {"from": "def-delta", "to": "conclusion"},
+      {"from": "def-d-eq-diff-e", "to": "conclusion"}
+    ]
+  },
+  "permitted_axioms": ["propext", "Classical.choice", "Quot.sound"],
+  "constructivity": {
+    "required": false,
+    "policy": "classical_allowed",
+    "rationale": "sorryAx was explicitly present on ALL THREE theorem-level declarations of the originating seat's GraphNodes.lean (coverFiberPartitionIdentity, konigSaturation, bandCarryStepHall) -- mandatory repair (1): the seat's own THEOREM-CONTRACT.yaml incorrectly said 'two of three', a literal both Cycle 6 critics struck as wrong and which this contract does NOT carry forward. This project's own 35 registered declarations are entirely sorry-free (mandatory repair (2): success_criteria.sorry_free is true below, updated from the seat's false value); four declarations (choose, E, D, capTerm) depend on no axioms at all; one (D_eq_diff_E) depends on [propext] alone; every other declaration, including the terminal theorem, depends on exactly [propext, Classical.choice, Quot.sound] (EVIDENCE/axiom-check-all-declarations.txt; zero sorryAx anywhere). Classical.propDecidable instance bridge (mandatory repair (4)): the originating critic construction (SOURCE/originating-critic-T-SeatLiteral.lean) needed the bridge `convert h using 2 <;> congr 1 <;> exact Subsingleton.elim _ _` because it combined the seat's GraphNodes.lean (whole-file `attribute [local instance] Classical.propDecidable`) with the critic's Node1.lean/Node3.lean (no such attribute; DecidableRel F.Adj alone suffices). This project needs no such bridge, by construction: Classical.propDecidable is a local instance in exactly one place (a `section PartnerConstruction ... end PartnerConstruction` block wrapping only the definition of `partner`, needed there to decide the general existential `∃ w, M.Adj v w`); the section closes immediately afterward, so every IsIndepSet/IsNIndepSet Finset.filter elsewhere (node (i) and the composition's own `set P := ... filter ...`) resolves its DecidablePred instance from [DecidableRel F.Adj] alone, consistently -- confirmed empirically (LeanProject/LeanProof/Main.lean contains zero occurrences of `Subsingleton.elim`, and `rw [carry_fiber C hC k]` inside bandCarryStepHall's own proof substitutes node (i)'s already-elaborated filter term directly with no bridge)."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "ErdosR25BandCarryStep.bandCarryStepHall",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem bandCarryStepHall {V : Type u} [Fintype V] [DecidableEq V]\n    {F : SimpleGraph V} [DecidableRel F.Adj] (r : ℕ)\n    (hcard : Fintype.card V = 2 * r + 5)\n    (C : Finset V) (hC : F.IsVertexCover (↑C : Set V)) (hCcard : C.card = 6)\n    (M : F.Subgraph) (hM : M.IsMatching) (hMcard : M.verts.ncard = 12)\n    (k : ℤ) :\n    delta F k - delta F (k - 1) ≤ Bd r k",
+    "expected_statement_sha256": "ad366e9b9b28361a0807442124798e87842115ac2c0e5b4d587a86095ef587ac"
+  },
+  "source_materials": [
+    {
+      "id": "source-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "sha256": "ebbdbd95562aee01b71614460325da1e4d7dea2f1a25288706723c4fe17c6706",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "source-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "sha256": "8af0ad5545f53f075b0d97733af08014eab3d67a3174b0deff2f65275d65a4cb",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-originating-seat-arithmetic",
+      "path": "SOURCE/originating-seat-F3-Arithmetic.lean",
+      "sha256": "8d438a342b0ef0739017330feb61db3cf0db9ab5f509569928d37ab468d25c48",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-originating-seat-graphnodes",
+      "path": "SOURCE/originating-seat-F3-GraphNodes.lean",
+      "sha256": "2a412052b8779f63576e4910c4689b79bfeb930223ec7e6ccd2349cf46a8aefa",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-originating-critic-t-seatliteral",
+      "path": "SOURCE/originating-critic-T-SeatLiteral.lean",
+      "sha256": "d316d79b2d3a8fffcaf499f98c1fc132981643ecfbd4ad71df12e1d2fdcc60e9",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-originating-critic-t-node1",
+      "path": "SOURCE/originating-critic-T-Node1.lean",
+      "sha256": "266e2cf8c17e1b643962e8224e7097a75cc9fd6be78084945010d62263436a22",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-originating-critic-t-node2",
+      "path": "SOURCE/originating-critic-T-Node2.lean",
+      "sha256": "066728c19972073220102584f39d0fa9e77e8592827b70027d8e6981a68a3bb8",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-originating-critic-t-node3",
+      "path": "SOURCE/originating-critic-T-Node3.lean",
+      "sha256": "3c393790ad8853a9438a371611baf2a7f2504bc99945197032a9a63c13551f6a",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-originating-critic-u-criticnode",
+      "path": "SOURCE/originating-critic-U-CriticNode.lean",
+      "sha256": "2fe846535bdc0a2a7afd77985f76f7063f2003e6590c2cfbecf84e84be824856",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-originating-critic-u-critickonig",
+      "path": "SOURCE/originating-critic-U-CriticKonig.lean",
+      "sha256": "001c3002975e695696218c49230420da9b5f0610fe0806e96beda3ee9be4db60",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-originating-critic-u-criticcompose",
+      "path": "SOURCE/originating-critic-U-CriticCompose.lean",
+      "sha256": "c7546f8f7810e852855cbb706c459b8d247990a20aed46604ab36ed3d8cbe976",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-evidence-generator",
+      "path": "EVIDENCE/verify_band_carry_step_hall.py",
+      "sha256": "7cda47682b370664e5f86383dc489aa239352005389b4ef94c2e36b034e48ccb",
+      "role": "reference"
+    }
+  ]
+}

@@ -7,3 +7,6 @@ proofs/lean/g1-c2-first-wide/LeanProof/Main.lean -text whitespace=-blank-at-eof
 proofs/lean/g1-c3-third-wide/LeanProof/Main.lean -text whitespace=-blank-at-eof,-blank-at-eol
 runs/g1-large-residual-dre-2026-09-13/TERMINAL-LEDGER.csv -text whitespace=cr-at-eol
 runs/g1-large-residual-dre-2026-09-13/OBLIGATIONS-C3-FINAL.csv -text whitespace=cr-at-eol
+
+# Preserve the exact governed r25 Lean sources (byte-identical exports; the card-5 package carries frozen line 3761's trailing space).
+proofs/lean/r25-*/source/LeanProof/*.lean -text whitespace=-blank-at-eof,-blank-at-eol

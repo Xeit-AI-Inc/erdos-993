@@ -1,0 +1,407 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "c1-la2-perfect-matching-uniform-sign-v1",
+  "theorem": {
+    "title": "Perfect-matching uniform sign (Cycle 1 award group B, companion contract)",
+    "informal_statement": "For every finite simple graph G on a vertex type X of cardinality 2m carrying a perfect matching (an injective f : Fin m x Bool -> X with G.Adj (f (i,false)) (f (i,true)) for every i : Fin m), and every natural r with 2m <= 3r+1: Delta_r(G) <= 0. Equivalently, with d = 2m-2r (always even, forced by the perfect-matching hypothesis): a perfect-matching graph of order 2r+d with 3d <= 2m+2 has Delta_r <= 0. Uniform over even d only; not Tier 3a (says nothing about graphs without a perfect matching); no sharpness claim; no transfer to firstDescent/x(G), forests, residuals, G1 tuples, Tier 1, Tier 2, the diagnostic band, FOREST, TREE, TRANSFER, E993-BETA-AGG, or Erdos #993."
+  },
+  "formulation_status": {
+    "status": "established",
+    "evidence": [
+      "Admitted by the Cycle 1 synthesis (cycles/cycle-1/stage6/SYNTHESIS.md, '## Lean awards', 'Award group B (companion) -- the perfect-matching uniform lemma'), the only uniform-in-d statement Cycle 1 produced.",
+      "Originating return cycles/cycle-1/stage3/returns/U2/RETURN.md; the outright perfect-matching proof is given in critique cycles/cycle-1/stage4/critics/U2/F/CRITIQUE.md section 4 (containment count (r+1)A_{r+1} <= 2(m-r)A_r, then 3d <= 2m+2 gives d <= r+1); reconciled in cycles/cycle-1/stage5/adjudicators/U/ADJUDICATION.md.",
+      "This run's kernel verification (RECEIPTS/kernel-verification.json, verdict 'verified') establishes only that the exact stated Lean declaration below type-checks with axioms propext, Classical.choice, Quot.sound; it is not, by itself, an independent informal audit or a fidelity review."
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-simple-graph",
+      "lean_name": "SimpleGraph",
+      "description": "Ordinary undirected loopless graph on an arbitrary vertex type.",
+      "dependencies": []
+    },
+    {
+      "id": "def-count",
+      "lean_name": "Erdos993G1.indepCount",
+      "description": "i_k(F) = (Nat.card {S : Finset V // F.IsNIndepSet k S} : Z). Actual independent k-subsets counted once; i_0=1 for every finite graph; zero beyond the independence number. Re-registered in this run (entry 1) with the identical defining body as the frozen G1 source, wrapped in 'namespace Erdos993G1 ... end Erdos993G1' instead of a top-level dotted declaration (a tooling-forced syntactic change only; see INFORMAL-PROOF.md section 1).",
+      "dependencies": [
+        "def-simple-graph"
+      ]
+    },
+    {
+      "id": "def-coeff",
+      "lean_name": "Erdos993G1.coeff",
+      "description": "coeff F k = if 0<=k then indepCount F k.toNat else 0 (integer zero extension). Re-registered in this run (entry 2), same tooling note as def-count.",
+      "dependencies": [
+        "def-count"
+      ]
+    },
+    {
+      "id": "def-delta",
+      "lean_name": "Erdos993G1.delta",
+      "description": "delta F k = coeff F (k+1) - coeff F k. Re-registered in this run (entry 3), same tooling note as def-count.",
+      "dependencies": [
+        "def-coeff"
+      ]
+    },
+    {
+      "id": "def-perfect-matching",
+      "lean_name": "Function.Injective",
+      "description": "The perfect-matching certificate is an injective f : Fin m x Bool -> X together with adjacency he : forall i, G.Adj (f (i,false)) (f (i,true)); since Nat.card X = 2*m = Fintype.card (Fin m x Bool), injectivity of f forces Finset.univ.image f = Finset.univ (perfectMatching_endpoints_univ, entry 11), i.e. f enumerates every vertex of X exactly once as one of m disjoint matched pairs.",
+      "dependencies": [
+        "def-simple-graph"
+      ]
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-vertices",
+      "lean_type": "Type u",
+      "description": "Arbitrary vertex type in an arbitrary universe.",
+      "dependencies": [
+        "def-simple-graph"
+      ]
+    },
+    {
+      "id": "domain-finite",
+      "lean_type": "Finite X",
+      "description": "Finiteness of the vertex type; Fintype and decidability are chosen internally (classical).",
+      "dependencies": [
+        "domain-vertices"
+      ]
+    },
+    {
+      "id": "domain-graph",
+      "lean_type": "SimpleGraph X",
+      "description": "An arbitrary ordinary simple graph on X. No acyclicity, no forest hypothesis.",
+      "dependencies": [
+        "domain-vertices",
+        "def-simple-graph"
+      ]
+    },
+    {
+      "id": "domain-matching-size",
+      "lean_type": "ℕ",
+      "description": "m: the number of matched pairs (Nat.card X = 2*m).",
+      "dependencies": []
+    },
+    {
+      "id": "domain-rank",
+      "lean_type": "ℕ",
+      "description": "r: the independent-set rank at which the sign is claimed. No upper bound other than 2m <= 3r+1.",
+      "dependencies": []
+    },
+    {
+      "id": "domain-matching-fn",
+      "lean_type": "Fin m × Bool → X",
+      "description": "The perfect-matching certificate f, injective, pairing (i,false) with (i,true) for each i : Fin m.",
+      "dependencies": [
+        "domain-matching-size",
+        "domain-vertices"
+      ]
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "X",
+      "kind": "forall",
+      "domain_id": "domain-vertices"
+    },
+    {
+      "binder": "finiteX",
+      "kind": "forall",
+      "domain_id": "domain-finite"
+    },
+    {
+      "binder": "G",
+      "kind": "forall",
+      "domain_id": "domain-graph"
+    },
+    {
+      "binder": "m",
+      "kind": "forall",
+      "domain_id": "domain-matching-size"
+    },
+    {
+      "binder": "r",
+      "kind": "forall",
+      "domain_id": "domain-rank"
+    },
+    {
+      "binder": "f",
+      "kind": "forall",
+      "domain_id": "domain-matching-fn"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-card",
+      "statement": "Nat.card X = 2 * m.",
+      "dependencies": [
+        "domain-finite",
+        "domain-matching-size"
+      ]
+    },
+    {
+      "id": "hyp-threshold",
+      "statement": "2 * m <= 3 * r + 1 (equivalently, with d := 2m-2r, 3d <= 2m+2; d is forced even by hyp-card and hyp-matching-inj).",
+      "dependencies": [
+        "domain-matching-size",
+        "domain-rank"
+      ]
+    },
+    {
+      "id": "hyp-matching-inj",
+      "statement": "Function.Injective f.",
+      "dependencies": [
+        "domain-matching-fn",
+        "def-perfect-matching"
+      ]
+    },
+    {
+      "id": "hyp-matching-adj",
+      "statement": "forall i : Fin m, G.Adj (f (i, false)) (f (i, true)).",
+      "dependencies": [
+        "domain-graph",
+        "domain-matching-fn"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "Erdos993G1.delta G (r : Z) <= 0. Proved via two named lemmas: perfectMatching_containment ((r+1)*indepCount G (r+1) <= (2*(m-r):N:Z)*indepCount G r, the incidence double count over the m matching edges) and perfectMatching_threshold_arith ((2*(m-r):N:Z) <= (r:Z)+1, by omega from hyp-threshold), combined by cancellation (indepCount nonneg, r+1>0) for r<m, with the r>=m case handled separately (indepCount G (r+1) = 0 since every independent set has cardinality <= m under a perfect matching).",
+    "dependencies": [
+      "hyp-card",
+      "hyp-threshold",
+      "hyp-matching-inj",
+      "hyp-matching-adj",
+      "def-delta"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "def-simple-graph",
+        "kind": "definition"
+      },
+      {
+        "id": "def-count",
+        "kind": "definition"
+      },
+      {
+        "id": "def-coeff",
+        "kind": "definition"
+      },
+      {
+        "id": "def-delta",
+        "kind": "definition"
+      },
+      {
+        "id": "def-perfect-matching",
+        "kind": "definition"
+      },
+      {
+        "id": "domain-vertices",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-finite",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-graph",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-matching-size",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-rank",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-matching-fn",
+        "kind": "domain"
+      },
+      {
+        "id": "hyp-card",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-threshold",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-matching-inj",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-matching-adj",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "def-simple-graph",
+        "to": "def-count"
+      },
+      {
+        "from": "def-count",
+        "to": "def-coeff"
+      },
+      {
+        "from": "def-coeff",
+        "to": "def-delta"
+      },
+      {
+        "from": "def-simple-graph",
+        "to": "def-perfect-matching"
+      },
+      {
+        "from": "def-simple-graph",
+        "to": "domain-vertices"
+      },
+      {
+        "from": "domain-vertices",
+        "to": "domain-finite"
+      },
+      {
+        "from": "domain-vertices",
+        "to": "domain-graph"
+      },
+      {
+        "from": "def-simple-graph",
+        "to": "domain-graph"
+      },
+      {
+        "from": "domain-vertices",
+        "to": "domain-matching-fn"
+      },
+      {
+        "from": "domain-matching-size",
+        "to": "domain-matching-fn"
+      },
+      {
+        "from": "domain-finite",
+        "to": "hyp-card"
+      },
+      {
+        "from": "domain-matching-size",
+        "to": "hyp-card"
+      },
+      {
+        "from": "domain-matching-size",
+        "to": "hyp-threshold"
+      },
+      {
+        "from": "domain-rank",
+        "to": "hyp-threshold"
+      },
+      {
+        "from": "domain-matching-fn",
+        "to": "hyp-matching-inj"
+      },
+      {
+        "from": "def-perfect-matching",
+        "to": "hyp-matching-inj"
+      },
+      {
+        "from": "domain-graph",
+        "to": "hyp-matching-adj"
+      },
+      {
+        "from": "domain-matching-fn",
+        "to": "hyp-matching-adj"
+      },
+      {
+        "from": "hyp-card",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-threshold",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-matching-inj",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-matching-adj",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-delta",
+        "to": "conclusion"
+      }
+    ]
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "explicit_axiom_allowlist",
+    "rationale": "Finite-type decidability, actual subset cardinalities, and the existing indepCount/coeff/delta definitions may use only the three standard approved axioms. No sorry, admit, sorryAx, native_decide, or mathematical assumption beyond the displayed hypotheses is permitted."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "Erdos993G1.C1LA2.perfectMatching_delta_nonpos",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem perfectMatching_delta_nonpos {X : Type u} [Finite X]\n    (G : SimpleGraph X) (m r : ℕ) (hn : Nat.card X = 2 * m) (hr : 2 * m ≤ 3 * r + 1)\n    (f : Fin m × Bool → X) (hf : Function.Injective f)\n    (he : ∀ i : Fin m, G.Adj (f (i, false)) (f (i, true))) :\n    Erdos993G1.delta G (r : ℤ) ≤ 0",
+    "expected_statement_sha256": "55639850c6d622371bad5b810a8624e6dbdb3ac8c31d3ea537257f9e753956d6"
+  },
+  "source_materials": [
+    {
+      "id": "source-synthesis",
+      "path": "SOURCE/SYNTHESIS.md",
+      "role": "theorem_intent",
+      "sha256": "b7cc57b1b2dda1c8d433c2436e7f3586b5282844700b0b1bda84b0fd8f48bae3"
+    },
+    {
+      "id": "source-semantic-contract",
+      "path": "SOURCE/SEMANTIC-CONTRACT.md",
+      "role": "definition_authority",
+      "sha256": "3bbeae0777006c9a4479f9976881f597373867782fe71157166dc75cb306aab3"
+    },
+    {
+      "id": "source-solution-contract",
+      "path": "SOURCE/SOLUTION-CONTRACT.md",
+      "role": "reference",
+      "sha256": "129225220caacf942bea2ad4d8e56548924897f3ab7a910b55e715c2e8c4c00f"
+    },
+    {
+      "id": "source-c3-main",
+      "path": "SOURCE/g1/LeanProof/Main.lean",
+      "role": "definition_authority",
+      "sha256": "aa517ebc678c552e4533ddd4c37e8b57bc3db0d58cdc91ef08f4e94c9fda1ca4"
+    },
+    {
+      "id": "source-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "role": "reference",
+      "sha256": "b11a52f24cfdeb5982b9a1afbfaa791741fa906e1c157b002f76154b0b69de49"
+    },
+    {
+      "id": "source-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "role": "theorem_intent",
+      "sha256": "93366e7c81065578d6fa5749172832404fac1cbe2805b00e330c93b371e20667"
+    }
+  ]
+}

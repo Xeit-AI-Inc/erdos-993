@@ -1,0 +1,217 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "c5-la1-matching-dual-scalar-core-v1",
+  "theorem": {
+    "title": "Matching dual scalar core (award group C5-LA1, E993-R25-MATCHING-DUAL-SCALAR-CORE)",
+    "informal_statement": "Pure arithmetic of the stratified matching-incidence certificate's greedy dual, uniform in (m, d) on the region and in the index, no horizon. The conjunction of: (1) the discriminant factorisation 9d^2+12(m+1)d-12(m+1)^2 = 3*(3d-2(m+1))*(d+2(m+1)) for all integers m,d; (2) the two-sided region characterisation: for m,d >= 0, the discriminant is <= 0 iff 3d <= 2m+2; (3) step (S): for m,d >= 0 with 3d <= 2m+2 and every integer n, (n+1)*((2m-d)+1-n) >= 4*(m+n-(2m-d))*(m-n); (4) PStatement m K n := Nat.descFactorial n (2n-K-1) >= 2^(2n-K-1) * Nat.descFactorial (m+n-K-1) (2n-K-1) holds at every hard index n (K+1 < 2n, n <= m) for all naturals m,K with K <= 2m and 3*(2m-K) <= 2m+2, i.e. both parities of K. SCOPE (mandatory fences): this is the SCALAR core; it does not raise E993-R25-MATCHING-ALL-INDEX-DUAL-POSITIVITY (whose object is the coefficientwise-in-t nonnegativity of N_j); it is not the large-rank theorem and not the Tier 3a schema; no statement about any graph, forest, G1 tuple, tier, FOREST, TREE, TRANSFER or Erdos #993; no SimpleGraph, Delta_k, indepCount occurs; no sharpness claim; no claim that a certificate exists for any particular graph; m and d are numerals (arbitrary naturals/integers as quantified, not fixed constants). Attribution (travels on the award's face): the definitions, the discriminant lemmas, step (S) and both base cases are seat U1's; the induction step (CRITIC-ATTRIBUTED, C-U1-F's toolkit-free proof, PRIMARY) and the induction principle (CRITIC-ATTRIBUTED, C-U1-T's Nat.le_induction scaffold, re-derived here to call C-U1-F's step) are critic-attributed, independently."
+  },
+  "formulation_status": {
+    "status": "established",
+    "evidence": [
+      "cycles/cycle-5/stage6/SYNTHESIS.md :: ## Lean awards :: AWARD GROUP A",
+      "cycles/cycle-5/stage5/adjudicators/U/ADJUDICATION.md :: ## Lean readiness :: 1. The positivity lemma's arithmetic core",
+      "cycles/cycle-5/stage4/critics/U1/F/CRITIQUE.md :: Finding 1",
+      "cycles/cycle-5/stage4/critics/U1/T/CRITIQUE.md :: F1",
+      "cycles/cycle-5/stage3/returns/U1/RETURN.md :: The mathematics, derived step by step"
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-pstatement",
+      "description": "(P): the greedy dual's scalar arithmetic-core statement in Nat.descFactorial form, s = 2n-K-1, q = m+n-K-1.",
+      "lean_name": "ErdosR25.E1ArithmeticCore.PStatement",
+      "dependencies": ["domain-nat"]
+    },
+    {
+      "id": "def-discriminant-factorization",
+      "description": "Award part 1: the discriminant 9d^2+12(m+1)d-12(m+1)^2 factors as 3*(3d-2(m+1))*(d+2(m+1)). Pure ring identity, seat U1.",
+      "lean_name": "ErdosR25.E1ArithmeticCore.discriminant_factorization",
+      "dependencies": ["domain-int"]
+    },
+    {
+      "id": "def-discriminant-in-k-matches-in-d",
+      "description": "The discriminant substituting K = 2m-d into the (K,m) form equals the (m,d) form. Pure ring identity, seat U1.",
+      "lean_name": "ErdosR25.E1ArithmeticCore.discriminant_in_K_matches_in_d",
+      "dependencies": ["domain-int"]
+    },
+    {
+      "id": "def-discriminant-nonpos-iff",
+      "description": "Award part 2: the two-sided region characterisation, discriminant <= 0 iff 3d <= 2m+2, for m,d >= 0. Seat U1.",
+      "lean_name": "ErdosR25.E1ArithmeticCore.discriminant_nonpos_iff",
+      "dependencies": ["domain-int", "def-discriminant-factorization"]
+    },
+    {
+      "id": "def-s-quadratic-nonneg",
+      "description": "Discriminant <= 0 implies the quadratic form 3n^2-3Kn+C is a sum-of-squares nonnegative. Seat U1.",
+      "lean_name": "ErdosR25.E1ArithmeticCore.S_quadratic_nonneg_of_discriminant_nonpos",
+      "dependencies": ["domain-int"]
+    },
+    {
+      "id": "def-s-holds-of-discriminant-nonpos",
+      "description": "Step (S) in its multiplicative form, from the discriminant hypothesis. Seat U1.",
+      "lean_name": "ErdosR25.E1ArithmeticCore.S_holds_of_discriminant_nonpos",
+      "dependencies": ["domain-int", "def-s-quadratic-nonneg"]
+    },
+    {
+      "id": "def-s-holds-on-region",
+      "description": "Award part 3: step (S) holds at every integer n on the region 3d <= 2m+2. Seat U1.",
+      "lean_name": "ErdosR25.E1ArithmeticCore.S_holds_on_region",
+      "dependencies": ["domain-int", "def-discriminant-nonpos-iff", "def-discriminant-in-k-matches-in-d", "def-s-holds-of-discriminant-nonpos"]
+    },
+    {
+      "id": "def-p-base-s1",
+      "description": "Base case s=1 (K even, K=2c, n=c+1); the region hypothesis is literally 3(c+1) >= 2m+2. Seat U1.",
+      "lean_name": "ErdosR25.E1ArithmeticCore.P_base_s1",
+      "dependencies": ["def-pstatement"]
+    },
+    {
+      "id": "def-p-base-s2",
+      "description": "Base case s=2 (K odd, K=2c+1, n=c+2); region 3d<=2m+2 rearranges to 4m <= 6c+5. Seat U1.",
+      "lean_name": "ErdosR25.E1ArithmeticCore.P_base_s2",
+      "dependencies": ["def-pstatement"]
+    },
+    {
+      "id": "def-p-induction-step-critic",
+      "description": "PRIMARY induction step, CRITIC-ATTRIBUTED (C-U1-F), toolkit-free: (P) at a hard index n implies (P) at n+1, given (S).",
+      "lean_name": "ErdosR25.E1ArithmeticCore.P_induction_step_critic",
+      "dependencies": ["def-pstatement", "def-s-holds-of-discriminant-nonpos"]
+    },
+    {
+      "id": "def-p-holds-critic",
+      "description": "Induction-principle scaffold, CRITIC-ATTRIBUTED (C-U1-T): Nat.le_induction over (K+3)/2 <= j <= m with the parity split at the base, calling the PRIMARY toolkit-free step.",
+      "lean_name": "ErdosR25.E1ArithmeticCore.P_holds_critic",
+      "dependencies": ["def-pstatement", "def-discriminant-nonpos-iff", "def-discriminant-in-k-matches-in-d", "def-p-base-s1", "def-p-base-s2", "def-p-induction-step-critic"]
+    },
+    {
+      "id": "def-p-holds-critic-general",
+      "description": "Award part 4, CRITIC-ATTRIBUTED (C-U1-T; source name P_holds_critic'): the m <= K+1 hypothesis is shown redundant given K <= 2m and the region.",
+      "lean_name": "ErdosR25.E1ArithmeticCore.P_holds_critic_general",
+      "dependencies": ["def-p-holds-critic"]
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-int",
+      "description": "The integers, for parts 1-3 (m, d, n).",
+      "lean_type": "ℤ",
+      "dependencies": []
+    },
+    {
+      "id": "domain-nat",
+      "description": "The naturals, for part 4 (m, K, n) and PStatement.",
+      "lean_type": "ℕ",
+      "dependencies": []
+    }
+  ],
+  "quantifiers": [],
+  "hypotheses": [],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "theorem matchingDual_scalarCore_award : (∀ m d : ℤ, 9 * d ^ 2 + 12 * (m + 1) * d - 12 * (m + 1) ^ 2 = 3 * (3 * d - 2 * (m + 1)) * (d + 2 * (m + 1))) ∧ (∀ m d : ℤ, 0 ≤ m → 0 ≤ d → (9 * d ^ 2 + 12 * (m + 1) * d - 12 * (m + 1) ^ 2 ≤ 0 ↔ 3 * d ≤ 2 * m + 2)) ∧ (∀ m d n : ℤ, 0 ≤ m → 0 ≤ d → 3 * d ≤ 2 * m + 2 → (n + 1) * ((2 * m - d) + 1 - n) ≥ 4 * (m + n - (2 * m - d)) * (m - n)) ∧ (∀ m K : ℕ, (K : ℤ) ≤ 2 * (m : ℤ) → 3 * (2 * (m : ℤ) - (K : ℤ)) ≤ 2 * (m : ℤ) + 2 → ∀ n : ℕ, K + 1 < 2 * n → n ≤ m → PStatement m K n)",
+    "dependencies": ["domain-int", "domain-nat", "def-discriminant-factorization", "def-discriminant-nonpos-iff", "def-s-holds-on-region", "def-p-holds-critic-general"]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {"id": "domain-int", "kind": "domain"},
+      {"id": "domain-nat", "kind": "domain"},
+      {"id": "def-pstatement", "kind": "definition"},
+      {"id": "def-discriminant-factorization", "kind": "definition"},
+      {"id": "def-discriminant-in-k-matches-in-d", "kind": "definition"},
+      {"id": "def-discriminant-nonpos-iff", "kind": "definition"},
+      {"id": "def-s-quadratic-nonneg", "kind": "definition"},
+      {"id": "def-s-holds-of-discriminant-nonpos", "kind": "definition"},
+      {"id": "def-s-holds-on-region", "kind": "definition"},
+      {"id": "def-p-base-s1", "kind": "definition"},
+      {"id": "def-p-base-s2", "kind": "definition"},
+      {"id": "def-p-induction-step-critic", "kind": "definition"},
+      {"id": "def-p-holds-critic", "kind": "definition"},
+      {"id": "def-p-holds-critic-general", "kind": "definition"},
+      {"id": "conclusion", "kind": "conclusion"}
+    ],
+    "edges": [
+      {"from": "domain-nat", "to": "def-pstatement"},
+      {"from": "domain-int", "to": "def-discriminant-factorization"},
+      {"from": "domain-int", "to": "def-discriminant-in-k-matches-in-d"},
+      {"from": "domain-int", "to": "def-discriminant-nonpos-iff"},
+      {"from": "def-discriminant-factorization", "to": "def-discriminant-nonpos-iff"},
+      {"from": "domain-int", "to": "def-s-quadratic-nonneg"},
+      {"from": "domain-int", "to": "def-s-holds-of-discriminant-nonpos"},
+      {"from": "def-s-quadratic-nonneg", "to": "def-s-holds-of-discriminant-nonpos"},
+      {"from": "domain-int", "to": "def-s-holds-on-region"},
+      {"from": "def-discriminant-nonpos-iff", "to": "def-s-holds-on-region"},
+      {"from": "def-discriminant-in-k-matches-in-d", "to": "def-s-holds-on-region"},
+      {"from": "def-s-holds-of-discriminant-nonpos", "to": "def-s-holds-on-region"},
+      {"from": "def-pstatement", "to": "def-p-base-s1"},
+      {"from": "def-pstatement", "to": "def-p-base-s2"},
+      {"from": "def-pstatement", "to": "def-p-induction-step-critic"},
+      {"from": "def-s-holds-of-discriminant-nonpos", "to": "def-p-induction-step-critic"},
+      {"from": "def-pstatement", "to": "def-p-holds-critic"},
+      {"from": "def-discriminant-nonpos-iff", "to": "def-p-holds-critic"},
+      {"from": "def-discriminant-in-k-matches-in-d", "to": "def-p-holds-critic"},
+      {"from": "def-p-base-s1", "to": "def-p-holds-critic"},
+      {"from": "def-p-base-s2", "to": "def-p-holds-critic"},
+      {"from": "def-p-induction-step-critic", "to": "def-p-holds-critic"},
+      {"from": "def-p-holds-critic", "to": "def-p-holds-critic-general"},
+      {"from": "domain-int", "to": "conclusion"},
+      {"from": "domain-nat", "to": "conclusion"},
+      {"from": "def-discriminant-factorization", "to": "conclusion"},
+      {"from": "def-discriminant-nonpos-iff", "to": "conclusion"},
+      {"from": "def-s-holds-on-region", "to": "conclusion"},
+      {"from": "def-p-holds-critic-general", "to": "conclusion"}
+    ]
+  },
+  "permitted_axioms": ["propext", "Classical.choice", "Quot.sound"],
+  "constructivity": {
+    "required": false,
+    "policy": "classical_allowed",
+    "rationale": "Most registered declarations depend on Classical.choice (inherited via Nat.le_induction and related Mathlib machinery), as the originating seat and critic files already establish and this project's own kernel-verification receipt reconfirms; three declarations (discriminant_factorization, discriminant_in_K_matches_in_d, P_base_s1) use only [propext, Quot.sound]. Axioms are restricted to exactly propext, Classical.choice, Quot.sound (kernel-checked)."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "ErdosR25.E1ArithmeticCore.matchingDual_scalarCore_award",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem matchingDual_scalarCore_award : (∀ m d : ℤ, 9 * d ^ 2 + 12 * (m + 1) * d - 12 * (m + 1) ^ 2 = 3 * (3 * d - 2 * (m + 1)) * (d + 2 * (m + 1))) ∧ (∀ m d : ℤ, 0 ≤ m → 0 ≤ d → (9 * d ^ 2 + 12 * (m + 1) * d - 12 * (m + 1) ^ 2 ≤ 0 ↔ 3 * d ≤ 2 * m + 2)) ∧ (∀ m d n : ℤ, 0 ≤ m → 0 ≤ d → 3 * d ≤ 2 * m + 2 → (n + 1) * ((2 * m - d) + 1 - n) ≥ 4 * (m + n - (2 * m - d)) * (m - n)) ∧ (∀ m K : ℕ, (K : ℤ) ≤ 2 * (m : ℤ) → 3 * (2 * (m : ℤ) - (K : ℤ)) ≤ 2 * (m : ℤ) + 2 → ∀ n : ℕ, K + 1 < 2 * n → n ≤ m → PStatement m K n)",
+    "expected_statement_sha256": "2da4ae2dc4bf632aca0a4ef6e31663cabcd31b764362d690b270cebd0f8723b5"
+  },
+  "source_materials": [
+    {
+      "id": "source-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "sha256": "f1e0d57ed35141aad5fa3b5d10a01b063b885964357eaa50be12b73b782320d9",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "source-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "sha256": "275d4617fa53384a65136acd30edb78c4964d2963b9755ee110d281371ca8c66",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-originating-seat-u1",
+      "path": "SOURCE/originating-seat-U1-Main.lean",
+      "sha256": "d661af4ccbce92fc8ed3c2937e4d1a6fc5d2cf76d555d5aefba1f0db63529ee0",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-originating-critic-u1-f",
+      "path": "SOURCE/originating-critic-U1-F-CriticStep.lean",
+      "sha256": "6dcbced9d320e0001a098b1ab6a454d63eca234352ae3096e64999ca3506709d",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-originating-critic-u1-t",
+      "path": "SOURCE/originating-critic-U1-T-CriticAll.lean",
+      "sha256": "ada79add62fea5a8aa11fd097931e750d27bdaf0424740bf3a2e05dcdfc943d4",
+      "role": "definition_authority"
+    }
+  ]
+}

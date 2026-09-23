@@ -1,0 +1,931 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "c6-la4-c6-bd-step-sign-interior-peak-v1",
+  "theorem": {
+    "title": "Bd step-sign law and interior peak bound (award group C6-LA4, U-AWARD-BD-STEP-SIGN-AND-INTERIOR-PEAK)",
+    "informal_statement": "The explicit conjunction of two theorems over Z-valued functions of naturals m,g, with D(b,m) = C(b,m+1) - 2C(b,m) + C(b,m-1) the zero-extended integer binomial ranged object (SEMANTIC-CONTRACT.md zero-extension convention): (1) D_step_sign, the UNCONDITIONAL D-level step-sign law: for naturals g<m, 1<=m, m*(2m-g)*(D(2m-g-1,m)-D(2m-g,m)) = C(2m-g,m-1)*(2m-g^2+g); this together with peak_bracket_integral is the registered VERIFIED E993-R25-D-ROW-STEP-SIGN-LAW verbatim (both conjuncts) -- a GRADE CHANGE proved_informal -> formally_verified with its Cycle 5 critic attribution (C-U2-T, C-U2-F) preserved; (2) interior_peak_le_cat, the interior peak bound: for naturals 7<=m, g<=m with g^2-g>=2m and (g-1)^2-(g-1)<2m (g supplied as a WITNESS of these two inequalities, never asserted to exist -- precisely the distinction that makes D_unimodal_peak false and this true), D(2m-g,m) <= catalan(m-1); this is NEW content with no registered predecessor and takes the new key E993-R25-BD-INTERIOR-PEAK-CATALAN-BOUND. SCOPE (mandatory fences, per Cycle 6 synthesis Dispatch 4): fixed-band d=5 ARITHMETIC; no graph object occurs anywhere in the corpus; D, N, L, R are the seat's integer functions over Z with zero extension; 'unimodality' here is of the integer function g |-> D(2m-g,m) and is DERIVED from a sign identity, importing no shape premise on any i_k; this raises NOTHING else -- not E993-R25-BD-TAIL-NEGATIVE (the top-level Bd(r,r) < 0, NOT carried), not E993-R25-FOURTH-BAND-CLOSE-ALL-R, and no MaR/BdRR/[6,14]-layer object is carried into this award. Attribution: seat U2 for nodes 1, 2a, 4, 5, 6, 7; critic C-U2-F for node 2b and the interior peak bound; node 2b independently compiled by critic C-U2-T (joint attribution on that node)."
+  },
+  "formulation_status": {
+    "status": "established",
+    "evidence": [
+      "cycles/cycle-6/stage6/SYNTHESIS.md :: ## Lean awards :: Dispatch 4",
+      "cycles/cycle-6/stage6/SYNTHESIS.md :: ## Exact established results",
+      "cycles/cycle-6/stage5/adjudicators/U/ADJUDICATION.md :: ## Lean readiness :: Contract-ready group 5 -- U-AWARD-BD-STEP-SIGN-AND-INTERIOR-PEAK",
+      "cycles/cycle-6/stage4/critics/U2/F/CRITIQUE.md",
+      "cycles/cycle-6/stage4/critics/U2/T/CRITIQUE.md",
+      "cycles/cycle-6/stage3/returns/U2/RETURN.md",
+      "control/C6-STAGE7-PROTOCOL.md",
+      "control/c6-stage7-capsules/C6-LA4-PACKET-MANIFEST.json"
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-cz",
+      "description": "Zero-extended integer binomial coefficient: Cz n k = C(n,k) for 0<=k<=n, 0 for negative n or k (SEMANTIC-CONTRACT.md zero-extension convention applied to C). Seat U2.",
+      "lean_name": "ErdosR25C6U2.Cz",
+      "dependencies": [
+        "domain-int"
+      ]
+    },
+    {
+      "id": "def-d",
+      "description": "D(b,m) = C(b,m+1) - 2C(b,m) + C(b,m-1), the ranged object, over Z. Seat U2.",
+      "lean_name": "ErdosR25C6U2.D",
+      "dependencies": [
+        "domain-int",
+        "def-cz"
+      ]
+    },
+    {
+      "id": "def-n",
+      "description": "N(m,g) = g^2 + g - 2m - 2, the sign-governing numerator of D(2m-g,m). Seat U2.",
+      "lean_name": "ErdosR25C6U2.N",
+      "dependencies": [
+        "domain-int"
+      ]
+    },
+    {
+      "id": "def-l",
+      "description": "L(m,g) = (m+1-g)*N(g+1) (ratio-test numerator, ascending form). Seat U2.",
+      "lean_name": "ErdosR25C6U2.L",
+      "dependencies": [
+        "domain-int"
+      ]
+    },
+    {
+      "id": "def-r",
+      "description": "R(m,g) = (2m-g)*N(g) (ratio-test numerator, descending form). Seat U2.",
+      "lean_name": "ErdosR25C6U2.R",
+      "dependencies": [
+        "domain-int"
+      ]
+    },
+    {
+      "id": "def-cz-natcast",
+      "description": "Cz (n:Z) (k:Z) = C(n,k):Z for naturals n,k. Seat U2.",
+      "lean_name": "ErdosR25C6U2.Cz_natCast",
+      "dependencies": [
+        "domain-nat",
+        "def-cz"
+      ]
+    },
+    {
+      "id": "def-cz-cast-add-one",
+      "description": "Cz (n:Z) ((k:Z)+1) = C(n,k+1):Z for naturals n,k. Seat U2.",
+      "lean_name": "ErdosR25C6U2.Cz_cast_add_one",
+      "dependencies": [
+        "domain-nat",
+        "def-cz",
+        "def-cz-natcast"
+      ]
+    },
+    {
+      "id": "def-cz-cast-sub-one",
+      "description": "Cz (n:Z) ((k:Z)-1) = C(n,k-1):Z for naturals n,k, 1<=k. Seat U2.",
+      "lean_name": "ErdosR25C6U2.Cz_cast_sub_one",
+      "dependencies": [
+        "domain-nat",
+        "def-cz",
+        "def-cz-natcast"
+      ]
+    },
+    {
+      "id": "def-choose-ratio-up",
+      "description": "C(b,m+1)*(m+1) = C(b,m)*(b-m), cast to Z, for m<=b (Nat.choose_succ_right_eq). Seat U2.",
+      "lean_name": "ErdosR25C6U2.choose_ratio_up",
+      "dependencies": [
+        "domain-nat"
+      ]
+    },
+    {
+      "id": "def-choose-ratio-down",
+      "description": "C(b,m)*m = C(b,m-1)*(b-m+1), cast to Z, for 1<=m<=b (Nat.choose_succ_right_eq at k=m-1). Seat U2.",
+      "lean_name": "ErdosR25C6U2.choose_ratio_down",
+      "dependencies": [
+        "domain-nat"
+      ]
+    },
+    {
+      "id": "def-d-closed-form",
+      "description": "NODE 1: D(2m-g,m)*(m+1)*(m-g+1) = C(2m-g,m)*N(g), for naturals g<=m, 1<=m. Seat U2.",
+      "lean_name": "ErdosR25C6U2.D_closed_form",
+      "dependencies": [
+        "domain-nat",
+        "def-d",
+        "def-n",
+        "def-cz",
+        "def-choose-ratio-up",
+        "def-choose-ratio-down",
+        "def-cz-cast-add-one",
+        "def-cz-natcast",
+        "def-cz-cast-sub-one"
+      ]
+    },
+    {
+      "id": "def-l-eq",
+      "description": "L m g = (m+1-g)*N(m,g+1). Seat U2.",
+      "lean_name": "ErdosR25C6U2.L_eq",
+      "dependencies": [
+        "domain-int",
+        "def-l",
+        "def-n"
+      ]
+    },
+    {
+      "id": "def-r-eq",
+      "description": "R m g = (2m-g)*N(m,g). Seat U2.",
+      "lean_name": "ErdosR25C6U2.R_eq",
+      "dependencies": [
+        "domain-int",
+        "def-r",
+        "def-n"
+      ]
+    },
+    {
+      "id": "def-l-sub-r",
+      "description": "NODE 2a, the ratio-test identity: L(g) - R(g) = (m+1)*(2m-g^2+g). Seat U2.",
+      "lean_name": "ErdosR25C6U2.L_sub_R",
+      "dependencies": [
+        "domain-int",
+        "def-l",
+        "def-r"
+      ]
+    },
+    {
+      "id": "def-peak-bracket-integral",
+      "description": "NODE 4, the INTEGRAL peak bracket (critic C-U2-F sharpening): if (g-1)^2-(g-1) < 2m then N(m,g) <= 4g-5 as an integer inequality.",
+      "lean_name": "ErdosR25C6U2.peak_bracket_integral",
+      "dependencies": [
+        "domain-int",
+        "def-n"
+      ]
+    },
+    {
+      "id": "def-gc-ge-five",
+      "description": "g_c(m) >= 5 for m >= 7, given g_c passes the transition test. Seat U2, node 7 apparatus.",
+      "lean_name": "ErdosR25C6U2.gc_ge_five",
+      "dependencies": [
+        "domain-int",
+        "domain-nat"
+      ]
+    },
+    {
+      "id": "def-three-gc-le",
+      "description": "3*g_c <= 2m+2 for m >= 7, given g_c-1 fails the transition test. Seat U2, node 7 apparatus.",
+      "lean_name": "ErdosR25C6U2.three_gc_le",
+      "dependencies": [
+        "domain-int",
+        "domain-nat"
+      ]
+    },
+    {
+      "id": "def-gc-star-bound",
+      "description": "NODE 7, '(**)': 8(2m-1)(g_c-1) <= 2^{g_c}(m+1)(m+1-g_c) for m>=7 at the exact transition point. Seat U2. Renamed from the chartered name 'star_star' (collides with Mathlib root star_star); mandatory rename per Cycle 6 synthesis Dispatch 4 repair (1 of 2 used, this one).",
+      "lean_name": "ErdosR25C6U2.gc_star_bound",
+      "dependencies": [
+        "domain-int",
+        "domain-nat",
+        "def-gc-ge-five",
+        "def-three-gc-le"
+      ]
+    },
+    {
+      "id": "def-choose-double-step",
+      "description": "2*C(b,m) <= C(b+1,m) whenever m<=b and b+1<=2m (Nat.choose_mul_succ_eq). Seat U2.",
+      "lean_name": "ErdosR25C6U2.choose_double_step",
+      "dependencies": [
+        "domain-nat"
+      ]
+    },
+    {
+      "id": "def-row-ratio",
+      "description": "NODE 5, the row-ratio telescope: 2^g * C(2m-g,m) <= C(2m,m) for g<=m. Seat U2.",
+      "lean_name": "ErdosR25C6U2.row_ratio",
+      "dependencies": [
+        "domain-nat",
+        "def-choose-double-step"
+      ]
+    },
+    {
+      "id": "def-catalan-centralbinom-gap",
+      "description": "NODE 6, the Catalan/centralBinom identity: C(2m,m) = 2(2m-1)*catalan(m-1) for m>=1 (Nat.succ_mul_centralBinom_succ, succ_mul_catalan_eq_centralBinom). Seat U2.",
+      "lean_name": "ErdosR25C6U2.catalan_centralBinom_gap",
+      "dependencies": [
+        "domain-nat"
+      ]
+    },
+    {
+      "id": "def-choose-row-shift",
+      "description": "Row-shift Pascal identity at b=2m-g: C(2m-g-1,m)*(2m-g) = C(2m-g,m)*(m-g) (Nat.choose_mul_succ_eq). Critic C-U2-F.",
+      "lean_name": "ErdosR25C6U2.choose_row_shift",
+      "dependencies": [
+        "domain-nat",
+        "domain-int",
+        "def-cz",
+        "def-cz-natcast"
+      ]
+    },
+    {
+      "id": "def-choose-ratio-down-at",
+      "description": "C(2m-g,m)*m = C(2m-g,m-1)*(m-g+1), over Z. Critic C-U2-F.",
+      "lean_name": "ErdosR25C6U2.choose_ratio_down_at",
+      "dependencies": [
+        "domain-nat",
+        "domain-int",
+        "def-cz",
+        "def-cz-natcast",
+        "def-cz-cast-sub-one",
+        "def-choose-ratio-down"
+      ]
+    },
+    {
+      "id": "def-d-step-sign",
+      "description": "NODE 2b, the D-level UNCONDITIONAL step-sign law: m*(2m-g)*(D(2m-g-1,m)-D(2m-g,m)) = C(2m-g,m-1)*(2m-g^2+g), for g<m, 1<=m. No hypothesis on N(g). Critic C-U2-F, PRIMARY; independently compiled by critic C-U2-T as a FALLBACK on the same statement (joint attribution on this node per Cycle 6 synthesis Dispatch 4; the T-critic's MaR0/BdRR frame is explicitly not carried into this award).",
+      "lean_name": "ErdosR25C6U2.D_step_sign",
+      "dependencies": [
+        "domain-nat",
+        "domain-int",
+        "def-d-closed-form",
+        "def-choose-row-shift",
+        "def-choose-ratio-down-at",
+        "def-d",
+        "def-n",
+        "def-cz"
+      ]
+    },
+    {
+      "id": "def-choose-pred-pos",
+      "description": "C(2m-g,m-1) > 0 for g<m, 1<=m. Critic C-U2-F.",
+      "lean_name": "ErdosR25C6U2.choose_pred_pos",
+      "dependencies": [
+        "domain-nat",
+        "domain-int",
+        "def-cz",
+        "def-cz-cast-sub-one"
+      ]
+    },
+    {
+      "id": "def-d-step-up",
+      "description": "Node 3, step up: while the transition test fails, h(g) < h(g+1). Critic C-U2-F.",
+      "lean_name": "ErdosR25C6U2.D_step_up",
+      "dependencies": [
+        "domain-nat",
+        "domain-int",
+        "def-d-step-sign",
+        "def-choose-pred-pos",
+        "def-d"
+      ]
+    },
+    {
+      "id": "def-d-step-down",
+      "description": "Node 3, step down: once the transition test passes, h(g+1) <= h(g). Critic C-U2-F.",
+      "lean_name": "ErdosR25C6U2.D_step_down",
+      "dependencies": [
+        "domain-nat",
+        "domain-int",
+        "def-d-step-sign",
+        "def-choose-pred-pos",
+        "def-d"
+      ]
+    },
+    {
+      "id": "def-cz-nonneg",
+      "description": "Cz is nonnegative everywhere. Critic C-U2-F.",
+      "lean_name": "ErdosR25C6U2.Cz_nonneg",
+      "dependencies": [
+        "domain-int",
+        "def-cz"
+      ]
+    },
+    {
+      "id": "def-interior-peak-le-cat",
+      "description": "NODE 8 core: interior_peak_le_cat. For m>=7 and g<=m the exact transition point (g^2-g>=2m and (g-1)^2-(g-1)<2m, g entering only as a WITNESS of these two inequalities, never asserted to exist): D(2m-g,m) <= catalan(m-1). New content, no registered predecessor (E993-R25-BD-INTERIOR-PEAK-CATALAN-BOUND). Critic C-U2-F. Assembly of nodes 1,4,5,6,7.",
+      "lean_name": "ErdosR25C6U2.interior_peak_le_cat",
+      "dependencies": [
+        "domain-nat",
+        "domain-int",
+        "def-gc-ge-five",
+        "def-d-closed-form",
+        "def-peak-bracket-integral",
+        "def-row-ratio",
+        "def-catalan-centralbinom-gap",
+        "def-gc-star-bound",
+        "def-cz-natcast",
+        "def-cz",
+        "def-d",
+        "def-n"
+      ]
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-int",
+      "description": "The integers Z: Cz/D/N/L/R and the polynomial-identity layer (nodes 1, 2a, 2b, 4, 7).",
+      "lean_type": "ℤ",
+      "dependencies": []
+    },
+    {
+      "id": "domain-nat",
+      "description": "The naturals N: m, g range over N in every registered lemma statement and in the terminal theorem's outer quantifiers.",
+      "lean_type": "ℕ",
+      "dependencies": []
+    }
+  ],
+  "quantifiers": [],
+  "hypotheses": [],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "theorem bdStepSign_interiorPeak_award :\n    (∀ m g : ℕ, g < m → 1 ≤ m →\n        (m : ℤ) * (2 * (m : ℤ) - (g : ℤ))\n            * (D (2 * (m : ℤ) - ((g : ℤ) + 1)) (m : ℤ) - D (2 * (m : ℤ) - (g : ℤ)) (m : ℤ))\n          = Cz (2 * (m : ℤ) - (g : ℤ)) ((m : ℤ) - 1)\n              * (2 * (m : ℤ) - (g : ℤ) ^ 2 + (g : ℤ))) ∧\n    (∀ m g : ℕ, 7 ≤ m → g ≤ m →\n        2 * (m : ℤ) ≤ (g : ℤ) ^ 2 - (g : ℤ) →\n        ((g : ℤ) - 1) ^ 2 - ((g : ℤ) - 1) < 2 * (m : ℤ) →\n        D (2 * (m : ℤ) - (g : ℤ)) (m : ℤ) ≤ (catalan (m - 1) : ℤ))",
+    "dependencies": [
+      "domain-nat",
+      "def-d-step-sign",
+      "def-interior-peak-le-cat"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "domain-int",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-nat",
+        "kind": "domain"
+      },
+      {
+        "id": "def-cz",
+        "kind": "definition"
+      },
+      {
+        "id": "def-d",
+        "kind": "definition"
+      },
+      {
+        "id": "def-n",
+        "kind": "definition"
+      },
+      {
+        "id": "def-l",
+        "kind": "definition"
+      },
+      {
+        "id": "def-r",
+        "kind": "definition"
+      },
+      {
+        "id": "def-cz-natcast",
+        "kind": "definition"
+      },
+      {
+        "id": "def-cz-cast-add-one",
+        "kind": "definition"
+      },
+      {
+        "id": "def-cz-cast-sub-one",
+        "kind": "definition"
+      },
+      {
+        "id": "def-choose-ratio-up",
+        "kind": "definition"
+      },
+      {
+        "id": "def-choose-ratio-down",
+        "kind": "definition"
+      },
+      {
+        "id": "def-d-closed-form",
+        "kind": "definition"
+      },
+      {
+        "id": "def-l-eq",
+        "kind": "definition"
+      },
+      {
+        "id": "def-r-eq",
+        "kind": "definition"
+      },
+      {
+        "id": "def-l-sub-r",
+        "kind": "definition"
+      },
+      {
+        "id": "def-peak-bracket-integral",
+        "kind": "definition"
+      },
+      {
+        "id": "def-gc-ge-five",
+        "kind": "definition"
+      },
+      {
+        "id": "def-three-gc-le",
+        "kind": "definition"
+      },
+      {
+        "id": "def-gc-star-bound",
+        "kind": "definition"
+      },
+      {
+        "id": "def-choose-double-step",
+        "kind": "definition"
+      },
+      {
+        "id": "def-row-ratio",
+        "kind": "definition"
+      },
+      {
+        "id": "def-catalan-centralbinom-gap",
+        "kind": "definition"
+      },
+      {
+        "id": "def-choose-row-shift",
+        "kind": "definition"
+      },
+      {
+        "id": "def-choose-ratio-down-at",
+        "kind": "definition"
+      },
+      {
+        "id": "def-d-step-sign",
+        "kind": "definition"
+      },
+      {
+        "id": "def-choose-pred-pos",
+        "kind": "definition"
+      },
+      {
+        "id": "def-d-step-up",
+        "kind": "definition"
+      },
+      {
+        "id": "def-d-step-down",
+        "kind": "definition"
+      },
+      {
+        "id": "def-cz-nonneg",
+        "kind": "definition"
+      },
+      {
+        "id": "def-interior-peak-le-cat",
+        "kind": "definition"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "def-catalan-centralbinom-gap",
+        "to": "def-interior-peak-le-cat"
+      },
+      {
+        "from": "def-choose-double-step",
+        "to": "def-row-ratio"
+      },
+      {
+        "from": "def-choose-pred-pos",
+        "to": "def-d-step-down"
+      },
+      {
+        "from": "def-choose-pred-pos",
+        "to": "def-d-step-up"
+      },
+      {
+        "from": "def-choose-ratio-down",
+        "to": "def-choose-ratio-down-at"
+      },
+      {
+        "from": "def-choose-ratio-down",
+        "to": "def-d-closed-form"
+      },
+      {
+        "from": "def-choose-ratio-down-at",
+        "to": "def-d-step-sign"
+      },
+      {
+        "from": "def-choose-ratio-up",
+        "to": "def-d-closed-form"
+      },
+      {
+        "from": "def-choose-row-shift",
+        "to": "def-d-step-sign"
+      },
+      {
+        "from": "def-cz",
+        "to": "def-choose-pred-pos"
+      },
+      {
+        "from": "def-cz",
+        "to": "def-choose-ratio-down-at"
+      },
+      {
+        "from": "def-cz",
+        "to": "def-choose-row-shift"
+      },
+      {
+        "from": "def-cz",
+        "to": "def-cz-cast-add-one"
+      },
+      {
+        "from": "def-cz",
+        "to": "def-cz-cast-sub-one"
+      },
+      {
+        "from": "def-cz",
+        "to": "def-cz-natcast"
+      },
+      {
+        "from": "def-cz",
+        "to": "def-cz-nonneg"
+      },
+      {
+        "from": "def-cz",
+        "to": "def-d"
+      },
+      {
+        "from": "def-cz",
+        "to": "def-d-closed-form"
+      },
+      {
+        "from": "def-cz",
+        "to": "def-d-step-sign"
+      },
+      {
+        "from": "def-cz",
+        "to": "def-interior-peak-le-cat"
+      },
+      {
+        "from": "def-cz-cast-add-one",
+        "to": "def-d-closed-form"
+      },
+      {
+        "from": "def-cz-cast-sub-one",
+        "to": "def-choose-pred-pos"
+      },
+      {
+        "from": "def-cz-cast-sub-one",
+        "to": "def-choose-ratio-down-at"
+      },
+      {
+        "from": "def-cz-cast-sub-one",
+        "to": "def-d-closed-form"
+      },
+      {
+        "from": "def-cz-natcast",
+        "to": "def-choose-ratio-down-at"
+      },
+      {
+        "from": "def-cz-natcast",
+        "to": "def-choose-row-shift"
+      },
+      {
+        "from": "def-cz-natcast",
+        "to": "def-cz-cast-add-one"
+      },
+      {
+        "from": "def-cz-natcast",
+        "to": "def-cz-cast-sub-one"
+      },
+      {
+        "from": "def-cz-natcast",
+        "to": "def-d-closed-form"
+      },
+      {
+        "from": "def-cz-natcast",
+        "to": "def-interior-peak-le-cat"
+      },
+      {
+        "from": "def-d",
+        "to": "def-d-closed-form"
+      },
+      {
+        "from": "def-d",
+        "to": "def-d-step-down"
+      },
+      {
+        "from": "def-d",
+        "to": "def-d-step-sign"
+      },
+      {
+        "from": "def-d",
+        "to": "def-d-step-up"
+      },
+      {
+        "from": "def-d",
+        "to": "def-interior-peak-le-cat"
+      },
+      {
+        "from": "def-d-closed-form",
+        "to": "def-d-step-sign"
+      },
+      {
+        "from": "def-d-closed-form",
+        "to": "def-interior-peak-le-cat"
+      },
+      {
+        "from": "def-d-step-sign",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-d-step-sign",
+        "to": "def-d-step-down"
+      },
+      {
+        "from": "def-d-step-sign",
+        "to": "def-d-step-up"
+      },
+      {
+        "from": "def-gc-ge-five",
+        "to": "def-gc-star-bound"
+      },
+      {
+        "from": "def-gc-ge-five",
+        "to": "def-interior-peak-le-cat"
+      },
+      {
+        "from": "def-gc-star-bound",
+        "to": "def-interior-peak-le-cat"
+      },
+      {
+        "from": "def-interior-peak-le-cat",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-l",
+        "to": "def-l-eq"
+      },
+      {
+        "from": "def-l",
+        "to": "def-l-sub-r"
+      },
+      {
+        "from": "def-n",
+        "to": "def-d-closed-form"
+      },
+      {
+        "from": "def-n",
+        "to": "def-d-step-sign"
+      },
+      {
+        "from": "def-n",
+        "to": "def-interior-peak-le-cat"
+      },
+      {
+        "from": "def-n",
+        "to": "def-l-eq"
+      },
+      {
+        "from": "def-n",
+        "to": "def-peak-bracket-integral"
+      },
+      {
+        "from": "def-n",
+        "to": "def-r-eq"
+      },
+      {
+        "from": "def-peak-bracket-integral",
+        "to": "def-interior-peak-le-cat"
+      },
+      {
+        "from": "def-r",
+        "to": "def-l-sub-r"
+      },
+      {
+        "from": "def-r",
+        "to": "def-r-eq"
+      },
+      {
+        "from": "def-row-ratio",
+        "to": "def-interior-peak-le-cat"
+      },
+      {
+        "from": "def-three-gc-le",
+        "to": "def-gc-star-bound"
+      },
+      {
+        "from": "domain-int",
+        "to": "def-choose-pred-pos"
+      },
+      {
+        "from": "domain-int",
+        "to": "def-choose-ratio-down-at"
+      },
+      {
+        "from": "domain-int",
+        "to": "def-choose-row-shift"
+      },
+      {
+        "from": "domain-int",
+        "to": "def-cz"
+      },
+      {
+        "from": "domain-int",
+        "to": "def-cz-nonneg"
+      },
+      {
+        "from": "domain-int",
+        "to": "def-d"
+      },
+      {
+        "from": "domain-int",
+        "to": "def-d-step-down"
+      },
+      {
+        "from": "domain-int",
+        "to": "def-d-step-sign"
+      },
+      {
+        "from": "domain-int",
+        "to": "def-d-step-up"
+      },
+      {
+        "from": "domain-int",
+        "to": "def-gc-ge-five"
+      },
+      {
+        "from": "domain-int",
+        "to": "def-gc-star-bound"
+      },
+      {
+        "from": "domain-int",
+        "to": "def-interior-peak-le-cat"
+      },
+      {
+        "from": "domain-int",
+        "to": "def-l"
+      },
+      {
+        "from": "domain-int",
+        "to": "def-l-eq"
+      },
+      {
+        "from": "domain-int",
+        "to": "def-l-sub-r"
+      },
+      {
+        "from": "domain-int",
+        "to": "def-n"
+      },
+      {
+        "from": "domain-int",
+        "to": "def-peak-bracket-integral"
+      },
+      {
+        "from": "domain-int",
+        "to": "def-r"
+      },
+      {
+        "from": "domain-int",
+        "to": "def-r-eq"
+      },
+      {
+        "from": "domain-int",
+        "to": "def-three-gc-le"
+      },
+      {
+        "from": "domain-nat",
+        "to": "conclusion"
+      },
+      {
+        "from": "domain-nat",
+        "to": "def-catalan-centralbinom-gap"
+      },
+      {
+        "from": "domain-nat",
+        "to": "def-choose-double-step"
+      },
+      {
+        "from": "domain-nat",
+        "to": "def-choose-pred-pos"
+      },
+      {
+        "from": "domain-nat",
+        "to": "def-choose-ratio-down"
+      },
+      {
+        "from": "domain-nat",
+        "to": "def-choose-ratio-down-at"
+      },
+      {
+        "from": "domain-nat",
+        "to": "def-choose-ratio-up"
+      },
+      {
+        "from": "domain-nat",
+        "to": "def-choose-row-shift"
+      },
+      {
+        "from": "domain-nat",
+        "to": "def-cz-cast-add-one"
+      },
+      {
+        "from": "domain-nat",
+        "to": "def-cz-cast-sub-one"
+      },
+      {
+        "from": "domain-nat",
+        "to": "def-cz-natcast"
+      },
+      {
+        "from": "domain-nat",
+        "to": "def-d-closed-form"
+      },
+      {
+        "from": "domain-nat",
+        "to": "def-d-step-down"
+      },
+      {
+        "from": "domain-nat",
+        "to": "def-d-step-sign"
+      },
+      {
+        "from": "domain-nat",
+        "to": "def-d-step-up"
+      },
+      {
+        "from": "domain-nat",
+        "to": "def-gc-ge-five"
+      },
+      {
+        "from": "domain-nat",
+        "to": "def-gc-star-bound"
+      },
+      {
+        "from": "domain-nat",
+        "to": "def-interior-peak-le-cat"
+      },
+      {
+        "from": "domain-nat",
+        "to": "def-row-ratio"
+      },
+      {
+        "from": "domain-nat",
+        "to": "def-three-gc-le"
+      }
+    ]
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "classical_allowed",
+    "rationale": "Every registered declaration in this project prints axioms exactly [propext, Classical.choice, Quot.sound] (kernel-verified, RECEIPTS/kernel-verification.json); Classical.choice is inherited via Mathlib's Nat.choose/centralBinom/catalan API and the positivity/nlinarith/omega tactics used throughout, as the originating seat U2 and critic C-U2-F files already establish."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "ErdosR25C6U2.bdStepSign_interiorPeak_award",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem bdStepSign_interiorPeak_award :\n    (∀ m g : ℕ, g < m → 1 ≤ m →\n        (m : ℤ) * (2 * (m : ℤ) - (g : ℤ))\n            * (D (2 * (m : ℤ) - ((g : ℤ) + 1)) (m : ℤ) - D (2 * (m : ℤ) - (g : ℤ)) (m : ℤ))\n          = Cz (2 * (m : ℤ) - (g : ℤ)) ((m : ℤ) - 1)\n              * (2 * (m : ℤ) - (g : ℤ) ^ 2 + (g : ℤ))) ∧\n    (∀ m g : ℕ, 7 ≤ m → g ≤ m →\n        2 * (m : ℤ) ≤ (g : ℤ) ^ 2 - (g : ℤ) →\n        ((g : ℤ) - 1) ^ 2 - ((g : ℤ) - 1) < 2 * (m : ℤ) →\n        D (2 * (m : ℤ) - (g : ℤ)) (m : ℤ) ≤ (catalan (m - 1) : ℤ))",
+    "expected_statement_sha256": "729702a486b1d24d2a9bd52063de22447d4737c1bfe1b757711b57fc43d69d7b"
+  },
+  "source_materials": [
+    {
+      "id": "source-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "sha256": "d6cab2934950767b525ed81ca4594ee89258021fd3a98f197dce5a594e6c2b70",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "source-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "sha256": "48f586b77a69c2a51e592bd67c75add244cf298ca5b752b5afea14aea88629e8",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-originating-seat-u2-main",
+      "path": "SOURCE/originating-seat-U2-Main.lean",
+      "sha256": "be6dd935fa5a7f72655b0afbfc714acb4f9af0493da69445013a11b5cdfb8472",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-originating-critic-u2-f-criticf",
+      "path": "SOURCE/originating-critic-U2-F-CriticF.lean",
+      "sha256": "9199cf0e1ef7b4623fea348ca602e7dce3c4443b5b76a1e80bb9f368f9238dc1",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-originating-critic-u2-f-criticf2",
+      "path": "SOURCE/originating-critic-U2-F-CriticF2.lean",
+      "sha256": "ac039dbc80fed03d22f328bb0f00a2cf342c7516cede8bf80b554e27c4effed0",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-originating-critic-u2-t-main",
+      "path": "SOURCE/originating-critic-U2-T-Main.lean",
+      "sha256": "ca41c4a035691258981b0f101e23bf5513d8a222315745238e854fbe233ccab5",
+      "role": "reference"
+    }
+  ]
+}

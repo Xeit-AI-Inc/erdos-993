@@ -1,0 +1,229 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "c6-la6-c6-sharpened-order-bound-argmin-v1",
+  "theorem": {
+    "title": "Candidate D's argmin step (C6-LA6; T2's node N8; RE-FROZEN contract; scope update of E993-R25-FOREST-ORDER-BOUND-SHARPENED)",
+    "informal_statement": "Let C(a,b) denote the zero-extended integer binomial coefficient (0 whenever a < 0 or b < 0, or b > a >= 0). Let H(n,k,e,c_e) := C(n,k+1) - e*C(n-2,k-1) + (e-c_e)*C(n-3,k-2) + (c_e-1)*C(n-4,k-3), and W(n,k,e) := H(n,k,e, min(e, n-e)). For every integer n >= 4, every integer k, and every integer e with 1 <= e <= n-1: H(n,k,n-1,1) <= W(n,k,e). That is, e = n-1, c_e = 1 minimises H(n,k,e,min(e,n-e)) over 1 <= e <= n-1 (Candidate D's own missing step, in Candidate D's own words). NO graph token occurs anywhere in this statement: it is purely about zero-extended integer binomial coefficients, uniform in k, with the n >= 4 fence TIGHT (the Pascal-derived closed form underlying the proof fails at n = 3, k = 1, e = 1 and below; EVIDENCE/argmin_evidence_check.py Check B). d, nu, tau and x(F) < r occur nowhere. This is NOT the forest order bound: the seat's own separate frozen contract of RETURN.md Section 4.1 (graph theorem, declaration name Erdos993G1.ForestOrderBound.forest_descent_order_bound_sharpened) is explicitly NOT dispatched by this contract -- no shipped fragment proves it (a token sweep of every compiled source finds no SimpleGraph, IsAcyclic, indepCount or Erdos993G1 occurrence). Registry effect: no new E993-R25-... registration; a SCOPE UPDATE of the already-registered E993-R25-FOREST-ORDER-BOUND-SHARPENED (whose scope text names this exact argmin as its own open step) -- \"the argmin step is now kernel-checked\" -- never a grade change."
+  },
+  "formulation_status": {
+    "status": "established",
+    "evidence": [
+      "Compiled and kernel-verified in this run: Lean 4.32.2 / Mathlib 905b95818eb32af7874a58b427f50c1711a5e96c, foreground lake build exit 0 (8657 jobs), every registered declaration reports axioms within [propext, Classical.choice, Quot.sound] under #print axioms (three definitions depend on none), no sorry/admit/native_decide (RECEIPTS/kernel-verification.json, EVIDENCE/axiom-check-raw-output.txt).",
+      "Governing text: cycles/cycle-6/stage6/SYNTHESIS.md '## Lean awards', Dispatch 6 (contingent; ranked last); cycles/cycle-6/stage5/adjudicators/T/ADJUDICATION.md '## Lean readiness', binding conditions 1-2 (re-freeze on the integer statement; do not carry the seat's Section 5 pointer).",
+      "The c_e = 1 bridge (ce_at_spanning_tree) and the terminal candidateD_argmin statement are critic-attributed to C-T2-F (cycles/cycle-6/stage4/critics/T2/F/CRITIQUE.md finding F4); the argmin step itself (zchoose, Hbound, W, pascal_step1-3, W_antitone, W_min_at_spanning_tree) is attributed to seat T2 (cycles/cycle-6/stage3/returns/T2/RETURN.md). Independently rebuilt from fresh copy-outs by both Cycle 6 critics with identical source digest, job count and axiom receipts."
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-zchoose",
+      "description": "Zero-extended integer binomial coefficient: zchoose a b = 0 whenever a < 0 or b < 0, and (via Nat.choose) 0 whenever b > a >= 0.",
+      "lean_name": "ErdosR25T2.zchoose",
+      "dependencies": []
+    },
+    {
+      "id": "def-hbound",
+      "description": "H(n,k,e,c_e), zero-extended and lifted to ZZ: Hbound n k e ce = zchoose n (k+1) - e*zchoose (n-2) (k-1) + (e-ce)*zchoose (n-3) (k-2) + (ce-1)*zchoose (n-4) (k-3).",
+      "lean_name": "ErdosR25T2.Hbound",
+      "dependencies": [
+        "def-zchoose"
+      ]
+    },
+    {
+      "id": "def-w",
+      "description": "W(n,k,e) := H(n,k,e, min(e, n-e)), the worst-case-c_e reduction (proved_informal upstream; taken as given).",
+      "lean_name": "ErdosR25T2.W",
+      "dependencies": [
+        "def-hbound"
+      ]
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-int",
+      "description": "The integers, ZZ (Lean's Int).",
+      "lean_type": "ℤ",
+      "dependencies": []
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "n",
+      "kind": "forall",
+      "domain_id": "domain-int"
+    },
+    {
+      "binder": "k",
+      "kind": "forall",
+      "domain_id": "domain-int"
+    },
+    {
+      "binder": "e",
+      "kind": "forall",
+      "domain_id": "domain-int"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-n",
+      "statement": "4 <= n (tight; the underlying closed form fails at n = 3, k = 1, e = 1)",
+      "dependencies": [
+        "domain-int"
+      ]
+    },
+    {
+      "id": "hyp-e-lower",
+      "statement": "1 <= e",
+      "dependencies": [
+        "domain-int"
+      ]
+    },
+    {
+      "id": "hyp-e-upper",
+      "statement": "e <= n - 1",
+      "dependencies": [
+        "domain-int"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "Hbound n k (n - 1) 1 <= Hbound n k e (min e (n - e))",
+    "dependencies": [
+      "def-hbound",
+      "def-w",
+      "hyp-n",
+      "hyp-e-lower",
+      "hyp-e-upper"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "def-zchoose",
+        "kind": "definition"
+      },
+      {
+        "id": "def-hbound",
+        "kind": "definition"
+      },
+      {
+        "id": "def-w",
+        "kind": "definition"
+      },
+      {
+        "id": "domain-int",
+        "kind": "domain"
+      },
+      {
+        "id": "hyp-n",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-e-lower",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-e-upper",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "def-zchoose",
+        "to": "def-hbound"
+      },
+      {
+        "from": "def-hbound",
+        "to": "def-w"
+      },
+      {
+        "from": "domain-int",
+        "to": "hyp-n"
+      },
+      {
+        "from": "domain-int",
+        "to": "hyp-e-lower"
+      },
+      {
+        "from": "domain-int",
+        "to": "hyp-e-upper"
+      },
+      {
+        "from": "def-hbound",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-w",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-n",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-e-lower",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-e-upper",
+        "to": "conclusion"
+      }
+    ]
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "classical_allowed",
+    "rationale": "The compiled proof uses Mathlib's standard elaboration of omega/nlinarith-discharged integer goals and the Nat induction principle used in W_min_at_spanning_tree, both of which depend on the standard three axioms as is typical for Mathlib-based Lean 4 proofs; no constructive restriction is required or claimed by this contract. Permitted axioms are exactly the three standard ones per SOLUTION-CONTRACT.md Section 4. Verified by #print axioms on every registered declaration: the three definitions depend on no axioms; every lemma and the terminal theorem depend on axioms within [propext, Classical.choice, Quot.sound] (RECEIPTS/kernel-verification.json, EVIDENCE/axiom-check-raw-output.txt)."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "ErdosR25T2.candidateD_argmin",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem candidateD_argmin (n k e : ℤ) (hn : 4 ≤ n) (he1 : 1 ≤ e) (he2 : e ≤ n - 1) :\n    Hbound n k (n - 1) 1 ≤ Hbound n k e (min e (n - e))",
+    "expected_statement_sha256": "2e1091783be18af5014ec227dfdccf1d45910e539c9182704ce96519f76ad139"
+  },
+  "source_materials": [
+    {
+      "id": "source-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "sha256": "1a2eb133657e78a9c6bb42f50b4681f32731f63e584f5734ed2b78e6d2dbcd48",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "source-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "sha256": "8d036d6e1514beff16daa9ce7dfe31e1fd8d62fd2c4ab5f05e303e93cd8347e1",
+      "role": "reference"
+    },
+    {
+      "id": "source-seat-t2-main",
+      "path": "EVIDENCE/originating-source/T2-Main.lean",
+      "sha256": "9e9acb723e479a9a5bea28cb26c9f339216699949a53c3af39a2766ec47b8b2c",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-critic-t2f",
+      "path": "EVIDENCE/originating-source/CriticT2F.lean",
+      "sha256": "d54c119905746f1953cdddb2ae9fb185ecfbbc5192c68a491836940a3f677eb5",
+      "role": "definition_authority"
+    }
+  ]
+}

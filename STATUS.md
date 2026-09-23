@@ -1,6 +1,6 @@
 # Research Status
 
-Last updated: 2026-09-20 (G1 large-residual DRE: three completed cycles; master ledger and public proof packages reconciled)
+Last updated: 2026-09-22 (r25 uniform residual no-recovery DRE: six cycles, terminal close; twelve Lean packages; master registry 360 identities)
 
 ## Headline Problems
 
@@ -16,6 +16,10 @@ The consolidated orientation document — the conjecture, the full proof path
 with per-step status, the claim/fence/obligation tables, strategy verdicts,
 and next-phase priorities — is the
 [master proof ledger (2026-09-04)](docs/master-proof-ledger-2026-09-04.md).
+
+## r25 uniform residual no-recovery, 2026-09-22
+
+Six cycles closed with twelve governed Lean packages (see [the experiment](experiments/r25-uniform-residual-no-recovery.md) and [verification](evidence/verification-2026-09-22-r25.md)). The `d = 5` diagnostic band is closed informally for every `r` on three formal inputs; the cover diagonal is refuted at every `d ≥ 6`; Corollary F is sharp at `d ≤ 11`; the matching branch is formal at rank `r = d` and informal at `r ≥ K(d)`, with the band between them bounded computation to `d ≤ 400`. Tier 1, Tier 2 and every Tier 3 schema remain open. The master now contains 360 identities (204 VERIFIED, 88 REFUTED, 26 CONDITIONAL, 42 OPEN), preserving all 288 prior objects; statuses are registry grades, not a theorem count.
 
 ## G1 residual-sign progress, 2026-09-20
 

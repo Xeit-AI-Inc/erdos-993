@@ -1,0 +1,188 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "c1-la1-d5-seven-matching-sign-v1",
+  "theorem": {
+    "title": "Fixed-band d=5 seven-edge matching sign (Award group A, E993-R25-FOURTH-BAND-SEVEN-EDGE-MATCHING-SIGN)",
+    "informal_statement": "For every finite simple graph G on a vertex type of cardinality 2r+5 carrying seven pairwise disjoint edges, Delta_r(G) <= 0, for every r >= 1. Bare: no crossing hypothesis, no acyclicity, no forest hypothesis. Delta, coeff, indepCount are the SEMANTIC-CONTRACT.md Erdos993G1 definitions reused verbatim. hr : 1 <= r is retained for fidelity with the C3 analogue (fiveMatching_delta_nonpos, entry 164) though derivable from cardinality (M.card = 14 <= Nat.card X = 2r+5 forces 5 <= r by omega; r <= 4 is vacuous)."
+  },
+  "formulation_status": {
+    "status": "established",
+    "evidence": [
+      "cycles/cycle-1/stage6/SYNTHESIS.md ## Lean awards, Award group A",
+      "cycles/cycle-1/stage5/adjudicators/U/ADJUDICATION.md ## Lean readiness, E1",
+      "cycles/cycle-1/stage4/critics/U4/F/CRITIQUE.md (closed-form r-uniform dual, independently re-derived and re-verified in this run)",
+      "cycles/cycle-1/stage4/critics/U4/T/CRITIQUE.md (independent chain-elimination re-derivation of m(5)=7)",
+      "control/C1-STAGE7-PROTOCOL.md"
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-indepcount",
+      "description": "Actual independent k-set count, reused verbatim from SEMANTIC-CONTRACT.md / C3 entry 1.",
+      "lean_name": "Erdos993G1.indepCount",
+      "dependencies": []
+    },
+    {
+      "id": "def-coeff",
+      "description": "Integer zero-extension of indepCount to negative indices, reused verbatim from SEMANTIC-CONTRACT.md / C3 entry 2.",
+      "lean_name": "Erdos993G1.coeff",
+      "dependencies": ["def-indepcount"]
+    },
+    {
+      "id": "def-delta",
+      "description": "Delta_k = coeff(k+1) - coeff(k), reused verbatim from SEMANTIC-CONTRACT.md / C3 entry 3.",
+      "lean_name": "Erdos993G1.delta",
+      "dependencies": ["def-coeff"]
+    },
+    {
+      "id": "def-stratum",
+      "description": "Independent k-sets meeting a marked Finset M in exactly j vertices; reused verbatim from C3 entry 13 (Erdos993G1.FirstWide.stratum), restated self-contained for standalone fragment registration.",
+      "lean_name": "Erdos993G1.FirstWide.stratum",
+      "dependencies": []
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-vertex-type",
+      "description": "The ambient vertex type X, an arbitrary finite type (universe-polymorphic).",
+      "lean_type": "Type*",
+      "dependencies": []
+    },
+    {
+      "id": "domain-graph",
+      "description": "A finite simple graph G on X.",
+      "lean_type": "SimpleGraph X",
+      "dependencies": ["domain-vertex-type"]
+    },
+    {
+      "id": "domain-rank",
+      "description": "The rank r, a natural number.",
+      "lean_type": "ℕ",
+      "dependencies": []
+    },
+    {
+      "id": "domain-matching-map",
+      "description": "The seven-edge matching, presented as an injective map from Fin 7 x Bool (14 distinct endpoints) into X.",
+      "lean_type": "Fin 7 × Bool → X",
+      "dependencies": ["domain-vertex-type"]
+    }
+  ],
+  "quantifiers": [
+    {"binder": "X", "kind": "forall", "domain_id": "domain-vertex-type"},
+    {"binder": "G", "kind": "forall", "domain_id": "domain-graph"},
+    {"binder": "r", "kind": "forall", "domain_id": "domain-rank"},
+    {"binder": "f", "kind": "forall", "domain_id": "domain-matching-map"}
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-finite",
+      "statement": "X is Finite.",
+      "dependencies": ["domain-vertex-type"]
+    },
+    {
+      "id": "hyp-rank-pos",
+      "statement": "hr : 1 <= r (retained for fidelity with the C3 analogue; redundant given hyp-card and hyp-matching-injective, since 14 <= 2r+5 forces 5 <= r).",
+      "dependencies": ["domain-rank"]
+    },
+    {
+      "id": "hyp-card",
+      "statement": "hn : Nat.card X = 2*r+5.",
+      "dependencies": ["domain-vertex-type", "domain-rank"]
+    },
+    {
+      "id": "hyp-matching-injective",
+      "statement": "hf : Function.Injective f (the 14 endpoints f(i,false), f(i,true) for i : Fin 7 are pairwise distinct).",
+      "dependencies": ["domain-matching-map"]
+    },
+    {
+      "id": "hyp-matching-adjacent",
+      "statement": "he : forall i : Fin 7, G.Adj (f (i, false)) (f (i, true)) (each of the seven pairs is an edge of G).",
+      "dependencies": ["domain-graph", "domain-matching-map"]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion-delta-nonpos",
+    "statement": "Erdos993G1.delta G (r : ℤ) <= 0.",
+    "dependencies": ["def-delta", "def-stratum", "hyp-finite", "hyp-rank-pos", "hyp-card", "hyp-matching-injective", "hyp-matching-adjacent"]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {"id": "def-indepcount", "kind": "definition"},
+      {"id": "def-coeff", "kind": "definition"},
+      {"id": "def-delta", "kind": "definition"},
+      {"id": "def-stratum", "kind": "definition"},
+      {"id": "domain-vertex-type", "kind": "domain"},
+      {"id": "domain-graph", "kind": "domain"},
+      {"id": "domain-rank", "kind": "domain"},
+      {"id": "domain-matching-map", "kind": "domain"},
+      {"id": "hyp-finite", "kind": "hypothesis"},
+      {"id": "hyp-rank-pos", "kind": "hypothesis"},
+      {"id": "hyp-card", "kind": "hypothesis"},
+      {"id": "hyp-matching-injective", "kind": "hypothesis"},
+      {"id": "hyp-matching-adjacent", "kind": "hypothesis"},
+      {"id": "conclusion-delta-nonpos", "kind": "conclusion"}
+    ],
+    "edges": [
+      {"from": "def-indepcount", "to": "def-coeff"},
+      {"from": "def-coeff", "to": "def-delta"},
+      {"from": "domain-vertex-type", "to": "domain-graph"},
+      {"from": "domain-vertex-type", "to": "domain-matching-map"},
+      {"from": "domain-vertex-type", "to": "hyp-finite"},
+      {"from": "domain-vertex-type", "to": "hyp-card"},
+      {"from": "domain-rank", "to": "hyp-rank-pos"},
+      {"from": "domain-rank", "to": "hyp-card"},
+      {"from": "domain-matching-map", "to": "hyp-matching-injective"},
+      {"from": "domain-matching-map", "to": "hyp-matching-adjacent"},
+      {"from": "domain-graph", "to": "hyp-matching-adjacent"},
+      {"from": "def-delta", "to": "conclusion-delta-nonpos"},
+      {"from": "hyp-finite", "to": "conclusion-delta-nonpos"},
+      {"from": "hyp-rank-pos", "to": "conclusion-delta-nonpos"},
+      {"from": "hyp-card", "to": "conclusion-delta-nonpos"},
+      {"from": "hyp-matching-injective", "to": "conclusion-delta-nonpos"},
+      {"from": "hyp-matching-adjacent", "to": "conclusion-delta-nonpos"},
+      {"from": "def-stratum", "to": "conclusion-delta-nonpos"}
+    ]
+  },
+  "permitted_axioms": ["propext", "Classical.choice", "Quot.sound"],
+  "constructivity": {
+    "required": false,
+    "policy": "classical_allowed",
+    "rationale": "The proof uses classical Finset/decidability instances throughout (stratum, indepSetFinset are defined via `classical`); this mirrors the frozen, kernel-verified C3 precedent (fiveMatching_delta_nonpos) exactly, which also depends on Classical.choice and propext. No constructive restriction is required or claimed by the award."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "Erdos993G1.FourthWideMatching.sevenMatching_delta_nonpos",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem sevenMatching_delta_nonpos {X : Type*} [Finite X] (G : SimpleGraph X) (r : ℕ) (hr : 1 ≤ r) (hn : Nat.card X = 2*r+5) (f : Fin 7 × Bool → X) (hf : Function.Injective f) (he : ∀ i : Fin 7, G.Adj (f (i, false)) (f (i, true))) : Erdos993G1.delta G (r : ℤ) ≤ 0",
+    "expected_statement_sha256": "cc5575f4b906c41851529643770bd194f011c4064cf166566615b75645064706"
+  },
+  "source_materials": [
+    {
+      "id": "source-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "sha256": "be5d93c2c05b9515a2caa078a58b74c80ba472fdbf480b23b63e1fc9de44c44c",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "source-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "sha256": "2f75188414fc1db2cf26956f8676fca51f3595a698d40364854af6c89439722e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-dependencies-pin",
+      "path": "DEPENDENCIES.yaml",
+      "sha256": "f2d29a42fe90c3a2507f3036ce6bb2e6cdf88f979f4c3d6c0becadc179944f32",
+      "role": "reference"
+    }
+  ]
+}

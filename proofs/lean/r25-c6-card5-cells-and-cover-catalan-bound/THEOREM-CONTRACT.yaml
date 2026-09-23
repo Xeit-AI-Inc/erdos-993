@@ -1,0 +1,379 @@
+{
+  "conclusion": {
+    "dependencies": [
+      "def-delta",
+      "def-fsingleton",
+      "def-catalan",
+      "domain-x",
+      "domain-order",
+      "domain-k",
+      "hyp-acyclic-a",
+      "hyp-order",
+      "hyp-cover",
+      "hyp-rank"
+    ],
+    "id": "conclusion",
+    "statement": "card5_cells_and_cover_catalan_award: the six-way conjunction of cell_9, cell_11, cell_13, cell_15, cell_17 and cover_catalan_bound_five, exactly as stated in lean_binding.expected_statement."
+  },
+  "constructivity": {
+    "policy": "classical_allowed",
+    "rationale": "Depends on Mathlib lemmas (Finset.sum machinery, Nat.choose/centralBinom/catalan facts, SimpleGraph API) that use propext, Classical.choice and Quot.sound in their own derivations, as is standard for Mathlib; this project introduces no axiom beyond that closure. `open Classical` is used for decidability convenience only. Verified by #print axioms on all 52 declarations (RECEIPTS/kernel-verification.json, EVIDENCE/axioms-all-52-declarations.txt).",
+    "required": false
+  },
+  "contract_id": "c6-la5-c6-card5-cells-and-cover-catalan-v1",
+  "definitions": [
+    {
+      "dependencies": [],
+      "description": "Actual independent-k-subset count, integer-valued.",
+      "id": "def-indepcount",
+      "lean_name": "Erdos993G1.indepCount"
+    },
+    {
+      "dependencies": [
+        "def-indepcount"
+      ],
+      "description": "Integer zero-extension of indepCount at negative index.",
+      "id": "def-coeff",
+      "lean_name": "Erdos993G1.coeff"
+    },
+    {
+      "dependencies": [
+        "def-coeff"
+      ],
+      "description": "delta F k = coeff F (k+1) - coeff F k, at an integer index.",
+      "id": "def-delta",
+      "lean_name": "Erdos993G1.delta"
+    },
+    {
+      "dependencies": [],
+      "description": "Integer zero-extended binomial coefficient (Nat.choose, zero when k<0).",
+      "id": "def-binomcoeff",
+      "lean_name": "Erdos993G1.FirstWide.binomCoeff"
+    },
+    {
+      "dependencies": [
+        "def-binomcoeff"
+      ],
+      "description": "Exact singleton cover-fiber term fSingleton n k d = binomCoeff(n-d,k) - binomCoeff(n-d,k-1).",
+      "id": "def-fsingleton",
+      "lean_name": "Erdos993G1.ThirdWide.fSingleton"
+    },
+    {
+      "dependencies": [],
+      "description": "Mathlib's Catalan-number function (statement (b) only).",
+      "id": "def-catalan",
+      "lean_name": "catalan"
+    }
+  ],
+  "dependency_graph": {
+    "edges": [
+      {
+        "from": "def-binomcoeff",
+        "to": "def-fsingleton"
+      },
+      {
+        "from": "def-catalan",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-coeff",
+        "to": "def-delta"
+      },
+      {
+        "from": "def-delta",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-fsingleton",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-indepcount",
+        "to": "def-coeff"
+      },
+      {
+        "from": "domain-k",
+        "to": "conclusion"
+      },
+      {
+        "from": "domain-k",
+        "to": "hyp-rank"
+      },
+      {
+        "from": "domain-order",
+        "to": "conclusion"
+      },
+      {
+        "from": "domain-order",
+        "to": "hyp-order"
+      },
+      {
+        "from": "domain-x",
+        "to": "conclusion"
+      },
+      {
+        "from": "domain-x",
+        "to": "domain-order"
+      },
+      {
+        "from": "domain-x",
+        "to": "hyp-acyclic-a"
+      },
+      {
+        "from": "domain-x",
+        "to": "hyp-cover"
+      },
+      {
+        "from": "hyp-acyclic-a",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-cover",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-order",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-rank",
+        "to": "conclusion"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "def-indepcount",
+        "kind": "definition"
+      },
+      {
+        "id": "def-coeff",
+        "kind": "definition"
+      },
+      {
+        "id": "def-delta",
+        "kind": "definition"
+      },
+      {
+        "id": "def-binomcoeff",
+        "kind": "definition"
+      },
+      {
+        "id": "def-fsingleton",
+        "kind": "definition"
+      },
+      {
+        "id": "def-catalan",
+        "kind": "definition"
+      },
+      {
+        "id": "domain-x",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-order",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-k",
+        "kind": "domain"
+      },
+      {
+        "id": "hyp-acyclic-a",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-order",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-cover",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-rank",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      }
+    ]
+  },
+  "domains": [
+    {
+      "dependencies": [],
+      "description": "X : Type u, the vertex type, Fintype + DecidableEq.",
+      "id": "domain-x",
+      "lean_type": "Type u"
+    },
+    {
+      "dependencies": [
+        "domain-x"
+      ],
+      "description": "Fixed order numerals 9/11/13/15/17 for statement (a); n : Nat with Fintype.card X = n+5 for statement (b).",
+      "id": "domain-order",
+      "lean_type": "\u2115"
+    },
+    {
+      "dependencies": [],
+      "description": "Rank k (fixed literal 1/2/3/4/5 for statement (a); a Nat parameter for statement (b)).",
+      "id": "domain-k",
+      "lean_type": "\u2115"
+    }
+  ],
+  "formulation_status": {
+    "evidence": [
+      "Compiled and kernel-verified in this repair-1 run: Lean 4.32.2 / Mathlib 905b95818eb32af7874a58b427f50c1711a5e96c, foreground `lake build` exit 0 (8655 jobs), RECEIPTS/kernel-verification.json verdict.verified=true, all checks passed (project_build, single_file, axiom_policy, axiom_probe, incomplete_proof_scan, path_containment, pinned_project, source_immutable, toolchain, execution_sandbox, unsafe_execution_scan).",
+      "52/52 registered declarations report axioms within [propext, Classical.choice, Quot.sound] under #print axioms (EVIDENCE/axioms-all-52-declarations.txt); no sorry/admit/native_decide/bespoke axiom anywhere (grep, zero hits). Identical axiom footprint to the parent run at all 52 declarations.",
+      "REPAIR 1: the parent run's claim that registered entry 21 (cover_singleton_available, frozen ENTRY 174) restored the frozen trailing-space byte at frozen line 3761 was FALSE (fidelity reviewer finding, rejected_semantic_mismatch); the parent's built Main.lean had no trailing-whitespace line anywhere. This run restores the byte for real and verifies it byte-for-byte three ways (frozen source, this run's source fragment, this run's built Main.lean) via EVIDENCE/verify_frozen_entry_tags.py; output EVIDENCE/verify_frozen_entry_tags_output.txt. The parent's further-false claim that the frozen tag digest 5077d1d2... would recompute over the registered fragment is retracted; the registered fragment's own digest (registrar-computed, not the frozen tag) is f72c64b6534ede23e1ec198087f52887b121e91f3e84ad0ccf0b53bd642010b9 -- frozen identity is instead carried by the byte-for-byte EVIDENCE/originating-sources/frozen-g1-thirdwide-main.lean copy plus the independent tag-authenticity check in the same script.",
+      "Every numeral (the five cell totals 9,5,9,21,42, both LP-dual certificates on the full admissible cross-degree-profile domain, and the six-term Gamma(5,k) identity for k in [5,60]) independently reconfirmed by exact-integer Python, no code shared with any prior seat's or critic's generator (EVIDENCE/generate_card5_evidence.py, EVIDENCE/card5_evidence_report.json).",
+      "Every source digest named in the C6-LA5 sealed capsule and every named compiled Lean source independently recomputed and matched, including the frozen ENTRY 174 (lines 3743-3765) and ENTRY 178 (lines 3844-3861) spans (CAPSULE-VERIFICATION.json)."
+    ],
+    "status": "established"
+  },
+  "hypotheses": [
+    {
+      "dependencies": [
+        "domain-x"
+      ],
+      "id": "hyp-acyclic-a",
+      "statement": "F.IsAcyclic -- statement (a) only, at exactly one point in the whole DAG (budget_bound). Statement (b) carries NO acyclicity hypothesis."
+    },
+    {
+      "dependencies": [
+        "domain-order"
+      ],
+      "id": "hyp-order",
+      "statement": "Fintype.card X = 9/11/13/15/17 (statement a, one numeral per cell) or Fintype.card X = n+5 (statement b)."
+    },
+    {
+      "dependencies": [
+        "domain-x"
+      ],
+      "id": "hyp-cover",
+      "statement": "A vertex cover of cardinality <= 5 (statement a, padded internally to exactly 5 by exists_card_five_cover) or of cardinality exactly 5 (statement b): tau(F) <= 5."
+    },
+    {
+      "dependencies": [
+        "domain-k"
+      ],
+      "id": "hyp-rank",
+      "statement": "k a fixed literal 1..5 (statement a) or an arbitrary Nat (statement b)."
+    }
+  ],
+  "lean_binding": {
+    "declaration_name": "Erdos993G1.ThirdWide.card5_cells_and_cover_catalan_award",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "    (\u2200 {X : Type u} [Fintype X] [DecidableEq X] (F : SimpleGraph X) [DecidableRel F.Adj],\n        F.IsAcyclic \u2192 Fintype.card X = 9 \u2192 \u2200 (C0 : Finset X), C0.card \u2264 5 \u2192\n        (\u2200 x y, F.Adj x y \u2192 x \u2208 C0 \u2228 y \u2208 C0) \u2192 (9 : \u2124) \u2264 delta F 1) \u2227\n    (\u2200 {X : Type u} [Fintype X] [DecidableEq X] (F : SimpleGraph X) [DecidableRel F.Adj],\n        F.IsAcyclic \u2192 Fintype.card X = 11 \u2192 \u2200 (C0 : Finset X), C0.card \u2264 5 \u2192\n        (\u2200 x y, F.Adj x y \u2192 x \u2208 C0 \u2228 y \u2208 C0) \u2192 (5 : \u2124) \u2264 delta F 2) \u2227\n    (\u2200 {X : Type u} [Fintype X] [DecidableEq X] (F : SimpleGraph X) [DecidableRel F.Adj],\n        F.IsAcyclic \u2192 Fintype.card X = 13 \u2192 \u2200 (C0 : Finset X), C0.card \u2264 5 \u2192\n        (\u2200 x y, F.Adj x y \u2192 x \u2208 C0 \u2228 y \u2208 C0) \u2192 (9 : \u2124) \u2264 delta F 3) \u2227\n    (\u2200 {X : Type u} [Fintype X] [DecidableEq X] (F : SimpleGraph X) [DecidableRel F.Adj],\n        F.IsAcyclic \u2192 Fintype.card X = 15 \u2192 \u2200 (C0 : Finset X), C0.card \u2264 5 \u2192\n        (\u2200 x y, F.Adj x y \u2192 x \u2208 C0 \u2228 y \u2208 C0) \u2192 (21 : \u2124) \u2264 delta F 4) \u2227\n    (\u2200 {X : Type u} [Fintype X] [DecidableEq X] (F : SimpleGraph X) [DecidableRel F.Adj],\n        F.IsAcyclic \u2192 Fintype.card X = 17 \u2192 \u2200 (C0 : Finset X), C0.card \u2264 5 \u2192\n        (\u2200 x y, F.Adj x y \u2192 x \u2208 C0 \u2228 y \u2208 C0) \u2192 (42 : \u2124) \u2264 delta F 5) \u2227\n    (\u2200 {X : Type u} [Fintype X] [DecidableEq X] (F : SimpleGraph X) [DecidableRel F.Adj]\n        (C : Finset X), C.card = 5 \u2192 (\u2200 x y, F.Adj x y \u2192 x \u2208 C \u2228 y \u2208 C) \u2192\n        \u2200 n k : \u2115, Fintype.card X = n + 5 \u2192\n        (n.choose (k+1) : \u2124) - n.choose k - 5*(if 1 \u2264 k then (catalan (k-1) : \u2124) else 0)\n          - 10*(if 2 \u2264 k then (catalan (k-2) : \u2124) else 0) - 10*(if 3 \u2264 k then (catalan (k-3) : \u2124) else 0)\n          - 5*(if 4 \u2264 k then (catalan (k-4) : \u2124) else 0) - (if 5 \u2264 k then (catalan (k-5) : \u2124) else 0)\n          \u2264 delta F (k : \u2124))",
+    "expected_statement_sha256": "cee46ec8164f9bda5912ab51b66f0568e1844e2c40ee97631d2d996e596f09ff",
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean"
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "quantifiers": [
+    {
+      "binder": "X",
+      "domain_id": "domain-x",
+      "kind": "forall"
+    },
+    {
+      "binder": "F",
+      "domain_id": "domain-x",
+      "kind": "forall"
+    },
+    {
+      "binder": "C0_or_C",
+      "domain_id": "domain-x",
+      "kind": "forall"
+    },
+    {
+      "binder": "n",
+      "domain_id": "domain-order",
+      "kind": "forall"
+    },
+    {
+      "binder": "k",
+      "domain_id": "domain-k",
+      "kind": "forall"
+    }
+  ],
+  "schema_version": "theorem-contract/v1",
+  "source_materials": [
+    {
+      "id": "source-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "role": "theorem_intent",
+      "sha256": "396a5e1861dee0909559fc538b6ee50100e6bde6e34b9d6b8203e66ea8f5ff47"
+    },
+    {
+      "id": "source-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "role": "reference",
+      "sha256": "b00fee1345fbdaebbdf1d1e47a715511ec919fdf3492cf15f4089b962bc4c603"
+    },
+    {
+      "id": "source-seat-u3-main",
+      "path": "EVIDENCE/originating-sources/seat-u3-main.lean",
+      "role": "definition_authority",
+      "sha256": "d4c198a604f2655bea52eda5ec74e0678eafd517134939f3e58b7a2c1d6b8935"
+    },
+    {
+      "id": "source-seat-u3-transcribed",
+      "path": "EVIDENCE/originating-sources/seat-u3-transcribed.lean",
+      "role": "definition_authority",
+      "sha256": "d6264ebe2dac8b9a76b1109219544eec68fb7a69f7b7a32235438c7f7f19ad2e"
+    },
+    {
+      "id": "source-seat-u3-transcribed2",
+      "path": "EVIDENCE/originating-sources/seat-u3-transcribed2.lean",
+      "role": "definition_authority",
+      "sha256": "2093c211104316b37acc78e8a59f79b5a4a72fc915b75218ee67ca071de65cbb"
+    },
+    {
+      "id": "source-critic-u3f-cover",
+      "path": "EVIDENCE/originating-sources/critic-u3f-cover.lean",
+      "role": "definition_authority",
+      "sha256": "0c6e5e69706b5a8623558171b7b7e53f750a5ebf1e7cc6be6e9c8d926543736b"
+    },
+    {
+      "id": "source-critic-u3f",
+      "path": "EVIDENCE/originating-sources/critic-u3f.lean",
+      "role": "reference",
+      "sha256": "17947ebc4fde5f789cced3be0372fb9a74d765faca88c28f67996db91826f154"
+    },
+    {
+      "id": "source-frozen-g1",
+      "path": "EVIDENCE/originating-sources/frozen-g1-thirdwide-main.lean",
+      "role": "definition_authority",
+      "sha256": "aa517ebc678c552e4533ddd4c37e8b57bc3db0d58cdc91ef08f4e94c9fda1ca4"
+    },
+    {
+      "id": "source-synthesis",
+      "path": "EVIDENCE/originating-sources/cycle6-synthesis.md",
+      "role": "reference",
+      "sha256": "4b9cc572ba51aa2029b2fd20116f59e4eb3fe9ebcb8eee41a6e0a1f56c0c7d32"
+    },
+    {
+      "id": "source-adjudication",
+      "path": "EVIDENCE/originating-sources/cycle6-u-adjudication.md",
+      "role": "reference",
+      "sha256": "9624e817066a2979e0c13ccbf2a68a1edde33c852cf1a799b027b7b7bbc07117"
+    }
+  ],
+  "success_criteria": {
+    "approved_axioms_only": true,
+    "contract_valid": true,
+    "fidelity_audit_required": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "sorry_free": true
+  },
+  "theorem": {
+    "informal_statement": "TWO award statements bound as one terminal conjunction. (a) FIXED-CELL, five theorems Erdos993G1.ThirdWide.cell_9/11/13/15/17: for an acyclic SimpleGraph F on Fintype.card X = 2k+7 vertices (k=1..5, orders 9,11,13,15,17) with a vertex cover C0 of cardinality <= 5 (tau(F) <= 5), t_k <= delta F k with t = 9,5,9,21,42. Not uniform in d, in the order, or in r; the Lean formalisation, at these five ranks, of the registered VERIFIED E993-R25-CARD5-JOINT-BUDGET-CELLS (a grade change, not a new claim; proved_informal -> formally_verified). ALIAS IN FULL: also names E993-R25-COVER-BRANCH-UNIFORM-PREHISTORY (OPEN, the uniform-in-d schema of which these cells are d=5 instances) and E993-GRAPH-VERTEX-COVER-DELTA-PARTITION (the cover-fiber partition the whole assembly rests on). MANDATORY: cell_9's registered content is already frozen ENTRY 175 (forest_delta_one_pos) more generally -- delivered novelty is FOUR cells, not five; the cover hypothesis is VACUOUS at orders 9 and 11 (tau <= floor(n/2) for any forest by Koenig) and cover-essential only at 15 and 17. Does NOT discharge E993-R25-COVER-THRESHOLD-MIN-D-5-FOREST (each cell proves one rank k=r-1; that claim asks for every k<r). Far from sharp at four of five cells (true minima 19/39/56/56/43); the population at order 13 is 3,073 (tau<=5), not 3,658 (the total order-13 forest class count). (b) PARAMETERIZED in (n,k), Erdos993G1.ThirdWide.cover_catalan_bound_five, taking the controller-assigned NEW KEY E993-R25-CARD5-COVER-CATALAN-BOUND: for ANY SimpleGraph F (no acyclicity hypothesis) with a card-5 vertex cover C and Fintype.card X = n+5, n.choose(k+1) - n.choose k - 5*Cat(k-1) - 10*Cat(k-2) - 10*Cat(k-3) - 5*Cat(k-4) - Cat(k-5) <= delta F k (Cat = Mathlib's catalan, each term guarded by an if-k-large-enough zero extension). Unconditional (no hfloor hypothesis); this is the object of record per the U adjudication (C-U3-F's form, not C-U3-T's conditional form). catalan_gap5_pos / catalan_gap_five_pos (Gamma(5,k) > 0 for k>=6) is an instance of the already formally verified E993-R25-CATALAN-GAP-MONOTONE-RATIO at tau=5 and is explicitly NOT registered as new by this contract. x(F) < r is never a hypothesis anywhere in this group; the group is never c(d)=min(d,5) and never a tier statement. Frozen line spans (verified against sources/g1/lean/g1-c3-third-wide/LeanProof/Main.lean before this text was written): ENTRY 174 (cover_singleton_available) spans frozen lines 3743-3765; ENTRY 178 (cover_available_empty) spans frozen lines 3844-3861.",
+    "title": "Card-5 joint-budget cells (five fixed cells) and the card-5 cover_catalan_bound (parameterized)"
+  }
+}

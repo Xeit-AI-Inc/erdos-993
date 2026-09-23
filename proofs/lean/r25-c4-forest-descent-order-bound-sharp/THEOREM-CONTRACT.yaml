@@ -1,0 +1,248 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "c4-la2-forest-descent-order-bound-v1",
+  "theorem": {
+    "title": "Forest descent order bound, sharp (k+1)^2 form",
+    "informal_statement": "For every finite acyclic simple graph G on a finite vertex type X and every integer k >= 1: if Erdos993G1.delta G k < 0 (a strict descent in the independent-set-count sequence at rank k, verbatim G1 definitions) then Nat.card X <= (k+1)^2. Uniform in k and in G (any forest, connected or not, including the empty forest); no tightness claim beyond k=1; not a no-recovery statement; no transfer to Tier 1, NR1, FOREST, TREE, TRANSFER or Erdos #993."
+  },
+  "formulation_status": {
+    "status": "established",
+    "evidence": [
+      "Compiled and kernel-verified in this run: Lean 4.32.2 / Mathlib 905b95818eb32af7874a58b427f50c1711a5e96c, foreground `lake build` exit 0, every registered declaration reports exactly [propext, Classical.choice, Quot.sound] under #print axioms, no sorry/admit/native_decide (RECEIPTS/kernel-verification.json).",
+      "Governing text: cycles/cycle-4/stage6/SYNTHESIS.md '## Lean awards', Award group 2 (FOREST-DESCENT-ORDER-BOUND-SHARP), corroborated by cycles/cycle-4/stage5/adjudicators/T/ADJUDICATION.md E3 and '## Lean readiness'.",
+      "The sharp (k+1)^2 form is critic-attributed jointly to C-T4-F and C-T4-U (cycles/cycle-4/stage4/critics/T4/F/CRITIQUE.md finding 1; cycles/cycle-4/stage4/critics/T4/U/CRITIQUE.md Sec.4), who derived it independently; this Lean proof re-derives the exact quadratic itself rather than citing their arithmetic (INFORMAL-PROOF.md Sec.3.5-3.6)."
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-indep-count",
+      "description": "Actual independent k-subset count, integer-valued. noncomputable def. Verbatim G1 (SEMANTIC-CONTRACT.md entry 1).",
+      "lean_name": "Erdos993G1.indepCount",
+      "dependencies": []
+    },
+    {
+      "id": "def-coeff",
+      "description": "Integer zero-extension of indepCount to negative indices. noncomputable def. Verbatim G1 (SEMANTIC-CONTRACT.md entry 2).",
+      "lean_name": "Erdos993G1.coeff",
+      "dependencies": [
+        "def-indep-count"
+      ]
+    },
+    {
+      "id": "def-delta",
+      "description": "First difference of coeff: delta F k = coeff F (k+1) - coeff F k. noncomputable def. Verbatim G1 (SEMANTIC-CONTRACT.md entry 3).",
+      "lean_name": "Erdos993G1.delta",
+      "dependencies": [
+        "def-coeff"
+      ]
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-x",
+      "description": "X : a finite type (the vertex set of the forest).",
+      "lean_type": "Type u, [Finite X]",
+      "dependencies": []
+    },
+    {
+      "id": "domain-k",
+      "description": "k : the naturals (the descent rank).",
+      "lean_type": "ℕ",
+      "dependencies": []
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "X",
+      "kind": "forall",
+      "domain_id": "domain-x"
+    },
+    {
+      "binder": "G",
+      "kind": "forall",
+      "domain_id": "domain-x"
+    },
+    {
+      "binder": "k",
+      "kind": "forall",
+      "domain_id": "domain-k"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-acyclic",
+      "statement": "G.IsAcyclic (G is a forest: no cyclic walk; not required connected, not required nonempty). The only use of forest structure anywhere in the proof is the edge bound e(G) <= Nat.card X - 1 for Nat.card X >= 1 (INFORMAL-PROOF.md Sec.3.2); condition (ii) is discharged because the conclusion is trivially true when Nat.card X = 0, not by a separate vacuous-hypothesis lemma.",
+      "dependencies": [
+        "domain-x"
+      ]
+    },
+    {
+      "id": "hyp-k-lb",
+      "statement": "1 <= k. Load-bearing: used in the union-bound rank shift (k+1 >= 2, so C(n-2,k-1) is meaningful) and in the choose_mul absorption identity (Nat.choose_mul needs 2 <= k+1).",
+      "dependencies": [
+        "domain-k"
+      ]
+    },
+    {
+      "id": "hyp-descent",
+      "statement": "Erdos993G1.delta G (k : ℤ) < 0, i.e. coeff G (k+1) - coeff G k < 0, i.e. (for k >= 0) indepCount G (k+1) < indepCount G k: a strict descent at rank k.",
+      "dependencies": [
+        "def-delta",
+        "domain-x",
+        "domain-k"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "forest_descent_order_bound: Nat.card X <= (k+1)^2, exactly as stated in lean_binding.expected_statement.",
+    "dependencies": [
+      "def-delta",
+      "domain-x",
+      "domain-k",
+      "hyp-acyclic",
+      "hyp-k-lb",
+      "hyp-descent"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "def-indep-count",
+        "kind": "definition"
+      },
+      {
+        "id": "def-coeff",
+        "kind": "definition"
+      },
+      {
+        "id": "def-delta",
+        "kind": "definition"
+      },
+      {
+        "id": "domain-x",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-k",
+        "kind": "domain"
+      },
+      {
+        "id": "hyp-acyclic",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-k-lb",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-descent",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "def-indep-count",
+        "to": "def-coeff"
+      },
+      {
+        "from": "def-coeff",
+        "to": "def-delta"
+      },
+      {
+        "from": "domain-x",
+        "to": "hyp-acyclic"
+      },
+      {
+        "from": "domain-k",
+        "to": "hyp-k-lb"
+      },
+      {
+        "from": "domain-x",
+        "to": "hyp-descent"
+      },
+      {
+        "from": "domain-k",
+        "to": "hyp-descent"
+      },
+      {
+        "from": "def-delta",
+        "to": "hyp-descent"
+      },
+      {
+        "from": "def-delta",
+        "to": "conclusion"
+      },
+      {
+        "from": "domain-x",
+        "to": "conclusion"
+      },
+      {
+        "from": "domain-k",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-acyclic",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-k-lb",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-descent",
+        "to": "conclusion"
+      }
+    ]
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "classical_allowed",
+    "rationale": "Uses `classical` for decidability of IsIndepSet/Adj and Fintype.ofFinite on the finite carrier X, matching the bridge used by the earlier G1 awards; also depends on Mathlib lemmas (Finset.card_biUnion_le, Nat.choose_mul, SimpleGraph.IsAcyclic.isTree_connectedComponent, etc.) that use propext, Classical.choice and Quot.sound in their own derivations, as is standard for Mathlib. Verified by #print axioms on every registered declaration (RECEIPTS/kernel-verification.json, EVIDENCE/axioms.txt)."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "Erdos993G1.ForestOrderBound.forest_descent_order_bound",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem forest_descent_order_bound {X : Type u} [Finite X]\n    (G : SimpleGraph X) (hG : G.IsAcyclic) (k : ℕ) (hk : 1 ≤ k)\n    (hneg : Erdos993G1.delta G (k : ℤ) < 0) :\n    Nat.card X ≤ (k + 1) ^ 2",
+    "expected_statement_sha256": "bca81d5c08164f14197f86498d2c3dcccd426a6222a3366bfeb695d71f4022d7"
+  },
+  "source_materials": [
+    {
+      "id": "source-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "sha256": "019b4abf563cac0c3ae981e72351e560c3e9074c0bfe99b96a597dc71ec669c7",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "source-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "sha256": "e1908109b2ad259f6d83f595953bf92a4128c59cea394c522c878094b69a03dd",
+      "role": "reference"
+    },
+    {
+      "id": "source-originating-project",
+      "path": "EVIDENCE/originating-source/Main.lean",
+      "sha256": "aa517ebc678c552e4533ddd4c37e8b57bc3db0d58cdc91ef08f4e94c9fda1ca4",
+      "role": "definition_authority"
+    }
+  ]
+}
