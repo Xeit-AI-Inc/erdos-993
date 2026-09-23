@@ -1,0 +1,166 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "b-la1-bd-tail-negative-v1",
+  "theorem": {
+    "title": "Bd tail negativity, r >= 6 (r25 ADDENDUM lane B, seat B-LA1)",
+    "informal_statement": "With D(b,m) = C(b,m+1) - 2C(b,m) + C(b,m-1) (zero-extended integer binomial coefficients) and the RANGED Bd(r,r) = D(2r-1,r) + sum_{a=1}^{6} C(6,a) * max(0, max_{0<=b<=2r-1-a} D(b,r-a)) (C-U2-F's integer-rank MaR/BdRR of record, CriticF2.lean verbatim): Bd(r,r) < 0 for every integer r >= 6. This is the r >= 6 half of the registry claim E993-R25-BD-TAIL-NEGATIVE; the parenthetical sharpness half (Bd(r,r) >= 0 exactly at r in {2,3,4,5}) is out of scope. No graph object occurs; this is pure binomial-integer arithmetic."
+  },
+  "formulation_status": {
+    "status": "established",
+    "evidence": [
+      "EVIDENCE/generate_bd_tail_checks.py exact-integer replay, r = 2..60, 0 failures",
+      "RECEIPTS/kernel-verification.json verdict.code = verified"
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-cz",
+      "description": "Zero-extended integer binomial coefficient: Cz n k = C(n,k) for 0<=k<=n, else 0 (also 0 for negative n or k). C-U2-F's convention, imported byte-identically from the C6-LA4 award (formally_verified).",
+      "lean_name": "ErdosR25C6U2.Cz",
+      "dependencies": []
+    },
+    {
+      "id": "def-d",
+      "description": "D(b,m) = C(b,m+1) - 2C(b,m) + C(b,m-1), over ZZ, via Cz. Imported byte-identically from the C6-LA4 award (formally_verified).",
+      "lean_name": "ErdosR25C6U2.D",
+      "dependencies": ["def-cz"]
+    },
+    {
+      "id": "def-mar",
+      "description": "The ranged Hall maximum M_a(r) = max_{0<=b<=2r-1-a} D(b, r-a), integer inner rank (r:ZZ)-(a:ZZ), unconditionally nonempty Finset.range. C-U2-F's definition of record (CriticF2.lean), reproduced verbatim in this run's own namespace.",
+      "lean_name": "ErdosR25AddBdTail.MaR",
+      "dependencies": ["def-d"]
+    },
+    {
+      "id": "def-bdrr",
+      "description": "Bd(r,r) = D(2r-1,r) + sum_{a=1}^{6} C(6,a) * max(0, M_a(r)). C-U2-F's definition of record (CriticF2.lean), reproduced verbatim in this run's own namespace; reproduces BdRR 4 = 48, BdRR 5 = 33, BdRR 6 = -16, BdRR 10 = -14406 by decide.",
+      "lean_name": "ErdosR25AddBdTail.BdRR",
+      "dependencies": ["def-d", "def-mar"]
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-r",
+      "description": "The rank r, a natural number.",
+      "lean_type": "ℕ",
+      "dependencies": []
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "r",
+      "kind": "forall",
+      "domain_id": "domain-r"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-r6",
+      "statement": "6 <= r",
+      "dependencies": ["domain-r"]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "BdRR r < 0",
+    "dependencies": ["def-bdrr", "hyp-r6"]
+  },
+  "dependency_graph": {
+    "nodes": [
+      { "id": "def-cz", "kind": "definition" },
+      { "id": "def-d", "kind": "definition" },
+      { "id": "def-mar", "kind": "definition" },
+      { "id": "def-bdrr", "kind": "definition" },
+      { "id": "domain-r", "kind": "domain" },
+      { "id": "hyp-r6", "kind": "hypothesis" },
+      { "id": "conclusion", "kind": "conclusion" }
+    ],
+    "edges": [
+      { "from": "def-cz", "to": "def-d" },
+      { "from": "def-d", "to": "def-mar" },
+      { "from": "def-d", "to": "def-bdrr" },
+      { "from": "def-mar", "to": "def-bdrr" },
+      { "from": "domain-r", "to": "hyp-r6" },
+      { "from": "def-bdrr", "to": "conclusion" },
+      { "from": "hyp-r6", "to": "conclusion" }
+    ]
+  },
+  "permitted_axioms": ["propext", "Classical.choice", "Quot.sound"],
+  "constructivity": {
+    "required": false,
+    "policy": "explicit_axiom_allowlist",
+    "rationale": "The proof uses Nat.find (classical/decidable choice over a decidable predicate), by_contra/Classical reasoning in several lemmas (gc_pos, D_tail_le_cat), and the imported award declarations and Mathlib lemmas this proof depends on are not constructed under a constructive-only discipline. The three axioms are exactly propext, Classical.choice and Quot.sound, matching every other formally_verified award in this run family (r25 and this addendum); no other axiom is permitted or used, confirmed by #print axioms on the terminal declaration and on every one of the 96 registered declarations (EVIDENCE/axioms.txt, EVIDENCE/all-96-declarations-axioms.txt)."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "ErdosR25AddBdTail.bdTailNegative_award",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem bdTailNegative_award : ∀ r : ℕ, 6 ≤ r → BdRR r < 0",
+    "expected_statement_sha256": "6ea44d128e32c813684f5d897f69dc2c59ff8593a320b18b30dd94c0f3710b85"
+  },
+  "source_materials": [
+    {
+      "id": "informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "sha256": "7447d0d3eec4dbc4605a59868a22147215a5feecb4ef7ebe732c55d56a2467fe",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "cu2f-main",
+      "path": "SOURCE/CU2-Main.lean",
+      "sha256": "be6dd935fa5a7f72655b0afbfc714acb4f9af0493da69445013a11b5cdfb8472",
+      "role": "definition_authority"
+    },
+    {
+      "id": "cu2f-criticf",
+      "path": "SOURCE/CU2-CriticF.lean",
+      "sha256": "9199cf0e1ef7b4623fea348ca602e7dce3c4443b5b76a1e80bb9f368f9238dc1",
+      "role": "definition_authority"
+    },
+    {
+      "id": "cu2f-criticf2",
+      "path": "SOURCE/CU2-CriticF2.lean",
+      "sha256": "ac039dbc80fed03d22f328bb0f00a2cf342c7516cede8bf80b554e27c4effed0",
+      "role": "definition_authority"
+    },
+    {
+      "id": "cu2f-criticf3",
+      "path": "SOURCE/CU2-CriticF3.lean",
+      "sha256": "cfea60e53c73bffc94e991f228b27d1c8dbee20664db2299f16bdb4360a73496",
+      "role": "definition_authority"
+    },
+    {
+      "id": "critt-main-reference",
+      "path": "SOURCE/CritT-Main.lean",
+      "sha256": "ca41c4a035691258981b0f101e23bf5513d8a222315745238e854fbe233ccab5",
+      "role": "reference"
+    },
+    {
+      "id": "c6la4-award-main",
+      "path": "SOURCE/C6LA4-award-Main.lean",
+      "sha256": "9be947ce127b21982fe553c7a8fef07567dc8331d200bede2ac3759dfbd5c88c",
+      "role": "definition_authority"
+    },
+    {
+      "id": "c3la1-award-main",
+      "path": "SOURCE/C3LA1-award-Main.lean",
+      "sha256": "f1243faf4e0d92753a5c90ed056a5885ed44a9c5f10568eac31f9423baff9031",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "sha256": "8b3860723ca4273efb0915d4b5beccfda18b6672710e1071a0137df7d349a0c4",
+      "role": "reference"
+    }
+  ]
+}

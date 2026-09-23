@@ -107,3 +107,50 @@ The internal run root (seat returns, critiques, adjudications, scratch, receipts
 sealed and private; a vendored third-party paper used as a fixture source inside the run is
 excluded from publication. Verification record:
 [`evidence/verification-2026-09-22-r25.md`](../evidence/verification-2026-09-22-r25.md).
+
+## Addendum (2026-09-22/23): surgical package and one seating-design cycle
+
+Authorized by Ashton after the terminal close, as part of the same experiment, in a sibling root
+(`erdos-993-uniform-residual-no-recovery-addendum-dre-2026-09-22`; terminal manifest `94b9845701b9963c3052478bd387f97d1422a03377e7332510a3baa8dac44271`).
+Three lanes ran in parallel: lane B, one governed Lean run for the `Bd` tail; lane C, the four isolated second
+reads the terminal cycle could not seat; lane A, one 3-route / 6-critic / 3-adjudicator / 1-synthesis cycle with
+routes AND critics on Claude Sonnet 5 (the seating design), Opus 5 elsewhere.
+
+**Two further formally verified packages (the thirteenth and fourteenth):**
+
+- [`r25a-b-bd-tail-negative`](../proofs/lean/r25a-b-bd-tail-negative/README.md) — `∀ r ≥ 6, Bd(r,r) < 0` on the
+  ranged integer-rank object (`ErdosR25AddBdTail.bdTailNegative_award`). `E993-R25-BD-TAIL-NEGATIVE` → `formally_verified` on the
+  `r ≥ 6` half; the `d = 5` band now has three formally verified inputs of eight (matching half, carry step,
+  tail) and stays `proved_informal` at its weakest link. Note the correction: at the terminal close the band had
+  TWO formal inputs, not the three stated above and in the terminal review — the card-5 award is the finite part
+  of the cover-half input at top rank only (erratum A1-E-b).
+- [`r25a-a1-forest-delta3-pos-order-12`](../proofs/lean/r25a-a1-forest-delta3-pos-order-12/README.md) —
+  `Δ₃(F) > 0` for every forest of order ≥ 12, enumeration-free (`Erdos993G1.ForestDelta3.forest_delta_three_pos_ge_twelve`); the pendant identity and
+  the arithmetic chain are r25 critic-derived (Cycle 5 C-U3-F; Cycle 6 C-U4-F), the inductions the addendum
+  seat's own. `E993-R25-FOREST-DELTA3-THRESHOLD-ORDER-12` → `formally_verified` on the `n ≥ 12` half; the
+  sharpness half stays informal, now confirmed at full forest scope by a 710-class census.
+
+**Second reads (all six `confirmed_with_repairs`):** Lemma H's uniqueness half and the `τ = 1..7` Γ-residue
+table with `s*(1..7) = 0,1,1,1,2,2,3` registered at `proved_informal`; Composition S1 and the band's eight-input
+ledger recorded as scope notes; the `τ = 12` thin-tree census completion and the order-11 forest enumeration
+confirmed. Corrections to the r25 record: the printed sign-clause range in Lemma H's proof (A1-E-a); the
+formal-input count (A1-E-b); "19 failures at `r ≤ 14`" is 14 (A1-E-c); the "lower ranks remain informal" caveat
+at the `τ ≤ 5` residue cells — only the top rank is Γ-inconclusive.
+
+**Cycle A1 (no headline moved):** the `τ = 12` thin-tree band closed by complete census at every order 26–35
+(539,470,990 accepted instances; no in-window log-concavity failure, no recovery; standing minimum `τ = 21`
+unchanged), registered as `E993-R25-THIN-TREE-TAU-12-BAND-NO-IN-WINDOW-FAILURE-NO-RECOVERY` after its second
+read renamed the proposed `-TAU-LE-12` key (which would have asserted a predicate the census refutes) and
+withheld the forest key; the matching band's Region II one-step lemma still open, with a new sub-multiplicative
+upper bound and four refuted majorization strategies recorded on `E993-R25-MATCHING-BAND-REGION-DOMINATION`.
+
+**Seating finding:** undetermined by design limits — on the one route where a grade moved by this cycle's work
+the step was seat-derived; on the award route the mathematics was inherited from r25's Opus-seated critics; on
+the third no grade moved. Whether a critic moves a grade tracks whether the route leaves an open step of the kind
+the critic charter targets; a successor must vary the route shape, not only the model.
+
+Records (synthesis, cycle close, both Lean-gate closeouts, the controller review addendum, all six second
+reads, the controller notes with errata A1-E-a…f, the terminal manifest) are mirrored under
+[`runs/erdos-993-uniform-residual-no-recovery-addendum-dre-2026-09-22/`](../runs/erdos-993-uniform-residual-no-recovery-addendum-dre-2026-09-22/).
+Verification record: [`evidence/verification-2026-09-23-r25-addendum.md`](../evidence/verification-2026-09-23-r25-addendum.md).
+Every headline stays open; the charter outcome is unchanged; no claim bears on Erdős #993.

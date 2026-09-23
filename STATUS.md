@@ -1,6 +1,6 @@
 # Research Status
 
-Last updated: 2026-09-22 (r25 uniform residual no-recovery DRE: six cycles, terminal close; twelve Lean packages; master registry 360 identities)
+Last updated: 2026-09-23 (r25 addendum: two further Lean packages — the Bd tail and the forest Δ₃ threshold; six second reads confirmed; master registry 363 identities)
 
 ## Headline Problems
 
@@ -16,6 +16,10 @@ The consolidated orientation document — the conjecture, the full proof path
 with per-step status, the claim/fence/obligation tables, strategy verdicts,
 and next-phase priorities — is the
 [master proof ledger (2026-09-04)](docs/master-proof-ledger-2026-09-04.md).
+
+## r25 addendum, 2026-09-23
+
+Two governed Lean packages added (see [the experiment's addendum section](experiments/r25-uniform-residual-no-recovery.md) and [verification](evidence/verification-2026-09-23-r25-addendum.md)): `∀ r ≥ 6, Bd(r,r) < 0` (the `d = 5` band's tail — the band now has three formal inputs of eight, corrected from the two it actually had at the terminal close) and `Δ₃(F) > 0` for every forest of order ≥ 12, enumeration-free. Four outstanding second reads plus two new ones all confirmed with repairs; the `τ = 12` thin-tree band is closed by complete census at orders 26–35 with no in-window failure and no recovery. The master now contains 363 identities (208 VERIFIED, 88 REFUTED, 26 CONDITIONAL, 41 OPEN); all 360 prior objects preserved with statuses unchanged. Tier 1, Tier 2 and every Tier 3 schema remain open.
 
 ## r25 uniform residual no-recovery, 2026-09-22
 

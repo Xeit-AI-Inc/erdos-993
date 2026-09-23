@@ -17,6 +17,10 @@ of size `k`. The problem asks whether
 is weakly unimodal whenever `G` is a finite tree, and likewise whenever `G` is
 a finite forest.
 
+## 2026-09-23: r25 addendum
+
+The [r25 addendum](experiments/r25-uniform-residual-no-recovery.md#addendum-2026-09-2223-surgical-package-and-one-seating-design-cycle) adds two reproducible Lean packages — the `d = 5` band's arithmetic tail `∀ r ≥ 6, Bd(r,r) < 0` on the ranged integer-rank object, and the enumeration-free forest threshold `Δ₃ > 0` at order ≥ 12 — closes the four second reads the terminal cycle could not seat (all confirmed, with corrections to the r25 record including the band's formal-input count), and runs one seating-design cycle whose census closes the `τ = 12` thin-tree band at every order. The master registry now holds 363 identities. Every headline stays open. Read the [verification record](evidence/verification-2026-09-23-r25-addendum.md).
+
 ## 2026-09-22: r25 six-cycle terminal close
 
 The completed [r25 uniform residual no-recovery experiment](experiments/r25-uniform-residual-no-recovery.md) adds twelve reproducible Lean packages at exact, narrow scopes — fixed-band `d = 5` matching and carry-step results, a Catalan-gap theorem, a uniform-in-`d` bottom-rank matching sign at rank `r = d` only, a sharp forest order bound `Δ_k < 0 ⟹ |V| ≤ (k+1)²`, the uniform-in-order forest threshold `Δ₂ > 0` (order ≥ 9), coefficientwise positivity of the certificate dual for every index, and the five `τ ≤ 5` small-rank cells on actual forests — and 72 registered identities. Every headline stays open; no recovering forest exists anywhere in the evidence; the charter outcome is another fixed-band result plus method-fencing refutations, not a uniform advance. Read the [verification record](evidence/verification-2026-09-22-r25.md) and the [terminal controller review](runs/r25-uniform-residual-no-recovery-dre-2026-09-20/CONTROLLER-REVIEW-C6.md).
@@ -170,6 +174,9 @@ The expected transitive axioms are `propext`, `Classical.choice`, and
 - [r24 top-rank selector collapse Lean package](proofs/lean/r24-c4-top-rank-selector-collapse/README.md)
 - [r24 top-rank residual identity Lean package](proofs/lean/r24-c5-top-rank-residual-identity/README.md)
 - [r25 uniform residual no-recovery DRE (six cycles, terminal)](experiments/r25-uniform-residual-no-recovery.md)
+- [2026-09-23 r25 addendum verification record](evidence/verification-2026-09-23-r25-addendum.md)
+- [r25a-b-bd-tail-negative Lean package](proofs/lean/r25a-b-bd-tail-negative/README.md)
+- [r25a-a1-forest-delta3-pos-order-12 Lean package](proofs/lean/r25a-a1-forest-delta3-pos-order-12/README.md)
 - [2026-09-22 r25 verification record](evidence/verification-2026-09-22-r25.md)
 - [r25-c1-fourth-band-seven-edge-matching-sign Lean package](proofs/lean/r25-c1-fourth-band-seven-edge-matching-sign/README.md)
 - [r25-c1-perfect-matching-even-excess-sign Lean package](proofs/lean/r25-c1-perfect-matching-even-excess-sign/README.md)

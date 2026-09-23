@@ -616,6 +616,8 @@ for artifacts not explicitly exported there.
 
 **r25 Lean packages (2026-09-22).** Twelve governed packages under `proofs/lean/r25-*`, each with its frozen contract, informal proof, independent informal audit, fidelity review, verification report and receipt summary; Lean `v4.32.2`, Mathlib `905b95818eb32af7874a58b427f50c1711a5e96c`; axioms exactly `propext`, `Classical.choice`, `Quot.sound`. Internal grade `formally_verified`; published as `verified`. Scopes are the exact contract statements and nothing wider.
 
+**r25 ADDENDUM Lean packages (2026-09-23).** Two governed packages under `proofs/lean/r25a-*` (the `Bd` tail `∀ r ≥ 6, Bd(r,r) < 0`; the forest `Δ₃ > 0` threshold at order ≥ 12, enumeration-free), each with its frozen contract, informal proof, independent informal audit, fidelity review, verification report and receipt summary; Lean `v4.32.2`, Mathlib `905b95818eb32af7874a58b427f50c1711a5e96c`; axioms exactly `propext`, `Classical.choice`, `Quot.sound`. Internal grade `formally_verified`; published as `verified`; each proves the stated HALF of its registry statement (the sharpness halves stay informal).
+
 ## 8. Process Preconditions for the Next Phase
 
 Binding lessons from the TRS2 forensic record (Codex audit,
@@ -938,7 +940,7 @@ records for the seventh consecutive cycle that its grade-moving advances were cr
 adjudicator-derived.
 
 **Informal results of record (grade and attribution on every registry face):** the `d = 5`
-band closed for every `r` (`proved_informal`, weakest link, three formal inputs — a count of
+band closed for every `r` (`proved_informal`, weakest link, three formal inputs [ERRATUM A1-E-b, 2026-09-23: TWO formal inputs of eight at the r25 close — the matching half and the carry step; the card-5 award is the finite part of the cover half at top rank only; THREE with the addendum's `Bd` tail] — a count of
 inputs is not a grade); `c(d) = min(d,5)` for forests (FALSE for graphs); Corollary F at
 `d = 2..11`, a proved SHARP ceiling (refuted at `d = 12` with explicit forests); the matching
 branch at `r = d` (formal) and `r ≥ K(d)` (informal), the band `d < r < K(d)` bounded
@@ -972,3 +974,60 @@ the refuted cover diagonal above `τ = 5`. A successor needs an argument at the 
 a horizon sweep, and a `d`-uniform cover mechanism above `τ = 5`, which nothing in this run
 supplies. The `Bd` tail's top-level statement is one focused Lean cycle from a fourth formal
 band input (open nodes named in the run).
+
+### r25 ADDENDUM — surgical package and one seating-design cycle (erdos-993-uniform-residual-no-recovery-addendum-dre-2026-09-22), CLOSED 2026-09-23
+
+Authorized by Ashton on 2026-09-22 after the r25 terminal close, as part of the same experiment (a sibling
+root; the r25 root stays terminal): lane B, one governed Lean run for the `Bd` tail; lane C, the four second
+reads r25 stated but could not seat; lane A, one 3/6/3/1 cycle with routes AND critics on Claude Sonnet 5 xhigh
+(the seating design), adjudicators/synthesis/readers Claude Opus 5 high. Terminal manifest
+`94b9845701b9963c3052478bd387f97d1422a03377e7332510a3baa8dac44271`; controller review `control/CONTROLLER-REVIEW-A1.md` in the run.
+
+**Two formally verified awards (the program's thirteenth and fourteenth), at exact scope:**
+
+- **B-LA1 — the `Bd` tail.** `∀ r ≥ 6, Bd(r,r) < 0` on the RANGED integer-rank object of record
+  (`ErdosR25AddBdTail.bdTailNegative_award`; fixed points `48, 33, −16, −14406` proved; the `[6,14]` layer by `decide`,
+  `r ≥ 15` by the assembled composition importing the Catalan-gap and step-sign/interior-peak awards
+  byte-identically; the informal auditor served as the gate-ruling-8 isolated reader of the composition).
+  Registry: `E993-R25-BD-TAIL-NEGATIVE` → `formally_verified` on the `r ≥ 6` half (the sharpness half
+  `Bd(r,r) ≥ 0` exactly at `r ∈ {2,3,4,5}` stays informal). Consequence: the `d = 5` band now has THREE formal
+  inputs of eight (matching half, carry step, tail); grade unchanged `proved_informal` at the weakest link.
+- **A1-LA1 — the forest `Δ₃` threshold, enumeration-free.** `Δ₃(F) > 0` for every forest of order ≥ 12
+  (`Erdos993G1.ForestDelta3.forest_delta_three_pos_ge_twelve`), in the frozen G1 definitions, by three strong inductions on the critic-derived
+  pendant identity (r25 Cycle 5 critic C-U3-F) threading the C6-LA1 import and the critic-derived arithmetic chain
+  (r25 Cycle 6 critic C-U4-F), with no enumeration over graphs, trees, forests or isomorphism classes at any
+  order and no `native_decide` (the single kernel-evaluated numeral in the closure is `0 < L3 12`). Registry:
+  `E993-R25-FOREST-DELTA3-THRESHOLD-ORDER-12` → `formally_verified` on the `n ≥ 12` half; the sharpness half
+  (order 11, `P₁₁` unique, `Δ₃ = −14`) stays `proved_informal`, now confirmed at full forest scope by a 710-class
+  census (adjudicator-derived; second read SR-U11). Fixed rank; never a band result.
+
+**Four second reads, all `confirmed_with_repairs` (lane C):** Lemma H's uniqueness half registered as
+`E993-R25-BINOMIAL-DIFFERENCE-CATALAN-FLOOR-UNIQUENESS` (attaining set `{2j−1, 2j} ∩ ℕ`, a singleton at `j = 0`;
+the r25 F adjudication's printed sign-clause range corrected, A1-E-a); the `τ = 1..7` Γ-residue table registered
+as `E993-R25-GAMMA-RESIDUE-SLACK-THRESHOLD` (`s*(1..7) = 0,1,1,1,2,2,3`; the non-strict convention load-bearing —
+three cells attain `Γ_n = 0`, and the "no closed form" fence rests on `(7,2,2)`); Composition S1 recorded as a scope
+note on `E993-R25-COVER-THRESHOLD-MIN-D-5-FOREST` (the complete Γ-route residue: thirteen cells, all at the top
+rank; only the top rank Γ-inconclusive — the r25 "lower ranks informal" caveat corrected); Composition S2 as the
+eight-input ledger on `E993-R25-FOURTH-BAND-CLOSE-ALL-R` with the formal-count erratum (A1-E-b).
+
+**Cycle A1 (three routes; bounded computation and scope lines; no headline moved):** the `τ = 12` thin-tree band
+closed by complete census at every order 26–35 (539,470,990 accepted instances over 1,721,756 skeleton classes;
+no in-window log-concavity failure, no recovery; the two out-of-window failures pre-registered; standing minimum
+`τ = 21` unchanged) — registered as `E993-R25-THIN-TREE-TAU-12-BAND-NO-IN-WINDOW-FAILURE-NO-RECOVERY` after second
+read SR-F, which renamed the synthesis's proposed `-TAU-LE-12` log-concavity key (a predicate the census itself
+refutes) and withheld the forest key (single-component evidence only); the Region II one-step lemma of the matching
+band still open, with a new sub-multiplicative upper bound and four refuted majorization strategies (S1–S4) recorded
+as a scope line on `E993-R25-MATCHING-BAND-REGION-DOMINATION`, and the α-profile's parity-explicit scope.
+
+**Seating finding (the cycle's design deliverable):** with routes and critics both on Sonnet 5 the comparison with
+r25's seven recordings is undetermined — on F the grade-moving closure was seat-derived, on U the grade-moving
+mathematics was inherited from r25's Opus-seated critics, on T no grade moved; whether a critic moves a grade
+tracks whether the route left an open step of the kind the critic charter targets. A successor must vary the route
+shape, not only the model.
+
+**Errata surfaced (sealed records never edited; corrections on registry faces):** A1-E-a (Lemma H sign-clause
+range); A1-E-b (formal-input over-count, incl. in the r25 controller review and this ledger's r25 section above);
+A1-E-c (S-U-1's "19 failures" is 14); A1-E-d (controller: two agents records edited after their seals); A1-E-e (a
+producer-id date literal); A1-E-f (a post-receipt `axioms.txt` edit, receipt bytes restored). Master registry after
+this publication: 363 identities (26 CONDITIONAL, 41 OPEN, 88 REFUTED, 208 VERIFIED); all 360 prior objects preserved with
+statuses unchanged. Every headline OPEN; no claim bears on Erdős #993; closing G1 alone does not solve it.

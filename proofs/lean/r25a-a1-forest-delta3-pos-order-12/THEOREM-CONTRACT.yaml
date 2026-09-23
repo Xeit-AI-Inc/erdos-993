@@ -1,0 +1,197 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "a1-la1-forest-delta3-order-12-v1",
+  "theorem": {
+    "title": "Forest Delta-3 positivity threshold at order 12 (n >= 12 half only)",
+    "informal_statement": "For every finite simple graph F on a finite vertex type X, if F is acyclic (a forest, connected or not) and Nat.card X is at least 12, then Delta_3(F) = i_4(F) - i_3(F) > 0, where i_k(F) is the exact count of independent k-subsets of F (Erdos993G1.indepCount), coeff is the integer zero-extension of indepCount to negative indices, and delta is the first difference coeff(k+1) - coeff(k). This proves the first conjunct only of the registered claim E993-R25-FOREST-DELTA3-THRESHOLD-ORDER-12, whose second conjunct (sharpness at order 11, P_11 the unique minimiser, Delta_3 = -14) is explicitly excluded from this contract and stays proved_informal."
+  },
+  "formulation_status": {
+    "status": "established",
+    "evidence": [
+      "SOURCE/ADJUDICATION.md",
+      "SOURCE/SYNTHESIS.md",
+      "SOURCE/RETURN.md"
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-indepcount",
+      "description": "Exact integer count of independent k-subsets of a finite simple graph F on carrier V: the cardinality of the subtype of k-element Finset V that are F-independent sets, cast to Int. Frozen G1 definition, byte-identical to the sealed source (see SOURCE/SEMANTIC-CONTRACT.md).",
+      "lean_name": "Erdos993G1.indepCount",
+      "dependencies": []
+    },
+    {
+      "id": "def-coeff",
+      "description": "Integer zero-extension of indepCount to all integer indices: coeff F k = indepCount F k.toNat when 0 <= k, else 0.",
+      "lean_name": "Erdos993G1.coeff",
+      "dependencies": ["def-indepcount"]
+    },
+    {
+      "id": "def-delta",
+      "description": "First difference of coeff: delta F k = coeff F (k+1) - coeff F k. Delta_3(F) is a positivity statement (opposite sign from a no-recovery statement); x(F) (first strict descent) never enters this proof.",
+      "lean_name": "Erdos993G1.delta",
+      "dependencies": ["def-coeff"]
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-x",
+      "description": "The (implicit) finite vertex carrier type of the forest, [Finite X].",
+      "lean_type": "Type u",
+      "dependencies": []
+    },
+    {
+      "id": "domain-f",
+      "description": "A simple graph structure on the carrier X.",
+      "lean_type": "SimpleGraph X",
+      "dependencies": ["domain-x"]
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "X",
+      "kind": "forall",
+      "domain_id": "domain-x"
+    },
+    {
+      "binder": "F",
+      "kind": "forall",
+      "domain_id": "domain-f"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-acyclic",
+      "statement": "F.IsAcyclic (SimpleGraph.IsAcyclic; never SimpleGraph.IsTree, so no connectivity is assumed -- disconnected forests are genuinely covered).",
+      "dependencies": ["domain-f"]
+    },
+    {
+      "id": "hyp-order",
+      "statement": "12 <= Nat.card X (the exact threshold of the n >= 12 half of E993-R25-FOREST-DELTA3-THRESHOLD-ORDER-12).",
+      "dependencies": ["domain-x"]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "0 < Erdos993G1.delta F 3",
+    "dependencies": ["def-delta", "hyp-acyclic", "hyp-order"]
+  },
+  "dependency_graph": {
+    "nodes": [
+      { "id": "def-indepcount", "kind": "definition" },
+      { "id": "def-coeff", "kind": "definition" },
+      { "id": "def-delta", "kind": "definition" },
+      { "id": "domain-x", "kind": "domain" },
+      { "id": "domain-f", "kind": "domain" },
+      { "id": "hyp-acyclic", "kind": "hypothesis" },
+      { "id": "hyp-order", "kind": "hypothesis" },
+      { "id": "conclusion", "kind": "conclusion" }
+    ],
+    "edges": [
+      { "from": "def-indepcount", "to": "def-coeff" },
+      { "from": "def-coeff", "to": "def-delta" },
+      { "from": "domain-x", "to": "domain-f" },
+      { "from": "domain-f", "to": "hyp-acyclic" },
+      { "from": "domain-x", "to": "hyp-order" },
+      { "from": "def-delta", "to": "conclusion" },
+      { "from": "hyp-acyclic", "to": "conclusion" },
+      { "from": "hyp-order", "to": "conclusion" }
+    ]
+  },
+  "permitted_axioms": ["propext", "Classical.choice", "Quot.sound"],
+  "constructivity": {
+    "required": false,
+    "policy": "classical_allowed",
+    "rationale": "The proof uses classical logic pervasively (Nat.card over Finite/infinite-agnostic types, Finset bijections via classical decidability instances) exactly as the frozen G1 definitions and every imported fragment (C6-LA1, the pendant identity, the arithmetic chain) already do; the three permitted axioms are propext, Classical.choice, Quot.sound, matching SOLUTION-CONTRACT.md Sec.4's Lean gate exactly."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "Erdos993G1.ForestDelta3.forest_delta_three_pos_ge_twelve",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem forest_delta_three_pos_ge_twelve {X : Type u} [Finite X] (F : SimpleGraph X)\n    (hF : F.IsAcyclic) (hn : 12 ≤ Nat.card X) : 0 < Erdos993G1.delta F 3",
+    "expected_statement_sha256": "f441f25004c731c5a267f349b5c4cf3e1cb7921a08aae477607cea7f577f83ec"
+  },
+  "source_materials": [
+    {
+      "id": "src-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "sha256": "27fe04549fb7d74c3805e66bbc63bbf73c2e760cdc46ce2aa3b24d3334298290",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "sha256": "3fb65f347ccb7f9c5cc9415053de77c3f6d0c59f2a209180c999bd1478e064bb",
+      "role": "reference"
+    },
+    {
+      "id": "src-semantic-contract",
+      "path": "SOURCE/SEMANTIC-CONTRACT.md",
+      "sha256": "3bbeae0777006c9a4479f9976881f597373867782fe71157166dc75cb306aab3",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-adjudication",
+      "path": "SOURCE/ADJUDICATION.md",
+      "sha256": "bc01ad5b6388ff4d2b5eb5f6ec569ba867f59a5347febfa1371b2949348de598",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "src-synthesis",
+      "path": "SOURCE/SYNTHESIS.md",
+      "sha256": "44821949e10423f6ef85bcb7fc1b5f5a095e6294501fd02b9077deb9caa2e265",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "src-return",
+      "path": "SOURCE/RETURN.md",
+      "sha256": "b445709c733ceeca98ce9104c643064490e517fced94b73b63921884c4cb8e99",
+      "role": "reference"
+    },
+    {
+      "id": "src-pendant-identity",
+      "path": "SOURCE/C-U3-F-Crit.lean",
+      "sha256": "d8aae69d35b0539097275bd940490a5a5c88e1b2f075a4e4320049842b95a85e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-pendant-identity-corroboration",
+      "path": "SOURCE/C-U3-T-CriticPendant.lean",
+      "sha256": "c9a230bcd9b7fdece2ad4ea33667d6d1eafe5fed1908797617a4dacd4f18baf3",
+      "role": "reference"
+    },
+    {
+      "id": "src-frozen-entries",
+      "path": "SOURCE/C-U3-F-Transcribed.lean",
+      "sha256": "74cce95f60a9bc811a88115eb2623a133d558e4ecc00b0bb3f23c376ae1cdc53",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-c6la1-import",
+      "path": "SOURCE/C6-LA1-Main.lean",
+      "sha256": "de002193e6322583122fd3855a64df53a2599187cb91dd1c18971128bc76faf0",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-arithmetic-chain",
+      "path": "SOURCE/CriticUC604FChain.lean",
+      "sha256": "f436e4ae3a15e12ffb091e7665828e991d400f843c7b076dca15c5585ee24494",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-source-digests",
+      "path": "SOURCE/SOURCE-DIGESTS.json",
+      "sha256": "d70e5a994667660d2e653aa238d2538100fdbc7d144e81324596365de5982b49",
+      "role": "reference"
+    }
+  ]
+}
