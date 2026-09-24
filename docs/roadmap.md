@@ -1,6 +1,6 @@
 # Open Research Roadmap
 
-Updated after the three-cycle G1 close on 2026-09-20 and the completed r23b/r24 siblings. TREE, FOREST, TRANSFER, unrestricted G1 and aggregated beta-prime remain open. The [current assessment](assessment-2026-09-20.md) explains the following priorities and the limits of any forecast.
+Updated 2026-09-24 after r25 (uniform residual no-recovery), r26 (the r24 top-rank residual sign `(RC)` formally verified) and r27 (the finite forest degree lemma and extension inequality formally verified, with the linear order bound `Δ_k < 0 ⇒ n ≤ 4k`). Earlier: the three-cycle G1 close on 2026-09-20 and the completed r23b/r24 siblings. TREE, FOREST, TRANSFER, unrestricted G1 and aggregated beta-prime remain open. The [current assessment](assessment-2026-09-20.md) explains the following priorities and the limits of any forecast.
 
 ## 1. A uniform structural residual theorem
 

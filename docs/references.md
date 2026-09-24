@@ -19,6 +19,14 @@ This is a starting bibliography, not a claim of worldwide completeness.
    transfer invariant
    ([replayable check](../evidence/kl-order26-trs2-witness/README.md)).*
 5. Thomas F. Bloom, [Erdős Problem #993](https://www.erdosproblems.com/993).
+6. Fang, Lu, Nevo, Yao, and Zheng, "Unimodality of Independence Polynomials for
+   Sufficiently Large Forests," [arXiv:2609.20961](https://arxiv.org/abs/2609.20961)
+   (2026). *Its §8 finite forest degree lemma and extension inequality are
+   formally verified in this record with an in-run proof
+   ([r27](../experiments/r27-forest-degree-extension.md)); the asymptotic
+   theorem itself is not part of this record. The authors' accompanying Lean
+   development was read for audit only (no license in the audit copy); no line
+   of it is used here.*
 
 Claims taken from preprints or computational reports must retain that source
 classification until independently verified.

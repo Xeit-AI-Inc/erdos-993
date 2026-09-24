@@ -27,7 +27,7 @@ sequences are not closed under convolution.
 
 ## Current Boundary
 
-As of the 2026-09-20 G1 release, both headline targets remain open in this research record. No verified counterexample, complete proof, or formal independence result has been found.
+As of the 2026-09-24 r27 release, both headline targets remain open in this research record. No verified counterexample, complete proof, or formal independence result has been found.
 
 The current graph theorems include the rank-four local log-concavity result and the new all-rank order-`2r+4` forest crossing theorem: an earlier strict descent implies `Delta_r<=0` on that exact order band. Three G1 packages close the ordinary `p<=5` case and two exact residual-size bands. Unrestricted G1, the complete favorable-leaf aggregate, and forest transfer remain open. See [current results](results.md) and [the assessment](assessment-2026-09-20.md).
 

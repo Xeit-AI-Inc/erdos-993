@@ -324,3 +324,41 @@ characterized, TYPE-2-DIRECT proved unconditional, LEMMA F3-1 sharp, the CB-arm
 criterion proved in Lean. The relation-family transport lemmas and abstract
 bridge corollaries are sorry-free; one named residual (O16) remains. Object of
 record: the ordinary-tree object (Horn B), with the universal transfer as O15.
+
+## r24 (2026-09-18): the signed top-rank residual identity
+
+The direct attack on the literal complete favorable-original-leaf aggregate `S(T,p) ≤ 0` on the window
+`x(T)+2 ≤ p < α(T)` left the headline open after six cycles, but produced the signed identity `(RI)` at the top
+rank `p = α−1` on the residual class (every leaf in every maximum independent set): `S(T, α−1) = ℓM − Σ_B(|B∩L| −
+Σ_{s∈B} λ(s))`, formally verified together with its four-hypothesis companion. Its weighted lower bound on the
+non-flat residual class was named as terminal debt TD-6. See [r24](../experiments/r24-direct-favorable-leaf-aggregate.md).
+
+## r25 (2026-09-22/23): uniform-in-`d` matching/cover theorems and forest order bounds
+
+Fourteen formal awards across the run and its surgical addendum: the fixed-band and even-`d` perfect-matching
+theorems, the uniform-in-`d` bottom-rank matching, the Catalan-gap monotone ratio, the `Bd` tail `Bd(r,r) < 0` for
+`r ≥ 6`, the sharp forest descent order bound `Δ_k < 0 ⇒ n ≤ (k+1)²`, and the enumeration-free forest threshold
+`Δ₃ > 0` at order ≥ 12. The `d = 5` band closed informally for every `r`; the forest-wide no-recovery headline
+`E993-R25-UNR-FOREST-WIDE` stays open. The K1-addition closure `x(G ⊔ K₁) ≤ x(G)+1` was registered for `x ≤ 4`,
+with a rank-5 residue at orders 22–25. See [r25](../experiments/r25-uniform-residual-no-recovery.md).
+
+## r26 (2026-09-24): the top-rank residual sign `(RC)` is formally verified
+
+For every finite tree with `2 ≤ α`, `x + 2 ≤ α − 1` and every leaf in every maximum independent set,
+`S(T, α−1) ≤ 0` — TD-6 closed by an exchange ("forced neighbour") and grouped counting over the near-maximum
+shell, composed with `(RI)`. Informally sharper: `S ≤ −2` on the eligible class, with `S = 0` exactly at `P₅` and
+`S > 0` exactly at `P₃`, both outside the window. The r24 record's "realized by 1,420 eligible residual trees"
+statement was a predicate substitution (realized count 0, now a theorem). The all-rank aggregate stays open:
+interior ranks and the non-residual class. See [r26](../experiments/r26-top-rank-residual-sign.md).
+
+## r27 (2026-09-24): the finite forest degree lemma and extension inequality are formally verified
+
+On the program's G1 definitions of record, for every finite forest and every `k`:
+`Σ_{J∈I_k} Σ_{v∈J} deg(v) ≤ 2k·i_k` and `n·i_k ≤ (k+1)·i_{k+1} + 3k·i_k` (Fang–Lu–Nevo–Yao–Zheng 2026 §8; in-run
+injection proof of a stronger root-corrected lemma, not the paper's polynomial induction), with the unconditional
+consequences `Δ_k < 0 ⇒ n ≤ 4k` (a linear order bound, strengthening the r25 `(k+1)²` award as a separate key),
+`n ≥ 21 ⇒ Δ_5 ≥ 0` and `x < r ⇒ n ≤ 4r − 4`. The r25 rank-5 residue is empty; the K1-addition closure extends to
+`x ≤ 5` at census grade. The true descent maxima are `4, 8, 11, 15, 18` for `k = 1..5` (order-20 census), so `4k`
+is exact only at `k = 1, 2`. `(DL)` is never tight for `k ≥ 1` with `i_k > 0`, is false on `K_{2,3}`, and every
+cycle satisfies it with equality. These are order bounds with sign `Δ_k ≥ 0` — not no-recovery statements.
+See [r27](../experiments/r27-forest-degree-extension.md) and [verification](../evidence/verification-2026-09-24-r27.md).
