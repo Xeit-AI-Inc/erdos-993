@@ -1,0 +1,344 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "c1-la2-deletion-injection-fibre-v1",
+  "theorem": {
+    "title": "C1-LA2 Deletion Injection and Sharp Fibre Inequality for Independent Subsets of an Arbitrary Vertex Finset",
+    "informal_statement": "Let V be a finite type with decidable equality, G a simple graph on V with decidable adjacency, U : Finset V an arbitrary vertex finset, and I(U) the finset of independent subsets of U. Then (a) 2 * (sum over A in I(U) of |A|) <= |U| * |I(U)| in the natural numbers, and (b) for EVERY natural number ℓ, ((ℓ : ℤ) - (|U| : ℤ)) * (|I(U)| : ℤ) <= sum over A in I(U) of ((ℓ : ℤ) - 2 * (|A| : ℤ)) in the integers. The terminal declaration of this contract is (b), the sharp fibre inequality. There are no hypotheses beyond finiteness: no tree, no connectivity, no hyp-alpha, no hyp-eligible, no residual hypothesis (star), and no |U| <= ℓ. Statement (a) is the in-run RE-PROOF of the occupancy bound of Andriantiana-Razanajatovo Misanantenaina-Wagner (2020), carried on the face of this contract per SOLUTION-CONTRACT.md fence 7; nothing is imported. The award asserts nothing about the residual aggregate S, about trees, about the family decomposition, about W_III, or about (RC); the instantiation of (b) at U := U(J') belongs to award group C1-LA1."
+  },
+  "formulation_status": {
+    "status": "established",
+    "evidence": [
+      "Award capsule control/c1-stage7-capsules/C1-LA2-PACKET-MANIFEST.json: seal 75ebcffbd75128f47c4f6aabc7bae00ce43fac4964fcb05e0f9aa37b4bd9eb78 recomputed and all 28 listed byte counts and digests verified; see CAPSULE-VERIFICATION.json in this run root.",
+      "Cycle 1 Stage 6 synthesis (cycles/cycle-1/stage6/SYNTHESIS.md, section 'Lean awards', 'C1-LA2 — the deletion injection and the sharp fibre inequality') awards exactly these two declarations at exactly this scope, with no hypotheses beyond finiteness, and records the material as compiled sorry-free with the three permitted axioms.",
+      "Named independently by all three orientations: T (AG-T2), F (Group F-B), U (U-A / U-B); the three Stage 5 adjudications all record it CONTRACT-READY with registration blocked on the attribution line alone.",
+      "Compiled form route-attributed to U2 (cycles/cycle-1/stage3/returns/U2/RETURN.md items (a)/(b)); sharp form critic-attributed to C-U2-F (cycles/cycle-1/stage4/critics/U2/F/CRITIQUE.md finding F7 item 1); informal derivations T3 (v) and C-F1-T (D).",
+      "INFORMAL-PROOF.md in this run root records the statement-level proof of both declarations, the ARMW-2020 attribution line, the excluded conclusions, and the natural-number-subtraction audit."
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-indep-powerset",
+      "lean_name": "R26LA2.indepPowerset",
+      "description": "I(U) := indepPowerset G U := U.powerset.filter (fun A => G.IsIndepSet (A : Set V)) : the finset of independent subsets of the vertex finset U. Membership A in I(U) unfolds exactly to A subset U and G.IsIndepSet (A : Set V). Carried byte-identically at the declaration level from U2 (sources/c1-stage7-sources/U2-Main.lean, c382707596674822e0b78135414cdd3320e0bc56f9f558fee78e438794b1043b).",
+      "dependencies": [
+        "domain-vertex-type",
+        "domain-finite-simple-graph",
+        "domain-adjacency-decision",
+        "domain-vertex-finset"
+      ]
+    },
+    {
+      "id": "def-sum-card-filter-comm",
+      "lean_name": "C5LA1.sum_card_filter_comm",
+      "description": "The frozen C5-LA1 award's ENTRY 23 lemma (Fubini for filters): for finsets s and t and a decidable relation r, sum over a in s of |{b in t : r a b}| equals sum over b in t of |{a in s : r a b}|. Carried byte-identically at the declaration level from the frozen C5-LA1 Lean source sources/r24/c5-la1/LeanProject/LeanProof/Main.lean (0933211d8f02acd867e91547d4a2b09d13fcc3ea178e192e385acc33b696b63b), entry digest 8a2d0fcef47481141c9b03c55648c36181f4dde28ed2dd5ed1d8d96bc4b0f59e. It is the only C5-LA1 entry this award depends on; it is a lemma, recorded here as a declaration node because the contract schema carries declaration nodes under 'definitions'.",
+      "dependencies": []
+    },
+    {
+      "id": "def-deletion-injection-bound",
+      "lean_name": "R26LA2.deletionInjectionBound",
+      "description": "The deletion injection bound: 2 * (sum over A in I(U) of |A|) <= |U| * |I(U)| in the natural numbers, for an arbitrary finite simple graph and an arbitrary vertex finset U, with no tree, connectivity, hyp-alpha, hyp-eligible or residual hypothesis. Proved in-run by the injection A |-> A.erase u from {A in I(U) : u in A} into {A in I(U) : u not-in A} for each fixed u in U, the exact partition of I(U) by membership of u, and the double count sum over u in U of |{A in I(U) : u in A}| = sum over A in I(U) of |A|. This is the in-run RE-PROOF of the occupancy bound of Andriantiana-Razanajatovo Misanantenaina-Wagner (2020); nothing is imported. Carried byte-identically at the body level from U2 (sources/c1-stage7-sources/U2-Main.lean), with the single declaration keyword changed from 'theorem' to 'lemma' as the Stage 7 brief section 2 directs and the registrar's kind grammar requires.",
+      "dependencies": [
+        "def-indep-powerset",
+        "def-sum-card-filter-comm",
+        "domain-vertex-type",
+        "domain-finite-simple-graph",
+        "domain-adjacency-decision",
+        "domain-vertex-finset"
+      ]
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-vertex-type",
+      "lean_type": "V : Type* with [Fintype V] [DecidableEq V]",
+      "description": "An arbitrary finite vertex type with decidable equality. Finiteness is the only ambient assumption of this award.",
+      "dependencies": []
+    },
+    {
+      "id": "domain-finite-simple-graph",
+      "lean_type": "G : SimpleGraph V",
+      "description": "An arbitrary simple graph on V. No tree, forest, connectivity or residual structure is assumed anywhere in this award.",
+      "dependencies": [
+        "domain-vertex-type"
+      ]
+    },
+    {
+      "id": "domain-adjacency-decision",
+      "lean_type": "[DecidableRel G.Adj]",
+      "description": "A decidability instance for adjacency, required so that the filter defining indepPowerset is a Finset operation.",
+      "dependencies": [
+        "domain-finite-simple-graph"
+      ]
+    },
+    {
+      "id": "domain-vertex-finset",
+      "lean_type": "U : Finset V",
+      "description": "An arbitrary finset of vertices. It is not required to be independent, to lie in any particular structure, or to satisfy any cardinality bound.",
+      "dependencies": [
+        "domain-vertex-type"
+      ]
+    },
+    {
+      "id": "domain-rank-parameter",
+      "lean_type": "ℓ : ℕ",
+      "description": "An arbitrary natural number parameter. In the intended downstream use it is the leaf count |L(G)|, but the award assumes nothing about it: in particular |U| <= ℓ is NOT assumed, and the inequality holds also when ℓ < |U|, where its left-hand side is negative.",
+      "dependencies": []
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "V",
+      "kind": "forall",
+      "domain_id": "domain-vertex-type"
+    },
+    {
+      "binder": "G",
+      "kind": "forall",
+      "domain_id": "domain-finite-simple-graph"
+    },
+    {
+      "binder": "adjacencyDecision",
+      "kind": "forall",
+      "domain_id": "domain-adjacency-decision"
+    },
+    {
+      "binder": "U",
+      "kind": "forall",
+      "domain_id": "domain-vertex-finset"
+    },
+    {
+      "binder": "ell",
+      "kind": "forall",
+      "domain_id": "domain-rank-parameter"
+    }
+  ],
+  "hypotheses": [],
+  "conclusion": {
+    "id": "conclusion-sharp-fibre-inequality",
+    "statement": "For every finite vertex type V with decidable equality, every simple graph G on V with decidable adjacency, every U : Finset V and every natural number ℓ, the inequality ((ℓ : ℤ) - (|U| : ℤ)) * (|I(U)| : ℤ) <= sum over A in I(U) of ((ℓ : ℤ) - 2 * (|A| : ℤ)) holds in the integers, where I(U) = indepPowerset G U. No hypothesis beyond finiteness is used: no tree, no connectivity, no hyp-alpha, no hyp-eligible, no residual hypothesis, and in particular no |U| <= ℓ. The statement asserts nothing about the residual sign S, about trees, about families (I)/(II)/(III), about W_III or about (RC); its instantiation at U := U(J') belongs to award group C1-LA1 and is outside this contract.",
+    "dependencies": [
+      "def-indep-powerset",
+      "def-deletion-injection-bound",
+      "def-sum-card-filter-comm",
+      "domain-vertex-type",
+      "domain-finite-simple-graph",
+      "domain-adjacency-decision",
+      "domain-vertex-finset",
+      "domain-rank-parameter"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "def-indep-powerset",
+        "kind": "definition"
+      },
+      {
+        "id": "def-sum-card-filter-comm",
+        "kind": "definition"
+      },
+      {
+        "id": "def-deletion-injection-bound",
+        "kind": "definition"
+      },
+      {
+        "id": "domain-vertex-type",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-finite-simple-graph",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-adjacency-decision",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-vertex-finset",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-rank-parameter",
+        "kind": "domain"
+      },
+      {
+        "id": "conclusion-sharp-fibre-inequality",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "domain-vertex-type",
+        "to": "def-indep-powerset"
+      },
+      {
+        "from": "domain-finite-simple-graph",
+        "to": "def-indep-powerset"
+      },
+      {
+        "from": "domain-adjacency-decision",
+        "to": "def-indep-powerset"
+      },
+      {
+        "from": "domain-vertex-finset",
+        "to": "def-indep-powerset"
+      },
+      {
+        "from": "def-indep-powerset",
+        "to": "def-deletion-injection-bound"
+      },
+      {
+        "from": "def-sum-card-filter-comm",
+        "to": "def-deletion-injection-bound"
+      },
+      {
+        "from": "domain-vertex-type",
+        "to": "def-deletion-injection-bound"
+      },
+      {
+        "from": "domain-finite-simple-graph",
+        "to": "def-deletion-injection-bound"
+      },
+      {
+        "from": "domain-adjacency-decision",
+        "to": "def-deletion-injection-bound"
+      },
+      {
+        "from": "domain-vertex-finset",
+        "to": "def-deletion-injection-bound"
+      },
+      {
+        "from": "domain-vertex-type",
+        "to": "domain-finite-simple-graph"
+      },
+      {
+        "from": "domain-finite-simple-graph",
+        "to": "domain-adjacency-decision"
+      },
+      {
+        "from": "domain-vertex-type",
+        "to": "domain-vertex-finset"
+      },
+      {
+        "from": "def-indep-powerset",
+        "to": "conclusion-sharp-fibre-inequality"
+      },
+      {
+        "from": "def-deletion-injection-bound",
+        "to": "conclusion-sharp-fibre-inequality"
+      },
+      {
+        "from": "def-sum-card-filter-comm",
+        "to": "conclusion-sharp-fibre-inequality"
+      },
+      {
+        "from": "domain-vertex-type",
+        "to": "conclusion-sharp-fibre-inequality"
+      },
+      {
+        "from": "domain-finite-simple-graph",
+        "to": "conclusion-sharp-fibre-inequality"
+      },
+      {
+        "from": "domain-adjacency-decision",
+        "to": "conclusion-sharp-fibre-inequality"
+      },
+      {
+        "from": "domain-vertex-finset",
+        "to": "conclusion-sharp-fibre-inequality"
+      },
+      {
+        "from": "domain-rank-parameter",
+        "to": "conclusion-sharp-fibre-inequality"
+      }
+    ]
+  },
+  "permitted_axioms": [
+    "Classical.choice",
+    "propext",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "explicit_axiom_allowlist",
+    "rationale": "The statement is finite and combinatorial, but the proof is elaborated through Mathlib's classical Finset and Set.Pairwise infrastructure (classical in the filter/decidability layer and in linarith/nlinarith normalisation), so only the three explicitly listed standard Lean axioms may appear in the kernel dependency report for R26LA2.fibreInequalitySharp. No sorry, admit, axiom, native_decide, or decide-over-enumeration standing in for a universal step is permitted."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "R26LA2.fibreInequalitySharp",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "(G : SimpleGraph V) [DecidableRel G.Adj] (U : Finset V) (ℓ : ℕ) : ((ℓ : ℤ) - (U.card : ℤ)) * ((indepPowerset G U).card : ℤ) ≤ ∑ A ∈ indepPowerset G U, ((ℓ : ℤ) - 2 * (A.card : ℤ))",
+    "expected_statement_sha256": "4c23d4046c43790a6142ee1462d1c8338144ca7c330727957ceb3b7231f05e46"
+  },
+  "source_materials": [
+    {
+      "id": "source-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "role": "reference",
+      "sha256": "8e289f532fec249b0f18c6662e33107c173d27c8fe8733a3a90edac34239d97b"
+    },
+    {
+      "id": "source-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "role": "theorem_intent",
+      "sha256": "8de0f32f2364b8224f1b53b851e70af6a7bb27a660a45c1fd9657a863bbf8c0f"
+    },
+    {
+      "id": "source-carry-indep-powerset",
+      "path": "DRAFTS/carry-indepPowerset.declaration.txt",
+      "role": "definition_authority",
+      "sha256": "9a8a2d6fed890098a064c6d01c75013758eb1e06c8b242e5dfa70af668ae54cf"
+    },
+    {
+      "id": "source-carry-sum-card-filter-comm",
+      "path": "DRAFTS/carry-C5LA1-sum_card_filter_comm.declaration.txt",
+      "role": "definition_authority",
+      "sha256": "ab69bac2e2ef51c09fc20bcfc9171cb49ff758f0e978896470a25641febc48ab"
+    },
+    {
+      "id": "source-carry-deletion-injection-bound",
+      "path": "DRAFTS/carry-deletionInjectionBound.declaration.txt",
+      "role": "definition_authority",
+      "sha256": "4da5315a2ee97fd32a99f9644ccedb55de729d0bce6f927f027356957fc61541"
+    },
+    {
+      "id": "source-carry-fibre-inequality-sharp",
+      "path": "DRAFTS/carry-fibreInequalitySharp.declaration.txt",
+      "role": "definition_authority",
+      "sha256": "95185be6ea95cdeadb98202b95298e2c5f5068b323ae058b63d8d764415f4275"
+    },
+    {
+      "id": "source-fragment-1-indep-powerset",
+      "path": "LeanProject/LeanProof/Snippets/0001-definition-R26LA2-indepPowerset.lean.fragment",
+      "role": "definition_authority",
+      "sha256": "16f62186a8ff95ee3f2688ce4fc3473511013583285672e7edcc48bd49feed79"
+    },
+    {
+      "id": "source-fragment-2-sum-card-filter-comm",
+      "path": "LeanProject/LeanProof/Snippets/0002-lemma-C5LA1-sum_card_filter_comm.lean.fragment",
+      "role": "definition_authority",
+      "sha256": "d46b2e45dbdc672c60d2cdb3cc0fee99969af8f296a0c8d73fc88a2cebf3eaf9"
+    },
+    {
+      "id": "source-fragment-3-deletion-injection-bound",
+      "path": "LeanProject/LeanProof/Snippets/0003-lemma-R26LA2-deletionInjectionBound.lean.fragment",
+      "role": "definition_authority",
+      "sha256": "181215acccb1d36090fdf7f8aaa6b65da869f039b2673418434b6ee7e6a58d93"
+    },
+    {
+      "id": "source-fragment-4-fibre-inequality-sharp",
+      "path": "LeanProject/LeanProof/Snippets/0004-theorem-R26LA2-fibreInequalitySharp.lean.fragment",
+      "role": "definition_authority",
+      "sha256": "c8fddaacb8d3ba8c6cf7c7f94a8135f76bfd23bacb9a75264ac2e4a00ed961f2"
+    }
+  ]
+}

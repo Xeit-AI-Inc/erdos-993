@@ -1,6 +1,6 @@
 # Research Status
 
-Last updated: 2026-09-23 (r25 addendum: two further Lean packages — the Bd tail and the forest Δ₃ threshold; six second reads confirmed; master registry 363 identities)
+Last updated: 2026-09-24 (r26: the r24 top-rank residual sign (RC) formally verified; two companion Lean packages; master registry 370 identities)
 
 ## Headline Problems
 
@@ -16,6 +16,10 @@ The consolidated orientation document — the conjecture, the full proof path
 with per-step status, the claim/fence/obligation tables, strategy verdicts,
 and next-phase priorities — is the
 [master proof ledger (2026-09-04)](docs/master-proof-ledger-2026-09-04.md).
+
+## r26, 2026-09-24
+
+The r24 top-rank residual sign `(RC)` is formally verified (see [the experiment page](experiments/r26-top-rank-residual-sign.md) and [verification](evidence/verification-2026-09-24-r26.md)): on the eligible top-rank residual class of finite trees, `S(T, α−1) ≤ 0`, composed with the r24 identity `(RI)` — r24's terminal debt TD-6 closed. Companion packages: the deletion-injection/fibre bound and the tree-structural core. Informally, `S ≤ −2` with equality boundary `P₅` outside the window. The r24 record's "1,420 realized negative family-(I) weights" statement is corrected (a predicate substitution; the identity stands); `N₂ ≤ M` is refuted. The master now contains 370 identities (214 VERIFIED, 89 REFUTED, 26 CONDITIONAL, 41 OPEN); all 363 prior objects preserved with statuses unchanged. The all-rank aggregate, `E993-BETA-AGG`, TREE, FOREST and Erdős #993 remain open.
 
 ## r25 addendum, 2026-09-23
 

@@ -17,6 +17,10 @@ of size `k`. The problem asks whether
 is weakly unimodal whenever `G` is a finite tree, and likewise whenever `G` is
 a finite forest.
 
+## 2026-09-24: r26 — the r24 top-rank residual sign is formally verified
+
+The [r26 run](experiments/r26-top-rank-residual-sign.md) validated a literature-map candidate proof of the r24 top-rank residual sign `(RC)` and closed it as a governed Lean package composed with the r24 identity `(RI)`: for every finite tree with `2 ≤ α`, `x + 2 ≤ α − 1` and every leaf in every maximum independent set, `S(T, α−1) ≤ 0` — r24's terminal debt TD-6. Two companion packages (the deletion-injection/fibre bound; the tree-structural core), the strict form `S ≤ −2` informally, a correction of the r24 record's "1,420 realized" statement, and `N₂ ≤ M` refuted. The master registry now holds 370 identities. The all-rank aggregate and every headline stay open. Read the [verification record](evidence/verification-2026-09-24-r26.md).
+
 ## 2026-09-23: r25 addendum
 
 The [r25 addendum](experiments/r25-uniform-residual-no-recovery.md#addendum-2026-09-2223-surgical-package-and-one-seating-design-cycle) adds two reproducible Lean packages — the `d = 5` band's arithmetic tail `∀ r ≥ 6, Bd(r,r) < 0` on the ranged integer-rank object, and the enumeration-free forest threshold `Δ₃ > 0` at order ≥ 12 — closes the four second reads the terminal cycle could not seat (all confirmed, with corrections to the r25 record including the band's formal-input count), and runs one seating-design cycle whose census closes the `τ = 12` thin-tree band at every order. The master registry now holds 363 identities. Every headline stays open. Read the [verification record](evidence/verification-2026-09-23-r25-addendum.md).
@@ -174,6 +178,10 @@ The expected transitive axioms are `propext`, `Classical.choice`, and
 - [r24 top-rank selector collapse Lean package](proofs/lean/r24-c4-top-rank-selector-collapse/README.md)
 - [r24 top-rank residual identity Lean package](proofs/lean/r24-c5-top-rank-residual-identity/README.md)
 - [r25 uniform residual no-recovery DRE (six cycles, terminal)](experiments/r25-uniform-residual-no-recovery.md)
+- [2026-09-24 r26 verification record](evidence/verification-2026-09-24-r26.md)
+- [r26-c1-la1-top-rank-residual-sign Lean package](proofs/lean/r26-c1-la1-top-rank-residual-sign/README.md)
+- [r26-c1-la2-deletion-injection-fibre Lean package](proofs/lean/r26-c1-la2-deletion-injection-fibre/README.md)
+- [r26-c1-la3-tree-structural-core Lean package](proofs/lean/r26-c1-la3-tree-structural-core/README.md)
 - [2026-09-23 r25 addendum verification record](evidence/verification-2026-09-23-r25-addendum.md)
 - [r25a-b-bd-tail-negative Lean package](proofs/lean/r25a-b-bd-tail-negative/README.md)
 - [r25a-a1-forest-delta3-pos-order-12 Lean package](proofs/lean/r25a-a1-forest-delta3-pos-order-12/README.md)

@@ -29568,7 +29568,7 @@
         "sha256": "7515683a1a8982767062221bf0ca6fb7135bfb02c46ce5c09293d73443d7dda8"
       },
       "novelty_claimed": false,
-      "scope": "Literal ordinary-tree aggregate. Each original leaf is a distinct tag even when supports coincide; higher-degree supports are included; the empty favorable set has sum zero.",
+      "scope": "Literal ordinary-tree aggregate. Each original leaf is a distinct tag even when supports coincide; higher-degree supports are included; the empty favorable set has sum zero. r26 (2026-09-24): its TOP-RANK RESIDUAL sub-case (RC) is formally verified as E993-R26-TOP-RANK-RESIDUAL-SIGN; this all-rank claim stays OPEN (other ranks and the non-residual class untouched; no positive complete eligible aggregate is known).",
       "source_occurrence_links": [
         {
           "identity_review": {
@@ -29644,7 +29644,21 @@
         }
       ],
       "statement": "For every finite ordinary tree T and every natural p>=x(T)+2, sum over all favorable ORIGINAL leaves v, defined by Delta_p(T-v)<0, of [Delta_(p-1)(T-{v,s_v})-Delta_(p-1)(T-N_T[s_v])]<=0.",
-      "status": "OPEN"
+      "status": "OPEN",
+      "terminal_history": [
+        {
+          "run": "erdos-993-top-rank-residual-sign-dre-2026-09-23 (r26)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "scope note: top-rank residual sub-case closed by E993-R26-TOP-RANK-RESIDUAL-SIGN; status OPEN unchanged"
+        },
+        {
+          "run": "erdos-993-top-rank-residual-sign-dre-2026-09-23 (r26)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "scope note: top-rank residual sub-case closed by E993-R26-TOP-RANK-RESIDUAL-SIGN; status OPEN unchanged"
+        }
+      ]
     },
     {
       "alias_patterns": [],
@@ -36263,10 +36277,272 @@
       "registered_by": "erdos-993-math-dre-20260922-r25-addendum",
       "registered": "2026-09-22 (addendum close)",
       "provenance": "imported additively from the run-local registry of erdos-993-uniform-residual-no-recovery-addendum-dre-2026-09-22 at the addendum close (2026-09-23); terminal manifest 94b9845701b9963c3052478bd387f97d1422a03377e7332510a3baa8dac44271"
+    },
+    {
+      "claim_key": "E993-R26-TOP-RANK-RESIDUAL-SIGN",
+      "statement": "For every finite simple graph G on a finite vertex type with decidable equality and adjacency: if G is a tree, 2 <= alpha(G), x(G) + 2 <= alpha(G) - 1 (x the first STRICT descent of the independence sequence, C5LA1.crossingIndex), and every leaf of G belongs to every maximum independent set of G, then the top-rank favorable-original-leaf aggregate S(G, alpha(G) - 1) = C5LA1.aggregate G (G.indepNum - 1) is <= 0. (The r24 top-rank residual sign (RC) on the whole eligible top-rank residual class, flat and non-flat.)",
+      "scope": "Literal ordinary-tree statement at the top rank p = alpha - 1 on the residual class, at exactly the four C5-LA1 hypotheses; composed with the formally verified identity (RI) C5LA1.topRankResidualIdentity in one project. hEligible is consumed only through 3 <= alpha (it excludes P_3, whose unqualified expression is +2); the proof shows S <= -ell(ell-2)M - (ell-4)N_2 in Z with N_2 <= k_2 M and k_2 <= floor(ell/2). NO status transfer: the all-rank literal aggregate E993-R23-ORDINARY-FAVORABLE-LEAF-AGGREGATE stays OPEN (other ranks and the non-residual class untouched); E993-BETA-AGG (governed RTree scope) stays OPEN and needs the ordinary-to-RTree transport, never attempted; the common-leaf condition, TREE, FOREST, TRANSFER and Erdos #993 are untouched. Excluded from the award: the strict form S < 0 (registered separately at proved_informal, see E993-R26-TOP-RANK-RESIDUAL-SIGN-STRICT), S = 0 iff P_5, any other rank, forests, RTree, N_2 <= M (false from order 9).",
+      "status": "VERIFIED",
+      "evidence_grade": "formally_verified",
+      "formal_award": true,
+      "smallest_witness_order": null,
+      "certificate": "formally_verified (governed lean-proof-workflow run runs/lean-2026-09-24-c1-la1-top-rank-residual-sign of r26: kernel verified within propext/Classical.choice/Quot.sound on all 148 declarations; independent informal proof-integrity audit passed (bdaaa23e...; every step recomputed on the 312 eligible residual trees of orders 7-12 and the fixed points; N_2 <= M shown false from order 9, the proof uses N_2 <= k_2 M); independent statement-fidelity review match (052fd81b...; 88 checks; statement byte-identical to SOLUTION-CONTRACT §2 four ways; non-vacuity: 1,897 labelled order-7 trees satisfy all four hypotheses); VERIFICATION-REPORT 16d2420bf9f5a77a...; cycles/cycle-1/stage7/LEAN-GATE-CLOSEOUT.md; award C1-LA1). Terminal declaration R26LA1.topRankResidualSign (G : SimpleGraph V) [DecidableRel G.Adj] (hTree : G.IsTree) (hAlpha : 2 <= G.indepNum) (hEligible : crossingIndex G + 2 <= G.indepNum - 1) (hResidual : forall v, C4LA1.IsGraphLeaf G v -> forall S : Finset V, G.IsIndepSet S -> S.card = G.indepNum -> v in S) : aggregate G (G.indepNum - 1) <= 0, with crossingIndex/aggregate the C5-LA1 definitions carried byte-identically (31 registrar entries; entry 31 with a recorded one-token theorem->lemma keyword). Proof DAG: definition layer; leaf/support structure; the (★)-free gate alpha = ell + a and the maximum-set bijection; forced neighbour; h >= 0; the exact budget identity (a-|A_D|) + sum(lambda-1) + h = 1; four arithmetic shapes pruned to three families; W_I = ell(ell-1)M; W_II = (ell-4)N_2; family-(III) bijection over the a-1 shell; deletion injection and fibre bound; N_2 <= k_2 M; the bound in Z; finishes ell >= 4, ell = 3, ell = 2 (C_2 = ∅ under eligibility); ell <= 1 impossible. Attribution: candidate architecture and forced-neighbour statement — the 2026-09-23 literature map lane 05 (research packet); three-family expansion B3 — r24 critic C-T1-U; flat law — r24 route A1; occupancy bound avi(H) <= |V(H)|/2 — Andriantiana–Razanajatovo Misanantenaina–Wagner (2020), RE-PROVED in-run by the deletion injection and never imported; r26 Cycle 1 seats T1 (from-scratch L0–L11 derivation), T2 (independent generating-function derivation of the same identity), T3 (tree-structural lemmas with Mathlib anchors), U2 (compiled counting core), U3 (compiled tree-structural core), U1 (contract/DAG architecture); critics C-T1-F and C-T1-U (the L5 -> L5'+L5'' repair), C-U2-T (exact budget identity; family-(I) injection without hL1), C-U2-F (sharp fibre bound; W_I = ell(ell-1)M), C-U3-T (card_C2_eq_zero_of_eligible; L ∩ C = ∅), C-U3-F, C-U1-T, C-U1-F; the T/F/U adjudicators and the synthesis (DAG order, eleven repairs); the Stage 7 formalizer c1-la1-formalizer-opus-20260924 (the assembled proof).",
+      "aliases": [
+        "E993-R24-RC",
+        "r24 (RC)",
+        "TD-6",
+        "top-rank residual sign",
+        "E993-R26-RC"
+      ],
+      "alias_patterns": [
+        "top.rank.residual.sign",
+        "r24.*\\(RC\\)"
+      ],
+      "novelty_claimed": "Closes r24 terminal debt TD-6 (the eligible top-rank residual class with D != ∅; 98% of the class), which r24 had proved only on the flat subclass and the T_m family. A component of the OPEN all-rank aggregate; it does not by itself close that aggregate, the governed E993-BETA-AGG, or any headline.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "runs/lean-2026-09-24-c1-la1-top-rank-residual-sign/VERIFICATION-REPORT.md",
+        "cycles/cycle-1/stage6/SYNTHESIS.md",
+        "cycles/cycle-1/stage3/returns/T1/RETURN.md"
+      ],
+      "terminal_evidence": {
+        "grade": "formally_verified",
+        "award": "C1-LA1",
+        "run": "runs/lean-2026-09-24-c1-la1-top-rank-residual-sign"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-top-rank-residual-sign-dre-2026-09-23 (r26)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "registered VERIFIED at formally_verified (first registration; the r24 record carried (RC) as TD-6 with no registry key)"
+        }
+      ]
+    },
+    {
+      "claim_key": "E993-R26-DELETION-INJECTION-FIBRE-BOUND",
+      "statement": "For every finite simple graph G on a finite vertex type and every finite vertex set U, with I(U) the independent subsets of U: 2 * sum_{A in I(U)} |A| <= |U| * |I(U)|, and for every natural ell: ((ell : Z) - |U|) * |I(U)| <= sum_{A in I(U)} ((ell : Z) - 2|A|).",
+      "scope": "All finite graphs; no tree, connectivity, alpha, eligibility or residual hypothesis. The first inequality is the occupancy bound avi(H) <= |V(H)|/2 of Andriantiana–Razanajatovo Misanantenaina–Wagner (2020), RE-PROVED in-run by the injection A -> A.erase u (never imported); the second is its sharp fibre form (equality for edgeless U). Its use at the fibres U(J') of the (RC) proof belongs to E993-R26-TOP-RANK-RESIDUAL-SIGN; nothing about S, trees or (RC) is asserted here.",
+      "status": "VERIFIED",
+      "evidence_grade": "formally_verified",
+      "formal_award": true,
+      "smallest_witness_order": null,
+      "certificate": "formally_verified (governed run runs/lean-2026-09-24-c1-la2-deletion-injection-fibre: kernel verified within the three permitted axioms on all four declarations; independent informal audit passed (5db13b3c...; 33,867 + 304,803 exhaustive instances, sharpness exhibited, U2's weaker form shown to need |U| <= ell); independent fidelity review match (2fa7bbe5...; the explicit Nat.cast form judged the same elaborated proposition); VERIFICATION-REPORT e55d3e58509b30a8...; award C1-LA2). Terminal declaration R26LA2.fibreInequalitySharp with R26LA2.deletionInjectionBound; one C5-LA1 entry (C5LA1.sum_card_filter_comm) carried byte-identically. Attribution: ARMW 2020 (statement); r26 seat U2 (compiled deletionInjectionBound, fibreInequality), critic C-U2-F (fibreInequalitySharp), T3 (v) and C-F1-T (informal derivations), C-U1-F (statement identity by rfl).",
+      "aliases": [
+        "deletion injection",
+        "occupancy bound",
+        "avi(H) <= |V(H)|/2",
+        "E993-R26-DELETION-INJECTION"
+      ],
+      "alias_patterns": [
+        "deletion.injection",
+        "occupancy.bound"
+      ],
+      "novelty_claimed": "None mathematically (ARMW 2020); new as a kernel-verified statement on the program's carrier.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "runs/lean-2026-09-24-c1-la2-deletion-injection-fibre/VERIFICATION-REPORT.md"
+      ],
+      "terminal_evidence": {
+        "grade": "formally_verified",
+        "award": "C1-LA2",
+        "run": "runs/lean-2026-09-24-c1-la2-deletion-injection-fibre"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-top-rank-residual-sign-dre-2026-09-23 (r26)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "registered VERIFIED at formally_verified"
+        }
+      ]
+    },
+    {
+      "claim_key": "E993-R26-TREE-STRUCTURAL-CORE",
+      "statement": "For a finite tree G (Mathlib IsTree) with the C5-LA1 leaf/support definitions: (a) 2 <= alpha(G) implies at least two leaves; (b) 2 <= alpha(G) implies no two leaves are adjacent, hence L ∩ C = ∅ and lambda ≡ 0 on leaves; (c) a vertex outside the support image has lambda = 0 (no hypotheses); (d) sum_s lambda(s) = ell and j * |C_j| <= ell for every j, hence k_2 <= floor(ell/2) (no hypotheses); (e) the P_3 lemma: |L| = 2 and lambda(s) = 2 imply alpha(G) = 2 (no alpha hypothesis); (f) x(G) + 2 <= alpha(G) - 1 implies 3 <= alpha(G); and C_2 = ∅ when ell = 2 under eligibility.",
+      "scope": "Tree structure only; no declaration consumes the residual hypothesis (★); nothing about S, W_III, the families or (RC). Statement (e) needs connectivity (P_3 ⊔ K_1 is a forest witness where the closure fails).",
+      "status": "VERIFIED",
+      "evidence_grade": "formally_verified",
+      "formal_award": true,
+      "smallest_witness_order": null,
+      "certificate": "formally_verified (governed run runs/lean-2026-09-24-c1-la3-tree-structural-core: 30 declarations, kernel verified within the three permitted axioms; independent informal audit passed (5ab1f2e8...; all 33,867 graphs n <= 6 and 280,393 labelled trees n <= 8; each hypothesis falsified outside its range; 16 Mathlib anchors verified at the pinned lines); independent fidelity review match (8bdf3c47...; eleven carried C5-LA1 entries byte-identical; the three binding repairs honoured); VERIFICATION-REPORT 891cdb7112f0418e...; award C1-LA3). Terminal declaration R26LA3.leafDegree_two_indepNum_eq_two. Attribution: r26 seat U3 (route), critics C-U3-T and C-U3-F (extensions L ∩ C = ∅, j|C_j| <= ell, card_C2_eq_zero_of_eligible, corrected forms), T3 (informal proofs and Mathlib anchors, verified by C-T3-F/C-T3-U).",
+      "aliases": [
+        "E993-R26-TREE-TWO-LEAVES",
+        "E993-R26-LEAF-SUPPORT-DISJOINT",
+        "E993-R26-LEAF-DEGREE-PARTITION",
+        "E993-R26-ELL2-LAMBDA2-FORCES-P3"
+      ],
+      "alias_patterns": [
+        "P_3 lemma",
+        "two.leaves.*support"
+      ],
+      "novelty_claimed": "Elementary; new as kernel-verified support for the program's leaf/support carrier.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "runs/lean-2026-09-24-c1-la3-tree-structural-core/VERIFICATION-REPORT.md"
+      ],
+      "terminal_evidence": {
+        "grade": "formally_verified",
+        "award": "C1-LA3",
+        "run": "runs/lean-2026-09-24-c1-la3-tree-structural-core"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-top-rank-residual-sign-dre-2026-09-23 (r26)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "registered VERIFIED at formally_verified"
+        }
+      ]
+    },
+    {
+      "claim_key": "E993-R26-FORCED-NEIGHBOUR-FAMILY-I-EMPTY",
+      "statement": "Under the C5-LA1 hypotheses hTree, hAlpha and (★) (every leaf in every maximum independent set): every maximum independent J ⊆ D meets N(s) for every multiplicity-1 support s (forced neighbour); consequently every realized family-(I) member B of I_{alpha-1}(G) (|B ∩ D| = a, supports of multiplicity 1 only) has B ∩ C = ∅ and weight exactly ell - 1, and there are exactly ell * M of them; every family-(II) member has B ∩ C = {s} with lambda(s) = 2 and weight exactly ell - 4, and there are exactly N_2 of them.",
+      "scope": "Component declarations of the formally verified award C1-LA1 (R26LA1.forced_neighbour, family_support_pruned, famI_card, family_I_weight, family_II_weight), not its terminal declaration; hEligible is not consumed (verified informally also on the 18 ineligible residual trees). This is the structural fact that refutes the r24 C6 'realized negative family-(I) weights' statement (see E993-R26-C6-B3-FAMILY-I-REALIZATION-CORRECTION).",
+      "status": "VERIFIED",
+      "evidence_grade": "formally_verified_component_of_award",
+      "formal_award": false,
+      "smallest_witness_order": null,
+      "certificate": "Kernel-verified declarations inside award C1-LA1 (runs/lean-2026-09-24-c1-la1-top-rank-residual-sign; the award's kernel receipt covers all 148 declarations); informally derived six times in r26 (packet lane 05 statement; seat T1 L6-L8; critics C-F2-T, C-F2-U, C-F1-T, C-F1-U; seat T2). Attribution: the research packet lane 05 (statement), seat T1, the F critics named, the formalizer.",
+      "aliases": [
+        "forced neighbour lemma",
+        "family-(I) emptiness",
+        "E993-R26-FORCED-NEIGHBOUR"
+      ],
+      "alias_patterns": [
+        "forced.neighbou?r"
+      ],
+      "novelty_claimed": "The packet's key exchange lemma; new in this program.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "runs/lean-2026-09-24-c1-la1-top-rank-residual-sign/INFORMAL-PROOF.md",
+        "cycles/cycle-1/stage5/adjudicators/F/ADJUDICATION.md"
+      ],
+      "terminal_evidence": {
+        "grade": "formally_verified_component_of_award",
+        "award": "C1-LA1"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-top-rank-residual-sign-dre-2026-09-23 (r26)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "registered VERIFIED as a kernel-verified component of C1-LA1"
+        }
+      ]
+    },
+    {
+      "claim_key": "E993-R26-C6-B3-FAMILY-I-REALIZATION-CORRECTION",
+      "statement": "RECORD CORRECTION of the r24 C6 terminal synthesis (B3, TD-6) and C6 T adjudication (Ruling 2, inventory item 6): the statement that family-(I) weights ell-1-2|A_S| 'flip ... realized by 1,420 eligible residual trees of orders 7-16, first at order 9' is FALSE as a realization statement — under (★) every realized family-(I) member has A_S = ∅ and weight exactly ell-1 >= 1 (forced neighbour; now kernel-verified inside C1-LA1), and 0 of the 128,908 shell members of the 7,247 eligible residual trees of orders 7-16 has a family-(I) support selection. The number 1,420 (first at order 9; exactly two order-9 classes) is reproduced exactly by the predicate P_b: 'the induced graph on the multiplicity-1 supports has an independent set of size > (ell-1)/2' — a structural precondition, not a realized term. B3's three-family identity itself is EXACT (verified on all 7,247 trees) and the sign-flipping the record described is real but belongs to family (III) (negative individual weights; every fibre sum >= 0). Provenance gap: no surviving artifact of the C6 T adjudication (scan.py, adj_engine.py) computes the family classifier (inventory item 5) or the 1,420 count (item 6). Origin: the substitution first appears in r24 critic C-T1-U's sentence (its order-16 witness is a |C_1| = 6 count) and was propagated by the T adjudicator's count. Error class: predicate substitution on the evidence, an inference about a lost instrument. Neither of TD-6's two prescriptions is needed: the first ('bound the multiplicity-1 support count against ell inside the class') is void — family-(I) weights are the constant ell-1 under (★) — and the second ('pair family-(I) terms against ell*M and family (III) rather than sign them individually') is void as a necessity: family (I) IS signed individually, family (III) is nonnegative fibre-wise, and the ell*M term is absorbed by W_I = ell(ell-1)M in one integer subtraction (SR-B3 repair b; SR-REC repair d). The sealed TD-6 text says '1,420 residual trees'; 'eligible' enters from the C6 T adjudication's restatement (SR-REC repair c). The sealed r24 files are unchanged.",
+      "scope": "A correction record about the r24 RECORD, never an edit of it (SOLUTION-CONTRACT §3.5); the mathematical identity B3 stands; (RC) is closed separately by E993-R26-TOP-RANK-RESIDUAL-SIGN.",
+      "status": "VERIFIED",
+      "evidence_grade": "record_correction_replayed_four_instruments_plus_kernel_verified_component",
+      "formal_award": false,
+      "smallest_witness_order": 9,
+      "certificate": "r26 seat F2 (trace, replay, draft); critics C-F2-T and C-F2-U (independent instruments; forced-neighbour proofs); F adjudicator Tier 2 ruling (five substantive changes to the draft); synthesis R-2; isolated second read SR-B3 verdict confirmed_with_repairs (second-reads/SR-B3/SECOND-READ.md; a sixth instrument over orders 7-16; repairs: the two TD-6 disjuncts; the reader graded the forced-neighbour core proved_informal because its capsule predated the C1-LA1 close — superseded by the C1-LA1 kernel receipt, which the controller cites); the controller's pre-run replay (control/controller-prerun/) as a further instrument; forced neighbour kernel-verified in runs/lean-2026-09-24-c1-la1-top-rank-residual-sign.",
+      "aliases": [
+        "1,420 trees",
+        "family-(I) sign flip",
+        "B3 realization"
+      ],
+      "alias_patterns": [
+        "1,?420"
+      ],
+      "novelty_claimed": "Record hygiene.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "cycles/cycle-1/stage3/returns/F2/RETURN.md",
+        "cycles/cycle-1/stage5/adjudicators/F/ADJUDICATION.md",
+        "second-reads/SR-B3/SECOND-READ.md"
+      ],
+      "terminal_evidence": {
+        "grade": "record_correction",
+        "second_read": "SR-B3"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-top-rank-residual-sign-dre-2026-09-23 (r26)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "registered after the isolated second read SR-B3"
+        }
+      ]
+    },
+    {
+      "claim_key": "E993-R26-TOP-RANK-N2-LE-M",
+      "statement": "On the eligible top-rank residual class (the four C5-LA1 hypotheses), N_2 <= M, where N_2 counts compatible pairs (J maximum independent in D, s a support with lambda(s) = 2) and M = i_alpha(G).",
+      "scope": "A mechanism proposed in the r26 allocation's item 1(f) parenthesis and in U's Cycle 2 target; false in general — only N_2 <= k_2 M holds (k_2 = |C_2| <= floor(ell/2)); at ell = 3 it is true because k_2 <= 1. The (RC) proof uses N_2 <= k_2 M.",
+      "status": "REFUTED",
+      "evidence_grade": "explicit_exact_finite_counterexample",
+      "formal_award": false,
+      "smallest_witness_order": 9,
+      "certificate": "Unique order-9 eligible residual witness (flat): edges 0-1,0-2,0-3,0-4,1-5,1-6,2-7,2-8; independence sequence 1,9,28,40,28,9,1; alpha = 6, x = 3 (eligible: 3 + 2 <= 5), ell = 6, C = {0,1,2} with lambda = 2 each (k_2 = 3), D = empty, a = 0, M = 1, N_2 = 3 > 1, S = -30. 21 eligible residual classes to order 12, 52 to 13, 118 to 14 violate it (critic C-F3-T; F adjudicator; C1-LA1 informal auditor; second read SR-REC — all independent instruments).",
+      "aliases": [
+        "N_2 <= M",
+        "N2 <= M"
+      ],
+      "alias_patterns": [
+        "N_?2\\s*<=\\s*M\\b"
+      ],
+      "novelty_claimed": "Fence for successors.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "cycles/cycle-1/stage4/critics/F3/T/CRITIQUE.md",
+        "second-reads/SR-REC/SECOND-READ.md"
+      ],
+      "terminal_evidence": {
+        "grade": "explicit_exact_finite_counterexample",
+        "second_read": "SR-REC"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-top-rank-residual-sign-dre-2026-09-23 (r26)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "registered REFUTED with the order-9 witness"
+        }
+      ]
+    },
+    {
+      "claim_key": "E993-R26-TOP-RANK-RESIDUAL-SIGN-STRICT",
+      "statement": "Under the four C5-LA1 hypotheses (tree; 2 <= alpha; x + 2 <= alpha - 1; every leaf in every maximum independent set): S(G, alpha-1) <= -2, in particular S < 0. Branches: ell >= 4 gives S <= -ell(ell-2)M <= -8; ell = 3 gives S <= -2M (via k_2 <= floor(ell/2) = 1 and N_2 <= k_2 M, never N_2 <= M); ell = 2 gives S <= -4 (a residual tree with ell = 2 is an odd path P_{2 alpha - 1}, every even path failing (★), with S(P_{2 alpha - 1}) = 3 alpha - alpha^2 (subtraction-free; equivalently 2 - a(a+1) with a = alpha - 2), and hEligible forces alpha >= 4, on the eligible class in fact alpha >= 5). Ingredient: hEligible implies alpha >= 4 since x >= 1 always. Consequence (its own statement, needing the ell >= 3 strict branches too): among residual trees with alpha >= 2, S = 0 iff G is P_5 and S > 0 iff G is P_3, both ineligible. This key is STRICTLY STRONGER than the SOLUTION-CONTRACT §1 Tier 1-prime row (which allowed S <= 0 at ell = 2): contract erratum R26-E-c.",
+      "scope": "Same scope as E993-R26-TOP-RANK-RESIDUAL-SIGN; informal only (not part of the formal award C1-LA1, which excludes the strict form on its face). No status transfer to any other rank, class or headline.",
+      "status": "VERIFIED",
+      "evidence_grade": "proved_informal",
+      "formal_award": false,
+      "smallest_witness_order": null,
+      "certificate": "Derived from the kernel-verified bound S <= -ell(ell-2)M - (ell-4)N_2 (C1-LA1) plus alpha >= 4; seat T2 (S = 0 question, generating-function derivation), critics C-T2-F and C-T2-U (the even-path repair of T2's a = 1 case; the closed form -(a-1)(a+2)), C-T1-F and C-T3-U (alpha >= 4; the strict finish), C-T1-U (S <= -8 at ell >= 4, S <= -2M at ell = 3); T adjudicator; isolated second read SR-STRICT verdicts ['confirmed', 'confirmed', 'confirmed_with_repairs', 'confirmed_with_repairs'] (second-reads/SR-STRICT/SECOND-READ.md). Maximum S on the 312 eligible residual trees of orders 7-12: -12 (unique argmax an order-7 class; still -12 through order 14, 1,469 members). SR-STRICT repairs: subtraction-free closed form; ell = 3 via k_2 <= 1; ell = 2 gives -4 not -2; the S = 0 iff P_5 clause needs the strict branches; the key is stronger than the contract's Tier 1-prime row (R26-E-c).",
+      "aliases": [
+        "strict (RC)",
+        "Tier 1 prime",
+        "S = 0 iff P_5"
+      ],
+      "alias_patterns": [
+        "strict.*residual.sign"
+      ],
+      "novelty_claimed": "Sharpens (RC) to S <= -2 with the equality boundary P_5 outside the window.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "cycles/cycle-1/stage3/returns/T2/RETURN.md",
+        "cycles/cycle-1/stage4/critics/T2/F/CRITIQUE.md",
+        "second-reads/SR-STRICT/SECOND-READ.md"
+      ],
+      "terminal_evidence": {
+        "grade": "proved_informal",
+        "second_read": "SR-STRICT"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-top-rank-residual-sign-dre-2026-09-23 (r26)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "registered after the isolated second read SR-STRICT"
+        }
+      ]
     }
   ],
-  "last_updated": "2026-09-23",
-  "update_note": "r25 ADDENDUM publication (2026-09-23): 3 new run-local identities of erdos-993-uniform-residual-no-recovery-addendum-dre-2026-09-22 imported additively (two proved_informal from the four isolated second reads; one bounded computation from Cycle A1); 5 r25-owned identities updated on their faces from the run-local continuation (two grade changes to formally_verified on their stated halves: the Bd tail r >= 6, award B-LA1; the forest Delta_3 threshold n >= 12, award A1-LA1; two scope notes; one scope line); one note appended to the master object E993-C3-FOREST-FOURTH-WIDE-CROSSING-SIGN; all 360 prior objects preserved with statuses unchanged. Statuses are registry statuses at their explicit evidence grades, not a count of theorems.",
+  "last_updated": "2026-09-24",
+  "update_note": "r26 close (2026-09-24): 7 E993-R26- identities added (3 formal awards: the r24 top-rank residual sign (RC) composed with (RI); the deletion-injection/fibre bound; the tree-structural core; 1 kernel-verified component; 1 informal theorem (strict form); 1 record correction of the r24 C6 B3/TD-6 statement; 1 REFUTED mechanism N_2 <= M). E993-R23-ORDINARY-FAVORABLE-LEAF-AGGREGATE scope note (status OPEN unchanged). All prior statuses preserved.",
   "g1_publication": {
     "source_run": "erdos-993-g1-large-residual-dre-2026-09-13",
     "source_registry_sha256": "bceaa933993f5294db482a89b57a59f470a7de1fa6b51f2ce3c46227f59300eb",
@@ -36290,5 +36566,15 @@
     "updated": 5,
     "formally_verified_awards": 2,
     "date": "2026-09-23"
+  },
+  "r26_publication": {
+    "run": "erdos-993-top-rank-residual-sign-dre-2026-09-23",
+    "terminal_manifest": "4f835552b5b8b417c616a7395f9d623de50fcc89aef290ccea9f867317481765",
+    "awards": {
+      "C1-LA1": "E993-R26-TOP-RANK-RESIDUAL-SIGN",
+      "C1-LA2": "E993-R26-DELETION-INJECTION-FIBRE-BOUND",
+      "C1-LA3": "E993-R26-TREE-STRUCTURAL-CORE"
+    },
+    "closed": "2026-09-24"
   }
 }

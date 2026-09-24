@@ -1,5 +1,7 @@
 # Erdős #993 — Master Proof Ledger
 
+**Updated 2026-09-24 — r26 (validate and formalize the r24 top-rank residual sign, `erdos-993-top-rank-residual-sign-dre-2026-09-23`) closed after ONE cycle on the early-stop rule: the r24 top-rank residual sign `(RC)` is FORMALLY VERIFIED** (`E993-R26-TOP-RANK-RESIDUAL-SIGN`, award C1-LA1, composed with the r24 identity (RI)), closing r24 terminal debt TD-6; two further governed packages (the deletion-injection/fibre bound; the tree-structural core); the strict form `S ≤ −2` at `proved_informal`; the r24 C6 "1,420 realized negative family-(I) weights" statement corrected on the record (a predicate substitution; B3's identity stands); `N₂ ≤ M` registered REFUTED. Master registry 370 identities (214 VERIFIED, 89 REFUTED, 26 CONDITIONAL, 41 OPEN). The all-rank aggregate, `E993-BETA-AGG`, TREE, FOREST and Erdős #993 remain OPEN. See the r26 section at the end.
+
 **Updated 2026-09-20 — the G1 large-residual experiment completed all three authorized cycles.** Three exact Lean contracts close ordinary G1 at `p<=5`, the first wide band, and the third wide band. The all-rank order-`2r+4` forest crossing theorem is new to this lineage. Unrestricted G1, TREE, FOREST, TRANSFER and aggregate beta-prime remain OPEN. The merged registry now has 288 identities; all 81 pre-existing master objects are preserved. See the G1 close section at the end.
 
 **Date: 2026-09-04. Prepared by Claude (Fable 5) within VerityOS at Ashton's
@@ -480,7 +482,7 @@ Statuses as of 2026-09-04. "governed" = Lean kernel at the pinned toolchain
 | O11 | Lean debt, residual | small | interval-bound conversion; fresh-root treehood; `∂_y` receipt |
 | O12 | **`AmbientTargetDeg2`** — the r12 C6 residue, **r14-refined (2026-09-05)** | OPEN — strictly narrowed | Reduction of record completed at RG (r14 C3); successor surface `ambientTargetDeg2_of_G1wide_G2wide` ADOPTED (r14 C4 Q2); **the entire band `2 ≤ p ∧ |U| ≤ 2p−3 ⟹ D ≤ 0` closed premise-free at RG** (`residual_nonpos_of_card_le_band`; seven elaborations, four parties); S1/S4/S5 discharged inside the surface; the G1 side closes only under Premise K + K-SCOPE + the identification premise. **The open obligation is exactly `HG2` on `G2 ∧ |U| ≥ 2p−2`**, signature `AMB-CTREX-D2`, blocking facts BF-1..3 (r14 FC-R14-10); new premise-free constraint: any deg-2 counterexample has `n ≥ 2x(T)+3` (a proof-obligation narrowing, never a search restriction). Gating items: order-22 census provenance and the identification constructor — **both EXECUTED (2026-09-06):** the census extends the frontier to order 22 (witnesses ≥ 23); the constructor EXISTS (C18) and the G1 side is upgraded to premise-carrying-BY-CONSTRUCTION — the open obligation is unchanged and exactly `HG2` on `G2 ∧ |U| ≥ 2p−2` ; **r18 (2026-09-06, five cycles, honest stop):** `HG2` unmoved in either direction; `HG2Faithful` RG (rfl-definitional transcription + kernel-checked interchangeability); (★L)-sufficiency proved NON-universal (exact firing criterion `2H ≥ (p+2)·D+2`, edgeless-U star-hub scope); `H/D` landscape mapped to order 17,603 (record 3.0406…, no approach to 1 found; the orders-303/1263 anchors corrected into the closed S4 stratum); `sign(a_s(p))` proved not a function of `(|U|, crossIdx(U))` + leg hypotheses (legs-only and legs+`combined<0`, order ≥ 23 witnesses); successor entry: r18 FINAL-RECONCILIATION §6 — re-draw the path to (A) first |
 | O13 | `EXCEPTIONAL-SHAPE-1` sufficiency; `C7BBgenBound` RESERVED (r12 Q6: identity substrate legal, inequality core not) | OPEN | r12 residue register; **r14 (D4):** sufficiency-side and instrument outputs gated at proved_informal/computation — NEC-1 necessary-at-exhaustive-scope, killed as an equivalence; no sufficient structural condition from measured data; the `x(U)=p−1` observation documented at exact scope, explanation refused (F1/F2-adjacent) |
-| O14 | **`E993-BETA-AGG` (aggregated β′)** — for every governed `RTree` and `p ≥ x(T)+2`, the sum of `b_v(p)-Bgen_{s_v}(p-1)` over favorable original leaves is nonpositive | OPEN after r23; literal ordinary-tree all-cut Hall is REFUTED | r23 established the exact tagged identity `|P|-|N|=S` and found T22/T60 rows where proper-cut Hall fails while the complete aggregate is negative. The next proof must target direct full demand `|P|<=|N|`, equivalently the aggregate sign, through signed cancellation, recurrence, mass transport, or total-capacity structure that does not assume all-cut Hall. The same-byte ordinary-tree/governed-RTree bridge remains independently open. The pointwise and support-fibre variants are REFUTED and must not be reopened. **r23b (2026-09-17):** every cut-based strengthening of the aggregate is now refuted by exact witnesses (orders 91 and 1567) — the surviving open object at literal scope IS the per-row demand `|P|≤|N|`; structural progress on it: paths CLOSED at governed scope, stars characterized, THEOREM TYPE-2-DIRECT (`g_v = Δ_{p−2}(K_v)` at `deg(s_v)=2`) unconditional, LEMMA F3-1 sharp, the CB-arm criterion `g_arm>0 ⇔ 2(jk−p+2)>p−1` proved; branch-point peels reduce to the open question itself. Object of record: the r23 ordinary-tree object (Horn B). **r24 (2026-09-18, six cycles, direct favorable-leaf aggregate DRE):** literal `S(T,p) ≤ 0` remains OPEN with no positive complete eligible row anywhere (orders ≤ 16 exhaustive, residual class to order 17, every designed family, ~4.9M stratum rows); the top-rank residual identity `(RI)` is now formally verified in the governed workflow (`C5-LA1`, composed with the Cycle 4 selector collapse `C4-LA1`), and its top-rank case `(RC)` is proved on the flat residual subclass (`S = −ℓ(ℓ−2)−k₂(ℓ−4) ≤ −16`) and on the whole `T_m` family (`S(T_m,α−1) = −9m²−6m+1 < 0`) but is otherwise exactly as open as after r24 Cycle 4; the non-strict per-support sign `g_s(p) ≤ 0` is proved on the `K₂`/exceptional-`P₃` PSC-terminal strata (critic-attributed); the `T_m` lower band is non-empty for every `m ≥ 30` of either parity (correcting r24's own Cycle 5 record) and its domination is reduced to the coefficient monotonicity of one explicit polynomial. Transport untouched. |
+| O14 | **`E993-BETA-AGG` (aggregated β′)** — for every governed `RTree` and `p ≥ x(T)+2`, the sum of `b_v(p)-Bgen_{s_v}(p-1)` over favorable original leaves is nonpositive | OPEN after r23; literal ordinary-tree all-cut Hall is REFUTED | r23 established the exact tagged identity `|P|-|N|=S` and found T22/T60 rows where proper-cut Hall fails while the complete aggregate is negative. The next proof must target direct full demand `|P|<=|N|`, equivalently the aggregate sign, through signed cancellation, recurrence, mass transport, or total-capacity structure that does not assume all-cut Hall. The same-byte ordinary-tree/governed-RTree bridge remains independently open. The pointwise and support-fibre variants are REFUTED and must not be reopened. **r23b (2026-09-17):** every cut-based strengthening of the aggregate is now refuted by exact witnesses (orders 91 and 1567) — the surviving open object at literal scope IS the per-row demand `|P|≤|N|`; structural progress on it: paths CLOSED at governed scope, stars characterized, THEOREM TYPE-2-DIRECT (`g_v = Δ_{p−2}(K_v)` at `deg(s_v)=2`) unconditional, LEMMA F3-1 sharp, the CB-arm criterion `g_arm>0 ⇔ 2(jk−p+2)>p−1` proved; branch-point peels reduce to the open question itself. Object of record: the r23 ordinary-tree object (Horn B). **r26 (2026-09-24): the literal top-rank residual case `(RC)` is FORMALLY VERIFIED (`E993-R26-TOP-RANK-RESIDUAL-SIGN`); the all-rank aggregate stays OPEN (interior ranks; the non-residual class) and transport untouched.** **r24 (2026-09-18, six cycles, direct favorable-leaf aggregate DRE):** literal `S(T,p) ≤ 0` remains OPEN with no positive complete eligible row anywhere (orders ≤ 16 exhaustive, residual class to order 17, every designed family, ~4.9M stratum rows); the top-rank residual identity `(RI)` is now formally verified in the governed workflow (`C5-LA1`, composed with the Cycle 4 selector collapse `C4-LA1`), and its top-rank case `(RC)` is proved on the flat residual subclass (`S = −ℓ(ℓ−2)−k₂(ℓ−4) ≤ −16`) and on the whole `T_m` family (`S(T_m,α−1) = −9m²−6m+1 < 0`) but is otherwise exactly as open as after r24 Cycle 4; the non-strict per-support sign `g_s(p) ≤ 0` is proved on the `K₂`/exceptional-`P₃` PSC-terminal strata (critic-attributed); the `T_m` lower band is non-empty for every `m ≥ 30` of either parity (correcting r24's own Cycle 5 record) and its domination is reduced to the coefficient monotonicity of one explicit polynomial. Transport untouched. |
 | O15 | **Universal ordinary-tree/governed-RTree transfer (`RTree.semanticAdequacyTarget`)** — Horn A: prove that the r23 ordinary-tree restatement is adequate for every governed RTree, so r23/r23b actual-tree results become instances of `E993-R19-FIXED-GAMMA-HALL`/`E993-R19-R2-HALL-UNIVERSAL` | OPEN (named at the r23b close; Horn B is the object of record meanwhile) | Per-instance adequacy is `decide`-dischargeable (r8 precedent); the universal statement is unattempted. Substantially more tractable after r23b: the relation-family transport lemmas (C,P,N via induce and the realization equivalence) are sorry-free and the three abstract bridge corollaries are proved; the single remaining piece of the bridge is O16. |
 | O16 | **`induce_ofSimpleGraph` graph-object coherence** — lift the proved adjacency-level induce transport to full graph-object form (a `Finset`→`Fin` bijection) | OPEN — the one named residual of r23b's correspondence (R-1..R-5 otherwise discharged) | Precisely isolated in r23b C6-T2 (`R23B-C6-T2-02`); Lean bookkeeping of known shape, not a mathematical gap. Closing it completes the transport bridge that O15 rests on. |
 
@@ -617,6 +619,8 @@ for artifacts not explicitly exported there.
 **r25 Lean packages (2026-09-22).** Twelve governed packages under `proofs/lean/r25-*`, each with its frozen contract, informal proof, independent informal audit, fidelity review, verification report and receipt summary; Lean `v4.32.2`, Mathlib `905b95818eb32af7874a58b427f50c1711a5e96c`; axioms exactly `propext`, `Classical.choice`, `Quot.sound`. Internal grade `formally_verified`; published as `verified`. Scopes are the exact contract statements and nothing wider.
 
 **r25 ADDENDUM Lean packages (2026-09-23).** Two governed packages under `proofs/lean/r25a-*` (the `Bd` tail `∀ r ≥ 6, Bd(r,r) < 0`; the forest `Δ₃ > 0` threshold at order ≥ 12, enumeration-free), each with its frozen contract, informal proof, independent informal audit, fidelity review, verification report and receipt summary; Lean `v4.32.2`, Mathlib `905b95818eb32af7874a58b427f50c1711a5e96c`; axioms exactly `propext`, `Classical.choice`, `Quot.sound`. Internal grade `formally_verified`; published as `verified`; each proves the stated HALF of its registry statement (the sharpness halves stay informal).
+
+**r26 Lean packages (2026-09-24).** Three governed packages under `proofs/lean/r26-*`: `r26-c1-la1-top-rank-residual-sign` (`R26LA1.topRankResidualSign` — the r24 top-rank residual sign `(RC)` at the exact C5-LA1 hypotheses, composed with `C5LA1.topRankResidualIdentity` whose 31 registrar entries are carried byte-identically; 148 declarations), `r26-c1-la2-deletion-injection-fibre` (`R26LA2.fibreInequalitySharp` with `deletionInjectionBound`; hypothesis-free; ARMW 2020 re-proved), `r26-c1-la3-tree-structural-core` (`R26LA3.leafDegree_two_indepNum_eq_two` and 29 further tree-structural declarations). Same pin, axioms exactly `[propext, Classical.choice, Quot.sound]`, each with frozen contract, independent informal audit, kernel/axiom receipt and independent fidelity attestation. Internal grade `formally_verified`; public projection `verified`.
 
 ## 8. Process Preconditions for the Next Phase
 
@@ -792,7 +796,7 @@ controller's independent evaluation (`TERMINAL-EVALUATION.md`). Stop gate:
 no decisive event, no plateau; `continue: no` records the boundary.
 
 **Headline faces, unchanged:** literal aggregate OPEN; `(RC)` (its top-rank
-residual case) exactly as open as after Cycle 4; transport `not_established`
+residual case) exactly as open as after Cycle 4 [**r26 (2026-09-24): `(RC)` now FORMALLY VERIFIED — `E993-R26-TOP-RANK-RESIDUAL-SIGN`; and the C6 B3/TD-6 statement that negative family-(I) weights are "realized by 1,420 eligible residual trees" is corrected on the record — `E993-R26-C6-B3-FAMILY-I-REALIZATION-CORRECTION`**]; transport `not_established`
 (never attempted); O14 OPEN; Erdős #993 unresolved. No positive complete
 eligible aggregate exists anywhere in the evidence (orders ≤ 16 exhaustive,
 71,075 rows at orders 15–16 with the mechanism value tight — `g_v = 0` on ~10%
@@ -1031,3 +1035,56 @@ A1-E-c (S-U-1's "19 failures" is 14); A1-E-d (controller: two agents records edi
 producer-id date literal); A1-E-f (a post-receipt `axioms.txt` edit, receipt bytes restored). Master registry after
 this publication: 363 identities (26 CONDITIONAL, 41 OPEN, 88 REFUTED, 208 VERIFIED); all 360 prior objects preserved with
 statuses unchanged. Every headline OPEN; no claim bears on Erdős #993; closing G1 alone does not solve it.
+
+## r26 — validate and formalize the r24 top-rank residual sign (erdos-993-top-rank-residual-sign-dre-2026-09-23), CLOSED 2026-09-24
+
+Chartered by Ashton on 2026-09-23 from the literature map of the same day (lane 05's candidate proof of
+the r24 top-rank residual sign `(RC)`, with an independent review and an order-≤12 check): validate the
+candidate as an argument under attack, resolve the r24 C6 B3/TD-6 discrepancy, and, if sound, produce a
+governed Lean proof composed with the verified identity `(RI)`. Topology 9 routes / 18 critics / 3
+adjudicators / 1 synthesis (routes Sonnet 5 xhigh; critics Opus 5 medium; adjudicators, synthesis and Stage 7
+Opus 5 high); up to six cycles with early stop on a formal award. **The award landed in Cycle 1**, so the run
+closed after one cycle (terminal manifest `4f835552b5b8b417c616a7395f9d623de50fcc89aef290ccea9f867317481765`; integrity sweep 36 manifests / 2,581 members / 0
+unexpected drifts; controller review `CONTROLLER-REVIEW-R26.md`).
+
+**Formally verified (governed workflow, three packages, §7):** `E993-R26-TOP-RANK-RESIDUAL-SIGN` — for every
+finite tree `G` with `2 ≤ α`, `x(G)+2 ≤ α−1` and every leaf in every maximum independent set,
+`S(G, α−1) ≤ 0` (award C1-LA1; `hEligible` consumed only through `α ≥ 3`; the proof: the `(★)`-free gate
+`α = ℓ + a`, forced neighbour, the exact budget identity, four arithmetic shapes pruned to three families,
+`W_I = ℓ(ℓ−1)M`, `W_II = (ℓ−4)N₂`, the family-(III) fibres signed by the deletion injection,
+`S ≤ −ℓ(ℓ−2)M − (ℓ−4)N₂` with `N₂ ≤ k₂M`, finishes at `ℓ ≥ 4 / 3 / 2`); `E993-R26-DELETION-INJECTION-FIBRE-BOUND`
+(C1-LA2); `E993-R26-TREE-STRUCTURAL-CORE` (C1-LA3); the forced-neighbour/family structure
+`E993-R26-FORCED-NEIGHBOUR-FAMILY-I-EMPTY` as a kernel-verified component of C1-LA1. **This closes r24
+terminal debt TD-6** (the eligible top-rank residual class with `D ≠ ∅`, ~98% of the class).
+
+**Informal (after isolated second reads):** `E993-R26-TOP-RANK-RESIDUAL-SIGN-STRICT` — `S ≤ −2` on the eligible
+class (`ℓ ≥ 4`: `≤ −8`; `ℓ = 3`: `≤ −2M`; `ℓ = 2`: `≤ −4`; the eligible class has `α ≥ 5`); `S(P_{2α−1}) = 3α − α²`;
+among residual trees with `α ≥ 2`, `S = 0 ⟺ P₅`, `S > 0 ⟺ P₃`, both ineligible (`proved_informal`; the
+contract's Tier 1′ row was weaker than proved — erratum R26-E-c).
+
+**Record correction (Tier 2, second read SR-B3):** the r24 C6 terminal synthesis B3/TD-6 and T adjudication
+statement that family-(I) weights "flip … realized by 1,420 eligible residual trees of orders 7–16, first at
+order 9" is FALSE as a realization statement — under `(★)` every realized family-(I) member has `A_C = ∅`
+and weight exactly `ℓ − 1` (structurally impossible to violate; 0 of 128,908 shell members). The number
+1,420 is reproduced exactly (six independent instruments) by the predicate "the multiplicity-1 supports
+contain an independent set of size `> (ℓ−1)/2`" — a structural precondition, not a realized term. B3's
+three-family identity is exact; the sign-flipping the record described belongs to family (III). Provenance
+gap: the C6 T adjudicator's family classifier and count (inventory items 5 and 6) have no surviving artifact;
+origin in r24 critic `C-T1-U`'s sentence; neither TD-6 prescription is needed. Registered as
+`E993-R26-C6-B3-FAMILY-I-REALIZATION-CORRECTION`; the sealed r24 files are unchanged.
+
+**Refuted:** `E993-R26-TOP-RANK-N2-LE-M` (`N₂ ≤ M` on the eligible class; unique order-9 witness, flat; only
+`N₂ ≤ k₂M` holds). **Records:** 16,424 eligible residual trees to order 17 (none below order 7) = 290 flat +
+16,134 non-flat — TD-6's figure reconciled; 16,442 residual trees with `α ≥ 2` = 16,424 + 18 ineligible (orders
+3,4,5,5,6,6,6,7,7,8×5,9×3,11); `(RI)` holds on every residual tree and forest tested and fails on every
+non-residual one; `(★) ⟺` every leaf is missed by some maximum matching (stated, critic `C-F1-T`).
+
+**Unchanged:** `E993-R23-ORDINARY-FAVORABLE-LEAF-AGGREGATE` OPEN (scope note: its top-rank residual sub-case is
+closed; the interior ranks and the non-residual class remain); `E993-BETA-AGG` OPEN (transport never
+attempted); the common-leaf condition, TREE, FOREST, TRANSFER, Erdős #993 untouched; every REFUTED claim
+REFUTED. Master registry 370 identities (214 VERIFIED, 89 REFUTED,
+26 CONDITIONAL, 41 OPEN); all 363 prior objects preserved with statuses
+unchanged. **Errata:** R26-E-a (a bind command unusable on scratch roots), R26-E-b (`P₇` mislabelled eligible
+in the controller's brief; `x(P₇) = 2`, `α = 4`; first eligible odd path `P₁₁`), R26-E-c (contract Tier 1′
+row). Public mirror: `proofs/lean/r26-*`, `experiments/r26-top-rank-residual-sign.md`,
+`evidence/verification-2026-09-24-r26.md`, `runs/erdos-993-top-rank-residual-sign-dre-2026-09-23/`.

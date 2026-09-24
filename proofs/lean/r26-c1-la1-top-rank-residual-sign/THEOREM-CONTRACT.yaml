@@ -1,0 +1,2309 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "c1-la1-top-rank-residual-sign-v1",
+  "theorem": {
+    "title": "C1-LA1 Top-Rank Residual Sign for Finite Eligible Residual Trees (RC)",
+    "informal_statement": "For every finite simple graph G on a finite vertex type with decidable equality and decidable adjacency: if G is a tree, 2 <= alpha(G), x(G) + 2 <= alpha(G) - 1, and every leaf of G belongs to every maximum independent set of G, then the literal top-rank residual aggregate satisfies S(G, alpha(G)-1) <= 0. The proof composes the verified (RI) identity S = ell M - W with the exact budget identity sum_{s in B cap C}(lambda(s)-1) + (a - |B cap D|) + h(B) = 1 on I_{alpha-1}(G), the three-family classification (I) A_C empty, (II) A_C = {s} with lambda(s) = 2, (III) |A_D| = a - 1 obtained by forced-neighbour pruning under (star), the exact counts |family I| = ell M and N_2 <= k_2 M with k_2 <= floor(ell/2), and the nonnegativity of the family-(III) weight sum via the deletion injection, giving S <= -ell(ell-2) M - (ell-4) N_2 and hence S <= 0 in each of the branches ell >= 4, ell = 3 and ell = 2. The statement is NON-STRICT and is confined to rank alpha-1 on the eligible residual class."
+  },
+  "formulation_status": {
+    "status": "established",
+    "evidence": [
+      "Capsule gate: the sealed award capsule control/c1-stage7-capsules/C1-LA1-PACKET-MANIFEST.json was re-verified in this run; the inner seal da278eb66e273bedeaaa4684767138afebb39ef4b5198a0c05d9b985f5c64b2b was recomputed and all 42 member byte counts and digests match, as did all 89 entries of the two SOURCE-DIGESTS.json files. See CAPSULE-VERIFICATION.json.",
+      "Statement of record: the r26 Cycle 1 Stage 6 synthesis (cycles/cycle-1/stage6/SYNTHESIS.md, section 'Lean awards', C1-LA1) awards exactly this statement, unnarrowed, with all four hypotheses verbatim; the shipped declaration text is character-for-character the synthesis's Lean block.",
+      "Base award: (RI) (C5LA1.topRankResidualIdentity) is independently kernel- and fidelity-verified in the r24 run lean-2026-09-17-c5-top-rank-residual-identity; its frozen source digest 0933211d8f02acd867e91547d4a2b09d13fcc3ea178e192e385acc33b696b63b is re-verified here and its 31 registrar entries are reproduced (30 of 31 entry digests exactly; entry 31 under the single recorded r1_byte_diff).",
+      "INFORMAL-PROOF.md records the source-bound statement-level proof node by node in the brief's R3 order, carrying the REPAIRED L5' + L5'' trichotomy (never the unrepaired L5), the Nat-subtraction audit, the carry table with origin digests, the fence-7 attributions and the excluded conclusions.",
+      "Kernel evidence: the terminal declaration and every registered declaration depend only on propext, Classical.choice and Quot.sound; EVIDENCE/axioms.txt was written before kernel verification."
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-independence-number",
+      "description": "alpha(G), the maximum cardinality of an independent vertex set of G.",
+      "lean_name": "SimpleGraph.indepNum",
+      "dependencies": [
+        "domain-finite-simple-graph"
+      ]
+    },
+    {
+      "id": "def-graph-leaf",
+      "description": "A vertex v is a leaf of G exactly when there is a unique u adjacent to v. Reused from C4-LA1 by name.",
+      "lean_name": "C4LA1.IsGraphLeaf",
+      "dependencies": [
+        "domain-finite-simple-graph",
+        "domain-vertex"
+      ]
+    },
+    {
+      "id": "def-vertex-deletion-coefficient",
+      "description": "i_k(G-v): independent k-subsets of the vertex type avoiding v. Reused from C4-LA1 by name.",
+      "lean_name": "C4LA1.vertexDeletionIndepSetCount",
+      "dependencies": [
+        "domain-adjacency-decision",
+        "domain-vertex"
+      ]
+    },
+    {
+      "id": "def-vertex-deletion-forward-difference",
+      "description": "The integer forward difference i_(p+1)(G-v) - i_p(G-v). Reused from C4-LA1 by name.",
+      "lean_name": "C4LA1.vertexDeletionForwardDifference",
+      "dependencies": [
+        "def-vertex-deletion-coefficient"
+      ]
+    },
+    {
+      "id": "def-favorable",
+      "description": "A leaf v is favorable at p exactly when the vertex-deletion forward difference is negative. Reused from C4-LA1 by name.",
+      "lean_name": "C4LA1.IsFavorableAt",
+      "dependencies": [
+        "def-vertex-deletion-forward-difference"
+      ]
+    },
+    {
+      "id": "def-support",
+      "description": "s_v, the unique neighbour of a leaf v, by classical choice; unconstrained off the leaf set. Reused from C5-LA1 by name.",
+      "lean_name": "C5LA1.support",
+      "dependencies": [
+        "def-graph-leaf"
+      ]
+    },
+    {
+      "id": "def-leaf-set",
+      "description": "L(G), the finite set of leaves of G. Reused from C5-LA1 by name.",
+      "lean_name": "C5LA1.leafSet",
+      "dependencies": [
+        "def-graph-leaf"
+      ]
+    },
+    {
+      "id": "def-leaf-degree",
+      "description": "lambda(s), the number of leaves of G adjacent to s; zero off supports. Reused from C5-LA1 by name.",
+      "lean_name": "C5LA1.leafDegree",
+      "dependencies": [
+        "def-leaf-set",
+        "domain-adjacency-decision"
+      ]
+    },
+    {
+      "id": "def-h-del",
+      "description": "H_v = G - {v, s_v}, as a two-element deletion set. Reused from C5-LA1 by name.",
+      "lean_name": "C5LA1.H",
+      "dependencies": [
+        "def-support"
+      ]
+    },
+    {
+      "id": "def-r-del",
+      "description": "R_v = G - N[s_v], as a deletion set. Reused from C5-LA1 by name.",
+      "lean_name": "C5LA1.R",
+      "dependencies": [
+        "def-support",
+        "domain-adjacency-decision"
+      ]
+    },
+    {
+      "id": "def-indep-sets-avoiding",
+      "description": "I_k(G-D): independent k-subsets of the vertex type avoiding a finite deletion set D. THE CONTRACT CARRIER: every counting node of this award is stated over this family or over filters of Finset.powerset, and never over SimpleGraph.induce. Reused from C5-LA1 by name.",
+      "lean_name": "C5LA1.indepSetsAvoiding",
+      "dependencies": [
+        "domain-adjacency-decision"
+      ]
+    },
+    {
+      "id": "def-indep-set-count",
+      "description": "i_k(G-D) = |I_k(G-D)|. Reused from C5-LA1 by name.",
+      "lean_name": "C5LA1.indepSetCount",
+      "dependencies": [
+        "def-indep-sets-avoiding"
+      ]
+    },
+    {
+      "id": "def-forward-difference-del",
+      "description": "Delta_k(G-D) = i_(k+1)(G-D) - i_k(G-D). Reused from C5-LA1 by name.",
+      "lean_name": "C5LA1.forwardDifferenceDel",
+      "dependencies": [
+        "def-indep-set-count"
+      ]
+    },
+    {
+      "id": "def-aggregate",
+      "description": "S(G,p), the literal top-rank residual aggregate, summed over the favorable filter of the leaf set. Reused from C5-LA1 by name; the conclusion is about this object at p = alpha-1.",
+      "lean_name": "C5LA1.aggregate",
+      "dependencies": [
+        "def-leaf-set",
+        "def-favorable",
+        "def-forward-difference-del",
+        "def-h-del",
+        "def-r-del"
+      ]
+    },
+    {
+      "id": "def-crossing-index",
+      "description": "x(G), the least k with Delta_k(G) < 0. Reused from C5-LA1 by name; required by hyp-eligible.",
+      "lean_name": "C5LA1.crossingIndex",
+      "dependencies": [
+        "def-forward-difference-del"
+      ]
+    },
+    {
+      "id": "def-top-rank",
+      "description": "The top interior rank p = alpha(G) - 1 in Nat (truncated subtraction; hyp-alpha makes p + 1 = alpha).",
+      "lean_name": "Nat.sub",
+      "dependencies": [
+        "def-independence-number"
+      ]
+    },
+    {
+      "id": "def-indep-powerset",
+      "description": "I(U), the independent subsets of a Finset U of vertices, as a filter of U.powerset. Carried byte-identically from U2 (source-u2).",
+      "lean_name": "R26LA1.indepPowerset",
+      "dependencies": [
+        "domain-adjacency-decision"
+      ]
+    },
+    {
+      "id": "def-fam-one-map",
+      "description": "The family-(I) index map (J, v) |-> J union (L erase v). Carried byte-identically from critic C-U2-T (source-c-u2-t).",
+      "lean_name": "R26CritT.famOneMap",
+      "dependencies": [
+        "domain-vertex-type"
+      ]
+    },
+    {
+      "id": "def-fam-one-source",
+      "description": "The family-(I) index source: the independent a-subsets of D, as a filter of D.powerset. Carried byte-identically from critic C-U2-T (source-c-u2-t).",
+      "lean_name": "R26CritT.famOneSource",
+      "dependencies": [
+        "domain-adjacency-decision"
+      ]
+    },
+    {
+      "id": "def-support-set",
+      "description": "C(G) = {s : lambda(s) > 0}, the support set, in the FILTER spelling. The corpus carries three incompatible spellings of supportSet; this award fixes the filter spelling and connects it to the image spelling by node-c-eq-support-image.",
+      "lean_name": "R26LA1.supportSet",
+      "dependencies": [
+        "def-leaf-degree"
+      ]
+    },
+    {
+      "id": "def-interior",
+      "description": "D(G) = V minus (L union C), the interior vertices.",
+      "lean_name": "R26LA1.interior",
+      "dependencies": [
+        "def-leaf-set",
+        "def-support-set"
+      ]
+    },
+    {
+      "id": "def-interior-indep",
+      "description": "The independent subsets of the interior, as a filter of (interior G).powerset. This is I_k(T[D]) on the contract carrier; SimpleGraph.induce is not used.",
+      "lean_name": "R26LA1.interiorIndep",
+      "dependencies": [
+        "def-interior"
+      ]
+    },
+    {
+      "id": "def-a-val",
+      "description": "a(G), the maximum size of an independent subset of the interior.",
+      "lean_name": "R26LA1.aVal",
+      "dependencies": [
+        "def-interior-indep"
+      ]
+    },
+    {
+      "id": "def-c-one",
+      "description": "C_1(G) = {s : lambda(s) = 1}.",
+      "lean_name": "R26LA1.C1",
+      "dependencies": [
+        "def-leaf-degree"
+      ]
+    },
+    {
+      "id": "def-c-two",
+      "description": "C_2(G) = {s : lambda(s) = 2}; k_2 = |C_2(G)|.",
+      "lean_name": "R26LA1.C2",
+      "dependencies": [
+        "def-leaf-degree"
+      ]
+    },
+    {
+      "id": "def-weight",
+      "description": "w(B) = |B intersect L| - sum_{s in B} lambda(s), in Int: the SEMANTIC-CONTRACT.md section 4 weight whose total over I_{alpha-1}(G) is subtracted in (RI).",
+      "lean_name": "R26LA1.w",
+      "dependencies": [
+        "def-leaf-set",
+        "def-leaf-degree"
+      ]
+    },
+    {
+      "id": "def-u-set",
+      "description": "U(J) = {s in C_1 : s has no neighbour in J}, the outer-fibre index of family (III).",
+      "lean_name": "R26LA1.USet",
+      "dependencies": [
+        "def-c-one",
+        "domain-adjacency-decision"
+      ]
+    },
+    {
+      "id": "def-max-indep-interior",
+      "description": "The maximum independent subsets of the interior, i.e. the a-shell of interiorIndep.",
+      "lean_name": "R26LA1.maxIndepInterior",
+      "dependencies": [
+        "def-interior-indep",
+        "def-a-val"
+      ]
+    },
+    {
+      "id": "def-top-shell",
+      "description": "I_{alpha-1}(G), the top shell, on the contract carrier indepSetsAvoiding G (empty) (alpha-1).",
+      "lean_name": "R26LA1.topShell",
+      "dependencies": [
+        "def-indep-sets-avoiding",
+        "def-top-rank"
+      ]
+    },
+    {
+      "id": "def-slack",
+      "description": "h(B) = ell - |B intersect L| - sum_{s in B} lambda(s), in Int: the budget slack.",
+      "lean_name": "R26LA1.slack",
+      "dependencies": [
+        "def-leaf-set",
+        "def-leaf-degree"
+      ]
+    },
+    {
+      "id": "def-fam-one",
+      "description": "Family (I): the members of the top shell whose interior part is already maximum and which use no support.",
+      "lean_name": "R26LA1.famI",
+      "dependencies": [
+        "def-top-shell",
+        "def-interior",
+        "def-a-val",
+        "def-support-set"
+      ]
+    },
+    {
+      "id": "def-fam-two",
+      "description": "Family (II): the members of the top shell whose interior part is already maximum and which use some support.",
+      "lean_name": "R26LA1.famII",
+      "dependencies": [
+        "def-top-shell",
+        "def-interior",
+        "def-a-val",
+        "def-support-set"
+      ]
+    },
+    {
+      "id": "def-fam-three",
+      "description": "Family (III): the members of the top shell whose interior part is NOT maximum (so, by the budget, is one short).",
+      "lean_name": "R26LA1.famIII",
+      "dependencies": [
+        "def-top-shell",
+        "def-interior",
+        "def-a-val"
+      ]
+    },
+    {
+      "id": "def-n-two",
+      "description": "N_2 = |family (II)|, the family-(II) count.",
+      "lean_name": "R26LA1.N2",
+      "dependencies": [
+        "def-fam-two"
+      ]
+    },
+    {
+      "id": "def-fam-two-map",
+      "description": "The family-(II) index map (s, J) |-> {s} union J union (L minus leaves(s)).",
+      "lean_name": "R26LA1.famIIMap",
+      "dependencies": [
+        "def-leaf-set",
+        "def-support"
+      ]
+    },
+    {
+      "id": "def-shell-d",
+      "description": "The a-1 shell of the interior, stated as |J| + 1 = a so that a = 0 makes it EMPTY by construction, never by Nat-truncation.",
+      "lean_name": "R26LA1.shellD",
+      "dependencies": [
+        "def-interior-indep",
+        "def-a-val"
+      ]
+    },
+    {
+      "id": "def-fam-three-index",
+      "description": "The family-(III) index: the dependent sum over J in the a-1 shell of the independent subsets of U(J).",
+      "lean_name": "R26LA1.famIIIIndex",
+      "dependencies": [
+        "def-shell-d",
+        "def-indep-powerset",
+        "def-u-set"
+      ]
+    },
+    {
+      "id": "def-fam-three-map",
+      "description": "The family-(III) index map (J, A) |-> A union J union (L minus leaves(A)).",
+      "lean_name": "R26LA1.famIIIMap",
+      "dependencies": [
+        "def-leaf-set",
+        "def-support"
+      ]
+    },
+    {
+      "id": "node-c-eq-support-image",
+      "description": "L-12. C(G) = support '' L(G): the filter and image spellings of the support set agree. No hypotheses.",
+      "lean_name": "R26LA1.c_eq_support_image",
+      "dependencies": [
+        "def-support-set",
+        "def-leaf-set",
+        "def-support"
+      ]
+    },
+    {
+      "id": "node-leaf-support-disjoint",
+      "description": "L-8. Disjoint (L(G)) (C(G)): in a tree with alpha >= 2 no leaf is a support. Consumes hyp-tree and hyp-alpha (through connectivity and no-adjacent-leaves). Re-derived on this award's spelling of supportSet.",
+      "lean_name": "R26LA1.leaf_support_disjoint",
+      "dependencies": [
+        "node-c-eq-support-image",
+        "hyp-tree",
+        "hyp-alpha"
+      ]
+    },
+    {
+      "id": "node-leaf-degree-sum",
+      "description": "L-10 (d). sum_{s : V} lambda(s) = ell. No hypotheses. Carried from U3 (source-u3).",
+      "lean_name": "R26LA1.leaf_degree_sum_eq_card",
+      "dependencies": [
+        "def-leaf-degree",
+        "def-leaf-set"
+      ]
+    },
+    {
+      "id": "node-leaf-card-ge-two",
+      "description": "L-6. 2 <= ell: a tree with alpha >= 2 has at least two leaves (handshake plus connectivity). Consumes hyp-tree and hyp-alpha. This is the node the finish needs to exclude ell <= 1.",
+      "lean_name": "R26LA1.leaf_card_ge_two",
+      "dependencies": [
+        "def-leaf-set",
+        "hyp-tree",
+        "hyp-alpha"
+      ]
+    },
+    {
+      "id": "node-k2-le-ell-div-two",
+      "description": "L-10. 2 k_2 <= ell, from j |C_j| <= ell. No hypotheses. Carried from critic C-U3-T (source-c-u3-t).",
+      "lean_name": "R26LA1.k2_le_ell_div_two",
+      "dependencies": [
+        "def-c-two",
+        "node-leaf-degree-sum"
+      ]
+    },
+    {
+      "id": "node-eligible-imp-alpha-ge-three",
+      "description": "L-11. hyp-eligible implies 3 <= alpha, by Nat arithmetic on the truncated subtraction. THIS IS THE ONLY CONSUMPTION OF hyp-eligible: it has no edge to node-sign-bound.",
+      "lean_name": "R26LA1.eligible_imp_alpha_ge_three",
+      "dependencies": [
+        "hyp-eligible",
+        "def-crossing-index",
+        "def-independence-number"
+      ]
+    },
+    {
+      "id": "node-max-indep-no-support",
+      "description": "X-5. Under (star) a maximum independent set meets no support. Consumes hyp-residual alone. Re-proved in-run; the U adjudicator's probe is not carried.",
+      "lean_name": "R26LA1.maxIndep_no_support",
+      "dependencies": [
+        "def-support-set",
+        "hyp-residual"
+      ]
+    },
+    {
+      "id": "node-alpha-eq-ell-add-a",
+      "description": "GATE, L-9. alpha = ell + a. Consumes hyp-tree and hyp-alpha; (star)-FREE.",
+      "lean_name": "R26LA1.alpha_eq_ell_add_a",
+      "dependencies": [
+        "def-a-val",
+        "def-interior",
+        "node-leaf-support-disjoint",
+        "node-c-eq-support-image",
+        "hyp-tree",
+        "hyp-alpha",
+        "def-independence-number"
+      ]
+    },
+    {
+      "id": "node-max-indep-eq-leaf-union-d",
+      "description": "L-9 with (star). Every maximum independent set is L union (S intersect D), and S intersect D has size a.",
+      "lean_name": "R26LA1.max_indep_eq_leaf_union_D",
+      "dependencies": [
+        "node-alpha-eq-ell-add-a",
+        "node-max-indep-no-support",
+        "hyp-residual"
+      ]
+    },
+    {
+      "id": "node-m-eq-card-max-indep-d",
+      "description": "L-9 with (star). M = i_alpha(G) = |maxIndepInterior G|, by the mutually inverse maps S |-> S intersect D and J |-> L union J, on the contract carrier.",
+      "lean_name": "R26LA1.M_eq_card_maxIndep_D",
+      "dependencies": [
+        "node-max-indep-eq-leaf-union-d",
+        "def-max-indep-interior",
+        "def-indep-set-count"
+      ]
+    },
+    {
+      "id": "node-forced-neighbour",
+      "description": "L-1. Under (star), an independent B with |B intersect D| = a contains no lambda = 1 support: otherwise {s} union (B intersect D) union (L minus {v}) is a maximum independent set omitting the leaf v.",
+      "lean_name": "R26LA1.forced_neighbour",
+      "dependencies": [
+        "node-alpha-eq-ell-add-a",
+        "hyp-residual",
+        "hyp-tree",
+        "hyp-alpha",
+        "def-interior",
+        "def-leaf-degree"
+      ]
+    },
+    {
+      "id": "node-h-nonneg",
+      "description": "L-2. 0 <= h(B) for independent B, from |B intersect L| + sum_{s in B} lambda(s) <= ell. The only step of the budget that uses independence. Carried from U2 (source-u2).",
+      "lean_name": "R26LA1.h_nonneg",
+      "dependencies": [
+        "def-slack",
+        "def-indep-powerset"
+      ]
+    },
+    {
+      "id": "node-budget-identity",
+      "description": "L-2. The EXACT budget: sum_{s in B intersect C} (lambda(s) - 1) + (a - |B intersect D|) + h(B) = 1 in Int, for every B in the top shell. Pure Finset.card arithmetic once h_nonneg is split out; consumes the partition V = L + C + D and the GATE.",
+      "lean_name": "R26LA1.budget_identity",
+      "dependencies": [
+        "node-alpha-eq-ell-add-a",
+        "node-leaf-support-disjoint",
+        "def-slack",
+        "def-top-shell",
+        "def-a-val",
+        "def-support-set"
+      ]
+    },
+    {
+      "id": "node-budget-shapes",
+      "description": "L5'. The arithmetic trichotomy: three nonnegative integers summing to 1. The a-1 shell at a = 0 is PROVED empty by the budget term in Int, never declared empty by Nat-truncation.",
+      "lean_name": "R26LA1.budget_shapes",
+      "dependencies": [
+        "node-budget-identity",
+        "node-h-nonneg"
+      ]
+    },
+    {
+      "id": "node-family-support-pruned",
+      "description": "L5''. Under (star): an already-maximum interior part admits at most one support, and that support carries lambda = 2. Forced-neighbour pruning of the fourth arithmetic shape.",
+      "lean_name": "R26LA1.family_support_pruned",
+      "dependencies": [
+        "node-budget-shapes",
+        "node-forced-neighbour",
+        "hyp-residual"
+      ]
+    },
+    {
+      "id": "node-family-one-weight",
+      "description": "L-3. Every family-(I) member has weight ell - 1.",
+      "lean_name": "R26LA1.family_I_weight",
+      "dependencies": [
+        "node-budget-identity",
+        "def-fam-one",
+        "def-weight"
+      ]
+    },
+    {
+      "id": "node-family-one-count",
+      "description": "L-3, item 8(c). |family (I)| = ell M exactly, by the bijection with maxIndepInterior x L under famOneMap. The inert hypothesis hL1 of U2's familyOneInjection never enters; the real obligation a + (ell-1) = alpha-1 is discharged at the call site by the GATE.",
+      "lean_name": "R26LA1.famI_card",
+      "dependencies": [
+        "node-family-one-weight",
+        "def-fam-one-map",
+        "def-fam-one-source",
+        "node-m-eq-card-max-indep-d",
+        "node-alpha-eq-ell-add-a"
+      ]
+    },
+    {
+      "id": "node-family-two-weight",
+      "description": "L-3. Every family-(II) member has weight ell - 4.",
+      "lean_name": "R26LA1.family_II_weight",
+      "dependencies": [
+        "node-family-support-pruned",
+        "def-fam-two",
+        "def-weight"
+      ]
+    },
+    {
+      "id": "node-deletion-injection",
+      "description": "L-5. 2 sum_{A in I(U)} |A| <= |U| |I(U)| for every U, by the A |-> A.erase u injection. No graph hypothesis. Andriantiana-Razanajatovo Misanantenaina-Wagner (2020), RE-PROVED IN-RUN AND NEVER IMPORTED. Carried from U2 (source-u2).",
+      "lean_name": "R26LA1.deletionInjectionBound",
+      "dependencies": [
+        "def-indep-powerset"
+      ]
+    },
+    {
+      "id": "node-fibre-nonneg",
+      "description": "L-5. Each family-(III) fibre sum is nonnegative, from the SHARP fibre inequality (ell - |U|)|I(U)| <= sum_{A in I(U)} (ell - 2|A|) together with |U(J)| <= |C_1| <= ell. The sharp form is carried from critic C-U2-F (source-c-u2-f).",
+      "lean_name": "R26LA1.fibre_nonneg",
+      "dependencies": [
+        "node-deletion-injection",
+        "def-u-set",
+        "node-leaf-degree-sum"
+      ]
+    },
+    {
+      "id": "node-family-three-bijection",
+      "description": "L-4. Family (III) is exactly the injective image of the index famIIIIndex, whose OUTER INDEX IS THE a-1 SHELL I_{a-1}(D), never the maximum shell.",
+      "lean_name": "R26LA1.famIII_eq_image",
+      "dependencies": [
+        "node-budget-shapes",
+        "def-fam-three",
+        "def-fam-three-index",
+        "def-fam-three-map",
+        "node-alpha-eq-ell-add-a",
+        "node-leaf-support-disjoint"
+      ]
+    },
+    {
+      "id": "node-n2-le-k2-mul-m",
+      "description": "L-10. N_2 <= k_2 M, with 2 k_2 <= ell. NEVER N_2 <= M, which is false from order 9.",
+      "lean_name": "R26LA1.N2_le_k2_mul_M",
+      "dependencies": [
+        "node-family-support-pruned",
+        "node-m-eq-card-max-indep-d",
+        "def-n-two",
+        "def-fam-two-map",
+        "def-c-two"
+      ]
+    },
+    {
+      "id": "node-w-split",
+      "description": "The three families partition the top shell, so W = W_I + W_II + W_III.",
+      "lean_name": "R26LA1.W_split",
+      "dependencies": [
+        "def-fam-one",
+        "def-fam-two",
+        "def-fam-three",
+        "def-top-shell",
+        "def-weight"
+      ]
+    },
+    {
+      "id": "node-w-one",
+      "description": "W_I = ell(ell-1) M, the family-(I) weight sum.",
+      "lean_name": "R26LA1.famI_sum",
+      "dependencies": [
+        "node-family-one-weight",
+        "node-family-one-count"
+      ]
+    },
+    {
+      "id": "node-w-two",
+      "description": "W_II = (ell-4) N_2, the family-(II) weight sum.",
+      "lean_name": "R26LA1.famII_sum",
+      "dependencies": [
+        "node-family-two-weight",
+        "def-n-two"
+      ]
+    },
+    {
+      "id": "node-w-three",
+      "description": "W_III >= 0, the family-(III) weight sum, by the bijection and the fibre inequality.",
+      "lean_name": "R26LA1.famIII_sum_nonneg",
+      "dependencies": [
+        "node-family-three-bijection",
+        "node-fibre-nonneg"
+      ]
+    },
+    {
+      "id": "node-top-rank-residual-identity",
+      "description": "(RI). The verified C5-LA1 award: S = ell M - W on the eligible residual class. Composed with, never restated by, this award. hyp-eligible is an inert argument of this declaration.",
+      "lean_name": "C5LA1.topRankResidualIdentity",
+      "dependencies": [
+        "def-aggregate",
+        "def-leaf-set",
+        "def-indep-set-count",
+        "def-indep-sets-avoiding",
+        "def-leaf-degree",
+        "hyp-tree",
+        "hyp-alpha",
+        "hyp-eligible",
+        "hyp-residual"
+      ]
+    },
+    {
+      "id": "node-sign-bound",
+      "description": "The exact sign bound S <= -ell(ell-2) M - (ell-4) N_2 in Int. It has NO edge from node-eligible-imp-alpha-ge-three.",
+      "lean_name": "R26LA1.sign_bound",
+      "dependencies": [
+        "node-top-rank-residual-identity",
+        "node-w-split",
+        "node-w-one",
+        "node-w-two",
+        "node-w-three"
+      ]
+    },
+    {
+      "id": "node-ell-two-lambda-two",
+      "description": "L-7. A tree with exactly two leaves one of whose support carries lambda = 2 is P_3, so alpha = 2. Consumes hyp-tree and connectivity; does NOT consume hyp-alpha. Carried from U3 (source-u3).",
+      "lean_name": "R26LA1.ell_two_lambda_two_imp_alpha_two",
+      "dependencies": [
+        "hyp-tree",
+        "def-leaf-set",
+        "def-leaf-degree",
+        "def-independence-number"
+      ]
+    },
+    {
+      "id": "node-c2-zero",
+      "description": "k_2 = 0 when ell = 2 and 3 <= alpha. Stated with 3 <= alpha, not with hyp-eligible, so that the 'hyp-eligible is consumed only through alpha >= 3' claim is literal in the Lean text.",
+      "lean_name": "R26LA1.C2_card_eq_zero_of_alpha_three",
+      "dependencies": [
+        "node-ell-two-lambda-two",
+        "def-c-two"
+      ]
+    },
+    {
+      "id": "node-finish-ell-ge-four",
+      "description": "Finish branch ell >= 4: both terms of the sign bound are nonpositive.",
+      "lean_name": "R26LA1.finish_ell_ge_four",
+      "dependencies": [
+        "node-sign-bound"
+      ]
+    },
+    {
+      "id": "node-finish-ell-three",
+      "description": "Finish branch ell = 3: k_2 <= 1 so N_2 <= M, and the bound reads S <= -2M <= 0.",
+      "lean_name": "R26LA1.finish_ell_three",
+      "dependencies": [
+        "node-sign-bound",
+        "node-k2-le-ell-div-two",
+        "node-n2-le-k2-mul-m"
+      ]
+    },
+    {
+      "id": "node-finish-ell-two",
+      "description": "Finish branch ell = 2: k_2 = 0 so N_2 = 0, and the bound reads S <= 0.",
+      "lean_name": "R26LA1.finish_ell_two",
+      "dependencies": [
+        "node-sign-bound",
+        "node-c2-zero",
+        "node-n2-le-k2-mul-m"
+      ]
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-vertex-type",
+      "description": "An arbitrary finite vertex type with decidable equality.",
+      "lean_type": "V : Type* with [Fintype V] [DecidableEq V]",
+      "dependencies": []
+    },
+    {
+      "id": "domain-finite-simple-graph",
+      "description": "An arbitrary finite simple graph on V; the tree property is a separate theorem hypothesis.",
+      "lean_type": "G : SimpleGraph V",
+      "dependencies": [
+        "domain-vertex-type"
+      ]
+    },
+    {
+      "id": "domain-adjacency-decision",
+      "description": "Decidable adjacency data, used only to form the finite independent-set families.",
+      "lean_type": "[DecidableRel G.Adj]",
+      "dependencies": [
+        "domain-finite-simple-graph"
+      ]
+    },
+    {
+      "id": "domain-vertex",
+      "description": "An arbitrary vertex of G, used internally by the leaf/support machinery and universally ranged over by hyp-residual.",
+      "lean_type": "v : V",
+      "dependencies": [
+        "domain-vertex-type"
+      ]
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "V",
+      "kind": "forall",
+      "domain_id": "domain-vertex-type"
+    },
+    {
+      "binder": "G",
+      "kind": "forall",
+      "domain_id": "domain-finite-simple-graph"
+    },
+    {
+      "binder": "adjacencyDecision",
+      "kind": "forall",
+      "domain_id": "domain-adjacency-decision"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-tree",
+      "statement": "G is a connected acyclic simple graph, i.e. G.IsTree.",
+      "dependencies": [
+        "domain-finite-simple-graph"
+      ]
+    },
+    {
+      "id": "hyp-alpha",
+      "statement": "2 <= G.indepNum.",
+      "dependencies": [
+        "def-independence-number"
+      ]
+    },
+    {
+      "id": "hyp-eligible",
+      "statement": "x(G) + 2 <= G.indepNum - 1, i.e. crossingIndex G + 2 <= G.indepNum - 1. Retained verbatim in the statement of record per C1-STAGE1-GATE.md Ruling 5; the proof consumes it ONLY through alpha >= 3 (node-eligible-imp-alpha-ge-three), and its only other occurrence is as an inert argument of (RI).",
+      "dependencies": [
+        "def-crossing-index",
+        "def-top-rank"
+      ]
+    },
+    {
+      "id": "hyp-residual",
+      "statement": "(star): every leaf of G belongs to every maximum independent set of G.",
+      "dependencies": [
+        "def-graph-leaf",
+        "def-independence-number"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion-top-rank-residual-sign",
+    "statement": "aggregate G (G.indepNum - 1) <= 0: the literal top-rank residual aggregate of an eligible residual tree is nonpositive. NON-STRICT. This award does not state S < 0, does not state S = 0 iff P_5, states nothing at any other rank, nothing on the non-residual class, nothing about forests or RTree, does not restate (RI), states no fixed-band, bounded or censused result, does not state N_2 <= M, and says nothing about the all-rank aggregate.",
+    "dependencies": [
+      "def-aggregate",
+      "def-top-rank",
+      "hyp-tree",
+      "hyp-alpha",
+      "hyp-eligible",
+      "hyp-residual",
+      "node-finish-ell-ge-four",
+      "node-finish-ell-three",
+      "node-finish-ell-two",
+      "node-leaf-card-ge-two",
+      "node-eligible-imp-alpha-ge-three",
+      "node-sign-bound"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "domain-vertex-type",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-finite-simple-graph",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-adjacency-decision",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-vertex",
+        "kind": "domain"
+      },
+      {
+        "id": "def-independence-number",
+        "kind": "definition"
+      },
+      {
+        "id": "def-graph-leaf",
+        "kind": "definition"
+      },
+      {
+        "id": "def-vertex-deletion-coefficient",
+        "kind": "definition"
+      },
+      {
+        "id": "def-vertex-deletion-forward-difference",
+        "kind": "definition"
+      },
+      {
+        "id": "def-favorable",
+        "kind": "definition"
+      },
+      {
+        "id": "def-support",
+        "kind": "definition"
+      },
+      {
+        "id": "def-leaf-set",
+        "kind": "definition"
+      },
+      {
+        "id": "def-leaf-degree",
+        "kind": "definition"
+      },
+      {
+        "id": "def-h-del",
+        "kind": "definition"
+      },
+      {
+        "id": "def-r-del",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indep-sets-avoiding",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indep-set-count",
+        "kind": "definition"
+      },
+      {
+        "id": "def-forward-difference-del",
+        "kind": "definition"
+      },
+      {
+        "id": "def-aggregate",
+        "kind": "definition"
+      },
+      {
+        "id": "def-crossing-index",
+        "kind": "definition"
+      },
+      {
+        "id": "def-top-rank",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indep-powerset",
+        "kind": "definition"
+      },
+      {
+        "id": "def-fam-one-map",
+        "kind": "definition"
+      },
+      {
+        "id": "def-fam-one-source",
+        "kind": "definition"
+      },
+      {
+        "id": "def-support-set",
+        "kind": "definition"
+      },
+      {
+        "id": "def-interior",
+        "kind": "definition"
+      },
+      {
+        "id": "def-interior-indep",
+        "kind": "definition"
+      },
+      {
+        "id": "def-a-val",
+        "kind": "definition"
+      },
+      {
+        "id": "def-c-one",
+        "kind": "definition"
+      },
+      {
+        "id": "def-c-two",
+        "kind": "definition"
+      },
+      {
+        "id": "def-weight",
+        "kind": "definition"
+      },
+      {
+        "id": "def-u-set",
+        "kind": "definition"
+      },
+      {
+        "id": "def-max-indep-interior",
+        "kind": "definition"
+      },
+      {
+        "id": "def-top-shell",
+        "kind": "definition"
+      },
+      {
+        "id": "def-slack",
+        "kind": "definition"
+      },
+      {
+        "id": "def-fam-one",
+        "kind": "definition"
+      },
+      {
+        "id": "def-fam-two",
+        "kind": "definition"
+      },
+      {
+        "id": "def-fam-three",
+        "kind": "definition"
+      },
+      {
+        "id": "def-n-two",
+        "kind": "definition"
+      },
+      {
+        "id": "def-fam-two-map",
+        "kind": "definition"
+      },
+      {
+        "id": "def-shell-d",
+        "kind": "definition"
+      },
+      {
+        "id": "def-fam-three-index",
+        "kind": "definition"
+      },
+      {
+        "id": "def-fam-three-map",
+        "kind": "definition"
+      },
+      {
+        "id": "node-c-eq-support-image",
+        "kind": "definition"
+      },
+      {
+        "id": "node-leaf-support-disjoint",
+        "kind": "definition"
+      },
+      {
+        "id": "node-leaf-degree-sum",
+        "kind": "definition"
+      },
+      {
+        "id": "node-leaf-card-ge-two",
+        "kind": "definition"
+      },
+      {
+        "id": "node-k2-le-ell-div-two",
+        "kind": "definition"
+      },
+      {
+        "id": "node-eligible-imp-alpha-ge-three",
+        "kind": "definition"
+      },
+      {
+        "id": "node-max-indep-no-support",
+        "kind": "definition"
+      },
+      {
+        "id": "node-alpha-eq-ell-add-a",
+        "kind": "definition"
+      },
+      {
+        "id": "node-max-indep-eq-leaf-union-d",
+        "kind": "definition"
+      },
+      {
+        "id": "node-m-eq-card-max-indep-d",
+        "kind": "definition"
+      },
+      {
+        "id": "node-forced-neighbour",
+        "kind": "definition"
+      },
+      {
+        "id": "node-h-nonneg",
+        "kind": "definition"
+      },
+      {
+        "id": "node-budget-identity",
+        "kind": "definition"
+      },
+      {
+        "id": "node-budget-shapes",
+        "kind": "definition"
+      },
+      {
+        "id": "node-family-support-pruned",
+        "kind": "definition"
+      },
+      {
+        "id": "node-family-one-weight",
+        "kind": "definition"
+      },
+      {
+        "id": "node-family-one-count",
+        "kind": "definition"
+      },
+      {
+        "id": "node-family-two-weight",
+        "kind": "definition"
+      },
+      {
+        "id": "node-deletion-injection",
+        "kind": "definition"
+      },
+      {
+        "id": "node-fibre-nonneg",
+        "kind": "definition"
+      },
+      {
+        "id": "node-family-three-bijection",
+        "kind": "definition"
+      },
+      {
+        "id": "node-n2-le-k2-mul-m",
+        "kind": "definition"
+      },
+      {
+        "id": "node-w-split",
+        "kind": "definition"
+      },
+      {
+        "id": "node-w-one",
+        "kind": "definition"
+      },
+      {
+        "id": "node-w-two",
+        "kind": "definition"
+      },
+      {
+        "id": "node-w-three",
+        "kind": "definition"
+      },
+      {
+        "id": "node-top-rank-residual-identity",
+        "kind": "definition"
+      },
+      {
+        "id": "node-sign-bound",
+        "kind": "definition"
+      },
+      {
+        "id": "node-ell-two-lambda-two",
+        "kind": "definition"
+      },
+      {
+        "id": "node-c2-zero",
+        "kind": "definition"
+      },
+      {
+        "id": "node-finish-ell-ge-four",
+        "kind": "definition"
+      },
+      {
+        "id": "node-finish-ell-three",
+        "kind": "definition"
+      },
+      {
+        "id": "node-finish-ell-two",
+        "kind": "definition"
+      },
+      {
+        "id": "hyp-tree",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-alpha",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-eligible",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-residual",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion-top-rank-residual-sign",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "def-a-val",
+        "to": "def-fam-one"
+      },
+      {
+        "from": "def-a-val",
+        "to": "def-fam-three"
+      },
+      {
+        "from": "def-a-val",
+        "to": "def-fam-two"
+      },
+      {
+        "from": "def-a-val",
+        "to": "def-max-indep-interior"
+      },
+      {
+        "from": "def-a-val",
+        "to": "def-shell-d"
+      },
+      {
+        "from": "def-a-val",
+        "to": "node-alpha-eq-ell-add-a"
+      },
+      {
+        "from": "def-a-val",
+        "to": "node-budget-identity"
+      },
+      {
+        "from": "def-aggregate",
+        "to": "conclusion-top-rank-residual-sign"
+      },
+      {
+        "from": "def-aggregate",
+        "to": "node-top-rank-residual-identity"
+      },
+      {
+        "from": "def-c-one",
+        "to": "def-u-set"
+      },
+      {
+        "from": "def-c-two",
+        "to": "node-c2-zero"
+      },
+      {
+        "from": "def-c-two",
+        "to": "node-k2-le-ell-div-two"
+      },
+      {
+        "from": "def-c-two",
+        "to": "node-n2-le-k2-mul-m"
+      },
+      {
+        "from": "def-crossing-index",
+        "to": "hyp-eligible"
+      },
+      {
+        "from": "def-crossing-index",
+        "to": "node-eligible-imp-alpha-ge-three"
+      },
+      {
+        "from": "def-fam-one",
+        "to": "node-family-one-weight"
+      },
+      {
+        "from": "def-fam-one",
+        "to": "node-w-split"
+      },
+      {
+        "from": "def-fam-one-map",
+        "to": "node-family-one-count"
+      },
+      {
+        "from": "def-fam-one-source",
+        "to": "node-family-one-count"
+      },
+      {
+        "from": "def-fam-three",
+        "to": "node-family-three-bijection"
+      },
+      {
+        "from": "def-fam-three",
+        "to": "node-w-split"
+      },
+      {
+        "from": "def-fam-three-index",
+        "to": "node-family-three-bijection"
+      },
+      {
+        "from": "def-fam-three-map",
+        "to": "node-family-three-bijection"
+      },
+      {
+        "from": "def-fam-two",
+        "to": "def-n-two"
+      },
+      {
+        "from": "def-fam-two",
+        "to": "node-family-two-weight"
+      },
+      {
+        "from": "def-fam-two",
+        "to": "node-w-split"
+      },
+      {
+        "from": "def-fam-two-map",
+        "to": "node-n2-le-k2-mul-m"
+      },
+      {
+        "from": "def-favorable",
+        "to": "def-aggregate"
+      },
+      {
+        "from": "def-forward-difference-del",
+        "to": "def-aggregate"
+      },
+      {
+        "from": "def-forward-difference-del",
+        "to": "def-crossing-index"
+      },
+      {
+        "from": "def-graph-leaf",
+        "to": "def-leaf-set"
+      },
+      {
+        "from": "def-graph-leaf",
+        "to": "def-support"
+      },
+      {
+        "from": "def-graph-leaf",
+        "to": "hyp-residual"
+      },
+      {
+        "from": "def-h-del",
+        "to": "def-aggregate"
+      },
+      {
+        "from": "def-indep-powerset",
+        "to": "def-fam-three-index"
+      },
+      {
+        "from": "def-indep-powerset",
+        "to": "node-deletion-injection"
+      },
+      {
+        "from": "def-indep-powerset",
+        "to": "node-h-nonneg"
+      },
+      {
+        "from": "def-indep-set-count",
+        "to": "def-forward-difference-del"
+      },
+      {
+        "from": "def-indep-set-count",
+        "to": "node-m-eq-card-max-indep-d"
+      },
+      {
+        "from": "def-indep-set-count",
+        "to": "node-top-rank-residual-identity"
+      },
+      {
+        "from": "def-indep-sets-avoiding",
+        "to": "def-indep-set-count"
+      },
+      {
+        "from": "def-indep-sets-avoiding",
+        "to": "def-top-shell"
+      },
+      {
+        "from": "def-indep-sets-avoiding",
+        "to": "node-top-rank-residual-identity"
+      },
+      {
+        "from": "def-independence-number",
+        "to": "def-top-rank"
+      },
+      {
+        "from": "def-independence-number",
+        "to": "hyp-alpha"
+      },
+      {
+        "from": "def-independence-number",
+        "to": "hyp-residual"
+      },
+      {
+        "from": "def-independence-number",
+        "to": "node-alpha-eq-ell-add-a"
+      },
+      {
+        "from": "def-independence-number",
+        "to": "node-eligible-imp-alpha-ge-three"
+      },
+      {
+        "from": "def-independence-number",
+        "to": "node-ell-two-lambda-two"
+      },
+      {
+        "from": "def-interior",
+        "to": "def-fam-one"
+      },
+      {
+        "from": "def-interior",
+        "to": "def-fam-three"
+      },
+      {
+        "from": "def-interior",
+        "to": "def-fam-two"
+      },
+      {
+        "from": "def-interior",
+        "to": "def-interior-indep"
+      },
+      {
+        "from": "def-interior",
+        "to": "node-alpha-eq-ell-add-a"
+      },
+      {
+        "from": "def-interior",
+        "to": "node-forced-neighbour"
+      },
+      {
+        "from": "def-interior-indep",
+        "to": "def-a-val"
+      },
+      {
+        "from": "def-interior-indep",
+        "to": "def-max-indep-interior"
+      },
+      {
+        "from": "def-interior-indep",
+        "to": "def-shell-d"
+      },
+      {
+        "from": "def-leaf-degree",
+        "to": "def-c-one"
+      },
+      {
+        "from": "def-leaf-degree",
+        "to": "def-c-two"
+      },
+      {
+        "from": "def-leaf-degree",
+        "to": "def-slack"
+      },
+      {
+        "from": "def-leaf-degree",
+        "to": "def-support-set"
+      },
+      {
+        "from": "def-leaf-degree",
+        "to": "def-weight"
+      },
+      {
+        "from": "def-leaf-degree",
+        "to": "node-ell-two-lambda-two"
+      },
+      {
+        "from": "def-leaf-degree",
+        "to": "node-forced-neighbour"
+      },
+      {
+        "from": "def-leaf-degree",
+        "to": "node-leaf-degree-sum"
+      },
+      {
+        "from": "def-leaf-degree",
+        "to": "node-top-rank-residual-identity"
+      },
+      {
+        "from": "def-leaf-set",
+        "to": "def-aggregate"
+      },
+      {
+        "from": "def-leaf-set",
+        "to": "def-fam-three-map"
+      },
+      {
+        "from": "def-leaf-set",
+        "to": "def-fam-two-map"
+      },
+      {
+        "from": "def-leaf-set",
+        "to": "def-interior"
+      },
+      {
+        "from": "def-leaf-set",
+        "to": "def-leaf-degree"
+      },
+      {
+        "from": "def-leaf-set",
+        "to": "def-slack"
+      },
+      {
+        "from": "def-leaf-set",
+        "to": "def-weight"
+      },
+      {
+        "from": "def-leaf-set",
+        "to": "node-c-eq-support-image"
+      },
+      {
+        "from": "def-leaf-set",
+        "to": "node-ell-two-lambda-two"
+      },
+      {
+        "from": "def-leaf-set",
+        "to": "node-leaf-card-ge-two"
+      },
+      {
+        "from": "def-leaf-set",
+        "to": "node-leaf-degree-sum"
+      },
+      {
+        "from": "def-leaf-set",
+        "to": "node-top-rank-residual-identity"
+      },
+      {
+        "from": "def-max-indep-interior",
+        "to": "node-m-eq-card-max-indep-d"
+      },
+      {
+        "from": "def-n-two",
+        "to": "node-n2-le-k2-mul-m"
+      },
+      {
+        "from": "def-n-two",
+        "to": "node-w-two"
+      },
+      {
+        "from": "def-r-del",
+        "to": "def-aggregate"
+      },
+      {
+        "from": "def-shell-d",
+        "to": "def-fam-three-index"
+      },
+      {
+        "from": "def-slack",
+        "to": "node-budget-identity"
+      },
+      {
+        "from": "def-slack",
+        "to": "node-h-nonneg"
+      },
+      {
+        "from": "def-support",
+        "to": "def-fam-three-map"
+      },
+      {
+        "from": "def-support",
+        "to": "def-fam-two-map"
+      },
+      {
+        "from": "def-support",
+        "to": "def-h-del"
+      },
+      {
+        "from": "def-support",
+        "to": "def-r-del"
+      },
+      {
+        "from": "def-support",
+        "to": "node-c-eq-support-image"
+      },
+      {
+        "from": "def-support-set",
+        "to": "def-fam-one"
+      },
+      {
+        "from": "def-support-set",
+        "to": "def-fam-two"
+      },
+      {
+        "from": "def-support-set",
+        "to": "def-interior"
+      },
+      {
+        "from": "def-support-set",
+        "to": "node-budget-identity"
+      },
+      {
+        "from": "def-support-set",
+        "to": "node-c-eq-support-image"
+      },
+      {
+        "from": "def-support-set",
+        "to": "node-max-indep-no-support"
+      },
+      {
+        "from": "def-top-rank",
+        "to": "conclusion-top-rank-residual-sign"
+      },
+      {
+        "from": "def-top-rank",
+        "to": "def-top-shell"
+      },
+      {
+        "from": "def-top-rank",
+        "to": "hyp-eligible"
+      },
+      {
+        "from": "def-top-shell",
+        "to": "def-fam-one"
+      },
+      {
+        "from": "def-top-shell",
+        "to": "def-fam-three"
+      },
+      {
+        "from": "def-top-shell",
+        "to": "def-fam-two"
+      },
+      {
+        "from": "def-top-shell",
+        "to": "node-budget-identity"
+      },
+      {
+        "from": "def-top-shell",
+        "to": "node-w-split"
+      },
+      {
+        "from": "def-u-set",
+        "to": "def-fam-three-index"
+      },
+      {
+        "from": "def-u-set",
+        "to": "node-fibre-nonneg"
+      },
+      {
+        "from": "def-vertex-deletion-coefficient",
+        "to": "def-vertex-deletion-forward-difference"
+      },
+      {
+        "from": "def-vertex-deletion-forward-difference",
+        "to": "def-favorable"
+      },
+      {
+        "from": "def-weight",
+        "to": "node-family-one-weight"
+      },
+      {
+        "from": "def-weight",
+        "to": "node-family-two-weight"
+      },
+      {
+        "from": "def-weight",
+        "to": "node-w-split"
+      },
+      {
+        "from": "domain-adjacency-decision",
+        "to": "def-fam-one-source"
+      },
+      {
+        "from": "domain-adjacency-decision",
+        "to": "def-indep-powerset"
+      },
+      {
+        "from": "domain-adjacency-decision",
+        "to": "def-indep-sets-avoiding"
+      },
+      {
+        "from": "domain-adjacency-decision",
+        "to": "def-leaf-degree"
+      },
+      {
+        "from": "domain-adjacency-decision",
+        "to": "def-r-del"
+      },
+      {
+        "from": "domain-adjacency-decision",
+        "to": "def-u-set"
+      },
+      {
+        "from": "domain-adjacency-decision",
+        "to": "def-vertex-deletion-coefficient"
+      },
+      {
+        "from": "domain-finite-simple-graph",
+        "to": "def-graph-leaf"
+      },
+      {
+        "from": "domain-finite-simple-graph",
+        "to": "def-independence-number"
+      },
+      {
+        "from": "domain-finite-simple-graph",
+        "to": "domain-adjacency-decision"
+      },
+      {
+        "from": "domain-finite-simple-graph",
+        "to": "hyp-tree"
+      },
+      {
+        "from": "domain-vertex",
+        "to": "def-graph-leaf"
+      },
+      {
+        "from": "domain-vertex",
+        "to": "def-vertex-deletion-coefficient"
+      },
+      {
+        "from": "domain-vertex-type",
+        "to": "def-fam-one-map"
+      },
+      {
+        "from": "domain-vertex-type",
+        "to": "domain-finite-simple-graph"
+      },
+      {
+        "from": "domain-vertex-type",
+        "to": "domain-vertex"
+      },
+      {
+        "from": "hyp-alpha",
+        "to": "conclusion-top-rank-residual-sign"
+      },
+      {
+        "from": "hyp-alpha",
+        "to": "node-alpha-eq-ell-add-a"
+      },
+      {
+        "from": "hyp-alpha",
+        "to": "node-forced-neighbour"
+      },
+      {
+        "from": "hyp-alpha",
+        "to": "node-leaf-card-ge-two"
+      },
+      {
+        "from": "hyp-alpha",
+        "to": "node-leaf-support-disjoint"
+      },
+      {
+        "from": "hyp-alpha",
+        "to": "node-top-rank-residual-identity"
+      },
+      {
+        "from": "hyp-eligible",
+        "to": "conclusion-top-rank-residual-sign"
+      },
+      {
+        "from": "hyp-eligible",
+        "to": "node-eligible-imp-alpha-ge-three"
+      },
+      {
+        "from": "hyp-eligible",
+        "to": "node-top-rank-residual-identity"
+      },
+      {
+        "from": "hyp-residual",
+        "to": "conclusion-top-rank-residual-sign"
+      },
+      {
+        "from": "hyp-residual",
+        "to": "node-family-support-pruned"
+      },
+      {
+        "from": "hyp-residual",
+        "to": "node-forced-neighbour"
+      },
+      {
+        "from": "hyp-residual",
+        "to": "node-max-indep-eq-leaf-union-d"
+      },
+      {
+        "from": "hyp-residual",
+        "to": "node-max-indep-no-support"
+      },
+      {
+        "from": "hyp-residual",
+        "to": "node-top-rank-residual-identity"
+      },
+      {
+        "from": "hyp-tree",
+        "to": "conclusion-top-rank-residual-sign"
+      },
+      {
+        "from": "hyp-tree",
+        "to": "node-alpha-eq-ell-add-a"
+      },
+      {
+        "from": "hyp-tree",
+        "to": "node-ell-two-lambda-two"
+      },
+      {
+        "from": "hyp-tree",
+        "to": "node-forced-neighbour"
+      },
+      {
+        "from": "hyp-tree",
+        "to": "node-leaf-card-ge-two"
+      },
+      {
+        "from": "hyp-tree",
+        "to": "node-leaf-support-disjoint"
+      },
+      {
+        "from": "hyp-tree",
+        "to": "node-top-rank-residual-identity"
+      },
+      {
+        "from": "node-alpha-eq-ell-add-a",
+        "to": "node-budget-identity"
+      },
+      {
+        "from": "node-alpha-eq-ell-add-a",
+        "to": "node-family-one-count"
+      },
+      {
+        "from": "node-alpha-eq-ell-add-a",
+        "to": "node-family-three-bijection"
+      },
+      {
+        "from": "node-alpha-eq-ell-add-a",
+        "to": "node-forced-neighbour"
+      },
+      {
+        "from": "node-alpha-eq-ell-add-a",
+        "to": "node-max-indep-eq-leaf-union-d"
+      },
+      {
+        "from": "node-budget-identity",
+        "to": "node-budget-shapes"
+      },
+      {
+        "from": "node-budget-identity",
+        "to": "node-family-one-weight"
+      },
+      {
+        "from": "node-budget-shapes",
+        "to": "node-family-support-pruned"
+      },
+      {
+        "from": "node-budget-shapes",
+        "to": "node-family-three-bijection"
+      },
+      {
+        "from": "node-c-eq-support-image",
+        "to": "node-alpha-eq-ell-add-a"
+      },
+      {
+        "from": "node-c-eq-support-image",
+        "to": "node-leaf-support-disjoint"
+      },
+      {
+        "from": "node-c2-zero",
+        "to": "node-finish-ell-two"
+      },
+      {
+        "from": "node-deletion-injection",
+        "to": "node-fibre-nonneg"
+      },
+      {
+        "from": "node-eligible-imp-alpha-ge-three",
+        "to": "conclusion-top-rank-residual-sign"
+      },
+      {
+        "from": "node-ell-two-lambda-two",
+        "to": "node-c2-zero"
+      },
+      {
+        "from": "node-family-one-count",
+        "to": "node-w-one"
+      },
+      {
+        "from": "node-family-one-weight",
+        "to": "node-family-one-count"
+      },
+      {
+        "from": "node-family-one-weight",
+        "to": "node-w-one"
+      },
+      {
+        "from": "node-family-support-pruned",
+        "to": "node-family-two-weight"
+      },
+      {
+        "from": "node-family-support-pruned",
+        "to": "node-n2-le-k2-mul-m"
+      },
+      {
+        "from": "node-family-three-bijection",
+        "to": "node-w-three"
+      },
+      {
+        "from": "node-family-two-weight",
+        "to": "node-w-two"
+      },
+      {
+        "from": "node-fibre-nonneg",
+        "to": "node-w-three"
+      },
+      {
+        "from": "node-finish-ell-ge-four",
+        "to": "conclusion-top-rank-residual-sign"
+      },
+      {
+        "from": "node-finish-ell-three",
+        "to": "conclusion-top-rank-residual-sign"
+      },
+      {
+        "from": "node-finish-ell-two",
+        "to": "conclusion-top-rank-residual-sign"
+      },
+      {
+        "from": "node-forced-neighbour",
+        "to": "node-family-support-pruned"
+      },
+      {
+        "from": "node-h-nonneg",
+        "to": "node-budget-shapes"
+      },
+      {
+        "from": "node-k2-le-ell-div-two",
+        "to": "node-finish-ell-three"
+      },
+      {
+        "from": "node-leaf-card-ge-two",
+        "to": "conclusion-top-rank-residual-sign"
+      },
+      {
+        "from": "node-leaf-degree-sum",
+        "to": "node-fibre-nonneg"
+      },
+      {
+        "from": "node-leaf-degree-sum",
+        "to": "node-k2-le-ell-div-two"
+      },
+      {
+        "from": "node-leaf-support-disjoint",
+        "to": "node-alpha-eq-ell-add-a"
+      },
+      {
+        "from": "node-leaf-support-disjoint",
+        "to": "node-budget-identity"
+      },
+      {
+        "from": "node-leaf-support-disjoint",
+        "to": "node-family-three-bijection"
+      },
+      {
+        "from": "node-m-eq-card-max-indep-d",
+        "to": "node-family-one-count"
+      },
+      {
+        "from": "node-m-eq-card-max-indep-d",
+        "to": "node-n2-le-k2-mul-m"
+      },
+      {
+        "from": "node-max-indep-eq-leaf-union-d",
+        "to": "node-m-eq-card-max-indep-d"
+      },
+      {
+        "from": "node-max-indep-no-support",
+        "to": "node-max-indep-eq-leaf-union-d"
+      },
+      {
+        "from": "node-n2-le-k2-mul-m",
+        "to": "node-finish-ell-three"
+      },
+      {
+        "from": "node-n2-le-k2-mul-m",
+        "to": "node-finish-ell-two"
+      },
+      {
+        "from": "node-sign-bound",
+        "to": "conclusion-top-rank-residual-sign"
+      },
+      {
+        "from": "node-sign-bound",
+        "to": "node-finish-ell-ge-four"
+      },
+      {
+        "from": "node-sign-bound",
+        "to": "node-finish-ell-three"
+      },
+      {
+        "from": "node-sign-bound",
+        "to": "node-finish-ell-two"
+      },
+      {
+        "from": "node-top-rank-residual-identity",
+        "to": "node-sign-bound"
+      },
+      {
+        "from": "node-w-one",
+        "to": "node-sign-bound"
+      },
+      {
+        "from": "node-w-split",
+        "to": "node-sign-bound"
+      },
+      {
+        "from": "node-w-three",
+        "to": "node-sign-bound"
+      },
+      {
+        "from": "node-w-two",
+        "to": "node-sign-bound"
+      }
+    ]
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "explicit_axiom_allowlist",
+    "rationale": "The finite statement is classical in this implementation because Mathlib's independence number, the leaf-support choice function, the leaf-set filter and the aggregate's favorable filter are noncomputable, and the interior/support/family definitions inherit that. Only the three explicitly listed standard Lean axioms may appear in the kernel dependency report; no sorry, admit, native_decide or axiom command occurs, and no decide over an enumeration stands in for a universal step."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "R26LA1.topRankResidualSign",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem topRankResidualSign (G : SimpleGraph V) [DecidableRel G.Adj] (hTree : G.IsTree)\n    (hAlpha : 2 \u2264 G.indepNum) (hEligible : crossingIndex G + 2 \u2264 G.indepNum - 1)\n    (hResidual : \u2200 v, C4LA1.IsGraphLeaf G v \u2192 \u2200 S : Finset V, G.IsIndepSet (S : Set V) \u2192\n      S.card = G.indepNum \u2192 v \u2208 S) :\n    aggregate G (G.indepNum - 1) \u2264 0",
+    "expected_statement_sha256": "7ab65fbf07bda813ce859c89a52e79802fee3c10f2ee2662d64deff9483576a6"
+  },
+  "source_materials": [
+    {
+      "id": "source-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "sha256": "dd3c42eaff9c4bab57e7399d56dcd0dd950daa83e0c00e784e52542a0ef3dba9",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "source-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "sha256": "5f7b8284c96d97c132c4ce8de9da70cb482a11f9f828573076b6d69b63a806fb",
+      "role": "reference"
+    },
+    {
+      "id": "source-lean-main",
+      "path": "LeanProject/LeanProof/Main.lean",
+      "sha256": "aff08ce72f9a5f1a93c9b8cb34c0f26ceeddc105cc5a94a4a132d5b6f6367dbc",
+      "role": "reference"
+    },
+    {
+      "id": "source-c5-la1-frozen",
+      "path": "SOURCES/C5LA1-Main.lean",
+      "sha256": "0933211d8f02acd867e91547d4a2b09d13fcc3ea178e192e385acc33b696b63b",
+      "role": "reference"
+    },
+    {
+      "id": "source-u2",
+      "path": "SOURCES/U2-Main.lean",
+      "sha256": "c382707596674822e0b78135414cdd3320e0bc56f9f558fee78e438794b1043b",
+      "role": "reference"
+    },
+    {
+      "id": "source-u3",
+      "path": "SOURCES/U3-Main.lean",
+      "sha256": "fb54fa05563238ba77167cefd1d30fd85baa0135a36d24518284e2380b6fa332",
+      "role": "reference"
+    },
+    {
+      "id": "source-c-u3-t",
+      "path": "SOURCES/C-U3-T-CriticU3T.lean",
+      "sha256": "1dba1d5bb45129f3e0a62a1081723db558bbcf134a4acb0d928125a24074a993",
+      "role": "reference"
+    },
+    {
+      "id": "source-c-u2-t",
+      "path": "SOURCES/C-U2-T-CriticT.lean",
+      "sha256": "5fafeb1446bca62ea16c46679fa37636fbd5e11a190e23a605a9c7428043600e",
+      "role": "reference"
+    },
+    {
+      "id": "source-c-u2-f",
+      "path": "SOURCES/C-U2-F-CritF.lean",
+      "sha256": "4ce9a7a5690f584e88d60947ec32ee33aaa42bc134b6bede86c0db73712edfb4",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-001",
+      "path": "LeanProject/LeanProof/Snippets/0001-definition-C4LA1-vertexDeletionIndepSetCount.lean.fragment",
+      "sha256": "7e0a588e243735a611c919ea1080816911a3e27e4523478af0c0f560ce1b3b48",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-002",
+      "path": "LeanProject/LeanProof/Snippets/0002-definition-C4LA1-vertexDeletionForwardDifference.lean.fragment",
+      "sha256": "c2da50eb16ee788c439b146577efeedd7dd42811c6943fb437585edcf63b5880",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-003",
+      "path": "LeanProject/LeanProof/Snippets/0003-definition-C4LA1-IsFavorableAt.lean.fragment",
+      "sha256": "25d8f7d274f9080468bf6d46acc6db3d4a469c2e399e7faee6cdcee24290a0db",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-004",
+      "path": "LeanProject/LeanProof/Snippets/0004-definition-C4LA1-IsGraphLeaf.lean.fragment",
+      "sha256": "65acd314d3bfd74aca476e00dd8866434c67682b627bce5e105d372a556f7ae5",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-005",
+      "path": "LeanProject/LeanProof/Snippets/0005-definition-C5LA1-support.lean.fragment",
+      "sha256": "8e1e1a689393f555eb5c216207b1368c7415a8543c569884b2fc86954b7bc2b4",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-006",
+      "path": "LeanProject/LeanProof/Snippets/0006-definition-C5LA1-leafSet.lean.fragment",
+      "sha256": "78ec65517bde90cc2fc5e542fc7c60d6a5147b243b74b9ac3de33d4efd1df697",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-007",
+      "path": "LeanProject/LeanProof/Snippets/0007-definition-C5LA1-leafDegree.lean.fragment",
+      "sha256": "ccfc9b2f549aa8c9986931152d249096ce49e3ccd3b67f4afd8678a749d93a68",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-008",
+      "path": "LeanProject/LeanProof/Snippets/0008-definition-C5LA1-H.lean.fragment",
+      "sha256": "55f37d9161901d6006e571cf548c4e56675c9d786a1aba83e7889ad9d443224d",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-009",
+      "path": "LeanProject/LeanProof/Snippets/0009-definition-C5LA1-R.lean.fragment",
+      "sha256": "a0407d82ab112a65a0f9d85970e9d6217b66201680cc079a4ba13751e53dc6b8",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-010",
+      "path": "LeanProject/LeanProof/Snippets/0010-definition-C5LA1-indepSetsAvoiding.lean.fragment",
+      "sha256": "ac0e331eec99650eca7a18e9fe98829bb5495850685b8f31936169f0a6d8e368",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-011",
+      "path": "LeanProject/LeanProof/Snippets/0011-definition-C5LA1-indepSetCount.lean.fragment",
+      "sha256": "e22635d8697e49b38dd521080f34c3eefe56a93964120c70f53ad9899b4a7f71",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-012",
+      "path": "LeanProject/LeanProof/Snippets/0012-definition-C5LA1-forwardDifferenceDel.lean.fragment",
+      "sha256": "60bd8efcc88e8e511a7caacac5867f7845243ccab08f1660e8c3962af544dd8f",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-013",
+      "path": "LeanProject/LeanProof/Snippets/0013-definition-C5LA1-aggregate.lean.fragment",
+      "sha256": "d66e776c5cf49b2a78a2d9713e4a41de2cbaf5de0af7b6d580075064d1daea8b",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-014",
+      "path": "LeanProject/LeanProof/Snippets/0014-definition-C5LA1-crossingIndex.lean.fragment",
+      "sha256": "378868ab2e660af8a36ea0b1045c55bc60f8383dca3d31dd85c4b52fa8a898fb",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-015",
+      "path": "LeanProject/LeanProof/Snippets/0015-definition-R26LA1-indepPowerset.lean.fragment",
+      "sha256": "d2bf1485c4f586deca46a0e4b326e8ebac5399bb84c6b3c1b5f63c4c2a50363a",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-016",
+      "path": "LeanProject/LeanProof/Snippets/0016-definition-R26CritT-famOneMap.lean.fragment",
+      "sha256": "b34fef11b637e2a10a2f99441f4411c75ca36f8acdced88883fd5e80f00cae68",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-017",
+      "path": "LeanProject/LeanProof/Snippets/0017-definition-R26CritT-famOneSource.lean.fragment",
+      "sha256": "4391f1a3def2e3883b352d7a85f2f0ddc9c6d17512f5cb5ee1b535546ed008ab",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-037",
+      "path": "LeanProject/LeanProof/Snippets/0037-lemma-C4LA1-isIndepSet_insert_of_unique_neighbor.lean.fragment",
+      "sha256": "792665784226f42ee4138c1863f5db0312fee1122546999a8b85206666405f78",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-038",
+      "path": "LeanProject/LeanProof/Snippets/0038-lemma-C4LA1-support_mem_of_max_indep_avoids_leaf.lean.fragment",
+      "sha256": "49d38e011acf4223e557be333e8cc99f9bf41d31f1d425d4ec4c6743f0cf3935",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-039",
+      "path": "LeanProject/LeanProof/Snippets/0039-lemma-C4LA1-exists_maximum_indepSet_containing_leaf.lean.fragment",
+      "sha256": "7aa899bcbaba4534e07c8da5ba513a51a932c99ab5c1866319fc7e6bbdddc637",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-040",
+      "path": "LeanProject/LeanProof/Snippets/0040-lemma-C4LA1-topRankSelectorCollapse.lean.fragment",
+      "sha256": "e9ffbcfbaf88ffd14aad1288a5add8057a2d92bd0845e816ca17f08b37a32a9e",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-041",
+      "path": "LeanProject/LeanProof/Snippets/0041-lemma-C5LA1-support_spec.lean.fragment",
+      "sha256": "70b0781d1f99e74a3b34849eadd081b15d9968f177ef1e147c25765e186069fb",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-042",
+      "path": "LeanProject/LeanProof/Snippets/0042-lemma-C5LA1-adj_iff_support_eq.lean.fragment",
+      "sha256": "f12f82bc757ccd70f1eea5e3aa5759bd654fb7d4088a5360e04cc098a202a81e",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-043",
+      "path": "LeanProject/LeanProof/Snippets/0043-lemma-C5LA1-support_ne_self.lean.fragment",
+      "sha256": "8cf3e2ee51f18d50c6b6c4a2dd74dd68783a94c1013337b7d1ae88aceeee0462",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-044",
+      "path": "LeanProject/LeanProof/Snippets/0044-lemma-C5LA1-leafDegree_eq_filter_support.lean.fragment",
+      "sha256": "53119a540f36ad19dd43c9dd7b7a5761e9eef2fdd92425606b8a92e8ff5e1597",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-045",
+      "path": "LeanProject/LeanProof/Snippets/0045-lemma-C5LA1-sum_card_filter_comm.lean.fragment",
+      "sha256": "8a2d0fcef47481141c9b03c55648c36181f4dde28ed2dd5ed1d8d96bc4b0f59e",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-046",
+      "path": "LeanProject/LeanProof/Snippets/0046-lemma-C5LA1-H_bijection_card.lean.fragment",
+      "sha256": "5baf8f1fd00f875f31b82aeda3961b2524d1a8a971f311c126f6d0b1c3db7edd",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-047",
+      "path": "LeanProject/LeanProof/Snippets/0047-lemma-C5LA1-isIndepSet_insert_of_no_adj.lean.fragment",
+      "sha256": "09b4af885f4c75886f46324a56c0df2dbfa1340d01983751a8c46d47267a9201",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-048",
+      "path": "LeanProject/LeanProof/Snippets/0048-lemma-C5LA1-R_bijection_card.lean.fragment",
+      "sha256": "ee259823168fb3e94a7d059897d50aafe504fbb8322354f90bb8cf3c4ba882d0",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-049",
+      "path": "LeanProject/LeanProof/Snippets/0049-lemma-C5LA1-H_count_eq_M.lean.fragment",
+      "sha256": "342ed6c99bfa5dd17e8bba58034490e9a8cedce7417010c2d3d7a57375c732f4",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-050",
+      "path": "LeanProject/LeanProof/Snippets/0050-lemma-C5LA1-R_count_eq_zero.lean.fragment",
+      "sha256": "6ace840bee5205e0d71b135f9ff55902dd8e013afead9bd2ec951b0ce39259fc",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-051",
+      "path": "LeanProject/LeanProof/Snippets/0051-lemma-C5LA1-H_doubleCount.lean.fragment",
+      "sha256": "cbfc5ccdaa5265a9d4b0f1f7e6cd360ce823b381a452364a2a5753500a449f92",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-052",
+      "path": "LeanProject/LeanProof/Snippets/0052-lemma-C5LA1-R_doubleCount.lean.fragment",
+      "sha256": "4039d9e3e0bcab3b73a38fb8f1ed36793741e14634713965a537d0ee37dfce0f",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-053",
+      "path": "LeanProject/LeanProof/Snippets/0053-lemma-C5LA1-topRankResidualIdentity.lean.fragment",
+      "sha256": "834e7be0f991607fd57f45ba5f2f3eb8e19b0d08536f81b869f3090faaeff91c",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-054",
+      "path": "LeanProject/LeanProof/Snippets/0054-lemma-R26LA1-deletionInjectionBound.lean.fragment",
+      "sha256": "01ad773c6d6d039e27aeaae5f15d33d39d38cbb92e9ad7a8f18cf8d4d3fad2a8",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-055",
+      "path": "LeanProject/LeanProof/Snippets/0055-lemma-R26LA1-isIndepSet_union_of_no_cross_adj.lean.fragment",
+      "sha256": "ed67598cbf66ddd589c808414125267bc83ed88e30bf452536ffc61de1570d55",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-056",
+      "path": "LeanProject/LeanProof/Snippets/0056-lemma-R26LA1-budgetWeightBound.lean.fragment",
+      "sha256": "8c6f63f823996cb640802152ee451955bf0b1a2e2187e796fbf77af3d46e4059",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-057",
+      "path": "LeanProject/LeanProof/Snippets/0057-lemma-R26LA1-leafDegree_sum_eq_inter_support.lean.fragment",
+      "sha256": "8455424e75e38b19dcc2695da63fdef4aecd6ed3e2821d02d51c80ae35be2665",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-058",
+      "path": "LeanProject/LeanProof/Snippets/0058-lemma-R26U3-closed_reachable.lean.fragment",
+      "sha256": "a0106c0719d0340e934b6f5f3d3d9f492a1b119b15267921e3c4e221d5670d2a",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-059",
+      "path": "LeanProject/LeanProof/Snippets/0059-lemma-R26U3-card_leafSet_ge_two_of_nontrivial.lean.fragment",
+      "sha256": "2d9493125ebce49ce08e2c8f11c1e516565ec3e04e312e0699e2bc8b37bed841",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-060",
+      "path": "LeanProject/LeanProof/Snippets/0060-lemma-R26U3-tree_two_le_indepNum_two_le_leafSet.lean.fragment",
+      "sha256": "835ef1f23ebd121580fffd9b40fe933596c04936b6f39525ffc756b47fca02ec",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-061",
+      "path": "LeanProject/LeanProof/Snippets/0061-lemma-R26U3-tree_two_le_indepNum_no_adjacent_leaves.lean.fragment",
+      "sha256": "aae3582c8741188e3105fdf3cb70d7e44245775705fe5e3ba06a64f1c65aef57",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-062",
+      "path": "LeanProject/LeanProof/Snippets/0062-lemma-R26U3-sum_leafDegree_eq_card_leafSet.lean.fragment",
+      "sha256": "e9b662d235a5e1c870f7b4a7c9dde3c2330669b9ee22efbcc982148e853457ed",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-063",
+      "path": "LeanProject/LeanProof/Snippets/0063-lemma-R26U3-eligible_three_le_indepNum.lean.fragment",
+      "sha256": "dee3ba1e295f9c3624c5e84ddf4719629a9794da45ba7a761203a7d10ecab5d7",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-064",
+      "path": "LeanProject/LeanProof/Snippets/0064-lemma-R26U3-nonleaf_degree_eq_two_of_leafSet_card_eq_two.lean.fragment",
+      "sha256": "66f9a969b7f9c633cfe08c038192c1a12e43b919f867aa2d1e23d837ec3290d0",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-065",
+      "path": "LeanProject/LeanProof/Snippets/0065-lemma-R26U3-leafDegree_two_indepNum_eq_two.lean.fragment",
+      "sha256": "00ca6c31db0bb81b2e9693494f75ceaa02f30c15cc4b7896cd1403d05bc056fa",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-066",
+      "path": "LeanProject/LeanProof/Snippets/0066-lemma-R26CritU3T-mul_card_leafDegree_fiber_le_card_leafSet.lean.fragment",
+      "sha256": "44c452de2d36964390586edaa601e3984707ce0f574294d742e096e9878e2c15",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-067",
+      "path": "LeanProject/LeanProof/Snippets/0067-lemma-R26CritU3T-two_mul_card_C2_le_card_leafSet.lean.fragment",
+      "sha256": "3001306ce77e6db329767050b48d9c715e6b6302385f8edefd8831fed6beff81",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-068",
+      "path": "LeanProject/LeanProof/Snippets/0068-lemma-R26CritT-famOneInjOn.lean.fragment",
+      "sha256": "49df2035dd71dd00c0416bf132af94a3d9923fdc91e1e488dcea022a4f37564c",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-069",
+      "path": "LeanProject/LeanProof/Snippets/0069-lemma-R26CritT-famOneImageCard.lean.fragment",
+      "sha256": "8949361b6a5cf2a27d24599f9c70733c4568cf4b7a08c7828b3ee4097ce1c546",
+      "role": "reference"
+    },
+    {
+      "id": "source-fragment-070",
+      "path": "LeanProject/LeanProof/Snippets/0070-lemma-R26CritF-fibreInequalitySharp.lean.fragment",
+      "sha256": "c93f269067af130c11239a2edd33dca446b24eafbff9ef6b645492c0a20f360a",
+      "role": "reference"
+    }
+  ]
+}

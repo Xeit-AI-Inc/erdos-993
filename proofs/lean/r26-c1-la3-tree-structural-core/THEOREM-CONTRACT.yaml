@@ -1,0 +1,903 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "c1-la3-tree-structural-core-v1",
+  "theorem": {
+    "title": "C1-LA3 Tree-Structural Core: the P_3 Lemma for Finite Literal Ordinary Trees (r26 Cycle 1)",
+    "informal_statement": "For every finite simple graph G on a finite vertex type with decidable equality and decidable adjacency, if G is a tree, its leaf set has exactly two elements, and some vertex s has leaf degree exactly 2 (both leaves are adjacent to s), then G.indepNum = 2. The declaration is the deepest fact of award group C1-LA3, whose registered declarations are the tree-structural core of C1-ALLOCATION.md item 9 (a)-(f) in the sharp forms ruled by the Cycle 1 synthesis, together with the critic-compiled extensions L intersect C(G) = empty, lambda identically zero on the leaf set, j*|C_j| <= |L| hence k_2 <= floor(|L|/2), and k_2 = 0 on the eligible class when |L| = 2. No registered declaration mentions the aggregate S, W_III, the families, or (RC), and none consumes hyp-residual."
+  },
+  "formulation_status": {
+    "status": "established",
+    "evidence": [
+      "Award capsule seal c5fcd34880aae4310c39f6d1ae2e7e8fa7b13531610da5e09c68aef06cfc29af recomputed and every one of the 29 listed member digests and byte counts verified; see CAPSULE-VERIFICATION.json in this run root.",
+      "Cycle 1 Stage 6 synthesis (cycles/cycle-1/stage6/SYNTHESIS.md, section 'Lean awards', 'C1-LA3 - the tree-structural core') awards exactly this content and rules its readiness 'compiled sorry-free today; governed close only'.",
+      "The U adjudicator (cycles/cycle-1/stage5/adjudicators/U/ADJUDICATION.md, 'Lean readiness', group U-C) independently rebuilt all twelve U3 declarations and all thirty-two critic declarations sorry-free with exactly the three permitted axioms, and ruled the group ready with the two repairs the synthesis then made binding.",
+      "T3's informal lemmas (i)-(iv) (cycles/cycle-1/stage3/returns/T3/RETURN.md section 5) supply the informal proofs and Mathlib anchors; both T3 critics verified every anchor at file and line against the pinned Mathlib revision 905b95818eb32af7874a58b427f50c1711a5e96c.",
+      "INFORMAL-PROOF.md in this run root records the argument of record for every registered declaration, names the hypotheses each one consumes, flags every Nat subtraction, and records where the compiled derivation takes a different route from T3's informal one."
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-independence-number",
+      "description": "alpha(G), the maximum cardinality of an independent vertex set of G (Mathlib).",
+      "lean_name": "SimpleGraph.indepNum",
+      "dependencies": [
+        "domain-finite-simple-graph"
+      ]
+    },
+    {
+      "id": "def-top-rank",
+      "description": "The top interior rank alpha(G)-1 in truncated Nat subtraction; it appears only inside hyp-eligible-shaped premises of registered lemmas, never in the terminal declaration.",
+      "lean_name": "Nat.sub",
+      "dependencies": [
+        "def-independence-number"
+      ]
+    },
+    {
+      "id": "def-graph-leaf",
+      "description": "A vertex v is a leaf of G exactly when there exists a unique u adjacent to v. Frozen C5-LA1 entry 4, registered byte-identically.",
+      "lean_name": "C4LA1.IsGraphLeaf",
+      "dependencies": [
+        "domain-finite-simple-graph",
+        "domain-vertex"
+      ]
+    },
+    {
+      "id": "def-support",
+      "description": "The unique support (neighbour) of a leaf v, realised by classical choice; unconstrained off the leaf set. Frozen C5-LA1 entry 5, registered byte-identically.",
+      "lean_name": "C5LA1.support",
+      "dependencies": [
+        "def-graph-leaf",
+        "domain-vertex"
+      ]
+    },
+    {
+      "id": "def-leaf-set",
+      "description": "L(G), the finite set of leaves of G. Frozen C5-LA1 entry 6, registered byte-identically.",
+      "lean_name": "C5LA1.leafSet",
+      "dependencies": [
+        "def-graph-leaf"
+      ]
+    },
+    {
+      "id": "def-leaf-degree",
+      "description": "lambda(s), the number of leaves of G adjacent to s; zero off supports. Frozen C5-LA1 entry 7, registered byte-identically.",
+      "lean_name": "C5LA1.leafDegree",
+      "dependencies": [
+        "def-leaf-set",
+        "domain-adjacency-decision"
+      ]
+    },
+    {
+      "id": "def-indep-sets-avoiding",
+      "description": "I_k(G-D): independent k-subsets of the vertex type avoiding a finite deletion set D. Frozen C5-LA1 entry 10, registered byte-identically; needed only as the transitive definitional base of def-crossing-index.",
+      "lean_name": "C5LA1.indepSetsAvoiding",
+      "dependencies": [
+        "domain-adjacency-decision",
+        "domain-finite-simple-graph"
+      ]
+    },
+    {
+      "id": "def-indep-set-count",
+      "description": "i_k(G-D). Frozen C5-LA1 entry 11, registered byte-identically.",
+      "lean_name": "C5LA1.indepSetCount",
+      "dependencies": [
+        "def-indep-sets-avoiding"
+      ]
+    },
+    {
+      "id": "def-forward-difference-del",
+      "description": "Delta_k(G-D) = i_(k+1)(G-D) - i_k(G-D) in Int. Frozen C5-LA1 entry 12, registered byte-identically.",
+      "lean_name": "C5LA1.forwardDifferenceDel",
+      "dependencies": [
+        "def-indep-set-count"
+      ]
+    },
+    {
+      "id": "def-crossing-index",
+      "description": "x(G), the least k with Delta_k(G) < 0; well-defined because Delta_alpha(G) = -i_alpha(G) < 0. Frozen C5-LA1 entry 14, registered byte-identically. Registered only because the eligible-class lemmas mention x(G); no declaration of this award unfolds it.",
+      "lean_name": "C5LA1.crossingIndex",
+      "dependencies": [
+        "def-forward-difference-del",
+        "def-independence-number"
+      ]
+    },
+    {
+      "id": "def-support-set",
+      "description": "C(G), the set of supports of leaves, presented as the image of the leaf set under support. The only definition this award adds to the C5-LA1 layer; origin critic C-U3-T.",
+      "lean_name": "R26LA3.supportSet",
+      "dependencies": [
+        "def-leaf-set",
+        "def-support"
+      ]
+    },
+    {
+      "id": "lem-support-spec",
+      "description": "Registered Lean lemma of the award (the contract schema's node kinds are definition/domain/hypothesis/conclusion, so every registered non-terminal declaration is carried as a 'definition' node; its lean_name is the exact declaration name). The defining property of support: a leaf is adjacent to its support and every neighbour of the leaf equals it. Frozen C5-LA1 entry 19, byte-identical.",
+      "lean_name": "C5LA1.support_spec",
+      "dependencies": [
+        "def-graph-leaf",
+        "def-support"
+      ]
+    },
+    {
+      "id": "lem-adj-iff-support-eq",
+      "description": "Registered Lean lemma of the award (the contract schema's node kinds are definition/domain/hypothesis/conclusion, so every registered non-terminal declaration is carried as a 'definition' node; its lean_name is the exact declaration name). For a leaf v, G.Adj v s holds exactly when support G v = s. Frozen C5-LA1 entry 20, byte-identical.",
+      "lean_name": "C5LA1.adj_iff_support_eq",
+      "dependencies": [
+        "lem-support-spec"
+      ]
+    },
+    {
+      "id": "lem-leafdegree-eq-filter-support",
+      "description": "Registered Lean lemma of the award (the contract schema's node kinds are definition/domain/hypothesis/conclusion, so every registered non-terminal declaration is carried as a 'definition' node; its lean_name is the exact declaration name). lambda(s) equals the cardinality of the fibre of support over s inside the leaf set. Frozen C5-LA1 entry 22, byte-identical.",
+      "lean_name": "C5LA1.leafDegree_eq_filter_support",
+      "dependencies": [
+        "def-leaf-degree",
+        "def-leaf-set",
+        "def-support",
+        "lem-adj-iff-support-eq"
+      ]
+    },
+    {
+      "id": "lem-closed-reachable",
+      "description": "Registered Lean lemma of the award (the contract schema's node kinds are definition/domain/hypothesis/conclusion, so every registered non-terminal declaration is carried as a 'definition' node; its lean_name is the exact declaration name). A walk transports a predicate closed under a single adjacency step. No hypotheses beyond the closure premise; the adjacency-closure engine that replaces the nested induce route (synthesis repair 9). Origin route U3.",
+      "lean_name": "R26LA3.closed_reachable",
+      "dependencies": [
+        "domain-finite-simple-graph"
+      ]
+    },
+    {
+      "id": "lem-card-leafset-ge-two-nontrivial",
+      "description": "Registered Lean lemma of the award (the contract schema's node kinds are definition/domain/hypothesis/conclusion, so every registered non-terminal declaration is carried as a 'definition' node; its lean_name is the exact declaration name). A nontrivial finite tree has at least two leaves (handshake: IsTree.card_edgeFinset, sum_degrees_eq_twice_card_edges, Preconnected.degree_pos_of_nontrivial). Consumes hyp-tree and Nontrivial V; no hyp-alpha. Origin route U3.",
+      "lean_name": "R26LA3.card_leafSet_ge_two_of_nontrivial",
+      "dependencies": [
+        "def-graph-leaf",
+        "def-leaf-set",
+        "domain-finite-simple-graph"
+      ]
+    },
+    {
+      "id": "lem-tree-two-le-indepnum-two-le-leafset",
+      "description": "Registered Lean lemma of the award (the contract schema's node kinds are definition/domain/hypothesis/conclusion, so every registered non-terminal declaration is carried as a 'definition' node; its lean_name is the exact declaration name). Allocation item 9(a): IsTree and 2 <= alpha imply 2 <= |L|. hyp-alpha is consumed only to produce Nontrivial V. Origin route U3.",
+      "lean_name": "R26LA3.tree_two_le_indepNum_two_le_leafSet",
+      "dependencies": [
+        "def-independence-number",
+        "lem-card-leafset-ge-two-nontrivial"
+      ]
+    },
+    {
+      "id": "lem-no-adjacent-leaves",
+      "description": "Registered Lean lemma of the award (the contract schema's node kinds are definition/domain/hypothesis/conclusion, so every registered non-terminal declaration is carried as a 'definition' node; its lean_name is the exact declaration name). Allocation item 9(b): IsTree and 2 <= alpha imply no two leaves are adjacent, by adjacency closure rather than an induced subgraph. Origin route U3.",
+      "lean_name": "R26LA3.tree_two_le_indepNum_no_adjacent_leaves",
+      "dependencies": [
+        "def-graph-leaf",
+        "def-independence-number",
+        "lem-closed-reachable"
+      ]
+    },
+    {
+      "id": "lem-leafdegree-eq-zero-not-mem-supportset",
+      "description": "Registered Lean lemma of the award (the contract schema's node kinds are definition/domain/hypothesis/conclusion, so every registered non-terminal declaration is carried as a 'definition' node; its lean_name is the exact declaration name). Allocation item 9(c) in the SHARP form required by the synthesis: a vertex outside the support set has leaf degree zero. No IsTree, no hyp-alpha, and no inert non-leaf hypothesis. Origin critic C-U3-T; co-derived by C-U3-F as interior_leafDegree_eq_zero'.",
+      "lean_name": "R26LA3.leafDegree_eq_zero_of_not_mem_supportSet",
+      "dependencies": [
+        "def-leaf-degree",
+        "def-support-set",
+        "lem-leafdegree-eq-filter-support"
+      ]
+    },
+    {
+      "id": "lem-leaf-not-mem-supportset",
+      "description": "Registered Lean lemma of the award (the contract schema's node kinds are definition/domain/hypothesis/conclusion, so every registered non-terminal declaration is carried as a 'definition' node; its lean_name is the exact declaration name). On a tree with 2 <= alpha, no leaf is the support of a leaf. Origin critic C-U3-T.",
+      "lean_name": "R26LA3.leaf_not_mem_supportSet",
+      "dependencies": [
+        "def-support-set",
+        "lem-adj-iff-support-eq",
+        "lem-no-adjacent-leaves"
+      ]
+    },
+    {
+      "id": "lem-disjoint-leafset-supportset",
+      "description": "Registered Lean lemma of the award (the contract schema's node kinds are definition/domain/hypothesis/conclusion, so every registered non-terminal declaration is carried as a 'definition' node; its lean_name is the exact declaration name). L intersect C(G) is empty when 2 <= alpha (SEMANTIC-CONTRACT section 3). Origin critic C-U3-T; co-derived by C-U3-F as leafSet_disjoint_supports.",
+      "lean_name": "R26LA3.disjoint_leafSet_supportSet",
+      "dependencies": [
+        "def-leaf-set",
+        "def-support-set",
+        "lem-leaf-not-mem-supportset"
+      ]
+    },
+    {
+      "id": "lem-leaf-leafdegree-eq-zero",
+      "description": "Registered Lean lemma of the award (the contract schema's node kinds are definition/domain/hypothesis/conclusion, so every registered non-terminal declaration is carried as a 'definition' node; its lean_name is the exact declaration name). lambda vanishes identically on the leaf set when 2 <= alpha. Origin critic C-U3-T; C-U3-F compiled the identical statement under the same name with a different proof (the corpus's one name collision), and that derivation is NOT carried.",
+      "lean_name": "R26LA3.leaf_leafDegree_eq_zero",
+      "dependencies": [
+        "lem-leaf-not-mem-supportset",
+        "lem-leafdegree-eq-zero-not-mem-supportset"
+      ]
+    },
+    {
+      "id": "lem-sum-leafdegree-eq-card-leafset",
+      "description": "Registered Lean lemma of the award (the contract schema's node kinds are definition/domain/hypothesis/conclusion, so every registered non-terminal declaration is carried as a 'definition' node; its lean_name is the exact declaration name). Allocation item 9(d) part 1: the sum of lambda over all vertices equals |L|, by fibering the leaf set over the support function. Recorded at NO hypotheses per the synthesis repair. Origin route U3.",
+      "lean_name": "R26LA3.sum_leafDegree_eq_card_leafSet",
+      "dependencies": [
+        "lem-leafdegree-eq-filter-support"
+      ]
+    },
+    {
+      "id": "lem-card-c1-le-card-leafset",
+      "description": "Registered Lean lemma of the award (the contract schema's node kinds are definition/domain/hypothesis/conclusion, so every registered non-terminal declaration is carried as a 'definition' node; its lean_name is the exact declaration name). Allocation item 9(d) part 2: |C_1| <= |L|, at no hypotheses. Origin route U3.",
+      "lean_name": "R26LA3.card_C1_le_card_leafSet",
+      "dependencies": [
+        "lem-sum-leafdegree-eq-card-leafset"
+      ]
+    },
+    {
+      "id": "lem-mul-card-leafdegree-fiber-le",
+      "description": "Registered Lean lemma of the award (the contract schema's node kinds are definition/domain/hypothesis/conclusion, so every registered non-terminal declaration is carried as a 'definition' node; its lean_name is the exact declaration name). j times |C_j| <= |L| for every multiplicity j, at no hypotheses; strictly generalizes the j = 1 case. Origin critic C-U3-T; co-derived by C-U3-F as mul_card_leafDegree_eq_le (the spelling the synthesis prints).",
+      "lean_name": "R26LA3.mul_card_leafDegree_fiber_le_card_leafSet",
+      "dependencies": [
+        "lem-sum-leafdegree-eq-card-leafset"
+      ]
+    },
+    {
+      "id": "lem-two-mul-card-c2-le",
+      "description": "Registered Lean lemma of the award (the contract schema's node kinds are definition/domain/hypothesis/conclusion, so every registered non-terminal declaration is carried as a 'definition' node; its lean_name is the exact declaration name). k_2 <= floor(|L|/2), stated in the multiplication form 2*k_2 <= |L| so that no Nat division occurs. At no hypotheses. Origin critic C-U3-T.",
+      "lean_name": "R26LA3.two_mul_card_C2_le_card_leafSet",
+      "dependencies": [
+        "lem-mul-card-leafdegree-fiber-le"
+      ]
+    },
+    {
+      "id": "lem-eligible-three-le-indepnum",
+      "description": "Registered Lean lemma of the award (the contract schema's node kinds are definition/domain/hypothesis/conclusion, so every registered non-terminal declaration is carried as a 'definition' node; its lean_name is the exact declaration name). Allocation item 9(f): x(G) + 2 <= alpha - 1 forces 3 <= alpha. Truncated Nat arithmetic only; no IsTree, no hyp-alpha. Origin route U3.",
+      "lean_name": "R26LA3.eligible_three_le_indepNum",
+      "dependencies": [
+        "def-crossing-index",
+        "def-independence-number",
+        "def-top-rank"
+      ]
+    },
+    {
+      "id": "lem-nonleaf-degree-eq-two",
+      "description": "Registered Lean lemma of the award (the contract schema's node kinds are definition/domain/hypothesis/conclusion, so every registered non-terminal declaration is carried as a 'definition' node; its lean_name is the exact declaration name). A tree with exactly two leaves has every non-leaf vertex of degree exactly two (degree-sum tightness). Consumes IsTree and |L| = 2; no hyp-alpha. Origin route U3.",
+      "lean_name": "R26LA3.nonleaf_degree_eq_two_of_leafSet_card_eq_two",
+      "dependencies": [
+        "def-graph-leaf",
+        "def-leaf-set",
+        "domain-finite-simple-graph"
+      ]
+    },
+    {
+      "id": "lem-p3-core",
+      "description": "Registered Lean lemma of the award (the contract schema's node kinds are definition/domain/hypothesis/conclusion, so every registered non-terminal declaration is carried as a 'definition' node; its lean_name is the exact declaration name). The carried U3 derivation of the P_3 lemma: IsTree, |L| = 2 and lambda(s) = 2 force alpha = 2, WITHOUT hyp-alpha (synthesis repair (iv')). Registered under the _core name because the registrar admits exactly one terminal theorem and the eligible-class lemmas below consume this fact; the terminal declaration restates it unchanged and applies it. Origin route U3.",
+      "lean_name": "R26LA3.leafDegree_two_indepNum_eq_two_core",
+      "dependencies": [
+        "def-independence-number",
+        "def-leaf-degree",
+        "def-leaf-set",
+        "lem-closed-reachable",
+        "lem-nonleaf-degree-eq-two"
+      ]
+    },
+    {
+      "id": "lem-no-leafdegree-two-of-eligible",
+      "description": "Registered Lean lemma of the award (the contract schema's node kinds are definition/domain/hypothesis/conclusion, so every registered non-terminal declaration is carried as a 'definition' node; its lean_name is the exact declaration name). On the eligible class a tree with |L| = 2 has no support of leaf degree 2. Origin critic C-U3-T.",
+      "lean_name": "R26LA3.no_leafDegree_two_of_eligible",
+      "dependencies": [
+        "lem-eligible-three-le-indepnum",
+        "lem-p3-core"
+      ]
+    },
+    {
+      "id": "lem-card-c2-eq-zero-of-eligible",
+      "description": "Registered Lean lemma of the award (the contract schema's node kinds are definition/domain/hypothesis/conclusion, so every registered non-terminal declaration is carried as a 'definition' node; its lean_name is the exact declaration name). k_2 = 0 on the eligible class when |L| = 2; the ell = 2 step of the candidate finish. States nothing about N_2, the families, W_III, S or (RC). Origin critic C-U3-T.",
+      "lean_name": "R26LA3.card_C2_eq_zero_of_eligible",
+      "dependencies": [
+        "lem-no-leafdegree-two-of-eligible"
+      ]
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-vertex-type",
+      "description": "An arbitrary finite vertex type with decidable equality.",
+      "lean_type": "V : Type* with [Fintype V] [DecidableEq V]",
+      "dependencies": []
+    },
+    {
+      "id": "domain-finite-simple-graph",
+      "description": "An arbitrary finite simple graph on V; the tree property is a separate theorem hypothesis.",
+      "lean_type": "G : SimpleGraph V",
+      "dependencies": [
+        "domain-vertex-type"
+      ]
+    },
+    {
+      "id": "domain-adjacency-decision",
+      "description": "Decidable adjacency data, used to form the finite leaf-degree and independent-set filters.",
+      "lean_type": "[DecidableRel G.Adj]",
+      "dependencies": [
+        "domain-finite-simple-graph"
+      ]
+    },
+    {
+      "id": "domain-vertex",
+      "description": "An arbitrary vertex of G. At the terminal declaration it is the implicitly bound support vertex s; internally it ranges over leaves and supports.",
+      "lean_type": "v : V",
+      "dependencies": [
+        "domain-finite-simple-graph",
+        "domain-vertex-type"
+      ]
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "V",
+      "kind": "forall",
+      "domain_id": "domain-vertex-type"
+    },
+    {
+      "binder": "G",
+      "kind": "forall",
+      "domain_id": "domain-finite-simple-graph"
+    },
+    {
+      "binder": "adjacencyDecision",
+      "kind": "forall",
+      "domain_id": "domain-adjacency-decision"
+    },
+    {
+      "binder": "s",
+      "kind": "forall",
+      "domain_id": "domain-vertex"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-tree",
+      "statement": "G is a connected acyclic simple graph, i.e. G.IsTree. Both halves are load-bearing in the terminal declaration: acyclicity through the tree edge count inside lem-nonleaf-degree-eq-two, connectivity through lem-closed-reachable.",
+      "dependencies": [
+        "domain-finite-simple-graph"
+      ]
+    },
+    {
+      "id": "hyp-leaf-card",
+      "statement": "The leaf set has exactly two elements: (C5LA1.leafSet G).card = 2.",
+      "dependencies": [
+        "def-leaf-set"
+      ]
+    },
+    {
+      "id": "hyp-leafdegree-two",
+      "statement": "The distinguished vertex s supports both leaves: C5LA1.leafDegree G s = 2.",
+      "dependencies": [
+        "def-leaf-degree",
+        "domain-vertex"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion-p3-indepnum-eq-two",
+    "statement": "G.indepNum = 2. Under hyp-tree, hyp-leaf-card and hyp-leafdegree-two the tree is forced to be the three-vertex path t1 - s - t2, whose independence number is 2. The declaration asserts the independence-number value ONLY; it does not assert the vertex identification V = {t1, s, t2}, and it consumes NO hyp-alpha and NO hyp-residual.",
+    "dependencies": [
+      "def-independence-number",
+      "hyp-leaf-card",
+      "hyp-leafdegree-two",
+      "hyp-tree",
+      "lem-p3-core"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "conclusion-p3-indepnum-eq-two",
+        "kind": "conclusion"
+      },
+      {
+        "id": "def-crossing-index",
+        "kind": "definition"
+      },
+      {
+        "id": "def-forward-difference-del",
+        "kind": "definition"
+      },
+      {
+        "id": "def-graph-leaf",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indep-set-count",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indep-sets-avoiding",
+        "kind": "definition"
+      },
+      {
+        "id": "def-independence-number",
+        "kind": "definition"
+      },
+      {
+        "id": "def-leaf-degree",
+        "kind": "definition"
+      },
+      {
+        "id": "def-leaf-set",
+        "kind": "definition"
+      },
+      {
+        "id": "def-support",
+        "kind": "definition"
+      },
+      {
+        "id": "def-support-set",
+        "kind": "definition"
+      },
+      {
+        "id": "def-top-rank",
+        "kind": "definition"
+      },
+      {
+        "id": "domain-adjacency-decision",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-finite-simple-graph",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-vertex",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-vertex-type",
+        "kind": "domain"
+      },
+      {
+        "id": "hyp-leaf-card",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-leafdegree-two",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-tree",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "lem-adj-iff-support-eq",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-card-c1-le-card-leafset",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-card-c2-eq-zero-of-eligible",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-card-leafset-ge-two-nontrivial",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-closed-reachable",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-disjoint-leafset-supportset",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-eligible-three-le-indepnum",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-leaf-leafdegree-eq-zero",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-leaf-not-mem-supportset",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-leafdegree-eq-filter-support",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-leafdegree-eq-zero-not-mem-supportset",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-mul-card-leafdegree-fiber-le",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-no-adjacent-leaves",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-no-leafdegree-two-of-eligible",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-nonleaf-degree-eq-two",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-p3-core",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-sum-leafdegree-eq-card-leafset",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-support-spec",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-tree-two-le-indepnum-two-le-leafset",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-two-mul-card-c2-le",
+        "kind": "definition"
+      }
+    ],
+    "edges": [
+      {
+        "from": "def-crossing-index",
+        "to": "lem-eligible-three-le-indepnum"
+      },
+      {
+        "from": "def-forward-difference-del",
+        "to": "def-crossing-index"
+      },
+      {
+        "from": "def-graph-leaf",
+        "to": "def-leaf-set"
+      },
+      {
+        "from": "def-graph-leaf",
+        "to": "def-support"
+      },
+      {
+        "from": "def-graph-leaf",
+        "to": "lem-card-leafset-ge-two-nontrivial"
+      },
+      {
+        "from": "def-graph-leaf",
+        "to": "lem-no-adjacent-leaves"
+      },
+      {
+        "from": "def-graph-leaf",
+        "to": "lem-nonleaf-degree-eq-two"
+      },
+      {
+        "from": "def-graph-leaf",
+        "to": "lem-support-spec"
+      },
+      {
+        "from": "def-indep-set-count",
+        "to": "def-forward-difference-del"
+      },
+      {
+        "from": "def-indep-sets-avoiding",
+        "to": "def-indep-set-count"
+      },
+      {
+        "from": "def-independence-number",
+        "to": "conclusion-p3-indepnum-eq-two"
+      },
+      {
+        "from": "def-independence-number",
+        "to": "def-crossing-index"
+      },
+      {
+        "from": "def-independence-number",
+        "to": "def-top-rank"
+      },
+      {
+        "from": "def-independence-number",
+        "to": "lem-eligible-three-le-indepnum"
+      },
+      {
+        "from": "def-independence-number",
+        "to": "lem-no-adjacent-leaves"
+      },
+      {
+        "from": "def-independence-number",
+        "to": "lem-p3-core"
+      },
+      {
+        "from": "def-independence-number",
+        "to": "lem-tree-two-le-indepnum-two-le-leafset"
+      },
+      {
+        "from": "def-leaf-degree",
+        "to": "hyp-leafdegree-two"
+      },
+      {
+        "from": "def-leaf-degree",
+        "to": "lem-leafdegree-eq-filter-support"
+      },
+      {
+        "from": "def-leaf-degree",
+        "to": "lem-leafdegree-eq-zero-not-mem-supportset"
+      },
+      {
+        "from": "def-leaf-degree",
+        "to": "lem-p3-core"
+      },
+      {
+        "from": "def-leaf-set",
+        "to": "def-leaf-degree"
+      },
+      {
+        "from": "def-leaf-set",
+        "to": "def-support-set"
+      },
+      {
+        "from": "def-leaf-set",
+        "to": "hyp-leaf-card"
+      },
+      {
+        "from": "def-leaf-set",
+        "to": "lem-card-leafset-ge-two-nontrivial"
+      },
+      {
+        "from": "def-leaf-set",
+        "to": "lem-disjoint-leafset-supportset"
+      },
+      {
+        "from": "def-leaf-set",
+        "to": "lem-leafdegree-eq-filter-support"
+      },
+      {
+        "from": "def-leaf-set",
+        "to": "lem-nonleaf-degree-eq-two"
+      },
+      {
+        "from": "def-leaf-set",
+        "to": "lem-p3-core"
+      },
+      {
+        "from": "def-support",
+        "to": "def-support-set"
+      },
+      {
+        "from": "def-support",
+        "to": "lem-leafdegree-eq-filter-support"
+      },
+      {
+        "from": "def-support",
+        "to": "lem-support-spec"
+      },
+      {
+        "from": "def-support-set",
+        "to": "lem-disjoint-leafset-supportset"
+      },
+      {
+        "from": "def-support-set",
+        "to": "lem-leaf-not-mem-supportset"
+      },
+      {
+        "from": "def-support-set",
+        "to": "lem-leafdegree-eq-zero-not-mem-supportset"
+      },
+      {
+        "from": "def-top-rank",
+        "to": "lem-eligible-three-le-indepnum"
+      },
+      {
+        "from": "domain-adjacency-decision",
+        "to": "def-indep-sets-avoiding"
+      },
+      {
+        "from": "domain-adjacency-decision",
+        "to": "def-leaf-degree"
+      },
+      {
+        "from": "domain-finite-simple-graph",
+        "to": "def-graph-leaf"
+      },
+      {
+        "from": "domain-finite-simple-graph",
+        "to": "def-indep-sets-avoiding"
+      },
+      {
+        "from": "domain-finite-simple-graph",
+        "to": "def-independence-number"
+      },
+      {
+        "from": "domain-finite-simple-graph",
+        "to": "domain-adjacency-decision"
+      },
+      {
+        "from": "domain-finite-simple-graph",
+        "to": "domain-vertex"
+      },
+      {
+        "from": "domain-finite-simple-graph",
+        "to": "hyp-tree"
+      },
+      {
+        "from": "domain-finite-simple-graph",
+        "to": "lem-card-leafset-ge-two-nontrivial"
+      },
+      {
+        "from": "domain-finite-simple-graph",
+        "to": "lem-closed-reachable"
+      },
+      {
+        "from": "domain-finite-simple-graph",
+        "to": "lem-nonleaf-degree-eq-two"
+      },
+      {
+        "from": "domain-vertex",
+        "to": "def-graph-leaf"
+      },
+      {
+        "from": "domain-vertex",
+        "to": "def-support"
+      },
+      {
+        "from": "domain-vertex",
+        "to": "hyp-leafdegree-two"
+      },
+      {
+        "from": "domain-vertex-type",
+        "to": "domain-finite-simple-graph"
+      },
+      {
+        "from": "domain-vertex-type",
+        "to": "domain-vertex"
+      },
+      {
+        "from": "hyp-leaf-card",
+        "to": "conclusion-p3-indepnum-eq-two"
+      },
+      {
+        "from": "hyp-leafdegree-two",
+        "to": "conclusion-p3-indepnum-eq-two"
+      },
+      {
+        "from": "hyp-tree",
+        "to": "conclusion-p3-indepnum-eq-two"
+      },
+      {
+        "from": "lem-adj-iff-support-eq",
+        "to": "lem-leaf-not-mem-supportset"
+      },
+      {
+        "from": "lem-adj-iff-support-eq",
+        "to": "lem-leafdegree-eq-filter-support"
+      },
+      {
+        "from": "lem-card-leafset-ge-two-nontrivial",
+        "to": "lem-tree-two-le-indepnum-two-le-leafset"
+      },
+      {
+        "from": "lem-closed-reachable",
+        "to": "lem-no-adjacent-leaves"
+      },
+      {
+        "from": "lem-closed-reachable",
+        "to": "lem-p3-core"
+      },
+      {
+        "from": "lem-eligible-three-le-indepnum",
+        "to": "lem-no-leafdegree-two-of-eligible"
+      },
+      {
+        "from": "lem-leaf-not-mem-supportset",
+        "to": "lem-disjoint-leafset-supportset"
+      },
+      {
+        "from": "lem-leaf-not-mem-supportset",
+        "to": "lem-leaf-leafdegree-eq-zero"
+      },
+      {
+        "from": "lem-leafdegree-eq-filter-support",
+        "to": "lem-leafdegree-eq-zero-not-mem-supportset"
+      },
+      {
+        "from": "lem-leafdegree-eq-filter-support",
+        "to": "lem-sum-leafdegree-eq-card-leafset"
+      },
+      {
+        "from": "lem-leafdegree-eq-zero-not-mem-supportset",
+        "to": "lem-leaf-leafdegree-eq-zero"
+      },
+      {
+        "from": "lem-mul-card-leafdegree-fiber-le",
+        "to": "lem-two-mul-card-c2-le"
+      },
+      {
+        "from": "lem-no-adjacent-leaves",
+        "to": "lem-leaf-not-mem-supportset"
+      },
+      {
+        "from": "lem-no-leafdegree-two-of-eligible",
+        "to": "lem-card-c2-eq-zero-of-eligible"
+      },
+      {
+        "from": "lem-nonleaf-degree-eq-two",
+        "to": "lem-p3-core"
+      },
+      {
+        "from": "lem-p3-core",
+        "to": "conclusion-p3-indepnum-eq-two"
+      },
+      {
+        "from": "lem-p3-core",
+        "to": "lem-no-leafdegree-two-of-eligible"
+      },
+      {
+        "from": "lem-sum-leafdegree-eq-card-leafset",
+        "to": "lem-card-c1-le-card-leafset"
+      },
+      {
+        "from": "lem-sum-leafdegree-eq-card-leafset",
+        "to": "lem-mul-card-leafdegree-fiber-le"
+      },
+      {
+        "from": "lem-support-spec",
+        "to": "lem-adj-iff-support-eq"
+      }
+    ]
+  },
+  "permitted_axioms": [
+    "Classical.choice",
+    "propext",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "explicit_axiom_allowlist",
+    "rationale": "The finite statement is classical in this implementation because Mathlib's independence number, the leaf-support choice function and the leaf-set filter are noncomputable; only the three explicitly listed standard Lean axioms may appear in any registered declaration's kernel dependency report. No sorry, admit, native_decide, axiom, or decide-over-an-enumeration standing in for a universal step is permitted."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "R26LA3.leafDegree_two_indepNum_eq_two",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "(G : SimpleGraph V) [DecidableRel G.Adj] (hTree : G.IsTree) (hLeafCard : (C5LA1.leafSet G).card = 2) {s : V} (hDeg2 : C5LA1.leafDegree G s = 2) : G.indepNum = 2",
+    "expected_statement_sha256": "272221c3cf3809e320778b53f0c156e68293e47bde5948dee3677de7a526add5"
+  },
+  "source_materials": [
+    {
+      "id": "source-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "sha256": "0dc0b7193fafb06c97541cc377fdbcd955eff151775bfedefbf752f532de5f90",
+      "role": "reference"
+    },
+    {
+      "id": "source-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "sha256": "9493e9c267fb4563bfb7b2bd7c5e8edf890a8d01698cfe6806294e055b061b71",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "source-carry-table",
+      "path": "DRAFTS/CARRY-TABLE.json",
+      "sha256": "33b7a347723b8ba272bccef2628d871303176dd1d551fd850609a6177e4648a2",
+      "role": "reference"
+    },
+    {
+      "id": "source-lean-main",
+      "path": "LeanProject/LeanProof/Main.lean",
+      "sha256": "28c765ec8846d0fc561e3098bc1b992f856dad7817daa58abab7700ebfb2b054",
+      "role": "definition_authority"
+    }
+  ]
+}

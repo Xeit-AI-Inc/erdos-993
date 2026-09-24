@@ -1,0 +1,201 @@
+{
+ "schema": "verityos.r26.controller-notes.v1",
+ "living_file": false,
+ "notes": [
+  {
+   "id": "R26-N-1",
+   "date": "2026-09-23",
+   "note": "Run root created; frozen sources copied from the r24 root, the r25 addendum root, the master ledger, the public repo at 6e772d9 and the research packet; digests in control/SOURCE-DIGESTS.json."
+  },
+  {
+   "id": "R26-N-2",
+   "date": "2026-09-23",
+   "note": "Controller pre-run replay of the C6 '1,420 trees' count (control/controller-prerun/): the predicate 'the induced graph on the multiplicity-1 supports has an independent set of size > (ell-1)/2' reproduces 1,420 over orders 7-16 with first occurrence at order 9 (ell = 4, two independent multiplicity-1 supports; edges 0-1,0-5,0-8,1-2,2-3,2-4,5-6,6-7); the count of trees with a REALIZED family-(I) set having nonempty A_C is 0 on all 7,247 eligible residual trees of orders 7-16. Withheld from the Stage 2 packet so F2's replay is independent; released to the F adjudicator as a controller fact at Stage 5."
+  },
+  {
+   "id": "R26-N-3",
+   "date": "2026-09-23",
+   "note": "Controller's own reading of the candidate proof before dispatch: every step checks (forced neighbour; budget; three families; deletion injection; ell >= 4 / 3 / 2; P_3 excluded by alpha >= 3 from hyp-eligible). Recorded as the controller's prior, not as evidence; the seats derive independently."
+  },
+  {
+   "id": "R26-N-4",
+   "date": "2026-09-23",
+   "note": "Opus 5.5 not selectable in this session's agent transport (only the opus alias); all Opus seats are Opus 5, effort as chartered."
+  },
+  {
+   "id": "R26-N-5",
+   "date": "2026-09-23",
+   "note": "U1 returned first (compiled; 4 sorry-free declarations; sorry ledger of 5 + 3 unshaped DAG nodes; smallest open node alpha = ell + a). Tooling deviation disclosed by U1: the governed `bind-shared-packages` refuses a seat scratch root (its _assert_run_root requires experiments/<slug>/runs/lean-YYYY-MM-DD[-suffix]); the seat performed the equivalent manual symlink bind (.lake/packages -> shared packages; revision verified against PIN.json; nothing copied). U3 bound the same way. The controller accepts the manual symlink bind for SEAT SCRATCH projects as equivalent (same target, same protection); the governed Stage 7 run uses the tool proper. The brief's literal command was wrong for scratch roots: recorded as controller erratum R26-E-a; Cycle 2 briefs will give the manual bind for scratch projects."
+  },
+  {
+   "id": "R26-N-6",
+   "date": "2026-09-23",
+   "note": "Returns in: U1 (compiled), T3 (proved, six lemmas), F2 (refuted the 'realized' statement; P_b reproduces 1,420; 0 realized family-(I) members with nonempty A_C over 128,908 shell members; provenance gap on the adjudicator's surviving artifacts; correction record drafted), T2 (proved_conditional; GF derivation; S = 0 iff G = P_5 \u2014 STATED by a route, needs critics/adjudicator and a second read before registration)."
+  },
+  {
+   "id": "R26-N-7",
+   "date": "2026-09-23",
+   "note": "Stage 3 admitted 9/9 after the validator's flag-line parser was relaxed to accept the flag written as a heading or in bold/backticks (five seats wrote `## headline_resolved: no`); the flag is present exactly once in every return. Stage 4 dispatch and critic capsules were first sealed with the attack briefs carrying a date literal one day ahead (2026-09-24 at 23:40 on 09-23); nothing had been dispatched; the literal was corrected and the unpublished dispatch manifest and capsules were deleted and re-sealed (the Stage 3 packet seal is unchanged, deterministic). Read-boundary disclosures recorded for F3 (non-recursive ls of scratchpad parent), U2 (read the workflow script source), U1 (tooling deviation)."
+  },
+  {
+   "id": "R26-N-8",
+   "date": "2026-09-23",
+   "note": "Critics returning: C-T2-F (retained_narrowed; case gap in T2's S = 0 theorem at a = 1 repaired by the critic: (\u2605) + ell = 2 force odd order, so a = 1 iff P_5; closed form S = -(a-1)(a+2) on the ell = 2 class), C-U1-T (retained_narrowed; U1's compiled signBound sorry omits the -(ell-4)N_2 term; DAG omits ell >= 2; three critic Lean lemmas), C-U3-T (retained_narrowed; twelve declarations confirmed; critic lemmas j*|C_j| <= ell, k_2 <= floor(ell/2), C_2 = empty under eligibility when ell = 2). Both U critics struck the Lean seats' 'no other VerityOS file read' literal (they cite run_workflow.py internals): disposition to the U adjudicator."
+  },
+  {
+   "id": "R26-N-9",
+   "date": "2026-09-23",
+   "note": "C-U3-F (retained_narrowed) noted two capsule-design nits: the Stage 3 packet manifest is not a critic-capsule member (the protocol asks critics to verify the Stage 3 seal; they can only digest-check it through the Stage 4 dispatch manifest) and the per-capsule path-check report carries counts only. Cycle 2 capsules will include the Stage 3 manifest. Both U3 critics struck the inert `_hd` hypothesis on interior_leafDegree_eq_zero and the bonus lemma's IsTree prose (K_2 case); neither affects the six required lemmas."
+  },
+  {
+   "id": "R26-N-10",
+   "date": "2026-09-23",
+   "note": "C-T2-U (retained_narrowed): same P_6 gap in T2 \u00a76 found and repaired (every P_{2k} fails (\u2605) via {v_2,...,v_{2k}}); T2's obligation 6 discharged (N_2 > 0 with a >= 1 exists from order 8). C-F3-T (retained_narrowed): all thirteen F3 figures reproduced; census reconciliation 16,442 = hyp-alpha \u2227 (\u2605), 16,424 = all four hypotheses (= master ledger), gap 18 trees of order <= 11; TD-6's 16,134 reproduces neither; (RI) holds on all 330 (\u2605)-trees and 545 (\u2605)-forests to order 12 and fails on all 656 non-(\u2605) trees; K_2 \u2294 P_3 has S = +2 (fails hyp-tree, hyp-eligible, (\u2605): not a counterexample); F3's 'no forest counterexample in seven constructions' literal struck (no S computed for the K_2-containing ones)."
+  },
+  {
+   "id": "R26-N-11",
+   "date": "2026-09-23",
+   "note": "C-T1-F (retained_narrowed): T1's L0-L11 confirmed; L5 misstatement (not a gap; 322 (G,B,A_C) budget-admissible witnesses with extra lambda = 1 supports, eliminated by L6/L8); struck T1's citation of the packet's order-<=12 check as evidence (Gate ruling 2). Critic-derived, STATED: hyp-eligible implies alpha >= 4 (x >= 1 always); strict form S < 0 on the whole eligible class with S <= -2 (ell = 2: alpha >= 4 gives a >= 2 and L6 yields a fibre contributing exactly 2); P_3 is the unique residual tree with alpha = 2. Overlaps T2/F3; ownership to the adjudicators."
+  },
+  {
+   "id": "R26-N-12",
+   "date": "2026-09-23",
+   "note": "C-T1-U (retained_narrowed): L5 false as stated (31 budget-admissible escapees with one lambda = 2 plus extra lambda = 1 supports, all non-residual, minimal order 7); corrected L5' (arithmetic: four shapes) + L5'' (forced-neighbour pruning under (\u2605)); T1's Lean DAG states L3/L9/L10 on induced-subgraph carriers (forbidden by the contract's fixed-carrier rule) \u2014 translation to indepSetsAvoiding supplied; DAG omits k2_le_ell_div_two and N2_le_k2_mul_M; L0 omits ell-2 and ell-4; attribution (fence 7) missing from T1's face. STATED strictness S <= -8 (ell >= 4), S <= -2M (ell = 3). Stage 7 brief must carry: fixed-carrier statements only; exact bound with the N_2 term; the L5'/L5'' split."
+  },
+  {
+   "id": "R26-N-13",
+   "date": "2026-09-23",
+   "note": "C-T3-F (retained_narrowed): six lemmas hold; (iv) recorded with an unused hyp-alpha and (iii) with an unneeded hyp-tree (weaker than proved; the Lean forms U3(e)/(d) are the sharp ones); T3's verify_output_n9.json has an appended 'RC 0' and fails to parse (redirect into an inventoried artifact) \u2014 struck; hyp-eligible => 3 <= alpha discharged by the critic (also U3(f) in Lean). The T3 dispatch WRAPPER (Agent prompt) granted grep inside the Mathlib package directory; the sealed DISPATCH-T3.md did not \u2014 controller note: wrapper text must not extend a sealed dispatch; Cycle 2 wrappers carry only the file pointer."
+  },
+  {
+   "id": "R26-N-14",
+   "date": "2026-09-23",
+   "note": "C-F3-U (retained_narrowed): all F3 figures reproduced from scratch; joint-drop row (non-residual AND ineligible) supplied: 124 trees to order 17, three positive (P_4 +2, P_6 +2, an order-6 spider +1) besides P_3; forests K_2 \u2294 P_3, K_2 \u2294 P_4 (+2); none in scope. Forest ell = 2 with a lambda = 2 support is exactly P_3 \u2294 m K_1, S = 2 - 2m (proved_informal, critic-attributed). (RI) fails on every non-residual tree/forest tested and holds on every residual one (orders <= 13/12): (RI) tracks (\u2605). 16,442 = 16,424 + 18 ineligible residual trees of orders 3-11 (enumerated)."
+  },
+  {
+   "id": "R26-N-15",
+   "date": "2026-09-24",
+   "note": "C-F2-U (retained_narrowed): every F2 number reproduced on an independent instrument (1,420 / 1,486 / 0 / 0 / 7,247 / 128,908 / 312); the flipping the r24 record described is REAL but belongs to family (III) (147 negative weights at orders <= 13, min -6), never to (I) or (II) whose weights are the constants ell-1 and ell-4; critic proved the forced-neighbour lemma and family-(I) emptiness informally (valid without hyp-eligible; confirmed on the 18 ineligible residual trees); |Fam II| = N_2 with weight ell-4 on all 4,406 realized members; provenance gap widened to adjudication inventory item 5 as well as 6; error class recorded as an inference about a lost instrument. Also confirms the Stage 3 manifest capsule omission (R26-N-9). Also: 16,134 = the NON-FLAT eligible residual count at orders 4-17 (16,424 minus 290 flat) per C-F2-U's census row \u2014 this reconciles TD-6's figure, which both F3 critics could not reproduce; to be confirmed by the F adjudicator."
+  },
+  {
+   "id": "R26-N-16",
+   "date": "2026-09-24",
+   "note": "C-F2-T (retained_narrowed): all F2 numbers reproduced (centroid canonical form); exactly 2 order-16 shapes with ell = 8 and |C_1| = 6; 16,424 / 16,134 over orders 4-17 confirmed (16,134 = non-flat); F2's 'byte-identical to scan_4_17.json ... coincidental' struck (key order mirrored deliberately after reading scan.py); forced-neighbour lemma proved by the critic; family-(II) weight exactly ell-4 and |Fam II| = N_2 on all 4,406 members; B3 identity verified on all 7,247 trees; the substitution originates in r24 critic C-T1-U's sentence (its witness is a P_a-shaped |C_1| = 6 count) and was propagated by the T adjudicator's count; provenance gap covers adjudication inventory item 5 (family classifier) as well as item 6."
+  },
+  {
+   "id": "R26-N-17",
+   "date": "2026-09-24",
+   "note": "C-T3-U (retained_narrowed): six lemmas correct; (iv) over-hypothesised (hyp-alpha removable) and as written does not discharge U3(e)'s hypothesis-free form; hyp-eligible => alpha >= 4 (independent of C-T1-F); the two characterisations of C(G) coincide unconditionally; E993-R26-DELETION-INJECTION not registrable without ARMW attribution on its face; all nine Mathlib anchors verified at the pinned lines."
+  },
+  {
+   "id": "R26-N-18",
+   "date": "2026-09-24",
+   "note": "C-U1-F (retained_narrowed): confirms U1's compiled signBound drops the -(ell-4)N_2 term (at ell = 2 it is (RC) itself; at ell = 3 it demands W_III >= N_2, unproved; P_3 separates the statements); the 33-node DAG lacks an ell >= 2 node, the P_3 lemma, leaf/support disjointness and the family sums; expected_statement matches SOLUTION-CONTRACT \u00a72 by sha but not the shipped declaration (which qualifies C5LA1.*) \u2014 the Stage 7 contract must bind the declaration's exact text; critic Lean: deletionInjection proved sorry-free, supportSet_eq_image, aggregate_nonpos_of_signBound (the ell >= 2 bridge). Numeric: all fixed points and 1,469 eligible residual trees of orders 7-14, zero failures of every step including the budget identity in the seat's N-truncated shape."
+  },
+  {
+   "id": "R26-N-19",
+   "date": "2026-09-24",
+   "note": "C-F1-T (retained_narrowed): F1's census reproduced exactly (81,137 trees; 16,424; 295 flat; digest 632a433b...); F1's fibre check VACUOUS (indexed over maximum J, U(J) = empty by forced neighbour; 0 of 20,797 maximum-J instances with nonempty U) \u2014 critic ran the correct check over J' in I_{a-1}(D): 37,074 of 65,846 fibres with nonempty U, 2,039 negative individual terms, 0 fibre failures; evaluator-bug count is 2 (K_1, K_2), not 1; comb([2]x(t+1)) at order 5t+3 satisfies all four hypotheses with M = 2^t (order 43: M = 256, S = -102,016); (\u2605) iff every leaf is missed by some maximum matching (via Konig alpha = n - mu), zero disagreements on 5,445 trees; S(P_{2 alpha - 1}) = -alpha(alpha - 3)."
+  },
+  {
+   "id": "R26-N-20",
+   "date": "2026-09-24",
+   "note": "C-F1-U (retained_narrowed): converges with C-F1-T \u2014 F1's fibre check vacuous; correct check over J' in I_{a-1}(D): 65,846 fibres, 37,074 non-trivial, min fibre value 0, min deletion-injection slack 0 (tight); K_1/K_2 count; comb_pairs family at orders 43/48 with M = 256/512; 16,442 - 16,424 = 18 ineligible residual trees (orders 3-12 per this critic; C-F3-T/C-F3-U say 3-11 \u2014 adjudicator reconciles)."
+  },
+  {
+   "id": "R26-N-21",
+   "date": "2026-09-24",
+   "note": "C-U2-F (retained_narrowed): U2 mathematics survives (rebuild, axioms, exhaustive small-graph model checks; each hypothesis shown necessary by witnesses); hL1 inert (critic proved familyOneInjection without it); (c) exports ell*M <= i_{alpha-1}(G) not the injection cardinality; critic Lean: fibreInequalitySharp ((ell - |U|)|I(U)| <= sum(ell - 2|A|), hypothesis-free), familyOneWeightPointwise / familyOneWeightSum (W_I = ell(ell-1)M) \u2014 compiled sorry-free; 'evidentiary strength equal to formally_verified' prose struck."
+  },
+  {
+   "id": "R26-N-22",
+   "date": "2026-09-24",
+   "note": "C-U2-T (retained_narrowed): U2's four lemmas true/sorry-free; budgetInequality discards the slack h (so cannot feed the family-(I) classification); critic Lean: budgetIdentity (sum(lambda-1) + (a - |B \u2229 D|) + h = 1 from the two cardinality hypotheses alone), slack_nonneg, budgetExact, famOneInjOn/famOneImageCard/familyOneInjection' (exact image count ell*|JS|, no hL1); hNoEdge follows from the L/C/D definitions (not (\u2605)); hLindep needs connectivity (K_2 \u2294 K_1). All 18 critics returned: 18 x retained_narrowed, 0 rejected, 0 retained."
+  },
+  {
+   "id": "R26-N-23",
+   "date": "2026-09-24",
+   "note": "Adjudications: T \u2014 status proved (informal), material_progress yes, AG-T1 (RC) contract-ready at the \u00a72 statement after the L5'/L5'' repair; alpha >= 4 form of record; Tier 1' and S = 0 iff P_5 withheld pending second reads. U \u2014 status still_open at U's grade, material_progress yes; 23 seat + 32 critic declarations rebuilt sorry-free; groups U-A (deletionInjectionBound, unconditional, ARMW attribution), U-B (fibreInequalitySharp), U-C (tree-structural set, two repairs) contract-ready; U-D/U-E conditional; (RC)/signBound not ready from U alone; smallest open node alpha = ell + a (first (\u2605) step ~12 lines); byte-identical carry list: U2 Main.lean c3827075..., U3 Main.lean fb54fa05..., C-U2-T CriticT.lean 5fafeb14..., C-U2-F CritF.lean 4ce9a7a5..., C-U3-T CriticU3T.lean 1dba1d5b..., C-U3-F CriticF.lean 1963b75b...; U1 critic fragments must be restated on a clean base. U adjudicator used PyYAML (already installed, not installed by it) to parse YAML \u2014 noted. Alias checks unverified by U (run-local registry not a capsule member) \u2014 routed to the controller: the controller's registry copy is byte-identical to sources/authority/CLAIM-IDENTITY.json (a capsule member), so the seats' alias checks against it are checks against the same 363 identities."
+  },
+  {
+   "id": "R26-N-24",
+   "date": "2026-09-24",
+   "note": "F adjudication: still_open at F's grade; open node the family-(III) parametrization (T1's L9); Tier 3 groups F-A (forced neighbour + families (I)/(II)), F-B (deletion injection + fibre), F-C (ell = 2 closure, found inside C-F3-U's forest lemma at m = 0) contract-ready; Tier 2 record STATED (five substantive changes to F2's draft) \u2014 second read required; 16,424 = 290 flat + 16,134 non-flat; 16,442 = 16,424 + 18; N_2 <= M fails from order 9 in the eligible class (ell = 6, k_2 = 3, M = 1, N_2 = 3); K_2 \u2294 P_3 has S = +2, not in scope. Stage 5 sealed ec0de291...; Stage 6 dispatch d52e8fe4...; synthesis launched. Tool patch: PATH-CHECK-*.json reports excluded from scans (they quote the checker's non-durable roots)."
+  },
+  {
+   "id": "R26-N-25",
+   "date": "2026-09-24",
+   "note": "Synthesis admitted (flags no/yes/no/yes; \u00a75(c) met); Stage 6 sealed dec961b2...; three award groups funded: C1-LA1 (RC at the \u00a72 statement; eleven repairs; DAG order; carry list), C1-LA2 (deletion injection + sharp fibre; ARMW attribution), C1-LA3 (tree-structural core). Carry fragments frozen under sources/c1-stage7-sources/ (all synthesis prefix digests match full digests). Formalizer briefs LA1/LA2/LA3 written (R1: single-source project \u2014 C5-LA1 registrar entries carried byte-identically fragment by fragment; recorded one-token keyword diff allowed for entry 31). Three capsules sealed (da278eb6..., 75ebcffb..., c5fcd348...); three Opus 5 high formalizers launched in parallel. Tool notes: stage7-capsule brief path uses award.split('-',1)[1]; zsh does not word-split unquoted variables (use arrays)."
+  },
+  {
+   "id": "R26-N-26",
+   "date": "2026-09-24",
+   "note": "C1-LA2 compiled-candidate (run lean-2026-09-24-c1-la2-deletion-injection-fibre; kernel verified; axioms exact; one C5-LA1 entry (23) carried byte-identically; recorded forced deviations: `open SimpleGraph C4LA1` wrapper dropped C4LA1 (absent namespace hard-errors), deletionInjectionBound keyword theorem->lemma, fibreInequalitySharp re-derived with R26LA2-qualified names). Brief R1's parenthetical ('depends on IsIndepSet and Finset only') was wrong \u2014 the carried body uses C5LA1.sum_card_filter_comm; the formalizer applied R1's operative clause correctly. Reviews tool pre-check aligned to the canonical whitespace-normalized rule (it had been a raw substring test; C5-LA1's own contract would fail the raw test). Reviewers assigned; fidelity input regenerated canonically (abdf504f...); two Opus 5 high reviewers launched."
+  },
+  {
+   "id": "R26-N-27",
+   "date": "2026-09-24",
+   "note": "C1-LA2 closed formally_verified: run lean-2026-09-24-c1-la2-deletion-injection-fibre; terminal R26LA2.fibreInequalitySharp (hypothesis-free) with R26LA2.deletionInjectionBound; informal audit passed (5db13b3c...; 33,867 + 304,803 exhaustive instances, sharpness exhibited, hypothesis-removal witness for U2's weaker form); fidelity match (2fa7bbe5...; coercion form = same elaborated proposition); VERIFICATION-REPORT e55d3e58...; axioms exactly the three. First award of r26."
+  },
+  {
+   "id": "R26-N-28",
+   "date": "2026-09-24",
+   "note": "C1-LA3 compiled-candidate (run lean-2026-09-24-c1-la3-tree-structural-core; 30 declarations; kernel verified; axioms exact). Packaging: the P_3 derivation registered as lemma ..._eq_two_core and the award-named terminal theorem last (one added name; statement byte-identical to U3's); `--run-id` = run-root directory name per \u00a75.3 (established practice; canonical DRE id recorded in CAPSULE-VERIFICATION.json). Reviews tool run; reviewers launched."
+  },
+  {
+   "id": "R26-N-29",
+   "date": "2026-09-24",
+   "note": "C1-LA1 compiled-candidate: R26LA1.topRankResidualSign at the exact \u00a72 statement, every DAG node sorry-free (gate alpha_eq_ell_add_a (\u2605)-free), 148 registered declarations, kernel verified, axioms exact; run lean-2026-09-24-c1-la1-top-rank-residual-sign; Main.lean aff08ce7..., contract c73eb8dc..., kernel receipt 9cd68225.... Deviations recorded by the formalizer: r1_byte_diff (entry 31 keyword lemma; 30/31 entry digests reproduce exactly; 14 carried seat/critic bodies took the same one-token normalisation); registrar kind-ordering forced the run's definition layer between C5-LA1 entries 14 and 15 (all 31 keep relative order, names, kinds, digests); one controlled reset of the run's own pre-receipt formalization state (symlink unlinked with rm; shared tree verified intact \u2014 controller re-verified: 11 packages, Mathlib.olean present, 13G). Controller ruling: both deviations accepted (they change no statement; the fidelity reviewer is asked to confirm). LA3 fidelity: match/passed (8bdf3c47...). LA1 reviewers launched. Formalizer's boundary note (no conversations/ log for the seat) \u2014 the controller logs the run's conversation; seats do not."
+  },
+  {
+   "id": "R26-N-30",
+   "date": "2026-09-24",
+   "note": "C1-LA3 closed formally_verified: run lean-2026-09-24-c1-la3-tree-structural-core; terminal R26LA3.leafDegree_two_indepNum_eq_two (the P_3 lemma) with 29 further declarations incl. card_C2_eq_zero_of_eligible; informal audit passed (5ab1f2e8...; 33,867 graphs n<=6, 280,393 labelled trees n<=8; each hypothesis falsified outside its range; 16 Mathlib anchors verified); fidelity match (8bdf3c47...); VERIFICATION-REPORT 891cdb71.... Second award of r26."
+  },
+  {
+   "id": "R26-N-31",
+   "date": "2026-09-24",
+   "note": "C1-LA1 fidelity: match/passed (052fd81b...; 88 checks). Notes: (1) the contract YAML's attribution names ARMW-2020 and the U critics; packet lane 05, r24 C-T1-U and r24 route A1 are on the face of INFORMAL-PROOF.md and FORMALIZER-REPORT.md but not the contract \u2014 carried to the registration text and the publication page (the contract is receipt-bound and is not edited post-receipt); (2) EVIDENCE/axioms.txt is the transitive terminal line (policy discharged), the per-declaration list is EVIDENCE/axioms-all-declarations.txt (147/148; C4LA1.IsGraphLeaf, a Prop-valued def, absent) \u2014 brief R8 asked for one line per declaration in axioms.txt; accepted as-is (rule A1-E-f: never edit axioms.txt after the receipt); noted for the Cycle 2/successor brief."
+  },
+  {
+   "id": "R26-N-32",
+   "date": "2026-09-24",
+   "note": "C1-LA1 closed formally_verified (VERIFICATION-REPORT 16d2420b...; informal audit bdaaa23e... passed; fidelity 052fd81b... match). Decisive event \u00a75(a): the run ends at the Cycle 1 close. Stage 7 closeout written (cycles/cycle-1/stage7/LEAN-GATE-CLOSEOUT.md). Informal auditor O-1: INFORMAL-PROOF.md \u00a77 omits T2/T3 among credited r26 seats \u2014 carried to registration/publication text."
+  },
+  {
+   "id": "R26-N-33",
+   "date": "2026-09-24",
+   "note": "Second reads: SR-B3 confirmed_with_repairs (sixth instrument, orders 7-16 reproduced; repairs: TD-6 has two disjuncts, only the first void; the reader's proved_informal grade for the forced-neighbour core is superseded by the C1-LA1 kernel receipt outside its capsule). SR-STRICT: ST-1/ST-2 confirmed, ST-3/ST-4 confirmed_with_repairs (max S = -12 on 312 and on 1,469 to order 14; closed form subtraction-free 3 alpha - alpha^2; ell = 2 gives S <= -4; alpha >= 5 on the eligible class; N_2 <= M false on 21 of 312; contract Tier 1-prime row weaker than proved: R26-E-c). SR-REC pending."
+  },
+  {
+   "id": "R26-N-34",
+   "date": "2026-09-24",
+   "note": "SR-REC confirmed_with_repairs x4 (census to order 17 on an independent enumerator; first N_2 > M witness unique at order 9 and flat; the 18 ineligible orders as a multiset; the F adjudicator's '21 classes' is to order 12 (52 to 13, 118 to 14); REC-4 is synthesis R-12 not R-14; TD-6's sealed text says 'residual' not 'eligible'). Registration run: 7 claims (370), ledger 287 rows, run-local lint 0/0. CYCLE-CLOSE.md and CONTROLLER-REVIEW-R26.md written. Notes file frozen at the close (living_file false) and sealed by the terminal manifest."
+  }
+ ],
+ "errata": [
+  {
+   "id": "R26-E-a",
+   "date": "2026-09-23",
+   "erratum": "C1-WORKER-COMMON-BRIEF.md item 8 and C1-ALLOCATION.md item 7 give a `bind-shared-packages --run-root <scratch>` command that the tool rejects for scratch roots; the intended binding (symlink of .lake/packages to the shared packages tree, no copy) is what the seats performed. Sealed members are not edited; the correction is carried here and in the Cycle 2 brief."
+  },
+  {
+   "id": "R26-E-b",
+   "date": "2026-09-23",
+   "erratum": "Controller error caught by seat T2: C1-WORKER-COMMON-BRIEF.md, C1-ALLOCATION.md item 2 and the T2 dispatch label P_7 'eligible'. P_7 has alpha = 4, x = 2 (i = 1,7,15,10,1; Delta_2 = -5), so x + 2 = 4 > alpha - 1 = 3: P_7 FAILS hyp-eligible. Its fixed-point numbers (alpha = 4, x = 2, S = -4) are correct. First eligible odd path is P_11 (T2's finding; to be confirmed by critics). Sealed members unchanged; correction carried to the critic attack briefs, the Stage 5 controller facts and the Cycle 2 brief."
+  },
+  {
+   "id": "R26-E-c",
+   "date": "2026-09-24",
+   "erratum": "SOLUTION-CONTRACT.md \u00a71 Tier 1-prime row states the strict candidate as 'ell >= 3: S < 0; ell = 2: S <= 0'. The proved form (SR-STRICT) is S <= -2 on the whole eligible class, with S <= -4 at ell = 2 (the eligible class has alpha >= 5). The sealed contract is unchanged; the registered key carries the proved form."
+  }
+ ],
+ "incidents": [
+  {
+   "id": "R26-I-1",
+   "date": "2026-09-23",
+   "incident": "Critic C-T2-U used `pkill -f <pattern>` to stop its own background census; it may have killed critic C-U2-F's Python process. Disclosed by C-T2-U. Outcome recorded when C-U2-F returns.",
+   "outcome": "C-U2-F returned complete (retained_narrowed) and reports only a detached run of its own that it killed itself, with nothing in its critique derived from it; no lost result attributable to C-T2-U's pattern kill is recorded by either seat. Rule for Cycle 2: kill by literal PID only."
+  }
+ ]
+}
