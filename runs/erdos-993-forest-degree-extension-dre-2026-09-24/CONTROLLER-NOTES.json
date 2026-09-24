@@ -1,0 +1,335 @@
+{
+  "schema": "verityos.r27.controller-notes.v1",
+  "living_file": true,
+  "notes": [
+    {
+      "id": "R27-N-1",
+      "date": "2026-09-24",
+      "note": "Run root created; sources frozen (93 files); toolkit cloned from r26 with the run id re-pointed. State refresh: public 0b4bbdb; master 370; registry/ledger digests match the charter; no prior import of the FLNYZ §8 result."
+    },
+    {
+      "id": "R27-N-2",
+      "date": "2026-09-24",
+      "note": "Controller's own reading before dispatch: (EX) follows from the double count (k+1)i_{k+1} = sum_J e(J), e(J) >= n - k - sum_{v in J} deg(v), and (DL); (LB), (R5), (XR) are contrapositives of (EX) with i_k > 0. (DL) is the hard object (the paper's two-potential induction; ~700 lines externally). Recorded as prior, not evidence."
+    },
+    {
+      "id": "R27-N-3",
+      "date": "2026-09-24",
+      "note": "License ruling: the external Lean audit copy has no LICENSE file (repository-tree.json lists none); external Lean text is read for audit and structure only and never copied into a project or published (Gate ruling 3). The paper's mathematics is attributed on every face."
+    },
+    {
+      "id": "R27-N-4",
+      "date": "2026-09-24",
+      "note": "Section 8 of arXiv:2609.20961v1 fetched by the controller (seats have no network) and frozen as HTML + extracted text."
+    },
+    {
+      "id": "R27-N-5",
+      "date": "2026-09-24",
+      "note": "F2 returned (bounded_evidence): import closure of sum_degOn_le/prefix_ratio = {Basic, Recursion, Extensions, Components, DegreeLemma, Ends}; frozen Main/AxiomCheck/root dangle-import absent modules (context only); sum_degOn_le = (DL) at S = univ; prefix_ratio = (EX) prefix form with an N-truncation caveat; paper numbering 8.x vs Lean comments 6.x (version drift); static scan 0 sorry/admit/axiom/native_decide/unsafe, 5 decide hits none in the target closure (packet's STATIC-SCAN 'zero hits' contradicted); no LICENSE in the audit copy or the upstream tree."
+    },
+    {
+      "id": "R27-N-6",
+      "date": "2026-09-24",
+      "note": "T1 (proved, informal): (DL) by the two-potential induction re-derived from scratch; highest Lean risk flagged: the Z-cast of the weights 2 - deg(v) and the Finset strong-induction skeleton. T3 (proved_conditional): double count and e(J) >= n - k - sum deg unconditional for any graph; (EX)/(LB)/(R5)/(XR) conditional on (DL); 4k <= (k+1)^2 with equality only at k = 1; live r25 cells after (XR): 2 <= d <= 2r-4, r >= 3 (smallest r = 3, d = 2, n = 8); 40,233 labelled forests to order 7 checked. Both T1 and T3 (and F2) note the brief's residue (R27-E-a) and followed the contract."
+    },
+    {
+      "id": "R27-N-7",
+      "date": "2026-09-24",
+      "note": "T2 (blocked): no alternative proof of (DL); sharpest obstruction P_3 rooted at an endpoint, k = 2, J = {a, c} (root-for-child swap not independent); leaf-deletion (D_k, i_k) recursion leaves an irreducible per-vertex term. Fences: (DL) FALSE on bipartite graphs in general (K_{2,3}, n = 5); no failure on unicyclic / average-degree <= 2 graphs to n <= 7 (bounded). Read AUTHORIZATION.md and the charter (Stage 2 members; within grant)."
+    },
+    {
+      "id": "R27-N-8",
+      "date": "2026-09-24",
+      "note": "U1 (compiled): definition layer indepDegreeSum, extensionCount, firstDescent (Nat.find witnessed at indepNum) + four lemmas sorry-free (i_0 = 1; i_k = 0 for k > n; Delta_k < 0 -> 0 < i_k; firstDescent spec/minimality); five targets stated with sorry; contract draft. Build 8657 jobs."
+    },
+    {
+      "id": "R27-N-9",
+      "date": "2026-09-24",
+      "note": "F1 (bounded_evidence): 15,206 forest classes to order 14 (A000055/A000081/forest counts reproduced), 45 adversarial families to order 120 (29 instances with n >= 21 for (R5)) — zero violations; no nontrivial tight case; smallest non-forest failures K_4 and K_{2,3} at k = 1 (D_1 = 2|E|, i_1 = n; failure iff |E| > n); cycles/unicyclic tight but never violating to n = 16; a DP bug caught by brute force before any number was reported."
+    },
+    {
+      "id": "R27-N-10",
+      "date": "2026-09-24",
+      "note": "F3 (bounded_evidence): K1-addition NR1 reduction, x <= 4 closure DAG and rank-5 chain reconstructed against the live registry; r25 order-<=21 census replayed exactly (8,355,831) with an independent instrument and extended to order 22 (13,184,156 new; 21,539,987 cumulative; zero violations); order-23 attempt killed by literal PID at 4.3 GB (disclosed, not claimed); composition: (R5) + census closes x(G+K1) <= x(G)+1 for x(G) <= 5, conditional on (LB), at the census's grade; x <= 6 needs order 24."
+    },
+    {
+      "id": "R27-N-11",
+      "date": "2026-09-24",
+      "note": "U3 (compiled): double_count and e_ge_sub unconditional (any graph); (EX)/(LB)/(R5)/(XR) conditional on a (DL) hypothesis in the contract's shape (stated on [Fintype X][DecidableEq X]); firstDescent via Nat.find with exists_delta_neg (Nat.findGreatest on 0 < i_k); 17 declarations, standard axioms; Extension.lean 397 lines."
+    },
+    {
+      "id": "R27-N-12",
+      "date": "2026-09-24",
+      "note": "U2 (compiled): definitional layer (degOn, indepFinsets, Z, D, E, closedNbhdCompl), root conditioning, D_zero/E_zero, SingleEdgeJoin bundle and the m = 1 join recurrences D_{Ttot} = D_T + x E_T, E_{Ttot} = D_T sorry-free (standard axioms); a mis-shifted E definition self-caught on K_2. Open: leaf existence (U2 did not find Mathlib's IsTree.exists_vert_degree_one_of_nontrivial, which r26 U3 used — critics to note), the leaf-induction wrapper (needs the general two-set join or a re-rooting lemma: the m = 1 join gives the NEW LEAF as root, while the induction hypothesis needs the attachment vertex's root — controller reading), the one-root bridge to the root-free (DL), the multi-component extension. All nine returns in."
+    },
+    {
+      "id": "R27-N-13",
+      "date": "2026-09-24",
+      "note": "C-F2-U (retained_narrowed): F2's dependency closure was a text-span over-approximation (docstrings swallowed; 124/133 vs 132/140; nine not eight); safety conclusion (no decide in the target closure) survives; four (not three) files import absent modules, Basic.lean imports all of Mathlib; eleven literals struck incl. a false strict step at i_k = 0; license finding strengthened (no SPDX/copyright header either); critic-derived: subtraction-free transport via le_tsub_add without case split; Finset.card_nbij' (Data/Finset/Card.lean:403) and IsAcyclic.coloringTwo (Acyclic.lean:614) exist at the pin; F2 quoted a six-token PROOF line of Ends.lean in scratch (de minimis; not propagated)."
+    },
+    {
+      "id": "R27-N-14",
+      "date": "2026-09-24",
+      "note": "C-T3-U (retained_narrowed): T3 re-derived end to end; struck 'consequences inherit (DL)'s grade automatically' (a kernel-checked (DL) plus an uncompiled derivation is proved_informal); critic-derived exact identity e(J) = n - k - sum deg + exc(J), (k+1) i_{k+1} = (n-k) i_k - D_k + E_k, (EX) slack (2k i_k - D_k) + E_k (unconditional; verified on 2,949 forest classes to order 12); (LB) attained at k = 0,1,2, not at k = 3 (max 11 < 12); smallest non-forest (DL) failure order 4 with 5 edges; Delta_k >= 0 for negative Z indices. Disclosure: read the whole attack-briefs file."
+    },
+    {
+      "id": "R27-N-15",
+      "date": "2026-09-24",
+      "note": "C-F1-T (retained): F1 reproduced entirely (15,206 to 14; 20,514 at 15; 59 adversarial instances to 127; 46,745 unicyclic graphs to 12). CRITIC-DERIVED CANDIDATE PROOF of the root-corrected (DL): D_k + 2 sum_i a_{r_i}(k) <= 2k i_k by an explicit injection (parent-map form D_k = sum_{uv in E}(a_u + a_v); type-A/type-B swap; injectivity invariant p(p(u)) in K), corroborated on 356,703 source pairs / 2,056 root choices / 0 collisions; gives strict (DL) with slack >= 2 at k >= 1 with i_k > 0. STATED; conflicts with T2's 'no alternative mechanism' verdict — for the T and F adjudicators and an isolated second read; if it stands it is a Finset-native Lean route for Stage 7."
+    },
+    {
+      "id": "R27-N-16",
+      "date": "2026-09-24",
+      "note": "C-T1-U (retained_narrowed): T1's §3 Step c derivation of (D-REC) is truncated and FALSE as displayed (drops -deg_S(r) B' A; 225/250 random joins fail; a boxed E_S substitution also false 195/250); the correct (D-REC) present is character-for-character the allocation's formula (not derived); INFORMAL-PROOF.draft.md absent. Critic supplied a six-step derivation of (D-REC)/(E-REC) verified 250/250 plus the auxiliary identity; (DL) affirmed proved_informal on the critic's evidence; critic-derived (DL+) D_k <= 2k i_k - 2 sum_components max_v n_k(v) (exhaustive to n = 7) — STATED, needs second read. C-U3-T (retained_narrowed): U3 reproduced (8658 jobs, 17 propositions standard axioms); critic module: (DL)/(EX)/(LB) unconditional at ranks 0 and 1; composition to §2 signatures by exact; struck 'static grep returns nothing' (18 axiom hits in prose/comments) and two misquoted abbreviated digests."
+    },
+    {
+      "id": "R27-N-17",
+      "date": "2026-09-24",
+      "note": "C-U1-F (retained_narrowed): U1 reproduced (8657 jobs, five sorries, ten axiom lines); r25 award source a byte-identical 17,180-byte prefix of U1's Main.lean; struck: the draft contract carries no expected_statement digest and no Lean text for the definition layer (Gate ruling 5 not achieved by U1's contract); critic Lean: (LB) from (EX), (R5)/(XR) from (LB) on U1's literal types (the Fintype/Finite split is not a blocker); (LB) unconditional at k = 0 (any graph) and k = 1 (from the carried (k+1)^2 award); own census to order 12: constant 4 attained at k = 0,1,2; (DL) tight only at k = 0."
+    },
+    {
+      "id": "R27-N-18",
+      "date": "2026-09-24",
+      "note": "C-T1-F (retained_narrowed): converges with C-T1-U on T1's false displayed Step c (root weight -deg_S(r)-1 truncated to -1; 182/196 joins fail; the substitution box mixes T into an S-only definition); corrected Step c + (P1)-at-r substitution closes (D-REC)/(E-REC) 196/196; [x^k]E_T display omits +i_k(T minus N[r]) (E_{K_1} = -1 vs base case); join root never stated (rooting at s breaks 780/841); the brief's induction worry DISCHARGED (T1 states the claim over every rooted tree); candidate root-deficit key D_k + 2 sum_i #{J ni root_i} <= 2k i_k and the sharp n D_k <= 2k i_k (n-1) (equality for every tree at k = 1) — STATED, second read; K_{2,3} fails (DL) at k = 1 and 2."
+    },
+    {
+      "id": "R27-N-19",
+      "date": "2026-09-24",
+      "note": "C-F2-T (retained_narrowed): converges with C-F2-U (four files, closure 110/119, 192 declarations incl. structure JoinAt); Mathlib drift at the pin: Polynomial.finset_sum_coeff deprecated (-> finsetSum_coeff) used in vpoly_coeff; Finset.card_nbij' fine; packet's (EX) pointer wrong ((8.8) is Prop 8.2's conclusion; (EX) is the unnumbered ratio display); numExtensions_ge's independence hypothesis inert; six of F2's sixteen 'load-bearing' API names struck."
+    },
+    {
+      "id": "R27-N-20",
+      "date": "2026-09-24",
+      "note": "C-T2-U (retained_narrowed): tree-to-forest passage of (DL) is convolution algebra D_k(G1 + G2) = sum_{a+b=k}[D_a i_b + i_a D_b] (T2's items 1(b)/4 struck); alternative reduction (DL) for a tree iff sum_{deg v >= 3}(deg v - 2) c_v(k) <= sum_{leaves} c_l(k) — closable by a leaf-to-branch SDR/Hall argument (Hall condition holds on all 987 trees to order 12, every k; pointwise form refuted at a 5-vertex tree, k = 3) — STATED, unproved in general; unicyclic to order 10 all tight at k = 1 (|E| = n); struck '2^28 labelled graphs' excuse, 'average degree <= 2 = pseudoforest' (K_{2,3} + K_1)."
+    },
+    {
+      "id": "R27-N-21",
+      "date": "2026-09-24",
+      "note": "C-U1-T (retained_narrowed): four of U1's five sorries discharged in Lean on U1's frozen declarations (double count via Finset.card_nbij'; per-J bound; extensionCount characterisation; (EX) <= (DL); (LB) <= (EX) across the Fintype/Finite seam; (R5); (XR)); ten declarations standard axioms; (DL) is the only open formal node. Struck: the non-existent statement digest; Type u vs Type v between U1's contract and declarations; 736eb9db vs 736eb9df; #print axioms covered 10 of 26 (critic checked the other 16: clean)."
+    },
+    {
+      "id": "R27-N-22",
+      "date": "2026-09-24",
+      "note": "C-U3-F (retained_narrowed): U3 reproduced; 12 probe declarations derive all five §2 statements at the [Finite X]/Nat.card carrier (bridge free because indepCount/delta/Nat.card are instance-free; a (DL) proved at one fixed Fintype instance would NOT compose); exhaustive to order 16 (85,625 classes): max order with Delta_k < 0 = 0, 4, 8, 11, 15 for k = 0..4 — (LB) optimal at k = 0,1,2; Delta_4 < 0 max 15 (r25 informal 19 sharpened); Delta_5 < 0 attained at order 18 ((R5)'s 20 sharp within 2); 502 adversarial families to order 121 zero violations. Rule-text gaps for Cycle 2: critic replay grant must name scratchpad/c1-<seat>-replay/; align the process-listing rule across briefs."
+    },
+    {
+      "id": "R27-N-23",
+      "date": "2026-09-24",
+      "note": "C-T2-F (retained_narrowed): T2's P_3 obstruction rooting-dependent; characterisation: the root-for-child swap is well-defined iff every component is a star rooted at its centre (minimal rooting-free witness P_4); forest-from-tree reduction by containment count (three lines); order-12 underdetermination witness (D_6 = 233 vs 232 with identical lower data); k = 1 theorem D_1 = 2|E| <= 2n = 2 i_1 subsumes the bipartite fence; sweeps: 15,206 forests to 14, 132,611 unicyclic to 13, zero violations."
+    },
+    {
+      "id": "R27-N-24",
+      "date": "2026-09-24",
+      "note": "C-T3-F (retained_narrowed): T3's Step 8 live-region table labels three empty cells live (r = 4/d = 4/n = 12; r = 5/d = 6/n = 16; r = 6/d = 7/n = 19) — (XR) is necessary only; census to order 14 full / order 19 classes (1,291,316) on an independent instrument: exact max{n : x(F) < r} = 0, 4, 8, 11, 15, 18 for r = 1..6; descent maxima M(k) = 4, 8, 11, 15, 18 for k = 1..5 (agrees with C-U3-F); (R5)'s 20 unattained through order 19; P_8 the unique witness of the r = 3 live cell; struck 'byte-identical' G1 block (U+2212 vs U+002D) and a provenance attribution."
+    },
+    {
+      "id": "R27-N-25",
+      "date": "2026-09-24",
+      "note": "C-F1-U (retained_narrowed): plain (DL) admits every cycle with equality at every k; acyclicity is separated by the root-corrected form (at k = 1: |E| <= n - c); sharpened D_k + 2 M_k <= 2k i_k with M_k = sum_components max_v c_v(k) (converges with C-T1-U's (DL+)); (DL) never nontrivially tight on a forest (slack exactly 2c at k = 1); census to order 16 (85,625 classes) + 232,308 labelled graphs + 78,637 one-cycle graphs zero failures; edge-minimal non-forest failure K_4 - e."
+    },
+    {
+      "id": "R27-N-26",
+      "date": "2026-09-24",
+      "note": "C-F3-T (retained_narrowed): F3's replay was counts-only; the critic replayed the census CONTENT (K1-addition target and NR1) on all 1,291,315 classes to order 19 with zero violations and a first-descent histogram matching r25 digit for digit — residual gap for the x <= 5 composition: order 20 only; STATED: Delta_5 < 0 => n <= 18, attained (9,532 classes) — second read; x <= 6 census route = 146,271,593 classes to order 24; second instrument for the order-22 count; four of six n17-n20 report digests not reproducible (vestigial field; counts identical); NR1 sufficient not necessary; F3 used `ps aux | grep` (full listing) — the worker brief forbids only self-matching pgrep -f; rule alignment for Cycle 2."
+    },
+    {
+      "id": "R27-N-27",
+      "date": "2026-09-24",
+      "note": "C-U2-T (retained_narrowed): leaf-by-leaf shortcut REFUTED (pendant-only induction reaches only endpoint-rooted paths: 1 of 4/9/20 rooted classes at n = 4/5/6; smallest obstruction K_{1,3}); one-root-suffices bridge correct and compiled (degreeSum_le_of_D_nonneg); critic-derived EDGE-SPLIT JOIN for two arbitrary rooted pieces (5,513 instances, zero mismatches) closing the all-roots induction with single-edge splits and no leaf-existence lemma; Mathlib has IsTree.exists_vert_degree_one_of_nontrivial (Acyclic.lean:508); U2's item-8 deliverables 'nonnegativity under sum/product' and 'multiplicativity over separated sets' absent; Z <-> indepCount bridge missing; name coincidences with the external slice (indepFinsets, degOn: packet-quoted names) — rename before any award (controller: adopt). Disclosure: a harness-backgrounded job killed by literal PID; the ps listing exposed a sibling directory name."
+    },
+    {
+      "id": "R27-N-28",
+      "date": "2026-09-24",
+      "note": "C-F3-U (retained_narrowed): r25 census replicated at PROPERTY level to order 20 (3,269,193 classes; K1-addition target and NR1 zero violations; histograms identical to r25) — exactly (R5)'s horizon, so the x <= 5 closure's only remaining input is (LB); order-22 confirmed by a second instrument; class counts to order 26 by Otter/Euler arithmetic (the 'cliff' is evaluation, ~146M classes for x <= 6); struck F3's necessity wording ('exactly Delta_{x+1} <= 0': sufficient only; non-forest witness K_15 join complement K_6) and file-count literals; F3's ps aux | grep noted."
+    },
+    {
+      "id": "R27-N-29",
+      "date": "2026-09-24",
+      "note": "C-U2-F (retained_narrowed): leaf-existence lemma IS in Mathlib at the pin (Acyclic.lean:508, :516, :96, :137); shortcut FAILS (K_{1,3}); DISAGREES with C-U2-T: even the all-roots strengthening needs the product apparatus (external-root identity's correction negative in 922/24,620 configurations) — paired-critic conflict for the U adjudicator; seven critic declarations (degOn <-> induced-degree bridge, exists_degOn_eq_one, D0_eq, D_le_D0, degree_lemma_of_root connecting U2's machinery to the contract's forest_degree_lemma shape); U2's indepFinsets shares name/signature/body with the external declaration (undisclosed), degOn shares the name (disclosed) — rename before any award; a harness-backgrounded run stopped by its task handle. ALL 18 CRITICS IN: 17 retained_narrowed, 1 retained (C-F1-T)."
+    },
+    {
+      "id": "R27-N-30",
+      "date": "2026-09-24",
+      "note": "F adjudication: status proved (informal); C-F1-T's injection proof of the root-corrected (DL) SUSTAINED (line by line; 40,233 labelled forests to order 7, every root, pair by pair; 0 failures) — matches the paper's own step before (8.8) though derived independently; STATED, needs isolated second read; C-F1-U's (SH)/(EXS) discharged conditional on it; one gap in F's portfolio: the double count written out by nobody in F (T3/U3 own it); composition x <= 5 proved_informal-with-census, unconditional at F; rank-5 residue EMPTY; F2's 'self-contained slice' false; finset_sum_coeff deprecation confirmed; F3's ps aux | grep not charged."
+    },
+    {
+      "id": "R27-N-31",
+      "date": "2026-09-24",
+      "note": "T adjudication: status proved (informal); proof of record for (DL) = T1's primitives + every-rooted-tree induction + forest assembly with the false join step REPLACED by the critics' corrected chain (0/5,776 join failures vs 5,700 for T1's Step c); Hall/SDR route = open conjecture (Step C bounded only); all five §2 statements contract-ready at proved_informal; double count / pointwise bound / C-T3-U's identity to be stated WITHOUT IsAcyclic; T3's live table over-reports (cells n = 12, 16 empty); M(1..3) = 4, 8, 11 unconditional (the formal (k+1)^2 award caps the search at 16); (LB) tight at k = 1, 2 (P_8 unique at k = 2); fifteen literals struck; no compiled evidence in T (synthesis takes it from U)."
+    },
+    {
+      "id": "R27-N-32",
+      "date": "2026-09-24",
+      "note": "U adjudication: still_open at U's grade; twelve artifacts replayed; groups U-A (double_count, e_ge_sub: unconditional, no acyclicity), U-B (DlHyp -> ExHyp ∧ LbHyp; LbHyp -> R5 ∧ XR as implications), U-C (definition layer); join ruling FOR C-U2-T on mechanism (edge-split join verified on 215,754 instances; induction reaches every (tree, root) pair, 2,223,278 to order 8; no m-products, no leaf existence needed) with C-U2-F's product-layer prerequisite sustained (binary convolutions); shortcut refuted; smallest open node Z_union_of_separated (content closed by the adjudicator, Finset bookkeeping open); carry list 19 files; rename set exactly {indepFinsets (identical body), mem_indepFinsets (identical statement), degOn (name)}; U1/U3 definitions equal by rfl (adjudicator-derived, STATED); separated-union reduction D_{A+B}(a) = D_A(a) Z_B + Z_A D0_B makes the multi-component step two lines."
+    },
+    {
+      "id": "R27-N-33",
+      "date": "2026-09-24",
+      "note": "Stage 6 sealed aa17f389…; synthesis flags headline_resolved no / material_progress yes / plateau no / continue yes; §5(c) met (mathematics proved informally twice — injection proof of the root-corrected lemma sustained by F; corrected two-potential chain — with (DL) the only open formal node). Decision 1 proof of record = injection proof with the two-potential fallback and a stated switch point; Decision 2 funds C1-LA1 (DL+EX), C1-LA2 (double_count + e_ge_sub, graph-general), C1-LA3 (implication chain), C1-LA4 deferred until LA1 closes."
+    },
+    {
+      "id": "R27-N-34",
+      "date": "2026-09-24",
+      "note": "Stage 7 carry: sources/c1-stage7-sources/ frozen with 14 files (U1/U2/U3 seats; C-U1-T, C-U1-F ×2, C-U2-T, C-U2-F, C-U3-T, C-U3-F critics; ADJ-U Bridge/Prod/Reconcile) — all digests match the synthesis carry table; SOURCE-DIGESTS.json written. Three formalizer briefs written (LA1 seat lineage U2; LA2 U3; LA3 U1), each carrying Gate ruling 3 (no external Lean text; renames indepFinsets→r27IndepFinsets with body re-expressed, mem_indepFinsets→mem_r27IndepFinsets, degOn→r27DegreeIn), G1 entries 1–3 byte-identical from the r25 award source (736eb9df…), the single-source registrar rule, axioms.txt-before-verification, producer ids c1-laN-formalizer-opus-20260925 and run roots runs/lean-2026-09-25-*."
+    },
+    {
+      "id": "R27-N-35",
+      "date": "2026-09-24",
+      "note": "Stage 7 capsules sealed: C1-LA1 330ce250… (51 files), C1-LA2 3cfd2f64… (46), C1-LA3 81ddfb72… (46); each includes the Stage 6 manifest, protocol, contracts, synthesis, all three adjudications, the three U returns and six U critiques, the carry files, the Stage 1 gate and the frozen r25 LeanProject; LA1 additionally T1/T2/T3 returns and C-F1-T, C-T1-F, C-T1-U, C-T2-U (the proof-of-record and fallback derivations); LA2/LA3 the T3 return and C-T3-U. Path-check 0 findings on all three. Dispatch wrappers control/dispatch/c1-stage7/ carry only pointers. Three Opus 5 high formalizers launched in parallel; agents record control/C1-STAGE7-AGENTS.json."
+    },
+    {
+      "id": "R27-N-36",
+      "date": "2026-09-24",
+      "note": "Isolated second reads dispatched in parallel with Stage 7 (synthesis Registrations table B, 15 STATED items bundled into four reads): SR-RC caf34d6c… (67 members), SR-JOIN d9fb5b35… (284; includes the U adjudicator's and C-U2-T's scratch Lean projects read-only), SR-EXX d4a5ab21… (102), SR-REC e89e7953… (51). Path-check 0 findings each. Protocol control/C1-SECOND-READ-PROTOCOL.md adds rule 4 (no external evidence; no external Lean; §3.1/§3.4 fences) and rule 5 (seat instruments read/replay only). Registration of every table-B item is gated on these verdicts; table-A items register after Stage 7 closes."
+    },
+    {
+      "id": "R27-N-37",
+      "date": "2026-09-24",
+      "note": "C1-LA2 returned compiled-candidate with kernel receipt verified (Erdos993G1.e_ge_sub terminal, double_count as lemma; 19 declarations; G1 entries 1–4 byte-identical; U3 Extension.lean bodies carried, five theorem→lemma keyword changes forced by the registrar; firstDescent authored as sInf (= Nat.find by Nat.sInf_def) because the registrar forbids a def after a lemma — reviewers told; e_ge_sub uses hJ only via hJ.card_eq). Reviews script had r26 residue (C5-LA1 / sources/r24 paths in the reviewer briefs) — erratum R27-E-d: patched before dispatch; script made idempotent (assignment immutable; canonical fidelity input kept once written; one superseded-fidelity-input-1 copy exists from the first run and is inert). Two Opus 5 high reviewers dispatched."
+    },
+    {
+      "id": "R27-N-38",
+      "date": "2026-09-24",
+      "note": "SR-RC returned: RC-1..5 all confirmed_with_repairs (seal verified; 67/67 members). Injection replayed pair by pair on all forest classes to order 11 at every rooting (9,242,866 source pairs, 0 collisions); (RC) on 431,055 rooting instances to order 12; k=1 equivalences on all 33,868 labelled graphs to order 6. Substantive finding: the injection's case split needs p(p(u)) ≠ u — a third, latent use of acyclicity; conveyed to the running C1-LA1 formalizer as controller fact CF-LA1-1 (control/C1-STAGE7-CONTROLLER-FACTS-LA1.json) by SendMessage; statement unaffected. Consolidation: (RC)/(SH)/(DL+)/root-deficit are one object (RC ⟺ SH) → one canonical key in the every-rooting form; Corollary A subsumed by strictness; Corollary B a named corollary clause; strictness registered as an iff (D_k = 2k·i_k ⟺ k = 0 ∨ i_k = 0); subtraction-free forms; recommended key E993-R27-FOREST-ROOT-CORRECTED-DEGREE-LEMMA (carrier-bearing). Alias check on the reader's spellings owed by the controller at registration."
+    },
+    {
+      "id": "R27-N-39",
+      "date": "2026-09-24",
+      "note": "SR-REC returned: RE-1..4 all confirmed_with_repairs (seal verified 51/51; no mathematical error; ten face/warrant/provenance repairs). Binding at registration: (a) scope note 5's 'M(1..3) unconditional' is itself STATED (owes SR-EXX) — struck from the r25 faces unless SR-EXX confirms; (b) scope notes 2/3/4 must also address each key's live x=5 residue narrative (orders 22–29) — corrected texts in the deliverable; (c) the 'registry scope carves out K₁' warrant repeated by F3/C-F3-U/F adjudication is FALSE at the exact key E993-FOREST-FIRST-DESCENT-DISJOINT-UNION-UPPER-ADDITIVITY — logical warrant supplied; (d) rank 0 discharged outright (Δ₀ = n−1 < 0 ⟺ n = 0), removing the closure_certificate dependency; F3's order-22 replay is counts-only and not an input; (e) external-audit record: counts replaced by exact location lists; decide-exclusion warrant per location (Recursion.lean:301 rests on non-citation); packet correction 1 narrowed to C1-ALLOCATION item 5(b); Gate-ruling-3 disclosure of which findings are second-read-confirmed travels on the record; (f) (R5) alone closes orders 22–25 — closeout not census-bound, branch-vertex condition inert; (g) alias check zero matches; no registered key contains 'R27'. Registration text for all four objects and eight corrected scope notes in second-reads/SR-REC/SECOND-READ.md."
+    },
+    {
+      "id": "R27-N-40",
+      "date": "2026-09-24",
+      "note": "SR-EXX returned: EX-1 confirmed, EX-2/EX-3 confirmed_with_repairs (seal verified 102/102). (EXX) graph-general, replayed on all 33,868 labelled graphs to order 6 and all forest classes to order 10, zero failures. In-run exhaustive forest census to ORDER 20 (centroid decomposition, packed truncated independence polynomials; A000055/A005195 matched at every order; 19,615,164 (forest,k) instances with 0 violations of (EX), (LB), (k+1)²): M(k) = 4, 8, 11, 15, 18 confirmed; 9,532 order-18 classes with Δ₅<0; orders 19 AND 20 empty for k ≤ 5 — order 20 had never been enumerated by an r27 seat (C-F3-T took it from the frozen r25 census; C-T3-F stopped at 19; T adjudicator recorded the cell unverified) → EX-3's evidence line drops the frozen-census dependency; the unreconciled review-stage disagreement is recorded here. GRADE CORRECTION to the controller's brief gloss (erratum R27-E-e): a value closed only under (LB) is NOT unconditional while (LB) is proved_informal; 'unconditional' = capped by the formally verified (k+1)² award, which closes k = 1, 2, 3 only; M(4), M(5) are (LB)-conditional; every M(k) is bounded_computation. Canonical form: the maxima row (key E993-R27-FOREST-DESCENT-MAXIMA-CENSUS); (XR) occupancy row = M(r−1) re-indexed; the rank-5 companion is the M(5) entry, annotated 'not a second independent result'. ℤ-typing load-bearing ((n−k)i_k − D_k = −98 on P_12, k = 5). This also confirms SR-REC's item (a): 'M(1..3) unconditional' is sustained in the (k+1)²-capped sense and may travel on the scope note with that warrant."
+    },
+    {
+      "id": "R27-N-41",
+      "date": "2026-09-24",
+      "note": "C1-LA3 returned compiled-candidate, kernel verified: Erdos993G1.degree_lemma_implies_chain : DlHyp.{u} → ExHyp.{u} ∧ LbHyp.{u} ∧ R5Hyp.{u} ∧ XrHyp.{u} (explicit shared universe parameter is load-bearing); four component lemmas ex_of_dl, lb_of_ex, r5_of_lb, xr_of_lb; 39 declarations; G1 entries 1–6 byte-identical; three declarations re-derived for registrar-ordering reasons (exists_delta_neg; pos_indepCount_of_delta_neg, firstDescent_spec from U1's file, carry row 6, not a capsule member) — recorded on the declarations and in INFORMAL-PROOF §5.2; renames inapplicable (row 8 unused); fences and C-U3-F instance caveat on the terminal docstring. Two Opus 5 high reviewers dispatched."
+    },
+    {
+      "id": "R27-N-42",
+      "date": "2026-09-24",
+      "note": "C1-LA2 fidelity review: match/passed (fc12cd1d…; 32 checks, 1 warning). Warning: this run's firstDescent is sInf-form, extensionally equal by Nat.sInf_def but not definitionally the Nat.find object the U adjudicator certified rfl-equal — no award declaration depends on it; a later composition must not treat LA2's firstDescent as the rfl-certified object of record (registration face carries this). Face 1 double_count's axiom line rests on axioms-all-declarations.txt, not receipt-bound (the receipt probes the terminal only) — recorded on the face. Brief-side numbering inconsistency (conditions labelled R1–R7 under §2, no §3 heading) — erratum R27-E-f, cosmetic, every condition mapped by content."
+    },
+    {
+      "id": "R27-N-43",
+      "date": "2026-09-24",
+      "note": "C1-LA1 returned compiled-candidate with kernel receipt verified: Erdos993G1.forest_extension_inequality terminal, forest_degree_lemma as lemma, both at the §2 statements; 55 declarations at the three axioms; INJECTION route (rooting API sorry-free before the halfway mark; fallback unused; renames inapplicable). Controller fact CF-LA1-1 verified and already satisfied (par_par_ne from rk_par_lt; two-sided invariant swapMap_grandparent_pos/neg; additive assembly D_k + 2·#rootPairs ≤ 2·(k·i_k); rootPairs with multiplicity). Deviations: firstDescent absent from the LA1 contract (def depending on a lemma; registrar ordering; an LA4 object); seven carried U3 bodies theorem→lemma (recorded re-derivations, digests in DRAFTS/ORDER.json). Reviews dispatched (informal brief carries a §4 addendum on CF-LA1-1, the rooting API and pair-by-pair replay)."
+    },
+    {
+      "id": "R27-N-44",
+      "date": "2026-09-24",
+      "note": "C1-LA4 dispatched in parallel with LA1's reviews (capsule 08d725c8…, 339 members incl. the three sibling run roots minus .lake; seat lineage U3): three unconditional faces at §2 (LB, R5 lemmas; XR terminal), composition rule R10 (carry LA1's 55 entries + LA3's hypothesis layer and chain byte-identically, dedupe U3 bodies; direct route permitted as fallback), R9 no DlHyp binder, grade CONTINGENT on LA1's close written on the face. If LA1's reviews fail, LA4's product is void and is recorded as such."
+    },
+    {
+      "id": "R27-N-45",
+      "date": "2026-09-24",
+      "note": "C1-LA2 CLOSED formally_verified (VERIFICATION-REPORT 73d21e93…): informal audit passed (792ad30e…; own evaluator, 23,034,439 checks on 38,608 labelled graphs, 0 failures; L5 bijection pair by pair to n ≤ 5; sharpness: decoupling |J| from k breaks the bound; dropping independence breaks the double count), fidelity match (fc12cd1d…). Record defect F1 (auditor): INFORMAL-PROOF §6 item 1 and the contract's conclusion.statement say no ℕ-subtraction occurs anywhere in the development — false as written (one truncation-free ℕ-subtraction (k+1)−1 via Finset.card_erase_of_mem at Main.lean:183; omega models it faithfully; no conclusion affected; the claim of record asserts nothing about ℕ-subtraction). Sealed run artifacts are not edited after the receipt: the correction is carried on the closeout (cycles/cycle-1/stage7/LEAN-GATE-CLOSEOUT.md) and the registration face. Coverage note N6 / fidelity item 2: the kernel receipt probes the terminal only; double_count's axiom line rests on axioms-all-declarations.txt and the whole-file build — recorded on the face."
+    },
+    {
+      "id": "R27-N-46",
+      "date": "2026-09-24",
+      "note": "C1-LA3 fidelity review match/passed (9315e695…; 32/0/0): five hypothesis abbreviations token-identical to §2; acyclicity enters once via DlHyp; non-vacuity K_{1,3} and 40,232 labelled forests to order 7; note (a) the anti-drift examples prove only §2 ⇒ abbreviation, closed by the reviewer's direct token comparison; note (b) two fences live on the docstring/INFORMAL-PROOF, not the contract (which asserts nothing contrary)."
+    },
+    {
+      "id": "R27-N-47",
+      "date": "2026-09-24",
+      "note": "C1-LA3 informal audit FAILED round 1 (b4e5d242…): F1 the source docstring (Main.lean ~465–466), INFORMAL-PROOF §5.2 and the report state U1's file (carry row 6) is not a capsule member — it is (U1-Main.lean 8cc381f4…, match:true in the run's own CAPSULE-VERIFICATION.json); F2 the contract scope omits FLNYZ/literature-map attribution, critics C-U3-T/C-U1-F and two fences. Mathematics sound (all five Props literal §2; acyclicity enters once; 5,399,978 checks, 0 failures; K₄/K₅ exhibit the expected failures outside acyclicity). Bounded repair round 1 issued to the same seat by SendMessage: F1/F2 only; statements byte-identical; rebuild; fresh axioms.txt before a new kernel receipt; old receipt superseded per the workflow; reviews re-run afterwards (assignment immutable; a fresh fidelity input by the canonical projection)."
+    },
+    {
+      "id": "R27-N-48",
+      "date": "2026-09-24",
+      "note": "C1-LA1 fidelity review match/passed (7f19fa3e…; 32/0/0): both faces character-for-character the §2 / synthesis statements (forest_degree_lemma differs by the mandated `lemma` keyword only); acyclicity enters exactly once at rootPath_unique; counting core carries no hG; G1 byte-identical; ten carried U3 bodies keyword-only; non-vacuity Fin 2 single edge (equality at k = 0). Notes: firstDescent absent from LA1 (an LA4 object; disclosed) — harmless to fidelity; the brief-numbering defect R27-E-f restated (the §5 cross-references R7–R10 are offset by four from the R1–R9 block) — repaired in the LA4 brief? NO: the LA4 brief was cloned from LA1 before this note; carry the erratum, do not edit sealed briefs."
+    },
+    {
+      "id": "R27-N-49",
+      "date": "2026-09-24",
+      "note": "C1-LA3 repair round 1 returned: F1 corrected on every face (true reason: row 6 is a capsule member, read and cited by digest 8cc381f4…, but not on the byte-identical carry list; U1's firstDescent_spec body references U1's own firstDescent/firstDescent_exists, unregistered here, so it could not be carried); F2 attribution and both fences added to conclusion.statement; informal_statement and expected_statement byte-identical (claim digest 8f30c107… unchanged); fresh axioms.txt before the new receipt; kernel verified; contract valid. Method: the registrar is append-only and begin-repair requires a blocked closeout, so the seat rebuilt the managed project in place with the governed tooling, preserving round-0 under RECEIPTS/superseded/round-0 and EVIDENCE/superseded/round-0 — accepted by the controller (the shared tree untouched; only the packages symlink re-bound). Controller superseded the round-0 fidelity receipt/input/review files into the same folders, regenerated the canonical fidelity input (1adc8a92…) and briefs, and resumed both reviewers for round 2. F3 advisory (LA3's conditional forest_extension_inequality shares the §2 target's NAME with LA1's unconditional theorem): recorded — LA3's registration face carries the alias distinction; LA4 must not import LA3's conditional copy under that name in a project that also carries LA1's."
+    },
+    {
+      "id": "R27-N-50",
+      "date": "2026-09-24",
+      "note": "Controller fact CF-LA4-1 sent to the running C1-LA4 formalizer (name collision between LA3's conditional and LA1's unconditional forest_extension_inequality; carry LA1's; re-derive ex_of_dl; LA3 round-1 digest). Recorded at control/C1-STAGE7-CONTROLLER-FACTS-LA4.json."
+    },
+    {
+      "id": "R27-N-51",
+      "date": "2026-09-24",
+      "note": "C1-LA1 CLOSED formally_verified (VERIFICATION-REPORT 28bc7d1a…): (DL) forest_degree_lemma and (EX) forest_extension_inequality at the §2 statements, 55 declarations, three axioms; informal audit passed (595731fa…; CF-LA1-1 confirmed used at swapMap_grandparent_neg and par_notMem_childrenFinset; excluded conclusions checked: min slack exactly 2 for k ≥ 1 with i_k > 0; slack 2c at k = 1; cycles tight; (RC) at k = 1 ⟺ acyclicity; pointwise form false on K_{1,3}); fidelity match (7f19fa3e…). Record notes carried to the closeout: §8 'ℕ↔ℤ bridge used exactly twice' undercounts by one (line 429 inside carried double_count); 'acyclicity consumed only at rootPath_unique' imprecise (par_or applies eq_snd_of_adj_start directly); §9's external-slice identifier non-coincidence claim is unverifiable inside the Gate-ruling-3 boundary; def-indepcount description elides the namespace wrapper; conclusion node over-lists dependencies; FIDELITY-REVIEW.md digest drift is the later gate's write. Stop-gate (a) now turns on C1-LA4 (LB/R5/XR) and the residue closeout record."
+    },
+    {
+      "id": "R27-N-52",
+      "date": "2026-09-24",
+      "note": "C1-LA3 round-2 fidelity match/passed (154d8b63…): expected_statement hash unchanged; comment-stripped round-0/round-2 sources byte-identical; contract changed in exactly three places (conclusion.statement appended; two digests); reviewer discloses its round-0 miss on the capsule-membership sentence (record, not a statement defect). Awaiting the round-2 informal audit."
+    },
+    {
+      "id": "R27-N-53",
+      "date": "2026-09-24",
+      "note": "C1-LA4 returned compiled-candidate, kernel verified: forest_descent_restriction terminal; forest_descent_linear_bound and forest_rank5_ceiling_20 lemmas; all three unconditional (R9); 71 entries / 81 declarations at the three axioms; DIRECT route with maximal byte-identical carry (chain route impossible: LA1 entry 55 and LA3 entry 13 declare forest_extension_inequality with different types — CF-LA4-1 confirmed independently by the seat); one keyword-only re-derivation (LA1's terminal theorem → lemma). Capsule gate: 339/342 members reproduce; the three drifted members are C1-LA2 lifecycle files written by its close (expected, recorded). LA3's mid-run docstring drift detected and handled by the seat (carried the pinned round-0 copy; reconstructed cae93961… byte-exactly). Contingency on LA1 discharged (LA1 closed formally_verified before LA4's reviews). Two Opus 5 high reviewers dispatched with a §4 addendum."
+    },
+    {
+      "id": "R27-N-54",
+      "date": "2026-09-24",
+      "note": "C1-LA3 CLOSED formally_verified after one repair round (VERIFICATION-REPORT 163d64e2…): round-2 informal audit passed (7eca7d28…; F1/F2 repaired truthfully on all faces; axioms.txt timestamp-ordered before the receipt), round-2 fidelity match (154d8b63…). Observations carried: O1 paraphrase 'U1's file' for 'U1's five sorry'd targets' in four places (imprecision); O3 four stale hash-table rows belonging to the fidelity seat; O4 round-0 INFORMAL-PROOF.md not preserved beside the other round-0 artifacts (comparison rests on the auditor's round-1 ledger); F3 advisory (conditional forest_extension_inequality shares the §2 name) carried to the registration face. Three of four Stage 7 awards closed; LA4 under review."
+    },
+    {
+      "id": "R27-N-55",
+      "date": "2026-09-24",
+      "note": "SR-JOIN returned: JN-1..5 all confirmed_with_repairs (seal verified 284/284; deliverable 8e0be4cf…). Material repairs: acyclicity is NOT a hypothesis of the join recurrences (841 arbitrary-graph joins, 0 failures; it enters later, twice) — the T adjudication's established result 2 and the synthesis mis-record it; hd : Disjoint A B declared and not consumed by AdjU.indepFinsets_union_of_separated (compiled without it); a fourth load-bearing declaration (AdjU.indepFinsets_univ_filter_card) missing from the synthesis's row; agreement lemmas are AdjUReconcile.*, definitional at the definition level; canonical single form of the recurrences with the rooting on its face; n = 1 fails the identity, not the biconditional. Brief erratum R27-E-g: the controller's SR-JOIN brief attributed the 215,754-instance figure to C-U2-T; it is the U adjudicator's (C-U2-T reports 5,513; both reproduced). Disclosures: one grep rooted above the capsule (two non-member lines seen, not relied on); one harness-backgrounded job killed by literal PID. Six keys proposed; registration script extended; alias check to be run by the controller at registration (SR-REC's namespace-wide result: no registered key contains 'R27')."
+    },
+    {
+      "id": "R27-N-56",
+      "date": "2026-09-24",
+      "note": "C1-LA4 fidelity match/passed (6f7bb4e3…; 38/0/1): all five §2 statements occur verbatim in the source (four as lemma, the terminal as theorem); no conditional binder; firstDescent = Nat.find (least descent) byte-identical to LA3 entry 9 / U3 row 9; LA1's 55 entries 54 byte-identical + 1 keyword-only; 81 declarations at the three axioms. Warning: the terminal docstring overstates provenance ('spec/minimality lemmas carried' — the minimality lemma not_delta_neg_of_lt_firstDescent is not in the project; never consumed) — carried on the registration face, no repair round. Contingency on LA1 satisfied at the exact carried bytes."
+    },
+    {
+      "id": "R27-N-57",
+      "date": "2026-09-24",
+      "note": "C1-LA4 CLOSED formally_verified (VERIFICATION-REPORT 8ee1e413…): (LB), (R5), (XR) unconditional at the §2 statements, composed with LA1's 55 entries (54 byte-identical + keyword) and LA3's hypothesis/firstDescent layer; informal audit passed (1747cf0a…; 4*r−4 through 4*(r−1) for r ≥ 1 plus r = 0 vacuity, never clamped; dl_holds and R5Hyp confirmed unused by (XR)); fidelity match (6f7bb4e3…). Findings carried: acyclicity gloss off by one declaration (par_or applies eq_snd_of_adj_start directly — same as LA1); CAPSULE-VERIFICATION entries_not_carried omits LA3 entry 13 (prose correct); axioms.txt rewritten by the verifier per its own contract (same set, disclosed); contract scope attribution incomplete but complete on the faces. ALL FOUR AWARDS CLOSED. Stop-gate (a) is met: (DL), (EX) formally verified at §2; (LB), (R5), (XR) checked formally; residue closeout recorded (records/R27-RANK5-RESIDUE-CLOSEOUT.md). Gate ruling 9: the run ENDS at the Cycle 1 close."
+    },
+    {
+      "id": "R27-N-58",
+      "date": "2026-09-24",
+      "note": "CLOSE: registration run (control/register_c1_close.py): 21 E993-R27-* keys (8 formal-award keys from 4 awards; 10 proved_informal; 2 bounded_computation; 1 compiled-scratch record), scope notes on seven r25 claims and on E993-FOREST-FIRST-DESCENT-DISJOINT-UNION-UPPER-ADDITIVITY (statuses unchanged); registry 370 → 391 (235 V / 89 R / 26 C / 41 O); ledger 301 rows; lint 0/0 on both the authority (370) and the run-local (391) registries. Records: records/R27-RANK5-RESIDUE-CLOSEOUT.md, R27-EXTERNAL-SOURCE-AUDIT.md, R27-REGISTRY-COMPARISON-AND-ALIAS-CHECK.md; cycles/cycle-1/stage7/LEAN-GATE-CLOSEOUT.md; cycles/cycle-1/CYCLE-CLOSE.md; control/CONTROLLER-REVIEW-R27.md. Stage 7 packet sealed e7573277… (551 members); second-reads packet d369223e… (23 members). Integrity sweep: the C1-LA4 capsule's sibling-run members drifted by design (LA1/LA2 closes, LA3 repair) — declared expected in build_r27_close.py. RUN COMPLETE at the Cycle 1 close (stop-gate (a); Gate ruling 9). Notes frozen here before the terminal seal."
+    }
+  ],
+  "errata": [
+    {
+      "id": "R27-E-a",
+      "date": "2026-09-24",
+      "erratum": "C1-WORKER-COMMON-BRIEF.md (sealed) carries r26 residue: item 2 names the hypotheses hyp-tree/hyp-alpha/hyp-eligible/(★) (r26's) instead of acyclicity/finiteness/the root; item 5 says candidates are named in the E993-R26- namespace where SOLUTION-CONTRACT.md says E993-R27-. Caught by seat F2. Sealed member unchanged; the contract governs; carried to the critic briefs and the Cycle 2 brief."
+    },
+    {
+      "id": "R27-E-b",
+      "date": "2026-09-24",
+      "erratum": "SEMANTIC-CONTRACT.md §4 lists '(DL) tight cases (e.g. edgeless forests: D_k = 0; single edges)'. Edgeless forests have D_k = 0 (a fixed point) but are not tight (2k i_k = 2k C(n,k) > 0); K_2 at k = 1 gives D_1 = 2 < 4. F1 found no nontrivial tight case of (DL) or (EX) on any forest tested. The fixed-point VALUES are right; the label 'tight' is wrong. Sealed member unchanged."
+    },
+    {
+      "id": "R27-E-c",
+      "date": "2026-09-24",
+      "erratum": "SOLUTION-CONTRACT.md §3.8 names the refuted mechanism as E993-R25-FIRST-STRICT-DESCENT-IS-FIRST-MAXIMIZER; the registered key is E993-FIRST-STRICT-DESCENT-IS-FIRST-MAXIMIZER (REFUTED). Caught by C-T3-U. Sealed member unchanged; the registry key governs."
+    },
+    {
+      "id": "R27-E-d",
+      "date": "2026-09-24",
+      "text": "r27_stage7_reviews.py (cloned from r26) still named the C5-LA1 award under sources/r24/c5-la1/ in the reviewer briefs' read boundary and definition checks; corrected to the r25 award source and the r27 carry files before any reviewer was dispatched. The first generated LA2 briefs (with the residue) were overwritten; no reviewer read them."
+    },
+    {
+      "id": "R27-E-e",
+      "date": "2026-09-24",
+      "text": "C1-SECOND-READ-BRIEF-SR-EXX.md EX-2 glossed values closed by (LB) + census as 'unconditional (proved_informal + bounded_computation)'; (LB) is proved_informal at Stage 6, so only the formally verified (k+1)² cap makes a maximum unconditional (k ≤ 3). The reader corrected it; the registration follows the reader. If C1-LA4 closes (LB) formally, the cap for k = 4, 5 becomes formal and the faces may be updated at that time as a scope note, never silently."
+    },
+    {
+      "id": "R27-E-f",
+      "date": "2026-09-24",
+      "text": "The three Stage 7 formalizer briefs place conditions R1–R9 directly under the §2 heading without a '## 3' heading, while the reviewer briefs refer to '§3 conditions'. Cosmetic; conditions are identified by their R-numbers. Not edited after seal."
+    },
+    {
+      "id": "R27-E-g",
+      "date": "2026-09-24",
+      "text": "C1-SECOND-READ-BRIEF-SR-JOIN.md JN-1 wrote 'C-U2-T reports 215,754 instances'; the 215,754-instance sweep is the U adjudicator's, C-U2-T's own count is 5,513. The reader reproduced both. Not edited after seal."
+    }
+  ],
+  "incidents": [],
+  "frozen_at_terminal_seal": "2026-09-24"
+}

@@ -17,6 +17,10 @@ of size `k`. The problem asks whether
 is weakly unimodal whenever `G` is a finite tree, and likewise whenever `G` is
 a finite forest.
 
+## 2026-09-24: r27 — the finite forest degree lemma and extension inequality are formally verified
+
+The [r27 run](experiments/r27-forest-degree-extension.md) audited and formalized the finite forest degree lemma and extension inequality of Fang–Lu–Nevo–Yao–Zheng (2026, §8) on the program's G1 definitions of record, with an in-run injection proof: for every finite forest and every `k`, `Σ_{J∈I_k} Σ_{v∈J} deg v ≤ 2k·i_k` and `n·i_k ≤ (k+1)·i_{k+1} + 3k·i_k` ([`r27-c1-la1-…`](proofs/lean/r27-c1-la1-forest-degree-extension/README.md)); the unconditional consequences `Δ_k < 0 ⇒ n ≤ 4k`, `n ≥ 21 ⇒ Δ_5 ≥ 0` and `x < r ⇒ n ≤ 4r − 4` ([`r27-c1-la4-…`](proofs/lean/r27-c1-la4-descent-order-bounds/README.md)); the graph-general counting core ([`r27-c1-la2-…`](proofs/lean/r27-c1-la2-extension-counting-core/README.md)) and the implication chain ([`r27-c1-la3-…`](proofs/lean/r27-c1-la3-degree-lemma-implication-chain/README.md)). The r25 rank-5 residue (orders 22–25) is closed out; the K1-addition closure extends to `x ≤ 5` at census grade. These are order bounds whose contrapositives have sign `Δ_k ≥ 0` — not no-recovery statements; nothing transfers to the forest-wide no-recovery claim, NR1, FOREST, TREE or Erdős #993. Verification record: [`evidence/verification-2026-09-24-r27.md`](evidence/verification-2026-09-24-r27.md). Master registry 392 identities.
+
 ## 2026-09-24: r26 — the r24 top-rank residual sign is formally verified
 
 The [r26 run](experiments/r26-top-rank-residual-sign.md) validated a literature-map candidate proof of the r24 top-rank residual sign `(RC)` and closed it as a governed Lean package composed with the r24 identity `(RI)`: for every finite tree with `2 ≤ α`, `x + 2 ≤ α − 1` and every leaf in every maximum independent set, `S(T, α−1) ≤ 0` — r24's terminal debt TD-6. Two companion packages (the deletion-injection/fibre bound; the tree-structural core), the strict form `S ≤ −2` informally, a correction of the r24 record's "1,420 realized" statement, and `N₂ ≤ M` refuted. The master registry now holds 370 identities. The all-rank aggregate and every headline stay open. Read the [verification record](evidence/verification-2026-09-24-r26.md).
@@ -178,6 +182,11 @@ The expected transitive axioms are `propext`, `Classical.choice`, and
 - [r24 top-rank selector collapse Lean package](proofs/lean/r24-c4-top-rank-selector-collapse/README.md)
 - [r24 top-rank residual identity Lean package](proofs/lean/r24-c5-top-rank-residual-identity/README.md)
 - [r25 uniform residual no-recovery DRE (six cycles, terminal)](experiments/r25-uniform-residual-no-recovery.md)
+- [2026-09-24 r27 verification record](evidence/verification-2026-09-24-r27.md)
+- [r27-c1-la1-forest-degree-extension Lean package](proofs/lean/r27-c1-la1-forest-degree-extension/README.md)
+- [r27-c1-la2-extension-counting-core Lean package](proofs/lean/r27-c1-la2-extension-counting-core/README.md)
+- [r27-c1-la3-degree-lemma-implication-chain Lean package](proofs/lean/r27-c1-la3-degree-lemma-implication-chain/README.md)
+- [r27-c1-la4-descent-order-bounds Lean package](proofs/lean/r27-c1-la4-descent-order-bounds/README.md)
 - [2026-09-24 r26 verification record](evidence/verification-2026-09-24-r26.md)
 - [r26-c1-la1-top-rank-residual-sign Lean package](proofs/lean/r26-c1-la1-top-rank-residual-sign/README.md)
 - [r26-c1-la2-deletion-injection-fibre Lean package](proofs/lean/r26-c1-la2-deletion-injection-fibre/README.md)

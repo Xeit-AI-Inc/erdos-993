@@ -1,5 +1,7 @@
 # Erdős #993 — Master Proof Ledger
 
+**Updated 2026-09-24 — r27 (audit and formalize the finite forest degree/extension inequality of Fang–Lu–Nevo–Yao–Zheng 2026 §8, `erdos-993-forest-degree-extension-dre-2026-09-24`) closed after ONE cycle on the early-stop rule: the forest degree lemma `(DL)` `Σ_{J∈I_k}Σ_{v∈J} deg v ≤ 2k·i_k` and the extension inequality `(EX)` `n·i_k ≤ (k+1)·i_{k+1} + 3k·i_k` are FORMALLY VERIFIED** (`E993-R27-FOREST-DEGREE-LEMMA`, `E993-R27-FOREST-EXTENSION-INEQUALITY`, award C1-LA1, in-run injection proof), with the unconditional consequences `Δ_k < 0 ⇒ n ≤ 4k`, `n ≥ 21 ⇒ Δ_5 ≥ 0` and `x < r ⇒ n ≤ 4r − 4` formally verified (C1-LA4), the graph-general counting core (C1-LA2) and the implication chain (C1-LA3); the r25 rank-5 residue (orders 22–25) closed out; the K1-addition closure extended to `x ≤ 5` at census grade; the root-corrected degree lemma, its equality classification and the exact extension identity at `proved_informal`. Master registry 392 identities (235 VERIFIED, 89 REFUTED, 26 CONDITIONAL, 42 OPEN). `E993-R25-UNR-FOREST-WIDE`, the no-size-cap claim, NR1, FOREST, TREE and Erdős #993 remain OPEN — these are order bounds with sign `Δ_k ≥ 0`, never no-recovery statements. See the r27 section at the end.
+
 **Updated 2026-09-24 — r26 (validate and formalize the r24 top-rank residual sign, `erdos-993-top-rank-residual-sign-dre-2026-09-23`) closed after ONE cycle on the early-stop rule: the r24 top-rank residual sign `(RC)` is FORMALLY VERIFIED** (`E993-R26-TOP-RANK-RESIDUAL-SIGN`, award C1-LA1, composed with the r24 identity (RI)), closing r24 terminal debt TD-6; two further governed packages (the deletion-injection/fibre bound; the tree-structural core); the strict form `S ≤ −2` at `proved_informal`; the r24 C6 "1,420 realized negative family-(I) weights" statement corrected on the record (a predicate substitution; B3's identity stands); `N₂ ≤ M` registered REFUTED. Master registry 370 identities (214 VERIFIED, 89 REFUTED, 26 CONDITIONAL, 41 OPEN). The all-rank aggregate, `E993-BETA-AGG`, TREE, FOREST and Erdős #993 remain OPEN. See the r26 section at the end.
 
 **Updated 2026-09-20 — the G1 large-residual experiment completed all three authorized cycles.** Three exact Lean contracts close ordinary G1 at `p<=5`, the first wide band, and the third wide band. The all-rank order-`2r+4` forest crossing theorem is new to this lineage. Unrestricted G1, TREE, FOREST, TRANSFER and aggregate beta-prime remain OPEN. The merged registry now has 288 identities; all 81 pre-existing master objects are preserved. See the G1 close section at the end.
@@ -622,6 +624,8 @@ for artifacts not explicitly exported there.
 
 **r26 Lean packages (2026-09-24).** Three governed packages under `proofs/lean/r26-*`: `r26-c1-la1-top-rank-residual-sign` (`R26LA1.topRankResidualSign` — the r24 top-rank residual sign `(RC)` at the exact C5-LA1 hypotheses, composed with `C5LA1.topRankResidualIdentity` whose 31 registrar entries are carried byte-identically; 148 declarations), `r26-c1-la2-deletion-injection-fibre` (`R26LA2.fibreInequalitySharp` with `deletionInjectionBound`; hypothesis-free; ARMW 2020 re-proved), `r26-c1-la3-tree-structural-core` (`R26LA3.leafDegree_two_indepNum_eq_two` and 29 further tree-structural declarations). Same pin, axioms exactly `[propext, Classical.choice, Quot.sound]`, each with frozen contract, independent informal audit, kernel/axiom receipt and independent fidelity attestation. Internal grade `formally_verified`; public projection `verified`.
 
+**r27 Lean packages (2026-09-24).** Four governed packages under `proofs/lean/r27-*`: `r27-c1-la1-forest-degree-extension` (`Erdos993G1.forest_degree_lemma` — the FLNYZ forest degree lemma `(DL)` — and the terminal `Erdos993G1.forest_extension_inequality` `(EX)`, both on the G1 definitions of record carried byte-identically from the r25 award; 55 declarations; proof of record the type-A/type-B injection of the root-corrected lemma with the rooting API supplying `p(p(u)) ≠ u`), `r27-c1-la2-extension-counting-core` (`Erdos993G1.double_count`, `Erdos993G1.e_ge_sub`; graph-general, no acyclicity), `r27-c1-la3-degree-lemma-implication-chain` (`Erdos993G1.degree_lemma_implies_chain : DlHyp → ExHyp ∧ LbHyp ∧ R5Hyp ∧ XrHyp`, each hypothesis definitionally the contract statement), `r27-c1-la4-descent-order-bounds` (`Erdos993G1.forest_descent_linear_bound` `Δ_k < 0 ⇒ n ≤ 4k`, `forest_rank5_ceiling_20`, and the terminal `forest_descent_restriction` `firstDescent G < r ⇒ n ≤ 4r − 4`; 81 declarations composing C1-LA1 byte-identically). Same pin, axioms exactly `[propext, Classical.choice, Quot.sound]`, each with frozen contract, independent informal audit, kernel/axiom receipt and independent fidelity attestation (C1-LA3 after one bounded repair round on record defects). No external Lean text: the external audit copy carries no LICENSE and was read for audit only. Internal grade `formally_verified`; public projection `verified`.
+
 ## 8. Process Preconditions for the Next Phase
 
 Binding lessons from the TRS2 forensic record (Codex audit,
@@ -1088,3 +1092,80 @@ unchanged. **Errata:** R26-E-a (a bind command unusable on scratch roots), R26-E
 in the controller's brief; `x(P₇) = 2`, `α = 4`; first eligible odd path `P₁₁`), R26-E-c (contract Tier 1′
 row). Public mirror: `proofs/lean/r26-*`, `experiments/r26-top-rank-residual-sign.md`,
 `evidence/verification-2026-09-24-r26.md`, `runs/erdos-993-top-rank-residual-sign-dre-2026-09-23/`.
+
+
+## First-interior aggregate successor opened (2026-09-24)
+
+User-authorized independent DRE + Lean run `erdos-993-first-interior-aggregate-dre-2026-09-24`, up to six cycles, is ACTIVE. New identity `E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE` is OPEN: the complete ordinary-tree favorable-original-leaf sum at integer p=alpha(T)-2, under x(T)+2<=p. It is a proper rank slice of `E993-R23-ORDINARY-FAVORABLE-LEAF-AGGREGATE`, without a residual hypothesis. The verified r26 top-rank residual theorem does not settle it. All prior claim objects and statuses are preserved; this registration is not a mathematical award. Code's separate forest-degree experiment is independent. Search: 3 T / 3 F / 3 U, GPT-6 Luna high; critics, adjudicators, synthesis and Lean roles GPT-6 Sol high; Astra high reviews after C3 and C6.
+
+## r27 — audit and formalize the finite forest degree/extension inequality (erdos-993-forest-degree-extension-dre-2026-09-24), CLOSED 2026-09-24
+
+Chartered by Ashton on 2026-09-24 from the r26 review's recommended next experiment: audit and formalize
+the finite forest degree lemma `(DL)` `Σ_{J∈I_k} Σ_{v∈J} deg(v) ≤ 2k·i_k` and the extension inequality
+`(EX)` `(k+1)·i_{k+1} ≥ (n−3k)·i_k` of Fang–Lu–Nevo–Yao–Zheng (2026, arXiv:2609.20961v1 §8); derive
+`(LB)` `Δ_k < 0 ⇒ n ≤ 4k`, `(R5)` `n ≥ 21 ⇒ Δ_5 ≥ 0`, `(XR)` `x < r ⇒ n ≤ 4r−4`; reconstruct the r25
+isolated-vertex-addition claim and close the rank-5 residue dependency by dependency; audit the external
+finite Lean slice; never upgrade the toolchain; never compute the asymptotic `N₀`. Topology 9 routes / 18
+critics / 3 adjudicators / 1 synthesis / governed Stage 7 / four isolated second reads (routes Sonnet 5
+xhigh; critics Opus 5 medium; the rest Opus 5 high); up to six cycles with early stop. **Stop-gate (a) was met
+in Cycle 1**: the run closed after one cycle (terminal manifest `017ddb693bdb678625efa3ead71aa34eb09af2d8ab53ff7b4b71fc25fb22b569`; integrity sweep 38 manifests /
+3,698 members / 0 unexpected drifts; controller review `CONTROLLER-REVIEW-R27.md`).
+
+**Gate ruling 3 (license).** The external Lean audit copy carries no LICENSE. It was read for audit and proof
+structure only; every declaration of this run is authored in-run on the G1 definitions of record; the paper's
+mathematics is attributed on every face and is never cited as evidence (Gate ruling 2).
+
+**Formally verified (governed workflow, four packages, §7):** `E993-R27-FOREST-DEGREE-LEMMA` `(DL)` and
+`E993-R27-FOREST-EXTENSION-INEQUALITY` `(EX)` (award C1-LA1; proof of record the type-A/type-B injection
+of critic `C-F1-T` for the root-corrected lemma `D_k + 2·Σ_i a_{r_i}(k) ≤ 2k·i_k`, one root per component;
+the rooting API supplies the third use of acyclicity `p(p(u)) ≠ u` that the second read SR-RC found latent;
+the paper's polynomial induction — corrected in-run by `C-T1-F`/`C-T1-U` and `C-U2-T` — is the second,
+informal derivation); `E993-R27-INDEP-EXTENSION-DOUBLE-COUNT` and `E993-R27-EXTENSION-LOWER-BOUND`
+(C1-LA2; graph-general, no acyclicity); `E993-R27-DEGREE-LEMMA-IMPLIES-EXTENSION-CHAIN` (C1-LA3; the
+implication is the award); `E993-R27-FOREST-DESCENT-LINEAR-BOUND` `(LB)`, `E993-R27-RANK5-CEILING-20`
+`(R5)`, `E993-R27-DESCENT-RESTRICTION-4R-MINUS-4` `(XR)` (C1-LA4; unconditional, composed with C1-LA1's
+source byte-identically). `(LB)` strengthens the formally verified r25 award `(k+1)²` as a separate key
+(`4k ≤ (k+1)²`, equality only at `k = 1`; covers `k = 0`); the r25 award is unchanged.
+
+**Informal (after isolated second reads SR-RC, SR-JOIN, SR-EXX, SR-REC — 17/17 items confirmed, none
+rejected):** `E993-R27-FOREST-ROOT-CORRECTED-DEGREE-LEMMA` (one canonical key for `(RC)`/`(SH)`/`(DL+)`/
+root-deficit, with the exact correction term `M_k = Σ_C max_v a_v(k)`, attained; FALSE without
+acyclicity); `E993-R27-FOREST-DEGREE-LEMMA-EQUALITY-CLASSIFICATION` (`(DL)` tight iff `k = 0` or `i_k = 0`;
+`k = 1` slack exactly `2c`; the packet's "(DL) tight cases" label was an erratum, now a theorem);
+`E993-R27-DEGREE-LEMMA-K1-ACYCLICITY-CRITERION` (`D_1 + 2c ≤ 2·i_1 ⟺ |E| + c ≤ n ⟺ forest`; plain `(DL)`
+does not certify acyclicity — cycles are tight, `K_{2,3}`/`K_4`/`K_4−e` fail); `E993-R27-EXACT-EXTENSION-IDENTITY`
+(`(k+1)·i_{k+1} = (n−k)·i_k − D_k + E_k` with the co-degree excess `exc(J)`; graph-general);
+`E993-R27-TWO-POTENTIAL-EDGE-SPLIT-RECURRENCES-ROOTED` (acyclicity NOT a hypothesis of the identities);
+`E993-R27-POTENTIAL-SEPARATED-UNION-CONVOLUTION` and `E993-R27-SINGLE-ROOT-SEPARATED-UNION-REDUCTION` (the
+forest step of `(DL)` is two lines); `E993-R27-TREE-LEAF-BRANCH-REFORMULATION-ORDER-GE-2`;
+`E993-R27-FIRSTDESCENT-Z-INDEX-COMPLETENESS`; `E993-R27-KADDITION-CLOSURE-X-LE-5` (`x(G ⊔ K₁) ≤ x(G)+1` for
+`x ≤ 5`, `proved_informal`-with-census: `(R5)` + the r25 `x ≤ 4` closure + the r25 order-≤21 census
+re-verified in-run to order 20; rank 0 discharged outright).
+
+**Census grade (in-run exhaustive forest census to order 20, SR-EXX):** `E993-R27-FOREST-DESCENT-MAXIMA-CENSUS`
+(`M(k) = 0, 4, 8, 11, 15, 18` for `k = 0..5`; `4k` attained at `k = 1, 2` only; `(XR)` occupancy row
+`0, 4, 8, 11, 15, 18` against `4r−4`); `E993-R27-RANK5-CEILING-18-CENSUS` (`Δ_5 < 0 ⇒ n ≤ 18`, sharp; 9,532
+order-18 classes; never on an award face). `E993-R27-CARRIER-BRIDGES-AND-AGREEMENT-LEMMAS` (compiled-scratch
+record; U1/U3 definitions agree by `rfl`).
+
+**Records and scope notes.** Rank-5 residue closeout: under `(R5)` every forest of order 22–25 has `Δ_5 ≥ 0`,
+so the residue stated on `E993-R25-RANK5-CEILING-SHARPENED-TO-25` is EMPTY (the branch-vertex condition is
+inert); scope notes on that key and on `E993-R25-RANK5-TWO-BRANCH-EXACTNESS-ORDERS-22-29`,
+`E993-R25-SECOND-ORDER-TWO-SIDED-CEILING`, `E993-R25-KADDITION-CLOSURE-X-LE-4`,
+`E993-R25-FOREST-DESCENT-ORDER-BOUND-SHARP`, `E993-R25-FOREST-ORDER-BOUND-SHARPENED`,
+`E993-R25-HUNTER-SPANNING-TREE-INEQUALITY` and the REFUTED `E993-FOREST-FIRST-DESCENT-DISJOINT-UNION-UPPER-ADDITIVITY`
+(its `K₁` instance registered separately; the refutation untouched; the "registry scope carves out `K₁`"
+warrant found FALSE and replaced by the logical one) — every status unchanged. External-source audit record
+(statement fidelity of the four external declarations to §8 and to the run's definitions; dependency
+graph; static scan by location with per-location `decide` warrants; toolchain; license; no counts
+registrable; a Gate-ruling-3 disclosure of what an isolated reader can and cannot confirm). Registry
+comparison and alias check (zero matches; no registered key contains "R27").
+
+**Unchanged:** `E993-R25-UNR-FOREST-WIDE` OPEN, `E993-G1WIDE-NO-SIZE-CAP` OPEN, NR1, FOREST, TREE, TRANSFER,
+`E993-BETA-AGG`, the all-rank aggregate and Erdős #993 untouched — every r27 registration is an order bound
+or a counting statement whose contrapositive has sign `Δ_k ≥ 0`, never a no-recovery statement; every REFUTED
+claim REFUTED. Master registry 392 identities (235 VERIFIED, 89 REFUTED, 26 CONDITIONAL, 42 OPEN); all 371
+prior objects preserved with statuses unchanged (370 at r26's close plus `E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE`, registered OPEN
+earlier on 2026-09-24 by the first-interior DRE; r27's run-local snapshot predates it and it is untouched here). **Errata:** R27-E-a…g (`CONTROLLER-NOTES.json`). Public mirror:
+`proofs/lean/r27-*`, `experiments/r27-forest-degree-extension.md`, `evidence/verification-2026-09-24-r27.md`,
+`runs/erdos-993-forest-degree-extension-dre-2026-09-24/`.

@@ -1,0 +1,1118 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "e993-r27-c1-la4-descent-order-bounds-v1",
+  "theorem": {
+    "title": "(XR) descent restriction for finite forests, with (LB) and (R5) as award faces",
+    "informal_statement": "Let G be a finite forest and x(G) the least k with Delta_k(G) < 0. (LB) For every natural k, Delta_k(G) < 0 implies n <= 4k. (R5) If n >= 21 then Delta_5(G) >= 0. (XR) For every natural r, x(G) < r implies n <= 4r - 4. Here n = Nat.card X and Delta_k is the G1 definition of record. The terminal declaration of this award is (XR); (LB) and (R5) are the other two award faces, registered as lemmas in the same project. All three are unconditional: the degree lemma (DL) is supplied by the carried, kernel-verified Erdos993G1.forest_degree_lemma of award C1-LA1, so no DlHyp hypothesis appears on any face."
+  },
+  "formulation_status": {
+    "status": "established",
+    "evidence": [
+      "Fang-Lu-Nevo-Yao-Zheng, arXiv:2609.20961v1 (2026), section 8: Lemma 8.1 consequence (8.3) is (DL) and Proposition 8.2's displayed step is (EX); (LB), (R5), (XR) are their conditional consequences.",
+      "r27 Cycle 1 synthesis, Lean awards, C1-LA4: the award statement of record, with Decisions 1 and 2, the carry list and the three renames.",
+      "Award C1-LA3 (kernel-verified, compiled-candidate, under independent review) compiled the implication chain (DL) => (EX) => (LB) => (R5), (XR) at exactly these statement types; award C1-LA1 (kernel-verified, compiled-candidate, under independent review) proved (DL) and (EX) unconditionally. C1-LA4 composes the two.",
+      "GRADE NOTE: this award is composed with C1-LA1's kernel-verified source; its grade FOLLOWS C1-LA1's close and is formally_verified only once C1-LA1 closes formally_verified."
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-indepcount",
+      "description": "G1 definition of record (frozen r25 award source, registrar entry 1, carried byte-identically): i_k(G), the number of independent k-subsets of the vertex type, as an integer. Nonnegative by construction; i_0 = 1 always.\n\nLean text:\nnoncomputable\ndef indepCount {V : Type u} (F : SimpleGraph V) (k : ℕ) : ℤ :=\n  (Nat.card {S : Finset V // F.IsNIndepSet k S} : ℤ)",
+      "lean_name": "Erdos993G1.indepCount",
+      "dependencies": [
+        "domain-vertex-type",
+        "domain-graph",
+        "domain-rank-k"
+      ]
+    },
+    {
+      "id": "def-coeff",
+      "description": "G1 definition of record (r25 entry 2, byte-identical): the integer-indexed zero extension of i_k.\n\nLean text:\nnoncomputable\ndef coeff {V : Type u} (F : SimpleGraph V) (k : ℤ) : ℤ :=\n  if 0 ≤ k then Erdos993G1.indepCount F k.toNat else 0",
+      "lean_name": "Erdos993G1.coeff",
+      "dependencies": [
+        "def-indepcount"
+      ]
+    },
+    {
+      "id": "def-delta",
+      "description": "G1 definition of record (r25 entry 3, byte-identical): Delta_k(G) = coeff(k+1) - coeff(k) in the integers. Delta_k < 0 is a STRICT descent; Delta_k = 0 is not a descent.\n\nLean text:\nnoncomputable\ndef delta {V : Type u} (F : SimpleGraph V) (k : ℤ) : ℤ :=\n  Erdos993G1.coeff F (k + 1) - Erdos993G1.coeff F k",
+      "lean_name": "Erdos993G1.delta",
+      "dependencies": [
+        "def-coeff"
+      ]
+    },
+    {
+      "id": "def-closednbhdfinset",
+      "description": "The closed neighbourhood N[J] of a finite vertex set J: J together with every neighbour of a vertex of J. Carried from C1-LA1 entry 4 (seat U3's file).\n\nLean text:\ndef closedNbhdFinset (J : Finset X) : Finset X :=\n  J ∪ J.biUnion (fun u => G.neighborFinset u)",
+      "lean_name": "Erdos993G1.closedNbhdFinset",
+      "dependencies": [
+        "domain-graph"
+      ]
+    },
+    {
+      "id": "def-extensionfinset",
+      "description": "The extension set of J: the vertices outside N[J], i.e. those v for which J union {v} is independent whenever J is. Carried from C1-LA1 entry 5.\n\nLean text:\ndef extensionFinset (J : Finset X) : Finset X :=\n  Finset.univ \\ closedNbhdFinset G J",
+      "lean_name": "Erdos993G1.extensionFinset",
+      "dependencies": [
+        "def-closednbhdfinset"
+      ]
+    },
+    {
+      "id": "def-extensioncount",
+      "description": "e(J), the number of extensions of J. This is the run's own extension count named in SEMANTIC-CONTRACT.md section 1. Carried from C1-LA1 entry 6.\n\nLean text:\ndef e (J : Finset X) : ℕ := (extensionFinset G J).card",
+      "lean_name": "Erdos993G1.e",
+      "dependencies": [
+        "def-extensionfinset"
+      ]
+    },
+    {
+      "id": "def-indepdegreesum",
+      "description": "D_k(G), the incident degree sum over independent k-sets, as a natural number. This is the run's own definition named in SEMANTIC-CONTRACT.md section 1. It is the subject of (DL), which bounds it ON AVERAGE over I_k(G) and bounds no individual set. Carried from C1-LA1 entry 7.\n\nLean text:\ndef indepDegreeSum (k : ℕ) : ℕ :=\n  ∑ J ∈ G.indepSetFinset k, ∑ v ∈ J, G.degree v",
+      "lean_name": "Erdos993G1.indepDegreeSum",
+      "dependencies": [
+        "domain-graph",
+        "domain-rank-k"
+      ]
+    },
+    {
+      "id": "def-rootrep",
+      "description": "A distinguished vertex of the connected component of v. Part of C1-LA1's rooting API, used only inside the proof of (DL).\n\nLean text:\nnoncomputable\ndef rootRep {X : Type u} (G : SimpleGraph X) (v : X) : X :=\n  (G.connectedComponentMk v).out",
+      "lean_name": "Erdos993G1.rootRep",
+      "dependencies": [
+        "domain-graph"
+      ]
+    },
+    {
+      "id": "def-rootpath",
+      "description": "A path from v to the root of its component; in a forest it is THE path. Part of C1-LA1's rooting API.\n\nLean text:\nnoncomputable\ndef rootPath {X : Type u} [DecidableEq X] (G : SimpleGraph X) (v : X) :\n    G.Walk v (rootRep G v) :=\n  (Nonempty.some\n    (show G.Reachable v (rootRep G v) from\n      (SimpleGraph.ConnectedComponent.exact\n        (Quot.out_eq (G.connectedComponentMk v))).symm)).toPath.1",
+      "lean_name": "Erdos993G1.rootPath",
+      "dependencies": [
+        "def-rootrep"
+      ]
+    },
+    {
+      "id": "def-par",
+      "description": "The parent of v: the second vertex of its root path; par v = v exactly when v is its component's root.\n\nLean text:\nnoncomputable\ndef par {X : Type u} [DecidableEq X] (G : SimpleGraph X) (v : X) : X :=\n  (rootPath G v).snd",
+      "lean_name": "Erdos993G1.par",
+      "dependencies": [
+        "def-rootpath"
+      ]
+    },
+    {
+      "id": "def-rk",
+      "description": "The rank of v: the length of its root path. The parent strictly decreases it, which is what forbids two-cycles in the parent map.\n\nLean text:\nnoncomputable\ndef rk {X : Type u} [DecidableEq X] (G : SimpleGraph X) (v : X) : ℕ :=\n  (rootPath G v).length",
+      "lean_name": "Erdos993G1.rk",
+      "dependencies": [
+        "def-rootpath"
+      ]
+    },
+    {
+      "id": "def-childrenfinset",
+      "description": "The children of v: the non-root vertices whose parent is v.\n\nLean text:\nnoncomputable\ndef childrenFinset {X : Type u} [Fintype X] [DecidableEq X] (G : SimpleGraph X)\n    (v : X) : Finset X :=\n  Finset.univ.filter (fun u => par G u = v ∧ par G u ≠ u)",
+      "lean_name": "Erdos993G1.childrenFinset",
+      "dependencies": [
+        "def-par"
+      ]
+    },
+    {
+      "id": "def-uppairs",
+      "description": "The up incidences (J, v): J an independent k-set and v in J a non-root.\n\nLean text:\nnoncomputable\ndef upPairs {X : Type u} [Fintype X] [DecidableEq X] (G : SimpleGraph X)\n    [DecidableRel G.Adj] (k : ℕ) : Finset ((_ : Finset X) × X) :=\n  (G.indepSetFinset k).sigma (fun J => J.filter (fun v => par G v ≠ v))",
+      "lean_name": "Erdos993G1.upPairs",
+      "dependencies": [
+        "def-par",
+        "domain-rank-k"
+      ]
+    },
+    {
+      "id": "def-downpairs",
+      "description": "The down incidences (J, u): J an independent k-set, u a non-root with par u in J.\n\nLean text:\nnoncomputable\ndef downPairs {X : Type u} [Fintype X] [DecidableEq X] (G : SimpleGraph X)\n    [DecidableRel G.Adj] (k : ℕ) : Finset ((_ : Finset X) × X) :=\n  (G.indepSetFinset k).sigma\n    (fun J => Finset.univ.filter (fun u => par G u ≠ u ∧ par G u ∈ J))",
+      "lean_name": "Erdos993G1.downPairs",
+      "dependencies": [
+        "def-par",
+        "domain-rank-k"
+      ]
+    },
+    {
+      "id": "def-rootpairs",
+      "description": "The root incidences (J, r): J an independent k-set and r in J a root. This is the root correction term of the root-corrected degree lemma.\n\nLean text:\nnoncomputable\ndef rootPairs {X : Type u} [Fintype X] [DecidableEq X] (G : SimpleGraph X)\n    [DecidableRel G.Adj] (k : ℕ) : Finset ((_ : Finset X) × X) :=\n  (G.indepSetFinset k).sigma (fun J => J.filter (fun v => par G v = v))",
+      "lean_name": "Erdos993G1.rootPairs",
+      "dependencies": [
+        "def-par",
+        "domain-rank-k"
+      ]
+    },
+    {
+      "id": "def-swapmap",
+      "description": "The injection witnessing #downPairs <= #upPairs, the combinatorial heart of C1-LA1's proof of (DL).\n\nLean text:\nnoncomputable\ndef swapMap {X : Type u} [DecidableEq X] (G : SimpleGraph X)\n    (a : (_ : Finset X) × X) : (_ : Finset X) × X :=\n  if h : (a.1.filter (fun c => par G c = a.2)).Nonempty then ⟨a.1, h.choose⟩\n  else ⟨insert a.2 (a.1.erase (par G a.2)), a.2⟩",
+      "lean_name": "Erdos993G1.swapMap",
+      "dependencies": [
+        "def-par"
+      ]
+    },
+    {
+      "id": "def-dlhyp",
+      "description": "The Prop abbreviation of (DL), SOLUTION-CONTRACT.md section 2 forest_degree_lemma, quantified over Fintype/DecidableEq/DecidableRel INSTANCES. Carried byte-identically from C1-LA3 entry 5. Registered because R10 mandates the C1-LA3 Prop layer; it is NOT a dependency of the terminal statement (this project's (EX) is already unconditional, so the chain does not route through (DL) a second time).\n\nLean text:\ndef DlHyp : Prop := ∀ {X : Type u} [Fintype X] [DecidableEq X] (G : SimpleGraph X) [DecidableRel G.Adj],\n  G.IsAcyclic → ∀ k : ℕ, (indepDegreeSum G k : ℤ) ≤ 2 * k * Erdos993G1.indepCount G k",
+      "lean_name": "Erdos993G1.DlHyp",
+      "dependencies": [
+        "def-indepdegreesum",
+        "def-indepcount"
+      ]
+    },
+    {
+      "id": "def-exhyp",
+      "description": "The Prop abbreviation of (EX), SOLUTION-CONTRACT.md section 2 forest_extension_inequality, quantified over instances. Carried byte-identically from C1-LA3 entry 6.\n\nLean text:\ndef ExHyp : Prop := ∀ {X : Type u} [Fintype X] [DecidableEq X] (G : SimpleGraph X) [DecidableRel G.Adj],\n  G.IsAcyclic → ∀ k : ℕ,\n    (Fintype.card X : ℤ) * Erdos993G1.indepCount G k\n      ≤ (k + 1) * Erdos993G1.indepCount G (k + 1) + 3 * k * Erdos993G1.indepCount G k",
+      "lean_name": "Erdos993G1.ExHyp",
+      "dependencies": [
+        "def-indepcount"
+      ]
+    },
+    {
+      "id": "def-lbhyp",
+      "description": "The Prop abbreviation of (LB), SOLUTION-CONTRACT.md section 2 forest_descent_linear_bound. Carried byte-identically from C1-LA3 entry 7.\n\nLean text:\ndef LbHyp : Prop := ∀ {X : Type u} [Finite X] (G : SimpleGraph X), G.IsAcyclic → ∀ k : ℕ,\n  Erdos993G1.delta G (k : ℤ) < 0 → Nat.card X ≤ 4 * k",
+      "lean_name": "Erdos993G1.LbHyp",
+      "dependencies": [
+        "def-delta"
+      ]
+    },
+    {
+      "id": "def-r5hyp",
+      "description": "The Prop abbreviation of (R5), SOLUTION-CONTRACT.md section 2 forest_rank5_ceiling_20. Carried byte-identically from C1-LA3 entry 8. It is NOT a dependency of the terminal statement: (R5) is a sibling face of this award, not an input to (XR).\n\nLean text:\ndef R5Hyp : Prop := ∀ {X : Type u} [Finite X] (G : SimpleGraph X), G.IsAcyclic →\n  21 ≤ Nat.card X → 0 ≤ Erdos993G1.delta G 5",
+      "lean_name": "Erdos993G1.R5Hyp",
+      "dependencies": [
+        "def-delta"
+      ]
+    },
+    {
+      "id": "def-firstdescent",
+      "description": "x(G), the FIRST STRICT DESCENT: the least natural k with Delta_k(G) < 0, by Nat.find on the existence lemma Erdos993G1.exists_delta_neg. This is the run's definition of record (SEMANTIC-CONTRACT.md section 1). Carried byte-identically from C1-LA3 entry 9, together with exists_delta_neg. By proof irrelevance Nat.find does not depend on which proof of the existential is supplied, so this is the same function as C1-LA3's and U1's.\n\nLean text:\nlemma exists_delta_neg {X : Type u} [Finite X] (G : SimpleGraph X) :\n    ∃ k : ℕ, Erdos993G1.delta G (k : ℤ) < 0 := by\n  classical\n  letI := Fintype.ofFinite X\n  have hcoeff : ∀ j : ℕ, Erdos993G1.coeff G (j : ℤ) = Erdos993G1.indepCount G j := by\n    intro j\n    simp [Erdos993G1.coeff]\n  have hdelta : ∀ j : ℕ, Erdos993G1.delta G (j : ℤ)\n      = Erdos993G1.indepCount G (j + 1) - Erdos993G1.indepCount G j := by\n    intro j\n    simpa only [Erdos993G1.delta, Nat.cast_add, Nat.cast_one] using\n      congrArg₂ (· - ·) (hcoeff (j + 1)) (hcoeff j)\n  have hzero : Erdos993G1.indepCount G (Fintype.card X + 1) = 0 := by\n    haveI hempty : IsEmpty {S : Finset X // G.IsNIndepSet (Fintype.card X + 1) S} := by\n      refine ⟨?_⟩\n      rintro ⟨S, hS⟩\n      have h1 : S.card = Fintype.card X + 1 := hS.card_eq\n      have h2 : S.card ≤ Fintype.card X := by\n        simpa [Finset.card_univ] using Finset.card_le_univ S\n      omega\n    unfold Erdos993G1.indepCount\n    simp\n  have hpos : 0 < Erdos993G1.indepCount G 0 := by\n    have hne : Nonempty {S : Finset X // G.IsNIndepSet 0 S} := by\n      refine ⟨⟨∅, ?_, ?_⟩⟩\n      · rw [SimpleGraph.isIndepSet_iff]\n        simp\n      · simp\n    unfold Erdos993G1.indepCount\n    have := Nat.card_pos (α := {S : Finset X // G.IsNIndepSet 0 S})\n    exact_mod_cast this\n  by_contra hcon\n  push Not at hcon\n  have hmono : ∀ j : ℕ, Erdos993G1.indepCount G 0 ≤ Erdos993G1.indepCount G j := by\n    intro j\n    induction j with\n    | zero => exact le_refl _\n    | succ m ih =>\n        have hstep := hcon m\n        have hd := hdelta m\n        omega\n  have hfinal := hmono (Fintype.card X + 1)\n  rw [hzero] at hfinal\n  omega\nnoncomputable def firstDescent {X : Type u} [Finite X] (G : SimpleGraph X) : ℕ := by\n  classical exact Nat.find (Erdos993G1.exists_delta_neg G)\ndef XrHyp : Prop := ∀ {X : Type u} [Finite X] (G : SimpleGraph X), G.IsAcyclic → ∀ r : ℕ,\n  firstDescent G < r → Nat.card X ≤ 4 * r - 4",
+      "lean_name": "Erdos993G1.firstDescent",
+      "dependencies": [
+        "def-delta"
+      ]
+    },
+    {
+      "id": "def-xrhyp",
+      "description": "The Prop abbreviation of (XR), SOLUTION-CONTRACT.md section 2 forest_descent_restriction. Carried byte-identically from C1-LA3 entry 9 (it shares that registrar entry with firstDescent).\n\nLean text:\nlemma exists_delta_neg {X : Type u} [Finite X] (G : SimpleGraph X) :\n    ∃ k : ℕ, Erdos993G1.delta G (k : ℤ) < 0 := by\n  classical\n  letI := Fintype.ofFinite X\n  have hcoeff : ∀ j : ℕ, Erdos993G1.coeff G (j : ℤ) = Erdos993G1.indepCount G j := by\n    intro j\n    simp [Erdos993G1.coeff]\n  have hdelta : ∀ j : ℕ, Erdos993G1.delta G (j : ℤ)\n      = Erdos993G1.indepCount G (j + 1) - Erdos993G1.indepCount G j := by\n    intro j\n    simpa only [Erdos993G1.delta, Nat.cast_add, Nat.cast_one] using\n      congrArg₂ (· - ·) (hcoeff (j + 1)) (hcoeff j)\n  have hzero : Erdos993G1.indepCount G (Fintype.card X + 1) = 0 := by\n    haveI hempty : IsEmpty {S : Finset X // G.IsNIndepSet (Fintype.card X + 1) S} := by\n      refine ⟨?_⟩\n      rintro ⟨S, hS⟩\n      have h1 : S.card = Fintype.card X + 1 := hS.card_eq\n      have h2 : S.card ≤ Fintype.card X := by\n        simpa [Finset.card_univ] using Finset.card_le_univ S\n      omega\n    unfold Erdos993G1.indepCount\n    simp\n  have hpos : 0 < Erdos993G1.indepCount G 0 := by\n    have hne : Nonempty {S : Finset X // G.IsNIndepSet 0 S} := by\n      refine ⟨⟨∅, ?_, ?_⟩⟩\n      · rw [SimpleGraph.isIndepSet_iff]\n        simp\n      · simp\n    unfold Erdos993G1.indepCount\n    have := Nat.card_pos (α := {S : Finset X // G.IsNIndepSet 0 S})\n    exact_mod_cast this\n  by_contra hcon\n  push Not at hcon\n  have hmono : ∀ j : ℕ, Erdos993G1.indepCount G 0 ≤ Erdos993G1.indepCount G j := by\n    intro j\n    induction j with\n    | zero => exact le_refl _\n    | succ m ih =>\n        have hstep := hcon m\n        have hd := hdelta m\n        omega\n  have hfinal := hmono (Fintype.card X + 1)\n  rw [hzero] at hfinal\n  omega\nnoncomputable def firstDescent {X : Type u} [Finite X] (G : SimpleGraph X) : ℕ := by\n  classical exact Nat.find (Erdos993G1.exists_delta_neg G)\ndef XrHyp : Prop := ∀ {X : Type u} [Finite X] (G : SimpleGraph X), G.IsAcyclic → ∀ r : ℕ,\n  firstDescent G < r → Nat.card X ≤ 4 * r - 4",
+      "lean_name": "Erdos993G1.XrHyp",
+      "dependencies": [
+        "def-firstdescent"
+      ]
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-vertex-type",
+      "description": "The vertex carrier: a type that is finite. The three faces are stated on [Finite X] with Nat.card X; they are never stated at one fixed Fintype instance. The Fintype/DecidableEq/DecidableRel instances the Finset computations need are produced classically inside the proofs via Fintype.ofFinite.",
+      "lean_type": "Type u",
+      "dependencies": []
+    },
+    {
+      "id": "domain-graph",
+      "description": "A simple graph on the vertex carrier. No connectivity, no nonemptiness and no degree bound is assumed.",
+      "lean_type": "SimpleGraph X",
+      "dependencies": [
+        "domain-vertex-type"
+      ]
+    },
+    {
+      "id": "domain-rank-k",
+      "description": "The rank k of (LB), an arbitrary natural number. k = 0 is included and is not a special case.",
+      "lean_type": "Nat",
+      "dependencies": []
+    },
+    {
+      "id": "domain-rank-r",
+      "description": "The bound r of (XR), an arbitrary natural number. r = 0 is admitted by the binder and excluded by the hypothesis firstDescent G < r, which is unsatisfiable there.",
+      "lean_type": "Nat",
+      "dependencies": []
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "X",
+      "kind": "forall",
+      "domain_id": "domain-vertex-type"
+    },
+    {
+      "binder": "G",
+      "kind": "forall",
+      "domain_id": "domain-graph"
+    },
+    {
+      "binder": "r",
+      "kind": "forall",
+      "domain_id": "domain-rank-r"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-finiteness",
+      "statement": "[Finite X] : the vertex carrier is finite. Verbatim binder on the face: `{X : Type u} [Finite X]`. Used EVERYWHERE; it is what makes Nat.card X, the finsets and the cardinalities meaningful. The crossing to [Fintype X] is made classically inside the proofs by Fintype.ofFinite and is used only through Nat.card_eq_fintype_card.",
+      "dependencies": [
+        "domain-vertex-type"
+      ]
+    },
+    {
+      "id": "hyp-acyclicity",
+      "statement": "hG : G.IsAcyclic : the graph is a finite forest (possibly disconnected, possibly empty). Verbatim binder on the face: `(hG : G.IsAcyclic)`. Consumed EXACTLY ONCE mathematically, through (DL), inside C1-LA1's rooting API at Erdos993G1.rootPath_unique; everything downstream of (DL) is unconditional on acyclicity and merely transports hG to that one use.",
+      "dependencies": [
+        "domain-graph"
+      ]
+    },
+    {
+      "id": "hyp-first-descent-before-r",
+      "statement": "hx : firstDescent G < r : the first strict descent of the independence sequence occurs strictly before r. Verbatim binder on the face: `(hx : firstDescent G < r)`. It is this hypothesis, and not arithmetic, that makes the truncated subtraction 4 * r - 4 sound: it forces 1 <= r, so 4 * r - 4 = 4 * (r - 1); at r = 0 it is unsatisfiable, so that instance is vacuous-hypothesis-sound.",
+      "dependencies": [
+        "domain-graph",
+        "domain-rank-r",
+        "def-firstdescent"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "For every type X that is finite, every simple graph G on X that is acyclic, and every natural r: if firstDescent G < r then Nat.card X <= 4 * r - 4, where the subtraction is natural-number truncated subtraction. This is (XR), the descent restriction, the terminal declaration Erdos993G1.forest_descent_restriction of award C1-LA4, stated UNCONDITIONALLY (there is no DlHyp binder). It is an ORDER BOUND whose contrapositive has sign Delta_k >= 0: it is NOT a no-recovery statement, it transfers status to none of E993-R25-UNR-FOREST-WIDE, E993-G1WIDE-NO-SIZE-CAP, NR1, FOREST, TREE, TRANSFER, the aggregates or Erdos #993, it asserts nothing asymptotic, it asserts no sharpness, it says nothing about non-forests, and it is NOT a uniform bound on d (read at n = 2r + d it says d <= 2r - 4, a bound growing with r). The r25 award E993-R25-FOREST-DESCENT-ORDER-BOUND-SHARP is unchanged and stays registered at its own statement.",
+    "dependencies": [
+      "hyp-finiteness",
+      "hyp-acyclicity",
+      "hyp-first-descent-before-r",
+      "def-firstdescent",
+      "def-xrhyp",
+      "def-lbhyp",
+      "def-exhyp",
+      "def-delta",
+      "def-indepcount",
+      "def-indepdegreesum",
+      "def-extensioncount",
+      "def-uppairs",
+      "def-downpairs",
+      "def-rootpairs",
+      "def-swapmap",
+      "def-childrenfinset",
+      "def-rk",
+      "domain-rank-r"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "domain-vertex-type",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-graph",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-rank-k",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-rank-r",
+        "kind": "domain"
+      },
+      {
+        "id": "def-indepcount",
+        "kind": "definition"
+      },
+      {
+        "id": "def-coeff",
+        "kind": "definition"
+      },
+      {
+        "id": "def-delta",
+        "kind": "definition"
+      },
+      {
+        "id": "def-closednbhdfinset",
+        "kind": "definition"
+      },
+      {
+        "id": "def-extensionfinset",
+        "kind": "definition"
+      },
+      {
+        "id": "def-extensioncount",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indepdegreesum",
+        "kind": "definition"
+      },
+      {
+        "id": "def-rootrep",
+        "kind": "definition"
+      },
+      {
+        "id": "def-rootpath",
+        "kind": "definition"
+      },
+      {
+        "id": "def-par",
+        "kind": "definition"
+      },
+      {
+        "id": "def-rk",
+        "kind": "definition"
+      },
+      {
+        "id": "def-childrenfinset",
+        "kind": "definition"
+      },
+      {
+        "id": "def-uppairs",
+        "kind": "definition"
+      },
+      {
+        "id": "def-downpairs",
+        "kind": "definition"
+      },
+      {
+        "id": "def-rootpairs",
+        "kind": "definition"
+      },
+      {
+        "id": "def-swapmap",
+        "kind": "definition"
+      },
+      {
+        "id": "def-dlhyp",
+        "kind": "definition"
+      },
+      {
+        "id": "def-exhyp",
+        "kind": "definition"
+      },
+      {
+        "id": "def-lbhyp",
+        "kind": "definition"
+      },
+      {
+        "id": "def-r5hyp",
+        "kind": "definition"
+      },
+      {
+        "id": "def-firstdescent",
+        "kind": "definition"
+      },
+      {
+        "id": "def-xrhyp",
+        "kind": "definition"
+      },
+      {
+        "id": "hyp-finiteness",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-acyclicity",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-first-descent-before-r",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "domain-vertex-type",
+        "to": "domain-graph"
+      },
+      {
+        "from": "domain-vertex-type",
+        "to": "def-indepcount"
+      },
+      {
+        "from": "domain-graph",
+        "to": "def-indepcount"
+      },
+      {
+        "from": "domain-rank-k",
+        "to": "def-indepcount"
+      },
+      {
+        "from": "def-indepcount",
+        "to": "def-coeff"
+      },
+      {
+        "from": "def-coeff",
+        "to": "def-delta"
+      },
+      {
+        "from": "domain-graph",
+        "to": "def-closednbhdfinset"
+      },
+      {
+        "from": "def-closednbhdfinset",
+        "to": "def-extensionfinset"
+      },
+      {
+        "from": "def-extensionfinset",
+        "to": "def-extensioncount"
+      },
+      {
+        "from": "domain-graph",
+        "to": "def-indepdegreesum"
+      },
+      {
+        "from": "domain-rank-k",
+        "to": "def-indepdegreesum"
+      },
+      {
+        "from": "domain-graph",
+        "to": "def-rootrep"
+      },
+      {
+        "from": "def-rootrep",
+        "to": "def-rootpath"
+      },
+      {
+        "from": "def-rootpath",
+        "to": "def-par"
+      },
+      {
+        "from": "def-rootpath",
+        "to": "def-rk"
+      },
+      {
+        "from": "def-par",
+        "to": "def-childrenfinset"
+      },
+      {
+        "from": "def-par",
+        "to": "def-uppairs"
+      },
+      {
+        "from": "domain-rank-k",
+        "to": "def-uppairs"
+      },
+      {
+        "from": "def-par",
+        "to": "def-downpairs"
+      },
+      {
+        "from": "domain-rank-k",
+        "to": "def-downpairs"
+      },
+      {
+        "from": "def-par",
+        "to": "def-rootpairs"
+      },
+      {
+        "from": "domain-rank-k",
+        "to": "def-rootpairs"
+      },
+      {
+        "from": "def-par",
+        "to": "def-swapmap"
+      },
+      {
+        "from": "def-indepdegreesum",
+        "to": "def-dlhyp"
+      },
+      {
+        "from": "def-indepcount",
+        "to": "def-dlhyp"
+      },
+      {
+        "from": "def-indepcount",
+        "to": "def-exhyp"
+      },
+      {
+        "from": "def-delta",
+        "to": "def-lbhyp"
+      },
+      {
+        "from": "def-delta",
+        "to": "def-r5hyp"
+      },
+      {
+        "from": "def-delta",
+        "to": "def-firstdescent"
+      },
+      {
+        "from": "def-firstdescent",
+        "to": "def-xrhyp"
+      },
+      {
+        "from": "domain-vertex-type",
+        "to": "hyp-finiteness"
+      },
+      {
+        "from": "domain-graph",
+        "to": "hyp-acyclicity"
+      },
+      {
+        "from": "domain-graph",
+        "to": "hyp-first-descent-before-r"
+      },
+      {
+        "from": "domain-rank-r",
+        "to": "hyp-first-descent-before-r"
+      },
+      {
+        "from": "def-firstdescent",
+        "to": "hyp-first-descent-before-r"
+      },
+      {
+        "from": "hyp-finiteness",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-acyclicity",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-first-descent-before-r",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-firstdescent",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-xrhyp",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-lbhyp",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-exhyp",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-delta",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-indepcount",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-indepdegreesum",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-extensioncount",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-uppairs",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-downpairs",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-rootpairs",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-swapmap",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-childrenfinset",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-rk",
+        "to": "conclusion"
+      },
+      {
+        "from": "domain-rank-r",
+        "to": "conclusion"
+      }
+    ]
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "explicit_axiom_allowlist",
+    "rationale": "The development is classical. Nat.find and Fintype.ofFinite are used under `classical`; C1-LA1's carried rooting API uses Quot.out to select a component representative, Nonempty.some to select a path and Exists.choose to select a child in the swap branch. Exactly propext, Classical.choice and Quot.sound are permitted. sorry, admit, native_decide, axiom, and decide over an enumeration standing in for a universal step are all forbidden."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "Erdos993G1.forest_descent_restriction",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem forest_descent_restriction {X : Type u} [Finite X] (G : SimpleGraph X) (hG : G.IsAcyclic)\n    (r : ℕ) (hx : firstDescent G < r) : Nat.card X ≤ 4 * r - 4",
+    "expected_statement_sha256": "443de70788bc0250ae0bc52d1d4d9614b58858744c1e0a754a6363685f7e9d92"
+  },
+  "source_materials": [
+    {
+      "id": "source-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "sha256": "526f85e839f0b653cfecae2022747954b6072ab9e62b62e7e48a066dd1b2cfb2",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "source-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "sha256": "f31c2b25238db23095116d9bc3a81892449f26a2775672474c9a65e986bfe80d",
+      "role": "reference"
+    },
+    {
+      "id": "source-r25-award-lean",
+      "path": "EVIDENCE/carried-sources/r25-c4-forest-descent-order-bound-Main.lean",
+      "sha256": "736eb9dfb6ba82b0e099fe70df9e4d7f780bccdbd24ca240f4ad1115cfe7dfe0",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-c1-la1-lean",
+      "path": "EVIDENCE/carried-sources/C1-LA1-Main.lean",
+      "sha256": "b49ea82a33edc55f8185379c3abd44e13a17914b7f8b9ab0bf5e2aaac5aafc5a",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-c1-la3-lean-pinned",
+      "path": "EVIDENCE/carried-sources/C1-LA3-Main.lean.pinned-cae93961",
+      "sha256": "cae9396136d9609bc3d086140e7c0e135ad0bf127fab48d22b58b850411f3a30",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0001",
+      "path": "LeanProject/LeanProof/Snippets/0001-definition-Erdos993G1-indepCount.lean.fragment",
+      "sha256": "5484fc21ffce7bf707240da15858d7d82289f8e6f286a8fa9837cd9a0c474ccb",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0002",
+      "path": "LeanProject/LeanProof/Snippets/0002-definition-Erdos993G1-coeff.lean.fragment",
+      "sha256": "211900436b28e4a685af60df26a20e8fe254fd4c9479c12ba2863fa180c1a639",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0003",
+      "path": "LeanProject/LeanProof/Snippets/0003-definition-Erdos993G1-delta.lean.fragment",
+      "sha256": "bdb46014d98507a7c85cc8de0b806f80c04496479795e28677dde024e216b9ee",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0004",
+      "path": "LeanProject/LeanProof/Snippets/0004-definition-Erdos993G1-closedNbhdFinset.lean.fragment",
+      "sha256": "dec12eac260570fafea80bebca4b45f3b4f875a5e486a975adfdc6beb882f4cc",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0005",
+      "path": "LeanProject/LeanProof/Snippets/0005-definition-Erdos993G1-extensionFinset.lean.fragment",
+      "sha256": "a90756266a574cb4811cb7750aa112bc0efedbad69cb55139b7c582ff37f9460",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0006",
+      "path": "LeanProject/LeanProof/Snippets/0006-definition-Erdos993G1-e.lean.fragment",
+      "sha256": "9e7ac4873c80945c9d6e9176683b368c5128e01906504f0387b923d1ac34a807",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0007",
+      "path": "LeanProject/LeanProof/Snippets/0007-definition-Erdos993G1-indepDegreeSum.lean.fragment",
+      "sha256": "a1ed32eb12b137ac5915bf15255c1173593296f3eb22127e2dcf0fab2ea9f38e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0008",
+      "path": "LeanProject/LeanProof/Snippets/0008-definition-Erdos993G1-rootRep.lean.fragment",
+      "sha256": "374f2db4b0725371fc7b9f1060aa66bb2ee6182316320f36933da3dcacd8b010",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0009",
+      "path": "LeanProject/LeanProof/Snippets/0009-definition-Erdos993G1-rootPath.lean.fragment",
+      "sha256": "b6ac72e3cf4e210f171972fb26aca81603e373798eb259d808db8aa75aacb31e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0010",
+      "path": "LeanProject/LeanProof/Snippets/0010-definition-Erdos993G1-par.lean.fragment",
+      "sha256": "343cffbe7fb26014882200669829a8ed589677c966093c8d55545f6d9ec7f9af",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0011",
+      "path": "LeanProject/LeanProof/Snippets/0011-definition-Erdos993G1-rk.lean.fragment",
+      "sha256": "3284c2e8847d1d708b56f32f654f7b587db761611e9af3c46acf3dabffdb56f5",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0012",
+      "path": "LeanProject/LeanProof/Snippets/0012-definition-Erdos993G1-childrenFinset.lean.fragment",
+      "sha256": "9f1a449c71f2a47a1579c6dcf35d9d2a5daf3ae82e3e62d8b4c49f9b1238ae85",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0013",
+      "path": "LeanProject/LeanProof/Snippets/0013-definition-Erdos993G1-upPairs.lean.fragment",
+      "sha256": "b1c56b649cc550f6919d78d588a6a25cbbaf0ed0f3266d86279b191aafe3526b",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0014",
+      "path": "LeanProject/LeanProof/Snippets/0014-definition-Erdos993G1-downPairs.lean.fragment",
+      "sha256": "497207784a63c4f3b62b86688a69ada3e1b48391222439ed5b6afdc690691173",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0015",
+      "path": "LeanProject/LeanProof/Snippets/0015-definition-Erdos993G1-rootPairs.lean.fragment",
+      "sha256": "27966a15b92cb630c846b62aaaeeeca64126088f23ebc75561365de929344b70",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0016",
+      "path": "LeanProject/LeanProof/Snippets/0016-definition-Erdos993G1-swapMap.lean.fragment",
+      "sha256": "6acc44c9ec8d91ab5b04315da037334f5e820b6940be43b0077c6b80a13c1ab9",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0017",
+      "path": "LeanProject/LeanProof/Snippets/0017-definition-Erdos993G1-DlHyp.lean.fragment",
+      "sha256": "63dcbc2d778f2315b972038827d393b9c6b903597fbbe54c0b8b04773029b3a6",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0018",
+      "path": "LeanProject/LeanProof/Snippets/0018-definition-Erdos993G1-ExHyp.lean.fragment",
+      "sha256": "004460974bab462adfd9e322599ef271da9dc231ce6065495887208873a41773",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0019",
+      "path": "LeanProject/LeanProof/Snippets/0019-definition-Erdos993G1-LbHyp.lean.fragment",
+      "sha256": "088244b71297f91e3e71d8d88006443e72e90a1a3b60f673243f3ffcf138f46e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0020",
+      "path": "LeanProject/LeanProof/Snippets/0020-definition-Erdos993G1-R5Hyp.lean.fragment",
+      "sha256": "ffe90940053b05251eeb3a73256a07511f36a2420e334caa8d243ab5ad5bece8",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0021",
+      "path": "LeanProject/LeanProof/Snippets/0021-definition-Erdos993G1-XrHyp.lean.fragment",
+      "sha256": "1597ea21840dc1aec7a7b12e0ae6371a5a7a06d8d3c0d09e8935b5aa58f1615c",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0022",
+      "path": "LeanProject/LeanProof/Snippets/0022-lemma-Erdos993G1-indepCount_eq_card_indepSetFinset.lean.fragment",
+      "sha256": "4463e7eea65f11f69266095e58b54777ea245aa79caee47bf5b6e3ab77aa0eac",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0023",
+      "path": "LeanProject/LeanProof/Snippets/0023-lemma-Erdos993G1-mem_extensionFinset_iff.lean.fragment",
+      "sha256": "2d2c86bc4260c15708f5231faf0ecc154efae179f01fb9bc0665f36f0ce947e0",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0024",
+      "path": "LeanProject/LeanProof/Snippets/0024-lemma-Erdos993G1-isNIndepSet_insert_of_mem_extensionFinset.lean.fragment",
+      "sha256": "6e93855ffde0aba8402ed757360ee6254c13667e69b1e3ab3a4b48908ce393b5",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0025",
+      "path": "LeanProject/LeanProof/Snippets/0025-lemma-Erdos993G1-isNIndepSet_erase_and_mem_extensionFinset.lean.fragment",
+      "sha256": "63c83f650a0cac2ad0b02fcabfa81bdcbb8c0a98d99820c9725f61d6aeee5a6e",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0026",
+      "path": "LeanProject/LeanProof/Snippets/0026-lemma-Erdos993G1-sigma_card_double_count.lean.fragment",
+      "sha256": "3dbdbb33a7e478730a2facdd66fc897568217ab4db9f41e93131c3439f36e0cf",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0027",
+      "path": "LeanProject/LeanProof/Snippets/0027-lemma-Erdos993G1-sum_card_indepSetFinset_succ.lean.fragment",
+      "sha256": "36c1178b3743443cdcc68c7d937d44bb1d325792f07bef26b56dbe83214d236a",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0028",
+      "path": "LeanProject/LeanProof/Snippets/0028-lemma-Erdos993G1-sum_e_eq_succ_mul_card.lean.fragment",
+      "sha256": "11ea489ae3170380dccf1e8baef3b1fa2eb4bb03d994ed6ba77c8f739035752e",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0029",
+      "path": "LeanProject/LeanProof/Snippets/0029-lemma-Erdos993G1-double_count.lean.fragment",
+      "sha256": "6cad038aebaff81cd3a6e45c9462bde139d139017513d191d513a1daedf9417b",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0030",
+      "path": "LeanProject/LeanProof/Snippets/0030-lemma-Erdos993G1-card_closedNbhdFinset_le.lean.fragment",
+      "sha256": "92b171b2812a61cf696a2aa86d993660811ed739f2d4eb719fdcea8ba6003255",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0031",
+      "path": "LeanProject/LeanProof/Snippets/0031-lemma-Erdos993G1-e_add_card_add_degreeSum_ge.lean.fragment",
+      "sha256": "5c20e841bcd4ee0f483d315f9169dadb6bbb27c54e45526c11aa588d7d4b3c5a",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0032",
+      "path": "LeanProject/LeanProof/Snippets/0032-lemma-Erdos993G1-e_ge_sub.lean.fragment",
+      "sha256": "93a19ab344bf2a2290ebeac6d1a2f44a89b78720d1ded68be3c540f9ad167a1f",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0033",
+      "path": "LeanProject/LeanProof/Snippets/0033-lemma-Erdos993G1-rootPath_isPath.lean.fragment",
+      "sha256": "5bbc24574b2399a8e2d992f1e01a41fd7c5d2495660ef94cffe48f33703780d2",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0034",
+      "path": "LeanProject/LeanProof/Snippets/0034-lemma-Erdos993G1-rootRep_eq_of_adj.lean.fragment",
+      "sha256": "e0ad6bc2af15870b0ebe15afa9b9c76a0718b92538c4b104f094bf91acf3cbc0",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0035",
+      "path": "LeanProject/LeanProof/Snippets/0035-lemma-Erdos993G1-par_eq_self_of_nil.lean.fragment",
+      "sha256": "3fb75813d8ce5ceb5a0b0d0fe22beb147e02186f8983f7c36ecff69c4f6049f2",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0036",
+      "path": "LeanProject/LeanProof/Snippets/0036-lemma-Erdos993G1-not_nil_rootPath_of_par_ne.lean.fragment",
+      "sha256": "014b607c9e8472d93a48fb38746b615b5579240079b5c95ec65ba150b8a1b9ee",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0037",
+      "path": "LeanProject/LeanProof/Snippets/0037-lemma-Erdos993G1-adj_par.lean.fragment",
+      "sha256": "26f24650ca416da56f96bf89bf737f0cb6c2d2bbd43ab38fb286e8a3d36e830b",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0038",
+      "path": "LeanProject/LeanProof/Snippets/0038-lemma-Erdos993G1-rootPath_unique.lean.fragment",
+      "sha256": "140b2b08a64f5887c87b000d29f8fb3f60068f62ba0dde91313eb46d438bb8c0",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0039",
+      "path": "LeanProject/LeanProof/Snippets/0039-lemma-Erdos993G1-par_or.lean.fragment",
+      "sha256": "7aaca43eb99db6e13221e4774788863ed55d8a457e3b72d3fb89a1dd490d1c5c",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0040",
+      "path": "LeanProject/LeanProof/Snippets/0040-lemma-Erdos993G1-rk_par_lt.lean.fragment",
+      "sha256": "53a32b6e1f9147a406547085abf4901e7e0c8251c9c5901bc99918c60e570772",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0041",
+      "path": "LeanProject/LeanProof/Snippets/0041-lemma-Erdos993G1-par_par_ne.lean.fragment",
+      "sha256": "b935ab74a0ffd7cfcbbcf897aeb559faad11e64ae7e2275679dc44f5a38a4c99",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0042",
+      "path": "LeanProject/LeanProof/Snippets/0042-lemma-Erdos993G1-not_adj_of_indep.lean.fragment",
+      "sha256": "db396d8cb181e3ff478ee3b71834d877749539f0a2bf76fba526ce72c5488269",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0043",
+      "path": "LeanProject/LeanProof/Snippets/0043-lemma-Erdos993G1-notMem_of_par_mem.lean.fragment",
+      "sha256": "395178d04af9139c07ef15979fd610b290c7f719f3ada7b44044efcaf1a402ca",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0044",
+      "path": "LeanProject/LeanProof/Snippets/0044-lemma-Erdos993G1-mem_childrenFinset.lean.fragment",
+      "sha256": "6aeb7c0e8f060620768939897a64c3de700ffc2f78aa40829ed9b78b212a820f",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0045",
+      "path": "LeanProject/LeanProof/Snippets/0045-lemma-Erdos993G1-neighborFinset_eq_of_root.lean.fragment",
+      "sha256": "4095dc32553bc3a4b66d6e7534394e339306d5fc2e95047b64c9c9b7c2b5205f",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0046",
+      "path": "LeanProject/LeanProof/Snippets/0046-lemma-Erdos993G1-par_notMem_childrenFinset.lean.fragment",
+      "sha256": "646494eb8d480bcac331e08372bc40b7c6b0e2fb7b3d44c41922b1c26e6cd093",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0047",
+      "path": "LeanProject/LeanProof/Snippets/0047-lemma-Erdos993G1-neighborFinset_eq_of_nonroot.lean.fragment",
+      "sha256": "4abee80c104e6de8c01900522e4bba76166a7d4384f3925ca59065393b1f7c42",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0048",
+      "path": "LeanProject/LeanProof/Snippets/0048-lemma-Erdos993G1-degree_eq_card_childrenFinset_add.lean.fragment",
+      "sha256": "c05a83fb1e99533f4889d9168e3b4fc2e757b522d6735665d63e518b0ae8ff38",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0049",
+      "path": "LeanProject/LeanProof/Snippets/0049-lemma-Erdos993G1-sum_card_childrenFinset.lean.fragment",
+      "sha256": "a252b13068235f079d7948fdbd316b7c234ae2d4bbfaf965e9b3abb69f9e13f8",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0050",
+      "path": "LeanProject/LeanProof/Snippets/0050-lemma-Erdos993G1-card_downPairs_add_card_upPairs.lean.fragment",
+      "sha256": "f8c4bcb1d28b68f15feb75570a49f3deafbac22b3f46f82a7e5999bc7d96c52f",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0051",
+      "path": "LeanProject/LeanProof/Snippets/0051-lemma-Erdos993G1-card_upPairs_add_card_rootPairs.lean.fragment",
+      "sha256": "5fb92a46fa20b0ec347be306936e45a71a568f6e81349385fd149e0f0814b96e",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0052",
+      "path": "LeanProject/LeanProof/Snippets/0052-lemma-Erdos993G1-swapMap_mem_upPairs.lean.fragment",
+      "sha256": "2e34e8627e6726b3cb5ca504a57b8ae7f6d3dd634e4ed9a30b08824a96fa8599",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0053",
+      "path": "LeanProject/LeanProof/Snippets/0053-lemma-Erdos993G1-swapMap_grandparent_pos.lean.fragment",
+      "sha256": "5532a3bccfb979f4a54ef231771962fa30821b0bcbba42782576ba9e2b09742a",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0054",
+      "path": "LeanProject/LeanProof/Snippets/0054-lemma-Erdos993G1-swapMap_grandparent_neg.lean.fragment",
+      "sha256": "7f722159cb6724633932bb6a6d3d2e06a017be93b4653bfcb78115d938536be5",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0055",
+      "path": "LeanProject/LeanProof/Snippets/0055-lemma-Erdos993G1-swapMap_injOn.lean.fragment",
+      "sha256": "feb0207296ba2c5e1c71aff87cc12db6aa7bbe666309c8b8541421996a74d30b",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0056",
+      "path": "LeanProject/LeanProof/Snippets/0056-lemma-Erdos993G1-card_downPairs_le_card_upPairs.lean.fragment",
+      "sha256": "06b29cdca2821b7c3e842249a3414c4856774bbe9899bef8e3cacde64f2d2e6d",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0057",
+      "path": "LeanProject/LeanProof/Snippets/0057-lemma-Erdos993G1-forest_root_corrected_degree_bound.lean.fragment",
+      "sha256": "fdb9f93df438bde5358dc4fa3e3d7f8adaa8ea7cdcb0dc77cdf7285f02266f90",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0058",
+      "path": "LeanProject/LeanProof/Snippets/0058-lemma-Erdos993G1-forest_degree_lemma_nat.lean.fragment",
+      "sha256": "82f5db118bc3a13dafa232d50df9092fc50716775d75e53f2e5e9517fd6e3392",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0059",
+      "path": "LeanProject/LeanProof/Snippets/0059-lemma-Erdos993G1-forest_degree_lemma.lean.fragment",
+      "sha256": "b58c762dd29f98aff0861dd8d8b5e1a802d044c223a97ad20dee6ad7afdd7cb3",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0060",
+      "path": "LeanProject/LeanProof/Snippets/0060-lemma-Erdos993G1-forest_extension_inequality.lean.fragment",
+      "sha256": "ce29cda6f2f5bc25a49ff1609a01bc81dd83d6600f3de23c1e78a8c3c98398ee",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0061",
+      "path": "LeanProject/LeanProof/Snippets/0061-lemma-Erdos993G1-coeff_nat.lean.fragment",
+      "sha256": "df2c55481b6ddf4fc4fcce445b787573fca53c0f4fb7599f0e1f5b3330f36da1",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0062",
+      "path": "LeanProject/LeanProof/Snippets/0062-lemma-Erdos993G1-delta_nat.lean.fragment",
+      "sha256": "c063c49584d30c5e9e7761596f1f323212ddb803b56bea9b3fd8b0027ad38077",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0063",
+      "path": "LeanProject/LeanProof/Snippets/0063-lemma-Erdos993G1-pos_indepCount_of_delta_neg.lean.fragment",
+      "sha256": "03c82b200c6867fba54d51308a442b0fd051055f04de6a5eef00a96fc5482195",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0064",
+      "path": "LeanProject/LeanProof/Snippets/0064-lemma-Erdos993G1-dl_holds.lean.fragment",
+      "sha256": "441601c7f64a79f07e0b7562079a76ca9229b75b846756b5844402db5a349292",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0065",
+      "path": "LeanProject/LeanProof/Snippets/0065-lemma-Erdos993G1-lb_of_ex.lean.fragment",
+      "sha256": "dcf3652415e5501f3f1f34d93c90f82bcfdcb564298546e0a01cfbd34bf7c5ad",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0066",
+      "path": "LeanProject/LeanProof/Snippets/0066-lemma-Erdos993G1-r5_of_lb.lean.fragment",
+      "sha256": "e28fb6d6dffd772973e594af4c76dc47db12fe8decaf7a30f95f4d01fb24f502",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0067",
+      "path": "LeanProject/LeanProof/Snippets/0067-lemma-Erdos993G1-xr_of_lb.lean.fragment",
+      "sha256": "b125da425dbac191cb0ca31387f2ec06e1a4f3b1ce2e915e17758f021d8386f5",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0068",
+      "path": "LeanProject/LeanProof/Snippets/0068-lemma-Erdos993G1-lb_holds.lean.fragment",
+      "sha256": "f15017251f9e5a87c62e5e50421ae49439a3d29cb3625b7986c6fc4c52f0c8e1",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0069",
+      "path": "LeanProject/LeanProof/Snippets/0069-lemma-Erdos993G1-forest_descent_linear_bound.lean.fragment",
+      "sha256": "8293259ed8ce25a47c86f35c38cbb4608cf872479e0e9c0fb64da5cd2abe1841",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0070",
+      "path": "LeanProject/LeanProof/Snippets/0070-lemma-Erdos993G1-forest_rank5_ceiling_20.lean.fragment",
+      "sha256": "d08dfb94ded516be331c9375bfffabcd5595b5c0ec3695896a5510de25811496",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0071",
+      "path": "LeanProject/LeanProof/Snippets/0071-theorem-Erdos993G1-forest_descent_restriction.lean.fragment",
+      "sha256": "72aa1409e1cd6f889353026025847f95dee3a003b7604cd82d276c027dc7b49b",
+      "role": "theorem_intent"
+    }
+  ]
+}

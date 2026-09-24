@@ -1,0 +1,569 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "erdos-993-r27-c1-la3-degree-lemma-implies-extension-chain-v1",
+  "theorem": {
+    "title": "C1-LA3 - the degree lemma implies the extension inequality, the linear descent-order bound, the rank-5 ceiling 20 and the descent restriction",
+    "informal_statement": "Assume (DL): for every finite forest G on a finite vertex type X (quantified over the Fintype/DecidableEq/DecidableRel instances) and every natural k, the incident degree sum D_k(G) is at most 2k i_k(G). Then (EX) n i_k <= (k+1) i_{k+1} + 3k i_k for every finite forest and every k; (LB) Delta_k(G) < 0 implies n <= 4k for every finite forest and every k; (R5) 21 <= n implies 0 <= Delta_5(G) for every finite forest; and (XR) x(G) < r implies n <= 4r - 4 for every finite forest and every r. Each of the five statements is the corresponding frozen SOLUTION-CONTRACT.md section 2 declaration, taken definitionally. The award is the IMPLICATION: none of (DL), (EX), (LB), (R5), (XR) is asserted."
+  },
+  "formulation_status": {
+    "status": "open",
+    "evidence": []
+  },
+  "definitions": [
+    {
+      "id": "def-indepcount",
+      "description": "`i_k(G)`, the number of independent `k`-subsets, as an integer. Carried BYTE-IDENTICALLY from the r25 award source (registrar entry 1, entry SHA-256 5484fc21ffce7bf707240da15858d7d82289f8e6f286a8fa9837cd9a0c474ccb). Lean text: `noncomputable def indepCount {V : Type u} (F : SimpleGraph V) (k : ℕ) : ℤ := (Nat.card {S : Finset V // F.IsNIndepSet k S} : ℤ)`.",
+      "lean_name": "Erdos993G1.indepCount",
+      "dependencies": []
+    },
+    {
+      "id": "def-coeff",
+      "description": "The integer-indexed zero extension of `i_k`. Carried BYTE-IDENTICALLY (r25 entry 2, 211900436b28e4a685af60df26a20e8fe254fd4c9479c12ba2863fa180c1a639). Lean text: `noncomputable def coeff {V : Type u} (F : SimpleGraph V) (k : ℤ) : ℤ := if 0 ≤ k then Erdos993G1.indepCount F k.toNat else 0`.",
+      "lean_name": "Erdos993G1.coeff",
+      "dependencies": [
+        "def-indepcount"
+      ]
+    },
+    {
+      "id": "def-delta",
+      "description": "`Δ_k(G) = coeff (k+1) − coeff k`. Carried BYTE-IDENTICALLY (r25 entry 3, bdb46014d98507a7c85cc8de0b806f80c04496479795e28677dde024e216b9ee). Lean text: `noncomputable def delta {V : Type u} (F : SimpleGraph V) (k : ℤ) : ℤ := Erdos993G1.coeff F (k + 1) - Erdos993G1.coeff F k`.",
+      "lean_name": "Erdos993G1.delta",
+      "dependencies": [
+        "def-coeff"
+      ]
+    },
+    {
+      "id": "def-closednbhdfinset",
+      "description": "`N[J]`, the closed neighbourhood of a finite vertex set. Carried byte-identically from carry row 9 (`U3-Extension.lean`, 116b4f313eedfe4210173226c2f5ef877a6e1ee07061888f4106e908ba6b08a6). Lean text: `def closedNbhdFinset (J : Finset X) : Finset X := J ∪ J.biUnion (fun u => G.neighborFinset u)`.",
+      "lean_name": "Erdos993G1.closedNbhdFinset",
+      "dependencies": []
+    },
+    {
+      "id": "def-extensionfinset",
+      "description": "The extension set of `J`. Carried byte-identically from carry row 9. Lean text: `def extensionFinset (J : Finset X) : Finset X := Finset.univ \\ closedNbhdFinset G J`.",
+      "lean_name": "Erdos993G1.extensionFinset",
+      "dependencies": [
+        "def-closednbhdfinset"
+      ]
+    },
+    {
+      "id": "def-extension-count",
+      "description": "`e(J)`, the number of extensions of `J` (U1's file calls the same quantity `extensionCount`; carry row 19 records that the run-local definitions agree). Carried byte-identically from carry row 9. Lean text: `def e (J : Finset X) : ℕ := (extensionFinset G J).card`.",
+      "lean_name": "Erdos993G1.e",
+      "dependencies": [
+        "def-extensionfinset"
+      ]
+    },
+    {
+      "id": "def-indepdegreesum",
+      "description": "`D_k(G)`, the incident degree sum. Carried byte-identically from carry row 9. Lean text: `def indepDegreeSum (k : ℕ) : ℕ := ∑ J ∈ G.indepSetFinset k, ∑ v ∈ J, G.degree v`.",
+      "lean_name": "Erdos993G1.indepDegreeSum",
+      "dependencies": []
+    },
+    {
+      "id": "def-firstdescent",
+      "description": "`x(G)`, the first strict descent, as `Nat.find` of the existence of a negative `Δ_k`. The `def` is carried byte-identically from carry row 9; the existence lemma it consumes is re-derived in-run (registrar ordering; see INFORMAL-PROOF.md §5.2), which by definitional proof irrelevance yields the SAME function — carry row 19 (U adjudicator) proves U1's and U3's definitions equal by `rfl`. Lean text: `noncomputable def firstDescent {X : Type u} [Finite X] (G : SimpleGraph X) : ℕ := by classical exact Nat.find (Erdos993G1.exists_delta_neg G)`.",
+      "lean_name": "Erdos993G1.firstDescent",
+      "dependencies": [
+        "def-delta"
+      ]
+    },
+    {
+      "id": "def-dlhyp",
+      "description": "(DL) as a `Prop`, definitionally the frozen `SOLUTION-CONTRACT.md` §2 `forest_degree_lemma`. Lean text: `def DlHyp : Prop := ∀ {X : Type u} [Fintype X] [DecidableEq X] (G : SimpleGraph X) [DecidableRel G.Adj], G.IsAcyclic → ∀ k : ℕ, (indepDegreeSum G k : ℤ) ≤ 2 * k * Erdos993G1.indepCount G k`.",
+      "lean_name": "Erdos993G1.DlHyp",
+      "dependencies": [
+        "def-indepdegreesum",
+        "def-indepcount"
+      ]
+    },
+    {
+      "id": "def-exhyp",
+      "description": "(EX) as a `Prop`, definitionally §2 `forest_extension_inequality`. Lean text: `def ExHyp : Prop := ∀ {X : Type u} [Fintype X] [DecidableEq X] (G : SimpleGraph X) [DecidableRel G.Adj], G.IsAcyclic → ∀ k : ℕ, (Fintype.card X : ℤ) * Erdos993G1.indepCount G k ≤ (k + 1) * Erdos993G1.indepCount G (k + 1) + 3 * k * Erdos993G1.indepCount G k`.",
+      "lean_name": "Erdos993G1.ExHyp",
+      "dependencies": [
+        "def-indepcount"
+      ]
+    },
+    {
+      "id": "def-lbhyp",
+      "description": "(LB) as a `Prop`, definitionally §2 `forest_descent_linear_bound`. Lean text: `def LbHyp : Prop := ∀ {X : Type u} [Finite X] (G : SimpleGraph X), G.IsAcyclic → ∀ k : ℕ, Erdos993G1.delta G (k : ℤ) < 0 → Nat.card X ≤ 4 * k`.",
+      "lean_name": "Erdos993G1.LbHyp",
+      "dependencies": [
+        "def-delta"
+      ]
+    },
+    {
+      "id": "def-r5hyp",
+      "description": "(R5) as a `Prop`, definitionally §2 `forest_rank5_ceiling_20`. Lean text: `def R5Hyp : Prop := ∀ {X : Type u} [Finite X] (G : SimpleGraph X), G.IsAcyclic → 21 ≤ Nat.card X → 0 ≤ Erdos993G1.delta G 5`.",
+      "lean_name": "Erdos993G1.R5Hyp",
+      "dependencies": [
+        "def-delta"
+      ]
+    },
+    {
+      "id": "def-xrhyp",
+      "description": "(XR) as a `Prop`, definitionally §2 `forest_descent_restriction`. Lean text: `def XrHyp : Prop := ∀ {X : Type u} [Finite X] (G : SimpleGraph X), G.IsAcyclic → ∀ r : ℕ, firstDescent G < r → Nat.card X ≤ 4 * r - 4`. The `4 * r - 4` is truncated ℕ subtraction; `firstDescent G < r` forces `1 ≤ r`, and the `r = 0` case is vacuous-hypothesis-sound, not an arithmetic claim.",
+      "lean_name": "Erdos993G1.XrHyp",
+      "dependencies": [
+        "def-firstdescent"
+      ]
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-carrier",
+      "description": "The vertex type `X`, finite: `[Fintype X]` with `[DecidableEq X]` in (DL)/(EX), `[Finite X]` in (LB)/(R5)/(XR), bridged by `Fintype.ofFinite`.",
+      "lean_type": "Type u",
+      "dependencies": []
+    },
+    {
+      "id": "domain-graph",
+      "description": "`G : SimpleGraph X` with `[DecidableRel G.Adj]` where a `Finset` computation needs it; a finite forest is `G` with `G.IsAcyclic` (possibly disconnected or empty).",
+      "lean_type": "SimpleGraph X",
+      "dependencies": [
+        "domain-carrier"
+      ]
+    },
+    {
+      "id": "domain-rank",
+      "description": "The rank/index parameters `k` (in (DL), (EX), (LB)) and `r` (in (XR)); both range over all naturals, with no upper restriction and no `α`/`hyp-alpha` side condition.",
+      "lean_type": "ℕ",
+      "dependencies": []
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "X",
+      "kind": "forall",
+      "domain_id": "domain-carrier"
+    },
+    {
+      "binder": "G",
+      "kind": "forall",
+      "domain_id": "domain-graph"
+    },
+    {
+      "binder": "k",
+      "kind": "forall",
+      "domain_id": "domain-rank"
+    },
+    {
+      "binder": "r",
+      "kind": "forall",
+      "domain_id": "domain-rank"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-finiteness",
+      "statement": "Finiteness of the carrier. It is present in every statement of the chain and is the only structural assumption the unconditional counting steps use.",
+      "dependencies": [
+        "domain-carrier"
+      ]
+    },
+    {
+      "id": "hyp-instances",
+      "statement": "`[Fintype X]`, `[DecidableEq X]` and `[DecidableRel G.Adj]` are quantified INSTANCE binders inside `DlHyp`/`ExHyp`, not fixed instances (critic `C-U3-F`'s caveat): a (DL) proved at one fixed `Fintype` instance would not compose with this chain.",
+      "dependencies": [
+        "domain-carrier",
+        "domain-graph"
+      ]
+    },
+    {
+      "id": "hyp-acyclic",
+      "statement": "`G.IsAcyclic`. It enters the proof EXACTLY ONCE, as the argument handed to the (DL) hypothesis; every counting step used here (double count, `e(J)` bound) is graph-general and carries no acyclicity binder.",
+      "dependencies": [
+        "domain-graph"
+      ]
+    },
+    {
+      "id": "hyp-degree-lemma",
+      "statement": "THE hypothesis of the award: `DlHyp`, i.e. the degree lemma (DL) stated exactly as `SOLUTION-CONTRACT.md` §2 `forest_degree_lemma`, universally in the carrier, the instances, the forest and the rank. It is ASSUMED, never proved here; it is the object of award `C1-LA1`.",
+      "dependencies": [
+        "def-dlhyp",
+        "hyp-acyclic",
+        "hyp-finiteness",
+        "hyp-instances",
+        "domain-rank"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "`DlHyp → ExHyp ∧ LbHyp ∧ R5Hyp ∧ XrHyp`, at one shared universe parameter: the degree lemma implies the extension inequality, the linear descent-order bound, the rank-5 ceiling 20 and the descent restriction `4r − 4`, each stated exactly as its own frozen §2 declaration. THE IMPLICATION IS THE CLAIM; none of the four consequents is asserted, and all four stay `conditional` until an unconditional (DL) lands (`C1-LA1`). ATTRIBUTION, on every face (`SOLUTION-CONTRACT.md` §3.7): Fang–Lu–Nevo–Yao–Zheng 2026, §8 (Lemma 8.1 with (8.3), and Proposition 8.2's displayed step) for the mathematics of (DL) and (EX); the literature map (FRESH-LEAD, lane 11) for the conditional deductions (LB), (R5) and (XR); r27 seat U3 and critics `C-U1-T`, `C-U3-T`, `C-U3-F` and `C-U1-F` for the derivations carried and used here — carry-list rows 10–16 are critic-attributed and rows 17–19 adjudicator-attributed, never seat work; the U adjudicator for the `firstDescent` reconciliation by `rfl` (carry row 19). No external Lean text is carried or published (Gate ruling 3). FENCES, on every face: (1) NO NO-RECOVERY READING — (LB), (R5) and (XR) are ORDER BOUNDS whose contrapositives have sign `Δ_k ≥ 0`, and no status transfers to `E993-R25-UNR-FOREST-WIDE`, `E993-G1WIDE-NO-SIZE-CAP`, NR1, FOREST, TREE, TRANSFER, `E993-BETA-AGG` or Erdős #993; (2) (XR) IS NOT A UNIFORM BOUND ON `d`, and its `r = 0` truncation of `4 * r - 4` is vacuous-hypothesis-sound, not correct arithmetic; (3) the implication is the award and the targets are not; (4) (DL) is an average over `I_k`, so no pointwise degree statement is registrable; (5) nothing asymptotic is asserted; (6) the r25 award `E993-R25-FOREST-DESCENT-ORDER-BOUND-SHARP` stays registered at its own statement, and `4k ≤ (k+1)²` is a comparison, not a supersession.",
+    "dependencies": [
+      "hyp-degree-lemma",
+      "def-exhyp",
+      "def-lbhyp",
+      "def-r5hyp",
+      "def-xrhyp"
+    ]
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "explicit_axiom_allowlist",
+    "rationale": "The chain is classical: `Fintype.ofFinite`, `classical` instance supply, `Nat.find` on a classically decidable predicate and Mathlib's `Finset` API all depend on `Classical.choice`, `propext` and `Quot.sound`. No other axiom is permitted, and `sorry`, `admit`, `native_decide`, `axiom` and `decide` over an enumeration standing in for a universal step are all forbidden."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "Erdos993G1.degree_lemma_implies_chain",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem degree_lemma_implies_chain :\n    DlHyp.{u} → ExHyp.{u} ∧ LbHyp.{u} ∧ R5Hyp.{u} ∧ XrHyp.{u}",
+    "expected_statement_sha256": "750393942ec05d16f2f40d6a733368f7ff6d0cfbe72eaf5ca00e4c3115527f96"
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "def-indepcount",
+        "kind": "definition"
+      },
+      {
+        "id": "def-coeff",
+        "kind": "definition"
+      },
+      {
+        "id": "def-delta",
+        "kind": "definition"
+      },
+      {
+        "id": "def-closednbhdfinset",
+        "kind": "definition"
+      },
+      {
+        "id": "def-extensionfinset",
+        "kind": "definition"
+      },
+      {
+        "id": "def-extension-count",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indepdegreesum",
+        "kind": "definition"
+      },
+      {
+        "id": "def-firstdescent",
+        "kind": "definition"
+      },
+      {
+        "id": "def-dlhyp",
+        "kind": "definition"
+      },
+      {
+        "id": "def-exhyp",
+        "kind": "definition"
+      },
+      {
+        "id": "def-lbhyp",
+        "kind": "definition"
+      },
+      {
+        "id": "def-r5hyp",
+        "kind": "definition"
+      },
+      {
+        "id": "def-xrhyp",
+        "kind": "definition"
+      },
+      {
+        "id": "domain-carrier",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-graph",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-rank",
+        "kind": "domain"
+      },
+      {
+        "id": "hyp-finiteness",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-instances",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-acyclic",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-degree-lemma",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "def-indepcount",
+        "to": "def-coeff"
+      },
+      {
+        "from": "def-coeff",
+        "to": "def-delta"
+      },
+      {
+        "from": "def-closednbhdfinset",
+        "to": "def-extensionfinset"
+      },
+      {
+        "from": "def-extensionfinset",
+        "to": "def-extension-count"
+      },
+      {
+        "from": "def-delta",
+        "to": "def-firstdescent"
+      },
+      {
+        "from": "def-indepdegreesum",
+        "to": "def-dlhyp"
+      },
+      {
+        "from": "def-indepcount",
+        "to": "def-dlhyp"
+      },
+      {
+        "from": "def-indepcount",
+        "to": "def-exhyp"
+      },
+      {
+        "from": "def-delta",
+        "to": "def-lbhyp"
+      },
+      {
+        "from": "def-delta",
+        "to": "def-r5hyp"
+      },
+      {
+        "from": "def-firstdescent",
+        "to": "def-xrhyp"
+      },
+      {
+        "from": "domain-carrier",
+        "to": "domain-graph"
+      },
+      {
+        "from": "domain-carrier",
+        "to": "hyp-finiteness"
+      },
+      {
+        "from": "domain-carrier",
+        "to": "hyp-instances"
+      },
+      {
+        "from": "domain-graph",
+        "to": "hyp-instances"
+      },
+      {
+        "from": "domain-graph",
+        "to": "hyp-acyclic"
+      },
+      {
+        "from": "def-dlhyp",
+        "to": "hyp-degree-lemma"
+      },
+      {
+        "from": "hyp-acyclic",
+        "to": "hyp-degree-lemma"
+      },
+      {
+        "from": "hyp-finiteness",
+        "to": "hyp-degree-lemma"
+      },
+      {
+        "from": "hyp-instances",
+        "to": "hyp-degree-lemma"
+      },
+      {
+        "from": "domain-rank",
+        "to": "hyp-degree-lemma"
+      },
+      {
+        "from": "hyp-degree-lemma",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-exhyp",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-lbhyp",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-r5hyp",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-xrhyp",
+        "to": "conclusion"
+      }
+    ]
+  },
+  "source_materials": [
+    {
+      "id": "source-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "sha256": "0c743db10683617a923e7f4eab95e73e7aba1860d09943a11977b2076d1410c4",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "source-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "sha256": "95a15425195d3d9507d93d9daa8d98e8f0494e72a533dfae268b0e911c0a0ca9",
+      "role": "reference"
+    },
+    {
+      "id": "source-r25-award-main",
+      "path": "SOURCES/r25-c4-forest-descent-order-bound-Main.lean",
+      "sha256": "736eb9dfb6ba82b0e099fe70df9e4d7f780bccdbd24ca240f4ad1115cfe7dfe0",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-row09-u3-extension",
+      "path": "SOURCES/row09-U3-Extension.lean",
+      "sha256": "116b4f313eedfe4210173226c2f5ef877a6e1ee07061888f4106e908ba6b08a6",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-row10-critic-u1-t",
+      "path": "SOURCES/row10-C-U1-T-CriticAdvances.lean",
+      "sha256": "41dae810663a4ae1c680afac7bacc0824351f94858e89f5da32fdd51c112515a",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0001",
+      "path": "LeanProject/LeanProof/Snippets/0001-definition-Erdos993G1-indepCount.lean.fragment",
+      "sha256": "5484fc21ffce7bf707240da15858d7d82289f8e6f286a8fa9837cd9a0c474ccb",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0002",
+      "path": "LeanProject/LeanProof/Snippets/0002-definition-Erdos993G1-coeff.lean.fragment",
+      "sha256": "211900436b28e4a685af60df26a20e8fe254fd4c9479c12ba2863fa180c1a639",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0003",
+      "path": "LeanProject/LeanProof/Snippets/0003-definition-Erdos993G1-delta.lean.fragment",
+      "sha256": "bdb46014d98507a7c85cc8de0b806f80c04496479795e28677dde024e216b9ee",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0004",
+      "path": "LeanProject/LeanProof/Snippets/0004-definition-Erdos993G1-closedNbhdFinset.lean.fragment",
+      "sha256": "94a269d595df84d74617c5bad712b622351848eb632da7c34df3684ef321f51b",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0005",
+      "path": "LeanProject/LeanProof/Snippets/0005-definition-Erdos993G1-DlHyp.lean.fragment",
+      "sha256": "63dcbc2d778f2315b972038827d393b9c6b903597fbbe54c0b8b04773029b3a6",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0006",
+      "path": "LeanProject/LeanProof/Snippets/0006-definition-Erdos993G1-ExHyp.lean.fragment",
+      "sha256": "004460974bab462adfd9e322599ef271da9dc231ce6065495887208873a41773",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0007",
+      "path": "LeanProject/LeanProof/Snippets/0007-definition-Erdos993G1-LbHyp.lean.fragment",
+      "sha256": "088244b71297f91e3e71d8d88006443e72e90a1a3b60f673243f3ffcf138f46e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0008",
+      "path": "LeanProject/LeanProof/Snippets/0008-definition-Erdos993G1-R5Hyp.lean.fragment",
+      "sha256": "ffe90940053b05251eeb3a73256a07511f36a2420e334caa8d243ab5ad5bece8",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0009",
+      "path": "LeanProject/LeanProof/Snippets/0009-definition-Erdos993G1-XrHyp.lean.fragment",
+      "sha256": "1597ea21840dc1aec7a7b12e0ae6371a5a7a06d8d3c0d09e8935b5aa58f1615c",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0010",
+      "path": "LeanProject/LeanProof/Snippets/0010-lemma-Erdos993G1-indepCount_eq_card_indepSetFinset.lean.fragment",
+      "sha256": "4463e7eea65f11f69266095e58b54777ea245aa79caee47bf5b6e3ab77aa0eac",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0011",
+      "path": "LeanProject/LeanProof/Snippets/0011-lemma-Erdos993G1-coeff_nat.lean.fragment",
+      "sha256": "df2c55481b6ddf4fc4fcce445b787573fca53c0f4fb7599f0e1f5b3330f36da1",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0012",
+      "path": "LeanProject/LeanProof/Snippets/0012-lemma-Erdos993G1-delta_nat.lean.fragment",
+      "sha256": "c063c49584d30c5e9e7761596f1f323212ddb803b56bea9b3fd8b0027ad38077",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0013",
+      "path": "LeanProject/LeanProof/Snippets/0013-lemma-Erdos993G1-mem_extensionFinset_iff.lean.fragment",
+      "sha256": "26e89f0dc369ab7a305ac456f7c6ccfc5d073eb65b4ae2fbedf64395ebba1b92",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0014",
+      "path": "LeanProject/LeanProof/Snippets/0014-lemma-Erdos993G1-pos_indepCount_of_delta_neg.lean.fragment",
+      "sha256": "418beecfd5ca90332c61611e639d3741703da5bb1c8eba21f251b44e15450079",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0015",
+      "path": "LeanProject/LeanProof/Snippets/0015-lemma-Erdos993G1-ex_of_dl.lean.fragment",
+      "sha256": "3cbd3336982b00c4039378638121ec74ffa676b308182a0a94d9b19fdee4c723",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0016",
+      "path": "LeanProject/LeanProof/Snippets/0016-lemma-Erdos993G1-lb_of_ex.lean.fragment",
+      "sha256": "dcf3652415e5501f3f1f34d93c90f82bcfdcb564298546e0a01cfbd34bf7c5ad",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0017",
+      "path": "LeanProject/LeanProof/Snippets/0017-lemma-Erdos993G1-r5_of_lb.lean.fragment",
+      "sha256": "e28fb6d6dffd772973e594af4c76dc47db12fe8decaf7a30f95f4d01fb24f502",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0018",
+      "path": "LeanProject/LeanProof/Snippets/0018-lemma-Erdos993G1-xr_of_lb.lean.fragment",
+      "sha256": "b125da425dbac191cb0ca31387f2ec06e1a4f3b1ce2e915e17758f021d8386f5",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-fragment-0019",
+      "path": "LeanProject/LeanProof/Snippets/0019-theorem-Erdos993G1-degree_lemma_implies_chain.lean.fragment",
+      "sha256": "945e1102202f0559cd45f37664ddef113677b600fd6e1cf5b5ee8fe7e7fcfef3",
+      "role": "hypothesis_authority"
+    }
+  ]
+}

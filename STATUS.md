@@ -1,6 +1,6 @@
 # Research Status
 
-Last updated: 2026-09-24 (r26: the r24 top-rank residual sign (RC) formally verified; two companion Lean packages; master registry 370 identities)
+Last updated: 2026-09-24 (r27: the finite forest degree lemma and extension inequality formally verified with their linear order-bound consequences; four Lean packages; master registry 392 identities)
 
 ## Headline Problems
 
@@ -16,6 +16,10 @@ The consolidated orientation document — the conjecture, the full proof path
 with per-step status, the claim/fence/obligation tables, strategy verdicts,
 and next-phase priorities — is the
 [master proof ledger (2026-09-04)](docs/master-proof-ledger-2026-09-04.md).
+
+## r27, 2026-09-24
+
+The Fang–Lu–Nevo–Yao–Zheng finite forest degree lemma `(DL)` and extension inequality `(EX)` are formally verified on the G1 definitions of record (see [the experiment page](experiments/r27-forest-degree-extension.md) and [verification](evidence/verification-2026-09-24-r27.md)), together with the unconditional consequences `Δ_k < 0 ⇒ n ≤ 4k` (strengthening the r25 `(k+1)²` award as a separate key), `n ≥ 21 ⇒ Δ_5 ≥ 0` and `x < r ⇒ n ≤ 4r − 4`, the graph-general double count / extension lower bound, and the implication chain. The r25 rank-5 residue is closed out; the K1-addition closure extends to `x ≤ 5` at the census's grade. Every registration is an order bound or counting statement (sign `Δ_k ≥ 0`); the forest-wide no-recovery claim, NR1, FOREST, TREE, TRANSFER and Erdős #993 stay OPEN and untouched.
 
 ## r26, 2026-09-24
 

@@ -29541,7 +29541,7 @@
         "sha256": "7515683a1a8982767062221bf0ca6fb7135bfb02c46ce5c09293d73443d7dda8"
       },
       "novelty_claimed": false,
-      "scope": "Upper first-descent additivity only; neither a lower-bound claim nor forest nonunimodality.",
+      "scope": "Upper first-descent additivity only; neither a lower-bound claim nor forest nonunimodality. r27 Cycle 1 (2026-09-24): its K_1 instance is registered as E993-R27-KADDITION-CLOSURE-X-LE-5 (x ≤ 5); this refutation is untouched (witness pair K_{1,3}, P_4), and the stored scope contains no K_1 carve-out — the sub-family is untouched for the logical reason that a universal refuted by one witness pair says nothing about a proper sub-family. Status REFUTED unchanged.",
       "source_pins": [
         {
           "path": "inputs/c3-completed-siblings-v1/r23b/R23-TERMINAL-LEDGER.csv",
@@ -29553,7 +29553,15 @@
         }
       ],
       "statement": "For every pair of finite ordinary forests F1,F2, x(F1 disjoint union F2)<=x(F1)+x(F2).",
-      "status": "REFUTED"
+      "status": "REFUTED",
+      "terminal_history": [
+        {
+          "run": "erdos-993-forest-degree-extension-dre-2026-09-24 (r27)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "scope note: K_1 instance registered separately; REFUTED unchanged"
+        }
+      ]
     },
     {
       "alias_patterns": [],
@@ -35645,7 +35653,7 @@
     {
       "claim_key": "E993-R25-FOREST-DESCENT-ORDER-BOUND-SHARP",
       "statement": "For every finite forest G on n vertices and every integer k >= 1: Delta_k(G) < 0 implies n <= (k+1)^2 (a fortiori n <= k^2+3k).",
-      "scope": "All finite forests including disconnected ones; every k >= 1; uniform, no horizon. Uses only e(G) <= n-1, the level-one Bonferroni bound and quadratic algebra; nu, tau, d, x(F) < r enter nowhere. Tight at k = 1 only (true maxima 4, 8, 11, 15 at k = 1..4): no tightness wording and no linear ceiling claimed. NOT a no-recovery statement (its contrapositive yields Delta_k >= 0, the opposite sign); no transfer to Tier 1, the K1-addition target, NR1, FOREST, TREE, TRANSFER or Erdos #993; never bundled with the x <= 4 closure.",
+      "scope": "All finite forests including disconnected ones; every k >= 1; uniform, no horizon. Uses only e(G) <= n-1, the level-one Bonferroni bound and quadratic algebra; nu, tau, d, x(F) < r enter nowhere. Tight at k = 1 only (true maxima 4, 8, 11, 15 at k = 1..4): no tightness wording and no linear ceiling claimed. NOT a no-recovery statement (its contrapositive yields Delta_k >= 0, the opposite sign); no transfer to Tier 1, the K1-addition target, NR1, FOREST, TREE, TRANSFER or Erdos #993; never bundled with the x <= 4 closure. r27 Cycle 1 (2026-09-24): 4k ≤ (k+1)² with equality only at k = 1, so (LB) (E993-R27-FOREST-DESCENT-LINEAR-BOUND, formally_verified) is at least as strong at every k and strictly stronger for k ≠ 1, and covers k = 0 which this award's scope excludes. Both stay registered; this award's formal grade is untouched and its scope note's true maxima 4, 8, 11, 15 are reconfirmed. M(1..3) = 4, 8, 11 are unconditional in the sense of being capped by this award's formal ceilings with a complete census (E993-R27-FOREST-DESCENT-MAXIMA-CENSUS, after second read SR-EXX).",
       "status": "VERIFIED",
       "smallest_witness_order": null,
       "certificate": "Stage 7 governed lean-proof-workflow run runs/lean-2026-09-21-c4-forest-descent-order-bound: formally_verified (kernel + informal audit + fidelity match); cycles/cycle-4/stage7/LEAN-GATE-CLOSEOUT.md. Informal: the k^2+3k form is seat T4's; the sharp (k+1)^2 form is critic-attributed jointly to C-T4-F and C-T4-U (independent derivations); T-adjudicator-verified (cycles/cycle-4/stage5/adjudicators/T/ADJUDICATION.md (ecf43c7a...) E3); cycles/cycle-4/stage6/SYNTHESIS.md (2c23c6ea...) S4, award group 2. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21 (Cycle 4 close)).",
@@ -35654,7 +35662,15 @@
         "S4",
         "forest descent order bound"
       ],
-      "alias_patterns": []
+      "alias_patterns": [],
+      "terminal_history": [
+        {
+          "run": "erdos-993-forest-degree-extension-dre-2026-09-24 (r27)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "scope note: (LB) registered as a separate stronger key; formal grade untouched"
+        }
+      ]
     },
     {
       "claim_key": "E993-R25-RECOVERY-LOGCONCAVITY-NECESSARY",
@@ -35785,14 +35801,22 @@
     {
       "claim_key": "E993-R25-KADDITION-CLOSURE-X-LE-4",
       "statement": "x(G + K1) <= x(G)+1 for every finite forest G with x(G) <= 4 (no order bound in the hypothesis).",
-      "scope": "Fixed-rank, named as such: x(G + K1) <= x(G)+1 for every finite forest G with x(G) <= 4, no order bound in the hypothesis. CONDITIONAL -> VERIFIED at the Cycle 5 close: both former dependencies addressed — Hunter's spanning-tree inequality PROVED in-run (E993-R25-HUNTER-SPANNING-TREE-INEQUALITY) and the un-replayed finite scan replaced by E993-R25-SECOND-ORDER-TWO-SIDED-CEILING, whose parameter space is proved complete (Delta_4 < 0 implies |V| <= 19 < 21). Remaining input named on its face: the order-<= 21 in-run forest census (8,355,831 classes; established in Cycle 4, replayed byte-identically by both Cycle 4 critics; not re-run in Cycle 5). Smallest open rank x = 5, residue orders 22-29 (about 1.9e10 classes).",
+      "scope": "Fixed-rank, named as such: x(G + K1) <= x(G)+1 for every finite forest G with x(G) <= 4, no order bound in the hypothesis. CONDITIONAL -> VERIFIED at the Cycle 5 close: both former dependencies addressed — Hunter's spanning-tree inequality PROVED in-run (E993-R25-HUNTER-SPANNING-TREE-INEQUALITY) and the un-replayed finite scan replaced by E993-R25-SECOND-ORDER-TWO-SIDED-CEILING, whose parameter space is proved complete (Delta_4 < 0 implies |V| <= 19 < 21). Remaining input named on its face: the order-<= 21 in-run forest census (8,355,831 classes; established in Cycle 4, replayed byte-identically by both Cycle 4 critics; not re-run in Cycle 5). Smallest open rank x = 5, residue orders 22-29 (about 1.9e10 classes). r27 Cycle 1 (2026-09-24): extended to x ≤ 5 by E993-R27-KADDITION-CLOSURE-X-LE-5 at proved_informal-with-census; the census input is named on the new claim's face, and no formal grade from (LB)/(R5) promotes either claim. The clause 'Smallest open rank x = 5, residue orders 22–29' is closed: under (R5) every forest with x = 5 has order ≤ 20. Rank 0 of this claim's own statement is discharged directly (Δ_0 = n − 1 < 0 iff n = 0; ∅ ⊔ K_1 = K_1 with x = 1), so it needs no census artifact; closure_certificate.json's rank-0 entry is corroboration.",
       "status": "VERIFIED",
       "smallest_witness_order": null,
       "certificate": "proved_informal; critic-derived (C-T3-U's composition, C-T3-F concurring); Hunter's half seat-derived (T3); T adjudicator re-derived end to end (cycles/cycle-5/stage5/adjudicators/T/ADJUDICATION.md (7faae7a9...)); cycles/cycle-5/stage6/SYNTHESIS.md (dfa5bddc...) R16. Cycle 4 record: critic C-T4-F, CONDITIONAL on two dependencies. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-21 (Cycle 4 close); updated 2026-09-22 (Cycle 5 close)).",
       "aliases": [
         "K1-addition closure x <= 4"
       ],
-      "alias_patterns": []
+      "alias_patterns": [],
+      "terminal_history": [
+        {
+          "run": "erdos-993-forest-degree-extension-dre-2026-09-24 (r27)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "scope note: extended to x ≤ 5; rank 0 discharged directly; status unchanged"
+        }
+      ]
     },
     {
       "claim_key": "E993-R25-FOURTH-BAND-CLOSE-ALL-R",
@@ -35878,31 +35902,47 @@
     {
       "claim_key": "E993-R25-HUNTER-SPANNING-TREE-INEQUALITY",
       "statement": "For finite sets A_1..A_m and any spanning tree T on the index set: |union A_i| <= sum |A_i| - sum_{(i,j) in T} |A_i n A_j|.",
-      "scope": "General set systems; no graph, no horizon; no source vendored — proved in-run.",
+      "scope": "General set systems; no graph, no horizon; no source vendored — proved in-run. r27 Cycle 1 (2026-09-24): the x ≤ 5 closure route does not use it; the claim is unchanged and its r25 role is untouched.",
       "status": "VERIFIED",
       "smallest_witness_order": null,
       "certificate": "proved_informal; seat T3 (seat-derived); the T adjudicator read the induction line by line and brute-forced 2,410,945 system/tree pairs (cycles/cycle-5/stage5/adjudicators/T/ADJUDICATION.md (7faae7a9...)); C-T3-F 5,157,120 exhaustive pairs; C-T3-U 66,519; cycles/cycle-5/stage6/SYNTHESIS.md (dfa5bddc...) R5. Discharges the first named dependency of E993-R25-KADDITION-CLOSURE-X-LE-4. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 5 close)).",
       "aliases": [
         "Hunter's inequality (in-run proof)"
       ],
-      "alias_patterns": []
+      "alias_patterns": [],
+      "terminal_history": [
+        {
+          "run": "erdos-993-forest-degree-extension-dre-2026-09-24 (r27)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "scope note: not used by the r27 route; status unchanged"
+        }
+      ]
     },
     {
       "claim_key": "E993-R25-SECOND-ORDER-TWO-SIDED-CEILING",
       "statement": "For every finite forest G: Delta_4(G) < 0 implies |V(G)| <= 19, and Delta_5(G) < 0 implies |V(G)| <= 29.",
-      "scope": "FIXED-RANK (k = 4, 5), named as such; the (e, c_e, degree multiset) parameter space is PROVED complete (a proved superset); the tail is supplied by the formally verified (k+1)^2 award. NOT a no-recovery statement. Composed with the order-<= 21 in-run census this closes rank x = 4 of the K1-addition target and narrows x = 5 to orders 22-29.",
+      "scope": "FIXED-RANK (k = 4, 5), named as such; the (e, c_e, degree multiset) parameter space is PROVED complete (a proved superset); the tail is supplied by the formally verified (k+1)^2 award. NOT a no-recovery statement. Composed with the order-<= 21 in-run census this closes rank x = 4 of the K1-addition target and narrows x = 5 to orders 22-29. r27 Cycle 1 (2026-09-24): (LB) (E993-R27-FOREST-DESCENT-LINEAR-BOUND, formally_verified) gives Δ_4 < 0 ⇒ n ≤ 16 and Δ_5 < 0 ⇒ n ≤ 20, strictly stronger at both ranks. This claim is unchanged; no grade moves. The narrative clause 'narrows x = 5 to orders 22–29' is superseded: under (R5) that band is empty. The Δ_4 < 0 ⇒ n ≤ 19 clause remains the load-bearing half of the registered x ≤ 4 closure.",
       "status": "VERIFIED",
       "smallest_witness_order": null,
       "certificate": "proved_informal; critic-derived (C-T3-U, C-T3-F: the second Bonferroni inequality on i_k plus Theorem C below, exact DP over the parameter space; ceilings 4, 8, 12, 19, 29, 40, 53, 69 at k = 1..8); the T adjudicator built the certificate independently and reproduced every margin at k = 4, 5 (cycles/cycle-5/stage5/adjudicators/T/ADJUDICATION.md (7faae7a9...)); cycles/cycle-5/stage6/SYNTHESIS.md (dfa5bddc...) R6. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 5 close)).",
       "aliases": [
         "two-sided second-order ceiling"
       ],
-      "alias_patterns": []
+      "alias_patterns": [],
+      "terminal_history": [
+        {
+          "run": "erdos-993-forest-degree-extension-dre-2026-09-24 (r27)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "scope note: dominated by (LB) at ranks 4 and 5; status unchanged"
+        }
+      ]
     },
     {
       "claim_key": "E993-R25-FOREST-ORDER-BOUND-SHARPENED",
       "statement": "For every finite forest G and every k >= 2: Delta_k(G) < 0 implies |V(G)| <= k^2 + k + 3 (with N*(1) = 4).",
-      "scope": "Forests; uniform in k >= 2 (N*(1) = 4). Strictly sharper than the formally verified (k+1)^2 by exactly k-2 for k >= 3; never a weaker sibling and never 'improving the award'. The formerly named-open step — the argmin at e = n-1, c_e = 1 minimising H(n,k,e,min(e,n-e)) — was PROVED unconditionally in Cycle 6 by seat T2 (closed form W(e+1) - W(e) = -(1+delta) C(n-4,k-2) - C(n-4,k-1), delta >= -1, n >= 4 tight) and kernel-checked (formally_verified for award C6-LA6: ErdosR25T2.candidateD_argmin, an INTEGER statement about zero-extended binomials with no graph token; the c_e = 1 bridge critic-attributed to C-T2-F); this is a SCOPE UPDATE, explicitly NOT a grade change of this claim — the full graph theorem's assembly (N12; binding node N3, the maximum-weight auxiliary spanning tree over the line graph; the tree-ordering bridge of Hunter's inequality; an explicit e = 0 node) is unformalised. Hunter's inequality is Cycle 5 seat T3's (E993-R25-HUNTER-SPANNING-TREE-INEQUALITY), not T1's. Seat T2's section 5 states the two boundary-order sign tests INVERTED and is struck (control/C6-CONTROLLER-ADDENDUM-T2-S5.md); the true facts: H - C < 0 at n = k^2+k+3 and > 0 at n = k^2+k+4 for every k >= 2 tested.",
+      "scope": "Forests; uniform in k >= 2 (N*(1) = 4). Strictly sharper than the formally verified (k+1)^2 by exactly k-2 for k >= 3; never a weaker sibling and never 'improving the award'. The formerly named-open step — the argmin at e = n-1, c_e = 1 minimising H(n,k,e,min(e,n-e)) — was PROVED unconditionally in Cycle 6 by seat T2 (closed form W(e+1) - W(e) = -(1+delta) C(n-4,k-2) - C(n-4,k-1), delta >= -1, n >= 4 tight) and kernel-checked (formally_verified for award C6-LA6: ErdosR25T2.candidateD_argmin, an INTEGER statement about zero-extended binomials with no graph token; the c_e = 1 bridge critic-attributed to C-T2-F); this is a SCOPE UPDATE, explicitly NOT a grade change of this claim — the full graph theorem's assembly (N12; binding node N3, the maximum-weight auxiliary spanning tree over the line graph; the tree-ordering bridge of Hunter's inequality; an explicit e = 0 node) is unformalised. Hunter's inequality is Cycle 5 seat T3's (E993-R25-HUNTER-SPANNING-TREE-INEQUALITY), not T1's. Seat T2's section 5 states the two boundary-order sign tests INVERTED and is struck (control/C6-CONTROLLER-ADDENDUM-T2-S5.md); the true facts: H - C < 0 at n = k^2+k+3 and > 0 at n = k^2+k+4 for every k >= 2 tested. r27 Cycle 1 (2026-09-24): k²+k+3 − 4k = k²−3k+3 > 0 for every k, so (LB) (E993-R27-FOREST-DESCENT-LINEAR-BOUND) strictly dominates at every k ≥ 2. This claim is unchanged.",
       "status": "VERIFIED",
       "smallest_witness_order": null,
       "certificate": "proved_informal with one named open step; seat T3's computation; closed form and termination critic-derived (C-T3-U, C-T3-F); T adjudicator recomputed k = 1..12 (cycles/cycle-5/stage5/adjudicators/T/ADJUDICATION.md (7faae7a9...)); cycles/cycle-5/stage6/SYNTHESIS.md (dfa5bddc...) R7. Cycle 6 terminal Stage 7 candidate D. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 5 close); updated 2026-09-22 (Cycle 6 terminal close); run notes: [cycle6_note] Grade unchanged at proved_informal, now with NO named-open step in the informal proof. cycles/cycle-6/stage6/SYNTHESIS.md (4b9cc572...) R2(i), Dispatch 6; cycles/cycle-6/stage5/adjudicators/T/ADJUDICATION.md (a1172bab...); cycles/cycle-6/stage5/second-read/T-BUNDLE/SECOND-READ.md (b97906c0...; q1 complete, q2 confirmed_with_repairs) (Q2).).",
@@ -35910,7 +35950,15 @@
         "N*(k) = k^2+k+3",
         "sharpened forest order bound"
       ],
-      "alias_patterns": []
+      "alias_patterns": [],
+      "terminal_history": [
+        {
+          "run": "erdos-993-forest-degree-extension-dre-2026-09-24 (r27)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "scope note: dominated by (LB); status unchanged"
+        }
+      ]
     },
     {
       "claim_key": "E993-R25-MA-CATALAN-COMPARISON",
@@ -36082,7 +36130,7 @@
     {
       "claim_key": "E993-R25-RANK5-CEILING-SHARPENED-TO-25",
       "statement": "For every finite forest F: Delta_5(F) < 0 implies |V(F)| <= 25; equivalently every finite forest on >= 26 vertices has Delta_5(F) >= 0.",
-      "scope": "FIXED-RANK k = 5. An ORDER BOUND (contrapositive Delta_5 >= 0), never a no-recovery statement, never bundled with the x <= 4 closure. Composition on its face: orders 26-29 proved in-run over a proved-complete (e, c_e, degree multiset) superset including disconnected forests, every (e, c_e) != (n-1, 1) and the edgeless case; n >= 30 composed with the registered rank-5 ceiling 29 (whose tail is the formal (k+1)^2 = 36 for n >= 37 plus the second-order certificate for 30 <= n <= 36). STRUCTURAL REPAIR (second read): the chain 36 -> 33 -> 29 -> 25 is a numerically decreasing sequence, not a derivation chain — k^2+k+3 = 33 is NOT on the derivation path of 25. Named dependencies: the classical second- and third-order Bonferroni inequalities; E993-R25-HUNTER-SPANNING-TREE-INEQUALITY (proved_informal, Cycle 5 seat T3); the AM-GM substitution; kappa(n,k) >= 0. Residue for x = 5 on orders 22-25: forests with at least THREE branch vertices (E993-R25-RANK5-TWO-BRANCH-EXACTNESS-ORDERS-22-29).",
+      "scope": "FIXED-RANK k = 5. An ORDER BOUND (contrapositive Delta_5 >= 0), never a no-recovery statement, never bundled with the x <= 4 closure. Composition on its face: orders 26-29 proved in-run over a proved-complete (e, c_e, degree multiset) superset including disconnected forests, every (e, c_e) != (n-1, 1) and the edgeless case; n >= 30 composed with the registered rank-5 ceiling 29 (whose tail is the formal (k+1)^2 = 36 for n >= 37 plus the second-order certificate for 30 <= n <= 36). STRUCTURAL REPAIR (second read): the chain 36 -> 33 -> 29 -> 25 is a numerically decreasing sequence, not a derivation chain — k^2+k+3 = 33 is NOT on the derivation path of 25. Named dependencies: the classical second- and third-order Bonferroni inequalities; E993-R25-HUNTER-SPANNING-TREE-INEQUALITY (proved_informal, Cycle 5 seat T3); the AM-GM substitution; kappa(n,k) >= 0. Residue for x = 5 on orders 22-25: forests with at least THREE branch vertices (E993-R25-RANK5-TWO-BRANCH-EXACTNESS-ORDERS-22-29). r27 Cycle 1 (2026-09-24): under (R5) (E993-R27-RANK5-CEILING-20, formally_verified) the stated residue for x = 5 on orders 22–25 with ≥ 3 branch vertices is EMPTY; the branch-vertex condition is inert (the order band alone suffices). The claim's own statement and VERIFIED grade are unchanged; the residue note is a downstream consequence at the grade of (R5) and does not promote to this face.",
       "status": "VERIFIED",
       "smallest_witness_order": null,
       "certificate": "proved_informal; seat T3 (Theorem E via Theorem D + a joint Pareto-frontier DP); reproduced digit for digit by both T3 critics by literal exhaustion of every admissible degree multiset (-9,527 / -8,598 / -6,139 / -3,738 / +578 / +9,435 / +24,767 / +41,513 at n = 22..29) and by the isolated second reader (cycles/cycle-6/stage5/second-read/T-BUNDLE/SECOND-READ.md (b97906c0...; q1 complete, q2 confirmed_with_repairs), Q2 confirmed_with_repairs); cycles/cycle-6/stage5/adjudicators/T/ADJUDICATION.md (a1172bab...); cycles/cycle-6/stage6/SYNTHESIS.md (4b9cc572...) R3. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 6 terminal close)).",
@@ -36090,7 +36138,15 @@
         "Theorem E",
         "k = 5 order ceiling 25"
       ],
-      "alias_patterns": []
+      "alias_patterns": [],
+      "terminal_history": [
+        {
+          "run": "erdos-993-forest-degree-extension-dre-2026-09-24 (r27)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "scope note: rank-5 residue closed out by E993-R27-RANK5-CEILING-20; status unchanged"
+        }
+      ]
     },
     {
       "claim_key": "E993-R25-FOREST-THIRD-ORDER-BONFERRONI-BOUND",
@@ -36107,14 +36163,22 @@
     {
       "claim_key": "E993-R25-RANK5-TWO-BRANCH-EXACTNESS-ORDERS-22-29",
       "statement": "Every finite forest of order 22-29 with at most two branch vertices (vertices of degree >= 3) has Delta_5 >= 0.",
-      "scope": "Bounded computation, COMPLETE on the named finite class: 20,108,361 isomorphism classes / 19,955,812 Delta_5 evaluations, zero violations, with a positive-detection control and an AHU completeness control; the two-hub tree sub-family at orders 22-25 is 227,966 classes (58,648 / 86,660 / 126,677 / 183,325 structures per C-T3-F's count). SUPERSEDES any spider candidate (the seat's spider enumeration covers connected spanning trees only, 15,650 distinct classes, its '10,738' struck). Consequence: the x = 5 residue of the K1-addition target is exactly the forests of order 22-25 with at least three branch vertices.",
+      "scope": "Bounded computation, COMPLETE on the named finite class: 20,108,361 isomorphism classes / 19,955,812 Delta_5 evaluations, zero violations, with a positive-detection control and an AHU completeness control; the two-hub tree sub-family at orders 22-25 is 227,966 classes (58,648 / 86,660 / 126,677 / 183,325 structures per C-T3-F's count). SUPERSEDES any spider candidate (the seat's spider enumeration covers connected spanning trees only, 15,650 distinct classes, its '10,738' struck). Consequence: the x = 5 residue of the K1-addition target is exactly the forests of order 22-25 with at least three branch vertices. r27 Cycle 1 (2026-09-24): stands as a standalone theorem at its own statement and VERIFIED grade. Its role as an INPUT to the K1-addition closure is superseded by the (R5) route (E993-R27-RANK5-CEILING-20, formally_verified), which needs no branch-vertex analysis; the consequence stated on this face — 'the x = 5 residue of the K1-addition target is exactly the forests of order 22–25 with at least three branch vertices' — is EMPTY under (R5). Neither the theorem nor its grade moves.",
       "status": "VERIFIED",
       "smallest_witness_order": null,
       "certificate": "bounded computation (complete finite class); CRITIC-ATTRIBUTED to C-T3-U, corroborated by C-T3-F; cycles/cycle-6/stage5/adjudicators/T/ADJUDICATION.md (a1172bab...); cycles/cycle-6/stage6/SYNTHESIS.md (4b9cc572...) R3. || Registered by run erdos-993-uniform-residual-no-recovery-dre-2026-09-20 (r25; sealed terminal manifest 6bc912aecd177802…; registered 2026-09-22 (Cycle 6 terminal close)).",
       "aliases": [
         "two-branch-vertex exactness"
       ],
-      "alias_patterns": []
+      "alias_patterns": [],
+      "terminal_history": [
+        {
+          "run": "erdos-993-forest-degree-extension-dre-2026-09-24 (r27)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "scope note: input role superseded by (R5); residue narrative empty; status unchanged"
+        }
+      ]
     },
     {
       "claim_key": "E993-R25-THIN-TREE-LOGCONCAVE-TAU-LE-11",
@@ -36539,10 +36603,848 @@
           "event": "registered after the isolated second read SR-STRICT"
         }
       ]
+    },
+    {
+      "claim_key": "E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE",
+      "statement": "For every finite ordinary tree T with integer p=alpha(T)-2 and x(T)+2<=p, the complete sum over original leaves v satisfying Delta_p(T-v)<0 of Delta_(p-1)(T-{v,s_v})-Delta_(p-1)(T-N_T[s_v]) is nonpositive.",
+      "scope": "All finite connected acyclic simple graphs; first strict descent x; integer zero-extended independence coefficients; original support and closed neighborhood; no residual hypothesis.",
+      "status": "OPEN",
+      "aliases": [
+        "first interior ordinary favorable-leaf aggregate"
+      ],
+      "alias_patterns": [],
+      "certificate": "New unresolved proper rank-restricted subclaim; no mathematical award. User-authorized first-interior DRE 2026-09-24, control/SCOPE-AUDIT.md and SOLUTION-CONTRACT.md.",
+      "relations": [
+        {
+          "relation": "proper_subclaim",
+          "claim_key": "E993-R23-ORDINARY-FAVORABLE-LEAF-AGGREGATE"
+        },
+        {
+          "relation": "different_rank_and_scope",
+          "claim_key": "E993-R26-TOP-RANK-RESIDUAL-SIGN"
+        }
+      ]
+    },
+    {
+      "claim_key": "E993-R27-FOREST-DEGREE-LEMMA",
+      "statement": "(DL) For every finite forest G (finite carrier X, G.IsAcyclic) and every natural k: Σ_{J ∈ I_k(G)} Σ_{v ∈ J} deg_G(v) ≤ 2k·i_k(G), in ℤ, with i_k = Erdos993G1.indepCount and I_k the independent k-subsets. No α hypothesis, no k ≥ 1, no connectivity; instance binders on a general Type u carrier.",
+      "scope": "Lean: Erdos993G1.forest_degree_lemma (registered `lemma` kind inside award C1-LA1; statement byte-identical to SOLUTION-CONTRACT §2). Acyclicity is load-bearing (K4−e violates at k = 1; the statement is FALSE on K_{2,3}; every cycle C_n satisfies it with equality at every k). Excluded conclusions: tightness (never tight at k ≥ 1 with i_k > 0 — see E993-R27-FOREST-DEGREE-LEMMA-EQUALITY-CLASSIFICATION); that (DL) certifies acyclicity (only the root-corrected k = 1 form does); any pointwise degree claim; any no-recovery reading. Fence §3.1: an order bound / counting statement whose contrapositive has sign Δ_k ≥ 0; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE (OPEN), E993-G1WIDE-NO-SIZE-CAP (OPEN), NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the all-rank aggregate or Erdős #993. §3.2 nothing asymptotic. §3.3 (DL) is an average over I_k; no pointwise degree statement. §3.6 every Lean declaration authored in-run; no external Lean text (the audit copy carries no LICENSE). §3.7 attribution travels on this face.",
+      "status": "VERIFIED",
+      "evidence_grade": "formally_verified",
+      "formal_award": true,
+      "smallest_witness_order": null,
+      "certificate": "formally_verified (governed lean-proof-workflow run runs/lean-2026-09-25-c1-la1-forest-degree-extension: kernel verified within propext/Classical.choice/Quot.sound on all 55 declarations; independent informal proof-integrity audit passed (595731fa…; injection replayed pair by pair on 6,984 rooted instances to order 10 unlabelled and 280,392 rooted instances on all 40,232 labelled forests to order 7 under two choice functions, 0 defects; acyclicity shown load-bearing); independent statement-fidelity review match (7f19fa3e…; both faces character-for-character the §2 statements); VERIFICATION-REPORT 28bc7d1aa0536790…; award C1-LA1). Proof of record: the type-A/type-B injection of critic C-F1-T for the root-corrected lemma D_k + 2·Σ_i a_{r_i}(k) ≤ 2k·i_k (one root per component; parent map with root-path length strictly decreasing, whence p(p(u)) ≠ u — the third use of acyclicity found by second read SR-RC and supplied as Erdos993G1.par_par_ne; two-sided grandparent invariant; additive assembly with rootPairs counted with multiplicity), then drop the correction. Second, independent in-run derivation: the corrected two-potential chain (T1's architecture as corrected by C-T1-F/C-T1-U; edge-split join C-U2-T) — informal, not compiled. G1 definitions carried byte-identically from the r25 award source (736eb9df…). Attribution: Fang–Lu–Nevo–Yao–Zheng 2026, 'Unimodality of Independence Polynomials for Sufficiently Large Forests', arXiv:2609.20961v1 §8 (attribution for the mathematics; per Gate ruling 2 never evidence); r27 seats T1, T2, T3, U1, U2, U3; critics C-F1-T (proof of record), C-F1-U, C-T1-F, C-T1-U, C-U2-T, C-U1-T; the F/T/U adjudicators and the synthesis; formalizer c1-la1-formalizer-opus-20260925.",
+      "aliases": [
+        "forest degree lemma",
+        "(DL)",
+        "FLNYZ Lemma 8.1 consequence (8.3)",
+        "incident degree sum bound",
+        "E993-R27-DL"
+      ],
+      "alias_patterns": [
+        "forest.degree.lemma",
+        "degree.lemma.*forest",
+        "2k.*i_k"
+      ],
+      "novelty_claimed": "None mathematically (FLNYZ 2026 §8); new as a kernel-verified statement on the program's G1 carrier with an in-run injection proof.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "runs/lean-2026-09-25-c1-la1-forest-degree-extension/VERIFICATION-REPORT.md",
+        "cycles/cycle-1/stage6/SYNTHESIS.md",
+        "cycles/cycle-1/stage4/critics/F1/T/CRITIQUE.md",
+        "second-reads/SR-RC/SECOND-READ.md"
+      ],
+      "terminal_evidence": {
+        "grade": "formally_verified",
+        "award": "C1-LA1",
+        "run": "runs/lean-2026-09-25-c1-la1-forest-degree-extension"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-forest-degree-extension-dre-2026-09-24 (r27)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "registered VERIFIED at formally_verified (first registration; the FLNYZ result was absent from the registry)"
+        }
+      ]
+    },
+    {
+      "claim_key": "E993-R27-FOREST-EXTENSION-INEQUALITY",
+      "statement": "(EX) For every finite forest G of order n and every natural k: n·i_k(G) ≤ (k+1)·i_{k+1}(G) + 3k·i_k(G) in ℤ (equivalently (k+1)·i_{k+1} ≥ (n − 3k)·i_k).",
+      "scope": "Lean: Erdos993G1.forest_extension_inequality, the terminal theorem of award C1-LA1 (statement byte-identical to SOLUTION-CONTRACT §2). Composition: (DL) + the graph-general E993-R27-INDEP-EXTENSION-DOUBLE-COUNT and E993-R27-EXTENSION-LOWER-BOUND. Tight at k = 0 on every finite graph; never tight at k ≥ 1 with i_k > 0. Fence §3.1: an order bound / counting statement whose contrapositive has sign Δ_k ≥ 0; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE (OPEN), E993-G1WIDE-NO-SIZE-CAP (OPEN), NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the all-rank aggregate or Erdős #993. §3.2 nothing asymptotic. §3.3 (DL) is an average over I_k; no pointwise degree statement. §3.6 every Lean declaration authored in-run; no external Lean text (the audit copy carries no LICENSE). §3.7 attribution travels on this face.",
+      "status": "VERIFIED",
+      "evidence_grade": "formally_verified",
+      "formal_award": true,
+      "smallest_witness_order": null,
+      "certificate": "formally_verified (award C1-LA1, runs/lean-2026-09-25-c1-la1-forest-degree-extension; VERIFICATION-REPORT 28bc7d1aa0536790…; see E993-R27-FOREST-DEGREE-LEMMA for the audit and review evidence). Attribution: Fang–Lu–Nevo–Yao–Zheng 2026, 'Unimodality of Independence Polynomials for Sufficiently Large Forests', arXiv:2609.20961v1 §8 (attribution for the mathematics; per Gate ruling 2 never evidence) (the unnumbered ratio display inside Proposition 8.2's proof); T3 (derivation), U3 and C-U1-T (the compiled (EX) step), the formalizer.",
+      "aliases": [
+        "forest extension inequality",
+        "(EX)",
+        "(k+1) i_{k+1} >= (n-3k) i_k",
+        "E993-R27-EX"
+      ],
+      "alias_patterns": [
+        "extension.inequality",
+        "n.?-.?3k"
+      ],
+      "novelty_claimed": "None mathematically (FLNYZ 2026 §8); new as a kernel-verified statement on the G1 carrier.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "runs/lean-2026-09-25-c1-la1-forest-degree-extension/VERIFICATION-REPORT.md",
+        "cycles/cycle-1/stage3/returns/T3/RETURN.md"
+      ],
+      "terminal_evidence": {
+        "grade": "formally_verified",
+        "award": "C1-LA1",
+        "run": "runs/lean-2026-09-25-c1-la1-forest-degree-extension"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-forest-degree-extension-dre-2026-09-24 (r27)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "registered VERIFIED at formally_verified"
+        }
+      ]
+    },
+    {
+      "claim_key": "E993-R27-INDEP-EXTENSION-DOUBLE-COUNT",
+      "statement": "For every finite simple graph G and every natural k: (k+1)·i_{k+1}(G) = Σ_{J ∈ I_k(G)} e(J) in ℤ, where e(J) = |V ∖ N[J]| is the extension count. NO acyclicity.",
+      "scope": "Lean: Erdos993G1.double_count (`lemma` face of award C1-LA2; hypotheses exactly [Fintype X] [DecidableEq X] [DecidableRel G.Adj]). Graph-general; not a forest statement; not evidence for (DL)/(EX); transfers no status. Face note: the kernel receipt's #print axioms probe covers the terminal e_ge_sub; double_count's axiom line rests on the whole-file build and EVIDENCE/axioms-all-declarations.txt (all 19 declarations at the three axioms). This run's firstDescent is the sInf form, extensionally (Nat.sInf_def) but not definitionally the Nat.find object of record — nothing in the award depends on it; a later composition must not treat LA2's firstDescent as the rfl-certified object.",
+      "status": "VERIFIED",
+      "evidence_grade": "formally_verified",
+      "formal_award": true,
+      "smallest_witness_order": null,
+      "certificate": "formally_verified (governed run runs/lean-2026-09-25-c1-la2-extension-counting-core: kernel verified within the three permitted axioms on all 19 declarations; independent informal audit passed (792ad30e…; 23,034,439 checks on 38,608 labelled graphs, 0 failures; L5 bijection pair by pair to n ≤ 5); independent fidelity review match (fc12cd1d…); VERIFICATION-REPORT 73d21e93f64ae8ec…; award C1-LA2). Record defect F1 (auditor): INFORMAL-PROOF §6 item 1 and the contract's conclusion.statement claim no ℕ-subtraction anywhere in the development — false as written (one truncation-free (k+1)−1 via Finset.card_erase_of_mem at Main.lean:183); no conclusion affected; sealed artifacts not edited; correction carried here and on the closeout. Attribution: classical (FLNYZ (8.1), 'the extension method'); r27 seat U3 (compiled), critic C-U1-T (independent derivation), the U adjudicator (replay), T3 (informal proof); formalizer c1-la2-formalizer-opus-20260925.",
+      "aliases": [
+        "double count",
+        "extension double count",
+        "(8.1)",
+        "E993-R27-DOUBLE-COUNT"
+      ],
+      "alias_patterns": [
+        "double.count",
+        "extension.*count"
+      ],
+      "novelty_claimed": "None mathematically; new as a kernel-verified statement on the G1 carrier.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "runs/lean-2026-09-25-c1-la2-extension-counting-core/VERIFICATION-REPORT.md"
+      ],
+      "terminal_evidence": {
+        "grade": "formally_verified",
+        "award": "C1-LA2",
+        "run": "runs/lean-2026-09-25-c1-la2-extension-counting-core"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-forest-degree-extension-dre-2026-09-24 (r27)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "registered VERIFIED at formally_verified"
+        }
+      ]
+    },
+    {
+      "claim_key": "E993-R27-EXTENSION-LOWER-BOUND",
+      "statement": "For every finite simple graph G of order n, every natural k and every independent k-set J: e(J) ≥ n − k − Σ_{v ∈ J} deg_G(v) in ℤ. NO acyclicity.",
+      "scope": "Lean: Erdos993G1.e_ge_sub, the terminal theorem of award C1-LA2 (statement byte-identical to the synthesis statement of record). Graph-general; hJ is consumed only through |J| = k; equality iff exc(J) = 0 (no vertex has two or more neighbours in J) — see E993-R27-EXACT-EXTENSION-IDENTITY. Transfers no status; not evidence for (DL)/(EX).",
+      "status": "VERIFIED",
+      "evidence_grade": "formally_verified",
+      "formal_award": true,
+      "smallest_witness_order": null,
+      "certificate": "formally_verified (award C1-LA2, runs/lean-2026-09-25-c1-la2-extension-counting-core; VERIFICATION-REPORT 73d21e93f64ae8ec…; audit and review evidence as for E993-R27-INDEP-EXTENSION-DOUBLE-COUNT; sharpness: decoupling |J| from k breaks the bound (n = 1 witness)). Attribution: r27 seat U3; F1 and both F1 critics (informal); the formalizer.",
+      "aliases": [
+        "e(J) lower bound",
+        "extension lower bound",
+        "E993-R27-E-GE-SUB"
+      ],
+      "alias_patterns": [
+        "extension.lower.bound"
+      ],
+      "novelty_claimed": "Elementary; new as a kernel-verified statement on the G1 carrier.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "runs/lean-2026-09-25-c1-la2-extension-counting-core/VERIFICATION-REPORT.md"
+      ],
+      "terminal_evidence": {
+        "grade": "formally_verified",
+        "award": "C1-LA2",
+        "run": "runs/lean-2026-09-25-c1-la2-extension-counting-core"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-forest-degree-extension-dre-2026-09-24 (r27)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "registered VERIFIED at formally_verified"
+        }
+      ]
+    },
+    {
+      "claim_key": "E993-R27-DEGREE-LEMMA-IMPLIES-EXTENSION-CHAIN",
+      "statement": "The implication DlHyp → ExHyp ∧ LbHyp ∧ R5Hyp ∧ XrHyp, where each hypothesis is DEFINITIONALLY the SOLUTION-CONTRACT §2 statement of (DL), (EX), (LB), (R5), (XR) respectively, quantified over all finite carriers and instances (one shared universe parameter). Components: DlHyp → ExHyp; ExHyp → LbHyp; LbHyp → R5Hyp; LbHyp → XrHyp.",
+      "scope": "Lean: Erdos993G1.degree_lemma_implies_chain (award C1-LA3). THE IMPLICATION IS THE AWARD; the consequents are not asserted by this key (they are asserted by E993-R27-FOREST-EXTENSION-INEQUALITY, -FOREST-DESCENT-LINEAR-BOUND, -RANK5-CEILING-20, -DESCENT-RESTRICTION-4R-MINUS-4 at their own grades). Instance caveat (C-U3-F): a (DL) proved at one fixed Fintype instance would not compose; DlHyp quantifies over instances. Alias distinction: this run's Erdos993G1.forest_extension_inequality is the CONDITIONAL form (extra hDL binder) under the same name as C1-LA1's unconditional theorem — never conflate. Fences: no no-recovery reading; (XR) not a uniform bound on d; r = 0 vacuous-hypothesis-sound. Fence §3.1: an order bound / counting statement whose contrapositive has sign Δ_k ≥ 0; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE (OPEN), E993-G1WIDE-NO-SIZE-CAP (OPEN), NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the all-rank aggregate or Erdős #993. §3.2 nothing asymptotic. §3.3 (DL) is an average over I_k; no pointwise degree statement. §3.6 every Lean declaration authored in-run; no external Lean text (the audit copy carries no LICENSE). §3.7 attribution travels on this face.",
+      "status": "VERIFIED",
+      "evidence_grade": "formally_verified",
+      "formal_award": true,
+      "smallest_witness_order": null,
+      "certificate": "formally_verified (governed run runs/lean-2026-09-25-c1-la3-degree-lemma-implication-chain: 39 declarations at the three axioms; bounded repair round 1 (record defects only: a false capsule-membership sentence on three faces, corrected; attribution and two fences added to the contract scope; comment-stripped sources byte-identical across rounds; fresh receipt d3c85ead…); independent informal audit round 2 passed; fidelity review match round 2 (154d8b63…; expected_statement unchanged 75039394…); VERIFICATION-REPORT 163d64e288b31273…; award C1-LA3). Attribution: critics C-U1-T, C-U3-T, C-U3-F, C-U1-F; seat U3 (the conditional chain); the U adjudicator (firstDescent reconciliation by rfl); Fang–Lu–Nevo–Yao–Zheng 2026, 'Unimodality of Independence Polynomials for Sufficiently Large Forests', arXiv:2609.20961v1 §8 (attribution for the mathematics; per Gate ruling 2 never evidence); FRESH-LEAD lane 11 (the conditional deductions); formalizer c1-la3-formalizer-opus-20260925.",
+      "aliases": [
+        "implication chain",
+        "DlHyp → ExHyp ∧ LbHyp",
+        "E993-R27-CHAIN"
+      ],
+      "alias_patterns": [
+        "implication.chain",
+        "DlHyp"
+      ],
+      "novelty_claimed": "New as a kernel-verified conditional chain on the G1 carrier.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "runs/lean-2026-09-25-c1-la3-degree-lemma-implication-chain/VERIFICATION-REPORT.md"
+      ],
+      "terminal_evidence": {
+        "grade": "formally_verified",
+        "award": "C1-LA3",
+        "run": "runs/lean-2026-09-25-c1-la3-degree-lemma-implication-chain"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-forest-degree-extension-dre-2026-09-24 (r27)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "registered VERIFIED at formally_verified (as an implication)"
+        }
+      ]
+    },
+    {
+      "claim_key": "E993-R27-FOREST-DESCENT-LINEAR-BOUND",
+      "statement": "(LB) For every finite forest G of order n and every natural k: Δ_k(G) < 0 ⇒ n ≤ 4k (Δ_k = Erdos993G1.delta; k = 0 included: Δ_0 < 0 ⟺ n = 0).",
+      "scope": "Lean (if formal): Erdos993G1.forest_descent_linear_bound (award C1-LA4, [Finite X], Nat.card). Strengthens the formally verified r25 award E993-R25-FOREST-DESCENT-ORDER-BOUND-SHARP ((k+1)²; 4k ≤ (k+1)² with equality only at k = 1; covers k = 0 which that award excludes) as a SEPARATE key — the r25 award is unchanged. 4k is attained at k = 1, 2 (P_4, P_8) and strictly slack at k = 3, 4, 5 (true maxima 11, 15, 18: E993-R27-FOREST-DESCENT-MAXIMA-CENSUS). Fence §3.1: an order bound / counting statement whose contrapositive has sign Δ_k ≥ 0; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE (OPEN), E993-G1WIDE-NO-SIZE-CAP (OPEN), NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the all-rank aggregate or Erdős #993. §3.2 nothing asymptotic. §3.3 (DL) is an average over I_k; no pointwise degree statement. §3.6 every Lean declaration authored in-run; no external Lean text (the audit copy carries no LICENSE). §3.7 attribution travels on this face.",
+      "status": "VERIFIED",
+      "evidence_grade": "formally_verified",
+      "formal_award": true,
+      "smallest_witness_order": null,
+      "certificate": "formally_verified (governed run runs/lean-2026-09-25-c1-la4-descent-order-bounds: forest_descent_linear_bound, `lemma` face; all declarations at the three axioms; C1-LA1's 55 entries carried byte-identically; independent informal audit passed; fidelity review match; VERIFICATION-REPORT 8ee1e413587a694f…; award C1-LA4). Attribution: Fang–Lu–Nevo–Yao–Zheng 2026, 'Unimodality of Independence Polynomials for Sufficiently Large Forests', arXiv:2609.20961v1 §8 (attribution for the mathematics; per Gate ruling 2 never evidence) (Prop. 8.2's inequality and its consequence); FRESH-LEAD lane 11 (the conditional deductions); T3 (derivations); C-U1-T, C-U3-T, C-U3-F, C-U1-F and seat U3 (the compiled chain, C1-LA3); C1-LA1's formalizer and C-F1-T (the (DL) proof carried); formalizer c1-la4-formalizer-opus-20260925.",
+      "aliases": [
+        "linear descent bound",
+        "(LB)",
+        "n <= 4k",
+        "E993-R27-LB"
+      ],
+      "alias_patterns": [
+        "4k",
+        "linear.*order.bound"
+      ],
+      "novelty_claimed": "New in the program: a linear order bound for a descent at rank k (the prior formal bound was quadratic).",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "runs/lean-2026-09-25-c1-la4-descent-order-bounds/VERIFICATION-REPORT.md",
+        "cycles/cycle-1/stage6/SYNTHESIS.md"
+      ],
+      "terminal_evidence": {
+        "grade": "formally_verified",
+        "award": "C1-LA4"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-forest-degree-extension-dre-2026-09-24 (r27)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "registered VERIFIED at formally_verified"
+        }
+      ]
+    },
+    {
+      "claim_key": "E993-R27-RANK5-CEILING-20",
+      "statement": "(R5) For every finite forest G of order n ≥ 21: Δ_5(G) ≥ 0 (equivalently Δ_5 < 0 ⇒ n ≤ 20).",
+      "scope": "Lean (if formal): Erdos993G1.forest_rank5_ceiling_20 (award C1-LA4). Supersedes the informal ceiling 25 (E993-R25-RANK5-CEILING-SHARPENED-TO-25) as a consequence, not an edit; empties that claim's stated residue (orders 22–25) — see the rank-5 residue closeout record. The census-grade companion Δ_5 < 0 ⇒ n ≤ 18 (E993-R27-RANK5-CEILING-18-CENSUS) is a separate item and never enters this face. Fence §3.1: an order bound / counting statement whose contrapositive has sign Δ_k ≥ 0; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE (OPEN), E993-G1WIDE-NO-SIZE-CAP (OPEN), NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the all-rank aggregate or Erdős #993. §3.2 nothing asymptotic. §3.3 (DL) is an average over I_k; no pointwise degree statement. §3.6 every Lean declaration authored in-run; no external Lean text (the audit copy carries no LICENSE). §3.7 attribution travels on this face.",
+      "status": "VERIFIED",
+      "evidence_grade": "formally_verified",
+      "formal_award": true,
+      "smallest_witness_order": null,
+      "certificate": "formally_verified (governed run runs/lean-2026-09-25-c1-la4-descent-order-bounds: forest_rank5_ceiling_20, `lemma` face ((LB) at k = 5); all declarations at the three axioms; C1-LA1's 55 entries carried byte-identically; independent informal audit passed; fidelity review match; VERIFICATION-REPORT 8ee1e413587a694f…; award C1-LA4). Attribution: Fang–Lu–Nevo–Yao–Zheng 2026, 'Unimodality of Independence Polynomials for Sufficiently Large Forests', arXiv:2609.20961v1 §8 (attribution for the mathematics; per Gate ruling 2 never evidence) (Prop. 8.2's inequality and its consequence); FRESH-LEAD lane 11 (the conditional deductions); T3 (derivations); C-U1-T, C-U3-T, C-U3-F, C-U1-F and seat U3 (the compiled chain, C1-LA3); C1-LA1's formalizer and C-F1-T (the (DL) proof carried); formalizer c1-la4-formalizer-opus-20260925.",
+      "aliases": [
+        "rank-5 ceiling 20",
+        "(R5)",
+        "n >= 21 => Delta_5 >= 0",
+        "E993-R27-R5"
+      ],
+      "alias_patterns": [
+        "rank.?5.*ceiling.*20"
+      ],
+      "novelty_claimed": "New: the rank-5 descent ceiling lowered from 25 (informal) to 20.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "runs/lean-2026-09-25-c1-la4-descent-order-bounds/VERIFICATION-REPORT.md"
+      ],
+      "terminal_evidence": {
+        "grade": "formally_verified",
+        "award": "C1-LA4"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-forest-degree-extension-dre-2026-09-24 (r27)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "registered VERIFIED at formally_verified"
+        }
+      ]
+    },
+    {
+      "claim_key": "E993-R27-DESCENT-RESTRICTION-4R-MINUS-4",
+      "statement": "(XR) For every finite forest G of order n and every natural r: x(G) < r ⇒ n ≤ 4r − 4, where x = firstDescent (the first strict descent, Nat.find on {k | Δ_k < 0}); equivalently d ≤ 2r − 4 at n = 2r + d. The r = 0 case is vacuous (x < 0 is false); the ℕ-subtraction 4r − 4 is exact for r ≥ 1.",
+      "scope": "Lean (if formal): Erdos993G1.forest_descent_restriction, the terminal theorem of award C1-LA4. NOT a uniform bound on d. Occupancy (E993-R27-FOREST-DESCENT-MAXIMA-CENSUS): max{n : x < r} = M(r−1) = 0, 4, 8, 11, 15, 18 for r = 1..6 against 4r − 4 = 0, 4, 8, 12, 16, 20 — exact at r ≤ 3. Fence §3.1: an order bound / counting statement whose contrapositive has sign Δ_k ≥ 0; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE (OPEN), E993-G1WIDE-NO-SIZE-CAP (OPEN), NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the all-rank aggregate or Erdős #993. §3.2 nothing asymptotic. §3.3 (DL) is an average over I_k; no pointwise degree statement. §3.6 every Lean declaration authored in-run; no external Lean text (the audit copy carries no LICENSE). §3.7 attribution travels on this face.",
+      "status": "VERIFIED",
+      "evidence_grade": "formally_verified",
+      "formal_award": true,
+      "smallest_witness_order": null,
+      "certificate": "formally_verified (governed run runs/lean-2026-09-25-c1-la4-descent-order-bounds: forest_descent_restriction, terminal theorem ((LB) at k = x via firstDescent's spec); all declarations at the three axioms; C1-LA1's 55 entries carried byte-identically; independent informal audit passed; fidelity review match; VERIFICATION-REPORT 8ee1e413587a694f…; award C1-LA4). Attribution: Fang–Lu–Nevo–Yao–Zheng 2026, 'Unimodality of Independence Polynomials for Sufficiently Large Forests', arXiv:2609.20961v1 §8 (attribution for the mathematics; per Gate ruling 2 never evidence) (Prop. 8.2's inequality and its consequence); FRESH-LEAD lane 11 (the conditional deductions); T3 (derivations); C-U1-T, C-U3-T, C-U3-F, C-U1-F and seat U3 (the compiled chain, C1-LA3); C1-LA1's formalizer and C-F1-T (the (DL) proof carried); formalizer c1-la4-formalizer-opus-20260925.",
+      "aliases": [
+        "descent restriction",
+        "(XR)",
+        "x < r => n <= 4r-4",
+        "E993-R27-XR"
+      ],
+      "alias_patterns": [
+        "4r.?-.?4",
+        "descent.restriction"
+      ],
+      "novelty_claimed": "New: an order restriction on forests whose first strict descent precedes r.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "runs/lean-2026-09-25-c1-la4-descent-order-bounds/VERIFICATION-REPORT.md"
+      ],
+      "terminal_evidence": {
+        "grade": "formally_verified",
+        "award": "C1-LA4"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-forest-degree-extension-dre-2026-09-24 (r27)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "registered VERIFIED at formally_verified"
+        }
+      ]
+    },
+    {
+      "claim_key": "E993-R27-FOREST-ROOT-CORRECTED-DEGREE-LEMMA",
+      "statement": "(RC) For every finite forest G, every natural k and EVERY choice of exactly one root r_i in each connected component: D_k(G) + 2·Σ_i a_{r_i}(k) ≤ 2k·i_k(G) in ℤ, with D_k = Σ_{J∈I_k} Σ_{v∈J} deg(v), a_v(k) = #{J ∈ I_k : v ∈ J}, the correction summed over components with multiplicity. Equivalent presentations on this face (no second key): (SH) = (DL+) = root-deficit: D_k + 2·M_k ≤ 2k·i_k with M_k = Σ_C max_{v∈C} a_v(k), the exact correction term (attained at k = 1 on every forest at every rooting and at k ≥ 2 on forests with edges); Corollary B (C-T1-F): n·D_k + 2k·i_k ≤ 2k·i_k·n, equality exactly for trees at k = 1, moves no order bound; (EXS): (k+1)·i_{k+1} ≥ (n − 3k)·i_k + 2·M_k (does not improve (LB)). (DL) is the corollary obtained by dropping the correction.",
+      "scope": "The statement is FALSE without acyclicity (C_n violates it at k = 1): IsAcyclic travels on the face; never graph-general. Acyclicity is used three times (edge ↔ non-root bijection |E| = n − c; N(v) = {p(v)} ∪ children(v); parent map strictly decreasing depth, p(p(u)) ≠ u). No α, no k ≥ 1, no n ≥ 2, no connectivity. The injection proof is the kernel-verified core of award C1-LA1 (Erdos993G1.forest_root_corrected_degree_bound and the rootPairs assembly); this KEY is registered at the informal grade of its every-rooting statement as read by SR-RC. Fence §3.1: an order bound / counting statement whose contrapositive has sign Δ_k ≥ 0; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE (OPEN), E993-G1WIDE-NO-SIZE-CAP (OPEN), NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the all-rank aggregate or Erdős #993. §3.2 nothing asymptotic. §3.3 (DL) is an average over I_k; no pointwise degree statement. §3.6 every Lean declaration authored in-run; no external Lean text (the audit copy carries no LICENSE). §3.7 attribution travels on this face.",
+      "status": "VERIFIED",
+      "evidence_grade": "proved_informal",
+      "formal_award": false,
+      "smallest_witness_order": null,
+      "certificate": "proved_informal — proof of record the type-A/type-B injection Φ of critic C-F1-T, verified line by line and machine-checked by the F adjudicator; second independent derivation C-T1-F (root-deficit, verbatim) and C-T1-U ((DL+)) from T1's two-potential architecture as corrected by those critics (T1's shipped §3 Step c refuted); M_k, k = 1 exactness and (EXS): C-F1-U; isolated second read SR-RC verdicts RC-1 confirmed_with_repairs, RC-2 confirmed_with_repairs, RC-4 confirmed_with_repairs (second-reads/SR-RC/SECOND-READ.md; injection replayed pair by pair on all forest classes to order 11 at every rooting, 9,242,866 source pairs, 0 collisions; (RC) on 431,055 rooting instances to order 12). Its (DL) corollary is formally verified inside C1-LA1 (runs/lean-2026-09-25-c1-la1-forest-degree-extension), whose rooting API supplies the p(p(u)) ≠ u node (par_par_ne). Attribution: Fang–Lu–Nevo–Yao–Zheng 2026, 'Unimodality of Independence Polynomials for Sufficiently Large Forests', arXiv:2609.20961v1 §8 (attribution for the mathematics; per Gate ruling 2 never evidence) (attribution only); C-F1-T; C-T1-F; C-T1-U; C-F1-U; F and T adjudicators; SR-RC.",
+      "aliases": [
+        "root-corrected degree lemma",
+        "(RC)",
+        "(SH)",
+        "(DL+)",
+        "root deficit",
+        "E993-R27-ROOT-CORRECTED-DEGREE-LEMMA",
+        "E993-R27-FOREST-DEGREE-LEMMA-ROOT-SHARPENED",
+        "E993-R27-FOREST-DEGREE-LEMMA-ROOT-DEFICIT"
+      ],
+      "alias_patterns": [
+        "root.corrected",
+        "root.deficit",
+        "root.sharpened"
+      ],
+      "novelty_claimed": "New in-run: the root-corrected strengthening of the FLNYZ degree lemma with the exact correction term.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "cycles/cycle-1/stage4/critics/F1/T/CRITIQUE.md",
+        "cycles/cycle-1/stage5/adjudicators/F/ADJUDICATION.md",
+        "second-reads/SR-RC/SECOND-READ.md"
+      ],
+      "terminal_evidence": {
+        "grade": "proved_informal",
+        "second_read": "SR-RC"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-forest-degree-extension-dre-2026-09-24 (r27)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "registered VERIFIED at proved_informal after the isolated second read SR-RC (one canonical key for four presentations)"
+        }
+      ],
+      "second_read_registration_text": "second-reads/SR-RC/SECOND-READ.md ## Registration text KEY 1"
+    },
+    {
+      "claim_key": "E993-R27-FOREST-DEGREE-LEMMA-EQUALITY-CLASSIFICATION",
+      "statement": "For every finite forest G (order n, c components): (1) D_k(G) = 2k·i_k(G) iff k = 0 or i_k(G) = 0; (2) for k ≥ 1 with i_k > 0: D_k + 2·M_k ≤ 2k·i_k with M_k ≥ 1, hence D_k + 2 ≤ 2k·i_k, the 2 sharp (every tree at k = 1); (3) at k = 1: D_1 + 2c = 2·i_1 exactly (|E| + c = n), so the k = 1 slack of (DL) is exactly 2c; (4) (EX): (k+1)·i_{k+1} = (n − 3k)·i_k iff k = 0 or i_k = 0, and ≥ (n − 3k)·i_k + 2 for k ≥ 1 with i_k > 0; (EX) is tight at k = 0 on every finite graph.",
+      "scope": "Record correction carried on this face (§3.5, no sealed edit): SEMANTIC-CONTRACT §4's '(DL) tight cases' label has no instances at k ≥ 1 with i_k > 0 (erratum R27-E-b, now a theorem; the §4 fixed-point values are correct). Excluded conclusion for C1-LA1: no tightness claim on any award face; clause 1 is the reason, never a zero-failure census. Clause 4 consumes the two formally verified counting theorems; the grade stays proved_informal. Fence §3.1: an order bound / counting statement whose contrapositive has sign Δ_k ≥ 0; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE (OPEN), E993-G1WIDE-NO-SIZE-CAP (OPEN), NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the all-rank aggregate or Erdős #993. §3.2 nothing asymptotic. §3.3 (DL) is an average over I_k; no pointwise degree statement. §3.6 every Lean declaration authored in-run; no external Lean text (the audit copy carries no LICENSE). §3.7 attribution travels on this face.",
+      "status": "VERIFIED",
+      "evidence_grade": "proved_informal",
+      "formal_award": false,
+      "smallest_witness_order": null,
+      "certificate": "proved_informal — C-F1-T (strictness consequence of the injection) and C-F1-U (M_k form, k = 1 exactness) independently; C-T1-F Corollary A (the weak +2 form, subsumed); F adjudicator (40,233 labelled forests); T adjudicator (0 tight cases over 85,625 classes); isolated second read SR-RC verdict RC-3 confirmed_with_repairs (iff form; 0 nontrivial tight rows in 160,559 k-rows over 15,206 classes to order 14); C1-LA1's informal auditor (min slack exactly 2 for k ≥ 1, i_k > 0; slack 2c at k = 1).",
+      "aliases": [
+        "degree lemma strictness",
+        "(DL) equality classification",
+        "never tight",
+        "E993-R27-DL-STRICT"
+      ],
+      "alias_patterns": [
+        "equality.classification",
+        "strictness.*degree.lemma"
+      ],
+      "novelty_claimed": "New in-run: exact equality classification of (DL) and (EX) on forests.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "cycles/cycle-1/stage4/critics/F1/T/CRITIQUE.md",
+        "second-reads/SR-RC/SECOND-READ.md"
+      ],
+      "terminal_evidence": {
+        "grade": "proved_informal",
+        "second_read": "SR-RC"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-forest-degree-extension-dre-2026-09-24 (r27)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "registered VERIFIED at proved_informal after SR-RC"
+        }
+      ],
+      "second_read_registration_text": "second-reads/SR-RC/SECOND-READ.md ## Registration text KEY 2"
+    },
+    {
+      "claim_key": "E993-R27-DEGREE-LEMMA-K1-ACYCLICITY-CRITERION",
+      "statement": "For ANY finite simple graph G (order n, |E| edges, c components; a_v(1) = 1 so M_1 = c): D_1(G) + 2c ≤ 2·i_1(G) ⟺ |E| + c ≤ n ⟺ G is acyclic. Recorded fact about plain (DL) on non-forests (no second key): D_1 ≤ 2·i_1 ⟺ |E| ≤ n, with equality ⟺ |E| = n — plain (DL) does not certify acyclicity (every cycle C_n satisfies (DL) with equality at every k; unicyclic graphs are tight at k = 1); order-minimal failures K_4 and K_{2,3} (the latter failing at k = 1 and 2); edge-minimal failure K_4 − e.",
+      "scope": "Finiteness only; acyclicity is the CONCLUSION of the root-corrected form. Registration fence: the plain k = 1 form gets no key of its own and is never described as an acyclicity criterion; witnesses labelled order-minimal vs edge-minimal. The 'excess-1 never fails at k ≥ 2' observation is bounded_computation and not part of this face. Fence §3.1: an order bound / counting statement whose contrapositive has sign Δ_k ≥ 0; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE (OPEN), E993-G1WIDE-NO-SIZE-CAP (OPEN), NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the all-rank aggregate or Erdős #993. §3.2 nothing asymptotic. §3.3 (DL) is an average over I_k; no pointwise degree statement. §3.6 every Lean declaration authored in-run; no external Lean text (the audit copy carries no LICENSE). §3.7 attribution travels on this face.",
+      "status": "VERIFIED",
+      "evidence_grade": "proved_informal",
+      "formal_award": false,
+      "smallest_witness_order": null,
+      "certificate": "proved_informal (two-line identities plus |E| ≥ n − c) — plain form C-T2-U (finding 3) and C-T2-F (F-4) independently; root-corrected form C-F1-U (finding 1) and C-F1-T; F adjudicator (Established results 2 and 8); isolated second read SR-RC verdict RC-5 confirmed_with_repairs (both equivalences on all 33,868 labelled graphs to order 6, 0 exceptions).",
+      "aliases": [
+        "k = 1 criterion",
+        "root-corrected acyclicity equivalence",
+        "|E| + c <= n",
+        "E993-R27-K1-CRITERION"
+      ],
+      "alias_patterns": [
+        "acyclicity.criterion",
+        "k.?=.?1.criterion"
+      ],
+      "novelty_claimed": "New in-run: the root-corrected k = 1 inequality characterizes forests.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "cycles/cycle-1/stage4/critics/F1/U/CRITIQUE.md",
+        "cycles/cycle-1/stage4/critics/T2/U/CRITIQUE.md",
+        "second-reads/SR-RC/SECOND-READ.md"
+      ],
+      "terminal_evidence": {
+        "grade": "proved_informal",
+        "second_read": "SR-RC"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-forest-degree-extension-dre-2026-09-24 (r27)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "registered VERIFIED at proved_informal after SR-RC"
+        }
+      ],
+      "second_read_registration_text": "second-reads/SR-RC/SECOND-READ.md ## Registration text KEY 3"
+    },
+    {
+      "claim_key": "E993-R27-EXACT-EXTENSION-IDENTITY",
+      "statement": "(EXX) For every finite simple graph G of order n and every natural k: (k+1)·i_{k+1} = (n − k)·i_k − D_k + E_k in ℤ, with E_k = Σ_{J∈I_k} exc(J), exc(J) = Σ_{u∈V} max(codeg(u,J) − 1, 0) = Σ_{v∈J} deg(v) − |N(J)| (the over-counted neighbour incidences). Per-set form of record: e(J) = n − k − Σ_{v∈J} deg(v) + exc(J) for every independent k-set J. NO acyclicity; no lower bound on n or k.",
+      "scope": "Corollaries on the face: (EXX-slack) (k+1)·i_{k+1} − (n − 3k)·i_k = (2k·i_k − D_k) + E_k; exc(J) ≥ 0 recovers E993-R27-EXTENSION-LOWER-BOUND with equality iff exc(J) = 0; E_k = 0 identically for k ≤ 1. Graph-general: not evidence for (DL)/(EX)/(LB)/(R5)/(XR); must be stated in ℤ ((n−k)·i_k − D_k = −98 on P_12 at k = 5); exc is ℕ-safe as written. (EXX) is NOT an FLNYZ statement and is not attributed to them. Fence §3.1: an order bound / counting statement whose contrapositive has sign Δ_k ≥ 0; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE (OPEN), E993-G1WIDE-NO-SIZE-CAP (OPEN), NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the all-rank aggregate or Erdős #993. §3.2 nothing asymptotic. §3.3 (DL) is an average over I_k; no pointwise degree statement. §3.6 every Lean declaration authored in-run; no external Lean text (the audit copy carries no LICENSE). §3.7 attribution travels on this face.",
+      "status": "VERIFIED",
+      "evidence_grade": "proved_informal",
+      "formal_award": false,
+      "smallest_witness_order": null,
+      "certificate": "proved_informal — critic C-T3-U (advance A1: the identity and the defect term); T adjudicator (§4; per-set form is the one to compile); isolated second read SR-EXX verdict EX-1 confirmed (re-derived from SEMANTIC-CONTRACT §1; all 33,868 labelled graphs to order 6, 943,524 checks, and all 638 forest classes to order 10, 0 failures). Composes with the formally verified double count and e(J) bound; the composition's grade is this face's.",
+      "aliases": [
+        "exact extension identity",
+        "(EXX)",
+        "exc(J)",
+        "co-degree excess",
+        "E993-R27-EXX"
+      ],
+      "alias_patterns": [
+        "exact.extension.identity",
+        "exc\\(J\\)"
+      ],
+      "novelty_claimed": "New in-run: the exact defect term turning the extension lower bound into an identity.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "cycles/cycle-1/stage4/critics/T3/U/CRITIQUE.md",
+        "second-reads/SR-EXX/SECOND-READ.md"
+      ],
+      "terminal_evidence": {
+        "grade": "proved_informal",
+        "second_read": "SR-EXX"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-forest-degree-extension-dre-2026-09-24 (r27)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "registered VERIFIED at proved_informal after SR-EXX"
+        }
+      ],
+      "second_read_registration_text": "second-reads/SR-EXX/SECOND-READ.md ## Registration text 1"
+    },
+    {
+      "claim_key": "E993-R27-FOREST-DESCENT-MAXIMA-CENSUS",
+      "statement": "M(k) := max{n : some finite forest of order n has Δ_k < 0} satisfies M(0) = 0, M(1) = 4, M(2) = 8, M(3) = 11, M(4) = 15, M(5) = 18, each attained (empty forest; P_4; P_8; P_10 ⊔ K_1; P_15; P_10 ⊔ P_8). (XR) occupancy row (corollary, not a second key): max{n : x(G) < r} = M(r−1) = 0, 4, 8, 11, 15, 18 for r = 1..6 against 4r − 4 = 0, 4, 8, 12, 16, 20 — exact at r = 1, 2, 3, off by one at r = 4, 5, off by two at r = 6; the cells (4,12), (5,16), (6,19), (6,20) are EMPTY.",
+      "scope": "Conditionality on the face: M(0) elementary; M(1..3) UNCONDITIONAL (capped by the formally verified E993-R25-FOREST-DESCENT-ORDER-BOUND-SHARP ceilings 4, 9, 16 and a census complete to order 20). (LB) is formally verified (C1-LA4), so the (LB)-capped entries rest on a formal ceiling and a complete census; every entry stays bounded_computation. (LB)'s 4k is attained at k = 1, 2 and strictly slack at k = 3, 4, 5; the r25 wording 'tight at k = 1 only' is correct for (k+1)² and must not be carried to 4k. Grade bounded_computation for EVERY entry ('unconditional' describes the ceiling's provenance, not the grade; proved_informal is never written on an M(k)). The (XR) table column reads 'not excluded by (XR)', never 'live'. Fence §3.1: an order bound / counting statement whose contrapositive has sign Δ_k ≥ 0; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE (OPEN), E993-G1WIDE-NO-SIZE-CAP (OPEN), NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the all-rank aggregate or Erdős #993. §3.2 nothing asymptotic. §3.3 (DL) is an average over I_k; no pointwise degree statement. §3.6 every Lean declaration authored in-run; no external Lean text (the audit copy carries no LICENSE). §3.7 attribution travels on this face.",
+      "status": "VERIFIED",
+      "evidence_grade": "bounded_computation",
+      "formal_award": false,
+      "smallest_witness_order": null,
+      "certificate": "bounded_computation — C-T3-F (F-3/F-4: the five values, tightness profile, occupancy at horizon 19); C-T3-U (A2: M(1..3) at horizon 12); T adjudicator (unconditional at k ≤ 3; 'live' header struck); the r25 scope note of E993-R25-FOREST-DESCENT-ORDER-BOUND-SHARP (prior values 4, 8, 11, 15, reverified in-run three times); isolated second read SR-EXX verdict EX-2 confirmed_with_repairs (independent complete forest census to ORDER 20 by centroid decomposition with packed truncated independence polynomials — free trees A000055 and forests A005195 matched at every order through 20, 3,269,193 nonempty classes; witnesses verified by direct k-subset enumeration).",
+      "aliases": [
+        "descent maxima",
+        "M(k)",
+        "4, 8, 11, 15, 18",
+        "(XR) occupancy row",
+        "E993-R27-MAXIMA"
+      ],
+      "alias_patterns": [
+        "descent.maxima",
+        "occupancy.row"
+      ],
+      "novelty_claimed": "New in-run: the exact descent maxima to rank 5 and the (XR) occupancy row, with an order-20 census.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "cycles/cycle-1/stage4/critics/T3/F/CRITIQUE.md",
+        "second-reads/SR-EXX/SECOND-READ.md"
+      ],
+      "terminal_evidence": {
+        "grade": "bounded_computation",
+        "second_read": "SR-EXX"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-forest-degree-extension-dre-2026-09-24 (r27)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "registered VERIFIED at bounded_computation after SR-EXX"
+        }
+      ],
+      "second_read_registration_text": "second-reads/SR-EXX/SECOND-READ.md ## Registration text 2"
+    },
+    {
+      "claim_key": "E993-R27-RANK5-CEILING-18-CENSUS",
+      "statement": "For every finite forest G of order n: Δ_5(G) < 0 ⇒ n ≤ 18 (n ≥ 19 ⇒ Δ_5 ≥ 0). Sharp: exactly 9,532 forest isomorphism classes of order 18 have Δ_5 < 0 (e.g. P_10 ⊔ P_8: i_5 = 2232, i_6 = 2083, Δ_5 = −149). Two orders sharper than (R5) and seven sharper than E993-R25-RANK5-CEILING-SHARPENED-TO-25.",
+      "scope": "Mandatory annotation: this IS the M(5) = 18 entry of E993-R27-FOREST-DESCENT-MAXIMA-CENSUS in rank-5 presentation, not a second independent result (only the witness count and comparisons are additional). Evidence: exhaustive census of every forest class of order ≤ 20 (775,529 at order 19; 1,977,878 at order 20) — no class of order 19 or 20 with Δ_5 < 0; orders ≥ 21 excluded by (LB) at k = 5; the r25 frozen census is NOT an input. MUST NOT enter any award statement (§3.4; census-dependent, never formal); does not disturb the rank-5 residue closeout or the x ≤ 5 composition, which need only n ≤ 20. Fence §3.1: an order bound / counting statement whose contrapositive has sign Δ_k ≥ 0; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE (OPEN), E993-G1WIDE-NO-SIZE-CAP (OPEN), NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the all-rank aggregate or Erdős #993. §3.2 nothing asymptotic. §3.3 (DL) is an average over I_k; no pointwise degree statement. §3.6 every Lean declaration authored in-run; no external Lean text (the audit copy carries no LICENSE). §3.7 attribution travels on this face.",
+      "status": "VERIFIED",
+      "evidence_grade": "bounded_computation",
+      "formal_award": false,
+      "smallest_witness_order": null,
+      "certificate": "bounded_computation, capped by (LB) (formally_verified) — C-F3-T (F-4: statement, sharpening, the 9,532 count); C-T3-F (F-5: M(5) = 18 at horizon 19; order 20 named as the single unchecked order); T adjudicator (order 20 recorded as then unverified); isolated second read SR-EXX verdict EX-3 confirmed_with_repairs (in-run exhaustive enumeration of orders 19 and 20 on its own instrument, discharging the order-20 residual — order 20 had never been enumerated by an r27 seat). Unconditionally it would need the census to order 36.",
+      "aliases": [
+        "rank-5 ceiling 18",
+        "Delta_5 < 0 => n <= 18",
+        "9,532 order-18 classes",
+        "E993-R27-R5-18"
+      ],
+      "alias_patterns": [
+        "rank.?5.*ceiling.*18"
+      ],
+      "novelty_claimed": "New in-run: the sharp rank-5 descent ceiling at census grade.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "cycles/cycle-1/stage4/critics/F3/T/CRITIQUE.md",
+        "second-reads/SR-EXX/SECOND-READ.md"
+      ],
+      "terminal_evidence": {
+        "grade": "bounded_computation",
+        "second_read": "SR-EXX"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-forest-degree-extension-dre-2026-09-24 (r27)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "registered VERIFIED at bounded_computation after SR-EXX"
+        }
+      ],
+      "second_read_registration_text": "second-reads/SR-EXX/SECOND-READ.md ## Registration text 3"
+    },
+    {
+      "claim_key": "E993-R27-KADDITION-CLOSURE-X-LE-5",
+      "statement": "For every finite forest G with x(G) ≤ 5: x(G ⊔ K_1) ≤ x(G) + 1 (x = the first STRICT descent; Δ_k = 0 is not a descent).",
+      "scope": "Grade proved_informal-with-census (never formally_verified: Gate ruling 6, fence §3.4; no formal grade on (DL)/(LB)/(R5) promotes it). Evidence on the face: (i) reduction identity in ℤ, no acyclicity: i_k(G ⊔ K_1) = i_k(G) + i_{k−1}(G), hence Δ_j(G ⊔ K_1) = i_{j+1}(G) − i_{j−1}(G) = Δ_j(G) + Δ_{j−1}(G); (ii) rank 5: (R5) gives Δ_5 < 0 ⇒ n ≤ 20, so every forest with x = 5 lies inside the r25 order-≤21 census population; (iii) the census input, named: the r25 order-≤21 forest census checked the K1-addition TARGET itself with zero violations, re-verified in-run at orders ≤ 19 (C-F3-T) and ≤ 20 (C-F3-U) on independent instruments (one input in two attestations); (iv) ranks 0–4: E993-R25-KADDITION-CLOSURE-X-LE-4; rank 0 discharged outright (Δ_0 = n − 1 < 0 iff n = 0; ∅ ⊔ K_1 = K_1 has x = 1) with no census artifact (closure_certificate.json's rank-0 entry is corroboration). Relation to a REFUTED claim (travels): this is the K_1 instance of the REFUTED E993-FOREST-FIRST-DESCENT-DISJOINT-UNION-UPPER-ADDITIVITY (witness pair K_{1,3}, P_4, neither K_1); a refuted universal says nothing about a proper sub-family; the registry's stored scope contains NO K_1 carve-out (the F3/C-F3-U/F-adjudication sentence saying it does is FALSE and is replaced by this logical warrant); fence §3.8 intact. Excluded: no closure above rank 5; no order bound in the hypothesis; the order-22 class-count replay is NOT an input. Fence §3.1: an order bound / counting statement whose contrapositive has sign Δ_k ≥ 0; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE (OPEN), E993-G1WIDE-NO-SIZE-CAP (OPEN), NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the all-rank aggregate or Erdős #993. §3.2 nothing asymptotic. §3.3 (DL) is an average over I_k; no pointwise degree statement. §3.6 every Lean declaration authored in-run; no external Lean text (the audit copy carries no LICENSE). §3.7 attribution travels on this face.",
+      "status": "VERIFIED",
+      "evidence_grade": "proved_informal",
+      "formal_award": false,
+      "smallest_witness_order": null,
+      "certificate": "proved_informal-with-census — F3 (reconstruction and composition); C-F3-T and C-F3-U (census-content replays at orders ≤ 19 and ≤ 20); F adjudicator (evidence line); r25 seats/critics (K1-addition lineage); FRESH-LEAD lane 11; Fang–Lu–Nevo–Yao–Zheng 2026, 'Unimodality of Independence Polynomials for Sufficiently Large Forests', arXiv:2609.20961v1 §8 (attribution for the mathematics; per Gate ruling 2 never evidence); isolated second read SR-REC verdict RE-1 {V.get('RE-1')} (reduction identity on all 40,233 labelled forests to order 7 at every j; the closure directly, 0 failures; x = 0 ⟺ n = 0).",
+      "aliases": [
+        "K1-addition closure x <= 5",
+        "isolated-vertex addition",
+        "E993-R27-K1-X-LE-5"
+      ],
+      "alias_patterns": [
+        "k.?1.?addition.*5",
+        "closure.*x.*5"
+      ],
+      "novelty_claimed": "Extends the r25 x ≤ 4 closure by one rank via (R5).",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "cycles/cycle-1/stage3/returns/F3/RETURN.md",
+        "second-reads/SR-REC/SECOND-READ.md"
+      ],
+      "terminal_evidence": {
+        "grade": "proved_informal_with_census",
+        "second_read": "SR-REC"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-forest-degree-extension-dre-2026-09-24 (r27)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "registered VERIFIED at proved_informal-with-census after SR-REC"
+        }
+      ],
+      "second_read_registration_text": "second-reads/SR-REC/SECOND-READ.md ## Registration text RE-1"
+    },
+    {
+      "claim_key": "E993-R27-TWO-POTENTIAL-EDGE-SPLIT-RECURRENCES-ROOTED",
+      "statement": "Notation (travels): for a vertex subset S, deg_S(v) = |N(v) ∩ S|, N_S[v] = (N(v) ∪ {v}) ∩ S, I_k(S) the independent k-subsets of S, i_k(S) = |I_k(S)|, D_k(S) = Σ_{J∈I_k(S)} Σ_{v∈J} deg_S(v), c_v^S(k) = #{J ∈ I_k(S) : v ∈ J}; ℤ-valued families indexed by k ∈ ℕ; x·p the shift ((x·p)(0) = 0, (x·p)(k+1) = p(k)); product = convolution; potentials Z_S(k) = i_k(S); D_S(r)(k) = 2k·i_k(S) − D_k(S) − 2·c_r^S(k) (r ∈ S); E_S(r)(k) = Σ_{J∈I_k(S∖{r})} Σ_{v∈J} (2 − deg_S(v)) − i_k(S∖{r}) + i_k(S∖N_S[r]); D0_S(k) = 2k·i_k(S) − D_k(S). Let S, T be disjoint vertex subsets of a finite simple graph G whose only G-edge between them is r ~ s (r ∈ S, s ∈ T), U = S ∪ T, U ROOTED AT r. Then Z_U = Z_{S∖{r}}·Z_T + x·(Z_{S∖N_S[r]}·Z_{T∖{s}}); D_U(r) = D_S(r)·Z_{T∖{s}} + Z_{S∖{r}}·D_T(s) + x·(E_S(r)·Z_{T∖N_T[s]}) + x·(Z_{S∖N_S[r]}·E_T(s)) + 2x·(Z_{T∖N_T[s]}·(Z_{S∖{r}} − Z_{S∖N_S[r]})); E_U(r) = E_S(r)·Z_T + Z_{S∖{r}}·D_T(s) + x·(Z_{T∖N_T[s]}·(Z_{S∖{r}} − Z_{S∖N_S[r]})). The rooting at r is part of the statement (rooted at s the second and third identities fail in 214,828 of 215,754 labelled instances). Both Z-differences are coefficientwise ≥ 0, so if D_S(r), E_S(r), D_T(s), E_T(s) are coefficientwise nonnegative then every term is a shift of a convolution of nonnegative families and D_U(r), E_U(r) ≥ 0; base case D_{{r}}(r) = E_{{r}}(r) = 0.",
+      "scope": "Hypotheses consumed by the identities: finiteness; disjointness and separation (the single cross edge). ACYCLICITY IS NOT A HYPOTHESIS of the recurrences (841 arbitrary-graph joins, 0 failures) — it enters one step later, twice: every edge is a bridge (well-formed, strictly decreasing split for the induction over (tree, root) pairs) and it makes D, E nonnegative (off forests the potentials go negative: D_{C_3} = −2x, D_{K_4} = −6x). Canonical single form (abbreviation-free, rooting on its face); T1's abbreviated and C-U2-T's Ẑ presentations are the same identity and are not registered. Provenance that travels: the final forms were printed verbatim to seat T1 by control/C1-ALLOCATION.md item 1; T1's shipped §3 derivation does not reach them. Formalization conditions: x·p by cases on k, never p(k−1) over ℕ; 2 − deg_S(v) in ℤ; the Z-differences' nonnegativity is a theorem (S∖N_S[r] ⊆ S∖{r}). Fence §3.1: an order bound / counting statement whose contrapositive has sign Δ_k ≥ 0; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE (OPEN), E993-G1WIDE-NO-SIZE-CAP (OPEN), NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the all-rank aggregate or Erdős #993. §3.2 nothing asymptotic. §3.3 (DL) is an average over I_k; no pointwise degree statement. §3.6 every Lean declaration authored in-run; no external Lean text (the audit copy carries no LICENSE). §3.7 attribution travels on this face.",
+      "status": "VERIFIED",
+      "evidence_grade": "proved_informal",
+      "formal_award": false,
+      "smallest_witness_order": null,
+      "certificate": "proved_informal — derivation of record C-T1-F (F-3) and C-T1-U (steps 1–6), independently and concordantly; edge-split presentation C-U2-T (finding 2); replays: T adjudicator (5,776 joins), U adjudicator (215,754 labelled instances), isolated second read SR-JOIN verdict JN-1 confirmed_with_repairs (215,754 labelled + 3,216 free-tree + 5,776 ordered-pair + 841 arbitrary-graph instances + 15,276 direct split instances, 0 failures). Attribution: Fang–Lu–Nevo–Yao–Zheng 2026, 'Unimodality of Independence Polynomials for Sufficiently Large Forests', arXiv:2609.20961v1 §8 (attribution for the mathematics; per Gate ruling 2 never evidence) (Lemma 8.1, (8.2)–(8.5)) for the mathematics.",
+      "aliases": [
+        "two-potential recurrences",
+        "edge-split join",
+        "corrected join identities",
+        "E993-R27-JOIN"
+      ],
+      "alias_patterns": [
+        "edge.split",
+        "two.potential",
+        "join.identit"
+      ],
+      "novelty_claimed": "New in-run: the corrected, rooted join recurrences for the two potentials (the second, fallback derivation of (DL)).",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "cycles/cycle-1/stage4/critics/T1/F/CRITIQUE.md",
+        "cycles/cycle-1/stage4/critics/T1/U/CRITIQUE.md",
+        "cycles/cycle-1/stage4/critics/U2/T/CRITIQUE.md",
+        "second-reads/SR-JOIN/SECOND-READ.md"
+      ],
+      "terminal_evidence": {
+        "grade": "proved_informal",
+        "second_read": "SR-JOIN"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-forest-degree-extension-dre-2026-09-24 (r27)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "registered VERIFIED at proved_informal after SR-JOIN (one canonical form)"
+        }
+      ],
+      "second_read_registration_text": "second-reads/SR-JOIN/SECOND-READ.md ## Registration text 1"
+    },
+    {
+      "claim_key": "E993-R27-POTENTIAL-SEPARATED-UNION-CONVOLUTION",
+      "statement": "Notation (travels): for a vertex subset S, deg_S(v) = |N(v) ∩ S|, N_S[v] = (N(v) ∪ {v}) ∩ S, I_k(S) the independent k-subsets of S, i_k(S) = |I_k(S)|, D_k(S) = Σ_{J∈I_k(S)} Σ_{v∈J} deg_S(v), c_v^S(k) = #{J ∈ I_k(S) : v ∈ J}; ℤ-valued families indexed by k ∈ ℕ; x·p the shift ((x·p)(0) = 0, (x·p)(k+1) = p(k)); product = convolution; potentials Z_S(k) = i_k(S); D_S(r)(k) = 2k·i_k(S) − D_k(S) − 2·c_r^S(k) (r ∈ S); E_S(r)(k) = Σ_{J∈I_k(S∖{r})} Σ_{v∈J} (2 − deg_S(v)) − i_k(S∖{r}) + i_k(S∖N_S[r]); D0_S(k) = 2k·i_k(S) − D_k(S). Let A, B be disjoint vertex subsets of a finite simple graph with no G-edge between them. For every k: i_k(A ∪ B) = Σ_{a+b=k} i_a(A)·i_b(B); D_k(A ∪ B) = Σ_{a+b=k} [D_a(A)·i_b(B) + i_a(A)·D_b(B)]; D0_{A∪B} = D0_A·Z_B + Z_A·D0_B; Q_{A∪B} = Q_A·Z_B + Z_A·Q_B with Q_S = D_S(root_S), one root per piece. Consequence: (DL) on A and on B implies (DL) on A ∪ B (2a + 2b = 2k), and the root-corrected form carries identically — the tree case of (DL) is the whole problem; the multi-component step needs no generating function, no product-nonnegativity lemma.",
+      "scope": "Finiteness and separation only; NO acyclicity (5,625 arbitrary-graph pairs of order ≤ 4, 81,225 doubly-rooted instances, 0 failures). Refutes T2's Part 1 Step 3 diagnosis that the forest layer is a debt requiring T1's mechanism (the refutation is C-T2-U's and C-T2-F's). Fence §3.1: an order bound / counting statement whose contrapositive has sign Δ_k ≥ 0; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE (OPEN), E993-G1WIDE-NO-SIZE-CAP (OPEN), NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the all-rank aggregate or Erdős #993. §3.2 nothing asymptotic. §3.3 (DL) is an average over I_k; no pointwise degree statement. §3.6 every Lean declaration authored in-run; no external Lean text (the audit copy carries no LICENSE). §3.7 attribution travels on this face.",
+      "status": "VERIFIED",
+      "evidence_grade": "proved_informal",
+      "formal_award": false,
+      "smallest_witness_order": null,
+      "certificate": "proved_informal — C-T2-U (Finding 1) and C-T2-F (F-2) independently; T adjudicator (established result 3, 64 pairs); isolated second read SR-JOIN verdict JN-2 confirmed_with_repairs (196 tree pairs / 4,225 doubly-rooted; 5,625 arbitrary pairs / 81,225 doubly-rooted; 0 failures).",
+      "aliases": [
+        "forest convolution",
+        "separated union convolution",
+        "E993-R27-CONVOLUTION"
+      ],
+      "alias_patterns": [
+        "separated.union",
+        "forest.convolution"
+      ],
+      "novelty_claimed": "Elementary; records that the forest step of (DL) is two lines.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "cycles/cycle-1/stage4/critics/T2/U/CRITIQUE.md",
+        "second-reads/SR-JOIN/SECOND-READ.md"
+      ],
+      "terminal_evidence": {
+        "grade": "proved_informal",
+        "second_read": "SR-JOIN"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-forest-degree-extension-dre-2026-09-24 (r27)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "registered VERIFIED at proved_informal after SR-JOIN"
+        }
+      ],
+      "second_read_registration_text": "second-reads/SR-JOIN/SECOND-READ.md ## Registration text 2"
+    },
+    {
+      "claim_key": "E993-R27-SINGLE-ROOT-SEPARATED-UNION-REDUCTION",
+      "statement": "Notation (travels): for a vertex subset S, deg_S(v) = |N(v) ∩ S|, N_S[v] = (N(v) ∪ {v}) ∩ S, I_k(S) the independent k-subsets of S, i_k(S) = |I_k(S)|, D_k(S) = Σ_{J∈I_k(S)} Σ_{v∈J} deg_S(v), c_v^S(k) = #{J ∈ I_k(S) : v ∈ J}; ℤ-valued families indexed by k ∈ ℕ; x·p the shift ((x·p)(0) = 0, (x·p)(k+1) = p(k)); product = convolution; potentials Z_S(k) = i_k(S); D_S(r)(k) = 2k·i_k(S) − D_k(S) − 2·c_r^S(k) (r ∈ S); E_S(r)(k) = Σ_{J∈I_k(S∖{r})} Σ_{v∈J} (2 − deg_S(v)) − i_k(S∖{r}) + i_k(S∖N_S[r]); D0_S(k) = 2k·i_k(S) − D_k(S). Let A, B be disjoint vertex subsets of a finite simple graph with no G-edge between them and a ∈ A. Then D_{A∪B}(a) = D_A(a)·Z_B + Z_A·D0_B, and for every b ∈ B, D0_B = D_B(b) + 2·c_b^B ≥ D_B(b) coefficientwise, hence D_{A∪B}(a) ≥ D_A(a)·Z_B + Z_A·D_B(b). The naive form D_{A∪B}(a) = D_A(a)·Z_B is FALSE (smallest witness A = B = K_1: left (0, 2, 2), right 0).",
+      "scope": "Finiteness and separation only; no acyclicity; the asymmetry is forced (the B side carries no root correction). D0_B IS the (DL) slack family of B: the reduction presupposes nothing about (DL) and proves nothing about it — it converts (DL)-on-components plus single-root nonnegativity into single-root nonnegativity on the union. Fence §3.1: an order bound / counting statement whose contrapositive has sign Δ_k ≥ 0; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE (OPEN), E993-G1WIDE-NO-SIZE-CAP (OPEN), NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the all-rank aggregate or Erdős #993. §3.2 nothing asymptotic. §3.3 (DL) is an average over I_k; no pointwise degree statement. §3.6 every Lean declaration authored in-run; no external Lean text (the audit copy carries no LICENSE). §3.7 attribution travels on this face.",
+      "status": "VERIFIED",
+      "evidence_grade": "proved_informal",
+      "formal_award": false,
+      "smallest_witness_order": 2,
+      "certificate": "proved_informal — adjudicator-derived (U adjudication, Rejected and narrowed mechanisms 4; 1,596 separated-union instances) on C-U2-T finding 5 (the root-free potential convolves rather than adds); isolated second read SR-JOIN verdict JN-2 confirmed_with_repairs (910 single-rooted tree instances and 21,375 arbitrary-graph instances, 0 failures; D0 supplied a definition; 'separated' substituted for 'disjoint').",
+      "aliases": [
+        "single-root forest reduction",
+        "D_{A+B}(a) = D_A(a) Z_B + Z_A D0_B",
+        "E993-R27-SINGLE-ROOT-REDUCTION"
+      ],
+      "alias_patterns": [
+        "single.root.*reduction"
+      ],
+      "novelty_claimed": "New in-run: the single-root reduction for the fallback induction.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "cycles/cycle-1/stage5/adjudicators/U/ADJUDICATION.md",
+        "second-reads/SR-JOIN/SECOND-READ.md"
+      ],
+      "terminal_evidence": {
+        "grade": "proved_informal",
+        "second_read": "SR-JOIN"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-forest-degree-extension-dre-2026-09-24 (r27)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "registered VERIFIED at proved_informal after SR-JOIN"
+        }
+      ],
+      "second_read_registration_text": "second-reads/SR-JOIN/SECOND-READ.md ## Registration text 3"
+    },
+    {
+      "claim_key": "E993-R27-TREE-LEAF-BRANCH-REFORMULATION-ORDER-GE-2",
+      "statement": "Let T be a finite tree with 2 ≤ n = |V(T)|, L = {v : deg v = 1}, Br = {v : deg v ≥ 3}. For every k, in ℤ: 2k·i_k(T) − D_k(T) = Σ_{l∈L} c_l(k) − Σ_{v∈Br} (deg v − 2)·c_v(k); hence (DL) at k ⟺ Σ_{v∈Br} (deg v − 2)·c_v(k) ≤ Σ_{l∈L} c_l(k); and the slot count, in ℤ: Σ_{v∈Br} (deg v − 2) = |L| − 2.",
+      "scope": "2 ≤ n is required for the identity and the slot count, and only for them (at n = 1: L = Br = ∅, slot count reads 0 = −2, identity at k = 1 reads 2 = 0); the biconditional's truth value is NOT falsified at n = 1 (both sides hold), so 2 ≤ n is justified by the identity, not by a counterexample to the equivalence. The general weight identity 2k·i_k − D_k = Σ_v (2 − deg v)·c_v(k) holds for every finite graph. Formalization: slot count in ℤ (over ℕ it is provable by truncation and the defect is invisible); deg v − 2 guarded by deg v ≥ 3 or cast to ℤ; n ≤ 1 discharged separately. A REFORMULATION, not a proof of (DL): the Hall/SDR sufficient condition (C-T2-U Step C) is OPEN with bounded-computation support only. §3.3: an inequality between aggregates over I_k. Fence §3.1: an order bound / counting statement whose contrapositive has sign Δ_k ≥ 0; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE (OPEN), E993-G1WIDE-NO-SIZE-CAP (OPEN), NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the all-rank aggregate or Erdős #993. §3.2 nothing asymptotic. §3.3 (DL) is an average over I_k; no pointwise degree statement. §3.6 every Lean declaration authored in-run; no external Lean text (the audit copy carries no LICENSE). §3.7 attribution travels on this face.",
+      "status": "VERIFIED",
+      "evidence_grade": "proved_informal",
+      "formal_award": false,
+      "smallest_witness_order": null,
+      "certificate": "proved_informal — C-T2-U (Finding 6, Step A); the 2 ≤ n correction adjudicator-derived (T adjudication, Lean readiness, Step A ruling); isolated second read SR-JOIN verdict JN-3 confirmed_with_repairs (987 free trees to order 12, 12,980 (tree, k) instances: exactly one failing identity instance and one failing slot-count tree, both at n = 1; 0 failures of the general weight identity).",
+      "aliases": [
+        "leaf/branch reformulation",
+        "slot count |L| - 2",
+        "E993-R27-LEAF-BRANCH"
+      ],
+      "alias_patterns": [
+        "leaf.branch.reformulation",
+        "slot.count"
+      ],
+      "novelty_claimed": "Reformulation only; records the corrected hypothesis.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "cycles/cycle-1/stage4/critics/T2/U/CRITIQUE.md",
+        "cycles/cycle-1/stage5/adjudicators/T/ADJUDICATION.md",
+        "second-reads/SR-JOIN/SECOND-READ.md"
+      ],
+      "terminal_evidence": {
+        "grade": "proved_informal",
+        "second_read": "SR-JOIN"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-forest-degree-extension-dre-2026-09-24 (r27)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "registered VERIFIED at proved_informal after SR-JOIN"
+        }
+      ],
+      "second_read_registration_text": "second-reads/SR-JOIN/SECOND-READ.md ## Registration text 4"
+    },
+    {
+      "claim_key": "E993-R27-FIRSTDESCENT-Z-INDEX-COMPLETENESS",
+      "statement": "For finite X and G : SimpleGraph X, with Erdos993G1.coeff the ℤ-indexed zero extension of indepCount and delta G k = coeff G (k+1) − coeff G k: (1) delta G (−1) = i_0 = 1 > 0 and delta G k = 0 for every integer k ≤ −2, so 0 ≤ delta G k for every k < 0 — no strict descent at a negative index; (2) delta G α = −i_α < 0 and delta G k = 0 for every k > α (α the independence number), so a strict descent exists and the least one over ℤ lies in [0, α]; (3) firstDescent G = Nat.find (exists_delta_neg G) over ℕ is well-defined and equals the least strict descent over ℤ (existence, Nat.find_spec, Nat.find_min).",
+      "scope": "Finiteness only; NO acyclicity. Clause 3's ℕ-side triple is formally verified in the definition layer (U1's firstDescent_exists/spec/min; U3's exists_delta_neg/delta_firstDescent_neg/not_delta_neg_of_lt_firstDescent; carried in awards C1-LA3/C1-LA4). §3.8: about the sign of delta outside [0, α]; asserts nothing about maximizers; E993-FIRST-STRICT-DESCENT-IS-FIRST-MAXIMIZER (REFUTED) is not a premise and not reopened. x is the first STRICT descent; clause 2 makes that convention complete. Fence §3.1: an order bound / counting statement whose contrapositive has sign Δ_k ≥ 0; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE (OPEN), E993-G1WIDE-NO-SIZE-CAP (OPEN), NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the all-rank aggregate or Erdős #993. §3.2 nothing asymptotic. §3.3 (DL) is an average over I_k; no pointwise degree statement. §3.6 every Lean declaration authored in-run; no external Lean text (the audit copy carries no LICENSE). §3.7 attribution travels on this face.",
+      "status": "VERIFIED",
+      "evidence_grade": "proved_informal",
+      "formal_award": false,
+      "smallest_witness_order": null,
+      "certificate": "proved_informal — C-T3-U (F5) for clause 1; clause 2 and the [0, α] form added by isolated second read SR-JOIN verdict JN-4 confirmed_with_repairs (49 forests to order 8 and all 1,099 labelled graphs of order ≤ 5, 0 failures on all sub-clauses); definition layer U1/U3.",
+      "aliases": [
+        "Z-index completeness of firstDescent",
+        "no negative-index descent",
+        "E993-R27-FIRSTDESCENT-Z"
+      ],
+      "alias_patterns": [
+        "index.completeness",
+        "firstDescent.*Z"
+      ],
+      "novelty_claimed": "Records that the ℕ-indexed first descent is the ℤ-indexed one.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "cycles/cycle-1/stage4/critics/T3/U/CRITIQUE.md",
+        "second-reads/SR-JOIN/SECOND-READ.md"
+      ],
+      "terminal_evidence": {
+        "grade": "proved_informal",
+        "second_read": "SR-JOIN"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-forest-degree-extension-dre-2026-09-24 (r27)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "registered VERIFIED at proved_informal after SR-JOIN"
+        }
+      ],
+      "second_read_registration_text": "second-reads/SR-JOIN/SECOND-READ.md ## Registration text 5"
+    },
+    {
+      "claim_key": "E993-R27-CARRIER-BRIDGES-AND-AGREEMENT-LEMMAS",
+      "statement": "Six Lean declarations authored in-run by the U adjudicator on the scratch carrier, compiled sorry-free at the pinned toolchain with exactly the three permitted axioms: AdjU.indepFinsets_univ_filter_card (the k-filter of the scratch independent-set family at univ equals G.indepSetFinset k); AdjU.Z_univ_eq_indepCount (Z G univ k = Erdos993G1.indepCount G k); AdjU.degOn_univ_eq_degree (degOn G univ v = G.degree v); AdjU.indepFinsets_union_of_separated (membership in the family on A ∪ B ⟺ membership of J ∩ A, J ∩ B in the families on A, B and J ⊆ A ∪ B, for separated A, B); AdjUReconcile.indepDegreeSum_agree and AdjUReconcile.firstDescent_agree (U1's and U3's definitions agree by rfl — definitionally at the level of the definitions themselves: @indepDegreeSum = @Erdos993G1.indepDegreeSum and @firstDescent = @Erdos993G1.firstDescent by rfl).",
+      "scope": "NOT a governed award: compiled in scratch projects (U adjudicator; replayed by SR-JOIN), never through the kernel verifier with a receipt; recorded as compiled scratch identities, not as formally_verified awards. Conditions on the face: (a) Gate ruling 3 hygiene — the four AdjU declarations mention R27DegreeLemma.indepFinsets/degOn, whose names coincide with the unlicensed external slice; the renames indepFinsets → r27IndepFinsets (body re-expressed), mem_indepFinsets → mem_r27IndepFinsets, degOn → r27DegreeIn are mandatory before any award face carries them; no Stage 7 award of this run carried U2's file, so none did; (b) hd : Disjoint A B is declared and NOT consumed by indepFinsets_union_of_separated (SR-JOIN compiled the identical statement without it); a future formalization drops the binder; (c) indepFinsets_univ_filter_card is load-bearing and was missing from the synthesis's row; (d) [DecidableEq X] unused in degOn_univ_eq_degree; (e) the agreement lemmas are AdjUReconcile.*. The merged U1+U3 project builds with exactly U1's five expected sorry'd §2 targets, carried as statements of record only. §3.1: bridges and definitional agreements; not evidence for (DL)/(EX)/(LB)/(R5)/(XR). Fence §3.1: an order bound / counting statement whose contrapositive has sign Δ_k ≥ 0; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE (OPEN), E993-G1WIDE-NO-SIZE-CAP (OPEN), NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the all-rank aggregate or Erdős #993. §3.2 nothing asymptotic. §3.3 (DL) is an average over I_k; no pointwise degree statement. §3.6 every Lean declaration authored in-run; no external Lean text (the audit copy carries no LICENSE). §3.7 attribution travels on this face.",
+      "status": "VERIFIED",
+      "evidence_grade": "compiled_scratch_sorry_free",
+      "formal_award": false,
+      "smallest_witness_order": null,
+      "certificate": "compiled sorry-free on the scratch carrier (sources/c1-stage7-sources/ADJ-U-{Bridge,Prod,Reconcile}.lean, digests in SOURCE-DIGESTS.json) — U adjudicator (Stage 5) on the gap both U2 critics named; degOn half previously compiled by C-U2-T; isolated second read SR-JOIN verdict JN-5 confirmed_with_repairs (replayed and extended: the hd-free variant and the definition-level rfl agreements compiled independently). Not a governed lean-proof-workflow award.",
+      "aliases": [
+        "carrier bridges",
+        "agreement lemmas",
+        "AdjU",
+        "E993-R27-BRIDGES"
+      ],
+      "alias_patterns": [
+        "carrier.bridge",
+        "agreement.lemma"
+      ],
+      "novelty_claimed": "Engineering record for the fallback route; no mathematical novelty.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "cycles/cycle-1/stage5/adjudicators/U/ADJUDICATION.md",
+        "second-reads/SR-JOIN/SECOND-READ.md"
+      ],
+      "terminal_evidence": {
+        "grade": "compiled_scratch_sorry_free",
+        "second_read": "SR-JOIN"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-forest-degree-extension-dre-2026-09-24 (r27)",
+          "cycle": 1,
+          "date": "2026-09-24",
+          "event": "registered VERIFIED as compiled scratch identities after SR-JOIN (not a governed award)"
+        }
+      ],
+      "second_read_registration_text": "second-reads/SR-JOIN/SECOND-READ.md ## Registration text 6"
     }
   ],
   "last_updated": "2026-09-24",
-  "update_note": "r26 close (2026-09-24): 7 E993-R26- identities added (3 formal awards: the r24 top-rank residual sign (RC) composed with (RI); the deletion-injection/fibre bound; the tree-structural core; 1 kernel-verified component; 1 informal theorem (strict form); 1 record correction of the r24 C6 B3/TD-6 statement; 1 REFUTED mechanism N_2 <= M). E993-R23-ORDINARY-FAVORABLE-LEAF-AGGREGATE scope note (status OPEN unchanged). All prior statuses preserved.",
+  "update_note": "r27 close (2026-09-24): 21 E993-R27- identities added (4 formal awards / 8 formal-award keys: the FLNYZ finite forest degree lemma (DL) and extension inequality (EX); the graph-general double count and e(J) bound; the implication chain; the unconditional linear descent bound n <= 4k, the rank-5 ceiling 20 and the descent restriction 4r-4; 10 proved_informal after isolated second reads; 2 census-grade records; 1 compiled-scratch record). Scope notes on seven r25 claims and one refuted claim (statuses unchanged). All prior statuses preserved.",
   "g1_publication": {
     "source_run": "erdos-993-g1-large-residual-dre-2026-09-13",
     "source_registry_sha256": "bceaa933993f5294db482a89b57a59f470a7de1fa6b51f2ce3c46227f59300eb",
@@ -36574,6 +37476,17 @@
       "C1-LA1": "E993-R26-TOP-RANK-RESIDUAL-SIGN",
       "C1-LA2": "E993-R26-DELETION-INJECTION-FIBRE-BOUND",
       "C1-LA3": "E993-R26-TREE-STRUCTURAL-CORE"
+    },
+    "closed": "2026-09-24"
+  },
+  "r27_publication": {
+    "run": "erdos-993-forest-degree-extension-dre-2026-09-24",
+    "terminal_manifest": "017ddb693bdb678625efa3ead71aa34eb09af2d8ab53ff7b4b71fc25fb22b569",
+    "awards": {
+      "C1-LA1": "E993-R27-FOREST-EXTENSION-INEQUALITY (with E993-R27-FOREST-DEGREE-LEMMA)",
+      "C1-LA2": "E993-R27-EXTENSION-LOWER-BOUND (with E993-R27-INDEP-EXTENSION-DOUBLE-COUNT)",
+      "C1-LA3": "E993-R27-DEGREE-LEMMA-IMPLIES-EXTENSION-CHAIN",
+      "C1-LA4": "E993-R27-DESCENT-RESTRICTION-4R-MINUS-4 (with E993-R27-FOREST-DESCENT-LINEAR-BOUND, E993-R27-RANK5-CEILING-20)"
     },
     "closed": "2026-09-24"
   }
