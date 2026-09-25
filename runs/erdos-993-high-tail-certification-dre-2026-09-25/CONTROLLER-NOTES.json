@@ -1,0 +1,102 @@
+{
+  "schema": "verityos.r29.controller-notes.v1",
+  "living_file": false,
+  "notes": [
+    {
+      "id": "R29-N-1",
+      "date": "2026-09-25",
+      "note": "r29 authorized by Ashton (Codex's prompt carried verbatim in control/R29-CHARTER-PROMPT.md; 'do 6 cycles max with our DRE + Lean flow'). Opus 5.5 confirmed by a transport probe (alias opus -> claude-opus-5-5[1m]; file reads work): critics medium, adjudicators/synthesis/Stage 7/second reads high, exactly where Opus 5 sat in r26–r28. Seating 4/8/3/1 (an extraction run, not a search — the charter's own words). Root cloned from r28's toolkit with the residue check extended to r28 tokens; Stage 7/close/registration/publication scripts are r28's and are rewritten at Stage 7."
+    },
+    {
+      "id": "R29-N-2",
+      "date": "2026-09-25",
+      "note": "Stage 1 counterexample gate (controller): searched CLAIM-IDENTITY.json (407) for any refutation touching the five statements — E993-BETA-TARGET (governed all-window pointwise), E993-BETA-AGG-SUPPORT, E993-C3-G1-POINTWISE-ADDABILITY-BOUND are REFUTED at scopes the guarded statements exclude (Codex C2-SCOPE-AUDIT distinctions). Pre-run instrument control/controller-prerun/ht_check.py: 0 failures of (TSB) on all 5,604 bipartite labelled graphs of orders 1–6 with every W and 1 <= k <= a; 0 failures of (HTP)/(HTA) for every leaf and p >= 1 under the guard (incl. p = 1); trees to order 12 (976 classes; A000055 matched): 0 failures of (ELIG) (361 eligible) and (TRN) (846 eligible). Positive terms at 3p = 2*alpha appear from order 5 (P_3 + K_2, alpha 3, p 2, term +1) — the guard is sharp on disconnected bipartite graphs at least; on trees F1 decides. Priors, never evidence."
+    },
+    {
+      "id": "R29-N-3",
+      "date": "2026-09-25",
+      "note": "Controller's own reading before dispatch (prior): (a) the p = 1 endpoint of (HTP): guard gives alpha <= 1, a leaf gives alpha >= 1, bipartite + alpha = 1 gives n <= 2 (two same-colour vertices are non-adjacent, so each colour class has <= 1 vertex), so G = K_2 and the term is deg(s) - 1 = 0; on a general graph at p = 1 the term equals deg(s) - 1 >= 0 (Delta_0(G - D) = n - |D| - 1), so the endpoint is true only through the guard. (b) (TRN): x + 2 <= alpha - 1 in N forces alpha >= 3; alpha = 3 forces x = 0, but Delta_0 = n - 1 >= 0 for a nonempty tree of order >= 2; so alpha >= 4, p = alpha - 1 >= 3, and 3(alpha - 1) >= 2 alpha + 1 iff alpha >= 4 — entry 44 (p >= 2) applies with hT.isBipartite. (c) (TSB) at registry scope follows from entry 41 with U = univ and hcap := IsIndepSet.card_le_indepNum; the k <= a hypothesis makes the Z form equal the N form. (d) The definition layers of the r26 and first-interior sources (entries 1–14) are byte-identical (diff checked)."
+    },
+    {
+      "id": "R29-N-4",
+      "date": "2026-09-25",
+      "note": "Residue check (control/RESIDUE-CHECK.json) read before the Stage 2 seal: hits in the authored contracts/briefs are legitimate citations (the r26 key and its hypotheses as the sub-case being generalized; the C5LA1 namespace of record; the R28-I-1 incident behind the lake/lean rule; (RC)/(RI) named only to say the mechanism differs). The Stage 7 scripts (r29_stage7_reviews.py, r29_stage7_close.py, build_r29_close.py) are r28's with a first-pass patch (run root, dates, source references); their carry-set text is re-patched at Stage 7 before any reviewer brief is generated. r29_tool.py's remaining hits are its own token list."
+    },
+    {
+      "id": "R29-N-5",
+      "date": "2026-09-25",
+      "note": "Pre-seal lint on the run-local ledger (312 r28 rows + 6 R29 rows) against the 407-claim registry with r28's predecessor set + r28.csv: 0 findings, 0 warnings (control/CLAIM-STATUS-LINT-c1-prestage2.json). Pre-seal statement typecheck (r28 inbox rule 3): the five SOLUTION-CONTRACT §2 declarations appended with sorry bodies to a byte-copy of the first-interior Main.lean in scratchpad/controller-prerun-lean (manual symlink; cd before lake) — result recorded in R29-N-6."
+    },
+    {
+      "id": "R29-N-6",
+      "date": "2026-09-25",
+      "note": "Pre-seal statement typecheck PASSED: scratchpad/controller-prerun-lean/LeanProject (byte-copy of the first-interior Main.lean + the five SOLUTION-CONTRACT §2 declarations in namespace E993HighTail) built in 44 s at the pin; four declarations carry sorry bodies (TSB, HTP, HTA, TRN) — statements elaborate; interiorEligibilityAlphaGeSeven compiled WITHOUT sorry as the keyword re-export of the carried eligibleAlphaGeSeven (so Target 3's formal content is a registrar/contract exercise). Scratch only; never an award; excluded from every manifest (scratchpad/)."
+    },
+    {
+      "id": "R29-E-a",
+      "date": "2026-09-25",
+      "note": "ERRATUM (sealed member; corrected as a record, never edited): SEMANTIC-CONTRACT.md §2 'Fixed points' says trees of order <= 12 total '976 classes'; the A000055 partial sum 1+1+1+2+3+6+11+23+47+106+235+551 is 987, which is what the controller's instrument enumerated (ht_report.json per-order counts match A000055 at every order). The eligible counts (361 at p = alpha-2; 846 at p = alpha-1) are unaffected. Found by T2 (independent census). Successor briefs cite 987."
+    },
+    {
+      "id": "R29-E-b",
+      "date": "2026-09-25",
+      "note": "ERRATUM (sealed member C1-ALLOCATION.md, item 2(e), corrected as a record): the alias-check list names `E993-R24-*` (`TOP-RANK-SELECTOR-COLLAPSE`) as a registry prefix; the master registry holds no `E993-R24-` key at all (checked: 0 keys; no statement/alias mentions the C4-LA1 declaration topRankSelectorCollapse). The r24 C4-LA1 award (every leaf of a tree with alpha >= 2 is strictly favorable at p = alpha-1) is a published Lean package without a claim identity. Found by T2. Consequence for r29: the alias check against that prefix is vacuous; the fact itself is a cross-check for TRN (F_{alpha-1} = all leaves) that critics verify independently; registering the r24 fact is out of r29's scope (recorded for a successor)."
+    },
+    {
+      "id": "R29-E-c",
+      "date": "2026-09-25",
+      "note": "ERRATUM (sealed member SEMANTIC-CONTRACT.md §2 fixed points, corrected as a record): the star K_{1,m} leaf-term formula 'C(m-1,p) - C(m-1,p-1)' assumes Delta_{p-1}(R_v) = 0, which fails at p = 1 (R_v is the empty graph: Delta_0 = 0 - 1 = -1). Correct values: p >= 2 as stated; p = 1: term = (m-2) - (-1) = m-1 = deg(s) - 1 (the general p = 1 formula). Outside the guard for m >= 2; refutes nothing. Found by critic C-U1-T."
+    },
+    {
+      "id": "R29-I-1",
+      "date": "2026-09-25",
+      "note": "INCIDENT (process; mathematics untouched): the controller appended the Stage 7 carry-source digests to control/SOURCE-DIGESTS.json, a Stage 2 packet member (sealed 58655e87…). Sealed members are immutable (AUTHORIZATION standing rule; r24 sealing discipline). Remedy applied within minutes: the late version preserved unsealed as control/SOURCE-DIGESTS.late-unsealed-2026-09-25.json; the sealed bytes reconstructed and verified against the Stage 2 manifest digest, restored in place. The Stage 7 carry digests live ONLY in sources/c1-stage7-sources/SOURCE-DIGESTS.json (a new file; a Stage 7 capsule member), exactly the r28 pattern. Lesson: living digest records for later stages get their own file; a Stage 2 member is never a living record."
+    },
+    {
+      "id": "R29-N-7",
+      "date": "2026-09-25",
+      "note": "Stage 7 C1-LA1 compiled-candidate (kernel verified, three axioms; run runs/lean-2026-09-25-c1-la1-tagged-shadow-bound; Main.lean efafb79b…; contract 32aa0f3b…). Reviews assigned (c1-la1-fable-informal-20260925, c1-la1-fable-fidelity-20260925); canonical fidelity input regenerated (c4db1e18…); auditor and fidelity briefs written; both reviewers dispatched. Formalizer disclosures: read the frozen FORMALIZATION-STATE.json (brief-required), grep/sed on the contract validator's accepted keys (tooling, not mathematics), Mathlib greps; EVIDENCE/axioms.txt rewritten by the verifier (identical axiom line; the verifier's documented behaviour; never edited after the receipt)."
+    },
+    {
+      "id": "R29-N-8",
+      "date": "2026-09-25",
+      "note": "Second reads SR-MECH and SR-TRN complete. SR-1..SR-4 confirmed; SR-9 confirmed_with_repairs (the (HTP) scope note must say bipartiteness is load-bearing only for 3 ≤ p ≤ α−1 — on any graph with a leaf the term is −q_{p−1} ≤ 0 whenever p ≥ α, which under the guard includes p = 1, 2; the witness P_3 ⊔ 2K_3 sits at (α,p) = (4,3)); SR-5 confirmed (no Nonempty needed; K_3 ∨ 4K_1 shows α = 4 is attained on non-bipartite graphs); SR-6 confirmed_with_repairs (order 7 has FOUR eligible trees, exactly three at the minimum α = 5; the fourth is K_{1,6} with α = 6); SR-7 confirmed_with_repairs (the bipartite/forest clause is graded proved_informal SEPARATELY from the TRN key's formal grade; no strict inequality for the bipartite form — S = 0 occurs, e.g. the edgeless graph on 6 vertices; cite IsAcyclic.isBipartite line 617). The controller's registration texts adopt these repairs; register_c1_close.py to be adjusted accordingly before the close."
+    },
+    {
+      "id": "R29-N-9",
+      "date": "2026-09-25",
+      "note": "Stage 7 C1-LA3 compiled-candidate (kernel verified; run runs/lean-2026-09-25-c1-la3-interior-eligibility-guard; Main.lean 8d500fd7…; contract 99379e6d…; 40 carried entries + the terminal theorem). Reviews assigned and dispatched. Formalizer disclosures: frozen sources copied byte-identically into SOURCE/ (the contract validator refuses out-of-root paths — tooling); validator accepted only two source roles; read the frozen FORMALIZATION-STATE.json (brief-required); two helper files briefly written to the session scratchpad then moved into DRAFTS/; a temporary /tmp/x_base created and deleted within one command (a seat deviation from the no-/tmp rule; nothing depends on it; recorded). axioms.txt rewritten by the verifier (documented behaviour)."
+    },
+    {
+      "id": "R29-N-10",
+      "date": "2026-09-25",
+      "note": "Stage 7 C1-LA4 compiled-candidate (kernel verified; run runs/lean-2026-09-25-c1-la4-top-rank-nonresidual-aggregate; Main.lean 0c803739…; contract beb1d60b…; 18 carried entries 1–14, 18, 41, 42, 44 + 7 new declarations; hT used only through hT.isAcyclic.isBipartite). Reviews assigned and dispatched. Disclosures: read the frozen FORMALIZATION-STATE.json and THEOREM-CONTRACT.yaml (brief-covered); listed runs/ (sibling run names only); one stray registrar-output write to /tmp/null_reg_out deleted immediately (seat deviation from the no-/tmp rule; nothing depends on it). axioms.txt rewritten by the verifier (documented behaviour)."
+    },
+    {
+      "id": "R29-N-11",
+      "date": "2026-09-25",
+      "note": "Second read SR-BOUNDARY complete: SR-8a confirmed (both families' closed forms proved from I(T−{v,s}) = (1+2x)^m, I(T−N[s]) = (1+x)^m and I_H − I_R = x(1+2x)^m; positivity at ⌊2α/3⌋ exact for α ≤ 30; closed forms to α ≤ 400), SR-8b confirmed_with_repairs (attribution: C-F1-T and C-F1-U stated B2 first; the table matches to α = 10 on trees to order 18; ⌊2α/3⌋ = ⌈(2α+1)/3⌉ − 1 for every integer α), SR-8c confirmed (P_3 ⊔ K_2 unique at order 5 up to isomorphism). Fence qualifiers adopted: the record evaluates single leaf terms at 3p = 2α but no selector/aggregate/mechanism below the guard; E993-BETA-TARGET is refuted in the governed setting only, no bridge claimed; B1 says only that the pointwise sign fails one rank below the guard. All nine second-read items (SR-1..SR-9) now confirmed or confirmed_with_repairs; 0 rejected."
+    },
+    {
+      "id": "R29-I-2",
+      "date": "2026-09-25",
+      "note": "INCIDENT (process; mathematics untouched): the controller listed control/CONTROLLER-NOTES.json — a living record by design — as a member of the three second-read capsules (base member list). It drifted after the seals as notes were appended (SR-BOUNDARY noticed and reported it; each reader verified all digests at the start of its read, before the drift affected anything it used). r28's rule was 'never a capsule member until the close'. Remedy: no restoration (the notes are meant to grow); the drift is declared expected in the terminal sweep (build_r29_close.py EXPECTED_DRIFT lists the file); the readers' start-of-read digest checks stand as recorded. Lesson (for the inbox): the capsule builder must refuse living files (CONTROLLER-NOTES.json, RUN-STATE.live.json, *-AGENTS.json) as members."
+    },
+    {
+      "id": "R29-N-12",
+      "date": "2026-09-25",
+      "note": "Stage 7 C1-LA2 compiled-candidate (kernel verified; run runs/lean-2026-09-25-c1-la2-leaf-high-tail-pointwise; Main.lean d968eb56…; contract 7ef3f53a…; 17 carried entries 1–14, 18, 41, 42 + 8 new declarations, bodies byte-identical from ADJ-U-tails-LA2.lean). Reviews assigned and dispatched. CONTROLLER RULING on the (HTA) companion certificate: the synthesis's condition (iii) — 'the receipt's #print axioms covers the companion' — is NOT literally met (the kernel receipt binds the terminal theorem only; the companion's axiom line is in EVIDENCE/axioms-all-declarations.txt, unbound); condition (i) is met only by workaround (the validator rejects extra keys; companion text carried inside informal_statement and as digest-bound SOURCE files). Fail-closed: E993-R29-BIPARTITE-HIGH-TAIL-AGGREGATE registers VERIFIED at proved_informal with the note 'kernel-checked companion inside C1-LA2, not a separate certificate'; its standalone award (same carry; body ready) passes to a successor. The stop gate is unaffected ((HTA) is not one of the four targets). Formalizer disclosures: 17 transient /tmp/null_reg_NNNN registrar-output files, deleted at once (seat deviation; nothing depends on them); listings of sources/c1-stage7-sources/, runs/ and the frozen first-interior directory (names only); read the frozen FORMALIZATION-STATE.json (brief-granted)."
+    },
+    {
+      "id": "R29-E-e",
+      "date": "2026-09-25",
+      "note": "ERRATUM (records; sealed texts unchanged): SEMANTIC-CONTRACT §1, SOLUTION-CONTRACT §2 and the synthesis say the first-interior source's entries 15–17 (Erdos993G1.indepCount/coeff/delta) are 'byte-identical' to the r25 award. The LA3 fidelity reviewer (W1) found they are TOKEN-identical only: r25 puts the signatures on one line and has an extra blank line after `universe u`. No semantic effect; the r29 awards carry the FIRST-INTERIOR bytes (which is what 'byte-identical carry' means in this run — the carried source of record is the first-interior Main.lean 8d864da2…). Registration and publication texts say 'token-identical to the r25 award (whitespace-only differences)'. Also noted (LA3 note): contracts and Lean comments cite ORIGINAL entry numbers (e.g. 34, 43) while a run's registrar renumbers them (33, 40) — the original numbering is the convention of record."
+    },
+    {
+      "id": "R29-N-13",
+      "date": "2026-09-25",
+      "note": "STOP-GATE (a) MET: C1-LA4 closed formally_verified (informal audit passed 5d46cbf6…; fidelity match ff29bb30…; VR f7504a69…) after C1-LA1 (b21597ab…), C1-LA2 (47910b50…), C1-LA3 (2f5cee60…). All four targets formally_verified at Cycle 1; zero repair rounds; the run ENDS. LA4 auditor observation O1 (the proof's hypothesis table places 1 ≤ k at entry 41 where it is unused; it is consumed in leaf_tagged_monotone's cancellation — Step D states k = p−1 ≥ 1 there; wording imprecision, not a gap) recorded. Registration run: three auxiliary keys OPEN → VERIFIED formally_verified; E993-R29-TOP-RANK-NONRESIDUAL-AGGREGATE VERIFIED formally_verified; E993-R29-BIPARTITE-HIGH-TAIL-AGGREGATE VERIFIED proved_informal (R29-N-12); E993-R29-HIGH-TAIL-BOUNDARY-RECORD VERIFIED proved_informal; scope notes on six prior keys. This notes file is frozen at the close (final entry)."
+    }
+  ],
+  "frozen_at": "2026-09-25 close"
+}

@@ -1,0 +1,789 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "erdos-993-math-dre-20260925-r29-high-tail-certification-c1-la2-v1",
+  "theorem": {
+    "title": "C1-LA2 (HTP): bipartite leaf high-tail pointwise sign, key E993-BIPARTITE-LEAF-HIGH-TAIL-POINTWISE, with the (HTA) aggregate companion on its face",
+    "informal_statement": "For every finite simple bipartite graph G, every original degree-one vertex v of G with support s, and every integer p >= 1 with 3p >= 2 alpha(G) + 1: Delta_(p-1)(G - {v, s}) - Delta_(p-1)(G - N_G[s]) <= 0, where Delta_k(G - D) = i_(k+1)(G - D) - i_k(G - D) counts independent sets on the ORIGINAL carrier avoiding D. No selector, residual, connectivity or nonemptiness hypothesis. Companion (HTA), a lemma on the same face: under G bipartite, p >= 1 and 3p >= 2 alpha(G) + 1, the aggregate S(G, p) = C5LA1.aggregate G p <= 0 (original strict selector Delta_p(G - v) < 0; one tag per original leaf).\n\nTERMINAL LEAN STATEMENT (namespace E993HighTail; SHA-256 805b158547459c55f9ffe2268be7a038d567fd0304528f2fc1a458e5567031d2):\ntheorem bipartiteLeafHighTailPointwise {V : Type*} [Fintype V] [DecidableEq V]\n    (G : SimpleGraph V) [DecidableRel G.Adj] (hBip : G.IsBipartite) (v : V) (hv : C4LA1.IsGraphLeaf G v)\n    (p : ℕ) (hp : 1 ≤ p) (hTail : 2 * G.indepNum + 1 ≤ 3 * p) :\n    C5LA1.forwardDifferenceDel G (C5LA1.H G v) (p - 1) - C5LA1.forwardDifferenceDel G (C5LA1.R G v) (p - 1) ≤ 0\n\nCOMPANION STATEMENT FIELD (HTA certificate ruling (i); key E993-R29-BIPARTITE-HIGH-TAIL-AGGREGATE; declaration E993HighTail.bipartiteHighTailAggregateAllRanks, kind lemma, placed before the terminal theorem; exact SOLUTION-CONTRACT section 2 text; SHA-256 752a355bfd0e80bc28d0413435770e3a24885ac315341f91abc8c295078096af; also bound byte-exactly as source material SOURCE/COMPANION-STATEMENT.txt):\nlemma bipartiteHighTailAggregateAllRanks {V : Type*} [Fintype V] [DecidableEq V]\n    (G : SimpleGraph V) [DecidableRel G.Adj] (hBip : G.IsBipartite)\n    (p : ℕ) (hp : 1 ≤ p) (hTail : 2 * G.indepNum + 1 ≤ 3 * p) :\n    C5LA1.aggregate G p ≤ 0\nCompanion axiom-coverage note: The kernel verifier's #print axioms probe binds only the terminal declaration; the terminal theorem does not depend on the companion. The companion is kernel-checked by the same lake build and single-file check that the receipt binds, and its #print axioms (exactly [propext, Classical.choice, Quot.sound]) is recorded in EVIDENCE/axioms-all-declarations.txt, which is not receipt-bound. Whether condition (iii) is met is the controller's ruling.\n\nNAT/INT EQUIVALENCE:\n- p - 1 is Nat subtraction; under hp : 1 ≤ p it equals the integer p - 1, so the Lean statement at Nat rank p - 1 is exactly the registry statement at integer rank p - 1 for every integer p ≥ 1.\n- hTail : 2 * G.indepNum + 1 ≤ 3 * p is a Nat inequality without subtraction; it is literally 3p ≥ 2 alpha(G) + 1.\n- Every difference in the conclusion is an Int difference of Nat counts cast to Int (forwardDifferenceDel).\n- In the proof, alpha - 1 (Nat) is exact whenever an independent set exists (alpha ≥ 1), and a - k with a = alpha - 1 is exact on the branch k ≤ a where it is used; |V| - |D| is exact by |D| ≤ |V| (Nat.cast_sub).\n\nHYPOTHESIS CONSUMPTION:\n- hBip : G.IsBipartite -- only on the p ≥ 2 branch: E993Interior.taggedShadowBound G hBip (entry 41) at U = univ \\ H_v, W = R_v, a = alpha - 1; inside entry 41 only at Core.card_extension_le. Not consumed on the p = 1 branch.\n- hv : C4LA1.IsGraphLeaf G v -- support_adj / support_unique; H_subset_R; leaf_indep_cap; |H_v| = 2 and N(s) = {v} at p = 1. In the companion, supplied by membership in leafSet.\n- hp : 1 ≤ p -- makes Nat p - 1 the integer rank; with p < 2 pins p = 1.\n- hTail : 2 * G.indepNum + 1 ≤ 3 * p -- p = 1: alpha ≤ 1 (leafEndpointAtOne). p ≥ 2: 2((alpha - 1) - (p - 1)) ≤ p - 1 (leaf_tagged_monotone).\n- (none) -- No selector, residual, connectivity, IsTree or Nonempty hypothesis appears in any hypothesis text.\n\nFENCES:\n- §3.1: a statement about independent-set counts on finite bipartite graphs; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE, E993-G1WIDE-NO-SIZE-CAP, NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG or Erdős #993.\n- §3.3: nothing below the guard; the lower region 3p < 2 alpha + 1 is out of scope.\n- §3.4: NOT E993-BETA-TARGET (REFUTED; its witnesses fail the guard); not an alias of any refuted key.\n- §3.7: attribution travels on every face.\n- §3.8: a separate certificate; E993-BIPARTITE-LEAF-HIGH-TAIL-POINTWISE changes OPEN → VERIFIED only by this award's close; the carried internal lemmas (entries 41–42) are context, never certificates.\n\nATTRIBUTION:\n- Codex (GPT-6 Luna/Sol/Astra): the tagged-shadow mechanism, entries 41/42, the proposed statement, the identification of the p = 1 gap and the bipartite-free endpoint observation (prior art).\n- r24 C4-LA1: entries 1–4 (selector and leaf definitions); r26: entries 5–14 (the C5LA1 layer); the first-interior source: entry 18.\n- r29: T1 (the p = 1 endpoint; deg(s) − 1); C-T1-F (A1), C-T1-U (two-branch), C-F1-T (A3), C-F1-U (A3), U adjudicator (leafEndpointAtOne): the bipartite-free endpoint; U1 and the critics: compiles; T2: the aggregate corollary's use.\n- Bodies of the new declarations: carried byte-identically from the U adjudicator's scratch candidate ADJ-U-tails-LA2.lean (5db83f7b23f0afaad7bc844402b1ffd9435f76390063e0ff133e9b720d15ca0a), the plan of record (critic/adjudicator-attributed).\n- Formalizer seat: c1-la2-formalizer-opus-20260925, chartered Claude Opus 5.5 high; runtime-reported id claude-opus-5-5[1m].\n\nEXCLUDED CONCLUSIONS:\n- No sign below the guard; the guard is sharp (B1).\n- No favorable-selector, eligibility or residual statement.\n- No non-bipartite p ≥ 2 statement (false: P_3 ⊔ 2K_3, B4). The graph-general p = 1 companion (leafEndpointAtOne) is a lemma, not a registered claim until SR-1.\n- No transfer to E993-BETA-AGG, to the all-rank E993-R23-…, or to any no-recovery key.\n- No strict sign.\n\nThe same fields, structured, are bound as source material SOURCE/CONTRACT-FACE.json."
+  },
+  "formulation_status": {
+    "status": "open",
+    "evidence": [
+      "Registry status entering r29: OPEN (proposal); graded proved_informal at the close of Cycle 1 Stage 6 (SYNTHESIS.md R-HTP, R-HTA).",
+      "Canonical DRE run id: erdos-993-math-dre-20260925-r29-high-tail-certification; workflow run id (init): lean-2026-09-25-c1-la2-leaf-high-tail-pointwise.",
+      "No known counterexample in scope. The guard is sharp (boundary record B1); the unguarded statement is REFUTED as E993-BETA-TARGET and is NOT this statement."
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-simplegraph-isbipartite",
+      "lean_name": "SimpleGraph.IsBipartite",
+      "description": "Mathlib (Bipartite.lean:286, pinned 905b9581...): G.IsBipartite := G.Colorable 2, i.e. a proper 2-colouring exists. Disconnected graphs, isolated vertices and the empty graph are included. In both statements (hBip).",
+      "dependencies": []
+    },
+    {
+      "id": "def-simplegraph-indepnum",
+      "lean_name": "SimpleGraph.indepNum",
+      "description": "Mathlib: the independence number alpha(G) (a natural number), the largest card of an independent Finset. In both statements (hTail). The cap used is SimpleGraph.IsIndepSet.card_le_indepNum (Clique.lean:991).",
+      "dependencies": []
+    },
+    {
+      "id": "def-finset-univ",
+      "lean_name": "Finset.univ",
+      "description": "Mathlib: the Finset of all elements of the Fintype V. Enters through indepSetsAvoiding (univ \\ D) and leafSet (univ.filter).",
+      "dependencies": []
+    },
+    {
+      "id": "def-vertexdeletionindepsetcount",
+      "lean_name": "C4LA1.vertexDeletionIndepSetCount",
+      "description": "Carried BYTE-IDENTICALLY (registrar entry 1; first-interior entry 1; fragment SHA-256 7e0a588e243735a611c919ea1080816911a3e27e4523478af0c0f560ce1b3b48). i_k(G - v): independent k-subsets of the original vertex type avoiding v. Used by the companion only (through the selector). Full carried fragment text (verbatim):\nnamespace C4LA1\n\nopen SimpleGraph\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- The coefficient `i_k(G-v)`, represented without changing vertex types:\nindependent `k`-subsets of the original finite vertex type that avoid `v`. -/\ndef vertexDeletionIndepSetCount (G : SimpleGraph V) [DecidableRel G.Adj]\n    (v : V) (k : Nat) : Nat :=\n  (((Finset.univ.erase v).powersetCard k).filter fun s : Finset V =>\n    G.IsIndepSet (s : Set V)).card\n\nend C4LA1",
+      "dependencies": []
+    },
+    {
+      "id": "def-vertexdeletionforwarddifference",
+      "lean_name": "C4LA1.vertexDeletionForwardDifference",
+      "description": "Carried BYTE-IDENTICALLY (registrar entry 2; first-interior entry 2; fragment SHA-256 c2da50eb16ee788c439b146577efeedd7dd42811c6943fb437585edcf63b5880). Delta_p(G - v) = i_(p+1)(G-v) - i_p(G-v) in Int. Used by the companion only (through the selector). Full carried fragment text (verbatim):\nnamespace C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- The forward coefficient difference `i_(p+1)(G-v) - i_p(G-v)`, with\nnatural counts embedded in the integers. -/\ndef vertexDeletionForwardDifference (G : SimpleGraph V) [DecidableRel G.Adj]\n    (v : V) (p : Nat) : Int :=\n  (vertexDeletionIndepSetCount G v (p + 1) : Int) -\n    vertexDeletionIndepSetCount G v p\n\nend C4LA1",
+      "dependencies": [
+        "def-vertexdeletionindepsetcount"
+      ]
+    },
+    {
+      "id": "def-isfavorableat",
+      "lean_name": "C4LA1.IsFavorableAt",
+      "description": "Carried BYTE-IDENTICALLY (registrar entry 3; first-interior entry 3; fragment SHA-256 25d8f7d274f9080468bf6d46acc6db3d4a469c2e399e7faee6cdcee24290a0db). The STRICT favorable selector at the ORIGINAL rank p: Delta_p(G - v) < 0. Used by the companion only (the aggregate's filter); the proof never uses it beyond membership. Full carried fragment text (verbatim):\nnamespace C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- Literal strict favorability of an original leaf at rank `p`. -/\ndef IsFavorableAt (G : SimpleGraph V) [DecidableRel G.Adj] (v : V) (p : Nat) : Prop :=\n  vertexDeletionForwardDifference G v p < 0\n\nend C4LA1",
+      "dependencies": [
+        "def-vertexdeletionforwarddifference"
+      ]
+    },
+    {
+      "id": "def-isgraphleaf",
+      "lean_name": "C4LA1.IsGraphLeaf",
+      "description": "Carried BYTE-IDENTICALLY (registrar entry 4; first-interior entry 4; fragment SHA-256 65acd314d3bfd74aca476e00dd8866434c67682b627bce5e105d372a556f7ae5). An original degree-one vertex: exists a unique u with G.Adj v u. Isolated vertices are not leaves. In the terminal statement (hv). Full carried fragment text (verbatim):\nnamespace C4LA1\n\nvariable {V : Type*}\n\n/-- A graph leaf has exactly one adjacent vertex. -/\ndef IsGraphLeaf (G : SimpleGraph V) (v : V) : Prop :=\n  ∃! u, G.Adj v u\n\nend C4LA1",
+      "dependencies": []
+    },
+    {
+      "id": "def-support",
+      "lean_name": "C5LA1.support",
+      "description": "Carried BYTE-IDENTICALLY (registrar entry 5; first-interior entry 5; fragment SHA-256 8e1e1a689393f555eb5c216207b1368c7415a8543c569884b2fc86954b7bc2b4). The unique neighbour s of a leaf v (Classical.choose; arbitrary off the leaf set). Enters the statement through H and R. Full carried fragment text (verbatim):\nnamespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- The unique support (neighbour) of an original leaf `v`; unconstrained\n(any value satisfying nothing further) off the leaf set. -/\nnoncomputable\ndef support (G : SimpleGraph V) (v : V) : V :=\n  Classical.choose (p := fun u => C4LA1.IsGraphLeaf G v → G.Adj v u ∧ ∀ w, G.Adj v w → w = u)\n    (by\n      by_cases h : C4LA1.IsGraphLeaf G v\n      · obtain ⟨u, hu, huniq⟩ := h\n        exact ⟨u, fun _ => ⟨hu, huniq⟩⟩\n      · exact ⟨v, fun hc => absurd hc h⟩)\n\nend C5LA1",
+      "dependencies": [
+        "def-isgraphleaf"
+      ]
+    },
+    {
+      "id": "def-leafset",
+      "lean_name": "C5LA1.leafSet",
+      "description": "Carried BYTE-IDENTICALLY (registrar entry 6; first-interior entry 6; fragment SHA-256 78ec65517bde90cc2fc5e542fc7c60d6a5147b243b74b9ac3de33d4efd1df697). The original leaves: univ.filter (IsGraphLeaf G). Used by the companion (aggregate). Full carried fragment text (verbatim):\nnamespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\nopen Classical in\n/-- The set of original leaves of `G`. -/\nnoncomputable\ndef leafSet (G : SimpleGraph V) : Finset V :=\n  Finset.univ.filter (C4LA1.IsGraphLeaf G)\n\nend C5LA1",
+      "dependencies": [
+        "def-isgraphleaf",
+        "def-finset-univ"
+      ]
+    },
+    {
+      "id": "def-leafdegree",
+      "lean_name": "C5LA1.leafDegree",
+      "description": "Carried BYTE-IDENTICALLY (registrar entry 7; first-interior entry 7; fragment SHA-256 ccfc9b2f549aa8c9986931152d249096ce49e3ccd3b67f4afd8678a749d93a68). Carried definition of record (registrar unit); NOT used by the terminal statement, the companion statement or any proof in this award. Full carried fragment text (verbatim):\nnamespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- `lambda(s)`: the number of leaves of `G` adjacent to `s`, zero off\nsupports. -/\nnoncomputable\ndef leafDegree (G : SimpleGraph V) [DecidableRel G.Adj] (s : V) : Nat :=\n  ((leafSet G).filter fun v => G.Adj v s).card\n\nend C5LA1",
+      "dependencies": [
+        "def-leafset"
+      ]
+    },
+    {
+      "id": "def-h",
+      "lean_name": "C5LA1.H",
+      "description": "Carried BYTE-IDENTICALLY (registrar entry 8; first-interior entry 8; fragment SHA-256 55f37d9161901d6006e571cf548c4e56675c9d786a1aba83e7889ad9d443224d). H_v = {v, s}: the deletion set realising G - {v, s}. In the terminal statement. Full carried fragment text (verbatim):\nnamespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- `H_v = G - {v, s_v}`, realised as the deletion set for a leaf `v`. -/\nnoncomputable\ndef H (G : SimpleGraph V) (v : V) : Finset V :=\n  {v, support G v}\n\nend C5LA1",
+      "dependencies": [
+        "def-support"
+      ]
+    },
+    {
+      "id": "def-r",
+      "lean_name": "C5LA1.R",
+      "description": "Carried BYTE-IDENTICALLY (registrar entry 9; first-interior entry 9; fragment SHA-256 a0407d82ab112a65a0f9d85970e9d6217b66201680cc079a4ba13751e53dc6b8). R_v = insert s (N_G(s)): the deletion set realising G - N_G[s]. In the terminal statement. Full carried fragment text (verbatim):\nnamespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- `R_v = G - N[s_v]`, realised as the deletion set for a leaf `v`. -/\nnoncomputable\ndef R (G : SimpleGraph V) [DecidableRel G.Adj] (v : V) : Finset V :=\n  insert (support G v) (G.neighborFinset (support G v))\n\nend C5LA1",
+      "dependencies": [
+        "def-support"
+      ]
+    },
+    {
+      "id": "def-indepsetsavoiding",
+      "lean_name": "C5LA1.indepSetsAvoiding",
+      "description": "Carried BYTE-IDENTICALLY (registrar entry 10; first-interior entry 10; fragment SHA-256 ac0e331eec99650eca7a18e9fe98829bb5495850685b8f31936169f0a6d8e368). I_k(G - D): independent k-subsets of the ORIGINAL vertex type disjoint from D (vertex deletion realised as avoidance). Full carried fragment text (verbatim):\nnamespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- `I_k(G - D)`: independent `k`-subsets of the original vertex type\navoiding the finite deletion set `D`. -/\ndef indepSetsAvoiding (G : SimpleGraph V) [DecidableRel G.Adj]\n    (D : Finset V) (k : Nat) : Finset (Finset V) :=\n  ((Finset.univ \\ D).powersetCard k).filter fun s : Finset V => G.IsIndepSet (s : Set V)\n\nend C5LA1",
+      "dependencies": [
+        "def-finset-univ"
+      ]
+    },
+    {
+      "id": "def-indepsetcount",
+      "lean_name": "C5LA1.indepSetCount",
+      "description": "Carried BYTE-IDENTICALLY (registrar entry 11; first-interior entry 11; fragment SHA-256 e22635d8697e49b38dd521080f34c3eefe56a93964120c70f53ad9899b4a7f71). i_k(G - D) = card of indepSetsAvoiding G D k (a natural number; 0 above capacity). Full carried fragment text (verbatim):\nnamespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- `i_k(G - D)`. -/\ndef indepSetCount (G : SimpleGraph V) [DecidableRel G.Adj]\n    (D : Finset V) (k : Nat) : Nat :=\n  (indepSetsAvoiding G D k).card\n\nend C5LA1",
+      "dependencies": [
+        "def-indepsetsavoiding"
+      ]
+    },
+    {
+      "id": "def-forwarddifferencedel",
+      "lean_name": "C5LA1.forwardDifferenceDel",
+      "description": "Carried BYTE-IDENTICALLY (registrar entry 12; first-interior entry 12; fragment SHA-256 60bd8efcc88e8e511a7caacac5867f7845243ccab08f1660e8c3962af544dd8f). Delta_k(G - D) = (i_(k+1)(G-D) : Int) - i_k(G-D). In the terminal statement at k = p - 1 (Nat). Full carried fragment text (verbatim):\nnamespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- `Delta_k(G - D) = i_(k+1)(G-D) - i_k(G-D)`. -/\ndef forwardDifferenceDel (G : SimpleGraph V) [DecidableRel G.Adj]\n    (D : Finset V) (k : Nat) : Int :=\n  (indepSetCount G D (k + 1) : Int) - indepSetCount G D k\n\nend C5LA1",
+      "dependencies": [
+        "def-indepsetcount"
+      ]
+    },
+    {
+      "id": "def-aggregate",
+      "lean_name": "C5LA1.aggregate",
+      "description": "Carried BYTE-IDENTICALLY (registrar entry 13; first-interior entry 13; fragment SHA-256 d66e776c5cf49b2a78a2d9713e4a41de2cbaf5de0af7b6d580075064d1daea8b). S(G, p): sum over the favorable original leaves of the (HTP) term at rank p - 1. In the companion statement. Full carried fragment text (verbatim):\nnamespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\nopen Classical in\n/-- `S(G,p) = sum_{v in F} (b_v - B_v)`, the literal top-rank residual\naggregate, summed over the favorable filter of the leaf set. -/\nnoncomputable\ndef aggregate (G : SimpleGraph V) [DecidableRel G.Adj] (p : Nat) : Int :=\n  ∑ v ∈ (leafSet G).filter fun v => C4LA1.IsFavorableAt G v p,\n    (forwardDifferenceDel G (H G v) (p - 1) - forwardDifferenceDel G (R G v) (p - 1))\n\nend C5LA1",
+      "dependencies": [
+        "def-leafset",
+        "def-isfavorableat",
+        "def-forwarddifferencedel",
+        "def-h",
+        "def-r"
+      ]
+    },
+    {
+      "id": "def-crossingindex",
+      "lean_name": "C5LA1.crossingIndex",
+      "description": "Carried BYTE-IDENTICALLY (registrar entry 14; first-interior entry 14; fragment SHA-256 378868ab2e660af8a36ea0b1045c55bc60f8383dca3d31dd85c4b52fa8a898fb). Carried definition of record (registrar unit); NOT used by the terminal statement, the companion statement or any proof in this award. Full carried fragment text (verbatim):\nnamespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\nopen Classical in\n/-- `x(G)`: the least `k` with `Delta_k(G) < 0`; exists because\n`Delta_(alpha)(G) = -i_alpha(G) < 0`. -/\nnoncomputable\ndef crossingIndex (G : SimpleGraph V) [DecidableRel G.Adj] : Nat :=\n  Nat.find (p := fun k => forwardDifferenceDel G ∅ k < 0)\n    (by\n      classical\n      obtain ⟨s, hs⟩ := G.exists_isNIndepSet_indepNum\n      refine ⟨G.indepNum, ?_⟩\n      have hzero : indepSetCount G ∅ (G.indepNum + 1) = 0 := by\n        have hempty : indepSetsAvoiding G ∅ (G.indepNum + 1) = ∅ := by\n          rw [Finset.eq_empty_iff_forall_notMem]\n          intro t ht\n          simp only [indepSetsAvoiding, Finset.mem_filter, Finset.mem_powersetCard] at ht\n          have hle : t.card ≤ G.indepNum := ht.2.card_le_indepNum\n          omega\n        rw [indepSetCount, hempty, Finset.card_empty]\n      have hpos : 0 < indepSetCount G ∅ G.indepNum := by\n        rw [indepSetCount, Finset.card_pos]\n        refine ⟨s, ?_⟩\n        simp only [indepSetsAvoiding, Finset.mem_filter, Finset.mem_powersetCard]\n        refine ⟨⟨?_, hs.card_eq⟩, hs.isIndepSet⟩\n        intro x _\n        simp\n      simp only [forwardDifferenceDel, hzero]\n      omega)\n\nend C5LA1",
+      "dependencies": [
+        "def-forwarddifferencedel"
+      ]
+    },
+    {
+      "id": "def-taggedfamily",
+      "lean_name": "E993Interior.taggedFamily",
+      "description": "Carried BYTE-IDENTICALLY (registrar entry 15; first-interior entry 18; fragment SHA-256 cb43feebd48bdf3a82d95db4c0475a34a83acdd8c55f13ac44433ea26141fa1e). taggedFamily G U W k: k-subsets A of U, independent in G, meeting W. Not in either statement; used by the proof (q_j with U = univ \\ H_v, W = R_v; entry 41). Full carried fragment text (verbatim):\nnamespace E993Interior\n\nnoncomputable section\n\ndef taggedFamily {V : Type*} [Fintype V] [DecidableEq V]\n    (G : SimpleGraph V) [DecidableRel G.Adj] (U W : Finset V) (k : ℕ) :\n    Finset (Finset V) := by\n  classical\n  exact (U.powersetCard k).filter fun A =>\n    G.IsIndepSet (A : Set V) ∧ ¬ Disjoint A W\n\nend\n\nend E993Interior",
+      "dependencies": []
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-vertex-type",
+      "description": "V : Type* with [Fintype V] [DecidableEq V]: an arbitrary finite vertex type (empty allowed).",
+      "lean_type": "Type*",
+      "dependencies": []
+    },
+    {
+      "id": "domain-g",
+      "description": "G : SimpleGraph V with [DecidableRel G.Adj]: every finite simple graph on V.",
+      "lean_type": "SimpleGraph V",
+      "dependencies": [
+        "domain-vertex-type"
+      ]
+    },
+    {
+      "id": "domain-leaf-vertex",
+      "description": "v : V, a vertex of G (the leaf, constrained by hv).",
+      "lean_type": "V",
+      "dependencies": [
+        "domain-vertex-type"
+      ]
+    },
+    {
+      "id": "domain-p",
+      "description": "p : Nat, the rank (constrained by hp : 1 <= p and hTail). The Nat value p - 1 is the integer rank p - 1 under hp.",
+      "lean_type": "Nat",
+      "dependencies": []
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "V",
+      "kind": "forall",
+      "domain_id": "domain-vertex-type"
+    },
+    {
+      "binder": "G",
+      "kind": "forall",
+      "domain_id": "domain-g"
+    },
+    {
+      "binder": "v",
+      "kind": "forall",
+      "domain_id": "domain-leaf-vertex"
+    },
+    {
+      "binder": "p",
+      "kind": "forall",
+      "domain_id": "domain-p"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-hbip",
+      "statement": "hBip : G.IsBipartite",
+      "dependencies": [
+        "def-simplegraph-isbipartite",
+        "domain-g"
+      ]
+    },
+    {
+      "id": "hyp-hv",
+      "statement": "hv : C4LA1.IsGraphLeaf G v",
+      "dependencies": [
+        "def-isgraphleaf",
+        "domain-g",
+        "domain-leaf-vertex"
+      ]
+    },
+    {
+      "id": "hyp-hp",
+      "statement": "hp : 1 ≤ p",
+      "dependencies": [
+        "domain-p"
+      ]
+    },
+    {
+      "id": "hyp-htail",
+      "statement": "hTail : 2 * G.indepNum + 1 ≤ 3 * p",
+      "dependencies": [
+        "def-simplegraph-indepnum",
+        "domain-g",
+        "domain-p"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "C5LA1.forwardDifferenceDel G (C5LA1.H G v) (p - 1) - C5LA1.forwardDifferenceDel G (C5LA1.R G v) (p - 1) ≤ 0",
+    "dependencies": [
+      "hyp-hbip",
+      "hyp-hv",
+      "hyp-hp",
+      "hyp-htail",
+      "def-forwarddifferencedel",
+      "def-h",
+      "def-r"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "def-simplegraph-isbipartite",
+        "kind": "definition"
+      },
+      {
+        "id": "def-simplegraph-indepnum",
+        "kind": "definition"
+      },
+      {
+        "id": "def-finset-univ",
+        "kind": "definition"
+      },
+      {
+        "id": "def-vertexdeletionindepsetcount",
+        "kind": "definition"
+      },
+      {
+        "id": "def-vertexdeletionforwarddifference",
+        "kind": "definition"
+      },
+      {
+        "id": "def-isfavorableat",
+        "kind": "definition"
+      },
+      {
+        "id": "def-isgraphleaf",
+        "kind": "definition"
+      },
+      {
+        "id": "def-support",
+        "kind": "definition"
+      },
+      {
+        "id": "def-leafset",
+        "kind": "definition"
+      },
+      {
+        "id": "def-leafdegree",
+        "kind": "definition"
+      },
+      {
+        "id": "def-h",
+        "kind": "definition"
+      },
+      {
+        "id": "def-r",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indepsetsavoiding",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indepsetcount",
+        "kind": "definition"
+      },
+      {
+        "id": "def-forwarddifferencedel",
+        "kind": "definition"
+      },
+      {
+        "id": "def-aggregate",
+        "kind": "definition"
+      },
+      {
+        "id": "def-crossingindex",
+        "kind": "definition"
+      },
+      {
+        "id": "def-taggedfamily",
+        "kind": "definition"
+      },
+      {
+        "id": "domain-vertex-type",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-g",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-leaf-vertex",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-p",
+        "kind": "domain"
+      },
+      {
+        "id": "hyp-hbip",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-hv",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-hp",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-htail",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "def-vertexdeletionindepsetcount",
+        "to": "def-vertexdeletionforwarddifference"
+      },
+      {
+        "from": "def-vertexdeletionforwarddifference",
+        "to": "def-isfavorableat"
+      },
+      {
+        "from": "def-isgraphleaf",
+        "to": "def-support"
+      },
+      {
+        "from": "def-isgraphleaf",
+        "to": "def-leafset"
+      },
+      {
+        "from": "def-finset-univ",
+        "to": "def-leafset"
+      },
+      {
+        "from": "def-leafset",
+        "to": "def-leafdegree"
+      },
+      {
+        "from": "def-support",
+        "to": "def-h"
+      },
+      {
+        "from": "def-support",
+        "to": "def-r"
+      },
+      {
+        "from": "def-finset-univ",
+        "to": "def-indepsetsavoiding"
+      },
+      {
+        "from": "def-indepsetsavoiding",
+        "to": "def-indepsetcount"
+      },
+      {
+        "from": "def-indepsetcount",
+        "to": "def-forwarddifferencedel"
+      },
+      {
+        "from": "def-leafset",
+        "to": "def-aggregate"
+      },
+      {
+        "from": "def-isfavorableat",
+        "to": "def-aggregate"
+      },
+      {
+        "from": "def-forwarddifferencedel",
+        "to": "def-aggregate"
+      },
+      {
+        "from": "def-h",
+        "to": "def-aggregate"
+      },
+      {
+        "from": "def-r",
+        "to": "def-aggregate"
+      },
+      {
+        "from": "def-forwarddifferencedel",
+        "to": "def-crossingindex"
+      },
+      {
+        "from": "domain-vertex-type",
+        "to": "domain-g"
+      },
+      {
+        "from": "domain-vertex-type",
+        "to": "domain-leaf-vertex"
+      },
+      {
+        "from": "def-simplegraph-isbipartite",
+        "to": "hyp-hbip"
+      },
+      {
+        "from": "domain-g",
+        "to": "hyp-hbip"
+      },
+      {
+        "from": "def-isgraphleaf",
+        "to": "hyp-hv"
+      },
+      {
+        "from": "domain-g",
+        "to": "hyp-hv"
+      },
+      {
+        "from": "domain-leaf-vertex",
+        "to": "hyp-hv"
+      },
+      {
+        "from": "domain-p",
+        "to": "hyp-hp"
+      },
+      {
+        "from": "def-simplegraph-indepnum",
+        "to": "hyp-htail"
+      },
+      {
+        "from": "domain-g",
+        "to": "hyp-htail"
+      },
+      {
+        "from": "domain-p",
+        "to": "hyp-htail"
+      },
+      {
+        "from": "hyp-hbip",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-hv",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-hp",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-htail",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-forwarddifferencedel",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-h",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-r",
+        "to": "conclusion"
+      }
+    ]
+  },
+  "source_materials": [
+    {
+      "id": "src-contract-face",
+      "path": "SOURCE/CONTRACT-FACE.json",
+      "sha256": "29b39e3aa25f52910942c7cbb6bdaa9fee11d7ad13c535d53e202c673af02b08",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-companion-statement-hta",
+      "path": "SOURCE/COMPANION-STATEMENT.txt",
+      "sha256": "752a355bfd0e80bc28d0413435770e3a24885ac315341f91abc8c295078096af",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "sha256": "affa1fcbc1326ebe3c39a1b3545617e31154507d4963ab3f2e0c305a75d2e43a",
+      "role": "reference"
+    },
+    {
+      "id": "src-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "sha256": "1fb314794bf1214accd8d66d4cc015804208f976f448d452cba8ffb67a1e272d",
+      "role": "reference"
+    },
+    {
+      "id": "src-synthesis",
+      "path": "SOURCE/intent/SYNTHESIS.md",
+      "sha256": "bd7efb532f65e15df5bdf38d190d7c32f0802f9914b61ed249977e6d5bee9870",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-solution-contract",
+      "path": "SOURCE/intent/SOLUTION-CONTRACT.md",
+      "sha256": "0327cc8ee6fd83acb36074af4e8900bcd037e6613fc03020ac86e6b76d356e5f",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-semantic-contract",
+      "path": "SOURCE/intent/SEMANTIC-CONTRACT.md",
+      "sha256": "9e8131e845fcbaab999332b2b5bcaa838477ad15f1101d523c3ada8daad5501d",
+      "role": "reference"
+    },
+    {
+      "id": "src-brief",
+      "path": "SOURCE/intent/C1-STAGE7-FORMALIZER-BRIEF-LA2.md",
+      "sha256": "efbc74044b186e0c5ba035dd3d0764fe8317635b168d821e62c04ffa09d6e36d",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-capsule-manifest",
+      "path": "SOURCE/intent/C1-LA2-PACKET-MANIFEST.json",
+      "sha256": "e632aedadbcb5900e105464791f1533a094f7a7aa6f410df52a23aedb0d4847b",
+      "role": "reference"
+    },
+    {
+      "id": "src-frozen-first-interior-main",
+      "path": "SOURCE/frozen/first-interior/Main.lean",
+      "sha256": "8d864da290947d75ac0cb52644b8b5336a19076878fcb11eeed552e6a118d7a9",
+      "role": "reference"
+    },
+    {
+      "id": "src-frozen-first-interior-state",
+      "path": "SOURCE/frozen/first-interior/FORMALIZATION-STATE.json",
+      "sha256": "5411a8c2451549b650be1af2e551c40d8b4440f65ce50c691023ef1be2dc94a0",
+      "role": "reference"
+    },
+    {
+      "id": "src-carry-adj-u-tails-la2-lean",
+      "path": "SOURCE/frozen/c1-stage7-sources/ADJ-U-tails-LA2.lean",
+      "sha256": "5db83f7b23f0afaad7bc844402b1ffd9435f76390063e0ff133e9b720d15ca0a",
+      "role": "reference"
+    },
+    {
+      "id": "src-carry-adj-u-awards-la2-main-lean",
+      "path": "SOURCE/frozen/c1-stage7-sources/ADJ-U-awards-LA2-Main.lean",
+      "sha256": "8700323190cb4a14b3cbc12188853aeea4b7ea85cd810133bc294f6da6ab53df",
+      "role": "reference"
+    },
+    {
+      "id": "src-carry-adj-t-carryla2-lean",
+      "path": "SOURCE/frozen/c1-stage7-sources/ADJ-T-CarryLA2.lean",
+      "sha256": "ad655a1201568cf9a580433e1a9fb16a492a2dc866ea3a0f2be9c5258c17d303",
+      "role": "reference"
+    },
+    {
+      "id": "src-carry-c-u1-f-la2-main-lean",
+      "path": "SOURCE/frozen/c1-stage7-sources/C-U1-F-LA2-Main.lean",
+      "sha256": "a04c15c66b7eaa3f27529266f9ee6f2ef721eb66267fcf56a736d35687cd4d45",
+      "role": "reference"
+    },
+    {
+      "id": "src-carry-u1-e993hightail-append-lean",
+      "path": "SOURCE/frozen/c1-stage7-sources/U1-E993HighTail-append.lean",
+      "sha256": "f3b89bbf4fb2a6f687ba70529106c7e223ad507c8a351ee9979bb0654022378b",
+      "role": "reference"
+    },
+    {
+      "id": "src-carry-source-digests-json",
+      "path": "SOURCE/frozen/c1-stage7-sources/SOURCE-DIGESTS.json",
+      "sha256": "590ecd519b5a023ffc665a4236822a50b0e0ca7ff80e775f55d40c20003db9c9",
+      "role": "reference"
+    },
+    {
+      "id": "src-fragment-0001",
+      "path": "LeanProject/LeanProof/Snippets/0001-definition-C4LA1-vertexDeletionIndepSetCount.lean.fragment",
+      "sha256": "7e0a588e243735a611c919ea1080816911a3e27e4523478af0c0f560ce1b3b48",
+      "role": "reference"
+    },
+    {
+      "id": "src-fragment-0002",
+      "path": "LeanProject/LeanProof/Snippets/0002-definition-C4LA1-vertexDeletionForwardDifference.lean.fragment",
+      "sha256": "c2da50eb16ee788c439b146577efeedd7dd42811c6943fb437585edcf63b5880",
+      "role": "reference"
+    },
+    {
+      "id": "src-fragment-0003",
+      "path": "LeanProject/LeanProof/Snippets/0003-definition-C4LA1-IsFavorableAt.lean.fragment",
+      "sha256": "25d8f7d274f9080468bf6d46acc6db3d4a469c2e399e7faee6cdcee24290a0db",
+      "role": "reference"
+    },
+    {
+      "id": "src-fragment-0004",
+      "path": "LeanProject/LeanProof/Snippets/0004-definition-C4LA1-IsGraphLeaf.lean.fragment",
+      "sha256": "65acd314d3bfd74aca476e00dd8866434c67682b627bce5e105d372a556f7ae5",
+      "role": "reference"
+    },
+    {
+      "id": "src-fragment-0005",
+      "path": "LeanProject/LeanProof/Snippets/0005-definition-C5LA1-support.lean.fragment",
+      "sha256": "8e1e1a689393f555eb5c216207b1368c7415a8543c569884b2fc86954b7bc2b4",
+      "role": "reference"
+    },
+    {
+      "id": "src-fragment-0006",
+      "path": "LeanProject/LeanProof/Snippets/0006-definition-C5LA1-leafSet.lean.fragment",
+      "sha256": "78ec65517bde90cc2fc5e542fc7c60d6a5147b243b74b9ac3de33d4efd1df697",
+      "role": "reference"
+    },
+    {
+      "id": "src-fragment-0007",
+      "path": "LeanProject/LeanProof/Snippets/0007-definition-C5LA1-leafDegree.lean.fragment",
+      "sha256": "ccfc9b2f549aa8c9986931152d249096ce49e3ccd3b67f4afd8678a749d93a68",
+      "role": "reference"
+    },
+    {
+      "id": "src-fragment-0008",
+      "path": "LeanProject/LeanProof/Snippets/0008-definition-C5LA1-H.lean.fragment",
+      "sha256": "55f37d9161901d6006e571cf548c4e56675c9d786a1aba83e7889ad9d443224d",
+      "role": "reference"
+    },
+    {
+      "id": "src-fragment-0009",
+      "path": "LeanProject/LeanProof/Snippets/0009-definition-C5LA1-R.lean.fragment",
+      "sha256": "a0407d82ab112a65a0f9d85970e9d6217b66201680cc079a4ba13751e53dc6b8",
+      "role": "reference"
+    },
+    {
+      "id": "src-fragment-0010",
+      "path": "LeanProject/LeanProof/Snippets/0010-definition-C5LA1-indepSetsAvoiding.lean.fragment",
+      "sha256": "ac0e331eec99650eca7a18e9fe98829bb5495850685b8f31936169f0a6d8e368",
+      "role": "reference"
+    },
+    {
+      "id": "src-fragment-0011",
+      "path": "LeanProject/LeanProof/Snippets/0011-definition-C5LA1-indepSetCount.lean.fragment",
+      "sha256": "e22635d8697e49b38dd521080f34c3eefe56a93964120c70f53ad9899b4a7f71",
+      "role": "reference"
+    },
+    {
+      "id": "src-fragment-0012",
+      "path": "LeanProject/LeanProof/Snippets/0012-definition-C5LA1-forwardDifferenceDel.lean.fragment",
+      "sha256": "60bd8efcc88e8e511a7caacac5867f7845243ccab08f1660e8c3962af544dd8f",
+      "role": "reference"
+    },
+    {
+      "id": "src-fragment-0013",
+      "path": "LeanProject/LeanProof/Snippets/0013-definition-C5LA1-aggregate.lean.fragment",
+      "sha256": "d66e776c5cf49b2a78a2d9713e4a41de2cbaf5de0af7b6d580075064d1daea8b",
+      "role": "reference"
+    },
+    {
+      "id": "src-fragment-0014",
+      "path": "LeanProject/LeanProof/Snippets/0014-definition-C5LA1-crossingIndex.lean.fragment",
+      "sha256": "378868ab2e660af8a36ea0b1045c55bc60f8383dca3d31dd85c4b52fa8a898fb",
+      "role": "reference"
+    },
+    {
+      "id": "src-fragment-0015",
+      "path": "LeanProject/LeanProof/Snippets/0015-definition-E993Interior-taggedFamily.lean.fragment",
+      "sha256": "cb43feebd48bdf3a82d95db4c0475a34a83acdd8c55f13ac44433ea26141fa1e",
+      "role": "reference"
+    },
+    {
+      "id": "src-fragment-0016",
+      "path": "LeanProject/LeanProof/Snippets/0016-lemma-E993Interior-taggedShadowBound.lean.fragment",
+      "sha256": "50dcce4a7ad13fbb73361ff1235996a7bb79eeea2cf9435a752b1eab50d8583f",
+      "role": "reference"
+    },
+    {
+      "id": "src-fragment-0017",
+      "path": "LeanProject/LeanProof/Snippets/0017-lemma-E993Interior-highTailAggregateFromShadow.lean.fragment",
+      "sha256": "972d0d900218889995bebd2e0682c1886576df4d7b2b22356924b0d7295baa9d",
+      "role": "reference"
+    },
+    {
+      "id": "src-fragment-0018",
+      "path": "LeanProject/LeanProof/Snippets/0018-lemma-E993HighTail-indepSetCount_zero.lean.fragment",
+      "sha256": "cb21770bef2e789994531f4d5b6202d165f81ba9eba30dfdea7e92d581dbb417",
+      "role": "reference"
+    },
+    {
+      "id": "src-fragment-0019",
+      "path": "LeanProject/LeanProof/Snippets/0019-lemma-E993HighTail-indepSetCount_one.lean.fragment",
+      "sha256": "f952dc4f0da45dba4b94e228f1c59382a07c24d82e66f12aeeb88ee65045017b",
+      "role": "reference"
+    },
+    {
+      "id": "src-fragment-0020",
+      "path": "LeanProject/LeanProof/Snippets/0020-lemma-E993HighTail-forwardDifferenceDel_zero_eq.lean.fragment",
+      "sha256": "24b1a2c58bdc0409577b8150697430d59e956210639b7b2ef0a4564b40b7716a",
+      "role": "reference"
+    },
+    {
+      "id": "src-fragment-0021",
+      "path": "LeanProject/LeanProof/Snippets/0021-lemma-E993HighTail-leafTermAtOne_eq_degSubOne.lean.fragment",
+      "sha256": "6fd1056e4ed4d841532f979d03ea4a85ccc91fd07d836e9a578d9d5bab8cb56f",
+      "role": "reference"
+    },
+    {
+      "id": "src-fragment-0022",
+      "path": "LeanProject/LeanProof/Snippets/0022-lemma-E993HighTail-leafEndpointAtOne.lean.fragment",
+      "sha256": "a83504da29f4f4c9aec12fe1336e45f86e5c4ee7aad5eefd410ac3c6ef8abd75",
+      "role": "reference"
+    },
+    {
+      "id": "src-fragment-0023",
+      "path": "LeanProject/LeanProof/Snippets/0023-lemma-E993HighTail-leafHighTailPointwiseAux.lean.fragment",
+      "sha256": "ed61127e3aa89e465560d12d8cb98f7c84e73387794096b06a7386a04acec62e",
+      "role": "reference"
+    },
+    {
+      "id": "src-fragment-0024",
+      "path": "LeanProject/LeanProof/Snippets/0024-lemma-E993HighTail-bipartiteHighTailAggregateAllRanks.lean.fragment",
+      "sha256": "8cde34c757ba33710ba6e89fcf6d407f7eb70675eaa55be6f7f3a54ea10d10c1",
+      "role": "reference"
+    },
+    {
+      "id": "src-fragment-0025",
+      "path": "LeanProject/LeanProof/Snippets/0025-theorem-E993HighTail-bipartiteLeafHighTailPointwise.lean.fragment",
+      "sha256": "5c49ba5cccd1cefc03bdc9e2d75f4465bd1e0df4d6db5c6526292c48459a4a19",
+      "role": "reference"
+    }
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "classical_allowed",
+    "rationale": "The definitions of record are noncomputable (Classical.choose in C5LA1.support; open Classical in leafSet/aggregate) and Mathlib's indepNum is classical. Exactly propext, Classical.choice and Quot.sound are permitted; no sorry, admit, native_decide, axiom, and no decide over an enumeration for a universal step."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "E993HighTail.bipartiteLeafHighTailPointwise",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem bipartiteLeafHighTailPointwise {V : Type*} [Fintype V] [DecidableEq V]\n    (G : SimpleGraph V) [DecidableRel G.Adj] (hBip : G.IsBipartite) (v : V) (hv : C4LA1.IsGraphLeaf G v)\n    (p : ℕ) (hp : 1 ≤ p) (hTail : 2 * G.indepNum + 1 ≤ 3 * p) :\n    C5LA1.forwardDifferenceDel G (C5LA1.H G v) (p - 1) - C5LA1.forwardDifferenceDel G (C5LA1.R G v) (p - 1) ≤ 0",
+    "expected_statement_sha256": "805b158547459c55f9ffe2268be7a038d567fd0304528f2fc1a458e5567031d2"
+  }
+}

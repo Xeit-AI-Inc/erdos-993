@@ -4,7 +4,7 @@
 
 Code's r28 Hall/SDR experiment is complete: its universal sufficient condition is refuted, with restricted structural results formally verified. The registry has 407 identities (245 VERIFIED, 92 REFUTED, 26 CONDITIONAL, 44 OPEN). The completed order-24 census gives M(6)=22 and K1-addition closure for x<=6 at census-dependent grades. The fresh r27 review corrects informal equality endpoints and identifies the missing marked-shadow control; no new formal award is made. See the [current research notepad](docs/research-notepad-2026-09-25.md) and [assessment](docs/assessment-2026-09-25.md). Historical sections retain their dates and scopes.
 
-Last updated: 2026-09-25 (order-24 census and fresh r27 review complete; M(6)=22, K1 closure x<=6 at census-dependent grades; master registry 407 identities)
+Last updated: 2026-09-25 (r29: the high-tail mechanism certified — tagged-shadow bound, pointwise high-tail sign at every p ≥ 1 with its aggregate corollary, the eligibility guard, and the non-residual top-rank corollary; 4 Lean package(s); the guard exactly sharp on trees; master registry 415 identities)
 
 ## Headline Problems
 
@@ -20,6 +20,10 @@ The consolidated orientation document — the conjecture, the full proof path
 with per-step status, the claim/fence/obligation tables, strategy verdicts,
 and next-phase priorities — is the
 [master proof ledger (2026-09-04)](docs/master-proof-ledger-2026-09-04.md).
+
+## r29, 2026-09-25
+
+The uniform high-tail mechanism of the first-interior award is certified as separate governed awards (see [the experiment page](experiments/r29-high-tail-certification.md) and [verification](evidence/verification-2026-09-25-r29.md)): the tagged-shadow bound; the pointwise high-tail sign at every `p ≥ 1` with `3p ≥ 2α + 1` and its favorable-leaf aggregate corollary on every bipartite graph; the eligibility guard `α ≥ 7`; and the NON-residual top-rank corollary `x + 2 ≤ α − 1 ⇒ S(T, α − 1) ≤ 0` (r26's residual hypothesis dropped). The guard is exactly sharp on trees at every `α ≥ 2`. The all-rank aggregate `E993-R23-ORDINARY-FAVORABLE-LEAF-AGGREGATE` stays OPEN: its open remainder is exactly the eligible ranks `x + 2 ≤ p ≤ ⌊2α/3⌋` (Codex/Astra's compensation region). `E993-BETA-AGG`, the no-recovery claims, NR1, FOREST, TREE, TRANSFER and Erdős #993 stay OPEN and untouched.
 
 ## r28, 2026-09-25
 

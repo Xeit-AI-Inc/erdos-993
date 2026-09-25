@@ -1,0 +1,47 @@
+# Formalization Fidelity Review
+
+- Run: `lean-2026-09-25-c1-la2-leaf-high-tail-pointwise`
+- Verdict: `passed`
+- Fail closed: `false`
+- Deterministic precheck: `passed`
+- Independent semantic review: `passed`
+
+## Bound Evidence
+
+- Input SHA-256: `8aedc8be900945311f43aeaac66091c3649344d82327434374721a258dd1c2f5`
+- Contract projection SHA-256: `42de90fe6859fd89613f8d5c51464414d7367bb2ed5769b2ce043b773e78c9a0`
+- Lean binding projection SHA-256: `c76884a42e85ca8e6b99bdba1c513ebaf1a3b0599188d8cc5a640b1212c3bfb8`
+- Contract source SHA-256: `7ef3f53a84e9abe33a773b8f71ae053580ff83681057ae5d3f0d28a8d2664ece`
+- Lean source SHA-256: `d968eb56ec0dcab9ad96195a9adbaf0c0e515a073a2b5ba29131bed98c8fd496`
+- Kernel receipt SHA-256: `7b455713348debdbd45f03e1e19959b3b522f2573a4365b4f272e981ed6badc0`
+
+## Check Counts
+
+- Passed checks: 37
+- Failed findings: 0
+- Warnings: 1
+
+## Findings
+
+- `warning` `hta_axiom_coverage_not_receipt_bound` `independent_review` (independent_reviewer, `87cab62bb64735d8`): HTA condition (iii) is not met literally on the receipt. The kernel receipt 7b455713... probes `#print axioms` only for the terminal theorem, and the terminal theorem does not depend on the companion lemma. The receipt-bound source d968eb56... does contain the companion, and the receipt-bound lake build and single-file check compiled it. The companion's per-declaration axioms, recorded as exactly [propext, Classical.choice, Quot.sound], are in EVIDENCE/axioms-all-declarations.txt, which the receipt does not bind. This does not affect the fidelity of the terminal declaration. Whether HTA registers at formally_verified or at the synthesis fallback proved_informal ('kernel-checked companion inside C1-LA2, not a separate certificate') is the controller's ruling. Expected `"semantic fidelity"`; observed `"match"`.
+- `note` `definitions_of_record` `independent_review` (independent_reviewer, `4b6eea3b9fde20e9`): Registrar entries 1-14 (C4LA1.vertexDeletionIndepSetCount, vertexDeletionForwardDifference, IsFavorableAt, IsGraphLeaf; C5LA1.support, leafSet, leafDegree, H, R, indepSetsAvoiding, indepSetCount, forwardDifferenceDel, aggregate, crossingIndex) and 15-17 (first-interior entries 18 E993Interior.taggedFamily, 41 taggedShadowBound + Core helpers, 42 highTailAggregateFromShadow + Leaf helpers) are byte-identical to the frozen first-interior fragments under sources/first-interior/c2-primary-v2/LeanProject/LeanProof/Snippets/ and to the corresponding entries of the frozen Main.lean (8d864da290947d75ac0cb52644b8b5336a19076878fcb11eeed552e6a118d7a9). Each registrar marker digest equals the SHA-256 of its body. Each full fragment text embedded in the contract's definitions block equals the compiled entry. No Erdos993G1 declaration is carried or used, so the r25 G1 comparison has nothing to check. The award introduces no new `def`; the eight new declarations (entries 18-25) are the lemma/theorem set of the plan of record (SOLUTION-CONTRACT section 2; synthesis new-declaration list). Entries 7 (leafDegree) and 14 (crossingIndex) are carried but unused; they are harmless, and the synthesis admits the 1-14 carry. Expected `"semantic fidelity"`; observed `"match"`.
+- `note` `fences_and_repairs` `independent_review` (independent_reviewer, `6a655bb14d55f3dc`): Fences: the contract scope text carries sections 3.1, 3.3, 3.4 (not E993-BETA-TARGET), 3.7 and 3.8, the attribution, and the excluded conclusions of the synthesis. No fenced object occurs in Main.lean: no firstInteriorAggregate (entry 45), no eligibleAlphaGeSeven/bipartiteHighTailAggregate (entries 43-44), no census value, no lower-region sign statement, no Erdos993G1. Repairs from the formalizer brief section 2 are all present: (1) bipartiteHighTailAggregateAllRanks is a `lemma` placed before the terminal theorem (entry 24 < 25); (2) the p = 1 branch runs through leafEndpointAtOne by `omega` with no `decide` anywhere in the file; (3) the contract's companion-statement field gives the companion's exact text and SHA-256 752a355bfd0e80bc28d0413435770e3a24885ac315341f91abc8c295078096af; (4) no Nonempty or connectivity appears in any hypothesis text. There is no sorry, admit, native_decide or axiom, no trailing-prime name, and the deprecated filter_card_add_filter_neg_card_eq_card does not occur. Expected `"semantic fidelity"`; observed `"match"`.
+- `note` `hta_companion_match` `independent_review` (independent_reviewer, `dac5bfaf2fa2f2d7`): HTA condition (ii): the compiled companion E993HighTail.bipartiteHighTailAggregateAllRanks (kind lemma) matches, from `lemma` to just before ` := by`, the SOLUTION-CONTRACT section 2 / synthesis companion text byte-for-byte (SHA-256 752a355bfd0e80bc28d0413435770e3a24885ac315341f91abc8c295078096af). This equals the digest in the contract's companion-statement field and the text embedded there. Its hypotheses are hBip, hp and hTail, with no leaf hypothesis; leafness comes from membership in leafSet inside C5LA1.aggregate. Its conclusion is C5LA1.aggregate G p <= 0, and the selector is the carried strict IsFavorableAt at the original rank p. Expected `"semantic fidelity"`; observed `"match"`.
+- `note` `informational_scope_notes` `independent_review` (independent_reviewer, `7ea9f2579c88f1b3`): (a) leafTermAtOne_eq_degSubOne (the synthesis's S2) is an unguarded p = 1 identity (term = deg(s) - 1 on any graph with a leaf). It is an in-file companion identity of the plan of record, not a sign statement below the guard and not a registered claim. leafEndpointAtOne (S3) is graph-general and stays a lemma until SR-1, as the contract states. (b) The Lean p = 1 route is graph-general (N(s) = {v}), not SEMANTIC-CONTRACT's bipartite K_2 route. This is a difference of proof, not of statement. (c) In the input, the lean_binding definitions projection repeats the contract descriptions by the canonical projection rule. I checked the embedded fragment texts against the compiled source myself. (d) The assigned reviewer id contains 'fable', but this seat was chartered and run as Claude Opus 5.5; see FIDELITY-REVIEWER-NOTES.md. Expected `"semantic fidelity"`; observed `"match"`.
+- `note` `nat_int_equivalence` `independent_review` (independent_reviewer, `355c64edd24f0232`): `p - 1` is Nat subtraction; under hp : 1 <= p it equals the integer p - 1, so the Lean statement at Nat rank p - 1 is the registry statement at integer rank p - 1 for every integer p >= 1. hTail has no subtraction and is literally 3p >= 2 alpha(G) + 1. The conclusion is an Int difference of Nat counts cast to Int (C5LA1.forwardDifferenceDel). The contract records this equivalence text. Expected `"semantic fidelity"`; observed `"match"`.
+- `note` `non_vacuity` `independent_review` (independent_reviewer, `72fb07610cc87824`): Witness satisfying every hypothesis: G = the path P_3 on Fin 3 (edges 0-1, 1-2), which is bipartite. v = 0 is a leaf with support 1. alpha(G) = 2. p = 2 gives hp : 1 <= 2 and hTail : 5 <= 6. Then H_v = {0,1} and R_v = {0,1,2}. Delta_1(G - H_v) = i_2 - i_1 = 0 - 1 = -1 and Delta_1(G - R_v) = 0, so the term is -1 <= 0 (strict). K_2 with v = 0 at p = 1 exercises the p = 1 branch with term 0. As an independent brute-force sanity check (scratch only; not evidence of record): both hypotheses are load-bearing. P_3 + 2K_3 (not bipartite, alpha = 4) gives term +3 at p = 3 under the guard. Bipartite graphs below the guard give positive terms, e.g. p = 1 with alpha = 6. 3000 random small bipartite graphs showed no guarded violation. Expected `"semantic fidelity"`; observed `"match"`.
+- `note` `terminal_statement_match` `independent_review` (independent_reviewer, `b9b149581d151b39`): Read from the Lean source, not from the normalized text. The terminal declaration E993HighTail.bipartiteLeafHighTailPointwise (Main.lean entry 25, the only `theorem`, placed last) is byte-identical from `theorem` to just before ` :=` to the statement of record: SYNTHESIS.md `## Lean awards` C1-LA2, SOLUTION-CONTRACT section 2 Target 2, and the formalizer brief section 2 (SHA-256 805b158547459c55f9ffe2268be7a038d567fd0304528f2fc1a458e5567031d2, equal to the contract's expected_statement_sha256). Binders: V : Type* [Fintype V] [DecidableEq V], G : SimpleGraph V [DecidableRel G.Adj], v : V, p : Nat, all universally quantified. Hypotheses are exactly hBip : G.IsBipartite, hv : C4LA1.IsGraphLeaf G v, hp : 1 <= p, hTail : 2 * G.indepNum + 1 <= 3 * p. There is no extra hypothesis (no selector, residual, IsTree, connectivity or Nonempty), and no hypothesis is dropped or weakened. The conclusion is the single Int clause forwardDifferenceDel G (H G v) (p - 1) - forwardDifferenceDel G (R G v) (p - 1) <= 0; no conjunct is dropped. Names resolve under `namespace E993HighTail` with `open SimpleGraph E993Interior`, and no local declaration shadows C4LA1/C5LA1/H/R/support. Expected `"semantic fidelity"`; observed `"match"`.
+
+## Independent Review
+
+- Reviewer: `c1-la2-fable-fidelity-20260925` (independent-mathematical-formalization-fidelity-reviewer)
+- Attestation: `c1-la2-fable-fidelity-attestation-20260925-5669f266-7842-4554-b134-3d6545f9086d`
+- Completed: `2026-09-25T07:52:08Z`
+- Verdict: `match`
+
+## Interpretation
+
+Only `passed` means the verified Lean declaration faithfully matches the bound
+theorem contract. A kernel pass without a current independent semantic
+attestation is not a fidelity pass. This Markdown file is rendered from the
+canonical JSON receipt and is not an independent source of truth.

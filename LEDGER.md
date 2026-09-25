@@ -1,6 +1,8 @@
 # Erdős #993 — Master Proof Ledger
 
-**Current orientation, 2026-09-25.** The registry has 407 identities (245 VERIFIED, 92 REFUTED, 26 CONDITIONAL, 44 OPEN), at mixed evidence grades. Code's r28 is complete; its universal Hall/SDR route is REFUTED and its four restricted/supporting packages stand. The first-interior primary is formally verified. The completed order-24 follow-up establishes M(6)=22 and K1-addition closure for x<=6 at census-dependent grades. The fresh r27 review corrects informal equality endpoints and identifies a failed marked-family transfer; no formal award or eligible aggregate is refuted. See the [current research notepad](https://github.com/Xeit-AI-Inc/erdos-993/blob/main/docs/research-notepad-2026-09-25.md). Historical sections retain dated counts and grades.
+**Updated 2026-09-25 — r29 (certify the uniform high-tail mechanism and its non-residual top-rank consequence, `erdos-993-high-tail-certification-dre-2026-09-25`; chartered from a Codex prompt) was met in Cycle 1; the run closed after one cycle:** the tagged-shadow bound `k·q_{k+1} ≤ 2(α − k)·q_k` on bipartite graphs, the pointwise high-tail sign of every original-leaf term at every rank `p ≥ 1` with `3p ≥ 2α + 1` (the `p = 1` endpoint new; no residual, selector or connectivity hypothesis) with its favorable-leaf aggregate corollary, the first-interior eligibility guard `x + 2 ≤ α − 2 ⇒ α ≥ 7`, and the NON-residual top-rank corollary `x + 2 ≤ α − 1 ⇒ S(T, α − 1) ≤ 0` — each certified as its own governed award (4 package(s): C1-LA1, C1-LA2, C1-LA3, C1-LA4). The guard is exactly sharp on trees at every `α ≥ 2` (boundary record); the all-rank aggregate's open remainder is exactly `x + 2 ≤ p ≤ ⌊2α/3⌋`. Master registry 415 identities (251 VERIFIED, 92 REFUTED, 26 CONDITIONAL, 46 OPEN). Nothing transfers to `E993-BETA-AGG`, the no-recovery claims, NR1, FOREST, TREE or Erdős #993. See the r29 section at the end.
+
+**Current orientation, 2026-09-25.** The registry has 412 identities (245 VERIFIED, 92 REFUTED, 26 CONDITIONAL, 49 OPEN), at mixed evidence grades. Code's r28 is complete; its universal Hall/SDR route is REFUTED and its four restricted/supporting packages stand. The first-interior primary is formally verified. The completed order-24 follow-up establishes M(6)=22 and K1-addition closure for x<=6 at census-dependent grades. The fresh r27 review corrects informal equality endpoints and identifies a failed marked-family transfer; no formal award or eligible aggregate is refuted. See the [current research notepad](https://github.com/Xeit-AI-Inc/erdos-993/blob/main/docs/research-notepad-2026-09-25.md). The lower-region compensation DRE is active with five newly registered OPEN identities, including three Cycle2 scopes; no new mathematical award. Historical sections retain dated counts and grades.
 
 
 **Updated 2026-09-25 — r28 (the Hall/SDR route to a second proof of the forest degree lemma, `erdos-993-degree-lemma-hall-sdr-dre-2026-09-24`) closed after ONE cycle on the counterexample stop rule: the leaf/slot dominance condition `(HS)` — for every finite tree, every `k` and every threshold `t ≥ 1`, the branch slots with `c_v(k) ≥ t` are at most the leaves with `c_ℓ(k) ≥ t` (the r27 critic's Hall/SDR sufficient condition for `(DL)`) — is REFUTED** by the order-22 tree `T22` (a root with three hubs, each carrying two pendant 3-paths; at `k = 12` the root lies in 18 of the 19 independent sets, every leaf in 17), found independently by two critics, reproduced by all three adjudicators, confirmed by an isolated second read that also enumerated every tree of order 22 and found it unique; `(DL)` itself is untouched. What survives: the pendant-path leaf dominance lemma (graph-general), Theorem BTP — `(HS)` on every tree whose branch tree is a path, sharp for every branch-degree bound — the surplus identity, the SDR/threshold equivalence and the layer-cake reduction `(HS) ⇒ (DL)`, with 4 governed Lean package(s) (C1-LA2, C1-LA3, C1-LA4, C1-LA5). Master registry 405 identities (243 VERIFIED, 92 REFUTED, 26 CONDITIONAL, 44 OPEN). Nothing transfers to the no-recovery claims, NR1, FOREST, TREE or Erdős #993. See the r28 section at the end.
@@ -634,6 +636,8 @@ for artifacts not explicitly exported there.
 **r27 Lean packages (2026-09-24).** Four governed packages under `proofs/lean/r27-*`: `r27-c1-la1-forest-degree-extension` (`Erdos993G1.forest_degree_lemma` — the FLNYZ forest degree lemma `(DL)` — and the terminal `Erdos993G1.forest_extension_inequality` `(EX)`, both on the G1 definitions of record carried byte-identically from the r25 award; 55 declarations; proof of record the type-A/type-B injection of the root-corrected lemma with the rooting API supplying `p(p(u)) ≠ u`), `r27-c1-la2-extension-counting-core` (`Erdos993G1.double_count`, `Erdos993G1.e_ge_sub`; graph-general, no acyclicity), `r27-c1-la3-degree-lemma-implication-chain` (`Erdos993G1.degree_lemma_implies_chain : DlHyp → ExHyp ∧ LbHyp ∧ R5Hyp ∧ XrHyp`, each hypothesis definitionally the contract statement), `r27-c1-la4-descent-order-bounds` (`Erdos993G1.forest_descent_linear_bound` `Δ_k < 0 ⇒ n ≤ 4k`, `forest_rank5_ceiling_20`, and the terminal `forest_descent_restriction` `firstDescent G < r ⇒ n ≤ 4r − 4`; 81 declarations composing C1-LA1 byte-identically). Same pin, axioms exactly `[propext, Classical.choice, Quot.sound]`, each with frozen contract, independent informal audit, kernel/axiom receipt and independent fidelity attestation (C1-LA3 after one bounded repair round on record defects). No external Lean text: the external audit copy carries no LICENSE and was read for audit only. Internal grade `formally_verified`; public projection `verified`.
 
 **r28 Lean packages (2026-09-25).** 4 governed package(s) under `proofs/lean/r28-*`: `r28-c1-la2-layer-cake-reduction` (`Erdos993G1.dominance_implies_degree_lemma`); `r28-c1-la3-forest-composition-and-hall` (`Erdos993G1.forest_degree_lemma_of_tree_degree_lemma`); `r28-c1-la4-pendant-path-leaf-dominance` (`Erdos993G1.pendant_path_leaf_dominance`); `r28-c1-la5-btp-second-proof-on-class` (`Erdos993G1.leaf_slot_dominance_branch_tree_max_degree_le_two`). Same pin, axioms exactly `[propext, Classical.choice, Quot.sound]`, each with frozen contract, independent informal audit, kernel/axiom receipt and independent fidelity attestation. Internal grade `formally_verified`; public projection `verified`.
+
+**r29 Lean packages (2026-09-25).** 4 governed package(s) under `proofs/lean/r29-*`: `r29-c1-la1-tagged-shadow-bound` (`E993HighTail.bipartiteTaggedShadowBound`); `r29-c1-la2-leaf-high-tail-pointwise` (`E993HighTail.bipartiteLeafHighTailPointwise`); `r29-c1-la3-interior-eligibility-guard` (`E993HighTail.interiorEligibilityAlphaGeSeven`); `r29-c1-la4-top-rank-nonresidual-aggregate` (`E993HighTail.topRankNonResidualAggregate`). Same pin, axioms exactly `[propext, Classical.choice, Quot.sound]`, each with frozen contract, independent informal audit, kernel/axiom receipt and independent fidelity attestation; every definition of record a byte-identical registrar carry of the first-interior award source. Internal grade `formally_verified`; public projection `verified`.
 
 ## 8. Process Preconditions for the Next Phase
 
@@ -1278,3 +1282,66 @@ The fresh reviewer inspected all four r27 package faces and reported receipts, f
 Corollary B's unqualified equality phrase is corrected: equality at k=0 and whenever i_k=0; at k=1,n>0, exactly for trees. No complete positive supported k>=2 equality classification is asserted here. The K1 x<=5 certificate's unexpanded RE-1 template is replaced by the original confirmed_with_repairs verdict. Four existing claim records have corrections or extension notes with unchanged status/grade; two new identities bring the total to 407 (245 VERIFIED,92 REFUTED,26 CONDITIONAL,44 OPEN). All sealed source remains unchanged.
 
 Public [census](https://github.com/Xeit-AI-Inc/erdos-993/blob/main/experiments/forest-census-order24.md), [fresh review](https://github.com/Xeit-AI-Inc/erdos-993/blob/main/docs/r27-fresh-review-2026-09-25.md), and [evidence record](https://github.com/Xeit-AI-Inc/erdos-993/blob/main/evidence/verification-2026-09-25-followups.md).
+
+## Lower-region compensation DRE — intake 2026-09-25
+
+Two new OPEN claims are registered before worker dispatch: `E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE` (ordinary trees, x(T)+2<=p and strict 3p<2alpha(T)+1, complete original favorable-leaf sum) and `E993-BIPARTITE-TAGGED-INCIDENCE-DEFICIT-IDENTITY` (exact marked extension accounting, with no global deficit budget implied). These are distinct from the all-rank ordinary aggregate and from the governed aggregate. Code independently handles high-tail certificates. All previous statuses and evidence grades are preserved. Authorized topology per cycle: 18 search workers, 36 cross-orientation critics, 3 adjudicators, 1 synthesis; search/critics Luna high, other stages Sol high, Astra controller reviews after cycles 3 and 6. Maximum six cycles; primary remains OPEN.
+
+
+## Lower-region DRE Cycle2 scope intake — 2026-09-25
+
+Three additional exact OPEN keys are registered before search dispatch: `E993-MARKED-ISOLATE-ORDER-BAND`, `E993-ORDINARY-LEAF-ORDER-BAND`, and `E993-LOWER-REGION-FIRST-ORDER-SHELL`. The first two have a controller candidate proof pending independent review; the third is the eligible full-sum shell n=2p+2 and remains unresolved. No prior claim object or status changes. Cycle1 remains in adjudication; these are next-cycle intake scopes, not Cycle1 premises. The current registry has 412 identities (245 VERIFIED, 92 REFUTED, 26 CONDITIONAL, 49 OPEN). No mathematical award. See the active run control/C2-ORDER-BAND-CANDIDATE.md and control/C2-REGISTRATION-RECEIPT.json.
+
+## r29 — certify the uniform high-tail mechanism and its non-residual top-rank consequence (erdos-993-high-tail-certification-dre-2026-09-25), CLOSED 2026-09-25
+
+Chartered by Ashton on 2026-09-25 from a Codex (GPT-6) prompt: a separately governed successor to the completed
+first-interior aggregate experiment. That award certified one statement — `S(T, α − 2) ≤ 0` on eligible trees — but its
+proof contains a rank-uniform mechanism (the tagged-shadow double count on a bipartite graph) that signs every
+original-leaf term throughout the high-tail region `3p ≥ 2α + 1`; three registry keys stood OPEN as proposals and the
+top-rank consequence had no key at all. r29 certified each as its own governed award. Topology 4 routes / 8 critics /
+3 adjudicators / 1 synthesis / governed Stage 7 / isolated second reads (routes Sonnet 5 xhigh; critics Opus 5.5
+medium; the rest Opus 5.5 high); up to six cycles. **Stop-gate (a) — all four targets formally verified — was met in Cycle 1; the run closed after one cycle**
+(terminal manifest `e4d7ede0233d1be72c103b0b91c0bc7cf83e6ecd96e511c320003f5b169ab355`; controller review `CONTROLLER-REVIEW-R29.md`).
+
+**Certified (each by its own award, its own frozen contract, independent informal audit, kernel/axiom receipt and
+independent statement-fidelity review).** 4 governed Lean package(s) closed `formally_verified`: `r29-c1-la1-tagged-shadow-bound` (`E993HighTail.bipartiteTaggedShadowBound` — E993-BIPARTITE-TAGGED-SHADOW-BOUND (OPEN → VERIFIED)); `r29-c1-la2-leaf-high-tail-pointwise` (`E993HighTail.bipartiteLeafHighTailPointwise` — E993-BIPARTITE-LEAF-HIGH-TAIL-POINTWISE (OPEN → VERIFIED), with E993-R29-BIPARTITE-HIGH-TAIL-AGGREGATE as the companion lemma on its face); `r29-c1-la3-interior-eligibility-guard` (`E993HighTail.interiorEligibilityAlphaGeSeven` — E993-INTERIOR-ELIGIBILITY-ALPHA-GE-SEVEN (OPEN → VERIFIED)); `r29-c1-la4-top-rank-nonresidual-aggregate` (`E993HighTail.topRankNonResidualAggregate` — E993-R29-TOP-RANK-NONRESIDUAL-AGGREGATE (new; VERIFIED formally_verified)).
+- `E993-BIPARTITE-TAGGED-SHADOW-BOUND` (TSB): for a finite bipartite `H`, any tag set `W`, `a = α(H)` and `1 ≤ k ≤ a`,
+  `k·q_{k+1} ≤ 2(a − k)·q_k` in ℤ, `q_j` the independent `j`-sets meeting `W` (every tagged `(k+1)`-set has ≥ `k`
+  tag-preserving deletions; every independent `k`-set has ≤ `2(a − k)` addable vertices by the colour-class split).
+  Holds for every `k ≥ 0`; tight at every `1 ≤ k ≤ a` (a perfect matching with one tagged vertex); bipartiteness is
+  load-bearing (`K_1 ⊔ K_5` fails it).
+- `E993-BIPARTITE-LEAF-HIGH-TAIL-POINTWISE` (HTP): for a finite bipartite `G`, an original leaf `v` with support `s` and
+  every integer `p ≥ 1` with `3p ≥ 2α(G) + 1`, `Δ_{p−1}(G − {v, s}) − Δ_{p−1}(G − N[s]) ≤ 0` — no residual, selector or
+  connectivity hypothesis. The `p = 1` endpoint is NEW (the guard forces `N(s) = {v}`, so the two deletion sets coincide
+  and the term is `0`; bipartiteness is not even needed there). `α(G − {v, s}) = α(G) − 1` for every leaf of every graph.
+- `E993-R29-BIPARTITE-HIGH-TAIL-AGGREGATE` (HTA; proved_informal; kernel-checked companion, not separately bound): the favorable-leaf aggregate `S(G, p) ≤ 0` on every
+  finite bipartite graph throughout the region, with the original strict selector and one tag per leaf — a companion
+  lemma on the (HTP) award's face. It closes every eligible rank with `3p ≥ 2α + 1` of the OPEN all-rank key
+  `E993-R23-ORDINARY-FAVORABLE-LEAF-AGGREGATE`; the exact open remainder is `x(T) + 2 ≤ p ≤ ⌊2α(T)/3⌋`.
+- `E993-INTERIOR-ELIGIBILITY-ALPHA-GE-SEVEN` (ELIG): on finite trees, `x + 2 ≤ α − 2 ⇒ α ≥ 7` (the three low-`α`
+  exclusions: `Δ₀ = n − 1 ≥ 0`; `Δ₁ = C(n−1, 2) − n ≥ 0` for `n ≥ 6`; `Δ₂ ≥ 0` by inclusion–exclusion for `n ≥ 9` and by
+  vertex covers at `n = 7, 8`), Codex's compiled proof carried byte-identically under its own certificate.
+- `E993-R29-TOP-RANK-NONRESIDUAL-AGGREGATE` (TRN; new key): on finite trees with `p = α − 1`, `x + 2 ≤ p ⇒ S(T, p) ≤ 0`
+  with NO residual hypothesis — eligibility forces `α ≥ 4` (indeed eligible trees have `α ≥ 5`), which puts the top
+  rank inside the region; the same conclusion as r26's residual award with two hypotheses dropped, by a different
+  mechanism; r26 stays the proof of record on the residual class. The conclusion holds on every finite bipartite graph.
+
+**Boundary record** `E993-R29-HIGH-TAIL-BOUNDARY-RECORD` (`proved_informal`; two isolated second reads): the guard
+`3p ≥ 2α + 1` is exactly SHARP on trees at every `α ≥ 2` — two explicit families of order `2α` (a spider with `α − 1`
+legs of length 2 plus a pendant leaf; a path `v–s–w–c` with `α − 2` pendant edges hung on `c`) have a positive leaf term
+at `p = ⌊2α/3⌋`, so the largest positive rank on trees is exactly `⌊2α/3⌋`; smallest witnesses `P_6` and `S(1,2,2)`
+(order 6) and, among labelled bipartite graphs, `P_3 ⊔ K_2` (order 5); the non-bipartite `P_3 ⊔ 2K_3` has a positive
+term at guard equality. A record about precision; it refutes nothing in scope.
+
+**Scope notes (statuses unchanged):** `E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE` (its guard and its aggregate now
+certified separately; the award unchanged), `E993-R26-TOP-RANK-RESIDUAL-SIGN` (the non-residual generalization is a
+separate key; r26 not widened), `E993-R23-ORDINARY-FAVORABLE-LEAF-AGGREGATE` (OPEN; open remainder stated exactly),
+`E993-BETA-TARGET` / `E993-BETA-AGG-SUPPORT` / `E993-C3-G1-POINTWISE-ADDABILITY-BOUND` (REFUTED; distinct — their
+witnesses fail the guard).
+
+**Unchanged:** the lower region `3p < 2α + 1` (Codex/Astra's), `E993-BETA-AGG`, `E993-R25-UNR-FOREST-WIDE`, NR1,
+FOREST, TREE, TRANSFER and Erdős #993 untouched; every REFUTED claim REFUTED. Master registry 415 identities (251
+VERIFIED, 92 REFUTED, 26 CONDITIONAL, 46 OPEN); all prior objects preserved. **Errata:** R29-E-a…d; **incident
+R29-I-1** (a sealed digest record edited by the controller and restored byte-exact within minutes). Public mirror:
+`proofs/lean/r29-*`, `experiments/r29-high-tail-certification.md`, `evidence/verification-2026-09-25-r29.md`,
+`runs/erdos-993-high-tail-certification-dre-2026-09-25/`.

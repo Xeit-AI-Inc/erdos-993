@@ -212,7 +212,7 @@
     {
       "claim_key": "E993-BETA-TARGET",
       "statement": "For leaf v with support s, p with k_A >= 2 and a_v(p) < 0: b_v(p) <= Bgen_s(p−1)",
-      "scope": "universal at k_A >= 2; (β)",
+      "scope": "universal at k_A >= 2; (β) r29 Cycle 1 (2026-09-25) scope note: distinct from the r29 high-tail keys: the registered refutation witnesses fail 3p ≥ 2α + 1 (a theorem given E993-BIPARTITE-LEAF-HIGH-TAIL-POINTWISE, not a data check); E993-BIPARTITE-TAGGED-SHADOW-BOUND is a size-restricted incidence count whose constants k and 2(a − k) are incomparable with the refuted per-set bound. Status REFUTED unchanged.",
       "status": "REFUTED",
       "certificate": "r12 registry BETA-TGT; r15: normalized to the guarded coefficient-descent b_v(p) − Bgen_s(p−1) = g_p − g_{p−1} (governed); support-degree 1 closed by equality, degree 2 closed through p <= 6; remainder = degree 2 at p >= 7 and degree >= 3; witnesses >= 23; REFUTED by r17 exact order-243 witness R17-BETA-CE-ORDER243-STAR60: experiments/erdos-993-beta-remainder-dre-2026-09-06/control/ORDER243-ADJUDICATION-MANIFEST.json and decisive-event/order243/adjudication/ADJUDICATION.md; same tuple T60, v=[0,0], p=90 has crossingIndex=87, K_A=3, a_v(90)<0, and b_v(90)-Bgen_s(89)>0; exact computation plus independent computation, structural, informal-audit, and neutral-adjudication checks. Governed Lean headline remains BLOCKED, not awarded: experiments/erdos-993-beta-remainder-order243-counterexample/runs/lean-2026-09-06/VERIFICATION-REPORT.json.; r18 controller independent verification 2026-09-06: tree rebuilt from description with an independent rooted DP, all four polynomial identities + crossing 87 + all exact integers confirmed (erdos-993-hg2-dre-2026-09-06/control/beta-order243-verification/); GOVERNED LEAN AWARD 2026-09-07 (controller closeout, CONTROLLER-AWARD.md c31b53e7...): Order243.T60_not_BetaTarget : Not RTree.BetaTarget kernel-verified at the pin (Main.lean 9f01357a..., 107 declarations, axioms exactly [propext, Classical.choice, Quot.sound], statement sha 1c20e5a9... = frozen contract; controller reran the kernel check, exit 0) with independent hostile fidelity review PASS-WITH-NOTES (reviewer key R243-FID-2026-09-07-CLAUDE-CTRL). SCOPE: (beta) over the governed RTree model; the D9 semantic-adequacy bridge to ordinary finite trees is unproved and outside the contract — ordinary-tree phrasings carry the D9 caveat. Never formally_verified. r19 Stage-1 computation-tier refinement (2026-09-07): the exact T_22 star-hub tree of order 91, marked leaf, p=34 has crossingIndex=32, K_A=2, a_v=-24528898691191536776, and b_v-Bgen_s=212336130412243110>0. Controller replay and an isolated forest-DP reviewer agree exactly: experiments/erdos-993-beta-aggregate-dre-2026-09-07/evidence/C1-ORDER91-CANONICAL-REPLAY.json and cycles/cycle-1/stage1/review/REVIEW.md. This lowers the smallest known computational witness only; the order-243 governed Lean witness remains the formal certificate of record.",
       "aliases": [
@@ -227,7 +227,15 @@
         "\\bbeta[- ]?target\\b",
         "coefficient[- ]descent"
       ],
-      "smallest_witness_order": 91
+      "smallest_witness_order": 91,
+      "terminal_history": [
+        {
+          "run": "erdos-993-high-tail-certification-dre-2026-09-25 (r29)",
+          "cycle": 1,
+          "date": "2026-09-25",
+          "event": "distinction note vs r29 keys; status unchanged"
+        }
+      ]
     },
     {
       "claim_key": "E993-AMBIENT-TARGET-DEG2",
@@ -553,7 +561,7 @@
     {
       "claim_key": "E993-BETA-AGG-SUPPORT",
       "statement": "For every governed RTree T and p >= x(T)+2, each support fibre has nonpositive total g_v(T,p) over its original leaves satisfying a_v(p)<0",
-      "scope": "universal per-support favorable-leaf aggregate on the governed RTree model; distinct from both the global aggregate E993-BETA-AGG and the refuted pointwise E993-BETA-TARGET",
+      "scope": "universal per-support favorable-leaf aggregate on the governed RTree model; distinct from both the global aggregate E993-BETA-AGG and the refuted pointwise E993-BETA-TARGET r29 Cycle 1 (2026-09-25) scope note: distinct from the r29 high-tail keys: the registered refutation witnesses fail 3p ≥ 2α + 1 (a theorem given E993-BIPARTITE-LEAF-HIGH-TAIL-POINTWISE, not a data check); E993-BIPARTITE-TAGGED-SHADOW-BOUND is a size-restricted incidence count whose constants k and 2(a − k) are incomparable with the refuted per-set bound. Status REFUTED unchanged.",
       "status": "REFUTED",
       "certificate": "r19 exact T_22 star-hub witness of order 91 at p=34: the marked singleton support has a_v=-24528898691191536776<0 and support aggregate g_v=212336130412243110>0. Independently reproduced by explicit forest DP. See experiments/erdos-993-beta-aggregate-dre-2026-09-07/evidence/C1-ORDER91-CANONICAL-REPLAY.json and cycles/cycle-1/stage1/review/REVIEW.md. Computation-tier refutation; no governed Lean award.",
       "aliases": [
@@ -565,7 +573,15 @@
         "AGG[- ]SUPPORT",
         "support[- ]fibre aggregate"
       ],
-      "smallest_witness_order": 91
+      "smallest_witness_order": 91,
+      "terminal_history": [
+        {
+          "run": "erdos-993-high-tail-certification-dre-2026-09-25 (r29)",
+          "cycle": 1,
+          "date": "2026-09-25",
+          "event": "distinction note vs r29 keys; status unchanged"
+        }
+      ]
     },
     {
       "claim_key": "E993-CERT-WINDOW-LB",
@@ -29590,7 +29606,7 @@
         "sha256": "7515683a1a8982767062221bf0ca6fb7135bfb02c46ce5c09293d73443d7dda8"
       },
       "novelty_claimed": false,
-      "scope": "Literal ordinary-tree aggregate. Each original leaf is a distinct tag even when supports coincide; higher-degree supports are included; the empty favorable set has sum zero. r26 (2026-09-24): its TOP-RANK RESIDUAL sub-case (RC) is formally verified as E993-R26-TOP-RANK-RESIDUAL-SIGN; this all-rank claim stays OPEN (other ranks and the non-residual class untouched; no positive complete eligible aggregate is known).",
+      "scope": "Literal ordinary-tree aggregate. Each original leaf is a distinct tag even when supports coincide; higher-degree supports are included; the empty favorable set has sum zero. r26 (2026-09-24): its TOP-RANK RESIDUAL sub-case (RC) is formally verified as E993-R26-TOP-RANK-RESIDUAL-SIGN; this all-rank claim stays OPEN (other ranks and the non-residual class untouched; no positive complete eligible aggregate is known). r29 Cycle 1 (2026-09-25) scope note: OPEN. r29 (HTA) closes every eligible rank with 3p ≥ 2α(T) + 1 (at proved_informal); that region contains every eligible top rank (E993-R29-TOP-RANK-NONRESIDUAL-AGGREGATE) and first-interior rank (VERIFIED). The open remainder is exactly the eligible ranks with x(T) + 2 ≤ p ≤ ⌊2α(T)/3⌋ (depth α − p ≥ ⌈α/3⌉), nonempty; the leafwise pointwise sign fails there at some leaf of some tree (E993-R29-HIGH-TAIL-BOUNDARY-RECORD). Status unchanged.",
       "source_occurrence_links": [
         {
           "identity_review": {
@@ -29679,6 +29695,12 @@
           "cycle": 1,
           "date": "2026-09-24",
           "event": "scope note: top-rank residual sub-case closed by E993-R26-TOP-RANK-RESIDUAL-SIGN; status OPEN unchanged"
+        },
+        {
+          "run": "erdos-993-high-tail-certification-dre-2026-09-25 (r29)",
+          "cycle": 1,
+          "date": "2026-09-25",
+          "event": "scope note: high-tail region closed by r29; open remainder stated exactly; status OPEN unchanged"
         }
       ]
     },
@@ -30711,7 +30733,7 @@
       "evidence_grade": "exact_counterevidence_source_adjudicated_no_formal_award",
       "formal_award": false,
       "novelty_claimed": false,
-      "scope": "Literal full ordinary G1 scope at r=p-2; universal over all independent r-sets in each residual.",
+      "scope": "Literal full ordinary G1 scope at r=p-2; universal over all independent r-sets in each residual. r29 Cycle 1 (2026-09-25) scope note: distinct from the r29 high-tail keys: the registered refutation witnesses fail 3p ≥ 2α + 1 (a theorem given E993-BIPARTITE-LEAF-HIGH-TAIL-POINTWISE, not a data check); E993-BIPARTITE-TAGGED-SHADOW-BOUND is a size-restricted incidence count whose constants k and 2(a − k) are incomparable with the refuted per-set bound. Status REFUTED unchanged.",
       "source_occurrence_links": [
         {
           "identity_review": {
@@ -31030,6 +31052,12 @@
             "path": "cycles/cycle-3/stage6/C3-SYNTHESIS/CLAIMS.json",
             "sha256": "00ff9ed1decfe8b1793c92ca9dd34e727e7f8bcdd0171471a124b2319218b387"
           }
+        },
+        {
+          "run": "erdos-993-high-tail-certification-dre-2026-09-25 (r29)",
+          "cycle": 1,
+          "date": "2026-09-25",
+          "event": "distinction note vs r29 keys; status unchanged"
         }
       ]
     },
@@ -36359,7 +36387,7 @@
     {
       "claim_key": "E993-R26-TOP-RANK-RESIDUAL-SIGN",
       "statement": "For every finite simple graph G on a finite vertex type with decidable equality and adjacency: if G is a tree, 2 <= alpha(G), x(G) + 2 <= alpha(G) - 1 (x the first STRICT descent of the independence sequence, C5LA1.crossingIndex), and every leaf of G belongs to every maximum independent set of G, then the top-rank favorable-original-leaf aggregate S(G, alpha(G) - 1) = C5LA1.aggregate G (G.indepNum - 1) is <= 0. (The r24 top-rank residual sign (RC) on the whole eligible top-rank residual class, flat and non-flat.)",
-      "scope": "Literal ordinary-tree statement at the top rank p = alpha - 1 on the residual class, at exactly the four C5-LA1 hypotheses; composed with the formally verified identity (RI) C5LA1.topRankResidualIdentity in one project. hEligible is consumed only through 3 <= alpha (it excludes P_3, whose unqualified expression is +2); the proof shows S <= -ell(ell-2)M - (ell-4)N_2 in Z with N_2 <= k_2 M and k_2 <= floor(ell/2). NO status transfer: the all-rank literal aggregate E993-R23-ORDINARY-FAVORABLE-LEAF-AGGREGATE stays OPEN (other ranks and the non-residual class untouched); E993-BETA-AGG (governed RTree scope) stays OPEN and needs the ordinary-to-RTree transport, never attempted; the common-leaf condition, TREE, FOREST, TRANSFER and Erdos #993 are untouched. Excluded from the award: the strict form S < 0 (registered separately at proved_informal, see E993-R26-TOP-RANK-RESIDUAL-SIGN-STRICT), S = 0 iff P_5, any other rank, forests, RTree, N_2 <= M (false from order 9).",
+      "scope": "Literal ordinary-tree statement at the top rank p = alpha - 1 on the residual class, at exactly the four C5-LA1 hypotheses; composed with the formally verified identity (RI) C5LA1.topRankResidualIdentity in one project. hEligible is consumed only through 3 <= alpha (it excludes P_3, whose unqualified expression is +2); the proof shows S <= -ell(ell-2)M - (ell-4)N_2 in Z with N_2 <= k_2 M and k_2 <= floor(ell/2). NO status transfer: the all-rank literal aggregate E993-R23-ORDINARY-FAVORABLE-LEAF-AGGREGATE stays OPEN (other ranks and the non-residual class untouched); E993-BETA-AGG (governed RTree scope) stays OPEN and needs the ordinary-to-RTree transport, never attempted; the common-leaf condition, TREE, FOREST, TRANSFER and Erdos #993 are untouched. Excluded from the award: the strict form S < 0 (registered separately at proved_informal, see E993-R26-TOP-RANK-RESIDUAL-SIGN-STRICT), S = 0 iff P_5, any other rank, forests, RTree, N_2 <= M (false from order 9). r29 Cycle 1 (2026-09-25) scope note: E993-R29-TOP-RANK-NONRESIDUAL-AGGREGATE states the same conclusion at the same rank with hAlpha and the residual condition (★) dropped, by a different mechanism (tagged shadow). This award remains the proof of record on the residual class and is not widened; its strict companion is untouched. Status unchanged.",
       "status": "VERIFIED",
       "evidence_grade": "formally_verified",
       "formal_award": true,
@@ -36394,6 +36422,12 @@
           "cycle": 1,
           "date": "2026-09-24",
           "event": "registered VERIFIED at formally_verified (first registration; the r24 record carried (RC) as TD-6 with no registry key)"
+        },
+        {
+          "run": "erdos-993-high-tail-certification-dre-2026-09-25 (r29)",
+          "cycle": 1,
+          "date": "2026-09-25",
+          "event": "scope note: non-residual generalization registered as a separate key; status unchanged"
         }
       ]
     },
@@ -36621,7 +36655,7 @@
     {
       "claim_key": "E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE",
       "statement": "For every finite ordinary tree T with integer p=alpha(T)-2 and x(T)+2<=p, the complete sum over original leaves v satisfying Delta_p(T-v)<0 of Delta_(p-1)(T-{v,s_v})-Delta_(p-1)(T-N_T[s_v]) is nonpositive.",
-      "scope": "All finite connected acyclic simple graphs; first strict descent x; integer zero-extended independence coefficients; original support and closed neighborhood; no residual hypothesis.",
+      "scope": "All finite connected acyclic simple graphs; first strict descent x; integer zero-extended independence coefficients; original support and closed neighborhood; no residual hypothesis. r29 Cycle 1 (2026-09-25) scope note: r29 certifies separately the guard (E993-INTERIOR-ELIGIBILITY-ALPHA-GE-SEVEN) and the high-tail aggregate (E993-R29-BIPARTITE-HIGH-TAIL-AGGREGATE) that compose to this statement (α ≥ 7 puts p = α − 2 inside 3p ≥ 2α + 1), each under its own award; this award is unchanged, never re-registered, never edited. Status unchanged.",
       "status": "VERIFIED",
       "aliases": [
         "first interior ordinary favorable-leaf aggregate"
@@ -36668,6 +36702,12 @@
           "cycle": 2,
           "date": "2026-09-24",
           "event": "OPEN -> VERIFIED at formally_verified; exact primary statement and scope unchanged; decisive target resolution"
+        },
+        {
+          "run": "erdos-993-high-tail-certification-dre-2026-09-25 (r29)",
+          "cycle": 1,
+          "date": "2026-09-25",
+          "event": "scope note: components certified separately by r29; status unchanged"
         }
       ]
     },
@@ -37559,12 +37599,12 @@
     {
       "claim_key": "E993-BIPARTITE-TAGGED-SHADOW-BOUND",
       "statement": "For a finite bipartite simple graph H, a vertex subset W, integer a=alpha(H), and natural k with 1<=k<=a, let q_j count independent j-subsets of H meeting W. Then k*q_(k+1)<=2*(a-k)*q_k, in integers.",
-      "scope": "New proposed counting lemma. No leaf, acyclicity, selector, first descent, residual premise or aggregate. A size-restricted incidence count, not the refuted all-window pointwise addability claim.",
-      "status": "OPEN",
+      "scope": "New proposed counting lemma. No leaf, acyclicity, selector, first descent, residual premise or aggregate. A size-restricted incidence count, not the refuted all-window pointwise addability claim. r29 Cycle 1 (2026-09-25): Registry statement at 1 ≤ k ≤ α(H). The inequality holds for every k ≥ 0 in ℤ and in truncated ℕ (SR-MECH SR-3). It is tight at every 1 ≤ k ≤ a (mK_2 with one tagged vertex; SR-MECH SR-4). Bipartiteness is load-bearing: K_1 ⊔ K_5 with the isolate tagged fails it at k = 1 (SR-MECH SR-9). hk : 1 ≤ k is statement scope (entry 41's body does not use it); hka : k ≤ α makes the ℤ cast exact (Nat.cast_sub).",
+      "status": "VERIFIED",
       "aliases": [],
       "alias_patterns": [],
-      "certificate": "OPEN proposal only; independent Sol high scope audit approved exact identity. No proof or mathematical grade. See erdos-993-first-interior-aggregate-dre-2026-09-24/control/C2-SCOPE-AUDIT.md.",
-      "formal_award": false,
+      "certificate": "formally_verified (governed lean-proof-workflow run runs/lean-2026-09-25-c1-la1-tagged-shadow-bound; terminal declaration E993HighTail.bipartiteTaggedShadowBound; VERIFICATION-REPORT b21597ab9d783c91…; kernel verified at exactly [propext, Classical.choice, Quot.sound]; independent informal proof-integrity audit and independent statement-fidelity review passed; carried entries of the first-interior source byte-identical through the registrar). Attribution: Codex (GPT-6 Luna/Sol/Astra; first-interior run erdos-993-first-interior-aggregate-dre-2026-09-24): the tagged-shadow mechanism, the compiled internal lemmas (entries 41–44 of the verified award source, Main.lean 8d864da2…) and the proposed statements (C2 scope audit; FINAL-ANALYSIS); r24 C4-LA1 (C4LA1 selector/leaf definitions); r26 (C5LA1 definition layer; the residual top-rank award); r25 (G1 definitions); r29 seats T1, T2, F1, U1, critics C-T1-F, C-T1-U, C-T2-F, C-T2-U, C-F1-T, C-F1-U, C-U1-T, C-U1-F, the T/F/U adjudicators and the synthesis for their derivations. Fence SOLUTION-CONTRACT §3.1: a statement about independent-set counts on finite bipartite graphs/trees; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE, E993-G1WIDE-NO-SIZE-CAP, NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG (governed RTree), or Erdős #993. §3.2 the first-interior award and r26's residual award are unchanged. §3.3 nothing about the lower region 3p < 2α+1 (Codex/Astra's). §3.4 not an alias of the REFUTED E993-BETA-TARGET / E993-BETA-AGG-SUPPORT / E993-C3-G1-POINTWISE-ADDABILITY-BOUND. §3.5 no census value, root correction or Hall/SDR step. §3.8 each award is its own certificate.",
+      "formal_award": true,
       "relations": [
         {
           "relation": "proposed_auxiliary_for",
@@ -37573,17 +37613,26 @@
       ],
       "scope_distinction": "Tagged independent-set layer-count inequality for arbitrary finite bipartite H and W, 1<=k<=alpha(H); no tree, leaf, selector, eligibility, or aggregate. Distinct from the REFUTED every-independent-set G1 pointwise addability bound and governed beta pointwise sign.",
       "scope_boundary": "At k=alpha(H), q_(k+1)=0; empty W is allowed. Application to a leaf uses W=N_G(s)\\{v}, R=H-W, and alpha(H)<=alpha(G)-1.",
-      "novelty_claimed": false
+      "novelty_claimed": false,
+      "evidence_grade": "formally_verified",
+      "terminal_history": [
+        {
+          "run": "erdos-993-high-tail-certification-dre-2026-09-25 (r29)",
+          "cycle": 1,
+          "date": "2026-09-25",
+          "event": "OPEN → VERIFIED formally_verified by award C1-LA1 (runs/lean-2026-09-25-c1-la1-tagged-shadow-bound)"
+        }
+      ]
     },
     {
       "claim_key": "E993-BIPARTITE-LEAF-HIGH-TAIL-POINTWISE",
       "statement": "For a finite bipartite simple graph G, any original degree-one vertex v with support s, a=alpha(G), and integer p>=1 with 3*p>=2*a+1, put H=G-{v,s} and R=G-N_G[s]. Then Delta_(p-1)(H)-Delta_(p-1)(R)<=0, using integer zero-extended counts.",
-      "scope": "Proposed high-rank proper restriction of pointwise leaf sign. No residual or favorable-selector hypothesis. The refuted unrestricted all-window beta target stays refuted; its witnesses must be checked against this explicit rank condition.",
-      "status": "OPEN",
+      "scope": "Proposed high-rank proper restriction of pointwise leaf sign. No residual or favorable-selector hypothesis. The refuted unrestricted all-window beta target stays refuted; its witnesses must be checked against this explicit rank condition. r29 Cycle 1 (2026-09-25): Every integer p ≥ 1. At p = 1 the guard forces N(s) = {v}, so H_v = R_v and the term deg(s) − 1 is 0 — bipartiteness is sufficient but not needed there (SR-MECH SR-1; erratum R29-E-d). α(G − {v, s}) = α(G) − 1 for every leaf of every finite graph (SR-MECH SR-2). The guard 3p ≥ 2α + 1 is sharp on trees at every α ≥ 2 (E993-R29-HIGH-TAIL-BOUNDARY-RECORD). Bipartiteness is load-bearing exactly for 3 ≤ p ≤ α(G) − 1 (which forces α ≥ 4): on ANY graph with a leaf the term is −q_{p−1} ≤ 0 whenever p ≥ α(G), which under the guard covers p = 1 and p = 2; the non-bipartite P_3 ⊔ 2K_3 at (α, p) = (4, 3) has term +3 (SR-MECH SR-9, repaired wording). The E993-BETA-TARGET witnesses fail the guard. No selector, residual or connectivity hypothesis.",
+      "status": "VERIFIED",
       "aliases": [],
       "alias_patterns": [],
-      "certificate": "OPEN proposal only; independent Sol high scope audit approved exact identity. No proof or mathematical grade. See erdos-993-first-interior-aggregate-dre-2026-09-24/control/C2-SCOPE-AUDIT.md.",
-      "formal_award": false,
+      "certificate": "formally_verified (governed lean-proof-workflow run runs/lean-2026-09-25-c1-la2-leaf-high-tail-pointwise; terminal declaration E993HighTail.bipartiteLeafHighTailPointwise; VERIFICATION-REPORT 47910b509d85d808…; kernel verified at exactly [propext, Classical.choice, Quot.sound]; independent informal proof-integrity audit and independent statement-fidelity review passed; carried entries of the first-interior source byte-identical through the registrar). Attribution: Codex (GPT-6 Luna/Sol/Astra; first-interior run erdos-993-first-interior-aggregate-dre-2026-09-24): the tagged-shadow mechanism, the compiled internal lemmas (entries 41–44 of the verified award source, Main.lean 8d864da2…) and the proposed statements (C2 scope audit; FINAL-ANALYSIS); r24 C4-LA1 (C4LA1 selector/leaf definitions); r26 (C5LA1 definition layer; the residual top-rank award); r25 (G1 definitions); r29 seats T1, T2, F1, U1, critics C-T1-F, C-T1-U, C-T2-F, C-T2-U, C-F1-T, C-F1-U, C-U1-T, C-U1-F, the T/F/U adjudicators and the synthesis for their derivations. Fence SOLUTION-CONTRACT §3.1: a statement about independent-set counts on finite bipartite graphs/trees; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE, E993-G1WIDE-NO-SIZE-CAP, NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG (governed RTree), or Erdős #993. §3.2 the first-interior award and r26's residual award are unchanged. §3.3 nothing about the lower region 3p < 2α+1 (Codex/Astra's). §3.4 not an alias of the REFUTED E993-BETA-TARGET / E993-BETA-AGG-SUPPORT / E993-C3-G1-POINTWISE-ADDABILITY-BOUND. §3.5 no census value, root correction or Hall/SDR step. §3.8 each award is its own certificate.",
+      "formal_award": true,
       "relations": [
         {
           "relation": "proposed_auxiliary_for",
@@ -37592,17 +37641,26 @@
       ],
       "scope_distinction": "Unselected single original-leaf sign on any finite bipartite G, restricted by 3p>=2alpha(G)+1. The REFUTED E993-BETA-TARGET and support-fibre claim have all-window governed RTree scopes; known positive marked witnesses T_22,p=34 and T_60,p=90 fail this high-tail guard.",
       "scope_boundary": "Keep integer p>=1 and zero extension. Derivation from tagged shadow needs a separate p=1 base case: the guard forces alpha(G)=1 and alpha(H)=0. No favorable, first-descent, residual, or connectivity premise.",
-      "novelty_claimed": false
+      "novelty_claimed": false,
+      "evidence_grade": "formally_verified",
+      "terminal_history": [
+        {
+          "run": "erdos-993-high-tail-certification-dre-2026-09-25 (r29)",
+          "cycle": 1,
+          "date": "2026-09-25",
+          "event": "OPEN → VERIFIED formally_verified by award C1-LA2 (runs/lean-2026-09-25-c1-la2-leaf-high-tail-pointwise)"
+        }
+      ]
     },
     {
       "claim_key": "E993-INTERIOR-ELIGIBILITY-ALPHA-GE-SEVEN",
       "statement": "For every finite ordinary tree T with p=alpha(T)-2 as an integer and x(T)+2<=p, where x is first strict negative forward difference, alpha(T)>=7.",
-      "scope": "Proposed guard lemma for the registered first-interior aggregate only. Does not assert an aggregate sign, no-recovery or unimodality.",
-      "status": "OPEN",
+      "scope": "Proposed guard lemma for the registered first-interior aggregate only. Does not assert an aggregate sign, no-recovery or unimodality. r29 Cycle 1 (2026-09-25): Guard lemma only. The ℕ hypothesis crossingIndex + 2 ≤ indepNum − 2 is equivalent to the integer hypothesis for every α (both false for α < 2). Proof: Codex's entry 43 (eligibleAlphaGeSeven, with its Guard helpers) carried byte-identically under a new terminal name; acyclicity enters all three Δ₂ branches (entry 34), connectivity through card_edgeFinset. The first-interior award E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE is unchanged.",
+      "status": "VERIFIED",
       "aliases": [],
       "alias_patterns": [],
-      "certificate": "OPEN proposal only; independent Sol high scope audit approved exact identity. No proof or mathematical grade. See erdos-993-first-interior-aggregate-dre-2026-09-24/control/C2-SCOPE-AUDIT.md.",
-      "formal_award": false,
+      "certificate": "formally_verified (governed lean-proof-workflow run runs/lean-2026-09-25-c1-la3-interior-eligibility-guard; terminal declaration E993HighTail.interiorEligibilityAlphaGeSeven; VERIFICATION-REPORT 2f5cee601be3829c…; kernel verified at exactly [propext, Classical.choice, Quot.sound]; independent informal proof-integrity audit and independent statement-fidelity review passed; carried entries of the first-interior source byte-identical through the registrar). Attribution: Codex (GPT-6 Luna/Sol/Astra; first-interior run erdos-993-first-interior-aggregate-dre-2026-09-24): the tagged-shadow mechanism, the compiled internal lemmas (entries 41–44 of the verified award source, Main.lean 8d864da2…) and the proposed statements (C2 scope audit; FINAL-ANALYSIS); r24 C4-LA1 (C4LA1 selector/leaf definitions); r26 (C5LA1 definition layer; the residual top-rank award); r25 (G1 definitions); r29 seats T1, T2, F1, U1, critics C-T1-F, C-T1-U, C-T2-F, C-T2-U, C-F1-T, C-F1-U, C-U1-T, C-U1-F, the T/F/U adjudicators and the synthesis for their derivations. Fence SOLUTION-CONTRACT §3.1: a statement about independent-set counts on finite bipartite graphs/trees; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE, E993-G1WIDE-NO-SIZE-CAP, NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG (governed RTree), or Erdős #993. §3.2 the first-interior award and r26's residual award are unchanged. §3.3 nothing about the lower region 3p < 2α+1 (Codex/Astra's). §3.4 not an alias of the REFUTED E993-BETA-TARGET / E993-BETA-AGG-SUPPORT / E993-C3-G1-POINTWISE-ADDABILITY-BOUND. §3.5 no census value, root correction or Hall/SDR step. §3.8 each award is its own certificate.",
+      "formal_award": true,
       "relations": [
         {
           "relation": "proposed_auxiliary_for",
@@ -37611,7 +37669,16 @@
       ],
       "scope_distinction": "Guard lemma only for eligible ordinary connected trees at integer p=alpha(T)-2 with first strict descent x(T); no sign claim. Distinct from r25 Delta_2 order-nine and r27 forest order bounds and from the verified r26 top-rank residual sign.",
       "scope_boundary": "Eligibility first gives alpha>=4, needed before Nat subtraction. With high-tail pointwise, alpha>=7 makes 3p>=2alpha+1 and would imply the still-OPEN primary by summing all favorable original-leaf tags.",
-      "novelty_claimed": false
+      "novelty_claimed": false,
+      "evidence_grade": "formally_verified",
+      "terminal_history": [
+        {
+          "run": "erdos-993-high-tail-certification-dre-2026-09-25 (r29)",
+          "cycle": 1,
+          "date": "2026-09-25",
+          "event": "OPEN → VERIFIED formally_verified by award C1-LA3 (runs/lean-2026-09-25-c1-la3-interior-eligibility-guard)"
+        }
+      ]
     },
     {
       "claim_key": "E993-R28-DOMINANCE-REFUTATION",
@@ -38088,10 +38155,232 @@
         "grade": "proved_informal_with_census",
         "census_report_sha256": "d3d7d05542c61bdfc0ac45fc9fbea4296a80a91f76c839e2bfc30f315718d17e"
       }
+    },
+    {
+      "claim_key": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "For every finite ordinary tree T with a=alpha(T), first strict descent x(T) of its integer zero-extended independence counts, and natural p satisfying x(T)+2<=p and 3p<2a+1, the complete sum over original leaves v with Delta_p(T-v)<0 of Delta_(p-1)(T-{v,s_v})-Delta_(p-1)(T-N_T[s_v]) is nonpositive.",
+      "scope": "Connected acyclic finite simple graphs; original leaves are distinct tags even when supports coincide; original supports and original closed neighborhoods; empty selected set has sum zero; no residual hypothesis; no governed RTree transport.",
+      "status": "OPEN",
+      "evidence_grade": "open",
+      "formal_award": false,
+      "aliases": [],
+      "alias_patterns": [],
+      "certificate": "New lower-region DRE intake 2026-09-25; exact source distinctions in experiments/erdos-993-lower-region-compensation-dre-2026-09-25/control-proposals/scope-audit/PROPOSAL.json. No proof or refutation award.",
+      "registration_reason": "No exact statement, scope, key or alias among all 407 initial registry claims; strict lower boundary is the new material hypothesis. Do not award R23 or governed BETA-AGG from this key.",
+      "terminal_history": []
+    },
+    {
+      "claim_key": "E993-BIPARTITE-TAGGED-INCIDENCE-DEFICIT-IDENTITY",
+      "statement": "For every finite bipartite graph H, vertex subset W, integer h>=alpha(H), and 1<=k<=h, let q_j count independent j-sets meeting W, e(A) count actual addable vertices for a tagged independent k-set A, D=sum_A(2(h-k)-e(A)), and C count independent (k+1)-sets meeting W in at least two vertices once each. Then k*q_(k+1)+C=2(h-k)*q_k-D, with D,C>=0.",
+      "scope": "Exact marked extension accounting with separately defined nonnegative deficits. It strictly refines the inequality-only E993-BIPARTITE-TAGGED-SHADOW-BOUND; it is not an alias of that bound, unmarked extension double-counting, or root-corrected degree lemmas.",
+      "status": "OPEN",
+      "evidence_grade": "open",
+      "formal_award": false,
+      "aliases": [],
+      "alias_patterns": [],
+      "certificate": "New lower-region DRE intake 2026-09-25; exact source distinctions in experiments/erdos-993-lower-region-compensation-dre-2026-09-25/control-proposals/scope-audit/PROPOSAL.json. No proof or refutation award.",
+      "registration_reason": "Exact marked extension accounting with separately defined nonnegative deficits. It strictly refines the inequality-only E993-BIPARTITE-TAGGED-SHADOW-BOUND; it is not an alias of that bound, unmarked extension double-counting, or root-corrected degree lemmas.",
+      "terminal_history": []
+    },
+    {
+      "status": "OPEN",
+      "evidence_grade": "open",
+      "formal_award": false,
+      "aliases": [],
+      "alias_patterns": [],
+      "novelty_claimed": false,
+      "terminal_history": [
+        {
+          "run": "erdos-993-lower-region-compensation-dre-2026-09-25",
+          "cycle": 2,
+          "date": "2026-09-25",
+          "event": "Registered OPEN before any Cycle2 search dispatch; no award"
+        }
+      ],
+      "claim_key": "E993-MARKED-ISOLATE-ORDER-BAND",
+      "statement": "For every finite simple graph G on m vertices, every W containing all isolated vertices of G, and every natural k>=2 with m<=2k+1, the number of independent (k+1)-sets meeting W is at most the number of independent k-sets meeting W.",
+      "scope": "Arbitrary finite simple graphs, not necessarily forests or bipartite; W is a vertex subset containing every isolate. Rank and order guards are essential. Generic marked counts, no selector, residual class or first-descent hypothesis.",
+      "certificate": "Cycle2 OPEN intake in experiments/erdos-993-lower-region-compensation-dre-2026-09-25/control/C2-ORDER-BAND-CANDIDATE.md; controller candidate, no independent or formal award.",
+      "registration_reason": "Exact-scope distinction after comparison against the current409 registry."
+    },
+    {
+      "status": "OPEN",
+      "evidence_grade": "open",
+      "formal_award": false,
+      "aliases": [],
+      "alias_patterns": [],
+      "novelty_claimed": false,
+      "terminal_history": [
+        {
+          "run": "erdos-993-lower-region-compensation-dre-2026-09-25",
+          "cycle": 2,
+          "date": "2026-09-25",
+          "event": "Registered OPEN before any Cycle2 search dispatch; no award"
+        }
+      ],
+      "claim_key": "E993-ORDINARY-LEAF-ORDER-BAND",
+      "statement": "For every finite ordinary tree T, every original leaf v with original support s, and every natural p>=3 with |V(T)|<=2p+1, Delta_(p-1)(T-{v,s})-Delta_(p-1)(T-N_T[s])<=0.",
+      "scope": "Original tree and original neighborhoods; integer zero-extended counts. A restricted order-band pointwise claim. It implies the complete favorable-leaf sum on this order band only. No transfer to the unrestricted pointwise beta claim, which remains REFUTED, or to the all-rank aggregate.",
+      "certificate": "Cycle2 OPEN intake in experiments/erdos-993-lower-region-compensation-dre-2026-09-25/control/C2-ORDER-BAND-CANDIDATE.md; controller candidate, no independent or formal award.",
+      "registration_reason": "Exact-scope distinction after comparison against the current409 registry."
+    },
+    {
+      "status": "OPEN",
+      "evidence_grade": "open",
+      "formal_award": false,
+      "aliases": [],
+      "alias_patterns": [],
+      "novelty_claimed": false,
+      "terminal_history": [
+        {
+          "run": "erdos-993-lower-region-compensation-dre-2026-09-25",
+          "cycle": 2,
+          "date": "2026-09-25",
+          "event": "Registered OPEN before any Cycle2 search dispatch; no award"
+        }
+      ],
+      "claim_key": "E993-LOWER-REGION-FIRST-ORDER-SHELL",
+      "statement": "For every finite ordinary tree T with a=alpha(T), first strict descent x(T), and natural p satisfying x(T)+2<=p, 3p<2a+1, and |V(T)|=2p+2, the complete favorable-original-leaf aggregate is nonpositive.",
+      "scope": "First remaining order shell of the registered lower-region target. Distinct from ordinary G1 residual order bands: here the bound concerns |T| and the full fixed favorable-leaf sum, not a residual forest or a pointwise summand.",
+      "certificate": "Cycle2 OPEN intake in experiments/erdos-993-lower-region-compensation-dre-2026-09-25/control/C2-ORDER-BAND-CANDIDATE.md; controller candidate, no independent or formal award.",
+      "registration_reason": "Exact-scope distinction after comparison against the current409 registry."
+    },
+    {
+      "claim_key": "E993-R29-BIPARTITE-HIGH-TAIL-AGGREGATE",
+      "statement": "(HTA) For every finite bipartite simple graph G and every integer p ≥ 1 with 3p ≥ 2α(G) + 1: the favorable-leaf aggregate S(G, p) = Σ_{v original leaf, Δ_p(G − v) < 0} [Δ_{p−1}(G − {v, s_v}) − Δ_{p−1}(G − N_G[s_v])] ≤ 0 (C5LA1.aggregate G p ≤ 0; original strict selector; one tag per original leaf; integer zero-extended counts). No eligibility, residual or connectivity hypothesis.",
+      "scope": "Every finite bipartite graph, hence every tree and forest; the whole high-tail region 3p ≥ 2α + 1 at every rank. Consequence for E993-R23-ORDINARY-FAVORABLE-LEAF-AGGREGATE (OPEN): closed for every eligible rank in that region; the open remainder is exactly x(T) + 2 ≤ p ≤ ⌊2α(T)/3⌋. Proof: Finset.sum_nonpos over E993-BIPARTITE-LEAF-HIGH-TAIL-POINTWISE. Kernel-checked as a companion lemma inside C1-LA2's source where that award closed, but not bound as a separate certificate — grade proved_informal; a standalone award passes to a successor (same carry; body ready). Fence SOLUTION-CONTRACT §3.1: a statement about independent-set counts on finite bipartite graphs/trees; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE, E993-G1WIDE-NO-SIZE-CAP, NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG (governed RTree), or Erdős #993. §3.2 the first-interior award and r26's residual award are unchanged. §3.3 nothing about the lower region 3p < 2α+1 (Codex/Astra's). §3.4 not an alias of the REFUTED E993-BETA-TARGET / E993-BETA-AGG-SUPPORT / E993-C3-G1-POINTWISE-ADDABILITY-BOUND. §3.5 no census value, root correction or Hall/SDR step. §3.8 each award is its own certificate.",
+      "status": "VERIFIED",
+      "evidence_grade": "proved_informal",
+      "formal_award": false,
+      "smallest_witness_order": null,
+      "certificate": "proved_informal (route result of T1/T2; adjudicated T/U; synthesis R-HTA). Attribution: Codex/Astra (the proposal); r29 T1 (the pointwise proof incl. p = 1), T2 (the corollary's use); Codex (GPT-6 Luna/Sol/Astra; first-interior run erdos-993-first-interior-aggregate-dre-2026-09-24): the tagged-shadow mechanism, the compiled internal lemmas (entries 41–44 of the verified award source, Main.lean 8d864da2…) and the proposed statements (C2 scope audit; FINAL-ANALYSIS); r24 C4-LA1 (C4LA1 selector/leaf definitions); r26 (C5LA1 definition layer; the residual top-rank award); r25 (G1 definitions); r29 seats T1, T2, F1, U1, critics C-T1-F, C-T1-U, C-T2-F, C-T2-U, C-F1-T, C-F1-U, C-U1-T, C-U1-F, the T/F/U adjudicators and the synthesis for their derivations.",
+      "aliases": [
+        "(HTA)",
+        "bipartite high-tail aggregate",
+        "high-tail favorable-leaf aggregate",
+        "E993-R29-HTA"
+      ],
+      "alias_patterns": [
+        "high.tail.*aggregate"
+      ],
+      "novelty_claimed": "New: the aggregate sign on the whole high-tail region for every bipartite graph, extracted from the first-interior mechanism.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "cycles/cycle-1/stage3/returns/T1/RETURN.md",
+        "cycles/cycle-1/stage3/returns/T2/RETURN.md",
+        "cycles/cycle-1/stage6/SYNTHESIS.md",
+        "runs/lean-2026-09-25-c1-la2-leaf-high-tail-pointwise/VERIFICATION-REPORT.md"
+      ],
+      "terminal_evidence": {
+        "grade": "proved_informal",
+        "award": null
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-high-tail-certification-dre-2026-09-25 (r29)",
+          "cycle": 1,
+          "date": "2026-09-25",
+          "event": "registered VERIFIED at proved_informal"
+        }
+      ]
+    },
+    {
+      "claim_key": "E993-R29-TOP-RANK-NONRESIDUAL-AGGREGATE",
+      "statement": "(TRN) For every finite ordinary tree T with p = α(T) − 1: if x(T) + 2 ≤ p (x the first STRICT descent, C5LA1.crossingIndex; ℕ hypothesis crossingIndex + 2 ≤ indepNum − 1, equivalent to the integer one for every α) then S(T, p) = Σ_{v ∈ F_p(T)} [Δ_{p−1}(T − {v, s_v}) − Δ_{p−1}(T − N_T[s_v])] ≤ 0 (C5LA1.aggregate T (indepNum − 1) ≤ 0). NO residual hypothesis. Proof: the ℕ hypothesis forces α ≥ 3; Δ₀ = n − 1 ≥ 0 gives x ≥ 1, so α ≥ 4 and p = α − 1 ≥ 3; 3(α − 1) ≥ 2α + 1 ⟺ α ≥ 4; apply (HTA) with bipartiteness from IsTree.",
+      "scope": "Literal ordinary-tree statement at the top rank p = α − 1 with the eligibility hypothesis alone. Relations: strictly_weaker_hypotheses_than E993-R26-TOP-RANK-RESIDUAL-SIGN (same conclusion and rank; hAlpha : 2 ≤ α and the residual condition (★) DROPPED; a different mechanism — tagged shadow, not the (RI)/(RC) budget); one_rank_of E993-R23-ORDINARY-FAVORABLE-LEAF-AGGREGATE (OPEN; one rank closed, not the key). Eligible trees have α ≥ 5 (no eligible tree — indeed no eligible bipartite graph — has α ≤ 4; on non-bipartite graphs α = 4 is attained: K_3 ∨ 4K_1), so the guard 3p ≥ 2α + 1 holds strictly on this domain; the smallest eligible trees have order 7 (four eligible trees at order 7, exactly three at the minimum α = 5 with S = −12, −14, −16; the fourth is K_{1,6} with α = 6) (SR-TRN SR-6, repaired wording). The conclusion holds on every finite bipartite graph, hence on every forest, under the same ℕ hypothesis (connectivity unused; IsAcyclic.isBipartite) — this bipartite/forest clause is graded proved_informal SEPARATELY (not kernel-checked; the terminal theorem is stated on trees) and asserts no strict inequality (S = 0 occurs, e.g. the edgeless graph on 6 vertices is eligible) (SR-TRN SR-7, repaired). Top-rank eligibility forces α ≥ 4 on every finite simple graph, with no Nonempty hypothesis (SR-TRN SR-5). At p = α − 1 every leaf of a tree with α ≥ 2 is favorable (r24 C4LA1.topRankSelectorCollapse, a published Lean award without a claim identity), so this is a full-leaf sum. Excluded: any strict inequality (E993-R26-TOP-RANK-RESIDUAL-SIGN-STRICT untouched; the census maximum S = −12 to order 16 is bounded_computation only); any other rank; any widening of r26; E993-R26-TOP-RANK-N2-LE-M (REFUTED) is unused. Fence SOLUTION-CONTRACT §3.1: a statement about independent-set counts on finite bipartite graphs/trees; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE, E993-G1WIDE-NO-SIZE-CAP, NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG (governed RTree), or Erdős #993. §3.2 the first-interior award and r26's residual award are unchanged. §3.3 nothing about the lower region 3p < 2α+1 (Codex/Astra's). §3.4 not an alias of the REFUTED E993-BETA-TARGET / E993-BETA-AGG-SUPPORT / E993-C3-G1-POINTWISE-ADDABILITY-BOUND. §3.5 no census value, root correction or Hall/SDR step. §3.8 each award is its own certificate.",
+      "status": "VERIFIED",
+      "evidence_grade": "formally_verified",
+      "formal_award": true,
+      "smallest_witness_order": null,
+      "certificate": "formally_verified (governed lean-proof-workflow run runs/lean-2026-09-25-c1-la4-top-rank-nonresidual-aggregate; terminal declaration E993HighTail.topRankNonResidualAggregate; VERIFICATION-REPORT f7504a694964582d…; kernel verified at exactly [propext, Classical.choice, Quot.sound]; independent informal proof-integrity audit and independent statement-fidelity review passed; carried entries of the first-interior source byte-identical through the registrar). Attribution: Codex/Astra (the proposed corollary, 'supported informally'); r26 (the residual sub-case and the α ≥ 4 ingredient); Codex (GPT-6 Luna/Sol/Astra; first-interior run erdos-993-first-interior-aggregate-dre-2026-09-24): the tagged-shadow mechanism, the compiled internal lemmas (entries 41–44 of the verified award source, Main.lean 8d864da2…) and the proposed statements (C2 scope audit; FINAL-ANALYSIS); r24 C4-LA1 (C4LA1 selector/leaf definitions); r26 (C5LA1 definition layer; the residual top-rank award); r25 (G1 definitions); r29 seats T1, T2, F1, U1, critics C-T1-F, C-T1-U, C-T2-F, C-T2-U, C-F1-T, C-F1-U, C-U1-T, C-U1-F, the T/F/U adjudicators and the synthesis for their derivations.",
+      "aliases": [
+        "(TRN)",
+        "non-residual top-rank aggregate",
+        "top-rank corollary without residuality",
+        "E993-R29-TRN"
+      ],
+      "alias_patterns": [
+        "non.?residual.*top.rank",
+        "top.rank.*non.?residual"
+      ],
+      "novelty_claimed": "New: the top-rank aggregate sign without the residual hypothesis, by the high-tail mechanism.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "cycles/cycle-1/stage3/returns/T2/RETURN.md",
+        "cycles/cycle-1/stage4/critics/T2/F/CRITIQUE.md",
+        "cycles/cycle-1/stage4/critics/T2/U/CRITIQUE.md",
+        "cycles/cycle-1/stage6/SYNTHESIS.md",
+        "runs/lean-2026-09-25-c1-la4-top-rank-nonresidual-aggregate/VERIFICATION-REPORT.md"
+      ],
+      "terminal_evidence": {
+        "grade": "formally_verified",
+        "award": "C1-LA4",
+        "second_reads": {
+          "SR-5": "confirmed",
+          "SR-6": "confirmed_with_repairs",
+          "SR-7": "confirmed_with_repairs"
+        }
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-high-tail-certification-dre-2026-09-25 (r29)",
+          "cycle": 1,
+          "date": "2026-09-25",
+          "event": "registered VERIFIED at formally_verified"
+        }
+      ],
+      "second_read_registration_text": "second-reads/SR-TRN/SECOND-READ.md ## Registration text"
+    },
+    {
+      "claim_key": "E993-R29-HIGH-TAIL-BOUNDARY-RECORD",
+      "statement": "Boundary record for the high-tail guard 3p ≥ 2α(G) + 1 of E993-BIPARTITE-LEAF-HIGH-TAIL-POINTWISE. B1 (sharpness at every α ≥ 2): for every integer α ≥ 2 there is a tree of order 2α with independence number α and an original leaf whose term Δ_{p−1}(H_v) − Δ_{p−1}(R_v) is strictly POSITIVE at p = ⌊2α/3⌋ — family A (C-F1-T): a centre s with one leaf v and m = α − 1 legs s–w_i–u_i, term(p) = C(m,p)(2^p − 1) − C(m,p−1)(2^{p−1} − 1); family B (C-F1-U): the path v–s–w–c plus m = α − 2 pendant edges a_i–b_i with a_i ~ c, term(p) = C(m,p−1)·2^{p−1} − C(m,p−2)·2^{p−2} for 2 ≤ p ≤ m + 2 (zero at guard equality). B2: the largest p with a positive leaf term on trees is exactly ⌊2α/3⌋ for every α ≥ 2 (B1 + the pointwise sign). B3 (bounded_computation): smallest tree witnesses at 3p = 2α are P_6 and the spider S(1,2,2) (order 6, α = 3, p = 2, term +1); at 3p = 2α − 1, P_3 (order 3, p = 1); smallest labelled bipartite graph P_3 ⊔ K_2 (order 5). B4 (hypothesis necessity, exact finite): K_1 ⊔ K_5 with the isolate tagged fails (TSB) at k = 1 (5 > 2); P_3 ⊔ 2K_3 (order 9, α = 4, p = 3) has leaf term +3 — bipartiteness is load-bearing for (TSB) and for (HTP) at p ≥ 2.",
+      "scope": "A record about the guard's PRECISION: it refutes nothing in scope; it evaluates single leaf terms exactly at 3p = 2α but NO selector, aggregate or mechanism below the guard (fence §3.3 in that sense); the unguarded pointwise statement is already REFUTED as E993-BETA-TARGET in the governed RTree setting only — no bridge to ordinary trees is claimed and no new refutation key is needed. B1 shows only that the pointwise leaf sign, over all trees and leaves, fails one rank below the guard. Grades: B1 and B2 proved_informal (SR-BOUNDARY SR-8a/8b; B2 first stated by C-F1-T and C-F1-U conditional on (HTP), raised by the synthesis; the ⌊2α/3⌋ table matches the census to order 18 for α = 2..10); B3 bounded_computation (F1, C-F1-T, C-F1-U, F adjudicator, SR-BOUNDARY SR-8c: P_3 ⊔ K_2 is the unique order-5 bipartite witness up to isomorphism); B4 explicit exact finite witnesses (C-T1-F; replayed by the T adjudicator, the synthesis and SR-MECH SR-9). Fence SOLUTION-CONTRACT §3.1: a statement about independent-set counts on finite bipartite graphs/trees; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE, E993-G1WIDE-NO-SIZE-CAP, NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG (governed RTree), or Erdős #993. §3.2 the first-interior award and r26's residual award are unchanged. §3.3 nothing about the lower region 3p < 2α+1 (Codex/Astra's). §3.4 not an alias of the REFUTED E993-BETA-TARGET / E993-BETA-AGG-SUPPORT / E993-C3-G1-POINTWISE-ADDABILITY-BOUND. §3.5 no census value, root correction or Hall/SDR step. §3.8 each award is its own certificate.",
+      "status": "VERIFIED",
+      "evidence_grade": "proved_informal",
+      "formal_award": false,
+      "smallest_witness_order": 6,
+      "certificate": "Second reads SR-BOUNDARY (SR-8a confirmed, SR-8b confirmed_with_repairs, SR-8c confirmed) and SR-MECH (SR-9 confirmed_with_repairs); F adjudicator's checks (closed forms by recurrence m ≤ 10; sign pattern m ≤ 1500); the synthesis's replay. Attribution: C-F1-T (family A), C-F1-U (family B), C-F1-T and C-F1-U (B2 in conditional form) with the F adjudicator and the synthesis (composition), F1/C-F1-T/C-F1-U/F adjudicator (minima), C-T1-F (B4); Codex (GPT-6 Luna/Sol/Astra; first-interior run erdos-993-first-interior-aggregate-dre-2026-09-24): the tagged-shadow mechanism, the compiled internal lemmas (entries 41–44 of the verified award source, Main.lean 8d864da2…) and the proposed statements (C2 scope audit; FINAL-ANALYSIS); r24 C4-LA1 (C4LA1 selector/leaf definitions); r26 (C5LA1 definition layer; the residual top-rank award); r25 (G1 definitions); r29 seats T1, T2, F1, U1, critics C-T1-F, C-T1-U, C-T2-F, C-T2-U, C-F1-T, C-F1-U, C-U1-T, C-U1-F, the T/F/U adjudicators and the synthesis for their derivations.",
+      "aliases": [
+        "high-tail boundary record",
+        "guard sharpness",
+        "3p >= 2 alpha + 1 sharp",
+        "E993-R29-BOUNDARY"
+      ],
+      "alias_patterns": [
+        "boundary.record",
+        "guard.*sharp"
+      ],
+      "novelty_claimed": "New: the guard of the high-tail mechanism is exactly sharp on trees for every α ≥ 2; the constant 2(a − k) of the tagged bound is attained.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "cycles/cycle-1/stage4/critics/F1/T/CRITIQUE.md",
+        "cycles/cycle-1/stage4/critics/F1/U/CRITIQUE.md",
+        "cycles/cycle-1/stage5/adjudicators/F/ADJUDICATION.md",
+        "second-reads/SR-BOUNDARY/SECOND-READ.md",
+        "second-reads/SR-MECH/SECOND-READ.md"
+      ],
+      "terminal_evidence": {
+        "grade": "proved_informal",
+        "second_reads": {
+          "SR-8a": "confirmed",
+          "SR-8b": "confirmed_with_repairs",
+          "SR-8c": "confirmed",
+          "SR-9": "confirmed_with_repairs"
+        }
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-high-tail-certification-dre-2026-09-25 (r29)",
+          "cycle": 1,
+          "date": "2026-09-25",
+          "event": "registered as a boundary record after SR-BOUNDARY and SR-MECH"
+        }
+      ],
+      "second_read_registration_text": "second-reads/SR-BOUNDARY/SECOND-READ.md ## Registration text"
     }
   ],
   "last_updated": "2026-09-25",
-  "update_note": "r28 close (2026-09-25): 10 E993-R28- identities added — the Tier 1 target (HS), the Hall/SDR sufficient condition for the forest degree lemma, REFUTED at order 22 (witness T22; two instruments, three adjudicator replays, isolated second read) with its refutation record and census; the pendant-path leaf dominance lemma, Theorem BTP ((HS) on trees whose branch tree has maximum degree ≤ 2, sharp), the surplus identity, the SDR/threshold equivalence and the layer-cake reduction at their grades (4 formal award(s): C1-LA2, C1-LA3, C1-LA4, C1-LA5); five refuted local mechanisms as one record. Scope notes on five prior keys (statuses unchanged). All prior statuses preserved. Follow-up census/review close: two scoped census-dependent VERIFIED identities added (M6=22; K1 closure x<=6); four old identities receive equality/certificate corrections or extension notes with unchanged status and grade. No new formal award. All 405 prior identities and statuses preserved.",
+  "update_note": "r29 close (2026-09-25): 3 E993-R29- claims added; the three auxiliary keys E993-BIPARTITE-TAGGED-SHADOW-BOUND, E993-BIPARTITE-LEAF-HIGH-TAIL-POINTWISE, E993-INTERIOR-ELIGIBILITY-ALPHA-GE-SEVEN upgraded by their own awards where closed (4 formal award(s): C1-LA1, C1-LA2, C1-LA3, C1-LA4); (HTA) proved_informal; (TRN) formally_verified; the boundary record registered. Scope notes on E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE, E993-R26-TOP-RANK-RESIDUAL-SIGN, E993-R23-ORDINARY-FAVORABLE-LEAF-AGGREGATE and the three refuted pointwise keys (statuses unchanged). Errata R29-E-a…d recorded. All prior statuses preserved.",
   "g1_publication": {
     "source_run": "erdos-993-g1-large-residual-dre-2026-09-13",
     "source_registry_sha256": "bceaa933993f5294db482a89b57a59f470a7de1fa6b51f2ce3c46227f59300eb",
@@ -38188,5 +38477,17 @@
     "new_formal_awards": 0,
     "report_sha256": "d3d7d05542c61bdfc0ac45fc9fbea4296a80a91f76c839e2bfc30f315718d17e",
     "prior_public_head": "cf1ab9a5d64cad258f3cd338969e7f6608d2e9c9"
+  },
+  "r29_publication": {
+    "run": "erdos-993-high-tail-certification-dre-2026-09-25",
+    "terminal_manifest": "e4d7ede0233d1be72c103b0b91c0bc7cf83e6ecd96e511c320003f5b169ab355",
+    "awards": {
+      "C1-LA1": "E993-BIPARTITE-TAGGED-SHADOW-BOUND (OPEN → VERIFIED)",
+      "C1-LA2": "E993-BIPARTITE-LEAF-HIGH-TAIL-POINTWISE (OPEN → VERIFIED), with E993-R29-BIPARTITE-HIGH-TAIL-AGGREGATE as the companion lemma on its face",
+      "C1-LA3": "E993-INTERIOR-ELIGIBILITY-ALPHA-GE-SEVEN (OPEN → VERIFIED)",
+      "C1-LA4": "E993-R29-TOP-RANK-NONRESIDUAL-AGGREGATE (new; VERIFIED formally_verified)"
+    },
+    "hta_companion_formal": false,
+    "closed": "2026-09-25"
   }
 }

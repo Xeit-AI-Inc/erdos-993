@@ -1,0 +1,383 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "erdos-993-r29-c1-la1-tagged-shadow-bound-v1",
+  "theorem": {
+    "title": "Bipartite tagged-shadow bound (TSB), E993-BIPARTITE-TAGGED-SHADOW-BOUND, r29 award C1-LA1",
+    "informal_statement": "For every finite type V ([Fintype V] [DecidableEq V]), every simple graph H on V with [DecidableRel H.Adj] that is bipartite (H.IsBipartite), every tag set W : Finset V, and every natural k with 1 <= k <= H.indepNum: (k:Z) * q_{k+1} <= 2 * ((H.indepNum:Z) - k) * q_k in the integers, where q_j := (taggedFamily H Finset.univ W j).card is the number of independent j-subsets of V that meet W. Key E993-BIPARTITE-TAGGED-SHADOW-BOUND (TSB), r29 award C1-LA1 (canonical run id erdos-993-math-dre-20260925-r29-high-tail-certification); OPEN -> VERIFIED by this award only. N/Z equivalence: under hka : k <= H.indepNum the integer value (H.indepNum:Z) - k equals the cast of the natural truncated value H.indepNum - k (Nat.cast_sub hka); the registry text (1 <= k <= a, integers) and the Lean text agree on this domain. Hypothesis consumption: hBip is consumed at entry 41's Core.card_extension_le (the proper 2-colouring splits the addable set into two colour classes); hk : 1 <= k is statement scope (passed to entry 41, whose body does not use it); hka is consumed by Nat.cast_sub. Fences: SOLUTION-CONTRACT 3.1 (a statement about independent-set counts on finite bipartite graphs; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE, E993-G1WIDE-NO-SIZE-CAP, NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG or Erdos #993); 3.4 (this is NOT E993-C3-G1-POINTWISE-ADDABILITY-BOUND, which stays REFUTED and is neither reopened nor aliased); 3.7 (attribution on every face); 3.8 (a separate certificate; entry 41's presence inside the first-interior package is context, never a certificate). Excluded conclusions: no leaf, tree, selector or aggregate statement; no k = 0 or k > a clause in the terminal theorem (the N companion without k <= a is a lemma only); no tightness claim; nothing about non-bipartite graphs (false there, B4: K_1 disjoint-union K_5); no reopening or aliasing of the refuted addability bound. Attribution: Codex (GPT-6 Luna/Sol/Astra) for the tagged-shadow mechanism, entry 41 and the proposed statement (Sol's C2 scope audit); the first-interior award source for the definition of entry 18; r29 T1 (registry derivation), C-T1-F and C-T1-U (the Nat.cast_sub hka narrowing), U1 (scratch compile), C-U1-T and C-U1-F (carry sets, candidates), U's adjudicator (base candidate; the bodies of the companion lemma and the terminal theorem are adjudicator-authored and transported byte-identically), F1, C-F1-T and C-F1-U (falsification, tightness). Governing text: cycles/cycle-1/stage6/SYNTHESIS.md, ## Lean awards, C1-LA1."
+  },
+  "formulation_status": {
+    "status": "established",
+    "evidence": [
+      "Synthesis R-TSB (cycles/cycle-1/stage6/SYNTHESIS.md): grade proved_informal at the close of Stage 6 (T1 registry derivation; C-T1-F, C-T1-U, T's adjudicator).",
+      "Bounded: 56,649,670 triples to order 7, 0 failures (F1, replayed three times); pre-run: all 5,604 bipartite labelled graphs of orders 1-6 with every W and every 1 <= k <= a.",
+      "Scratch kernel compiles (replays, not certificates): T's adjudicator CarryLA1, U's adjudicator awards/LA1, C-U1-F, C-U1-T.",
+      "No counterexample is known; the statement is false for non-bipartite graphs (B4), which the hypothesis hBip excludes.",
+      "This contract makes no formally_verified claim; the informal audit and fidelity review are separate pending gates."
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-isbipartite",
+      "lean_name": "SimpleGraph.IsBipartite",
+      "dependencies": [],
+      "description": "Mathlib (Bipartite.lean:286): abbrev IsBipartite (G : SimpleGraph V) : Prop := G.Colorable 2 -- a proper 2-colouring exists; disconnected graphs, isolated vertices and the empty graph are included."
+    },
+    {
+      "id": "def-isindepset",
+      "lean_name": "SimpleGraph.IsIndepSet",
+      "dependencies": [],
+      "description": "Mathlib (Clique.lean:843): abbrev IsIndepSet (s : Set α) : Prop := s.Pairwise (fun v w ↦ ¬G.Adj v w) -- no two distinct members are adjacent."
+    },
+    {
+      "id": "def-indepnum",
+      "lean_name": "SimpleGraph.indepNum",
+      "dependencies": [
+        "def-isindepset"
+      ],
+      "description": "Mathlib (Clique.lean:983): noncomputable def indepNum (G : SimpleGraph α) : ℕ := sSup {n | ∃ s, G.IsNIndepSet n s} -- the independence number a = α(H); every independent finset has card ≤ indepNum (IsIndepSet.card_le_indepNum, Clique.lean:991, a lemma, not a definition)."
+    },
+    {
+      "id": "def-univ",
+      "lean_name": "Finset.univ",
+      "dependencies": [],
+      "description": "Mathlib (Data/Fintype/Defs.lean:92): def univ : Finset α := @Fintype.elems α _ -- the finset of all vertices; the carrier U of taggedFamily in this award."
+    },
+    {
+      "id": "def-taggedfamily",
+      "lean_name": "E993Interior.taggedFamily",
+      "dependencies": [
+        "def-isindepset"
+      ],
+      "description": "Carried byte-identically (first-interior entry 18, fragment SHA-256 cb43feebd48bdf3a82d95db4c0475a34a83acdd8c55f13ac44433ea26141fa1e; this run's registrar entry 1), inside namespace E993Interior / noncomputable section: def taggedFamily {V : Type*} [Fintype V] [DecidableEq V]\n    (G : SimpleGraph V) [DecidableRel G.Adj] (U W : Finset V) (k : ℕ) :\n    Finset (Finset V) := by\n  classical\n  exact (U.powersetCard k).filter fun A =>\n    G.IsIndepSet (A : Set V) ∧ ¬ Disjoint A W -- the k-subsets of U that are independent in G and meet W. q_j(H, W) := (taggedFamily H Finset.univ W j).card."
+    }
+  ],
+  "domains": [
+    {
+      "id": "dom-v",
+      "lean_type": "Type*",
+      "dependencies": [],
+      "description": "V : Type* with [Fintype V] [DecidableEq V] -- a finite vertex type (any cardinality, including empty)."
+    },
+    {
+      "id": "dom-h",
+      "lean_type": "SimpleGraph V",
+      "dependencies": [
+        "dom-v"
+      ],
+      "description": "H : SimpleGraph V with [DecidableRel H.Adj] -- any simple graph on V (bipartiteness is the hypothesis hBip)."
+    },
+    {
+      "id": "dom-w",
+      "lean_type": "Finset V",
+      "dependencies": [
+        "dom-v"
+      ],
+      "description": "W : Finset V -- an arbitrary tag set (W = ∅ gives 0 ≤ 0)."
+    },
+    {
+      "id": "dom-k",
+      "lean_type": "ℕ",
+      "dependencies": [],
+      "description": "k : ℕ -- the rank; restricted by hk and hka."
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "V",
+      "kind": "forall",
+      "domain_id": "dom-v"
+    },
+    {
+      "binder": "H",
+      "kind": "forall",
+      "domain_id": "dom-h"
+    },
+    {
+      "binder": "W",
+      "kind": "forall",
+      "domain_id": "dom-w"
+    },
+    {
+      "binder": "k",
+      "kind": "forall",
+      "domain_id": "dom-k"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-bip",
+      "dependencies": [
+        "def-isbipartite",
+        "dom-h"
+      ],
+      "statement": "hBip : H.IsBipartite -- consumed at entry 41's Core.card_extension_le (obtain ⟨c⟩ := hBip; the 2-colouring splits the addable set E of an independent k-set A into two colour classes, each of which can be adjoined to A, so |E| ≤ 2(a − k)). The only place bipartiteness is used."
+    },
+    {
+      "id": "hyp-k-pos",
+      "dependencies": [
+        "dom-k"
+      ],
+      "statement": "hk : 1 ≤ k -- statement scope: passed to the N companion and to entry 41 (taggedShadowBound), whose body does not reference it (Lean unused-variable linter at the carried fragment). Kept to match the registry text 1 ≤ k ≤ a."
+    },
+    {
+      "id": "hyp-k-le-alpha",
+      "dependencies": [
+        "def-indepnum",
+        "dom-h",
+        "dom-k"
+      ],
+      "statement": "hka : k ≤ H.indepNum -- consumed by Nat.cast_sub hka in the terminal theorem: ((H.indepNum - k : ℕ) : ℤ) = (H.indepNum : ℤ) - k. N/Z equivalence: under hka the integer value α − k equals the natural truncated value α ∸ k."
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "dependencies": [
+      "def-taggedfamily",
+      "def-univ",
+      "def-indepnum",
+      "dom-w",
+      "hyp-bip",
+      "hyp-k-pos",
+      "hyp-k-le-alpha"
+    ],
+    "statement": "(k : ℤ) * (taggedFamily H Finset.univ W (k + 1)).card ≤ 2 * ((H.indepNum : ℤ) - k) * (taggedFamily H Finset.univ W k).card -- i.e. k·q_{k+1}(H, W) ≤ 2(α(H) − k)·q_k(H, W) over the integers."
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "explicit_axiom_allowlist",
+    "rationale": "Mathlib's finset, cardinality and indepNum (sSup) API and the carried entries use classical reasoning; exactly propext, Classical.choice and Quot.sound are permitted. No sorry, admit, native_decide, axiom, or decide over an enumeration."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "E993HighTail.bipartiteTaggedShadowBound",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem bipartiteTaggedShadowBound {V : Type*} [Fintype V] [DecidableEq V]\n    (H : SimpleGraph V) [DecidableRel H.Adj] (hBip : H.IsBipartite) (W : Finset V) (k : ℕ)\n    (hk : 1 ≤ k) (hka : k ≤ H.indepNum) :\n    (k : ℤ) * (taggedFamily H Finset.univ W (k + 1)).card ≤\n      2 * ((H.indepNum : ℤ) - k) * (taggedFamily H Finset.univ W k).card",
+    "expected_statement_sha256": "87b98c294ccee3aaddf06cd0a52cbb0a65e6d8981a091a6f030b38fdf2eb9f68"
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "def-isbipartite",
+        "kind": "definition"
+      },
+      {
+        "id": "def-isindepset",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indepnum",
+        "kind": "definition"
+      },
+      {
+        "id": "def-univ",
+        "kind": "definition"
+      },
+      {
+        "id": "def-taggedfamily",
+        "kind": "definition"
+      },
+      {
+        "id": "dom-v",
+        "kind": "domain"
+      },
+      {
+        "id": "dom-h",
+        "kind": "domain"
+      },
+      {
+        "id": "dom-w",
+        "kind": "domain"
+      },
+      {
+        "id": "dom-k",
+        "kind": "domain"
+      },
+      {
+        "id": "hyp-bip",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-k-pos",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-k-le-alpha",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "def-isindepset",
+        "to": "def-indepnum"
+      },
+      {
+        "from": "def-isindepset",
+        "to": "def-taggedfamily"
+      },
+      {
+        "from": "dom-v",
+        "to": "dom-h"
+      },
+      {
+        "from": "dom-v",
+        "to": "dom-w"
+      },
+      {
+        "from": "def-isbipartite",
+        "to": "hyp-bip"
+      },
+      {
+        "from": "dom-h",
+        "to": "hyp-bip"
+      },
+      {
+        "from": "dom-k",
+        "to": "hyp-k-pos"
+      },
+      {
+        "from": "def-indepnum",
+        "to": "hyp-k-le-alpha"
+      },
+      {
+        "from": "dom-h",
+        "to": "hyp-k-le-alpha"
+      },
+      {
+        "from": "dom-k",
+        "to": "hyp-k-le-alpha"
+      },
+      {
+        "from": "def-taggedfamily",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-univ",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-indepnum",
+        "to": "conclusion"
+      },
+      {
+        "from": "dom-w",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-bip",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-k-pos",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-k-le-alpha",
+        "to": "conclusion"
+      }
+    ]
+  },
+  "source_materials": [
+    {
+      "id": "src-synthesis",
+      "path": "SOURCE/C1-SYNTHESIS.md",
+      "sha256": "bd7efb532f65e15df5bdf38d190d7c32f0802f9914b61ed249977e6d5bee9870",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-solution-contract",
+      "path": "SOURCE/SOLUTION-CONTRACT.md",
+      "sha256": "0327cc8ee6fd83acb36074af4e8900bcd037e6613fc03020ac86e6b76d356e5f",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-brief",
+      "path": "SOURCE/C1-STAGE7-FORMALIZER-BRIEF-LA1.md",
+      "sha256": "4c97f4721e10a40c40ed647352513cafb496a848e7e5ed92254e84374b47572a",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-semantic-contract",
+      "path": "SOURCE/SEMANTIC-CONTRACT.md",
+      "sha256": "9e8131e845fcbaab999332b2b5bcaa838477ad15f1101d523c3ada8daad5501d",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-first-interior-main",
+      "path": "SOURCE/first-interior-c2-primary-v2-Main.lean",
+      "sha256": "8d864da290947d75ac0cb52644b8b5336a19076878fcb11eeed552e6a118d7a9",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-entry18",
+      "path": "LeanProject/LeanProof/Snippets/0001-definition-E993Interior-taggedFamily.lean.fragment",
+      "sha256": "cb43feebd48bdf3a82d95db4c0475a34a83acdd8c55f13ac44433ea26141fa1e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-entry41",
+      "path": "LeanProject/LeanProof/Snippets/0002-lemma-E993Interior-taggedShadowBound.lean.fragment",
+      "sha256": "50dcce4a7ad13fbb73361ff1235996a7bb79eeea2cf9435a752b1eab50d8583f",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "src-new-companion",
+      "path": "LeanProject/LeanProof/Snippets/0003-lemma-E993HighTail-bipartiteTaggedShadowBoundNat.lean.fragment",
+      "sha256": "2d6d3dda0e8c081d6093f85288f5478d3aff1b9cc45a93ff8e415966dfec3143",
+      "role": "reference"
+    },
+    {
+      "id": "src-new-terminal",
+      "path": "LeanProject/LeanProof/Snippets/0004-theorem-E993HighTail-bipartiteTaggedShadowBound.lean.fragment",
+      "sha256": "02f727a3ab9cea4a594ffcc4ecbfb10e5beb05b6ecfeda1151c77c5c53b1d9f5",
+      "role": "reference"
+    },
+    {
+      "id": "src-base-candidate",
+      "path": "SOURCE/ADJ-U-awards-LA1-Main.lean",
+      "sha256": "d88f6043e9b8e1587daa1495a1e7a8792f9cd3400529c159e46c5021ba5862ce",
+      "role": "reference"
+    },
+    {
+      "id": "src-carry-digests",
+      "path": "SOURCE/c1-stage7-sources-SOURCE-DIGESTS.json",
+      "sha256": "590ecd519b5a023ffc665a4236822a50b0e0ca7ff80e775f55d40c20003db9c9",
+      "role": "reference"
+    },
+    {
+      "id": "src-capsule-manifest",
+      "path": "SOURCE/C1-LA1-PACKET-MANIFEST.json",
+      "sha256": "66e13b98bb860d9abf677717c57c926b9ce834d2dc6c42a8a631f6cf0be92bc2",
+      "role": "reference"
+    },
+    {
+      "id": "src-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "sha256": "3f7ff1d9bf320c45c4c1f06f7656d180e8760602448632958f39e9912fa00a04",
+      "role": "reference"
+    },
+    {
+      "id": "src-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "sha256": "4e289b6dc62d7e6ccf91eb26fe939993e07ca722950f64079db72b43ed4285e9",
+      "role": "reference"
+    }
+  ]
+}
