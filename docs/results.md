@@ -374,3 +374,21 @@ consequences `Δ_k < 0 ⇒ n ≤ 4k` (a linear order bound, strengthening the r2
 is exact only at `k = 1, 2`. `(DL)` is never tight for `k ≥ 1` with `i_k > 0`, is false on `K_{2,3}`, and every
 cycle satisfies it with equality. These are order bounds with sign `Δ_k ≥ 0` — not no-recovery statements.
 See [r27](../experiments/r27-forest-degree-extension.md) and [verification](../evidence/verification-2026-09-24-r27.md).
+
+## r28 (2026-09-25): the Hall/SDR route to the degree lemma is refuted; its true boundary is registered
+
+An r27 critic had reformulated the forest degree lemma for trees as `Σ_{v∈Br}(deg v − 2)·c_v(k) ≤ Σ_{ℓ∈L} c_ℓ(k)` and
+proposed the stronger leaf/slot dominance condition `(HS)`: for every threshold `t`, the branch slots with `c_v(k) ≥ t`
+are at most the leaves with `c_ℓ(k) ≥ t` (by Hall, an injection from slots to leaves respecting `c_ℓ ≥ c_v`). r28 refuted
+it: the order-22 tree with a root joined to three hubs, each carrying two pendant paths of three edges, has its root in
+18 of the 19 independent 12-sets while every leaf lies in 17 — one slot at threshold 18, no leaf. Two critics found it
+independently; all three adjudicators reproduced it; an isolated second read confirmed it by three methods, proved an
+infinite family with unbounded shortfall, and enumerated all 5,623,756 trees of order 22 (unique failure; none below).
+The degree lemma holds on the tree and is untouched. What survives, all formally verified: a leaf dominates every
+vertex of its own pendant path (`c_{u_i}(k) ≤ c_ℓ(k)`, any finite graph); Theorem BTP — `(HS)` holds on every tree whose
+branch tree has maximum degree ≤ 2 (caterpillars, spiders, brooms), sharp for every branch-degree bound; the
+layer-cake reduction `(HS at t ≥ 1) ⇒ (DL)` with the r27 leaf/branch reformulation formalized; the forest composition
+at its corrected hypothesis; the SDR/threshold equivalence; and their composition — a second, matching-type proof of
+`(DL)` on the path-like class. Every proposed matching-type strengthening of `(DL)` on all trees fails on the same
+order-22 tree, where the root's occupancy is the strict maximum over all vertices. Nothing here is a no-recovery
+statement. See [r28](../experiments/r28-degree-lemma-hall-sdr.md) and [verification](../evidence/verification-2026-09-25-r28.md).

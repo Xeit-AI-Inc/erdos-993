@@ -1,0 +1,301 @@
+{
+  "schema": "verityos.r28.controller-notes.v1",
+  "living_file": true,
+  "notes": [
+    {
+      "id": "R28-N-1",
+      "date": "2026-09-24",
+      "note": "r28 authorized by Ashton (recommendation 2 of the r27 close accepted; standard DRE + Lean flow; six-cycle ceiling). Target: the leaf/slot dominance (HS) named by r27 critic C-T2-U (Step C), threshold form for every finite tree, k, t ≥ 1; reduction (LC) and forest composition (FC) as Lean targets. Seating 6/12/3/1 as recommended. Root built from r27's toolkit with a residue-check subcommand (r27 inbox proposal §2 implemented in r28_tool.py); the Stage 7/close/registration/publication scripts are r27's and are rewritten at Stage 7 (recorded here so no reviewer brief inherits r27 award names)."
+    },
+    {
+      "id": "R28-N-2",
+      "date": "2026-09-24",
+      "note": "Controller's own reading before dispatch (prior, never evidence): (a) leaf/support: c_ℓ(k) = i_{k−1}(T − ℓ − s) ≥ i_{k−1}(T − N[s]) = c_s(k) since T − N[s] is an induced subgraph of T − {ℓ, s} — every independent set of the former is one of the latter; (b) layer-cake: Σ_v w_v c_v = Σ_{t≥1} Σ_{v: c_v ≥ t} w_v for nonnegative weights, so (HS) at every t sums to the reformulated (DL); (c) the threshold bipartite graph has nested neighbourhoods, so Hall reduces to the threshold form. Pre-run instrument control/controller-prerun/hs_check.py: (HS) threshold form holds on all 204,813 free trees of orders 2–18, 2,204,379 (T, k) instances, 0 failures (canonical form by AHU over centres; c_v(k) by tree DP with rerooting; free-tree counts match A000055 through 18)."
+    },
+    {
+      "id": "R28-N-3",
+      "date": "2026-09-24",
+      "note": "Sources frozen: master registry 392 (post-r27; includes Codex's OPEN E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE — fenced), r27 records (C-T2-U critique and instrument; T2 return; C-T2-F; T adjudication; synthesis; cycle close; semantic contract), r27 second reads SR-JOIN/SR-RC/SR-EXX, the r27 C1-LA1 award (formal (DL) of record; Main.lean b49ea82a…), the r25 award (G1 definitions), predecessor ledgers incl. r27's OBLIGATIONS.csv. 62 files."
+    },
+    {
+      "id": "R28-N-4",
+      "date": "2026-09-24",
+      "note": "Residue check (r28_tool.py residue-check --predecessor r27 r26) over every control/contract file before the Stage 2 seal: markdown hits are all lineage citations by registered key or frozen-source path (E993-R27-*/E993-R26-* keys; sources/r27/c1-la1-forest-degree-extension/), reviewed and kept; one true residue fixed (the critic protocol's 'model ruling of 2026-09-23' date). The cloned Python scripts (reviews/close/register/publication) still carry r27 award names by design and are rewritten at Stage 7 before any brief is generated from them — they are not Stage 2 members except r28_tool.py itself. Report: control/RESIDUE-CHECK.json (a Stage 2 member)."
+    },
+    {
+      "id": "R28-N-5",
+      "date": "2026-09-24",
+      "note": "Stage 2 sealed 2eff91ef… (83 members; lint 0/0 with two new distinctions R28-LC/R28-FC against VERIFIED_REGRESSED; path-check 81 files 0 findings; the external-path allowlist had to be restored from r27 — the first seal attempt failed on a missing allowlist, no member written). Stage 3 dispatch sealed aadefb72…; six Sonnet 5 xhigh routes launched (T1 leaf/support induction; T2 nearest-branch assignment; F1 falsification census; F2 local-lemma obstructions; U1 definitions + layer-cake; U2 forest composition + Hall)."
+    },
+    {
+      "id": "R28-N-6",
+      "date": "2026-09-24",
+      "note": "T1 returned blocked: leaf ≥ support (L1) re-derived by subset argument and alias-checked to the VERIFIED E993-PAIR-R-LE-G-POINTWISE (a different index convention; a re-derivation, not new — good hygiene); exact leaf-deletion recurrence for c_v(k) (9,475 checks); naive pendant-path monotonicity REFUTED (S(3,1,1), k = 3); repaired candidate L2 'a leaf dominates every vertex of its own pendant path' holds on all tests to order 8 exhaustive + families to 18 but its one-step induction does not telescope (obstruction term named); 10-vertex 'starved hub' shows per-branch local service by own pendant directions cannot work in general. Controller reading: the starved-hub witness is the key structural fact for T2/F2 — it forces any proof to move slots across the branch tree."
+    },
+    {
+      "id": "R28-N-7",
+      "date": "2026-09-24",
+      "note": "T2 returned bounded_evidence: an elementary two-directional proof of the SDR ⟺ threshold equivalence (sort-and-pair, no Hall machinery) — T2's own; the same open lemma as T1 (a leaf dominates every vertex of its own pendant path; Lemma DM stops at distance 1); order-10 minimal witness where the 'own pendant leaves only' assignment fails (agrees with T1's starved hub); a two-level hub of order 22 with four simultaneously deficient interior branch vertices where (HS) still holds; matching-form census extended to order 15 (117,393 instances, three cross-validated methods, 0 failures). Disclosures: one pre-boot out-of-scope ls/skill read; one `ps -u $(id -u)` listing that showed F1's background command line (not touched) — a full process listing is against the standing rule; recorded here and in the Stage 3 disclosures file, not an incident (no effect)."
+    },
+    {
+      "id": "R28-N-8",
+      "date": "2026-09-24",
+      "note": "U1 returned proved: Erdos993G1.dominance_implies_degree_lemma (LC) sorry-free at the three axioms (Main.lean 74ab2108…, 292 lines; lake build 8657/8657), with the finding that (LC) needs no IsTree/IsAcyclic — 2k·i_k − D_k = Σ_L c_ℓ + 2Σ_{deg 0} c_v − Σ_{Br}(deg−2)c_v on any finite graph, so (HS at every t) ⇒ (DL) graph-generally; hT unused (linter warning). Consistent: (DL) fails on K_{2,3}, so (HS) fails there (two slots, no leaves). Draft contract, verifier and replay shipped; layerCake_subset reusable by U2. Disclosures: two non-recursive `ls scratchpad/` (sibling directory NAMES only); one unintended failed `lake --version` outside the project dir that attempted a network fetch (zero bytes, disk-space failure) — a network attempt is against the standing rule; recorded in the Stage 3 disclosures file; no effect."
+    },
+    {
+      "id": "R28-N-9",
+      "date": "2026-09-24",
+      "note": "F2 returned bounded_evidence: the local-lemma map — PROVED (graph-general): leaf ≥ support; leaf-removal occupancy recurrence. REFUTED with minimal witnesses: pendant-path monotonicity (S(3,1,1), order 6 — agrees with T1); branch-vertex self-sufficiency for a nearest-branch assignment (order 10 — agrees with T1's starved hub and T2's order-10 witness); interior-vs-extremal branch-vertex dominance (order 8). OPEN at horizon 13: L3 pendant leaf dominance (= T1's L2 / T2's open lemma — three seats converge). New general theorem: the (k=1, t=1) row of (HS) holds on any finite graph iff |E| + Z ≤ n (Z isolated vertices), on all 33,867 labelled graphs to order 6. Fences: (HS) holds on connected |E| ≤ n graphs to order 6 and unicyclic to order 10; refuted on bipartite graphs both trivially (K_{2,3}) and genuinely (order 6 with leaves). Relaxations k ≤ 2, t ≤ 2, k ≥ α−1 unrefuted to order 13; the fractional relaxation collapses to (DL). Nine E993-R28-* candidates alias-checked. Disclosure: one `ps` self-check (cites the SR-JOIN precedent; the rule is PID-only kills and no full listings — a `ps` restricted to own uid for self-check is tolerated, recorded)."
+    },
+    {
+      "id": "R28-N-10",
+      "date": "2026-09-25",
+      "note": "Host session restart interrupted Stage 3 with T1, T2, F2, U1 returned and F1, U2 mid-work (no RETURN.md; F1's three scripts and U2's LeanProject intact on disk). Both resumed by SendMessage to the same agents (never re-spawned), told to re-execute in the foreground and record the interruption as a process disclosure. No sealed member affected; Stage 3 is not yet sealed."
+    },
+    {
+      "id": "R28-N-11",
+      "date": "2026-09-25",
+      "note": "U2 returned compiled (after the resume): two-piece separated-union convolution for indepCount/indepDegreeSum sorry-free (the Lean form of the r27 informal convolution); sdr_iff_threshold (Hall on the nested-neighbourhood graph, composed with Mathlib's Hall theorem) sorry-free; both at the three axioms. One named sorry: slot_leaf_sdr_exists (Main.lean:470) — (HS-SDR) itself; tree_leaf_slot_dominance reduces to it in one line. Deviation disclosed: the two-piece form of (FC) rather than the ConnectedComponent.supp-indexed signature (the contract licensed it; the bridge is named as inheritance). Process disclosure: the host restart. Alias check clean for two candidate keys."
+    },
+    {
+      "id": "R28-N-12",
+      "date": "2026-09-25",
+      "note": "F1 returned bounded_evidence (after the resume): exhaustive free-tree census to ORDER 20 (1,346,023 classes; A000055 matched at every order), threshold AND matching forms on independent instruments (canonical form, c_v(k) rerooting, brute-force cross-check; two matchers), 0 failures; 25 adversarial families to n = 4,800 and 29 random Prüfer trees to order ~80, 0 failures; FIVE tight instances (orders 19–20 only; a single-slot-vs-single-leaf tie at max t); zero tight instances at t = min c_v through order 20. Process disclosures: the host restart (all numbers post-restart); three own benchmarking processes killed by literal PID."
+    },
+    {
+      "id": "R28-N-13",
+      "date": "2026-09-25",
+      "note": "Stage 3 admission 6/6 (0 findings); disclosures record control/C1-STAGE3-READ-BOUNDARY-DISCLOSURES.json (T2 ps listing; F2 ps self-check; U1 ls names + failed network attempt; U2/F1 host-restart process disclosures). Stage 3 sealed 56fa3b76ba633b21…; Stage 4 dispatch 7ead45432169e189…; six critic capsules sealed; attack briefs written from the returns' text (control/C1-CRITIC-ATTACK-BRIEFS.md — every T/F critic is pointed at the shared open lemma L2/L3 'a leaf dominates every vertex of its own pendant path' and at F1's five tight instances as the most valuable attacks). Twelve Opus 5 medium critics launched. Controller reading of the cycle so far: no route proved or refuted (HS); three independent seats named the same open local lemma; the starved-hub witness (order 10) forces any proof to be non-local; U1 closed (LC) formally (graph-general) and U2 closed the two-piece convolution and the Hall/threshold equivalence formally with (HS-SDR) the single sorry — so the run's entire formal residue is one declaration, slot_leaf_sdr_exists."
+    },
+    {
+      "id": "R28-N-14",
+      "date": "2026-09-25",
+      "note": "C-U1-T returned retained_narrowed: U1's dominance_implies_degree_lemma sorry-free at the three axioms on a copy-out rebuild; layer-cake over t = 1..i_k correct. Narrowings: the graph-general strengthening is a one-line consequence of the r27 reformulation key's scope (weight identity holds on every finite graph) → scope note, not a new key, and stated with t ≥ 1 (the contract's 'every t' adds a t = 0 condition that fails on K_{2,3} at k = 3 — controller erratum R28-E-a on SOLUTION-CONTRACT §2's quantifier for the LC hypothesis: the formalizer quantifies t ≥ 1 or proves t = 0 separately for trees); indepDegreeSum retyped by U1 (rfl-equal, not byte-identical — carry r27 entry 7 verbatim at Stage 7); allocation item 5's reformulation and slot-count lemmas not shipped by U1 and not listed open; draft contract grade word invalid; two literals struck. Critic-derived advance: scratch Lean proofs of all three clauses of the r27 reformulation for trees n ≥ 2 (exact identity; the biconditional; the slot count in ℤ), the identity for graphs without isolated vertices, and graph-general (LC) with t ≥ 1 — a Stage 7 carry candidate that would upgrade E993-R27-TREE-LEAF-BRANCH-REFORMULATION-ORDER-GE-2 to formal. Disclosures: printed the whole attack-brief file (used only its own section); authorized Mathlib grep; local git rev-parse on the pin."
+    },
+    {
+      "id": "R28-N-15",
+      "date": "2026-09-25",
+      "note": "C-U1-F returned retained_narrowed (independently concordant with C-U1-T): rebuild clean, hT unused confirmed; the graph-general LC needs t ≥ 1 (smallest witness K_4 − e at k = 2: (HS) holds for every t ≥ 1, (DL) holds with equality, the t = 0 case fails — R28-E-a sustained with a witness); the 'byte-identical indepDegreeSum' literal struck (rfl-equal); reformulation identity not shipped by U1; draft contract defects. Critic-derived advance: 10 sorry-free lemmas in scratchpad/c1-crit-U1-F/Critic.lean formalizing the full r27 reformulation (identity, iff, slot count), the identity for every finite graph (correction 2 × degree-0 counts), the t ≥ 1 graph-general LC, and that for trees the t ≥ 1 cases imply t = 0. Two independent critics now hold Lean proofs of the r27 reformulation — a Stage 7 carry candidate (both files; the synthesis picks one and records byte-identity or re-derivation)."
+    },
+    {
+      "id": "R28-N-16",
+      "date": "2026-09-25",
+      "note": "C-T1-U returned retained_narrowed with the cycle's first material advance: the shared open lemma L2/L3 — a leaf ℓ at the end of a pendant path u_0 (branch) – … – u_m = ℓ dominates EVERY vertex of the path, c_{u_i}(k) ≤ c_ℓ(k) for all i, k, on any finite simple graph — proved by a two-step shift of the tail beyond u_{i+1} onto u_i..u_{m−2} (the gap vertex u_{i−1} stays empty; for i = 0 the shifted tail may use u_0, whose other neighbours are absent from G − N[u_0]), giving an injection I_{k−1}(G − N[u_i]) → I_{k−1}(G − N[ℓ]). Controller re-derived the injection independently (prior, not evidence); census 0 failures on ~3.46M instances to order 15. STATED → isolated second read before registration. Consequence (critic-derived, open): (HS) reduces to a condition on the contracted branch tree — only branch vertices with ≥ 3 branch-tree neighbours can be short of their own leaves; holds on 46,977 instances to order 16. Refuted: 'one dominating leaf per direction' (order 12, k = 6). Starved hub unique at order 10. Contract erratum R28-E-b: SEMANTIC-CONTRACT §2's (PW) witness (order 5, k = 3, c_2 > c_4) compares two LEAVES and does not refute the branch-vs-leaf pointwise form as stated; that form IS false with smallest witness order 9, k = 5 (c_0 = 2 > c_8 = 1); the fence stands, the witness on record is corrected (inherited from r27 C-T2-U Step D's wording). Literals struck in T1 (7- not 8-vertex example; 46 not 47 trees; 1,071 checks; one script not two methods; 'T − {ℓ, s} is a tree' false when the support has degree ≥ 3; fixed-point count regraded)."
+    },
+    {
+      "id": "R28-N-17",
+      "date": "2026-09-25",
+      "note": "C-T1-F returned retained_narrowed: SECOND independent proof of L2 — for interior path vertices G − N[u_i] ≅ (G − N[ℓ]) − u_{i−1} (an induced subgraph of G − N[ℓ]), so c_{u_i}(k) ≤ c_ℓ(k); for the branch vertex u_0 a polynomial identity gives a nonnegative difference; any finite graph; 0 violations to order 16. Reductions (critic-derived, STATED): with L2, (HS) reduces to a matching problem on the BRANCH TREE (R-SDR), holding on all 497,244 cases to order 16; the pointwise shortcut for that matching refuted (order 12, k = 6 — same as C-T1-U's); a rooted-subtree local assignment WORKS for every leaf root to order 15 — contradicting T1's 'structurally insufficient' (only T1's own-pendant-leaf rule is ruled out): a live proof lead. Starved-hub minimality proved. (PW) witness erratum R28-E-b confirmed independently. T1 literals corrected (46 trees; 42 path/k instances; 7-vertex example; 63–288 checks per shape; eight single spiders); recurrence gets no new key (an instance of a registered rule)."
+    },
+    {
+      "id": "R28-N-18",
+      "date": "2026-09-25",
+      "note": "C-U2-T and C-U2-F returned retained_narrowed, concordant: U2's two sorry-free results rebuild at the three axioms; slot_leaf_sdr_exists the only sorry. CONTRACT DEFECT (erratum R28-E-c): SOLUTION-CONTRACT §2's forest_degree_lemma_of_components assumes the component bound at the single size k; composition needs it at every a ≤ k (K_4 ⊔ K_4 at k = 2: components 0 ≤ 0, union 96 > 64); on forests the literal statement is true only via r27's (DL) with hcomp unused — a formalizer must NOT prove it that way. Both critics shipped corrected sorry-free compositions: C-U2-T (CritU2T.lean, 6 declarations: two-piece step; induced-components bridge; composition over all components without acyclicity; components of a forest are trees; 'DL on every tree ⇒ DL on every forest') — the END-TO-END forest step; C-U2-F (CritAdvance.lean, 7 declarations: tree lemma tree_slots_zero_le; sdr_iff_threshold_pos_of_tree for t ≥ 1; dl_union; peel-one-component composition). Further: U2's Hall equivalence covers all t incl. t = 0 while (HS) is t ≥ 1 — on trees the t ≥ 1 cases imply t = 0 (C-U1-F/C-U2-F), so the equivalence needs the tree lemma named; U2's convolution uses whole-graph degree vs the r27 key's in-piece degree (agree for separated pieces); U2 literals struck ('all 83', 'all four', a Mathlib file citation Defs.lean:722 not Basic.lean:722, 'byte-identical' at the wrapped-entry level, the 841 misattribution, the formally_verified grade word). Disclosures: hashing of other seats' returns for seal checks (not read); one heading line / whole-file print of the attack briefs (unused); CLAUDE.md and the memory index arrived via the harness and were disclosed — a harness fact, recorded."
+    },
+    {
+      "id": "R28-N-19",
+      "date": "2026-09-25",
+      "note": "C-T2-F and C-T2-U returned retained_narrowed, concordant: T2's sort-and-pair SDR ⟺ threshold equivalence correct (Direction 2 needs m ≤ |L| — the tree slot count or t = 0 — named by C-T2-U); order-15 census reproduced on code-independent instruments and extended to order 16 (309,532 instances, 0 failures both forms); 'three independent methods' struck (one shared c_v(k) routine); H10 has α = 7 not 6. Advances (critic-derived, STATED): (1) the pendant-path dominance lemma proved a THIRD and FOURTH time (C-T2-F by the polynomial identity c_ℓ − c_u = P_{d−2}·(Z(Q) − Z(Q − N_Q(u))) ≥ 0; C-T2-U's Lemma PP by isomorphic re-embedding) — four independent proofs across both T seats' critics; (2) C-T2-F's SURPLUS IDENTITY: Σ_{branch v} (own pendant leaves − slots) = 2 exactly, so the own-leaves rule fails iff the branch tree has a vertex of degree ≥ 3; order-10 minimal and unique (both critics); (3) C-T2-U's THEOREM BTP: (HS) holds for every tree whose branch tree has maximum degree ≤ 2 (all caterpillars, spiders, …; 27,737 of 32,492 branching trees to order 16); (4) the open residue is exactly trees with a branch-tree vertex of degree ≥ 3, for which both critics state a sharper sufficient conjecture (C-T2-F: own leaves first, then one spare leaf per extremal branch vertex; C-T2-U: a rooted export form holding for every root) — 46,977 instances to order 16, 0 failures; (5) refuted: 'serve a deficient branch vertex from each of its own branch directions' (order 12, k = 6 — third critic to find it). (HS) never tight to order 16 per C-T2-U vs F1's five tight instances at orders 19–20 — consistent (different horizons)."
+    },
+    {
+      "id": "R28-N-20",
+      "date": "2026-09-25",
+      "note": "C-F2-U returned retained_narrowed: every F2 count reproduced on an independent generator/counter; F2's non-tree fences add nothing beyond registered facts ((HS) ⇒ (DL) on every finite graph, so every (DL) failure is an (HS) failure; bipartite failures are exactly |E| > n at k = 1; the k = 1 criterion is inside the r27 reformulation key's scope) → candidates 7/9 become scope notes, 8 renamed; 'fractional relaxation' misnamed (a fractional matching is equivalent to (HS) itself, not (DL)); L2's minimality argument wrong but the order-6 minimum stands by exhaustion; unicyclic null extended to order 14 (61,131 graphs). Advances (critic-derived, STATED): FIFTH independent proof of L3 (identity C_ℓ − C_w = x·(I(A) − I(B))·q_{m−2}); SECOND independent proof that (HS) holds on every tree whose branch tree has max degree ≤ 2 (65,512 of 81,136 trees to order 17); the residue class (a branch vertex touching ≥ 3 branch vertices, order ≥ 10) with 'reserve own leaves first, then match the rest' holding on 21,537,555 cases to order 17. Disclosures: one ls of a not-yet-existing directory; a heading-only grep of the attack briefs; the (RC) template residue (R28-E-d)."
+    },
+    {
+      "id": "R28-N-21",
+      "date": "2026-09-25",
+      "note": "C-F2-T returned retained_narrowed: every F2 count reproduced independently; SIXTH independent proof of the pendant-path dominance lemma (exact nonnegative difference formula) and THIRD independent proof that (HS) holds when no branch vertex has ≥ 3 branch-vertex neighbours (residue counts 1, 4, 19, 77, 287, 1,002 at orders 10–15); bipartite 'counterexamples' are |E| > n failures at k = 1 (bipartiteness plays no role); F2's edge-count criterion is nearly E993-R27-DEGREE-LEMMA-K1-ACYCLICITY-CRITERION → scope note; '5,865 unicyclic' are tree+edge pairs with repeats; L2 minimality argument wrong (order 6 stands by exhaustion); unicyclic null extended to order 13 (132,610 pairs) + 17 families to order 20 — '(HS) for connected |E| ≤ n graphs' recorded as a conjecture. Disclosures: hashed other returns for the seal check; one own script looped on a plain cycle, was harness-backgrounded and stopped by task id (no pattern kill/listing), re-run in the foreground; the (RC) template residue (R28-E-d, already patched)."
+    },
+    {
+      "id": "R28-N-22",
+      "date": "2026-09-25",
+      "note": "DECISIVE (pending §5(b) confirmation): C-F1-T returned retained_narrowed with a COUNTEREXAMPLE to (HS): the order-22 tree R(3,2)_3 — root with three children, each child carrying two pendant paths of three vertices (branch tree K_{1,3}; 4 branch vertices, 4 slots, 6 leaves). At k = 12: i_12 = 19, c_root = 18, c_child = 0, every leaf c = 17; threshold t = 18: slots 1 > leaves 0 — both forms fail. Critic's evidence: DP, brute force over all 54,929 independent sets, and F1's own code agree; an infinite family R(d, m) (d ≥ 3, m ≥ 2) fails at k = α − 1, t = 3dm (hand proof, STATED). (DL) holds on the tree (D_11 = 3099 ≤ 3762). Order 21 exhaustive on ONE instrument (2,144,505 classes): no failure → minimum order 22 needs a second instrument. CONTROLLER VERIFICATION (prior, not evidence): control/controller-prerun/r22_check.py — brute-force enumeration reproduces i_12 = 19, c_root = 18, children 0, leaves 17 ×6, t = 18 slots 1 > leaves 0, (DL) ok at k = 11, 12, tree connected with 21 edges. Consequences: (HS) is REFUTED as a universal statement; C-T2-U's Theorem BTP (branch tree max degree ≤ 2) is consistent (this branch tree is K_{1,3}); the critics' 'own leaves first, then match' conjecture also fails here (root has 0 own leaves; every spare leaf has c = 17 < 18). The SDR route to a second proof of (DL) is therefore closed as stated; what survives is (HS) on the max-branch-degree-≤2 class plus the graph-general reduction. Stop gate §5(b) requires two independent instruments AND an isolated second read: the F adjudicator replays; SR-HS-REF dispatched concurrently with Stage 5. F1's struck literals: Hopcroft–Karp to order 17 unshipped; summary extractor copies run-time counters; 'two independent matching instruments' is one; the Hall-reduction step 5 wrong as written (conclusion right); the master report embeds wall-clock timings (irreproducible digest)."
+    },
+    {
+      "id": "R28-N-23",
+      "date": "2026-09-25",
+      "note": "SR-HS-REF (the §5(b) second read of the refutation) sealed c6e02913… (85 members: contracts, protocol, brief, F1's return, C-F1-T's critique and scratch, C-T2-U and C-F2-T critiques for the surviving-class context, the controller's r22_check.py and hs_check.py, the run-local registry) and dispatched concurrently with the upcoming Stage 5 (it may not read stage5/). The C-F1-T critique is sealed inside this capsule before the Stage 4 packet seal; the critic is complete and the file is never edited — the Stage 4 seal will carry the same bytes (a drift here would be an incident)."
+    },
+    {
+      "id": "R28-N-24",
+      "date": "2026-09-25",
+      "note": "C-F1-U returned retained_narrowed: F1's census reproduced on a separate instrument (A000055 to 20; the same five ties; none at t = min c_v); struck: Hopcroft–Karp to 17, the 'recomputes' claim, a nonexistent test; 'two independent matching instruments' narrowed to one. INDEPENDENTLY of C-F1-T: the same order-22 counterexample to (HS) (four checks), an infinite family T(d, r) with shortfall d − 2 → ∞, four more counterexamples at orders 23–24, order 21 clear. §5(b)'s two-instrument condition is met (C-F1-T, C-F1-U; the controller's r22_check.py a prior); the isolated second read SR-HS-REF is running. F1's two self-reported `ps aux` listings were missing from the Stage 3 disclosures record — corrected before the Stage 4 seal (R28-N-24). C-F1-U stopped two scripts with the harness stop tool (not PID) — recorded."
+    },
+    {
+      "id": "R28-N-25",
+      "date": "2026-09-25",
+      "note": "Stage 4 admitted 12/12 (0 findings; all retained_narrowed) and sealed 4f6545959854f69e…; three adjudicator capsules sealed (T 59927abc…, F 69f1965e…, U 5831bd72…; 20 files each, path-check 0); controller facts records finalized (T/F/U) incl. the refutation and its consequences; three Opus 5 high adjudicators launched, the F adjudicator instructed to be the second-instrument replay of the counterexample. Stage 6 controller facts drafted."
+    },
+    {
+      "id": "R28-N-26",
+      "date": "2026-09-25",
+      "note": "T adjudication returned: status refuted; material_progress yes; plateau no. Reproduced the order-22 counterexample independently (three methods + hand; also fails at k = 11: hub 141 vs leaves 136; odd pendant lengths a, b ≥ 3 fail to order 40). Established: the pendant-path lemma (four T proofs), Theorem BTP (branch tree a path; sharp), the surplus identity, the sort-and-pair equivalence; four local mechanisms refuted with minimal witnesses. STRONGEST CORRECTION: every critic-proposed sufficient condition (local-first residual matching; rooted export; rooted-subtree rule) held to order 16 and is refuted by the order-22 tree; T1's 'obstruction' and T2's 'not past distance 1' struck. Lean readiness: sdr_iff_threshold ready now (graph-general, all t incl. 0 — no tree hypothesis); the pendant-path lemma ready after its second read; BTP informal, needs supporting lemmas; tree_leaf_slot_dominance WITHDRAWN as a target. Stop gate (b) supported pending SR-HS-REF. Disclosures: one harness-backgrounded command stopped by task id; a copy of T2's return placed in the SESSION scratchpad outside the run root and deleted (a path-hygiene disclosure, no effect); the controller facts record pointed it at the counterexample before its search (as intended — facts are replays, not evidence); CLAUDE.md/memory injected by the harness."
+    },
+    {
+      "id": "R28-N-27",
+      "date": "2026-09-25",
+      "note": "SR-HS-REF returned: HR-1 confirmed, HR-2 confirmed, HR-3 confirmed_with_repairs, HR-4 confirmed_with_repairs (seal c6e02913… verified 85/85). The order-22 counterexample R(3,2)_3 reproduced by three independent methods (2^22 brute force, rerooting DP, deletion recursion); fails at k = 12 (t = 18) and k = 11 (t = 137..141), no other k; (DL), the r27 identity and the slot count hold at every k; refutes (HS) and (HS-SDR) only. R(d,m) hand proof correct at proved_informal (m ≥ 2 and d ≥ 3 both necessary). MINIMALITY: centroid-based enumerator, exhaustive to order 22 (A000055 matched throughout); zero failures to order 21 (two instruments now); order 22: exactly ONE failing tree among 5,623,756 — uniqueness on one instrument (bounded_computation). Fallen with it (must not be registered as open): C-T2-U's Rooted Export Conjecture; C-F2-T's '(HS) for connected |E| ≤ n graphs'. Repairs: BTP's grade stands only after its own second read; the refutation key's statement opens by naming (HS) ('dominance' also names the true pendant-path lemma); the r27 reformulation key's scope still calls Hall/SDR OPEN → scope-note record. Registration text R1–R4 in the deliverable. Process: one own script hung past the tool timeout, harness-backgrounded, killed by literal PID (31354, 31357); all numbers from foreground reruns. §5(b) IS MET: two independent instruments (C-F1-T, C-F1-U; also the T adjudicator) and the isolated second read agree. The run ENDS at the Cycle 1 close once the synthesis rules; Stage 7 is scoped to the surviving true statements."
+    },
+    {
+      "id": "R28-N-28",
+      "date": "2026-09-25",
+      "note": "Second reads SR-PP (26d6eeac…, 59 members) and SR-BTP (d205f715…, 66 members) sealed and dispatched concurrently with Stage 5 — the surviving STATED items (pendant-path lemma; surplus identity; SDR ⟺ threshold; the k = 1 criterion/fences as scope notes; refuted local mechanisms; Theorem BTP; the residue class and fallen conjectures; the second proof of (DL) on the path-like class). A path-literal quotation record was filed for SR-HS-REF's disclosure (it quotes the harness scratch root). SR-HS-REF disclosed a `pgrep -f` pattern LISTING (no pattern kill) — recorded; Cycle 2 brief text would say: locate own jobs by PID files/`jobs`, never pgrep -f."
+    },
+    {
+      "id": "R28-N-29",
+      "date": "2026-09-25",
+      "note": "U adjudication returned: status refuted (own construction W22 = the order-22 tree, three computations + hand: centre 18 vs leaves 17 at k = 12; also fails at k = 11); material_progress yes; plateau no. Three contract-ready award groups: (LC) tree form with the graph-general t ≥ 1 form as a scope note; the SDR/threshold equivalence at t ≥ 1 on trees (needs C-U2-F's tree lemma for the t = 0 row — C-U2-F upheld over C-U2-T; K_4 at k = 2 witness); (FC) at the corrected ∀ a ≤ k statement, credited to C-U2-T. The two U1 critics' Lean proofs of the r27 reformulation = a scope-note upgrade, not an award. slot_leaf_sdr_exists / tree_leaf_slot_dominance FALSE — never to be proved or carried. Record corrections: neither U1 nor U2 carries indepDegreeSum byte-identically; U2's 841 misattribution; the controller facts record's Mathlib path is wrong — Fintype.sum_equiv is at Mathlib/Algebra/BigOperators/Group/Finset/Defs.lean:722 (facts record corrected here, not edited: it is sealed in the U capsule). Erratum R28-E-e: the adjudicator protocol template still says three returns / six critiques (r27's seating) where U has two/four."
+    },
+    {
+      "id": "R28-N-30",
+      "date": "2026-09-25",
+      "note": "SR-BTP returned: BT-1/2/3 confirmed_with_repairs (seal d205f715… 66/66). BT-1 Theorem BTP proof canonical: each branch vertex has deg − b(v) pendant directions (acyclicity); own-leaf sets of distinct branch vertices are disjoint; the pendant-path lemma gives c_ℓ ≥ c_v on own leaves → the own-leaves map is an SDR; needs NO Hall, no slot count, no surplus identity, no connectivity, no n ≥ 2/k ≥ 1/t ≥ 1 (holds at t = 0 too); exact branch-tree definition incl. 0/1 branch vertices; ℕ guards recorded; key renamed E993-R28-LEAF-SLOT-DOMINANCE-BRANCH-TREE-MAX-DEGREE-LE-2 (alias-clean); replay on an independent WROM generator to order 18 (155,290 trees; 2,991,832 instances; 0 failures). BT-2: sharpness for EVERY D ≥ 3 (R(D,2) has branch tree K_{1,D} and fails; D = 3, 4, 5 computed); residue counts replayed and extended to order 18 (3,365; 10,853; 34,088); (HS) holds on the residue to order 18 on its own run; every proposed sufficient condition falls to R(3,2)_3 (local-first residual = R-SDR; residual-Hall; rooted export at every root; rooted-subtree at every leaf root; |E| ≤ n; plus fractional matching and matching into leaves ∪ degree-2 vertices); at both failing k, c_0 is the STRICT maximum over all 22 vertices — any surviving matching-type strengthening must relax the pairwise comparison itself (multiplicative relaxation untested). BT-3: U1's LC kernel-checked on a copy with the pinned toolchain; the composition BTP + LC is proved_informal, registered as a SCOPE NOTE on E993-R27-FOREST-DEGREE-LEMMA, never a key. Disclosures: two grep globs over-matched non-member files (five lines of the U1 critiques printed; unused); one ls of seat names."
+    },
+    {
+      "id": "R28-N-31",
+      "date": "2026-09-25",
+      "note": "SR-PP returned: PP-1 confirmed; PP-2..5 confirmed_with_repairs (seal 26d6eeac… 59/59). PP-1: six critic proofs are ONE proof (cut the pendant path; induced-subgraph monotonicity); canonical key E993-R28-PENDANT-PATH-LEAF-DOMINANCE (strict extension of E993-PAIR-R-LE-G-POINTWISE clause (i) along the path incl. the anchor); replay 0 failures on all trees to order 13, all labelled graphs to order 6, 3,000 random graphs; negative control passed. PP-2: the per-vertex identity |own(v)| − (deg v − 2) = 2 − b(v) is the statement of record (the sum needs Br ≠ ∅); H10 minimal and unique by proof. PP-3: general graphs need all t incl. 0 (K_4, diamond at k = 2; K_{2,3} at k = 3); trees: t ≥ 1 suffices; U2's all-t sdr_iff_threshold correct. PP-4: 'bipartite failures are exactly |E| > n at k = 1' is FALSE in general — R(3,2)_3 is bipartite with |E| = n − 1 and fails at k = 11, 12 while passing the (1,1) row (holds on connected bipartite only to order 7); (HS) ⇒ (DL) with t ≥ 1 on every graph (47,799 (DL)-failure instances, no exception); ruling: two scope notes (on the K1 criterion key and the r27 reformulation key), no new keys. PP-5: five refuted mechanisms in ONE record E993-R28-HS-LOCAL-MECHANISMS (REFUTED), witnesses order-minimal and unique; monotonicity must be anchored at a branch vertex; minimality proved for M1–M3, computational for M4–M5. For Stage 7: U2's Main.lean still contains the false slot_leaf_sdr_exists / tree_leaf_slot_dominance — drop before any carry; F2's leaf-support key and T1's Part A duplicate a registered key. Disclosure: read back three oversized tool outputs from the harness's tool-results folder (capsule-member text)."
+    },
+    {
+      "id": "R28-N-32",
+      "date": "2026-09-25",
+      "note": "F adjudication returned: status refuted (own instrument over all 2^22 subsets + DP + hand closed form reproduces T22 exactly; fails at k = 12 t = 18 and k = 11 t = 137–141; (DL) holds at every k); material_progress yes; plateau no. The two critics' families merge into ONE family U(d, m, r) (d ≥ 3 hubs, m ≥ 2 legs of 2r + 1 edges; root beats every leaf by r; deficit d − 2 unbounded) — adjudicator-derived, STATED, checked mechanically on every member with d = 3–6, m = 2–5, r = 1–3, order ≤ 90; second read owed (small). Order 21 clear on TWO reconciled instruments (C-F1-T's own; F1's as run by C-F1-U) — correcting the controller facts record. Refuted additionally: the unicyclic-only form (T22 + edge {0,3}; 75 of 210 single-edge additions fail); F2's k ≥ α − 1 relaxation (at 22); (PW) witness order 9 confirmed. Surviving strengthening candidates (narrow evidence, all failures tested are two-level hubs): prefix dominance with offset 1 or 2 (P_1, P_2; P_2 at full length is exactly the leaf/branch form of (DL)); weak majorization and additive repairs fail. No F award group ready for Lean; the refutation record ready once SR-HS-REF confirms (it has). Disclosures: one harness-backgrounded run stopped by task id; no listing; CLAUDE.md/memory injected."
+    },
+    {
+      "id": "R28-N-33",
+      "date": "2026-09-25",
+      "note": "Stage 5 admitted 3/3 (0 findings) and sealed aeb6d030…; Stage 6 dispatch sealed 3f8bbec3… (11 files, path-check 0) with the finalized controller facts (three adjudications; three second reads complete; §5(b) met on the record; the surviving award candidates named); synthesis (Opus 5 high) launched with the instruction to rule explicitly on §5(b) and scope Stage 7 to surviving true statements."
+    },
+    {
+      "id": "R28-N-34",
+      "date": "2026-09-25",
+      "note": "Synthesis admitted (flags headline_resolved no / material_progress yes / plateau no / continue no); Stage 6 sealed 3f4edb7a…. Continuation ruling: §5(b) MET explicitly; the run ENDS at the Cycle 1 close; no Cycle 2. Stage 7 funded: C1-LA2 (LC + the r27 reformulation formal upgrade; carry and rebuild), C1-LA3 (corrected (FC) at ∀ a ≤ k + the SDR/threshold equivalence; carry and rebuild), C1-LA4 (pendant-path leaf dominance; bounded attempt), C1-LA5 (Theorem BTP + composition with (LC) = a second formal proof of (DL) on the btd ≤ 2 class; bounded attempt after LA4 and LA2). C1-LA1 no award attempted (false). Not funded: a formal refutation (admissible in principle by kernel decide on one instance — not a universal step — but infeasible naively), P_1/P_2. Registrations A1–A15 (per the second reads' texts), STATED items B (owed reads: the r ≥ 2 part of U(d,m,r); (HS) at k ≤ 2; the unicyclic counterexample and census; the deletion recurrence note; (PW) order-9 minimality; P_1/P_2 candidates; T's odd-leg claim), synthesis-first items C. Erratum R28-E-f: the synthesis dispatch template asked for a 9-route Cycle 2 portfolio (r27 residue in r28_tool.py's synthesis_message) while the protocol says 6 — moot (no Cycle 2). Carry files frozen: sources/c1-stage7-sources/ (7 files; digests match the synthesis prefixes 74ab2108/35b10eb0/7ae3f19e/5d71c16b/46be4587/824c7609; Audit.lean 59e28fa8)."
+    },
+    {
+      "id": "R28-N-35",
+      "date": "2026-09-25",
+      "note": "Stage 7 dispatched: capsules C1-LA2 803d725a… (39 files), C1-LA3 cd079387… (41), C1-LA4 d09c1c24… (43); each includes the Stage 6 manifest, protocol, contracts, synthesis, the three adjudications, the three second reads, the Stage 6 facts, the carry files, and the r25/r27 award LeanProjects (auto-included). Briefs carry the standing facts ((HS) false; the two false U2 declarations never carried), R1–R7 incl. the r27 entry-7 indepDegreeSum replacement and the truthful-provenance rule, and the pinned-project rule (R28-I-1). Three Opus 5 high formalizers launched; LA5 after LA4/LA2. Path-check 0 findings on all three."
+    },
+    {
+      "id": "R28-N-36",
+      "date": "2026-09-25",
+      "note": "C1-LA2 returned compiled-candidate, kernel verified: Erdos993G1.dominance_implies_degree_lemma byte-identical to §2 (hT unused; R28-E-a on the face); 33 declarations at the three axioms; r25 entries 1 and 4 and r27 entry 7 byte-identical with digests reproduced (U1's indepDegreeSum replaced); U1's six lemmas; C-U1-F's 13 companions (weight_identity, leaf_branch_identity_general, tree_leaf_branch_identity, dominance_implies_degree_lemma_general, tree_slots_le_leaves_zero, tree_forall_t_of_ge_one, tree_slot_count, tree_degree_lemma_iff …) and C-U1-T's 7 (incl. dominance_implies_degree_lemma_graph_general, tree_slot_count, tree_DL_iff_aggregate) — the r27 reformulation formalized; nothing from U2 carried. Deviations recorded: registrar ordering (r27 entry 7 and the definitions before r25 entry 4); theorem→lemma keyword on critic declarations (byte-reversal script shipped); axioms.txt rewritten by the verifier per its contract; the verifier's toolchain path via ~/.elan/bin (v4.32.2 already present; nothing fetched). Two Opus 5 high reviewers dispatched."
+    },
+    {
+      "id": "R28-N-37",
+      "date": "2026-09-25",
+      "note": "C1-LA3 returned compiled-candidate, kernel verified: forest_degree_lemma_of_tree_degree_lemma terminal (∀ a ≤ k — R28-E-c), sdr_iff_threshold_pos_of_tree as the SDR face (t ≥ 1; R28U2.Slot), 51 declarations at the three axioms; r25 entries 1/4 and r27 entry 7 byte-identical (digests reproduced); 46 carried (12 byte-identical; 34 keyword/whitespace-only — theorem→lemma ×19, line breaks after private/@[simp] ×15; DRAFTS/transport.py reverses each) + 2 in-run; the two false declarations absent (prose in one carried docstring only); r27's forest_degree_lemma not carried. Rulings: transport accepted; entry order accepted; --run-id practice accepted. Reviewers dispatched with a §4 addendum."
+    },
+    {
+      "id": "R28-N-38",
+      "date": "2026-09-25",
+      "note": "C1-LA4 returned compiled-candidate, kernel verified: pendant_path_leaf_dominance byte-identical to the brief's block (binder order (k)(i), equivalent to the adjudicator's; recorded), 12 declarations at the three axioms; route: the two-step shift extended to a vertex permutation (exists_pendant_shift_perm) mapping independent sets containing u_i injectively into those containing the leaf; no critic Lean carried; nothing from U2. Disclosures: one scratch write to /tmp/.x (deleted; quotation record C1-STAGE7-PATH-LITERAL-QUOTATION-RECORD.json filed so its report can be sealed); the RUNTIME REPORTS THE MODEL AS claude-opus-5-5[1m] — the `opus` alias appears to resolve to Opus 5.5 now (the charter named Opus 5 with 5.5 'if available'; every Opus seat of this run may in fact be 5.5 — recorded as a transport fact; the seats state it on dispatch-record authority as instructed; subsequent reviewers asked to state what their runtime reports). Reviewers dispatched."
+    },
+    {
+      "id": "R28-N-39",
+      "date": "2026-09-25",
+      "note": "C1-LA5 capsule sealed 0b676979… (372 files, incl. the three sibling run roots minus .lake; sibling drift declared in build_r28_close.py) and the formalizer launched — BTP + composition with (LC) on the compiled LA4/LA2 sources (byte-identical carry; grade contingent on their closes). Six reviewers (LA2/LA3/LA4 × informal/fidelity) running concurrently."
+    },
+    {
+      "id": "R28-N-40",
+      "date": "2026-09-25",
+      "note": "C1-LA2 fidelity review match/passed (25cfdda7…; 20/0/1): terminal statement character-for-character §2 (hT present, unused; h over all t); r25 entries 1/4 and r27 entry 7 byte-identical; 29 carried declarations verbatim modulo theorem→lemma on 20; the two false names absent everywhere incl. build outputs; non-vacuity K_{1,3}; T22 breaks the hypothesis at exactly k = 11, 12 (reviewer's own enumeration). Warning: the contract omits the Hall attribution the common rules list for every award — LA2 does not use Hall; recorded as not applicable on the registration face. The reviewer's runtime reports claude-opus-5-5[1m] (second seat to report 5.5)."
+    },
+    {
+      "id": "R28-N-41",
+      "date": "2026-09-25",
+      "note": "C1-LA4 fidelity review match/passed (b5dbd1a6…; 30/0/0): terminal statement character-for-character the brief's §2 block and the contract's expected_statement; binder order (k)(i) recorded as equivalent to the adjudicator's; graph-general (IsTree only in a docstring saying it is absent); r25 entries 1/4 and r27 entry 7 byte-identical; occ/slotsAtLeast/leavesAtLeast exactly §2; no U2 declaration or r27 forest_degree_lemma; non-vacuity K_2, S(3,1,1), a non-tree. Brief numbering note (§5 refers to R7–R10 for §3's R3–R6) — erratum R28-E-g (cosmetic, inherited from the r27 brief skeleton; every condition mapped by content). Runtime reports claude-opus-5-5[1m] (third seat)."
+    },
+    {
+      "id": "R28-N-42",
+      "date": "2026-09-25",
+      "note": "C1-LA2 CLOSED formally_verified (VERIFICATION-REPORT 4b798538…): informal audit passed (bfcad7b1…; every identity and the implication recomputed on 269,747 labelled-graph instances to order 6, 83,039 free-tree instances to order 14 and T22 — the hypothesis fails at exactly (T22, 11) and (T22, 12) and (DL) holds there; nothing depends on the two false U2 declarations or on r27's forest_degree_lemma), fidelity match (25cfdda7…). Escalations recorded on the registration face, none a defect: the Hall attribution is not applicable to LA2 (the common rule lists it for every award); CAPSULE-VERIFICATION marks C-U1-F-Audit.lean 'carried' while the faces call it evidence only (no declaration of it is present — the faces are right); the cast-audit §5 lists the ℕ-subtraction sites incompletely (all guarded by 3 ≤ deg v). TRANSPORT FACT: the auditor notes this was not a second-FAMILY check — its runtime reports Opus 5.5, the same as the formalizer's; that is inherent to the charter (every Stage 7 seat is Opus) and is how r24–r27 ran; recorded, not a defect."
+    },
+    {
+      "id": "R28-N-43",
+      "date": "2026-09-25",
+      "note": "C1-LA3 fidelity review match/passed (cd9de21a…; 33/0/1): terminal (FC) byte-identical to the contract and the synthesis statement (tree hypothesis at every a ≤ k, same universe; acyclicity only in induce_supp_isTree); SDR face t ≥ 1 on trees, graph-general form all t; r25/r27 entries byte-identical; all 46 transports checked (34 reverse to verbatim declarations); the false names absent as declarations. Warning: contract description says 'entry 12' for indepCount_eq_card_indepSetFinset where the registrar placed it at entry 14 — a successor-record correction, not a contract edit. Controller ruling on the reviewer's note: the fidelity input omits no canonical field — dom-tree-carrier is a binder inside htree and appears verbatim in the projected hypothesis; the schema lists top-level binders only; the reviewer's judgement to proceed is upheld. Registration face to carry: the common attribution list and 'T22's threshold failure is exactly a matching failure'; the SDR lemma's axiom line rests on the build + axioms-all-declarations.txt (receipt probes the terminal). Runtime reports Opus 5.5 (fourth seat)."
+    },
+    {
+      "id": "R28-N-44",
+      "date": "2026-09-25",
+      "note": "C1-LA3 CLOSED formally_verified (VERIFICATION-REPORT cbcf87e8291befcf…): informal audit passed (6c6ef7d9…; convolutions with hsep/hdisj each necessary; bridge needs closure; the peel over components on general graphs incl. 486 cases where a component fails (DL) at a larger size; the single-k defect on K_4 ⊔ K_4; Hall ⟺ threshold at all t on any graph, t ≥ 1 sufficing on trees; K_4 at k = 2 fails the t ≥ 1 form; T22's threshold and matching failures coincide at k = 11, 12; all 46 transports reversed; the two proof chains share no declarations), fidelity match (cd9de21a…). Advisory N4 carried to the registration face: the contract's statement text omits the common attribution list (present in the informal proof). Both keys (FC; SDR equivalence) register formally_verified; the SDR lemma's axiom evidence is the verified build + axioms-all-declarations.txt."
+    },
+    {
+      "id": "R28-N-45",
+      "date": "2026-09-25",
+      "note": "C1-LA4 CLOSED formally_verified (VERIFICATION-REPORT 50dad967c641aaa1…): the pendant-path leaf dominance lemma, graph-general; informal audit passed (ef25321a…; the permutation route verified incl. the gap vertex, the i = 0 anchor and the m = 0 sub-case; 0 failures on all 2,288 free trees to order 13, all 33,867 labelled graphs to order 6, 2,820 random hosts with pendant paths and 1,500 random graphs; dropping hadj/hdeg2/hleaf each yields a counterexample; hinj unnecessary for the conclusion — a scope remark on the face, no record claims necessity), fidelity match (b5dbd1a6…). Minor: prose i−1/m−1 used only where i ≥ 1; a '§6' cross-reference should read §10. Disclosure: the auditor saw one sentence of the concurrent fidelity reviewer's notes while tracing the /tmp token (no effect)."
+    },
+    {
+      "id": "R28-N-46",
+      "date": "2026-09-25",
+      "note": "C1-LA5 returned compiled-candidate, kernel verified: Erdos993G1.forest_degree_lemma_on_pathlike_branch_trees (terminal; the composition of the BTP face leaf_slot_dominance_on_pathlike_branch_trees with the carried C1-LA2 reduction), class predicate BranchTreeMaxDegreeLeTwo in walk-avoiding-v form with entry 22 proving equivalence to the induced-subgraph wording; 31 declarations at the three axioms; route the direct own-leaves injection (no Hall; nothing from U2 or the carry files); 18 byte-identical carries (r25 1/4, r27 7, one copy of the definition layer, LA4 entries 7–11, LA2 entries 7–12), 2 keyword-only (accepted), 11 in-run. Capsule 362/377 at recheck (sibling lifecycle drift, declared). The seat's write of FORMALIZER-REPORT.md was refused by the harness (a permission refusal inside the subagent); the seat did not work around it; resumed with instructions to retry (Bash heredoc within its grant). Review setup run (assignment, canonical fidelity input, briefs with a §4 addendum); reviewers launch once the report exists. Runtime reports Opus 5.5."
+    },
+    {
+      "id": "R28-N-47",
+      "date": "2026-09-25",
+      "note": "C1-LA5's FORMALIZER-REPORT.md written on the resumed retry (8ea85707…; the first write had been refused by the harness's file tool, leaving a 12-byte stub; the retry succeeded through the normal tool; the four pinned digests unchanged). LA5's two Opus reviewers launched — the run's last review pair. Stage 7 state: LA2, LA3, LA4 closed formally_verified; LA5 under review."
+    },
+    {
+      "id": "R28-N-48",
+      "date": "2026-09-25",
+      "note": "C1-LA5 fidelity review match/passed (7b7069e4…; 25/0/0): terminal forest_degree_lemma_on_pathlike_branch_trees with hT and hB concluding the §2 (DL) inequality (hT genuinely used); class predicate on the face with entry 22's equivalence to the induced-subgraph wording; BTP face a lemma over all t; carried LA4/LA2 lemmas byte-identical modulo the recorded keyword; r25/r27 entries byte-identical; no Hall, no U2 objects; all three fences on the contract face; non-vacuity K_{1,3} and an order-9 caterpillar; T22 outside the class. Only build warning: the unused hT inside the carried LA2 lemma (R28-E-a, on record). Awaiting LA5's informal audit — the run's final review."
+    },
+    {
+      "id": "R28-N-49",
+      "date": "2026-09-25",
+      "note": "C1-LA5 CLOSED formally_verified (VERIFICATION-REPORT 4c216c044673d73a…): Theorem BTP formal and composed into a SECOND FORMAL PROOF OF (DL) ON THE btd ≤ 2 CLASS (a scope note on E993-R27-FOREST-DEGREE-LEMMA, never a (DL) key); informal audit passed (695727fb…; acyclicity only in exists_pendant_chain, hB only in exists_own_leaves; the synthesis's 'connectivity gives pendant paths / acyclicity gives disjointness' corrected to 'acyclicity gives pendant paths / the degree pattern gives disjointness' — the informal proof states it truthfully; the bowtie (two triangles sharing a vertex) satisfies the class predicate and breaks both faces at k = 1, so the tree hypothesis is necessary; entry 23's docstring mentions a, b ≥ 1 not assumed; the contract calls r27's forest_degree_lemma 'an input' though it is not a dependency), fidelity match (7b7069e4…). ALL FOUR AWARDS CLOSED in one pass each; no repair round in r28. Stage 7 complete."
+    },
+    {
+      "id": "R28-N-50",
+      "date": "2026-09-25",
+      "note": "CLOSE: registration run (control/register_c1_close.py): 10 E993-R28-* keys (2 REFUTED; 5 on formal awards — LC, FC, SDR/threshold, pendant-path lemma, BTP; 1 proved_informal; 1 bounded_computation); scope notes on five prior keys (statuses unchanged); run-local registry 392 → 402; ledger 312 rows. Close documents finalized (LEAN-GATE-CLOSEOUT, CYCLE-CLOSE, CONTROLLER-REVIEW-R28; placeholders resolved). Notes frozen here before the terminal seal; anything later is a post-close addendum in the VerityOS records."
+    }
+  ],
+  "errata": [
+    {
+      "id": "R28-E-a",
+      "date": "2026-09-25",
+      "text": "SOLUTION-CONTRACT §2's dominance_implies_degree_lemma hypothesis `∀ t : ℕ, slotsAtLeast ≤ leavesAtLeast` includes t = 0, which holds on trees (|L| − 2 ≤ |L|) but fails on non-trees; harmless for the tree-hypothesis target, but the graph-general form (C-U1-T) needs t ≥ 1. The formalizer records the quantifier choice on the face. Not edited after seal."
+    },
+    {
+      "id": "R28-E-b",
+      "date": "2026-09-25",
+      "text": "SEMANTIC-CONTRACT §2 (PW) cites r27 C-T2-U's order-5 witness (S(2,1,1), k = 3, c_2 = 2 > c_4 = 1) — both vertices are leaves, so it refutes 'c_v ≤ c_ℓ for all vertex pairs', not the branch-vs-leaf form the contract states. The branch-vs-leaf form is false with smallest witness order 9, k = 5 (C-T1-U). The fence is unchanged; the witness is corrected on the synthesis's face and in the r27 key's scope note at the close. Not edited after seal."
+    },
+    {
+      "id": "R28-E-c",
+      "date": "2026-09-25",
+      "text": "SOLUTION-CONTRACT §2 forest_degree_lemma_of_components: the hypothesis hcomp must hold at every size a ≤ k (not only k) for the convolution composition to go through; as written it is provable on forests only by citing r27's (DL) with hcomp unused. The synthesis fixes the Stage 7 statement to the ∀ a ≤ k form (or the 'DL on every tree ⇒ DL on every forest' form the critics compiled). Not edited after seal."
+    },
+    {
+      "id": "R28-E-d",
+      "date": "2026-09-25",
+      "text": "The critic dispatch template in r28_tool.py (a sealed Stage 3/4 member) still read 'the headline is (RC) formally verified' — r26 residue inside a Python f-string that the residue check did not catch (its token list lacked '(RC)'). Every critic reported headline_resolved: no as required, so no effect. Tool patched after the Stage 4 seal (recorded drift, as in r27: the toolkit is a living member between stages); '(RC)', '(RI)', '(DL)+(EX)', '(LB)' added to the residue tokens; the Stage 5 and 6 templates checked clean."
+    },
+    {
+      "id": "R28-E-e",
+      "date": "2026-09-25",
+      "text": "C1-ADJUDICATOR-PROTOCOL.md (sealed) describes an orientation's portfolio as three returns and six critiques (r27's 9/18 seating); r28 is 6/12, so two returns and four critiques. No effect. Not edited after seal; fixed in any Cycle 2 protocol."
+    },
+    {
+      "id": "R28-E-f",
+      "date": "2026-09-25",
+      "text": "r28_tool.py's synthesis dispatch template said 'Cycle 2 portfolio (3 routes per orientation)' / nine routes — r27 residue; the r28 protocol says two per orientation. Moot: the synthesis ruled no Cycle 2. Patched in the tool after the Stage 6 seal."
+    },
+    {
+      "id": "R28-E-g",
+      "date": "2026-09-25",
+      "text": "The Stage 7 formalizer briefs' §5 cross-references (R7 contract, R8 axioms, R9 informal proof, R10 salvage) are offset from the §3 numbering (R3–R6) — inherited from the r27 skeleton (r27 erratum R27-E-f). Cosmetic; conditions identified by content. Not edited after seal."
+    }
+  ],
+  "incidents": [
+    {
+      "id": "R28-I-1",
+      "date": "2026-09-25",
+      "incident": "The U adjudicator ran `lake env lean` once OUTSIDE the pinned project directory; elan resolved a default toolchain and DOWNLOADED AND INSTALLED Lean v4.34.1 into ~/.elan/toolchains (a network fetch and an install, both against the standing rules). Every reported build used the pinned v4.32.2 inside the project; nothing depends on the stray toolchain. The seat disclosed it fully. The toolchain directory is left in place for Ashton's decision (removing files outside the run root is not the controller's call); recommended action: `elan toolchain uninstall leanprover/lean4:v4.34.1` — or leave it, since it is inert. Rule text for Cycle 2/successors: always `cd` into the pinned project before any `lake`/`lean` invocation; set ELAN_TOOLCHAIN or never invoke lake outside a project."
+    }
+  ],
+  "frozen_at_terminal_seal": "2026-09-25"
+}

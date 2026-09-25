@@ -929,7 +929,7 @@
     {
       "claim_key": "E993-PAIR-R-LE-G-POINTWISE",
       "statement": "Pointwise domination (TWO instances of induced-subgraph monotonicity, both true - repair r20 C9, U R-1): for any graph G with a leaf/support pair (v,u): (i) r <= g coefficientwise (i(G-N[u]) <= i(G-N[v]) - the instance this row's key and aliases name); (ii) g <= f coefficientwise (i(G-N[v]) <= i(G-v) - the instance the prior statement's inline formula displayed). The C9 record notes the u1-direction limb as the mechanism excluding several abstract witness classes ((X1)).",
-      "scope": "any graph with a leaf/support pair; registered ON ITS PROOF. Discriminating power of record: kill rate 93.84% at the lengths-2-5 box, of which 84.5% is the index-0 coordinate (a weakened form of the registered r0=1); honest marginal given r0=1 is 64.7% (224->79); net kills at the net-zero chain's terminus are ZERO; at the sealed lengths-2-4 box the lemma contributes nothing beyond r0<=1 (111/111 index-0)",
+      "scope": "any graph with a leaf/support pair; registered ON ITS PROOF. Discriminating power of record: kill rate 93.84% at the lengths-2-5 box, of which 84.5% is the index-0 coordinate (a weakened form of the registered r0=1); honest marginal given r0=1 is 64.7% (224->79); net kills at the net-zero chain's terminus are ZERO; at the sealed lengths-2-4 box the lemma contributes nothing beyond r0<=1 (111/111 index-0) r28 Cycle 1 (2026-09-25): corroborated: r28 seats T1, T2 and F2 re-derived clause (i) (leaf ≥ support, c_ℓ(k) ≥ c_s(k)) by the subset argument; it is the m = 1 case of E993-R28-PENDANT-PATH-LEAF-DOMINANCE, which extends it along the whole pendant path. Status unchanged.",
       "status": "VERIFIED",
       "certificate": "proved_informal, r20 C4 (C4-GATE-RECORD par.3 N2): route T1 proof re-derived by ADJ-T via induced-subgraph monotonicity; independent second proof via branch factorization survives on the repaired N3 form; the sign-and-domination route to R2 is proved insufficient by the zero net marginal",
       "smallest_witness_order": null,
@@ -938,6 +938,20 @@
       ],
       "alias_patterns": [
         "R-LE-G-POINTWISE"
+      ],
+      "terminal_history": [
+        {
+          "run": "erdos-993-degree-lemma-hall-sdr-dre-2026-09-24 (r28)",
+          "cycle": 1,
+          "date": "2026-09-25",
+          "event": "corroboration note; status unchanged"
+        },
+        {
+          "run": "erdos-993-degree-lemma-hall-sdr-dre-2026-09-24 (r28)",
+          "cycle": 1,
+          "date": "2026-09-25",
+          "event": "corroboration note; status unchanged"
+        }
       ]
     },
     {
@@ -36660,7 +36674,7 @@
     {
       "claim_key": "E993-R27-FOREST-DEGREE-LEMMA",
       "statement": "(DL) For every finite forest G (finite carrier X, G.IsAcyclic) and every natural k: Σ_{J ∈ I_k(G)} Σ_{v ∈ J} deg_G(v) ≤ 2k·i_k(G), in ℤ, with i_k = Erdos993G1.indepCount and I_k the independent k-subsets. No α hypothesis, no k ≥ 1, no connectivity; instance binders on a general Type u carrier.",
-      "scope": "Lean: Erdos993G1.forest_degree_lemma (registered `lemma` kind inside award C1-LA1; statement byte-identical to SOLUTION-CONTRACT §2). Acyclicity is load-bearing (K4−e violates at k = 1; the statement is FALSE on K_{2,3}; every cycle C_n satisfies it with equality at every k). Excluded conclusions: tightness (never tight at k ≥ 1 with i_k > 0 — see E993-R27-FOREST-DEGREE-LEMMA-EQUALITY-CLASSIFICATION); that (DL) certifies acyclicity (only the root-corrected k = 1 form does); any pointwise degree claim; any no-recovery reading. Fence §3.1: an order bound / counting statement whose contrapositive has sign Δ_k ≥ 0; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE (OPEN), E993-G1WIDE-NO-SIZE-CAP (OPEN), NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the all-rank aggregate or Erdős #993. §3.2 nothing asymptotic. §3.3 (DL) is an average over I_k; no pointwise degree statement. §3.6 every Lean declaration authored in-run; no external Lean text (the audit copy carries no LICENSE). §3.7 attribution travels on this face.",
+      "scope": "Lean: Erdos993G1.forest_degree_lemma (registered `lemma` kind inside award C1-LA1; statement byte-identical to SOLUTION-CONTRACT §2). Acyclicity is load-bearing (K4−e violates at k = 1; the statement is FALSE on K_{2,3}; every cycle C_n satisfies it with equality at every k). Excluded conclusions: tightness (never tight at k ≥ 1 with i_k > 0 — see E993-R27-FOREST-DEGREE-LEMMA-EQUALITY-CLASSIFICATION); that (DL) certifies acyclicity (only the root-corrected k = 1 form does); any pointwise degree claim; any no-recovery reading. Fence §3.1: an order bound / counting statement whose contrapositive has sign Δ_k ≥ 0; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE (OPEN), E993-G1WIDE-NO-SIZE-CAP (OPEN), NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the all-rank aggregate or Erdős #993. §3.2 nothing asymptotic. §3.3 (DL) is an average over I_k; no pointwise degree statement. §3.6 every Lean declaration authored in-run; no external Lean text (the audit copy carries no LICENSE). §3.7 attribution travels on this face. r28 Cycle 1 (2026-09-25): the Hall/SDR route (HS) to a second proof is REFUTED (the order-22 tree R(3,2)_3 = T22 (a root joined to three hubs, each hub carrying two pendant paths of three edges; 22 vertices, 21 edges; branch tree K_{1,3}); E993-R28-DOMINANCE-REFUTATION); (DL) holds on T22 at every k and is unaffected. A second, matching-type proof of (DL) exists on the proper subclass of trees whose branch tree has maximum degree ≤ 2 (Theorem BTP composed with the layer-cake reduction: E993-R28-LEAF-SLOT-DOMINANCE-BRANCH-TREE-MAX-DEGREE-LE-2 + E993-R28-DOMINANCE-IMPLIES-DEGREE-LEMMA), formally verified on that class in award C1-LA5 — an alias distinction, not a (DL) key; this award (the injection proof) remains the (DL) of record on all forests.",
       "status": "VERIFIED",
       "evidence_grade": "formally_verified",
       "formal_award": true,
@@ -36697,6 +36711,18 @@
           "cycle": 1,
           "date": "2026-09-24",
           "event": "registered VERIFIED at formally_verified (first registration; the FLNYZ result was absent from the registry)"
+        },
+        {
+          "run": "erdos-993-degree-lemma-hall-sdr-dre-2026-09-24 (r28)",
+          "cycle": 1,
+          "date": "2026-09-25",
+          "event": "scope note: SDR route refuted; second proof on the btd ≤ 2 class recorded; status unchanged"
+        },
+        {
+          "run": "erdos-993-degree-lemma-hall-sdr-dre-2026-09-24 (r28)",
+          "cycle": 1,
+          "date": "2026-09-25",
+          "event": "scope note: SDR route refuted; second proof on the btd ≤ 2 class recorded; status unchanged"
         }
       ]
     },
@@ -37048,7 +37074,7 @@
     {
       "claim_key": "E993-R27-DEGREE-LEMMA-K1-ACYCLICITY-CRITERION",
       "statement": "For ANY finite simple graph G (order n, |E| edges, c components; a_v(1) = 1 so M_1 = c): D_1(G) + 2c ≤ 2·i_1(G) ⟺ |E| + c ≤ n ⟺ G is acyclic. Recorded fact about plain (DL) on non-forests (no second key): D_1 ≤ 2·i_1 ⟺ |E| ≤ n, with equality ⟺ |E| = n — plain (DL) does not certify acyclicity (every cycle C_n satisfies (DL) with equality at every k; unicyclic graphs are tight at k = 1); order-minimal failures K_4 and K_{2,3} (the latter failing at k = 1 and 2); edge-minimal failure K_4 − e.",
-      "scope": "Finiteness only; acyclicity is the CONCLUSION of the root-corrected form. Registration fence: the plain k = 1 form gets no key of its own and is never described as an acyclicity criterion; witnesses labelled order-minimal vs edge-minimal. The 'excess-1 never fails at k ≥ 2' observation is bounded_computation and not part of this face. Fence §3.1: an order bound / counting statement whose contrapositive has sign Δ_k ≥ 0; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE (OPEN), E993-G1WIDE-NO-SIZE-CAP (OPEN), NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the all-rank aggregate or Erdős #993. §3.2 nothing asymptotic. §3.3 (DL) is an average over I_k; no pointwise degree statement. §3.6 every Lean declaration authored in-run; no external Lean text (the audit copy carries no LICENSE). §3.7 attribution travels on this face.",
+      "scope": "Finiteness only; acyclicity is the CONCLUSION of the root-corrected form. Registration fence: the plain k = 1 form gets no key of its own and is never described as an acyclicity criterion; witnesses labelled order-minimal vs edge-minimal. The 'excess-1 never fails at k ≥ 2' observation is bounded_computation and not part of this face. Fence §3.1: an order bound / counting statement whose contrapositive has sign Δ_k ≥ 0; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE (OPEN), E993-G1WIDE-NO-SIZE-CAP (OPEN), NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the all-rank aggregate or Erdős #993. §3.2 nothing asymptotic. §3.3 (DL) is an average over I_k; no pointwise degree statement. §3.6 every Lean declaration authored in-run; no external Lean text (the audit copy carries no LICENSE). §3.7 attribution travels on this face. r28 Cycle 1 (2026-09-25): cross-reference (r28 F2 §4, C-F2-U, SR-PP PP-4): the (k, t) = (1, 1) row of the leaf/slot dominance condition holds on any finite graph iff |E| + Z ≤ n (Z the isolated vertices), the k = 1 instance of the weight identity; F2's characterization 'bipartite (HS) failures are exactly |E| > n at k = 1' is FALSE (T22 is bipartite with |E| = n − 1 and fails at k = 11, 12) and is not registered. Status unchanged.",
       "status": "VERIFIED",
       "evidence_grade": "proved_informal",
       "formal_award": false,
@@ -37081,6 +37107,18 @@
           "cycle": 1,
           "date": "2026-09-24",
           "event": "registered VERIFIED at proved_informal after SR-RC"
+        },
+        {
+          "run": "erdos-993-degree-lemma-hall-sdr-dre-2026-09-24 (r28)",
+          "cycle": 1,
+          "date": "2026-09-25",
+          "event": "cross-reference note; status unchanged"
+        },
+        {
+          "run": "erdos-993-degree-lemma-hall-sdr-dre-2026-09-24 (r28)",
+          "cycle": 1,
+          "date": "2026-09-25",
+          "event": "cross-reference note; status unchanged"
         }
       ],
       "second_read_registration_text": "second-reads/SR-RC/SECOND-READ.md ## Registration text KEY 3"
@@ -37286,7 +37324,7 @@
     {
       "claim_key": "E993-R27-POTENTIAL-SEPARATED-UNION-CONVOLUTION",
       "statement": "Notation (travels): for a vertex subset S, deg_S(v) = |N(v) ∩ S|, N_S[v] = (N(v) ∪ {v}) ∩ S, I_k(S) the independent k-subsets of S, i_k(S) = |I_k(S)|, D_k(S) = Σ_{J∈I_k(S)} Σ_{v∈J} deg_S(v), c_v^S(k) = #{J ∈ I_k(S) : v ∈ J}; ℤ-valued families indexed by k ∈ ℕ; x·p the shift ((x·p)(0) = 0, (x·p)(k+1) = p(k)); product = convolution; potentials Z_S(k) = i_k(S); D_S(r)(k) = 2k·i_k(S) − D_k(S) − 2·c_r^S(k) (r ∈ S); E_S(r)(k) = Σ_{J∈I_k(S∖{r})} Σ_{v∈J} (2 − deg_S(v)) − i_k(S∖{r}) + i_k(S∖N_S[r]); D0_S(k) = 2k·i_k(S) − D_k(S). Let A, B be disjoint vertex subsets of a finite simple graph with no G-edge between them. For every k: i_k(A ∪ B) = Σ_{a+b=k} i_a(A)·i_b(B); D_k(A ∪ B) = Σ_{a+b=k} [D_a(A)·i_b(B) + i_a(A)·D_b(B)]; D0_{A∪B} = D0_A·Z_B + Z_A·D0_B; Q_{A∪B} = Q_A·Z_B + Z_A·Q_B with Q_S = D_S(root_S), one root per piece. Consequence: (DL) on A and on B implies (DL) on A ∪ B (2a + 2b = 2k), and the root-corrected form carries identically — the tree case of (DL) is the whole problem; the multi-component step needs no generating function, no product-nonnegativity lemma.",
-      "scope": "Finiteness and separation only; NO acyclicity (5,625 arbitrary-graph pairs of order ≤ 4, 81,225 doubly-rooted instances, 0 failures). Refutes T2's Part 1 Step 3 diagnosis that the forest layer is a debt requiring T1's mechanism (the refutation is C-T2-U's and C-T2-F's). Fence §3.1: an order bound / counting statement whose contrapositive has sign Δ_k ≥ 0; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE (OPEN), E993-G1WIDE-NO-SIZE-CAP (OPEN), NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the all-rank aggregate or Erdős #993. §3.2 nothing asymptotic. §3.3 (DL) is an average over I_k; no pointwise degree statement. §3.6 every Lean declaration authored in-run; no external Lean text (the audit copy carries no LICENSE). §3.7 attribution travels on this face.",
+      "scope": "Finiteness and separation only; NO acyclicity (5,625 arbitrary-graph pairs of order ≤ 4, 81,225 doubly-rooted instances, 0 failures). Refutes T2's Part 1 Step 3 diagnosis that the forest layer is a debt requiring T1's mechanism (the refutation is C-T2-U's and C-T2-F's). Fence §3.1: an order bound / counting statement whose contrapositive has sign Δ_k ≥ 0; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE (OPEN), E993-G1WIDE-NO-SIZE-CAP (OPEN), NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the all-rank aggregate or Erdős #993. §3.2 nothing asymptotic. §3.3 (DL) is an average over I_k; no pointwise degree statement. §3.6 every Lean declaration authored in-run; no external Lean text (the audit copy carries no LICENSE). §3.7 attribution travels on this face. r28 Cycle 1 (2026-09-25): the consequence clause '(DL) on components ⇒ (DL) on the forest' is formally verified at the corrected hypothesis (every a ≤ k) in award C1-LA3 as E993-R28-FOREST-DEGREE-LEMMA-FROM-TREES; the Lean form is ambient-degree and Finset-relative with `bridge` covering adjacency-closed sets. The r28 SOLUTION-CONTRACT §2 stated the component hypothesis at a single k; that is a defect (R28-E-c; witness K_4 ⊔ K_4 at k = 2) — the hypothesis must hold at every a ≤ k. Status unchanged.",
       "status": "VERIFIED",
       "evidence_grade": "proved_informal",
       "formal_award": false,
@@ -37317,6 +37355,18 @@
           "cycle": 1,
           "date": "2026-09-24",
           "event": "registered VERIFIED at proved_informal after SR-JOIN"
+        },
+        {
+          "run": "erdos-993-degree-lemma-hall-sdr-dre-2026-09-24 (r28)",
+          "cycle": 1,
+          "date": "2026-09-25",
+          "event": "scope note: formal consequence clause at the corrected hypothesis; status unchanged"
+        },
+        {
+          "run": "erdos-993-degree-lemma-hall-sdr-dre-2026-09-24 (r28)",
+          "cycle": 1,
+          "date": "2026-09-25",
+          "event": "scope note: formal consequence clause at the corrected hypothesis; status unchanged"
         }
       ],
       "second_read_registration_text": "second-reads/SR-JOIN/SECOND-READ.md ## Registration text 2"
@@ -37361,7 +37411,7 @@
     {
       "claim_key": "E993-R27-TREE-LEAF-BRANCH-REFORMULATION-ORDER-GE-2",
       "statement": "Let T be a finite tree with 2 ≤ n = |V(T)|, L = {v : deg v = 1}, Br = {v : deg v ≥ 3}. For every k, in ℤ: 2k·i_k(T) − D_k(T) = Σ_{l∈L} c_l(k) − Σ_{v∈Br} (deg v − 2)·c_v(k); hence (DL) at k ⟺ Σ_{v∈Br} (deg v − 2)·c_v(k) ≤ Σ_{l∈L} c_l(k); and the slot count, in ℤ: Σ_{v∈Br} (deg v − 2) = |L| − 2.",
-      "scope": "2 ≤ n is required for the identity and the slot count, and only for them (at n = 1: L = Br = ∅, slot count reads 0 = −2, identity at k = 1 reads 2 = 0); the biconditional's truth value is NOT falsified at n = 1 (both sides hold), so 2 ≤ n is justified by the identity, not by a counterexample to the equivalence. The general weight identity 2k·i_k − D_k = Σ_v (2 − deg v)·c_v(k) holds for every finite graph. Formalization: slot count in ℤ (over ℕ it is provable by truncation and the defect is invisible); deg v − 2 guarded by deg v ≥ 3 or cast to ℤ; n ≤ 1 discharged separately. A REFORMULATION, not a proof of (DL): the Hall/SDR sufficient condition (C-T2-U Step C) is OPEN with bounded-computation support only. §3.3: an inequality between aggregates over I_k. Fence §3.1: an order bound / counting statement whose contrapositive has sign Δ_k ≥ 0; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE (OPEN), E993-G1WIDE-NO-SIZE-CAP (OPEN), NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the all-rank aggregate or Erdős #993. §3.2 nothing asymptotic. §3.3 (DL) is an average over I_k; no pointwise degree statement. §3.6 every Lean declaration authored in-run; no external Lean text (the audit copy carries no LICENSE). §3.7 attribution travels on this face.",
+      "scope": "2 ≤ n is required for the identity and the slot count, and only for them (at n = 1: L = Br = ∅, slot count reads 0 = −2, identity at k = 1 reads 2 = 0); the biconditional's truth value is NOT falsified at n = 1 (both sides hold), so 2 ≤ n is justified by the identity, not by a counterexample to the equivalence. The general weight identity 2k·i_k − D_k = Σ_v (2 − deg v)·c_v(k) holds for every finite graph. Formalization: slot count in ℤ (over ℕ it is provable by truncation and the defect is invisible); deg v − 2 guarded by deg v ≥ 3 or cast to ℤ; n ≤ 1 discharged separately. A REFORMULATION, not a proof of (DL): the Hall/SDR sufficient condition (C-T2-U Step C) is OPEN with bounded-computation support only. §3.3: an inequality between aggregates over I_k. Fence §3.1: an order bound / counting statement whose contrapositive has sign Δ_k ≥ 0; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE (OPEN), E993-G1WIDE-NO-SIZE-CAP (OPEN), NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the all-rank aggregate or Erdős #993. §3.2 nothing asymptotic. §3.3 (DL) is an average over I_k; no pointwise degree statement. §3.6 every Lean declaration authored in-run; no external Lean text (the audit copy carries no LICENSE). §3.7 attribution travels on this face. r28 Cycle 1 (2026-09-25): the Hall/SDR sufficient condition (r27 C-T2-U Step C) is REFUTED — the order-22 tree R(3,2)_3 = T22 (a root joined to three hubs, each hub carrying two pendant paths of three edges; 22 vertices, 21 edges; branch tree K_{1,3}) fails it at k = 12, t = 18 (E993-R28-DOMINANCE-REFUTATION); the reformulation itself is unaffected and holds on T22 at every k. The (PW) witness correction (R28-E-b): C-T2-U Step D's order-5 witness S(2,1,1) compares two leaves; the branch-vs-leaf pointwise form first fails at order 9, k = 5. Formal upgrade: the weight identity on any finite graph, the exact leaf/branch identity with the 2Σ_{deg 0} c_v term, and for trees with n ≥ 2 the identity, the biconditional and the slot count in ℤ are formally verified in award C1-LA2. F2's (k, t) = (1, 1) identity Σ_{Br}(deg − 2) = |L| + 2(|E| + Z − n) (Z isolated vertices) is the k = 1 instance of the in-scope weight identity (cross-reference E993-R27-DEGREE-LEMMA-K1-ACYCLICITY-CRITERION, whose criterion counts components). Status unchanged.",
       "status": "VERIFIED",
       "evidence_grade": "proved_informal",
       "formal_award": false,
@@ -37393,6 +37443,18 @@
           "cycle": 1,
           "date": "2026-09-24",
           "event": "registered VERIFIED at proved_informal after SR-JOIN"
+        },
+        {
+          "run": "erdos-993-degree-lemma-hall-sdr-dre-2026-09-24 (r28)",
+          "cycle": 1,
+          "date": "2026-09-25",
+          "event": "scope note: Hall/SDR condition refuted; (PW) witness corrected; formal upgrade recorded"
+        },
+        {
+          "run": "erdos-993-degree-lemma-hall-sdr-dre-2026-09-24 (r28)",
+          "cycle": 1,
+          "date": "2026-09-25",
+          "event": "scope note: Hall/SDR condition refuted; (PW) witness corrected; formal upgrade recorded"
         }
       ],
       "second_read_registration_text": "second-reads/SR-JOIN/SECOND-READ.md ## Registration text 4"
@@ -37530,10 +37592,417 @@
       "scope_distinction": "Guard lemma only for eligible ordinary connected trees at integer p=alpha(T)-2 with first strict descent x(T); no sign claim. Distinct from r25 Delta_2 order-nine and r27 forest order bounds and from the verified r26 top-rank residual sign.",
       "scope_boundary": "Eligibility first gives alpha>=4, needed before Nat subtraction. With high-tail pointwise, alpha>=7 makes 3p>=2alpha+1 and would imply the still-OPEN primary by summing all favorable original-leaf tags.",
       "novelty_claimed": false
+    },
+    {
+      "claim_key": "E993-R28-DOMINANCE-REFUTATION",
+      "statement": "The leaf/slot dominance condition (HS) — for every finite tree T, every k and every t ≥ 1, Σ_{v∈Br : c_v(k) ≥ t}(deg v − 2) ≤ #{ℓ ∈ L : c_ℓ(k) ≥ t} (equivalently, by Hall, an injection from the deg−2 branch slots to leaves with c_ℓ(k) ≥ c_v(k)) — is FALSE. Witness: the order-22 tree R(3,2)_3 = T22 (a root joined to three hubs, each hub carrying two pendant paths of three edges; 22 vertices, 21 edges; branch tree K_{1,3}). At k = 12: i_12 = 19, c_root = 18, c_hub = 0, every leaf c = 17; at t = 18 there is 1 slot and 0 leaves, so the threshold form fails and the largest slot→leaf matching covers 3 of 4 slots. It also fails at k = 11 (t = 137..141; c_root = 141, leaves 136) and at no other k. (DL) holds on T22 at every k. Infinite family R(d,m) (d ≥ 3 hubs, m ≥ 2 legs of three edges; merged by the F adjudicator with C-F1-U's T(d,r) into U(d,m,r), legs of 2r+1 edges): fails at k = α − 1 with the root beating every leaf and shortfall d − 2 → ∞. Minimality: no tree of order ≤ 21 fails (exhaustive, two reconciled instruments; 2,144,505 trees at order 21); T22 is the UNIQUE failing tree among the 5,623,756 trees of order 22 (one instrument).",
+      "scope": "Grades clause by clause: the witness REFUTED (exact finite counts; C-F1-T and C-F1-U independently; T/F/U adjudicators and the controller replayed; SR-HS-REF confirmed by 2^22 brute force, a rerooting DP and a deletion recursion); the family R(d,m) proved_informal (SR-HS-REF HR-2; both parameter bounds necessary); minimum order 22 bounded_computation (two instruments to order 21); uniqueness at 22 bounded_computation (one instrument). Fallen with it (NOT open conjectures): every sufficient condition the cycle proposed — the local-first residual matching / R-SDR, the rooted export conjecture, the rooted-subtree rule, residual-Hall, '(HS) for connected |E| ≤ n graphs', the fractional matching and the matching into leaves ∪ degree-2 vertices — each fails on T22, where c_root is the STRICT maximum of c_v over all 22 vertices at both failing k. What survives: (HS) on trees whose branch tree has maximum degree ≤ 2 (E993-R28-LEAF-SLOT-DOMINANCE-BRANCH-TREE-MAX-DEGREE-LE-2), sharp for every bound D ≥ 3 (R(D,2) fails). The SDR route to a second proof of (DL) on all forests is CLOSED as stated. Attribution: C-F1-T and C-F1-U (discovery, isolated from each other; F1 credited for the pointer — its five tight instances at orders 19–20 are T22 with one leg shortened); the T, F, U adjudicators (replays); SR-HS-REF; controller prior control/controller-prerun/r22_check.py. Fence §3.1: a statement about independent-set counts on finite trees/graphs; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE, E993-G1WIDE-NO-SIZE-CAP, NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the aggregate at any rank, E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE or Erdős #993. §3.2 (DL) stays formally verified by r27's injection and is never re-registered. §3.3 (PW) stays refuted and is never a premise. §3.4 a census horizon is bounded_computation, never a grade. §3.5 no sealed record edited.",
+      "status": "REFUTED",
+      "evidence_grade": "explicit_exact_finite_counterexample",
+      "formal_award": false,
+      "smallest_witness_order": 22,
+      "certificate": "Two independent instruments (C-F1-T: DP + brute force over 54,929 independent sets + F1's code; C-F1-U: own DP, F1's DP, a DP-free count, a hand count), three adjudicator replays (T: three methods + hand; F: all 2^22 subsets + DP + closed form; U: own construction W22, three computations), the controller's brute force, and the isolated second read SR-HS-REF (verdicts HR-1 confirmed, HR-2 confirmed, HR-3/HR-4 confirmed_with_repairs; second-reads/SR-HS-REF/SECOND-READ.md; order 22 exhaustive, 5,623,756 trees, exactly one failure).",
+      "aliases": [
+        "(HS) refuted",
+        "leaf/slot dominance counterexample",
+        "r28 T22 counterexample",
+        "R(3,2)_3",
+        "U(d,m,r)",
+        "E993-R28-HS-REFUTED"
+      ],
+      "alias_patterns": [
+        "slot.dominance.*refut",
+        "R\\(3,2\\)_3",
+        "U\\(d,m,r\\)"
+      ],
+      "novelty_claimed": "New: the Hall/SDR sufficient condition for the forest degree lemma (r27 C-T2-U Step C) is false; minimal counterexample order 22.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "cycles/cycle-1/stage4/critics/F1/T/CRITIQUE.md",
+        "cycles/cycle-1/stage4/critics/F1/U/CRITIQUE.md",
+        "cycles/cycle-1/stage5/adjudicators/F/ADJUDICATION.md",
+        "second-reads/SR-HS-REF/SECOND-READ.md",
+        "control/controller-prerun/r22_check.py"
+      ],
+      "terminal_evidence": {
+        "grade": "explicit_exact_finite_counterexample",
+        "second_read": "SR-HS-REF"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-degree-lemma-hall-sdr-dre-2026-09-24 (r28)",
+          "cycle": 1,
+          "date": "2026-09-25",
+          "event": "registered REFUTED with the order-22 witness after the isolated second read SR-HS-REF"
+        }
+      ],
+      "second_read_registration_text": "second-reads/SR-HS-REF/SECOND-READ.md ## Registration text R1"
+    },
+    {
+      "claim_key": "E993-R28-TREE-LEAF-SLOT-DOMINANCE",
+      "statement": "(HS) For every finite tree T, every k and every t ≥ 1: Σ_{v∈Br : c_v(k) ≥ t}(deg v − 2) ≤ #{ℓ ∈ L : c_ℓ(k) ≥ t}; equivalently (HS-SDR) an injection from the branch slots to the leaves with c_ℓ(k) ≥ c_v(k). The r28 Tier 1 target.",
+      "scope": "REFUTED as a universal statement (witness T22, k = 12, t = 18 — see E993-R28-DOMINANCE-REFUTATION). The Lean target tree_leaf_slot_dominance of SOLUTION-CONTRACT §2 is WITHDRAWN; U2's slot_leaf_sdr_exists is a false statement and is never proved or carried. TRUE on the subclass of trees whose branch tree has maximum degree ≤ 2 (E993-R28-LEAF-SLOT-DOMINANCE-BRANCH-TREE-MAX-DEGREE-LE-2), sharp. Not to be confused with the true pendant-path leaf dominance lemma (E993-R28-PENDANT-PATH-LEAF-DOMINANCE). Fence §3.1: a statement about independent-set counts on finite trees/graphs; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE, E993-G1WIDE-NO-SIZE-CAP, NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the aggregate at any rank, E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE or Erdős #993. §3.2 (DL) stays formally verified by r27's injection and is never re-registered. §3.3 (PW) stays refuted and is never a premise. §3.4 a census horizon is bounded_computation, never a grade. §3.5 no sealed record edited.",
+      "status": "REFUTED",
+      "evidence_grade": "explicit_exact_finite_counterexample",
+      "formal_award": false,
+      "smallest_witness_order": 22,
+      "certificate": "As E993-R28-DOMINANCE-REFUTATION (SR-HS-REF R2). Held to order 21 on two instruments; census to order 20 by F1 (1,346,023 classes), to order 18 by the controller (prior), to order 15/16 by T2 and its critics.",
+      "aliases": [
+        "(HS)",
+        "leaf/slot dominance condition on all trees",
+        "Hall/SDR condition for the degree lemma",
+        "C-T2-U Step C",
+        "E993-R28-HS"
+      ],
+      "alias_patterns": [
+        "hall.*sdr.*(condition|route).*degree.lemma"
+      ],
+      "novelty_claimed": "The r27 open Step C, now closed negatively.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "SOLUTION-CONTRACT.md",
+        "second-reads/SR-HS-REF/SECOND-READ.md"
+      ],
+      "terminal_evidence": {
+        "grade": "explicit_exact_finite_counterexample",
+        "second_read": "SR-HS-REF"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-degree-lemma-hall-sdr-dre-2026-09-24 (r28)",
+          "cycle": 1,
+          "date": "2026-09-25",
+          "event": "registered REFUTED (the Tier 1 target) after SR-HS-REF"
+        }
+      ],
+      "second_read_registration_text": "second-reads/SR-HS-REF/SECOND-READ.md ## Registration text R2"
+    },
+    {
+      "claim_key": "E993-R28-DOMINANCE-CENSUS",
+      "statement": "Census record for (HS): the threshold form and the matching form hold on every free tree of order ≤ 21 (exhaustive; A000055 matched at every order; two reconciled instruments at order 21: C-F1-T's own and F1's as run by C-F1-U; F1 to order 20 on its own instrument with 1,346,023 classes; SR-HS-REF's centroid enumerator to order 22), and fail at order 22 on exactly one tree (T22; one instrument, SR-HS-REF). Tight instances of the threshold form (slack 0 at some t ≥ 1) first appear at orders 19–20 (five, all a single-slot-vs-single-leaf tie at the top threshold — T22 with one leg shortened); none at t = min c_v through order 20. On the residue class (a branch vertex with ≥ 3 branch-tree neighbours; counts 1, 4, 19, 77, 287, 1,002, 3,365, 10,853, 34,088 at orders 10–18) (HS) holds through order 21.",
+      "scope": "bounded_computation only; never a grade for any universal statement. Adversarial families to n = 4,800 and random Prüfer trees to order ~80 (F1) found no failure — consistent, since every failure found is of the multi-hub type at order ≥ 22. The controller's order-18 instrument is a prior. Fence §3.1: a statement about independent-set counts on finite trees/graphs; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE, E993-G1WIDE-NO-SIZE-CAP, NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the aggregate at any rank, E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE or Erdős #993. §3.2 (DL) stays formally verified by r27's injection and is never re-registered. §3.3 (PW) stays refuted and is never a premise. §3.4 a census horizon is bounded_computation, never a grade. §3.5 no sealed record edited.",
+      "status": "VERIFIED",
+      "evidence_grade": "bounded_computation",
+      "formal_award": false,
+      "smallest_witness_order": null,
+      "certificate": "F1 (census to 20; two forms; three components), C-F1-T (own census to 20; order 21 exhaustive), C-F1-U (F1's instrument to 21), F adjudicator (to 20 reconciled), T2 and its critics (matching form to 15/16), SR-BTP (residue counts to 18), SR-HS-REF (orders 21–22; HR-3 confirmed_with_repairs).",
+      "aliases": [
+        "(HS) census",
+        "dominance census to order 22",
+        "E993-R28-CENSUS"
+      ],
+      "alias_patterns": [
+        "dominance.census"
+      ],
+      "novelty_claimed": "Record of the exhaustive horizons behind the refutation's minimality.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "cycles/cycle-1/stage3/returns/F1/RETURN.md",
+        "second-reads/SR-HS-REF/SECOND-READ.md"
+      ],
+      "terminal_evidence": {
+        "grade": "bounded_computation",
+        "second_read": "SR-HS-REF"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-degree-lemma-hall-sdr-dre-2026-09-24 (r28)",
+          "cycle": 1,
+          "date": "2026-09-25",
+          "event": "registered as a census record after SR-HS-REF"
+        }
+      ],
+      "second_read_registration_text": "second-reads/SR-HS-REF/SECOND-READ.md ## Registration text R4"
+    },
+    {
+      "claim_key": "E993-R28-PENDANT-PATH-LEAF-DOMINANCE",
+      "statement": "For any finite simple graph G, any pendant path u_0 – u_1 – … – u_m = ℓ (ℓ a leaf, deg ℓ = 1; u_1..u_{m−1} of degree 2; u_0 arbitrary) and every k: c_{u_i}(k) ≤ c_ℓ(k) for every i = 0..m, where c_v(k) = #{J ∈ I_k(G) : v ∈ J}. Proof: for interior i, G − N[u_i] is isomorphic to (G − N[ℓ]) − u_{i−1}, an induced subgraph of G − N[ℓ] (shift the tail beyond u_{i+1} two steps toward u_0, leaving u_{i−1} empty), so c_{u_i}(k) = i_{k−1}(G − N[u_i]) ≤ i_{k−1}(G − N[ℓ]) = c_ℓ(k); for i = 0 the shifted tail may use u_0, whose other neighbours are absent from G − N[u_0]; equivalently the exact difference formula c_ℓ − c_u = P_{d−2}·(Z(Q) − Z(Q − N_Q(u))) ≥ 0.",
+      "scope": "Graph-general (no tree hypothesis; finiteness only). The case i = m − 1 (leaf ≥ support) is clause (i) of the VERIFIED E993-PAIR-R-LE-G-POINTWISE in another index convention; this key extends it strictly along the whole pendant path including the anchor u_0. Excluded: stepwise monotonicity along the path (REFUTED — S(3,1,1), k = 3: c_1 = 3 > c_2 = 1); the pointwise branch-vs-leaf form (PW) (REFUTED, smallest witness order 9, k = 5). Six independent critic derivations are ONE proof (SR-PP PP-1). Lean: Erdos993G1.pendant_path_leaf_dominance (award C1-LA4, runs/lean-2026-09-25-c1-la4-pendant-path-leaf-dominance). Fence §3.1: a statement about independent-set counts on finite trees/graphs; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE, E993-G1WIDE-NO-SIZE-CAP, NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the aggregate at any rank, E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE or Erdős #993. §3.2 (DL) stays formally verified by r27's injection and is never re-registered. §3.3 (PW) stays refuted and is never a premise. §3.4 a census horizon is bounded_computation, never a grade. §3.5 no sealed record edited.",
+      "status": "VERIFIED",
+      "evidence_grade": "formally_verified",
+      "formal_award": true,
+      "smallest_witness_order": null,
+      "certificate": "formally_verified (governed run runs/lean-2026-09-25-c1-la4-pendant-path-leaf-dominance; VERIFICATION-REPORT 50dad967c641aaa1…; kernel verified at the three axioms; independent informal audit and fidelity review passed). Derivations: C-T1-U (two-step shift injection), C-T1-F and C-T2-U (induced-subgraph isomorphism; polynomial identity at u_0), C-T2-F (exact difference formula), C-F2-T and C-F2-U (exact nonnegative difference formulas); T1 and F2 (the m = 1 case). Isolated second read SR-PP verdict PP-1 confirmed (own instrument from the definition; 0 failures on all free trees to order 13, all labelled graphs to order 6, 3,000 seeded random graphs; negative control passed). Adjudicators T/F/U replayed. Attribution: r27 critic C-T2-U (the leaf/branch reformulation, the SDR condition, the pointwise refutation; Finding 6 Steps A–D); the r27 T adjudicator (the 2 ≤ n correction); r27 second read SR-JOIN (JN-2/JN-3); Fang–Lu–Nevo–Yao–Zheng 2026 §8 (the degree lemma; formal (DL) of record r27 C1-LA1); Hall (classical, Mathlib).",
+      "aliases": [
+        "pendant-path leaf dominance",
+        "pendant path lemma",
+        "L2",
+        "L3",
+        "Lemma PP",
+        "E993-R28-PENDANT-PATH"
+      ],
+      "alias_patterns": [
+        "pendant.path.*dominan"
+      ],
+      "novelty_claimed": "New in-run: a leaf dominates every vertex of its own pendant path (strict extension of the registered leaf ≥ support inequality).",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "cycles/cycle-1/stage4/critics/T1/U/CRITIQUE.md",
+        "cycles/cycle-1/stage4/critics/T1/F/CRITIQUE.md",
+        "second-reads/SR-PP/SECOND-READ.md",
+        "runs/lean-2026-09-25-c1-la4-pendant-path-leaf-dominance/VERIFICATION-REPORT.md"
+      ],
+      "terminal_evidence": {
+        "grade": "formally_verified",
+        "second_read": "SR-PP",
+        "award": "C1-LA4"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-degree-lemma-hall-sdr-dre-2026-09-24 (r28)",
+          "cycle": 1,
+          "date": "2026-09-25",
+          "event": "registered VERIFIED at formally_verified after SR-PP"
+        }
+      ],
+      "second_read_registration_text": "second-reads/SR-PP/SECOND-READ.md ## Registration text PP-1"
+    },
+    {
+      "claim_key": "E993-R28-BRANCH-TREE-SURPLUS-IDENTITY",
+      "statement": "For a finite tree and a branch vertex v (deg v ≥ 3) let b(v) be the number of branch vertices reachable from v without passing another branch vertex (its branch-tree degree) and own(v) the leaves reachable from v without passing another branch vertex (its own pendant leaves). Then |own(v)| = deg v − b(v), so |own(v)| − (deg v − 2) = 2 − b(v); summing over a nonempty Br, Σ_{v∈Br}(|own(v)| − (deg v − 2)) = 2. Hence the own-leaves assignment (each branch vertex served by its own pendant leaves) covers every slot iff no branch vertex has b(v) ≥ 3; the smallest tree with a branch vertex of b(v) ≥ 3 is the order-10 'starved hub' (a hub joined to three branch vertices each with two leaves; α = 7), unique at its order.",
+      "scope": "Trees only (the pendant-direction count uses acyclicity). Absorbs the order-10 local-failure record (existence T1; construction T2; minimality and uniqueness critic-attributed, C-T2-F/C-T2-U/C-T1-F; SR-PP proved). Fence §3.1: a statement about independent-set counts on finite trees/graphs; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE, E993-G1WIDE-NO-SIZE-CAP, NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the aggregate at any rank, E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE or Erdős #993. §3.2 (DL) stays formally verified by r27's injection and is never re-registered. §3.3 (PW) stays refuted and is never a premise. §3.4 a census horizon is bounded_computation, never a grade. §3.5 no sealed record edited.",
+      "status": "VERIFIED",
+      "evidence_grade": "proved_informal",
+      "formal_award": false,
+      "smallest_witness_order": 10,
+      "certificate": "proved_informal — C-T2-F (the identity), C-T1-U and C-T1-F (concordant), C-T2-U (H10 minimal and unique); SR-PP verdict PP-2 confirmed_with_repairs (per-vertex identity is the statement of record; 0 defects on the 32,492 trees to order 16 with a branch vertex). Attribution: r27 critic C-T2-U (the leaf/branch reformulation, the SDR condition, the pointwise refutation; Finding 6 Steps A–D); the r27 T adjudicator (the 2 ≤ n correction); r27 second read SR-JOIN (JN-2/JN-3); Fang–Lu–Nevo–Yao–Zheng 2026 §8 (the degree lemma; formal (DL) of record r27 C1-LA1); Hall (classical, Mathlib).",
+      "aliases": [
+        "surplus identity",
+        "own pendant leaves minus slots",
+        "starved hub",
+        "H10",
+        "E993-R28-SURPLUS"
+      ],
+      "alias_patterns": [
+        "surplus.identity",
+        "starved.hub"
+      ],
+      "novelty_claimed": "New in-run: the exact per-vertex surplus of own leaves over slots.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "cycles/cycle-1/stage4/critics/T2/F/CRITIQUE.md",
+        "second-reads/SR-PP/SECOND-READ.md"
+      ],
+      "terminal_evidence": {
+        "grade": "proved_informal",
+        "second_read": "SR-PP"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-degree-lemma-hall-sdr-dre-2026-09-24 (r28)",
+          "cycle": 1,
+          "date": "2026-09-25",
+          "event": "registered VERIFIED at proved_informal after SR-PP"
+        }
+      ],
+      "second_read_registration_text": "second-reads/SR-PP/SECOND-READ.md ## Registration text PP-2"
+    },
+    {
+      "claim_key": "E993-R28-SDR-THRESHOLD-EQUIVALENCE",
+      "statement": "For a finite simple graph G and k, with slots the multiset of deg v − 2 copies of each branch vertex v and leaves L: an injection f from the slots to L with c_{f(s)}(k) ≥ c_{v(s)}(k) on every slot exists iff for every t ∈ ℕ (including t = 0): Σ_{v∈Br : c_v(k) ≥ t}(deg v − 2) ≤ #{ℓ ∈ L : c_ℓ(k) ≥ t}. On a finite TREE the t = 0 row holds automatically (the slot count |L| − 2 ≤ |L|), so t ≥ 1 suffices there. Proof: the threshold bipartite graph has nested neighbourhoods, so Hall's condition reduces to the threshold family (Hall via Mathlib), or directly by sort-and-pair (T2's Lemma SAP).",
+      "scope": "An equivalence per (G, k); never evidence for either side. On general graphs the quantifier must include t = 0 (K_4 and the diamond at k = 2, K_{2,3} at k = 3 fail with t ≥ 1 alone — SR-PP PP-3). After the refutation it says T22's threshold failure is exactly a matching failure. Lean: sdr_iff_threshold (graph-general, all t) and sdr_iff_threshold_pos_of_tree (trees, t ≥ 1) in award C1-LA3 (runs/lean-2026-09-25-c1-la3-forest-composition-and-hall). Fence §3.1: a statement about independent-set counts on finite trees/graphs; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE, E993-G1WIDE-NO-SIZE-CAP, NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the aggregate at any rank, E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE or Erdős #993. §3.2 (DL) stays formally verified by r27's injection and is never re-registered. §3.3 (PW) stays refuted and is never a premise. §3.4 a census horizon is bounded_computation, never a grade. §3.5 no sealed record edited.",
+      "status": "VERIFIED",
+      "evidence_grade": "formally_verified",
+      "formal_award": true,
+      "smallest_witness_order": null,
+      "certificate": "formally_verified (governed run runs/lean-2026-09-25-c1-la3-forest-composition-and-hall; VERIFICATION-REPORT cbcf87e8291befcf…). T2 (seat; sort-and-pair, both directions); C-T2-U (Direction 2 needs m ≤ |L|); C-F1-T (rank lemma); U2 (seat; graph-general Lean via nested_hall_iff_threshold and Finset.all_card_le_biUnion_card_iff_existsInjective'); C-U2-F (tree form; tree_slots_zero_le); SR-PP verdict PP-3 confirmed_with_repairs. Attribution: r27 critic C-T2-U (the leaf/branch reformulation, the SDR condition, the pointwise refutation; Finding 6 Steps A–D); the r27 T adjudicator (the 2 ≤ n correction); r27 second read SR-JOIN (JN-2/JN-3); Fang–Lu–Nevo–Yao–Zheng 2026 §8 (the degree lemma; formal (DL) of record r27 C1-LA1); Hall (classical, Mathlib).",
+      "aliases": [
+        "SDR iff threshold",
+        "Hall on nested neighbourhoods",
+        "sort-and-pair",
+        "Lemma SAP",
+        "E993-R28-SDR-EQ"
+      ],
+      "alias_patterns": [
+        "sdr.*threshold"
+      ],
+      "novelty_claimed": "Classical (Hall); new as a compiled equivalence on the program's carrier. Related but NOT an alias of E993-EXCHANGE-LEMMA-SEQ (two multisets vs a sequence against a ladder).",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "cycles/cycle-1/stage3/returns/T2/RETURN.md",
+        "cycles/cycle-1/stage3/returns/U2/RETURN.md",
+        "second-reads/SR-PP/SECOND-READ.md",
+        "runs/lean-2026-09-25-c1-la3-forest-composition-and-hall/VERIFICATION-REPORT.md"
+      ],
+      "terminal_evidence": {
+        "grade": "formally_verified",
+        "second_read": "SR-PP",
+        "award": "C1-LA3"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-degree-lemma-hall-sdr-dre-2026-09-24 (r28)",
+          "cycle": 1,
+          "date": "2026-09-25",
+          "event": "registered VERIFIED at formally_verified after SR-PP"
+        }
+      ],
+      "second_read_registration_text": "second-reads/SR-PP/SECOND-READ.md ## Registration text PP-3"
+    },
+    {
+      "claim_key": "E993-R28-HS-LOCAL-MECHANISMS",
+      "statement": "Five local mechanisms proposed for proving (HS) are FALSE, each with an order-minimal, unique-at-its-order witness: (M1) monotonicity of c along a pendant path anchored at a branch vertex — S(3,1,1), k = 3 (c_1 = 3 > c_2 = 1); (M2) branch-vertex self-sufficiency (every branch vertex has ≥ deg − 2 own pendant leaves) — order 10, the starved hub; (M3) interior-vs-extremal dominance (c_v ≤ c_w for w a leaf of the branch tree, v interior) — order 8; (M4) 'one dominating leaf per own direction' / serving a deficient branch vertex from each own branch direction — order 12, k = 6; (M5) the branch-vs-leaf pointwise form (PW) c_v(k) ≤ c_ℓ(k) for every branch v and leaf ℓ — order 9, k = 5 (c_0 = 2 > c_8 = 1) (the r27 order-5 witness compares two leaves: erratum R28-E-b).",
+      "scope": "A refuted-mechanisms record; each witness verified by hand (SR-PP). Minimality proved for M1–M3, computational for M4–M5. Anchoring matters for M1: with an arbitrary anchor it already fails on P_3 at k = 2. Fence §3.1: a statement about independent-set counts on finite trees/graphs; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE, E993-G1WIDE-NO-SIZE-CAP, NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the aggregate at any rank, E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE or Erdős #993. §3.2 (DL) stays formally verified by r27's injection and is never re-registered. §3.3 (PW) stays refuted and is never a premise. §3.4 a census horizon is bounded_computation, never a grade. §3.5 no sealed record edited.",
+      "status": "REFUTED",
+      "evidence_grade": "explicit_exact_finite_counterexample",
+      "formal_award": false,
+      "smallest_witness_order": 6,
+      "certificate": "T1 (M1, M2), F2 (M1–M3 battery), C-T1-U/C-T1-F/C-T2-U (M4; M5 minimality), C-T2-F (M2 uniqueness); SR-PP verdict PP-5 confirmed_with_repairs. Attribution: r27 critic C-T2-U (the leaf/branch reformulation, the SDR condition, the pointwise refutation; Finding 6 Steps A–D); the r27 T adjudicator (the 2 ≤ n correction); r27 second read SR-JOIN (JN-2/JN-3); Fang–Lu–Nevo–Yao–Zheng 2026 §8 (the degree lemma; formal (DL) of record r27 C1-LA1); Hall (classical, Mathlib).",
+      "aliases": [
+        "refuted local mechanisms for (HS)",
+        "pendant-path monotonicity refuted",
+        "branch-vertex self-sufficiency refuted",
+        "E993-R28-PENDANT-PATH-MONOTONICITY-REFUTED",
+        "E993-R28-BRANCH-VERTEX-OWN-DIRECTIONS-INSUFFICIENT"
+      ],
+      "alias_patterns": [
+        "local.mechanism",
+        "monotonicity.*refut"
+      ],
+      "novelty_claimed": "Record of which local lemmas a proof of (HS) could not have used.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "cycles/cycle-1/stage3/returns/F2/RETURN.md",
+        "cycles/cycle-1/stage3/returns/T1/RETURN.md",
+        "second-reads/SR-PP/SECOND-READ.md"
+      ],
+      "terminal_evidence": {
+        "grade": "explicit_exact_finite_counterexample",
+        "second_read": "SR-PP"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-degree-lemma-hall-sdr-dre-2026-09-24 (r28)",
+          "cycle": 1,
+          "date": "2026-09-25",
+          "event": "registered REFUTED (five mechanisms, one record) after SR-PP"
+        }
+      ],
+      "second_read_registration_text": "second-reads/SR-PP/SECOND-READ.md ## Registration text PP-5"
+    },
+    {
+      "claim_key": "E993-R28-LEAF-SLOT-DOMINANCE-BRANCH-TREE-MAX-DEGREE-LE-2",
+      "statement": "Theorem BTP. For every finite tree T whose branch tree (the tree on the branch vertices obtained by suppressing degree-2 vertices; trivial when Br has ≤ 1 vertex) has maximum degree ≤ 2 — i.e. no branch vertex has three or more branch-tree neighbours (b(v) ≤ 2) — and every k and every t (including t = 0): Σ_{v∈Br : c_v(k) ≥ t}(deg v − 2) ≤ #{ℓ ∈ L : c_ℓ(k) ≥ t}, and the own-leaves map is an SDR. Proof: each branch vertex has deg v − b(v) ≥ deg v − 2 own pendant leaves (acyclicity); own-leaf sets of distinct branch vertices are disjoint; by the pendant-path leaf dominance lemma every own leaf ℓ of v has c_ℓ(k) ≥ c_v(k); assign the slots of v to distinct own leaves. The class contains all paths, stars, spiders, caterpillars, brooms and double brooms (65,512 of the 81,136 trees of orders 2–17).",
+      "scope": "SHARP in the branch-degree parameter: for every D ≥ 3 the tree R(D,2) has branch tree K_{1,D} and fails (HS) (D = 3: T22). Needs neither Hall nor the slot count nor the surplus identity nor connectivity beyond acyclicity. Composed with the reduction E993-R28-DOMINANCE-IMPLIES-DEGREE-LEMMA it gives a SECOND proof of the degree lemma (DL) on this class by a matching argument — registered as a scope note on E993-R27-FOREST-DEGREE-LEMMA (an alias distinction), never a (DL) key; (DL) on all forests remains proved only by r27's injection. Lean: award C1-LA5 (runs/lean-2026-09-25-c1-la5-btp-second-proof-on-class). Fence §3.1: a statement about independent-set counts on finite trees/graphs; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE, E993-G1WIDE-NO-SIZE-CAP, NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the aggregate at any rank, E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE or Erdős #993. §3.2 (DL) stays formally verified by r27's injection and is never re-registered. §3.3 (PW) stays refuted and is never a premise. §3.4 a census horizon is bounded_computation, never a grade. §3.5 no sealed record edited.",
+      "status": "VERIFIED",
+      "evidence_grade": "formally_verified",
+      "formal_award": true,
+      "smallest_witness_order": null,
+      "certificate": "formally_verified (governed run runs/lean-2026-09-25-c1-la5-btp-second-proof-on-class; VERIFICATION-REPORT 4c216c044673d73a…). C-T2-U (Theorem BTP); C-T2-F, C-F2-T, C-F2-U, C-T1-F (independent proofs); SR-BTP verdicts BT-1 confirmed_with_repairs, BT-2 confirmed_with_repairs (canonical proof; own WROM generator to order 18: 155,290 class trees, 2,991,832 instances, 0 failures; sharpness for D = 3, 4, 5). Attribution: r27 critic C-T2-U (the leaf/branch reformulation, the SDR condition, the pointwise refutation; Finding 6 Steps A–D); the r27 T adjudicator (the 2 ≤ n correction); r27 second read SR-JOIN (JN-2/JN-3); Fang–Lu–Nevo–Yao–Zheng 2026 §8 (the degree lemma; formal (DL) of record r27 C1-LA1); Hall (classical, Mathlib).",
+      "aliases": [
+        "Theorem BTP",
+        "(HS) on path-like branch trees",
+        "caterpillars and spiders",
+        "E993-R28-DOMINANCE-ON-PATHLIKE-BRANCH-TREES"
+      ],
+      "alias_patterns": [
+        "branch.tree.*(max|degree).*2",
+        "BTP"
+      ],
+      "novelty_claimed": "New in-run: the exact subclass of trees on which the Hall/SDR condition holds, with its sharpness.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "cycles/cycle-1/stage4/critics/T2/U/CRITIQUE.md",
+        "second-reads/SR-BTP/SECOND-READ.md",
+        "runs/lean-2026-09-25-c1-la5-btp-second-proof-on-class/VERIFICATION-REPORT.md"
+      ],
+      "terminal_evidence": {
+        "grade": "formally_verified",
+        "second_read": "SR-BTP",
+        "award": "C1-LA5"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-degree-lemma-hall-sdr-dre-2026-09-24 (r28)",
+          "cycle": 1,
+          "date": "2026-09-25",
+          "event": "registered VERIFIED at formally_verified after SR-BTP"
+        }
+      ],
+      "second_read_registration_text": "second-reads/SR-BTP/SECOND-READ.md ## Registration text BT-1"
+    },
+    {
+      "claim_key": "E993-R28-DOMINANCE-IMPLIES-DEGREE-LEMMA",
+      "statement": "(LC) For every finite simple graph G and every k: if for every t ≥ 1, Σ_{v∈Br : c_v(k) ≥ t}(deg v − 2) ≤ #{ℓ ∈ L : c_ℓ(k) ≥ t}, then D_k(G) ≤ 2k·i_k(G). Proof: layer-cake (Σ_{v∈Br}(deg v − 2)·c_v(k) = Σ_{t≥1} slots_{≥t}, Σ_L c_ℓ(k) = Σ_{t≥1} leaves_{≥t}) and the weight identity 2k·i_k − D_k = Σ_v (2 − deg v)·c_v(k) = Σ_L c_ℓ + 2Σ_{deg 0} c_v − Σ_{Br}(deg v − 2)c_v (degree-0 vertices add slack, degree-2 contribute 0). The contract's tree form (hypothesis over all t, hT : IsTree present and unused) is the terminal declaration; the graph-general t ≥ 1 form is its scope declaration (erratum R28-E-a: on non-trees the t = 0 row is an extra condition, witness K_4 − e at k = 2).",
+      "scope": "Not a proof of (DL) and not a second proof of (DL): its hypothesis FAILS at (T22, 11) and (T22, 12). No composition with tree_leaf_slot_dominance. With Theorem BTP it yields a second proof of (DL) on the max-branch-degree-≤2 class only. Companion formal content (scope note on E993-R27-TREE-LEAF-BRANCH-REFORMULATION-ORDER-GE-2, never a new key): the r27 reformulation in full — the weight identity on any finite graph, the exact leaf/branch identity with the 2Σ_{deg 0} term, and for trees with n ≥ 2 the identity, the biconditional and the slot count in ℤ — formalized by C-U1-T and C-U1-F. Lean: Erdos993G1.dominance_implies_degree_lemma (award C1-LA2, runs/lean-2026-09-25-c1-la2-layer-cake-reduction). Fence §3.1: a statement about independent-set counts on finite trees/graphs; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE, E993-G1WIDE-NO-SIZE-CAP, NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the aggregate at any rank, E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE or Erdős #993. §3.2 (DL) stays formally verified by r27's injection and is never re-registered. §3.3 (PW) stays refuted and is never a premise. §3.4 a census horizon is bounded_computation, never a grade. §3.5 no sealed record edited.",
+      "status": "VERIFIED",
+      "evidence_grade": "formally_verified",
+      "formal_award": true,
+      "smallest_witness_order": null,
+      "certificate": "formally_verified (governed run runs/lean-2026-09-25-c1-la2-layer-cake-reduction; VERIFICATION-REPORT 4b79853868d78137…; kernel verified at the three axioms; independent informal audit and fidelity review passed). U1 (seat; sorry-free scratch proof, hT unused); C-U1-T and C-U1-F (graph-general form with t ≥ 1; the r27 reformulation in Lean); U adjudicator; SR-BTP BT-3 (kernel check on a copy at the pin). Attribution: r27 critic C-T2-U (the leaf/branch reformulation, the SDR condition, the pointwise refutation; Finding 6 Steps A–D); the r27 T adjudicator (the 2 ≤ n correction); r27 second read SR-JOIN (JN-2/JN-3); Fang–Lu–Nevo–Yao–Zheng 2026 §8 (the degree lemma; formal (DL) of record r27 C1-LA1); Hall (classical, Mathlib).",
+      "aliases": [
+        "layer-cake reduction",
+        "(LC)",
+        "(HS) implies (DL)",
+        "E993-R28-LC"
+      ],
+      "alias_patterns": [
+        "layer.cake",
+        "dominance.implies.degree"
+      ],
+      "novelty_claimed": "New in-run: the reduction from the leaf/slot dominance condition to the degree lemma, graph-general.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "cycles/cycle-1/stage3/returns/U1/RETURN.md",
+        "cycles/cycle-1/stage4/critics/U1/T/CRITIQUE.md",
+        "cycles/cycle-1/stage4/critics/U1/F/CRITIQUE.md",
+        "runs/lean-2026-09-25-c1-la2-layer-cake-reduction/VERIFICATION-REPORT.md"
+      ],
+      "terminal_evidence": {
+        "grade": "formally_verified",
+        "award": "C1-LA2"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-degree-lemma-hall-sdr-dre-2026-09-24 (r28)",
+          "cycle": 1,
+          "date": "2026-09-25",
+          "event": "registered VERIFIED at formally_verified"
+        }
+      ]
+    },
+    {
+      "claim_key": "E993-R28-FOREST-DEGREE-LEMMA-FROM-TREES",
+      "statement": "(FC) For every finite forest G (G.IsAcyclic) and every k: if every finite tree T (on any finite carrier) satisfies D_a(T) ≤ 2a·i_a(T) for every a ≤ k, then D_k(G) ≤ 2k·i_k(G). Via the two-piece separated-union convolutions i_k(A ∪ B) = Σ_{a+b=k} i_a(A) i_b(B), D_k(A ∪ B) = Σ_{a+b=k}[D_a(A) i_b(B) + i_a(A) D_b(B)] (Finset-relative, ambient degree), peeling one connected component at a time (component supports are adjacency-closed), the bridge to induced subgraphs, and 'components of an acyclic graph are trees' (the only use of acyclicity).",
+      "scope": "The formal consequence clause of E993-R27-POTENTIAL-SEPARATED-UNION-CONVOLUTION (scope note there). Erratum R28-E-c: the hypothesis MUST hold at every a ≤ k — at a single k it does not compose (K_4 ⊔ K_4 at k = 2: components 0 ≤ 0, union 96 > 64); SOLUTION-CONTRACT §2's single-k form is withdrawn. Scope declarations: degree_lemma_of_components (any finite graph, no acyclicity), forest_degree_lemma_of_components_allk (hG unused). NEVER composed with r27's forest_degree_lemma to present a 'second proof' of (DL). Lean: Erdos993G1.forest_degree_lemma_of_tree_degree_lemma (award C1-LA3, runs/lean-2026-09-25-c1-la3-forest-composition-and-hall). Fence §3.1: a statement about independent-set counts on finite trees/graphs; not a no-recovery statement; no status transfer to E993-R25-UNR-FOREST-WIDE, E993-G1WIDE-NO-SIZE-CAP, NR1, FOREST, TREE, TRANSFER, E993-BETA-AGG, the aggregate at any rank, E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE or Erdős #993. §3.2 (DL) stays formally verified by r27's injection and is never re-registered. §3.3 (PW) stays refuted and is never a premise. §3.4 a census horizon is bounded_computation, never a grade. §3.5 no sealed record edited.",
+      "status": "VERIFIED",
+      "evidence_grade": "formally_verified",
+      "formal_award": true,
+      "smallest_witness_order": null,
+      "certificate": "formally_verified (governed run runs/lean-2026-09-25-c1-la3-forest-composition-and-hall; VERIFICATION-REPORT cbcf87e8291befcf…). U2 (seat; the convolutions in Lean); C-U2-T (end to end incl. bridge and induce_supp_isTree); C-U2-F (core; peel-one-component form); U adjudicator (the corrected statement). Attribution: r27 critic C-T2-U (the leaf/branch reformulation, the SDR condition, the pointwise refutation; Finding 6 Steps A–D); the r27 T adjudicator (the 2 ≤ n correction); r27 second read SR-JOIN (JN-2/JN-3); Fang–Lu–Nevo–Yao–Zheng 2026 §8 (the degree lemma; formal (DL) of record r27 C1-LA1); Hall (classical, Mathlib).",
+      "aliases": [
+        "forest composition",
+        "(FC)",
+        "DL on trees implies DL on forests",
+        "E993-R28-FC"
+      ],
+      "alias_patterns": [
+        "forest.*composition",
+        "from.trees"
+      ],
+      "novelty_claimed": "The r27 informal convolution's consequence clause, kernel-verified at the corrected hypothesis.",
+      "surviving_premises": [],
+      "source_occurrence_links": [
+        "runs/lean-2026-09-25-c1-la3-forest-composition-and-hall/VERIFICATION-REPORT.md",
+        "cycles/cycle-1/stage4/critics/U2/T/CRITIQUE.md"
+      ],
+      "terminal_evidence": {
+        "grade": "formally_verified",
+        "award": "C1-LA3",
+        "run": "runs/lean-2026-09-25-c1-la3-forest-composition-and-hall"
+      },
+      "terminal_history": [
+        {
+          "run": "erdos-993-degree-lemma-hall-sdr-dre-2026-09-24 (r28)",
+          "cycle": 1,
+          "date": "2026-09-25",
+          "event": "registered VERIFIED at formally_verified"
+        }
+      ]
     }
   ],
-  "last_updated": "2026-09-24",
-  "update_note": "r27 close (2026-09-24): 21 E993-R27- identities added (4 formal awards / 8 formal-award keys: the FLNYZ finite forest degree lemma (DL) and extension inequality (EX); the graph-general double count and e(J) bound; the implication chain; the unconditional linear descent bound n <= 4k, the rank-5 ceiling 20 and the descent restriction 4r-4; 10 proved_informal after isolated second reads; 2 census-grade records; 1 compiled-scratch record). Scope notes on seven r25 claims and one refuted claim (statuses unchanged). All prior statuses preserved. First-interior aggregate close: one existing exact key promoted OPEN -> VERIFIED at formally_verified after Cycle 2; other 394 claim objects unchanged; three C2 auxiliary keys remain OPEN as separately governed claims.",
+  "last_updated": "2026-09-25",
+  "update_note": "r28 close (2026-09-25): 10 E993-R28- identities added — the Tier 1 target (HS), the Hall/SDR sufficient condition for the forest degree lemma, REFUTED at order 22 (witness T22; two instruments, three adjudicator replays, isolated second read) with its refutation record and census; the pendant-path leaf dominance lemma, Theorem BTP ((HS) on trees whose branch tree has maximum degree ≤ 2, sharp), the surplus identity, the SDR/threshold equivalence and the layer-cake reduction at their grades (4 formal award(s): C1-LA2, C1-LA3, C1-LA4, C1-LA5); five refuted local mechanisms as one record. Scope notes on five prior keys (statuses unchanged). All prior statuses preserved.",
   "g1_publication": {
     "source_run": "erdos-993-g1-large-residual-dre-2026-09-13",
     "source_registry_sha256": "bceaa933993f5294db482a89b57a59f470a7de1fa6b51f2ce3c46227f59300eb",
@@ -37599,5 +38068,16 @@
       "propext"
     ],
     "separate_auxiliary_awards": 0
+  },
+  "r28_publication": {
+    "run": "erdos-993-degree-lemma-hall-sdr-dre-2026-09-24",
+    "terminal_manifest": "54e71f419a69d815989bc8b26f4dadd5cf7fd4f536470d3b1ba0b3984e3607e2",
+    "awards": {
+      "C1-LA2": "E993-R28-DOMINANCE-IMPLIES-DEGREE-LEMMA (with the r27 reformulation formal upgrade)",
+      "C1-LA3": "E993-R28-FOREST-DEGREE-LEMMA-FROM-TREES (with E993-R28-SDR-THRESHOLD-EQUIVALENCE)",
+      "C1-LA4": "E993-R28-PENDANT-PATH-LEAF-DOMINANCE",
+      "C1-LA5": "E993-R28-LEAF-SLOT-DOMINANCE-BRANCH-TREE-MAX-DEGREE-LE-2"
+    },
+    "closed": "2026-09-25"
   }
 }

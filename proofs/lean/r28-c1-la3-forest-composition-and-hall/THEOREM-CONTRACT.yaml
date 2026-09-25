@@ -1,0 +1,892 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "erdos-993-r28-c1-la3-forest-composition-and-hall-v1",
+  "theorem": {
+    "title": "r28 C1-LA3: forest degree lemma from the tree degree lemma at every size a ≤ k (FC, corrected), with the SDR/threshold equivalence on trees as companion lemma",
+    "informal_statement": "(FC), corrected (erratum R28-E-c), key E993-R28-FOREST-DEGREE-LEMMA-FROM-TREES: for every finite simple graph G on a finite type X in universe u with G acyclic (a finite forest) and every k : ℕ, IF for every finite tree T on any carrier Y : Type u and every a ≤ k the degree lemma D_a(T) ≤ 2a·i_a(T) holds, THEN D_k(G) ≤ 2k·i_k(G), with i = Erdos993G1.indepCount (r25 entry 1) and D = Erdos993G1.indepDegreeSum (r27 entry 7). Acyclicity enters only through 'components of a forest are trees'; the composition itself (separated-union convolution, bridge, peel over components) holds for every finite graph (scope declarations R28CritU2T.degree_lemma_of_components, R28CritU2T.forest_degree_lemma_of_components_allk, R28U2.indepCountOn_union, R28U2.indepDegreeSumOn_union — hsep and hdisj both necessary — R28CritU2T.bridge, R28CritU2T.induce_supp_isTree). Companion lemma in the same source, key E993-R28-SDR-THRESHOLD-EQUIVALENCE (registers independently; not a dependency of the terminal theorem): lemma sdr_iff_threshold_pos_of_tree {X : Type u} [Fintype X] [DecidableEq X] (G : SimpleGraph X)\n    [DecidableRel G.Adj] (hT : G.IsTree) (k : ℕ) :\n    (∃ f : R28U2.Slot G → X, Function.Injective f ∧\n        ∀ s, G.degree (f s) = 1 ∧ R28U2.occ G s.1.1 k ≤ R28U2.occ G (f s) k) ↔\n      (∀ t, 1 ≤ t → R28U2.slotsAtLeast G k t ≤ R28U2.leavesAtLeast G k t) ; scope declaration R28U2.sdr_iff_threshold (graph-general, ∀ t : ℕ) via R28U2.nested_hall_iff_threshold and R28U2.sdr_iff_threshold_abstract, and R28CritU2F.tree_slots_zero_le. Fences: (FC) is never composed with r27's forest_degree_lemma to present a second proof of (DL) (not carried into this project); it is the formal consequence clause of E993-R27-POTENTIAL-SEPARATED-UNION-CONVOLUTION, a scope note there. The SDR equivalence is per (G, k), never evidence for either side. U2's slot_leaf_sdr_exists and tree_leaf_slot_dominance (FALSE, T22) are not carried and nothing depends on them. No status transfer (SOLUTION-CONTRACT §3.1). Attribution: (FC) — r27 convolution key (SR-JOIN JN-2), U2 (seat, convolution in Lean), C-U2-T (end to end, bridge), C-U2-F (core); SDR — T2 (Lemma SAP, informal), C-F1-T (rank lemma), Hall (Mathlib), U2 (graph-general Lean), C-U2-F (tree form), SR-PP (PP-3)."
+  },
+  "formulation_status": {
+    "status": "established",
+    "evidence": [
+      "(FC): r27 E993-R27-POTENTIAL-SEPARATED-UNION-CONVOLUTION proved_informal (SR-JOIN JN-2); r28 synthesis Exact established results item 8 at the corrected every-a hypothesis (R28-E-c).",
+      "SDR: r28 E993-R28-SDR-THRESHOLD-EQUIVALENCE proved_informal (T2 Lemma SAP; C-F1-T rank lemma); synthesis item 5.",
+      "The single-k form of SOLUTION-CONTRACT §2 is defective (K_4 ⊔ K_4, k = 2) and is not this contract's statement."
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-indep-set-finset",
+      "description": "Mathlib SimpleGraph.indepSetFinset: the Finset of independent k-subsets (IsNIndepSet k) of a finite graph with decidable adjacency.",
+      "lean_name": "SimpleGraph.indepSetFinset",
+      "dependencies": []
+    },
+    {
+      "id": "def-degree",
+      "description": "Mathlib SimpleGraph.degree v: card of the neighbour finset of v.",
+      "lean_name": "SimpleGraph.degree",
+      "dependencies": []
+    },
+    {
+      "id": "def-is-acyclic",
+      "description": "Mathlib SimpleGraph.IsAcyclic: no cycle (walk) in G. A finite forest.",
+      "lean_name": "SimpleGraph.IsAcyclic",
+      "dependencies": []
+    },
+    {
+      "id": "def-is-tree",
+      "description": "Mathlib SimpleGraph.IsTree: connected (hence nonempty) and acyclic.",
+      "lean_name": "SimpleGraph.IsTree",
+      "dependencies": [
+        "def-is-acyclic"
+      ]
+    },
+    {
+      "id": "def-indep-count",
+      "description": "G1 definition of record, r25 award entry 1 (registrar entry 1 of this run, byte-identical, entry digest 5484fc21ffce7bf707240da15858d7d82289f8e6f286a8fa9837cd9a0c474ccb): noncomputable def indepCount {V : Type u} (F : SimpleGraph V) (k : ℕ) : ℤ := (Nat.card {S : Finset V // F.IsNIndepSet k S} : ℤ). Linked to Finset card by r25 entry 4 Erdos993G1.indepCount_eq_card_indepSetFinset (registrar entry 12, digest 4463e7eea65f11f69266095e58b54777ea245aa79caee47bf5b6e3ab77aa0eac).",
+      "lean_name": "Erdos993G1.indepCount",
+      "dependencies": [
+        "def-indep-set-finset"
+      ]
+    },
+    {
+      "id": "def-indep-degree-sum",
+      "description": "r27 C1-LA1 award entry 7 (registrar entry 2 of this run, byte-identical, entry digest a1ed32eb12b137ac5915bf15255c1173593296f3eb22127e2dcf0fab2ea9f38e): def indepDegreeSum (k : ℕ) : ℕ := ∑ J ∈ G.indepSetFinset k, ∑ v ∈ J, G.degree v, under section variables {X : Type u} [Fintype X] [DecidableEq X] (G : SimpleGraph X) [DecidableRel G.Adj]. D_k(G).",
+      "lean_name": "Erdos993G1.indepDegreeSum",
+      "dependencies": [
+        "def-indep-set-finset",
+        "def-degree"
+      ]
+    },
+    {
+      "id": "def-occ",
+      "description": "Run-local (U2 text of SOLUTION-CONTRACT §2), used by the companion SDR face. Lean text: def occ (v : X) (k : ℕ) : ℕ := ((G.indepSetFinset k).filter (fun J => v ∈ J)).card Ambient section variables of every R28U2 definition: {X : Type u} [Fintype X] [DecidableEq X] (G : SimpleGraph X) [DecidableRel G.Adj].",
+      "lean_name": "R28U2.occ",
+      "dependencies": [
+        "def-indep-set-finset"
+      ]
+    },
+    {
+      "id": "def-slots-at-least",
+      "description": "Run-local (U2 text of SOLUTION-CONTRACT §2), used by the companion SDR face. Lean text: def slotsAtLeast (k t : ℕ) : ℕ :=\n  ∑ v ∈ (Finset.univ : Finset X).filter (fun v => 3 ≤ G.degree v ∧ t ≤ occ G v k), (G.degree v - 2) The ℕ subtraction G.degree v - 2 is guarded by the filter 3 ≤ G.degree v. Ambient section variables of every R28U2 definition: {X : Type u} [Fintype X] [DecidableEq X] (G : SimpleGraph X) [DecidableRel G.Adj].",
+      "lean_name": "R28U2.slotsAtLeast",
+      "dependencies": [
+        "def-occ",
+        "def-degree"
+      ]
+    },
+    {
+      "id": "def-leaves-at-least",
+      "description": "Run-local (U2 text of SOLUTION-CONTRACT §2), used by the companion SDR face. Lean text: def leavesAtLeast (k t : ℕ) : ℕ :=\n  ((Finset.univ : Finset X).filter (fun ℓ => G.degree ℓ = 1 ∧ t ≤ occ G ℓ k)).card Ambient section variables of every R28U2 definition: {X : Type u} [Fintype X] [DecidableEq X] (G : SimpleGraph X) [DecidableRel G.Adj].",
+      "lean_name": "R28U2.leavesAtLeast",
+      "dependencies": [
+        "def-occ",
+        "def-degree"
+      ]
+    },
+    {
+      "id": "def-branch",
+      "description": "Run-local (U2): abbrev Branch := {v : X // 3 ≤ G.degree v}.",
+      "lean_name": "R28U2.Branch",
+      "dependencies": [
+        "def-degree"
+      ]
+    },
+    {
+      "id": "def-leaf-t",
+      "description": "Run-local (U2): abbrev LeafT := {ℓ : X // G.degree ℓ = 1}. Codomain of the carried LeafT-form SDR declarations; the award SDR face uses X with G.degree (f s) = 1 instead.",
+      "lean_name": "R28U2.LeafT",
+      "dependencies": [
+        "def-degree"
+      ]
+    },
+    {
+      "id": "def-slot",
+      "description": "Run-local (U2): abbrev Slot := Σ v : Branch G, Fin (G.degree v.1 - 2) — deg v − 2 slots per branch vertex; unfolds to the synthesis's Σ v : {v // 3 ≤ G.degree v}, Fin (G.degree v − 2).",
+      "lean_name": "R28U2.Slot",
+      "dependencies": [
+        "def-branch",
+        "def-degree"
+      ]
+    },
+    {
+      "id": "def-indep-finset-on",
+      "description": "Run-local (U2), proof-internal for (FC): def indepFinsetOn (S : Finset X) (k : ℕ) : Finset (Finset X) := (G.indepSetFinset k).filter (fun J => J ⊆ S).",
+      "lean_name": "R28U2.indepFinsetOn",
+      "dependencies": [
+        "def-indep-set-finset"
+      ]
+    },
+    {
+      "id": "def-indep-count-on",
+      "description": "Run-local (U2), proof-internal for (FC): def indepCountOn (S : Finset X) (k : ℕ) : ℕ := (indepFinsetOn G S k).card.",
+      "lean_name": "R28U2.indepCountOn",
+      "dependencies": [
+        "def-indep-finset-on"
+      ]
+    },
+    {
+      "id": "def-indep-degree-sum-on",
+      "description": "Run-local (U2), proof-internal for (FC): def indepDegreeSumOn (S : Finset X) (k : ℕ) : ℕ := ∑ J ∈ indepFinsetOn G S k, ∑ v ∈ J, G.degree v (ambient degree).",
+      "lean_name": "R28U2.indepDegreeSumOn",
+      "dependencies": [
+        "def-indep-finset-on",
+        "def-degree"
+      ]
+    },
+    {
+      "id": "def-split-pair",
+      "description": "Run-local (U2), private, proof-internal for (FC): private def splitPair (S T : Finset X) (J : Finset X) : Finset X × Finset X := (J ∩ S, J ∩ T).",
+      "lean_name": "R28U2.splitPair",
+      "dependencies": []
+    },
+    {
+      "id": "def-join-pair",
+      "description": "Run-local (U2), private, proof-internal for (FC): private def joinPair (p : Finset X × Finset X) : Finset X := p.1 ∪ p.2.",
+      "lean_name": "R28U2.joinPair",
+      "dependencies": []
+    }
+  ],
+  "domains": [
+    {
+      "id": "dom-x",
+      "description": "X : Type u with [Fintype X] [DecidableEq X] — a finite vertex type in universe u.",
+      "lean_type": "Type u",
+      "dependencies": []
+    },
+    {
+      "id": "dom-g",
+      "description": "G : SimpleGraph X with [DecidableRel G.Adj].",
+      "lean_type": "SimpleGraph X",
+      "dependencies": [
+        "dom-x"
+      ]
+    },
+    {
+      "id": "dom-k",
+      "description": "k : ℕ, the independent-set size; no lower bound (k = 0 allowed).",
+      "lean_type": "ℕ",
+      "dependencies": []
+    },
+    {
+      "id": "dom-tree-carrier",
+      "description": "Inside htree: every Y : Type u (implicit binder) with [Fintype Y] [DecidableEq Y] and every T : SimpleGraph Y with [DecidableRel T.Adj] — trees on carriers in the SAME universe u as X, and every a : ℕ with a ≤ k.",
+      "lean_type": "∀ {Y : Type u} [Fintype Y] [DecidableEq Y] (T : SimpleGraph Y) [DecidableRel T.Adj], T.IsTree → ∀ a ≤ k, _",
+      "dependencies": [
+        "dom-k"
+      ]
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "X",
+      "kind": "forall",
+      "domain_id": "dom-x"
+    },
+    {
+      "binder": "G",
+      "kind": "forall",
+      "domain_id": "dom-g"
+    },
+    {
+      "binder": "k",
+      "kind": "forall",
+      "domain_id": "dom-k"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-instances",
+      "statement": "[Fintype X] [DecidableEq X] [DecidableRel G.Adj] (instance binders of the terminal statement, verbatim).",
+      "dependencies": [
+        "dom-x",
+        "dom-g"
+      ]
+    },
+    {
+      "id": "hyp-acyclic",
+      "statement": "(hG : G.IsAcyclic) — verbatim. Consumed only in R28CritU2T.induce_supp_isTree (each component of G, induced, is a tree).",
+      "dependencies": [
+        "def-is-acyclic",
+        "dom-g"
+      ]
+    },
+    {
+      "id": "hyp-tree-degree-lemma",
+      "statement": "(htree : ∀ {Y : Type u} [Fintype Y] [DecidableEq Y] (T : SimpleGraph Y) [DecidableRel T.Adj], T.IsTree →\n      ∀ a ≤ k, (Erdos993G1.indepDegreeSum T a : ℤ) ≤ 2 * a * Erdos993G1.indepCount T a) — verbatim. The degree lemma at EVERY size a ≤ k on every finite tree in universe u (erratum R28-E-c; the SOLUTION-CONTRACT §2 single-k component hypothesis is not used: K_4 ⊔ K_4, k = 2).",
+      "dependencies": [
+        "def-is-tree",
+        "def-indep-count",
+        "def-indep-degree-sum",
+        "dom-tree-carrier"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "(Erdos993G1.indepDegreeSum G k : ℤ) ≤ 2 * k * Erdos993G1.indepCount G k — verbatim; D_k(G) ≤ 2k·i_k(G) in ℤ.",
+    "dependencies": [
+      "hyp-instances",
+      "hyp-acyclic",
+      "hyp-tree-degree-lemma",
+      "def-indep-count",
+      "def-indep-degree-sum",
+      "dom-k"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "def-indep-set-finset",
+        "kind": "definition"
+      },
+      {
+        "id": "def-degree",
+        "kind": "definition"
+      },
+      {
+        "id": "def-is-acyclic",
+        "kind": "definition"
+      },
+      {
+        "id": "def-is-tree",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indep-count",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indep-degree-sum",
+        "kind": "definition"
+      },
+      {
+        "id": "def-occ",
+        "kind": "definition"
+      },
+      {
+        "id": "def-slots-at-least",
+        "kind": "definition"
+      },
+      {
+        "id": "def-leaves-at-least",
+        "kind": "definition"
+      },
+      {
+        "id": "def-branch",
+        "kind": "definition"
+      },
+      {
+        "id": "def-leaf-t",
+        "kind": "definition"
+      },
+      {
+        "id": "def-slot",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indep-finset-on",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indep-count-on",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indep-degree-sum-on",
+        "kind": "definition"
+      },
+      {
+        "id": "def-split-pair",
+        "kind": "definition"
+      },
+      {
+        "id": "def-join-pair",
+        "kind": "definition"
+      },
+      {
+        "id": "dom-x",
+        "kind": "domain"
+      },
+      {
+        "id": "dom-g",
+        "kind": "domain"
+      },
+      {
+        "id": "dom-k",
+        "kind": "domain"
+      },
+      {
+        "id": "dom-tree-carrier",
+        "kind": "domain"
+      },
+      {
+        "id": "hyp-instances",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-acyclic",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-tree-degree-lemma",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "def-is-acyclic",
+        "to": "def-is-tree"
+      },
+      {
+        "from": "def-indep-set-finset",
+        "to": "def-indep-count"
+      },
+      {
+        "from": "def-indep-set-finset",
+        "to": "def-indep-degree-sum"
+      },
+      {
+        "from": "def-degree",
+        "to": "def-indep-degree-sum"
+      },
+      {
+        "from": "def-indep-set-finset",
+        "to": "def-occ"
+      },
+      {
+        "from": "def-occ",
+        "to": "def-slots-at-least"
+      },
+      {
+        "from": "def-degree",
+        "to": "def-slots-at-least"
+      },
+      {
+        "from": "def-occ",
+        "to": "def-leaves-at-least"
+      },
+      {
+        "from": "def-degree",
+        "to": "def-leaves-at-least"
+      },
+      {
+        "from": "def-degree",
+        "to": "def-branch"
+      },
+      {
+        "from": "def-degree",
+        "to": "def-leaf-t"
+      },
+      {
+        "from": "def-branch",
+        "to": "def-slot"
+      },
+      {
+        "from": "def-degree",
+        "to": "def-slot"
+      },
+      {
+        "from": "def-indep-set-finset",
+        "to": "def-indep-finset-on"
+      },
+      {
+        "from": "def-indep-finset-on",
+        "to": "def-indep-count-on"
+      },
+      {
+        "from": "def-indep-finset-on",
+        "to": "def-indep-degree-sum-on"
+      },
+      {
+        "from": "def-degree",
+        "to": "def-indep-degree-sum-on"
+      },
+      {
+        "from": "dom-x",
+        "to": "dom-g"
+      },
+      {
+        "from": "dom-k",
+        "to": "dom-tree-carrier"
+      },
+      {
+        "from": "dom-x",
+        "to": "hyp-instances"
+      },
+      {
+        "from": "dom-g",
+        "to": "hyp-instances"
+      },
+      {
+        "from": "def-is-acyclic",
+        "to": "hyp-acyclic"
+      },
+      {
+        "from": "dom-g",
+        "to": "hyp-acyclic"
+      },
+      {
+        "from": "def-is-tree",
+        "to": "hyp-tree-degree-lemma"
+      },
+      {
+        "from": "def-indep-count",
+        "to": "hyp-tree-degree-lemma"
+      },
+      {
+        "from": "def-indep-degree-sum",
+        "to": "hyp-tree-degree-lemma"
+      },
+      {
+        "from": "dom-tree-carrier",
+        "to": "hyp-tree-degree-lemma"
+      },
+      {
+        "from": "hyp-instances",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-acyclic",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-tree-degree-lemma",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-indep-count",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-indep-degree-sum",
+        "to": "conclusion"
+      },
+      {
+        "from": "dom-k",
+        "to": "conclusion"
+      }
+    ]
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "explicit_axiom_allowlist",
+    "rationale": "Mathlib's Finset/Fintype counting, Hall's theorem and classical decidability use Classical.choice, propext and Quot.sound; exactly these three are permitted. No sorry, admit, native_decide, axiom, or decide over an enumeration for a universal step."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "Erdos993G1.forest_degree_lemma_of_tree_degree_lemma",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem forest_degree_lemma_of_tree_degree_lemma {X : Type u} [Fintype X] [DecidableEq X] (G : SimpleGraph X)\n    [DecidableRel G.Adj] (hG : G.IsAcyclic) (k : ℕ)\n    (htree : ∀ {Y : Type u} [Fintype Y] [DecidableEq Y] (T : SimpleGraph Y) [DecidableRel T.Adj], T.IsTree →\n      ∀ a ≤ k, (Erdos993G1.indepDegreeSum T a : ℤ) ≤ 2 * a * Erdos993G1.indepCount T a) :\n    (Erdos993G1.indepDegreeSum G k : ℤ) ≤ 2 * k * Erdos993G1.indepCount G k",
+    "expected_statement_sha256": "0ed31930e9fc871882eefe8970a7555779e7425265d8c04901212fed5237b2b0"
+  },
+  "source_materials": [
+    {
+      "id": "src-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "sha256": "d558726424fa2a657feb41cdb8805d52c9eda20a1251ac24b47446debc3a13b1",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-synthesis",
+      "path": "SOURCES/SYNTHESIS.md",
+      "sha256": "a79ae34e1c9ba2f97dec20406ffd6f8ba41e7ed89f26c1eee51beba4c4f111c8",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-brief",
+      "path": "SOURCES/C1-STAGE7-FORMALIZER-BRIEF-LA3.md",
+      "sha256": "d62b501fda90d5e7decee4be864a14b65a345a59b4671382da4fc018ba8c4793",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-solution-contract",
+      "path": "SOURCES/SOLUTION-CONTRACT.md",
+      "sha256": "5c3f3a0b928bbe1c146ff24394cab932862970a54b06578be5bcc1c5b0b60a5f",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "src-semantic-contract",
+      "path": "SOURCES/SEMANTIC-CONTRACT.md",
+      "sha256": "fa8dc971305d981459c71c130ed3468078efa3cbf1cbd3232e6b5aa83cc2731d",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "sha256": "8bb5bbeeefb3a111373679aaa975c7e6aa50c63f9f02dc99c5bae207a8fc8a26",
+      "role": "reference"
+    },
+    {
+      "id": "src-r25-award-main",
+      "path": "SOURCES/r25/Main.lean",
+      "sha256": "736eb9dfb6ba82b0e099fe70df9e4d7f780bccdbd24ca240f4ad1115cfe7dfe0",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-r27-award-main",
+      "path": "SOURCES/r27/Main.lean",
+      "sha256": "b49ea82a33edc55f8185379c3abd44e13a17914b7f8b9ab0bf5e2aaac5aafc5a",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-u2",
+      "path": "SOURCES/c1-stage7-sources/U2-Main.lean",
+      "sha256": "5d71c16bfd340aad85de5291e537ee28c8e6d2e0ef60ffb98a8a611ff644c6cc",
+      "role": "reference"
+    },
+    {
+      "id": "src-carry-cu2t",
+      "path": "SOURCES/c1-stage7-sources/C-U2-T-CritU2T.lean",
+      "sha256": "46be4587c0514b05a9fd9bf9b51ac0e7cf8046753b17960a12b57c32c805fa34",
+      "role": "reference"
+    },
+    {
+      "id": "src-carry-cu2f",
+      "path": "SOURCES/c1-stage7-sources/C-U2-F-CritAdvance.lean",
+      "sha256": "824c760943f02e1e7d28af13bb3e62c34e1110dae4387c3276fb686f98e2660d",
+      "role": "reference"
+    },
+    {
+      "id": "src-carry-digests",
+      "path": "SOURCES/c1-stage7-sources/SOURCE-DIGESTS.json",
+      "sha256": "4fdcd2885fd8b69c04647f2884594222bc8c845ab65b59a333a975458179f308",
+      "role": "reference"
+    },
+    {
+      "id": "src-carry-table",
+      "path": "DRAFTS/carry-table.json",
+      "sha256": "b00ee5d38fddcc688be1f91f3e27add9cb5d6384675b325b88dd53177dad0c0f",
+      "role": "reference"
+    },
+    {
+      "id": "src-transport-script",
+      "path": "DRAFTS/transport.py",
+      "sha256": "73588a1b4bf5bfb4ecd77a47ab0dafba18913fb5c7b2102debe6b310877027fa",
+      "role": "reference"
+    },
+    {
+      "id": "frag-01",
+      "path": "LeanProject/LeanProof/Snippets/0001-definition-Erdos993G1-indepCount.lean.fragment",
+      "sha256": "5484fc21ffce7bf707240da15858d7d82289f8e6f286a8fa9837cd9a0c474ccb",
+      "role": "definition_authority"
+    },
+    {
+      "id": "frag-02",
+      "path": "LeanProject/LeanProof/Snippets/0002-definition-Erdos993G1-indepDegreeSum.lean.fragment",
+      "sha256": "a1ed32eb12b137ac5915bf15255c1173593296f3eb22127e2dcf0fab2ea9f38e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "frag-03",
+      "path": "LeanProject/LeanProof/Snippets/0003-definition-R28U2-occ.lean.fragment",
+      "sha256": "dd5dba734553ed76a9e3c6b41c0a19ef2a639d00a8adc540f184041b37206433",
+      "role": "definition_authority"
+    },
+    {
+      "id": "frag-04",
+      "path": "LeanProject/LeanProof/Snippets/0004-definition-R28U2-slotsAtLeast.lean.fragment",
+      "sha256": "ba7eee89b6e73147bea7c9f2825b14546b645581c6380eb5728e6f51134278f2",
+      "role": "definition_authority"
+    },
+    {
+      "id": "frag-05",
+      "path": "LeanProject/LeanProof/Snippets/0005-definition-R28U2-leavesAtLeast.lean.fragment",
+      "sha256": "cdcddd1d3d3e8af0f2964275effa07e2df7abd96823a32748decfe23cbd2db2f",
+      "role": "definition_authority"
+    },
+    {
+      "id": "frag-06",
+      "path": "LeanProject/LeanProof/Snippets/0006-definition-R28U2-indepFinsetOn.lean.fragment",
+      "sha256": "e61ddb08a2cbbee185938b4eedb720e3ea823c19f025303f4ddb1e569cb2098e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "frag-07",
+      "path": "LeanProject/LeanProof/Snippets/0007-definition-R28U2-indepCountOn.lean.fragment",
+      "sha256": "58dae1b489315cb9dafe6339c6e344133ac7b3bd9ce6be527efe7707b6b7dfbd",
+      "role": "definition_authority"
+    },
+    {
+      "id": "frag-08",
+      "path": "LeanProject/LeanProof/Snippets/0008-definition-R28U2-indepDegreeSumOn.lean.fragment",
+      "sha256": "7bdd5644f3ddcd6441c514d2d8084b25c73753c3cf5c4575d6efc2d8837cd261",
+      "role": "definition_authority"
+    },
+    {
+      "id": "frag-09",
+      "path": "LeanProject/LeanProof/Snippets/0009-definition-R28U2-splitPair.lean.fragment",
+      "sha256": "920149a54ace4724e0e40b32a6c48e5ff8522f7351720737d610e07de581ff25",
+      "role": "definition_authority"
+    },
+    {
+      "id": "frag-10",
+      "path": "LeanProject/LeanProof/Snippets/0010-definition-R28U2-joinPair.lean.fragment",
+      "sha256": "673d19ca34e7831a1d8a3f1d8ccf1528946d4606070cf5f64ebb248734e7c633",
+      "role": "definition_authority"
+    },
+    {
+      "id": "frag-11",
+      "path": "LeanProject/LeanProof/Snippets/0011-definition-R28U2-Branch.lean.fragment",
+      "sha256": "cf0e0e8502d90f7e563d17f42e856166a52b9c38ae3773d6b14f5df3384a8983",
+      "role": "definition_authority"
+    },
+    {
+      "id": "frag-12",
+      "path": "LeanProject/LeanProof/Snippets/0012-definition-R28U2-LeafT.lean.fragment",
+      "sha256": "c75cc80b344c11bc94aa5b892692f284b8018d28715ac4d3879dd1671f99d772",
+      "role": "definition_authority"
+    },
+    {
+      "id": "frag-13",
+      "path": "LeanProject/LeanProof/Snippets/0013-definition-R28U2-Slot.lean.fragment",
+      "sha256": "4717d4e89800de6de4c630b710430d65b999f44eb87edfcebc1c9d61c879b36d",
+      "role": "definition_authority"
+    },
+    {
+      "id": "frag-14",
+      "path": "LeanProject/LeanProof/Snippets/0014-lemma-Erdos993G1-indepCount_eq_card_indepSetFinset.lean.fragment",
+      "sha256": "4463e7eea65f11f69266095e58b54777ea245aa79caee47bf5b6e3ab77aa0eac",
+      "role": "reference"
+    },
+    {
+      "id": "frag-15",
+      "path": "LeanProject/LeanProof/Snippets/0015-lemma-R28U2-indepFinsetOn_univ.lean.fragment",
+      "sha256": "25fa6f7139682e93145d69ae00947519dc7e1b765cc42d1f60e38a7a49da9a9c",
+      "role": "reference"
+    },
+    {
+      "id": "frag-16",
+      "path": "LeanProject/LeanProof/Snippets/0016-lemma-R28U2-indepCountOn_univ.lean.fragment",
+      "sha256": "92b26dcb667eb95ff5564afc490d58dde45d4528c97f7e604af28043d7a7b098",
+      "role": "reference"
+    },
+    {
+      "id": "frag-17",
+      "path": "LeanProject/LeanProof/Snippets/0017-lemma-R28U2-indepDegreeSumOn_univ.lean.fragment",
+      "sha256": "6b18cbcadc739946f57f5c7f4da006356ebcc0eac3cd955662c7dc6cc34f8f54",
+      "role": "reference"
+    },
+    {
+      "id": "frag-18",
+      "path": "LeanProject/LeanProof/Snippets/0018-lemma-R28U2-isIndepSet_union_iff.lean.fragment",
+      "sha256": "0a49d7a638e5153547952269bbd4f4a4d7cbdce501f994ef66702a414d1e6e4f",
+      "role": "reference"
+    },
+    {
+      "id": "frag-19",
+      "path": "LeanProject/LeanProof/Snippets/0019-lemma-R28U2-join_splitPair.lean.fragment",
+      "sha256": "8bbc6f78463dbf6352a1129d518db9046d483e917d085454f2f89ed51c8cd5c9",
+      "role": "reference"
+    },
+    {
+      "id": "frag-20",
+      "path": "LeanProject/LeanProof/Snippets/0020-lemma-R28U2-splitPair_joinPair.lean.fragment",
+      "sha256": "c52d9441fa4222730f74dde040a04f2fcc4a4f430a73de6021731a0b21d06037",
+      "role": "reference"
+    },
+    {
+      "id": "frag-21",
+      "path": "LeanProject/LeanProof/Snippets/0021-lemma-R28U2-splitPair_mem.lean.fragment",
+      "sha256": "c4531c1f2430611c946c190e512bba5d685fe1794fa2807f4547f1d7b52abc9e",
+      "role": "reference"
+    },
+    {
+      "id": "frag-22",
+      "path": "LeanProject/LeanProof/Snippets/0022-lemma-R28U2-joinPair_mem.lean.fragment",
+      "sha256": "6e96881edf60e01dddd0f166c5f861a54a604d1202d1612d262d1b1899b8c79a",
+      "role": "reference"
+    },
+    {
+      "id": "frag-23",
+      "path": "LeanProject/LeanProof/Snippets/0023-lemma-R28U2-indepCountOn_union_filter_card.lean.fragment",
+      "sha256": "cc83dc07de583300be13f9470076004e8702b8b77f2e14795c64af1584ea544f",
+      "role": "reference"
+    },
+    {
+      "id": "frag-24",
+      "path": "LeanProject/LeanProof/Snippets/0024-lemma-R28U2-indepDegreeSumOn_union_filter_sum.lean.fragment",
+      "sha256": "0a6152a59998a1e91ef51a772326a8acc29bf42965f9109c6cd9de7f7bb22b0c",
+      "role": "reference"
+    },
+    {
+      "id": "frag-25",
+      "path": "LeanProject/LeanProof/Snippets/0025-lemma-R28U2-interS_card_mem_range.lean.fragment",
+      "sha256": "bc3da5c26ee431881ef1fefda7ebb8c95bf13c3fb5b7a4b3e5cb43de3b5ad1e7",
+      "role": "reference"
+    },
+    {
+      "id": "frag-26",
+      "path": "LeanProject/LeanProof/Snippets/0026-lemma-R28U2-indepCountOn_union.lean.fragment",
+      "sha256": "35b055ec37d8c606e36cf0b8a9cae101902679453b6589e9ae01de4903201949",
+      "role": "reference"
+    },
+    {
+      "id": "frag-27",
+      "path": "LeanProject/LeanProof/Snippets/0027-lemma-R28U2-indepDegreeSumOn_union.lean.fragment",
+      "sha256": "756679f68a4b62b94917fe24f452ea13d28e559da5a3d5570c4c329b8ab2c4a7",
+      "role": "reference"
+    },
+    {
+      "id": "frag-28",
+      "path": "LeanProject/LeanProof/Snippets/0028-lemma-R28U2-nested_hall_iff_threshold.lean.fragment",
+      "sha256": "291b912b208c422d73a4c0fa9c061311948faf0d18ec7fe23d410d7e6a2fc2be",
+      "role": "reference"
+    },
+    {
+      "id": "frag-29",
+      "path": "LeanProject/LeanProof/Snippets/0029-lemma-R28U2-sdr_iff_threshold_abstract.lean.fragment",
+      "sha256": "efa1c4d53ac0d36fd4f43ca41ac13271e8392075adccbdaa19c0be2e1351d652",
+      "role": "reference"
+    },
+    {
+      "id": "frag-30",
+      "path": "LeanProject/LeanProof/Snippets/0030-lemma-R28U2-card_filter_subtype_eq.lean.fragment",
+      "sha256": "23f549ff306f7a3a61ed1ca8e5e2869df6af2f2b6ecbf2b1f70ea2b06493ad89",
+      "role": "reference"
+    },
+    {
+      "id": "frag-31",
+      "path": "LeanProject/LeanProof/Snippets/0031-lemma-R28U2-sum_filter_subtype_eq.lean.fragment",
+      "sha256": "d96f8233898ae15c64098205a2d0a97f25bc295c710f06779301b62e8e02d7ff",
+      "role": "reference"
+    },
+    {
+      "id": "frag-32",
+      "path": "LeanProject/LeanProof/Snippets/0032-lemma-R28U2-card_filter_slot_eq.lean.fragment",
+      "sha256": "58a54c0662c791736aaa9dc628e7a8258ada7f7732b34726721446ffd989b932",
+      "role": "reference"
+    },
+    {
+      "id": "frag-33",
+      "path": "LeanProject/LeanProof/Snippets/0033-lemma-R28U2-card_filter_leaf_eq.lean.fragment",
+      "sha256": "a276cc9963d8d71fa77ec06c720a5e433939341b4ce0fa6cc7661fa9d6528b88",
+      "role": "reference"
+    },
+    {
+      "id": "frag-34",
+      "path": "LeanProject/LeanProof/Snippets/0034-lemma-R28U2-sdr_iff_threshold.lean.fragment",
+      "sha256": "96f879ee99e5381185e12e5908dc249812c91f52d55baae563a07c71908c5ad9",
+      "role": "reference"
+    },
+    {
+      "id": "frag-35",
+      "path": "LeanProject/LeanProof/Snippets/0035-lemma-R28CritU2T-degree_lemma_on_union.lean.fragment",
+      "sha256": "67ff442bcf37dd47f6073fcab2fdb3e68b0931cbb14231996bd20ac14fee96b4",
+      "role": "reference"
+    },
+    {
+      "id": "frag-36",
+      "path": "LeanProject/LeanProof/Snippets/0036-lemma-R28CritU2T-sum_empty_on.lean.fragment",
+      "sha256": "018d2df47acb0bcb8c1671ae08269519ed6bed40ba73e2e35d72eb913cfe9619",
+      "role": "reference"
+    },
+    {
+      "id": "frag-37",
+      "path": "LeanProject/LeanProof/Snippets/0037-lemma-R28CritU2T-bridge.lean.fragment",
+      "sha256": "20d0191e642b632b34bf13eacdf82ae360924c7702d903753589cbdbf52900c0",
+      "role": "reference"
+    },
+    {
+      "id": "frag-38",
+      "path": "LeanProject/LeanProof/Snippets/0038-lemma-R28CritU2T-supp_closed.lean.fragment",
+      "sha256": "22db38cac7bfaa81649ff297330943d58c4d7ce9926ccd591636557e26bf8a96",
+      "role": "reference"
+    },
+    {
+      "id": "frag-39",
+      "path": "LeanProject/LeanProof/Snippets/0039-lemma-R28CritU2T-degree_lemma_of_components.lean.fragment",
+      "sha256": "d9dfb9a70d1c7f5c153911ddbf701113860b622c61a38bf25877a0edde707593",
+      "role": "reference"
+    },
+    {
+      "id": "frag-40",
+      "path": "LeanProject/LeanProof/Snippets/0040-lemma-R28CritU2T-forest_degree_lemma_of_components_allk.lean.fragment",
+      "sha256": "5347e7031aacd894274a1f0936a238c4aa6e9a4d47740ab4548806f75fe5bc05",
+      "role": "reference"
+    },
+    {
+      "id": "frag-41",
+      "path": "LeanProject/LeanProof/Snippets/0041-lemma-R28CritU2T-induce_supp_isTree.lean.fragment",
+      "sha256": "892b3dc12bf5a7eb656f6f07816d34c1e1f8edb7b92080dc2fe1f951d12af376",
+      "role": "reference"
+    },
+    {
+      "id": "frag-42",
+      "path": "LeanProject/LeanProof/Snippets/0042-lemma-R28CritU2T-forest_degree_lemma_of_tree_degree_lemma.lean.fragment",
+      "sha256": "caf15263f6e7ea32eb687e16f68914706885be4b4828040d49286c0533fe68d4",
+      "role": "reference"
+    },
+    {
+      "id": "frag-43",
+      "path": "LeanProject/LeanProof/Snippets/0043-lemma-R28CritU2F-dl_union.lean.fragment",
+      "sha256": "f6feac9c01d2b756135daf54b098136338e931a77a562f2b62da6077f256cce9",
+      "role": "reference"
+    },
+    {
+      "id": "frag-44",
+      "path": "LeanProject/LeanProof/Snippets/0044-lemma-R28CritU2F-card_isolated_le_one.lean.fragment",
+      "sha256": "4cb656d841721c281b53e9008548a03696e71dd933c1fb289c85d26a1e5b2bc2",
+      "role": "reference"
+    },
+    {
+      "id": "frag-45",
+      "path": "LeanProject/LeanProof/Snippets/0045-lemma-R28CritU2F-tree_slots_zero_le.lean.fragment",
+      "sha256": "989705c8d7085d66fca2d59e849a1432676ecfbd1a347ca39eb842ec53499c34",
+      "role": "reference"
+    },
+    {
+      "id": "frag-46",
+      "path": "LeanProject/LeanProof/Snippets/0046-lemma-R28CritU2F-sdr_iff_threshold_pos_of_tree.lean.fragment",
+      "sha256": "6e6c6520694c3679797e4f0d5fe7acbe23f8ec9f673a2197da3da8ff2b2fe274",
+      "role": "reference"
+    },
+    {
+      "id": "frag-47",
+      "path": "LeanProject/LeanProof/Snippets/0047-lemma-R28CritU2F-mem_of_reachable_of_closed.lean.fragment",
+      "sha256": "9c915bda6219b8909bd79a77f48b6579d620953d6aca98cb596bad51cd503b66",
+      "role": "reference"
+    },
+    {
+      "id": "frag-48",
+      "path": "LeanProject/LeanProof/Snippets/0048-lemma-R28CritU2F-dl_closed_of_components.lean.fragment",
+      "sha256": "d61ea90169836feff63292640992406cb9c0d68139f93c5593eda1efb00ec1c2",
+      "role": "reference"
+    },
+    {
+      "id": "frag-49",
+      "path": "LeanProject/LeanProof/Snippets/0049-lemma-R28CritU2F-degree_lemma_of_component_supports.lean.fragment",
+      "sha256": "14f9886cad0e2f99ccbba64b2670980ccd994a5922ea5c2bb778d639c25492f1",
+      "role": "reference"
+    },
+    {
+      "id": "frag-50",
+      "path": "LeanProject/LeanProof/Snippets/0050-lemma-Erdos993G1-sdr_iff_threshold_pos_of_tree.lean.fragment",
+      "sha256": "fa8cfc72dae188191e5687376ca7ce8abb1a27f9b48284ae098750bc574e89f5",
+      "role": "reference"
+    },
+    {
+      "id": "frag-51",
+      "path": "LeanProject/LeanProof/Snippets/0051-theorem-Erdos993G1-forest_degree_lemma_of_tree_degree_lemma.lean.fragment",
+      "sha256": "1e72e521f6ffe8d6e3664206123115c2a7f6d26ad1d62156ea00ce65215839d7",
+      "role": "reference"
+    }
+  ]
+}
