@@ -1,6 +1,6 @@
 # Public Experiments
 
-Current assignments and retired recommendations are tracked in the [25 September research notepad](../docs/research-notepad-2026-09-25.md). Code's r28 has completed; the authorized order-24 census and r27 review are separate follow-ups, not additional DRE cycles.
+Current assignments and retired recommendations are tracked in the [25 September research notepad](../docs/research-notepad-2026-09-25.md). Code's r28 has completed; the completed order-24 census and r27 review are separate follow-ups, not additional DRE cycles.
 
 This directory is reserved for bounded, replayable experiments that are safe
 to publish. The first-interior publication mirrors its full admitted sealed
@@ -61,3 +61,6 @@ result, limitations, and hashes.
 - [First-interior aggregate](first-interior-aggregate.md) — two full cycles (early decisive close), 2026-09-24: exact `p=α(T)−2` complete strict favorable-original-leaf sum formally verified without residuality; one primary registry award, three auxiliary keys OPEN; all-rank ordinary and governed beta aggregates remain OPEN. See the [terminal report](../runs/erdos-993-first-interior-aggregate-dre-2026-09-24/REPORT.md).
 - [r27 forest degree/extension inequality](r27-forest-degree-extension.md) — one cycle (early stop), closed 2026-09-24: the Fang–Lu–Nevo–Yao–Zheng finite forest degree lemma and extension inequality formally verified with an in-run injection proof; the unconditional `Δ_k < 0 ⇒ n ≤ 4k`, `n ≥ 21 ⇒ Δ_5 ≥ 0`, `x < r ⇒ n ≤ 4r − 4`; the r25 rank-5 residue closed out; K1-addition closure `x ≤ 5` at census grade; descent maxima `4, 8, 11, 15, 18` from an order-20 census.
 - [r28 Hall/SDR route to the degree lemma](r28-degree-lemma-hall-sdr.md) — one cycle (counterexample stop), closed 2026-09-25: the leaf/slot dominance condition (an r27 critic's Hall/SDR sufficient condition for the degree lemma) REFUTED by a unique order-22 tree, confirmed by an isolated second read; the pendant-path leaf dominance lemma, Theorem BTP ((HS) on trees whose branch tree is a path, sharp), the layer-cake reduction, the corrected forest composition and the SDR/threshold equivalence formally verified in four packages; a second formal proof of (DL) on the path-like class.
+
+- [Order-24 forest census](forest-census-order24.md): M(6)=22 and K1 closure x<=6, census-dependent.
+- [Fresh r27 review](../docs/r27-fresh-review-2026-09-25.md): package scope, marked-transfer obstruction and equality correction.

@@ -2,7 +2,7 @@
 
 ## Current orientation, 2026-09-25
 
-Code's r28 Hall/SDR experiment is complete: its universal sufficient condition is refuted, with restricted structural results formally verified. The registry has 405 identities (243 VERIFIED, 92 REFUTED, 26 CONDITIONAL, 44 OPEN). The new bounded forest census and fresh r27 review are authorized and pending; no additional mathematical award is made. See the [current research notepad](research-notepad-2026-09-25.md) and [assessment](assessment-2026-09-25.md). Historical sections retain their dates and scopes.
+Code's r28 Hall/SDR experiment is complete: its universal sufficient condition is refuted, with restricted structural results formally verified. The registry has 407 identities (245 VERIFIED, 92 REFUTED, 26 CONDITIONAL, 44 OPEN). The completed order-24 census gives M(6)=22 and K1-addition closure for x<=6 at census-dependent grades. The fresh r27 review corrects informal equality endpoints and identifies the missing marked-shadow control; no new formal award is made. See the [current research notepad](research-notepad-2026-09-25.md) and [assessment](assessment-2026-09-25.md). Historical sections retain their dates and scopes.
 
 ## First-interior ordinary aggregate, 2026-09-24
 
@@ -396,3 +396,5 @@ at its corrected hypothesis; the SDR/threshold equivalence; and their compositio
 `(DL)` on the path-like class. Every proposed matching-type strengthening of `(DL)` on all trees fails on the same
 order-22 tree, where the root's occupancy is the strict maximum over all vertices. Nothing here is a no-recovery
 statement. See [r28](../experiments/r28-degree-lemma-hall-sdr.md) and [verification](../evidence/verification-2026-09-25-r28.md).
+
+Completed follow-ups: [order-24 census](../experiments/forest-census-order24.md), [fresh r27 review](../docs/r27-fresh-review-2026-09-25.md), and [verification record](../evidence/verification-2026-09-25-followups.md).

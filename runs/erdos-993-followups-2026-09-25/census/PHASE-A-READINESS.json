@@ -1,0 +1,15 @@
+{
+  "phase_b_commands": [
+    "python3 census/forest24.py --max-order 20 --out census/baseline20.json",
+    "python3 census/forest24.py --max-order 24 --out census/production24.json"
+  ],
+  "production_started": false,
+  "source_and_protocol_sha256": {
+    "PROTOCOL.md": "51403280c2f53ef5731bbe946908d81cdf6fa8ee89a50d39d3b57153dba8b54e",
+    "fixtures.py": "3e39bb5b0e0f4482bf45267afe318ad503305eef52b044d54313711383599677",
+    "forest24.py": "72fa4ee0ffee32a3e022e1467e8a24185f5f509ce968521df3285298d35fc836",
+    "independent_small.py": "490d2f9602c7dcd0b037bc25525c5ff4ffe79995a1be2ccf540fa0f88cf35e4a"
+  },
+  "status": "proposed_unfrozen_phase_a",
+  "validation12_sha256": "0595597adc73bf21439447190c3a10f114c470e56e90dcabe3a4db3a19f2a17a"
+}

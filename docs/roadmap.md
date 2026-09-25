@@ -41,10 +41,13 @@ Universal tree TRS2 and universal tree log-concavity are refuted; see [the errat
 
 This roadmap is prospective. The three-cycle G1 experiment is closed; additional research cycles require new authorization.
 
-## Immediate authorized follow-ups
+## Completed follow-ups and their implications
 
-The r28 universal Hall/SDR route is refuted; do not reopen it. Its pendant-path and path-like branch-tree results are available only at their exact scopes. One bounded forest census through order 24 will decide the rank-6 maximum and directly test K1-addition closure for x<=6, using the formal n<=4k ceiling. A separate fresh review of all four r27 packages will assess whether the root correction M_k can help interior aggregate deficits. These are an instrument job and a review, not new DRE cycles. Their results are pending.
+The bounded order-24 census is complete: M(6)=22 and K1-addition closure for x<=6 at census-dependent grades. XR occupancy now reaches r=7 with maximum order 22; orders 23 and 24 are excluded. Use this restriction in eligible finite cases. A blind expansion to rank 7 is not the current priority.
 
+The fresh r27 review found no source/contract mismatch, but root optimization does not by itself bound marked next layers. Preserve the favorable selector and original support tags while developing upper-shadow control or complete selected-sum compensation below the high-tail guard. The ineligible six-vertex witness blocks the naive marked restriction, not the eligible aggregate. Universal Hall/SDR is refuted by completed r28; its branch-tree theorem remains class restricted.
+
+See the [census](../experiments/forest-census-order24.md), [fresh review](r27-fresh-review-2026-09-25.md) and [current twelve-area notepad](research-notepad-2026-09-25.md).
 ## Areas to work on (consolidated 2026-09-25)
 
 This is the run-close view from the two most recent closes. The standing priority map is the [twelve-area research notepad](research-notepad-2026-09-25.md), summarized in the [assessment](assessment-2026-09-25.md): items 1–3 below are its areas 4–5 and its highest-impact list, item 4 its areas 6, 9 and 11. Where the two disagree, the notepad governs.

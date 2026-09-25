@@ -1,0 +1,65 @@
+{
+  "schema": "independent-r27-review/v1",
+  "scope": "four pinned r27 Lean packages, registered optimized root correction, and relevance to the ordinary selected leaf aggregate",
+  "lean_rebuilt": false,
+  "new_formal_awards": false,
+  "findings": [
+    {
+      "id": "R27-REVIEW-1",
+      "grade": "mathematical_counterexample_to_proposed_transfer",
+      "severity": "high",
+      "direction": "global root-corrected degree and extension lower bounds do not upper-bound the marked next rank",
+      "claim": "The optimized all-independent-set inequality can be tight at ranks 1 and 2 while a genuine original favorable leaf has q_2-q_1=1. Restriction of RC to root-meeting independent sets fails already at rank 1.",
+      "witness": {
+        "vertices": [0, 1, 2, 3, 4, 5],
+        "edges": [[0, 1], [1, 2], [2, 3], [1, 4], [4, 5]],
+        "original_leaf": 0,
+        "support": 1,
+        "H_edges": [[2, 3], [4, 5]],
+        "W": [2, 4],
+        "H_rank_1": {"i": 4, "D": 4, "M": 2, "q": 2},
+        "H_rank_2": {"i": 4, "D": 8, "M": 4, "q": 3},
+        "T_minus_leaf": {"i_2": 6, "i_3": 1},
+        "scope_fence": "This rank is outside first-interior eligibility; it refutes a direct marked-family transfer, not the verified interior theorem or the eligible aggregate."
+      },
+      "sources": [
+        "sources/public/proofs/lean/r27-c1-la1-forest-degree-extension/source/LeanProof/Main.lean:1006-1015",
+        "sources/public/proofs/lean/r27-c1-la2-extension-counting-core/source/LeanProof/Main.lean:279-356",
+        "sources/verity/experiments/erdos-993-forest-degree-extension-dre-2026-09-24/second-reads/SR-RC/SECOND-READ.md:179-185",
+        "review/scratch/check_transfer_example.py"
+      ],
+      "next_action": "Seek a selector-preserving upper shadow or aggregate deficit budget across original support tags, especially below the known high-tail guard."
+    },
+    {
+      "id": "R27-REVIEW-2",
+      "grade": "source_text_endpoint_error",
+      "severity": "medium",
+      "direction": "Corollary B inequality true; its unqualified iff equality claim false",
+      "claim": "Equality also holds at k=0 for every forest and whenever i_k=0, including out-of-support ranks. The second read and registry omit these endpoints in the phrase 'equality exactly for trees at k=1'.",
+      "sources": [
+        "sources/verity/experiments/erdos-993-forest-degree-extension-dre-2026-09-24/second-reads/SR-RC/SECOND-READ.md:190-192",
+        "sources/verity/experiments/erdos-993-forest-degree-extension-dre-2026-09-24/second-reads/SR-RC/SECOND-READ.md:363-364",
+        "sources/verity/experiments/erdos-993-master-ledger-2026-09-04/CLAIM-IDENTITY.json:36991-36993"
+      ],
+      "next_action": "Correct the registry wording or explicitly restrict the equality classification to n>0, k>=1, i_k>0 after checking the iff in that domain; preserve the correct inequality and sealed source."
+    },
+    {
+      "id": "R27-REVIEW-3",
+      "grade": "scope_boundary_confirmed",
+      "severity": "high",
+      "direction": "universal Hall/SDR route refuted; restricted BTP survives",
+      "claim": "The pinned r28 order-22 tree has root occupancy 18 and each leaf occupancy 17 at rank 12, refuting universal threshold slot dominance; the verified branch-tree-path theorem is class restricted.",
+      "sources": [
+        "sources/public/experiments/r28-degree-lemma-hall-sdr.md:15-32",
+        "sources/public/evidence/verification-2026-09-25-r28.md:24-38"
+      ],
+      "next_action": "Do not invoke universal Hall/SDR as a marked-family bridge; use BTP only with its branch-tree hypothesis."
+    }
+  ],
+  "packages": [
+    {"id": "C1-LA1", "terminal": "Erdos993G1.forest_extension_inequality", "reported_grade": "formally_verified", "review": "contract and source face agree; compiled root lemma uses rootRep, optimized every-rooting max face is separately proved_informal"},
+    {"id": "C1-LA2", "terminal": "Erdos993G1.e_ge_sub", "reported_grade": "formally_verified", "review": "contract and source face agree; graph-general double count and integer lower bound"},
+    {"id": "C1-LA3", "terminal": "Erdos993G1.degree_lemma_implies_chain", "reported_grade": "formally_verified", "review": "contract and source face agree; implication only, quantified instance binders"},
+    {"id": "C1-LA4", "terminal": "Erdos993G1.forest_descent_restriction", "reported_grade": "formally_verified", "review": "contract and source face agree; unconditional after LA1, r=0 premise vacuous"}
+  ]
+}

@@ -70,3 +70,7 @@ run concurrently with the Lean stage (which let a reader's finding reach a forma
 integrity sweep of 38 manifests / 3,698 members / 0 unexpected drifts. Controller errata R27-E-a…g are on
 the record. Master registry 392 identities after publication. Verification record:
 [`evidence/verification-2026-09-24-r27.md`](../evidence/verification-2026-09-24-r27.md).
+
+## Follow-up review and census, 2026-09-25
+
+The [fresh review](../docs/r27-fresh-review-2026-09-25.md) confirms the four package faces against source and reported receipts, without a Lean rebuild. The informal Corollary B equality sentence is corrected at k=0 and i_k=0; no complete positive supported k>=2 classification is asserted by the corrected face. Sealed source and formal awards are unchanged. The separate [order-24 census](forest-census-order24.md) extends the descent maxima to M(6)=22 and K1-addition closure to x<=6 at census-dependent grades.

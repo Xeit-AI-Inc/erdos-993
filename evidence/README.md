@@ -35,3 +35,5 @@ source packets, raw model transcripts, and noncanonical duplicate returns.
 - [`source-hashes.sha256`](source-hashes.sha256) binds the published Lean
   packages, computation sources, and toolchain metadata.
 - `verification-2026-09-17-r23b.md` — r23b (sibling construction/verification run) terminal verification record.
+
+- [Follow-up census and review](verification-2026-09-25-followups.md) records the complete order-24 instrument, independent checks and r27 scope corrections. The current global registry projection is `../runs/erdos-993-followups-2026-09-25/TERMINAL-LEDGER.csv`; `obligations.csv` is the same current 407-row registry projection. The old public-ID rows are preserved unchanged in [obligations-through-r23b.csv](obligations-through-r23b.csv) as historical evidence, superseded for current status by the canonical registry.
