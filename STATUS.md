@@ -1,6 +1,10 @@
 # Research Status
 
-Last updated: 2026-09-24 (first-interior aggregate formally verified; master registry 395 identities)
+## Current orientation, 2026-09-25
+
+Code's r28 Hall/SDR experiment is complete: its universal sufficient condition is refuted, with restricted structural results formally verified. The registry has 405 identities (243 VERIFIED, 92 REFUTED, 26 CONDITIONAL, 44 OPEN). The new bounded forest census and fresh r27 review are authorized and pending; no additional mathematical award is made. See the [current research notepad](docs/research-notepad-2026-09-25.md) and [assessment](docs/assessment-2026-09-25.md). Historical sections retain their dates and scopes.
+
+Last updated: 2026-09-25 (r28: the Hall/SDR sufficient condition for the degree lemma refuted at order 22, four Lean packages for the surviving statements; first-interior aggregate formally verified 2026-09-24; master registry 405 identities)
 
 ## Headline Problems
 
@@ -17,6 +21,10 @@ with per-step status, the claim/fence/obligation tables, strategy verdicts,
 and next-phase priorities — is the
 [master proof ledger (2026-09-04)](docs/master-proof-ledger-2026-09-04.md).
 
+## r28, 2026-09-25
+
+The leaf/slot dominance condition `(HS)` — the Hall/SDR route to a second proof of the forest degree lemma — is REFUTED by an order-22 tree (see [the experiment page](experiments/r28-degree-lemma-hall-sdr.md) and [verification](evidence/verification-2026-09-25-r28.md)); `(DL)` is untouched. What survives and is registered: the pendant-path leaf dominance lemma, Theorem BTP (`(HS)` on trees whose branch tree is a path, sharp), the surplus identity, the SDR/threshold equivalence and the layer-cake reduction; 4 governed Lean package(s). The forest-wide no-recovery claim, NR1, FOREST, TREE, TRANSFER and Erdős #993 stay OPEN and untouched.
+
 ## First-interior aggregate, 2026-09-24
 
 The exact ordinary-tree claim `E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE` is VERIFIED at `formally_verified`. For `p = α(T) − 2` and first strict descent `x(T) + 2 ≤ p`, the complete strict favorable **original-leaf** sum
@@ -25,11 +33,7 @@ The exact ordinary-tree claim `E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE` is VERIF
 Σ_{v leaf of T, Δ_p(T−v)<0} [Δ_(p−1)(T−{v,s_v}) − Δ_(p−1)(T−N_T[s_v])] ≤ 0
 ```
 
-holds without a residual assumption. The selector is evaluated at the original `p`; original supports and closed neighborhoods are used, and leaves sharing a support retain separate tags. Eligibility implies `α(T) ≥ 7` within the proof; it is not an extra premise. The experiment closed after two complete cycles of six authorized maximum. Only this primary key received a new certificate; the three separately registered auxiliary keys remain OPEN despite compiled internal lemmas. The master has 395 identities: 236 VERIFIED, 89 REFUTED, 26 CONDITIONAL and 44 OPEN. These mixed evidence grades are not a formal-theorem count. The all-rank ordinary aggregate, governed `E993-BETA-AGG`, TREE, FOREST, TRANSFER and Erdős #993 remain OPEN. The ordinary all-rank target is self-contained; an ordinary-to-governed-model bridge is needed only for downstream transfer to governed beta aggregation. See the [experiment](experiments/first-interior-aggregate.md), [proof package](proofs/lean/first-interior-aggregate/README.md), [verification](evidence/verification-2026-09-24-first-interior.md), [terminal report](runs/erdos-993-first-interior-aggregate-dre-2026-09-24/REPORT.md) and [independent analysis](runs/erdos-993-first-interior-aggregate-dre-2026-09-24/FINAL-ANALYSIS.md).
-
-## r28, 2026-09-25
-
-The leaf/slot dominance condition `(HS)` — the Hall/SDR route to a second proof of the forest degree lemma — is REFUTED by an order-22 tree (see [the experiment page](experiments/r28-degree-lemma-hall-sdr.md) and [verification](evidence/verification-2026-09-25-r28.md)); `(DL)` is untouched. What survives and is registered: the pendant-path leaf dominance lemma, Theorem BTP (`(HS)` on trees whose branch tree is a path, sharp), the surplus identity, the SDR/threshold equivalence and the layer-cake reduction; 4 governed Lean package(s). The forest-wide no-recovery claim, NR1, FOREST, TREE, TRANSFER and Erdős #993 stay OPEN and untouched.
+holds without a residual assumption. The selector is evaluated at the original `p`; original supports and closed neighborhoods are used, and leaves sharing a support retain separate tags. Eligibility implies `α(T) ≥ 7` within the proof; it is not an extra premise. The experiment closed after two complete cycles of six authorized maximum. Only this primary key received a new certificate; the three separately registered auxiliary keys remain OPEN despite compiled internal lemmas. At the first-interior close, the master had 395 identities: 236 VERIFIED, 89 REFUTED, 26 CONDITIONAL and 44 OPEN. These mixed evidence grades are not a formal-theorem count. The all-rank ordinary aggregate, governed `E993-BETA-AGG`, TREE, FOREST, TRANSFER and Erdős #993 remain OPEN. The ordinary all-rank target is self-contained; an ordinary-to-governed-model bridge is needed only for downstream transfer to governed beta aggregation. See the [experiment](experiments/first-interior-aggregate.md), [proof package](proofs/lean/first-interior-aggregate/README.md), [verification](evidence/verification-2026-09-24-first-interior.md), [terminal report](runs/erdos-993-first-interior-aggregate-dre-2026-09-24/REPORT.md) and [independent analysis](runs/erdos-993-first-interior-aggregate-dre-2026-09-24/FINAL-ANALYSIS.md).
 
 ## r27, 2026-09-24
 

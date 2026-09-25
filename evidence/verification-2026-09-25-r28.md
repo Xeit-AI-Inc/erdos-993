@@ -24,9 +24,9 @@ adjudicators and the controller reproduced it; the isolated second read confirme
 infinite family, and enumerated all 5,623,756 trees of order 22 (unique failure; none at order ≤ 21). The degree
 lemma `(DL)` holds on `T22` and is untouched (its r27 award remains the proof of record).
 
-**What the packages prove (where closed).** The layer-cake reduction `(HS at t ≥ 1) ⇒ (DL)` on any finite graph, with
+**What the closed packages prove.** The layer-cake reduction `(HS at t ≥ 1) ⇒ (DL)` on any finite graph, with
 the r27 leaf/branch reformulation formalized; the forest composition at its corrected hypothesis (the tree bound at
-every `a ≤ k`) and the SDR/threshold equivalence; the pendant-path leaf dominance lemma; and, if closed, Theorem
+every `a ≤ k`) and the SDR/threshold equivalence; the pendant-path leaf dominance lemma; and Theorem
 BTP — `(HS)` on trees whose branch tree has maximum degree ≤ 2 — composed with the reduction into a second,
 matching-type proof of `(DL)` on that class only. None of this is a no-recovery statement; nothing transfers to the
 forest-wide no-recovery claim, NR1, FOREST, TREE, TRANSFER or Erdős #993.

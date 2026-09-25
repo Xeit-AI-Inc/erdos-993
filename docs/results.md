@@ -1,5 +1,9 @@
 # Current Results
 
+## Current orientation, 2026-09-25
+
+Code's r28 Hall/SDR experiment is complete: its universal sufficient condition is refuted, with restricted structural results formally verified. The registry has 405 identities (243 VERIFIED, 92 REFUTED, 26 CONDITIONAL, 44 OPEN). The new bounded forest census and fresh r27 review are authorized and pending; no additional mathematical award is made. See the [current research notepad](research-notepad-2026-09-25.md) and [assessment](assessment-2026-09-25.md). Historical sections retain their dates and scopes.
+
 ## First-interior ordinary aggregate, 2026-09-24
 
 The exact claim `E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE` is formally verified. For a finite ordinary tree `T`, let `p=α(T)−2`; if the first strict negative independence-coefficient difference has `x(T)+2≤p`, then
@@ -9,7 +13,7 @@ The exact claim `E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE` is formally verified. 
   [Δ_(p−1)(T−{v,s_v}) − Δ_(p−1)(T−N_T[s_v])] ≤ 0.
 ```
 
-Counts use integer zero extension. The favorable filter stays strict at the original rank, and leaves sharing a support remain separately tagged. There is no residual premise. The proof derives `α(T)≥7` from eligibility, then uses a bipartite tagged-set double count to show every original-leaf term is nonpositive. The experiment ended after two complete cycles out of six maximum; its sole registry award is this primary claim at `formally_verified`. Three related auxiliary keys remain OPEN as separate certificate scopes. The master has 395 identities (236 VERIFIED, 89 REFUTED, 26 CONDITIONAL, 44 OPEN); these mixed grades are not a count of formally verified theorems.
+Counts use integer zero extension. The favorable filter stays strict at the original rank, and leaves sharing a support remain separately tagged. There is no residual premise. The proof derives `α(T)≥7` from eligibility, then uses a bipartite tagged-set double count to show every original-leaf term is nonpositive. The experiment ended after two complete cycles out of six maximum; its sole registry award is this primary claim at `formally_verified`. Three related auxiliary keys remain OPEN as separate certificate scopes. At the first-interior close, the master had 395 identities (236 VERIFIED, 89 REFUTED, 26 CONDITIONAL, 44 OPEN); these mixed grades are not a count of formally verified theorems.
 
 The ordinary all-rank aggregate remains OPEN and is a self-contained ordinary-tree target. The proposed non-residual top-rank consequence and uniform high-tail helpers still need separate certificates; the lower eligible ranks need complete selected-sum compensation. Governed `E993-BETA-AGG` would additionally need an exact ordinary-to-governed-model bridge. TREE, FOREST, TRANSFER and Erdős #993 remain open. See the [experiment](../experiments/first-interior-aggregate.md), [Lean package](../proofs/lean/first-interior-aggregate/README.md), [verification record](../evidence/verification-2026-09-24-first-interior.md), [terminal report](../runs/erdos-993-first-interior-aggregate-dre-2026-09-24/REPORT.md) and [independent final analysis](../runs/erdos-993-first-interior-aggregate-dre-2026-09-24/FINAL-ANALYSIS.md).
 

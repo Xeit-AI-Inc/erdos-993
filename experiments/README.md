@@ -1,5 +1,7 @@
 # Public Experiments
 
+Current assignments and retired recommendations are tracked in the [25 September research notepad](../docs/research-notepad-2026-09-25.md). Code's r28 has completed; the authorized order-24 census and r27 review are separate follow-ups, not additional DRE cycles.
+
 This directory is reserved for bounded, replayable experiments that are safe
 to publish. The first-interior publication mirrors its full admitted sealed
 record and verified proof evidence; unadmitted scratch work and package caches

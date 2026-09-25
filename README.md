@@ -1,5 +1,9 @@
 # Erdős Problem #993
 
+## Current orientation, 2026-09-25
+
+Code's r28 Hall/SDR experiment is complete: its universal sufficient condition is refuted, with restricted structural results formally verified. The registry has 405 identities (243 VERIFIED, 92 REFUTED, 26 CONDITIONAL, 44 OPEN). The new bounded forest census and fresh r27 review are authorized and pending; no additional mathematical award is made. See the [current research notepad](docs/research-notepad-2026-09-25.md) and [assessment](docs/assessment-2026-09-25.md). Historical sections retain their dates and scopes.
+
 Formal and computational research by [Xeit AI, Inc.](https://xeit.ai) on the
 unimodality of independent-set sequences of finite trees and forests.
 
@@ -17,6 +21,10 @@ of size `k`. The problem asks whether
 is weakly unimodal whenever `G` is a finite tree, and likewise whenever `G` is
 a finite forest.
 
+## 2026-09-25: r28 — the Hall/SDR route to the degree lemma is refuted; what survives is registered
+
+The [r28 run](experiments/r28-degree-lemma-hall-sdr.md) attacked the leaf/slot dominance condition `(HS)` — the Hall/SDR sufficient condition an r27 critic proposed for a second, structural proof of the forest degree lemma — and refuted it: the order-22 tree `T22` (a root with three hubs, each carrying two pendant 3-paths) has its root in 18 of the 19 independent 12-sets while every leaf lies in 17, so one branch slot at threshold 18 has no leaf; found independently by two critics, reproduced by all three adjudicators, confirmed by an isolated second read that enumerated all 5,623,756 trees of order 22 and found it unique. The degree lemma `(DL)` holds on `T22` and is untouched. Registered from the run: the pendant-path leaf dominance lemma (graph-general), Theorem BTP — `(HS)` holds on every tree whose branch tree is a path, sharp for every branch-degree bound — the surplus identity, the SDR/threshold equivalence, the layer-cake reduction `(HS) ⇒ (DL)`, five refuted local mechanisms, and the census; 4 governed Lean package(s). Nothing transfers to the forest-wide no-recovery claim, NR1, FOREST, TREE or Erdős #993. Verification record: [`evidence/verification-2026-09-25-r28.md`](evidence/verification-2026-09-25-r28.md). Master registry 405 identities.
+
 ## 2026-09-24: first-interior aggregate formally verified
 
 The [first-interior experiment](experiments/first-interior-aggregate.md) closed after two full cycles (six maximum). For every finite ordinary tree `T`, put `p = α(T) − 2`. If the first strict negative difference satisfies `x(T) + 2 ≤ p`, the complete sum over **original leaves** with `Δ_p(T−v) < 0` is formally verified nonpositive:
@@ -25,11 +33,7 @@ The [first-interior experiment](experiments/first-interior-aggregate.md) closed 
 Σ_v [Δ_(p−1)(T−{v,s_v}) − Δ_(p−1)(T−N_T[s_v])] ≤ 0.
 ```
 
-The strict selector remains at the original rank; leaves sharing a support retain distinct tags. The theorem needs no residual assumption, and eligibility itself implies `α(T) ≥ 7`. The sole new award is `E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE` at `formally_verified`; the three related auxiliary registry keys remain OPEN. The master has 395 identities (236 VERIFIED, 89 REFUTED, 26 CONDITIONAL, 44 OPEN), whose mixed grades are not a formal-theorem count. The all-rank ordinary aggregate, governed `E993-BETA-AGG`, TREE, FOREST and Erdős #993 remain open. Read the [Lean package](proofs/lean/first-interior-aggregate/README.md), [verification record](evidence/verification-2026-09-24-first-interior.md), [terminal report](runs/erdos-993-first-interior-aggregate-dre-2026-09-24/REPORT.md) and [independent final analysis](runs/erdos-993-first-interior-aggregate-dre-2026-09-24/FINAL-ANALYSIS.md).
-
-## 2026-09-25: r28 — the Hall/SDR route to the degree lemma is refuted; what survives is registered
-
-The [r28 run](experiments/r28-degree-lemma-hall-sdr.md) attacked the leaf/slot dominance condition `(HS)` — the Hall/SDR sufficient condition an r27 critic proposed for a second, structural proof of the forest degree lemma — and refuted it: the order-22 tree `T22` (a root with three hubs, each carrying two pendant 3-paths) has its root in 18 of the 19 independent 12-sets while every leaf lies in 17, so one branch slot at threshold 18 has no leaf; found independently by two critics, reproduced by all three adjudicators, confirmed by an isolated second read that enumerated all 5,623,756 trees of order 22 and found it unique. The degree lemma `(DL)` holds on `T22` and is untouched. Registered from the run: the pendant-path leaf dominance lemma (graph-general), Theorem BTP — `(HS)` holds on every tree whose branch tree is a path, sharp for every branch-degree bound — the surplus identity, the SDR/threshold equivalence, the layer-cake reduction `(HS) ⇒ (DL)`, five refuted local mechanisms, and the census; 4 governed Lean package(s). Nothing transfers to the forest-wide no-recovery claim, NR1, FOREST, TREE or Erdős #993. Verification record: [`evidence/verification-2026-09-25-r28.md`](evidence/verification-2026-09-25-r28.md). Master registry 405 identities.
+The strict selector remains at the original rank; leaves sharing a support retain distinct tags. The theorem needs no residual assumption, and eligibility itself implies `α(T) ≥ 7`. The sole new award is `E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE` at `formally_verified`; the three related auxiliary registry keys remain OPEN. At the first-interior close, the master had 395 identities (236 VERIFIED, 89 REFUTED, 26 CONDITIONAL, 44 OPEN), whose mixed grades are not a formal-theorem count. The all-rank ordinary aggregate, governed `E993-BETA-AGG`, TREE, FOREST and Erdős #993 remain open. Read the [Lean package](proofs/lean/first-interior-aggregate/README.md), [verification record](evidence/verification-2026-09-24-first-interior.md), [terminal report](runs/erdos-993-first-interior-aggregate-dre-2026-09-24/REPORT.md) and [independent final analysis](runs/erdos-993-first-interior-aggregate-dre-2026-09-24/FINAL-ANALYSIS.md).
 
 ## 2026-09-24: r27 — the finite forest degree lemma and extension inequality are formally verified
 
