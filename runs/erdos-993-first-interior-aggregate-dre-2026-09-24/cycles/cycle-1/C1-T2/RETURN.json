@@ -1,0 +1,49 @@
+{
+  "worker_id": "C1-T2",
+  "cycle": 1,
+  "stage": "search",
+  "orientation": "T",
+  "status_authority": "proposed_worker_only",
+  "claims": [
+    {
+      "claim_id": "C1-T2-ALG-IDENTITY",
+      "statement": "For every finite ordinary tree, every original leaf v with support s, and every integer rank p, I_{T-v}=I_H+zI_R and therefore g_v + Delta_p(T-v)=i_{p+1}(H)-i_{p-1}(H). In particular, at p=alpha(T)-2 each favorable summand equals i_{alpha-1}(H)-i_{alpha-3}(H)+|Delta_{alpha-2}(T-v)|.",
+      "scope": "All finite ordinary trees and original leaves; no residual or eligibility hypothesis is needed for the identities.",
+      "status": "proposed_proved_informal",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-T2/REPORT.md"
+      ],
+      "reason": "The independent-set split according to whether the support is selected proves the polynomial factorization; coefficient comparison proves the identities. No formal gate was assigned."
+    },
+    {
+      "claim_id": "C1-T2-ALPHA2-BUDGET",
+      "statement": "The frozen target at p=alpha-2 would follow from the pointwise rank-budget inequality i_{alpha-3}(H_v)-i_{alpha-1}(H_v) >= -Delta_{alpha-2}(T-v) on every favorable original leaf; this inequality is not proved here.",
+      "scope": "Eligible finite ordinary trees at the frozen p=alpha-2 rank.",
+      "status": "proposed_unresolved",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-T2/REPORT.md"
+      ],
+      "reason": "The exact identity reduces each favorable summand to the difference in this inequality, but neither the pointwise budget nor a weaker aggregate budget has been established."
+    },
+    {
+      "claim_id": "C1-T2-BOUNDED-POINTWISE-CHECK",
+      "statement": "The stronger conjecture that every favorable summand is nonpositive at p=alpha-2 survived exact-DP checks on P_501, T_125, and four deterministic uniform Prüfer trees of order 260; all six were eligible and had zero positive favorable summands.",
+      "scope": "Six named constructed or deterministic random examples only.",
+      "status": "proposed_bounded_evidence",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-T2/identity_probe.py",
+        "cycles/cycle-1/C1-T2/large_constructed_summary.json",
+        "cycles/cycle-1/C1-T2/random_probe.py",
+        "cycles/cycle-1/C1-T2/random-probe.json",
+        "cycles/cycle-1/C1-T2/ordinary_tree.py"
+      ],
+      "reason": "Exact integer tree-DP replay; bounded evidence does not prove the candidate or the complete aggregate universally."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-T2/REPORT.md",
+  "limitations": [
+    "The frozen complete aggregate is not proved or refuted.",
+    "The pointwise rank-budget inequality and any aggregate substitute remain unproved.",
+    "The larger constructed and seeded Prüfer checks are bounded falsification attempts only."
+  ]
+}

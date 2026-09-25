@@ -1,0 +1,30 @@
+{
+  "worker_id": "C2-CU-T2",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "U",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-T2-INTERIOR-ELIGIBILITY-ALPHA-GE-SEVEN"
+  ],
+  "claims": [
+    {
+      "claim_id": "C2-T2-INTERIOR-ELIGIBILITY-ALPHA-GE-SEVEN",
+      "statement": "For every finite ordinary connected tree T, with integer p=alpha(T)-2 and x(T) the first natural rank with Delta_x(T)<0, eligibility x(T)+2<=p implies alpha(T)>=7.",
+      "scope": "Exact auxiliary eligibility guard for finite ordinary connected trees under the semantic and solution contracts; no residual premise and no aggregate-sign conclusion.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CU-T2/REPORT.md",
+        "cycles/cycle-2/C2-CU-T2/audit.py",
+        "cycles/cycle-2/C2-CU-T2/audit.out.json"
+      ],
+      "reason": "The imported verified r27 arbitrary-rank forest lemma applies to the exact integer Delta_x and gives n<=4x. Eligibility plus a<n reduces alpha<=6 to alpha=6, x=2, n=7 or 8. The exact pair/triple count and one-/two-vertex cover bounds give Delta_2>=5 or >=2, contradicting strict descent. Independent finite checks corroborate the small cases and a 13-vertex eligible double star tests the larger setting."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CU-T2/REPORT.md",
+  "limitations": [
+    "The argument imports the r27 forest descent bound as verified historical authority; no new Lean build or formal gate was run in this critique.",
+    "The first-interior aggregate and the proposed tagged-shadow and high-tail pointwise statements remain unproved by this auxiliary guard.",
+    "The finite enumeration covers only labeled orders seven and eight; the proof itself excludes larger low-alpha contradiction cases by n<=4x<=8."
+  ]
+}

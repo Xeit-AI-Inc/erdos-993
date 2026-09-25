@@ -1,0 +1,1 @@
+Pre-dispatch process check completed. No mathematical seats or worker computation jobs have been launched. The only operational scope reviewer writes excluded control-proposals; it has no write authority over seal members. No Lean jobs were launched.

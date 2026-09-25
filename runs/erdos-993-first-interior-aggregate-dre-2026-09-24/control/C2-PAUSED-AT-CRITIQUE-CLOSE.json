@@ -1,0 +1,63 @@
+{
+  "boundary": "All 18 critiques complete, admitted and sealed; already running adjudications C2-AT and C2-AF also complete",
+  "completed_adjudications": [
+    "C2-AT",
+    "C2-AF"
+  ],
+  "completed_critiques": [
+    "C2-CF-T1",
+    "C2-CU-T1",
+    "C2-CF-T2",
+    "C2-CU-T2",
+    "C2-CF-T3",
+    "C2-CU-T3",
+    "C2-CT-F1",
+    "C2-CU-F1",
+    "C2-CT-F2",
+    "C2-CU-F2",
+    "C2-CT-F3",
+    "C2-CU-F3",
+    "C2-CT-U1",
+    "C2-CF-U1",
+    "C2-CT-U2",
+    "C2-CF-U2",
+    "C2-CT-U3",
+    "C2-CF-U3"
+  ],
+  "completed_searches": [
+    "C2-T1",
+    "C2-T2",
+    "C2-T3",
+    "C2-F1",
+    "C2-F2",
+    "C2-F3",
+    "C2-U1",
+    "C2-U2",
+    "C2-U3"
+  ],
+  "concurrency_total_including_root": 4,
+  "cycle": 2,
+  "formal_gate_started": false,
+  "max_cycles": 6,
+  "models": {
+    "checkpoint_and_final_controller": "gpt-6-astra high",
+    "critique_adjudication_synthesis_and_lean_roles": "gpt-6-sol high",
+    "search": "gpt-6-luna high"
+  },
+  "pending": [
+    "C2-AU",
+    "C2-SYNTHESIS",
+    "exact governed Lean gate if synthesis selects closed candidate",
+    "remaining authorized cycles if needed",
+    "Astra high C3 checkpoint if C3 reached",
+    "Astra high final review"
+  ],
+  "primary_status": "OPEN",
+  "public_head_last_verified": "8f1573372c9135b970300a3ec0aa38a95ecc55ce",
+  "registry_claim_count": 395,
+  "registry_last_verified_sha256": "785dd4b12504a0f5a2aa66b84266cb313da80c0b28a27b2d96318a78ad3c8fdb",
+  "registry_snapshot": "control/C2-REGISTERED-CLAIM-IDENTITY.json",
+  "resume_requires_explicit_user": true,
+  "schema": "e993.user-pause-checkpoint.v1",
+  "status": "paused_by_user"
+}

@@ -1,0 +1,95 @@
+{
+  "worker_id": "C2-AT",
+  "cycle": 2,
+  "stage": "adjudication",
+  "orientation": "N",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-T1-EXACTID-E993-BIPARTITE-TAGGED-SHADOW-BOUND",
+    "C2-T2-INTERIOR-ELIGIBILITY-ALPHA-GE-SEVEN",
+    "C2-T3-01",
+    "C2-T3-02",
+    "C2-T3-03",
+    "C2-T3-04"
+  ],
+  "claims": [
+    {
+      "claim_id": "C2-T1-EXACTID-E993-BIPARTITE-TAGGED-SHADOW-BOUND",
+      "statement": "For every finite bipartite simple graph H, arbitrary W subseteq V(H), a=alpha(H), and integer 1<=k<=a, the independent j-set counts q_j meeting W satisfy k*q_(k+1)<=2*(a-k)*q_k.",
+      "scope": "Exact registered tagged-shadow auxiliary, including disconnected H, empty W, terminal k=a, and integer zero extension; complete informal proof only.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AT/REPORT.md",
+        "cycles/cycle-2/C2-AT/evidence_audit.py",
+        "cycles/cycle-2/C2-AT/evidence_audit.json"
+      ],
+      "reason": "The independent double count gives at least k tag-preserving deletions per tagged (k+1)-set and at most 2(a-k) additions per tagged k-set because its addable bipartite graph has independence number at most a-k. The F/U endpoint objections are discharged without dividing by q_k; finite checks are corroborative only."
+    },
+    {
+      "claim_id": "C2-T2-INTERIOR-ELIGIBILITY-ALPHA-GE-SEVEN",
+      "statement": "For every finite ordinary connected tree T, with integer p=alpha(T)-2 and first strict negative forward-difference index x(T), eligibility x(T)+2<=p implies alpha(T)>=7.",
+      "scope": "Exact ordinary connected-tree eligibility auxiliary; no residual premise or aggregate conclusion; complete informal proof only.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AT/REPORT.md",
+        "cycles/cycle-2/C2-AT/evidence_audit.py",
+        "cycles/cycle-2/C2-AT/evidence_audit.json"
+      ],
+      "reason": "Eligibility yields x+4<=alpha. Delta_0 and Delta_1 exclude alpha 4 and 5; the exact tree triple formula gives nonnegative Delta_2 for every alpha-6 tree, including n=7 and n=8 cover cases, excluding alpha 6. This independent all-order proof removes the origin route's historical r27 dependency."
+    },
+    {
+      "claim_id": "C2-T3-01",
+      "statement": "For finite bipartite H, arbitrary W subseteq V(H), a=alpha(H), and integer 1<=k<=a, tagged independent-set counts satisfy k*q_(k+1)<=2*(a-k)*q_k.",
+      "scope": "Same exact bipartite tagged-shadow scope as C2-T1's incoming ID; complete informal proof only.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AT/REPORT.md",
+        "cycles/cycle-2/C2-AT/evidence_audit.py",
+        "cycles/cycle-2/C2-AT/evidence_audit.json"
+      ],
+      "reason": "The finite-set incidence proof establishes the precise quantified inequality, including empty tags, disconnected graphs, and k=a; it is a count comparison, not the refuted all-window per-set addability claim."
+    },
+    {
+      "claim_id": "C2-T3-02",
+      "statement": "If finite bipartite G has a degree-one vertex v with support s, p>=1, and 3p>=2alpha(G)+1, then Delta_(p-1)(G-{v,s})-Delta_(p-1)(G-N_G[s])<=0.",
+      "scope": "Exact unselected original-leaf sign for finite bipartite simple G under the displayed high-tail guard, with integer zero extension and no connectivity, favorable, or residual premise; complete informal proof only.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AT/REPORT.md",
+        "cycles/cycle-2/C2-AT/evidence_audit.py",
+        "cycles/cycle-2/C2-AT/evidence_audit.json"
+      ],
+      "reason": "R=H-W makes the term q_p-q_(p-1); alpha(H)<=alpha(G)-1 and the guard allow the tagged-shadow inequality with k=p-1 when p>=2. If k>alpha(H), both counts vanish. At p=1 the guard and leaf force alpha(G)=1 and H empty, so the term is zero."
+    },
+    {
+      "claim_id": "C2-T3-03",
+      "statement": "An eligible finite connected tree with integer p=alpha(T)-2 and first strict descent x(T) has alpha(T)>=7.",
+      "scope": "Same exact ordinary connected-tree eligibility scope as C2-T2's incoming ID; complete informal proof only.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AT/REPORT.md",
+        "cycles/cycle-2/C2-AT/evidence_audit.py",
+        "cycles/cycle-2/C2-AT/evidence_audit.json"
+      ],
+      "reason": "A direct Delta_0/Delta_1/Delta_2 and maximum-independent-set complement argument excludes alpha<=6 without importing r27, while preserving strict descent and integer p."
+    },
+    {
+      "claim_id": "C2-T3-04",
+      "statement": "For every finite ordinary connected tree T, with integer p=alpha(T)-2 and x(T)+2<=p, the complete favorable original-leaf aggregate S(T,p) is nonpositive.",
+      "scope": "Exactly E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE: strict selector Delta_p(T-v)<0 at original p, all original leaf tags with multiplicity, no residual premise; complete informal proof pending governed Lean gate.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AT/REPORT.md",
+        "cycles/cycle-2/C2-AT/evidence_audit.py",
+        "cycles/cycle-2/C2-AT/evidence_audit.json"
+      ],
+      "reason": "Eligibility implies alpha>=7 and hence 3p>=2alpha+1 at p=alpha-2. The high-tail lemma then signs every original-leaf term, so summing exactly the strict favorable subset with repeated-support leaves separately gives S<=0. This is an informal proof, not canonical closure or formal award."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-AT/REPORT.md",
+  "limitations": [
+    "All six retained dispositions are proposed informal mathematical assessments. No governed Lean gate, kernel check, fidelity review, or canonical registry award was performed; the primary remains OPEN for formal success under SOLUTION-CONTRACT.md.",
+    "The origin and critique computations cover only the exact finite graph families, tree orders, and constructed examples enumerated in REPORT.md. The C2-AT audit verifies digests and internal arithmetic only and does not rerun tree DP or Prüfer enumeration.",
+    "No new claim ID or stronger all-window pointwise, residual, beta, TREE, FOREST, TRANSFER, or Erdős #993 conclusion is proposed."
+  ]
+}

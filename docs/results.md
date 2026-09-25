@@ -1,5 +1,18 @@
 # Current Results
 
+## First-interior ordinary aggregate, 2026-09-24
+
+The exact claim `E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE` is formally verified. For a finite ordinary tree `T`, let `p=α(T)−2`; if the first strict negative independence-coefficient difference has `x(T)+2≤p`, then
+
+```text
+Σ_{v original leaf, Δ_p(T−v)<0}
+  [Δ_(p−1)(T−{v,s_v}) − Δ_(p−1)(T−N_T[s_v])] ≤ 0.
+```
+
+Counts use integer zero extension. The favorable filter stays strict at the original rank, and leaves sharing a support remain separately tagged. There is no residual premise. The proof derives `α(T)≥7` from eligibility, then uses a bipartite tagged-set double count to show every original-leaf term is nonpositive. The experiment ended after two complete cycles out of six maximum; its sole registry award is this primary claim at `formally_verified`. Three related auxiliary keys remain OPEN as separate certificate scopes. The master has 395 identities (236 VERIFIED, 89 REFUTED, 26 CONDITIONAL, 44 OPEN); these mixed grades are not a count of formally verified theorems.
+
+The ordinary all-rank aggregate remains OPEN and is a self-contained ordinary-tree target. The proposed non-residual top-rank consequence and uniform high-tail helpers still need separate certificates; the lower eligible ranks need complete selected-sum compensation. Governed `E993-BETA-AGG` would additionally need an exact ordinary-to-governed-model bridge. TREE, FOREST, TRANSFER and Erdős #993 remain open. See the [experiment](../experiments/first-interior-aggregate.md), [Lean package](../proofs/lean/first-interior-aggregate/README.md), [verification record](../evidence/verification-2026-09-24-first-interior.md), [terminal report](../runs/erdos-993-first-interior-aggregate-dre-2026-09-24/REPORT.md) and [independent final analysis](../runs/erdos-993-first-interior-aggregate-dre-2026-09-24/FINAL-ANALYSIS.md).
+
 ## G1 large-residual results, 2026-09-20
 
 | Scope | Verified result |
@@ -348,8 +361,7 @@ For every finite tree with `2 ≤ α`, `x + 2 ≤ α − 1` and every leaf in ev
 `S(T, α−1) ≤ 0` — TD-6 closed by an exchange ("forced neighbour") and grouped counting over the near-maximum
 shell, composed with `(RI)`. Informally sharper: `S ≤ −2` on the eligible class, with `S = 0` exactly at `P₅` and
 `S > 0` exactly at `P₃`, both outside the window. The r24 record's "realized by 1,420 eligible residual trees"
-statement was a predicate substitution (realized count 0, now a theorem). The all-rank aggregate stays open:
-interior ranks and the non-residual class. See [r26](../experiments/r26-top-rank-residual-sign.md).
+statement was a predicate substitution (realized count 0, now a theorem). At the r26 close, the all-rank aggregate stayed open, including interior ranks and the non-residual class. The later first-interior result and its current boundary are stated above. See [r26](../experiments/r26-top-rank-residual-sign.md).
 
 ## r27 (2026-09-24): the finite forest degree lemma and extension inequality are formally verified
 

@@ -1,0 +1,8 @@
+namespace Erdos993G1
+
+lemma delta_nat {V : Type u} (F : SimpleGraph V) (k : ℕ) :
+    delta F (k : ℤ) = indepCount F (k + 1) - indepCount F k := by
+  simpa only [delta, Nat.cast_add, Nat.cast_one] using
+    congrArg₂ (· - ·) (coeff_nat F (k + 1)) (coeff_nat F k)
+
+end Erdos993G1

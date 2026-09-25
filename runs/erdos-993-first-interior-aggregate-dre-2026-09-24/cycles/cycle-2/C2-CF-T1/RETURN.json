@@ -1,0 +1,30 @@
+{
+  "worker_id": "C2-CF-T1",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "F",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-T1-EXACTID-E993-BIPARTITE-TAGGED-SHADOW-BOUND"
+  ],
+  "claims": [
+    {
+      "claim_id": "C2-T1-EXACTID-E993-BIPARTITE-TAGGED-SHADOW-BOUND",
+      "statement": "For every finite bipartite simple graph H, every vertex tag set W, a=alpha(H), and integer 1<=k<=a, tagged independent-set counts satisfy k*q_(k+1)<=2*(a-k)*q_k.",
+      "scope": "Exact registered bipartite tagged-shadow auxiliary scope, including disconnected graphs, empty W, terminal rank k=a, and integer zero extension; informal proof only.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CF-T1/REPORT.md",
+        "cycles/cycle-2/C2-CF-T1/larger_check.py",
+        "cycles/cycle-2/C2-CF-T1/larger_check.json"
+      ],
+      "reason": "The origin's finite-set double count is complete: tagged (k+1)-sets provide at least k tag-preserving deletions, while each tagged k-set has at most 2(a-k) addable vertices by bipartiteness and alpha(H[A])<=a-k. A fresh order-245 bipartite forest attains equality at every rank; order-245 connected-path checks show no failure. These calculations corroborate the proof and do not establish the separate eligibility guard or primary aggregate."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CF-T1/REPORT.md",
+  "limitations": [
+    "This is an informal mathematical critique with no Lean build or formal award.",
+    "The fresh exact computations cover only 122K2 plus K1 with its specified tag and P245 with five specified tag sets; universality rests on the incidence proof.",
+    "The separate alpha>=7 eligibility claim remains OPEN, so the primary first-interior aggregate is not closed by this return."
+  ]
+}

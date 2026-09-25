@@ -1,0 +1,53 @@
+{
+  "worker_id": "C2-CT-F2",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "T",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-F2-ELIGIBILITY-ALPHA-GE-SEVEN",
+    "C2-F2-FRESH-ELIGIBLE-ORDER-NINE-REPLAY"
+  ],
+  "claims": [
+    {
+      "claim_id": "C2-F2-ELIGIBILITY-ALPHA-GE-SEVEN",
+      "statement": "For every finite ordinary connected tree T, eligibility x(T)+2<=alpha(T)-2 with integer p=alpha(T)-2 and first strict descent x(T) implies alpha(T)>=7.",
+      "scope": "Exactly the incoming ordinary finite connected tree and strict zero-extended first-interior eligibility scope; it uses the independently verified imported r27 finite-forest descent bound n<=4x.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CT-F2/REPORT.md"
+      ],
+      "reason": "The r27 hypotheses and coefficient convention match. Eligibility and n<=4x force alpha=6, x=2 and n=7 or 8 under alpha<=6; exact tree i2/i3 counting and the complementary vertex-cover degree bounds force Delta_2>=5 or >=2, contradicting strict descent. No false step or broader sign inference was found."
+    },
+    {
+      "claim_id": "C2-F2-FRESH-ELIGIBLE-ORDER-NINE-REPLAY",
+      "statement": "The specified nine-vertex ordinary tree has alpha=7, x=3, p=5, all six original leaves favorable, and complete selected sum S=-56.",
+      "scope": "Exactly the specified order-nine tree with original leaf tags, strict Delta_p(T-v) selection and full selected sum; no census or universal sign statement.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CT-F2/REPORT.md",
+        "cycles/cycle-2/C2-CT-F2/origin_replay_copy.py",
+        "cycles/cycle-2/C2-CT-F2/audit.py"
+      ],
+      "reason": "The copied source all-subsets replay and an independent exact rooted-tree polynomial recursion agree on the independence coefficients, six selector/term pairs, multiplicity at shared supports and S=-56."
+    },
+    {
+      "claim_id": "C2-CT-F2-LARGE-245-CHECK",
+      "statement": "The specified 245-vertex core-plus-pendant-path tree is eligible with alpha=125, x=69 and p=123; all six original leaves are favorable and its complete sum is S=-50595152.",
+      "scope": "One explicitly constructed 245-vertex ordinary tree, exactly checked by integer independence-polynomial recursion; a bounded falsification target and no general sign claim.",
+      "status": "proposed_supported",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CT-F2/REPORT.md",
+        "cycles/cycle-2/C2-CT-F2/audit.py"
+      ],
+      "reason": "The edge recipe and exact recursion give alpha, first descent, selector differences, individual summands and the complete negative sum. It exceeds the inherited order-243 local witness and satisfies the proposed high-tail guard, but does not falsify it."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CT-F2/REPORT.md",
+  "limitations": [
+    "The alpha-seven proof depends on the separately verified imported r27 forest descent bound; no new Lean build was run in this critique.",
+    "The order-nine and order-245 computations are specified finite graph checks and imply no universal high-tail sign or primary complete-sum theorem.",
+    "The fresh large check found no positive local term or positive complete favorable sum; no broad graph sweep was run.",
+    "No owned background jobs remain running."
+  ]
+}

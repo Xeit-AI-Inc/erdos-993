@@ -1,0 +1,47 @@
+{
+  "construction": "P4 0-1-2-3 plus second leaf 4 at support 1, and 201 paths 3-(5+2j)-(6+2j), 0<=j<201",
+  "order": 407,
+  "edge_count": 406,
+  "alpha": 204,
+  "p": 202,
+  "x": 136,
+  "eligible": true,
+  "original_leaf_count": 203,
+  "high_tail_guard": true,
+  "leaf_orbits": [
+    {
+      "representative_leaf": 0,
+      "support": 1,
+      "multiplicity": 2,
+      "W": [
+        2,
+        4
+      ],
+      "alpha_H": 203,
+      "delta_p_T_minus_leaf": -329422299073093006486102228929938333517051613725472531236782481,
+      "favorable": true,
+      "q_p_minus_1": 16795716438594966359964587789149831521562065691017750714570002052,
+      "q_p": 329422299073093006486102228929938333517051613725472531236782281,
+      "term": -16466294139521873353478485560219893188045014077292278183333219771,
+      "shadow_slack": 968983640688171136151803141681721049320888405251024079686769727
+    },
+    {
+      "representative_leaf": 6,
+      "support": 5,
+      "multiplicity": 201,
+      "W": [
+        3
+      ],
+      "alpha_H": 203,
+      "delta_p_T_minus_leaf": -8481418997598950674310475923376656216112187401185580584720662730,
+      "favorable": true,
+      "q_p_minus_1": 20501,
+      "q_p": 203,
+      "term": -20298,
+      "shadow_slack": 41201
+    }
+  ],
+  "favorable_original_leaf_count": 203,
+  "complete_sum": -32932588279043746706956971120439786376090028154584556366670519440,
+  "coefficient_formula_verified_all_ranks": true
+}

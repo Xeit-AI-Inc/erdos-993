@@ -1,0 +1,27 @@
+{
+  "worker_id": "C2-T2",
+  "cycle": 2,
+  "stage": "search",
+  "orientation": "T",
+  "status_authority": "proposed_worker_only",
+  "claims": [
+    {
+      "claim_id": "C2-T2-INTERIOR-ELIGIBILITY-ALPHA-GE-SEVEN",
+      "statement": "For every finite ordinary connected tree T, with integer p=alpha(T)-2 and x(T) the least natural index for which Delta_x(T)<0, x(T)+2<=p implies alpha(T)>=7.",
+      "scope": "Exact auxiliary eligibility guard on finite ordinary connected trees, with the first strict descent and integer p fixed by SEMANTIC-CONTRACT.md; no residuality premise.",
+      "status": "proposed_proved",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-T2/REPORT.md",
+        "cycles/cycle-2/C2-T2/checks.py",
+        "cycles/cycle-2/C2-T2/checks.out.json"
+      ],
+      "reason": "The r27 arbitrary-rank forest descent bound gives n<=4x at k=x. Eligibility and alpha<n force the contrary case alpha<=6 to have alpha=6, x=2, and n in {7,8}; exact tree coefficient formulas plus the one- and two-vertex cover degree bounds give Delta_2>0 in both cases, contradiction."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-T2/REPORT.md",
+  "limitations": [
+    "This proves only the auxiliary eligibility guard; the proposed tagged-shadow inequality and the primary complete favorable-leaf aggregate remain open.",
+    "The exact Prüfer-code enumeration covers labeled trees only at orders seven and eight and is corroborative finite evidence, not the universal proof.",
+    "The fresh K_{1,10} example is a boundary consistency check for the proposed tail mechanism and does not prove its general inequality."
+  ]
+}

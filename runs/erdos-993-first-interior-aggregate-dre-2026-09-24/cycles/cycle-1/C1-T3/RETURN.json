@@ -1,0 +1,38 @@
+{
+  "worker_id": "C1-T3",
+  "cycle": 1,
+  "stage": "search",
+  "orientation": "T",
+  "status_authority": "proposed_worker_only",
+  "claims": [
+    {
+      "claim_id": "C1-T3-01",
+      "statement": "For every finite ordinary tree T, original leaf v with support s, and integer k, i_k(T-v)=i_k(H_v)+i_(k-1)(R_v). Consequently Delta_p(T-v)=Delta_p(H_v)+Delta_(p-1)(R_v), with the original strict favorable selector preserved; leaves at one support form an all-or-none favorable fibre and S(T,p) equals the multiplicity-weighted support-fibre sum stated in REPORT.md.",
+      "scope": "Exact ordinary-tree coefficient/regrouping identity under the frozen definitions; no sign conclusion and no residual assumption.",
+      "status": "proposed_exact_identity",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-T3/REPORT.md",
+        "cycles/cycle-1/C1-T3/interior_probe.py",
+        "cycles/cycle-1/C1-T3/interior_probe.json"
+      ],
+      "reason": "Partitioning independent sets of T-v by membership of s proves the coefficient recurrence; isomorphism within a support fibre preserves its selector and summand. The exact aggregate sign still requires a new argument."
+    },
+    {
+      "claim_id": "C1-T3-02",
+      "statement": "The complete favorable-original-leaf aggregate satisfies S(T,alpha(T)-2)<=0 for every eligible finite ordinary tree.",
+      "scope": "Primary frozen claim E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE, with x(T)+2<=p and p=alpha(T)-2 as an integer; all favorable original leaves with multiplicity.",
+      "status": "proposed_unresolved",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-T3/REPORT.md"
+      ],
+      "reason": "The exact reduction leaves an unsigned selected weighted difference sum. No complete proof, eligible counterexample, or residual-free sign mechanism was obtained."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-T3/REPORT.md",
+  "limitations": [
+    "No universal proof or exact eligible positive complete aggregate was found; the primary claim remains open in this worker return.",
+    "The T_100 and T_22/T_60 computations are finite family checks and do not imply a theorem.",
+    "A nonisomorphic-tree search using NetworkX was attempted but could not run because NetworkX is unavailable in the active Python environment; no result from that attempt is evidence.",
+    "No Lean build was assigned or run; no background job remains active."
+  ]
+}

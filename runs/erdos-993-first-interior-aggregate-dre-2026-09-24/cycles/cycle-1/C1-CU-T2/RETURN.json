@@ -1,0 +1,59 @@
+{
+  "worker_id": "C1-CU-T2",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "U",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-T2-ALG-IDENTITY",
+    "C1-T2-ALPHA2-BUDGET",
+    "C1-T2-BOUNDED-POINTWISE-CHECK"
+  ],
+  "claims": [
+    {
+      "claim_id": "C1-T2-ALG-IDENTITY",
+      "statement": "The original-leaf polynomial split and its all-integer-rank coefficient identity are valid; at p=alpha(T)-2 they give the stated favorable-leaf formula.",
+      "scope": "All finite ordinary trees and their original leaves, with zero-extended coefficients; informal proof only.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CU-T2/REPORT.md",
+        "cycles/cycle-1/C1-CU-T2/independent_audit.py",
+        "cycles/cycle-1/C1-CU-T2/independent-audit.json"
+      ],
+      "reason": "Direct partition by support membership proves I_(T-v)=I_H+zI_R; partition by leaf membership proves alpha(T)=alpha(H)+1. Coefficient comparison gives the identity for signed integer ranks. Independent subset counts passed 358242 bounded checks."
+    },
+    {
+      "claim_id": "C1-T2-ALPHA2-BUDGET",
+      "statement": "The pointwise rank-budget inequality is equivalent to each favorable g_v<=0 and would imply the complete aggregate, but the inequality itself remains unproved.",
+      "scope": "Eligible finite ordinary trees at p=alpha(T)-2, with every original favorable leaf counted separately.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CU-T2/REPORT.md"
+      ],
+      "reason": "The algebra gives the exact conditional implication. No transfer from x(T)'s eligibility condition to the needed H_v coefficient bound is supplied; the pointwise claim and primary theorem stay unresolved."
+    },
+    {
+      "claim_id": "C1-T2-BOUNDED-POINTWISE-CHECK",
+      "statement": "The six specified eligible fixtures have zero positive favorable summands under exact integer DP, with their reported alpha, x, p, favorable counts, and complete sums.",
+      "scope": "P_501, T_125, and four order-260 Prüfer trees from one continuous stream seeded 20260924; bounded evidence only.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CU-T2/REPORT.md",
+        "cycles/cycle-1/C1-CU-T2/identity_probe.py",
+        "cycles/cycle-1/C1-CU-T2/random_probe.py",
+        "cycles/cycle-1/C1-CU-T2/ordinary_tree.py",
+        "cycles/cycle-1/C1-CU-T2/large_constructed_summary.json",
+        "cycles/cycle-1/C1-CU-T2/random-probe.json",
+        "cycles/cycle-1/C1-CU-T2/independent_audit.py",
+        "cycles/cycle-1/C1-CU-T2/independent-audit.json"
+      ],
+      "reason": "Scratch replay matched both source JSON datasets exactly. The four random fixtures use a single RNG stream rather than four separately named seeds, and the original replay script targets a mutable scratch path. These are reproducibility qualifications, not numerical contradictions."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CU-T2/REPORT.md",
+  "limitations": [
+    "The pointwise rank-budget inequality and complete aggregate theorem are still unresolved.",
+    "All numerical checks are bounded; the independent order-2-through-7 enumeration has no eligible trees.",
+    "No Lean build or formal gate was performed."
+  ]
+}

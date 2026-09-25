@@ -1,0 +1,16 @@
+namespace Erdos993G1
+
+lemma card_nonindep_pairs {V : Type u} (F : SimpleGraph V) [Fintype V] [DecidableEq V] [DecidableRel F.Adj] :
+    (((Finset.univ : Finset V).powersetCard 2).filter
+      (fun E : Finset V => ¬F.IsIndepSet E)).card = Nat.card F.edgeSet := by
+  have hp := Finset.card_filter_add_card_filter_not
+    (s := (Finset.univ : Finset V).powersetCard 2)
+    (fun E : Finset V => F.IsIndepSet E)
+  rw [← indepSetFinset_eq_filter_powersetCard, Finset.card_powersetCard,
+    Finset.card_univ] at hp
+  have he := indepCount_two_add_edges F
+  rw [indepCount_eq_card_indepSetFinset,
+    Nat.card_eq_fintype_card (α := V)] at he
+  omega
+
+end Erdos993G1

@@ -1,0 +1,55 @@
+{
+  "worker_id": "C1-CU-F1",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "U",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-F1-001",
+    "C1-F1-002"
+  ],
+  "claims": [
+    {
+      "claim_id": "C1-F1-001",
+      "statement": "Retain the exact T22 counterexample to the broader all-rank pointwise nonpositivity shortcut.",
+      "scope": "An eligible rank p=34=x+2 in the broader all-rank domain; p is not alpha-2, and the complete aggregate is negative.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CU-F1/formula_results.json",
+        "cycles/cycle-1/C1-CU-F1/comparison.json"
+      ],
+      "reason": "The independent T22 coefficient formulas give alpha=68, x=32, all 67 original leaves favorable, one +212336130412243110 summand, and negative complete sum -498754180547001418536. The phenomenon was already recorded in r24, so no novelty is claimed."
+    },
+    {
+      "claim_id": "C1-F1-002",
+      "statement": "The C1-F1 evidence does not settle the universal first-interior aggregate sign.",
+      "scope": "Frozen all-ordinary-tree target p=alpha-2 under x+2<=p; reviewed experiments consist of two T-family target instances and orders 2 through 8 with no eligible trees.",
+      "status": "proposed_unresolved",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CU-F1/formula_results.json",
+        "cycles/cycle-1/C1-CU-F1/unlabeled_results.json",
+        "cycles/cycle-1/C1-CU-F1/comparison.json"
+      ],
+      "reason": "T22 and T60 have exact eligible complete sums -147807 and -2947590. The small sweep has zero eligible rows. No universal proof or positive eligible complete sum follows. The source report's labeled-tree total is misstated: the per-order counts sum to 280392, not 275392."
+    },
+    {
+      "claim_id": "C1-CU-F1-001",
+      "statement": "For every m>=1, the T_m family has alpha=3m+2; at p=alpha-2=3m all 3m+1 original leaves are favorable and S=-q^2+4q-(q+1)*binom(q,2)<0, where q=3m.",
+      "scope": "Exact restricted-family target-rank identity for T_m; the eligibility guard is required when using it as an instance of the frozen target, and no all-tree conclusion follows.",
+      "status": "proposed_proved_informal",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CU-F1/REPORT.md",
+        "cycles/cycle-1/C1-CU-F1/independent_formula.py",
+        "cycles/cycle-1/C1-CU-F1/formula_results.json"
+      ],
+      "reason": "Root decomposition and original-support deletion give explicit independence-polynomial identities in the report. Their top coefficients prove both strict selector signs and the summand formula for every m>=1; binom(q,2)>=q for q>=3 proves negativity."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CU-F1/REPORT.md",
+  "limitations": [
+    "The new T_m formula covers only one explicit family, even when its members satisfy target eligibility.",
+    "The order-2-through-8 sweep has no eligible target rows and gives no target-sign evidence.",
+    "The broader-rank positive individual summand is historically known and is not a positive complete aggregate at p=alpha-2.",
+    "No Lean build was run and no universal proof or in-scope positive complete counterexample was supplied."
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "role": "C2-RECONCILIATION-PREVIEW",
+  "model": "gpt-6-sol",
+  "reasoning_effort": "high",
+  "status_authority": "controller_review_proposal_only",
+  "source_pins": [
+    {
+      "path": "SEMANTIC-CONTRACT.md",
+      "sha256": "49eed23fbc788ded6fe76a205d64c8212667daf4f79b03572933c11e45640bff"
+    },
+    {
+      "path": "SOLUTION-CONTRACT.md",
+      "sha256": "e48242be51901def4d68af095b53ccc107295619b6fc1870aa18f44d5735a6c7"
+    },
+    {
+      "path": "control/C2-REGISTERED-CLAIM-IDENTITY.json",
+      "sha256": "785dd4b12504a0f5a2aa66b84266cb313da80c0b28a27b2d96318a78ad3c8fdb"
+    },
+    {
+      "path": "ledgers/C2-OBLIGATIONS.csv",
+      "sha256": "9f28e43de56105611ef8646dfebd75ecf15ae7e1f08171a8cf1e597e3621cf87"
+    },
+    {
+      "path": "cycles/cycle-1/C1-SYNTHESIS/REPORT.md",
+      "sha256": "9b616cc7ed3e992320f6e350a6c947f81f7ff9b342078433021fabe135e48a0e"
+    },
+    {
+      "path": "cycles/cycle-1/C1-SYNTHESIS/RETURN.json",
+      "sha256": "1538793335162e29ecd003a8ca3bc7e4fb93b59b763580824a6bcfc0330e319e"
+    },
+    {
+      "path": "cycles/cycle-2/C2-SYNTHESIS/REPORT.md",
+      "sha256": "275233e0099a0d79cad49a3ce1994748c36fee2488e999ad02639dff2332d7a3"
+    },
+    {
+      "path": "cycles/cycle-2/C2-SYNTHESIS/RETURN.json",
+      "sha256": "eda2e4c146a80d920dfbe251e5832d03f7b4a540f757876bcdbbb8efcbded2ff"
+    },
+    {
+      "path": "cycles/cycle-2/C2-SYNTHESIS/CANDIDATE-PROOF.md",
+      "sha256": "cc9fa001269c7e649bea456661f92b9aea2f17ee406f24da6ebfabe78161a0c9"
+    },
+    {
+      "path": "runs/lean-2026-09-24-c2-primary-v2/THEOREM-CONTRACT.yaml",
+      "sha256": "61029a5001c862684a6e8b8e96cced4af2b0e48353183a00b95efe5272cad61e"
+    }
+  ],
+  "scratch_absolute": "/Users/ashtonsperry/Documents/Codex/2026-09-13/in-x20/work/erdos-993-first-interior-aggregate-dre-2026-09-24/scratchpad/C2-RECONCILIATION-PREVIEW",
+  "task": "Read both sealed synthesis returns/reports and exact registry/ledger. Produce a proposed complete per-occurrence reconciliation covering each of their 53 claims exactly once. Identify exact registered key if semantic identity holds, otherwise classify auxiliary/conditional/finite evidence/failed mechanism/unregistered proposed statement, with precise scope and evidence grade. Current primary OPEN until governed formal gate. Do not award any auxiliary or headline from a single primary contract. Explicitly preserve REFUTED precedence, original tags/multiplicity and Nat/integer semantic guards. Explain C1-to-C2 supersession without rewriting old verdicts. Deliver REPORT.md and RECONCILIATION.json, no canonical writes, no new research, no subagents. Do not write hashes or certify receipts; controller owns authority. If scope cannot be resolved from allowed sources, identify uncertainty; do not assume. This is supportive analysis while producers finish, not final Astra review or fidelity review."
+}

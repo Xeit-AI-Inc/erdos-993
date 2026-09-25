@@ -1,0 +1,29 @@
+{
+  "worker_id": "C1-U2",
+  "cycle": 1,
+  "stage": "search",
+  "orientation": "U",
+  "status_authority": "proposed_worker_only",
+  "claims": [
+    {
+      "claim_id": "C1-U2-LOCAL-TOPSHELL-REDUCTION",
+      "statement": "For every finite ordinary tree T and every original leaf v with support s, alpha(T-{v,s})=alpha(T)-1. At p=alpha(T)-2, writing H=T-{v,s}, W=N_T(s)-{v}, R=H-W, and q_v(j)=i_j(H)-i_j(R), the contract summand is q_v(p)-q_v(p-1), the favorable condition is Delta_p(H)+Delta_(p-1)(R)<0, and S is exactly the difference of the two tagged witness-hit shells at sizes p and p-1. A leaf is residual exactly when alpha(R)<=alpha(T)-2; otherwise alpha(R)=alpha(T)-1, so the permitted selector spans two local top-rank regimes.",
+      "scope": "Exact ordinary-tree identities at the frozen rank p=alpha(T)-2; no sign claim, residual premise, or theorem about the aggregate is included.",
+      "status": "proposed_proved_informal",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-U2/REPORT.md",
+        "cycles/cycle-1/C1-U2/independent_T100_replay.py",
+        "cycles/cycle-1/C1-U2/independent_T100_replay.json",
+        "cycles/cycle-1/C1-U2/fresh_T_family_test.py",
+        "cycles/cycle-1/C1-U2/fresh_T_family_test.json"
+      ],
+      "reason": "The identities follow by partitioning independent sets on v/s and on W, with exact coefficient extraction. The unresolved theorem is the resulting selected tagged-shell cardinality comparison. T_100 at order 403 provides an eligible fresh larger replay of every local identity, but computation does not prove the universal sign."
+    }
+  ],
+  "report_path": "scratchpad/C1-U2/REPORT.md",
+  "limitations": [
+    "No proof or eligible counterexample for the complete aggregate sign was found.",
+    "The T_m family scan checks only m=1..40,50,60,80,100 and is not an all-tree census.",
+    "No Lean build was assigned or run; the exact reduction remains informal at this stage."
+  ]
+}

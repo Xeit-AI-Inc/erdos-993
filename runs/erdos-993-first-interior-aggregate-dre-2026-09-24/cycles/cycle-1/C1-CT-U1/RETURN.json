@@ -1,0 +1,43 @@
+{
+  "worker_id": "C1-CT-U1",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "T",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-U1-PRIMARY-INTERIOR-AGGREGATE-STATUS",
+    "C1-U1-SUPPORT-FIBRE-POLYNOMIAL-IDENTITY"
+  ],
+  "claims": [
+    {
+      "claim_id": "C1-U1-PRIMARY-INTERIOR-AGGREGATE-STATUS",
+      "statement": "For every finite ordinary tree T, at integer p=alpha(T)-2 with x(T)+2<=p, the complete favorable-original-leaf aggregate S(T,p)<=0.",
+      "scope": "Exact primary target E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE, without a residual hypothesis.",
+      "status": "proposed_unresolved",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CT-U1/REPORT.md",
+        "cycles/cycle-1/C1-CT-U1/replay.json",
+        "cycles/cycle-1/C1-CT-U1/independent_check.py"
+      ],
+      "reason": "The support-fibre identity is correct but gives no global inequality for the selected weighted slopes. Exact eligible negative sums on P_100 and the 91-vertex double-leaf hub are bounded examples, not a universal proof or counterexample. The r26 verified sign has top-rank residual scope only."
+    },
+    {
+      "claim_id": "C1-U1-SUPPORT-FIBRE-POLYNOMIAL-IDENTITY",
+      "statement": "For each support s with lambda_s original leaf neighbors, H_s=(1+z)^(lambda_s-1) product_u I(C_{s,u};z), R_s=product_u I(C_{s,u}-u;z), and Q_s=H_s-R_s. For any original leaf v at s, I(T-v;z)=H_s+zR_s; its strict favorable selector and target summand are the stated coefficient differences, and grouping by s weights the common selected term by lambda_s.",
+      "scope": "All finite ordinary trees and integer p, with zero-extended coefficients and distinct original leaf tags; no residual premise.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CT-U1/REPORT.md",
+        "cycles/cycle-1/C1-CT-U1/replay.json",
+        "cycles/cycle-1/C1-CT-U1/independent_check.py"
+      ],
+      "reason": "The disjoint-component decomposition after deleting s proves the H and R products; partitioning independent sets of T-v by containing s proves H+zR. Coefficient extraction and support grouping are exact. Parsed pinned replay data agree exactly, and separate closed-form checks reproduce both examples."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CT-U1/REPORT.md",
+  "limitations": [
+    "No proof or eligible positive complete-sum counterexample for the primary universal inequality is supplied.",
+    "The arithmetic replay covers only P_100 and the 91-vertex double-leaf hub; no exhaustive order interval was searched.",
+    "No Lean build was assigned or run."
+  ]
+}

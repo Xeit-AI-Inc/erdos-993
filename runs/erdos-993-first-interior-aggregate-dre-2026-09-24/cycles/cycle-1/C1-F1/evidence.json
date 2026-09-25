@@ -1,0 +1,100 @@
+{
+  "T22_alpha_minus_2": {
+    "aggregate": -147807,
+    "all_favorable_leaf_tags": true,
+    "alpha": 68,
+    "eligible_target": true,
+    "favorable_leaf_count": 67,
+    "order": 91,
+    "positive_summands": 0,
+    "rank": 66,
+    "summand_multiplicities": {
+      "-2079": 1,
+      "-2208": 66
+    },
+    "x": 32
+  },
+  "T22_interior_fence": {
+    "aggregate": -498754180547001418536,
+    "all_favorable_leaf_tags": true,
+    "alpha": 68,
+    "eligible_target": false,
+    "favorable_leaf_count": 67,
+    "order": 91,
+    "positive_summands": 1,
+    "rank": 34,
+    "summand_multiplicities": {
+      "-7560098737536570631": 66,
+      "212336130412243110": 1
+    },
+    "x": 32
+  },
+  "T60_alpha_minus_2": {
+    "aggregate": -2947590,
+    "all_favorable_leaf_tags": true,
+    "alpha": 182,
+    "eligible_target": true,
+    "favorable_leaf_count": 181,
+    "order": 243,
+    "positive_summands": 0,
+    "rank": 180,
+    "summand_multiplicities": {
+      "-15930": 1,
+      "-16287": 180
+    },
+    "x": 87
+  },
+  "T60_interior_fence": {
+    "aggregate": -1058142362147652597702654588268394677176033202323316960380,
+    "all_favorable_leaf_tags": true,
+    "alpha": 182,
+    "eligible_target": false,
+    "favorable_leaf_count": 181,
+    "order": 243,
+    "positive_summands": 1,
+    "rank": 90,
+    "summand_multiplicities": {
+      "-5878584985140474340847544870681760577687103410521705741": 180,
+      "2935177632783649903488454322226807645411570590073000": 1
+    },
+    "x": 87
+  },
+  "bounded_labeled_sweep": [
+    {
+      "eligible_target_rows": 0,
+      "labeled_trees": 1,
+      "order": 2
+    },
+    {
+      "eligible_target_rows": 0,
+      "labeled_trees": 3,
+      "order": 3
+    },
+    {
+      "eligible_target_rows": 0,
+      "labeled_trees": 16,
+      "order": 4
+    },
+    {
+      "eligible_target_rows": 0,
+      "labeled_trees": 125,
+      "order": 5
+    },
+    {
+      "eligible_target_rows": 0,
+      "labeled_trees": 1296,
+      "order": 6
+    },
+    {
+      "eligible_target_rows": 0,
+      "labeled_trees": 16807,
+      "order": 7
+    },
+    {
+      "eligible_target_rows": 0,
+      "labeled_trees": 262144,
+      "order": 8
+    }
+  ],
+  "method": "Exact integer forest-DP on a byte-copy of admitted ordinary_tree.py; x computed through Delta_alpha=-1 zero extension; strict original-leaf selector and distinct leaf records."
+}

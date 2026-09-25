@@ -1,0 +1,11 @@
+namespace E993Interior
+
+lemma bipartiteHighTailAggregate {V : Type*} [Fintype V] [DecidableEq V]
+    (G : SimpleGraph V) [DecidableRel G.Adj] (hBip : G.IsBipartite)
+    (p : ℕ) (hp : 2 ≤ p) (hTail : 2 * G.indepNum + 1 ≤ 3 * p) :
+    C5LA1.aggregate G p ≤ 0 := by
+  apply highTailAggregateFromShadow G ?_ p hp hTail
+  intro U W a k hcap hk
+  exact taggedShadowBound G hBip U W a k hcap hk
+
+end E993Interior

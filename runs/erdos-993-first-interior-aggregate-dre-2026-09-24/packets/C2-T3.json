@@ -1,0 +1,522 @@
+{
+  "allowed_source_files": [
+    {
+      "path": "EXECUTION-POLICY.md",
+      "sha256": "6c240e1871bbefe6a94a42e9c5a4d6b9884e338e03d4e066e5446d2f430bbe6d"
+    },
+    {
+      "path": "SEMANTIC-CONTRACT.md",
+      "sha256": "49eed23fbc788ded6fe76a205d64c8212667daf4f79b03572933c11e45640bff"
+    },
+    {
+      "path": "SOLUTION-CONTRACT.md",
+      "sha256": "e48242be51901def4d68af095b53ccc107295619b6fc1870aa18f44d5735a6c7"
+    },
+    {
+      "path": "WORKER-PROTOCOL.md",
+      "sha256": "4d97b83bd2d3e5440e2f7a176d58023866f800c2c708a0286a6068820e2e633a"
+    },
+    {
+      "path": "control/ALLOCATION.json",
+      "sha256": "7aa0245748be673aed92744496c95218f6f441da0848f2f1540551d3d8b94bf8"
+    },
+    {
+      "path": "control/C1-RECONCILIATION-GRADE-ERRATUM.md",
+      "sha256": "e0fc2ba6fc66435316850f5eaed793701c006443ee7f4f949dbb93ca40922684"
+    },
+    {
+      "path": "control/C2-CAPSULE-AND-COUNTEREXAMPLE-GATE.md",
+      "sha256": "0b0498625076d618cac2ff23d8bee3bda4f475c113eadeb1cbc0633dc585eca7"
+    },
+    {
+      "path": "control/C2-REGISTERED-CLAIM-IDENTITY.json",
+      "sha256": "785dd4b12504a0f5a2aa66b84266cb313da80c0b28a27b2d96318a78ad3c8fdb"
+    },
+    {
+      "path": "control/C2-REJECTED-MECHANISMS.json",
+      "sha256": "fe0f99076c23f36c66934d2621452f2027fea6e768355b05b158b344bba043fc"
+    },
+    {
+      "path": "control/C2-SCOPE-AUDIT.json",
+      "sha256": "1eda6f458374f9417ba325d234197ea7cc66842a0cc85b6702a38ddef24d8526"
+    },
+    {
+      "path": "control/C2-SCOPE-AUDIT.md",
+      "sha256": "ad24a0fe7c7021c90f3d5bdf07df57746d89ac6ff65f4c27c7a0071c67e95cbb"
+    },
+    {
+      "path": "cycles/cycle-1/C1-SYNTHESIS/REPORT.md",
+      "sha256": "9b616cc7ed3e992320f6e350a6c947f81f7ff9b342078433021fabe135e48a0e"
+    },
+    {
+      "path": "cycles/cycle-1/C1-SYNTHESIS/RETURN.json",
+      "sha256": "1538793335162e29ecd003a8ca3bc7e4fb93b59b763580824a6bcfc0330e319e"
+    },
+    {
+      "path": "ledgers/C2-OBLIGATIONS.csv",
+      "sha256": "9f28e43de56105611ef8646dfebd75ecf15ae7e1f08171a8cf1e597e3621cf87"
+    },
+    {
+      "path": "packets/C2-COMMON-NEUTRAL.md",
+      "sha256": "ea8229651a303a9e1109ed483126687012de175df79e33649cdde4d955928935"
+    },
+    {
+      "path": "packets/C2-REVIEW-PROTOCOL.md",
+      "sha256": "00902966746f8a396e15fed99fa9bb1faef71d4c30c72ad1806021b5d384e4e8"
+    },
+    {
+      "path": "proposals/cycle2/SMALL-CASE-REDUCTION-ADDENDUM.md",
+      "sha256": "ea66d31e23b3955e308224d0f67d6d1933eb33383f179f150728a22f48e9c0dd"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/SNAPSHOT.json",
+      "sha256": "cfdebac808bc7fff2b75b9fedb7ff0c6bee29b1624217b58cc3f1e912337638c"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/runs/lean-2026-09-25-c1-la1-forest-degree-extension/RECEIPTS/dependency-authority.json",
+      "sha256": "fa479205de1ca4395eb6376afa1b8e57ba2a5476f1002f2ee579c962e3954ffe"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/runs/lean-2026-09-25-c1-la1-forest-degree-extension/RECEIPTS/fidelity-audit.json",
+      "sha256": "7f19fa3e6a90a98d810a873ed5a98ada3234d298a30af59f9553e4b99766d451"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/runs/lean-2026-09-25-c1-la1-forest-degree-extension/RECEIPTS/formalization.json",
+      "sha256": "2d81c8f4e290752f828050fb4eb8d7270b001ea3339dbf550fb4bca15ea20d6b"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/runs/lean-2026-09-25-c1-la1-forest-degree-extension/RECEIPTS/informal-audit.json",
+      "sha256": "12f8e475fb2733ed820745b2c0b1bf980442bee1f8d4f5195e20227a83476eca"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/runs/lean-2026-09-25-c1-la1-forest-degree-extension/RECEIPTS/kernel-verification.json",
+      "sha256": "c721cf79589183904e856a079840408f1a38bb4a31f94cd2db34a98abc6749bb"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/runs/lean-2026-09-25-c1-la1-forest-degree-extension/RECEIPTS/reviewer-assignment.json",
+      "sha256": "cef276f07b1a6822d6ba35176700555b61ad18721f80591f87e46a891829574e"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/runs/lean-2026-09-25-c1-la1-forest-degree-extension/RECEIPTS/theorem-contract.json",
+      "sha256": "b15246ad28147f444ede266033a9477565d1a122e204961e14e0ac13a81024de"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/runs/lean-2026-09-25-c1-la1-forest-degree-extension/VERIFICATION-REPORT.json",
+      "sha256": "0ddfc31951b969b4dbfbc214ae8dcddfe84f056b143126ff4255735911fc3ddc"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/runs/lean-2026-09-25-c1-la2-extension-counting-core/RECEIPTS/dependency-authority.json",
+      "sha256": "ed5960bc29c5325ceb8f0903739f7037a41a71c817fb91881af3f4522231a17f"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/runs/lean-2026-09-25-c1-la2-extension-counting-core/RECEIPTS/fidelity-audit.json",
+      "sha256": "fc12cd1d309537d4134fbca78910b9ea8799f93b1f2df67ed708d0fd3adb2481"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/runs/lean-2026-09-25-c1-la2-extension-counting-core/RECEIPTS/formalization.json",
+      "sha256": "f1e960e44af2964aa21794c3dcf036048de943c5194d05eb981f3fbd75eec0f7"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/runs/lean-2026-09-25-c1-la2-extension-counting-core/RECEIPTS/informal-audit.json",
+      "sha256": "ea73903703a920311a3e810f92993bc6e0761a775040eefed8e00176b0494cf3"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/runs/lean-2026-09-25-c1-la2-extension-counting-core/RECEIPTS/kernel-verification.json",
+      "sha256": "a4acda11494133ceb21051062faaef6a9c40acd1e07b0979e3f19b0c5d49edea"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/runs/lean-2026-09-25-c1-la2-extension-counting-core/RECEIPTS/reviewer-assignment.json",
+      "sha256": "6c15523c82fb8ebc83d1a34d5282f1b209eb83a481ef3115b40c602adee980c8"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/runs/lean-2026-09-25-c1-la2-extension-counting-core/RECEIPTS/theorem-contract.json",
+      "sha256": "2a7949db6cc6804a7871532d5d3af54df5f88e68fe1283eb24ef59a53ce9afaa"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/runs/lean-2026-09-25-c1-la2-extension-counting-core/VERIFICATION-REPORT.json",
+      "sha256": "19ea55dc77a7624ba1ef7fd960d282ec887e41cc5c889d00ea586ecdde7c1ec4"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/runs/lean-2026-09-25-c1-la3-degree-lemma-implication-chain/RECEIPTS/dependency-authority.json",
+      "sha256": "cb8f19206852dd0ec1ad8200b736c0fd1f8c873a1403cc9515194a99c2fb61f8"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/runs/lean-2026-09-25-c1-la3-degree-lemma-implication-chain/RECEIPTS/fidelity-audit.json",
+      "sha256": "154d8b63e29e1e2f01ab458eb4aa0c6190b4cf4f273474f6d33cdb69b64df38d"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/runs/lean-2026-09-25-c1-la3-degree-lemma-implication-chain/RECEIPTS/formalization.json",
+      "sha256": "74d32f7f8291bf269bb10cf73d982bd4b9b1ebfb4f91325c8bf7d525d62aa511"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/runs/lean-2026-09-25-c1-la3-degree-lemma-implication-chain/RECEIPTS/informal-audit.json",
+      "sha256": "32864ed2ae70f3acf013d060b67d6923226fb053795abf6d844f41a36a504d7a"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/runs/lean-2026-09-25-c1-la3-degree-lemma-implication-chain/RECEIPTS/kernel-verification.json",
+      "sha256": "d3c85ead997c3ebaa48837e05aa2492f466ba05770941642fad4382487614501"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/runs/lean-2026-09-25-c1-la3-degree-lemma-implication-chain/RECEIPTS/reviewer-assignment.json",
+      "sha256": "10e13ac9eccc00066001c96b009b22eb63dc9c2ed94b6e854959a6af4089ed19"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/runs/lean-2026-09-25-c1-la3-degree-lemma-implication-chain/RECEIPTS/theorem-contract.json",
+      "sha256": "99148ec3e8e0a72d1c546bedc3cc634c69c1eea7be76e4356e0080483585dd36"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/runs/lean-2026-09-25-c1-la3-degree-lemma-implication-chain/VERIFICATION-REPORT.json",
+      "sha256": "f99546ffe0f812aaca53a7a84063171f0dc25cf3d1cbc31e4fea1d45ba796b01"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/runs/lean-2026-09-25-c1-la4-descent-order-bounds/RECEIPTS/dependency-authority.json",
+      "sha256": "d1530d464445a0f0bc074eb565b379582e07bab1ca50780cf87876b179103c04"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/runs/lean-2026-09-25-c1-la4-descent-order-bounds/RECEIPTS/fidelity-audit.json",
+      "sha256": "6f7bb4e32fc409ead7e541297822a805f5141e4f6426f1fb54f96783a3edbabc"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/runs/lean-2026-09-25-c1-la4-descent-order-bounds/RECEIPTS/formalization.json",
+      "sha256": "2c9cbc4d9fdbf0f39e29c0a16486113d63c8a2b02805a426bccab79682fcb525"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/runs/lean-2026-09-25-c1-la4-descent-order-bounds/RECEIPTS/informal-audit.json",
+      "sha256": "76d627736c44e5158f4365117d4f4640d661513386ffa66268a29925f638666f"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/runs/lean-2026-09-25-c1-la4-descent-order-bounds/RECEIPTS/kernel-verification.json",
+      "sha256": "2e4965968b77c9250979d427d38f7cfceecc5cfcd8778ba0123fc24e0a04a612"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/runs/lean-2026-09-25-c1-la4-descent-order-bounds/RECEIPTS/reviewer-assignment.json",
+      "sha256": "653cd3a0a0f79fd704e3944b9746d4de42273caf619bb4eecf6058a3f433b581"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/runs/lean-2026-09-25-c1-la4-descent-order-bounds/RECEIPTS/theorem-contract.json",
+      "sha256": "185d2874e2f527ec6a5f58f5364c148a1e21ee04c15463d2ffec114bf01a81aa"
+    },
+    {
+      "path": "proposals/cycle2/code-canonical-receipts/runs/lean-2026-09-25-c1-la4-descent-order-bounds/VERIFICATION-REPORT.json",
+      "sha256": "ac3e466a2c85b3315db56f438f414ab41262deea8c34ffee5ad296d282827a21"
+    },
+    {
+      "path": "proposals/cycle2/controller/BOUNDARY-NOTE.md",
+      "sha256": "baa02d829ee70ea789e0a0ac362bd666ddaf83edad9c0f9caa4f7ba4890c54da"
+    },
+    {
+      "path": "proposals/cycle2/controller/CANDIDATE.md",
+      "sha256": "3fcb7b63d7f56a04c79796031bd032be50a280ad596d6e3ed927c1aba5bdb46a"
+    },
+    {
+      "path": "proposals/cycle2/controller/ordinary_tree.py",
+      "sha256": "201a663f8d611a892c0471302dd355ea80b1b17b21cfc5c0e7a6a92d61d5abb4"
+    },
+    {
+      "path": "proposals/cycle2/controller/sharp_boundary.json",
+      "sha256": "266250089fa5a25d3e3081f4b1ec334cfd0ff3418ad8b41589344a9f109d26dc"
+    },
+    {
+      "path": "proposals/cycle2/controller/sharp_boundary.py",
+      "sha256": "b2acd95045e006fc683af82904f76e23ae45166c5753a31b978bb2c07a6539fa"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/CONTROLLER-IMPORT-REVIEW.md",
+      "sha256": "5e72ad6a2ff928492e1fda60c5abaf47790177baf1161bc2b6f75dbdaf81f0c7"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r25-c6-forest-delta2-pos-order-9/FIDELITY-REVIEW.md",
+      "sha256": "ef7b453d1ac615384d546481fb804b3da95f343aa1a73b518a944da71ee342d4"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r25-c6-forest-delta2-pos-order-9/INFORMAL-AUDIT.md",
+      "sha256": "0c821d899abc4ecc89f64379a6f661c781ca4d1d0516a4e6607ad12462c5cf61"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r25-c6-forest-delta2-pos-order-9/INFORMAL-PROOF.md",
+      "sha256": "2196aa7d392403716412e6a8513ee32bf7d196453f72a078556a0b1e6610a926"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r25-c6-forest-delta2-pos-order-9/README.md",
+      "sha256": "2cfd02e8ad169b6ffef187344d1b912a7875fc6321c1b49a3d65973e5a564856"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r25-c6-forest-delta2-pos-order-9/THEOREM-CONTRACT.md",
+      "sha256": "fea7b040be1481f89ddf43563fa0ab51d2ad57192536b6ef7d13f2b6d0c9abb1"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r25-c6-forest-delta2-pos-order-9/THEOREM-CONTRACT.yaml",
+      "sha256": "06f3bc93f80a567f99deb895215a3468715eb18956840684010e47462590e918"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r25-c6-forest-delta2-pos-order-9/VERIFICATION-REPORT.md",
+      "sha256": "49c2ad1bd5b23c24cdcef20ad0288295ce0fdfc1863ed9e4210d14c456063b6d"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r25-c6-forest-delta2-pos-order-9/receipts/RECEIPT-SUMMARY.json",
+      "sha256": "431287f089ac8a059c8407a7f9a1c209f499a319ae7dfc867d32ada29a2ec1de"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r25-c6-forest-delta2-pos-order-9/source/LeanProof.lean",
+      "sha256": "f4dfdef8320a735eab53d24f4b47d3b60bcb474ffd2c84c77f24ae2fc75fcf31"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r25-c6-forest-delta2-pos-order-9/source/LeanProof/Main.lean",
+      "sha256": "de002193e6322583122fd3855a64df53a2599187cb91dd1c18971128bc76faf0"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r25-c6-forest-delta2-pos-order-9/source/lake-manifest.json",
+      "sha256": "52a4d73cb6d885abcc2669f7eb652c81ce369a8a93ce211894a6e6b9f7d46c7c"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r25-c6-forest-delta2-pos-order-9/source/lakefile.toml",
+      "sha256": "45d0ca58145784d5f29322ff21a1335e350c38e72afe8d5396d9c9910b94ff49"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la1-forest-degree-extension/FIDELITY-REVIEW.md",
+      "sha256": "461d8f0465b25f2f61d2a17b69381a38b1e519c8544f2e43791ac76a2a4d2980"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la1-forest-degree-extension/INFORMAL-AUDIT.md",
+      "sha256": "595731fad2a16b585f9f18a5ae46d554c5080996b963e16e5680b9f5e77a3ce7"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la1-forest-degree-extension/INFORMAL-PROOF.md",
+      "sha256": "e912b6cadbbae1e0f41ca78787192224fec17c4cee071dbfb30fa3788a835e9b"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la1-forest-degree-extension/README.md",
+      "sha256": "41e0fe493bfcad8db839cc01f3317376b81857644483b3487714fc3fd0b8b75e"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la1-forest-degree-extension/THEOREM-CONTRACT.md",
+      "sha256": "7365c26a6f9eb5ee9696043185c9a9b0116f82ea3769419d8c202fe1b02797a8"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la1-forest-degree-extension/THEOREM-CONTRACT.yaml",
+      "sha256": "58e4d0a8e5b473c06b5ca2d8693ad3f58bf5fa964cb2451a251837273b306997"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la1-forest-degree-extension/VERIFICATION-REPORT.md",
+      "sha256": "28bc7d1aa053679075c9f5563ddfcf431fcfb3a91a1b3a8d9dfab3b0e9cc38a6"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la1-forest-degree-extension/receipts/RECEIPT-SUMMARY.json",
+      "sha256": "bdb722efa46ef29fb3b7dfbbf3ea2af91e3f9921ea7466d7d5964144bd6a3072"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la1-forest-degree-extension/source/LeanProof.lean",
+      "sha256": "f4dfdef8320a735eab53d24f4b47d3b60bcb474ffd2c84c77f24ae2fc75fcf31"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la1-forest-degree-extension/source/LeanProof/Main.lean",
+      "sha256": "b49ea82a33edc55f8185379c3abd44e13a17914b7f8b9ab0bf5e2aaac5aafc5a"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la1-forest-degree-extension/source/lake-manifest.json",
+      "sha256": "52a4d73cb6d885abcc2669f7eb652c81ce369a8a93ce211894a6e6b9f7d46c7c"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la1-forest-degree-extension/source/lakefile.toml",
+      "sha256": "45d0ca58145784d5f29322ff21a1335e350c38e72afe8d5396d9c9910b94ff49"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la2-extension-counting-core/FIDELITY-REVIEW.md",
+      "sha256": "5aac2e51aaccc7ffd57c7999c9b0c5627a2b389d1c2002c7485324247e7a45ae"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la2-extension-counting-core/INFORMAL-AUDIT.md",
+      "sha256": "792ad30ea7a3aa0e7a69281b78af7ab9f3386e26892df30d0ee6abd85e59c09d"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la2-extension-counting-core/INFORMAL-PROOF.md",
+      "sha256": "a55e5b869795f0d39dd83f2c5761cfa623f49a60b9e801fe460755b4471293b1"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la2-extension-counting-core/README.md",
+      "sha256": "1c618ea233d4fbf07f7b6acdc3e9795a290927068e82361b973caddbf7404d77"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la2-extension-counting-core/THEOREM-CONTRACT.md",
+      "sha256": "beb4a73bb22a8c90b285842c3d8a6dcc23b6c8f1851e1bb53572cefa914467ef"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la2-extension-counting-core/THEOREM-CONTRACT.yaml",
+      "sha256": "eb4dcdf58415ea2ee82868e18a54fc747e14b45a6969a05c5497a2ef36fb7c0c"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la2-extension-counting-core/VERIFICATION-REPORT.md",
+      "sha256": "73d21e93f64ae8ec793ddc907af3bdf59be6ecfb0db3ba7c83cd4bbbaab667a4"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la2-extension-counting-core/receipts/RECEIPT-SUMMARY.json",
+      "sha256": "d5eef144218fb720909db2765c4d216fc48f4d4d80c612ea4c9b054ce30aa2f1"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la2-extension-counting-core/source/LeanProof.lean",
+      "sha256": "f4dfdef8320a735eab53d24f4b47d3b60bcb474ffd2c84c77f24ae2fc75fcf31"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la2-extension-counting-core/source/LeanProof/Main.lean",
+      "sha256": "24e8764fbf99bca80a12a3e5f96449e1a5ae0517846ea8808ead5d399f327b19"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la2-extension-counting-core/source/lake-manifest.json",
+      "sha256": "52a4d73cb6d885abcc2669f7eb652c81ce369a8a93ce211894a6e6b9f7d46c7c"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la2-extension-counting-core/source/lakefile.toml",
+      "sha256": "45d0ca58145784d5f29322ff21a1335e350c38e72afe8d5396d9c9910b94ff49"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la3-degree-lemma-implication-chain/FIDELITY-REVIEW.md",
+      "sha256": "13e34755bc74443069241f52b86ead4dfc9908de1d8f08819ca8fb8bcb2d984f"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la3-degree-lemma-implication-chain/INFORMAL-AUDIT.md",
+      "sha256": "7eca7d28671a2049ba24a69981c56f0d7173ebbfe11c87df32f6bafe1641b205"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la3-degree-lemma-implication-chain/INFORMAL-PROOF.md",
+      "sha256": "0c743db10683617a923e7f4eab95e73e7aba1860d09943a11977b2076d1410c4"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la3-degree-lemma-implication-chain/README.md",
+      "sha256": "e9842096826f2821e492dc630485f5481a68a86486bee9102ae9aa627b8c862d"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la3-degree-lemma-implication-chain/THEOREM-CONTRACT.md",
+      "sha256": "6809262a31be068eee6ee41bd023989de04a1ebd182beab5bc6a2e45713b0698"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la3-degree-lemma-implication-chain/THEOREM-CONTRACT.yaml",
+      "sha256": "28f56fc6e2f346fd4085d125ae0337dfe31020d668bd574bcfaecaee939df09d"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la3-degree-lemma-implication-chain/VERIFICATION-REPORT.md",
+      "sha256": "163d64e288b3127350da27b1f9160d8d790fbfdf6e45c6f77ad16b6e48e8bb40"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la3-degree-lemma-implication-chain/receipts/RECEIPT-SUMMARY.json",
+      "sha256": "0f0f30278ab0cbc8a16d6a88c5b8a79e6578c56328fc37f9ca217f27e1be95c5"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la3-degree-lemma-implication-chain/source/LeanProof.lean",
+      "sha256": "f4dfdef8320a735eab53d24f4b47d3b60bcb474ffd2c84c77f24ae2fc75fcf31"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la3-degree-lemma-implication-chain/source/LeanProof/Main.lean",
+      "sha256": "23d9a1633c9d8f849be992f5f2f1cbe9b270092109903e98e51c903591017851"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la3-degree-lemma-implication-chain/source/lake-manifest.json",
+      "sha256": "52a4d73cb6d885abcc2669f7eb652c81ce369a8a93ce211894a6e6b9f7d46c7c"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la3-degree-lemma-implication-chain/source/lakefile.toml",
+      "sha256": "45d0ca58145784d5f29322ff21a1335e350c38e72afe8d5396d9c9910b94ff49"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la4-descent-order-bounds/FIDELITY-REVIEW.md",
+      "sha256": "c0fb4dba03a85a199baa01b871eb4d4a23b470af3b82c1327a140c070c2e3425"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la4-descent-order-bounds/INFORMAL-AUDIT.md",
+      "sha256": "1747cf0aca295681263d1c46e44996076136c94d74a49fee91cd50eddb036327"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la4-descent-order-bounds/INFORMAL-PROOF.md",
+      "sha256": "526f85e839f0b653cfecae2022747954b6072ab9e62b62e7e48a066dd1b2cfb2"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la4-descent-order-bounds/README.md",
+      "sha256": "4eb72a2e6b577efbecde2c84e0be79fb7cd00c40497247aed43e29e785f6df1d"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la4-descent-order-bounds/THEOREM-CONTRACT.md",
+      "sha256": "a4d0bf46534d1716c7c6127af8259500be4011193a51d28e2ce2a0fe7e7b8ba3"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la4-descent-order-bounds/THEOREM-CONTRACT.yaml",
+      "sha256": "a5d964540c9cc3aa05deb276256eacd28ab893612ce99abe9e50ea12ad2fbee8"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la4-descent-order-bounds/VERIFICATION-REPORT.md",
+      "sha256": "8ee1e413587a694f4fe49c2fec38f045a476835b0198c315d8a7b9e420858d92"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la4-descent-order-bounds/receipts/RECEIPT-SUMMARY.json",
+      "sha256": "22d002db1ef8215a62af1c93d51e81d28ea36a3f79562a56f7c9582875bda592"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la4-descent-order-bounds/source/LeanProof.lean",
+      "sha256": "f4dfdef8320a735eab53d24f4b47d3b60bcb474ffd2c84c77f24ae2fc75fcf31"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la4-descent-order-bounds/source/LeanProof/Main.lean",
+      "sha256": "dcecb681d019a29c625dcea1a2385de920fffa6b8f185e79372f31ae547c1936"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la4-descent-order-bounds/source/lake-manifest.json",
+      "sha256": "52a4d73cb6d885abcc2669f7eb652c81ce369a8a93ce211894a6e6b9f7d46c7c"
+    },
+    {
+      "path": "proposals/cycle2/latest-code/packages/r27-c1-la4-descent-order-bounds/source/lakefile.toml",
+      "sha256": "45d0ca58145784d5f29322ff21a1335e350c38e72afe8d5396d9c9910b94ff49"
+    },
+    {
+      "path": "receipts/C2-KEYED-LEDGER-PARITY.json",
+      "sha256": "21c476f2dc6cf086ba8eacb047fe87419753f42757384caa403c0ecfaf0777ab"
+    },
+    {
+      "path": "receipts/C2-PUBLIC-CODE-PACKAGE-HASH-CHECK.json",
+      "sha256": "8ff00131f04276d1c70e291c0df6c40bf23749277e1aef81d3d61d3e5d015b72"
+    },
+    {
+      "path": "sources/public/proofs/lean/r26-c1-la1-top-rank-residual-sign/THEOREM-CONTRACT.md",
+      "sha256": "b4abd3cf71d67595f02b8f4dcc73ae0c9711f15b74c9c5ff9a31d3fc5b363778"
+    },
+    {
+      "path": "sources/public/proofs/lean/r26-c1-la1-top-rank-residual-sign/source/LeanProof/Main.lean",
+      "sha256": "aff08ce72f9a5f1a93c9b8cb34c0f26ceeddc105cc5a94a4a132d5b6f6367dbc"
+    },
+    {
+      "path": "sources/standing-controls/kl-non-lc-fixtures.json",
+      "sha256": "36ef741655174e908011edafd9db1110f7f5e9bedc35b3d6e6089fa4bd928881"
+    },
+    {
+      "path": "sources/standing-controls/ordinary_tree.py",
+      "sha256": "201a663f8d611a892c0471302dd355ea80b1b17b21cfc5c0e7a6a92d61d5abb4"
+    },
+    {
+      "path": "sources/standing-controls/run_controls.py",
+      "sha256": "e4bfa655fd73f2277b3531e8df7169e93a179f6c50bc93638c50478d1fce0c20"
+    },
+    {
+      "path": "sources/standing-controls/small-exhaustive.json",
+      "sha256": "2ecfc261f21c2c1bcb1521c79c54b485fc5f5865721028d3ddc5e72fc44ad50a"
+    },
+    {
+      "path": "sources/standing-controls/summary.json",
+      "sha256": "fb764f1d7fd891e4b5d4f66bf81b7346125b672c0222c007bf2dde6ea1f2af1f"
+    },
+    {
+      "path": "sources/standing-controls/t22-order91.json",
+      "sha256": "2198f01fa5de1c192da190ac242f5af8a914b0b03bd5e6df979590d20c6a18ed"
+    },
+    {
+      "path": "sources/standing-controls/t60-order243.json",
+      "sha256": "871a3656ce328c800606a97bee60c2bc33b25c1381e0e716c54ff124372f23a2"
+    }
+  ],
+  "cycle": 2,
+  "focus": "Build a complete end-to-end proof of the unchanged primary from the proposed lemmas, independently filling every mathematical boundary case.",
+  "model": "gpt-6-luna",
+  "orientation": "T",
+  "reasoning_effort": "high",
+  "schema": "e993.search.case.v1",
+  "scratch_absolute": "/Users/ashtonsperry/Documents/Codex/2026-09-13/in-x20/work/erdos-993-first-interior-aggregate-dre-2026-09-24/scratchpad/C2-T3",
+  "stage": "search",
+  "status_authority": "proposed_worker_only",
+  "worker_id": "C2-T3"
+}

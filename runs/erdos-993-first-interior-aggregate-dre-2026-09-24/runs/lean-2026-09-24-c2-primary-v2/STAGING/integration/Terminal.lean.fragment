@@ -1,0 +1,12 @@
+namespace E993Interior
+
+theorem firstInteriorAggregate {V : Type*} [Fintype V] [DecidableEq V]
+    (G : SimpleGraph V) [DecidableRel G.Adj] (hT : G.IsTree)
+    (hInterior : C5LA1.crossingIndex G + 2 ≤ G.indepNum - 2) :
+    C5LA1.aggregate G (G.indepNum - 2) ≤ 0 := by
+  have ha : 7 ≤ G.indepNum := eligibleAlphaGeSeven G hT hInterior
+  apply bipartiteHighTailAggregate G hT.isBipartite (G.indepNum - 2)
+  · omega
+  · omega
+
+end E993Interior

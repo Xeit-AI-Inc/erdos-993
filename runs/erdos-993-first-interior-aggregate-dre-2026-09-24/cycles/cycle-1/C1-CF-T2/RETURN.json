@@ -1,0 +1,52 @@
+{
+  "worker_id": "C1-CF-T2",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "F",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-T2-ALG-IDENTITY",
+    "C1-T2-ALPHA2-BUDGET",
+    "C1-T2-BOUNDED-POINTWISE-CHECK"
+  ],
+  "claims": [
+    {
+      "claim_id": "C1-T2-ALG-IDENTITY",
+      "statement": "The support-deletion polynomial identity and the resulting all-integer-rank coefficient identity are valid for every original leaf of a finite ordinary tree, without eligibility or residual assumptions.",
+      "scope": "Every finite ordinary tree, original leaf, and integer rank.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-1/C1-CF-T2/REPORT.md"],
+      "reason": "Direct independent-set partition and zero-extended coefficient comparison give the identity exactly."
+    },
+    {
+      "claim_id": "C1-T2-ALPHA2-BUDGET",
+      "statement": "At p=alpha-2, the stated pointwise rank-budget inequality is equivalent to nonpositivity of its favorable summand and would imply the primary complete aggregate, but it is unproved.",
+      "scope": "Eligible finite ordinary trees at the frozen rank p=alpha-2.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-1/C1-CF-T2/REPORT.md"],
+      "reason": "Exact rearrangement validates the conditional reduction; neither eligibility nor the numerical checks prove its antecedent."
+    },
+    {
+      "claim_id": "C1-T2-BOUNDED-POINTWISE-CHECK",
+      "statement": "The six specified eligible cases have no positive favorable summands at p=alpha-2, as exact integer DP reports; this is bounded evidence only.",
+      "scope": "P_501, T_125, and four consecutive seeded Prüfer samples of order 260.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-1/C1-CF-T2/REPORT.md", "cycles/cycle-1/C1-CF-T2/large_constructed_summary.json", "cycles/cycle-1/C1-CF-T2/random-probe-replay.json", "cycles/cycle-1/C1-CF-T2/identity_probe.py", "cycles/cycle-1/C1-CF-T2/random_probe.py", "cycles/cycle-1/C1-CF-T2/ordinary_tree.py"],
+      "reason": "Scratch-copy replays exactly matched both pinned summary files, and a separate binomial calculation confirms the path row."
+    },
+    {
+      "claim_id": "C1-CF-T2-TARGETED-T22-RANK",
+      "statement": "At the frozen rank 66, the inherited T22 construction is eligible and has no positive favorable summands and complete aggregate -147807; its inherited positive marked summand at rank 34 does not transfer to this rank.",
+      "scope": "The exact T22 family member only, with additional bounded checks of T8, T40, and 120 seeded Prüfer trees.",
+      "status": "proposed_bounded_evidence",
+      "evidence_paths": ["cycles/cycle-1/C1-CF-T2/REPORT.md", "cycles/cycle-1/C1-CF-T2/targeted_probe.py", "cycles/cycle-1/C1-CF-T2/targeted-probe.json", "cycles/cycle-1/C1-CF-T2/ordinary_tree.py"],
+      "reason": "Targeted exact-DP replay tests the inherited obstruction at p=alpha-2; it does not establish a universal pointwise or aggregate sign."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CF-T2/REPORT.md",
+  "limitations": [
+    "The primary eligible-tree aggregate and pointwise rank-budget remain open from this critique.",
+    "The numerical replays largely share the source evaluator; only the path row has a separate closed-form arithmetic check.",
+    "The directed search covered 123 specified trees, 94 eligible, and provides no universal certificate."
+  ]
+}

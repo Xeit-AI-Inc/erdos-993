@@ -1,0 +1,70 @@
+{
+  "worker_id": "C2-CU-F1",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "U",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-F1-01",
+    "C2-F1-02",
+    "C2-F1-03",
+    "C2-F1-04"
+  ],
+  "claims": [
+    {
+      "claim_id": "C2-F1-01",
+      "statement": "The finite-bipartite tagged-shadow incidence bound and its degree-one-leaf strengthening hold at the incoming quantifiers.",
+      "scope": "Exactly C2-F1-01: arbitrary finite bipartite H and W with 1<=k<=alpha(H), plus the stated leaf application.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-2/C2-CU-F1/REPORT.md"],
+      "reason": "Independent incidence recount verifies at least k tag-preserving deletions per tagged (k+1)-set and at most 2(alpha(H)-k) extensions per tagged k-set; the leaf binds alpha(H)<=alpha(G)-1. Empty tags and k=alpha(H) are covered."
+    },
+    {
+      "claim_id": "C2-F1-02",
+      "statement": "The high-tail single-leaf signed difference is nonpositive on the incoming bipartite graph and rank scope.",
+      "scope": "Exactly C2-F1-02, including disconnected graphs, p=1, above-degree zero extension, and no selector or residual premise.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-2/C2-CU-F1/REPORT.md"],
+      "reason": "At p>=2 the guard gives p-1>=2(alpha(G)-p), so the strengthened count inequality signs q_p-q_(p-1); above alpha(H) both counts vanish. At p=1 the graph must be its degree-one edge and the term is zero."
+    },
+    {
+      "claim_id": "C2-F1-03",
+      "statement": "Primary eligibility of an ordinary connected tree forces alpha at least seven.",
+      "scope": "Exactly C2-F1-03 with integer p=alpha-2 and first strict descent including the terminal zero extension.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-2/C2-CU-F1/REPORT.md"],
+      "reason": "Alpha 4 and 5 require impossible descents by ranks 0 and 1. At alpha 6, the exact tree Delta_2 formula is nonnegative for n>=9, and the n=7,8 maximum-independent-set covers give positive values."
+    },
+    {
+      "claim_id": "C2-F1-04",
+      "statement": "The five reported path-with-arms instances have the stated alpha, rank, first descent, strict leaf selectors, local terms, and complete sums.",
+      "scope": "Exactly the five instances m in {3,4,5,10,20}; finite evidence only.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-2/C2-CU-F1/REPORT.md", "cycles/cycle-2/C2-CU-F1/family_check.py", "cycles/cycle-2/C2-CU-F1/family_check.json"],
+      "reason": "An independent closed-form polynomial computation reproduces the five source rows, retaining one tag per arm leaf and summing only strict-selector leaves."
+    },
+    {
+      "claim_id": "C2-CU-F1-01",
+      "statement": "The incoming high-tail pointwise sign and small-alpha exclusion compose to an informal proof that the complete favorable-original-leaf sum S(T,alpha(T)-2) is nonpositive for every primary-eligible ordinary tree.",
+      "scope": "Exact SOLUTION-CONTRACT.md ordinary-tree first-interior aggregate, as an informal dependency consequence without a Lean award.",
+      "status": "proposed_informal_proof_complete",
+      "evidence_paths": ["cycles/cycle-2/C2-CU-F1/REPORT.md"],
+      "reason": "Eligibility implies alpha>=7, equivalent at p=alpha-2 to the tail guard; every original-leaf term is then nonpositive, so summing the unshifted favorable selector with multiplicity preserves the sign."
+    },
+    {
+      "claim_id": "C2-CU-F1-02",
+      "statement": "The explicit path-with-120-arms tree has order 244, alpha 122, p 120, x 81, all 121 original leaves selected, and exact complete sum -2292918292728979880759067178983596064240.",
+      "scope": "One exact eligible 244-vertex tree; finite mechanism check only.",
+      "status": "proposed_exact_finite_check",
+      "evidence_paths": ["cycles/cycle-2/C2-CU-F1/REPORT.md", "cycles/cycle-2/C2-CU-F1/family_check.py", "cycles/cycle-2/C2-CU-F1/family_check.json"],
+      "reason": "Exact integer coefficient formulas from conditioning on the junction vertex yield the first strict descent, both selector orbits, two local terms, and full multiplicity-weighted sum."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CU-F1/REPORT.md",
+  "limitations": [
+    "Universal conclusions are informal proofs only; no Lean build, formal gate, or controller award was performed.",
+    "The independent family check covers exactly six parameter values and is not an exhaustive or universal proof.",
+    "The 244-vertex row is one eligible negative example and does not imply the sign for other large trees.",
+    "No background job was started, and no owned job remains."
+  ]
+}

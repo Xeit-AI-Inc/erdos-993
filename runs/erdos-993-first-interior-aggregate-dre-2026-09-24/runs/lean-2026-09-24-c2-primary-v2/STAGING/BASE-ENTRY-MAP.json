@@ -1,0 +1,361 @@
+[
+  {
+    "origin": "r26-Main.lean",
+    "entry": 1,
+    "kind": "definition",
+    "name": "C4LA1.vertexDeletionIndepSetCount",
+    "original_fragment_sha256": "7e0a588e243735a611c919ea1080816911a3e27e4523478af0c0f560ce1b3b48",
+    "body": "namespace C4LA1\n\nopen SimpleGraph\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- The coefficient `i_k(G-v)`, represented without changing vertex types:\nindependent `k`-subsets of the original finite vertex type that avoid `v`. -/\ndef vertexDeletionIndepSetCount (G : SimpleGraph V) [DecidableRel G.Adj]\n    (v : V) (k : Nat) : Nat :=\n  (((Finset.univ.erase v).powersetCard k).filter fun s : Finset V =>\n    G.IsIndepSet (s : Set V)).card\n\nend C4LA1\n",
+    "body_sha256": "7e0a588e243735a611c919ea1080816911a3e27e4523478af0c0f560ce1b3b48"
+  },
+  {
+    "origin": "r26-Main.lean",
+    "entry": 2,
+    "kind": "definition",
+    "name": "C4LA1.vertexDeletionForwardDifference",
+    "original_fragment_sha256": "c2da50eb16ee788c439b146577efeedd7dd42811c6943fb437585edcf63b5880",
+    "body": "namespace C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- The forward coefficient difference `i_(p+1)(G-v) - i_p(G-v)`, with\nnatural counts embedded in the integers. -/\ndef vertexDeletionForwardDifference (G : SimpleGraph V) [DecidableRel G.Adj]\n    (v : V) (p : Nat) : Int :=\n  (vertexDeletionIndepSetCount G v (p + 1) : Int) -\n    vertexDeletionIndepSetCount G v p\n\nend C4LA1\n",
+    "body_sha256": "c2da50eb16ee788c439b146577efeedd7dd42811c6943fb437585edcf63b5880"
+  },
+  {
+    "origin": "r26-Main.lean",
+    "entry": 3,
+    "kind": "definition",
+    "name": "C4LA1.IsFavorableAt",
+    "original_fragment_sha256": "25d8f7d274f9080468bf6d46acc6db3d4a469c2e399e7faee6cdcee24290a0db",
+    "body": "namespace C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- Literal strict favorability of an original leaf at rank `p`. -/\ndef IsFavorableAt (G : SimpleGraph V) [DecidableRel G.Adj] (v : V) (p : Nat) : Prop :=\n  vertexDeletionForwardDifference G v p < 0\n\nend C4LA1\n",
+    "body_sha256": "25d8f7d274f9080468bf6d46acc6db3d4a469c2e399e7faee6cdcee24290a0db"
+  },
+  {
+    "origin": "r26-Main.lean",
+    "entry": 4,
+    "kind": "definition",
+    "name": "C4LA1.IsGraphLeaf",
+    "original_fragment_sha256": "65acd314d3bfd74aca476e00dd8866434c67682b627bce5e105d372a556f7ae5",
+    "body": "namespace C4LA1\n\nvariable {V : Type*}\n\n/-- A graph leaf has exactly one adjacent vertex. -/\ndef IsGraphLeaf (G : SimpleGraph V) (v : V) : Prop :=\n  ∃! u, G.Adj v u\n\nend C4LA1\n",
+    "body_sha256": "65acd314d3bfd74aca476e00dd8866434c67682b627bce5e105d372a556f7ae5"
+  },
+  {
+    "origin": "r26-Main.lean",
+    "entry": 5,
+    "kind": "definition",
+    "name": "C5LA1.support",
+    "original_fragment_sha256": "8e1e1a689393f555eb5c216207b1368c7415a8543c569884b2fc86954b7bc2b4",
+    "body": "namespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- The unique support (neighbour) of an original leaf `v`; unconstrained\n(any value satisfying nothing further) off the leaf set. -/\nnoncomputable\ndef support (G : SimpleGraph V) (v : V) : V :=\n  Classical.choose (p := fun u => C4LA1.IsGraphLeaf G v → G.Adj v u ∧ ∀ w, G.Adj v w → w = u)\n    (by\n      by_cases h : C4LA1.IsGraphLeaf G v\n      · obtain ⟨u, hu, huniq⟩ := h\n        exact ⟨u, fun _ => ⟨hu, huniq⟩⟩\n      · exact ⟨v, fun hc => absurd hc h⟩)\n\nend C5LA1\n",
+    "body_sha256": "8e1e1a689393f555eb5c216207b1368c7415a8543c569884b2fc86954b7bc2b4"
+  },
+  {
+    "origin": "r26-Main.lean",
+    "entry": 6,
+    "kind": "definition",
+    "name": "C5LA1.leafSet",
+    "original_fragment_sha256": "78ec65517bde90cc2fc5e542fc7c60d6a5147b243b74b9ac3de33d4efd1df697",
+    "body": "namespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\nopen Classical in\n/-- The set of original leaves of `G`. -/\nnoncomputable\ndef leafSet (G : SimpleGraph V) : Finset V :=\n  Finset.univ.filter (C4LA1.IsGraphLeaf G)\n\nend C5LA1\n",
+    "body_sha256": "78ec65517bde90cc2fc5e542fc7c60d6a5147b243b74b9ac3de33d4efd1df697"
+  },
+  {
+    "origin": "r26-Main.lean",
+    "entry": 7,
+    "kind": "definition",
+    "name": "C5LA1.leafDegree",
+    "original_fragment_sha256": "ccfc9b2f549aa8c9986931152d249096ce49e3ccd3b67f4afd8678a749d93a68",
+    "body": "namespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- `lambda(s)`: the number of leaves of `G` adjacent to `s`, zero off\nsupports. -/\nnoncomputable\ndef leafDegree (G : SimpleGraph V) [DecidableRel G.Adj] (s : V) : Nat :=\n  ((leafSet G).filter fun v => G.Adj v s).card\n\nend C5LA1\n",
+    "body_sha256": "ccfc9b2f549aa8c9986931152d249096ce49e3ccd3b67f4afd8678a749d93a68"
+  },
+  {
+    "origin": "r26-Main.lean",
+    "entry": 8,
+    "kind": "definition",
+    "name": "C5LA1.H",
+    "original_fragment_sha256": "55f37d9161901d6006e571cf548c4e56675c9d786a1aba83e7889ad9d443224d",
+    "body": "namespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- `H_v = G - {v, s_v}`, realised as the deletion set for a leaf `v`. -/\nnoncomputable\ndef H (G : SimpleGraph V) (v : V) : Finset V :=\n  {v, support G v}\n\nend C5LA1\n",
+    "body_sha256": "55f37d9161901d6006e571cf548c4e56675c9d786a1aba83e7889ad9d443224d"
+  },
+  {
+    "origin": "r26-Main.lean",
+    "entry": 9,
+    "kind": "definition",
+    "name": "C5LA1.R",
+    "original_fragment_sha256": "a0407d82ab112a65a0f9d85970e9d6217b66201680cc079a4ba13751e53dc6b8",
+    "body": "namespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- `R_v = G - N[s_v]`, realised as the deletion set for a leaf `v`. -/\nnoncomputable\ndef R (G : SimpleGraph V) [DecidableRel G.Adj] (v : V) : Finset V :=\n  insert (support G v) (G.neighborFinset (support G v))\n\nend C5LA1\n",
+    "body_sha256": "a0407d82ab112a65a0f9d85970e9d6217b66201680cc079a4ba13751e53dc6b8"
+  },
+  {
+    "origin": "r26-Main.lean",
+    "entry": 10,
+    "kind": "definition",
+    "name": "C5LA1.indepSetsAvoiding",
+    "original_fragment_sha256": "ac0e331eec99650eca7a18e9fe98829bb5495850685b8f31936169f0a6d8e368",
+    "body": "namespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- `I_k(G - D)`: independent `k`-subsets of the original vertex type\navoiding the finite deletion set `D`. -/\ndef indepSetsAvoiding (G : SimpleGraph V) [DecidableRel G.Adj]\n    (D : Finset V) (k : Nat) : Finset (Finset V) :=\n  ((Finset.univ \\ D).powersetCard k).filter fun s : Finset V => G.IsIndepSet (s : Set V)\n\nend C5LA1\n",
+    "body_sha256": "ac0e331eec99650eca7a18e9fe98829bb5495850685b8f31936169f0a6d8e368"
+  },
+  {
+    "origin": "r26-Main.lean",
+    "entry": 11,
+    "kind": "definition",
+    "name": "C5LA1.indepSetCount",
+    "original_fragment_sha256": "e22635d8697e49b38dd521080f34c3eefe56a93964120c70f53ad9899b4a7f71",
+    "body": "namespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- `i_k(G - D)`. -/\ndef indepSetCount (G : SimpleGraph V) [DecidableRel G.Adj]\n    (D : Finset V) (k : Nat) : Nat :=\n  (indepSetsAvoiding G D k).card\n\nend C5LA1\n",
+    "body_sha256": "e22635d8697e49b38dd521080f34c3eefe56a93964120c70f53ad9899b4a7f71"
+  },
+  {
+    "origin": "r26-Main.lean",
+    "entry": 12,
+    "kind": "definition",
+    "name": "C5LA1.forwardDifferenceDel",
+    "original_fragment_sha256": "60bd8efcc88e8e511a7caacac5867f7845243ccab08f1660e8c3962af544dd8f",
+    "body": "namespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- `Delta_k(G - D) = i_(k+1)(G-D) - i_k(G-D)`. -/\ndef forwardDifferenceDel (G : SimpleGraph V) [DecidableRel G.Adj]\n    (D : Finset V) (k : Nat) : Int :=\n  (indepSetCount G D (k + 1) : Int) - indepSetCount G D k\n\nend C5LA1\n",
+    "body_sha256": "60bd8efcc88e8e511a7caacac5867f7845243ccab08f1660e8c3962af544dd8f"
+  },
+  {
+    "origin": "r26-Main.lean",
+    "entry": 13,
+    "kind": "definition",
+    "name": "C5LA1.aggregate",
+    "original_fragment_sha256": "d66e776c5cf49b2a78a2d9713e4a41de2cbaf5de0af7b6d580075064d1daea8b",
+    "body": "namespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\nopen Classical in\n/-- `S(G,p) = sum_{v in F} (b_v - B_v)`, the literal top-rank residual\naggregate, summed over the favorable filter of the leaf set. -/\nnoncomputable\ndef aggregate (G : SimpleGraph V) [DecidableRel G.Adj] (p : Nat) : Int :=\n  ∑ v ∈ (leafSet G).filter fun v => C4LA1.IsFavorableAt G v p,\n    (forwardDifferenceDel G (H G v) (p - 1) - forwardDifferenceDel G (R G v) (p - 1))\n\nend C5LA1\n",
+    "body_sha256": "d66e776c5cf49b2a78a2d9713e4a41de2cbaf5de0af7b6d580075064d1daea8b"
+  },
+  {
+    "origin": "r26-Main.lean",
+    "entry": 14,
+    "kind": "definition",
+    "name": "C5LA1.crossingIndex",
+    "original_fragment_sha256": "378868ab2e660af8a36ea0b1045c55bc60f8383dca3d31dd85c4b52fa8a898fb",
+    "body": "namespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\nopen Classical in\n/-- `x(G)`: the least `k` with `Delta_k(G) < 0`; exists because\n`Delta_(alpha)(G) = -i_alpha(G) < 0`. -/\nnoncomputable\ndef crossingIndex (G : SimpleGraph V) [DecidableRel G.Adj] : Nat :=\n  Nat.find (p := fun k => forwardDifferenceDel G ∅ k < 0)\n    (by\n      classical\n      obtain ⟨s, hs⟩ := G.exists_isNIndepSet_indepNum\n      refine ⟨G.indepNum, ?_⟩\n      have hzero : indepSetCount G ∅ (G.indepNum + 1) = 0 := by\n        have hempty : indepSetsAvoiding G ∅ (G.indepNum + 1) = ∅ := by\n          rw [Finset.eq_empty_iff_forall_notMem]\n          intro t ht\n          simp only [indepSetsAvoiding, Finset.mem_filter, Finset.mem_powersetCard] at ht\n          have hle : t.card ≤ G.indepNum := ht.2.card_le_indepNum\n          omega\n        rw [indepSetCount, hempty, Finset.card_empty]\n      have hpos : 0 < indepSetCount G ∅ G.indepNum := by\n        rw [indepSetCount, Finset.card_pos]\n        refine ⟨s, ?_⟩\n        simp only [indepSetsAvoiding, Finset.mem_filter, Finset.mem_powersetCard]\n        refine ⟨⟨?_, hs.card_eq⟩, hs.isIndepSet⟩\n        intro x _\n        simp\n      simp only [forwardDifferenceDel, hzero]\n      omega)\n\nend C5LA1\n",
+    "body_sha256": "378868ab2e660af8a36ea0b1045c55bc60f8383dca3d31dd85c4b52fa8a898fb"
+  },
+  {
+    "origin": "r25-Main.lean",
+    "entry": 1,
+    "kind": "definition",
+    "name": "Erdos993G1.indepCount",
+    "original_fragment_sha256": "f6bc96fd41a76a97b28a866a483e2b1d637d371832690897422edeeb9b65bc2b",
+    "body": "universe u\n\nnamespace Erdos993G1\n\nnoncomputable\ndef indepCount {V : Type u}\n    (F : SimpleGraph V) (k : ℕ) : ℤ :=\n  (Nat.card {S : Finset V // F.IsNIndepSet k S} : ℤ)\n\nend Erdos993G1\n",
+    "body_sha256": "f6bc96fd41a76a97b28a866a483e2b1d637d371832690897422edeeb9b65bc2b"
+  },
+  {
+    "origin": "r25-Main.lean",
+    "entry": 2,
+    "kind": "definition",
+    "name": "Erdos993G1.coeff",
+    "original_fragment_sha256": "15ce5e3474a249e2ae5d727a1012a8f6bea52cbbf8188b13cfe247eb844d5cf8",
+    "body": "namespace Erdos993G1\n\nnoncomputable\ndef coeff {V : Type u}\n    (F : SimpleGraph V) (k : ℤ) : ℤ :=\n  if 0 ≤ k then Erdos993G1.indepCount F k.toNat else 0\n\nend Erdos993G1\n",
+    "body_sha256": "15ce5e3474a249e2ae5d727a1012a8f6bea52cbbf8188b13cfe247eb844d5cf8"
+  },
+  {
+    "origin": "r25-Main.lean",
+    "entry": 3,
+    "kind": "definition",
+    "name": "Erdos993G1.delta",
+    "original_fragment_sha256": "d7dc776c79754ed209810ad69194b3b65d71e3bf718124b0133c53d1bee1a42c",
+    "body": "namespace Erdos993G1\n\nnoncomputable\ndef delta {V : Type u}\n    (F : SimpleGraph V) (k : ℤ) : ℤ :=\n  Erdos993G1.coeff F (k + 1) - Erdos993G1.coeff F k\n\nend Erdos993G1\n",
+    "body_sha256": "d7dc776c79754ed209810ad69194b3b65d71e3bf718124b0133c53d1bee1a42c"
+  },
+  {
+    "origin": "controller_representation_of_audited_tagged_family",
+    "entry": 1,
+    "kind": "definition",
+    "name": "E993Interior.taggedFamily",
+    "body": "namespace E993Interior\n\nnoncomputable def taggedFamily {V : Type*} [Fintype V] [DecidableEq V]\n    (G : SimpleGraph V) [DecidableRel G.Adj] (U W : Finset V) (k : ℕ) :\n    Finset (Finset V) := by\n  classical\n  exact (U.powersetCard k).filter fun A =>\n    G.IsIndepSet (A : Set V) ∧ ¬ Disjoint A W\n\nend E993Interior\n",
+    "body_sha256": "10402bf0b99a801e99b439ec5fe328ed9fff0369071c924f3b1f4ecbbbeb2a95"
+  },
+  {
+    "origin": "r25-Main.lean",
+    "entry": 4,
+    "kind": "lemma",
+    "name": "Erdos993G1.indepCount_eq_card_indepSetFinset",
+    "original_fragment_sha256": "01ee774fedf7bb37cb52000e541f0c8196f3882ce0e4c5a77cc46e05ba98e876",
+    "body": "namespace Erdos993G1\n\nlemma indepCount_eq_card_indepSetFinset {V : Type u} (F : SimpleGraph V) [Fintype V] [DecidableEq V]\n    [DecidableRel F.Adj] (k : ℕ) :\n    indepCount F k = ((F.indepSetFinset k).card : ℤ) := by\n  simp only [indepCount, Nat.card_eq_fintype_card, Fintype.card_subtype,\n    SimpleGraph.indepSetFinset]\n\nend Erdos993G1\n",
+    "body_sha256": "01ee774fedf7bb37cb52000e541f0c8196f3882ce0e4c5a77cc46e05ba98e876"
+  },
+  {
+    "origin": "r25-Main.lean",
+    "entry": 5,
+    "kind": "lemma",
+    "name": "Erdos993G1.coeff_nat",
+    "original_fragment_sha256": "91c74d915628f89477cb21d889b1e6cb464d34247520df6084260b72ec796440",
+    "body": "namespace Erdos993G1\n\nlemma coeff_nat {V : Type u} (F : SimpleGraph V) (k : ℕ) : coeff F (k : ℤ) = indepCount F k := by\n  simp [coeff]\n\nend Erdos993G1\n",
+    "body_sha256": "91c74d915628f89477cb21d889b1e6cb464d34247520df6084260b72ec796440"
+  },
+  {
+    "origin": "r25-Main.lean",
+    "entry": 6,
+    "kind": "lemma",
+    "name": "Erdos993G1.delta_nat",
+    "original_fragment_sha256": "61f3c4d43f5847c9c65da6c606c0fa3083078cfbc394be9e5d90b14463c042a9",
+    "body": "namespace Erdos993G1\n\nlemma delta_nat {V : Type u} (F : SimpleGraph V) (k : ℕ) :\n    delta F (k : ℤ) = indepCount F (k + 1) - indepCount F k := by\n  simpa only [delta, Nat.cast_add, Nat.cast_one] using\n    congrArg₂ (· - ·) (coeff_nat F (k + 1)) (coeff_nat F k)\n\nend Erdos993G1\n",
+    "body_sha256": "61f3c4d43f5847c9c65da6c606c0fa3083078cfbc394be9e5d90b14463c042a9"
+  },
+  {
+    "origin": "r25-Main.lean",
+    "entry": 7,
+    "kind": "lemma",
+    "name": "Erdos993G1.isNIndepSet_pair_iff",
+    "original_fragment_sha256": "a5eb6d6e8d552c64fa2cb4001d5f440637a38ef7c2e15e179c1eaaab1db9d412",
+    "body": "namespace Erdos993G1\n\nlemma isNIndepSet_pair_iff {V : Type u} (F : SimpleGraph V) [DecidableEq V] (a b : V) :\n    F.IsNIndepSet 2 {a, b} ↔ a ≠ b ∧ ¬F.Adj a b := by\n  by_cases h : a = b\n  · subst b\n    simp [SimpleGraph.isNIndepSet_iff]\n  · simp [SimpleGraph.isNIndepSet_iff, SimpleGraph.isIndepSet_iff, Set.Pairwise, h, F.adj_comm] <;> tauto\n\nend Erdos993G1\n",
+    "body_sha256": "a5eb6d6e8d552c64fa2cb4001d5f440637a38ef7c2e15e179c1eaaab1db9d412"
+  },
+  {
+    "origin": "r25-Main.lean",
+    "entry": 8,
+    "kind": "lemma",
+    "name": "Erdos993G1.sym2_toFinset_injective",
+    "original_fragment_sha256": "d90c2a73eb34028360b6e19de80ccb0f42b1901ef4a1fec0e9cc0281ba551a02",
+    "body": "namespace Erdos993G1\n\nlemma sym2_toFinset_injective {V : Type u} [DecidableEq V] :\n    Function.Injective (Sym2.toFinset : Sym2 V → Finset V) := by\n  intro a b h\n  apply Sym2.ext\n  intro v\n  simpa only [Sym2.mem_toFinset] using iff_of_eq (congrArg (v ∈ ·) h)\n\nend Erdos993G1\n",
+    "body_sha256": "d90c2a73eb34028360b6e19de80ccb0f42b1901ef4a1fec0e9cc0281ba551a02"
+  },
+  {
+    "origin": "r25-Main.lean",
+    "entry": 9,
+    "kind": "lemma",
+    "name": "Erdos993G1.indepSetFinset_two_eq",
+    "original_fragment_sha256": "9a618f5577e807ae3ba07edfc6fb09ddfe732dc3bca7f5260288a798c219a0d1",
+    "body": "namespace Erdos993G1\n\nlemma indepSetFinset_two_eq {V : Type u} (F : SimpleGraph V) [Fintype V] [DecidableEq V] [DecidableRel F.Adj] :\n    F.indepSetFinset 2 = (Fᶜ.edgeFinset).image Sym2.toFinset := by\n  ext S\n  constructor\n  · intro h\n    have hS := SimpleGraph.mem_indepSetFinset_iff.mp h\n    obtain ⟨a, b, hab, rfl⟩ := Finset.card_eq_two.mp hS.card_eq\n    refine Finset.mem_image.mpr ⟨s(a, b), ?_, Sym2.toFinset_mk_eq⟩\n    simpa only [SimpleGraph.mem_edgeFinset, SimpleGraph.mem_edgeSet,\n      SimpleGraph.compl_adj] using (isNIndepSet_pair_iff F a b).mp hS\n  · intro h\n    obtain ⟨e, he, rfl⟩ := Finset.mem_image.mp h\n    induction e using Sym2.inductionOn with\n    | hf a b =>\n      rw [SimpleGraph.mem_indepSetFinset_iff, Sym2.toFinset_mk_eq,\n        isNIndepSet_pair_iff]\n      simpa only [SimpleGraph.mem_edgeFinset, SimpleGraph.mem_edgeSet,\n        SimpleGraph.compl_adj] using he\n\nend Erdos993G1\n",
+    "body_sha256": "9a618f5577e807ae3ba07edfc6fb09ddfe732dc3bca7f5260288a798c219a0d1"
+  },
+  {
+    "origin": "r25-Main.lean",
+    "entry": 10,
+    "kind": "lemma",
+    "name": "Erdos993G1.indepCount_two_add_edges",
+    "original_fragment_sha256": "889082ae5e0ef42ec09114ff404a94b0e30b0f5d9d2f4e621868328930e53ce3",
+    "body": "namespace Erdos993G1\n\nlemma indepCount_two_add_edges {V : Type u} (F : SimpleGraph V) [Finite V] :\n    indepCount F 2 + (Nat.card F.edgeSet : ℤ) = ((Nat.card V).choose 2 : ℤ) := by\n  classical\n  letI := Fintype.ofFinite V\n  have hd : Disjoint F.edgeFinset Fᶜ.edgeFinset :=\n    SimpleGraph.disjoint_edgeFinset.mpr disjoint_compl_right\n  have hu : F.edgeFinset ∪ Fᶜ.edgeFinset = (⊤ : SimpleGraph V).edgeFinset := by\n    ext e\n    induction e using Sym2.inductionOn with\n    | hf a b =>\n      by_cases hab : a = b\n      · subst b\n        simp\n      · simp [SimpleGraph.compl_adj, hab]\n        exact Classical.em _\n  have ht : F.edgeFinset.card + Fᶜ.edgeFinset.card = (Fintype.card V).choose 2 := by\n    rw [← Finset.card_union_of_disjoint hd, hu,\n      SimpleGraph.card_edgeFinset_top_eq_card_choose_two]\n  rw [indepCount_eq_card_indepSetFinset, indepSetFinset_two_eq,\n    Finset.card_image_of_injective _ sym2_toFinset_injective,\n    Nat.card_eq_fintype_card, Nat.card_eq_fintype_card,\n    ← SimpleGraph.edgeFinset_card]\n  exact_mod_cast (by omega : Fᶜ.edgeFinset.card + F.edgeFinset.card = (Fintype.card V).choose 2)\n\nend Erdos993G1\n",
+    "body_sha256": "889082ae5e0ef42ec09114ff404a94b0e30b0f5d9d2f4e621868328930e53ce3"
+  },
+  {
+    "origin": "r25-Main.lean",
+    "entry": 11,
+    "kind": "lemma",
+    "name": "Erdos993G1.indepSetFinset_eq_filter_powersetCard",
+    "original_fragment_sha256": "5dae608f7a4c0080d5baf5c3d9c7f348b9ca8c8fe0696a8ff41609ad9715e16b",
+    "body": "namespace Erdos993G1\n\nlemma indepSetFinset_eq_filter_powersetCard {V : Type u} (F : SimpleGraph V) [Fintype V] [DecidableEq V]\n    [DecidableRel F.Adj] (k : ℕ) :\n    F.indepSetFinset k = ((Finset.univ : Finset V).powersetCard k).filter\n      (fun B : Finset V => F.IsIndepSet B) := by\n  ext B\n  simp [SimpleGraph.mem_indepSetFinset_iff, SimpleGraph.isNIndepSet_iff, and_comm]\n\nend Erdos993G1\n",
+    "body_sha256": "5dae608f7a4c0080d5baf5c3d9c7f348b9ca8c8fe0696a8ff41609ad9715e16b"
+  },
+  {
+    "origin": "r25-Main.lean",
+    "entry": 12,
+    "kind": "lemma",
+    "name": "Erdos993G1.card_nonindep_pairs",
+    "original_fragment_sha256": "6e86164cc77740b70b633979f1bb9f55b1379ed261467391fe51ffb0836f3fcf",
+    "body": "namespace Erdos993G1\n\nlemma card_nonindep_pairs {V : Type u} (F : SimpleGraph V) [Fintype V] [DecidableEq V] [DecidableRel F.Adj] :\n    (((Finset.univ : Finset V).powersetCard 2).filter\n      (fun E : Finset V => ¬F.IsIndepSet E)).card = Nat.card F.edgeSet := by\n  have hp := Finset.card_filter_add_card_filter_not\n    (s := (Finset.univ : Finset V).powersetCard 2)\n    (fun E : Finset V => F.IsIndepSet E)\n  rw [← indepSetFinset_eq_filter_powersetCard, Finset.card_powersetCard,\n    Finset.card_univ] at hp\n  have he := indepCount_two_add_edges F\n  rw [indepCount_eq_card_indepSetFinset,\n    Nat.card_eq_fintype_card (α := V)] at he\n  omega\n\nend Erdos993G1\n",
+    "body_sha256": "6e86164cc77740b70b633979f1bb9f55b1379ed261467391fe51ffb0836f3fcf"
+  },
+  {
+    "origin": "r25-Main.lean",
+    "entry": 13,
+    "kind": "lemma",
+    "name": "Erdos993G1.sum_card_filter_swap",
+    "original_fragment_sha256": "8a32f504cb65462cc407e7d76e8cfa05f1df7f218b7072b70414f24aba94a68f",
+    "body": "namespace Erdos993G1\n\nlemma sum_card_filter_swap {A : Type u} {B : Type w}\n    (s : Finset A) (t : Finset B) (p : A → B → Prop)\n    [DecidableRel p] :\n    ∑ a ∈ s, (t.filter (p a)).card =\n      ∑ b ∈ t, (s.filter (fun a => p a b)).card := by\n  simp only [Finset.card_eq_sum_ones, Finset.sum_filter]\n  exact Finset.sum_comm\n\nend Erdos993G1\n",
+    "body_sha256": "8a32f504cb65462cc407e7d76e8cfa05f1df7f218b7072b70414f24aba94a68f"
+  },
+  {
+    "origin": "r25-Main.lean",
+    "entry": 14,
+    "kind": "lemma",
+    "name": "Erdos993G1.sum_nonindep_pair_incidence",
+    "original_fragment_sha256": "bafc19d498fd73893dbbd27856e681905568a5a1ed659a421802e2d1f4c4b1d9",
+    "body": "namespace Erdos993G1\n\nlemma sum_nonindep_pair_incidence {V : Type u} (F : SimpleGraph V) [Fintype V] [DecidableEq V]\n    [DecidableRel F.Adj] :\n    ∑ B ∈ (Finset.univ : Finset V).powersetCard 3,\n      ((B.powersetCard 2).filter (fun E : Finset V => ¬F.IsIndepSet E)).card =\n        Nat.card F.edgeSet * (Fintype.card V - 2) := by\n  classical\n  let E := ((Finset.univ : Finset V).powersetCard 2).filter\n    (fun S : Finset V => ¬F.IsIndepSet S)\n  have hlocal (B : Finset V) :\n      (B.powersetCard 2).filter (fun S : Finset V => ¬F.IsIndepSet S) =\n        E.filter (fun S => S ⊆ B) := by\n    ext S\n    simp [E, and_assoc, and_left_comm, and_comm]\n  calc\n    _ = ∑ B ∈ (Finset.univ : Finset V).powersetCard 3,\n        (E.filter (fun S => S ⊆ B)).card := by\n      apply Finset.sum_congr rfl\n      intro B _\n      rw [hlocal]\n    _ = ∑ S ∈ E, (((Finset.univ : Finset V).powersetCard 3).filter\n        (fun B => S ⊆ B)).card :=\n      sum_card_filter_swap _ _ (fun B S : Finset V => S ⊆ B)\n    _ = ∑ S ∈ E, (Fintype.card V - 2) := by\n      apply Finset.sum_congr rfl\n      intro S hS\n      have hcard : S.card = 2 := (Finset.mem_powersetCard.mp\n        (Finset.mem_filter.mp hS).1).2\n      rw [Finset.card_filter_powersetCard_subset S Finset.univ 3\n        (Finset.subset_univ _) (by omega), hcard, Finset.card_univ]\n      simp\n    _ = E.card * (Fintype.card V - 2) := by simp\n    _ = _ := by rw [show E.card = Nat.card F.edgeSet from card_nonindep_pairs F]\n\nend Erdos993G1\n",
+    "body_sha256": "bafc19d498fd73893dbbd27856e681905568a5a1ed659a421802e2d1f4c4b1d9"
+  },
+  {
+    "origin": "r25-Main.lean",
+    "entry": 15,
+    "kind": "lemma",
+    "name": "Erdos993G1.sum_indep_indicator",
+    "original_fragment_sha256": "967e8cea5583894061db4c306ff05690dfe200422d9c6fd62d559a8ffbb1b3a8",
+    "body": "namespace Erdos993G1\n\nlemma sum_indep_indicator {V : Type u} (F : SimpleGraph V) [Fintype V] [DecidableEq V] [DecidableRel F.Adj]\n    (k : ℕ) :\n    ∑ B ∈ (Finset.univ : Finset V).powersetCard k,\n      (if F.IsIndepSet B then 1 else 0) = (F.indepSetFinset k).card := by\n  rw [indepSetFinset_eq_filter_powersetCard]\n  simp only [Finset.card_eq_sum_ones, Finset.sum_filter]\n\nend Erdos993G1\n",
+    "body_sha256": "967e8cea5583894061db4c306ff05690dfe200422d9c6fd62d559a8ffbb1b3a8"
+  },
+  {
+    "origin": "r25-Main.lean",
+    "entry": 16,
+    "kind": "lemma",
+    "name": "Erdos993G1.triple_local_identity",
+    "original_fragment_sha256": "b2a3d62321344a280924b2701b63fda6abb7f1fd6e8bba69fd46b6fc7538fbe7",
+    "body": "namespace Erdos993G1\n\nlemma triple_local_identity {V : Type u} (F : SimpleGraph V) [DecidableEq V] [DecidableRel F.Adj]\n    (hF : F.IsAcyclic) (B : Finset V) (hB : B.card = 3) :\n    (if F.IsIndepSet B then 1 else 0) +\n        ((B.powersetCard 2).filter (fun E : Finset V => ¬F.IsIndepSet E)).card =\n      1 + ∑ a ∈ B, ((B.filter (F.Adj a)).card).choose 2 := by\n  classical\n  obtain ⟨a, b, c, hab, hac, hbc, rfl⟩ := Finset.card_eq_three.mp hB\n  have hn : ¬(F.Adj a b ∧ F.Adj a c ∧ F.Adj b c) := by\n    intro h\n    exact (hF.cliqueFree (by omega : 3 ≤ 3)) {a, b, c}\n      ((F.is3Clique_triple_iff).mpr h)\n  have hsingle : ({c} : Finset V).powerset = {∅, {c}} := by\n    change (insert c ∅ : Finset V).powerset = _\n    rw [Finset.powerset_insert]\n    simp\n  have hpabac : ({a, b} : Finset V) ≠ {a, c} := by\n    intro h\n    have h' := congrArg (fun S : Finset V => b ∈ S) h\n    simp [hab.symm, hbc] at h'\n  have hpabbc : ({a, b} : Finset V) ≠ {b, c} := by\n    intro h\n    have h' := congrArg (fun S : Finset V => a ∈ S) h\n    simp [hab, hac] at h'\n  have hpacbc : ({a, c} : Finset V) ≠ {b, c} := by\n    intro h\n    have h' := congrArg (fun S : Finset V => a ∈ S) h\n    simp [hab, hac] at h'\n  have hp : ({a, b, c} : Finset V).powersetCard 2 =\n      {{a, b}, {a, c}, {b, c}} := by\n    simp [Finset.powersetCard_eq_filter, Finset.powerset_insert,\n      hsingle, Finset.filter_insert, Finset.filter_singleton, Finset.insert_comm,\n      hab, hac, hbc, hab.symm, hac.symm, hbc.symm]\n  rw [hp]\n  by_cases hab' : F.Adj a b <;> by_cases hac' : F.Adj a c <;>\n    by_cases hbc' : F.Adj b c\n  all_goals simp_all [SimpleGraph.isIndepSet_iff, Set.Pairwise, F.adj_comm,\n    Finset.filter_insert, Finset.filter_singleton, hpabac, hpabbc, hpacbc,\n    hab, hac, hbc, hab.symm, hac.symm, hbc.symm]\n\nend Erdos993G1\n",
+    "body_sha256": "b2a3d62321344a280924b2701b63fda6abb7f1fd6e8bba69fd46b6fc7538fbe7"
+  },
+  {
+    "origin": "r25-Main.lean",
+    "entry": 17,
+    "kind": "lemma",
+    "name": "Erdos993G1.indepSetFinset_three_incidence",
+    "original_fragment_sha256": "e75d6c9bdb5332d9efa9c20535c35c0f047fcbf29add7232eaabf570bdb871a2",
+    "body": "namespace Erdos993G1\n\nlemma indepSetFinset_three_incidence {V : Type u} (F : SimpleGraph V) [Fintype V] [DecidableEq V]\n    [DecidableRel F.Adj] (hF : F.IsAcyclic) :\n    (F.indepSetFinset 3).card + Nat.card F.edgeSet * (Fintype.card V - 2) =\n      (Fintype.card V).choose 3 +\n        ∑ B ∈ (Finset.univ : Finset V).powersetCard 3,\n          ∑ a ∈ B, ((B.filter (F.Adj a)).card).choose 2 := by\n  have hs :\n      (∑ B ∈ (Finset.univ : Finset V).powersetCard 3,\n        ((if F.IsIndepSet B then 1 else 0) +\n          ((B.powersetCard 2).filter (fun E : Finset V => ¬F.IsIndepSet E)).card)) =\n      ∑ B ∈ (Finset.univ : Finset V).powersetCard 3,\n        (1 + ∑ a ∈ B, ((B.filter (F.Adj a)).card).choose 2) := by\n    apply Finset.sum_congr rfl\n    intro B hB\n    exact triple_local_identity F hF B (Finset.mem_powersetCard.mp hB).2\n  simp only [Finset.sum_add_distrib] at hs\n  rw [sum_indep_indicator, sum_nonindep_pair_incidence] at hs\n  simpa only [Finset.sum_const, smul_eq_mul, mul_one,\n    Finset.card_powersetCard, Finset.card_univ] using hs\n\nend Erdos993G1\n",
+    "body_sha256": "e75d6c9bdb5332d9efa9c20535c35c0f047fcbf29add7232eaabf570bdb871a2"
+  },
+  {
+    "origin": "r25-Main.lean",
+    "entry": 18,
+    "kind": "lemma",
+    "name": "Erdos993G1.sum_triple_centered_neighbor_pairs",
+    "original_fragment_sha256": "2d8c865096680299876ca4ee7a094c41cf849dd15d7c4ac33ae166f43d34e549",
+    "body": "namespace Erdos993G1\n\nlemma sum_triple_centered_neighbor_pairs {V : Type u}\n    [Fintype V] [DecidableEq V] (F : SimpleGraph V) [DecidableRel F.Adj] :\n    (∑ B ∈ (Finset.univ : Finset V).powersetCard 3,\n      ∑ a ∈ B, ((B.filter (F.Adj a)).card).choose 2) =\n      ∑ a : V, (F.degree a).choose 2 := by\n  let L : Finset (Σ _B : Finset V, Σ _a : V, Finset V) :=\n    ((Finset.univ : Finset V).powersetCard 3).sigma fun B =>\n      B.sigma fun a => (B.filter (F.Adj a)).powersetCard 2\n  let R : Finset (Σ _a : V, Finset V) :=\n    (Finset.univ : Finset V).sigma fun a => (F.neighborFinset a).powersetCard 2\n  have hcard : L.card = R.card := by\n    refine Finset.card_bij'\n      (fun x _ => x.2)\n      (fun y _ => ⟨insert y.1 y.2, y⟩) ?_ ?_ ?_ ?_\n    · rintro ⟨B, a, N⟩ hx\n      simp only [L, Finset.mem_sigma, Finset.mem_powersetCard,\n        Finset.subset_univ, true_and] at hx\n      obtain ⟨hB, ha, hN, hn⟩ := hx\n      simp only [R, Finset.mem_sigma, Finset.mem_univ, true_and,\n        Finset.mem_powersetCard]\n      refine ⟨?_, hn⟩\n      intro w hw\n      exact (F.mem_neighborFinset a w).mpr (Finset.mem_filter.mp (hN hw)).2\n    · rintro ⟨a, N⟩ hy\n      simp only [R, Finset.mem_sigma, Finset.mem_univ, true_and,\n        Finset.mem_powersetCard] at hy\n      obtain ⟨hN, hn⟩ := hy\n      have ha : a ∉ N := by\n        intro h\n        exact F.irrefl ((F.mem_neighborFinset a a).mp (hN h))\n      simp only [L, Finset.mem_sigma, Finset.mem_powersetCard,\n        Finset.subset_univ, true_and]\n      refine ⟨?_, Finset.mem_insert_self a N, ?_, hn⟩\n      · simp [Finset.card_insert_of_notMem ha, hn]\n      · intro w hw\n        exact Finset.mem_filter.mpr\n          ⟨Finset.mem_insert_of_mem hw, (F.mem_neighborFinset a w).mp (hN hw)⟩\n    · rintro ⟨B, a, N⟩ hx\n      simp only [L, Finset.mem_sigma, Finset.mem_powersetCard,\n        Finset.subset_univ, true_and] at hx\n      obtain ⟨hB, haB, hN, hn⟩ := hx\n      have ha : a ∉ N := by\n        intro h\n        exact F.irrefl (Finset.mem_filter.mp (hN h)).2\n      have hNB : insert a N ⊆ B := by\n        intro w hw\n        obtain rfl | hw := Finset.mem_insert.mp hw\n        · exact haB\n        · exact (Finset.mem_filter.mp (hN hw)).1\n      have hEq : insert a N = B := by\n        apply Finset.eq_of_subset_of_card_le hNB\n        simp [hB, Finset.card_insert_of_notMem ha, hn]\n      simp only [hEq]\n    · rintro ⟨a, N⟩ _\n      rfl\n  simpa only [L, R, Finset.card_sigma, Finset.card_powersetCard,\n    SimpleGraph.card_neighborFinset_eq_degree] using hcard\n\nend Erdos993G1\n",
+    "body_sha256": "2d8c865096680299876ca4ee7a094c41cf849dd15d7c4ac33ae166f43d34e549"
+  },
+  {
+    "origin": "r25-Main.lean",
+    "entry": 19,
+    "kind": "lemma",
+    "name": "Erdos993G1.indepCount_three_add_edge_incidence",
+    "original_fragment_sha256": "2f67af0812ec6608bd511d62e5579e86d21d3d59da08da663d11a124768a627e",
+    "body": "namespace Erdos993G1\n\nlemma indepCount_three_add_edge_incidence {V : Type u} [Fintype V] [DecidableEq V]\n    (F : SimpleGraph V) [DecidableRel F.Adj] (hF : F.IsAcyclic) :\n    indepCount F 3 + (Nat.card F.edgeSet : ℤ) * ((Fintype.card V - 2 : ℕ) : ℤ) =\n      ((Fintype.card V).choose 3 : ℤ) +\n        ∑ a : V, ((F.degree a).choose 2 : ℤ) := by\n  have h := indepSetFinset_three_incidence F hF\n  rw [sum_triple_centered_neighbor_pairs] at h\n  rw [indepCount_eq_card_indepSetFinset]\n  exact_mod_cast h\n\nend Erdos993G1\n",
+    "body_sha256": "2f67af0812ec6608bd511d62e5579e86d21d3d59da08da663d11a124768a627e"
+  },
+  {
+    "origin": "r25-Main.lean",
+    "entry": 20,
+    "kind": "lemma",
+    "name": "Erdos993G1.forest_card_edges_add_components",
+    "original_fragment_sha256": "7eef4f723871eb13f3132efb877cda06e5b4a7498589fca0a012eb49339ea183",
+    "body": "namespace Erdos993G1\n\nlemma forest_card_edges_add_components {V : Type u} [Finite V]\n    (F : SimpleGraph V) (hF : F.IsAcyclic) :\n    Nat.card F.edgeSet + Nat.card F.ConnectedComponent = Nat.card V := by\n  classical\n  letI := Fintype.ofFinite V\n  have hvertices :\n      (∑ c : F.ConnectedComponent, Fintype.card c) = Fintype.card V := by\n    have hv := Fintype.sum_fiberwise F.connectedComponentMk (fun _ : V => (1 : ℕ))\n    simp only [Finset.sum_const, Finset.card_univ, smul_eq_mul, mul_one] at hv\n    calc\n      _ = ∑ c : F.ConnectedComponent,\n          Fintype.card {v : V // F.connectedComponentMk v = c} := by\n        apply Finset.sum_congr rfl\n        intro c _\n        exact Fintype.card_congr (Equiv.refl _)\n      _ = _ := hv\n  have hdegrees :\n      (∑ c : F.ConnectedComponent, ∑ v : c, F.degree v.val) =\n        ∑ v : V, F.degree v := by\n    exact Fintype.sum_fiberwise F.connectedComponentMk (fun v : V => F.degree v)\n  have hcomponent (c : F.ConnectedComponent) :\n      (∑ v : c, F.degree v.val) + 2 = 2 * Fintype.card c := by\n    have ht := (hF.isTree_connectedComponent c).card_edgeFinset\n    have hd := c.toSimpleGraph.sum_degrees_eq_twice_card_edges\n    have heq : (∑ v : c, F.degree v.val) =\n        ∑ v : c, c.toSimpleGraph.degree v := by\n      apply Finset.sum_congr rfl\n      intro v _\n      symm\n      rw [← SimpleGraph.card_neighborSet_eq_degree,\n        ← SimpleGraph.card_neighborSet_eq_degree]\n      exact Fintype.card_congr\n        { toFun := fun w => ⟨w.val.val, w.property⟩\n          invFun := fun w =>\n            ⟨⟨w.val, c.mem_supp_of_adj_mem_supp v.property w.property⟩, w.property⟩\n          left_inv := fun _ => rfl\n          right_inv := fun _ => rfl }\n    rw [heq, hd]\n    omega\n  have hsum := congrArg\n    (fun f : F.ConnectedComponent → ℕ => ∑ c, f c) (funext hcomponent)\n  simp only [Finset.sum_add_distrib, Finset.sum_const, Finset.card_univ,\n    smul_eq_mul, ← Finset.mul_sum] at hsum\n  rw [hdegrees, hvertices, F.sum_degrees_eq_twice_card_edges] at hsum\n  have hcount : F.edgeFinset.card + Fintype.card F.ConnectedComponent =\n      Fintype.card V := by omega\n  simpa only [Nat.card_eq_fintype_card, ← SimpleGraph.edgeFinset_card] using hcount\n\nend Erdos993G1\n",
+    "body_sha256": "7eef4f723871eb13f3132efb877cda06e5b4a7498589fca0a012eb49339ea183"
+  },
+  {
+    "origin": "r25-Main.lean",
+    "entry": 21,
+    "kind": "lemma",
+    "name": "Erdos993G1.components_card_pos_of_card_pos",
+    "original_fragment_sha256": "2948f2bea2afbc682160cd1afae04ff4f83f519d4413e437dddd787c6d33f3a8",
+    "body": "namespace Erdos993G1\n\nlemma components_card_pos_of_card_pos {V : Type u} [Finite V]\n    (F : SimpleGraph V) (hV : 0 < Nat.card V) :\n    0 < Nat.card F.ConnectedComponent := by\n  haveI : Nonempty V := (Finite.card_pos_iff).mp hV\n  exact Nat.card_pos\n\nend Erdos993G1\n",
+    "body_sha256": "2948f2bea2afbc682160cd1afae04ff4f83f519d4413e437dddd787c6d33f3a8"
+  },
+  {
+    "origin": "r25-Main.lean",
+    "entry": 22,
+    "kind": "lemma",
+    "name": "Erdos993G1.degreeDefect_nonneg",
+    "original_fragment_sha256": "e13b00906721b8a815d185d3bc4f38148fccc231d200b3bb820579c0f05fdb8f",
+    "body": "namespace Erdos993G1\n\nlemma degreeDefect_nonneg (d : ℕ) :\n    (0 : ℤ) ≤ (d.choose 2 : ℤ) - (d : ℤ) + 1 := by\n  cases d with\n  | zero => norm_num\n  | succ n =>\n    rw [Nat.choose_succ_succ]\n    simp only [Nat.choose_one_right, Nat.cast_add, Nat.cast_succ]\n    have h := (Nat.cast_nonneg (n.choose 2) : (0 : ℤ) ≤ n.choose 2)\n    omega\n\nend Erdos993G1\n",
+    "body_sha256": "e13b00906721b8a815d185d3bc4f38148fccc231d200b3bb820579c0f05fdb8f"
+  },
+  {
+    "origin": "r25-Main.lean",
+    "entry": 23,
+    "kind": "lemma",
+    "name": "Erdos993G1.degreeChoose_sum_lower",
+    "original_fragment_sha256": "990ee7b780b0a7a0c7c6a7c34cf026d13ded3d7de15d826aec6ea560dc1bff35",
+    "body": "namespace Erdos993G1\n\nlemma degreeChoose_sum_lower {V : Type*} [Fintype V] (d : V → ℕ) :\n    (∑ v, (d v : ℤ)) - Fintype.card V ≤ ∑ v, ((d v).choose 2 : ℤ) := by\n  have h : 0 ≤ ∑ v, (((d v).choose 2 : ℤ) - (d v : ℤ) + 1) :=\n    Finset.sum_nonneg (fun v _ => Erdos993G1.degreeDefect_nonneg (d v))\n  simp only [Finset.sum_add_distrib, Finset.sum_sub_distrib, Finset.sum_const,\n    Finset.card_univ, nsmul_eq_mul, mul_one] at h\n  omega\n\nend Erdos993G1\n",
+    "body_sha256": "990ee7b780b0a7a0c7c6a7c34cf026d13ded3d7de15d826aec6ea560dc1bff35"
+  },
+  {
+    "origin": "r25-Main.lean",
+    "entry": 24,
+    "kind": "lemma",
+    "name": "Erdos993G1.scaledChooseTwo",
+    "original_fragment_sha256": "998f5e2749af9a08a08bf161dcce06d9fe4036299593a66572a2f1d12eee0ca4",
+    "body": "namespace Erdos993G1\n\nlemma scaledChooseTwo (n : ℕ) :\n    2 * (n.choose 2 : ℤ) = (n : ℤ) * ((n : ℤ) - 1) := by\n  induction n with\n  | zero => norm_num\n  | succ n ih =>\n    rw [Nat.choose_succ_succ]\n    simp only [Nat.choose_one_right, Nat.cast_add, Nat.cast_succ]\n    change 2 * ((n : ℤ) + (n.choose 2 : ℤ)) =\n      ((n : ℤ) + 1) * ((n : ℤ) + 1 - 1)\n    nlinarith\n\nend Erdos993G1\n",
+    "body_sha256": "998f5e2749af9a08a08bf161dcce06d9fe4036299593a66572a2f1d12eee0ca4"
+  },
+  {
+    "origin": "r25-Main.lean",
+    "entry": 25,
+    "kind": "lemma",
+    "name": "Erdos993G1.scaledChooseThree",
+    "original_fragment_sha256": "d6f3427951f65a5d5b754f7876b5fa0b8e855ce52dfa70173a4ab26edf87aff0",
+    "body": "namespace Erdos993G1\n\nlemma scaledChooseThree (n : ℕ) :\n    6 * (n.choose 3 : ℤ) = (n : ℤ) * ((n : ℤ) - 1) * ((n : ℤ) - 2) := by\n  induction n with\n  | zero => norm_num\n  | succ n ih =>\n    rw [Nat.choose_succ_succ]\n    simp only [Nat.cast_add, Nat.cast_succ]\n    change 6 * ((n.choose 2 : ℤ) + (n.choose 3 : ℤ)) =\n      ((n : ℤ) + 1) * ((n : ℤ) + 1 - 1) * ((n : ℤ) + 1 - 2)\n    nlinarith [Erdos993G1.scaledChooseTwo n]\n\nend Erdos993G1\n",
+    "body_sha256": "d6f3427951f65a5d5b754f7876b5fa0b8e855ce52dfa70173a4ab26edf87aff0"
+  }
+]

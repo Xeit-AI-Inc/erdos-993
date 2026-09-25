@@ -1,0 +1,37 @@
+{
+  "worker_id": "C1-F1",
+  "cycle": 1,
+  "stage": "search",
+  "orientation": "F",
+  "status_authority": "proposed_worker_only",
+  "claims": [
+    {
+      "claim_id": "C1-F1-001",
+      "statement": "The universal shortcut that every favorable-leaf summand is nonpositive at every eligible rank is false: exact ordinary-tree T_22 at p=34=x+2 has one positive summand while its complete aggregate is negative.",
+      "scope": "All-rank pointwise shortcut only; the witness has alpha=68 and p=34, so it is outside the frozen p=alpha-2 target and says nothing against a target-rank-only pointwise assertion.",
+      "status": "proposed_refuted",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-F1/evidence.json"
+      ],
+      "reason": "Exact forest-DP replay retains all 67 favorable original leaves with distinct tags; summand multiset is one +212336130412243110 and 66 times -7560098737536570631, giving S=-498754180547001418536."
+    },
+    {
+      "claim_id": "C1-F1-002",
+      "statement": "The frozen p=alpha-2 complete aggregate remains unresolved by this seat; no eligible positive complete sum or universal proof was found.",
+      "scope": "Primary target for all ordinary trees; exact larger checks are restricted to T_22 and T_60, plus the stated bounded labeled sweep.",
+      "status": "proposed_unresolved",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-F1/evidence.json"
+      ],
+      "reason": "T_22 at order 91 and T_60 at order 243 are eligible with complete sums -147807 and -2947590 respectively. Orders 2 through 8 have no eligible labeled Prüfer rows; finite family checks and empty small eligibility do not prove the universal target."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-F1/REPORT.md",
+  "limitations": [
+    "No general proof or exact positive complete counterexample was obtained.",
+    "The bounded labeled sweep through order 8 has zero eligible target rows and gives no target sign evidence.",
+    "The order-91 and order-243 T-family computations are specific examples, not a universal family theorem.",
+    "The positive summand witnesses occur at p below alpha-2 and cannot be treated as primary-target counterexamples.",
+    "No Lean build or external literature search was performed."
+  ]
+}

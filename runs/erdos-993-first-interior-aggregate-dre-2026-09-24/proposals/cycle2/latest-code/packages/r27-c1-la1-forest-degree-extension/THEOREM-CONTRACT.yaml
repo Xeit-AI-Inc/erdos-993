@@ -1,0 +1,652 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "e993-r27-c1-la1-forest-extension-inequality-v1",
+  "theorem": {
+    "title": "(EX) Forest extension inequality, with (DL) the forest degree lemma",
+    "informal_statement": "(DL) For every finite forest G and every natural k, the total incident degree over the independent k-sets satisfies (indepDegreeSum G k : Int) <= 2 * k * indepCount G k. (EX) Consequently, for every finite forest G and every natural k, (Fintype.card X : Int) * indepCount G k <= (k + 1) * indepCount G (k + 1) + 3 * k * indepCount G k. Hypotheses: acyclicity and finiteness only. (DL) is an average over the independent k-sets and bounds no individual set. Mathematics: Fang-Lu-Nevo-Yao-Zheng 2026, section 8 (Lemma 8.1 with consequence (8.3); the displayed step of Proposition 8.2). Injection derivation of the root-corrected lemma: critic C-F1-T, sustained by the F adjudication. Compiled (EX) step: U3, re-derived by C-U1-T."
+  },
+  "formulation_status": {
+    "status": "established",
+    "evidence": [
+      "Fang-Lu-Nevo-Yao-Zheng, arXiv:2609.20961v1 (2026), section 8.",
+      "r27 Cycle 1 synthesis, Exact established results 1 and 8: proved_informal with two independent in-run proofs (the corrected two-potential chain and the injection proof of the root-corrected lemma).",
+      "Bounded evidence: zero violations of (DL) and (EX) across 85,625 forest isomorphism classes to order 16 and 40,232 labelled forests to order 7 under every root choice (synthesis Established result 27)."
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-indepcount",
+      "description": "G1 definition of record (r25 award, registrar entry 1, carried byte-identically): the number of independent k-subsets, as an integer.\n\nLean text:\nuniverse u\nnoncomputable\ndef indepCount {V : Type u} (F : SimpleGraph V) (k : ℕ) : ℤ :=\n  (Nat.card {S : Finset V // F.IsNIndepSet k S} : ℤ)",
+      "lean_name": "Erdos993G1.indepCount",
+      "dependencies": [
+        "domain-vertex-type",
+        "domain-graph",
+        "domain-rank"
+      ]
+    },
+    {
+      "id": "def-coeff",
+      "description": "G1 definition of record (r25 entry 2), the integer-indexed zero extension of i_k. Registered because R1 mandates the three G1 definitions of record; it is NOT a dependency of the terminal statement.\n\nLean text:\nnoncomputable\ndef coeff {V : Type u} (F : SimpleGraph V) (k : ℤ) : ℤ :=\n  if 0 ≤ k then Erdos993G1.indepCount F k.toNat else 0",
+      "lean_name": "Erdos993G1.coeff",
+      "dependencies": [
+        "def-indepcount"
+      ]
+    },
+    {
+      "id": "def-delta",
+      "description": "G1 definition of record (r25 entry 3), the forward difference of coeff. Registered under R1; NOT a dependency of the terminal statement.\n\nLean text:\nnoncomputable\ndef delta {V : Type u} (F : SimpleGraph V) (k : ℤ) : ℤ :=\n  Erdos993G1.coeff F (k + 1) - Erdos993G1.coeff F k",
+      "lean_name": "Erdos993G1.delta",
+      "dependencies": [
+        "def-coeff"
+      ]
+    },
+    {
+      "id": "def-closednbhdfinset",
+      "description": "U3 definition (carried byte-identically): the closed neighbourhood of a finset of vertices.\n\nLean text:\n/-- The closed neighbourhood of a finite set `J` of vertices: `J` together with every\nneighbour of a vertex of `J`. -/\ndef closedNbhdFinset (J : Finset X) : Finset X :=\n  J ∪ J.biUnion (fun u => G.neighborFinset u)",
+      "lean_name": "Erdos993G1.closedNbhdFinset",
+      "dependencies": [
+        "domain-vertex-type",
+        "domain-graph"
+      ]
+    },
+    {
+      "id": "def-extensionfinset",
+      "description": "U3 definition (carried byte-identically): the extension set of J, the vertices outside its closed neighbourhood.\n\nLean text:\n/-- The extension set of `J`: vertices outside the closed neighbourhood of `J`, i.e. those\n`v` with `J ∪ {v}` independent whenever `J` is. -/\ndef extensionFinset (J : Finset X) : Finset X :=\n  Finset.univ \\ closedNbhdFinset G J",
+      "lean_name": "Erdos993G1.extensionFinset",
+      "dependencies": [
+        "def-closednbhdfinset"
+      ]
+    },
+    {
+      "id": "def-extensioncount",
+      "description": "U3 definition of record for e(J) (carried byte-identically): the number of extensions of J.\n\nLean text:\n/-- `e(J)`, the number of extensions of `J`. -/\ndef e (J : Finset X) : ℕ := (extensionFinset G J).card",
+      "lean_name": "Erdos993G1.e",
+      "dependencies": [
+        "def-extensionfinset"
+      ]
+    },
+    {
+      "id": "def-indepdegreesum",
+      "description": "U3/U1 definition of record for D_k (carried byte-identically from U3; the U adjudicator proved U1 and U3 definitionally equal by rfl): the total incident degree over independent k-sets.\n\nLean text:\n/-- The incident degree sum `D_k(G) := Σ_{J ∈ I_k(G)} Σ_{v ∈ J} deg_G(v)`. -/\ndef indepDegreeSum (k : ℕ) : ℕ :=\n  ∑ J ∈ G.indepSetFinset k, ∑ v ∈ J, G.degree v",
+      "lean_name": "Erdos993G1.indepDegreeSum",
+      "dependencies": [
+        "domain-graph",
+        "domain-rank"
+      ]
+    },
+    {
+      "id": "def-rootrep",
+      "description": "Authored in-run. A distinguished vertex of each connected component; adjacent vertices share it. One root per component.\n\nLean text:\n/-- A distinguished vertex of the connected component of `v`: the root of `v`'s component.\nIt depends only on the component, so adjacent vertices share it. -/\nnoncomputable\ndef rootRep {X : Type u} (G : SimpleGraph X) (v : X) : X :=\n  (G.connectedComponentMk v).out",
+      "lean_name": "Erdos993G1.rootRep",
+      "dependencies": [
+        "domain-graph"
+      ]
+    },
+    {
+      "id": "def-rootpath",
+      "description": "Authored in-run. A path from v to its component root; in a forest it is THE path.\n\nLean text:\n/-- A path from `v` to the root of its component. In a forest it is *the* path, by\n`SimpleGraph.IsAcyclic.path_unique`; the definition itself needs no acyclicity. -/\nnoncomputable\ndef rootPath {X : Type u} [DecidableEq X] (G : SimpleGraph X) (v : X) :\n    G.Walk v (rootRep G v) :=\n  (Nonempty.some\n    (show G.Reachable v (rootRep G v) from\n      (SimpleGraph.ConnectedComponent.exact\n        (Quot.out_eq (G.connectedComponentMk v))).symm)).toPath.1",
+      "lean_name": "Erdos993G1.rootPath",
+      "dependencies": [
+        "def-rootrep"
+      ]
+    },
+    {
+      "id": "def-par",
+      "description": "Authored in-run. The parent map: the second vertex of the root path. par G v = v exactly for the component roots.\n\nLean text:\n/-- The parent of `v`: the second vertex of `v`'s root path. `par G v = v` exactly when that\npath is trivial, i.e. when `v` is its component's root. -/\nnoncomputable\ndef par {X : Type u} [DecidableEq X] (G : SimpleGraph X) (v : X) : X :=\n  (rootPath G v).snd",
+      "lean_name": "Erdos993G1.par",
+      "dependencies": [
+        "def-rootpath"
+      ]
+    },
+    {
+      "id": "def-rk",
+      "description": "Authored in-run. The rank (root-path length). It strictly decreases along par, which forbids two-cycles in the parent map.\n\nLean text:\n/-- The rank of `v`: the length of its root path. The parent strictly decreases it, which is\nwhat forbids two-cycles in the parent map. -/\nnoncomputable\ndef rk {X : Type u} [DecidableEq X] (G : SimpleGraph X) (v : X) : ℕ :=\n  (rootPath G v).length",
+      "lean_name": "Erdos993G1.rk",
+      "dependencies": [
+        "def-rootpath"
+      ]
+    },
+    {
+      "id": "def-childrenfinset",
+      "description": "Authored in-run. The children of v: the non-root vertices whose parent is v.\n\nLean text:\n/-- The children of `v`: the non-root vertices whose parent is `v`. -/\nnoncomputable\ndef childrenFinset {X : Type u} [Fintype X] [DecidableEq X] (G : SimpleGraph X)\n    (v : X) : Finset X :=\n  Finset.univ.filter (fun u => par G u = v ∧ par G u ≠ u)",
+      "lean_name": "Erdos993G1.childrenFinset",
+      "dependencies": [
+        "def-par"
+      ]
+    },
+    {
+      "id": "def-uppairs",
+      "description": "Authored in-run. The up incidences: (J, v) with J independent of size k and v a non-root member of J.\n\nLean text:\n/-- The \"up\" incidences: pairs `(J, v)` with `J` an independent `k`-set and `v ∈ J` a non-root.\nEach such pair is the incidence of `v ∈ J` with the edge `{v, par v}`. -/\nnoncomputable\ndef upPairs {X : Type u} [Fintype X] [DecidableEq X] (G : SimpleGraph X)\n    [DecidableRel G.Adj] (k : ℕ) : Finset ((_ : Finset X) × X) :=\n  (G.indepSetFinset k).sigma (fun J => J.filter (fun v => par G v ≠ v))",
+      "lean_name": "Erdos993G1.upPairs",
+      "dependencies": [
+        "def-par",
+        "domain-rank"
+      ]
+    },
+    {
+      "id": "def-downpairs",
+      "description": "Authored in-run. The down incidences: (J, u) with J independent of size k, u a non-root and par u in J.\n\nLean text:\n/-- The \"down\" incidences: pairs `(J, u)` with `J` an independent `k`-set, `u` a non-root and\n`par u ∈ J`. Each such pair is the incidence of `par u ∈ J` with the edge `{u, par u}`. -/\nnoncomputable\ndef downPairs {X : Type u} [Fintype X] [DecidableEq X] (G : SimpleGraph X)\n    [DecidableRel G.Adj] (k : ℕ) : Finset ((_ : Finset X) × X) :=\n  (G.indepSetFinset k).sigma\n    (fun J => Finset.univ.filter (fun u => par G u ≠ u ∧ par G u ∈ J))",
+      "lean_name": "Erdos993G1.downPairs",
+      "dependencies": [
+        "def-par",
+        "domain-rank"
+      ]
+    },
+    {
+      "id": "def-rootpairs",
+      "description": "Authored in-run. The root incidences: (J, r) with r a component root in J. This is the root-correction term of the root-corrected degree lemma, counted with multiplicity across components.\n\nLean text:\n/-- The root incidences: pairs `(J, r)` with `J` an independent `k`-set and `r ∈ J` a root.\nThis is the root correction term of the root-corrected degree lemma. -/\nnoncomputable\ndef rootPairs {X : Type u} [Fintype X] [DecidableEq X] (G : SimpleGraph X)\n    [DecidableRel G.Adj] (k : ℕ) : Finset ((_ : Finset X) × X) :=\n  (G.indepSetFinset k).sigma (fun J => J.filter (fun v => par G v = v))",
+      "lean_name": "Erdos993G1.rootPairs",
+      "dependencies": [
+        "def-par",
+        "domain-rank"
+      ]
+    },
+    {
+      "id": "def-swapmap",
+      "description": "Authored in-run. The explicit injection from the down incidences into the up incidences: move to a child in J when one exists, otherwise swap the vertex for its parent inside J.\n\nLean text:\n/-- The injection witnessing `#downPairs ≤ #upPairs`. On a down incidence `(J, u)` (so\n`par u ∈ J` and `u ∉ J`): if `u` has a child in `J`, keep `J` and move to that child; otherwise\nswap `u` for its parent inside `J`. The two branches are told apart by whether the image's\ngrandparent lies in the image's set. -/\nnoncomputable\ndef swapMap {X : Type u} [DecidableEq X] (G : SimpleGraph X)\n    (a : (_ : Finset X) × X) : (_ : Finset X) × X :=\n  if h : (a.1.filter (fun c => par G c = a.2)).Nonempty then ⟨a.1, h.choose⟩\n  else ⟨insert a.2 (a.1.erase (par G a.2)), a.2⟩",
+      "lean_name": "Erdos993G1.swapMap",
+      "dependencies": [
+        "def-par"
+      ]
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-vertex-type",
+      "description": "The vertex carrier: a finite type with decidable equality. Stated with instance binders, never at one fixed Fintype instance.",
+      "lean_type": "Type u",
+      "dependencies": []
+    },
+    {
+      "id": "domain-graph",
+      "description": "A simple graph on the vertex carrier, with decidable adjacency.",
+      "lean_type": "SimpleGraph X",
+      "dependencies": [
+        "domain-vertex-type"
+      ]
+    },
+    {
+      "id": "domain-rank",
+      "description": "The rank k, an arbitrary natural number. No lower bound on k and no upper bound on the order are assumed.",
+      "lean_type": "Nat",
+      "dependencies": []
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "X",
+      "kind": "forall",
+      "domain_id": "domain-vertex-type"
+    },
+    {
+      "binder": "G",
+      "kind": "forall",
+      "domain_id": "domain-graph"
+    },
+    {
+      "binder": "k",
+      "kind": "forall",
+      "domain_id": "domain-rank"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-finiteness",
+      "statement": "[Fintype X] [DecidableEq X] : the vertex carrier is finite with decidable equality. Used everywhere; it is what makes the finsets and cardinalities meaningful.",
+      "dependencies": [
+        "domain-vertex-type"
+      ]
+    },
+    {
+      "id": "hyp-decidable-adjacency",
+      "statement": "[DecidableRel G.Adj] : adjacency is decidable. Bookkeeping instance for G.indepSetFinset, G.degree and the filters.",
+      "dependencies": [
+        "domain-graph"
+      ]
+    },
+    {
+      "id": "hyp-acyclicity",
+      "statement": "hG : G.IsAcyclic : the graph is a finite forest (possibly disconnected, possibly empty). Consumed exactly once mathematically, inside the rooting API at Erdos993G1.rootPath_unique, and propagated from there. There is NO alpha/indepNum side condition and no other hypothesis.",
+      "dependencies": [
+        "domain-graph"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "For every finite type X with decidable equality, every simple graph G on X with decidable adjacency that is acyclic, and every natural k: (Fintype.card X : Int) * Erdos993G1.indepCount G k <= (k + 1) * Erdos993G1.indepCount G (k + 1) + 3 * k * Erdos993G1.indepCount G k. This is (EX), the forest extension inequality, stated subtraction-free in the integers. It is an average statement over the independent k-sets; no pointwise degree claim and no order bound is asserted.",
+    "dependencies": [
+      "hyp-finiteness",
+      "hyp-decidable-adjacency",
+      "hyp-acyclicity",
+      "def-indepcount",
+      "def-indepdegreesum",
+      "def-extensioncount",
+      "def-uppairs",
+      "def-downpairs",
+      "def-rootpairs",
+      "def-swapmap",
+      "def-childrenfinset",
+      "def-rk",
+      "domain-rank"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "def-indepcount",
+        "kind": "definition"
+      },
+      {
+        "id": "def-coeff",
+        "kind": "definition"
+      },
+      {
+        "id": "def-delta",
+        "kind": "definition"
+      },
+      {
+        "id": "def-closednbhdfinset",
+        "kind": "definition"
+      },
+      {
+        "id": "def-extensionfinset",
+        "kind": "definition"
+      },
+      {
+        "id": "def-extensioncount",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indepdegreesum",
+        "kind": "definition"
+      },
+      {
+        "id": "def-rootrep",
+        "kind": "definition"
+      },
+      {
+        "id": "def-rootpath",
+        "kind": "definition"
+      },
+      {
+        "id": "def-par",
+        "kind": "definition"
+      },
+      {
+        "id": "def-rk",
+        "kind": "definition"
+      },
+      {
+        "id": "def-childrenfinset",
+        "kind": "definition"
+      },
+      {
+        "id": "def-uppairs",
+        "kind": "definition"
+      },
+      {
+        "id": "def-downpairs",
+        "kind": "definition"
+      },
+      {
+        "id": "def-rootpairs",
+        "kind": "definition"
+      },
+      {
+        "id": "def-swapmap",
+        "kind": "definition"
+      },
+      {
+        "id": "domain-vertex-type",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-graph",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-rank",
+        "kind": "domain"
+      },
+      {
+        "id": "hyp-finiteness",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-decidable-adjacency",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-acyclicity",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "domain-vertex-type",
+        "to": "def-indepcount"
+      },
+      {
+        "from": "domain-graph",
+        "to": "def-indepcount"
+      },
+      {
+        "from": "domain-rank",
+        "to": "def-indepcount"
+      },
+      {
+        "from": "def-indepcount",
+        "to": "def-coeff"
+      },
+      {
+        "from": "def-coeff",
+        "to": "def-delta"
+      },
+      {
+        "from": "domain-vertex-type",
+        "to": "def-closednbhdfinset"
+      },
+      {
+        "from": "domain-graph",
+        "to": "def-closednbhdfinset"
+      },
+      {
+        "from": "def-closednbhdfinset",
+        "to": "def-extensionfinset"
+      },
+      {
+        "from": "def-extensionfinset",
+        "to": "def-extensioncount"
+      },
+      {
+        "from": "domain-graph",
+        "to": "def-indepdegreesum"
+      },
+      {
+        "from": "domain-rank",
+        "to": "def-indepdegreesum"
+      },
+      {
+        "from": "domain-graph",
+        "to": "def-rootrep"
+      },
+      {
+        "from": "def-rootrep",
+        "to": "def-rootpath"
+      },
+      {
+        "from": "def-rootpath",
+        "to": "def-par"
+      },
+      {
+        "from": "def-rootpath",
+        "to": "def-rk"
+      },
+      {
+        "from": "def-par",
+        "to": "def-childrenfinset"
+      },
+      {
+        "from": "def-par",
+        "to": "def-uppairs"
+      },
+      {
+        "from": "domain-rank",
+        "to": "def-uppairs"
+      },
+      {
+        "from": "def-par",
+        "to": "def-downpairs"
+      },
+      {
+        "from": "domain-rank",
+        "to": "def-downpairs"
+      },
+      {
+        "from": "def-par",
+        "to": "def-rootpairs"
+      },
+      {
+        "from": "domain-rank",
+        "to": "def-rootpairs"
+      },
+      {
+        "from": "def-par",
+        "to": "def-swapmap"
+      },
+      {
+        "from": "domain-vertex-type",
+        "to": "domain-graph"
+      },
+      {
+        "from": "domain-vertex-type",
+        "to": "hyp-finiteness"
+      },
+      {
+        "from": "domain-graph",
+        "to": "hyp-decidable-adjacency"
+      },
+      {
+        "from": "domain-graph",
+        "to": "hyp-acyclicity"
+      },
+      {
+        "from": "hyp-finiteness",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-decidable-adjacency",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-acyclicity",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-indepcount",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-indepdegreesum",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-extensioncount",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-uppairs",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-downpairs",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-rootpairs",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-swapmap",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-childrenfinset",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-rk",
+        "to": "conclusion"
+      },
+      {
+        "from": "domain-rank",
+        "to": "conclusion"
+      }
+    ]
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "explicit_axiom_allowlist",
+    "rationale": "The development is classical: Quot.out selects a component representative, Nonempty.some selects a path, and Exists.choose selects a child in the swap branch of the injection. Exactly propext, Classical.choice and Quot.sound are permitted; sorry, admit, native_decide, axiom, and decide over an enumeration standing in for a universal step are all forbidden."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "Erdos993G1.forest_extension_inequality",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem forest_extension_inequality {X : Type u} [Fintype X] [DecidableEq X] (G : SimpleGraph X)\n    [DecidableRel G.Adj] (hG : G.IsAcyclic) (k : ℕ) :\n    (Fintype.card X : ℤ) * Erdos993G1.indepCount G k\n      ≤ (k + 1) * Erdos993G1.indepCount G (k + 1) + 3 * k * Erdos993G1.indepCount G k",
+    "expected_statement_sha256": "47809abc5c4e94d89aa1859886dbd44cc040d742d3ed0b214aae7adcc240fe18"
+  },
+  "source_materials": [
+    {
+      "id": "source-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "sha256": "e912b6cadbbae1e0f41ca78787192224fec17c4cee071dbfb30fa3788a835e9b",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "source-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "sha256": "3f07701cd66234cea412000533cb292e849e960402b827f7640946e4fe24a696",
+      "role": "reference"
+    },
+    {
+      "id": "source-r25-award-lean",
+      "path": "EVIDENCE/carried-sources/r25-c4-forest-descent-order-bound-Main.lean",
+      "sha256": "736eb9dfb6ba82b0e099fe70df9e4d7f780bccdbd24ca240f4ad1115cfe7dfe0",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-u3-extension-lean",
+      "path": "EVIDENCE/carried-sources/U3-Extension.lean",
+      "sha256": "116b4f313eedfe4210173226c2f5ef877a6e1ee07061888f4106e908ba6b08a6",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0001",
+      "path": "LeanProject/LeanProof/Snippets/0001-definition-Erdos993G1-indepCount.lean.fragment",
+      "sha256": "5484fc21ffce7bf707240da15858d7d82289f8e6f286a8fa9837cd9a0c474ccb",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0002",
+      "path": "LeanProject/LeanProof/Snippets/0002-definition-Erdos993G1-coeff.lean.fragment",
+      "sha256": "211900436b28e4a685af60df26a20e8fe254fd4c9479c12ba2863fa180c1a639",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0003",
+      "path": "LeanProject/LeanProof/Snippets/0003-definition-Erdos993G1-delta.lean.fragment",
+      "sha256": "bdb46014d98507a7c85cc8de0b806f80c04496479795e28677dde024e216b9ee",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0004",
+      "path": "LeanProject/LeanProof/Snippets/0004-definition-Erdos993G1-closedNbhdFinset.lean.fragment",
+      "sha256": "dec12eac260570fafea80bebca4b45f3b4f875a5e486a975adfdc6beb882f4cc",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0005",
+      "path": "LeanProject/LeanProof/Snippets/0005-definition-Erdos993G1-extensionFinset.lean.fragment",
+      "sha256": "a90756266a574cb4811cb7750aa112bc0efedbad69cb55139b7c582ff37f9460",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0006",
+      "path": "LeanProject/LeanProof/Snippets/0006-definition-Erdos993G1-e.lean.fragment",
+      "sha256": "9e7ac4873c80945c9d6e9176683b368c5128e01906504f0387b923d1ac34a807",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0007",
+      "path": "LeanProject/LeanProof/Snippets/0007-definition-Erdos993G1-indepDegreeSum.lean.fragment",
+      "sha256": "a1ed32eb12b137ac5915bf15255c1173593296f3eb22127e2dcf0fab2ea9f38e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0017",
+      "path": "LeanProject/LeanProof/Snippets/0017-lemma-Erdos993G1-indepCount_eq_card_indepSetFinset.lean.fragment",
+      "sha256": "4463e7eea65f11f69266095e58b54777ea245aa79caee47bf5b6e3ab77aa0eac",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0018",
+      "path": "LeanProject/LeanProof/Snippets/0018-lemma-Erdos993G1-mem_extensionFinset_iff.lean.fragment",
+      "sha256": "2d2c86bc4260c15708f5231faf0ecc154efae179f01fb9bc0665f36f0ce947e0",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0019",
+      "path": "LeanProject/LeanProof/Snippets/0019-lemma-Erdos993G1-isNIndepSet_insert_of_mem_extensionFinset.lean.fragment",
+      "sha256": "6e93855ffde0aba8402ed757360ee6254c13667e69b1e3ab3a4b48908ce393b5",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0020",
+      "path": "LeanProject/LeanProof/Snippets/0020-lemma-Erdos993G1-isNIndepSet_erase_and_mem_extensionFinset.lean.fragment",
+      "sha256": "63c83f650a0cac2ad0b02fcabfa81bdcbb8c0a98d99820c9725f61d6aeee5a6e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0021",
+      "path": "LeanProject/LeanProof/Snippets/0021-lemma-Erdos993G1-sigma_card_double_count.lean.fragment",
+      "sha256": "3dbdbb33a7e478730a2facdd66fc897568217ab4db9f41e93131c3439f36e0cf",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0022",
+      "path": "LeanProject/LeanProof/Snippets/0022-lemma-Erdos993G1-sum_card_indepSetFinset_succ.lean.fragment",
+      "sha256": "36c1178b3743443cdcc68c7d937d44bb1d325792f07bef26b56dbe83214d236a",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0023",
+      "path": "LeanProject/LeanProof/Snippets/0023-lemma-Erdos993G1-sum_e_eq_succ_mul_card.lean.fragment",
+      "sha256": "11ea489ae3170380dccf1e8baef3b1fa2eb4bb03d994ed6ba77c8f739035752e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0024",
+      "path": "LeanProject/LeanProof/Snippets/0024-lemma-Erdos993G1-double_count.lean.fragment",
+      "sha256": "6cad038aebaff81cd3a6e45c9462bde139d139017513d191d513a1daedf9417b",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0025",
+      "path": "LeanProject/LeanProof/Snippets/0025-lemma-Erdos993G1-card_closedNbhdFinset_le.lean.fragment",
+      "sha256": "92b171b2812a61cf696a2aa86d993660811ed739f2d4eb719fdcea8ba6003255",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0026",
+      "path": "LeanProject/LeanProof/Snippets/0026-lemma-Erdos993G1-e_add_card_add_degreeSum_ge.lean.fragment",
+      "sha256": "5c20e841bcd4ee0f483d315f9169dadb6bbb27c54e45526c11aa588d7d4b3c5a",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-fragment-0027",
+      "path": "LeanProject/LeanProof/Snippets/0027-lemma-Erdos993G1-e_ge_sub.lean.fragment",
+      "sha256": "93a19ab344bf2a2290ebeac6d1a2f44a89b78720d1ded68be3c540f9ad167a1f",
+      "role": "definition_authority"
+    }
+  ]
+}

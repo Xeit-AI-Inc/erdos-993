@@ -1,0 +1,10 @@
+namespace Erdos993G1
+
+lemma indepSetFinset_eq_filter_powersetCard {V : Type u} (F : SimpleGraph V) [Fintype V] [DecidableEq V]
+    [DecidableRel F.Adj] (k : ℕ) :
+    F.indepSetFinset k = ((Finset.univ : Finset V).powersetCard k).filter
+      (fun B : Finset V => F.IsIndepSet B) := by
+  ext B
+  simp [SimpleGraph.mem_indepSetFinset_iff, SimpleGraph.isNIndepSet_iff, and_comm]
+
+end Erdos993G1

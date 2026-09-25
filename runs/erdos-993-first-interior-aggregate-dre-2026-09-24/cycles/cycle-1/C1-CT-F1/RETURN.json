@@ -1,0 +1,56 @@
+{
+  "worker_id": "C1-CT-F1",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "T",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-F1-001",
+    "C1-F1-002"
+  ],
+  "claims": [
+    {
+      "claim_id": "C1-F1-001",
+      "statement": "The T_22 rank-34 row refutes an all-eligible-ranks pointwise nonpositive-summand shortcut while its complete aggregate is negative.",
+      "scope": "Pointwise shortcut over ranks p satisfying x(T)+2<=p; the witness rank 34 differs from the frozen target rank alpha(T)-2=66.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CT-F1/REPORT.md",
+        "cycles/cycle-1/C1-CT-F1/independent_results.json",
+        "cycles/cycle-1/C1-CT-F1/copied-code-replay.json"
+      ],
+      "reason": "Independent closed-form coefficients confirm alpha=68, x=32, a strictly favorable marked leaf, its positive summand 212336130412243110, all 67 leaf tags, and complete sum -498754180547001418536. This is an auxiliary refutation only."
+    },
+    {
+      "claim_id": "C1-F1-002",
+      "statement": "The primary alpha-minus-two complete-sum inequality remains unresolved by this return; two eligible T-family rows are negative and all labeled trees of orders 2 through 8 are ineligible.",
+      "scope": "Only T_22 and T_60 at the target rank and the complete labeled Prüfer enumeration for orders 2 through 8; the reported total is corrected to 280392.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CT-F1/REPORT.md",
+        "cycles/cycle-1/C1-CT-F1/independent_results.json",
+        "cycles/cycle-1/C1-CT-F1/copied-code-replay.json"
+      ],
+      "reason": "Independent exact calculation confirms target sums -147807 and -2947590 and an independent exhaustive Prüfer sweep confirms zero eligible rows among 280392 labeled trees. The origin report's 275392 total is an arithmetic error; finite checks do not settle the universal target."
+    },
+    {
+      "claim_id": "C1-CT-F1-001",
+      "statement": "For every integer m>=2, T_m is target eligible at p=alpha(T_m)-2=3m, every original leaf is favorable, and S(T_m,3m)<0.",
+      "scope": "The explicit root-marked-path plus m three-leaf-arm family T_m only, with m>=2.",
+      "status": "proposed_proved_informal",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CT-F1/REPORT.md",
+        "cycles/cycle-1/C1-CT-F1/independent_check.py",
+        "cycles/cycle-1/C1-CT-F1/independent_results.json"
+      ],
+      "reason": "A generating-function proof in the report derives alpha=3m+2, an explicit negative Delta_(3m-2) establishing eligibility, strict selector differences 1-6m and -3m-1, and negative marked and arm summands with all 3m+1 leaf tags counted."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CT-F1/REPORT.md",
+  "limitations": [
+    "The general first-interior aggregate inequality remains open; the new closed-form argument covers only T_m with m>=2.",
+    "The sweep is complete only for labeled orders 2 through 8 and contains no target-eligible rows.",
+    "Copied-code replay reproduces the origin evidence but is not independent proof; the independent family computation and sweep are separate.",
+    "No Lean gate was assigned or run."
+  ]
+}

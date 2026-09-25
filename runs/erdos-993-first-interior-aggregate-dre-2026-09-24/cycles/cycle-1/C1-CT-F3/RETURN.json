@@ -1,0 +1,67 @@
+{
+  "worker_id": "C1-CT-F3",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "T",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-F3-01",
+    "C1-F3-02",
+    "C1-F3-03"
+  ],
+  "claims": [
+    {
+      "claim_id": "C1-F3-01",
+      "statement": "For the three explicit T_m trees at m=22,60,100, the interior rank p=alpha-2 is eligible and the complete favorable-original-leaf sums are -147807, -2947590, and -13588650, respectively.",
+      "scope": "Exactly the three listed T_m instances at their target ranks; finite negative evidence only.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CT-F3/REPORT.md",
+        "cycles/cycle-1/C1-CT-F3/C1-F3-independent-checks.json",
+        "cycles/cycle-1/C1-CT-F3/audit.json"
+      ],
+      "reason": "The copied independent recurrence and full-field comparison match the source polynomials, selectors, every selected leaf summand, and complete sums; each listed edge graph is a tree."
+    },
+    {
+      "claim_id": "C1-F3-02",
+      "statement": "In the deterministic seed-9932401 sequence of 1500 generated Pruefer-word trees at orders 16,20,24,30,40, 1466 are eligible and none has a positive complete target-rank sum; the maximum sum is -210 and maximum selected summand is 0.",
+      "scope": "The exact pseudorandom sequence produced by the pinned Python script; no claim of certified ideal-uniform independent sampling or exhaustive coverage.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CT-F3/REPORT.md",
+        "cycles/cycle-1/C1-CT-F3/C1-F3-random-summary.json",
+        "cycles/cycle-1/C1-CT-F3/audit.json"
+      ],
+      "reason": "Replay reproduced the complete source summary, while the source script's seeded PRNG warrants deterministic bounded evidence rather than a formal probability assertion."
+    },
+    {
+      "claim_id": "C1-F3-03",
+      "statement": "The explicit ten-vertex tree is eligible at p=5 but non-residual, with complete favorable-leaf sum -72; it therefore demonstrates a scope gap in applying the residual top-rank theorem directly to the unrestricted interior target.",
+      "scope": "One exact ordinary tree; transfer-scope obstruction, not an aggregate counterexample.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CT-F3/REPORT.md",
+        "cycles/cycle-1/C1-CT-F3/audit.py",
+        "cycles/cycle-1/C1-CT-F3/audit.json"
+      ],
+      "reason": "Independent exhaustive subset enumeration confirms the polynomial, eligibility, all leaf summands, complete sum, and a maximum independent set omitting original leaf 6."
+    },
+    {
+      "claim_id": "C1-CT-F3-01",
+      "statement": "For an original leaf v with support s, H=T-{v,s}, R=T-N_T[s], and any integer p, Delta_p(T-v)=Delta_p(H)+Delta_(p-1)(R) and g_v(p)=i_(p+1)(H)-i_(p-1)(H)-Delta_p(T-v).",
+      "scope": "Exact coefficient identity for every finite simple graph with a degree-one v and zero-extended independence coefficients; no sign conclusion.",
+      "status": "proposed_exact_identity",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CT-F3/REPORT.md"
+      ],
+      "reason": "Partition independent sets of T-v according to membership of s, obtaining I(T-v;z)=I(H;z)+zI(R;z), then take and telescope signed forward differences."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CT-F3/REPORT.md",
+  "limitations": [
+    "No universal interior aggregate proof or exact positive complete eligible counterexample follows from these finite checks.",
+    "The PRNG replay checks only the specified deterministic sequence, not ideal random-sampling guarantees.",
+    "The new deletion identity leaves a collective or pointwise coefficient bound open at p=alpha-2.",
+    "No Lean build was run; all owned commands completed and no background job remains."
+  ]
+}

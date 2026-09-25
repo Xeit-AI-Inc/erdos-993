@@ -1,0 +1,54 @@
+{
+  "worker_id": "C2-CT-F3",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "T",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-F3-001",
+    "C2-F3-002",
+    "C2-F3-003"
+  ],
+  "claims": [
+    {
+      "claim_id": "C2-F3-001",
+      "statement": "The tagged independent-set shadow inequality holds for every finite bipartite H, every vertex subset W, and integer k>=1, including zero-extended ranks; the original-leaf refinement follows from alpha(H)<=alpha(G)-1.",
+      "scope": "The exact full scope of incoming C2-F3-001, including disconnected H, empty W, k=alpha(H), and k>alpha(H).",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CT-F3/REPORT.md"
+      ],
+      "reason": "An independent incidence count gives at least k tag-preserving deletions per tagged (k+1)-set and at most 2(alpha(H)-k) extensions per tagged k-set; rank endpoints and the leaf extension inequality are checked explicitly."
+    },
+    {
+      "claim_id": "C2-F3-002",
+      "statement": "Eligibility at the integer first-interior rank p=alpha(T)-2 forces alpha(T)>=7 for every finite ordinary tree.",
+      "scope": "The exact ordinary-tree, strict-first-descent scope of incoming C2-F3-002.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CT-F3/REPORT.md"
+      ],
+      "reason": "The alpha=4,5 cases contradict nonnegative Delta_0 or Delta_1. An independent triple-count audit gives Delta_2>=0 for alpha=6, including exact n=7 and n=8 vertex-cover cases."
+    },
+    {
+      "claim_id": "C2-F3-003",
+      "statement": "The two retained informal lemmas yield a nonpositive original term for every leaf at p=alpha(T)-2 on eligible trees and hence the exact complete favorable-original-leaf aggregate S(T,p)<=0.",
+      "scope": "The unchanged primary ordinary-tree first-interior target with its strict selector, original leaf tags, repeated-support multiplicity, and no residual assumption; informal proof candidate pending the governed formal gate.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CT-F3/REPORT.md",
+        "cycles/cycle-2/C2-CT-F3/path1001_replay.py",
+        "cycles/cycle-2/C2-CT-F3/path1001_replay.json",
+        "cycles/cycle-2/C2-CT-F3/broom253_exact.py",
+        "cycles/cycle-2/C2-CT-F3/broom253_exact.json"
+      ],
+      "reason": "At alpha>=7, k=p-1=alpha-3 satisfies 2(alpha-1-k)=4<=k; the tagged-shadow inequality makes q_p<=q_(p-1) for each original leaf, including rank endpoints. The exact identity term=q_p-q_(p-1) then signs the unshifted complete sum. A new eligible 253-vertex shared-support tree has exact complete sum -40734124; this is only bounded corroboration."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CT-F3/REPORT.md",
+  "limitations": [
+    "No Lean build or governed fidelity review was performed, so the primary registry remains OPEN notwithstanding the retained informal proof candidate.",
+    "The exact computations cover only the copied P_1001 and one fresh 253-vertex tree; they are corroboration and not universal evidence.",
+    "The proof applies only at the first-interior rank on eligible ordinary trees and does not settle the broader all-rank aggregate or governed RTree beta target."
+  ]
+}

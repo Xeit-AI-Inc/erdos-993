@@ -1,6 +1,6 @@
 # Research Status
 
-Last updated: 2026-09-24 (r27: the finite forest degree lemma and extension inequality formally verified with their linear order-bound consequences; four Lean packages; master registry 392 identities)
+Last updated: 2026-09-24 (first-interior aggregate formally verified; master registry 395 identities)
 
 ## Headline Problems
 
@@ -16,6 +16,16 @@ The consolidated orientation document — the conjecture, the full proof path
 with per-step status, the claim/fence/obligation tables, strategy verdicts,
 and next-phase priorities — is the
 [master proof ledger (2026-09-04)](docs/master-proof-ledger-2026-09-04.md).
+
+## First-interior aggregate, 2026-09-24
+
+The exact ordinary-tree claim `E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE` is VERIFIED at `formally_verified`. For `p = α(T) − 2` and first strict descent `x(T) + 2 ≤ p`, the complete strict favorable **original-leaf** sum
+
+```text
+Σ_{v leaf of T, Δ_p(T−v)<0} [Δ_(p−1)(T−{v,s_v}) − Δ_(p−1)(T−N_T[s_v])] ≤ 0
+```
+
+holds without a residual assumption. The selector is evaluated at the original `p`; original supports and closed neighborhoods are used, and leaves sharing a support retain separate tags. Eligibility implies `α(T) ≥ 7` within the proof; it is not an extra premise. The experiment closed after two complete cycles of six authorized maximum. Only this primary key received a new certificate; the three separately registered auxiliary keys remain OPEN despite compiled internal lemmas. The master has 395 identities: 236 VERIFIED, 89 REFUTED, 26 CONDITIONAL and 44 OPEN. These mixed evidence grades are not a formal-theorem count. The all-rank ordinary aggregate, governed `E993-BETA-AGG`, TREE, FOREST, TRANSFER and Erdős #993 remain OPEN. The ordinary all-rank target is self-contained; an ordinary-to-governed-model bridge is needed only for downstream transfer to governed beta aggregation. See the [experiment](experiments/first-interior-aggregate.md), [proof package](proofs/lean/first-interior-aggregate/README.md), [verification](evidence/verification-2026-09-24-first-interior.md), [terminal report](runs/erdos-993-first-interior-aggregate-dre-2026-09-24/REPORT.md) and [independent analysis](runs/erdos-993-first-interior-aggregate-dre-2026-09-24/FINAL-ANALYSIS.md).
 
 ## r27, 2026-09-24
 
@@ -91,18 +101,16 @@ see [the package](proofs/lean/r17-order243-beta-counterexample/README.md). See
   [r19](experiments/r19-beta-aggregate.md) and
   [r22](experiments/r22-o14-multibase-hall-continuation.md), and
   [r23](experiments/r23-delete-retag-actual-tree.md).
-- **Direct favorable-leaf aggregate (r24, closed 2026-09-18 at the six-cycle
-  ceiling):** the literal aggregate `S(T,p) ≤ 0` on `x(T)+2 ≤ p < α(T)`
-  remains OPEN with no positive complete eligible row anywhere (orders ≤ 16
-  exhaustive; the top-rank residual class to order 17; every designed family).
-  Verified: the top-rank selector collapse and the top-rank residual identity
-  `(RI)` (two Lean packages, published `verified`). `(RC)`, the top-rank case,
-  is proved on the flat residual subclass and on the whole `T_m` family
-  (`S(T_m,α−1) = −9m²−6m+1`), otherwise exactly as open as before; the
-  non-strict per-support sign is proved on the `K₂`/exceptional-`P₃`
-  PSC-terminal strata (critic-attributed). Transport untouched. See
-  [r24](experiments/r24-direct-favorable-leaf-aggregate.md) and the
-  35-item terminal debt register.
+- **Direct favorable-leaf aggregate:** the literal all-rank claim `S(T,p) ≤ 0`
+  on `x(T)+2 ≤ p < α(T)` remains OPEN. At the r24 close, the top-rank selector
+  collapse and residual identity `(RI)` were verified, while the top-rank
+  residual sign `(RC)` was terminal debt TD-6; [r26](experiments/r26-top-rank-residual-sign.md)
+  later closed that residual sign. The first-interior rank `p=α−2` is now
+  formally verified without residuality. The remaining ordinary obligation
+  includes eligible lower ranks and separately certifying the proposed
+  non-residual top-rank consequence. A governed-model bridge concerns only
+  downstream `E993-BETA-AGG` transfer. See [r24](experiments/r24-direct-favorable-leaf-aggregate.md)
+  and the [first-interior result](experiments/first-interior-aggregate.md).
 - **Unimodality certificates** (closed, one day): the fixed-window
   certificate strategy is dead **by proof** — any sound scheme's window
   grows at least like |α − 2·mode|, linear on paths. The surviving

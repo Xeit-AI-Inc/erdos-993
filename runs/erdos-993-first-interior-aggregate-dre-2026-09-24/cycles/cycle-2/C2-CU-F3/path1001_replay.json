@@ -1,0 +1,84 @@
+{
+  "construction": "P_1001 with vertices 0..1000 and edges {i,i+1} for 0<=i<1000",
+  "order": 1001,
+  "alpha": 501,
+  "p": 499,
+  "x_first_strict_negative_including_terminal_alpha": 277,
+  "eligible": true,
+  "original_leaf_tags": [
+    0,
+    1000
+  ],
+  "support_by_tag": {
+    "0": 1,
+    "1000": 999
+  },
+  "deletion_binding_each_tag": "T-v=P_1000, H=P_999, R=P_998",
+  "selector_delta_p_T_minus_v": -20957999,
+  "favorable_tags": [
+    0,
+    1000
+  ],
+  "delta_p_minus_1_H": -2614447625,
+  "delta_p_minus_1_R": -20832750,
+  "term_each_favorable_tag": -2593614875,
+  "tagged_shadow_q_at_primary_k": {
+    "k": 498,
+    "q_k": 2593739625,
+    "q_k_plus_1": 124750,
+    "comparison": true
+  },
+  "tagged_shadow_boundary_checks": [
+    {
+      "k": 1,
+      "q_k": 1,
+      "q_k_plus_1": 997,
+      "lhs": 997,
+      "rhs": 998,
+      "high_tail": false
+    },
+    {
+      "k": 498,
+      "q_k": 2593739625,
+      "q_k_plus_1": 124750,
+      "lhs": 62125500,
+      "rhs": 10374958500,
+      "high_tail": true
+    },
+    {
+      "k": 499,
+      "q_k": 124750,
+      "q_k_plus_1": 1,
+      "lhs": 499,
+      "rhs": 249500,
+      "high_tail": true
+    },
+    {
+      "k": 500,
+      "q_k": 1,
+      "q_k_plus_1": 0,
+      "lhs": 0,
+      "rhs": 0,
+      "high_tail": true
+    }
+  ],
+  "tagged_shadow_full_checked_k_range": [
+    1,
+    500
+  ],
+  "tagged_shadow_high_tail_checked_k_range": [
+    334,
+    500
+  ],
+  "tagged_shadow_high_tail_rank_count": 167,
+  "tagged_shadow_all_k_inequality_holds": true,
+  "tagged_shadow_high_tail_monotonicity_holds_for_k_ge_ceil_2a_minus_2_over_3": true,
+  "complete_favorable_sum": -5187229750,
+  "checks": {
+    "delta_at_x_minus_1_nonnegative": true,
+    "delta_at_x_negative": true,
+    "terminal_delta_at_alpha": -1,
+    "both_original_tags_have_strict_selector": true,
+    "sum_counts_each_original_tag_once": true
+  }
+}

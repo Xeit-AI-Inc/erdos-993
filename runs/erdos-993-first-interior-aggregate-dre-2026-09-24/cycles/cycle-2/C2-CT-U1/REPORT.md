@@ -1,0 +1,37 @@
+# C2-CT-U1 constructive critique of C2-U1
+
+## Dispositions and authority
+
+I propose **retained** for both `C2-U1-TAGGED-SHADOW-COUNT` and `C2-U1-ELIGIBILITY-ALPHA-LOWER-BOUND`, at their informal, exact scopes. I found no false step in either proof. This review does not constitute a Lean build, a governed primary award, or a change to the canonical registry. In particular the primary remains OPEN under `SOLUTION-CONTRACT.md` until its required formal gate. The source report and return, and its two computational files, matched the SHA-256 pins in `packets/C2-CT-U1.json` before review. The supporting historical references below are allowed by `packets/C2-T1-v2.json`. I did not read current siblings or controller scratch.
+
+## Exact tagged-incidence audit
+
+Let `H` be a finite bipartite graph, `W` any vertex subset, and `Q_j` the family of independent `j`-sets of `H` meeting `W`. Put `q_j=|Q_j|`, with integer zero extension. Let `a` be an integer satisfying `alpha(H)<=a-1` and `k>=1`. Count the finite incidence set `E={(A,B): A in Q_k, B in Q_(k+1), A subset B}`.
+
+For each `B`, deletion of any vertex outside `B∩W` leaves a tagged independent `k`-set. If `|B∩W|=1`, exactly `k` deletions preserve the witness; if `|B∩W|>=2`, all `k+1` do. Thus `|E|>=k q_(k+1)`. For each `A`, any eligible extension vertex lies in `H-N_H[A]`. An independent set in this induced graph joins `A` to an independent set in `H`, so its independence number is at most `alpha(H)-k` when `Q_k` is nonempty. Each bipartition class has size at most this number; hence there are at most `2(alpha(H)-k)<=2(a-1-k)` possible extension vertices, including ones that fail the upper witness condition. Thus `|E|<=2(a-1-k)q_k`. If `Q_k` is empty, the lower bound forces `Q_(k+1)` empty. If `k>alpha(H)`, both counts are zero and the inequality still reads `0<=0`, even when `a-1-k` is negative. Empty `W`, disconnected `H`, and top-rank zero extension therefore require no division or positivity assumption. This proves the exact statement in `C2-U1/RETURN.json`.
+
+For an original leaf `v` of a tree `T`, with original support `s`, put `H=T-{v,s}`, `W=N_T(s)\{v}` viewed in `H`, and `R=H-W=T-N_T[s]`. The difference `q_j=i_j(H)-i_j(R)` counts *exactly* independent `j`-sets of `H` meeting `W`; the equality is a bijective partition into sets avoiding and meeting `W`. Every independent set of `H` can be augmented by `v`, so `alpha(H)<=alpha(T)-1`. With `a=alpha(T)`, `p=a-2`, and `k=p-1=a-3`, the incidence inequality becomes `k q_p<=4q_(p-1)`. If `a>=7`, then `k>=4`, so `q_p<=q_(p-1)`; the leaf summand is exactly `q_p-q_(p-1)<=0`. This does not require the leaf to be favorable. The source's discussion of the broader high-tail statement at `p=1` is an optional boundary clarification, not a premise of either incoming claim or of this composition; the primary has `p>=2` by eligibility.
+
+The selector is still the strict, unshifted condition `Delta_p(T-v)<0` on the *original* leaf. Since the argument signs every original-leaf summand, restricting to those selected leaves and adding one copy for each leaf preserves the inequality. Leaves with the same support yield repeated, correctly tagged terms; no support quotient or residual hypothesis is used. An empty selected family gives zero. This closes the informal dependency from the two incoming claims to the exact complete sum, subject to the formal gate.
+
+## Eligibility guard audit
+
+Write `n=|V(T)|` and `a=alpha(T)`. From `x+2<=a-2`, `x<=a-4`, so `a>=4`. For a nontrivial tree, `i_1=n`, `i_2=binom(n,2)-(n-1)=binom(n-1,2)`, and `Delta_0=n-1>0`. The formula `Delta_1=binom(n-1,2)-n` is positive for `n>=6`. Count edge-containing triples by incidences: the `n-1` edges each lie in `n-2` triples, and every two-edge triple in a tree is one wedge counted twice. Hence
+
+`i_3=binom(n,3)-(n-1)(n-2)+sum_u binom(deg(u),2)` and
+
+`Delta_2=(n-1)(n-2)(n-9)/6+sum_u binom(deg(u),2)`.
+
+If `a=4`, then `n>=5` and eligibility requires `x<=0`, contradicting positive `Delta_0`. If `a=5`, then `n>=6` and eligibility requires `x<=1`, contradicting positive `Delta_0,Delta_1`. If `a=6`, then `n>=7` and eligibility requires `x<=2`. For `n>=9`, the displayed `Delta_2` is nonnegative. At `n=7`, the complement of a maximum independent six-set is one vertex covering all six tree edges; the tree is `K_(1,6)`, with degree-square contribution `15` and `Delta_2=-10+15=5`. At `n=8`, the two complement vertices cover all seven edges, so their degrees sum to at least seven; the minimum `binom(d_1,2)+binom(d_2,2)` under this integer constraint is nine, attained at `(3,4)`. Other vertices contribute nonnegative amounts, yielding `Delta_2>=-7+9=2`. There is no strict descent through index two. Thus `a>=7`. This also confirms the source's numerical lower bounds and its handling of flat differences.
+
+## Fences, sharpness, and fresh falsification
+
+The relevant inherited fence is rank-specific. `control/C2-CAPSULE-AND-COUNTEREXAMPLE-GATE.md` gives the order-91 `T22` positive marked term at rank 34 with `alpha=68`, so the target rank is 66 and the high-tail guard fails (`102<137`). It gives the order-243 `T60` positive marked term at rank 90 with `alpha=182`, so its target rank is 180 and the high-tail guard fails (`270<365`). `cycles/cycle-1/C1-SYNTHESIS/REPORT.md` records the eligible non-residual ten-vertex tree `(alpha,x,p)=(7,3,5)` with six negative favorable terms and complete sum `-72`; the proof here does not assume residuality. The 89 inherited REFUTED mechanisms retain their original scopes, as recorded in the capsule and scope audit; no refuted all-rank pointwise, Hall, beta, or `RTree` statement is revived. The `m=4` boundary tree's positive marked `+8` term and zero five-tag sum are ineligible; at `m=5` the marked `q_p=q_(p-1)=80` shows non-strict equality at `alpha=7`, also ineligible. These are sharpness checks, not primary counterexamples.
+
+For a fresh example larger than the standing 243-vertex control, I copied the source DP to my own scratch as `source_dp_copy.py` and ran `independent_244_check.py` from the run root. It builds the explicit tree `v-s-u-w`, with `m` disjoint arms `w-a_j-b_j`, at `m=120`, hence 244 vertices. Its exact polynomial was independently checked coefficient by coefficient against `(1+3z+z^2)(1+2z)^m+z(1+2z)(1+z)^m`. The DP including terminal zero extension gave `(alpha,p,x)=(122,120,81)`, so `x+2<=p`. All 121 original leaves are favorable. The marked leaf has `q_p=79753679747094952374228423616820674560`, `q_(p-1)=2372671972476074833133295602600415068160`, and term `-2292918292728979880759067178983594393600`. Each of the 120 arm leaves has term `239-14161=-13922`; retaining all 120 tags gives the complete sum `-2292918292728979880759067178983596064240`. Closed formulas `q_p=m2^(m-1)`, `q_(p-1)=binom(m,2)2^(m-2)` for the marked tag and `q_p=2m-1`, `q_(p-1)=(m-1)^2` for each arm tag cross-check the DP. The same driver reproduced the source's exact `m=4,5,11` rows. This is a four-instance check of one family, not a universal inference or an exhaustive search.
+
+Replay: `python3 scratchpad/C2-CT-U1/independent_244_check.py > scratchpad/C2-CT-U1/independent_244_check.json`. No background process remains. I ran no Lean build.
+
+## Limitations
+
+This is a complete informal audit of the two incoming claims and their composition, not formal verification. The finite check covers only `m in {4,5,11,120}`. No source-status change, governed `RTree` transport, all-rank aggregate, or headline Erdős #993 resolution follows from this review.

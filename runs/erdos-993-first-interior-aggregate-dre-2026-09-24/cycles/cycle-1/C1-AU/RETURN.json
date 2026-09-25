@@ -1,0 +1,86 @@
+{
+  "worker_id": "C1-AU",
+  "cycle": 1,
+  "stage": "adjudication",
+  "orientation": "N",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-CF-U2-ELIGIBLE-MIXED-TAGS",
+    "C1-CT-U2-T-FAMILY-FIRST-INTERIOR",
+    "C1-U1-PRIMARY-INTERIOR-AGGREGATE-STATUS",
+    "C1-U1-SUPPORT-FIBRE-POLYNOMIAL-IDENTITY",
+    "C1-U2-LOCAL-TOPSHELL-REDUCTION",
+    "C1-U3-EXACT-COUNT-OBSTRUCTION"
+  ],
+  "claims": [
+    {
+      "claim_id": "C1-CF-U2-ELIGIBLE-MIXED-TAGS",
+      "statement": "The explicit 12-vertex tree with edges 01,12,23,04,45,46,47,08,89,8(10),8(11) has independence coefficients [1,12,55,127,167,138,72,22,3], alpha=8, x=4, p=6, seven favorable original leaves, one selected non-residual tag with selector -25 and summand -11, six selected residual tags each with selector -17 and summand -32, and complete S=-203.",
+      "scope": "One explicitly specified eligible ordinary tree at p=alpha-2; exact finite computation only.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-AU/REPORT.md",
+        "cycles/cycle-1/C1-AU/independent_audit_copy.py",
+        "cycles/cycle-1/C1-AU/independent_audit_replay.json"
+      ],
+      "reason": "The pinned critic's 4096-subset enumeration and hub-conditioned polynomial agree; the adjudicator replay of a copy is byte-equal. The three maximum sets prove the mixed residual classification, and all tagged selectors and q slopes give S=-203. This finite negative row has no universal sign implication."
+    },
+    {
+      "claim_id": "C1-CT-U2-T-FAMILY-FIRST-INTERIOR",
+      "statement": "For T_m formed from a root, one marked length-two arm, and m>=1 root-adjacent three-leaf stars, alpha=3m+2; at p=3m all 3m+1 original leaves are strictly favorable and S(T_m,p)=(-27m^3-18m^2+27m)/2<0.",
+      "scope": "The specified one-parameter ordinary-tree family only; the polynomial formula needs no eligibility premise, and eligible members satisfy the primary inequality only on this family.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-AU/REPORT.md"
+      ],
+      "reason": "The report gives exact root-conditioned independence polynomials, both leaf-type selectors, both q slopes, multiplicities and the negative closed form. The m=120 computation is bounded corroboration. The result neither proves the all-tree target nor claims novel parameter/rank coverage."
+    },
+    {
+      "claim_id": "C1-U1-PRIMARY-INTERIOR-AGGREGATE-STATUS",
+      "statement": "For every finite ordinary tree T at integer p=alpha(T)-2 satisfying x(T)+2<=p, the complete favorable-original-leaf sum S(T,p)<=0 remains unresolved on the assigned evidence.",
+      "scope": "Exact unrestricted primary claim E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE, with distinct original leaf tags and no residual hypothesis.",
+      "status": "proposed_unresolved",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-AU/REPORT.md"
+      ],
+      "reason": "The retained identities rewrite S as a selected tagged-shell difference but provide no global cardinality comparison. All cited eligible complete sums are negative finite examples; there is no universal proof, eligible positive complete-sum counterexample, or formal gate."
+    },
+    {
+      "claim_id": "C1-U1-SUPPORT-FIBRE-POLYNOMIAL-IDENTITY",
+      "statement": "For each support s with lambda_s original leaf tags and non-leaf branch components C_(s,u), H_s=(1+z)^(lambda_s-1) product_u I(C_(s,u)), R_s=product_u I(C_(s,u)-u), Q_s=H_s-R_s; for every tag v at s, I(T-v)=H_s+zR_s, its selector is [z^(p+1)]H_s+[z^p]R_s-[z^p]H_s-[z^(p-1)]R_s<0, its summand is [z^p]Q_s-[z^(p-1)]Q_s, and support grouping multiplies the selected term by lambda_s.",
+      "scope": "All finite ordinary trees and integer ranks p, with zero-extended coefficients, empty products and distinct original leaf tags; no residual premise or sign claim.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-AU/REPORT.md"
+      ],
+      "reason": "Deleting the support gives the stated disjoint components; deleting its original closed neighborhood deletes each branch root; partitioning sets of T-v by membership of s proves the polynomial and coefficient identities. The one-vertex and empty-branch cases are covered."
+    },
+    {
+      "claim_id": "C1-U2-LOCAL-TOPSHELL-REDUCTION",
+      "statement": "For every original leaf v with support s, H=T-{v,s}, W=N_T(s)\\{v}, R=H-W satisfy alpha(H)=alpha(T)-1. At p=alpha(T)-2, q_v(j)=i_j(H)-i_j(R) counts independent j-sets of H meeting W, g_v=q_v(p)-q_v(p-1), and the strict selector is Delta_p(H)+Delta_(p-1)(R)<0. The complete sum is the difference of the two tagged witness-hit shells. The leaf is residual iff alpha(R)<=alpha(T)-2; otherwise alpha(R)=alpha(T)-1.",
+      "scope": "Exact ordinary-tree identities at p=alpha-2, including integer zero extension at low-alpha boundary cases; no aggregate sign or injection.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-AU/REPORT.md"
+      ],
+      "reason": "Extending H sets by v and removing v or s from T sets proves alpha(H); partitioning on W and s proves q and the selector. Maximum sets omitting v correspond to size-alpha(H) sets in R. The original return's scratch report path was separately controller-normalized without altering the claim."
+    },
+    {
+      "claim_id": "C1-U3-EXACT-COUNT-OBSTRUCTION",
+      "statement": "The exact tagged identity S(T,p)=A_p(T,p)-A_(p-1)(T,p), where A_j counts favorable original-leaf tags paired with independent j-sets of H_v meeting N_T(s_v)\\{v}, and the exact selector decomposition Delta_p(T-v)=Delta_p(H_v)+Delta_(p-1)(R_v) are retained. They leave the eligible complete-aggregate sign as an open proof obligation.",
+      "scope": "Frozen ordinary-tree primary rank p=alpha(T)-2 with x(T)+2<=p for the target; algebraic identities themselves hold at all integer ranks. No claim that a further tree-specific sign argument is impossible or that the family rows are new coverage.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-AU/REPORT.md"
+      ],
+      "reason": "Direct independent-set partitions prove the identities, but 'obstruction' means an unclosed implication only. The m=75,100,150 negative T_m rows are finite checks already covered at this rank by historical r24 TD-16, despite the origin's freshness wording."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-AU/REPORT.md",
+  "limitations": [
+    "The unrestricted primary inequality remains open; no positive eligible complete sum or universal sign proof is established.",
+    "The T_m theorem is family-specific, and the 12-vertex mixed row and all searches or replays are finite evidence only.",
+    "The adjudicator's arithmetic replay copies a critic's script; its byte equality is not an additional independent implementation.",
+    "No Lean build or formal gate was assigned or run, and no owned background job remains."
+  ]
+}

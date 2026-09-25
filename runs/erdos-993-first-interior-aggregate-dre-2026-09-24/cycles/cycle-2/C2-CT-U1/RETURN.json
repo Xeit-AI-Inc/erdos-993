@@ -1,0 +1,43 @@
+{
+  "worker_id": "C2-CT-U1",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "T",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-U1-TAGGED-SHADOW-COUNT",
+    "C2-U1-ELIGIBILITY-ALPHA-LOWER-BOUND"
+  ],
+  "claims": [
+    {
+      "claim_id": "C2-U1-TAGGED-SHADOW-COUNT",
+      "statement": "For finite bipartite H, W subset V(H), integer a with alpha(H)<=a-1, and integer k>=1, tagged independent-set counts satisfy k*q_(k+1)<=2(a-1-k)*q_k with zero extension; its tree-leaf specialization has nonpositive summand at p=alpha(T)-2 whenever alpha(T)>=7.",
+      "scope": "Exact informal finite-set incidence proof for arbitrary finite bipartite H and W, including empty and above-alpha cases, followed by the original-leaf specialization; no favorable, residual, or connectivity premise for the count.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CT-U1/REPORT.md",
+        "cycles/cycle-2/C2-CT-U1/independent_244_check.py",
+        "cycles/cycle-2/C2-CT-U1/independent_244_check.json",
+        "cycles/cycle-2/C2-CT-U1/source_dp_copy.py"
+      ],
+      "reason": "Independent lower and upper incidence counts verify the exact inequality; the k>alpha(H) and empty-family cases are valid. With alpha(T)>=7, k=alpha(T)-3>=4 gives q_p<=q_(p-1), retaining every original leaf tag and the strict unshifted selector in the complete sum. The 244-vertex eligible family row is a finite cross-check only."
+    },
+    {
+      "claim_id": "C2-U1-ELIGIBILITY-ALPHA-LOWER-BOUND",
+      "statement": "Every finite ordinary connected tree with integer p=alpha(T)-2 and first strict descent x(T) satisfying x(T)+2<=p has alpha(T)>=7.",
+      "scope": "Exact informal proof from the Delta_0, Delta_1, Delta_2 formulas and the n=7,8 vertex-cover boundary cases; no residual hypothesis.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CT-U1/REPORT.md",
+        "cycles/cycle-2/C2-CT-U1/independent_244_check.py",
+        "cycles/cycle-2/C2-CT-U1/independent_244_check.json"
+      ],
+      "reason": "The eligibility inequality forces alpha>=4, and each alpha=4,5,6 possibility contradicts nonnegative or positive early differences; the n=7 star has Delta_2=5 and the n=8 cover argument gives Delta_2>=2."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CT-U1/REPORT.md",
+  "limitations": [
+    "This critique establishes only informal mathematics. No Lean build, governed gate, or registry update was performed; the primary remains OPEN.",
+    "The finite falsification check covers only the explicit spine family at m=4,5,11,120, including one 244-vertex eligible row; it is not an exhaustive or universal computational result."
+  ]
+}

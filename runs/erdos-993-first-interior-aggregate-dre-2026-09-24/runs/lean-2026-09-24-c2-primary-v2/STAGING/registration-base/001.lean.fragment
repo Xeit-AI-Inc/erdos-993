@@ -1,0 +1,14 @@
+namespace C4LA1
+
+open SimpleGraph
+
+variable {V : Type*} [Fintype V] [DecidableEq V]
+
+/-- The coefficient `i_k(G-v)`, represented without changing vertex types:
+independent `k`-subsets of the original finite vertex type that avoid `v`. -/
+def vertexDeletionIndepSetCount (G : SimpleGraph V) [DecidableRel G.Adj]
+    (v : V) (k : Nat) : Nat :=
+  (((Finset.univ.erase v).powersetCard k).filter fun s : Finset V =>
+    G.IsIndepSet (s : Set V)).card
+
+end C4LA1

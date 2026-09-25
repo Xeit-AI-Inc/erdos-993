@@ -1,0 +1,31 @@
+{
+  "worker_id": "C1-CT-U3",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "T",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-U3-EXACT-COUNT-OBSTRUCTION"
+  ],
+  "claims": [
+    {
+      "claim_id": "C1-U3-EXACT-COUNT-OBSTRUCTION",
+      "statement": "The tagged independent-set count identity S(T,p)=A_p(T,p)-A_(p-1)(T,p) and selector decomposition Delta_p(T-v)=Delta_p(H_v)+Delta_(p-1)(R_v) are exact. They leave the eligible complete-aggregate sign open. The three replayed T_m rows are bounded corroboration at already historically sampled parameter/rank points.",
+      "scope": "Finite ordinary trees under the frozen definitions, with p=alpha(T)-2 and x(T)+2<=p for the primary target; the algebraic identities themselves require only an original leaf and induced deletions.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CT-U3/REPORT.md",
+        "cycles/cycle-1/C1-CT-U3/fresh_family.py",
+        "cycles/cycle-1/C1-CT-U3/ordinary_tree_copy.py",
+        "cycles/cycle-1/C1-CT-U3/fresh_family_results.json"
+      ],
+      "reason": "Direct partition of independent sets proves the count identity; partition by support membership proves the selector decomposition. The replay matches the pinned calculation byte for byte. Prior r24 TD-16 already sampled these same T_m parameter values at p=alpha-2, so the calculation should not be presented as new coverage. Neither identity nor finite check settles the sign."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CT-U3/REPORT.md",
+  "limitations": [
+    "No proof or eligible positive complete-aggregate counterexample for the primary target was obtained.",
+    "The polynomial calculation is a same-code replay at m=75,100,150, not an independent implementation or a universal argument.",
+    "No Lean build or full tree census was performed."
+  ]
+}

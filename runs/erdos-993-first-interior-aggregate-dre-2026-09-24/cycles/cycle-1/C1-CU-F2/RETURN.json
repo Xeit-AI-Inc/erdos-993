@@ -1,0 +1,46 @@
+{
+  "worker_id": "C1-CU-F2",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "U",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-F2-NEGATIVE-BOUNDED-SEARCH",
+    "C1-F2-RESIDUAL-SCOPE-GAP"
+  ],
+  "claims": [
+    {
+      "claim_id": "C1-F2-NEGATIVE-BOUNDED-SEARCH",
+      "statement": "The assigned seeded search had 3840 eligible samples among 4560 labeled trees of orders 8 through 45 and no positive complete sum; the m=1..60 root-plus-stars family had 59 eligible members and no positive complete sum; labeled-tree enumeration through order 7 had no eligible member. In the m=60 member at p=180, the complete sum is -2947590.",
+      "scope": "Reproduced finite computations at the exact alpha-minus-two rank; no universal sign conclusion.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CU-F2/REPORT.md",
+        "cycles/cycle-1/C1-CU-F2/replay.py",
+        "cycles/cycle-1/C1-CU-F2/replay-results.json",
+        "cycles/cycle-1/C1-CU-F2/random-search-summary.json",
+        "cycles/cycle-1/C1-CU-F2/exhaustive-small-summary.json"
+      ],
+      "reason": "Own-scratch copies reproduced both search summaries byte for byte, and an independent factorized integer-polynomial replay matched all 60 family rows. The exhaustive small range is vacuous for eligibility; the random search and family remain bounded."
+    },
+    {
+      "claim_id": "C1-F2-RESIDUAL-SCOPE-GAP",
+      "statement": "The order-10 graph in nonresidual-example.json, with edges {0-3,1-6,1-9,2-6,3-5,3-7,3-8,4-6,6-7}, is an eligible non-residual tree at alpha=7, p=5, x=3 with all six leaves selected and complete sum -72. The origin report's displayed edge list is a different residual tree, so the claim must be cited using the JSON certificate and corrected graph.",
+      "scope": "Exact single-tree scope obstruction to applying the r26 residual theorem to the unrestricted interior target; not a counterexample to the aggregate sign.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CU-F2/REPORT.md",
+        "cycles/cycle-1/C1-CU-F2/replay.py",
+        "cycles/cycle-1/C1-CU-F2/replay-results.json"
+      ],
+      "reason": "Independent subset enumeration verifies the pinned JSON graph, all coefficients, original leaves, strict selector, summands, and both maximum sets. It separately shows the report's displayed graph has leaves [0,1,4,6,9], S=-62, and is residual. Thus the report's prose certificate is invalid while the JSON certificate supports the narrower claim."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CU-F2/REPORT.md",
+  "limitations": [
+    "The primary all-tree interior aggregate is still unresolved; no proof or eligible positive complete-sum counterexample was found.",
+    "The origin report's explicit order-10 edge list must be corrected before its prose is used as a certificate.",
+    "The full random sample was replayed using a scratch copy of the origin DP, not an independent second evaluator for every sampled tree.",
+    "No Lean build was assigned or run. All owned replay jobs exited; no background process remains."
+  ]
+}

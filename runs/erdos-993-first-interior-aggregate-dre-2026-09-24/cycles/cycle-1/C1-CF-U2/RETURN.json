@@ -1,0 +1,42 @@
+{
+  "worker_id": "C1-CF-U2",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "F",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-U2-LOCAL-TOPSHELL-REDUCTION"
+  ],
+  "claims": [
+    {
+      "claim_id": "C1-U2-LOCAL-TOPSHELL-REDUCTION",
+      "statement": "For every finite ordinary tree T and original leaf v with support s, H=T-{v,s}, W=N_T(s)-{v}, and R=H-W satisfy alpha(H)=alpha(T)-1. At p=alpha(T)-2, q_v(j)=i_j(H)-i_j(R) counts independent j-sets of H meeting W, the target summand equals q_v(p)-q_v(p-1), the strict favorable selector equals Delta_p(H)+Delta_(p-1)(R)<0, and the aggregate is the resulting difference of tagged shell cardinalities. Per-leaf residuality holds exactly when alpha(R)<=alpha(T)-2; otherwise alpha(R)=alpha(T)-1.",
+      "scope": "Exact ordinary-tree coefficient and residual-split identities at p=alpha(T)-2, including zero-extended boundary ranks; no nonpositive aggregate theorem or injection follows.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CF-U2/REPORT.md",
+        "cycles/cycle-1/C1-CF-U2/independent_audit.py",
+        "cycles/cycle-1/C1-CF-U2/independent_audit.json"
+      ],
+      "reason": "A direct independent-set partition proves every identity, including the strict selector and distinct leaf tags. An independent closed-form calculation reproduces the eligible T_100 row. The T_22 mechanism obstructions cited in the origin report are at p=34 rather than that tree's frozen p=66, so they remain only mechanism fences."
+    },
+    {
+      "claim_id": "C1-CF-U2-ELIGIBLE-MIXED-TAGS",
+      "statement": "The 12-vertex tree with edges 01,12,23,04,45,46,47,08,89,8(10),8(11) has independence coefficients [1,12,55,127,167,138,72,22,3], alpha=8, x=4, p=6, and all seven original leaves strictly favorable. Leaf 3 is non-residual with selector -25 and summand -11; the six star leaves are residual, each with selector -17 and summand -32. Its complete aggregate is -203.",
+      "scope": "One explicit eligible ordinary tree at its first interior rank; finite exact scope only, with both residual and non-residual selected tags.",
+      "status": "proposed_exact_finite_computation",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CF-U2/REPORT.md",
+        "cycles/cycle-1/C1-CF-U2/independent_audit.py",
+        "cycles/cycle-1/C1-CF-U2/independent_audit.json"
+      ],
+      "reason": "Direct enumeration of all 4096 vertex subsets independently yields the polynomial, three maximum sets, strict selectors, local q counts, and the seven-tag complete sum; a hub-conditioned product formula checks the polynomial. The row probes the non-residual scope absent from T_m without refuting the aggregate sign."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CF-U2/REPORT.md",
+  "limitations": [
+    "The identity does not establish the selected tagged-shell cardinality comparison or the primary aggregate sign.",
+    "The independent numerical checks cover one order-403 family member and one 12-vertex mixed-regime tree, not an all-tree census.",
+    "No Lean gate was assigned or run."
+  ]
+}

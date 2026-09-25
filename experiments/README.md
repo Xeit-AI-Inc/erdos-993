@@ -1,9 +1,10 @@
 # Public Experiments
 
 This directory is reserved for bounded, replayable experiments that are safe
-to publish. The internal research lineage contains a much larger operational
-record, including raw model returns and quarantined failures, which is not
-mirrored here.
+to publish. The first-interior publication mirrors its full admitted sealed
+record and verified proof evidence; unadmitted scratch work and package caches
+are excluded. Earlier public summaries need not mirror the entire internal
+operational lineage, including raw model returns and quarantined failures.
 
 Every published experiment must include its scope, source, replay command,
 result, limitations, and hashes.
@@ -55,4 +56,5 @@ result, limitations, and hashes.
 - [r24 direct favorable-leaf aggregate](r24-direct-favorable-leaf-aggregate.md) — six cycles (Codex 1–4, Claude 5–6), closed 2026-09-18: headline aggregate still open; the signed top-rank residual identity `(RI)` formally verified with its four-hypothesis companion; terminal debt TD-6 named.
 - [r25 uniform residual no-recovery](r25-uniform-residual-no-recovery.md) — six cycles plus a surgical addendum, closed 2026-09-22/23: fourteen formal awards (uniform-in-`d` matching/cover theorems, the sharp `(k+1)²` forest descent order bound, the `Bd` tail, the forest `Δ₃` threshold); the forest-wide no-recovery headline stays open; the `d = 5` band closed informally for every `r`.
 - [r26 top-rank residual sign](r26-top-rank-residual-sign.md) — one cycle (early stop), closed 2026-09-24: the r24 top-rank residual sign `(RC)` formally verified, closing TD-6; the deletion-injection/fibre bound and tree-structural core packages; the r24 "1,420 realized" record corrected.
+- [First-interior aggregate](first-interior-aggregate.md) — two full cycles (early decisive close), 2026-09-24: exact `p=α(T)−2` complete strict favorable-original-leaf sum formally verified without residuality; one primary registry award, three auxiliary keys OPEN; all-rank ordinary and governed beta aggregates remain OPEN. See the [terminal report](../runs/erdos-993-first-interior-aggregate-dre-2026-09-24/REPORT.md).
 - [r27 forest degree/extension inequality](r27-forest-degree-extension.md) — one cycle (early stop), closed 2026-09-24: the Fang–Lu–Nevo–Yao–Zheng finite forest degree lemma and extension inequality formally verified with an in-run injection proof; the unconditional `Δ_k < 0 ⇒ n ≤ 4k`, `n ≥ 21 ⇒ Δ_5 ≥ 0`, `x < r ⇒ n ≤ 4r − 4`; the r25 rank-5 residue closed out; K1-addition closure `x ≤ 5` at census grade; descent maxima `4, 8, 11, 15, 18` from an order-20 census.

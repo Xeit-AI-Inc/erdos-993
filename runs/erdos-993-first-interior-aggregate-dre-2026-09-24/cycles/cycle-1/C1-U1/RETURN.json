@@ -1,0 +1,37 @@
+{
+  "worker_id": "C1-U1",
+  "cycle": 1,
+  "stage": "search",
+  "orientation": "U",
+  "status_authority": "proposed_worker_only",
+  "claims": [
+    {
+      "claim_id": "C1-U1-SUPPORT-FIBRE-POLYNOMIAL-IDENTITY",
+      "statement": "For every finite ordinary tree, support s with lambda_s original leaf neighbors, and any tagged leaf v at s, let C_{s,u} range over components of T-s at non-leaf neighbors u of s, A_s=product_u I(C_{s,u};z), B_s=product_u I(C_{s,u}-u;z), H_s=(1+z)^(lambda_s-1)A_s, R_s=B_s, Q_s=H_s-R_s. Then I(T-v;z)=H_s+zR_s, the favorable selector is Delta_p(T-v)=[z^(p+1)]H_s+[z^p]R_s-[z^p]H_s-[z^(p-1)]R_s, the summand is [z^p]Q_s-[z^(p-1)]Q_s, and grouping over supports weights this common term by lambda_s while retaining every leaf tag.",
+      "scope": "All finite ordinary trees and integer p; no residual premise. Coefficients are zero outside polynomial degree.",
+      "status": "proposed_proved_informal",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-U1/REPORT.md",
+        "cycles/cycle-1/C1-U1/exact-replays.json"
+      ],
+      "reason": "Partition independent sets by whether support s is selected. Without s, the other lambda_s-1 leaves and all branch components remain; with s, all its neighbors are excluded and each branch root u is deleted. Subtracting the two H/R coefficient differences gives the claimed Q slope. Exact arithmetic replay on P_100 and a 91-vertex 30-support double-leaf hub tree checks the definitions and repeated-tag multiplicity."
+    },
+    {
+      "claim_id": "C1-U1-PRIMARY-INTERIOR-AGGREGATE-STATUS",
+      "statement": "For all finite ordinary trees T, at integer p=alpha(T)-2 with x(T)+2<=p, the complete favorable-original-leaf aggregate S(T,p)<=0.",
+      "scope": "The exact primary target E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE, with no residual hypothesis.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-U1/REPORT.md",
+        "cycles/cycle-1/C1-U1/exact-replays.json"
+      ],
+      "reason": "The support-fibre formula separates each local favorable selector from its local Q coefficient slope, but no global inequality controlling their lambda-weighted selected sum follows from the formula. No eligible positive complete aggregate was found and no universal proof or counterexample was obtained."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-U1/REPORT.md",
+  "limitations": [
+    "The primary universal aggregate statement remains open; the support-fibre identity is not a sign proof.",
+    "Exact calculations were performed only on P_100 and the 91-vertex double-leaf hub tree; no exhaustive range was searched.",
+    "No Lean build was run at this search stage."
+  ]
+}

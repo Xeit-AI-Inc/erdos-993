@@ -1,0 +1,48 @@
+{
+  "worker_id": "C2-F1",
+  "cycle": 2,
+  "stage": "search",
+  "orientation": "F",
+  "status_authority": "proposed_worker_only",
+  "claims": [
+    {
+      "claim_id": "C2-F1-01",
+      "statement": "For every finite bipartite simple H, W subset V(H), a=alpha(H), and integer 1<=k<=a, if q_j counts independent j-sets meeting W, then k*q_(k+1)<=2(a-k)*q_k; moreover for a leaf application with H=G-{v,s}, W=N_G(s)\\{v}, and R=H-W, the bound strengthens to k*q_(k+1)<=2(alpha(G)-1-k)*q_k on 1<=k<=alpha(H).",
+      "scope": "Registered arbitrary tagged-shadow inequality at its stated finite bipartite quantifiers, plus the explicitly bound leaf application; no tree/favorable/residual assumptions for the first clause.",
+      "status": "proposed_informal_proof_complete",
+      "evidence_paths": ["cycles/cycle-2/C2-F1/REPORT.md"],
+      "reason": "Double-count tagged inclusion incidences. For each tagged A, all extensions lie in H-N[A], whose order is at most twice its independence number, at most 2(alpha(H)-k); each tagged B has at least k tag-preserving deletions. Leaf binding gives alpha(H)<=alpha(G)-1."
+    },
+    {
+      "claim_id": "C2-F1-02",
+      "statement": "For a finite bipartite graph G with a degree-one vertex v of support s and integer p>=1 satisfying 3p>=2alpha(G)+1, Delta_(p-1)(G-{v,s})-Delta_(p-1)(G-N_G[s])<=0 with integer zero-extension.",
+      "scope": "The proposed E993-BIPARTITE-LEAF-HIGH-TAIL-POINTWISE scope; disconnected G allowed, no favorable selector required.",
+      "status": "proposed_informal_proof_complete",
+      "evidence_paths": ["cycles/cycle-2/C2-F1/REPORT.md", "cycles/cycle-2/C2-F1/checks.json"],
+      "reason": "Set k=p-1. For p>=2 the guard implies k>=2(alpha(G)-1-k), so the tagged count inequality forces q_p<=q_(p-1), and the coefficient difference is q_p-q_(p-1). For p=1 the guard forces alpha(G)=1 and the degree-one component exhausts G, so both deletions are empty."
+    },
+    {
+      "claim_id": "C2-F1-03",
+      "statement": "For an ordinary connected tree T with integer p=alpha(T)-2, x(T)+2<=p implies alpha(T)>=7.",
+      "scope": "The proposed E993-INTERIOR-ELIGIBILITY-ALPHA-GE-SEVEN scope, with strict first descent and integer p.",
+      "status": "proposed_informal_proof_complete",
+      "evidence_paths": ["cycles/cycle-2/C2-F1/REPORT.md"],
+      "reason": "Eligibility gives alpha>=4. Alpha 4 and 5 contradict positive Delta_0 and Delta_1. If alpha=6, eligibility forces x<=2, but Delta_0, Delta_1>0 and the exact tree Delta_2 formula is nonnegative for n>=7, with n=7 and n=8 settled by the one- and two-vertex complement covers."
+    },
+    {
+      "claim_id": "C2-F1-04",
+      "statement": "The constructed path-with-arms family has exact positive marked tagged terms outside the tail guard at m=3 and m=4, equality at m=5, and exact eligible larger members at m=10 and m=20 with negative complete favorable-leaf sums.",
+      "scope": "Only the five exact constructor instances m in {3,4,5,10,20}; finite evidence, not a universal family claim.",
+      "status": "proposed_exact_finite_check",
+      "evidence_paths": ["cycles/cycle-2/C2-F1/checks.py", "cycles/cycle-2/C2-F1/checks.json", "cycles/cycle-2/C2-F1/REPORT.md"],
+      "reason": "The deterministic integer forest recurrence records alpha, strict crossing x, the unshifted selector on each original leaf, each exact local difference, and the complete selected sum; the boundary marked term also follows from z(1+2z)^m."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-F1/REPORT.md",
+  "limitations": [
+    "All statuses are worker proposals only; no formal Lean gate or controller adjudication was performed.",
+    "Finite checking covers exactly m=3,4,5,10,20 and is not a universal inference.",
+    "The pointwise sign and eligibility proof compose to the primary only if the separate eligibility statement is faithfully admitted; the primary target itself remains unchanged.",
+    "No unbounded search, sibling scratchpad, Lean build, or background job was used."
+  ]
+}

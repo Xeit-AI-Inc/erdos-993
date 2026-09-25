@@ -1,0 +1,42 @@
+{
+  "worker_id": "C2-CU-F2",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "U",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-F2-ELIGIBILITY-ALPHA-GE-SEVEN",
+    "C2-F2-FRESH-ELIGIBLE-ORDER-NINE-REPLAY"
+  ],
+  "claims": [
+    {
+      "claim_id": "C2-F2-ELIGIBILITY-ALPHA-GE-SEVEN",
+      "statement": "For every finite ordinary connected tree T, eligibility x(T)+2<=alpha(T)-2 implies alpha(T)>=7.",
+      "scope": "Original integer alpha-minus-two eligibility, strict first descent, and finite ordinary connected trees; uses the pinned r27 finite-forest bound n<=4x and exact order-7/8 tree counting.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CU-F2/REPORT.md"
+      ],
+      "reason": "The exact r27 hypotheses apply at k=x. Eligibility and n>=alpha+1 force any alpha<=6 instance to alpha=6, x=2, n in {7,8}; in both cases a maximum six-set's complement gives Delta_2>0, contradicting strict descent. The hypothetical failure has order at most 8, so no greater-than-243 test is applicable."
+    },
+    {
+      "claim_id": "C2-F2-FRESH-ELIGIBLE-ORDER-NINE-REPLAY",
+      "statement": "The named order-nine tree has alpha=7, x=3, p=5, six favorable original leaf tags, and complete sum S=-56.",
+      "scope": "Exactly the explicitly listed nine-vertex ordinary tree, with original-support deletion and neighborhood deletion, unshifted strict selector, and all six original leaf tags.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CU-F2/REPORT.md",
+        "cycles/cycle-2/C2-CU-F2/replay_target_copy.py",
+        "cycles/cycle-2/C2-CU-F2/independent_dp.py"
+      ],
+      "reason": "The copied source enumerator and an independently written deletion-neighborhood polynomial DP agree on all coefficients, selectors, individual terms, and the complete sum. The source report's separate K1,6 boundary count is wrong at rank one but does not affect this claim."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CU-F2/REPORT.md",
+  "limitations": [
+    "The source report incorrectly states i_1(K1,6)=6; the correct value is 7. Its x=3 and ineligible-boundary conclusion remain correct, as checked in cycles/cycle-2/C2-CU-F2/star_boundary.py.",
+    "The proposed universal guard depends on the pinned r27 theorem and this critique's informal tree counting; no new Lean gate was run and canonical status is unchanged.",
+    "The order-nine replay is one exact graph, not a census or universal aggregate-sign proof.",
+    "No owned background jobs remain running."
+  ]
+}

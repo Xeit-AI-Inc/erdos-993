@@ -1,0 +1,57 @@
+{
+  "worker_id": "C2-T3",
+  "cycle": 2,
+  "stage": "search",
+  "orientation": "T",
+  "status_authority": "proposed_worker_only",
+  "claims": [
+    {
+      "claim_id": "C2-T3-01",
+      "statement": "For every finite bipartite graph H, vertex set W, a=alpha(H), and integer 1<=k<=a, if q_j counts independent j-sets meeting W, then k*q_(k+1)<=2*(a-k)*q_k.",
+      "scope": "All finite bipartite simple graphs H, all W subseteq V(H), and 1<=k<=alpha(H).",
+      "status": "proposed_proved",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-T3/REPORT.md"
+      ],
+      "reason": "Double-count tagged deletion-extension pairs; each tagged (k+1)-set has at least k tag-preserving deletions, and each tagged k-set has at most 2*(alpha(H)-k) extensions by the bipartite independence-number bound."
+    },
+    {
+      "claim_id": "C2-T3-02",
+      "statement": "For a finite bipartite graph G with original degree-one vertex v and integer p>=1, put H=G-{v,s}, R=G-N[s]. If 3p>=2alpha(G)+1, then Delta_(p-1)(H)-Delta_(p-1)(R)<=0.",
+      "scope": "Finite bipartite simple G, an original degree-one vertex v with support s, and integer p>=1 under the displayed high-tail guard; no favorable or residual premise.",
+      "status": "proposed_proved",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-T3/REPORT.md"
+      ],
+      "reason": "Identify the deletion difference with q_p-q_(p-1), apply C2-T3-01 with k=p-1 when p>=2, and handle p=1 separately from the guard, which forces G=K2."
+    },
+    {
+      "claim_id": "C2-T3-03",
+      "statement": "If T is a finite connected tree, p=alpha(T)-2, x(T) is the first strict negative forward-difference index, and x(T)+2<=p, then alpha(T)>=7.",
+      "scope": "Finite connected trees with the exact integer p and strict first-descent convention in SEMANTIC-CONTRACT.md.",
+      "status": "proposed_proved",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-T3/REPORT.md"
+      ],
+      "reason": "Eligibility implies alpha>=4; alpha=4,5,6 are excluded by Delta0, Delta1, and the exact tree Delta2 formula, including the order-7 and order-8 vertex-cover cases."
+    },
+    {
+      "claim_id": "C2-T3-04",
+      "statement": "For every finite ordinary connected tree T, with integer p=alpha(T)-2 and x(T)+2<=p, the complete favorable original-leaf sum S(T,p) is nonpositive.",
+      "scope": "Exactly E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE, including the strict selector Delta_p(T-v)<0, every original-leaf tag with multiplicity, and no residual premise.",
+      "status": "proposed_proved",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-T3/REPORT.md",
+        "cycles/cycle-2/C2-T3/check_m200.py",
+        "cycles/cycle-2/C2-T3/check_m200.json"
+      ],
+      "reason": "C2-T3-03 makes 3p>=2alpha+1; C2-T3-02 then signs every original-leaf term, and hence the exact strict-selector sub-sum. A fresh order-404 exact replay checks all definitions and the complete sum but is not used as universal proof."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-T3/REPORT.md",
+  "limitations": [
+    "All claims are proposed worker results only; controller reconciliation and the required formal gate remain outstanding.",
+    "The order-404 exact replay is finite corroboration and is not universal proof evidence.",
+    "No Lean formalization or kernel verification was performed in this search role."
+  ]
+}

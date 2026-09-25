@@ -1,0 +1,72 @@
+{
+  "worker_id": "C2-AU",
+  "cycle": 2,
+  "stage": "adjudication",
+  "orientation": "N",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-CT-U2-ELIGIBILITY-PROOF",
+    "C2-CT-U2-TAGGED-SHADOW-PROOF",
+    "C2-U1-ELIGIBILITY-ALPHA-LOWER-BOUND",
+    "C2-U1-TAGGED-SHADOW-COUNT",
+    "C2-U2-TRANSPORT-AND-CONDITIONAL-COMPOSITION",
+    "C2-U3-PRIMARY-PROOF-COMPLETENESS"
+  ],
+  "claims": [
+    {
+      "claim_id": "C2-CT-U2-ELIGIBILITY-PROOF",
+      "statement": "Every eligible finite ordinary connected tree at integer p=alpha(T)-2 has alpha(T)>=7. The r27 forest-order-bound route is an informal alternate proof after exact coefficient and strict-first-descent identification; an independent direct Delta_0/Delta_1/Delta_2 tree proof closes the mathematical result without that transport.",
+      "scope": "Ordinary finite connected acyclic simple graphs, integer p=alpha(T)-2, strict first descent x, x+2<=p; informal mathematical result only. The r27-to-primary Lean carrier equality is not established here.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": ["cycles/cycle-2/C2-AU/REPORT.md"],
+      "reason": "The small-alpha exclusions are correct, but the cited r27 route must explicitly bridge coefficients and Nat.find before formal use. The report gives a self-contained direct proof with n=7 star and n=8 two-vertex-cover boundary cases, so this bridge is not a dependency of the informal result."
+    },
+    {
+      "claim_id": "C2-CT-U2-TAGGED-SHADOW-PROOF",
+      "statement": "For finite bipartite H, arbitrary W subset V(H), h=alpha(H), and integer 1<=k<=h, tagged counts obey k*q_(k+1)<=2(h-k)*q_k; this yields the high-tail original-leaf sign under its stated rank guard, with p=1 handled separately.",
+      "scope": "Finite bipartite simple H, including disconnected H and empty W; independent j-sets meeting W with zero extension; 1<=k<=alpha(H). Leaf corollary for a finite bipartite graph with an original degree-one vertex and integer p>=1 satisfying 3p>=2alpha(G)+1. Informal proof only.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-2/C2-AU/REPORT.md"],
+      "reason": "An upper tagged set has at least k tag-preserving deletions, while addable vertices of a lower tagged set lie in a bipartite closed-neighborhood complement with at most 2(h-k) vertices. At p=1 the guard forces K2 and a zero term."
+    },
+    {
+      "claim_id": "C2-U1-ELIGIBILITY-ALPHA-LOWER-BOUND",
+      "statement": "Eligibility x(T)+2<=alpha(T)-2 for an ordinary finite connected tree forces alpha(T)>=7.",
+      "scope": "Finite connected acyclic simple ordinary T; signed zero-extended independent-set differences; x is the least strict negative rank; integer p=alpha(T)-2. Informal proof only.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-2/C2-AU/REPORT.md"],
+      "reason": "Eligibility gives x<=alpha-4. Delta_0 and Delta_1 exclude alpha 4 and 5; the exact wedge-count Delta_2 formula and n=7 star/n=8 cover cases exclude alpha 6, including flat-difference endpoints."
+    },
+    {
+      "claim_id": "C2-U1-TAGGED-SHADOW-COUNT",
+      "statement": "For finite bipartite H, arbitrary W, integer a satisfying alpha(H)<=a-1, and integer k>=1, tagged counts satisfy k*q_(k+1)<=2(a-1-k)*q_k with zero extension; for any tree leaf at p=alpha(T)-2 and alpha(T)>=7, its H/R summand is nonpositive.",
+      "scope": "All finite bipartite H and W, including empty and out-of-range tagged layers, followed by original-leaf specialization in an ordinary finite tree; no selector or residual assumption for the pointwise sign. Informal proof only.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-2/C2-AU/REPORT.md"],
+      "reason": "The finite incidence count proves the bound without division; if k>alpha(H), both tagged layers vanish. For a tree leaf alpha(H)<=alpha(T)-1, and k=alpha(T)-3>=4 makes the upper extension factor at most four, so q_p<=q_(p-1)."
+    },
+    {
+      "claim_id": "C2-U2-TRANSPORT-AND-CONDITIONAL-COMPOSITION",
+      "statement": "The original-leaf H/R coefficient identities and strict high-tail rank arithmetic correctly transport the proposed tagged and eligibility lemmas to the complete first-interior sum. The two mathematical inputs now have complete informal proofs, while cross-package Lean carrier lemmas and the governed primary gate remain open; r26's top-rank residual theorem does not directly apply.",
+      "scope": "Ordinary finite connected trees at integer p=alpha(T)-2 with strict x+2<=p, original leaf tags and supports, selector Delta_p(T-v)<0, complete sum with multiplicity. Mathematical finite-set composition only, without a formal carrier award or broader-rank/RTree implication.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": ["cycles/cycle-2/C2-AU/REPORT.md"],
+      "reason": "The index p-1, R=H-W, q_p-q_(p-1), and leaf-indexed sum are exact. The origin's assessment of the auxiliaries as mathematically missing is outdated in light of the independent proofs, but the C4/C5/G1 coefficient, support, Nat/Int, and strict-first-descent Lean bridges were not supplied or checked."
+    },
+    {
+      "claim_id": "C2-U3-PRIMARY-PROOF-COMPLETENESS",
+      "statement": "At the exact eligible ordinary-tree alpha-minus-two scope, eligibility forces alpha>=7 and a bipartite tagged-set count makes every original-leaf term nonpositive; summing over the complete strict favorable leaf filter proves S(T,p)<=0 as a complete informal mathematical proof candidate.",
+      "scope": "Every finite connected acyclic simple ordinary T, integer p=alpha(T)-2, strict first descent x with x+2<=p, original degree-one leaves with original supports/neighborhoods, unshifted strict selector Delta_p(T-v)<0, all leaf tags including shared-support multiplicity; no residual premise. Governed formal proof is pending.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-2/C2-AU/REPORT.md"],
+      "reason": "The report independently proves both dependencies and the exact H/R-to-tagged coefficient identity. It signs every original-leaf term, then sums the unchanged favorable filter, including empty and repeated-support cases. Finite checks are corroboration only; the solution contract still requires the governed Lean gate for primary success."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-AU/REPORT.md",
+  "limitations": [
+    "This is a complete informal mathematical proof at the exact primary scope, not a governed Lean fidelity/kernel verification or registry award; the primary remains OPEN until its gate passes.",
+    "The r26 C4/C5 and r27 G1 cross-package coefficient, support, induced-deletion, Nat/Int, and first-descent equality lemmas are specified but were not implemented or built here; the direct informal proof does not depend on r27.",
+    "All cited computational examples and bipartite sweeps have finite stated ranges and cannot prove the universal sign; no new computation or unbounded search is claimed.",
+    "No owned background job remains running."
+  ]
+}

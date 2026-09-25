@@ -1,0 +1,29 @@
+{
+  "worker_id": "C1-T1",
+  "cycle": 1,
+  "stage": "search",
+  "orientation": "T",
+  "status_authority": "proposed_worker_only",
+  "claims": [
+    {
+      "claim_id": "C1-T1-LEAF-BRANCH-IDENTITY",
+      "statement": "For every finite tree T, original leaf v with support s, and integer k, writing H=T-{v,s} and R=T-N_T[s], the independence polynomial satisfies P_{T-v}(z)=P_H(z)+zP_R(z), hence Delta_k(T-v)=Delta_k(H)+Delta_{k-1}(R); therefore at any integer p the complete favorable-original-leaf sum is sum over leaves with Delta_p(H)+Delta_{p-1}(R)<0 of Delta_{p-1}(H)-Delta_{p-1}(R), counting each leaf tag once.",
+      "scope": "Universal exact branch recurrence and equivalent selector/summand representation for finite ordinary trees; no sign conclusion, and no restriction to p=alpha-2 is needed for the identity.",
+      "status": "proposed_proved_informal",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-T1/REPORT.md",
+        "cycles/cycle-1/C1-T1/ordinary_tree.py",
+        "cycles/cycle-1/C1-T1/evidence.py",
+        "cycles/cycle-1/C1-T1/replay.py",
+        "cycles/cycle-1/C1-T1/EXACT-REPLAYS.json"
+      ],
+      "reason": "Partition independent sets of T-v by whether they contain s; the corresponding remainder graphs are exactly H and R. Taking adjacent coefficient differences gives the identity and translating the strict favorable selector gives the aggregate representation. Exact integer replays on eligible P60 at p=28 and T60 at p=180 check all favorable leaves, summands, aggregate totals, and the selector recurrence. The lemma does not settle the target because its selector linear form and summand linear form differ."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-T1/REPORT.md",
+  "limitations": [
+    "The primary aggregate inequality S(T,alpha(T)-2)<=0 under x(T)+2<=alpha(T)-2 remains open; no proof or eligible positive complete-sum counterexample was found.",
+    "The exact replays are bounded examples and not universal proof; no global compensation inequality controlling the selector-restricted sum was derived.",
+    "No Lean build was run, in accordance with the search-stage protocol."
+  ]
+}

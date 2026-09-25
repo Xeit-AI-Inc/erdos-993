@@ -1,0 +1,31 @@
+{
+  "worker_id": "C2-CF-U3",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "F",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-U3-PRIMARY-PROOF-COMPLETENESS"
+  ],
+  "claims": [
+    {
+      "claim_id": "C2-U3-PRIMARY-PROOF-COMPLETENESS",
+      "statement": "The C2-U3 eligibility exclusion and bipartite tagged-set incidence count give a complete informal proof candidate for the exact first-interior ordinary-tree favorable-leaf aggregate inequality.",
+      "scope": "Finite connected acyclic simple ordinary trees; integer p=alpha(T)-2; first strict negative difference x with x+2<=p; all original degree-one leaf tags and original supports/neighborhoods; strict selector Delta_p(T-v)<0; signed zero-extended integer coefficients; no residual premise.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CF-U3/REPORT.md",
+        "cycles/cycle-2/C2-CF-U3/fresh_replay.py",
+        "cycles/cycle-2/C2-CF-U3/fresh_replay.json",
+        "cycles/cycle-2/C2-CF-U3/origin_300_replay.py",
+        "cycles/cycle-2/C2-CF-U3/origin_300_replay.json"
+      ],
+      "reason": "The small-alpha argument covers all eligibility-permitted ranks through alpha=6, including n=7 and n=8. The incidence count handles k=alpha-3>=4, zero-extended out-of-range ranks, and each original leaf tag separately; all favorable terms are therefore nonpositive. Standing positive local examples fail the rank guard. The origin's 1203-vertex row reproduces byte-for-byte, and a new 247-vertex exact replay corroborates the arithmetic; neither is universal evidence. Formal gate and neutral adjudication remain pending."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CF-U3/REPORT.md",
+  "limitations": [
+    "This is an informal proof critique, not a governed Lean fidelity/kernel verification or registry status award.",
+    "The 247-vertex replay is a single family instance and reuses the origin script's arithmetic routines after an assigned-scratch copy; it is bounded corroboration."
+  ]
+}

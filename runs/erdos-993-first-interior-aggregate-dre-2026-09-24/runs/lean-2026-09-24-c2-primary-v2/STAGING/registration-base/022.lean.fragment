@@ -1,0 +1,10 @@
+namespace Erdos993G1
+
+lemma isNIndepSet_pair_iff {V : Type u} (F : SimpleGraph V) [DecidableEq V] (a b : V) :
+    F.IsNIndepSet 2 {a, b} ↔ a ≠ b ∧ ¬F.Adj a b := by
+  by_cases h : a = b
+  · subst b
+    simp [SimpleGraph.isNIndepSet_iff]
+  · simp [SimpleGraph.isNIndepSet_iff, SimpleGraph.isIndepSet_iff, Set.Pairwise, h, F.adj_comm] <;> tauto
+
+end Erdos993G1

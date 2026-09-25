@@ -1,0 +1,9 @@
+# Cycle 2 leaf formalization draft
+
+The assigned `Leaf.lean` fragment compiles against the immutable `STAGING/BASE.lean` in the pinned remote Lean project. Its public declaration is `E993Interior.highTailAggregateFromShadow`, declared as a `lemma` with the exact assigned type. It assumes only the universal `hShadow` interface beyond the graph, rank, and tail premises, and proves `C5LA1.aggregate G p ≤ 0`.
+
+The fragment proves support adjacency and uniqueness for an original leaf, `H ⊆ R` for that leaf, independence and the `indepNum - 1` cap after inserting the original leaf, the exact equality between a tagged layer and the difference of original deletion counts, zero tagged layers above the cap, and nonpositivity of each original leaf term. The final sum retains the unchanged strict favorable filter and one term per original leaf vertex. No extra hypothesis, axiom, definition, `sorry`, `admit`, or `native_decide` was introduced.
+
+Draft check: `STAGING/leaf/Check.lean` is the unchanged `STAGING/BASE.lean` concatenated with `STAGING/leaf/Leaf.lean`. The command was `lake env lean <absolute STAGING/leaf/Check.lean>` from `<run>/LeanProject`, using the exact `/Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin` binaries. `Check.status.json` records exit code 0; `Check.log` is the real compiler output. The separate `Axioms.lean` check printed `[propext, Classical.choice, Quot.sound]` for the public declaration, with exit code 0; its real output is `Axioms.log`.
+
+There is no remaining leaf interface gap. The full primary theorem still requires the controller to integrate this fragment with the core universal shadow proof and guard proof, then run canonical registration, kernel verification, and independent fidelity review. This report claims only a successful isolated draft check of the stated intermediate declaration.

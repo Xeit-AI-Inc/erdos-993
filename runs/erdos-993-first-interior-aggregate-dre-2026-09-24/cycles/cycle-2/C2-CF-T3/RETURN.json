@@ -1,0 +1,65 @@
+{
+  "worker_id": "C2-CF-T3",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "F",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-T3-01",
+    "C2-T3-02",
+    "C2-T3-03",
+    "C2-T3-04"
+  ],
+  "claims": [
+    {
+      "claim_id": "C2-T3-01",
+      "statement": "For finite bipartite H, W subseteq V(H), a=alpha(H), and integer 1<=k<=a, tagged independent-set counts satisfy k*q_(k+1)<=2*(a-k)*q_k.",
+      "scope": "All finite bipartite simple graphs H, all vertex subsets W, and integer 1<=k<=alpha(H).",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CF-T3/REPORT.md"
+      ],
+      "reason": "The deletion-extension incidence count and bipartite alpha(Q)>=|Q|/2 bound are valid at every stated rank, including terminal zero extension; a matching shows sharpness."
+    },
+    {
+      "claim_id": "C2-T3-02",
+      "statement": "For finite bipartite G with degree-one v and integer p>=1, the high-tail guard 3p>=2alpha(G)+1 implies Delta_(p-1)(H_v)-Delta_(p-1)(R_v)<=0.",
+      "scope": "Finite bipartite simple G with original degree-one v and support s, H_v=G-{v,s}, R_v=G-N_G[s], integer p>=1 under the displayed guard; no residual or favorable premise.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CF-T3/REPORT.md"
+      ],
+      "reason": "The term equals q_p-q_(p-1); alpha(H_v)<=alpha(G)-1 and 3(p-1)>=2alpha(H_v) make the tagged shadow inequality sign it. The p=1 and above-degree cases vanish."
+    },
+    {
+      "claim_id": "C2-T3-03",
+      "statement": "An eligible finite connected tree with integer p=alpha(T)-2 and x(T)+2<=p has alpha(T)>=7.",
+      "scope": "Finite connected trees with first strict negative forward difference and zero extension as defined in SEMANTIC-CONTRACT.md.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CF-T3/REPORT.md"
+      ],
+      "reason": "Alpha 4 and 5 contradict positive Delta0/Delta1; alpha 6 contradicts nonnegative Delta2 from the exact tree triple count, including n=7,8 vertex-cover cases."
+    },
+    {
+      "claim_id": "C2-T3-04",
+      "statement": "Every finite ordinary connected tree with integer p=alpha(T)-2 and x(T)+2<=p has nonpositive complete favorable original-leaf sum S(T,p).",
+      "scope": "The exact E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE contract, strict original-rank selector, all original-leaf multiplicities, and no residual premise.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CF-T3/REPORT.md",
+        "cycles/cycle-2/C2-CF-T3/replay_m200.py",
+        "cycles/cycle-2/C2-CF-T3/replay_m200.json",
+        "cycles/cycle-2/C2-CF-T3/check_augmented_m201.py",
+        "cycles/cycle-2/C2-CF-T3/check_augmented_m201.json"
+      ],
+      "reason": "Eligibility forces alpha>=7, hence the high-tail guard at p=alpha-2. Every original-leaf term is nonpositive, so the exact strict-selector sum is nonpositive; an independent order-407 exact check tests shared-support multiplicity but is not universal evidence."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CF-T3/REPORT.md",
+  "limitations": [
+    "This is an informal proof audit and proposed disposition, not a governed Lean verification or registry award.",
+    "The order-404 replay and order-407 fresh check are finite evidence only; they cannot establish universality.",
+    "No independently admissible counterexample to the four stated claims was found."
+  ]
+}

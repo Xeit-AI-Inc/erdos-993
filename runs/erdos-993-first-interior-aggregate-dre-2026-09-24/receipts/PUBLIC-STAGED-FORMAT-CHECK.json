@@ -1,0 +1,12 @@
+{
+  "status": "passed_current_docs_sealed_formatting_preserved",
+  "default_diff_check_exit": 2,
+  "notices": {
+    "new blank line at EOF.": 14,
+    "trailing whitespace.": 2380
+  },
+  "affected_paths": 22,
+  "explanation": "Default git whitespace check flags CRLF CSVs, 14 preserved blank EOFs, and one trailing space in an immutable critic report. Every flagged file matches its seal or the exact verified source. Current public prose/mirrors pass the default staged check; no evidence bytes were reformatted.",
+  "current_docs_staged_diff_check_exit": 0,
+  "all_flagged_files_hash_verified": true
+}

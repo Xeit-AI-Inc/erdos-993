@@ -1,0 +1,67 @@
+{
+  "schema_version": "verityos.math.claim-distinction-review.v1",
+  "review_date": "2026-09-24",
+  "source_receipt": "receipts/PREDISPATCH-LINT.json",
+  "distinctions": [
+    {
+      "row_id": "E993-TGT-TRANSFER",
+      "claim_key": "E993-UNIV-TREE-TRS2",
+      "distinction": "not_same_claim: the open transfer target asks for some convolution-stable class between log-concavity and unimodality containing every tree sequence; the refuted TRS2 claim asserts that every tree sequence itself is log-concave. The transfer class may be weaker than TRS2, so the known non-TRS2 trees do not refute it.",
+      "approved_by": "independent operational scope reviewer /root/interior_scope_audit, 2026-09-24"
+    },
+    {
+      "row_id": "E993-COMP-AB",
+      "claim_key": "E993-BETA-TARGET",
+      "distinction": "not_same_claim: COMP-AB verifies only the conditional implication AlphaTarget AND BetaTarget implies Theorem A; it does not assert the BetaTarget antecedent. BetaTarget remains refuted by its own witness, and this implication cannot establish Theorem A through that antecedent.",
+      "approved_by": "independent operational scope reviewer /root/interior_scope_audit, 2026-09-24"
+    },
+    {
+      "row_id": "E993-LAMBDA2-CONJ",
+      "claim_key": "E993-CERT-WINDOW-LB",
+      "distinction": "not_same_claim: LAMBDA2-CONJ asks for a quantitative comonotone mode-centred box certificate with slack 2 and proportional slope at most 1/5; CERT-WINDOW-LB proves a lower bound on required centre drift and rules out a fixed-width symmetric-unimodal window. A proportional window is not a fixed-width window, and the lower-bound theorem does not prove the proposed box certificate exists.",
+      "approved_by": "independent operational scope reviewer /root/interior_scope_audit, 2026-09-24"
+    },
+    {
+      "row_id": "E993-PAIR-ALLLEAF-WINDOW",
+      "claim_key": "E993-PAIR-C1-IMPLIES-TARGET",
+      "distinction": "not_same_claim: ALLLEAF-WINDOW is an open universal inequality for every forest-leaf pair and is the type of antecedent the C1 implication needs; PAIR-C1-IMPLIES-TARGET verifies only that a universal C1 motion bound would imply the forest and tree targets, together with the crossing-is-last-mode bridge. Its antecedent is explicitly open.",
+      "approved_by": "independent operational scope reviewer /root/interior_scope_audit, 2026-09-24"
+    },
+    {
+      "row_id": "E993-PAIR-NETZERO",
+      "claim_key": "E993-PAIR-ALPHA-SANDWICH",
+      "distinction": "not_same_claim: PAIR-NETZERO records a bounded abstract-witness realizability chain and its unresolved generalization; it mentions that the alpha-sandwich condition is inert in that chain. PAIR-ALPHA-SANDWICH is the verified inequality between independence numbers of the two deletion graphs for realizable leaf pairs. The bounded chain is neither that inequality nor its negation.",
+      "approved_by": "independent operational scope reviewer /root/interior_scope_audit, 2026-09-24"
+    },
+    {
+      "row_id": "E993-R25-COVER-THRESHOLD-MIN-D-5-FOREST",
+      "claim_key": "E993-R25-COVER-DIAGONAL-D6-SIGN",
+      "distinction": "not_same_claim: the verified forest theorem assumes tau(F) <= min(d,5), so at d=6 it assumes tau<=5. The refuted diagonal claim assumes tau<=6 at d=6. The row cites the refutation to state that its threshold is sharp; it does not assert the false tau<=6 extension.",
+      "approved_by": "independent operational scope reviewer /root/interior_scope_audit, 2026-09-24"
+    },
+    {
+      "row_id": "E993-R25-THIN-FOREST-NO-RECOVERY-TAU-LE-10",
+      "claim_key": "E993-UNIV-TREE-TRS2",
+      "distinction": "not_same_claim: the row concerns forests whose every component is a thin tree with cover number at most 10 and inherits the stated order-census conditionality. The refuted key claims TRS2 for every finite tree without a thinness or cover restriction. Restricted componentwise log-concavity and its conditional convolution do not revive universal tree TRS2.",
+      "approved_by": "independent operational scope reviewer /root/interior_scope_audit, 2026-09-24"
+    },
+    {
+      "row_id": "E993-R25-STRATUM-COROLLARY-F-D12-REFUTED",
+      "claim_key": "E993-R25-STRATUM-DEPTH-COROLLARY-F",
+      "distinction": "not_same_claim: STRATUM-DEPTH-COROLLARY-F proves its sign only for d in {2,...,11}; the refuted row tests the extension to d=12 and supplies witnesses at k=r-2. A counterexample beyond the finite proved range does not regress the theorem within that range.",
+      "approved_by": "independent operational scope reviewer /root/interior_scope_audit, 2026-09-24"
+    },
+    {
+      "row_id": "E993-R25-THIN-FOREST-NO-RECOVERY-TAU-LE-11",
+      "claim_key": "E993-UNIV-TREE-TRS2",
+      "distinction": "not_same_claim: the row concerns forests whose components are thin trees with cover number at most 11, under its stated conditional tree-class evidence and per-component transfer. The refuted key claims TRS2 for all finite trees. The cover-limited thin-tree class excludes the unrestricted order-26 non-log-concave tree witnesses and does not assert universal tree TRS2.",
+      "approved_by": "independent operational scope reviewer /root/interior_scope_audit, 2026-09-24"
+    },
+    {
+      "row_id": "E993-R26-TOP-RANK-RESIDUAL-SIGN-STRICT",
+      "claim_key": "E993-R26-TOP-RANK-N2-LE-M",
+      "distinction": "not_same_claim: the verified-status strict residual sign is an informal inequality for the complete top-rank aggregate S. The refuted key is the auxiliary bound N_2<=M. The strict-sign row explicitly uses N_2<=k_2 M and notes N_2<=M only in the ell=3 subcase where k_2<=1; it never asserts the false general bound.",
+      "approved_by": "independent operational scope reviewer /root/interior_scope_audit, 2026-09-24"
+    }
+  ]
+}

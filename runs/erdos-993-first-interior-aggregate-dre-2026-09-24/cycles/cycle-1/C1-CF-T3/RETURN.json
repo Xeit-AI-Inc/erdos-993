@@ -1,0 +1,41 @@
+{
+  "worker_id": "C1-CF-T3",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "F",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": ["C1-T3-01", "C1-T3-02"],
+  "claims": [
+    {
+      "claim_id": "C1-T3-01",
+      "statement": "The coefficient deletion recurrence, strict-selector expression, all-or-none support fibres, and multiplicity-weighted regrouping in the incoming claim hold for every finite ordinary tree at every integer rank under the frozen definitions.",
+      "scope": "Exact identity only; no aggregate sign or residual hypothesis.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-1/C1-CF-T3/REPORT.md", "cycles/cycle-1/C1-CF-T3/origin_probe_replay.json"],
+      "reason": "A disjoint partition by support membership proves the recurrence at every integer rank; leaf permutations at a common support prove fibre equality. The replay has zero recurrence and fibre mismatches on the checked family."
+    },
+    {
+      "claim_id": "C1-T3-02",
+      "statement": "For every eligible finite ordinary tree, the complete favorable-original-leaf aggregate at p=alpha(T)-2 is nonpositive.",
+      "scope": "Primary unrestricted claim E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE.",
+      "status": "proposed_unresolved",
+      "evidence_paths": ["cycles/cycle-1/C1-CF-T3/REPORT.md"],
+      "reason": "The exact recurrence leaves an unsigned selected weighted sum. Neither the origin probe nor this critique supplies a universal sign proof or eligible positive complete counterexample."
+    },
+    {
+      "claim_id": "C1-CF-T3-01",
+      "statement": "For the constructed T_m family with m>=1, alpha=3m+2, p=3m, all 3m+1 original leaves are favorable at p, the marked and star summands are respectively 3m-C(3m,2) and 3m-C(3m,2)+3-6m, and the complete sum is -(9m/2)(3m^2+2m-3)<0.",
+      "scope": "Exact family formula at p=alpha-2; eligibility verified only for m=22,60,100, with no claim about arbitrary trees.",
+      "status": "proposed_exact_identity",
+      "evidence_paths": ["cycles/cycle-1/C1-CF-T3/REPORT.md", "cycles/cycle-1/C1-CF-T3/independent_family_check.py", "cycles/cycle-1/C1-CF-T3/independent_family_check.json"],
+      "reason": "Root-membership factorization gives exact independence polynomials after each leaf deletion; top-two coefficient extraction yields strict selectors and local summands, then multiplicity gives the closed aggregate."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CF-T3/REPORT.md",
+  "limitations": [
+    "The primary inequality remains unresolved; no eligible positive complete aggregate or universal proof was found.",
+    "Independent numerical verification and first-descent checks cover only m=22,60,100; the closed sign formula is restricted to the stated T_m family.",
+    "The origin-script replay shares the origin implementation and is not an independent validation of its evaluator.",
+    "No Lean build was assigned or run, and all owned jobs have stopped."
+  ]
+}

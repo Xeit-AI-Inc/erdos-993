@@ -1,0 +1,42 @@
+{
+  "worker_id": "C1-CF-U1",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "F",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-U1-PRIMARY-INTERIOR-AGGREGATE-STATUS",
+    "C1-U1-SUPPORT-FIBRE-POLYNOMIAL-IDENTITY"
+  ],
+  "claims": [
+    {
+      "claim_id": "C1-U1-PRIMARY-INTERIOR-AGGREGATE-STATUS",
+      "statement": "The exact unrestricted first-interior favorable-original-leaf aggregate at p=alpha(T)-2 and x(T)+2<=p remains open on the assigned evidence.",
+      "scope": "All finite ordinary trees under SEMANTIC-CONTRACT.md, with no residual premise; status of this search return only.",
+      "status": "proposed_unresolved",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CF-U1/REPORT.md",
+        "cycles/cycle-1/C1-CF-U1/independent_replay.json"
+      ],
+      "reason": "The support-fibre identity has no global sign implication; both independently replayed eligible examples have negative complete sums. No universal proof or eligible positive complete-sum counterexample, let alone a formal gate, is supplied."
+    },
+    {
+      "claim_id": "C1-U1-SUPPORT-FIBRE-POLYNOMIAL-IDENTITY",
+      "statement": "For every original support s with lambda_s leaf tags, H_s=(1+z)^(lambda_s-1) product_u I(C_{s,u}), R_s=product_u I(C_{s,u}-u), I(T-v)=H_s+zR_s for each tag v, with the stated selector and lambda_s-weighted Q_s-slope summand identities.",
+      "scope": "All finite ordinary trees and integer ranks p, zero-extended coefficients; no residual condition.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CF-U1/REPORT.md",
+        "cycles/cycle-1/C1-CF-U1/independent_replay.py",
+        "cycles/cycle-1/C1-CF-U1/independent_replay.json"
+      ],
+      "reason": "Direct partition by membership of s proves each polynomial and coefficient formula. The proof includes empty products, low-order trees, integer zero extension, and all original leaf multiplicities; independent closed-form replay matches both origin examples."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CF-U1/REPORT.md",
+  "limitations": [
+    "The identity is established informally and has no Lean award in this critique stage.",
+    "Independent arithmetic covers exactly P_100 and the specified 91-vertex double-leaf hub tree; no exhaustive range or general sign proof is claimed.",
+    "The universal primary aggregate remains open on the assigned evidence; no formal gate was run."
+  ]
+}

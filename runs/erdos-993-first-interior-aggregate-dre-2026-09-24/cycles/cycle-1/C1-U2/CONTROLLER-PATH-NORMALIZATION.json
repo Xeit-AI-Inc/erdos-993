@@ -1,0 +1,15 @@
+{
+  "worker_id": "C1-U2",
+  "original_return": "cycles/cycle-1/C1-U2/RETURN.json",
+  "normalized_return": "cycles/cycle-1/C1-U2/RETURN-NORMALIZED.json",
+  "changes": [
+    {
+      "field": "report_path",
+      "before": "scratchpad/C1-U2/REPORT.md",
+      "after": "cycles/cycle-1/C1-U2/REPORT.md"
+    }
+  ],
+  "report_bytes_identical": true,
+  "claim_content_unchanged": true,
+  "reason": "Worker report_path retained scratch prefix; schema passed existence check but exact downstream pinning correctly failed. Protocol permits separate controller path-normalized return. Original sealed bytes retained."
+}

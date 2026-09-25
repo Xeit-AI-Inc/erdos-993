@@ -1,0 +1,85 @@
+{
+  "role": "FINAL-ASTRA-REVIEW",
+  "model": "gpt-6-astra",
+  "reasoning_effort": "high",
+  "decision": "accept_primary_decisive_close",
+  "primary_blockers": [],
+  "novelty_claimed": false,
+  "source_pins_checked": 31,
+  "source_pins_match": true,
+  "receipt_dependency_hashes_checked": 7,
+  "receipt_dependency_hashes_match": true,
+  "additional_sources_used": [
+    "runs/lean-2026-09-24-c2-primary-v2/RECEIPTS/dependency-authority.json",
+    "runs/lean-2026-09-24-c2-primary-v2/RECEIPTS/formalization.json",
+    "runs/lean-2026-09-24-c2-primary-v2/RECEIPTS/informal-audit.json",
+    "runs/lean-2026-09-24-c2-primary-v2/RECEIPTS/reviewer-assignment.json",
+    "runs/lean-2026-09-24-c2-primary-v2/RECEIPTS/theorem-contract.json",
+    "runs/lean-2026-09-24-c2-primary-v2/EVIDENCE/axioms.txt",
+    "runs/lean-2026-09-24-c2-primary-v2/EVIDENCE/build.log"
+  ],
+  "additional_source_purpose": "Read-only verification of directly referenced receipt and kernel-log hashes; no new build or experiment.",
+  "primary": {
+    "claim_key": "E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE",
+    "declaration": "E993Interior.firstInteriorAggregate",
+    "workflow_status": "formally_verified",
+    "source_sha256": "8d864da290947d75ac0cb52644b8b5336a19076878fcb11eeed552e6a118d7a9",
+    "exact_scope": "All finite ordinary connected acyclic simple graphs; integer p=alpha(T)-2 and first strict descent x(T)+2<=p; complete strict original-rank favorable original-leaf sum with original H/R deletions and leaf multiplicity; no residual premise.",
+    "award_only_this_key": true
+  },
+  "early_close": {
+    "accepted": true,
+    "completed_cycles": 2,
+    "maximum_cycles": 6,
+    "reason": "Exact frozen primary resolved through all governed gates; no additional search cycle is needed."
+  },
+  "occurrence_reconciliation": {
+    "total": 53,
+    "cycle_1": 27,
+    "cycle_2": 26,
+    "unique_source_pointers": 53,
+    "original_fields_exact_match": true,
+    "primary_exact_occurrences": 7,
+    "auxiliary_exact_occurrences": 11,
+    "other_occurrences": 35,
+    "historical_statuses_preserved": true
+  },
+  "required_corrections": [
+    {
+      "id": "FINAL-CLARIFY-MODEL-BRIDGE",
+      "severity": "publication_scope_clarification",
+      "blocks_primary_close": false,
+      "source": "control-proposals/C2-CONTROLLER-ROOTED-FOREST-NOTE.md final sentence",
+      "correction": "The ordinary all-rank aggregate needs no ordinary-to-governed-model bridge. Such a bridge is additionally required when transferring an ordinary theorem to governed E993-BETA-AGG. Clarify in terminal/public interpretation; do not mutate the sealed note."
+    }
+  ],
+  "controller_deductions": {
+    "high_tail_p_ge_2": "accepted_as_mathematics_and_compiled_internal_helper_not_separate_award",
+    "alpha_minus_d": "correct iff alpha>=3d+1, retain p>=2 or discharge from stated d domain",
+    "eligible_nonresidual_top_rank": "informally_confirmed: eligibility excludes alpha<=3, so alpha>=4 makes high-tail guard; separate contract required",
+    "one_root_per_H_component": "confirmed, empty H vacuous; does not imply eligibility or all-window pointwise sign",
+    "rooted_matching_formula": "confirmed q_k=C(h,k)*(2^k-1); stress example only",
+    "new_deficit_identity": "unawarded analytical direction only; no lower-region budget proved"
+  },
+  "separate_auxiliary_keys_remain_open": [
+    "E993-BIPARTITE-TAGGED-SHADOW-BOUND",
+    "E993-BIPARTITE-LEAF-HIGH-TAIL-POINTWISE",
+    "E993-INTERIOR-ELIGIBILITY-ALPHA-GE-SEVEN"
+  ],
+  "broader_awards": [],
+  "prioritized_next_work": [
+    "Separately certify reusable uniform high-tail/auxiliary statements and the eligible non-residual top-rank corollary.",
+    "Target complete selected aggregate compensation below 3p>=2alpha+1 using actual rooted forest structure, exact deficit budgets, and existing positive-local controls.",
+    "Close only the model and implication bridges needed for explicit downstream governed beta or unimodality objectives."
+  ],
+  "terminal_plan": "accepted_subject_to_scope_clarification_and_controller_execution_checks",
+  "publication_already_verified_by_this_review": false,
+  "constraints_observed": {
+    "canonical_mutations": false,
+    "new_experiment": false,
+    "new_lean_build": false,
+    "subagents": false,
+    "writes_only_assigned_scratchpad": true
+  },
+  "report_path": "scratchpad/FINAL-ASTRA-REVIEW/FINAL-ANALYSIS.md"
+}

@@ -1,0 +1,65 @@
+{
+  "worker_id": "C2-CT-F1",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "T",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-F1-01",
+    "C2-F1-02",
+    "C2-F1-03",
+    "C2-F1-04"
+  ],
+  "claims": [
+    {
+      "claim_id": "C2-F1-01",
+      "statement": "The tagged-shadow inequality k q_(k+1) <= 2(alpha(H)-k) q_k holds for finite bipartite H, arbitrary W, and 1<=k<=alpha(H); the leaf-bound application with alpha(G)-1 also holds.",
+      "scope": "Exactly the incoming arbitrary finite bipartite tagged-count and explicitly bound leaf-application scopes; no selector or tree assumption on the first clause.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-2/C2-CT-F1/REPORT.md"],
+      "reason": "Independent two-sided incidence audit verifies the extension order bound and at least k tag-preserving deletions, including empty W and k=alpha(H). Leaf binding follows because v extends every independent set of H."
+    },
+    {
+      "claim_id": "C2-F1-02",
+      "statement": "For finite bipartite G and a degree-one vertex v, the high-tail guard 3p>=2alpha(G)+1 at integer p>=1 makes Delta_(p-1)(H_v)-Delta_(p-1)(R_v)<=0.",
+      "scope": "Exactly the incoming finite bipartite leaf scope, disconnected graphs included, with no favorable or residual premise.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-2/C2-CT-F1/REPORT.md"],
+      "reason": "The signed difference is q_p-q_(p-1). For p>=2 the shadow bound and guard imply q_p<=q_(p-1); p=1 is separately discharged by alpha(G)=1 and H_v=R_v=empty."
+    },
+    {
+      "claim_id": "C2-F1-03",
+      "statement": "An ordinary connected tree eligible at integer p=alpha(T)-2 has alpha(T)>=7.",
+      "scope": "Exactly the incoming first-strict-descent eligibility guard lemma; no independent aggregate or no-recovery assertion.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-2/C2-CT-F1/REPORT.md"],
+      "reason": "Alpha 4 and 5 are excluded by positive Delta_0 and Delta_1. For alpha 6, an exact independent-triple count gives nonnegative Delta_2 at n>=9 and the n=7,8 vertex-cover cases."
+    },
+    {
+      "claim_id": "C2-F1-04",
+      "statement": "The five path-with-arms rows m=3,4,5,10,20 have the incoming stated boundary terms, eligibility and exact complete sums.",
+      "scope": "Exactly the incoming five finite constructor instances, without universal-family or primary-counterexample inference.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CT-F1/REPORT.md",
+        "cycles/cycle-2/C2-CT-F1/independent_family.py",
+        "cycles/cycle-2/C2-CT-F1/independent_family.json"
+      ],
+      "reason": "Independently derived exact generating polynomials reproduce the five source rows and verify an additional eligible order-244 member with all 121 original leaf tags selected and a negative complete sum."
+    },
+    {
+      "claim_id": "C2-CT-F1-01",
+      "statement": "For every finite ordinary connected tree T, integer p=alpha(T)-2 and x(T)+2<=p imply the complete favorable-original-leaf aggregate S(T,p)<=0.",
+      "scope": "Primary E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE exactly as in the semantic and solution contracts; no residual hypothesis; informal implication only.",
+      "status": "proposed_informal_proof_complete",
+      "evidence_paths": ["cycles/cycle-2/C2-CT-F1/REPORT.md"],
+      "reason": "Eligibility gives alpha>=7, hence p=alpha-2 satisfies the high-tail guard. Every original leaf term is nonpositive by the bipartite pointwise lemma, and summing the complete selected set with multiplicity preserves the sign. No governed Lean gate was run."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CT-F1/REPORT.md",
+  "limitations": [
+    "All dispositions and the new primary implication are proposed informal worker findings, not controller adjudications or governed Lean awards.",
+    "The exact computational check covers only m in {3,4,5,10,20,120}; it is not used as a universal proof.",
+    "No Lean build was authorized or run, and no owned background jobs remain."
+  ]
+}

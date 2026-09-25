@@ -1,0 +1,53 @@
+{
+  "worker_id": "C2-CU-T3",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "U",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-T3-01",
+    "C2-T3-02",
+    "C2-T3-03",
+    "C2-T3-04"
+  ],
+  "claims": [
+    {
+      "claim_id": "C2-T3-01",
+      "statement": "For finite bipartite H, W subseteq V(H), a=alpha(H), and 1<=k<=a, tagged independent-set counts satisfy k*q_(k+1)<=2*(a-k)*q_k.",
+      "scope": "All finite bipartite simple H, including disconnected graphs and empty W, with integer 1<=k<=alpha(H).",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-2/C2-CU-T3/REPORT.md"],
+      "reason": "The deletion-extension incidence count and bipartite color-class bound close every stated case, including k=a and empty W."
+    },
+    {
+      "claim_id": "C2-T3-02",
+      "statement": "For bipartite G with an original leaf v and p>=1, 3p>=2alpha(G)+1 implies Delta_(p-1)(H_v)-Delta_(p-1)(R_v)<=0.",
+      "scope": "All finite bipartite simple G with a degree-one vertex in G; integer p>=1 under the explicit high-tail guard; no selector or residual premise.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-2/C2-CU-T3/REPORT.md"],
+      "reason": "The tagged-count binding and rank arithmetic are exact; p=1 forces G=K2, while p>=2 follows from C2-T3-01 or zero extension."
+    },
+    {
+      "claim_id": "C2-T3-03",
+      "statement": "An eligible connected tree with integer p=alpha(T)-2 and x(T)+2<=p has alpha(T)>=7.",
+      "scope": "Finite ordinary connected trees and first strict descent x(T) as defined in SEMANTIC-CONTRACT.md.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-2/C2-CU-T3/REPORT.md"],
+      "reason": "The exact Delta_0, Delta_1, Delta_2 arguments exclude alpha=4,5,6, including the n=7 star and n=8 two-vertex-cover boundaries."
+    },
+    {
+      "claim_id": "C2-T3-04",
+      "statement": "Every eligible ordinary connected tree has nonpositive complete favorable original-leaf sum at p=alpha(T)-2.",
+      "scope": "Exactly E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE: strict selector at original p, all original leaf tags with multiplicity, no residual premise.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-2/C2-CU-T3/REPORT.md", "cycles/cycle-2/C2-CU-T3/origin_replay_copy.py", "cycles/cycle-2/C2-CU-T3/origin_replay_copy.json", "cycles/cycle-2/C2-CU-T3/replay_246.py", "cycles/cycle-2/C2-CU-T3/replay_246.json"],
+      "reason": "C2-T3-03 makes the high-tail guard automatic, C2-T3-02 signs each original-leaf term, and summation over the complete strict-selector set preserves the sign. Exact 404- and 246-vertex replays corroborate bindings but are not universal proof."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CU-T3/REPORT.md",
+  "limitations": [
+    "These dispositions assess informal proofs only; the primary formal gate was not run and no canonical status is awarded.",
+    "The larger replays cover exactly two constructed trees, not all eligible trees.",
+    "No Lean build was authorized for this critique role."
+  ]
+}

@@ -1,0 +1,436 @@
+{
+  "status": "read_only_preflight_passed_independent_review_pending",
+  "adapter_sha256": "1742325a6b654743e2f47dd0885993b0e96df939f45710147a1444b202a8bfab",
+  "original_formalization_sha256": "f19e8a58d6d25fe8a8eae1a87d243575946c4e1ab55c7d244860877f6fad0982",
+  "original_kernel_sha256": "37482a2dd78ed5646c54c38b480f350a1656d17b6088bd357a6a6f8f9723d4b5",
+  "base_entries": [
+    {
+      "entry": 1,
+      "kind": "definition",
+      "name": "C4LA1.vertexDeletionIndepSetCount",
+      "source": "STAGING/registration-base/001.lean.fragment",
+      "source_sha256": "7e0a588e243735a611c919ea1080816911a3e27e4523478af0c0f560ce1b3b48",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 2,
+      "kind": "definition",
+      "name": "C4LA1.vertexDeletionForwardDifference",
+      "source": "STAGING/registration-base/002.lean.fragment",
+      "source_sha256": "c2da50eb16ee788c439b146577efeedd7dd42811c6943fb437585edcf63b5880",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 3,
+      "kind": "definition",
+      "name": "C4LA1.IsFavorableAt",
+      "source": "STAGING/registration-base/003.lean.fragment",
+      "source_sha256": "25d8f7d274f9080468bf6d46acc6db3d4a469c2e399e7faee6cdcee24290a0db",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 4,
+      "kind": "definition",
+      "name": "C4LA1.IsGraphLeaf",
+      "source": "STAGING/registration-base/004.lean.fragment",
+      "source_sha256": "65acd314d3bfd74aca476e00dd8866434c67682b627bce5e105d372a556f7ae5",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 5,
+      "kind": "definition",
+      "name": "C5LA1.support",
+      "source": "STAGING/registration-base/005.lean.fragment",
+      "source_sha256": "8e1e1a689393f555eb5c216207b1368c7415a8543c569884b2fc86954b7bc2b4",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 6,
+      "kind": "definition",
+      "name": "C5LA1.leafSet",
+      "source": "STAGING/registration-base/006.lean.fragment",
+      "source_sha256": "78ec65517bde90cc2fc5e542fc7c60d6a5147b243b74b9ac3de33d4efd1df697",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 7,
+      "kind": "definition",
+      "name": "C5LA1.leafDegree",
+      "source": "STAGING/registration-base/007.lean.fragment",
+      "source_sha256": "ccfc9b2f549aa8c9986931152d249096ce49e3ccd3b67f4afd8678a749d93a68",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 8,
+      "kind": "definition",
+      "name": "C5LA1.H",
+      "source": "STAGING/registration-base/008.lean.fragment",
+      "source_sha256": "55f37d9161901d6006e571cf548c4e56675c9d786a1aba83e7889ad9d443224d",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 9,
+      "kind": "definition",
+      "name": "C5LA1.R",
+      "source": "STAGING/registration-base/009.lean.fragment",
+      "source_sha256": "a0407d82ab112a65a0f9d85970e9d6217b66201680cc079a4ba13751e53dc6b8",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 10,
+      "kind": "definition",
+      "name": "C5LA1.indepSetsAvoiding",
+      "source": "STAGING/registration-base/010.lean.fragment",
+      "source_sha256": "ac0e331eec99650eca7a18e9fe98829bb5495850685b8f31936169f0a6d8e368",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 11,
+      "kind": "definition",
+      "name": "C5LA1.indepSetCount",
+      "source": "STAGING/registration-base/011.lean.fragment",
+      "source_sha256": "e22635d8697e49b38dd521080f34c3eefe56a93964120c70f53ad9899b4a7f71",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 12,
+      "kind": "definition",
+      "name": "C5LA1.forwardDifferenceDel",
+      "source": "STAGING/registration-base/012.lean.fragment",
+      "source_sha256": "60bd8efcc88e8e511a7caacac5867f7845243ccab08f1660e8c3962af544dd8f",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 13,
+      "kind": "definition",
+      "name": "C5LA1.aggregate",
+      "source": "STAGING/registration-base/013.lean.fragment",
+      "source_sha256": "d66e776c5cf49b2a78a2d9713e4a41de2cbaf5de0af7b6d580075064d1daea8b",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 14,
+      "kind": "definition",
+      "name": "C5LA1.crossingIndex",
+      "source": "STAGING/registration-base/014.lean.fragment",
+      "source_sha256": "378868ab2e660af8a36ea0b1045c55bc60f8383dca3d31dd85c4b52fa8a898fb",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 15,
+      "kind": "definition",
+      "name": "Erdos993G1.indepCount",
+      "source": "STAGING/registration-base/015.lean.fragment",
+      "source_sha256": "f6bc96fd41a76a97b28a866a483e2b1d637d371832690897422edeeb9b65bc2b",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 16,
+      "kind": "definition",
+      "name": "Erdos993G1.coeff",
+      "source": "STAGING/registration-base/016.lean.fragment",
+      "source_sha256": "15ce5e3474a249e2ae5d727a1012a8f6bea52cbbf8188b13cfe247eb844d5cf8",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 17,
+      "kind": "definition",
+      "name": "Erdos993G1.delta",
+      "source": "STAGING/registration-base/017.lean.fragment",
+      "source_sha256": "d7dc776c79754ed209810ad69194b3b65d71e3bf718124b0133c53d1bee1a42c",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 18,
+      "kind": "definition",
+      "name": "E993Interior.taggedFamily",
+      "source": "STAGING/registration-base/018.lean.fragment",
+      "source_sha256": "10402bf0b99a801e99b439ec5fe328ed9fff0369071c924f3b1f4ecbbbeb2a95",
+      "original_lexical_failure": "source does not contain the registered definition declaration E993Interior.taggedFamily",
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 19,
+      "kind": "lemma",
+      "name": "Erdos993G1.indepCount_eq_card_indepSetFinset",
+      "source": "STAGING/registration-base/019.lean.fragment",
+      "source_sha256": "01ee774fedf7bb37cb52000e541f0c8196f3882ce0e4c5a77cc46e05ba98e876",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 20,
+      "kind": "lemma",
+      "name": "Erdos993G1.coeff_nat",
+      "source": "STAGING/registration-base/020.lean.fragment",
+      "source_sha256": "91c74d915628f89477cb21d889b1e6cb464d34247520df6084260b72ec796440",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 21,
+      "kind": "lemma",
+      "name": "Erdos993G1.delta_nat",
+      "source": "STAGING/registration-base/021.lean.fragment",
+      "source_sha256": "61f3c4d43f5847c9c65da6c606c0fa3083078cfbc394be9e5d90b14463c042a9",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 22,
+      "kind": "lemma",
+      "name": "Erdos993G1.isNIndepSet_pair_iff",
+      "source": "STAGING/registration-base/022.lean.fragment",
+      "source_sha256": "a5eb6d6e8d552c64fa2cb4001d5f440637a38ef7c2e15e179c1eaaab1db9d412",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 23,
+      "kind": "lemma",
+      "name": "Erdos993G1.sym2_toFinset_injective",
+      "source": "STAGING/registration-base/023.lean.fragment",
+      "source_sha256": "d90c2a73eb34028360b6e19de80ccb0f42b1901ef4a1fec0e9cc0281ba551a02",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 24,
+      "kind": "lemma",
+      "name": "Erdos993G1.indepSetFinset_two_eq",
+      "source": "STAGING/registration-base/024.lean.fragment",
+      "source_sha256": "9a618f5577e807ae3ba07edfc6fb09ddfe732dc3bca7f5260288a798c219a0d1",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 25,
+      "kind": "lemma",
+      "name": "Erdos993G1.indepCount_two_add_edges",
+      "source": "STAGING/registration-base/025.lean.fragment",
+      "source_sha256": "889082ae5e0ef42ec09114ff404a94b0e30b0f5d9d2f4e621868328930e53ce3",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 26,
+      "kind": "lemma",
+      "name": "Erdos993G1.indepSetFinset_eq_filter_powersetCard",
+      "source": "STAGING/registration-base/026.lean.fragment",
+      "source_sha256": "5dae608f7a4c0080d5baf5c3d9c7f348b9ca8c8fe0696a8ff41609ad9715e16b",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 27,
+      "kind": "lemma",
+      "name": "Erdos993G1.card_nonindep_pairs",
+      "source": "STAGING/registration-base/027.lean.fragment",
+      "source_sha256": "6e86164cc77740b70b633979f1bb9f55b1379ed261467391fe51ffb0836f3fcf",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 28,
+      "kind": "lemma",
+      "name": "Erdos993G1.sum_card_filter_swap",
+      "source": "STAGING/registration-base/028.lean.fragment",
+      "source_sha256": "8a32f504cb65462cc407e7d76e8cfa05f1df7f218b7072b70414f24aba94a68f",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 29,
+      "kind": "lemma",
+      "name": "Erdos993G1.sum_nonindep_pair_incidence",
+      "source": "STAGING/registration-base/029.lean.fragment",
+      "source_sha256": "bafc19d498fd73893dbbd27856e681905568a5a1ed659a421802e2d1f4c4b1d9",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 30,
+      "kind": "lemma",
+      "name": "Erdos993G1.sum_indep_indicator",
+      "source": "STAGING/registration-base/030.lean.fragment",
+      "source_sha256": "967e8cea5583894061db4c306ff05690dfe200422d9c6fd62d559a8ffbb1b3a8",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 31,
+      "kind": "lemma",
+      "name": "Erdos993G1.triple_local_identity",
+      "source": "STAGING/registration-base/031.lean.fragment",
+      "source_sha256": "b2a3d62321344a280924b2701b63fda6abb7f1fd6e8bba69fd46b6fc7538fbe7",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 32,
+      "kind": "lemma",
+      "name": "Erdos993G1.indepSetFinset_three_incidence",
+      "source": "STAGING/registration-base/032.lean.fragment",
+      "source_sha256": "e75d6c9bdb5332d9efa9c20535c35c0f047fcbf29add7232eaabf570bdb871a2",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 33,
+      "kind": "lemma",
+      "name": "Erdos993G1.sum_triple_centered_neighbor_pairs",
+      "source": "STAGING/registration-base/033.lean.fragment",
+      "source_sha256": "2d8c865096680299876ca4ee7a094c41cf849dd15d7c4ac33ae166f43d34e549",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 34,
+      "kind": "lemma",
+      "name": "Erdos993G1.indepCount_three_add_edge_incidence",
+      "source": "STAGING/registration-base/034.lean.fragment",
+      "source_sha256": "2f67af0812ec6608bd511d62e5579e86d21d3d59da08da663d11a124768a627e",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 35,
+      "kind": "lemma",
+      "name": "Erdos993G1.forest_card_edges_add_components",
+      "source": "STAGING/registration-base/035.lean.fragment",
+      "source_sha256": "7eef4f723871eb13f3132efb877cda06e5b4a7498589fca0a012eb49339ea183",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 36,
+      "kind": "lemma",
+      "name": "Erdos993G1.components_card_pos_of_card_pos",
+      "source": "STAGING/registration-base/036.lean.fragment",
+      "source_sha256": "2948f2bea2afbc682160cd1afae04ff4f83f519d4413e437dddd787c6d33f3a8",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 37,
+      "kind": "lemma",
+      "name": "Erdos993G1.degreeDefect_nonneg",
+      "source": "STAGING/registration-base/037.lean.fragment",
+      "source_sha256": "e13b00906721b8a815d185d3bc4f38148fccc231d200b3bb820579c0f05fdb8f",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 38,
+      "kind": "lemma",
+      "name": "Erdos993G1.degreeChoose_sum_lower",
+      "source": "STAGING/registration-base/038.lean.fragment",
+      "source_sha256": "990ee7b780b0a7a0c7c6a7c34cf026d13ded3d7de15d826aec6ea560dc1bff35",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 39,
+      "kind": "lemma",
+      "name": "Erdos993G1.scaledChooseTwo",
+      "source": "STAGING/registration-base/039.lean.fragment",
+      "source_sha256": "998f5e2749af9a08a08bf161dcce06d9fe4036299593a66572a2f1d12eee0ca4",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    },
+    {
+      "entry": 40,
+      "kind": "lemma",
+      "name": "Erdos993G1.scaledChooseThree",
+      "source": "STAGING/registration-base/040.lean.fragment",
+      "source_sha256": "d6f3427951f65a5d5b754f7876b5fa0b8e855ce52dfa70173a4ab26edf87aff0",
+      "original_lexical_failure": null,
+      "compatible_reader_preserves_bytes": true
+    }
+  ],
+  "predicate_tests": [
+    {
+      "kind": "definition",
+      "name": "N.f",
+      "input": "namespace N\nnoncomputable def f : Nat := 0\nend N",
+      "expected": true,
+      "observed": true
+    },
+    {
+      "kind": "definition",
+      "name": "N.f",
+      "input": "def N.f : Nat := 0",
+      "expected": true,
+      "observed": true
+    },
+    {
+      "kind": "lemma",
+      "name": "N.f",
+      "input": "lemma f : True := True.intro",
+      "expected": true,
+      "observed": true
+    },
+    {
+      "kind": "theorem",
+      "name": "N.f",
+      "input": "theorem f : True := True.intro",
+      "expected": true,
+      "observed": true
+    },
+    {
+      "kind": "lemma",
+      "name": "N.f",
+      "input": "-- lemma f : False := bogus",
+      "expected": false,
+      "observed": false
+    },
+    {
+      "kind": "lemma",
+      "name": "N.f",
+      "input": "def s := \"lemma f : False := bogus\"",
+      "expected": false,
+      "observed": false
+    },
+    {
+      "kind": "lemma",
+      "name": "N.f",
+      "input": "lemma foo : True := True.intro",
+      "expected": false,
+      "observed": false
+    },
+    {
+      "kind": "lemma",
+      "name": "N.f",
+      "input": "theorem f : True := True.intro",
+      "expected": false,
+      "observed": false
+    },
+    {
+      "kind": "definition",
+      "name": "N.f",
+      "input": "noncomputable def fake : Nat := 0",
+      "expected": false,
+      "observed": false
+    }
+  ],
+  "source_bytes_changed": false,
+  "canonical_registration_executed": false,
+  "receipts_changed": false
+}

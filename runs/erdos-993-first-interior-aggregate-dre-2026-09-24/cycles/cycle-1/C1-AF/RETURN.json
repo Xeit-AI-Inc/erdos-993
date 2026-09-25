@@ -1,0 +1,118 @@
+{
+  "worker_id": "C1-AF",
+  "cycle": 1,
+  "stage": "adjudication",
+  "orientation": "N",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-CT-F1-001",
+    "C1-CT-F2-FAMILY-SIGN",
+    "C1-CT-F3-01",
+    "C1-CU-F1-001",
+    "C1-F1-001",
+    "C1-F1-002",
+    "C1-F2-NEGATIVE-BOUNDED-SEARCH",
+    "C1-F2-RESIDUAL-SCOPE-GAP",
+    "C1-F3-01",
+    "C1-F3-02",
+    "C1-F3-03"
+  ],
+  "claims": [
+    {
+      "claim_id": "C1-CT-F1-001",
+      "statement": "For every integer m>=2, the explicit root-marked-path plus m three-leaf-arm tree T_m is eligible at p=alpha-2=3m, all 3m+1 original leaf tags are favorable, and its complete sum is negative.",
+      "scope": "Exact informal proof for this restricted infinite family only; no all-tree theorem or Lean award.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-1/C1-AF/REPORT.md", "cycles/cycle-1/C1-AF/audit.py", "cycles/cycle-1/C1-AF/audit.json"],
+      "reason": "The report derives the root-conditioned polynomial, strict selector formulas, a negative Delta_(3m-2) for m>=2 establishing eligibility, and the negative leaf-tagged sum. Independent integer checks confirm representative parameters but are not the quantified proof."
+    },
+    {
+      "claim_id": "C1-CT-F2-FAMILY-SIGN",
+      "statement": "For every integer m>=2, T_m is target-eligible and S(T_m,3m)=-(9/2)m(m-1)+3m[3-6m-(9/2)m(m-1)]<0, with all 3m+1 original leaves favorable.",
+      "scope": "Same explicit restricted infinite family and informal coefficient proof as C1-CT-F1-001; no independent all-tree implication.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-1/C1-AF/REPORT.md", "cycles/cycle-1/C1-AF/audit.py", "cycles/cycle-1/C1-AF/audit.json"],
+      "reason": "The formula equals the q=3m expression in the report; the root-conditioned deletion polynomials give every selector and summand, and Delta_(3m-2)<0 gives eligibility for m>=2."
+    },
+    {
+      "claim_id": "C1-CT-F3-01",
+      "statement": "For a degree-one v with support s, H=T-{v,s}, R=T-N[s], and every integer p, Delta_p(T-v)=Delta_p(H)+Delta_(p-1)(R), while g_v=i_(p+1)(H)-i_(p-1)(H)-Delta_p(T-v).",
+      "scope": "Exact zero-extended coefficient identity for a finite simple graph with degree-one v; no aggregate sign conclusion.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-1/C1-AF/REPORT.md"],
+      "reason": "Partition independent sets of T-v by support membership to get I(T-v)=I(H)+zI(R), then take differences and telescope. The missing collective sign bound remains open."
+    },
+    {
+      "claim_id": "C1-CU-F1-001",
+      "statement": "For every m>=1 in the explicit T_m family, alpha=3m+2, all 3m+1 original leaves are favorable at p=3m, and S=-q^2+4q-(q+1)binom(q,2)<0 for q=3m.",
+      "scope": "Restricted-family target-rank identity for all m>=1; m=1 is ineligible, and only m>=2 instances meet the frozen target guard.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-1/C1-AF/REPORT.md", "cycles/cycle-1/C1-AF/audit.py", "cycles/cycle-1/C1-AF/audit.json"],
+      "reason": "The report gives exact root-conditioned and deletion polynomials, derives both strict selector signs and the marked/arm summands, and separately proves eligibility for m>=2."
+    },
+    {
+      "claim_id": "C1-F1-001",
+      "statement": "At T_22 and broader eligible rank p=34=x+2, a favorable marked leaf has positive summand 212336130412243110 although the complete aggregate is -498754180547001418536.",
+      "scope": "Refutes only the all-eligible-ranks pointwise nonpositive-summand shortcut; p=34 differs from the frozen alpha-2 rank 66.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-1/C1-AF/REPORT.md"],
+      "reason": "The pinned exact T22 row and independent coefficient replay support the leaf selector, positive summand and negative complete sum. The phenomenon was historically known and supplies no primary counterexample."
+    },
+    {
+      "claim_id": "C1-F1-002",
+      "statement": "The universal eligible alpha-minus-two complete-sum inequality remains unresolved; T_22 and T_60 have negative target sums and every labeled tree of orders 2..8 is ineligible.",
+      "scope": "Primary all-ordinary-tree claim remains open; finite checks are T_22, T_60 and 280392 labeled trees of orders 2..8 with zero eligible rows.",
+      "status": "proposed_unresolved",
+      "evidence_paths": ["cycles/cycle-1/C1-AF/REPORT.md", "cycles/cycle-1/C1-AF/audit.json"],
+      "reason": "The origin report's 275392 labeled total is corrected to 280392. No eligible positive complete sum or universal proof is in this route; negative examples and an eligibility-empty census cannot settle the primary target."
+    },
+    {
+      "claim_id": "C1-F2-NEGATIVE-BOUNDED-SEARCH",
+      "statement": "A seeded 4560-tree sample had 3840 eligible and no positive complete sum; the T_m computation for m=1..60 had 59 eligible negative rows; labeled Prüfer orders 2..7 had no eligible tree, and T_60 has S=-2947590 at p=180.",
+      "scope": "Precisely the stated deterministic sample, first 60 family rows and exhaustive labeled orders 2..7; K1 is separately ineligible by direct arithmetic, and none proves a universal sign.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": ["cycles/cycle-1/C1-AF/REPORT.md", "cycles/cycle-1/C1-AF/audit.json"],
+      "reason": "Critic replays support the finite counts and family rows. The source n=1 exhaustive row mistakenly constructs K2, and an unexplained 100-row family file exceeds the described 60-row computation; neither is used to enlarge the claim."
+    },
+    {
+      "claim_id": "C1-F2-RESIDUAL-SCOPE-GAP",
+      "statement": "The pinned JSON graph with edges {0-3,1-6,1-9,2-6,3-5,3-7,3-8,4-6,6-7} is eligible at alpha=7,p=5,x=3, non-residual, with all six leaves favorable and complete S=-72.",
+      "scope": "One exact non-residual ordinary tree proving a direct r26 residual-class coverage gap; not a counterexample to the target inequality.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": ["cycles/cycle-1/C1-AF/REPORT.md", "cycles/cycle-1/C1-AF/audit.py", "cycles/cycle-1/C1-AF/audit.json"],
+      "reason": "Independent subset enumeration confirms the pinned graph, complete leaf table and maximum sets. The origin report prints a different residual graph with polynomial (1,10,36,62,58,32,9,1) and S=-62; that prose certificate is rejected, while its JSON certificate supports the narrowed claim."
+    },
+    {
+      "claim_id": "C1-F3-01",
+      "statement": "The explicit target-eligible T_22, T_60 and T_100 trees have complete sums -147807, -2947590 and -13588650, respectively.",
+      "scope": "Exactly these three finite trees; T_100 is a larger checked instance, not an all-tree or all-family theorem.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-1/C1-AF/REPORT.md", "cycles/cycle-1/C1-AF/audit.json"],
+      "reason": "Full source edge/leaf records and a separate recurrence were checked by both critics; my independent polynomial formula agrees at all three m values. The universal family conclusion rests on the separate symbolic lemma."
+    },
+    {
+      "claim_id": "C1-F3-02",
+      "statement": "In the deterministic seed-9932401 Prüfer-word sequence of 1500 trees at orders 16,20,24,30,40, 1466 are eligible, none has a positive complete sum, the maximum sum is -210 and maximum selected summand is 0.",
+      "scope": "Exactly 300 seeded pseudorandom words per stated order, with no certified probability or exhaustive-census conclusion.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": ["cycles/cycle-1/C1-AF/REPORT.md"],
+      "reason": "Both critiques replayed the script and matched the pinned summary; the origin phrase independent uniform samples is restricted to the reproducible generated sequence."
+    },
+    {
+      "claim_id": "C1-F3-03",
+      "statement": "The explicit F3 ten-vertex tree is target-eligible but non-residual, with all six original leaves favorable and complete S=-72; it is isomorphic to the corrected F2 certificate.",
+      "scope": "One structural witness under a second labeling; scope obstruction to direct residual top-rank transfer, not an aggregate counterexample.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-1/C1-AF/REPORT.md", "cycles/cycle-1/C1-AF/audit.py", "cycles/cycle-1/C1-AF/audit.json"],
+      "reason": "Independent subset enumeration confirms polynomial, selector, summands, maximum-set omission of leaf 6 and sum -72; the report gives an explicit edge-preserving relabeling to the F2 witness."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-AF/REPORT.md",
+  "limitations": [
+    "The primary all-tree first-interior inequality remains open: no universal proof or eligible positive complete-sum counterexample was established.",
+    "The symbolic family result covers only the explicit T_m construction; the deletion identity has no collective sign bound.",
+    "The off-target positive summand does not address the frozen alpha-minus-two rank.",
+    "All random and small-tree computations are bounded; the small exhaustive ranges contain zero eligible trees.",
+    "No Lean build was assigned or run, and all owned jobs and writes have completed."
+  ]
+}

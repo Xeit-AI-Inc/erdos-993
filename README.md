@@ -17,13 +17,23 @@ of size `k`. The problem asks whether
 is weakly unimodal whenever `G` is a finite tree, and likewise whenever `G` is
 a finite forest.
 
+## 2026-09-24: first-interior aggregate formally verified
+
+The [first-interior experiment](experiments/first-interior-aggregate.md) closed after two full cycles (six maximum). For every finite ordinary tree `T`, put `p = α(T) − 2`. If the first strict negative difference satisfies `x(T) + 2 ≤ p`, the complete sum over **original leaves** with `Δ_p(T−v) < 0` is formally verified nonpositive:
+
+```text
+Σ_v [Δ_(p−1)(T−{v,s_v}) − Δ_(p−1)(T−N_T[s_v])] ≤ 0.
+```
+
+The strict selector remains at the original rank; leaves sharing a support retain distinct tags. The theorem needs no residual assumption, and eligibility itself implies `α(T) ≥ 7`. The sole new award is `E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE` at `formally_verified`; the three related auxiliary registry keys remain OPEN. The master has 395 identities (236 VERIFIED, 89 REFUTED, 26 CONDITIONAL, 44 OPEN), whose mixed grades are not a formal-theorem count. The all-rank ordinary aggregate, governed `E993-BETA-AGG`, TREE, FOREST and Erdős #993 remain open. Read the [Lean package](proofs/lean/first-interior-aggregate/README.md), [verification record](evidence/verification-2026-09-24-first-interior.md), [terminal report](runs/erdos-993-first-interior-aggregate-dre-2026-09-24/REPORT.md) and [independent final analysis](runs/erdos-993-first-interior-aggregate-dre-2026-09-24/FINAL-ANALYSIS.md).
+
 ## 2026-09-24: r27 — the finite forest degree lemma and extension inequality are formally verified
 
-The [r27 run](experiments/r27-forest-degree-extension.md) audited and formalized the finite forest degree lemma and extension inequality of Fang–Lu–Nevo–Yao–Zheng (2026, §8) on the program's G1 definitions of record, with an in-run injection proof: for every finite forest and every `k`, `Σ_{J∈I_k} Σ_{v∈J} deg v ≤ 2k·i_k` and `n·i_k ≤ (k+1)·i_{k+1} + 3k·i_k` ([`r27-c1-la1-…`](proofs/lean/r27-c1-la1-forest-degree-extension/README.md)); the unconditional consequences `Δ_k < 0 ⇒ n ≤ 4k`, `n ≥ 21 ⇒ Δ_5 ≥ 0` and `x < r ⇒ n ≤ 4r − 4` ([`r27-c1-la4-…`](proofs/lean/r27-c1-la4-descent-order-bounds/README.md)); the graph-general counting core ([`r27-c1-la2-…`](proofs/lean/r27-c1-la2-extension-counting-core/README.md)) and the implication chain ([`r27-c1-la3-…`](proofs/lean/r27-c1-la3-degree-lemma-implication-chain/README.md)). The r25 rank-5 residue (orders 22–25) is closed out; the K1-addition closure extends to `x ≤ 5` at census grade. These are order bounds whose contrapositives have sign `Δ_k ≥ 0` — not no-recovery statements; nothing transfers to the forest-wide no-recovery claim, NR1, FOREST, TREE or Erdős #993. Verification record: [`evidence/verification-2026-09-24-r27.md`](evidence/verification-2026-09-24-r27.md). Master registry 392 identities.
+The [r27 run](experiments/r27-forest-degree-extension.md) audited and formalized the finite forest degree lemma and extension inequality of Fang–Lu–Nevo–Yao–Zheng (2026, §8) on the program's G1 definitions of record, with an in-run injection proof: for every finite forest and every `k`, `Σ_{J∈I_k} Σ_{v∈J} deg v ≤ 2k·i_k` and `n·i_k ≤ (k+1)·i_{k+1} + 3k·i_k` ([`r27-c1-la1-…`](proofs/lean/r27-c1-la1-forest-degree-extension/README.md)); the unconditional consequences `Δ_k < 0 ⇒ n ≤ 4k`, `n ≥ 21 ⇒ Δ_5 ≥ 0` and `x < r ⇒ n ≤ 4r − 4` ([`r27-c1-la4-…`](proofs/lean/r27-c1-la4-descent-order-bounds/README.md)); the graph-general counting core ([`r27-c1-la2-…`](proofs/lean/r27-c1-la2-extension-counting-core/README.md)) and the implication chain ([`r27-c1-la3-…`](proofs/lean/r27-c1-la3-degree-lemma-implication-chain/README.md)). The r25 rank-5 residue (orders 22–25) is closed out; the K1-addition closure extends to `x ≤ 5` at census grade. These are order bounds whose contrapositives have sign `Δ_k ≥ 0` — not no-recovery statements; nothing transfers to the forest-wide no-recovery claim, NR1, FOREST, TREE or Erdős #993. Verification record: [`evidence/verification-2026-09-24-r27.md`](evidence/verification-2026-09-24-r27.md). At the r27 close, the master registry held 392 identities.
 
 ## 2026-09-24: r26 — the r24 top-rank residual sign is formally verified
 
-The [r26 run](experiments/r26-top-rank-residual-sign.md) validated a literature-map candidate proof of the r24 top-rank residual sign `(RC)` and closed it as a governed Lean package composed with the r24 identity `(RI)`: for every finite tree with `2 ≤ α`, `x + 2 ≤ α − 1` and every leaf in every maximum independent set, `S(T, α−1) ≤ 0` — r24's terminal debt TD-6. Two companion packages (the deletion-injection/fibre bound; the tree-structural core), the strict form `S ≤ −2` informally, a correction of the r24 record's "1,420 realized" statement, and `N₂ ≤ M` refuted. The master registry now holds 370 identities. The all-rank aggregate and every headline stay open. Read the [verification record](evidence/verification-2026-09-24-r26.md).
+The [r26 run](experiments/r26-top-rank-residual-sign.md) validated a literature-map candidate proof of the r24 top-rank residual sign `(RC)` and closed it as a governed Lean package composed with the r24 identity `(RI)`: for every finite tree with `2 ≤ α`, `x + 2 ≤ α − 1` and every leaf in every maximum independent set, `S(T, α−1) ≤ 0` — r24's terminal debt TD-6. Two companion packages (the deletion-injection/fibre bound; the tree-structural core), the strict form `S ≤ −2` informally, a correction of the r24 record's "1,420 realized" statement, and `N₂ ≤ M` refuted. At the r26 close, the master registry held 370 identities. The all-rank aggregate and every headline stay open. Read the [verification record](evidence/verification-2026-09-24-r26.md).
 
 ## 2026-09-23: r25 addendum
 
@@ -154,6 +164,9 @@ The expected transitive axioms are `propext`, `Classical.choice`, and
 
 ## Start Here
 
+- [First-interior aggregate result](experiments/first-interior-aggregate.md)
+- [First-interior Lean package](proofs/lean/first-interior-aggregate/README.md)
+- [First-interior verification record](evidence/verification-2026-09-24-first-interior.md)
 - [Problem and status](docs/problem-and-status.md)
 - [Current results](docs/results.md)
 - [Proof architecture status, 2026-09-01](docs/proof-architecture-status-2026-09-01.md)

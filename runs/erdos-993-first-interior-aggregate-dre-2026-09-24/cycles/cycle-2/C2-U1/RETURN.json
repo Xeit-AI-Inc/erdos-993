@@ -1,0 +1,38 @@
+{
+  "worker_id": "C2-U1",
+  "cycle": 2,
+  "stage": "search",
+  "orientation": "U",
+  "status_authority": "proposed_worker_only",
+  "claims": [
+    {
+      "claim_id": "C2-U1-TAGGED-SHADOW-COUNT",
+      "statement": "For every finite bipartite H, subset W, integer a with alpha(H)<=a-1, and integer k>=1, if q_j counts independent j-subsets of H meeting W with zero extension, then k*q_(k+1)<=2(a-1-k)*q_k; consequently for a tree leaf term at p=alpha(T)-2 and alpha(T)>=7, Delta_(p-1)(H)-Delta_(p-1)(R)<=0.",
+      "scope": "Informal combinatorial proof of the tagged deletion/extension count and its stated leaf-derived specialization; no selector, residual, connectivity, or nonempty-family assumption is needed for the count.",
+      "status": "proposed_proved_informal",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-U1/REPORT.md",
+        "cycles/cycle-2/C2-U1/fresh_shadow_check.py",
+        "cycles/cycle-2/C2-U1/fresh_shadow_check.json"
+      ],
+      "reason": "Double count gives at least k witness-preserving deletions per tagged upper set and at most 2(alpha(H)-k) available extensions per tagged lower set; all zero/empty cases are handled without division."
+    },
+    {
+      "claim_id": "C2-U1-ELIGIBILITY-ALPHA-LOWER-BOUND",
+      "statement": "Every ordinary finite connected tree T with p=alpha(T)-2 and first strict descent x(T) satisfying x(T)+2<=p has alpha(T)>=7.",
+      "scope": "Informal exact proof by eligibility guards, exact Delta_0/Delta_1/Delta_2 identities, and n=7/n=8 vertex-cover boundary cases.",
+      "status": "proposed_proved_informal",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-U1/REPORT.md",
+        "cycles/cycle-2/C2-U1/fresh_shadow_check.py",
+        "cycles/cycle-2/C2-U1/fresh_shadow_check.json"
+      ],
+      "reason": "Each alpha=4,5,6 possibility contradicts the required first strict descent; in the alpha=6 case Delta_2 is nonnegative for n>=9 and positive in the exact n=7,8 cases."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-U1/REPORT.md",
+  "limitations": [
+    "No Lean build, formal fidelity audit, or primary-gate verification was assigned or run; all mathematical claims are proposed informal results and registry status remains unchanged.",
+    "The independent DP replay covers the constructive examples m=4,5,11 only; no exhaustive ordinary-tree search was run or needed for the general proof."
+  ]
+}

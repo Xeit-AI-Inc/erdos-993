@@ -1,0 +1,40 @@
+{
+  "worker_id": "C1-CU-T1",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "U",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-T1-LEAF-BRANCH-IDENTITY"
+  ],
+  "claims": [
+    {
+      "claim_id": "C1-T1-LEAF-BRANCH-IDENTITY",
+      "statement": "For an original leaf v of any finite tree T and any integer k, with H=T-{v,s_v} and R=T-N_T[s_v], P_{T-v}=P_H+zP_R and Delta_k(T-v)=Delta_k(H)+Delta_{k-1}(R); consequently the original-leaf favorable selector and complete aggregate have the origin's exact A+B<0 and C-B representation, counting every leaf tag.",
+      "scope": "Universal exact identity for finite ordinary trees and every integer rank; no interior-rank sign or novelty conclusion.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CU-T1/REPORT.md",
+        "cycles/cycle-1/C1-CU-T1/independent_replay.py"
+      ],
+      "reason": "The independent-set partition by the original support is a complete proof, including negative/terminal ranks and repeated-support leaf tags. The identity is an inherited elementary leaf-deletion recurrence and does not imply the target sign."
+    },
+    {
+      "claim_id": "C1-CU-T1-INDEPENDENT-FINITE-REPLAY",
+      "statement": "Independent symbolic integer calculations give, at p=alpha-2, P60: alpha=30, x=17, two favorable leaves each with selector -35495 and summand -165851, S=-331702; T60: alpha=182, x=87, one marked favorable leaf with selector -359 and summand -15930 and 180 arm favorable leaves each with selector -181 and summand -16287, S=-2947590.",
+      "scope": "Exactly the stated P60 and 243-vertex T60 constructions at their first-interior ranks; bounded computation only.",
+      "status": "proposed_verified_finite",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CU-T1/REPORT.md",
+        "cycles/cycle-1/C1-CU-T1/independent_replay.py"
+      ],
+      "reason": "A new direct polynomial factorization, independent of the admitted evaluator, reproduces alpha, first strict descent, selectors, summands, and complete leaf-tag sums and asserts the branch polynomial equalities."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CU-T1/REPORT.md",
+  "limitations": [
+    "The branch identity and two negative complete-sum rows do not prove the universal first-interior inequality or refute it.",
+    "The historical pointwise and support-fibre failures in a wider rank window do not establish a failure at p=alpha-2.",
+    "No Lean build was run, as required by this critique-stage case."
+  ]
+}

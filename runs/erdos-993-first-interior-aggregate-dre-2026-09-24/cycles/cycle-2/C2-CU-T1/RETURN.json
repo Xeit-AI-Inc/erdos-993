@@ -1,0 +1,32 @@
+{
+  "worker_id": "C2-CU-T1",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "U",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-T1-EXACTID-E993-BIPARTITE-TAGGED-SHADOW-BOUND"
+  ],
+  "claims": [
+    {
+      "claim_id": "C2-T1-EXACTID-E993-BIPARTITE-TAGGED-SHADOW-BOUND",
+      "statement": "For every finite bipartite simple graph H, arbitrary W subseteq V(H), a=alpha(H), and integer 1<=k<=a, tagged independent-set counts satisfy k q_(k+1)<=2(a-k)q_k.",
+      "scope": "Exact registered bipartite tagged-shadow auxiliary, including disconnected H, empty W and terminal k=a; informal proof only.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CU-T1/REPORT.md",
+        "cycles/cycle-2/C2-CU-T1/check_matching_244.py",
+        "cycles/cycle-2/C2-CU-T1/matching_244.json",
+        "cycles/cycle-2/C2-CU-T1/replay_origin_check.py",
+        "cycles/cycle-2/C2-CU-T1/replay_origin_checks.json"
+      ],
+      "reason": "Independent finite-set audit validates both incidence directions, all boundary ranks and empty tags. A fresh 244-vertex matching with one tagged endpoint attains equality at every permitted rank. Replaying the pinned bounded script in own scratch reproduces its output. The leaf application remains conditional on the distinct open eligible-alpha>=7 statement."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CU-T1/REPORT.md",
+  "limitations": [
+    "The retained proof is informal and has no Lean or governed formal award.",
+    "The separate eligibility-alpha>=7 implication is not proved by this claim, so the primary aggregate remains OPEN.",
+    "Finite replay and matching checks are bounded corroboration; universal validity rests on the finite-set incidence proof."
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "worker_id": "C2-CT-U3",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "T",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-U3-PRIMARY-PROOF-COMPLETENESS"
+  ],
+  "claims": [
+    {
+      "claim_id": "C2-U3-PRIMARY-PROOF-COMPLETENESS",
+      "statement": "The C2-U3 low-alpha exclusion and bipartite tagged-set incidence count give a complete informal proof candidate for the exact eligible ordinary-tree alpha-minus-two favorable original-leaf aggregate; every original-leaf term is nonpositive at that rank.",
+      "scope": "Finite connected acyclic simple graphs T, integer p=alpha(T)-2, first strict descent x(T) with x(T)+2<=p, original degree-one leaf tags and their original supports and neighborhoods, strict unshifted favorable selector, complete sum with leaf multiplicity, no residual hypothesis.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CT-U3/REPORT.md",
+        "cycles/cycle-2/C2-CT-U3/replay_large_target.py",
+        "cycles/cycle-2/C2-CT-U3/replay_large_target.json",
+        "cycles/cycle-2/C2-CT-U3/fresh_target_335.py",
+        "cycles/cycle-2/C2-CT-U3/fresh_target_335.json"
+      ],
+      "reason": "The exact Delta_0, Delta_1 and Delta_2 tree calculations exclude alpha<=6 under eligibility. For every original leaf, R=H-W and q_j=i_j(H)-i_j(R); bipartite extension/deletion incidence gives k q_(k+1)<=2(alpha(H)-k)q_k. At k=alpha(T)-3>=4 and alpha(H)<=alpha(T)-1, this signs q_p-q_(p-1) for each tag, including zero-count endpoints, and summation over the strict selected tags preserves multiplicity. Pinned order-1203 output replayed exactly and a fresh order-335 instance was checked. Formal fidelity/kernel verification and adjudication remain pending; no registry award follows from this proposed critique."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CT-U3/REPORT.md",
+  "limitations": [
+    "This is an informal proof audit; no Lean build, governed fidelity review or kernel gate was assigned or run.",
+    "The exact order-1203 replay and fresh order-335 family check are finite corroboration, not universal proof.",
+    "The primary and auxiliary registry keys retain their pre-adjudication status; this return proposes a disposition only."
+  ]
+}

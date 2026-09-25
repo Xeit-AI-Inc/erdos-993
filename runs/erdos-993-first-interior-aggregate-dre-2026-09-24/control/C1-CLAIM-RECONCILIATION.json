@@ -1,0 +1,226 @@
+{
+  "canonical_status_changes": [],
+  "current_registry_claim_count": 395,
+  "note": "Worker-ID rows are run evidence dispositions, not newly awarded canonical registry claims. The later 24 registered entries did not enter Cycle 1 reasoning.",
+  "primary_key": "E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE",
+  "primary_status": "OPEN",
+  "source_claim_dispositions": [
+    {
+      "controller_disposition": "retained_narrowed",
+      "evidence_grade": "bounded_exact_computation",
+      "formal_award": false,
+      "retained_statement": "T22 at p=66 has S=-147807, and the directed 123-row probe has 94 eligible rows without a positive eligible local term or complete sum.",
+      "scope": "Exact T22 and stated finite probe only; three positive local probe rows are ineligible.",
+      "source_claim_id": "C1-CF-T2-TARGETED-T22-RANK"
+    },
+    {
+      "controller_disposition": "retained",
+      "evidence_grade": "informal_derivation",
+      "formal_award": false,
+      "retained_statement": "For T_m with m>=1, all 3m+1 original tags are favorable at p=3m and S=-(9m/2)(3m^2+2m-3)<0.",
+      "scope": "One explicit family; target eligibility holds for m>=2 through the AF argument.",
+      "source_claim_id": "C1-CF-T3-01"
+    },
+    {
+      "controller_disposition": "retained",
+      "evidence_grade": "bounded_exact_computation",
+      "formal_award": false,
+      "retained_statement": "The specified 12-vertex eligible tree has one selected non-residual leaf and six selected residual leaves, with S=-203.",
+      "scope": "One finite graph at alpha=8, x=4, p=6.",
+      "source_claim_id": "C1-CF-U2-ELIGIBLE-MIXED-TAGS"
+    },
+    {
+      "controller_disposition": "retained",
+      "evidence_grade": "bounded_exact_computation",
+      "formal_award": false,
+      "retained_statement": "Every T_m with m>=2 is eligible at p=3m, all original leaves are favorable, and S<0.",
+      "scope": "Restricted one-parameter family only.",
+      "source_claim_id": "C1-CT-F1-001"
+    },
+    {
+      "controller_disposition": "retained_narrowed",
+      "evidence_grade": "informal_derivation",
+      "formal_award": false,
+      "retained_statement": "Every T_m with m>=2 is eligible and has S=-(9m/2)(3m^2+2m-3)<0, using g_star=3-3m-binomial(3m,2).",
+      "scope": "Restricted family; the printed 3-6m arm term in AF RETURN is excluded as false.",
+      "source_claim_id": "C1-CT-F2-FAMILY-SIGN"
+    },
+    {
+      "controller_disposition": "retained",
+      "evidence_grade": "bounded_exact_computation",
+      "formal_award": false,
+      "retained_statement": "For a pendant vertex, I(T-v)=I(H)+zI(R), Delta_p(T-v)=Delta_p(H)+Delta_(p-1)(R), and g=i_(p+1)(H)-i_(p-1)(H)-Delta_p(T-v).",
+      "scope": "Exact finite-graph identity at all integer ranks; no sign consequence.",
+      "source_claim_id": "C1-CT-F3-01"
+    },
+    {
+      "controller_disposition": "retained",
+      "evidence_grade": "informal_derivation",
+      "formal_award": false,
+      "retained_statement": "The explicit T_m family has all tags favorable and S=-(9m/2)(3m^2+2m-3)<0 at p=3m.",
+      "scope": "Family only; eligibility separately established for m>=2.",
+      "source_claim_id": "C1-CT-U2-T-FAMILY-FIRST-INTERIOR"
+    },
+    {
+      "controller_disposition": "retained",
+      "evidence_grade": "bounded_exact_computation",
+      "formal_award": false,
+      "retained_statement": "For T_m with m>=1, alpha=3m+2, all original tags are favorable at p=3m, and S=-n(n^2+2n-9)/2<0 for n=3m.",
+      "scope": "Family formula; m=1 is ineligible and eligible target instances start at m=2.",
+      "source_claim_id": "C1-CU-F1-001"
+    },
+    {
+      "controller_disposition": "retained",
+      "evidence_grade": "bounded_exact_computation",
+      "formal_award": false,
+      "retained_statement": "P60 has S=-331702 and T60 has S=-2947590 at their eligible alpha-minus-two ranks.",
+      "scope": "Exactly two finite tree instances.",
+      "source_claim_id": "C1-CU-T1-INDEPENDENT-FINITE-REPLAY"
+    },
+    {
+      "controller_disposition": "retained",
+      "evidence_grade": "informal_derivation",
+      "formal_award": false,
+      "retained_statement": "For the same T_m family, all 3m+1 original tags are favorable and S=-(9m/2)(3m^2+2m-3)<0.",
+      "scope": "Same restricted family, not a second all-tree theorem.",
+      "source_claim_id": "C1-CU-T3-01"
+    },
+    {
+      "controller_disposition": "retained",
+      "evidence_grade": "bounded_exact_computation",
+      "formal_award": false,
+      "retained_statement": "At T22 rank 34, a favorable marked leaf has positive term 212336130412243110, while the complete sum is -498754180547001418536.",
+      "scope": "Broader-rank pointwise obstruction; frozen target rank for T22 is 66.",
+      "source_claim_id": "C1-F1-001"
+    },
+    {
+      "controller_disposition": "unresolved",
+      "evidence_grade": "unresolved",
+      "formal_award": false,
+      "retained_statement": "The primary all-eligible-tree alpha-minus-two complete-sum inequality remains open; T22 and T60 are negative and 280392 labeled trees of orders 2..8 have no eligible members.",
+      "scope": "Unrestricted primary status plus stated finite census only.",
+      "source_claim_id": "C1-F1-002"
+    },
+    {
+      "controller_disposition": "retained_narrowed",
+      "evidence_grade": "bounded_exact_computation",
+      "formal_award": false,
+      "retained_statement": "The seeded 4560-tree sample has 3840 eligible rows and no positive complete sum; T_m for m=1..60 has 59 eligible negative rows; orders 2..7 have no eligible tree.",
+      "scope": "Exact stated sample and first 60 family rows only; K1 checked separately.",
+      "source_claim_id": "C1-F2-NEGATIVE-BOUNDED-SEARCH"
+    },
+    {
+      "controller_disposition": "retained_narrowed",
+      "evidence_grade": "bounded_exact_computation",
+      "formal_award": false,
+      "retained_statement": "The pinned ten-vertex JSON graph is eligible at alpha=7, x=3, p=5, non-residual, with all six tags favorable and S=-72.",
+      "scope": "One corrected graph, not the different residual graph printed in F2 prose.",
+      "source_claim_id": "C1-F2-RESIDUAL-SCOPE-GAP"
+    },
+    {
+      "controller_disposition": "retained",
+      "evidence_grade": "bounded_exact_computation",
+      "formal_award": false,
+      "retained_statement": "T22, T60 and T100 are eligible and have respective complete sums -147807, -2947590 and -13588650.",
+      "scope": "Exactly three finite family instances.",
+      "source_claim_id": "C1-F3-01"
+    },
+    {
+      "controller_disposition": "retained_narrowed",
+      "evidence_grade": "bounded_exact_computation",
+      "formal_award": false,
+      "retained_statement": "The seed-9932401 sequence of 1500 Prüfer trees has 1466 eligible rows, maximum complete sum -210 and maximum selected term 0.",
+      "scope": "Exactly the specified deterministic pseudorandom sequence, not a probability or census statement.",
+      "source_claim_id": "C1-F3-02"
+    },
+    {
+      "controller_disposition": "retained",
+      "evidence_grade": "bounded_exact_computation",
+      "formal_award": false,
+      "retained_statement": "The F3 ten-vertex graph is eligible and non-residual with all six tags favorable and S=-72.",
+      "scope": "One graph isomorphic to the corrected F2 certificate.",
+      "source_claim_id": "C1-F3-03"
+    },
+    {
+      "controller_disposition": "retained",
+      "evidence_grade": "informal_derivation",
+      "formal_award": false,
+      "retained_statement": "The leaf-support partition gives I(T-v)=I(H)+zI(R) and its exact strict selector and tagged aggregate at all integer ranks.",
+      "scope": "Universal finite ordinary-tree identity, no sign conclusion.",
+      "source_claim_id": "C1-T1-LEAF-BRANCH-IDENTITY"
+    },
+    {
+      "controller_disposition": "retained",
+      "evidence_grade": "informal_derivation",
+      "formal_award": false,
+      "retained_statement": "For every original leaf, alpha(H)=alpha(T)-1 and g+Delta_p(T-v)=i_(p+1)(H)-i_(p-1)(H).",
+      "scope": "Exact all-integer-rank identity; no sign conclusion.",
+      "source_claim_id": "C1-T2-ALG-IDENTITY"
+    },
+    {
+      "controller_disposition": "retained_narrowed",
+      "evidence_grade": "informal_derivation",
+      "formal_award": false,
+      "retained_statement": "At p=alpha-2, the displayed coefficient budget is equivalent to g_v<=0 for a selected leaf and would imply S<=0 if it held for all selected leaves.",
+      "scope": "Conditional pointwise reduction only; budget truth is unresolved.",
+      "source_claim_id": "C1-T2-ALPHA2-BUDGET"
+    },
+    {
+      "controller_disposition": "retained_narrowed",
+      "evidence_grade": "bounded_exact_computation",
+      "formal_award": false,
+      "retained_statement": "P501, T125 and four specified order-260 Prüfer fixtures are eligible with no positive selected term and negative complete sums.",
+      "scope": "Exactly six finite fixtures; four Prüfer rows use one continuous seed stream.",
+      "source_claim_id": "C1-T2-BOUNDED-POINTWISE-CHECK"
+    },
+    {
+      "controller_disposition": "retained",
+      "evidence_grade": "informal_derivation",
+      "formal_award": false,
+      "retained_statement": "The exact leaf-deletion selector permits all-or-none selection and multiplicity-weighted regrouping at each original support.",
+      "scope": "Universal ordinary-tree identity at all integer ranks; no sign.",
+      "source_claim_id": "C1-T3-01"
+    },
+    {
+      "controller_disposition": "unresolved",
+      "evidence_grade": "unresolved",
+      "formal_award": false,
+      "retained_statement": "The unrestricted eligible-tree complete favorable-leaf sum at p=alpha-2 is nonpositive.",
+      "scope": "Primary E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE.",
+      "source_claim_id": "C1-T3-02"
+    },
+    {
+      "controller_disposition": "unresolved",
+      "evidence_grade": "unresolved",
+      "formal_award": false,
+      "retained_statement": "The unrestricted primary alpha-minus-two complete-sum inequality remains unresolved.",
+      "scope": "Exactly the frozen target, without residuality.",
+      "source_claim_id": "C1-U1-PRIMARY-INTERIOR-AGGREGATE-STATUS"
+    },
+    {
+      "controller_disposition": "retained",
+      "evidence_grade": "informal_derivation",
+      "formal_award": false,
+      "retained_statement": "At each support, branch products H_s and R_s give I(T-v)=H_s+zR_s for every tagged leaf, with exact selector, term and lambda_s multiplicity.",
+      "scope": "All finite ordinary trees and integer ranks; no sign theorem.",
+      "source_claim_id": "C1-U1-SUPPORT-FIBRE-POLYNOMIAL-IDENTITY"
+    },
+    {
+      "controller_disposition": "retained",
+      "evidence_grade": "informal_derivation",
+      "formal_award": false,
+      "retained_statement": "For each original leaf, alpha(H)=alpha(T)-1; q_v(j) counts H-independent j-sets hitting the other support neighbors; S=A_p-A_(p-1), with a per-leaf residual split.",
+      "scope": "Exact frozen-rank identity and classification; no shell comparison.",
+      "source_claim_id": "C1-U2-LOCAL-TOPSHELL-REDUCTION"
+    },
+    {
+      "controller_disposition": "retained_narrowed",
+      "evidence_grade": "informal_derivation",
+      "formal_award": false,
+      "retained_statement": "The exact tagged identity S=A_p-A_(p-1) and selector decomposition hold; their sign implication remains open.",
+      "scope": "Algebraic reduction only; no impossibility or fresh-family-coverage claim.",
+      "source_claim_id": "C1-U3-EXACT-COUNT-OBSTRUCTION"
+    }
+  ],
+  "source_registry_claim_count": 371
+}

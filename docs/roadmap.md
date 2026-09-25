@@ -1,6 +1,6 @@
 # Open Research Roadmap
 
-Updated 2026-09-24 after r25 (uniform residual no-recovery), r26 (the r24 top-rank residual sign `(RC)` formally verified) and r27 (the finite forest degree lemma and extension inequality formally verified, with the linear order bound `Δ_k < 0 ⇒ n ≤ 4k`). Earlier: the three-cycle G1 close on 2026-09-20 and the completed r23b/r24 siblings. TREE, FOREST, TRANSFER, unrestricted G1 and aggregated beta-prime remain open. The [current assessment](assessment-2026-09-20.md) explains the following priorities and the limits of any forecast.
+Updated 2026-09-24 after the first-interior aggregate, r27 forest degree/extension, r26 top-rank residual sign, and r25 uniform residual no-recovery results. The first-interior primary closed `formally_verified` after two complete cycles; its three auxiliary keys remain OPEN. TREE, FOREST, TRANSFER, unrestricted G1, the ordinary all-rank aggregate and governed beta aggregation remain open. The [current assessment](assessment-2026-09-20.md) records the earlier G1 priorities and forecast limits.
 
 ## 1. A uniform structural residual theorem
 
@@ -10,15 +10,15 @@ A useful result would prove unrestricted ordinary G1, prove a uniform forest no-
 
 ## 2. Complete aggregate cancellation
 
-Prove direct full demand or the complete favorable-leaf sum `S(T,p)<=0` on its actual eligible rank window. Universal all-cut Hall and tag-closed-cut Hall are false. A positive summand or deficient proper cut does not refute the complete sum.
+The [r26 result](../experiments/r26-top-rank-residual-sign.md) closed r24's top-rank **residual** sign. The [first-interior result](../experiments/first-interior-aggregate.md) now formally closes the exact `p=α(T)−2` complete strict favorable-original-leaf sum without residuality. The ordinary all-rank claim `S(T,p)≤0` on `x(T)+2≤p<α(T)` remains open.
 
-The most concrete proof entry is the signed top-rank residual identity from r24. Close its weighted lower bound for general non-flat residual trees, accounting for the sign-changing terms of the three-family expansion. Keep the flat class, `T_m`, and terminal `K2`/`P3` results at their existing grades and use them as controls. A focused lower-interior-window search for a positive **complete eligible row** should accompany this argument. See [r24](../experiments/r24-direct-favorable-leaf-aggregate.md).
+First, separately certify the reusable high-tail tagged bound and eligibility guard, the pointwise auxiliary at its exact endpoint, and the proposed non-residual top-rank consequence. The first-interior package contains internal helpers, but its primary-only award does not promote the three auxiliary registry keys or the top-rank consequence. Then target eligible lower ranks with `3p<2α(T)+1`: prove complete **selected-sum** compensation across original leaf tags or find a positive complete eligible row. An individual positive summand does not refute the sum. Universal local/support-fibre negativity, the refuted per-set addability lower bound, and the literal all-cut/tag-closed-cut Hall mechanisms have exact counterexamples and must not be revived as universal lemmas. See the [terminal report](../runs/erdos-993-first-interior-aggregate-dre-2026-09-24/REPORT.md) and [independent analysis](../runs/erdos-993-first-interior-aggregate-dre-2026-09-24/FINAL-ANALYSIS.md).
 
 ## 3. Exact reduction to the original graph problem
 
 State and check the complete conditional implication from named remaining hypotheses to ordinary TREE and FOREST. Preserve the distinction between residual G1wide and the master chain's strict-endpoint `OB-G1`, between first-descent ranks and global modes, and between ordinary graphs and the governed RTree representation.
 
-Resolve the needed ordinary/governed semantic correspondence and the genuine forest-composition problem. Tree unimodality alone is insufficient for generic convolution. A proposed graph-realizable transfer class must contain all tree sequences, survive disjoint union, and imply unimodality without assuming universal log-concavity or simply restating the target. A direct uniform forest argument could bypass this transfer route.
+Prove an ordinary-to-governed-model bridge only for a downstream governed `E993-BETA-AGG` conclusion; the ordinary all-rank aggregate is self-contained. Resolve the genuine forest-composition problem. Tree unimodality alone is insufficient for generic convolution. A proposed graph-realizable transfer class must contain all tree sequences, survive disjoint union, and imply unimodality without assuming universal log-concavity or simply restating the target. A direct uniform forest argument could bypass this transfer route.
 
 ## What would count as progress
 

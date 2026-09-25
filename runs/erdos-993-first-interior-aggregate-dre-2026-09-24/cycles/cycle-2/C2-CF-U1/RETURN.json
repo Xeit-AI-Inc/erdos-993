@@ -1,0 +1,43 @@
+{
+  "worker_id": "C2-CF-U1",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "F",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-U1-ELIGIBILITY-ALPHA-LOWER-BOUND",
+    "C2-U1-TAGGED-SHADOW-COUNT"
+  ],
+  "claims": [
+    {
+      "claim_id": "C2-U1-ELIGIBILITY-ALPHA-LOWER-BOUND",
+      "statement": "Every eligible ordinary finite tree at integer p=alpha(T)-2 has alpha(T)>=7.",
+      "scope": "Incoming exact ordinary-tree eligibility guard, assessed as an informal proof only; no formal gate or broader no-recovery claim.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CF-U1/REPORT.md",
+        "cycles/cycle-2/C2-CF-U1/large_falsification.py",
+        "cycles/cycle-2/C2-CF-U1/large_falsification.json"
+      ],
+      "reason": "The integer eligibility guard and exact Delta_0, Delta_1, Delta_2 tree formulas exclude alpha 4, 5, and 6; the n=7 star and n=8 two-vertex-cover boundary checks close the only small cases. The independent 246-vertex check corroborates but is not the proof."
+    },
+    {
+      "claim_id": "C2-U1-TAGGED-SHADOW-COUNT",
+      "statement": "For finite bipartite H and W subset V(H), alpha(H)<=a-1 and integer k>=1 imply k*q_(k+1)<=2(a-1-k)*q_k for tagged independent-set counts q; hence each original leaf term at p=alpha(T)-2 is nonpositive when alpha(T)>=7.",
+      "scope": "Incoming exact tagged layer-total incidence bound and tree-leaf specialization; arbitrary empty or disconnected H and empty W included, with integer zero extension.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CF-U1/REPORT.md",
+        "cycles/cycle-2/C2-CF-U1/large_falsification.py",
+        "cycles/cycle-2/C2-CF-U1/large_falsification.json"
+      ],
+      "reason": "Each tagged upper set has at least k witness-preserving deletions, while each tagged lower set has at most 2(alpha(H)-k) extensions by the bipartite color-class bound; zero and over-rank cases are valid. The leaf identification R=H-W and alpha(H)<=alpha(T)-1 preserve original tags and yield the stated sign."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CF-U1/REPORT.md",
+  "limitations": [
+    "No Lean build or governing formal gate was assigned or run; retained means an independently checked informal proof, and the primary registry status remains OPEN.",
+    "The exact DP check covers only m=4,5,11,121 in one constructive family, including one eligible 246-vertex instance; it is corroboration, not exhaustive evidence.",
+    "No owned background jobs remain active."
+  ]
+}

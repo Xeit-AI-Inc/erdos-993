@@ -1,0 +1,40 @@
+{
+  "audit_type": "claim_identity_and_scope_only",
+  "registry_snapshot": {
+    "claim_count": 392,
+    "primary_key": "E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE",
+    "primary_status": "OPEN"
+  },
+  "mathematical_grade": null,
+  "claims": [
+    {
+      "claim_key": "E993-BIPARTITE-TAGGED-SHADOW-BOUND",
+      "disposition": "approved_for_OPEN_registration",
+      "needed_statement_repair": null,
+      "exact_distinction": "Tagged independent-set layer-count inequality for arbitrary finite bipartite H and W, 1<=k<=alpha(H); no tree, leaf, selector, eligibility, or aggregate. Distinct from the REFUTED every-independent-set G1 pointwise addability bound and governed beta pointwise sign.",
+      "scope_boundary": "At k=alpha(H), q_(k+1)=0; empty W is allowed. Application to a leaf uses W=N_G(s)\\{v}, R=H-W, and alpha(H)<=alpha(G)-1."
+    },
+    {
+      "claim_key": "E993-BIPARTITE-LEAF-HIGH-TAIL-POINTWISE",
+      "disposition": "approved_for_OPEN_registration",
+      "needed_statement_repair": null,
+      "exact_distinction": "Unselected single original-leaf sign on any finite bipartite G, restricted by 3p>=2alpha(G)+1. The REFUTED E993-BETA-TARGET and support-fibre claim have all-window governed RTree scopes; known positive marked witnesses T_22,p=34 and T_60,p=90 fail this high-tail guard.",
+      "scope_boundary": "Keep integer p>=1 and zero extension. Derivation from tagged shadow needs a separate p=1 base case: the guard forces alpha(G)=1 and alpha(H)=0. No favorable, first-descent, residual, or connectivity premise."
+    },
+    {
+      "claim_key": "E993-INTERIOR-ELIGIBILITY-ALPHA-GE-SEVEN",
+      "disposition": "approved_for_OPEN_registration",
+      "needed_statement_repair": null,
+      "exact_distinction": "Guard lemma only for eligible ordinary connected trees at integer p=alpha(T)-2 with first strict descent x(T); no sign claim. Distinct from r25 Delta_2 order-nine and r27 forest order bounds and from the verified r26 top-rank residual sign.",
+      "scope_boundary": "Eligibility first gives alpha>=4, needed before Nat subtraction. With high-tail pointwise, alpha>=7 makes 3p>=2alpha+1 and would imply the still-OPEN primary by summing all favorable original-leaf tags."
+    }
+  ],
+  "unchanged_fences": [
+    "E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE remains OPEN",
+    "E993-R23-ORDINARY-FAVORABLE-LEAF-AGGREGATE remains OPEN",
+    "E993-R26-TOP-RANK-RESIDUAL-SIGN remains verified only at top rank and residual scope",
+    "E993-BETA-TARGET and E993-BETA-AGG-SUPPORT remain REFUTED",
+    "E993-BETA-AGG remains OPEN on governed RTree; no ordinary-to-RTree transport",
+    "No headline TREE, FOREST, TRANSFER, or E993 award"
+  ]
+}

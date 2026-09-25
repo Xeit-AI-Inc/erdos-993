@@ -1,0 +1,657 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "c6-la1-c6-forest-delta2-order-9-v1",
+  "theorem": {
+    "title": "Uniform forest Delta_2 positivity threshold, order >= 9 (award group C6-LA1, E993-R25-FOREST-DELTA2-POS-ORDER-9)",
+    "informal_statement": "For every finite forest F (SimpleGraph X, [Finite X], F.IsAcyclic) with Nat.card X >= 9, 0 < Erdos993G1.delta F 2 (i.e. i_3(F) > i_2(F), Delta_2 in the SEMANTIC-CONTRACT.md sense), with the quantitative companion (Nat.card X)^3 - 12*(Nat.card X)^2 + 35*(Nat.card X) - 30 <= 6 * Erdos993G1.delta F 2 for Nat.card X >= 5. A grade change for the registered VERIFIED E993-R25-FOREST-DELTA2-POS-ORDER-9 (proved_informal -> formally_verified), not a new claim. SCOPE (mandatory fences): uniform in the order, no horizon, no enumeration at any order; nu (matching number), tau (vertex-cover number), the excess d, and x(F) < r (first strict descent) enter nowhere; Delta_2 > 0 is a POSITIVITY statement, the opposite sign from a no-recovery statement; this is a forest THRESHOLD theorem, never 'the run's first unconditional forest theorem'; it does not sharpen E993-R25-FOREST-DESCENT-ORDER-BOUND-SHARP (an order bound is a different object); it is not E993-R25-FOREST-DELTA3-THRESHOLD-ORDER-12; it bears on no tier, on FOREST/TREE/TRANSFER, or on Erdos #993. Alias: E993-R25-FOREST-DELTA2-POS-ORDER-9; strictly generalises frozen ENTRY 176 (Erdos993G1.ThirdWide.forest_delta_two_ten_pos, Nat.card X = 10); also aliases E993-PAIR-RANK3-FOREST-MIN. Attribution: critic-attributed jointly to C-U4-T (contract form, quantitative cubic) and C-U4-F (component-corrected bound, entry176_is_an_instance disclosure), on the frozen G1 project's own compiled lemmas; seat U4's route framed the question and settled the decide-reach question the critics' closed form routes around."
+  },
+  "formulation_status": {
+    "status": "established",
+    "evidence": [
+      "cycles/cycle-6/stage6/SYNTHESIS.md :: ## Lean awards :: Dispatch 1",
+      "cycles/cycle-6/stage6/SYNTHESIS.md :: ## Exact established results :: A2",
+      "cycles/cycle-6/stage5/adjudicators/U/ADJUDICATION.md :: ## Lean readiness :: Contract-ready group 1",
+      "cycles/cycle-6/stage4/critics/U4/T/CRITIQUE.md :: F1",
+      "cycles/cycle-6/stage4/critics/U4/F/CRITIQUE.md :: F1",
+      "cycles/cycle-6/stage3/returns/U4/RETURN.md :: Frozen theorem contract (draft)"
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-indepcount",
+      "description": "Actual count of independent k-subsets, i_k(F). Frozen ENTRY 1.",
+      "lean_name": "Erdos993G1.indepCount",
+      "dependencies": []
+    },
+    {
+      "id": "def-coeff",
+      "description": "Integer zero extension of indepCount to negative indices. Frozen ENTRY 2.",
+      "lean_name": "Erdos993G1.coeff",
+      "dependencies": [
+        "def-indepcount"
+      ]
+    },
+    {
+      "id": "def-delta",
+      "description": "Delta_k(F) = coeff(k+1) - coeff(k). Frozen ENTRY 3. The G1 delta used in the terminal statement.",
+      "lean_name": "Erdos993G1.delta",
+      "dependencies": [
+        "def-coeff"
+      ]
+    },
+    {
+      "id": "lem-indepcount-eq-card",
+      "description": "indepCount via the computable Finset-indexed witness. Frozen ENTRY 17.",
+      "lean_name": "Erdos993G1.indepCount_eq_card_indepSetFinset",
+      "dependencies": [
+        "def-indepcount"
+      ]
+    },
+    {
+      "id": "lem-coeff-nat",
+      "description": "coeff at a natural index equals indepCount. Frozen ENTRY 23.",
+      "lean_name": "Erdos993G1.coeff_nat",
+      "dependencies": [
+        "def-coeff",
+        "def-indepcount"
+      ]
+    },
+    {
+      "id": "lem-delta-nat",
+      "description": "delta F k = i_(k+1) - i_k at a natural k. Frozen ENTRY 25.",
+      "lean_name": "Erdos993G1.delta_nat",
+      "dependencies": [
+        "def-delta",
+        "lem-coeff-nat"
+      ]
+    },
+    {
+      "id": "lem-isnindepset-pair-iff",
+      "description": "Pair independence iff non-adjacent and distinct. Frozen ENTRY 41.",
+      "lean_name": "Erdos993G1.isNIndepSet_pair_iff",
+      "dependencies": []
+    },
+    {
+      "id": "lem-sym2-tofinset-injective",
+      "description": "Sym2.toFinset injectivity. Frozen ENTRY 42.",
+      "lean_name": "Erdos993G1.sym2_toFinset_injective",
+      "dependencies": []
+    },
+    {
+      "id": "lem-indepsetfinset-two-eq",
+      "description": "Independent pairs = complement-graph edges. Frozen ENTRY 43.",
+      "lean_name": "Erdos993G1.indepSetFinset_two_eq",
+      "dependencies": [
+        "lem-isnindepset-pair-iff",
+        "lem-sym2-tofinset-injective"
+      ]
+    },
+    {
+      "id": "lem-indepcount-two-add-edges",
+      "description": "i_2(F) + |E(F)| = C(n,2). Frozen ENTRY 44.",
+      "lean_name": "Erdos993G1.indepCount_two_add_edges",
+      "dependencies": [
+        "lem-indepcount-eq-card",
+        "lem-indepsetfinset-two-eq",
+        "lem-sym2-tofinset-injective"
+      ]
+    },
+    {
+      "id": "lem-indepsetfinset-eq-filter-powersetcard",
+      "description": "Independent sets as a powersetCard filter. Frozen ENTRY 45.",
+      "lean_name": "Erdos993G1.indepSetFinset_eq_filter_powersetCard",
+      "dependencies": []
+    },
+    {
+      "id": "lem-card-nonindep-pairs",
+      "description": "Non-independent pair count equals edge count. Frozen ENTRY 46.",
+      "lean_name": "Erdos993G1.card_nonindep_pairs",
+      "dependencies": [
+        "lem-indepsetfinset-eq-filter-powersetcard",
+        "lem-indepcount-two-add-edges",
+        "lem-indepcount-eq-card"
+      ]
+    },
+    {
+      "id": "lem-sum-card-filter-swap",
+      "description": "Double-counting swap identity over two finsets. Frozen ENTRY 47.",
+      "lean_name": "Erdos993G1.sum_card_filter_swap",
+      "dependencies": []
+    },
+    {
+      "id": "lem-sum-nonindep-pair-incidence",
+      "description": "Non-independent-pair incidence summed over order-3 subsets. Frozen ENTRY 48.",
+      "lean_name": "Erdos993G1.sum_nonindep_pair_incidence",
+      "dependencies": [
+        "lem-card-nonindep-pairs",
+        "lem-sum-card-filter-swap"
+      ]
+    },
+    {
+      "id": "lem-sum-indep-indicator",
+      "description": "Independence indicator sum equals independent-set count. Frozen ENTRY 49.",
+      "lean_name": "Erdos993G1.sum_indep_indicator",
+      "dependencies": [
+        "lem-indepsetfinset-eq-filter-powersetcard"
+      ]
+    },
+    {
+      "id": "lem-triple-local-identity",
+      "description": "Local per-triple identity using acyclicity (triangle-freeness). Frozen ENTRY 50.",
+      "lean_name": "Erdos993G1.triple_local_identity",
+      "dependencies": []
+    },
+    {
+      "id": "lem-indepsetfinset-three-incidence",
+      "description": "Triple incidence identity, Finset-counted. Frozen ENTRY 51.",
+      "lean_name": "Erdos993G1.indepSetFinset_three_incidence",
+      "dependencies": [
+        "lem-triple-local-identity",
+        "lem-sum-indep-indicator",
+        "lem-sum-nonindep-pair-incidence"
+      ]
+    },
+    {
+      "id": "lem-sum-triple-centered-neighbor-pairs",
+      "description": "Re-indexes the triple sum to a per-vertex degree-choose-2 sum. Frozen ENTRY 53.",
+      "lean_name": "Erdos993G1.sum_triple_centered_neighbor_pairs",
+      "dependencies": []
+    },
+    {
+      "id": "lem-indepcount-three-add-edge-incidence",
+      "description": "i_3(F) + |E|(n-2) = C(n,3) + sum_v C(deg v,2). Frozen ENTRY 54.",
+      "lean_name": "Erdos993G1.indepCount_three_add_edge_incidence",
+      "dependencies": [
+        "lem-indepsetfinset-three-incidence",
+        "lem-sum-triple-centered-neighbor-pairs",
+        "lem-indepcount-eq-card"
+      ]
+    },
+    {
+      "id": "lem-forest-card-edges-add-components",
+      "description": "|E(F)| + c(F) = n, for an acyclic (forest) graph. Frozen ENTRY 58.",
+      "lean_name": "Erdos993G1.forest_card_edges_add_components",
+      "dependencies": []
+    },
+    {
+      "id": "lem-components-card-pos-of-card-pos",
+      "description": "c(F) >= 1 whenever n >= 1. Frozen ENTRY 59.",
+      "lean_name": "Erdos993G1.components_card_pos_of_card_pos",
+      "dependencies": []
+    },
+    {
+      "id": "lem-degreedefect-nonneg",
+      "description": "C(d,2) - d + 1 >= 0 termwise (the convexity defect is nonnegative). Frozen ENTRY 66.",
+      "lean_name": "Erdos993G1.degreeDefect_nonneg",
+      "dependencies": []
+    },
+    {
+      "id": "lem-degreechoose-sum-lower",
+      "description": "sum_v deg(v) - n <= sum_v C(deg v,2), the convexity step. Frozen ENTRY 68.",
+      "lean_name": "Erdos993G1.degreeChoose_sum_lower",
+      "dependencies": [
+        "lem-degreedefect-nonneg"
+      ]
+    },
+    {
+      "id": "lem-scaledchoosetwo",
+      "description": "2*C(n,2) = n(n-1). Frozen ENTRY 70.",
+      "lean_name": "Erdos993G1.scaledChooseTwo",
+      "dependencies": []
+    },
+    {
+      "id": "lem-scaledchoosethree",
+      "description": "6*C(n,3) = n(n-1)(n-2). Frozen ENTRY 71.",
+      "lean_name": "Erdos993G1.scaledChooseThree",
+      "dependencies": [
+        "lem-scaledchoosetwo"
+      ]
+    },
+    {
+      "id": "lem-forest-delta-two-lower",
+      "description": "The uniform closed-form quantitative lower bound: n^3-12n^2+35n-30 <= 6*delta F 2, for every forest of order n>=5. NEW in this project (registered as a lemma, per condition (iii)). Critic-attributed jointly to C-U4-T (this exact [Finite X] contract form and quantitative cubic) and C-U4-F (the independent second implementation with the component-corrected bound), on the frozen G1 project's own compiled lemmas transcribed above.",
+      "lean_name": "Erdos993G1.ForestDelta2.forest_delta_two_lower",
+      "dependencies": [
+        "lem-components-card-pos-of-card-pos",
+        "lem-forest-card-edges-add-components",
+        "lem-indepcount-two-add-edges",
+        "lem-indepcount-three-add-edge-incidence",
+        "lem-degreechoose-sum-lower",
+        "lem-scaledchoosetwo",
+        "lem-scaledchoosethree",
+        "lem-delta-nat",
+        "def-delta"
+      ]
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-vertex-type",
+      "description": "The forest's vertex type X : Type u, with [Finite X].",
+      "lean_type": "Type u",
+      "dependencies": []
+    },
+    {
+      "id": "domain-forest",
+      "description": "F : SimpleGraph X, constrained by hF : F.IsAcyclic (a forest).",
+      "lean_type": "SimpleGraph X",
+      "dependencies": [
+        "domain-vertex-type"
+      ]
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "X",
+      "kind": "forall",
+      "domain_id": "domain-vertex-type"
+    },
+    {
+      "binder": "F",
+      "kind": "forall",
+      "domain_id": "domain-forest"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-finite",
+      "statement": "[Finite X] -- the minimal instance burden; Erdos993G1.delta is noncomputable so no Fintype/DecidableEq/DecidableRel is needed by the statement.",
+      "dependencies": [
+        "domain-vertex-type"
+      ]
+    },
+    {
+      "id": "hyp-acyclic",
+      "statement": "hF : F.IsAcyclic -- F is a forest; enters through lem-forest-card-edges-add-components (|E|+c=n) and, via lem-indepCount-three-add-edge-incidence's own proof, through triangle-freeness in lem-triple-local-identity.",
+      "dependencies": [
+        "domain-forest"
+      ]
+    },
+    {
+      "id": "hyp-order-ge-nine",
+      "statement": "hn : 9 <= Nat.card X -- the threshold hypothesis; discharges 5 <= Nat.card X for forest_delta_two_lower and, via nlinarith with n^3-12n^2+35n-30 = (n-9)^3+15(n-9)^2+62(n-9)+42, gives strict positivity.",
+      "dependencies": [
+        "domain-vertex-type"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "theorem forest_delta_two_pos_ge_nine {X : Type u} [Finite X] (F : SimpleGraph X) (hF : F.IsAcyclic) (hn : 9 <= Nat.card X) : 0 < Erdos993G1.delta F 2",
+    "dependencies": [
+      "hyp-finite",
+      "hyp-acyclic",
+      "hyp-order-ge-nine",
+      "lem-forest-delta-two-lower",
+      "def-delta"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "domain-vertex-type",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-forest",
+        "kind": "domain"
+      },
+      {
+        "id": "def-indepcount",
+        "kind": "definition"
+      },
+      {
+        "id": "def-coeff",
+        "kind": "definition"
+      },
+      {
+        "id": "def-delta",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-indepcount-eq-card",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-coeff-nat",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-delta-nat",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-isnindepset-pair-iff",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-sym2-tofinset-injective",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-indepsetfinset-two-eq",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-indepcount-two-add-edges",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-indepsetfinset-eq-filter-powersetcard",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-card-nonindep-pairs",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-sum-card-filter-swap",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-sum-nonindep-pair-incidence",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-sum-indep-indicator",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-triple-local-identity",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-indepsetfinset-three-incidence",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-sum-triple-centered-neighbor-pairs",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-indepcount-three-add-edge-incidence",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-forest-card-edges-add-components",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-components-card-pos-of-card-pos",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-degreedefect-nonneg",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-degreechoose-sum-lower",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-scaledchoosetwo",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-scaledchoosethree",
+        "kind": "definition"
+      },
+      {
+        "id": "lem-forest-delta-two-lower",
+        "kind": "definition"
+      },
+      {
+        "id": "hyp-finite",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-acyclic",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-order-ge-nine",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "domain-vertex-type",
+        "to": "domain-forest"
+      },
+      {
+        "from": "def-indepcount",
+        "to": "def-coeff"
+      },
+      {
+        "from": "def-coeff",
+        "to": "def-delta"
+      },
+      {
+        "from": "def-indepcount",
+        "to": "lem-indepcount-eq-card"
+      },
+      {
+        "from": "def-coeff",
+        "to": "lem-coeff-nat"
+      },
+      {
+        "from": "def-indepcount",
+        "to": "lem-coeff-nat"
+      },
+      {
+        "from": "def-delta",
+        "to": "lem-delta-nat"
+      },
+      {
+        "from": "lem-coeff-nat",
+        "to": "lem-delta-nat"
+      },
+      {
+        "from": "lem-isnindepset-pair-iff",
+        "to": "lem-indepsetfinset-two-eq"
+      },
+      {
+        "from": "lem-sym2-tofinset-injective",
+        "to": "lem-indepsetfinset-two-eq"
+      },
+      {
+        "from": "lem-indepcount-eq-card",
+        "to": "lem-indepcount-two-add-edges"
+      },
+      {
+        "from": "lem-indepsetfinset-two-eq",
+        "to": "lem-indepcount-two-add-edges"
+      },
+      {
+        "from": "lem-sym2-tofinset-injective",
+        "to": "lem-indepcount-two-add-edges"
+      },
+      {
+        "from": "lem-indepsetfinset-eq-filter-powersetcard",
+        "to": "lem-card-nonindep-pairs"
+      },
+      {
+        "from": "lem-indepcount-two-add-edges",
+        "to": "lem-card-nonindep-pairs"
+      },
+      {
+        "from": "lem-indepcount-eq-card",
+        "to": "lem-card-nonindep-pairs"
+      },
+      {
+        "from": "lem-card-nonindep-pairs",
+        "to": "lem-sum-nonindep-pair-incidence"
+      },
+      {
+        "from": "lem-sum-card-filter-swap",
+        "to": "lem-sum-nonindep-pair-incidence"
+      },
+      {
+        "from": "lem-indepsetfinset-eq-filter-powersetcard",
+        "to": "lem-sum-indep-indicator"
+      },
+      {
+        "from": "lem-triple-local-identity",
+        "to": "lem-indepsetfinset-three-incidence"
+      },
+      {
+        "from": "lem-sum-indep-indicator",
+        "to": "lem-indepsetfinset-three-incidence"
+      },
+      {
+        "from": "lem-sum-nonindep-pair-incidence",
+        "to": "lem-indepsetfinset-three-incidence"
+      },
+      {
+        "from": "lem-indepsetfinset-three-incidence",
+        "to": "lem-indepcount-three-add-edge-incidence"
+      },
+      {
+        "from": "lem-sum-triple-centered-neighbor-pairs",
+        "to": "lem-indepcount-three-add-edge-incidence"
+      },
+      {
+        "from": "lem-indepcount-eq-card",
+        "to": "lem-indepcount-three-add-edge-incidence"
+      },
+      {
+        "from": "lem-degreedefect-nonneg",
+        "to": "lem-degreechoose-sum-lower"
+      },
+      {
+        "from": "lem-scaledchoosetwo",
+        "to": "lem-scaledchoosethree"
+      },
+      {
+        "from": "lem-components-card-pos-of-card-pos",
+        "to": "lem-forest-delta-two-lower"
+      },
+      {
+        "from": "lem-forest-card-edges-add-components",
+        "to": "lem-forest-delta-two-lower"
+      },
+      {
+        "from": "lem-indepcount-two-add-edges",
+        "to": "lem-forest-delta-two-lower"
+      },
+      {
+        "from": "lem-indepcount-three-add-edge-incidence",
+        "to": "lem-forest-delta-two-lower"
+      },
+      {
+        "from": "lem-degreechoose-sum-lower",
+        "to": "lem-forest-delta-two-lower"
+      },
+      {
+        "from": "lem-scaledchoosetwo",
+        "to": "lem-forest-delta-two-lower"
+      },
+      {
+        "from": "lem-scaledchoosethree",
+        "to": "lem-forest-delta-two-lower"
+      },
+      {
+        "from": "lem-delta-nat",
+        "to": "lem-forest-delta-two-lower"
+      },
+      {
+        "from": "def-delta",
+        "to": "lem-forest-delta-two-lower"
+      },
+      {
+        "from": "domain-vertex-type",
+        "to": "hyp-finite"
+      },
+      {
+        "from": "domain-forest",
+        "to": "hyp-acyclic"
+      },
+      {
+        "from": "domain-vertex-type",
+        "to": "hyp-order-ge-nine"
+      },
+      {
+        "from": "hyp-finite",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-acyclic",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-order-ge-nine",
+        "to": "conclusion"
+      },
+      {
+        "from": "lem-forest-delta-two-lower",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-delta",
+        "to": "conclusion"
+      }
+    ]
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "classical_allowed",
+    "rationale": "Every registered declaration depends on Classical.choice (inherited via the `classical` tactic used to obtain Fintype/DecidableEq/DecidableRel instances from [Finite X], and via Mathlib's own SimpleGraph API), as this project's own kernel-verification receipt confirms (EVIDENCE/axiom-check-all-declarations.txt: all 27 declarations report exactly [propext, Classical.choice, Quot.sound], zero sorryAx). Axioms are restricted to exactly propext, Classical.choice, Quot.sound (kernel-checked)."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "Erdos993G1.ForestDelta2.forest_delta_two_pos_ge_nine",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem forest_delta_two_pos_ge_nine {X : Type u} [Finite X] (F : SimpleGraph X)\n    (hF : F.IsAcyclic) (hn : 9 ≤ Nat.card X) : 0 < Erdos993G1.delta F 2",
+    "expected_statement_sha256": "9344b2dc4b4143f499ac8b5e5f5b4543e236d337e240ca4d1ddc2517b3dd6299"
+  },
+  "source_materials": [
+    {
+      "id": "source-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "sha256": "2196aa7d392403716412e6a8513ee32bf7d196453f72a078556a0b1e6610a926",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "source-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "sha256": "82e92eb23f6aa7c0617d237c1075a69078c88cb8e37ff2da9b9be2d2dec3dd0f",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "source-critic-u4-t-primary",
+      "path": "SOURCE/originating-critic-U4-T-CritU4T.lean",
+      "sha256": "74b78e9bbcb9aa5f7593d0c846e311280406e46cf766e780d95d3ef6f98a0f9b",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-critic-u4-f-fallback",
+      "path": "SOURCE/originating-critic-U4-F-CriticUC604F.lean",
+      "sha256": "834702bb27d33c1936163f0cf7fe7763e11c8383a683db9dffdfd427557093ad",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-frozen-g1-main",
+      "path": "SOURCE/originating-frozen-g1-Main.lean",
+      "sha256": "aa517ebc678c552e4533ddd4c37e8b57bc3db0d58cdc91ef08f4e94c9fda1ca4",
+      "role": "definition_authority"
+    }
+  ]
+}

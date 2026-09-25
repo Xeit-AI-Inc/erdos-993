@@ -1,0 +1,54 @@
+{
+  "worker_id": "C2-CU-F3",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "U",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-F3-001",
+    "C2-F3-002",
+    "C2-F3-003"
+  ],
+  "claims": [
+    {
+      "claim_id": "C2-F3-001",
+      "statement": "The bipartite tagged-set incidence bound and its degree-one leaf refinement hold at every integer k>=1, including zero-extension and boundary ranks.",
+      "scope": "All finite bipartite H and all W subsets of V(H); leaf refinement for finite bipartite G with a degree-one vertex.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CU-F3/REPORT.md"
+      ],
+      "reason": "Independent double-count verification confirms at least k tag-preserving deletions and at most 2(alpha(H)-k) extensions for k<=alpha(H); higher ranks are handled separately by zero extension."
+    },
+    {
+      "claim_id": "C2-F3-002",
+      "statement": "An eligible finite connected ordinary tree at integer rank p=alpha-2 has alpha>=7.",
+      "scope": "The exact first-interior eligibility condition with strict first negative difference and terminal zero extension.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CU-F3/REPORT.md"
+      ],
+      "reason": "The alpha=4,5 low differences obstruct eligibility; the exact triple count gives Delta_2>=0 at alpha=6, including the one- and two-vertex-cover boundary orders 7 and 8."
+    },
+    {
+      "claim_id": "C2-F3-003",
+      "statement": "The two preceding bounds give a complete informal proof that the exact favorable original-leaf aggregate is nonpositive for every eligible ordinary tree at p=alpha-2.",
+      "scope": "Primary first-interior aggregate, with exact strict selector, original leaf tags and support deletions, and no residual premise; formal primary award still requires the governed Lean gate.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CU-F3/REPORT.md",
+        "cycles/cycle-2/C2-CU-F3/path1001_replay.py",
+        "cycles/cycle-2/C2-CU-F3/path1001_replay.json",
+        "cycles/cycle-2/C2-CU-F3/branched_path302.py",
+        "cycles/cycle-2/C2-CU-F3/branched_path302.json"
+      ],
+      "reason": "Integer guard algebra makes the tagged count pointwise nonpositive for each original leaf; summation preserves favorable-tag multiplicity. A copied path replay matches pinned evidence, and an independent eligible 302-vertex branched path check probes a two-vertex W. Neither finite check confers universal or formal status."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CU-F3/REPORT.md",
+  "limitations": [
+    "All three dispositions concern informal mathematical validity only; no Lean build or governed formalization gate was run.",
+    "The two finite calculations are exact at their stated orders but do not prove a universal claim.",
+    "The inherited positive local witnesses lie at off-target ranks and do not refute the primary rank."
+  ]
+}

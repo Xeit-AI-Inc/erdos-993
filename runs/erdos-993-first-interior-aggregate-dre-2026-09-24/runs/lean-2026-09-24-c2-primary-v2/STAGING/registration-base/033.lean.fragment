@@ -1,0 +1,61 @@
+namespace Erdos993G1
+
+lemma sum_triple_centered_neighbor_pairs {V : Type u}
+    [Fintype V] [DecidableEq V] (F : SimpleGraph V) [DecidableRel F.Adj] :
+    (∑ B ∈ (Finset.univ : Finset V).powersetCard 3,
+      ∑ a ∈ B, ((B.filter (F.Adj a)).card).choose 2) =
+      ∑ a : V, (F.degree a).choose 2 := by
+  let L : Finset (Σ _B : Finset V, Σ _a : V, Finset V) :=
+    ((Finset.univ : Finset V).powersetCard 3).sigma fun B =>
+      B.sigma fun a => (B.filter (F.Adj a)).powersetCard 2
+  let R : Finset (Σ _a : V, Finset V) :=
+    (Finset.univ : Finset V).sigma fun a => (F.neighborFinset a).powersetCard 2
+  have hcard : L.card = R.card := by
+    refine Finset.card_bij'
+      (fun x _ => x.2)
+      (fun y _ => ⟨insert y.1 y.2, y⟩) ?_ ?_ ?_ ?_
+    · rintro ⟨B, a, N⟩ hx
+      simp only [L, Finset.mem_sigma, Finset.mem_powersetCard,
+        Finset.subset_univ, true_and] at hx
+      obtain ⟨hB, ha, hN, hn⟩ := hx
+      simp only [R, Finset.mem_sigma, Finset.mem_univ, true_and,
+        Finset.mem_powersetCard]
+      refine ⟨?_, hn⟩
+      intro w hw
+      exact (F.mem_neighborFinset a w).mpr (Finset.mem_filter.mp (hN hw)).2
+    · rintro ⟨a, N⟩ hy
+      simp only [R, Finset.mem_sigma, Finset.mem_univ, true_and,
+        Finset.mem_powersetCard] at hy
+      obtain ⟨hN, hn⟩ := hy
+      have ha : a ∉ N := by
+        intro h
+        exact F.irrefl ((F.mem_neighborFinset a a).mp (hN h))
+      simp only [L, Finset.mem_sigma, Finset.mem_powersetCard,
+        Finset.subset_univ, true_and]
+      refine ⟨?_, Finset.mem_insert_self a N, ?_, hn⟩
+      · simp [Finset.card_insert_of_notMem ha, hn]
+      · intro w hw
+        exact Finset.mem_filter.mpr
+          ⟨Finset.mem_insert_of_mem hw, (F.mem_neighborFinset a w).mp (hN hw)⟩
+    · rintro ⟨B, a, N⟩ hx
+      simp only [L, Finset.mem_sigma, Finset.mem_powersetCard,
+        Finset.subset_univ, true_and] at hx
+      obtain ⟨hB, haB, hN, hn⟩ := hx
+      have ha : a ∉ N := by
+        intro h
+        exact F.irrefl (Finset.mem_filter.mp (hN h)).2
+      have hNB : insert a N ⊆ B := by
+        intro w hw
+        obtain rfl | hw := Finset.mem_insert.mp hw
+        · exact haB
+        · exact (Finset.mem_filter.mp (hN hw)).1
+      have hEq : insert a N = B := by
+        apply Finset.eq_of_subset_of_card_le hNB
+        simp [hB, Finset.card_insert_of_notMem ha, hn]
+      simp only [hEq]
+    · rintro ⟨a, N⟩ _
+      rfl
+  simpa only [L, R, Finset.card_sigma, Finset.card_powersetCard,
+    SimpleGraph.card_neighborFinset_eq_degree] using hcard
+
+end Erdos993G1

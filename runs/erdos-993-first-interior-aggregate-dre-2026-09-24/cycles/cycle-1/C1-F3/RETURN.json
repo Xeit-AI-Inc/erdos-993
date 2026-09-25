@@ -1,0 +1,51 @@
+{
+  "worker_id": "C1-F3",
+  "cycle": 1,
+  "stage": "search",
+  "orientation": "F",
+  "status_authority": "proposed_worker_only",
+  "claims": [
+    {
+      "claim_id": "C1-F3-01",
+      "statement": "For the explicitly constructed T_m instances m=22,60,100, p=alpha-2 is eligible and the complete favorable-original-leaf aggregate is respectively -147807, -2947590, and -13588650.",
+      "scope": "These three T_m trees only, evaluated with the frozen ordinary-tree definitions.",
+      "status": "proposed_finite_negative_evidence",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-F3/REPORT.md",
+        "cycles/cycle-1/C1-F3/C1-F3-fresh-examples.json",
+        "cycles/cycle-1/C1-F3/C1-F3-independent-checks.json"
+      ],
+      "reason": "Exact integer polynomial evaluation with all selected leaves and summands recorded; a separate recurrence matched the selector and complete sum. This is finite evidence only."
+    },
+    {
+      "claim_id": "C1-F3-02",
+      "statement": "No positive complete aggregate occurred in 1466 eligible sampled labeled trees at orders 16, 20, 24, 30, and 40, each evaluated at p=alpha-2; the largest sampled aggregate was -210 and the largest selected summand was 0.",
+      "scope": "300 independent uniform Prüfer-word samples per listed order using seed 9932401; not an exhaustive census.",
+      "status": "proposed_bounded_search_evidence",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-F3/REPORT.md",
+        "cycles/cycle-1/C1-F3/random_search.py",
+        "cycles/cycle-1/C1-F3/C1-F3-random-summary.json"
+      ],
+      "reason": "The deterministic replay script uses exact integer tree-DP coefficients and the zero-extended strict-descent guard. Sampling does not establish the universal claim."
+    },
+    {
+      "claim_id": "C1-F3-03",
+      "statement": "The tree with edges 01,13,14,18,24,25,27,29,69 is eligible at p=alpha-2=5 but is non-residual: a maximum independent set {0,3,4,5,7,8,9} omits original leaf 6 while containing its support 9. Its complete favorable-leaf aggregate is -72.",
+      "scope": "One exact finite ordinary tree; this blocks a direct application of the inherited residual top-rank theorem to the unrestricted interior target but is not an aggregate counterexample.",
+      "status": "proposed_transfer_scope_obstruction",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-F3/REPORT.md",
+        "cycles/cycle-1/C1-F3/nonresidual_target.json"
+      ],
+      "reason": "The exact independence polynomial, descent, eligibility, all original and favorable leaves, each summand, complete sum, and a maximum set are recorded. The r26 theorem separately requires residuality and rank alpha-1."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-F3/REPORT.md",
+  "limitations": [
+    "No exact positive complete eligible aggregate or universal proof was found; the primary claim remains open.",
+    "The random Prüfer search is bounded and non-exhaustive.",
+    "No Lean build was run because no universal theorem or exact counterexample was proposed for a governed gate.",
+    "All owned calculations and processes were complete before return; no background job remains."
+  ]
+}

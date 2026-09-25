@@ -1,0 +1,28 @@
+{
+  "worker_id": "C1-U3",
+  "cycle": 1,
+  "stage": "search",
+  "orientation": "U",
+  "status_authority": "proposed_worker_only",
+  "claims": [
+    {
+      "claim_id": "C1-U3-EXACT-COUNT-OBSTRUCTION",
+      "statement": "For the frozen ordinary-tree definitions, S(T,p)=A_p(T,p)-A_(p-1)(T,p), where A_k sums, with distinct original leaf tags, independent k-sets of H_v meeting N_T(s_v)\\{v} over v in F_p(T). The selector Delta_p(T-v)<0 decomposes as Delta_p(H_v)+Delta_(p-1)(R_v)<0, which does not itself give the required sign for the previous-rank difference Delta_(p-1)(H_v)-Delta_(p-1)(R_v). The universal aggregate implication and an eligible positive counterexample both remain unresolved by this result.",
+      "scope": "Exact combinatorial identity and unresolved sign bridge for finite ordinary trees with p=alpha(T)-2 and x(T)+2<=p; no residual hypothesis.",
+      "status": "proposed_exact_identity_with_open_obligation",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-U3/REPORT.md",
+        "cycles/cycle-1/C1-U3/fresh_family.py",
+        "cycles/cycle-1/C1-U3/fresh_family_results.json"
+      ],
+      "reason": "Partition independent sets of H_v by whether they meet W_v=N_T(s_v)\\{v}; use I_(T-v)=I_H+z I_R. The resulting selector and summand differences compare different adjacent ranks with opposing signs, leaving exactly A_p<=A_(p-1) to prove or refute."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-U3/REPORT.md",
+  "limitations": [
+    "The exact identity does not establish the required aggregate sign or produce a counterexample.",
+    "The T_m checks cover only m=75, 100, 150 at p=alpha-2 and are not universal evidence.",
+    "No Lean build or complete tree census was performed.",
+    "The independent-set polynomial evaluator is a copied admitted evaluator; its first-descent routine was not used, and the runner scans through the terminal rank as required."
+  ]
+}

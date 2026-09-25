@@ -1,0 +1,38 @@
+{
+  "worker_id": "C2-F2",
+  "cycle": 2,
+  "stage": "search",
+  "orientation": "F",
+  "status_authority": "proposed_worker_only",
+  "claims": [
+    {
+      "claim_id": "C2-F2-ELIGIBILITY-ALPHA-GE-SEVEN",
+      "statement": "For every finite ordinary connected tree T with integer p=alpha(T)-2 and first strict descent x(T), eligibility x(T)+2<=p implies alpha(T)>=7.",
+      "scope": "Exactly ordinary finite connected trees, strict zero-extended Delta ranks, and the frozen alpha-minus-two eligibility condition; proof composes r27 n<=4x with elementary tree identities and the n=7,8 vertex-cover cases.",
+      "status": "proposed_supported",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-F2/REPORT.md",
+        "cycles/cycle-2/C2-F2/replay_target.py"
+      ],
+      "reason": "The assumption alpha<=6 forces alpha=6, x=2, n in {7,8}; exact tree counting and the corresponding one- or two-vertex-cover bounds force Delta_2>0, contradicting Delta_x<0. No eligible alpha<=6 tree or defect in these steps was found."
+    },
+    {
+      "claim_id": "C2-F2-FRESH-ELIGIBLE-ORDER-NINE-REPLAY",
+      "statement": "The displayed 9-vertex tree has alpha=7, x=3, p=5, is eligible, has six favorable original leaves, and complete sum S=-56.",
+      "scope": "One self-built finite ordinary tree, independently enumerated over all subsets by the included standalone script; no census or universal sign claim.",
+      "status": "proposed_supported",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-F2/REPORT.md",
+        "cycles/cycle-2/C2-F2/replay_target.py"
+      ],
+      "reason": "The script computes the independent-set sequence, first strict descent, every original-leaf selector and term, and the exact complete favorable sum from the explicitly listed edges."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-F2/REPORT.md",
+  "limitations": [
+    "No attack on the alpha>=7 eligibility claim or its cited r27 and small-tree steps was found; the result is proposed and does not alter canonical status.",
+    "The fresh order-nine replay is one exact graph only; no new exhaustive census or Lean build was run.",
+    "This work does not prove the tagged bipartite shadow bound, the high-tail leaf pointwise sign, or the primary complete-sum theorem, all of which remain unresolved here.",
+    "No owned background jobs remain running."
+  ]
+}

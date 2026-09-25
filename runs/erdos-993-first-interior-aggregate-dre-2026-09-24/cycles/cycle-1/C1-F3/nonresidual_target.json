@@ -1,0 +1,131 @@
+{
+  "edges": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      1,
+      4
+    ],
+    [
+      1,
+      8
+    ],
+    [
+      2,
+      4
+    ],
+    [
+      2,
+      5
+    ],
+    [
+      2,
+      7
+    ],
+    [
+      2,
+      9
+    ],
+    [
+      6,
+      9
+    ]
+  ],
+  "alpha": 7,
+  "independence_polynomial": [
+    1,
+    10,
+    36,
+    62,
+    61,
+    37,
+    13,
+    2
+  ],
+  "x": 3,
+  "p": 5,
+  "eligible": true,
+  "all_original_leaves": [
+    0,
+    3,
+    5,
+    6,
+    7,
+    8
+  ],
+  "favorable_original_leaves": [
+    0,
+    3,
+    5,
+    6,
+    7,
+    8
+  ],
+  "selected_leaf_summands": [
+    {
+      "leaf": 0,
+      "support": 1,
+      "delta_p_T_minus_leaf": -9,
+      "delta_pminus1_H": -15,
+      "delta_pminus1_R": 0,
+      "g": -15
+    },
+    {
+      "leaf": 3,
+      "support": 1,
+      "delta_p_T_minus_leaf": -9,
+      "delta_pminus1_H": -15,
+      "delta_pminus1_R": 0,
+      "g": -15
+    },
+    {
+      "leaf": 5,
+      "support": 2,
+      "delta_p_T_minus_leaf": -10,
+      "delta_pminus1_H": -14,
+      "delta_pminus1_R": -1,
+      "g": -13
+    },
+    {
+      "leaf": 6,
+      "support": 9,
+      "delta_p_T_minus_leaf": -14,
+      "delta_pminus1_H": -10,
+      "delta_pminus1_R": -9,
+      "g": -1
+    },
+    {
+      "leaf": 7,
+      "support": 2,
+      "delta_p_T_minus_leaf": -10,
+      "delta_pminus1_H": -14,
+      "delta_pminus1_R": -1,
+      "g": -13
+    },
+    {
+      "leaf": 8,
+      "support": 1,
+      "delta_p_T_minus_leaf": -9,
+      "delta_pminus1_H": -15,
+      "delta_pminus1_R": 0,
+      "g": -15
+    }
+  ],
+  "complete_sum": -72,
+  "maximum_independent_set_containing_support_9_but_omitting_leaf_6": [
+    0,
+    3,
+    4,
+    5,
+    7,
+    8,
+    9
+  ],
+  "consequence": "Residual(T) fails although the frozen primary eligibility holds; this is a transfer-scope obstruction, not a counterexample to S<=0."
+}

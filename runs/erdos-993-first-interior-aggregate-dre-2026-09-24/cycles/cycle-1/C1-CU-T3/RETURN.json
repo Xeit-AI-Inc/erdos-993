@@ -1,0 +1,53 @@
+{
+  "worker_id": "C1-CU-T3",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "U",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-T3-01",
+    "C1-T3-02"
+  ],
+  "claims": [
+    {
+      "claim_id": "C1-T3-01",
+      "statement": "The coefficient deletion recurrence, strict-selector equivalence, and multiplicity-weighted support-fibre regrouping in the incoming claim are exact for original leaves of finite ordinary trees at every integer rank under zero extension.",
+      "scope": "Finite ordinary trees, original leaf tags and original supports; identity only, with no sign or residual inference.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CU-T3/REPORT.md",
+        "cycles/cycle-1/C1-CU-T3/replay.json"
+      ],
+      "reason": "Partition independent sets of T-v by membership of the original support s. Swapping sibling leaves proves all-or-none selection and equal summands; distinct tags give the multiplicity. The exact identity does not sign the selected weighted sum."
+    },
+    {
+      "claim_id": "C1-T3-02",
+      "statement": "The complete favorable-original-leaf aggregate is nonpositive for every eligible finite ordinary tree at p=alpha(T)-2.",
+      "scope": "Primary frozen E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE, with x(T)+2<=p and every favorable original leaf counted.",
+      "status": "proposed_unresolved",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CU-T3/REPORT.md",
+        "cycles/cycle-1/C1-CU-T3/formula_check.json"
+      ],
+      "reason": "The reduction leaves an unsigned weighted sum. Replayed and independently checked T_m rows are finite negative evidence only; neither a universal proof nor an eligible positive complete aggregate is supplied."
+    },
+    {
+      "claim_id": "C1-CU-T3-01",
+      "statement": "For the constructed T_m family with m>=1, n=3m, alpha(T_m)=n+2 and p=alpha-2=n, all n+1 original leaves are favorable, and S(T_m,p)=-n(n^2+2n-9)/2<0.",
+      "scope": "Exact family formula at its alpha-minus-two rank; no assertion that all m satisfy the target eligibility guard.",
+      "status": "proposed_exact_family_formula",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CU-T3/REPORT.md",
+        "cycles/cycle-1/C1-CU-T3/formula_check.py",
+        "cycles/cycle-1/C1-CU-T3/formula_check.json"
+      ],
+      "reason": "Root decomposition yields explicit independence polynomials for T_m and its two leaf types. Coefficient extraction gives both strict selectors and the aggregate formula, with a separate exact arithmetic check at m=22,60,100."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CU-T3/REPORT.md",
+  "limitations": [
+    "The primary unrestricted eligible-tree sign is not established or refuted by this critique.",
+    "The copied evaluator replay covers only m=22,60,100 and shares the incoming implementation; the separate formula proof covers only the constructed T_m family.",
+    "No Lean build was assigned or run; all owned commands completed and no background job remains active."
+  ]
+}

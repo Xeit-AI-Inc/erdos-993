@@ -1,0 +1,284 @@
+namespace E993Interior.Guard
+
+variable {V : Type*} [Fintype V] [DecidableEq V]
+
+private lemma count_bridge (G : SimpleGraph V) [DecidableRel G.Adj] (k : ℕ) :
+    (C5LA1.indepSetCount G ∅ k : ℤ) = Erdos993G1.indepCount G k := by
+  rw [Erdos993G1.indepCount_eq_card_indepSetFinset,
+    Erdos993G1.indepSetFinset_eq_filter_powersetCard]
+  simp [C5LA1.indepSetCount, C5LA1.indepSetsAvoiding]
+
+private lemma delta_bridge (G : SimpleGraph V) [DecidableRel G.Adj] (k : ℕ) :
+    C5LA1.forwardDifferenceDel G ∅ k = Erdos993G1.delta G (k : ℤ) := by
+  simp only [C5LA1.forwardDifferenceDel, Erdos993G1.delta_nat,
+    ← count_bridge]
+
+private lemma indep_count_zero (G : SimpleGraph V) [DecidableRel G.Adj] :
+    Erdos993G1.indepCount G 0 = 1 := by
+  rw [← count_bridge]
+  have he : G.IsIndepSet (∅ : Set V) := by
+    simp [SimpleGraph.isIndepSet_iff, Set.Pairwise]
+  have he' : G.IsIndepSet ((∅ : Finset V) : Set V) := by simpa using he
+  simp only [C5LA1.indepSetCount, C5LA1.indepSetsAvoiding,
+    Finset.sdiff_empty, Finset.powersetCard_zero]
+  have hset : (({∅} : Finset (Finset V)).filter
+      (fun s : Finset V => G.IsIndepSet (s : Set V))) = {∅} := by
+    ext s
+    simp only [Finset.mem_filter, Finset.mem_singleton]
+    constructor
+    · exact And.left
+    · intro hs
+      subst s
+      exact ⟨rfl, he'⟩
+  rw [hset]
+  simp
+
+private lemma indep_count_one (G : SimpleGraph V) [DecidableRel G.Adj] :
+    Erdos993G1.indepCount G 1 = Fintype.card V := by
+  rw [← count_bridge]
+  have hfilter :
+      ((Finset.univ : Finset V).powersetCard 1).filter
+        (fun s : Finset V => G.IsIndepSet (s : Set V)) =
+      (Finset.univ : Finset V).powersetCard 1 := by
+    ext s
+    simp only [Finset.mem_filter]
+    constructor
+    · exact And.left
+    · intro hs
+      obtain ⟨v, rfl⟩ := Finset.card_eq_one.mp (Finset.mem_powersetCard.mp hs).2
+      simpa [SimpleGraph.isIndepSet_iff, Set.Pairwise] using hs
+  simp [C5LA1.indepSetCount, C5LA1.indepSetsAvoiding, hfilter]
+
+private lemma order_ge_alpha_succ (G : SimpleGraph V) [DecidableRel G.Adj]
+    (hT : G.IsTree) (ha : 2 ≤ G.indepNum) :
+    G.indepNum + 1 ≤ Fintype.card V := by
+  obtain ⟨S, hS⟩ := G.exists_isNIndepSet_indepNum
+  have hle : G.indepNum ≤ Fintype.card V := by
+    rw [← hS.card_eq]
+    exact Finset.card_le_card (Finset.subset_univ S)
+  by_contra h
+  have hScard := hS.card_eq
+  have hcard : Fintype.card V ≤ S.card := by omega
+  have heq : S = Finset.univ := by
+    apply Finset.eq_of_subset_of_card_le (Finset.subset_univ S)
+    simpa using hcard
+  have hzero : G.edgeFinset = ∅ := by
+    apply Finset.eq_empty_iff_forall_notMem.mpr
+    intro e he
+    induction e using Sym2.inductionOn with
+    | hf u v =>
+      have hadj : G.Adj u v := by simpa [SimpleGraph.mem_edgeFinset] using he
+      exact hS.isIndepSet (by simpa [heq] : u ∈ (S : Set V))
+        (by simpa [heq] : v ∈ (S : Set V)) hadj.ne hadj
+  have ht := hT.card_edgeFinset
+  rw [hzero] at ht
+  simp at ht
+  omega
+
+private lemma edge_cover_subset (G : SimpleGraph V) [DecidableRel G.Adj]
+    (S : Finset V) (hS : G.IsIndepSet (S : Set V)) :
+    G.edgeFinset ⊆ (Finset.univ \ S).biUnion (fun v => G.incidenceFinset v) := by
+  intro e he
+  induction e using Sym2.inductionOn with
+  | hf u v =>
+    have hadj : G.Adj u v := by simpa [SimpleGraph.mem_edgeFinset] using he
+    by_cases hu : u ∈ S
+    · have hv : v ∉ S := by
+        intro hv
+        exact hS hu hv hadj.ne hadj
+      refine Finset.mem_biUnion.mpr ⟨v, Finset.mem_sdiff.mpr ⟨Finset.mem_univ _, hv⟩, ?_⟩
+      simpa [SimpleGraph.mem_incidenceFinset] using
+        (G.mk'_mem_incidenceSet_right_iff.mpr hadj)
+    · refine Finset.mem_biUnion.mpr ⟨u, Finset.mem_sdiff.mpr ⟨Finset.mem_univ _, hu⟩, ?_⟩
+      simpa [SimpleGraph.mem_incidenceFinset] using
+        (G.mk'_mem_incidenceSet_left_iff.mpr hadj)
+
+private lemma cover_degree_one (G : SimpleGraph V) [DecidableRel G.Adj]
+    (S : Finset V) (hS : G.IsIndepSet (S : Set V)) (u : V)
+    (hc : Finset.univ \ S = {u}) :
+    G.edgeFinset.card ≤ G.degree u := by
+  have h := Finset.card_le_card (edge_cover_subset G S hS)
+  simpa [hc] using h
+
+private lemma cover_degree_two (G : SimpleGraph V) [DecidableRel G.Adj]
+    (S : Finset V) (hS : G.IsIndepSet (S : Set V)) (u w : V)
+    (hc : Finset.univ \ S = {u, w}) :
+    G.edgeFinset.card ≤ G.degree u + G.degree w := by
+  have h := Finset.card_le_card (edge_cover_subset G S hS)
+  rw [hc] at h
+  simp [Finset.biUnion_insert] at h
+  simpa using h.trans (Finset.card_union_le (G.incidenceFinset u) (G.incidenceFinset w))
+
+private lemma delta_zero_nonneg (G : SimpleGraph V) [DecidableRel G.Adj]
+    (hn : 2 ≤ Fintype.card V) :
+    0 ≤ C5LA1.forwardDifferenceDel G ∅ 0 := by
+  rw [delta_bridge, Erdos993G1.delta_nat, indep_count_zero, indep_count_one]
+  omega
+
+private lemma delta_one_nonneg (G : SimpleGraph V) [DecidableRel G.Adj]
+    (hT : G.IsTree) (hn : 6 ≤ Fintype.card V) :
+    0 ≤ C5LA1.forwardDifferenceDel G ∅ 1 := by
+  have hp := Erdos993G1.indepCount_two_add_edges G
+  have ht := hT.card_edgeFinset
+  rw [delta_bridge, Erdos993G1.delta_nat, indep_count_one]
+  simp only [Nat.card_eq_fintype_card, ← SimpleGraph.edgeFinset_card] at hp
+  have hchoose := Erdos993G1.scaledChooseTwo (Fintype.card V)
+  have hedge : (G.edgeFinset.card : ℤ) + 1 = Fintype.card V := by exact_mod_cast ht
+  have hpositive : 0 ≤ ((Fintype.card V : ℤ) - 5) * ((Fintype.card V : ℤ) + 1) :=
+    mul_nonneg (by omega) (by omega)
+  nlinarith
+
+private lemma delta_two_nonneg_large (G : SimpleGraph V) [DecidableRel G.Adj]
+    (hT : G.IsTree) (hn : 9 ≤ Fintype.card V) :
+    0 ≤ C5LA1.forwardDifferenceDel G ∅ 2 := by
+  have hp := Erdos993G1.indepCount_two_add_edges G
+  have ht := hT.card_edgeFinset
+  have hq := Erdos993G1.indepCount_three_add_edge_incidence G hT.isAcyclic
+  rw [delta_bridge, Erdos993G1.delta_nat]
+  simp only [Nat.card_eq_fintype_card, ← SimpleGraph.edgeFinset_card] at hp hq
+  have hchoose2 := Erdos993G1.scaledChooseTwo (Fintype.card V)
+  have hchoose3 := Erdos993G1.scaledChooseThree (Fintype.card V)
+  have hedge : (G.edgeFinset.card : ℤ) + 1 = Fintype.card V := by exact_mod_cast ht
+  have hsub : Fintype.card V - 2 + 2 = Fintype.card V := by omega
+  have hsubz : ((Fintype.card V - 2 : ℕ) : ℤ) + 2 = Fintype.card V := by
+    exact_mod_cast hsub
+  have hprod : 0 ≤ ((Fintype.card V : ℤ) - 1) *
+      ((Fintype.card V : ℤ) - 2) * ((Fintype.card V : ℤ) - 9) := by
+    apply mul_nonneg (mul_nonneg (by omega) (by omega))
+    omega
+  have hsum : 0 ≤ ∑ a : V, ((G.degree a).choose 2 : ℤ) :=
+    Finset.sum_nonneg (fun _ _ => Int.natCast_nonneg _)
+  nlinarith
+
+private lemma choose_degree_one_le_sum (G : SimpleGraph V) [DecidableRel G.Adj]
+    (u : V) :
+    ((G.degree u).choose 2 : ℤ) ≤ ∑ v : V, ((G.degree v).choose 2 : ℤ) := by
+  have hs : ({u} : Finset V) ⊆ Finset.univ := Finset.subset_univ _
+  have h := Finset.sum_le_sum_of_subset_of_nonneg hs
+    (fun v _ _ => Int.natCast_nonneg ((G.degree v).choose 2))
+  simpa using h
+
+private lemma choose_degree_two_le_sum (G : SimpleGraph V) [DecidableRel G.Adj]
+    (u w : V) (huw : u ≠ w) :
+    ((G.degree u).choose 2 : ℤ) + ((G.degree w).choose 2 : ℤ) ≤
+      ∑ v : V, ((G.degree v).choose 2 : ℤ) := by
+  have hs : ({u, w} : Finset V) ⊆ Finset.univ := Finset.subset_univ _
+  have h := Finset.sum_le_sum_of_subset_of_nonneg hs
+    (fun v _ _ => Int.natCast_nonneg ((G.degree v).choose 2))
+  simpa [Finset.sum_insert, huw] using h
+
+private lemma choose_ge_fifteen (d : ℕ) (hd : 6 ≤ d) :
+    (15 : ℤ) ≤ (d.choose 2 : ℤ) := by
+  have h := Erdos993G1.scaledChooseTwo d
+  have hz : (6 : ℤ) ≤ d := by exact_mod_cast hd
+  nlinarith [sq_nonneg ((d : ℤ) - 6)]
+
+private lemma choose_pair_ge_nine (d e : ℕ) (hde : 7 ≤ d + e) :
+    (9 : ℤ) ≤ (d.choose 2 : ℤ) + (e.choose 2 : ℤ) := by
+  have hd := Erdos993G1.scaledChooseTwo d
+  have he := Erdos993G1.scaledChooseTwo e
+  have hz : (7 : ℤ) ≤ (d : ℤ) + e := by exact_mod_cast hde
+  have hp : 0 ≤ ((d : ℤ) + e - 7) * ((d : ℤ) + e + 5) := by
+    apply mul_nonneg <;> omega
+  nlinarith [sq_nonneg ((d : ℤ) - e)]
+
+private lemma degree_choose_ge_fifteen_at_seven (G : SimpleGraph V)
+    [DecidableRel G.Adj] (hT : G.IsTree)
+    (ha : G.indepNum = 6) (hn : Fintype.card V = 7) :
+    (15 : ℤ) ≤ ∑ v : V, ((G.degree v).choose 2 : ℤ) := by
+  obtain ⟨S, hS⟩ := G.exists_isNIndepSet_indepNum
+  have hScard : S.card = 6 := by rw [hS.card_eq, ha]
+  have hCcard : (Finset.univ \ S).card = 1 := by
+    simp [Finset.card_sdiff, hn, hScard]
+  obtain ⟨u, hu⟩ := Finset.card_eq_one.mp hCcard
+  have hdeg := cover_degree_one G S hS.isIndepSet u hu
+  have hedge := hT.card_edgeFinset
+  have h6 : 6 ≤ G.degree u := by omega
+  exact (choose_ge_fifteen (G.degree u) h6).trans
+    (choose_degree_one_le_sum G u)
+
+private lemma degree_choose_ge_nine_at_eight (G : SimpleGraph V)
+    [DecidableRel G.Adj] (hT : G.IsTree)
+    (ha : G.indepNum = 6) (hn : Fintype.card V = 8) :
+    (9 : ℤ) ≤ ∑ v : V, ((G.degree v).choose 2 : ℤ) := by
+  obtain ⟨S, hS⟩ := G.exists_isNIndepSet_indepNum
+  have hScard : S.card = 6 := by rw [hS.card_eq, ha]
+  have hCcard : (Finset.univ \ S).card = 2 := by
+    simp [Finset.card_sdiff, hn, hScard]
+  obtain ⟨u, w, huw, hu⟩ := Finset.card_eq_two.mp hCcard
+  have hdeg := cover_degree_two G S hS.isIndepSet u w hu
+  have hedge := hT.card_edgeFinset
+  have h7 : 7 ≤ G.degree u + G.degree w := by omega
+  exact (choose_pair_ge_nine (G.degree u) (G.degree w) h7).trans
+    (choose_degree_two_le_sum G u w huw)
+
+private lemma delta_two_nonneg_seven (G : SimpleGraph V) [DecidableRel G.Adj]
+    (hT : G.IsTree) (ha : G.indepNum = 6) (hn : Fintype.card V = 7) :
+    0 ≤ C5LA1.forwardDifferenceDel G ∅ 2 := by
+  have hp := Erdos993G1.indepCount_two_add_edges G
+  have hq := Erdos993G1.indepCount_three_add_edge_incidence G hT.isAcyclic
+  have ht := hT.card_edgeFinset
+  have hd := degree_choose_ge_fifteen_at_seven G hT ha hn
+  simp only [Nat.card_eq_fintype_card, ← SimpleGraph.edgeFinset_card] at hp hq
+  rw [hn] at hp hq ht
+  norm_num [Nat.choose] at hp hq ⊢
+  rw [delta_bridge, Erdos993G1.delta_nat]
+  change 0 ≤ Erdos993G1.indepCount G 3 - Erdos993G1.indepCount G 2
+  omega
+
+private lemma delta_two_nonneg_eight (G : SimpleGraph V) [DecidableRel G.Adj]
+    (hT : G.IsTree) (ha : G.indepNum = 6) (hn : Fintype.card V = 8) :
+    0 ≤ C5LA1.forwardDifferenceDel G ∅ 2 := by
+  have hp := Erdos993G1.indepCount_two_add_edges G
+  have hq := Erdos993G1.indepCount_three_add_edge_incidence G hT.isAcyclic
+  have ht := hT.card_edgeFinset
+  have hd := degree_choose_ge_nine_at_eight G hT ha hn
+  simp only [Nat.card_eq_fintype_card, ← SimpleGraph.edgeFinset_card] at hp hq
+  rw [hn] at hp hq ht
+  norm_num [Nat.choose] at hp hq ⊢
+  rw [delta_bridge, Erdos993G1.delta_nat]
+  change 0 ≤ Erdos993G1.indepCount G 3 - Erdos993G1.indepCount G 2
+  omega
+
+private lemma crossing_negative (G : SimpleGraph V) [DecidableRel G.Adj] :
+    C5LA1.forwardDifferenceDel G ∅ (C5LA1.crossingIndex G) < 0 := by
+  classical
+  unfold C5LA1.crossingIndex
+  exact Nat.find_spec (p := fun k : ℕ => C5LA1.forwardDifferenceDel G ∅ k < 0) _
+
+end E993Interior.Guard
+
+namespace E993Interior
+
+lemma eligibleAlphaGeSeven {V : Type*} [Fintype V] [DecidableEq V]
+    (G : SimpleGraph V) [DecidableRel G.Adj] (hT : G.IsTree)
+    (hInterior : C5LA1.crossingIndex G + 2 ≤ G.indepNum - 2) :
+    7 ≤ G.indepNum := by
+  have ha4 : 4 ≤ G.indepNum := by omega
+  have hn := Guard.order_ge_alpha_succ G hT (by omega : 2 ≤ G.indepNum)
+  have hc := Guard.crossing_negative G
+  have h0 := Guard.delta_zero_nonneg G (by omega : 2 ≤ Fintype.card V)
+  by_contra h7
+  have ha6 : G.indepNum ≤ 6 := by omega
+  by_cases ha4eq : G.indepNum = 4
+  · have hx : C5LA1.crossingIndex G = 0 := by omega
+    rw [hx] at hc
+    omega
+  by_cases ha5eq : G.indepNum = 5
+  · have h1 := Guard.delta_one_nonneg G hT (by omega : 6 ≤ Fintype.card V)
+    have hx : C5LA1.crossingIndex G = 0 ∨ C5LA1.crossingIndex G = 1 := by omega
+    rcases hx with hx | hx <;> rw [hx] at hc <;> omega
+  have ha6eq : G.indepNum = 6 := by omega
+  have h1 := Guard.delta_one_nonneg G hT (by omega : 6 ≤ Fintype.card V)
+  have h2 : 0 ≤ C5LA1.forwardDifferenceDel G ∅ 2 := by
+    by_cases hn9 : 9 ≤ Fintype.card V
+    · exact Guard.delta_two_nonneg_large G hT hn9
+    · have hn78 : Fintype.card V = 7 ∨ Fintype.card V = 8 := by omega
+      rcases hn78 with hn7 | hn8
+      · exact Guard.delta_two_nonneg_seven G hT ha6eq hn7
+      · exact Guard.delta_two_nonneg_eight G hT ha6eq hn8
+  have hx : C5LA1.crossingIndex G = 0 ∨
+      C5LA1.crossingIndex G = 1 ∨ C5LA1.crossingIndex G = 2 := by omega
+  rcases hx with hx | hx | hx <;> rw [hx] at hc <;> omega
+
+end E993Interior

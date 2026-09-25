@@ -1,0 +1,128 @@
+{
+  "worker_id": "C1-AT",
+  "cycle": 1,
+  "stage": "adjudication",
+  "orientation": "N",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-CF-T2-TARGETED-T22-RANK",
+    "C1-CF-T3-01",
+    "C1-CU-T1-INDEPENDENT-FINITE-REPLAY",
+    "C1-CU-T3-01",
+    "C1-T1-LEAF-BRANCH-IDENTITY",
+    "C1-T2-ALG-IDENTITY",
+    "C1-T2-ALPHA2-BUDGET",
+    "C1-T2-BOUNDED-POINTWISE-CHECK",
+    "C1-T3-01",
+    "C1-T3-02"
+  ],
+  "claims": [
+    {
+      "claim_id": "C1-CF-T2-TARGETED-T22-RANK",
+      "statement": "T22 at p=66 is eligible, has 67 favorable tags, no positive favorable summand, and complete S=-147807; a directed 123-tree exact-DP probe had 94 eligible rows and no eligible positive local or complete sum.",
+      "scope": "Exact T22 row plus specified bounded directed probe only.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-AT/REPORT.md"
+      ],
+      "reason": "The T22 row is also independently implied by the exact T_m family formula; the other rows replay a copied evaluator. Three ineligible order-12 probe rows have positive local summands, so the summary's zero-positive count applies to eligible rows."
+    },
+    {
+      "claim_id": "C1-CF-T3-01",
+      "statement": "For T_m with m>=1 and n=3m, alpha=n+2, p=n, all n+1 original leaves are favorable, and S=-n(n^2+2n-9)/2<0.",
+      "scope": "Exact constructed T_m family formula at alpha-minus-two; eligibility established in reported rows m=22,60,100, not for all m.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-AT/REPORT.md"
+      ],
+      "reason": "Root-membership polynomial factorization and top coefficient extraction prove the family formula; it equals the CU critic's n-formula."
+    },
+    {
+      "claim_id": "C1-CU-T1-INDEPENDENT-FINITE-REPLAY",
+      "statement": "Independent integer polynomial calculations verify P60 has alpha=30,x=17,p=28,S=-331702 and T60 has alpha=182,x=87,p=180,S=-2947590, with all original leaf tags and selectors included.",
+      "scope": "Exactly P60 and T60 at their alpha-minus-two ranks; bounded finite evidence.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-AT/REPORT.md"
+      ],
+      "reason": "The path binomial formula and T_m root factorization reproduce the selectors, summands, and complete negative sums independently of the admitted evaluator."
+    },
+    {
+      "claim_id": "C1-CU-T3-01",
+      "statement": "For T_m with m>=1 and n=3m, alpha=n+2, p=n, all n+1 original leaves are favorable, and S=-n(n^2+2n-9)/2<0.",
+      "scope": "Exact constructed T_m family formula at alpha-minus-two; no universal eligibility assertion.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-AT/REPORT.md"
+      ],
+      "reason": "An independent root-factorization proof agrees algebraically with the CF critic's equivalent -(9m/2)(3m^2+2m-3) formula."
+    },
+    {
+      "claim_id": "C1-T1-LEAF-BRANCH-IDENTITY",
+      "statement": "For every original tree leaf v and integer k, I_(T-v)=I_H+zI_R and Delta_k(T-v)=Delta_k(H)+Delta_(k-1)(R); the strict favorable selector and complete leaf-tag sum have the corresponding exact representation.",
+      "scope": "Universal finite-tree identity at every integer rank; no sign conclusion.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-AT/REPORT.md"
+      ],
+      "reason": "Direct partition of independent sets by support membership proves the identity, including zero-extended ranks and repeated-support leaf multiplicity."
+    },
+    {
+      "claim_id": "C1-T2-ALG-IDENTITY",
+      "statement": "For each original tree leaf, g_v+Delta_p(T-v)=i_(p+1)(H_v)-i_(p-1)(H_v); alpha(T)=alpha(H_v)+1, giving the stated favorable alpha-minus-two formula.",
+      "scope": "All finite ordinary trees, original leaves, and integer ranks for the identity; specialized formula at p=alpha-2.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-AT/REPORT.md"
+      ],
+      "reason": "The branch polynomial and leaf-membership polynomial identities prove the algebra; no eligibility or residual assumption is used."
+    },
+    {
+      "claim_id": "C1-T2-ALPHA2-BUDGET",
+      "statement": "At p=alpha-2, the displayed coefficient budget is equivalent to g_v<=0 on a favorable leaf and, if true for every favorable leaf, would imply S<=0.",
+      "scope": "Eligible finite ordinary trees at the frozen rank, as a conditional reduction only; truth of the budget unresolved.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-AT/REPORT.md"
+      ],
+      "reason": "The equivalence follows by exact rearrangement, but neither the origin nor critics derive the inequality from eligibility or any other established premise."
+    },
+    {
+      "claim_id": "C1-T2-BOUNDED-POINTWISE-CHECK",
+      "statement": "P501, T125, and four seeded order-260 Prüfer fixtures are eligible and have no positive favorable summands, with their recorded negative complete sums.",
+      "scope": "Exactly six specified fixtures; reproducible exact-DP evidence, with an independent path check.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-AT/REPORT.md"
+      ],
+      "reason": "Copied-code replays matched summary objects; the four Prüfer fixtures are successive draws from one seed-20260924 stream. Detailed identity-probe rows were not regenerated by the source script."
+    },
+    {
+      "claim_id": "C1-T3-01",
+      "statement": "The all-integer-rank leaf-deletion coefficient identity yields the exact strict selector and all-or-none support-fibre, multiplicity-weighted aggregate formula.",
+      "scope": "Universal finite ordinary-tree identity and regrouping; no sign or residual conclusion.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-AT/REPORT.md"
+      ],
+      "reason": "Direct independent-set partition and leaf permutation at common supports establish the identity, selection, and multiplicity."
+    },
+    {
+      "claim_id": "C1-T3-02",
+      "statement": "For every eligible finite ordinary tree, the complete favorable-original-leaf sum at p=alpha(T)-2 is nonpositive.",
+      "scope": "Primary unrestricted E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE.",
+      "status": "proposed_unresolved",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-AT/REPORT.md"
+      ],
+      "reason": "The exact recurrence leaves an unsigned selected weighted sum; finite negative rows and the T_m family do not prove the universal claim, and no eligible positive complete sum is supplied."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-AT/REPORT.md",
+  "limitations": [
+    "The unrestricted eligible-tree first-interior complete aggregate remains open: no universal sign proof or eligible positive complete-sum counterexample was supplied.",
+    "The T2 pointwise coefficient budget is only a conditional reduction and remains unproved.",
+    "T_m formulas prove a negative result only for that family; eligibility is independently checked only for listed parameters.",
+    "Numerical tree-DP replays are bounded, some share their source evaluator, and no Lean build was assigned or run."
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "worker_id": "C2-F3",
+  "cycle": 2,
+  "stage": "search",
+  "orientation": "F",
+  "status_authority": "proposed_worker_only",
+  "claims": [
+    {
+      "claim_id": "C2-F3-001",
+      "statement": "For a finite bipartite graph H with W subset V(H), tagged independent-set counts q_j satisfy k q_(k+1) <= 2(alpha(H)-k) q_k for every integer k>=1; when H is the deletion graph of an original leaf v in a bipartite graph G, alpha(H)<=alpha(G)-1 gives the sharper factor 2(alpha(G)-1-k), with zero extension above alpha(H).",
+      "scope": "All finite bipartite H, all W, all integer k>=1; leaf refinement for finite bipartite G and an original degree-one vertex.",
+      "status": "proposed_supported",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-F3/REPORT.md"
+      ],
+      "reason": "A direct double count bounds extensions of tagged k-sets by vertices of H-N[A] and counts at least k tag-preserving deletions from each tagged (k+1)-set. The proof handles k=alpha(H), and higher ranks vanish."
+    },
+    {
+      "claim_id": "C2-F3-002",
+      "statement": "For an ordinary finite tree with integer p=alpha(T)-2, eligibility x(T)+2<=p implies alpha(T)>=7.",
+      "scope": "Finite connected acyclic simple trees with strict first negative forward difference and zero extension through terminal rank.",
+      "status": "proposed_supported",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-F3/REPORT.md"
+      ],
+      "reason": "The alpha=4,5 cases fail at Delta_0 or Delta_1. At alpha=6, an exact tree triple-count formula and the one- and two-vertex-cover cases for orders 7 and 8 give Delta_2>0; order at least 9 gives Delta_2>=0."
+    },
+    {
+      "claim_id": "C2-F3-003",
+      "statement": "The proposed tagged-shadow bound and eligibility restriction imply the unchanged complete favorable-original-leaf sum S(T,alpha(T)-2)<=0 for every eligible ordinary tree, because each unselected as well as selected original leaf term is nonpositive at the required rank.",
+      "scope": "Primary first-interior target E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE; all original leaf tags, exact support deletion, exact Delta_p(T-v)<0 selector, with no residual hypothesis.",
+      "status": "proposed_candidate",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-F3/REPORT.md",
+        "cycles/cycle-2/C2-F3/path1001_exact.py",
+        "cycles/cycle-2/C2-F3/path1001_exact.json"
+      ],
+      "reason": "At p=alpha-2, alpha>=7 is equivalent to the high-tail guard 3p>=2alpha+1. The local count then gives q_p<=q_(p-1) for each original leaf, and termwise summation preserves repeated-support multiplicity and the favorable selector. A fresh P_1001 exact check confirms the bindings and complete sum; the universal conclusion remains a worker proof candidate pending governed validation."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-F3/REPORT.md",
+  "limitations": [
+    "The P_1001 exact audit is finite evidence only; universality rests on the informal combinatorial proof in REPORT.md.",
+    "No Lean build or governed formalization/fidelity review was run; the primary contract and all registry statuses remain unchanged pending controller review.",
+    "The order-91 and order-243 positive local witnesses are at off-target ranks below the high-tail guard and remain fences for their original broader scopes."
+  ]
+}

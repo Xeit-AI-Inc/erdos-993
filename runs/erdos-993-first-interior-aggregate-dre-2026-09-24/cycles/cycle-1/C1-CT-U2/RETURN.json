@@ -1,0 +1,44 @@
+{
+  "worker_id": "C1-CT-U2",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "T",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-U2-LOCAL-TOPSHELL-REDUCTION"
+  ],
+  "claims": [
+    {
+      "claim_id": "C1-U2-LOCAL-TOPSHELL-REDUCTION",
+      "statement": "The source claim's alpha(H), witness-hit shell, selector, tagged complete-sum, and residual/non-residual identities all hold for every finite ordinary tree and original leaf at p=alpha(T)-2, with integer zero extension; no sign conclusion follows from them alone.",
+      "scope": "Exact ordinary-tree identities at the first interior rank, including unguarded low-alpha cases under integer zero extension; no universal sign or Lean award.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CT-U2/REPORT.md",
+        "cycles/cycle-1/C1-CT-U2/fresh_T_family_replay.json",
+        "cycles/cycle-1/C1-CT-U2/independent_T100_replay.json"
+      ],
+      "reason": "An independent set partition proves each identity, including the strict selector and residual split. Both copied evaluator replays are byte-identical to pinned source output; these computations corroborate only the T_100 row. The source return path normalization changes no mathematics."
+    },
+    {
+      "claim_id": "C1-CT-U2-T-FAMILY-FIRST-INTERIOR",
+      "statement": "For every integer m>=1, the ordinary T_m tree with one marked length-two arm and m root-adjacent three-leaf stars has alpha=3m+2. At p=3m all 3m+1 original leaves are strictly favorable and S(T_m,p)=(-27m^3-18m^2+27m)/2<0.",
+      "scope": "The explicitly defined T_m family only, with no eligibility premise needed for the formula; when eligible this verifies the primary sign on this family, not for all trees. No novelty claim.",
+      "status": "proposed_proved_informal",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CT-U2/REPORT.md",
+        "cycles/cycle-1/C1-CT-U2/independent_T120_extension.py",
+        "cycles/cycle-1/C1-CT-U2/independent_T120_extension.json",
+        "cycles/cycle-1/C1-CT-U2/top_shell_probe.py",
+        "cycles/cycle-1/C1-CT-U2/top_shell_probe.json"
+      ],
+      "reason": "The report supplies a complete coefficient proof from exact independence-polynomial decompositions and computes each favorable delta and tagged summand. The new order-483 row matches the formula as a finite check; the separate 1,100-tree null probe is not used as proof."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CT-U2/REPORT.md",
+  "limitations": [
+    "The central universal selected-shell sign at p=alpha(T)-2 remains unproved and no eligible positive complete sum was found.",
+    "The T_m proof is family-specific; the random probe checks only 1,100 sampled trees at the stated orders and seed.",
+    "No Lean build or formal gate was assigned or run; all mathematical proofs here are informal."
+  ]
+}

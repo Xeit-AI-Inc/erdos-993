@@ -1,0 +1,41 @@
+{
+  "status": "candidate_only_master_not_installed",
+  "before_sha256": "785dd4b12504a0f5a2aa66b84266cb313da80c0b28a27b2d96318a78ad3c8fdb",
+  "candidate_sha256": "d20f11df0dd198221a3dc8ed23f1f52849fff878796f8532713f7266ced190b7",
+  "changed_claim_keys": [
+    "E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE"
+  ],
+  "preserved_other_claim_objects": 394,
+  "identity_fields_unchanged": true,
+  "counts": {
+    "REFUTED": 89,
+    "VERIFIED": 236,
+    "OPEN": 44,
+    "CONDITIONAL": 26
+  },
+  "source_occurrences": 53,
+  "source_occurrences_awarded_by_exact_primary_overlay": 7,
+  "separate_auxiliary_awards": 0,
+  "historical_OBLIGATIONS_csv_preserved": true,
+  "formal_evidence": {
+    "run": "erdos-993-first-interior-aggregate-dre-2026-09-24",
+    "cycle": 2,
+    "lean_run": "runs/lean-2026-09-24-c2-primary-v2",
+    "declaration": "E993Interior.firstInteriorAggregate",
+    "closed_at": "2026-09-25T01:16:43Z",
+    "contract_sha256": "61029a5001c862684a6e8b8e96cced4af2b0e48353183a00b95efe5272cad61e",
+    "source_sha256": "8d864da290947d75ac0cb52644b8b5336a19076878fcb11eeed552e6a118d7a9",
+    "kernel_receipt_sha256": "9f54b701ca390dad51f95a765790049db0cb2789e5d0cd422b15816093850eaf",
+    "fidelity_receipt_sha256": "d8cad60977a9c8bcba0d59332b31f57c191645ec81d0314f925f562166e1b7b4",
+    "workflow_report_sha256": "da57965c495f97bec764ccf1fe43573c548997ecd18e680727868c38aff67069",
+    "informal_audit_receipt_sha256": "1354decd1efe4af46735950ca8d42851a314948458fa35cd0102722d24e87b29",
+    "toolchain": "leanprover/lean4:v4.32.2",
+    "mathlib_revision": "905b95818eb32af7874a58b427f50c1711a5e96c",
+    "axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "separate_auxiliary_awards": 0
+  }
+}

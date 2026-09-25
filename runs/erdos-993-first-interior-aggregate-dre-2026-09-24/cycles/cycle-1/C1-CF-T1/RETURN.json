@@ -1,0 +1,32 @@
+{
+  "worker_id": "C1-CF-T1",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "F",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-T1-LEAF-BRANCH-IDENTITY"
+  ],
+  "claims": [
+    {
+      "claim_id": "C1-T1-LEAF-BRANCH-IDENTITY",
+      "statement": "For every finite tree T, original leaf v with support s, and integer k, P_(T-v)(z)=P_H(z)+zP_R(z), hence Delta_k(T-v)=Delta_k(H)+Delta_(k-1)(R); at any integer p the favorable-original-leaf aggregate is the sum over distinct original leaf tags satisfying Delta_p(H_v)+Delta_(p-1)(R_v)<0 of Delta_(p-1)(H_v)-Delta_(p-1)(R_v).",
+      "scope": "Universal exact branch identity and selector/summand re-expression for finite ordinary trees, all integer k and p; no sign conclusion.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CF-T1/REPORT.md",
+        "cycles/cycle-1/C1-CF-T1/independent_formula_check.py",
+        "cycles/cycle-1/C1-CF-T1/INDEPENDENT-FORMULA-RESULTS.json",
+        "cycles/cycle-1/C1-CF-T1/copied-evidence-output.json",
+        "cycles/cycle-1/C1-CF-T1/copied-replay-output.json"
+      ],
+      "reason": "Direct partition of independent sets in T-v proves the coefficient and difference identities with the original closed neighborhood and correct index shift, including zero-extended edge ranks and shared-support leaf multiplicity. Copied-code replay agrees with the source but is not independent. Separate closed-form integer calculations for P60 and T60 verify alpha, first strict descent, selector values, summands and complete sums at p=alpha-2. Neither the identity nor these two examples proves the primary aggregate sign."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CF-T1/REPORT.md",
+  "limitations": [
+    "Numerical checks cover only P60 and T60 at p=alpha-2; they are not universal evidence.",
+    "The branch identity gives no global compensation argument for the selector-restricted aggregate, so the primary claim remains open.",
+    "No Lean build was run under the critique-stage protocol."
+  ]
+}

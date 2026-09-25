@@ -1,0 +1,16 @@
+{
+  "reviewer_id": "interior-c2-fidelity-reviewer",
+  "reviewer_kind": "independent-mathematical-formalization-fidelity-reviewer",
+  "attestation_id": "interior-c2-primary-fidelity-v2",
+  "completed_at": "2026-09-25T01:13:40Z",
+  "contract_projection_sha256": "9813b0e43426c673dab9a7059c2a193fb8cc37f7ee8995a500fe8075802d90c1",
+  "binding_projection_sha256": "9ac2a8cbcbbdd532fd46c184956cf6f98cb5968e15ee135a914879a2c642c49e",
+  "verdict": "match",
+  "findings": [
+    {
+      "category": "documentation",
+      "severity": "note",
+      "message": "The inherited C5LA1.aggregate docstring calls it a top-rank residual aggregate, but its Lean body is rank-generic, has no residual premise, and the primary theorem instantiates it at indepNum - 2. This stale comment does not change the theorem meaning."
+    }
+  ]
+}

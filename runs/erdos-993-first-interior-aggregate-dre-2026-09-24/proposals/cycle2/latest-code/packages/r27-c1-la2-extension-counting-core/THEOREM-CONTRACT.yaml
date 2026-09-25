@@ -1,0 +1,647 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "e993-r27-c1-la2-extension-counting-core-v1",
+  "theorem": {
+    "title": "C1-LA2 - the unconditional counting core: the independent-set extension double count and the extension lower bound",
+    "informal_statement": "Two graph-general statements about an arbitrary finite simple graph G on a finite vertex type X, with n = Fintype.card X, i_k(G) = Erdos993G1.indepCount G k, I_k(G) = G.indepSetFinset k, and e(J) = Erdos993G1.e G J = |V \\ N[J]| the number of vertices extending J to an independent set. (1) THE DOUBLE COUNT (registered as the lemma Erdos993G1.double_count, the award's first face): ((k : ℤ) + 1) * Erdos993G1.indepCount G (k + 1) = ∑ J ∈ G.indepSetFinset k, (Erdos993G1.e G J : ℤ), for every k : ℕ. (2) THE EXTENSION LOWER BOUND (registered as the terminal theorem Erdos993G1.e_ge_sub, the award's second face and the declaration this contract binds): (Erdos993G1.e G J : ℤ) ≥ (Fintype.card X : ℤ) - (k : ℤ) - (∑ v ∈ J, G.degree v : ℤ) for every k : ℕ and every J with hJ : G.IsNIndepSet k J. Hypotheses are exactly [Fintype X], [DecidableEq X], [DecidableRel G.Adj] and, for (2), hJ. THERE IS NO ACYCLICITY HYPOTHESIS on either statement, no (★) hypothesis and no hyp-alpha; a stray G.IsAcyclic binder on either is struck at fidelity review. Mathematics: Fang-Lu-Nevo-Yao-Zheng 2026, arXiv:2609.20961v1, §8 (Lemma 8.1 / (8.1) and the displayed step of Proposition 8.2); the double count is classical (the extension method). Derivation in run r27: seat U3 (compiled), critic C-U1-T (independent re-derivation), U adjudicator (replay). These are graph-general facts: they are not forest statements, they transfer no status, and they are not evidence for (DL) or (EX)."
+  },
+  "formulation_status": {
+    "status": "established",
+    "evidence": [
+      "Fang, Lu, Nevo, Yao, Zheng, Unimodality of Independence Polynomials for Sufficiently Large Forests, arXiv:2609.20961v1 (17 September 2026), section 8: Lemma 8.1 / (8.1) and the displayed step of Proposition 8.2.",
+      "cycles/cycle-1/stage6/SYNTHESIS.md, ## Lean awards, Decision 2, C1-LA2: 'Already sorry-free at [propext, Classical.choice, Quot.sound], seat-attributed to U3, independently re-derived by C-U1-T, replayed by the U adjudicator.'",
+      "The classical extension-method double count for independent sets; no counterexample is known or possible (the identity is a bijection count)."
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-fintype-card",
+      "description": "Mathlib's `Fintype.card X` — the order `n := |X|` of the finite vertex type. Lean text: Mathlib definition, not restated in this run.",
+      "lean_name": "Fintype.card",
+      "dependencies": [
+        "dom-vertex-type"
+      ]
+    },
+    {
+      "id": "def-neighbor-finset",
+      "description": "Mathlib's `G.neighborFinset v` — the `Finset` of neighbours of `v`; `(G.neighborFinset v).card = G.degree v`. Lean text: Mathlib definition, not restated in this run.",
+      "lean_name": "SimpleGraph.neighborFinset",
+      "dependencies": [
+        "dom-graph"
+      ]
+    },
+    {
+      "id": "def-degree",
+      "description": "Mathlib's `G.degree v` — `deg_G(v)`. Lean text: Mathlib definition, not restated in this run.",
+      "lean_name": "SimpleGraph.degree",
+      "dependencies": [
+        "def-neighbor-finset"
+      ]
+    },
+    {
+      "id": "def-is-n-indep-set",
+      "description": "Mathlib's `G.IsNIndepSet k J` — `J` is an independent set of cardinality `k`. Lean text: Mathlib definition, not restated in this run.",
+      "lean_name": "SimpleGraph.IsNIndepSet",
+      "dependencies": [
+        "dom-graph",
+        "dom-rank",
+        "dom-indep-set"
+      ]
+    },
+    {
+      "id": "def-indep-set-finset",
+      "description": "Mathlib's `G.indepSetFinset k` — `I_k(G)`, the `Finset` of independent `k`-subsets. Lean text: Mathlib definition, not restated in this run.",
+      "lean_name": "SimpleGraph.indepSetFinset",
+      "dependencies": [
+        "def-is-n-indep-set"
+      ]
+    },
+    {
+      "id": "def-indep-count",
+      "description": "G1 definition of record, registered byte-identically from the r25 award source (registrar entry 1). Lean text: `noncomputable def indepCount {V : Type u} (F : SimpleGraph V) (k : ℕ) : ℤ := (Nat.card {S : Finset V // F.IsNIndepSet k S} : ℤ)`. This is `i_k(G)`.",
+      "lean_name": "Erdos993G1.indepCount",
+      "dependencies": [
+        "def-is-n-indep-set"
+      ]
+    },
+    {
+      "id": "def-coeff",
+      "description": "G1 definition of record, registered byte-identically from the r25 award source (registrar entry 2). Lean text: `noncomputable def coeff {V : Type u} (F : SimpleGraph V) (k : ℤ) : ℤ := if 0 ≤ k then Erdos993G1.indepCount F k.toNat else 0`.",
+      "lean_name": "Erdos993G1.coeff",
+      "dependencies": [
+        "def-indep-count"
+      ]
+    },
+    {
+      "id": "def-delta",
+      "description": "G1 definition of record, registered byte-identically from the r25 award source (registrar entry 3). Lean text: `noncomputable def delta {V : Type u} (F : SimpleGraph V) (k : ℤ) : ℤ := Erdos993G1.coeff F (k + 1) - Erdos993G1.coeff F k`. This is `Δ_k(G)`.",
+      "lean_name": "Erdos993G1.delta",
+      "dependencies": [
+        "def-coeff"
+      ]
+    },
+    {
+      "id": "def-closed-nbhd-finset",
+      "description": "Run-local. Lean text: `def closedNbhdFinset (J : Finset X) : Finset X := J ∪ J.biUnion (fun u => G.neighborFinset u)`, under `variable {X : Type u} [Fintype X] [DecidableEq X] (G : SimpleGraph X) [DecidableRel G.Adj]`. This is `N[J]`.",
+      "lean_name": "Erdos993G1.closedNbhdFinset",
+      "dependencies": [
+        "def-neighbor-finset",
+        "dom-indep-set"
+      ]
+    },
+    {
+      "id": "def-extension-finset",
+      "description": "Run-local. Lean text: `def extensionFinset (J : Finset X) : Finset X := Finset.univ \\ closedNbhdFinset G J`, same variable block. This is `V ∖ N[J]`.",
+      "lean_name": "Erdos993G1.extensionFinset",
+      "dependencies": [
+        "def-closed-nbhd-finset"
+      ]
+    },
+    {
+      "id": "def-extension-count",
+      "description": "Run-local; U3's definition of record for the extension count `e(J) = |V ∖ N[J]|`, the one the award face names. Lean text: `def e (J : Finset X) : ℕ := (extensionFinset G J).card`, same variable block.",
+      "lean_name": "Erdos993G1.e",
+      "dependencies": [
+        "def-extension-finset"
+      ]
+    },
+    {
+      "id": "def-indep-degree-sum",
+      "description": "Run-local; the incident degree sum `D_k(G)`. Lean text: `def indepDegreeSum (k : ℕ) : ℕ := ∑ J ∈ G.indepSetFinset k, ∑ v ∈ J, G.degree v`, same variable block. Recorded in the definition layer only: no declaration of this award depends on it and nothing is claimed about it.",
+      "lean_name": "Erdos993G1.indepDegreeSum",
+      "dependencies": [
+        "def-indep-set-finset",
+        "def-degree"
+      ]
+    },
+    {
+      "id": "def-first-descent",
+      "description": "Run-local; the first strict descent `x(G)`. Lean text: `noncomputable def firstDescent {X : Type u} [Finite X] (G : SimpleGraph X) : ℕ := sInf {k : ℕ | Erdos993G1.delta G (k : ℤ) < 0}`. On `ℕ` this infimum is `Nat.find` applied to a nonemptiness proof (`Nat.sInf_def`), the form `SEMANTIC-CONTRACT.md` §1 names; it is authored in-run because the registrar forbids a definition entry after a lemma entry. Recorded in the definition layer only: no declaration of this award depends on it and nothing is claimed about it.",
+      "lean_name": "Erdos993G1.firstDescent",
+      "dependencies": [
+        "def-delta"
+      ]
+    }
+  ],
+  "domains": [
+    {
+      "id": "dom-vertex-type",
+      "description": "The vertex carrier: an arbitrary type `X` in universe `u`, made finite and decidable by the instance hypotheses. The statement is universe-polymorphic and is stated with instance binders, never at one fixed `Fintype` instance.",
+      "lean_type": "Type u",
+      "dependencies": []
+    },
+    {
+      "id": "dom-graph",
+      "description": "An arbitrary simple graph on `X`. No acyclicity, connectivity, degree or order restriction is imposed anywhere in this contract.",
+      "lean_type": "SimpleGraph X",
+      "dependencies": [
+        "dom-vertex-type"
+      ]
+    },
+    {
+      "id": "dom-rank",
+      "description": "The rank `k`, an arbitrary natural number. No lower or upper bound on `k` is imposed.",
+      "lean_type": "ℕ",
+      "dependencies": []
+    },
+    {
+      "id": "dom-indep-set",
+      "description": "The subset `J` of vertices under consideration.",
+      "lean_type": "Finset X",
+      "dependencies": [
+        "dom-vertex-type"
+      ]
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "X",
+      "kind": "forall",
+      "domain_id": "dom-vertex-type"
+    },
+    {
+      "binder": "G",
+      "kind": "forall",
+      "domain_id": "dom-graph"
+    },
+    {
+      "binder": "k",
+      "kind": "forall",
+      "domain_id": "dom-rank"
+    },
+    {
+      "binder": "J",
+      "kind": "forall",
+      "domain_id": "dom-indep-set"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-fintype",
+      "statement": "`[Fintype X]`: the vertex type carries a `Fintype` instance. Enters everywhere (`Finset.univ`, `Fintype.card X`, `G.indepSetFinset`, `G.neighborFinset`).",
+      "dependencies": [
+        "dom-vertex-type"
+      ]
+    },
+    {
+      "id": "hyp-decidable-eq",
+      "statement": "`[DecidableEq X]`: decidable equality on vertices. Enters everywhere (`Finset` union, set difference, `insert`, `erase`, `biUnion`).",
+      "dependencies": [
+        "dom-vertex-type"
+      ]
+    },
+    {
+      "id": "hyp-decidable-adj",
+      "statement": "`[DecidableRel G.Adj]`: decidable adjacency. Enters everywhere (`G.neighborFinset`, `G.degree`, `G.indepSetFinset`).",
+      "dependencies": [
+        "dom-graph"
+      ]
+    },
+    {
+      "id": "hyp-indep-k-set",
+      "statement": "`hJ : G.IsNIndepSet k J`: `J` is an independent set of cardinality `k`. Enters exactly once, in the terminal declaration, and is used there only through `hJ.card_eq : J.card = k`. NO acyclicity hypothesis, NO `(★)` hypothesis, NO `hyp-alpha`, and no `α(G)` side condition occurs in this contract.",
+      "dependencies": [
+        "def-is-n-indep-set",
+        "dom-rank",
+        "dom-indep-set"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "For every finite simple graph `G` on `X`, every `k : ℕ` and every independent `k`-set `J`, the number of extensions of `J` satisfies `e(J) ≥ n - k - ∑_{v ∈ J} deg(v)` in `ℤ`, where `n = Fintype.card X`. Stated in `ℤ`; no natural-number subtraction occurs at any point of the development. Excluded: this is a graph-general fact, not a forest statement; it transfers no status to any r25/r26/r27 forest key, NR1, FOREST, TREE, TRANSFER or Erdős #993; and it is not evidence for (DL) or (EX).",
+    "dependencies": [
+      "def-extension-count",
+      "def-fintype-card",
+      "def-degree",
+      "hyp-fintype",
+      "hyp-decidable-eq",
+      "hyp-decidable-adj",
+      "hyp-indep-k-set"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "def-fintype-card",
+        "kind": "definition"
+      },
+      {
+        "id": "def-neighbor-finset",
+        "kind": "definition"
+      },
+      {
+        "id": "def-degree",
+        "kind": "definition"
+      },
+      {
+        "id": "def-is-n-indep-set",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indep-set-finset",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indep-count",
+        "kind": "definition"
+      },
+      {
+        "id": "def-coeff",
+        "kind": "definition"
+      },
+      {
+        "id": "def-delta",
+        "kind": "definition"
+      },
+      {
+        "id": "def-closed-nbhd-finset",
+        "kind": "definition"
+      },
+      {
+        "id": "def-extension-finset",
+        "kind": "definition"
+      },
+      {
+        "id": "def-extension-count",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indep-degree-sum",
+        "kind": "definition"
+      },
+      {
+        "id": "def-first-descent",
+        "kind": "definition"
+      },
+      {
+        "id": "dom-vertex-type",
+        "kind": "domain"
+      },
+      {
+        "id": "dom-graph",
+        "kind": "domain"
+      },
+      {
+        "id": "dom-rank",
+        "kind": "domain"
+      },
+      {
+        "id": "dom-indep-set",
+        "kind": "domain"
+      },
+      {
+        "id": "hyp-fintype",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-decidable-eq",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-decidable-adj",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-indep-k-set",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "dom-vertex-type",
+        "to": "def-fintype-card"
+      },
+      {
+        "from": "dom-graph",
+        "to": "def-neighbor-finset"
+      },
+      {
+        "from": "def-neighbor-finset",
+        "to": "def-degree"
+      },
+      {
+        "from": "dom-graph",
+        "to": "def-is-n-indep-set"
+      },
+      {
+        "from": "dom-rank",
+        "to": "def-is-n-indep-set"
+      },
+      {
+        "from": "dom-indep-set",
+        "to": "def-is-n-indep-set"
+      },
+      {
+        "from": "def-is-n-indep-set",
+        "to": "def-indep-set-finset"
+      },
+      {
+        "from": "def-is-n-indep-set",
+        "to": "def-indep-count"
+      },
+      {
+        "from": "def-indep-count",
+        "to": "def-coeff"
+      },
+      {
+        "from": "def-coeff",
+        "to": "def-delta"
+      },
+      {
+        "from": "def-neighbor-finset",
+        "to": "def-closed-nbhd-finset"
+      },
+      {
+        "from": "dom-indep-set",
+        "to": "def-closed-nbhd-finset"
+      },
+      {
+        "from": "def-closed-nbhd-finset",
+        "to": "def-extension-finset"
+      },
+      {
+        "from": "def-extension-finset",
+        "to": "def-extension-count"
+      },
+      {
+        "from": "def-indep-set-finset",
+        "to": "def-indep-degree-sum"
+      },
+      {
+        "from": "def-degree",
+        "to": "def-indep-degree-sum"
+      },
+      {
+        "from": "def-delta",
+        "to": "def-first-descent"
+      },
+      {
+        "from": "dom-vertex-type",
+        "to": "dom-graph"
+      },
+      {
+        "from": "dom-vertex-type",
+        "to": "dom-indep-set"
+      },
+      {
+        "from": "dom-vertex-type",
+        "to": "hyp-fintype"
+      },
+      {
+        "from": "dom-vertex-type",
+        "to": "hyp-decidable-eq"
+      },
+      {
+        "from": "dom-graph",
+        "to": "hyp-decidable-adj"
+      },
+      {
+        "from": "def-is-n-indep-set",
+        "to": "hyp-indep-k-set"
+      },
+      {
+        "from": "dom-rank",
+        "to": "hyp-indep-k-set"
+      },
+      {
+        "from": "dom-indep-set",
+        "to": "hyp-indep-k-set"
+      },
+      {
+        "from": "def-extension-count",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-fintype-card",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-degree",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-fintype",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-decidable-eq",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-decidable-adj",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-indep-k-set",
+        "to": "conclusion"
+      }
+    ]
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "explicit_axiom_allowlist",
+    "rationale": "Mathlib's Finset, Fintype and SimpleGraph API used here is classical: Nat.card, Fintype.card_subtype, Set.Pairwise and the decidability instances draw on propext, Classical.choice and Quot.sound. Exactly those three axioms are permitted; no sorry, admit, native_decide or axiom declaration is used, and no decide over an enumeration stands in for a universal step."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "Erdos993G1.e_ge_sub",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem e_ge_sub {X : Type u} [Fintype X] [DecidableEq X] (G : SimpleGraph X)\n    [DecidableRel G.Adj] (k : ℕ) {J : Finset X} (hJ : G.IsNIndepSet k J) :\n    (Erdos993G1.e G J : ℤ) ≥ (Fintype.card X : ℤ) - (k : ℤ) - (∑ v ∈ J, G.degree v : ℤ)",
+    "expected_statement_sha256": "cd7190f59b1ba5ef1e99c70604a7f1fb9247d125def309294bec703b13e2139e"
+  },
+  "source_materials": [
+    {
+      "id": "source-synthesis",
+      "path": "SOURCES/SYNTHESIS.md",
+      "sha256": "8139b07bb97100ef413f6881380c08330f75731b5309c42aad0d8e043874b190",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "source-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "sha256": "a55e5b869795f0d39dd83f2c5761cfa623f49a60b9e801fe460755b4471293b1",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "source-semantic-contract",
+      "path": "SOURCES/SEMANTIC-CONTRACT.md",
+      "sha256": "b59552b8ab6e8185335888ac3f125702477aee462784e6e48bd7e2e3ce81af9d",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-r25-award-lean",
+      "path": "SOURCES/r25-c4-forest-descent-order-bound-Main.lean",
+      "sha256": "736eb9dfb6ba82b0e099fe70df9e4d7f780bccdbd24ca240f4ad1115cfe7dfe0",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-u3-extension-carry",
+      "path": "SOURCES/U3-Extension.lean",
+      "sha256": "116b4f313eedfe4210173226c2f5ef877a6e1ee07061888f4106e908ba6b08a6",
+      "role": "reference"
+    },
+    {
+      "id": "source-cu1t-rederivation",
+      "path": "SOURCES/C-U1-T-CriticAdvances.lean",
+      "sha256": "41dae810663a4ae1c680afac7bacc0824351f94858e89f5da32fdd51c112515a",
+      "role": "reference"
+    },
+    {
+      "id": "source-solution-contract",
+      "path": "SOURCES/SOLUTION-CONTRACT.md",
+      "sha256": "607da80443620a51195bd62738fa99f551c8b152677f38a43274f7a8a77dc2e7",
+      "role": "reference"
+    },
+    {
+      "id": "source-stage7-protocol",
+      "path": "SOURCES/C1-STAGE7-PROTOCOL.md",
+      "sha256": "b02fc45c5fa5637d99fb60b8fb1b0b9799bb098c8965b68d5125883624eb3fd4",
+      "role": "reference"
+    },
+    {
+      "id": "source-formalizer-brief",
+      "path": "SOURCES/C1-STAGE7-FORMALIZER-BRIEF-LA2.md",
+      "sha256": "052545aa5ea1a2851da43d4bfc75de06cf9eae7bd351530d2d84f1aff5442325",
+      "role": "reference"
+    },
+    {
+      "id": "source-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "sha256": "482440b21fdd41b2d51c8d0a8dc575a670e44ce20fba6e86f1c24a6d7b60a08b",
+      "role": "reference"
+    },
+    {
+      "id": "source-entry-01-indepcount",
+      "path": "LeanProject/LeanProof/Snippets/0001-definition-Erdos993G1-indepCount.lean.fragment",
+      "sha256": "5484fc21ffce7bf707240da15858d7d82289f8e6f286a8fa9837cd9a0c474ccb",
+      "role": "reference"
+    },
+    {
+      "id": "source-entry-02-coeff",
+      "path": "LeanProject/LeanProof/Snippets/0002-definition-Erdos993G1-coeff.lean.fragment",
+      "sha256": "211900436b28e4a685af60df26a20e8fe254fd4c9479c12ba2863fa180c1a639",
+      "role": "reference"
+    },
+    {
+      "id": "source-entry-03-delta",
+      "path": "LeanProject/LeanProof/Snippets/0003-definition-Erdos993G1-delta.lean.fragment",
+      "sha256": "bdb46014d98507a7c85cc8de0b806f80c04496479795e28677dde024e216b9ee",
+      "role": "reference"
+    },
+    {
+      "id": "source-entry-04-closednbhdfinset",
+      "path": "LeanProject/LeanProof/Snippets/0004-definition-Erdos993G1-closedNbhdFinset.lean.fragment",
+      "sha256": "cd7b02bbb9e1f54197bb4393f553dc9356c77804c15dc5eb7f07fe0792b1ddff",
+      "role": "reference"
+    },
+    {
+      "id": "source-entry-05-extensionfinset",
+      "path": "LeanProject/LeanProof/Snippets/0005-definition-Erdos993G1-extensionFinset.lean.fragment",
+      "sha256": "98167bde3acb58689604d2b5d11f32e099963b6a6d847bef7d1e31c0232f5707",
+      "role": "reference"
+    },
+    {
+      "id": "source-entry-06-e",
+      "path": "LeanProject/LeanProof/Snippets/0006-definition-Erdos993G1-e.lean.fragment",
+      "sha256": "c3576e8aafb3ad1ecac91b193eb2ece93cade71ee367c2f0f18a8ac166e51481",
+      "role": "reference"
+    },
+    {
+      "id": "source-entry-07-indepdegreesum",
+      "path": "LeanProject/LeanProof/Snippets/0007-definition-Erdos993G1-indepDegreeSum.lean.fragment",
+      "sha256": "54bedd8a2a64d672f14837e8e96231d575a7b9cd93a42453130a3fa1d04bc9ec",
+      "role": "reference"
+    },
+    {
+      "id": "source-entry-08-firstdescent",
+      "path": "LeanProject/LeanProof/Snippets/0008-definition-Erdos993G1-firstDescent.lean.fragment",
+      "sha256": "0ccd1036c077f1c40df3a2c1e2260b25f49f65a6fde2063d2bdd96fce103ec8d",
+      "role": "reference"
+    },
+    {
+      "id": "source-entry-09-indepcount-eq-card-indepsetfinset",
+      "path": "LeanProject/LeanProof/Snippets/0009-lemma-Erdos993G1-indepCount_eq_card_indepSetFinset.lean.fragment",
+      "sha256": "4463e7eea65f11f69266095e58b54777ea245aa79caee47bf5b6e3ab77aa0eac",
+      "role": "reference"
+    },
+    {
+      "id": "source-entry-10-mem-extensionfinset-iff",
+      "path": "LeanProject/LeanProof/Snippets/0010-lemma-Erdos993G1-mem_extensionFinset_iff.lean.fragment",
+      "sha256": "b2b5d06c64d10d0251bffd5e17b2fdaa18b46804b1e7b35bb0b1078cf6d56fc1",
+      "role": "reference"
+    },
+    {
+      "id": "source-entry-11-isnindepset-insert-of-mem-extensionfinset",
+      "path": "LeanProject/LeanProof/Snippets/0011-lemma-Erdos993G1-isNIndepSet_insert_of_mem_extensionFinset.lean.fragment",
+      "sha256": "29cadf3157ff850df750399b7c20b73ad0c0fc573cadb41246d50937c8988c9f",
+      "role": "reference"
+    },
+    {
+      "id": "source-entry-12-isnindepset-erase-and-mem-extensionfinset",
+      "path": "LeanProject/LeanProof/Snippets/0012-lemma-Erdos993G1-isNIndepSet_erase_and_mem_extensionFinset.lean.fragment",
+      "sha256": "f272e215c6c3ff23ea45de1cb4d97fd46e6a5e5846872f99733556e6a54a9667",
+      "role": "reference"
+    },
+    {
+      "id": "source-entry-13-sigma-card-double-count",
+      "path": "LeanProject/LeanProof/Snippets/0013-lemma-Erdos993G1-sigma_card_double_count.lean.fragment",
+      "sha256": "4890fab635992e65b4f611b740729d4cf26554eb3874d3fa68d3bba224bb63cb",
+      "role": "reference"
+    },
+    {
+      "id": "source-entry-14-sum-card-indepsetfinset-succ",
+      "path": "LeanProject/LeanProof/Snippets/0014-lemma-Erdos993G1-sum_card_indepSetFinset_succ.lean.fragment",
+      "sha256": "f2e5389c2b1a7df187b58422d6f56be5fd12943ebf9ce709b78bc4294264b728",
+      "role": "reference"
+    },
+    {
+      "id": "source-entry-15-sum-e-eq-succ-mul-card",
+      "path": "LeanProject/LeanProof/Snippets/0015-lemma-Erdos993G1-sum_e_eq_succ_mul_card.lean.fragment",
+      "sha256": "16966da037614ae543e50d10e19aa30152f9991cc8d0cce7ea982bb0481a75a9",
+      "role": "reference"
+    },
+    {
+      "id": "source-entry-16-double-count",
+      "path": "LeanProject/LeanProof/Snippets/0016-lemma-Erdos993G1-double_count.lean.fragment",
+      "sha256": "f123431dbbf223ed714d031ab21d11dfc85c45c362794f02bf001ff352a24351",
+      "role": "reference"
+    },
+    {
+      "id": "source-entry-17-card-closednbhdfinset-le",
+      "path": "LeanProject/LeanProof/Snippets/0017-lemma-Erdos993G1-card_closedNbhdFinset_le.lean.fragment",
+      "sha256": "1872734f778eec5c7536cef4e49d7302e263d312120b5a1152b492b4ea9cb325",
+      "role": "reference"
+    },
+    {
+      "id": "source-entry-18-e-add-card-add-degreesum-ge",
+      "path": "LeanProject/LeanProof/Snippets/0018-lemma-Erdos993G1-e_add_card_add_degreeSum_ge.lean.fragment",
+      "sha256": "ef02ff2f0e526b6afd3d5ff092f776491b3c0b1a30041a399050aa8b2548e720",
+      "role": "reference"
+    },
+    {
+      "id": "source-entry-19-e-ge-sub",
+      "path": "LeanProject/LeanProof/Snippets/0019-theorem-Erdos993G1-e_ge_sub.lean.fragment",
+      "sha256": "e3eec15eac5c8e9b6de24a81537a8daeb7e6a39e2e96a1058f29d28d1f602a09",
+      "role": "reference"
+    }
+  ]
+}

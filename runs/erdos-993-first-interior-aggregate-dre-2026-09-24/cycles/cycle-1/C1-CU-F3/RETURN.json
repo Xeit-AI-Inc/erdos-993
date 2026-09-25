@@ -1,0 +1,54 @@
+{
+  "worker_id": "C1-CU-F3",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "U",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-F3-01",
+    "C1-F3-02",
+    "C1-F3-03"
+  ],
+  "claims": [
+    {
+      "claim_id": "C1-F3-01",
+      "statement": "The three explicit eligible T_m trees with m=22,60,100 have complete interior aggregates -147807, -2947590, and -13588650, respectively.",
+      "scope": "Only the three specified finite trees at p=alpha-2, with the frozen original-leaf selector and tagged complete sum.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CU-F3/REPORT.md",
+        "cycles/cycle-1/C1-CU-F3/audit-summary.json"
+      ],
+      "reason": "The copied independent polynomial recurrence matched the complete pinned records; tree structure and all record fields were directly checked. This remains finite negative evidence."
+    },
+    {
+      "claim_id": "C1-F3-02",
+      "statement": "In the deterministic seed-9932401 Prüfer-word sample of 300 trees at each of orders 16,20,24,30,40, 1466 eligible trees had no positive complete aggregate; the largest aggregate was -210 and largest selected summand was 0.",
+      "scope": "Exactly this reproducible finite pseudorandom sample, not an exhaustive census or a certified probability claim.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CU-F3/REPORT.md",
+        "cycles/cycle-1/C1-CU-F3/random-replay-summary.json"
+      ],
+      "reason": "Same-code scratch replay matched the pinned summary byte for byte, but the wording independent uniform samples should not imply a certified probabilistic conclusion."
+    },
+    {
+      "claim_id": "C1-F3-03",
+      "statement": "The stated 10-vertex eligible tree is non-residual and has complete interior aggregate -72, obstructing direct use of the residual top-rank theorem.",
+      "scope": "One finite tree; a transfer-scope obstruction only, not an aggregate counterexample.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CU-F3/REPORT.md",
+        "cycles/cycle-1/C1-CU-F3/audit-summary.json"
+      ],
+      "reason": "Exhaustive enumeration checked its polynomial and maximum-set witness; direct induced-subgraph recurrence checked all leaf summands and the complete sum. The inherited theorem explicitly requires residuality and top rank."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CU-F3/REPORT.md",
+  "limitations": [
+    "No universal proof or eligible positive complete aggregate was established; the primary target remains open.",
+    "The random replay checks reproducibility of the source algorithm and only the stated 1500 generated trees.",
+    "No Lean build was run in this critique role.",
+    "All owned work finished before return; no background job remains."
+  ]
+}

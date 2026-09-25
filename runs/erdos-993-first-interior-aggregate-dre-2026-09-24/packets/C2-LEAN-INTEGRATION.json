@@ -1,0 +1,54 @@
+{
+  "role": "C2-LEAN-INTEGRATION",
+  "model": "gpt-6-sol",
+  "reasoning_effort": "high",
+  "source_pins": [
+    {
+      "path": "runs/lean-2026-09-24-c2-primary-v2/THEOREM-CONTRACT.yaml",
+      "sha256": "61029a5001c862684a6e8b8e96cced4af2b0e48353183a00b95efe5272cad61e"
+    },
+    {
+      "path": "runs/lean-2026-09-24-c2-primary-v2/SOURCE/CANDIDATE-PROOF.md",
+      "sha256": "cc9fa001269c7e649bea456661f92b9aea2f17ee406f24da6ebfabe78161a0c9"
+    },
+    {
+      "path": "runs/lean-2026-09-24-c2-primary-v2/EVIDENCE/INFORMAL-AUDIT.md",
+      "sha256": "8a6fcc5a20b72b851a2ae1bd5d07e24e3e20e21da1303061f1ae0c8283af7124"
+    },
+    {
+      "path": "runs/lean-2026-09-24-c2-primary-v2/STAGING/BASE.lean",
+      "sha256": "9b94d4b5ab3e048c6d86fee074d568705a1e771ae24172f130b0af9fd8462a45"
+    },
+    {
+      "path": "runs/lean-2026-09-24-c2-primary-v2/STAGING/BASE-ENTRY-MAP.json",
+      "sha256": "5464d7c942e27011ec7f540cf05debf27531048b752834863f05fe1c5a19d538"
+    },
+    {
+      "path": "runs/lean-2026-09-24-c2-primary-v2/STAGING/core/Core.lean.fragment",
+      "sha256": "50dcce4a7ad13fbb73361ff1235996a7bb79eeea2cf9435a752b1eab50d8583f"
+    },
+    {
+      "path": "runs/lean-2026-09-24-c2-primary-v2/STAGING/leaf/Leaf.lean",
+      "sha256": "972d0d900218889995bebd2e0682c1886576df4d7b2b22356924b0d7295baa9d"
+    },
+    {
+      "path": "runs/lean-2026-09-24-c2-primary-v2/STAGING/registration-base/018-section.lean.fragment",
+      "sha256": "cb43feebd48bdf3a82d95db4c0475a34a83acdd8c55f13ac44433ea26141fa1e"
+    },
+    {
+      "path": "runs/lean-2026-09-24-c2-primary-v2/EVIDENCE/REGISTRATION-SPELLING-DECISION.json",
+      "sha256": "d1deb4e123c7ad637963b24ff0cfaa4099cf414548a07bdfd3caa3a5d2e8dad8"
+    },
+    {
+      "path": "packets/C2-LEAN-PRODUCER-PROTOCOL.md",
+      "sha256": "8c50e2b443624c8da82450c30df71b13534cdb46ba1edc6eb57273358b1b805d"
+    },
+    {
+      "path": "control-proposals/C2-PRIMARY-TERMINAL-DRAFT.lean.fragment",
+      "sha256": "4906e43b8b30f7ca6c0297b6ed03b442825fbf29ce07521203d56b525be94566"
+    }
+  ],
+  "scratch_absolute": "/Users/ashtonsperry/Documents/Codex/2026-09-13/in-x20/work/erdos-993-first-interior-aggregate-dre-2026-09-24/scratchpad/C2-LEAN-INTEGRATION",
+  "remote_directory": "/Users/ashtonsperry/VerityOS/experiments/erdos-993-first-interior-aggregate-dre-2026-09-24/runs/lean-2026-09-24-c2-primary-v2/STAGING/integration",
+  "task": "Compose the sealed core and leaf lemmas into a public intermediate lemma bipartiteHighTailAggregate with G, hBip, p, hp:2<=p, hTail:2*indepNum+1<=3*p and conclusion C5LA1.aggregate G p<=0, with no shadow assumption. Compile against BASE with only the spelling replacement documented in REGISTRATION-SPELLING-DECISION (noncomputable section around taggedFamily, identical body). Preserve all imported fragment bytes. Later controller will provide the completed sealed guard lemma and pinned amendment; then assemble and compile exactly the terminal firstInteriorAggregate contract. Do not use unproved guard assumptions as if proved. Terminal proof draft is a controller suggestion, not evidence. Write only assigned integration directory and local scratchpad; do not modify sealed fragments, base, canonical Main, receipts, ledger or public repo. No subagents. Return helper and terminal fragments separately, complete integrated draft check and real logs/status, report and any remaining gap. All pinned Lean/shared project instructions continue. Do not make new top-level definitions; use lemma keyword for all intermediates, theorem only for terminal."
+}

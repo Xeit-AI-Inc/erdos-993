@@ -1,0 +1,15 @@
+namespace C5LA1
+
+open SimpleGraph C4LA1
+
+variable {V : Type*} [Fintype V] [DecidableEq V]
+
+open Classical in
+/-- `S(G,p) = sum_{v in F} (b_v - B_v)`, the literal top-rank residual
+aggregate, summed over the favorable filter of the leaf set. -/
+noncomputable
+def aggregate (G : SimpleGraph V) [DecidableRel G.Adj] (p : Nat) : Int :=
+  ∑ v ∈ (leafSet G).filter fun v => C4LA1.IsFavorableAt G v p,
+    (forwardDifferenceDel G (H G v) (p - 1) - forwardDifferenceDel G (R G v) (p - 1))
+
+end C5LA1

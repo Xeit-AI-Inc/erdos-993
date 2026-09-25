@@ -1,0 +1,11 @@
+claim_id,claim,source,verification,critic_focus,verdict
+C01,"Exact theorem and integer/Nat rank equivalence on eligible inputs","v2 THEOREM-CONTRACT.yaml; SEMANTIC-CONTRACT.md","Nat premise forces a>=4 and unsaturated p=a-2; planned declaration has only tree and eligibility premises","possible underflow or added a>=7 premise",verified
+C02,"Pair coefficients exclude a=4 and a=5","CANDIDATE-PROOF.md section 1","i2=C(n-1,2); Delta0=n-1>0; Delta1>=4 for n>=6","strict descent and n>=a+1",verified
+C03,"Tree triple coefficient identity","CANDIDATE-PROOF.md section 1","edge-triple incidence and meeting-edge correction produce i3=C(n,3)-(n-1)(n-2)+D","three-edge triangles absent in tree",verified
+C04,"a=6 excluded for all n","CANDIDATE-PROOF.md section 1","n>=9 formula nonnegative; n=7 one-cover gives Delta2>=5; n=8 two-cover gives Delta2>=2","cover degrees and convex bound",verified
+C05,"Tagged deletion incidence lower bound","CANDIDATE-PROOF.md section 2","each tagged (k+1)-set gives at least k tagged deletions","singleton-tag endpoint",verified
+C06,"Bipartite extension incidence upper bound","CANDIDATE-PROOF.md section 2","K=H-N[A] has at most 2(h-k) vertices via global bipartition","isolates disconnected and k=h",verified
+C07,"Original H/R/W identity and tagged coefficient difference","CANDIDATE-PROOF.md section 3; r26-Main.lean entries 8-12","R=H-W; qj=i_j(H)-i_j(R); summand=q_p-q_(p-1)","original closed neighborhood",verified
+C08,"Leaf extension gives alpha(H)<=a-1 and sign","CANDIDATE-PROOF.md section 3","v extends every independent H-set; k=a-3>=4 and bound yields q_p<=q_(p-1)","above-capacity and terminal cases",verified
+C09,"Strict selector and leaf multiplicity preserve aggregate sign","CANDIDATE-PROOF.md section 3; r26-Main.lean entry 13","each original-leaf summand nonpositive; finite filtered sum nonpositive","shared support and empty selector",verified
+C10,"Pinned carrier and source authority match exact primary","v2 packet; v2 REVIEWER-PROFILE.json; v2 THEOREM-CONTRACT.yaml; r26-Main.lean","12 pins match; v1/v2 mathematical sources and exact Lean statement unchanged; generic aggregate formula inspected","historical top-rank comment and imported awards",verified

@@ -1,0 +1,65 @@
+{
+  "worker_id": "C1-CT-F2",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "T",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-F2-NEGATIVE-BOUNDED-SEARCH",
+    "C1-F2-RESIDUAL-SCOPE-GAP"
+  ],
+  "claims": [
+    {
+      "claim_id": "C1-F2-NEGATIVE-BOUNDED-SEARCH",
+      "statement": "The claimed negative results are supported within 4,560 seeded Prüfer samples at orders 8..45 (3,840 eligible), the root-plus-stars rows m=1..60, and exhaustive Prüfer enumeration at orders 2..7; the one-vertex tree is ineligible by direct calculation. The m=60 target row has p=180 and S=-2947590.",
+      "scope": "Bounded computations and replayed deterministic source code only; no all-tree inference.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CT-F2/REPORT.md",
+        "cycles/cycle-1/C1-CT-F2/independent_audit.py",
+        "cycles/cycle-1/C1-CT-F2/independent-audit.json",
+        "cycles/cycle-1/C1-CT-F2/crosscheck.py",
+        "cycles/cycle-1/C1-CT-F2/crosscheck.json",
+        "cycles/cycle-1/C1-CT-F2/replay-random.log",
+        "cycles/cycle-1/C1-CT-F2/replay-exhaustive.log",
+        "cycles/cycle-1/C1-CT-F2/replay-family-dp.log",
+        "cycles/cycle-1/C1-CT-F2/replay-factorized.log"
+      ],
+      "reason": "Copied-code replay reproduced source JSON byte for byte and independent arithmetic checked all 60 family rows plus five saved random examples. The exhaustive script mislabeled a K2 run as n=1; that row is excluded, and K1 is directly ineligible. The 100-row source family-sweep file exceeds the described/replayed 60-row range, so only m<=60 is used for this computational disposition."
+    },
+    {
+      "claim_id": "C1-F2-RESIDUAL-SCOPE-GAP",
+      "statement": "The pinned JSON graph, with edges {0-3,1-6,1-9,2-6,3-5,3-7,3-8,4-6,6-7}, is an eligible order-10 non-residual tree at alpha=7, p=5, x=3 and has complete S=-72. The prose edge list in the origin report is a different residual tree and must be corrected.",
+      "scope": "Exact single-tree obstruction to residual-class coverage of the primary target, with corrected graph identity; not a target counterexample.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CT-F2/REPORT.md",
+        "cycles/cycle-1/C1-CT-F2/independent_audit.py",
+        "cycles/cycle-1/C1-CT-F2/independent-audit.json",
+        "cycles/cycle-1/C1-CT-F2/crosscheck.json",
+        "cycles/cycle-1/C1-CT-F2/replay-nonresidual.log"
+      ],
+      "reason": "Independent subset enumeration verifies every graph coefficient, leaf, selector value, H/R difference, total, and two maximum independent sets for the pinned graph; leaf 9 is missing from one maximum set. The printed prose edges instead equal a random-example row with different polynomial, leaves, sum and residuality."
+    },
+    {
+      "claim_id": "C1-CT-F2-FAMILY-SIGN",
+      "statement": "For every integer m>=2, the root-plus-m-three-leaf-star tree is eligible at p=alpha-2=3m; every original leaf is favorable and its complete aggregate is -(9/2)m(m-1)+3m[3-6m-(9/2)m(m-1)]<0.",
+      "scope": "Exact restricted infinite family with the graph construction and proof in REPORT.md; no general ordinary-tree conclusion and no Lean award.",
+      "status": "proposed_proved_informal",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CT-F2/REPORT.md",
+        "cycles/cycle-1/C1-CT-F2/independent_audit.py",
+        "cycles/cycle-1/C1-CT-F2/independent-audit.json",
+        "cycles/cycle-1/C1-CT-F2/crosscheck.json"
+      ],
+      "reason": "Root-conditioned independence polynomial, deletion polynomials, and H-R differences give exact selector and summand formulas. A negative difference at rank p-2 proves eligibility for all m>=2; independent integer calculations verify the first 60 cases."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CT-F2/REPORT.md",
+  "limitations": [
+    "No universal all-tree proof or eligible positive complete-sum counterexample was found; the primary claim remains open.",
+    "The random search was replayed from copied source code, not independently resampled or exhaustively enumerated; only five saved examples were independently checked by subset enumeration.",
+    "The exact new sign proof applies only to the root-plus-stars family and has no Lean verification.",
+    "All owned jobs exited and no background process remains."
+  ]
+}

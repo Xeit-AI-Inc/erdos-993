@@ -1,0 +1,27 @@
+{
+  "worker_id": "C2-U3",
+  "cycle": 2,
+  "stage": "search",
+  "orientation": "U",
+  "status_authority": "proposed_worker_only",
+  "claims": [
+    {
+      "claim_id": "C2-U3-PRIMARY-PROOF-COMPLETENESS",
+      "statement": "At the exact primary scope, an elementary eligibility bound alpha(T)>=7 and a bipartite tagged-set double count yield a complete informal proof candidate that every original-leaf summand at p=alpha(T)-2 is nonpositive, hence the complete favorable aggregate is nonpositive.",
+      "scope": "Finite connected acyclic simple ordinary graphs; integer p=alpha(T)-2; first strict descent x with x+2<=p; original degree-one tags with original support and closed neighborhood; selector Delta_p(T-v)<0; no residual premise; all tags counted with multiplicity.",
+      "status": "proposed_proof_candidate_formal_gate_pending",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-U3/REPORT.md",
+        "cycles/cycle-2/C2-U3/fresh_large_target.py",
+        "cycles/cycle-2/C2-U3/fresh_large_target.json"
+      ],
+      "reason": "The report proves the small-alpha exclusion using an exact Delta_2 tree identity, then counts extensions in the bipartite graph H-N[A] and at least k W-preserving deletions per tagged (k+1)-set at k=alpha-3>=4. This closes the informal target without selector, residuality, Hall, or residual premises. The order-1203 replay is corroborative only. Formal fidelity/kernel review and controller adjudication remain required; no registry or auxiliary status is changed."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-U3/REPORT.md",
+  "limitations": [
+    "Informal proof candidate only; no Lean build or governed formal gate was assigned or run.",
+    "The exact order-1203 replay is finite corroboration and is not universal evidence.",
+    "All three proposed auxiliary registry keys and the primary remain OPEN pending adjudication and gates."
+  ]
+}

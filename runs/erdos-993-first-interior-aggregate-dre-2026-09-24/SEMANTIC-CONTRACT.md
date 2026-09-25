@@ -1,0 +1,6 @@
+# Exact conventions
+Graphs are finite simple graphs; a tree is connected and acyclic. i_k(G) counts independent k-vertex subsets and equals zero at integer k<0 or k>alpha(G). alpha is the maximum size. Delta_k(G)=i_(k+1)(G)-i_k(G), signed integer arithmetic. x(G)=min{k>=0:Delta_k(G)<0}; the terminal zero extension guarantees existence. Flat differences are not descent. No floating arithmetic is evidence.
+p=alpha(T)-2 is an INTEGER. Eligibility x(T)+2<=p implies p>=2 and alpha>=4; any Nat encoding must discharge these guards before subtraction.
+L(T) contains original degree-one vertices, not isolated vertices or newly created leaves. Each v has original support s_v. H_v is the induced graph after deleting {v,s_v}; R_v after deleting the ORIGINAL closed neighborhood N_T[s_v]. F_p(T)={v in L(T):Delta_p(T-v)<0}. Strict inequality, original rank p, no shifted selector.
+S(T,p)=sum_{v in F_p(T)} (Delta_(p-1)(H_v)-Delta_(p-1)(R_v)). Distinct leaves at one support retain multiplicity; empty sum is zero. Residual(T) means every original leaf lies in every maximum independent set. Maximum means largest cardinality, not merely maximal.
+No h-index is used by this contract. Imported h-indices retain their source definitions and cannot replace p, alpha, or x. r26 uses top rank alpha-1 and residual(T); none of its selector simplifications transfer here without proof.

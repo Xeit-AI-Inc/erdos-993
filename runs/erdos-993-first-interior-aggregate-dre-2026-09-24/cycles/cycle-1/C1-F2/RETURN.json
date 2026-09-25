@@ -1,0 +1,43 @@
+{
+  "worker_id": "C1-F2",
+  "cycle": 1,
+  "stage": "search",
+  "orientation": "F",
+  "status_authority": "proposed_worker_only",
+  "claims": [
+    {
+      "claim_id": "C1-F2-RESIDUAL-SCOPE-GAP",
+      "statement": "The admitted r26 residual top-rank theorem does not cover the primary all-tree interior target: the exact order-10 tree recorded in the report is eligible at p=alpha-2 and has an original leaf omitted by a maximum independent set. Its complete aggregate is -72, so this is a scope gap and not a counterexample to the primary inequality.",
+      "scope": "Primary target's residual-versus-nonresidual coverage; exact single-tree computational certificate.",
+      "status": "proposed_scope_obstruction",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-F2/nonresidual-example.json",
+        "cycles/cycle-1/C1-F2/nonresidual-verification.json",
+        "cycles/cycle-1/C1-F2/REPORT.md"
+      ],
+      "reason": "Subset-enumeration verifier checks the full independence polynomial, first strict descent, selector, every summand, aggregate and two maximum independent sets. This disposes only of the idea that the residual theorem covers the whole target class."
+    },
+    {
+      "claim_id": "C1-F2-NEGATIVE-BOUNDED-SEARCH",
+      "statement": "No positive complete aggregate was found in 3,840 eligible seeded labeled Prüfer samples of orders 8 through 45, the m=1..60 root-plus-stars family sweep at p=alpha-2, or exhaustive labeled-tree enumeration through order 7; the order-243 family member has S=-2,947,590 at p=180.",
+      "scope": "Finite computational evidence only for tested instances and specified search ranges; no universal conclusion.",
+      "status": "proposed_computational_evidence",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-F2/random-search-summary.json",
+        "cycles/cycle-1/C1-F2/family-sweep.json",
+        "cycles/cycle-1/C1-F2/exhaustive-small-summary.json",
+        "cycles/cycle-1/C1-F2/factorized-t60.json",
+        "cycles/cycle-1/C1-F2/REPORT.md"
+      ],
+      "reason": "Every search is bounded. The m=60 row was cross-checked between the copied tree-DP evaluator and a separately implemented factorized exact polynomial evaluator."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-F2/REPORT.md",
+  "limitations": [
+    "The primary theorem remains unresolved: no universal proof and no eligible positive complete-sum counterexample was found.",
+    "The Prüfer sample is seeded but not exhaustive; the family sweep covers only one structured family.",
+    "The r26 result is limited to the residual subclass at p=alpha-1 and cannot be transferred to the full target without a new argument.",
+    "No Lean build was assigned or run; all computational evidence is proposed and worker-only.",
+    "All owned jobs exited and no background process remains."
+  ]
+}

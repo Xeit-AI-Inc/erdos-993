@@ -1,0 +1,31 @@
+{
+  "worker_id": "C1-CF-U3",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "F",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-U3-EXACT-COUNT-OBSTRUCTION"
+  ],
+  "claims": [
+    {
+      "claim_id": "C1-U3-EXACT-COUNT-OBSTRUCTION",
+      "statement": "For each original favorable leaf, I_(H_v)-I_(R_v) counts independent sets of H_v meeting N_T(s_v)\\{v}; consequently S(T,p)=A_p-A_(p-1). The selector identity Delta_p(T-v)=Delta_p(H_v)+Delta_(p-1)(R_v) is exact. The proposed route leaves the aggregate sign implication open.",
+      "scope": "Finite ordinary trees under the frozen first-interior definitions, p=alpha(T)-2 and x(T)+2<=p; exact identity and open sign obligation only, with no residual hypothesis.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CF-U3/REPORT.md",
+        "cycles/cycle-1/C1-CF-U3/replay.py",
+        "cycles/cycle-1/C1-CF-U3/replay_results.json"
+      ],
+      "reason": "Direct set partition proves both identities, and independent exact replay confirms the cited family counts and multiplicities. The selector equation alone has no demonstrated aggregate-sign consequence under the tree and eligibility hypotheses; no positive complete sum or universal proof is supplied."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CF-U3/REPORT.md",
+  "limitations": [
+    "The identities do not resolve S(T,p)<=0 and do not prove that a stronger implication is impossible.",
+    "Independent family replay covers exactly m=75,100,150; small literal subset verification covers the seven-vertex path only.",
+    "Historical fence records were used for scope checks; their underlying certificates were not independently re-proved.",
+    "No Lean build or exhaustive census was performed, and no owned jobs remain."
+  ]
+}

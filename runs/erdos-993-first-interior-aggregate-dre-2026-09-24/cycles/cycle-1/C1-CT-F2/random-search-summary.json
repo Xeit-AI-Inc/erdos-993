@@ -1,0 +1,698 @@
+{
+  "seed": 99320260924,
+  "counts": {
+    "samples": 4560,
+    "eligible": 3840,
+    "positive_aggregate": 0,
+    "positive_summand_rows": 0
+  },
+  "first_counterexample": null,
+  "first_positive_summand": null,
+  "eligible_examples": [
+    {
+      "n": 10,
+      "edges": [
+        [
+          0,
+          8
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          7,
+          9
+        ]
+      ],
+      "alpha": 7,
+      "x": 3,
+      "p": 5,
+      "eligible": true,
+      "selector": [
+        0,
+        1,
+        4,
+        6,
+        9
+      ],
+      "summands": [
+        {
+          "leaf": 0,
+          "support": 8,
+          "witness_vertices": [
+            3,
+            4,
+            5,
+            6
+          ],
+          "h_order": 8,
+          "r_order": 4,
+          "c_rank": 8,
+          "c_previous": 24,
+          "g": -16,
+          "pointwise_delta": -7
+        },
+        {
+          "leaf": 1,
+          "support": 2,
+          "witness_vertices": [
+            5
+          ],
+          "h_order": 8,
+          "r_order": 7,
+          "c_rank": 6,
+          "c_previous": 13,
+          "g": -7,
+          "pointwise_delta": -11
+        },
+        {
+          "leaf": 4,
+          "support": 8,
+          "witness_vertices": [
+            0,
+            3,
+            5,
+            6
+          ],
+          "h_order": 8,
+          "r_order": 4,
+          "c_rank": 8,
+          "c_previous": 24,
+          "g": -16,
+          "pointwise_delta": -7
+        },
+        {
+          "leaf": 6,
+          "support": 8,
+          "witness_vertices": [
+            0,
+            3,
+            4,
+            5
+          ],
+          "h_order": 8,
+          "r_order": 4,
+          "c_rank": 8,
+          "c_previous": 24,
+          "g": -16,
+          "pointwise_delta": -7
+        },
+        {
+          "leaf": 9,
+          "support": 7,
+          "witness_vertices": [
+            3
+          ],
+          "h_order": 8,
+          "r_order": 7,
+          "c_rank": 6,
+          "c_previous": 13,
+          "g": -7,
+          "pointwise_delta": -11
+        }
+      ],
+      "S": -62
+    },
+    {
+      "n": 10,
+      "edges": [
+        [
+          0,
+          4
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          7,
+          9
+        ]
+      ],
+      "alpha": 7,
+      "x": 3,
+      "p": 5,
+      "eligible": true,
+      "selector": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        8
+      ],
+      "summands": [
+        {
+          "leaf": 2,
+          "support": 1,
+          "witness_vertices": [
+            8,
+            9
+          ],
+          "h_order": 8,
+          "r_order": 6,
+          "c_rank": 6,
+          "c_previous": 13,
+          "g": -7,
+          "pointwise_delta": -11
+        },
+        {
+          "leaf": 3,
+          "support": 9,
+          "witness_vertices": [
+            1,
+            5,
+            6,
+            7
+          ],
+          "h_order": 8,
+          "r_order": 4,
+          "c_rank": 8,
+          "c_previous": 24,
+          "g": -16,
+          "pointwise_delta": -7
+        },
+        {
+          "leaf": 4,
+          "support": 0,
+          "witness_vertices": [
+            7
+          ],
+          "h_order": 8,
+          "r_order": 7,
+          "c_rank": 6,
+          "c_previous": 13,
+          "g": -7,
+          "pointwise_delta": -11
+        },
+        {
+          "leaf": 5,
+          "support": 9,
+          "witness_vertices": [
+            1,
+            3,
+            6,
+            7
+          ],
+          "h_order": 8,
+          "r_order": 4,
+          "c_rank": 8,
+          "c_previous": 24,
+          "g": -16,
+          "pointwise_delta": -7
+        },
+        {
+          "leaf": 6,
+          "support": 9,
+          "witness_vertices": [
+            1,
+            3,
+            5,
+            7
+          ],
+          "h_order": 8,
+          "r_order": 4,
+          "c_rank": 8,
+          "c_previous": 24,
+          "g": -16,
+          "pointwise_delta": -7
+        },
+        {
+          "leaf": 8,
+          "support": 1,
+          "witness_vertices": [
+            2,
+            9
+          ],
+          "h_order": 8,
+          "r_order": 6,
+          "c_rank": 6,
+          "c_previous": 13,
+          "g": -7,
+          "pointwise_delta": -11
+        }
+      ],
+      "S": -69
+    },
+    {
+      "n": 10,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          6,
+          9
+        ]
+      ],
+      "alpha": 7,
+      "x": 3,
+      "p": 5,
+      "eligible": true,
+      "selector": [
+        0,
+        1,
+        4,
+        5,
+        8,
+        9
+      ],
+      "summands": [
+        {
+          "leaf": 0,
+          "support": 2,
+          "witness_vertices": [
+            4,
+            7
+          ],
+          "h_order": 8,
+          "r_order": 6,
+          "c_rank": 7,
+          "c_previous": 17,
+          "g": -10,
+          "pointwise_delta": -8
+        },
+        {
+          "leaf": 1,
+          "support": 3,
+          "witness_vertices": [
+            7
+          ],
+          "h_order": 8,
+          "r_order": 7,
+          "c_rank": 5,
+          "c_previous": 10,
+          "g": -5,
+          "pointwise_delta": -10
+        },
+        {
+          "leaf": 4,
+          "support": 2,
+          "witness_vertices": [
+            0,
+            7
+          ],
+          "h_order": 8,
+          "r_order": 6,
+          "c_rank": 7,
+          "c_previous": 17,
+          "g": -10,
+          "pointwise_delta": -8
+        },
+        {
+          "leaf": 5,
+          "support": 6,
+          "witness_vertices": [
+            7,
+            8,
+            9
+          ],
+          "h_order": 8,
+          "r_order": 5,
+          "c_rank": 7,
+          "c_previous": 21,
+          "g": -14,
+          "pointwise_delta": -6
+        },
+        {
+          "leaf": 8,
+          "support": 6,
+          "witness_vertices": [
+            5,
+            7,
+            9
+          ],
+          "h_order": 8,
+          "r_order": 5,
+          "c_rank": 7,
+          "c_previous": 21,
+          "g": -14,
+          "pointwise_delta": -6
+        },
+        {
+          "leaf": 9,
+          "support": 6,
+          "witness_vertices": [
+            5,
+            7,
+            8
+          ],
+          "h_order": 8,
+          "r_order": 5,
+          "c_rank": 7,
+          "c_previous": 21,
+          "g": -14,
+          "pointwise_delta": -6
+        }
+      ],
+      "S": -67
+    },
+    {
+      "n": 10,
+      "edges": [
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "alpha": 7,
+      "x": 3,
+      "p": 5,
+      "eligible": true,
+      "selector": [
+        1,
+        2,
+        4,
+        7,
+        8,
+        9
+      ],
+      "summands": [
+        {
+          "leaf": 1,
+          "support": 5,
+          "witness_vertices": [
+            4,
+            6
+          ],
+          "h_order": 8,
+          "r_order": 6,
+          "c_rank": 7,
+          "c_previous": 17,
+          "g": -10,
+          "pointwise_delta": -8
+        },
+        {
+          "leaf": 2,
+          "support": 3,
+          "witness_vertices": [
+            6
+          ],
+          "h_order": 8,
+          "r_order": 7,
+          "c_rank": 5,
+          "c_previous": 10,
+          "g": -5,
+          "pointwise_delta": -10
+        },
+        {
+          "leaf": 4,
+          "support": 5,
+          "witness_vertices": [
+            1,
+            6
+          ],
+          "h_order": 8,
+          "r_order": 6,
+          "c_rank": 7,
+          "c_previous": 17,
+          "g": -10,
+          "pointwise_delta": -8
+        },
+        {
+          "leaf": 7,
+          "support": 0,
+          "witness_vertices": [
+            6,
+            8,
+            9
+          ],
+          "h_order": 8,
+          "r_order": 5,
+          "c_rank": 7,
+          "c_previous": 21,
+          "g": -14,
+          "pointwise_delta": -6
+        },
+        {
+          "leaf": 8,
+          "support": 0,
+          "witness_vertices": [
+            6,
+            7,
+            9
+          ],
+          "h_order": 8,
+          "r_order": 5,
+          "c_rank": 7,
+          "c_previous": 21,
+          "g": -14,
+          "pointwise_delta": -6
+        },
+        {
+          "leaf": 9,
+          "support": 0,
+          "witness_vertices": [
+            6,
+            7,
+            8
+          ],
+          "h_order": 8,
+          "r_order": 5,
+          "c_rank": 7,
+          "c_previous": 21,
+          "g": -14,
+          "pointwise_delta": -6
+        }
+      ],
+      "S": -67
+    },
+    {
+      "n": 11,
+      "edges": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          9
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          8,
+          9
+        ]
+      ],
+      "alpha": 7,
+      "x": 3,
+      "p": 5,
+      "eligible": true,
+      "selector": [
+        0,
+        3,
+        4,
+        6,
+        10
+      ],
+      "summands": [
+        {
+          "leaf": 0,
+          "support": 2,
+          "witness_vertices": [
+            9
+          ],
+          "h_order": 9,
+          "r_order": 8,
+          "c_rank": 5,
+          "c_previous": 11,
+          "g": -6,
+          "pointwise_delta": -15
+        },
+        {
+          "leaf": 3,
+          "support": 7,
+          "witness_vertices": [
+            5,
+            10
+          ],
+          "h_order": 9,
+          "r_order": 7,
+          "c_rank": 9,
+          "c_previous": 29,
+          "g": -20,
+          "pointwise_delta": -9
+        },
+        {
+          "leaf": 4,
+          "support": 1,
+          "witness_vertices": [
+            9
+          ],
+          "h_order": 9,
+          "r_order": 8,
+          "c_rank": 5,
+          "c_previous": 11,
+          "g": -6,
+          "pointwise_delta": -15
+        },
+        {
+          "leaf": 6,
+          "support": 8,
+          "witness_vertices": [
+            5,
+            9
+          ],
+          "h_order": 9,
+          "r_order": 7,
+          "c_rank": 9,
+          "c_previous": 23,
+          "g": -14,
+          "pointwise_delta": -12
+        },
+        {
+          "leaf": 10,
+          "support": 7,
+          "witness_vertices": [
+            3,
+            5
+          ],
+          "h_order": 9,
+          "r_order": 7,
+          "c_rank": 9,
+          "c_previous": 29,
+          "g": -20,
+          "pointwise_delta": -9
+        }
+      ],
+      "S": -66
+    }
+  ]
+}

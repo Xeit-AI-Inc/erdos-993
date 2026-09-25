@@ -1,0 +1,7 @@
+# Inactive controller operations v4 proposal
+
+`controller_ops_v4.py` is a copy of v3 with run-root discovery that works in this proposal directory or under `scripts/`. Its gate chooses the frozen C1 identity and ledger for C1, or the exact `control/C{n}-REGISTERED-CLAIM-IDENTITY.json` and `ledgers/C{n}-OBLIGATIONS.csv` pair for C2–C6. It infers the cycle from a leading `C1-` through `C6-` label unless supplied explicitly; a conflicting label fails. `admit` and `case` supply the cycle from `worker_spec` and preflight the pair before copying or writing outputs. Missing or symlinked later-cycle files fail without falling back to C1.
+
+The v3 admission, normalized-return inventory, topology and coverage checks, source-seal verification, process snapshot, path gate, exclusive-create receipts, and output sealing remain in place. The versioned snapshots are read as inputs; this proposal does not create, amend, or seal them. The controller must stage immutable cycle snapshots before activating a later-cycle operation. At review time, the local mirror had no `ledgers/` directory, so no real later-cycle gate was run.
+
+Validation: `python3 -B -m unittest discover -s control-proposals/ops-v4 -p 'test_*.py' -v` passed all six isolated tests. They use temporary roots and mocked gate subprocesses; no shared evidence or mathematical artifacts were read or changed. Proposal only; no live script was replaced or activated.

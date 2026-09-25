@@ -1,0 +1,27 @@
+{
+  "worker_id": "C2-T1",
+  "cycle": 2,
+  "stage": "search",
+  "orientation": "T",
+  "status_authority": "proposed_worker_only",
+  "claims": [
+    {
+      "claim_id": "C2-T1-EXACTID-E993-BIPARTITE-TAGGED-SHADOW-BOUND",
+      "statement": "The exact OPEN identity E993-BIPARTITE-TAGGED-SHADOW-BOUND holds: for every finite bipartite simple graph H, every W subset V(H), a=alpha(H), and every integer 1<=k<=a, if q_j counts independent j-subsets meeting W with zero extension, then k*q_(k+1)<=2(a-k)*q_k.",
+      "scope": "Exact registered auxiliary scope, including disconnected graphs, empty W, k=a, and integer counts; proved by a complete finite-set incidence argument, with no formal award claimed.",
+      "status": "proposed_proved_informal",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-T1/REPORT.md",
+        "cycles/cycle-2/C2-T1/check_tagged_shadow.py",
+        "cycles/cycle-2/C2-T1/checks.json"
+      ],
+      "reason": "Each tagged (k+1)-set has at least k tag-preserving deletions. For a fixed tagged k-set J, the addable vertices A(J) induce a bipartite graph with alpha at most a-k because J is anticomplete to A(J); hence |A(J)|<=2(a-k). Double-count incidences. Exact connected P4 equality verifies non-strict sharpness. Independent finite checks include every bipartite graph on partitions up to 3+3 for the stated tag families and all ranks, plus K_11,13 at all ranks."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-T1/REPORT.md",
+  "limitations": [
+    "The proof is informal and does not claim a Lean or governed formal award.",
+    "The exhaustive check covers only 682 graphs of partition sizes 1..3 and the stated tag families; the larger exact check is K_11,13. Computation is not the universal proof.",
+    "The separate OPEN alpha>=7 eligibility claim is not proved here, so the conditional application does not establish the primary aggregate."
+  ]
+}

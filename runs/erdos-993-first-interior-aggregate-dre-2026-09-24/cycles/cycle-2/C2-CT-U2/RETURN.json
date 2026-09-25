@@ -1,0 +1,51 @@
+{
+  "worker_id": "C2-CT-U2",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "T",
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-U2-TRANSPORT-AND-CONDITIONAL-COMPOSITION"
+  ],
+  "claims": [
+    {
+      "claim_id": "C2-U2-TRANSPORT-AND-CONDITIONAL-COMPOSITION",
+      "statement": "The exact finite-set r26 deletion-coefficient and r27 G1 first-descent/order-bound carriers align mathematically with the first-interior target, preserving integer guards, strict selector at p, and original leaf multiplicity. The r26 top-rank residual sign theorem does not transfer. The proposed tagged-shadow and alpha-at-least-seven inputs admit complete informal proofs in this critique, so the target follows mathematically, while Lean carrier lemmas and the governed gate remain absent.",
+      "scope": "Ordinary finite connected trees at integer p=alpha-2 with x+2<=p, with only the stated use of bipartite tagged counting and the pinned r27 forest order bound; no broader-rank, RTree, residual, or formal-verification award.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CT-U2/REPORT.md",
+        "cycles/cycle-2/C2-CT-U2/check_251.py",
+        "cycles/cycle-2/C2-CT-U2/check_251.json"
+      ],
+      "reason": "The origin's transport and conditional arithmetic check out, but its missing mathematical auxiliaries are proved here as separate proposed lemmas. Its cited nonresidual order-7 example is actually a 10-vertex example with alpha 7; its T151 script/JSON retain a stale m61 family label. No Lean implementation or formal target gate is claimed."
+    },
+    {
+      "claim_id": "C2-CT-U2-TAGGED-SHADOW-PROOF",
+      "statement": "For finite bipartite H, arbitrary W, a=alpha(H), and 1<=k<=a, the tagged independent-set counts satisfy k*q_(k+1)<=2*(a-k)*q_k; the report gives a complete incidence proof and derives the high-tail original-leaf sign, including p=1.",
+      "scope": "All finite bipartite simple graphs, including disconnected graphs and empty W, at natural 1<=k<=alpha; pointwise leaf corollary for finite bipartite graphs with degree-one v and integer p>=1 satisfying 3p>=2alpha+1.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CT-U2/REPORT.md"
+      ],
+      "reason": "Each tagged (k+1)-set has at least k tagged deletions, and the addable vertices of each tagged k-set bipartition into two independent sets of size at most a-k. The p=1 leaf endpoint reduces to K2. This is an informal proof, not a formal award."
+    },
+    {
+      "claim_id": "C2-CT-U2-ELIGIBILITY-PROOF",
+      "statement": "Every eligible ordinary connected tree at integer p=alpha(T)-2 has alpha(T)>=7, using the pinned r27 forest descent-order bound and an exact exclusion of alpha 4, 5, and 6.",
+      "scope": "Finite connected trees, strict first descent x, integer p=alpha-2, and x+2<=p; no claim about the all-rank aggregate or arbitrary forests.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CT-U2/REPORT.md"
+      ],
+      "reason": "After the exact coefficient bridge, n<=4x<=4(alpha-4). The only remaining alpha=6 orders 7 and 8 contradict Delta_2<0 by star counting or by at least ten cover edges in a seven-edge tree. This is an informal proof depending on the pinned formally verified order bound, not a target gate."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CT-U2/REPORT.md",
+  "limitations": [
+    "No Lean build or governed gate was run; the primary formal status stays OPEN.",
+    "Finite-set transport and the two new lemmas are complete informal arguments but not Lean formalizations.",
+    "Only the explicitly constructed T62 order-251 tree was freshly computed; the T151 check was a pinned origin result and neither is universal evidence.",
+    "No owned background job remains running."
+  ]
+}

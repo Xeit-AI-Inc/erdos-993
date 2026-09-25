@@ -1,0 +1,1 @@
+C1-CLAIM-RECONCILIATION.json used a suffix heuristic that labels C1-CT-F3-01 as bounded_exact_computation. Its accepted statement is the exact deletion/telescoping identity, with informal_derivation grade. The synthesis statement and scope are unchanged; no formal or canonical award exists. This explicit erratum supersedes only that grading field; sealed bytes are preserved.
