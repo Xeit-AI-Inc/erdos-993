@@ -47,6 +47,8 @@ The r28 universal Hall/SDR route is refuted; do not reopen it. Its pendant-path 
 
 ## Areas to work on (consolidated 2026-09-25)
 
+This is the run-close view from the two most recent closes. The standing priority map is the [twelve-area research notepad](research-notepad-2026-09-25.md), summarized in the [assessment](assessment-2026-09-25.md): items 1–3 below are its areas 4–5 and its highest-impact list, item 4 its areas 6, 9 and 11. Where the two disagree, the notepad governs.
+
 From the first-interior close (Codex, 2026-09-24) and the r28 close (Claude, 2026-09-25), in priority order:
 
 1. **Package the uniform high-tail mechanism at its exact scope.** Separate governed contracts for the tagged bound, the
