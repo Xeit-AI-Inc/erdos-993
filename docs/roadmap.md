@@ -1,6 +1,6 @@
 # Open Research Roadmap
 
-Updated 2026-09-25 after the order-24 census, fresh r27 review, r28, the first-interior aggregate, r27 forest degree/extension, r26 top-rank residual sign, and r25 uniform residual no-recovery results. The first-interior primary closed `formally_verified` after two complete cycles; its three auxiliary keys remain OPEN. TREE, FOREST, TRANSFER, unrestricted G1, the ordinary all-rank aggregate and governed beta aggregation remain open. The [current assessment](assessment-2026-09-25.md) and [twelve-area notepad](research-notepad-2026-09-25.md) incorporate the latest completed experiments.
+Updated 2026-09-25 after r29 (high-tail certification), the order-24 census, fresh r27 review, r28, the first-interior aggregate, r27 forest degree/extension, r26 top-rank residual sign, and r25 uniform residual no-recovery results. The first-interior primary closed `formally_verified` after two complete cycles; the [r29 run](../experiments/r29-high-tail-certification.md) (2026-09-25) then certified its three auxiliary keys and the non-residual top-rank corollary as separate governed awards, with the aggregate corollary at `proved_informal`. TREE, FOREST, TRANSFER, unrestricted G1, the ordinary all-rank aggregate and governed beta aggregation remain open. The [current assessment](assessment-2026-09-25.md) and [twelve-area notepad](research-notepad-2026-09-25.md) incorporate the latest completed experiments.
 
 ## 1. A uniform structural residual theorem
 
@@ -12,7 +12,7 @@ A useful result would prove unrestricted ordinary G1, prove a uniform forest no-
 
 The [r26 result](../experiments/r26-top-rank-residual-sign.md) closed r24's top-rank **residual** sign. The [first-interior result](../experiments/first-interior-aggregate.md) now formally closes the exact `p=α(T)−2` complete strict favorable-original-leaf sum without residuality. The ordinary all-rank claim `S(T,p)≤0` on `x(T)+2≤p<α(T)` remains open.
 
-First, separately certify the reusable high-tail tagged bound and eligibility guard, the pointwise auxiliary at its exact endpoint, and the proposed non-residual top-rank consequence. The first-interior package contains internal helpers, but its primary-only award does not promote the three auxiliary registry keys or the top-rank consequence. Then target eligible lower ranks with `3p<2α(T)+1`: prove complete **selected-sum** compensation across original leaf tags or find a positive complete eligible row. An individual positive summand does not refute the sum. Universal local/support-fibre negativity, the refuted per-set addability lower bound, and the literal all-cut/tag-closed-cut Hall mechanisms have exact counterexamples and must not be revived as universal lemmas. See the [terminal report](../runs/erdos-993-first-interior-aggregate-dre-2026-09-24/REPORT.md) and [independent analysis](../runs/erdos-993-first-interior-aggregate-dre-2026-09-24/FINAL-ANALYSIS.md).
+The [r29 result](../experiments/r29-high-tail-certification.md) (2026-09-25) separately certified the reusable high-tail tagged bound, the eligibility guard, the pointwise high-tail leaf sign at every `p ≥ 1` (the `p = 1` endpoint needs no bipartiteness) and the non-residual top-rank consequence, and showed the guard `3p ≥ 2α(T)+1` exactly sharp on trees for every `α ≥ 2`: the largest rank with a positive original-leaf term on a tree is exactly `⌊2α/3⌋`, so the open remainder of the all-rank aggregate is exactly `x(T)+2 ≤ p ≤ ⌊2α/3⌋`, and any argument there must be a compensation argument. The aggregate corollary is kernel-checked inside the pointwise package but registered at `proved_informal` pending its own standalone award. Then target eligible lower ranks with `3p<2α(T)+1`: prove complete **selected-sum** compensation across original leaf tags or find a positive complete eligible row. An individual positive summand does not refute the sum. Universal local/support-fibre negativity, the refuted per-set addability lower bound, and the literal all-cut/tag-closed-cut Hall mechanisms have exact counterexamples and must not be revived as universal lemmas. See the [terminal report](../runs/erdos-993-first-interior-aggregate-dre-2026-09-24/REPORT.md) and [independent analysis](../runs/erdos-993-first-interior-aggregate-dre-2026-09-24/FINAL-ANALYSIS.md).
 
 The [r28 result](../experiments/r28-degree-lemma-hall-sdr.md) bears on the forest side: the Hall/SDR leaf/slot dominance
 condition — proposed as a route to a second, matching-type proof of the degree lemma — is false (unique minimal
@@ -56,15 +56,19 @@ This is the run-close view from the two most recent closes. The standing priorit
 
 From the first-interior close (Codex, 2026-09-24) and the r28 close (Claude, 2026-09-25), in priority order:
 
-1. **Package the uniform high-tail mechanism at its exact scope.** Separate governed contracts for the tagged bound, the
-   `p ≥ 1` pointwise high-tail statement and the eligibility guard; extract the non-residual eligible top-rank corollary
-   with its endpoint proof. The primary-only first-interior award did not promote the three auxiliary keys.
+1. **Package the uniform high-tail mechanism at its exact scope — done by [r29](../experiments/r29-high-tail-certification.md)
+   (2026-09-25).** Four governed awards: the tagged bound, the `p ≥ 1` pointwise high-tail statement (with the aggregate
+   corollary as a kernel-checked companion), the eligibility guard, and the non-residual eligible top-rank corollary with its
+   endpoint proof. Remaining: a standalone award for the aggregate corollary (registered `proved_informal`; body ready), and a
+   claim identity for the r24 top-rank favorability fact (every leaf favorable at `p = α−1`).
 2. **Selected aggregate compensation below the high-tail boundary** (`3p < 2α(T)+1`, eligible ranks, all original leaf
    tags and strict original-rank selectors). The final Astra analysis derives
    `k·S(T,p) = (2α+1−3p)·Σ_{v favorable} q_v(k) − Σ_{v favorable}(D_v + M_v)`, `k = p−1` (`D` the actual extension deficit,
    `M` the tagged `(k+1)`-sets meeting at least two roots): register and independently audit this identity before using it
    as a premise; the global lower-region budget is unproved. Seek that budget or a positive complete eligible
-   counterexample — not universal local/support-fibre/Hall mechanisms, which are refuted.
+   counterexample — not universal local/support-fibre/Hall mechanisms, which are refuted. r29 fixed this region's exact
+   boundary: `x(T)+2 ≤ p ≤ ⌊2α/3⌋`, with the pointwise sign failing at `⌊2α/3⌋` on an explicit tree for every `α ≥ 2`. This is
+   the region under active study in the lower-region compensation experiment.
 3. **Exact implication chains, kept separate.** Ordinary all-rank aggregation is a self-contained target;
    ordinary-to-governed transport is needed only for the downstream governed beta formulation; any path from an
    aggregate sign to unimodality needs its own complete chain. TREE, FOREST and no-recovery stay separate contracts.
