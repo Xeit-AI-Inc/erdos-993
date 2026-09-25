@@ -55,7 +55,7 @@ false on `K_{2,3}`, and every cycle satisfies it with equality at every `k`.
 ## What else was learned
 
 The root-corrected lemma has an exact correction term (`M_k = Σ_C max_v a_v(k)`, attained). The bound `n ≤ 4k`
-is exact only at `k = 1, 2`: an in-run exhaustive census to order 20 gives the true descent maxima
+is exact only at `k = 1, 2` among the tested ranks `1..5`: an in-run exhaustive census to order 20 gives the true descent maxima
 `4, 8, 11, 15, 18` for `k = 1..5` and the sharp rank-5 ceiling `Δ_5 < 0 ⇒ n ≤ 18` (9,532 order-18 forest
 classes), at census grade only. The paper's two-potential recurrences hold for arbitrary graph pieces —
 acyclicity enters only afterwards, twice. Registered informally after isolated second reads: the root-corrected

@@ -1,6 +1,6 @@
 # Open Research Roadmap
 
-Updated 2026-09-25 after r28, the first-interior aggregate, r27 forest degree/extension, r26 top-rank residual sign, and r25 uniform residual no-recovery results. The first-interior primary closed `formally_verified` after two complete cycles; its three auxiliary keys remain OPEN. TREE, FOREST, TRANSFER, unrestricted G1, the ordinary all-rank aggregate and governed beta aggregation remain open. The [current assessment](assessment-2026-09-25.md) and [twelve-area notepad](research-notepad-2026-09-25.md) incorporate the latest completed experiments.
+Updated 2026-09-25 after the order-24 census, fresh r27 review, r28, the first-interior aggregate, r27 forest degree/extension, r26 top-rank residual sign, and r25 uniform residual no-recovery results. The first-interior primary closed `formally_verified` after two complete cycles; its three auxiliary keys remain OPEN. TREE, FOREST, TRANSFER, unrestricted G1, the ordinary all-rank aggregate and governed beta aggregation remain open. The [current assessment](assessment-2026-09-25.md) and [twelve-area notepad](research-notepad-2026-09-25.md) incorporate the latest completed experiments.
 
 ## 1. A uniform structural residual theorem
 
@@ -16,9 +16,11 @@ First, separately certify the reusable high-tail tagged bound and eligibility gu
 
 The [r28 result](../experiments/r28-degree-lemma-hall-sdr.md) bears on the forest side: the Hall/SDR leaf/slot dominance
 condition — proposed as a route to a second, matching-type proof of the degree lemma — is false (unique minimal
-counterexample of order 22, where the root's occupancy is the strict maximum over all vertices), so no pairwise
-matching-type strengthening of the degree lemma holds on all trees; the condition is formally verified exactly on trees
-whose branch tree is a path, giving a second formal proof of the degree lemma on that class. Candidates that relax the
+counterexample of order 22, where the root's occupancy is the strict maximum over all vertices). Thus the universal
+injection assigning every branch slot to a distinct leaf with at least the slot vertex's occupancy is false. The
+condition is formally verified on trees whose branch tree has maximum degree at most two, including trees without
+branch vertices, giving a second formal proof of the degree lemma on that class. This is a sufficient class, not an
+if-and-only-if classification of individual trees satisfying (HS). Candidates that relax the
 pairwise comparison (prefix dominance `P₁`/`P₂`) are conjecture-grade and want a census before any run.
 
 ## 3. Exact reduction to the original graph problem

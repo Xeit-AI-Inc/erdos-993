@@ -27,7 +27,7 @@ The ordinary all-rank aggregate remains OPEN and is a self-contained ordinary-tr
 | Finite forests, `|F|=2r+4`, `r>=1`, `x(F)<r` | `Delta_r(F)<=0` |
 | Ordinary G1, `|U|=2p` | Residual sign is nonpositive |
 
-These are the exact consequences of three governed contracts, published in three byte-identical Lean source packages. No unrestricted G1, TREE, FOREST or TRANSFER conclusion is awarded. The second wide band is retained at its informal grade. See [the experiment summary](../experiments/g1-large-residual-dre-2026-09-13.md), [verification record](../evidence/verification-2026-09-20-g1.md), and [current assessment](assessment-2026-09-20.md).
+These are the exact consequences of three governed contracts, published in three byte-identical Lean source packages. No unrestricted G1, TREE, FOREST or TRANSFER conclusion is awarded. The second wide band is retained at its informal grade. See [the experiment summary](../experiments/g1-large-residual-dre-2026-09-13.md), [verification record](../evidence/verification-2026-09-20-g1.md), and [current assessment](assessment-2026-09-25.md).
 
 ## Included Formal Result
 
@@ -375,7 +375,7 @@ injection proof of a stronger root-corrected lemma, not the paper's polynomial i
 consequences `Δ_k < 0 ⇒ n ≤ 4k` (a linear order bound, strengthening the r25 `(k+1)²` award as a separate key),
 `n ≥ 21 ⇒ Δ_5 ≥ 0` and `x < r ⇒ n ≤ 4r − 4`. The r25 rank-5 residue is empty; the K1-addition closure extends to
 `x ≤ 5` at census grade. The true descent maxima are `4, 8, 11, 15, 18` for `k = 1..5` (order-20 census), so `4k`
-is exact only at `k = 1, 2`. `(DL)` is never tight for `k ≥ 1` with `i_k > 0`, is false on `K_{2,3}`, and every
+is exact only at `k = 1, 2` among the tested ranks `1..5`. `(DL)` is never tight for `k ≥ 1` with `i_k > 0`, is false on `K_{2,3}`, and every
 cycle satisfies it with equality. These are order bounds with sign `Δ_k ≥ 0` — not no-recovery statements.
 See [r27](../experiments/r27-forest-degree-extension.md) and [verification](../evidence/verification-2026-09-24-r27.md).
 

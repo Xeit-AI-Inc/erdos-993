@@ -4,7 +4,7 @@
 
 Code's r28 Hall/SDR experiment is complete: its universal sufficient condition is refuted, with restricted structural results formally verified. The registry has 407 identities (245 VERIFIED, 92 REFUTED, 26 CONDITIONAL, 44 OPEN). The completed order-24 census gives M(6)=22 and K1-addition closure for x<=6 at census-dependent grades. The fresh r27 review corrects informal equality endpoints and identifies the missing marked-shadow control; no new formal award is made. See the [current research notepad](docs/research-notepad-2026-09-25.md) and [assessment](docs/assessment-2026-09-25.md). Historical sections retain their dates and scopes.
 
-Last updated: 2026-09-25 (r28: the Hall/SDR sufficient condition for the degree lemma refuted at order 22, four Lean packages for the surviving statements; first-interior aggregate formally verified 2026-09-24; master registry 405 identities)
+Last updated: 2026-09-25 (order-24 census and fresh r27 review complete; M(6)=22, K1 closure x<=6 at census-dependent grades; master registry 407 identities)
 
 ## Headline Problems
 
