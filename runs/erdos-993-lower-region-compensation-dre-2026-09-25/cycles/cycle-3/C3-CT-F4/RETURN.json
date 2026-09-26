@@ -1,0 +1,31 @@
+{
+  "worker_id": "C3-CT-F4",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "The C3-F4 investigation leaves the registered lower-region ordinary favorable-leaf aggregate unresolved and does not establish the proposed n=2p+3 extension; its stated exact controls and bounded sample are reproducible.",
+      "scope": "Audit of C3-F4 only: marked K1,7 control, its p=4,n=11 positive but early-descent-ineligible tree, analytic exclusions for p=3,4 at n=2p+3, and the seeded 12,000-draw-per-rank Prüfer sample for p=6..10.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CT-F4/EVIDENCE.json",
+        "cycles/cycle-3/C3-CT-F4/replay.py",
+        "cycles/cycle-3/C3-CT-F4/ordinary_tree_checked.py"
+      ],
+      "reason": "retained: independent replay confirms the stated exact counts and sample results. The only positive complete sum is ineligible because x+2>p, and the seeded sample is nonexhaustive; neither constitutes a proof or an eligible refutation."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CT-F4/REPORT.md",
+  "limitations": [
+    "No eligible positive complete sum or universal proof was found.",
+    "The Prüfer sample is seeded and nonexhaustive.",
+    "The separate first-shell candidate's imported first-wide classification and Catalan-floor premises were not independently verified in this audit.",
+    "Bounded local controls do not resolve the complete lower-region selector sum."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE"
+  ]
+}

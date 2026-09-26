@@ -1,0 +1,31 @@
+{
+  "worker_id": "C1-CU-F6",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C1-F6-1",
+      "statement": "The exact bounded spider search and seeded Prüfer sample recorded by C1-F6 contain no eligible row with positive complete lower-region selected aggregate.",
+      "scope": "Only the 456 rooted spider arm multisets with 2-6 arms of lengths 1-5 and the 1,760 seeded Prüfer-sequence draws at orders 18, 22, 26, 30, 34, 40, 48, and 56; no universal conclusion.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CU-F6/evidence/replay_search_local.py",
+        "cycles/cycle-1/C1-CU-F6/evidence/ordinary_tree.py",
+        "cycles/cycle-1/C1-CU-F6/evidence/replay-output.json",
+        "cycles/cycle-1/C1-CU-F6/evidence/standing-control-replay.json"
+      ],
+      "reason": "retained: an adapted copy of the route replay reproduces its complete search-results.json exactly. The spider tuple enumeration and both generation boundaries and eligible-row counts are consistent; ranks use the corrected terminal descent, strict guards, original-tree deletion operations, and distinct leaf tags. Independent replay of K1,12, T22, and T60 matches the shared controls and shows why local positive summands do not decide the complete aggregate. The result remains bounded and does not establish the universal assertion."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CU-F6/REPORT.md",
+  "limitations": [
+    "The spider search exhausts only the stated arm-count and arm-length multiset box.",
+    "The seeded Prüfer sample is not exhaustive and may draw the same labeled tree more than once.",
+    "The replay verifies the finite observation only and does not prove or refute the universal lower-region aggregate assertion."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-F6-1"
+  ]
+}

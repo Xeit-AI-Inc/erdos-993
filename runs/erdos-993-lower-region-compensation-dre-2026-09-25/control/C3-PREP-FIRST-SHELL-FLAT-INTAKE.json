@@ -1,0 +1,77 @@
+{
+  "allowed_source_files": [
+    {
+      "path": "control/C3-FIRST-SHELL-CANDIDATE.md",
+      "sha256": "f4f051cbb0bc6b18643775b88c0e2a113568af70aea5e6af504018ee0b00dad2"
+    },
+    {
+      "path": "control-proposals/FIRST-SHELL-POST-AWARD-REUSE.md",
+      "sha256": "2baf184c58421aa9395fe0118e271d17ea7469be78f32d9014ea9ed5b78c24a6"
+    },
+    {
+      "path": "preparation/C2-PREP-SHELL-FORMAL-INTAKE/REPORT.md",
+      "sha256": "448f030c5b3457205e3b906f605a30b13705d3f8d11bdb18ef6d76243e75e5b6"
+    },
+    {
+      "path": "cycles/cycle-3/C3-AU/REPORT.md",
+      "sha256": "68c3d367f8ffd79ee518eaf66daafb6fde6f502c8fdc65d4974bc08727ef7cf2"
+    },
+    {
+      "path": "runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean",
+      "sha256": "a45f8e2e218d27d528e2513e5cb8413d38780d9e6c01f8c34b171366f0bf3bde"
+    },
+    {
+      "path": "governance/lean-formalization-SKILL.md",
+      "sha256": "c2bb1d81f0a5026673dcd58480f9634eb8e78bf9e6d37e1704c5b9c6a5b78cbd"
+    },
+    {
+      "path": "governance/theorem-contract-SKILL.md",
+      "sha256": "583fab70f817541503a9671f9aadf20038df9dd70e4128027912ffb88fe1c2f4"
+    },
+    {
+      "path": "inputs/C3-formal-intake/DIRECT-PROOF-SIMPLIFICATION.md",
+      "sha256": "4341f0ff3bb8d6dd55910defe530756aea21c20e7e0865072e1d6ea47cd3e95d"
+    },
+    {
+      "path": "inputs/C3-formal-intake/FIRST-SHELL-TWO-PART-ROUTE.md",
+      "sha256": "aa22b40fa85b6e7b0b9c5ae21f7014540e4953160f52af01a25da656a166877b"
+    },
+    {
+      "path": "inputs/C3-formal-intake/FirstInteriorMain.lean",
+      "sha256": "8d864da290947d75ac0cb52644b8b5336a19076878fcb11eeed552e6a118d7a9"
+    },
+    {
+      "path": "inputs/C3-formal-intake/G1FirstWide-SOURCE-PIN.json",
+      "sha256": "b99961f3bdc1ee18c629847f3696072bae24e9dedc127ce816f1ffd94adcf541"
+    },
+    {
+      "path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "sha256": "beabf73950968ea22e71fb7b02a946eb849b7cdce3a0541fa80a59f7bc485d89"
+    },
+    {
+      "path": "inputs/C3-formal-intake/GENERIC-ORDER-BAND-VIA-FIRST-WIDE.md",
+      "sha256": "4f90cec2034385220d24d00df65a336fbfccdbded4be32feaa05468f6fa6f16d"
+    },
+    {
+      "path": "inputs/C3-formal-intake/R25Card5-PRIOR-VERIFICATION.json",
+      "sha256": "bc66010f6e45f02bc9adda5ad592b2e606f1d036bc4ccd25cef77daf8ba75061"
+    },
+    {
+      "path": "inputs/C3-formal-intake/R25Card5-SOURCE-PIN.json",
+      "sha256": "e604662718b8d1f4c9aea74b30c31a4e9cc75ed7bbadd23427dab6d07ed2e318"
+    },
+    {
+      "path": "inputs/C3-formal-intake/R25Card5Main.lean",
+      "sha256": "f47ef6b4fcad06580bb97206950c604927753c2c30cd369dbe6a76d4f0409a2d"
+    },
+    {
+      "path": "inputs/C3-formal-intake/SOURCE-PIN.json",
+      "sha256": "a5801a2626be4368180598151f62889c6eb064baab3eb1fb2c17a3f2f207c86d"
+    }
+  ],
+  "model": "gpt-6-sol",
+  "reasoning_effort": "high",
+  "status_authority": "proposed_worker_only",
+  "task": "Preparation only for the anticipated first-shell formal target; synthesis has not yet selected a new Lean gate. Read the exact first-shell proof and prior intake, but supersede its local module imports with the required flat single Main importing only Mathlib. Inspect the newly closed C2 order-band source and exact three older sources. Produce an actionable, dependency-closed extraction/integration manifest listing each inherited declaration with source marker, fully qualified name, precise byte fragment hash and dependencies; supply extracted unmodified fragments in your own scratch if useful. Reconcile duplicate C4/C5 definitions and namespaces; use already proved relative marked A, leaf support/card/count bridges rather than duplicating them. Choose minimal practical subset of G1 first-wide + r25 binomial Catalan cover lemmas; including whole G1 is acceptable if necessary but identify duplicate declarations to omit with exact equivalence evidence. Provide proposed exact pointwise-plus-aggregate terminal header, exact informal statement and implementation DAG. Do NOT insert dummy declarations, edit old sources, run Lean, copy packages, assign authority, modify registry, or assume prior kernel receipt transfers to new assembly. State all missing new bridges/proofs explicitly. REPORT.md and RESULTS.json should let the later Sol producer start substantive proofs directly. This is technical preparation, not proof completion or formal award.",
+  "worker_id": "C3-PREP-FIRST-SHELL-FLAT-INTAKE"
+}

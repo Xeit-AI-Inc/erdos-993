@@ -1,0 +1,97 @@
+{
+  "worker_id": "C3-AF",
+  "cycle": 3,
+  "stage": "adjudication",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "C3-F1.literal-two-for-one-flow-prefix",
+      "statement": "The literal fixed-selector deletion-plus-two-for-one weighted network has an integral flow saturating all upper supply on the deterministic first five stored eligible p=7 rows at each of orders 16, 17, and 18, 15 rows total. Their complete original-leaf sums are negative.",
+      "scope": "Only those 15 stored-order rows from the pinned order-16 and corrected-scope order-17/18 census results; original strict selector and all original leaf tags; no regenerated census or universal inference.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AF/EVIDENCE.json"
+      ],
+      "reason": "retained: route and both critics agree; adjudicator checked guards, selected terms, S=upper-lower, saturation totals, and zero deficits in the packaged exact rows. Critics replayed the network and CU audited arc legality and capacities. The remaining 4,976 reported eligible p=7 rows were not flow-tested."
+    },
+    {
+      "claim_id": "C3-F2-CB-ELIGIBLE-REPLAY",
+      "statement": "CB(8,92) at p=492 and CB(8,93) at p=498 are eligible strict lower-region ordinary-tree rows, all original leaves are favorable, and each exact complete selected sum S is negative.",
+      "scope": "Exactly the two CB(8,m) trees and ranks, with arm leaf multiplicity one and branch leaf multiplicity 8m; exact bounded polynomial computation only.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AF/EVIDENCE.json"
+      ],
+      "reason": "retained: both critics reran the pinned evaluator; adjudicator checked a,x,p, strict guards, orbit selector signs, all-leaf multiplicities, multiplicity-weighted S, and S=upper-lower. The negative old-envelope deficit lower bounds certify no deficient cut."
+    },
+    {
+      "claim_id": "C3-F2-HUB-ARM-ARC-CLASSIFICATION",
+      "statement": "For each independent upper set containing h and v in the two stated CB rows, the complete legal exact two-neighbor switch targets are arm support s and precisely those chokes c_i whose branch has one occupied support; aggregate arc counts are exact.",
+      "scope": "Only h,v-containing upper sets in CB(8,92),p=492 and CB(8,93),p=498; no classification for other source sets and no full-flow claim.",
+      "status": "proposed_bounded_exact",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AF/EVIDENCE.json"
+      ],
+      "reason": "retained: direct neighborhood exhaustion verifies s has occupied neighbors h,v; c_i has h plus its occupied supports; absent supports and leaves have at most one. Both critics agree and branch-polynomial arc counts are preserved in the packaged evidence."
+    },
+    {
+      "claim_id": "C3-F2-QUALIFYING-CHOKE-ROUTING",
+      "statement": "In each stated CB row, every h,v-containing upper source with a branch having one occupied support and at least four occupied leaves among its other seven pairs can route one unit by its first qualifying choke switch within lower node capacities; the exact routed and unrouted supplies are recorded.",
+      "scope": "Only the specified qualifying source subfamily of CB(8,92),p=492 and CB(8,93),p=498; full upper-supply saturation is unproved.",
+      "status": "proposed_bounded_routing",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AF/EVIDENCE.json"
+      ],
+      "reason": "retained: the move deletes exactly h and the occupied support, then inserts its choke. A destination with ell>=4 branch leaves has at most 8-ell preimages and capacity at least ell. The coefficient formula counts the routed family exactly; both critics verified the proof and positive unrouted supply remains."
+    },
+    {
+      "claim_id": "C3-F5-FINITE-WEIGHTED-HALL",
+      "statement": "Among 633 canonical hub-tree branch-multiset recipes of order at most 18, all 138 eligible rank rows have nonpositive complete selected sums and saturated integral flow under all deletion and literal two-for-one arcs.",
+      "scope": "Only 2..5 sorted branches of types P1..P4 or C2..C4, order <=18, and all ranks satisfying both target guards within that family; same-implementation replay, not a universal result.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AF/EVIDENCE.json"
+      ],
+      "reason": "retained: both critics reproduce the 633/138 counts, flow saturation and S range -9828..-224; the adjudicator checked the exact P2,C3,C4 representative including all eight leaf tags and S=-275=259-534. The full sweep depends on the source generator and its replays."
+    },
+    {
+      "claim_id": "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL",
+      "statement": "The universal fixed-selector two-for-one weighted Hall assertion remains open. Its supported bounded portion is saturation of upper supply, with negative complete S, for exactly five specified asymmetric claw-branch trees at p=x+2.",
+      "scope": "Universal assertion concerns all eligible ordinary trees and ranks; retained evidence covers only branch-length lists [1,1,2], [1,1,3], [1,2,3], [1,1,2,3], [1,1,2,4] at their recorded p=x+2, with all leaves favorable.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AF/EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: both critics replayed the five strict selectors, guards, term sums, network totals and saturated flows; adjudicator checked exact arithmetic. The five hand-selected instances provide neither an exhaustive generation boundary nor a universal Hall proof; no counterexample to the universal flow assertion was given."
+    },
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "The universal strict lower-region complete original-favorable-leaf aggregate S(T,p)<=0 remains open. F4 supplies exact boundary controls and a nonexhaustive sample; F6 supplies 985 exact eligible nonpositive parameter/rank rows in three bounded graft/gluing families. No eligible positive complete sum or universal proof is supplied.",
+      "scope": "Universal target is exactly the solution contract. F4 controls include an ineligible 11-vertex S=147 row, marked K1,7 graph control, analytic p=3,4 exclusions at n=2p+3, and 12,000 seeded samples per p=6..10. F6 covers m=0..8 path grafts of length 1..8 at root or support/first center, with stated extra-claw option, and m,k=0..6 two-core joins of length 1..4, yielding 254+254+477 eligible parameter/rank rows.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AF/EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed for F4 and retained at bounded scope for F6: both F4 critics confirm S=147 but x+2=7>p=4; their retained versus retained_narrowed wording differs only in scope emphasis. Both F6 critics reproduce 985 negative rows, with an independent subset check on one row. Adjudicator checked each stored F6 row’s terminal x, guards, selector signs and term sum. Samples and finite families do not resolve the universal target."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-AF/REPORT.md",
+  "limitations": [
+    "No universal proof or eligible positive complete-sum counterexample emerges from these six routes and twelve critics; the primary and stronger weighted Hall assertions remain proposed open.",
+    "The F1 sample depends on pinned stored census rows; census generation was not rerun. The other 4,976 reported eligible p=7 rows were not flow-tested by F1.",
+    "F3 tests only five hand-selected trees at p=x+2 with all leaves favorable; it does not test selector loss or other ranks.",
+    "F2 routes only a qualifying h,v-containing CB source subfamily; positive upper supply remains unrouted, and the supplied cut envelopes do not prove deficient cuts.",
+    "F5 and F6 full sweeps were primarily checked by replaying their source implementations; F6 has an independent direct subset check for one displayed row, not all 985.",
+    "F4 positive full sum violates x+2<=p, and its seeded Prüfer sample is not exhaustive; the separate first-shell candidate was not proved by this adjudication."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C3-F1.literal-two-for-one-flow-prefix",
+    "C3-F2-CB-ELIGIBLE-REPLAY",
+    "C3-F2-HUB-ARM-ARC-CLASSIFICATION",
+    "C3-F2-QUALIFYING-CHOKE-ROUTING",
+    "C3-F5-FINITE-WEIGHTED-HALL",
+    "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+    "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL"
+  ]
+}

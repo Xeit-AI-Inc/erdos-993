@@ -1,0 +1,12 @@
+lemma indepCount_one [Finite V] : indepCount F 1 = (Nat.card V : ℤ) := by
+  classical
+  letI := Fintype.ofFinite V
+  rw [indepCount_eq_card_indepSetFinset]
+  have h : F.indepSetFinset 1 = Finset.univ.image (fun a : V => ({a} : Finset V)) := by
+    ext S
+    simp only [SimpleGraph.mem_indepSetFinset_iff, isNIndepSet_one_iff,
+      Finset.mem_image, Finset.mem_univ, true_and]
+    exact ⟨fun ⟨a, ha⟩ => ⟨a, ha.symm⟩, fun ⟨a, ha⟩ => ⟨a, ha.symm⟩⟩
+  rw [h, Finset.card_image_of_injective _ Finset.singleton_injective,
+    Finset.card_univ, Nat.card_eq_fintype_card]
+

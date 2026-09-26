@@ -1,0 +1,127 @@
+{
+  "worker_id": "C1-AU",
+  "cycle": 1,
+  "stage": "adjudication",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "C1-U1-1",
+      "statement": "For every finite bipartite H, arbitrary marked W, integer h>=alpha(H), and 1<=k<=h, with q_j the count of independent j-sets meeting W, actual-addable e(A), D=sum_A[2(h-k)-e(A)], and C the count of independent (k+1)-sets meeting W at least twice once per set, k*q_(k+1)+C=2(h-k)*q_k-D and D,C>=0.",
+      "scope": "The registered tagged-incidence auxiliary, including k=h, q_k=0, and non-tight h.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-AU/REPORT.md",
+        "cycles/cycle-1/C1-AU/EVIDENCE.md"
+      ],
+      "reason": "retained: A bipartition bounds actual addable vertices by h-k on each color side. Double-counting marked extension incidences contributes k per singly marked upper set and k+1 per multiply marked upper set."
+    },
+    {
+      "claim_id": "C1-U1-2",
+      "statement": "For every eligible ordinary tree, the global deficit-budget margin sum_F(D_v+C_v)-(2a+1-3p)sum_F q_v(p-1) equals -(p-1)S(T,p). The budget is equivalent to the fixed-selector aggregate and is not implied by the identity and nonnegativity alone.",
+      "scope": "Exact lower-region ordinary-tree specialization using original leaves, supports, neighborhoods and all leaf tags; no primary sign conclusion.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-AU/REPORT.md",
+        "cycles/cycle-1/C1-AU/EVIDENCE.md"
+      ],
+      "reason": "retained_narrowed: alpha(H_v)=a-1 and the rank domain hold, and substitution proves the equality. CF correctly limits the nonimplication to the identity and nonnegativity facts; an additional tree-specific budget remains possible and unproved."
+    },
+    {
+      "claim_id": "C1-U2-1",
+      "statement": "For every eligible ordinary tree, S(T,p)>0 implies that some selected original leaf tag v and marked independent (p-1)-set A in H_v have at least p actual addable vertices. If every such selected marked set has at most p-1 addable vertices, then S(T,p)<=0.",
+      "scope": "Conditional necessary condition for a positive full sum and sufficient obstruction under the displayed uniform bound; not a universal bound or witness.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-AU/REPORT.md",
+        "cycles/cycle-1/C1-AU/EVIDENCE.md"
+      ],
+      "reason": "retained: With c=2a+1-3p>0 and k=p-1>0, the exact incidence equation is kS=cQ-E. Positivity forces a deficit below c, equivalent by integer arithmetic to e_v(A)>=p; the uniform converse makes E>=cQ."
+    },
+    {
+      "claim_id": "C1-U3-1",
+      "statement": "For each eligible tree with fixed original favorable set F and k=p-1, S(T,p)=sum_(v in F)[q_v(k+1)-q_v(k)], where q_v(j) counts independent j-sets of H_v meeting W_v. Thus the primary is equivalent to sum_F q_v(k+1)<=sum_F q_v(k).",
+      "scope": "Every eligible finite ordinary tree and p, with original H_v,W_v,R_v and distinct original leaf tags; exact reformulation only.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-AU/REPORT.md",
+        "cycles/cycle-1/C1-AU/EVIDENCE.md"
+      ],
+      "reason": "retained: R_v=H_v-W_v, and subtracting the rank-k differences row by row yields the formula without changing the strict selector or tag multiplicities."
+    },
+    {
+      "claim_id": "C1-U3-2",
+      "statement": "For a fixed eligible instance, a unit-capacity fractional matching from each marked tagged upper-layer set to a marked tagged lower-layer subset within the same leaf tag suffices for S<=0. Hall deficiency exactly obstructs this matching certificate but need not make S positive.",
+      "scope": "Fixed eligible ordinary tree and p with the exact F; conditional within-tag inclusion-graph certificate only, not universal feasibility.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-AU/REPORT.md",
+        "cycles/cycle-1/C1-AU/EVIDENCE.md"
+      ],
+      "reason": "retained: Summing unit flow constraints proves the cardinality inequality; finite bipartite Hall gives the exact feasibility condition. Pinned T22 and T60 each have a positive selected row and negative complete S, so this sufficient certificate fails there."
+    },
+    {
+      "claim_id": "C1-U3-3",
+      "statement": "The U3 transport route does not resolve the universal lower-region aggregate. Its specific no-cross-tag unit-capacity matching certificate is not universally feasible, as the eligible T22 and T60 controls have Hall-deficient positive selected rows but negative complete sums.",
+      "scope": "Assessment of the U3 method and the two finite pinned controls only; no refutation of the primary.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-AU/REPORT.md",
+        "cycles/cycle-1/C1-AU/EVIDENCE.md"
+      ],
+      "reason": "retained_narrowed: Both critics confirm the route supplies no universal flow theorem or positive full-sum witness; the finite control rows establish the stronger method limitation while preserving the negative global sums."
+    },
+    {
+      "claim_id": "C1-U4-1",
+      "statement": "For each original leaf v, I(T-v,z)=I(H_v,z)+zI(R_v,z). With q_j=i_j(H_v)-i_j(R_v) and r_j=i_j(R_v), the selector is q_(p+1)-q_p+r_(p+1)-r_(p-1)<0, while its summand is q_p-q_(p-1). This leaves a missing comparison for the displayed direct coefficient route; claw-free real-rootedness does not apply uniformly to arbitrary trees or establish that comparison.",
+      "scope": "Exact per-leaf identities on finite ordinary trees and limited audit of Chudnovsky-Seymour Theorem 1.1; no claim about all generating-function methods or either registered target verdict.",
+      "status": "proposed_partial",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-AU/REPORT.md",
+        "cycles/cycle-1/C1-AU/EVIDENCE.md"
+      ],
+      "reason": "retained_narrowed: The coefficient partition and zero-extended rank shifts are exact. The primary theorem requires claw-freeness, absent from arbitrary trees; CT correctly confines the missing-bridge conclusion to this direct route."
+    },
+    {
+      "claim_id": "C1-U5-1",
+      "statement": "For every ordinary tree of order at least three, its support-core polynomial and two-state rooted branch formulas exactly evaluate the original selector and local terms with all same-support leaf multiplicities. For every eligible ordinary star K_(1,m), the complete selected aggregate is strictly negative.",
+      "scope": "Exact representation for ordinary trees of order at least three; strict sign theorem only for stars satisfying x+2<=p and 3p<2m+1.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-AU/REPORT.md",
+        "cycles/cycle-1/C1-AU/EVIDENCE.md"
+      ],
+      "reason": "retained: Independent-set partitions prove the core and branch formulas. Star binomial differences give all leaves favorable and each summand binom(m-1,p)-binom(m-1,p-1)<0 at every eligible p; no general-core sign follows."
+    },
+    {
+      "claim_id": "C1-U6-1",
+      "statement": "For each fixed a=alpha(T), every ordinary tree has at most 2a vertices and lies in a finite isomorphism-class domain. Leaves at the same original support have equal strict selector values and equal summands, so their tagged contribution is their multiplicity times the common selected summand.",
+      "scope": "Exact fixed-a finite reduction and same-support compression; no uniform bound in a, executed census, or complete-sum sign result.",
+      "status": "proposed_partial",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-AU/REPORT.md",
+        "cycles/cycle-1/C1-AU/EVIDENCE.md"
+      ],
+      "reason": "retained: Both bipartition classes are independent and have size at most a. Transposing same-support leaves is an automorphism preserving both relevant deletion sequences and the original closed-neighborhood deletion."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-AU/REPORT.md",
+  "limitations": [
+    "The primary lower-region ordinary favorable-leaf aggregate remains unproved and unrefuted by these six routes and twelve critiques; the positive-coefficient global deficit budget is still missing.",
+    "The eligible T22 and T60 controls disprove universal feasibility only of the no-cross-tag matching certificate. Their stored rows were replayed by a critic, but their tree encodings and full coefficient vectors were not independently regenerated in this adjudication.",
+    "The all-star theorem is a proper subfamily result; support-core evaluation and fixed-a finiteness supply no uniform sign or parameter bound, and no exhaustive search was performed.",
+    "The addability threshold is conditional and supplies neither a universal bound nor a positive complete-sum witness.",
+    "The literature check covers the cited claw-free real-rootedness theorem only; no theorem bridge for arbitrary trees or separate high-tail conclusion is established."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-U1-1",
+    "C1-U1-2",
+    "C1-U2-1",
+    "C1-U3-1",
+    "C1-U3-2",
+    "C1-U3-3",
+    "C1-U4-1",
+    "C1-U5-1",
+    "C1-U6-1"
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "worker_id": "C1-AF",
+  "cycle": 1,
+  "stage": "adjudication",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "C1-F1-1",
+      "statement": "For the fixed seed 99320260925, 14 generated order-91 and 14 generated order-243 root multi-hub recipes plus the two unperturbed anchors yield 582 eligible tree/rank rows (137 and 445 respectively); all complete fixed-selector sums are nonpositive, and the anchors each have a positive selected local term but a negative full sum.",
+      "scope": "Exactly the 30 generated recipes and every eligible rank in each, with no deduplication or exhaustive claim for the multi-hub family or ordinary trees.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": ["cycles/cycle-1/C1-AF/AUDIT.json", "cycles/cycle-1/C1-AF/audit.py"],
+      "reason": "retained: both critics' replays and the adjudicator's stored-row audit support all 582 guards and nonpositive sums; the anchors demonstrate local-positive/global-negative behavior. The result is finite only."
+    },
+    {
+      "claim_id": "C1-F2-1",
+      "statement": "The actual seeded 1,200-case rooted-tree generator at orders 9 through 36 yields 878 eligible rows, none with a positive selected term or complete sum; its largest complete sum is -253. In mode 1 its executable non-root parent weight is 2d+2.",
+      "scope": "Exactly the draws from seed 99320260925 and the three source-code generation modes described in REPORT.md; the written 2d+1 mode-1 weight is corrected to the executable 2d+2. The draws are not an exhaustive tree census.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": ["cycles/cycle-1/C1-AF/AUDIT.json", "cycles/cycle-1/C1-AF/audit.py"],
+      "reason": "retained_narrowed: both critics replayed the counts and CT independently enumerated the best row, but the source prose and both critiques missed the code's non-root weight 1+(2d+1)=2d+2. The retained result applies to the actual program and has no universal implication."
+    },
+    {
+      "claim_id": "C1-F3-1",
+      "statement": "At p=35, the order-91 t_family(22) tree and its order-94 graft by path 4-91-92-93 are both eligible and have full sums -838171658290934690688 and -2341400510849661617965; old leaf 4 leaves the selector, new leaf 93 enters, and retained leaf 2 changes selected term from -212336130412243110 to +424672260824486220.",
+      "scope": "The one exactly encoded pair and fixed rank p=35, as an instance of selector and term instability with negative full sums; no general graft or aggregate sign theorem.",
+      "status": "proposed_bounded_result",
+      "evidence_paths": ["cycles/cycle-1/C1-AF/AUDIT.json", "cycles/cycle-1/C1-AF/audit.py"],
+      "reason": "retained: both critics' complete pair replays agree, and the adjudicator checked terminal descent, all original-leaf selector values, the 67 terms in each tree, and both complete sums. Local positivity does not refute the primary aggregate."
+    },
+    {
+      "claim_id": "C1-F4-1",
+      "statement": "For all 80 parameter configurations 2<=m<=6, 1<=d<=4, 2<=L<=5 in the symmetric root-hub pendant-path construction, all 151 eligible configuration/rank rows have strictly negative complete fixed-selector sums.",
+      "scope": "Complete finite census of the stated parameter box only; 80 counts configurations, without asserting distinct unrooted isomorphism classes or any sign outside the box.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": ["cycles/cycle-1/C1-AF/AUDIT.json", "cycles/cycle-1/C1-AF/audit.py"],
+      "reason": "retained: both critics reproduced the census; an independent hub/path polynomial check covered all 80 whole-tree polynomials. The adjudicator checked the 151/151 negative summary and sample rows. No universal inference follows."
+    },
+    {
+      "claim_id": "C1-F5-1",
+      "statement": "The equation-only scalar tagged-incidence relaxation admits h=5,k=2,q_k=1,q_(k+1)=3,D=C=0 and local g=2>0. Actual tree-derived leaf profiles obey the rooted-component product identities, the strict selector equation Delta_p(T-v)=q_(p+1)-q_p+r_(p+1)-r_(p-1), and all-or-none same-support leaf multiplicity; these necessary constraints establish no full-sum sign.",
+      "scope": "Abstract scalar arithmetic and exact necessary identities for original-leaf profiles of finite ordinary trees; the scalar point is not certified by a graph or eligible tree, and no global deficit budget or counterexample is claimed.",
+      "status": "proposed_partial_result",
+      "evidence_paths": ["cycles/cycle-1/C1-AF/AUDIT.json", "cycles/cycle-1/C1-AF/audit.py"],
+      "reason": "retained_narrowed: CT correctly restricts the scalar point to the equation-only relaxation. CU's selector formula using r_p in place of r_(p+1) is algebraically wrong; direct coefficient subtraction from I(T-v)=q+(1+z)R confirms the source and CT formula. Neither critic proves the global budget."
+    },
+    {
+      "claim_id": "C1-F6-1",
+      "statement": "The generated spider arm-length multisets (456 cases, 53 eligible rows) and seeded Prüfer-sequence draws (1,760 cases, 2,022 eligible rows) contain no positive complete fixed-selector sum; their largest sums are -230 and -2562 respectively.",
+      "scope": "All nondecreasing 2-6-arm tuples with lengths 1-5, and 220 Prüfer draws at each of orders 18,22,26,30,34,40,48,56 with seed 9930601; neither count asserts unique nonisomorphic trees or a universal sign.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": ["cycles/cycle-1/C1-AF/AUDIT.json", "cycles/cycle-1/C1-AF/audit.py"],
+      "reason": "retained_narrowed: both critics' adapted replays agree with the source results; the adjudicator checked counts, maximum-row guards, selected-term signs and sums. The spider count is parameter multisets and the Prüfer count is draws, as CT specified."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-AF/REPORT.md",
+  "limitations": [
+    "No source route proves the universal lower-region complete selected-sum inequality or gives an eligible ordinary tree with positive complete sum.",
+    "The five search/graft conclusions are finite; seeded draws and parameter boxes cannot be promoted to universal signs.",
+    "Copied-program critic replays largely use the same pinned independence-polynomial evaluator, so they establish reproducibility rather than formal verification of all arithmetic.",
+    "The F5 scalar positive point has no certified graph/tree realization and the global incidence-deficit budget remains unproved.",
+    "The F2 written generator weight required correction to the executable rule, and the C1-CU-F5 selector equation was rejected as an algebra error."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": ["C1-F1-1", "C1-F2-1", "C1-F3-1", "C1-F4-1", "C1-F5-1", "C1-F6-1"]
+}

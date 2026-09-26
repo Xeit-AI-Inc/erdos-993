@@ -1,0 +1,80 @@
+{
+  "controls": [
+    {
+      "aggregate": -498754180547001418536,
+      "alpha": 68,
+      "favorable_count": 67,
+      "first_strict_descent": 32,
+      "order": 91,
+      "rank": 34
+    },
+    {
+      "aggregate": -1058142362147652597702654588268394677176033202323316960380,
+      "alpha": 182,
+      "favorable_count": 181,
+      "first_strict_descent": 87,
+      "order": 243,
+      "rank": 90
+    },
+    {
+      "aggregate": 1,
+      "alpha": 3,
+      "eligibility": false,
+      "favorable_count": 3,
+      "favorable_leaves": [
+        0,
+        3,
+        5
+      ],
+      "first_strict_descent": 2,
+      "order": 6,
+      "rank": 2,
+      "summands": [
+        {
+          "c_previous": 2,
+          "c_rank": 3,
+          "g": 1,
+          "h_order": 4,
+          "leaf": 0,
+          "pointwise_delta": -5,
+          "r_order": 2,
+          "support": 1,
+          "witness_vertices": [
+            2,
+            4
+          ]
+        },
+        {
+          "c_previous": 1,
+          "c_rank": 1,
+          "g": 0,
+          "h_order": 4,
+          "leaf": 3,
+          "pointwise_delta": -4,
+          "r_order": 3,
+          "support": 2,
+          "witness_vertices": [
+            1
+          ]
+        },
+        {
+          "c_previous": 1,
+          "c_rank": 1,
+          "g": 0,
+          "h_order": 4,
+          "leaf": 5,
+          "pointwise_delta": -4,
+          "r_order": 3,
+          "support": 4,
+          "witness_vertices": [
+            1
+          ]
+        }
+      ]
+    }
+  ],
+  "endpoint_checks": 3,
+  "known_nonlogconcave_controls_replayed": 5,
+  "scope": "controller standing controls only; no exhaustive new census and no theorem award",
+  "status": "passed"
+}

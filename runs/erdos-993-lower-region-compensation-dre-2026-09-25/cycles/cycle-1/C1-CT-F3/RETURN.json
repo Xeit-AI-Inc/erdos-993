@@ -1,0 +1,31 @@
+{
+  "worker_id": "C1-CT-F3",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C1-F3-1",
+      "statement": "For the exact pair t_family(22) and the tree obtained by grafting path 4-91-92-93 onto original leaf 4, at fixed p=35 both trees satisfy x+2<=p and 3p<2alpha+1, but the selected sum remains negative in both (-838171658290934690688 and -2341400510849661617965). Grafting removes old favorable leaf 4 from the leaf set, adds favorable leaf 93, and changes retained favorable leaf 2's summand from -212336130412243110 to +424672260824486220.",
+      "scope": "One exact finite pair of ordinary trees; this is a selector and summand instability observation only, not a proof or refutation of the universal lower-region aggregate.",
+      "status": "proposed_bounded_result",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CT-F3/evidence/replay.py",
+        "cycles/cycle-1/C1-CT-F3/evidence/replay_result.json",
+        "cycles/cycle-1/C1-CT-F3/evidence/ordinary_tree_checked_copy.py",
+        "cycles/cycle-1/C1-CT-F3/evidence/source_graft_pair_copy.json"
+      ],
+      "reason": "retained: independent replay from scratch-local copies matched every field in the route's evidence, including graph encodings, complete independence vectors and terminal descent, all original-leaf selector values, every selected summand, and both full sums. Both graphs are ordinary trees and both strict eligibility guards hold. The example verifies the bounded instability claim and refutes universal termwise graft monotonicity in this instance; it does not establish a universal mechanism or decide the full aggregate inequality."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CT-F3/REPORT.md",
+  "limitations": [
+    "The retained result is a bounded observation on one exact pair and does not prove or refute the universal lower-region aggregate.",
+    "The route's additional exploratory family searches have no retained complete enumeration output and are not independently adjudicated here.",
+    "No claim about the separately registered bipartite tagged incidence identity is resolved."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-F3-1"
+  ]
+}

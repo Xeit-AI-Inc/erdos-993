@@ -1,0 +1,41 @@
+[
+  {
+    "claim_key": "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL",
+    "statement": "For every finite ordinary tree T and natural p with x(T)+2<=p and 3p<2alpha(T)+1, fix F={original leaves v: Delta_p(T-v)<0}. For each independent B define w_F(B)=#{v in F intersect B: (N_T(s_v) intersect (B minus {v})) is nonempty}. The capacitated bipartite graph from independent (p+1)-sets B with supply w_F(B) to independent p-sets D with capacity w_F(D), with an edge exactly when D=B minus {q} for q in B or D=(B minus (N_T(s) intersect B)) union {s} for s notin B with exactly two neighbors in B, has an integral flow saturating every upper supply.",
+    "scope": "Ordinary trees only; fixed strict original selector and original supports; all clone pairs over each allowed set pair are permitted. A sufficient mechanism for the lower-region aggregate, not equivalent to its scalar assertion. Distinct from the refuted literal Delete/Retag and deletion-only mechanisms because their clone compatibility and edge sets differ. No governed RTree assertion.",
+    "status": "OPEN",
+    "evidence_grade": "open_successor_proposal",
+    "formal_award": false,
+    "novelty_claimed": false,
+    "aliases": [],
+    "alias_patterns": [],
+    "certificate": "Proposed Cycle3 intake only in experiments/erdos-993-lower-region-compensation-dre-2026-09-25/preparation/C2-PREP-SWITCH-IDENTITY/REPORT.md",
+    "registration_reason": "Exact-scope prospective distinction; not registered by this draft."
+  },
+  {
+    "claim_key": "E993-FIRST-ORDER-SHELL-POINTWISE-EARLY-DESCENT",
+    "statement": "For every finite ordinary tree T, natural p>=3 with |V(T)|=2p+2 and x(T)+2<=p, and every original degree-one leaf v with unique original support s, Delta_(p-1)(T-{v,s})-Delta_(p-1)(T-N_T[s])<=0.",
+    "scope": "First parent-order shell and early first strict descent; no alpha guard and no favorable-leaf hypothesis. Stronger than the registered lower-region first-shell aggregate, and separate from the narrower-order ordinary-leaf band. Does not assert unrestricted pointwise descent.",
+    "status": "OPEN",
+    "evidence_grade": "open_successor_proposal",
+    "formal_award": false,
+    "novelty_claimed": false,
+    "aliases": [],
+    "alias_patterns": [],
+    "certificate": "Proposed Cycle3 intake only in experiments/erdos-993-lower-region-compensation-dre-2026-09-25/preparation/C2-PREP-SHELL-AUDIT-R2/REPORT.md",
+    "registration_reason": "Exact-scope prospective distinction; not registered by this draft."
+  },
+  {
+    "claim_key": "E993-LOWER-REGION-AGGREGATE-RANK-LE-SEVEN",
+    "statement": "For every finite ordinary tree T and natural p<=7 with x(T)+2<=p and 3p<2alpha(T)+1, the complete sum over original leaves v with Delta_p(T-v)<0 of Delta_(p-1)(T-{v,s_v})-Delta_(p-1)(T-N_T[s_v]) is nonpositive.",
+    "scope": "All finite ordinary trees, ranks at most7, original strict selector and separate leaf tags. Proposed composition of a graph order-band theorem with explicitly named global first-descent order maxima and exhaustive residual tree censuses; any eventual award must retain census dependence. Not an all-rank or governed claim.",
+    "status": "OPEN",
+    "evidence_grade": "open_successor_proposal",
+    "formal_award": false,
+    "novelty_claimed": false,
+    "aliases": [],
+    "alias_patterns": [],
+    "certificate": "Proposed Cycle3 intake only in experiments/erdos-993-lower-region-compensation-dre-2026-09-25/control-proposals/LOWER-RANK-LE7-COMPOSITION.md",
+    "registration_reason": "Exact-scope prospective distinction; not registered by this draft."
+  }
+]

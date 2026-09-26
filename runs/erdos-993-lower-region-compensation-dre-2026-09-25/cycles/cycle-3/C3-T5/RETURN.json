@@ -1,0 +1,39 @@
+{
+  "worker_id": "C3-T5",
+  "cycle": 3,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "T5-TM-COEFFICIENT-IDENTITY",
+      "statement": "For the assigned T_m family, the supplied leaf-marked polynomials give Q_all=(3m+1)z(1+z)^(3m)+3m z(2+5z+2z^2)(1+4z+3z^2+z^3)^(m-1), and when both original leaf orbits are favorable S(T_m,p)=[z^p]Q_all-[z^(p-1)]Q_all.",
+      "scope": "Exact algebraic identity for the displayed T_m polynomials and the both-orbits-selected case; this does not establish selector coincidence or a universal coefficient sign.",
+      "status": "proposed_proved_informal",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-T5/REPORT.md",
+        "cycles/cycle-3/C3-T5/COMPUTE.py",
+        "cycles/cycle-3/C3-T5/EVIDENCE.json"
+      ],
+      "reason": "The orbit multiplicities and q-polynomials combine directly, and each summand is q_p-q_(p-1). The exact script checks the polynomial identities on the stated finite horizon; the symbolic equality follows from the displayed formulas."
+    },
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "For every finite ordinary tree T, let i_j be its independence counts with zero extension, Delta_j=i_(j+1)-i_j, x the first nonnegative j with Delta_j(T)<0, and a=alpha(T). For natural p with x+2<=p and 3p<2a+1, set F(T,p)={v original leaf: Delta_p(T-v)<0}; using each leaf's original support s_v, S(T,p)=sum over v in F of [Delta_(p-1)(T-{v,s_v})-Delta_(p-1)(T-N_T[s_v])] is nonpositive.",
+      "scope": "The registered primary target; this route establishes only bounded exact evidence on the assigned T_m family for 1<=m<=50 and leaves the infinite family and general-tree claims unresolved.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-T5/REPORT.md",
+        "cycles/cycle-3/C3-T5/COMPUTE.py",
+        "cycles/cycle-3/C3-T5/EVIDENCE.json"
+      ],
+      "reason": "Every one of the 674 eligible family rows through m=50 has a negative full sum, including compensation where an arm term is positive. This finite horizon does not prove the required infinite selector classification or coefficient inequality, and supplies no conclusion for arbitrary trees."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-T5/REPORT.md",
+  "limitations": [
+    "The exact computation covers only T_m with 1<=m<=50 and all eligible ranks in that range.",
+    "No proof is given that the arm and claw selector orbits agree for every eligible m and p.",
+    "No infinite selected coefficient inequality is proved, and the assigned family result would not alone settle the full primary claim for arbitrary trees."
+  ],
+  "status_authority": "proposed_worker_only"
+}

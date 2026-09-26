@@ -1,0 +1,112 @@
+{
+  "worker_id": "C3-AT",
+  "cycle": 3,
+  "stage": "adjudication",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "C3-T1.COVER-BUDGET-AND-FIRST-MARK-SUBCLASS",
+      "statement": "For n=2p+2+d (d>=1), k=p-1, H_v=T-{v,s_v}, W_v=N_T(s_v)\\{v}, an ordering of W_v whose every union N_H[w_i] with earlier mark vertices has size at least d+3 makes the v summand nonpositive. If every v in the fixed F(T,p) has such an ordering, S(T,p)<=0. The source cover-number lower bound is false.",
+      "scope": "Exact sufficient structural subclass of the primary ordinary-tree setting; no implication from eligibility or favorability to the size condition. Cover bound rejected even for K2.",
+      "status": "proposed_partial",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AT/EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: first-mark partition and independent-set incidence prove the subclass. K2 with full vertex cover at r=1 has claimed L=-1 but actual Delta_1=-2; the positive a=r+1 cover contribution was replaced by an upper bound. Both critics found this defect."
+    },
+    {
+      "claim_id": "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL",
+      "statement": "The fixed-selector deletion-plus-legal-two-for-one weighted clone graph saturates every upper supply under the registered eligible ordinary-tree hypotheses. T2 supplies exact rooted state and weight identities after adding the selected-root-leaf term 1_{r in B}1_{(B-{r}) meets W_r}; T3 proves saturation only for stars in its stated rank range. Universal saturation remains unproved and unrefuted.",
+      "scope": "Registered universal mechanism is open. Rooted decomposition holds for arbitrary finite ordinary trees with the explicit root-leaf correction; star result has arbitrary fixed F and 2<=p<=m-1, p>(m-1)/2.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AT/EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: the route and critics give structural identities, but the uncorrected T2 formula omits a selected root leaf; K1,3 rooted at a selected leaf with B containing it and another leaf gives actual weight 1 versus formula 0. The explicit correction restores the identity. No universal Hall cuts, routing, or deficient cut are established; scalar S is weaker."
+    },
+    {
+      "claim_id": "C3-T3-STAR-SYMMETRIC-CHAIN-SUBCASE",
+      "statement": "For T=K_{1,m}, arbitrary fixed subset F of original leaf tags, 2<=p<=m-1 and p>(m-1)/2, each upper weighted clone injects into a lower clone through a tag-preserving deletion, saturating the weighted upper layer.",
+      "scope": "Stars only, stated Boolean rank range; no general ordinary-tree, favorable-selector, or eligibility assertion.",
+      "status": "proposed_verified_informal",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AT/EVIDENCE.json"
+      ],
+      "reason": "retained: a symmetric chain on the m-1 leaves other than each tag contains ranks p and p-1; its predecessor is a one-leaf deletion, retains a witness since p-1>=1, and is injective within and across tag fibers."
+    },
+    {
+      "claim_id": "C3-T3-T67-EXACT-BOUNDED-ROW",
+      "statement": "The explicitly encoded 271-vertex T_67 at p=99 has alpha=203, first strict descent x=97, all 202 original leaves strictly favorable, 297<407, and complete S=-2660057645968888213805432160329302041884660166106806408834263046.",
+      "scope": "One tree and rank; exact bounded coefficient calculation only, with one arm and 201 claw leaf tags.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AT/EVIDENCE.json",
+        "cycles/cycle-3/C3-AT/REPLAY-T67.py"
+      ],
+      "reason": "retained: the full vectors and polynomial replay verify terminal descent, both orbit selector deltas, one positive arm term, 201 negative claw terms, and exact negative full sum. The row supplies no set-level weighted flow."
+    },
+    {
+      "claim_id": "C3-T4-ODD-SHELL-REDUCTION",
+      "statement": "At n=2p+3, k=p-1, first-mark residuals satisfy |J_i|=2k+3-deg_H(w_i)-i because marks are pairwise nonadjacent. Thus size 2k+2 can arise at (i,deg)=(1,0), size 2k+1 at (1,1) or (2,0), and size 2k at (1,2),(2,1), or (3,0). Residuals of order <=2k-1 have i_k<=i_(k-1); for k edges plus one isolate the difference is 2^(k-2)(4-binomial(k,2)).",
+      "scope": "Odd parent shell structural and exact graph-subclass results only; no full selected-sum sign or guarded matching realization.",
+      "status": "proposed_partial",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AT/EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: the first-mark identity, small-residual shadow bound, and matching coefficient formula survive. The source and F-critic boundary inventories omit isolated marks. The U-critic 23-vertex eligible example has an isolated second mark and a size-2k+1 residual despite ordering a nonisolated mark first; its full S=-44250."
+    },
+    {
+      "claim_id": "T5-TM-COEFFICIENT-IDENTITY",
+      "statement": "For explicit T_m with L=1+z and B=1+4z+3z^2+z^3, if both original leaf orbits pass the fixed strict selector, Q_all=(3m+1)zL^(3m)+3m z(2+5z+2z^2)B^(m-1) and S(T_m,p)=[z^p]Q_all-[z^(p-1)]Q_all.",
+      "scope": "Exact conditional identity for m>=1 and both arm and claw orbits selected; no uniform selector coincidence or sign theorem.",
+      "status": "proposed_verified_informal",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AT/EVIDENCE.json",
+        "cycles/cycle-3/C3-AT/REPLAY-TM.py"
+      ],
+      "reason": "retained: root splitting yields q_arm=zL^(3m) and q_claw=z(2+5z+2z^2)B^(m-1)+zL^(3m); q_p-q_(p-1) is each leaf summand, with multiplicities 1 and 3m. Critics checked this conditional algebra."
+    },
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "For all ordinary trees under x(T)+2<=p and 3p<2alpha(T)+1, the complete fixed-selector sum S(T,p)<=0. C3-T5 supplies only 674 exact negative eligible T_m rows for 1<=m<=50, with both leaf orbits selected in each; no universal proof or positive complete-sum refutation is supplied.",
+      "scope": "Registered universal target remains open. Surviving source evidence is bounded to explicit T_m, m=1..50, every integer eligible p in that horizon.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AT/EVIDENCE.json",
+        "cycles/cycle-3/C3-AT/REPLAY-TM.py"
+      ],
+      "reason": "retained_narrowed: both critics reproduced 674 eligible rows and the m=22,p=34 compensation example. No infinite selector classification, selected coefficient inequality, or arbitrary-tree argument follows from this finite check."
+    },
+    {
+      "claim_id": "C3-T6-T4-PENDANT-GRAFT-SELECTOR-CLOSURE",
+      "statement": "At p=9, explicit T4 and T4 plus one leaf at root 0 both have alpha=14,x=7 and 27<29; all 12 old leaf tags remain favorable and the grafted leaf is favorable. Their complete sums are -9792 and -16983.",
+      "scope": "Exactly two encoded 19- and 20-vertex ordinary trees, one graft at root 0 and rank 9; no general graft theorem.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AT/EVIDENCE.json",
+        "cycles/cycle-3/C3-AT/REPLAY-GRAFT.py"
+      ],
+      "reason": "retained: exact independence vectors, terminal first descent, all original selector values, original supports and neighborhoods, each tagged q(8),q(9) difference, and totals are reproduced by the finite recursion and both critics."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-AT/REPORT.md",
+  "limitations": [
+    "The universal lower-region ordinary favorable-leaf aggregate is neither proved nor refuted; no eligible positive complete sum appears.",
+    "The universal deletion-plus-two-for-one weighted Hall mechanism lacks a cut proof or obstruction; finite scalar sums do not decide it.",
+    "The T1 structural condition is not derived from eligibility, and its source cover bound is false.",
+    "T4 boundary residuals of orders 2k and 2k+1, including isolated-mark cases, lack general sign or compensation control.",
+    "T5 family computation ends at m=50; no infinite selector classification or selected coefficient inequality is proved.",
+    "T6 graft evidence covers only two trees at p=9."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C3-T1.COVER-BUDGET-AND-FIRST-MARK-SUBCLASS",
+    "C3-T3-STAR-SYMMETRIC-CHAIN-SUBCASE",
+    "C3-T3-T67-EXACT-BOUNDED-ROW",
+    "C3-T4-ODD-SHELL-REDUCTION",
+    "C3-T6-T4-PENDANT-GRAFT-SELECTOR-CLOSURE",
+    "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+    "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL",
+    "T5-TM-COEFFICIENT-IDENTITY"
+  ]
+}

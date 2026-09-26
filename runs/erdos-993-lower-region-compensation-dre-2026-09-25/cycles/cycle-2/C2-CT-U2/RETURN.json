@@ -1,0 +1,28 @@
+{
+  "worker_id": "C2-CT-U2",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "E993-MARKED-ISOLATE-ORDER-BAND",
+      "statement": "For every finite simple graph G on m vertices, every W containing all isolated vertices of G, and every integer k>=2 with m<=2k+1, if q_j counts independent j-sets meeting W, then q_(k+1)<=q_k.",
+      "scope": "Arbitrary finite simple graphs; W contains every isolate; integer k>=2 and m<=2k+1. Generic marked counts; no tree, bipartite, selector, residual, or first-descent hypothesis.",
+      "status": "proposed_retained_informal",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CT-U2/EVIDENCE.md"
+      ],
+      "reason": "retained — The incidence identity follows by counting addability pairs, with actual e(A)=m-k-|N_G(A)| and each multiply marked upper set counted once in C. For m<=2k the sign is immediate. At m=2k+1, good sets pay through B; bad sets are k-sets of isolates and inject into C by adjoining a fixed non-isolate. If no non-isolate exists, complementation gives equality. The k>=2 guard is exactly what ensures at least two marks in the injection image."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CT-U2/REPORT.md",
+  "limitations": [
+    "Informal proof audit only; no Lean formalization or kernel receipt.",
+    "The disposition covers only E993-MARKED-ISOLATE-ORDER-BAND at m<=2k+1 and does not transfer it to leaf-specific or lower-region aggregate claims."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-MARKED-ISOLATE-ORDER-BAND"
+  ]
+}
+

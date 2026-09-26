@@ -1,0 +1,12 @@
+lemma ambientH_iso_delete_typed_survivor {V : Type u} (T : SimpleGraph V) (v g : V)
+    (hg : g ∉ closedNeighborhood T v) :
+    Nonempty (ambientH T v g ≃g
+      deleteVerts (ambientA T v) {⟨g, hg⟩}) := by
+  have hset : ({a : {w : V // w ∉ closedNeighborhood T v} | a.val = g}) =
+      {⟨g, hg⟩} := by
+    ext a
+    simp only [Set.mem_setOf_eq, Set.mem_singleton_iff, Subtype.ext_iff]
+  obtain ⟨e⟩ := ambientH_iso_delete_ambientA T v g
+  exact ⟨cast (congrArg (fun S => ambientH T v g ≃g deleteVerts (ambientA T v) S)
+    hset) e⟩
+

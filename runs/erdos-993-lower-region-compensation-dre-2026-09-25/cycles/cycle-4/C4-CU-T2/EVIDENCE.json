@@ -1,0 +1,29 @@
+{
+  "audit": "Independent algebraic reconstruction of C4-T2-NEIGHBORHOOD-REDUCTION",
+  "notation": {
+    "n": "|V(T)|",
+    "k": "p-1, so k>=1 by eligibility",
+    "H_v": "T-{v,s_v}, hence |V(H_v)|=n-2",
+    "W_v": "N_T(s_v)-{v}",
+    "R_v": "H_v-W_v=T-N_T[s_v]",
+    "q_v(j)": "number of independent j-sets in H_v meeting W_v",
+    "Q": "sum over the one fixed F(T,p) of q_v(k)",
+    "U": "sum over the same F(T,p) of q_v(k+1)",
+    "C": "sum over tags v in F of independent (k+1)-sets in H_v meeting W_v at least twice, once per upper set per tag",
+    "M": "sum over v in F and independent k-sets A of H_v meeting W_v of |N_Hv(A)|",
+    "E": "sum over the same tagged marked k-sets A of their actual addable vertices in H_v"
+  },
+  "checks": [
+    "For any marked independent k-set A in H_v, A and its open neighborhood are disjoint. Thus its actual addable count is (n-2)-k-|N_Hv(A)|, and summing gives E=((n-2)-k)Q-M.",
+    "For each tagged upper independent set B of size k+1 meeting W_v, the deletions preserving a mark number k if B meets W_v exactly once, and k+1 if it meets W_v at least twice. Thus E=kU+C, with each multiply marked upper set counted once in C for that tag.",
+    "Since R_v=H_v-W_v, i_j(H_v)-i_j(R_v)=q_v(j) for each integer j. Therefore each target summand is q_v(k+1)-q_v(k), so S=U-Q.",
+    "Combining the equalities yields kS=E-C-kQ=((n-2)-2k)Q-M-C=(n-2p)Q-M-C, using k=p-1.",
+    "Q, M, and C are nonnegative counts. Since k>=1, n<=2p implies S<=0. No sign for S follows from this identity alone when n>2p."
+  ],
+  "scope_checks": [
+    "The selector must remain the same F(T,p) in Q, U, C, M, E, and S; the reconstruction does so.",
+    "Each leaf is treated as a separate tag, including same-support leaves. No fibre merging is used.",
+    "The identities require no use of strict Delta_p(T-v)<0 beyond defining eligibility and F; hence they hold for this selector and in fact for any fixed set of original leaf tags under the same definitions.",
+    "This neither proves nor refutes the flat/current addability budgets, and it is not a positive full-sum counterexample or a proof of the primary target when n>2p."
+  ]
+}

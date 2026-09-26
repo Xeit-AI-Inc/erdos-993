@@ -1,0 +1,74 @@
+{
+  "schema": "e993.c4-f2-bounded-search.v1",
+  "generation": {
+    "main": {
+      "recipe": "All labeled Prüfer trees of orders 2 through 7; 400 independently generated Prüfer sequences per order 8 through 16 with Python random.Random seed 9930425; brooms with path-spine lengths 2 through n-1 for each order 8 through 16; the stated path-plus-two-leaf graft for each split 1 through n-4 and order 8 through 16; and every nonincreasing integer partition of n-1 as spider arm lengths for each order 8 through 20.",
+      "constructed_tree_instances_including_repetitions": 24067,
+      "eligible_tree_rank_pairs": 339,
+      "eligible_pairs_with_nonempty_F": 339,
+      "eligible_pairs_with_proper_F": 0,
+      "flat_budget_violations": 0,
+      "current_budget_violations": 0,
+      "target_budget_violations": 0
+    },
+    "two_hub_graft_selector_stress": {
+      "recipe": "Two adjacent hubs 0,1; d0,d1 direct pendant leaves and s0,s1 pendant paths of length two at the respective hubs; 0<=d0,d1<=14, 0<=s0,s1<=4; retain orders 8 through 18.",
+      "eligible_tree_rank_pairs_with_nonempty_F": 287,
+      "eligible_pairs_with_proper_F": 0,
+      "budget_evaluation": "selector stress only; the main corpus is the budget evaluation"
+    }
+  },
+  "budget_definitions": {
+    "Q": "sum over v in F of q_v(k), where q_v(j)=i_j(H_v)-i_j(R_v)",
+    "E": "sum over v in F and independent k-sets A in H_v meeting W_v of the actual number of vertices z in V(H_v)\\A with no neighbor in A",
+    "C": "sum over v in F of the number of independent (k+1)-sets in H_v meeting W_v in at least two vertices, each set counted once for its leaf tag",
+    "U": "sum over v in F of q_v(k+1)",
+    "gaps": {
+      "flat": "(x+1)Q-E",
+      "current": "kQ-E, k=p-1",
+      "target": "kQ-(E-C)"
+    }
+  },
+  "fully_reported_stress_instance": {
+    "tree": "Star K1,19 with center 0 and edges {0,j} for j=1,...,19",
+    "order": 20,
+    "degree_sequence": [19,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+    "original_leaves": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19],
+    "independence_polynomial_coefficients_i_0_through_i_19": [1,20,171,969,3876,11628,27132,50388,75582,92378,92378,75582,50388,27132,11628,3876,969,171,20,1],
+    "alpha": 19,
+    "x": 10,
+    "i_x": 92378,
+    "i_x_plus_1": 75582,
+    "p": 12,
+    "k": 11,
+    "guards": {
+      "x_plus_2_le_p": true,
+      "three_p_strictly_less_than_two_alpha_plus_one": "36 < 39"
+    },
+    "selector": [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19],
+    "selector_leaf_count": 19,
+    "original_leaf_count": 19,
+    "per_leaf_tag_values": {
+      "q_v(k)": 31824,
+      "q_v(k_plus_1)": 18564,
+      "actual_addable_total_over_marked_k_sets": 222768,
+      "multiply_marked_upper_sets": 18564,
+      "summand": -13260
+    },
+    "aggregate_values": {
+      "Q": 604656,
+      "E": 4232592,
+      "C": 352716,
+      "U": 352716,
+      "S": -251940,
+      "flat_gap": 2418624,
+      "current_gap": 2418624,
+      "target_gap": 2771340
+    },
+    "checks": {
+      "E_equals_kU_plus_C": "4232592 = 11*352716 + 352716",
+      "kS_equals_E_minus_C_minus_kQ": "-2771340 = 4232592 - 352716 - 11*604656"
+    }
+  },
+  "interpretation": "Finite bounded search only. It yields neither a universal budget theorem nor a refutation. The eligible samples failed to exercise a proper favorable subset, including in the targeted two-hub selector stress; no impossibility claim follows."
+}

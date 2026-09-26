@@ -1,0 +1,33 @@
+{
+  "scope": "All ordinary tree isomorphism classes of order 14 at p=6 satisfying x(T)+2<=6 and 18<2alpha(T)+1.",
+  "replay": {
+    "source_instrument": "instruments/p6-order14-15/run.py",
+    "adaptation": "Executed a scratch copy with the order loop restricted from (14,15) to (14,). The copied forest24.py and inputs/ordinary_tree_checked.py were used from the same scratch replay tree; sealed evidence was not modified.",
+    "generated_free_tree_classes": 3159,
+    "eligible_classes": 240,
+    "eligible_rows_subset_replayed": 240,
+    "source_evidence_record_pairs_matched": 240,
+    "maximum_complete_aggregate": -222,
+    "minimum_complete_aggregate": -404,
+    "nonnegative_complete_aggregates": 0,
+    "maximizer": {
+      "centroid_code": "U:(((((()))()))((((()))()))())",
+      "alpha": 9,
+      "x": 4,
+      "favorable_leaves": [5, 6, 11, 12, 13],
+      "aggregate": -222
+    }
+  },
+  "checks": [
+    "Generator asserted unique centroid codes and the pinned order-14 free-tree class count.",
+    "The tree-DP polynomial was compared against packed generator coefficients at ranks 0 through 8.",
+    "Eligibility used the full tree polynomial and first strict descent, including terminal zero extension; guards were x+2<=6 and 18<2alpha+1.",
+    "For each eligible class, literal vertex-subset counts were independently computed on the tree and every distinct deletion universe needed for the original leaf selector and summands.",
+    "For each row, subset replay matched the favorable leaf list and the complete aggregate, retaining distinct leaf tags even when supports coincide.",
+    "The exact finite LP claim follows because a convex combination of 240 column values has maximum at most -222, while a listed realizable column attains -222."
+  ],
+  "limitations": [
+    "This is bounded evidence for order 14 and p=6 only; it does not establish other first-shell orders, variable p, or the universal primary claim.",
+    "The replay is independent at the arithmetic and subset-count level but reuses the pinned centroid generator; the finite class-generation boundary is not a structural proof for larger orders."
+  ]
+}

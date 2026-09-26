@@ -1,0 +1,3 @@
+lemma coeff_iso (e : F ≃g G) (k : ℤ) : coeff F k = coeff G k := by
+  simp only [coeff, indepCount_iso e]
+

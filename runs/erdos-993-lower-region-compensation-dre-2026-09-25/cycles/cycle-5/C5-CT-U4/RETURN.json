@@ -1,0 +1,29 @@
+{
+  "worker_id": "C5-CT-U4",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C5-U4-LEMMA-1",
+      "statement": "The leaf-deletion polynomial identity and its rank-x sign alternative are correct for every finite ordinary tree, every original leaf, and every integer rank under zero extension; they give no later-rank selector transfer.",
+      "scope": "Exact rank-local identity for original leaves, retaining distinct tags for leaves sharing a support. The K_(1,3) example only refutes unguarded later-rank transfer and lies outside the strict lower-region alpha guard.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CT-U4/EVIDENCE.json"
+      ],
+      "reason": "retained — independent coefficient extraction verifies the identity and the negative-sum argument verifies the sign alternative. The example arithmetic is correct and ineligible for the primary claim. No cross-rank bridge or primary aggregate conclusion follows."
+    }
+  ],
+  "covered_claim_ids": [
+    "C5-U4-LEMMA-1"
+  ],
+  "report_path": "cycles/cycle-5/C5-CT-U4/REPORT.md",
+  "limitations": [
+    "The rank-local alternative does not establish Delta_p(T-v)<0 for eligible p with x(T)+2<=p.",
+    "K_(1,3) fails 3p<2alpha(T)+1 and is not a counterexample in the primary lower region.",
+    "No eligible selector witness, proof, or refutation of the complete favorable-leaf aggregate is supplied.",
+    "The cited literature result is not used as a premise and was not independently bibliographically audited."
+  ],
+  "status_authority": "proposed_worker_only"
+}

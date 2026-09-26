@@ -1,0 +1,28 @@
+{
+  "worker_id": "C1-CT-U6",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C1-U6-1",
+      "statement": "For each fixed independence number a, every ordinary tree T with alpha(T)=a has order at most 2a and hence lies in a finite isomorphism-class search domain; furthermore, all original leaves sharing an original support have identical Delta_p(T-v) selector values and identical selected summands, so their full tagged contribution is exactly their multiplicity times the common summand.",
+      "scope": "Exact fixed-a finite reduction and same-support compression for finite ordinary trees, preserving the strict selector and tagged aggregate. This provides no uniform bound over a and no sign conclusion for the complete sum.",
+      "status": "proposed_partial",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CT-U6/evidence/claim-audit.md"
+      ],
+      "reason": "retained: the bipartition order bound proves finite search for each fixed a, and exchanging same-support leaves is an automorphism that preserves the exact selector and both deletion-count sequences. Multiplicity preserves all distinct leaf tags. The result has no uniform bound in a and no aggregate sign consequence."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CT-U6/REPORT.md",
+  "limitations": [
+    "The retained statement is parameterwise in a and does not give a finite uniform search domain.",
+    "Same-support compression does not control cancellation or compensation between distinct supports.",
+    "No exhaustive computation, counterexample, proof of the primary inequality, or imported theorem is established."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-U6-1"
+  ]
+}

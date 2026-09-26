@@ -1,0 +1,9 @@
+namespace Erdos993G1.FirstWide
+
+lemma erase_image_card {X : Type u} [DecidableEq X] (S T : Finset X)
+    (hT : T ⊆ S) : (T.image S.erase).card = T.card := by
+  apply Finset.card_image_of_injOn
+  intro a ha b hb he
+  exact (Finset.erase_inj S (hT ha)).mp he
+
+end Erdos993G1.FirstWide

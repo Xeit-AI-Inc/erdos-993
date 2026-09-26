@@ -1,0 +1,28 @@
+{
+  "worker_id": "C3-CU-F1",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C3-F1.literal-two-for-one-flow-prefix",
+      "statement": "The literal weighted Hall graph has an integer flow saturating all positive upper-layer supply on each of the first five stored eligible rank-7 census rows at each order 16, 17, and 18.",
+      "scope": "Exactly 15 rows: the first five eligible rows in stored order from the supplied order-16, order-17, and order-18 p=7 results. For each tree, F is its original strict favorable selector; upper/lower layers are independent sets of sizes 8/7; arcs are all one-vertex deletions and the specified absent-vertex switches with exactly two neighbors in the upper set. This is a finite feasibility result only.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CU-F1/EVIDENCE.json"
+      ],
+      "reason": "retained: the copied source replay reproduces the 15-row evidence byte for byte, and independent checks reconstruct each upper/lower layer, verify every positive arc is a legal deletion or exact two-neighbor switch, enforce each weighted node capacity, and confirm total flow equals upper supply. This retains only the finite claim; it does not prove a universal Hall statement or the primary theorem."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CU-F1/REPORT.md",
+  "limitations": [
+    "Only the first five stored eligible rows at each order 16, 17, and 18 were flow-tested; the other 4,976 supplied eligible rank-7 rows and all larger cases remain untested.",
+    "The census generator was not rerun; replay relies on the pinned stored result files and their row ordering.",
+    "The retained result is bounded computation and does not establish a universal weighted Hall condition or decide the lower-region ordinary aggregate."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C3-F1.literal-two-for-one-flow-prefix"
+  ]
+}

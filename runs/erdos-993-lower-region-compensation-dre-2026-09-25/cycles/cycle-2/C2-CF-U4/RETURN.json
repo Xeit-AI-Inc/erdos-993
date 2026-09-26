@@ -1,0 +1,28 @@
+{
+  "worker_id": "C2-CF-U4",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "For every fixed eligible ordinary-tree instance (T,p) and its original strict favorable-leaf set F(T,p), the aggregate has the exact representation S(T,p)=sum_{B in I_(p+1)(T)} w_F(B)-sum_{A in I_p(T)} w_F(A), where w_F counts distinct original selected leaf tags. The finite bipartite one-vertex-deletion network with upper supplies w_F(B) and lower capacities w_F(A) admits a flow saturating every upper supply if and only if every deletion-neighborhood cut X satisfies sum_{B in X} w_F(B)<=sum_{A in N_-(X)}w_F(A); such a flow suffices to prove S(T,p)<=0. The full-upper-layer cut may be stronger than that scalar inequality because its neighborhood can omit lower sets. No universal validity of the cuts or sign is established.",
+      "scope": "The registered lower-region aggregate for finite ordinary trees with x(T)+2<=p and 3p<2alpha(T)+1, using the fixed strict original selector Delta_p(T-v)<0, original supports and neighborhoods, and separate multiplicity for every original leaf. The representation and finite flow/cut equivalence are per-instance statements only.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CF-U4/EVIDENCE.md"
+      ],
+      "reason": "retained_narrowed: direct tagwise bijection verifies the fixed-selector weighted-layer identity, and integral max-flow/min-cut verifies the exact cut characterization for existence of a saturating flow. Such a flow suffices for the scalar sign, but the full-upper-layer cut sums only over its deletion neighborhood and is not automatically the scalar comparison over all lower sets. No universal cut proof or refutation is supplied; failure of a cut only obstructs this certificate."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CF-U4/REPORT.md",
+  "limitations": [
+    "No proof that the weighted deletion-neighborhood cuts hold for all eligible ordinary trees; the full-upper-layer cut can be stronger than the scalar inequality because its neighborhood may omit lower-layer sets.",
+    "No eligible instance with a failed cut, positive complete aggregate, or counterexample was produced; a proper-cut failure alone would refute only this flow certificate.",
+    "No computational replay was needed because the route makes an exact finite algebraic and network characterization rather than a census claim."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE"
+  ]
+}

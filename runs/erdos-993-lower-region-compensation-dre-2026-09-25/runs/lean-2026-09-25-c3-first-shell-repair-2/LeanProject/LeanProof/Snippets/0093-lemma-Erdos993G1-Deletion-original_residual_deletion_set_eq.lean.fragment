@@ -1,0 +1,8 @@
+lemma original_residual_deletion_set_eq {V : Type u} (T : SimpleGraph V)
+    (v s g : V) (hvs : T.Adj v s) :
+    (closedNeighborhood T v ∪ {g}) ∪ {w | T.Adj g w ∧ w ≠ s} =
+      closedNeighborhood T v ∪ closedNeighborhood T g := by
+  ext w
+  simp only [closedNeighborhood, Set.mem_union, Set.mem_singleton_iff, Set.mem_setOf_eq]
+  by_cases hws : w = s <;> aesop
+

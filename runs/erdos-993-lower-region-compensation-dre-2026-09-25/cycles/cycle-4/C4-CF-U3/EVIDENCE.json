@@ -1,0 +1,39 @@
+{
+  "evidence_id": "C4-CF-U3-independent-critique",
+  "grade": "independent structural audit and exact arithmetic check; no sign census or source replay",
+  "orientation": "F",
+  "source_worker_id": "C4-U3",
+  "source_hashes_verified": true,
+  "independent_checks": [
+    {
+      "claim_id": "C4-U3.LOW-COVER-SKELETON",
+      "check": "Let C be a designated six-vertex cover, O=V\\C, D={u in O: deg_T(u)>=2}, and L=|O\\D|. O is independent, so every vertex in O\\D is an original degree-one vertex adjacent to C, and every vertex of D has all neighbors in C. Deleting the O\\D leaves preserves a connected subtree containing C. Thus K=T[C union D] is a tree. Counting edges and vertices gives n-1=e_C+sum_D deg(u)+L and n=6+t+L, hence e_C+sum_D(deg(u)-1)=5. Since every D vertex contributes at least 1, t<=5-e_C. Conversely, a connected core obeying this budget has 5+t edges on 6+t vertices, hence is a tree; attaching the specified leaves preserves the tree and designated cover. This also covers smaller covers after padding to size six, since n>6.",
+      "result": "structural identity and converse verified"
+    },
+    {
+      "claim_id": "C4-U3.LOW-COVER-SKELETON",
+      "check": "For fixed n,t the leaf multiplicities are weak compositions of L=n-6-t into six nonnegative parts. Stars and bars gives binom(L+5,5)=binom(n-t-1,5). At n=30,t=0 this is binom(29,5)=118755. The source text's formula binom(n-t-2,5) is off by one (it yields 98280 at n=30,t=0), though its subsequent stated largest count is correct. Enumerating all weak compositions as the recipe says remains complete; only the displayed formula is erroneous.",
+      "result": "complete recipe retained with corrected count formula"
+    },
+    {
+      "claim_id": "C4-U3.LOW-COVER-SKELETON",
+      "check": "For any independent core state I, each pendant leaf attached to c is freely selectable exactly when c is outside N_K[I]. Its contribution is (1+z)^m_c; otherwise it contributes 1. The core intersection uniquely identifies the state, validating the stated core-state polynomial formula and preservation of leaf multiplicities. Original degree-one vertices in C must still be separately included as the source report specifies.",
+      "result": "polynomial formula verified by independent-set partition"
+    },
+    {
+      "claim_id": "C4-U3.LOW-COVER-SIGN",
+      "check": "The source explicitly gives a parametrization and evaluation recipe but says no low-cover multiplicity census was run and proves no sign bound. No complete selected sums or counterexample are supplied. This supports only the evidence-status statement that the low-cover sign remains unresolved by this route.",
+      "result": "route-level unresolved statement retained"
+    }
+  ],
+  "dispositions": {
+    "C4-U3.LOW-COVER-SKELETON": "retained_narrowed: the structural parametrization, converse, core-state polynomial and exhaustive finite recipe are valid; correct the composition count to binom(n-t-1,5). The source count formula is a clerical arithmetic error, not an omission from the recipe that explicitly ranges over every weak composition.",
+    "C4-U3.LOW-COVER-SIGN": "retained: accurately reports that the route has not established the low-cover sign; it is not itself a claim that the mathematical sign is false or open by authoritative award."
+  },
+  "limitations": [
+    "No bounded census was executed or replayed.",
+    "No independence-polynomial vectors, alpha/x guards, favorable selectors, or complete selected sums were independently enumerated for a tree instance.",
+    "No conclusion is made about high-cover trees or the full lower-region aggregate.",
+    "The review is a proposed worker disposition only."
+  ]
+}

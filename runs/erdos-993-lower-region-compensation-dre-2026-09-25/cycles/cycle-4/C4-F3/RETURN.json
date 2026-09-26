@@ -1,0 +1,27 @@
+{
+  "worker_id": "C4-F3",
+  "cycle": 4,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C4-F3-TM5-EXACT-REPLAY",
+      "statement": "For the ordinary tree T_5 consisting of path 0-1-2 and five three-leaf claws attached at 0, at p=10 one has alpha=17, x=8, both original leaf orbits are strictly favorable, the complete favorable set has 16 leaves, and the exact full aggregate is S=-84215.",
+      "scope": "One exact eligible instance of the registered T_m family at m=5 and p=10; no universal implication.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-F3/EVIDENCE.json",
+        "cycles/cycle-4/C4-F3/replay.py"
+      ],
+      "reason": "A graph-derived independent-set recurrence verifies the guards, both orbit selectors, marked counts and E=kU+C identity; the full sum is independently recomputed from every original leaf's support and closed-neighborhood deletions."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-F3/REPORT.md",
+  "limitations": [
+    "This exact finite row is not a census or a proof of any universal claim.",
+    "No exact deficient cut or feasible flow certificate for the enlarged mixed weighted Hall network was obtained.",
+    "Orbit quotienting preserves cuts only when the group acts on the complete network with all capacities and arc multiplicities; aggregate polynomial counts alone do not provide those data.",
+    "The asymmetric CB and T_m mixed-boundary cases remain unresolved."
+  ],
+  "status_authority": "proposed_worker_only"
+}

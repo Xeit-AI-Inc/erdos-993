@@ -1,0 +1,25 @@
+# Independent fidelity follow-up: repair child
+
+**Verdict: match (review proposal).** Completed 2026-09-26T04:03:02Z. This attestation is bound to the metadata-repair child `lean-2026-09-25-c3-first-shell-repair-1`. It does not award or close the run.
+
+## Scope and lineage
+
+All **251** files in `control/C3-LA1-FIDELITY-REPAIR1.json` matched their pinned SHA-256 hashes. The parent `VERIFICATION-REPORT.json` records status `blocked`, with failures concerning the original short formalization run ID, fidelity input binding, and canonical contract/source/reviewer lineage. That record is a workflow failure, not evidence of a changed theorem.
+
+The child `LeanProject/LeanProof/Main.lean` is **byte-identical** to the previously reviewed parent Main, SHA-256 `0397b7bedd1ff695d8debd73a24cff430434e88f2d9ac56c49459843d155f17f`. The child `THEOREM-CONTRACT.yaml` is likewise byte-identical to the parent contract, SHA-256 `1cf37db1ec45656b89d7b0fece737ec60cfc3f5f081707ae2d6c2c4d8fc8e122`; its informal statement exactly equals the child `EXACT-CLAIM.txt`. The actual Main theorem header, the child terminal-header file, and the contract expected statement agree exactly, SHA-256 `4546fe679579b0f8cafc43d01be9c42a35cafd162ebf4a84ab55773aa7a10286`.
+
+I parsed all 225 registration blocks from the actual child Main. Each numbered block matches the corresponding child snippet byte for byte, its formalization entry name/kind/hash/byte count, and the same entry in `FORMALIZATION-STATE.json`. Entry 225 is `theorem E993FirstShell.firstShellPointwiseAndAggregate`. The formalization receipt and state, dependency authority, informal-audit receipt, and reviewer assignment all carry the child canonical run ID. The fresh kernel receipt binds its inputs to this child run root and this exact Main, not the parent's run path.
+
+## Mathematical fidelity carried through exact source identity
+
+The unchanged Main still states the two exact conjuncts reviewed in the pinned parent independent report: every original degree-one leaf receives the integer H/R pointwise nonpositivity under `p ≥ 3`, order `2p+2`, and first **strict** descent `x+2 ≤ p`, without an alpha or favorable-selector premise; the separate aggregate conjunct retains strict `3p < 2*indepNum(T)+1` and sums the same term over the fixed original-leaf strict selector. The definitions in the actual Main remain the original-neighbor support, original deletion sets `H={v,s}` and `R=N_T[s]`, zero-extended independent-set counts, integer forward differences, and a sum indexed by leaves rather than distinct supports. The unchanged terminal proof continues to derive the first term leaf by leaf and then sum over the selector. Exact byte identity, plus inspection of the terminal header and core definitions in this same Main, transfers the earlier semantic review to this child without assuming a kernel PASS alone establishes meaning.
+
+The pre-review audit input binds the same contract/source declaration and its facets match the actual theorem; the only domain shape difference is that the contract records `forbidden_narrowings: []` while the binding uses the schema's domain projection without that field. No hypothesis or conclusion is altered. Its `artifact_producer_id` is `C3-LA1-PRODUCER`, distinct from this reviewer.
+
+## Fresh verification and projections
+
+The child kernel receipt has SHA-256 `0dbcddc48cf6b7127d1cac84e39708183e804aae6615c38ceee2c2884830d759`, matching the pre-review binding. It reports `verified`; all listed checks passed, including project build, single-file check, axiom policy, and source immutability. Both before and after source hashes are the actual child Main hash. The pinned `axioms.txt` ends with exactly `propext`, `Classical.choice`, and `Quot.sound`, the permitted set. The contract, Lean binding, and kernel evidence have identical dependency lists. I recomputed all ten dependency content hashes from the child package identities as sorted compact JSON without a final newline, using the direct marker-file hash for `lean-toolchain`; all match. The child manifest hash matches the dependency-authority receipt.
+
+Using the official audit script's sorted compact UTF-8 JSON encoding **with** terminal newline, I independently recomputed contract projection `0112514a50fec2648b0edd08d8f825d41ead752f4300caa3c178f7e17e644caf` and binding projection `90e05e93c46e6309f4931f85d61268cbeeffceff7f71b831aedd80df1e602aad`. Both match the child `FIDELITY-FINGERPRINTS.json`. The binding hash differs from the parent review because it includes the fresh child kernel receipt. `INDEPENDENT-REVIEW.json` therefore carries a new attestation ID and this exact binding hash.
+
+The supplied audit input is explicitly **pre-review**. The controller has stated it will create the canonical `EVIDENCE/fidelity-audit-input.json` from this frozen input plus this attestation, then run the official audit and workflow close. Neither of those later actions was performed or claimed here. No build, source edit, registry edit, or workflow action was made in this review.

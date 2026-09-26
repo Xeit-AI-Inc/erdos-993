@@ -1,0 +1,27 @@
+{
+  "worker_id": "C3-F4",
+  "cycle": 3,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "The assigned F4 investigation does not resolve the lower-region ordinary favorable-leaf aggregate or prove the proposed n=2p+3 early-descent pointwise extension. Exact controls show the early-descent premise is essential for the tested positive example; a seeded bounded search found no eligible positive favorable local term.",
+      "scope": "F4 route only: marked-cover lemma premise control and n=2p+3. Exact result for p=3,4; seeded labeled Prüfer samples of 12,000 draws each for p=6..10; no universal conclusion.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-F4/EVIDENCE.json",
+        "cycles/cycle-3/C3-F4/COMPUTE.py"
+      ],
+      "reason": "The explicit positive full sum S=147 has x+2>p and is therefore ineligible. The marked K1,7 control shows that the candidate marked-shadow inequality fails without its tau>=3 premise. No proof or eligible counterexample was found; the random sample is not exhaustive."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-F4/REPORT.md",
+  "limitations": [
+    "The candidate first-shell argument's imported first-wide classification and Catalan-floor premises were not independently verified here.",
+    "The Prüfer search is a seeded labeled-tree sample, not an exhaustive census.",
+    "No eligible positive local term or proof for the next-order extension was obtained.",
+    "The positive full-sum example violates the early-descent guard and does not refute the registered primary claim."
+  ],
+  "status_authority": "proposed_worker_only"
+}

@@ -1,0 +1,33 @@
+{
+  "worker_id": "C6-CF-U3",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C6-U3-ABSORB-BOUNDED-20",
+      "statement": "The bounded exact-arithmetic census claim is retained: for every 2<=r,s<=20, F_r B_s^q has finite-order ULC for at least one q in {1,2,3,4}, with minimum-q counts 273, 80, 7, and 1 for q=1,2,3,4.",
+      "scope": "Only the finite coefficient computation for F_r=((1+z)^(r-1)-1)/z and B_s=(1+z)^s+z over 2<=r,s<=20 and 1<=q<=4; no uniform family or tree-level implication.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CF-U3/replay_absorption_census.py",
+        "cycles/cycle-6/C6-CF-U3/ABSORPTION-CENSUS.json",
+        "cycles/cycle-6/C6-CF-U3/U3-ABSORPTION-CENSUS.json",
+        "cycles/cycle-6/C6-CF-U3/pinned_121_factor_rows.json",
+        "cycles/cycle-6/C6-CF-U3/source_pin_audit.json"
+      ],
+      "reason": "retained: exact integer replay regenerates all 1,444 rows and reproduces the sealed census; it verifies finite-order ULC through the necessary-and-sufficient cleared-denominator criterion and independently matches the 121 pinned one-factor rows. This is only a bounded computational result. It proves no uniform absorption theorem, arbitrary mixed-factor claim, graph or selector bridge, or ordinary-tree aggregate."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CF-U3/REPORT.md",
+  "limitations": [
+    "The evidence is bounded to 2<=r,s<=20 and q<=4.",
+    "No uniform bound in r,s or result for arbitrary mixed absorbed factors is established.",
+    "No graph/polynomial fidelity, perturbation, selector, or ordinary-tree aggregate implication is established.",
+    "No new tree search or audit of the primary aggregate was performed; those are outside this bounded source claim."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-U3-ABSORB-BOUNDED-20"
+  ]
+}

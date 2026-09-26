@@ -1,0 +1,31 @@
+{
+  "worker_id": "C3-CT-F6",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "The F6 graft and gluing computation found no positive complete selected-leaf sum in 985 eligible parameter/rank rows across the three explicitly bounded T_m families recorded in REPORT.md and F6_RESULTS.json.",
+      "scope": "Exact finite computation only: root path grafts with m=0..8, l=1..8, optionally one added claw; path grafts at the marked support or first claw center with m=0..8 and l=1..8 (center only for m>=1); and T_m--path--T_k with m,k=0..6 and path length 1..4. All ranks satisfying x+2<=p and 3p<2alpha+1 were recorded. This is not a proof for unbounded parameters or all ordinary trees.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CT-F6/REPORT.md",
+        "cycles/cycle-3/C3-CT-F6/F6_COMPUTE.py",
+        "cycles/cycle-3/C3-CT-F6/F6_SOURCE_RESULTS.json",
+        "cycles/cycle-3/C3-CT-F6/F6_REPLAY_RESULTS.json",
+        "cycles/cycle-3/C3-CT-F6/F6_REPLAY_CHECK.json"
+      ],
+      "reason": "Retained as the stated bounded computation: the exact recurrence and selector/summand implementation replay byte-identically, and checks confirm eligibility, terminal-aware x, all selected signs, and all 985 complete sums are negative. This does not establish the universal aggregate statement; proposed status remains open."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CT-F6/REPORT.md",
+  "limitations": [
+    "The result covers only the three finite parameter sweeps stated in the source report; it gives no conclusion for arbitrary ordinary trees or beyond those bounds.",
+    "The replay reproduces the case implementation and is not an independent second implementation of the enumeration."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE"
+  ]
+}

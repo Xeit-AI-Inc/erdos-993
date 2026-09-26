@@ -1,0 +1,34 @@
+{
+  "audit": "independent algebraic check of the sole C5-T4 claim",
+  "claim_id": "C5-T4-SELECTOR-PENDANT-PATH-RECURRENCE",
+  "definitions_checked": {
+    "A": "I(G-r), sets with r absent",
+    "B": "z I(G-N[r]), contribution for sets with r present, including z for r",
+    "P_m": "independence polynomial of the m-vertex path, P_0=1, P_1=1+z, P_m=P_(m-1)+z P_(m-2) for m>=2"
+  },
+  "independent_derivation": [
+    "Partition independent sets in G_m by whether r is absent or present.",
+    "When r is absent, the attached path is unrestricted and contributes P_m, multiplying I(G-r)=A.",
+    "When r is present, w_1 is forbidden, and the remaining attached path is the (m-1)-vertex path; this contributes B P_(m-1).",
+    "Thus I(G_m)=A P_m+B P_(m-1). Coefficient extraction gives Delta_p(G_m)=[z^(p+1)](...) - [z^p](...) for every integer p, with coefficients outside polynomial degree equal to zero."
+  ],
+  "leaf_interface_checked": {
+    "old_leaf_v_distinct_from_r": "Deleting v commutes with attaching the path at r. Apply the same partition to G=T-v rooted at r; this evaluates the exact strict selector Delta_p(T_m-v)<0 for that tag. Distinct leaves remain distinct tags even when their supports coincide.",
+    "r_if_an_original_degree_one_leaf": "Its degree increases by one, so it is no longer a leaf of T_m and is omitted from the old-leaf list.",
+    "new_endpoint": "Deleting w_m leaves T_(m-1), including T_0=T when m=1; hence its selector test is Delta_p(T_(m-1))<0.",
+    "boundary_note": "For a singleton base tree and m=1, the formerly isolated root becomes a leaf of T_m although it was not an original degree-one leaf. The claim only promises surviving old-leaf tags and the new endpoint, so this omitted newly created root leaf is outside its stated interface."
+  },
+  "example_recalculation": {
+    "base": "K1,7 with center r; attach m=1 at r; choose any old leaf v.",
+    "before_coefficients_T_minus_v_low_to_high": [1, 7, 15, 20, 15, 6, 1],
+    "before_delta_3": -5,
+    "A_coefficients": [1, 6, 15, 20, 15, 6, 1],
+    "B_coefficients": [0, 1],
+    "delta_2_A": 5,
+    "after_coefficients_Tprime_minus_v_low_to_high": [1, 8, 21, 35, 35, 21, 7, 1],
+    "after_delta_3": 0,
+    "eligibility": "x(K1,7)=4 and p=3, so x+2<=p fails; this is not a primary counterexample."
+  },
+  "disposition": "retained",
+  "scope_boundary": "This proves an exact selector-computation recurrence for the stated pendant-path operation. It does not propagate x(T), alpha(T), lower-region eligibility, the fixed selected sum S, or its sign."
+}

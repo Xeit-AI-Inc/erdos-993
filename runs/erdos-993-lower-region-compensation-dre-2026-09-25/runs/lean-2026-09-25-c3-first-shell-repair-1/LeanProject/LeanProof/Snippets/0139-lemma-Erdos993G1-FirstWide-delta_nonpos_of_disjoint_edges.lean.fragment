@@ -1,0 +1,55 @@
+namespace Erdos993G1.FirstWide
+
+lemma delta_nonpos_of_disjoint_edges {X : Type u} [Finite X]
+    (G : SimpleGraph X) (r : ℕ) (hr : 1 ≤ r) (hn : Nat.card X = 2*r+2)
+    (a b c d : X) (hab : G.Adj a b) (hcd : G.Adj c d)
+    (hdis : Disjoint ({a,b} : Set X) {c,d}) : delta G (r : ℤ) ≤ 0 := by
+  classical
+  letI := Fintype.ofFinite X
+  let M : Finset X := {a,b,c,d}
+  have hM : M.card = 4 := matching_endpoints_card G a b c d hab hcd hdis
+  have hle : ∀ S : Finset X, G.IsIndepSet S → (S ∩ M).card ≤ 2 :=
+    fun S hS => indep_inter_matching_le_two G a b c d hab hcd S hS
+  have hL := stratum_partition G M hle r
+  have hV := stratum_partition G M hle (r+1)
+  have hcross := matching_cross_incidence_bound G a b c d hab hcd hdis r
+  have hcross' : (stratum G M (r+1) 2).card ≤ (stratum G M r 1).card := by
+    change 2 * (stratum G M (r+1) 2).card ≤ 2 * (stratum G M r 1).card at hcross
+    omega
+  rw [delta_nat,hL,hV]
+  by_cases hr1 : r = 1
+  · subst r
+    have hn' : (Finset.univ : Finset X).card = 4 := by simpa [Nat.card_eq_fintype_card] using hn
+    have hMu : M = Finset.univ := Finset.eq_of_subset_of_card_le (Finset.subset_univ _) (by omega)
+    have e10 := stratum_univ_empty G 1 0 (by omega)
+    have e12 := stratum_univ_empty G 1 2 (by omega)
+    have e20 := stratum_univ_empty G 2 0 (by omega)
+    have e21 := stratum_univ_empty G 2 1 (by omega)
+    rw [hMu] at hcross' ⊢
+    simp only [e10,e12,e20,e21,Finset.card_empty,Nat.cast_zero,zero_add,add_zero]
+    have hc : ((stratum G Finset.univ 2 2).card : ℤ) ≤
+        (stratum G Finset.univ 1 1).card := by exact_mod_cast hcross'
+    omega
+  · have hr2 : 2 ≤ r := by omega
+    have h0 := outside_incidence_bound G M hM r hr2 hn 0 (by omega)
+    have h1 := outside_incidence_bound G M hM r hr2 hn 1 (by omega)
+    have h2 := outside_incidence_bound G M hM r hr2 hn 2 (by omega)
+    have he1 : r+1-1 = r := by omega
+    have he2 : r+1-2 = r-1 := by omega
+    have he3 : r+2-2 = r := by omega
+    simp only [Nat.add_zero,Nat.sub_zero] at h0
+    rw [he1,he2] at h1
+    rw [he2,he3] at h2
+    have hv0 : (stratum G M (r+1) 0).card ≤ (stratum G M r 0).card := by
+      have hrm : r-2 ≤ r+1 := by omega
+      nlinarith [Nat.mul_le_mul_right (stratum G M r 0).card hrm]
+    have hv12 : (stratum G M (r+1) 1).card + (stratum G M (r+1) 2).card ≤
+        (stratum G M r 1).card + (stratum G M r 2).card := by
+      have he : r-1+1=r := by omega
+      nlinarith
+    have h0z : ((stratum G M (r+1) 0).card : ℤ) ≤ (stratum G M r 0).card := by exact_mod_cast hv0
+    have h12z : ((stratum G M (r+1) 1).card : ℤ) + (stratum G M (r+1) 2).card ≤
+        (stratum G M r 1).card + (stratum G M r 2).card := by exact_mod_cast hv12
+    omega
+
+end Erdos993G1.FirstWide

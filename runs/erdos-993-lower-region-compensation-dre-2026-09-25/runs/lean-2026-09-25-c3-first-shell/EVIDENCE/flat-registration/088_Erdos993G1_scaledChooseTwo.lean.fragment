@@ -1,0 +1,11 @@
+lemma Erdos993G1.scaledChooseTwo (n : ℕ) :
+    2 * (n.choose 2 : ℤ) = (n : ℤ) * ((n : ℤ) - 1) := by
+  induction n with
+  | zero => norm_num
+  | succ n ih =>
+    rw [Nat.choose_succ_succ]
+    simp only [Nat.choose_one_right, Nat.cast_add, Nat.cast_succ]
+    change 2 * ((n : ℤ) + (n.choose 2 : ℤ)) =
+      ((n : ℤ) + 1) * ((n : ℤ) + 1 - 1)
+    nlinarith
+

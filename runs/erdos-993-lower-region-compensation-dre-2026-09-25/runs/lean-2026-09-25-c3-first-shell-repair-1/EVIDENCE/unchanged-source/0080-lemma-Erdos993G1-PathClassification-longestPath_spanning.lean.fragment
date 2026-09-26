@@ -1,0 +1,14 @@
+lemma longestPath_spanning {V : Type u} [Finite V] {G : SimpleGraph V}
+    (hc : G.Connected) {a b : V} (p : G.Walk a b) (hp : p.IsPath)
+    (hmax : ∀ (a' b' : V) (q : G.Walk a' b'), q.IsPath → q.length ≤ p.length)
+    (hdeg : ∀ v, Nat.card (G.neighborSet v) ≤ 2) :
+    p.toSubgraph.IsSpanning := by
+  have hclosed := longestPath_support_closed p hp hmax hdeg
+  have hwalk : ∀ {v w : V} (q : G.Walk v w), v ∈ p.support → w ∈ p.support := by
+    intro v w q
+    induction q with
+    | nil => exact id
+    | cons hadj q ih => exact fun hv => ih (hclosed _ hv _ hadj)
+  intro v
+  exact p.mem_verts_toSubgraph.mpr (hwalk (hc a v).some p.start_mem_support)
+

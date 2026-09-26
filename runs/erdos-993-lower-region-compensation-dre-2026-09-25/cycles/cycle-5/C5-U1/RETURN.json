@@ -1,0 +1,36 @@
+{
+  "worker_id": "C5-U1",
+  "cycle": 5,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C5-U1.coefficient-window",
+      "statement": "For f=Gg+e with G=Σ_{r=0}^d g_r z^r, Δ_p(f)=Σ_{r=0}^d g_r Δ_{p-r}(g)+Δ_p(e); a negative weighted window M remains negative under |Δ_p(e)|<-M. This gives a finite transfer test but does not establish its sign from central-only log-concavity or first descent.",
+      "scope": "Exact polynomial identity for integer coefficient sequences with zero extension; its sign corollary requires the stated window and error bounds. No tree-wide or T_m-infinite theorem is claimed.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-U1/REPORT.md"
+      ],
+      "reason": "The identity and perturbation margin are algebraic; no-recovery or direct shifted-window sign control is absent from the authorized premises."
+    },
+    {
+      "claim_id": "C5-U1.Tm-bounded",
+      "statement": "For the specified T_m family and every eligible lower-region rank with 1≤m≤40, exact polynomial computation gives S(T_m,p)<0; there are 427 eligible (m,p) rows.",
+      "scope": "Only the path 0-1-2 with m three-tip claws attached at 0, for m=1,...,40, with original leaves and their original supports; no conclusion for m>40 or other trees.",
+      "status": "proposed_bounded_computational",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-U1/COMPUTE.py",
+        "cycles/cycle-5/C5-U1/EVIDENCE.json"
+      ],
+      "reason": "The recurrence uses exact integer polynomial arithmetic and records alpha, first descent, all guarded ranks, each orbit's strict selector values and full multiplicity-weighted sum; the finite boundary is m≤40."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-U1/REPORT.md",
+  "limitations": [
+    "The finite computation does not prove the T_m assertion for m>40 or the primary assertion for general ordinary trees.",
+    "Central-only log-concavity and first descent do not control all differences in a transfer window without no-recovery or a direct window certificate.",
+    "No crossing-minor implication, imported theorem, analytic candidate certificate, or authoritative status is established by this route."
+  ],
+  "status_authority": "proposed_worker_only"
+}

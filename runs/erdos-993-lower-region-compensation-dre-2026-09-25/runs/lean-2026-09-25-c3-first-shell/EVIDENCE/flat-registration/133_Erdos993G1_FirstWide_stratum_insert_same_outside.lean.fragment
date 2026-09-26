@@ -1,0 +1,15 @@
+namespace Erdos993G1.FirstWide
+
+lemma stratum_insert_same_outside {X : Type u} [Fintype X] [DecidableEq X]
+    (G : SimpleGraph X) (M B : Finset X) (k j : ℕ)
+    (hB : B ∈ stratum G M k j) (a : X) (ha : a ∉ B)
+    (hS : insert a B ∈ stratum G M (k+1) j) : a ∉ M := by
+  intro haM
+  have hb := (stratum_mem G M B k j).mp hB
+  have hs := (stratum_mem G M (insert a B) (k+1) j).mp hS
+  have he : insert a B ∩ M = insert a (B ∩ M) := by ext x; simp only [Finset.mem_inter, Finset.mem_insert]; aesop
+  have hc := Finset.card_insert_of_notMem (s := B ∩ M) (a := a) (by simp [ha])
+  rw [← he, hb.2, hs.2] at hc
+  omega
+
+end Erdos993G1.FirstWide

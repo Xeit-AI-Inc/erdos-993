@@ -1,0 +1,26 @@
+{
+  "worker_id": "C3-T6",
+  "cycle": 3,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C3-T6-T4-PENDANT-GRAFT-SELECTOR-CLOSURE",
+      "statement": "For the specified T4 path-and-four-claw tree at p=9, attaching one pendant leaf at its distinguished root preserves eligibility and keeps all 12 old leaves in the strict favorable selector while adding the new leaf; the full sums are -9792 before and -16983 after the graft.",
+      "scope": "Exact two-tree computation for T4 and T4 plus one leaf at root 0, p=9, with original supports and the complete strict selector; no general branch-composition or universal aggregate claim.",
+      "status": "proposed_bounded_verified",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-T6/COMPUTE.py",
+        "cycles/cycle-3/C3-T6/EVIDENCE.json"
+      ],
+      "reason": "The integer recursion replays both independence vectors, checks terminal first descent and both eligibility guards, lists every favorable leaf with its strict negative selector value, and computes every H/R difference and selected summand. This verifies the stated finite graft step only."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-T6/REPORT.md",
+  "limitations": [
+    "The result covers one graft at m=4 and p=9; it provides no induction or general selector-closure theorem.",
+    "The selected negative budget and q potential are recorded exactly, but no universal inequality between them or the aggregate is proved.",
+    "The two finite negative sums do not resolve the primary lower-region assertion."
+  ],
+  "status_authority": "proposed_worker_only"
+}

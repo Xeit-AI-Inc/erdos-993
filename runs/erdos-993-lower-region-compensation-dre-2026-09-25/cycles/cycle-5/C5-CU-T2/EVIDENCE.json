@@ -1,0 +1,50 @@
+{
+  "reviewed_claim_id": "C5-T2.HETEROGENEOUS-STAR-BOUNDED-CENSUS",
+  "source_hash_check": {
+    "common_and_case_entries_checked": 241,
+    "mismatches": 0
+  },
+  "replay": {
+    "method": "Copied the listed PROFILE-CENSUS.py to this worker scratch root, executed it there, then compared generated and pinned census JSON as parsed JSON.",
+    "json_equal": true,
+    "profiles": 285,
+    "eligible_rows": 913,
+    "positive_sums": 0,
+    "empty_selectors": 0,
+    "partial_selectors": 0,
+    "all_leaf_selectors": 913
+  },
+  "independent_row_consistency_checks": {
+    "checks": 6676,
+    "all_passed": true,
+    "checked": [
+      "alpha equals the degree of the independence polynomial",
+      "x is the first negative zero-extended difference, scanning through alpha",
+      "both eligibility inequalities at every recorded row",
+      "listed favorable tags equal exactly the tags with strictly negative deletion difference",
+      "every original leaf tag is selected in every eligible row",
+      "selected term tags equal selected leaf tags",
+      "each recorded aggregate equals the sum of its selected terms"
+    ]
+  },
+  "extrema": {
+    "maximum_sum": {
+      "value": -275,
+      "profile": [3, 4],
+      "alpha": 9,
+      "x": 4,
+      "p": 6
+    },
+    "minimum_sum": {
+      "value": -3351112008120,
+      "profile": [4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
+      "alpha": 42,
+      "x": 20,
+      "p": 24
+    }
+  },
+  "limitations": [
+    "The replay uses the route's implementation; no separately implemented polynomial engine was run.",
+    "No extension beyond the stated finite profile boundary or proof of the registered primary follows."
+  ]
+}

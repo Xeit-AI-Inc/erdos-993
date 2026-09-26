@@ -1,0 +1,29 @@
+{
+  "audit": "independent_exact_check_of_C5-T4_selector_recurrence",
+  "identity_check": {
+    "case_root_absent": "I(G-r) I(P_m)=A P_m",
+    "case_root_present": "z I(G-N[r]) I(P_(m-1))=B P_(m-1)",
+    "conclusion": "I(G_m)=A P_m+B P_(m-1) for every m>=1; the cases are disjoint and exhaustive"
+  },
+  "selector_check": {
+    "definition": "Delta_p(H)=[z^(p+1)]I(H)-[z^p]I(H)",
+    "conclusion": "substitution of the identity gives the exact strict selector test at every integer p, with absent polynomial coefficients zero"
+  },
+  "tag_check": {
+    "old_leaf_v": "apply the identity separately to G=T-v rooted at r; each surviving original leaf vertex is a separate tag, even when supports coincide",
+    "root_if_original_leaf": "only the root's degree changes among old vertices, so it ceases to be a leaf when m>=1",
+    "new_endpoint": "deleting the new endpoint leaves T_(m-1), so its selector test is Delta_p(T_(m-1))<0"
+  },
+  "arithmetic_check": {
+    "base": "K_{1,7}",
+    "operation": "attach one leaf to its center; test an old leaf v",
+    "before_polynomial": "I(T-v)=1+7z+15z^2+20z^3+15z^4+6z^5+z^6",
+    "before_delta_3": "15-20=-5",
+    "root_state": "A=(1+z)^6, B=z",
+    "change_in_delta_3": "Delta_2(A)=20-15=5",
+    "after_polynomial": "I(T'-v)=1+8z+21z^2+35z^3+35z^4+21z^5+7z^6+z^7",
+    "after_delta_3": "35-35=0",
+    "eligibility": "outside the primary range because x(K_{1,7})=4 and p=3 fails x+2<=p"
+  },
+  "scope_limit": "This verifies selector propagation only. It gives no eligibility preservation and no comparison or sign bound for the complete selected aggregate."
+}

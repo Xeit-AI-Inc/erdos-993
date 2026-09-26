@@ -1,0 +1,35 @@
+{
+  "worker_id": "C4-CF-T1",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C4-T1-CTx-SUFFICIENT-REDUCTION",
+      "statement": "Under the target hypotheses, the aggregate bridge i_x(T)E <= (x+1)i_(x+1)(T)Q implies S(T,p) <= 0.",
+      "scope": "Ordinary finite trees and the fixed favorable selector from the solution contract, with k=p-1, x+2<=p, and 3p<2alpha(T)+1; the statement is conditional on the displayed bridge and does not assert that bridge universally.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-4/C4-CF-T1/REPORT.md"],
+      "reason": "retained: the exact double count E=kU+C and identity kS=E-C-kQ are valid, and the first-descent and rank inequalities prove the stated conditional implication; the Q=0 case gives S=0 directly. The universal bridge remains open."
+    },
+    {
+      "claim_id": "C4-T1-ORDER24-POSITIVE-MARKED-ADDABILITY-COVARIANCE",
+      "statement": "There is an eligible order-24 ordinary-tree instance and selected original leaf tag for which the uniform-rank-k covariance between meeting W and actual addability in H is strictly positive.",
+      "scope": "The exact 23-edge tree and tag v=0 specified by the sealed C4-T1 case; alpha=15, x=8, p=10, and k=9.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-4/C4-CF-T1/independent_audit.json", "cycles/cycle-4/C4-CF-T1/replay_result.json", "cycles/cycle-4/C4-CF-T1/independent_audit.py"],
+      "reason": "retained: independent rooted-forest DP checks the tree, guards, all 11 original leaf tags, selector values, and full S=-51095; literal subsets give E_0=58429, i_9(H)=13677, q_0(9)=13232, and covariance numerator 1773113>0. This is a local witness, not a positive aggregate."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CF-T1/REPORT.md",
+  "limitations": [
+    "The conditional CT_x bridge is not established universally, and this route does not prove the primary lower-region aggregate.",
+    "The exact order-24 witness establishes positive covariance for one selected tag only; its complete selected sum is negative.",
+    "No literature result or exhaustive tree census was used."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-T1-CTx-SUFFICIENT-REDUCTION",
+    "C4-T1-ORDER24-POSITIVE-MARKED-ADDABILITY-COVARIANCE"
+  ]
+}

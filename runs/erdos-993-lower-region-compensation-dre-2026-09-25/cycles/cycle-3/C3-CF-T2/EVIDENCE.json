@@ -1,0 +1,21 @@
+{
+  "evidence_type": "independent_critique_of_rooted_decomposition",
+  "source_claim_id": "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL",
+  "disposition": "retained",
+  "independent_check": {
+    "state_partition": "For root r, each independent set either omits r and restricts to an independent set A_i of every component T_i of T-r, or contains r and then restricts to independent A_i in T_i-u_i. The cases are disjoint and exhaustive; their ranks are sum_i |A_i| and 1+sum_i |A_i|, respectively.",
+    "weight_partition": "A selected leaf v in branch i with support s_v != r has all vertices of W_v=N(s_v)\\{v} in that branch except possibly r, which occurs exactly when s_v=u_i. Its activity is therefore determined by A_i and the root-occupancy bit. If s_v=r, activity requires v's branch root u_i to be occupied and at least one other branch root to be occupied; if r is occupied, independence forces all those branch roots absent. This gives exactly the reported cross-branch term for J.",
+    "switch_boundary": "A switch centered at r is legal only in the root-absent slice, with exactly two occupied neighbors u_i,u_j; it removes those branch roots and inserts r. A switch crossing the root boundary centered away from r must be centered at some u_i and use r plus exactly one child as its two occupied neighbors. Every other switch stays within a branch slice. Thus the report's boundary cases are exhaustive.",
+    "scope_check": "These facts prove a decomposition for arbitrary fixed F and describe the allowed relation's root boundary. They do not prove weighted Hall inequalities for arbitrary cuts, feasibility of the proposed transport, or the primary complete selected-sum inequality under x(T)+2<=p and 3p<2alpha(T)+1. No scalar counterexample or proof follows from a transport obstruction alone."
+  },
+  "hash_verification": {
+    "common_packet_sources": "115/115 matched C3-COMMON.json pins",
+    "case_sources": "3/3 matched C3-CF-T2.json pins"
+  },
+  "computational_replay": "None; the source claim is a structural proof and no source computation was presented.",
+  "limitations": [
+    "The universal selector-preserving weighted Hall reduction remains open.",
+    "The source route gives no proof or eligible counterexample for the complete primary sum.",
+    "No separate exhaustive tree generation, imported theorem, or formal proof was used."
+  ]
+}

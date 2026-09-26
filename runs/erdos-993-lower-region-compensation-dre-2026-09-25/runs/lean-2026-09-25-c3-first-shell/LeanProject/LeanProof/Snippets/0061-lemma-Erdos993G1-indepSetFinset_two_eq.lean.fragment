@@ -1,0 +1,19 @@
+lemma indepSetFinset_two_eq [Fintype V] [DecidableEq V] [DecidableRel F.Adj] :
+    F.indepSetFinset 2 = (Fᶜ.edgeFinset).image Sym2.toFinset := by
+  ext S
+  constructor
+  · intro h
+    have hS := SimpleGraph.mem_indepSetFinset_iff.mp h
+    obtain ⟨a, b, hab, rfl⟩ := Finset.card_eq_two.mp hS.card_eq
+    refine Finset.mem_image.mpr ⟨s(a, b), ?_, Sym2.toFinset_mk_eq⟩
+    simpa only [SimpleGraph.mem_edgeFinset, SimpleGraph.mem_edgeSet,
+      SimpleGraph.compl_adj] using (isNIndepSet_pair_iff F a b).mp hS
+  · intro h
+    obtain ⟨e, he, rfl⟩ := Finset.mem_image.mp h
+    induction e using Sym2.inductionOn with
+    | hf a b =>
+      rw [SimpleGraph.mem_indepSetFinset_iff, Sym2.toFinset_mk_eq,
+        isNIndepSet_pair_iff]
+      simpa only [SimpleGraph.mem_edgeFinset, SimpleGraph.mem_edgeSet,
+        SimpleGraph.compl_adj] using he
+

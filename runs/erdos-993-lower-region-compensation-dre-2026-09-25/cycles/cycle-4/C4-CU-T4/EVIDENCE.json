@@ -1,0 +1,24 @@
+{
+  "review_type": "independent_critique",
+  "source_worker_id": "C4-T4",
+  "orientation": "U",
+  "source_hash_verification": {
+    "case_files": 3,
+    "common_files": 179,
+    "mismatches": 0
+  },
+  "audit_checks": {
+    "scope": "Finite ordinary trees; x(T)+2<=p; 3p<2alpha(T)+1; strict selector over every original leaf; fixed F; original supports and neighborhoods; separate tags for leaves sharing a support.",
+    "rank_domain": "p>=2 follows from x>=0 and x+2<=p; k=p-1>=1; k+1=p.",
+    "identity_derivation": "For each fixed favorable leaf v, q_v(j)=i_j(H_v)-i_j(R_v) counts exactly the independent j-sets of H_v meeting W_v because R_v=H_v-W_v. The contract summand is Delta_k(H_v)-Delta_k(R_v)=q_v(k+1)-q_v(k). Summing over the same fixed F gives S=dim K_(k+1)-dim K_k.",
+    "operator_domain_and_codomain": "Every retained deletion B is an independent k-set in H_v; if B still meets W_v its original tag is valid. Otherwise transferred w is selected only when B is independent in H_w and meets W_w, so the output belongs to K_k. A fixed total order makes selection single-valued.",
+    "injectivity_gap": "No rank, matching, or kernel argument establishes injectivity. Different input columns can share output basis vectors, and signed contributions can cancel; nonzero individual columns would not suffice. Injectivity, if established, would imply dim K_(k+1)<=dim K_k and hence S<=0, but the route proves no such property. Failure of injectivity alone would not imply S>0.",
+    "standing_controls_and_realizability": "No new tree witness, positive sum, or finite census is claimed. The definitions make the construction applicable on eligible instances; universal injectivity is unproved. The handoff's T22 local-map obstruction is not treated as a counterexample to this different cross-tag map.",
+    "independent_tests": "Manually expanded the q-difference identity and checked basis membership for each deletion branch. No source replay, literature application, exhaustive computation, or concrete map-rank computation is used as evidence."
+  },
+  "limitations": [
+    "No universal injectivity proof or eligible counterexample to this exact operator was established.",
+    "The candidate operator does not resolve the registered aggregate without the missing injectivity or another global argument.",
+    "No conclusion is drawn from the prior local injectivity fence, which concerns a different map."
+  ]
+}

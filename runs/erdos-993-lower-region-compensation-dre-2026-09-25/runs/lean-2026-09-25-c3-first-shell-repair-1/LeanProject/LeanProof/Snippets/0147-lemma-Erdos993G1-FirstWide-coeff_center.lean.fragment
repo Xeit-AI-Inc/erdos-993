@@ -1,0 +1,44 @@
+namespace Erdos993G1.FirstWide
+
+lemma coeff_center {V : Type u} [Finite V] (G : SimpleGraph V)
+    {a b c : V} (hab : G.Adj a b) (hac : G.Adj a c) (hbc : b ≠ c)
+    (hc : ∀ x y : V, G.Adj x y → x = a ∨ y = a) :
+    ∃ q : ℕ, q ≤ Nat.card V - 3 ∧ ∀ j : ℕ,
+      Erdos993G1.indepCount G j = binomCoeff (Nat.card V - 1) (j : ℤ) +
+        binomCoeff q ((j : ℤ)-1) := by
+  classical
+  letI := Fintype.ofFinite V
+  let U : Finset V := Finset.univ
+  let N := U.filter (fun x => x ≠ a ∧ ¬G.Adj a x)
+  have hN : N ⊆ U \ {a,b,c} := by
+    intro x hx
+    obtain ⟨hxU,hxa,hna⟩ := Finset.mem_filter.mp hx
+    apply Finset.mem_sdiff.mpr
+    refine ⟨hxU,?_⟩
+    simp only [Finset.mem_insert,Finset.mem_singleton]
+    rintro (rfl | rfl | rfl)
+    · exact hxa rfl
+    · exact hna hab
+    · exact hna hac
+  have hthree : ({a,b,c} : Finset V).card = 3 := by
+    simp [hab.ne,hac.ne,hbc]
+  have hcardU : U.card = Nat.card V := by simp [U,Nat.card_eq_fintype_card]
+  have hbound : N.card ≤ Nat.card V - 3 := by
+    have h := Finset.card_le_card hN
+    rw [Finset.card_sdiff_of_subset (Finset.subset_univ _), hthree, hcardU] at h
+    exact h
+  refine ⟨N.card,hbound,?_⟩
+  intro j
+  cases j with
+  | zero => simp [Erdos993G1.indepCount_zero,binomCoeff]
+  | succ j =>
+    have hcount := shape_indep_on_center G U a (Finset.mem_univ a)
+      (fun x _ y _ h => hc x y h) j
+    rw [hcardU] at hcount
+    rw [Erdos993G1.indepCount_eq_card_indepSetFinset,
+      Erdos993G1.indepSetFinset_eq_filter_powersetCard]
+    change (((U.powersetCard (j+1)).filter (fun S : Finset V => G.IsIndepSet S)).card : ℤ) = _
+    rw [hcount, Nat.cast_add]
+    simp [binomCoeff, Nat.cast_add, N, show (0 : ℤ) ≤ (j : ℤ)+1 by omega]
+
+end Erdos993G1.FirstWide

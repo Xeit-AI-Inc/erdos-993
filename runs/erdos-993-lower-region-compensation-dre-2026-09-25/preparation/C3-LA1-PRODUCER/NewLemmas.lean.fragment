@@ -1,0 +1,424 @@
+
+namespace E993FirstShell
+
+open Classical
+
+lemma leaf_term_eq_tagged_delta {V : Type u} [Fintype V] [DecidableEq V]
+    (T : SimpleGraph V) [DecidableRel T.Adj] (v : V)
+    (hv : C4LA1.IsGraphLeaf T v) (k : ℕ) :
+    C5LA1.forwardDifferenceDel T (C5LA1.H T v) k -
+      C5LA1.forwardDifferenceDel T (C5LA1.R T v) k =
+    ((E993Interior.taggedFamily T (Finset.univ \ C5LA1.H T v)
+        (C5LA1.R T v \ C5LA1.H T v) (k + 1)).card : ℤ) -
+      (E993Interior.taggedFamily T (Finset.univ \ C5LA1.H T v)
+        (C5LA1.R T v \ C5LA1.H T v) k).card := by
+  simp only [C5LA1.forwardDifferenceDel]
+  rw [E993OrderBand.leaf_count_split T v hv (k + 1),
+    E993OrderBand.leaf_count_split T v hv k]
+  push_cast
+  ring
+
+lemma aggregate_nonpos_of_leaf_terms {V : Type u} [Fintype V] [DecidableEq V]
+    (T : SimpleGraph V) [DecidableRel T.Adj] (p : ℕ)
+    (h : ∀ v, C4LA1.IsGraphLeaf T v →
+      C5LA1.forwardDifferenceDel T (C5LA1.H T v) (p - 1) -
+        C5LA1.forwardDifferenceDel T (C5LA1.R T v) (p - 1) ≤ 0) :
+    C5LA1.aggregate T p ≤ 0 := by
+  unfold C5LA1.aggregate
+  apply Finset.sum_nonpos
+  intro v hv
+  have hleaf : C4LA1.IsGraphLeaf T v := by
+    have hmem := (Finset.mem_filter.mp hv).1
+    exact (Finset.mem_filter.mp hmem).2
+  exact h v hleaf
+
+end E993FirstShell
+
+namespace Erdos993G1.ThirdWide
+
+open Finset Classical
+
+lemma powerset_three_sum {X : Type u} [DecidableEq X]
+    (C : Finset X) (hC : C.card = 3) (b : ℕ → ℤ) :
+    ∑ S ∈ C.powerset, b S.card = b 0 + 3 * b 1 + 3 * b 2 + b 3 := by
+  rw [sum_powerset]
+  simp_rw [sum_powersetCard]
+  rw [hC]
+  norm_num [sum_range_succ, Nat.choose]
+
+lemma cover_rank_bound_three {X : Type u} [Fintype X] [DecidableEq X]
+    (F : SimpleGraph X) [DecidableRel F.Adj] (C : Finset X)
+    (hC : C.card = 3)
+    (hcover : ∀ x y, F.Adj x y → x ∈ C ∨ y ∈ C) (k : ℕ)
+    (b : ℕ → ℤ) (hb : ∀ t, 0 < t → b t ≤ 0)
+    (hterm : ∀ S ⊆ C, F.IsIndepSet S → b S.card ≤
+      FirstWide.binomCoeff
+        ((univ : Finset X).filter (fun x => x ∉ C ∧ ∀ y ∈ S, ¬F.Adj y x)).card
+        ((k : ℤ) - S.card + 1) -
+      FirstWide.binomCoeff
+        ((univ : Finset X).filter (fun x => x ∉ C ∧ ∀ y ∈ S, ¬F.Adj y x)).card
+        ((k : ℤ) - S.card)) :
+    b 0 + 3 * b 1 + 3 * b 2 + b 3 ≤ delta F (k : ℤ) := by
+  rw [← powerset_three_sum C hC b]
+  apply cover_sum_bound F C hcover k (fun S => b S.card) ?_ hterm
+  intro S hSC hS
+  apply hb
+  by_contra h
+  have : S = ∅ := card_eq_zero.mp (by omega)
+  subst S
+  exact hS (by simp [SimpleGraph.IsIndepSet])
+
+lemma cover_catalan_bound_three {X : Type u} [Fintype X] [DecidableEq X]
+    (F : SimpleGraph X) [DecidableRel F.Adj] (C : Finset X)
+    (hC : C.card = 3)
+    (hcover : ∀ x y, F.Adj x y → x ∈ C ∨ y ∈ C)
+    (n k : ℕ) (hn : Fintype.card X = n + 3) :
+    (n.choose (k + 1) : ℤ) - n.choose k -
+      3 * (if 1 ≤ k then (catalan (k - 1) : ℤ) else 0) -
+      3 * (if 2 ≤ k then (catalan (k - 2) : ℤ) else 0) -
+      (if 3 ≤ k then (catalan (k - 3) : ℤ) else 0) ≤
+      delta F (k : ℤ) := by
+  let b : ℕ → ℤ := fun t => if t = 0 then
+    (n.choose (k + 1) : ℤ) - n.choose k else
+    -(if t ≤ k then (catalan (k - t) : ℤ) else 0)
+  have h := cover_rank_bound_three F C hC hcover k b ?_ ?_
+  · convert h using 1 <;> dsimp [b] <;> ring
+  · intro t ht
+    simp only [b, if_neg (by omega : t ≠ 0)]
+    split_ifs <;> omega
+  · intro S hSC hS
+    by_cases hzero : S.card = 0
+    · have he : S = ∅ := card_eq_zero.mp hzero
+      subst S
+      rw [cover_available_empty F C, hn, hC]
+      norm_num only [Nat.add_sub_cancel, card_empty, Nat.cast_zero, sub_zero]
+      simp [b, FirstWide.binomCoeff_nat_add_one, FirstWide.binomCoeff_nat]
+    · simpa only [b, if_neg hzero] using binom_shift_floor
+        ((univ : Finset X).filter (fun x => x ∉ C ∧ ∀ y ∈ S, ¬F.Adj y x)).card k S.card
+
+
+lemma exists_card_three_cover {X : Type u} [Fintype X] [DecidableEq X]
+    (F : SimpleGraph X) [DecidableRel F.Adj]
+    (C0 : Finset X) (hC0 : C0.card ≤ 3) (hX : 3 ≤ Fintype.card X)
+    (hcover0 : ∀ x y, F.Adj x y → x ∈ C0 ∨ y ∈ C0) :
+    ∃ C : Finset X, C.card = 3 ∧ C0 ⊆ C ∧
+      ∀ x y, F.Adj x y → x ∈ C ∨ y ∈ C := by
+  obtain ⟨C, hC0C, hCcard⟩ := Finset.exists_superset_card_eq hC0
+    (by simpa using hX)
+  refine ⟨C, hCcard, hC0C, fun x y hxy => ?_⟩
+  rcases hcover0 x y hxy with h | h
+  · exact Or.inl (hC0C h)
+  · exact Or.inr (hC0C h)
+
+lemma catalan_recurrence_int (n : ℕ) :
+    ((n:ℤ)+2) * catalan (n+1) = (4*n+2) * catalan n := by
+  have hc := Nat.succ_mul_centralBinom_succ n
+  rw [← succ_mul_catalan_eq_centralBinom (n+1),
+    ← succ_mul_catalan_eq_centralBinom n] at hc
+  have he : ((n:ℤ)+1) * (((n:ℤ)+2) * catalan (n+1)) =
+      2*(2*n+1)*(((n:ℤ)+1)*catalan n) := by exact_mod_cast hc
+  apply (mul_left_cancel₀ (show (n:ℤ)+1 ≠ 0 by omega))
+  nlinarith [he]
+
+lemma catalan_succ_ge (n : ℕ) : (catalan n : ℤ) ≤ catalan (n + 1) := by
+  have h := catalan_recurrence_int n
+  have hc : 0 ≤ (catalan n : ℤ) := Nat.cast_nonneg _
+  have hn : 0 ≤ (n : ℤ) := Nat.cast_nonneg _
+  have hnext : 0 ≤ (catalan (n + 1) : ℤ) := Nat.cast_nonneg _
+  nlinarith [mul_nonneg (show 0 ≤ (3 * (n : ℤ)) by omega) hc]
+
+lemma catalan_mono {a b : ℕ} (hab : a ≤ b) :
+    (catalan a : ℤ) ≤ catalan b := by
+  induction b, hab using Nat.le_induction with
+  | base => exact le_rfl
+  | succ b hab ih => exact ih.trans (catalan_succ_ge b)
+
+lemma catalan_succ_ge_double (n : ℕ) (hn : 1 ≤ n) :
+    2 * (catalan n : ℤ) ≤ catalan (n + 1) := by
+  have h := catalan_recurrence_int n
+  have hc : 0 ≤ (catalan n : ℤ) := Nat.cast_nonneg _
+  have hnext : 0 ≤ (catalan (n + 1) : ℤ) := Nat.cast_nonneg _
+  have hn' : 1 ≤ (n : ℤ) := by exact_mod_cast hn
+  nlinarith [mul_nonneg (show 0 ≤ (2 * (n : ℤ) - 2) by omega) hc]
+
+
+lemma binom_gap_two_catalan (r : ℕ) :
+    2 * (catalan (r + 1) : ℤ) ≤
+      ((2*r+3).choose (r+1) : ℤ) - (2*r+3).choose r := by
+  let A : ℤ := (2*r+3).choose (r+1)
+  let B : ℤ := (2*r+3).choose r
+  let C : ℤ := (2*r+2).choose (r+1)
+  let D : ℤ := (2*r+2).choose r
+  have hp : A = C + D := by
+    have h := Nat.choose_succ_succ' (2*r+2) r
+    dsimp [A,C,D]
+    convert congrArg (fun x : ℕ => (x : ℤ)) h using 1 <;> omega
+  have hchoose : C * ((r:ℤ)+1) = D * ((r:ℤ)+2) := by
+    have h := Nat.choose_succ_right_eq (2*r+2) r
+    have hr : 2*r+2-r = r+2 := by omega
+    rw [hr] at h
+    dsimp [C,D]
+    exact_mod_cast h
+  have hc : ((r:ℤ)+2) * catalan (r+1) = C := by
+    have h := succ_mul_catalan_eq_centralBinom (r+1)
+    have h' : (r+2) * catalan (r+1) = (2*r+2).choose (r+1) := by
+      dsimp [Nat.centralBinom] at h
+      have ha : r + 1 + 1 = r + 2 := by omega
+      have hb : 2 * (r + 1) = 2 * r + 2 := by omega
+      rw [ha, hb] at h
+      exact h
+    dsimp [C]
+    exact_mod_cast h'
+  have hD : D = ((r:ℤ)+1) * catalan (r+1) := by
+    apply (mul_left_cancel₀ (show (r:ℤ)+2 ≠ 0 by omega))
+    have hcm := congrArg (fun x : ℤ => x*((r:ℤ)+1)) hc
+    nlinarith [hchoose, hcm]
+  have hA : A = (2*(r:ℤ)+3) * catalan (r+1) := by
+    nlinarith [hp,hc,hD]
+  have hab : A * ((r:ℤ)+1) = B * ((r:ℤ)+3) := by
+    have h := Nat.choose_succ_right_eq (2*r+3) r
+    have hr : 2*r+3-r = r+3 := by omega
+    rw [hr] at h
+    dsimp [A,B]
+    exact_mod_cast h
+  have hid : ((r:ℤ)+3) * (A-B) = 2*(2*(r:ℤ)+3)*catalan (r+1) := by
+    nlinarith [hab,hA]
+  have hcat : 0 ≤ (catalan (r+1) : ℤ) := Nat.cast_nonneg _
+  have hnonneg : 0 ≤ (2*(r:ℤ)) * catalan (r+1) :=
+    mul_nonneg (by omega) hcat
+  have hmult : ((r:ℤ)+3) * (2*(catalan (r+1):ℤ)) ≤
+      ((r:ℤ)+3) * (A-B) := by nlinarith [hid,hnonneg]
+  have hpos : (0:ℤ) < (r:ℤ)+3 := by omega
+  have hres : 2*(catalan (r+1):ℤ) ≤ A-B := by
+    by_contra hn
+    have hlt : A-B < 2*(catalan (r+1):ℤ) := lt_of_not_ge hn
+    have hprod := mul_lt_mul_of_pos_left hlt hpos
+    omega
+  exact hres
+
+
+lemma catalan_pos_int (n : ℕ) : 0 < (catalan n : ℤ) := by
+  induction n with
+  | zero => norm_num [catalan_zero]
+  | succ n ih =>
+    have h := catalan_recurrence_int n
+    have hcoeff : 0 < (4 * (n : ℤ) + 2) := by omega
+    have hrhs : 0 < (4 * (n : ℤ) + 2) * catalan n := mul_pos hcoeff ih
+    have hnext : 0 ≤ (catalan (n+1) : ℤ) := Nat.cast_nonneg _
+    nlinarith
+
+lemma catalan_gap_three_pos (r : ℕ) :
+    0 < ((2*r+3).choose (r+1) : ℤ) - (2*r+3).choose r -
+      3 * (if 1 ≤ r then (catalan (r-1) : ℤ) else 0) -
+      3 * (if 2 ≤ r then (catalan (r-2) : ℤ) else 0) -
+      (if 3 ≤ r then (catalan (r-3) : ℤ) else 0) := by
+  by_cases hr0 : r = 0
+  · subst r
+    norm_num [Nat.choose]
+  by_cases hr1 : r = 1
+  · subst r
+    norm_num [Nat.choose, catalan_zero]
+  have hr : 2 ≤ r := by omega
+  have h1 : 1 ≤ r := by omega
+  have hE := binom_gap_two_catalan r
+  have hm1 := catalan_mono (a := r-2) (b := r-1) (by omega)
+  have hd1 := catalan_succ_ge_double (r-1) (by omega)
+  have hd2 := catalan_succ_ge_double r (by omega)
+  have heq : r-1+1 = r := by omega
+  rw [heq] at hd1
+  have hcat := catalan_pos_int (r-1)
+  by_cases h3 : 3 ≤ r
+  · have hm2 := catalan_mono (a := r-3) (b := r-1) (by omega)
+    simp only [if_pos h1, if_pos hr, if_pos h3]
+    linarith
+  · simp only [if_pos h1, if_pos hr, if_neg h3]
+    linarith
+
+
+lemma cover_three_early_pos {X : Type u} [Fintype X] [DecidableEq X]
+    (F : SimpleGraph X) [DecidableRel F.Adj] (C : Finset X)
+    (hC : C.card = 3)
+    (hcover : ∀ x y, F.Adj x y → x ∈ C ∨ y ∈ C)
+    (p r : ℕ) (hp : 3 ≤ p) (horder : Fintype.card X = 2*p+2)
+    (hr : r ≤ p-2) :
+    0 < delta F (r : ℤ) := by
+  have hn : Fintype.card X = (2*p-1)+3 := by omega
+  have hlower := cover_catalan_bound_three F C hC hcover (2*p-1) r hn
+  have hmono := binomDelta_mono_center (k := r)
+    (a := 2*r+3) (b := 2*p-1) (by omega) (by omega)
+  have hpos := catalan_gap_three_pos r
+  linarith
+
+end Erdos993G1.ThirdWide
+
+namespace E993FirstShell
+
+lemma crossingIndex_negative {V : Type u} [Fintype V] [DecidableEq V]
+    (T : SimpleGraph V) [DecidableRel T.Adj] :
+    C5LA1.forwardDifferenceDel T ∅ (C5LA1.crossingIndex T) < 0 := by
+  classical
+  unfold C5LA1.crossingIndex
+  exact Nat.find_spec (p := fun k : ℕ => C5LA1.forwardDifferenceDel T ∅ k < 0) _
+
+
+lemma indepSetCount_empty_eq {V : Type u} [Fintype V] [DecidableEq V]
+    (T : SimpleGraph V) [DecidableRel T.Adj] (k : ℕ) :
+    (C5LA1.indepSetCount T ∅ k : ℤ) = Erdos993G1.indepCount T k := by
+  have hsets : C5LA1.indepSetsAvoiding T ∅ k = T.indepSetFinset k := by
+    rw [Erdos993G1.indepSetFinset_eq_filter_powersetCard]
+    simp [C5LA1.indepSetsAvoiding]
+  rw [C5LA1.indepSetCount, hsets,
+    Erdos993G1.indepCount_eq_card_indepSetFinset]
+
+lemma empty_forwardDifference_eq_delta {V : Type u} [Fintype V] [DecidableEq V]
+    (T : SimpleGraph V) [DecidableRel T.Adj] (k : ℕ) :
+    C5LA1.forwardDifferenceDel T ∅ k = Erdos993G1.delta T (k : ℤ) := by
+  rw [C5LA1.forwardDifferenceDel, Erdos993G1.delta_nat,
+    indepSetCount_empty_eq, indepSetCount_empty_eq]
+
+
+lemma no_three_cover_of_early_crossing {V : Type u} [Fintype V] [DecidableEq V]
+    (T : SimpleGraph V) [DecidableRel T.Adj] (p : ℕ)
+    (hp : 3 ≤ p) (horder : Fintype.card V = 2*p+2)
+    (hcross : C5LA1.crossingIndex T + 2 ≤ p)
+    (C0 : Finset V) (hC0 : C0.card ≤ 3) :
+    ¬ (∀ x y, T.Adj x y → x ∈ C0 ∨ y ∈ C0) := by
+  intro hcover0
+  obtain ⟨C,hC,_,hcover⟩ :=
+    Erdos993G1.ThirdWide.exists_card_three_cover T C0 hC0 (by omega) hcover0
+  have hr : C5LA1.crossingIndex T ≤ p-2 := by omega
+  have hpos := Erdos993G1.ThirdWide.cover_three_early_pos T C hC hcover
+    p (C5LA1.crossingIndex T) hp horder hr
+  have hneg := crossingIndex_negative T
+  rw [empty_forwardDifference_eq_delta] at hneg
+  omega
+
+
+lemma leaf_retained_cover_transfer {V : Type u} [Fintype V] [DecidableEq V]
+    (T : SimpleGraph V) [DecidableRel T.Adj] (v : V)
+    (hv : C4LA1.IsGraphLeaf T v) (C : Finset V)
+    (hret : ∀ a b, T.Adj a b → a ∉ C5LA1.H T v → b ∉ C5LA1.H T v →
+      a ∈ C ∨ b ∈ C) :
+    ∀ a b, T.Adj a b →
+      a ∈ insert (C5LA1.support T v) C ∨
+      b ∈ insert (C5LA1.support T v) C := by
+  intro a b hab
+  by_cases has : a = C5LA1.support T v
+  · exact Or.inl (by simp [has])
+  by_cases hbs : b = C5LA1.support T v
+  · exact Or.inr (by simp [hbs])
+  have hav : a ≠ v := by
+    intro h
+    subst a
+    exact hbs (E993OrderBand.support_unique T v hv hab)
+  have hbv : b ≠ v := by
+    intro h
+    subst b
+    exact has (E993OrderBand.support_unique T v hv hab.symm)
+  have haH : a ∉ C5LA1.H T v := by simp [C5LA1.H, hav, has]
+  have hbH : b ∉ C5LA1.H T v := by simp [C5LA1.H, hbv, hbs]
+  rcases hret a b hab haH hbH with haC | hbC
+  · exact Or.inl (Finset.mem_insert_of_mem haC)
+  · exact Or.inr (Finset.mem_insert_of_mem hbC)
+
+lemma no_two_cover_retained {V : Type u} [Fintype V] [DecidableEq V]
+    (T : SimpleGraph V) [DecidableRel T.Adj] (v : V) (p : ℕ)
+    (hv : C4LA1.IsGraphLeaf T v)
+    (hp : 3 ≤ p) (horder : Fintype.card V = 2*p+2)
+    (hcross : C5LA1.crossingIndex T + 2 ≤ p)
+    (C : Finset V) (hC : C.card ≤ 2) :
+    ¬ (∀ a b, T.Adj a b → a ∉ C5LA1.H T v → b ∉ C5LA1.H T v →
+      a ∈ C ∨ b ∈ C) := by
+  intro hret
+  have hcard : (insert (C5LA1.support T v) C).card ≤ 3 := by
+    have h := Finset.card_insert_le (C5LA1.support T v) C
+    omega
+  exact no_three_cover_of_early_crossing T p hp horder hcross
+    (insert (C5LA1.support T v) C) hcard
+    (leaf_retained_cover_transfer T v hv C hret)
+
+
+lemma crossingIndex_pos_of_order {V : Type u} [Fintype V] [DecidableEq V]
+    (T : SimpleGraph V) [DecidableRel T.Adj]
+    (horder : 2 ≤ Fintype.card V) :
+    0 < C5LA1.crossingIndex T := by
+  have hneg := crossingIndex_negative T
+  rw [empty_forwardDifference_eq_delta] at hneg
+  have hzero : Erdos993G1.delta T 0 = (Fintype.card V : ℤ) - 1 := by
+    simpa [Nat.card_eq_fintype_card] using Erdos993G1.delta_zero T
+  by_contra h
+  have hx : C5LA1.crossingIndex T = 0 := by omega
+  rw [hx] at hneg
+  norm_num only [Nat.cast_zero] at hneg
+  rw [hzero] at hneg
+  omega
+
+lemma three_le_of_early_crossing {V : Type u} [Fintype V] [DecidableEq V]
+    (T : SimpleGraph V) [DecidableRel T.Adj] (p : ℕ)
+    (horder : Fintype.card V = 2*p+2)
+    (hcross : C5LA1.crossingIndex T + 2 ≤ p) : 3 ≤ p := by
+  have hx := crossingIndex_pos_of_order T (by omega)
+  omega
+
+lemma retained_has_edge {V : Type u} [Fintype V] [DecidableEq V]
+    (T : SimpleGraph V) [DecidableRel T.Adj] (v : V) (p : ℕ)
+    (hv : C4LA1.IsGraphLeaf T v)
+    (hp : 3 ≤ p) (horder : Fintype.card V = 2*p+2)
+    (hcross : C5LA1.crossingIndex T + 2 ≤ p) :
+    ∃ a b, T.Adj a b ∧ a ∉ C5LA1.H T v ∧ b ∉ C5LA1.H T v := by
+  by_contra h
+  have hnocover := no_two_cover_retained T v p hv hp horder hcross
+    (∅ : Finset V) (by simp)
+  apply hnocover
+  intro a b hab ha hb
+  exfalso
+  exact h ⟨a,b,hab,ha,hb⟩
+
+
+lemma leaf_retained_card_firstWide {V : Type u} [Fintype V] [DecidableEq V]
+    (T : SimpleGraph V) (v : V) (p : ℕ)
+    (hv : C4LA1.IsGraphLeaf T v) (hp : 1 ≤ p)
+    (horder : Fintype.card V = 2*p+2) :
+    (Finset.univ \ C5LA1.H T v).card = 2*(p-1)+2 := by
+  have hcard := E993OrderBand.retained_card T v hv
+  omega
+
+lemma no_three_cover_from_shell {V : Type u} [Fintype V] [DecidableEq V]
+    (T : SimpleGraph V) [DecidableRel T.Adj] (p : ℕ)
+    (horder : Fintype.card V = 2*p+2)
+    (hcross : C5LA1.crossingIndex T + 2 ≤ p)
+    (C0 : Finset V) (hC0 : C0.card ≤ 3) :
+    ¬ (∀ x y, T.Adj x y → x ∈ C0 ∨ y ∈ C0) := by
+  exact no_three_cover_of_early_crossing T p
+    (three_le_of_early_crossing T p horder hcross) horder hcross C0 hC0
+
+
+lemma leaf_term_nonpos_of_marked_shadow {V : Type u} [Fintype V] [DecidableEq V]
+    (T : SimpleGraph V) [DecidableRel T.Adj] (v : V) (p : ℕ)
+    (hv : C4LA1.IsGraphLeaf T v) (hp : 1 ≤ p)
+    (hshadow :
+      (E993Interior.taggedFamily T (Finset.univ \ C5LA1.H T v)
+        (C5LA1.R T v \ C5LA1.H T v) p).card ≤
+      (E993Interior.taggedFamily T (Finset.univ \ C5LA1.H T v)
+        (C5LA1.R T v \ C5LA1.H T v) (p-1)).card) :
+    C5LA1.forwardDifferenceDel T (C5LA1.H T v) (p-1) -
+      C5LA1.forwardDifferenceDel T (C5LA1.R T v) (p-1) ≤ 0 := by
+  have heq := leaf_term_eq_tagged_delta T v hv (p-1)
+  have hpn : p-1+1=p := Nat.sub_add_cancel hp
+  rw [hpn] at heq
+  rw [heq]
+  exact sub_nonpos.mpr (by exact_mod_cast hshadow)
+
+lemma aggregate_nonpos_of_marked_shadows {V : Type u} [Fintype V] [DecidableEq V]
+    (T : SimpleGraph V) [DecidableRel T.Adj] (p : ℕ) (hp : 1 ≤ p)
+    (hshadow : ∀ v, C4LA1.IsGraphLeaf T v →
+      (E993Interior.taggedFamily T (Finset.univ \ C5LA1.H T v)
+        (C5LA1.R T v \ C5LA1.H T v) p).card ≤
+      (E993Interior.taggedFamily T (Finset.univ \ C5LA1.H T v)
+        (C5LA1.R T v \ C5LA1.H T v) (p-1)).card) :
+    C5LA1.aggregate T p ≤ 0 := by
+  apply aggregate_nonpos_of_leaf_terms T p
+  intro v hv
+  exact leaf_term_nonpos_of_marked_shadow T v p hv hp (hshadow v hv)
+
+end E993FirstShell

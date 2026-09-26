@@ -1,0 +1,160 @@
+{
+  "worker_id": "C2-PREP-SHELL-AUDIT-R2",
+  "status_authority": "proposed_worker_only",
+  "registered_claim_key": "E993-LOWER-REGION-FIRST-ORDER-SHELL",
+  "registered_status_at_input": "OPEN",
+  "proposed_audit_verdict": "PASS",
+  "formal_award": false,
+  "final_exact_scope": "For every finite ordinary tree T and natural p with x(T)+2<=p, 3p<2alpha(T)+1, and |V(T)|=2p+2, the complete sum over original leaves v satisfying Delta_p(T-v)<0 of Delta_(p-1)(T-{v,s_v})-Delta_(p-1)(T-N_T[s_v]) is <=0.",
+  "stronger_proposed_intermediate": {
+    "verdict": "PASS",
+    "award": false,
+    "statement": "For every finite ordinary tree T and natural p>=3 with x(T)+2<=p and |V(T)|=2p+2, every original leaf v has Delta_(p-1)(T-{v,s_v})-Delta_(p-1)(T-N_T[s_v])<=0. The alpha guard and favorable selector are not needed for this pointwise shell assertion."
+  },
+  "evidence_grade": "independent_informal_proof_with_pinned_prior_formal_dependency",
+  "source_hashes": {
+    "pass": true,
+    "count": 20,
+    "artifact": "HASHES.json"
+  },
+  "dependencies": [
+    {
+      "key": "E993-GRAPH-FIRST-WIDE-SHARP-CLASSIFICATION",
+      "needed_component": "order 2r+2, r>=1, at least two edges implies Delta_r<=0",
+      "recorded_grade": "formally_verified",
+      "current_check": "exact saved Lean statement and source pin hash; no build"
+    },
+    {
+      "key": "E993-BINOMIAL-DIFFERENCE-CATALAN-FLOOR",
+      "needed_component": "E(b,j)>=-Cat_j, negative endpoints",
+      "recorded_grade": "proved_informal",
+      "current_check": "independently rederived in REPORT.md; no dependence necessary"
+    },
+    {
+      "key": "E993-R25-GAMMA-RESIDUE-SLACK-THRESHOLD",
+      "needed_component": "tau3 slack1 positivity",
+      "recorded_grade": "proved_informal",
+      "current_check": "independently rederived in REPORT.md; no dependence necessary"
+    }
+  ],
+  "inferences": [
+    {
+      "id": "H01",
+      "verdict": "pass",
+      "evidence": "HASHES.json",
+      "limitation": "Source identity only; no Lean build"
+    },
+    {
+      "id": "G01",
+      "verdict": "pass",
+      "evidence": "REPORT.md \u00a71",
+      "limitation": "All marks ordered with a nonisolated one first"
+    },
+    {
+      "id": "G02",
+      "verdict": "pass",
+      "evidence": "REPORT.md \u00a71",
+      "limitation": "Earlier mark is distinct; nonisolated first mark has neighbor"
+    },
+    {
+      "id": "G03",
+      "verdict": "pass",
+      "evidence": "REPORT.md \u00a71",
+      "limitation": "k i_k <= (|J|-k+1)i_(k-1) <= k i_(k-1)"
+    },
+    {
+      "id": "G04",
+      "verdict": "pass",
+      "evidence": "G1FirstWideMain.lean:2513; REPORT.md \u00a71",
+      "limitation": "Pinned prior formal dependency; not rebuilt"
+    },
+    {
+      "id": "G05",
+      "verdict": "pass",
+      "evidence": "REPORT.md \u00a71; INDEPENDENT-CHECK.json",
+      "limitation": "Universal proof uses G01-G04; computation bounded"
+    },
+    {
+      "id": "C01",
+      "verdict": "pass",
+      "evidence": "REPORT.md \u00a72",
+      "limitation": "Outside of a vertex cover is independent"
+    },
+    {
+      "id": "C02",
+      "verdict": "pass",
+      "evidence": "REPORT.md \u00a72",
+      "limitation": "Independent derivation; registered floor is informal auxiliary"
+    },
+    {
+      "id": "C03",
+      "verdict": "pass",
+      "evidence": "REPORT.md \u00a72; INDEPENDENT-CHECK.json",
+      "limitation": "Finite r<=500 check is corroboration only"
+    },
+    {
+      "id": "C04",
+      "verdict": "pass",
+      "evidence": "REPORT.md \u00a72",
+      "limitation": "x>=p-1 if tau<=3"
+    },
+    {
+      "id": "L01",
+      "verdict": "pass",
+      "evidence": "REPORT.md \u00a73",
+      "limitation": "H=T-{v,s}"
+    },
+    {
+      "id": "L02",
+      "verdict": "pass",
+      "evidence": "REPORT.md \u00a73",
+      "limitation": "Uniqueness uses acyclicity; only existence needed"
+    },
+    {
+      "id": "L03",
+      "verdict": "pass",
+      "evidence": "REPORT.md \u00a73",
+      "limitation": "Proposed informal scope only; no new award"
+    }
+  ],
+  "counterexample_search": {
+    "verdict": "none_found_in_bounded_checks",
+    "evidence": "independent_check.py; INDEPENDENT-CHECK.json",
+    "exhaustive_order6_graphs": 27626,
+    "exhaustive_order6_mark_cases": 1738095,
+    "gamma_ranks": "0..500",
+    "tree_sample_orders": [
+      8,
+      10,
+      12,
+      14,
+      16,
+      18,
+      20
+    ],
+    "tree_samples_each": 100,
+    "proof_status": "corroboration_only"
+  },
+  "required_mathematical_repairs": [],
+  "recommended_exposition_clarifications": [
+    "Explicitly handle isolated later first marks and an earlier mark as the second deleted vertex.",
+    "State why shell eligibility forces p>=3 and why all ranks 0..p-2 are strictly positive."
+  ],
+  "limitations": [
+    "No Lean build or new formal award.",
+    "No independent second model-family run.",
+    "No conclusion for |T|>=2p+3 or the unrestricted lower-region target.",
+    "No canonical registry or status mutation."
+  ],
+  "artifacts": [
+    "REPORT.md",
+    "RESULTS.json",
+    "LEDGER.csv",
+    "ESCALATIONS.md",
+    "LOOP-STATE.md",
+    "HASHES.json",
+    "independent_check.py",
+    "INDEPENDENT-CHECK.json"
+  ],
+  "stop_reason": "all 13 material audit inferences terminal; no open escalation"
+}

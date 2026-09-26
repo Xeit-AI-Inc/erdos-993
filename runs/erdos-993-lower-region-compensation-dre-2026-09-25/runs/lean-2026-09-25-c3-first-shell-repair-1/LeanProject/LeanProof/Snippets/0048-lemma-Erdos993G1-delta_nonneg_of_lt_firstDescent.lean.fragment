@@ -1,0 +1,4 @@
+lemma delta_nonneg_of_lt_firstDescent {k : ℕ} (hk : k < firstDescent F) :
+    0 ≤ delta F (k : ℤ) := by
+  exact le_of_not_gt (Nat.notMem_of_lt_sInf hk)
+

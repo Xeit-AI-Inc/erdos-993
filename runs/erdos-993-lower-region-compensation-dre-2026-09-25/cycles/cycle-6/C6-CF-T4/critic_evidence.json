@@ -1,0 +1,32 @@
+{
+  "case_source_hashes_verified": [
+    "cycles/cycle-6/C6-T4/REPORT.md",
+    "cycles/cycle-6/C6-T4/RETURN.json",
+    "cycles/cycle-6/C6-T4/evidence_t22.json",
+    "cycles/cycle-6/C6-T4/replay_t22.py"
+  ],
+  "common_source_hashes_verified": true,
+  "source_replay": {
+    "copied_to_scratch": "replay_t22.py",
+    "executed_with": "/Library/Frameworks/Python.framework/Versions/3.11/bin/python3",
+    "output": "replay_t22_output.json",
+    "matches_pinned_evidence_exactly": true,
+    "selector_size": 67,
+    "alpha": 68,
+    "x": 32,
+    "p": 34,
+    "guard_x_plus_2_le_p": true,
+    "guard_3p_lt_2alpha_plus_1": true,
+    "full_aggregate_S": -498754180547001418536,
+    "positive_marked_arm_term": 212336130412243110,
+    "identity_check": true,
+    "leaf_term_sum_check": true,
+    "compensation_surplus": 16458887958051046811688
+  },
+  "mathematical_audit": {
+    "forest_matching_slack_decomposition": "verified by alpha(U)=|U|-nu(U), u=|U|-2nu(U), and alpha(U)<=h-k",
+    "marked_extension_count": "verified: k deletions for exactly-one-mark upper sets; k+1 deletions for multiply-marked upper sets",
+    "uniform_compensation_bound": "not established by this route",
+    "source_availability_gap": false
+  }
+}

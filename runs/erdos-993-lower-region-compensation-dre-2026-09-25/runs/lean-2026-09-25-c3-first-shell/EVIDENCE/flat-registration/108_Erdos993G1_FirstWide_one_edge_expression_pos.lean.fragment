@@ -1,0 +1,35 @@
+namespace Erdos993G1.FirstWide
+
+lemma one_edge_expression_pos {r k : ℕ} (hr : 1 ≤ r) (hk : k ≤ r) :
+    0 < (binomCoeff (2 * r) ((k : ℤ) + 1) +
+      2 * binomCoeff (2 * r) (k : ℤ)) -
+      (binomCoeff (2 * r) (k : ℤ) +
+        2 * binomCoeff (2 * r) ((k : ℤ) - 1)) := by
+  by_cases hk0 : k = 0
+  · subst k
+    simp [binomCoeff]
+    omega
+  have hk1 : 1 ≤ k := by omega
+  rw [binomCoeff_nat_add_one, binomCoeff_nat, binomCoeff_nat_sub_one _ _ hk1]
+  by_cases hkr : k = r
+  · subst k
+    have he : (2 * r).choose (r + 1) = (2 * r).choose (r - 1) :=
+      Nat.choose_symm_of_eq_add (by omega)
+    have hp := choose_step_strict (n := 2 * r) (k := r - 1) (by omega)
+    have hpred : r - 1 + 1 = r := by omega
+    rw [hpred] at hp
+    rw [he]
+    have hp' : ((2 * r).choose (r - 1) : ℤ) < ((2 * r).choose r : ℤ) := by
+      exact_mod_cast hp
+    linarith
+  · have hc := choose_step_strict (n := 2 * r) (k := k) (by omega)
+    have hp := choose_step_strict (n := 2 * r) (k := k - 1) (by omega)
+    have hpred : k - 1 + 1 = k := by omega
+    rw [hpred] at hp
+    have hc' : ((2 * r).choose k : ℤ) < ((2 * r).choose (k + 1) : ℤ) := by
+      exact_mod_cast hc
+    have hp' : ((2 * r).choose (k - 1) : ℤ) < ((2 * r).choose k : ℤ) := by
+      exact_mod_cast hp
+    linarith
+
+end Erdos993G1.FirstWide

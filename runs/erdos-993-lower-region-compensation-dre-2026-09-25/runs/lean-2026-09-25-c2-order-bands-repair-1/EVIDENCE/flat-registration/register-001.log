@@ -1,0 +1,87 @@
+{
+  "entries": [
+    {
+      "index": 1,
+      "kind": "definition",
+      "name": "C4LA1.IsGraphLeaf",
+      "path": "LeanProject/LeanProof/Snippets/0001-definition-C4LA1-IsGraphLeaf.lean.fragment",
+      "source_bytes": 177,
+      "source_sha256": "65acd314d3bfd74aca476e00dd8866434c67682b627bce5e105d372a556f7ae5"
+    }
+  ],
+  "files": [
+    {
+      "bytes": 749,
+      "path": "DEPENDENCIES.yaml",
+      "sha256": "f2d29a42fe90c3a2507f3036ce6bb2e6cdf88f979f4c3d6c0becadc179944f32"
+    },
+    {
+      "bytes": 1585,
+      "path": "FORMALIZATION-STATE.json",
+      "sha256": "c78d13cb05790d2a90cbfae88cadf77d158f253ead42f6c425ca75f2e57cfaec"
+    },
+    {
+      "bytes": 22,
+      "path": "LeanProject/LeanProof.lean",
+      "sha256": "f4dfdef8320a735eab53d24f4b47d3b60bcb474ffd2c84c77f24ae2fc75fcf31"
+    },
+    {
+      "bytes": 488,
+      "path": "LeanProject/LeanProof/Main.lean",
+      "sha256": "d6dd6f4900021ddcd19ad16f5765626ee41bae6a2afa39f7b9fcb3c1144245de"
+    },
+    {
+      "bytes": 177,
+      "path": "LeanProject/LeanProof/Snippets/0001-definition-C4LA1-IsGraphLeaf.lean.fragment",
+      "sha256": "65acd314d3bfd74aca476e00dd8866434c67682b627bce5e105d372a556f7ae5"
+    },
+    {
+      "bytes": 237,
+      "path": "LeanProject/lakefile.toml",
+      "sha256": "45d0ca58145784d5f29322ff21a1335e350c38e72afe8d5396d9c9910b94ff49"
+    },
+    {
+      "bytes": 25,
+      "path": "LeanProject/lean-toolchain",
+      "sha256": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273"
+    }
+  ],
+  "limitations": [
+    "This receipt records prepared source and pins, not Lean kernel verification.",
+    "The formalization may be false, incomplete, or fail to compile until independently verified.",
+    "A git_manifest_only Mathlib dependency is pinned but is not fetched by this skill."
+  ],
+  "mathlib": {
+    "identity_sha256": "74b8cf1d7d3bc21648cd94e0fbf596420d3efcd43131a21378beacbdeb7078e3",
+    "mode": "git_manifest_only",
+    "revision": "905b95818eb32af7874a58b427f50c1711a5e96c",
+    "source": null,
+    "url": "https://github.com/leanprover-community/mathlib4"
+  },
+  "network": {
+    "allowed": false,
+    "used": false
+  },
+  "operation": "entry_registered",
+  "project_root": "/Users/ashtonsperry/VerityOS/experiments/erdos-993-lower-region-compensation-dre-2026-09-25/runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject",
+  "project_sha256": "d5830fe36c90e22a67b46679a745c440542f1d9cfbc155c64b89bb2b27bafcdc",
+  "receipt_id": "lean-formalization:d5830fe36c90e22a67b46679a745c440542f1d9cfbc155c64b89bb2b27bafcdc",
+  "receipt_sha256": "988931e309996ed7f331d7402334f12f8b1b3f91108c9cc7bb45d5088b903e84",
+  "run_id": "lean-2026-09-25-c2-order-bands-repair-1",
+  "run_root": "/Users/ashtonsperry/VerityOS/experiments/erdos-993-lower-region-compensation-dre-2026-09-25/runs/lean-2026-09-25-c2-order-bands-repair-1",
+  "schema_version": "verityos.lean-formalization-receipt.v1",
+  "state_revision": 1,
+  "state_sha256": "c78d13cb05790d2a90cbfae88cadf77d158f253ead42f6c425ca75f2e57cfaec",
+  "status": "prepared_not_verified",
+  "toolchain": {
+    "bin_dir": "/Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin",
+    "lake_path": "/Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lake",
+    "lake_sha256": "58261a1a2fa1a362376c71e02ca854a093e71cc5e6ea64b287a931cb2565273d",
+    "lake_version": "Lake version 5.0.0-src+f3b06c7 (Lean version 4.32.2)",
+    "lean_path": "/Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "lean_sha256": "1b370cfcbf44e80d1b004ab1b1ab9a4c73951f9f7c242140bcff9bc577576554",
+    "lean_version": "Lean (version 4.32.2, arm64-apple-darwin24.6.0, commit f3b06c705e6c85f5314019d5d3baab0fec5b580c, Release)",
+    "pin": "leanprover/lean4:v4.32.2"
+  },
+  "verdict": "FORMALIZATION_PREPARED_NOT_KERNEL_VERIFIED"
+}

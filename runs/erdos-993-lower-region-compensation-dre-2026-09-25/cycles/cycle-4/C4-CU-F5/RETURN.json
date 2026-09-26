@@ -1,0 +1,39 @@
+{
+  "worker_id": "C4-CU-F5",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "E993-ORDINARY-TM-LOWER-REGION-AGGREGATE",
+      "statement": "The complete favorable-leaf aggregate is nonpositive for every eligible rank in the path-plus-m-claws family T_m. The route evidence leaves this as an open all-m family subproblem.",
+      "scope": "T_m as defined in the case report; all integers m>=1 and natural p with x(T_m)+2<=p and 3p<2 alpha(T_m)+1, using strict per-original-leaf selectors. This is narrower than the all-ordinary-tree contract.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CU-F5/EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: retain only as the exact T_m subproblem. The orbit formulas and bounded checks are consistent, but no uniform adjacent-coefficient sign proof is given; the universal assertion remains unresolved."
+    },
+    {
+      "claim_id": "C4-F5-TM-EXACT-BOUNDED-CHECKS",
+      "statement": "Exact replay confirms nonpositive complete sums for every recorded eligible row in the stated T_m, equal-arm, and lopsided finite ranges, with the original strict selector and tag multiplicities.",
+      "scope": "T_m m=1..100; equal-arm r=1..6 and m=1..15; lopsided special branch size in {1,2,4,5}, remaining branch sizes 3, m=2..20. Edge-based cross-check: T_m m=1..20 and lopsided m=2..8.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CU-F5/EVIDENCE.json"
+      ],
+      "reason": "retained: exact coefficient replay matches the complete case evidence, and the edge-DP replay independently agrees on its stated finite ranges. This establishes only the bounded computations."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CU-F5/REPORT.md",
+  "limitations": [
+    "The all-m T_m inequality remains unproved and unrefuted.",
+    "Finite checks do not prove the ordinary-tree lower-region aggregate or arbitrary branch-profile cases.",
+    "No external theorem or formal proof was used."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-F5-TM-EXACT-BOUNDED-CHECKS",
+    "E993-ORDINARY-TM-LOWER-REGION-AGGREGATE"
+  ]
+}

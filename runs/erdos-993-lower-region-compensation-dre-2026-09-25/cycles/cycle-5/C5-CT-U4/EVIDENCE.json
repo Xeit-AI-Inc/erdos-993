@@ -1,0 +1,21 @@
+{
+  "claim_id": "C5-U4-LEMMA-1",
+  "disposition": "retained",
+  "independent_check": {
+    "deletion_partition": "For an original leaf v with support s, an independent set either omits v, contributing I_(T-v), or contains v, in which case it omits s and contributes z I_(T-{v,s}). Thus I_T(z)=I_(T-v)(z)+z I_(T-{v,s})(z).",
+    "rank_identity": "Writing i_j(G)=0 outside the nonnegative feasible ranks, the coefficient of z^j in z I_(T-{v,s}) is i_(j-1)(T-{v,s}). Subtracting the coefficient at j from that at j+1 gives Delta_j(T)=Delta_j(T-v)+Delta_(j-1)(T-{v,s}) for every integer j.",
+    "sign_consequence": "At j=x(T), Delta_x(T)<0. Since the two integer terms sum to this negative integer, at least one is negative. The argument is per original leaf, so leaves sharing a support remain distinct tags.",
+    "counterexample_arithmetic": {
+      "tree": "K_(1,3)",
+      "independence_vector": [1, 4, 3, 1],
+      "delta_rank_0_through_3": [3, -1, -2, -1],
+      "first_strict_descent": 1,
+      "after_leaf_deletion_vector": [1, 3, 1],
+      "zero_extended_delta_at_rank_3": 0,
+      "alpha": 3,
+      "p": 3,
+      "eligible_rank_guard": "x+2<=p holds with equality; 3p<2alpha+1 fails since 9 is not less than 7."
+    }
+  },
+  "scope_limit": "This verifies only the identity and rank-x alternative. The K_(1,3) row refutes the stated unguarded transfer but is not an eligible primary counterexample. No eligible cross-rank transfer, selector characterization, or full aggregate conclusion follows."
+}

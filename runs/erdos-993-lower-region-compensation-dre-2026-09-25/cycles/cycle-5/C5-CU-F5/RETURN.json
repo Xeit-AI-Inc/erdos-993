@@ -1,0 +1,31 @@
+{
+  "worker_id": "C5-CU-F5",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C5-F5.T22-tagwise-obstruction",
+      "statement": "Conditional on the values in the hash-pinned order-91 control row being accurate, the row has one selected tag with g=212336130412243110 and 66 tags with g=-7560098737536570631, totaling -498754180547001418536; hence a rule requiring every selected tag to have nonpositive local g fails on that row.",
+      "scope": "Arithmetic consequence of the single row in inputs/standing-controls/t22-order91.json, with n=91, a=68, recorded x=32 and p=34. This does not independently certify the ordinary-tree realization, first-descent value, complete selector, global cross-tag network, or primary aggregate beyond the row's recorded sum.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CU-F5/ARITHMETIC-REPLAY.json",
+        "cycles/cycle-5/C5-CU-F5/replay.py",
+        "cycles/cycle-5/C5-CU-F5/t22-order91.json"
+      ],
+      "reason": "retained_narrowed: independent integer replay confirms the row's 67 g values, tag multiplicities, negative total, k=33 multiplication, and consistency of the recorded eligibility inequalities. The source supplies no graph encoding or coefficient vectors, so the route's graph-level and selector assertions remain conditional. This only defeats a pointwise per-tag nonpositive-g requirement; it is neither a full-network cut/kernel nor a refutation of the negative full sum or the primary assertion."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CU-F5/REPORT.md",
+  "limitations": [
+    "The standing control is a pinned data row but contains no graph edge list or independence-count vectors for independent recomputation of its ordinary-tree realization.",
+    "The first strict descent and completeness of the favorable selector are recorded inputs, not independently derived by this critique.",
+    "No source/target bases, incidence rules, or capacities for the proposed global unsigned cross-tag relation are specified in the assigned files.",
+    "The row's negative full aggregate does not refute the primary claim; the positive local tag only obstructs pointwise tagwise charging."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-F5.T22-tagwise-obstruction"
+  ]
+}

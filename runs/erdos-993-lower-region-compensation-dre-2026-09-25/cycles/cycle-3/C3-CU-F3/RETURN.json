@@ -1,0 +1,34 @@
+{
+  "worker_id": "C3-CU-F3",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL",
+      "statement": "For the five explicitly listed asymmetric ordinary trees at p=x(T)+2, the literal weighted network with capacities w_F and all deletion and exact two-for-one switch arcs saturates its upper supply; the corresponding complete selected sums are negative.",
+      "scope": "Only the five arm-length constructions and ranks replayed in this review (orders 16, 17, 18, 22, and 23); not a universal ordinary-tree or all-eligible-rank assertion.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CU-F3/REPORT.md",
+        "cycles/cycle-3/C3-CU-F3/replay_evidence.json",
+        "cycles/cycle-3/C3-CU-F3/flow_replay.json",
+        "cycles/cycle-3/C3-CU-F3/source_search.py",
+        "cycles/cycle-3/C3-CU-F3/source_audit_evidence.py",
+        "cycles/cycle-3/C3-CU-F3/ordinary_tree_checked.py"
+      ],
+      "reason": "retained_narrowed: the exact finite rows replay, including guards, full fixed-selector sums, and saturated max flows. The source claim is universal, while its evidence covers only five hand-selected trees at p=x+2 and does not prove a universal Hall condition; no target counterexample is given."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CU-F3/REPORT.md",
+  "limitations": [
+    "The five hand-selected trees do not form an exhaustive census or generation-complete family.",
+    "Only p=x+2 was tested and all leaves were favorable in these examples; strict selector subsets remain untested.",
+    "Finite saturation provides neither a universal weighted Hall proof nor a decision of the primary aggregate.",
+    "No universal network cut argument or counterexample is supplied."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL"
+  ]
+}

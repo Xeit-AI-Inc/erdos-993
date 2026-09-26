@@ -1,0 +1,5 @@
+# C3 constrained Lean compiler transport
+
+This is a new service bound only to C3-LA1-PRODUCER scratch and the new first-shell run. Old C2 services, sources and awards are not modified. It permits Mathlib source read/search and compilation of candidate Lean files from that scratch, archives exact candidates and compiler replies, rejects incomplete proof/custom axiom/runtime-evaluation tokens, and permits only Mathlib imports. It never writes managed Main or shared packages. The official registrar, kernel/axiom verifier and independent fidelity remain separate. Source upload uses ASCII-escaped Python transport to preserve Unicode proof text reliably over SSH.
+
+Start only after contract and independent informal audit pass, verify shared binding/package audit first, stop after producer and all requests finish. Maximum three model workers including producer. This deterministic bridge is not a model seat. The producer's explicit local CLI requests gpt-6-sol high; no backend attestation is claimed.

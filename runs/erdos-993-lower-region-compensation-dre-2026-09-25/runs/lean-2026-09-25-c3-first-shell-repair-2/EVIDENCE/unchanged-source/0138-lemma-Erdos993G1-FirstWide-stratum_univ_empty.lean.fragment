@@ -1,0 +1,13 @@
+namespace Erdos993G1.FirstWide
+
+lemma stratum_univ_empty {X : Type u} [Fintype X] [DecidableEq X]
+    (G : SimpleGraph X) (k j : ℕ) (h : k ≠ j) : stratum G Finset.univ k j = ∅ := by
+  classical
+  apply Finset.eq_empty_iff_forall_notMem.mpr
+  intro S hS
+  have hs := (stratum_mem G Finset.univ S k j).mp hS
+  have hc := hs.1.card_eq
+  simp only [Finset.inter_univ] at hs
+  exact h (hc.symm.trans hs.2)
+
+end Erdos993G1.FirstWide

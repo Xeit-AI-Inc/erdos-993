@@ -1,0 +1,21 @@
+# C2-LA1-PRODUCER proposal
+
+## Result
+
+I propose `E993OrderBand.markedIsolateAndOrdinaryLeafOrderBand` in [Candidate.lean](Candidate.lean). The entire candidate, including both terminal conjuncts, compiled through the constrained bridge as request `terminal_004`: bridge `ok: true`, Lean exit code `0`, empty stdout and stderr, source SHA-256 `fe214c6a60e5d5847bd2ca927fec43574d874a635e61dfc1930be0c1c900f6e1`. Earlier full compiles, `terminal_001` and `terminal_002`, returned the same success and source hash. This is a producer result proposed to the controller; registration, kernel and axiom checks, and fresh fidelity review remain controller gates.
+
+All 12 brief-listed source files matched their specified SHA-256 hashes before content use. The three new public definitions `IsolateCoveredOn`, `IsolateCovered`, and `markedCount` retain the frozen definition meanings. The terminal uses explicit universe `u`, original `C4LA1.IsGraphLeaf`, `C5LA1.support/H/R`, and integer `C5LA1.forwardDifferenceDel`. Its namespace-qualified header is byte-for-byte equal to the contract `lean_binding.expected_statement`, with SHA-256 `2f76927cdaeade070834c224eae8d5a846ee9a05cb4d04aade9524be58ad0437`. [TERMINAL-HEADER.txt](TERMINAL-HEADER.txt) preserves the raw unqualified Lean declaration header in its namespace context.
+
+## Proof structure
+
+The arbitrary finite-set lemma `relativeOrderBand` counts marked independent sets inside `U`. `marked_incidence_bound` double-counts subset incidences. A multiply marked upper set supplies one more marked deletion; a lower set with a neighbor inside `U` loses one extension. The `bad_good_partition` and an injection of the bad lower sets into multiply marked upper sets close the boundary case `|U|=2k+1`. With a non-isolated vertex, the injection inserts that fixed vertex. When the graph is edgeless on `U`, it sends a bad set to its complement in `U`. At `|U|≤2k`, the basic incidence bound suffices. No bipartite, tree, alpha, or first-descent premise enters the generic proof. `wholeGraphOrderBand` takes `U=univ`.
+
+For the ordinary tree, `leaf_isolate_covered` uses connectedness and the unique original support of `v` to show every vertex isolated relative to `univ\H` belongs to `R\H`. `retained_card` gives `|univ\H|+2=|V|`. `leaf_count_split` gives the count identity at every natural rank, using `H⊆R`. `ordinaryLeafOrderBand` applies the relative lemma at `k=p-1` and rewrites both integer forward differences. The terminal conjoins the two proved lemmas with the exact contract guards.
+
+## Registrar proposal
+
+[REGISTRATION-PLAN.json](REGISTRATION-PLAN.json) lists 35 proposed fragments in dependency order: 7 definitions, 27 lemmas, and the single terminal theorem last. Each has an ordinary `E993OrderBand` namespace block and an unqualified declaration leaf name. The first fragment carries the import and universe declaration. The fragment bodies were extracted from the successful full candidate; definitions were moved ahead of lemmas for registration. The bridge did **not** successfully recompile that reordered assembly: requests `final_001`, `final_002`, and `final_003` returned `ok: false` before Lean with `SyntaxError: Non-UTF-8 code starting with '\xe2' in file <stdin> on line 6, but no encoding declared`. The successful compiled artifact remains `Candidate.lean`; the reordered fragment sequence requires a controller-side compile during registration. A formatting-only variant also failed before Lean in `terminal_003` with the same transport error; restoring the compiled source succeeded in `terminal_004`. Those service errors are not claimed as Lean passes.
+
+## Exact state and limits
+
+All 27 helper lemmas and both terminal conjuncts are complete in the compiled candidate; no unfinished lemma remains. The imported historical first-interior theorem is used only for its public definitions and base module. No private imported helper, custom axiom, incomplete proof, or runtime evaluation occurs in the candidate. The controller must still concatenate/register the proposed fragments, perform its kernel and axiom checks, verify the source/statement fingerprints, and obtain independent fidelity review. No formal award or registry change is claimed here.

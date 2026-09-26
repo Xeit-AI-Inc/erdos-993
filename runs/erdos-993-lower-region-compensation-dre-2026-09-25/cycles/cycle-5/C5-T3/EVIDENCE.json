@@ -1,0 +1,86 @@
+{
+  "kind": "exact_hand_check",
+  "scope": "One ordinary tree and one original leaf deletion; plus an exact identity for arbitrary finite graphs, matchings, and independent sets.",
+  "tree_edges": [
+    [
+      "s",
+      "v"
+    ],
+    [
+      "s",
+      "w"
+    ],
+    [
+      "s",
+      "z"
+    ],
+    [
+      "z",
+      "y1"
+    ],
+    [
+      "z",
+      "y2"
+    ]
+  ],
+  "leaf": "v",
+  "original_support": "s",
+  "H_v_vertices": [
+    "w",
+    "z",
+    "y1",
+    "y2"
+  ],
+  "H_v_edges": [
+    [
+      "z",
+      "y1"
+    ],
+    [
+      "z",
+      "y2"
+    ]
+  ],
+  "H_v_alpha": 3,
+  "H_v_maximum_matching_size": 1,
+  "W_v": [
+    "w",
+    "z"
+  ],
+  "k": 1,
+  "marked_independent_set_A": [
+    "w"
+  ],
+  "addable_vertices": [
+    "z",
+    "y1",
+    "y2"
+  ],
+  "e_A": 3,
+  "r_h_minus_k": 2,
+  "D_A_2r_minus_e": 1,
+  "proposed_bound_2_times_r_minus_nu": 2,
+  "bound_refuted_for_this_intermediate_quantity": true,
+  "matching_category_counts": {
+    "m2_both_endpoints_addable": 0,
+    "m1_exactly_one_endpoint_addable": 0,
+    "m0_no_endpoint_addable": 1,
+    "u_unmatched_addable_vertices": 3
+  },
+  "tree_independence_counts_i0_to_i4": [
+    1,
+    6,
+    10,
+    6,
+    1
+  ],
+  "tree_alpha": 4,
+  "tree_first_descent_x": 2,
+  "p_equals_k_plus_1": 2,
+  "primary_eligibility": {
+    "x_plus_2_le_p": false,
+    "three_p_lt_two_a_plus_one": false
+  },
+  "proof_identity": "e(A)=2*m2(A)+m1(A)+u(A); 2*(h-k)-e(A)=2*((h-k)-nu(H))+2*m0(A)+m1(A)-u(A).",
+  "limitation": "The example does not satisfy primary eligibility and does not refute the full selected aggregate. No bound for the aggregate unmatched-addable term plus C was proved."
+}

@@ -1,0 +1,30 @@
+{
+  "worker_id": "C1-CF-U4",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C1-U4-1",
+      "statement": "For each original leaf tag v, writing I(T-v,z)=I(H_v,z)+zI(R_v,z) and q_j=i_j(H_v)-i_j(R_v), the favorable selector is q_(p+1)-q_p+r_(p+1)-r_(p-1)<0 while the selected aggregate term is q_p-q_(p-1). The resulting coefficient-operator mismatch identifies the additional selector-aware global inequality needed by a generating-function route; the claw-free independence-polynomial real-rootedness theorem does not provide it for arbitrary trees.",
+      "scope": "Retained as an exact local decomposition for every original leaf of a finite ordinary tree and a limited audit of the cited claw-free real-rootedness theorem. The mismatch identifies a missing comparison for this direct coefficient-comparison route, not a necessary step for all possible proof methods. This is a partial reformulation, not a proof or refutation of either registered identity.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CF-U4/REPORT.md",
+        "cycles/cycle-1/C1-CF-U4/evidence/independent-audit.md"
+      ],
+      "reason": "retained. The polynomial split at the original support gives the claimed selector and summand identities with the correct zero-extended rank shifts; summing preserves distinct same-support leaf tags. The strict lower-region guard gives positive slack but no established selector-aware budget. Chudnovsky–Seymour Theorem 1.1 requires claw-freeness and establishes real-rootedness of individual independence polynomials; arbitrary target trees may contain an induced claw, and no coefficient-comparison bridge is given. The standing controls also show why local positivity cannot decide the complete sum. The claim remains partial and does not settle the primary target."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CF-U4/REPORT.md",
+  "limitations": [
+    "No proof or eligible counterexample for the lower-region ordinary-tree aggregate is established.",
+    "The cited theorem's hypothesis gap is checked; no broader literature survey or claim that no alternative theorem could help is made.",
+    "The admitted K_(1,12), T_22, and T_60 control values were not independently replayed; they are used only as bounded controls, not as proof.",
+    "The optional tagged-incidence deficit budget, high-tail extraction obligation, residual claims, and RTree transfers are outside this disposition."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-U4-1"
+  ]
+}

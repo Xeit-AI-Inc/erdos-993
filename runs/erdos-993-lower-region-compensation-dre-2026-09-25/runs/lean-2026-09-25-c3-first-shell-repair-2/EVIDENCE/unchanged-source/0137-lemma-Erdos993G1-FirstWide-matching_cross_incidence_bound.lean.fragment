@@ -1,0 +1,52 @@
+namespace Erdos993G1.FirstWide
+
+lemma matching_cross_incidence_bound {X : Type u} [Fintype X] [DecidableEq X]
+    (G : SimpleGraph X) (a b c d : X) (hab : G.Adj a b) (hcd : G.Adj c d)
+    (hdis : Disjoint ({a,b} : Set X) {c,d}) (r : ℕ) :
+    2 * (stratum G {a,b,c,d} (r+1) 2).card ≤
+      2 * (stratum G {a,b,c,d} r 1).card := by
+  classical
+  let M : Finset X := {a,b,c,d}
+  have hM : M.card = 4 := matching_endpoints_card G a b c d hab hcd hdis
+  have hcount := Finset.card_mul_le_card_mul (fun S B : Finset X => B ⊆ S)
+    (s := stratum G M (r+1) 2) (t := stratum G M r 1) (m := 2) (n := 2) ?_ ?_
+  · simpa only [Nat.mul_comm] using hcount
+  · intro S hS
+    change 2 ≤ ((stratum G M r 1).filter (fun B => B ⊆ S)).card
+    have hs := (stratum_mem G M S (r+1) 2).mp hS
+    calc
+      2 = (S ∩ M).card := hs.2.symm
+      _ = ((S ∩ M).image S.erase).card :=
+        (erase_image_card S (S ∩ M) Finset.inter_subset_left).symm
+      _ ≤ _ := Finset.card_le_card (by
+        intro B hB
+        obtain ⟨x,hx,rfl⟩ := Finset.mem_image.mp hB
+        exact Finset.mem_filter.mpr ⟨stratum_erase_inside G M S r 1 hS x hx,
+          Finset.erase_subset x S⟩)
+  · intro B hB
+    change ((stratum G M (r+1) 2).filter (fun S => B ⊆ S)).card ≤ 2
+    have hb := (stratum_mem G M B r 1).mp hB
+    obtain ⟨x,hx⟩ := Finset.card_pos.mp (show 0 < (B ∩ M).card by omega)
+    have hxB := (Finset.mem_inter.mp hx).1
+    have hxM := (Finset.mem_inter.mp hx).2
+    obtain ⟨y,hyM,hxy⟩ := matching_partner G a b c d hab hcd x hxM
+    have hpair : ({x,y} : Finset X) ⊆ M := by
+      intro z hz
+      simp only [Finset.mem_insert,Finset.mem_singleton] at hz
+      rcases hz with rfl | rfl <;> assumption
+    have hQ : (M \ {x,y}).card = 2 := by
+      rw [Finset.card_sdiff_of_subset hpair,hM,Finset.card_pair hxy.ne]
+    apply le_trans (b := (M \ {x,y}).card) ?_ hQ.le
+    apply extension_fiber_bound (stratum G M (r+1) 2) B (M \ {x,y}) r
+      (fun S hS => ((stratum_mem G M S (r+1) 2).mp hS).1.card_eq) hb.1.card_eq
+    intro z hz hS
+    have hzM := stratum_insert_cross_inside G M B r 1 hB z hS
+    have hzx : z ≠ x := by intro he; exact hz (he ▸ hxB)
+    have hzy : z ≠ y := by
+      intro he
+      have hs := ((stratum_mem G M (insert z B) (r+1) 2).mp hS).1.isIndepSet
+      have hy : y ∈ insert z B := by simp [he]
+      exact hs (by simp [hxB]) hy hxy.ne hxy
+    simp [hzM,hzx,hzy]
+
+end Erdos993G1.FirstWide

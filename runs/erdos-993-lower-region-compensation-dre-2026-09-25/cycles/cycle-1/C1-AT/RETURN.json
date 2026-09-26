@@ -1,0 +1,90 @@
+{
+  "worker_id": "C1-AT",
+  "cycle": 1,
+  "stage": "adjudication",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "C1-T1-1",
+      "statement": "For every star T=K_(1,m) with m>=4 and every natural p satisfying x(T)+2<=p and 3p<2alpha(T)+1, all m original leaves are favorable and S(T,p)=m[binom(m-1,p)-binom(m-1,p-1)]<0.",
+      "scope": "Exact symbolic theorem for the eligible star subfamily of finite ordinary trees, with all same-support leaf tags counted; no assertion for arbitrary trees.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-1/C1-AT/REPORT.md", "cycles/cycle-1/C1-AT/EVIDENCE.md"],
+      "reason": "retained: The binomial proof checks a=m, x=ceil(m/2) through zero extension, both strict guards, every selector value, the rank p-1 summand, and all m leaf tags. Both critics agree on the exact family scope; it gives no general-tree compensation."
+    },
+    {
+      "claim_id": "C1-T2-1",
+      "statement": "At an original leaf v with H=T-{v,s_v} and R=T-N_T[s_v], I_T=(1+z)I_H+zI_R and I_(T-v)=I_H+zI_R, so Delta_p(T-v)=Delta_p(H)+Delta_(p-1)(R); pair pruning need not preserve the strict lower-region guard, as K_(1,12) at p=8 shows.",
+      "scope": "Universal zero-extended leaf-support polynomial identities for finite ordinary trees, plus the one exact eligible star pruning obstruction; no induction theorem or primary-target verdict.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-1/C1-AT/REPORT.md", "cycles/cycle-1/C1-AT/EVIDENCE.md"],
+      "reason": "retained: Partition at the original support proves the identities. On K_(1,12), a=12, x=6, p=8, all 12 leaves are selected and S=-1980; pruning gives 11 isolates with a'=11, x'=6 and 24<23 false. This proves nonclosure only for direct guarded pair pruning."
+    },
+    {
+      "claim_id": "C1-T3-1",
+      "statement": "For finite bipartite H, arbitrary W, integer h>=alpha(H), and 1<=k<=h, marked independent-set counts Q_j obey k Q_(k+1)+C=2(h-k)Q_k-D with D,C>=0, where D sums actual addability deficits and C counts each multiply marked upper set once. For eligible ordinary trees this yields g_v=q_v(k+1)-q_v(k) and kS=(2a+1-3p)sum_F q_v(k)-sum_F(D_v+C_v).",
+      "scope": "Exact finite bipartite marked-incidence identity and its fixed-selector ordinary-tree specialization with original distinct leaf tags; no aggregate sign conclusion.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-1/C1-AT/REPORT.md"],
+      "reason": "retained: Same-color addable vertices give e(A)<=2(h-k), and extension-pair counting gives k or k+1 marked-preserving deletions. The tree domain alpha(H_v)=a-1 and 1<=k<=h is checked. This exact auxiliary identity leaves the positive-coefficient global deficit budget unproved."
+    },
+    {
+      "claim_id": "C1-T3-2",
+      "statement": "For the fixed favorable original-leaf set, the primary assertion is exactly sum_F q_v(k+1)<=sum_F q_v(k). A per-tag upper-to-lower containment matching is sufficient but cannot hold universally, since eligible T_22 and T_60 each have a positive selected tag while their complete sums are negative; no cross-tag matching or total inequality is proved.",
+      "scope": "Exact reformulation of the lower-region ordinary-tree target and a finite obstruction to universal tagwise matching only; distinct original leaves remain separate tags.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-1/C1-AT/REPORT.md", "cycles/cycle-1/C1-AT/EVIDENCE.md"],
+      "reason": "retained_narrowed: The F critic correctly treats matching as sufficient, while the U critic's positive-tag controls show a matching confined to each disjoint tag component cannot be universal. The cardinality equivalence survives; the selector-weighted aggregate sign and any cross-tag incidence bridge remain unproved."
+    },
+    {
+      "claim_id": "C1-T4-1",
+      "statement": "For each favorable original leaf v, i_p(T-v)>0 and Delta_p(T-v)<0 iff the mean number of addable vertices of a uniform independent p-set of T-v is less than p+1; the target summand is instead q_v(p)-q_v(p-1) in a marked slice of T-{v,s_v}.",
+      "scope": "Exact first-moment and marked-rank translation for eligible ordinary-tree pairs with the original strict selector; it supplies no coupling, deficit budget, or full-sum sign.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-1/C1-AT/REPORT.md"],
+      "reason": "retained: Addable-pair double counting proves the expectation formula and strict threshold, and favorability ensures its denominator is positive. Both critics confirm the marked-incidence correction and the missing bridge between different graphs, ranks, and measures."
+    },
+    {
+      "claim_id": "C1-T5-1",
+      "statement": "For every original support s with m_s leaf neighbors, P_s=(1+z)^(m_s-1) product_w J_(s,w) and Q_s=product_w E_(s,w) give I(T-v)=P_s+zQ_s, I(T-{v,s})=P_s, and I(T-N_T[s])=Q_s for every v in its leaf fibre; hence S(T,p)=sum_(s:Delta_p(P_s+zQ_s)<0) m_s Delta_(p-1)(P_s-Q_s).",
+      "scope": "Exact support-fibre polynomial identity for finite ordinary trees and integer zero-extended ranks, without needing the lower-region guards; original same-support leaves retain multiplicity.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-1/C1-AT/REPORT.md"],
+      "reason": "retained: Rooted branch factorization and partition at s prove all three polynomial formulas and the fibre multiplicity. The F critic independently replayed two standing controls; the U critic checked recorded rows. Neither finite replay nor the recurrence supplies cross-fibre compensation."
+    },
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "The C1-T5 route and its transfer identity establish neither a proof nor an eligible positive complete-sum counterexample for the registered lower-region ordinary favorable-leaf aggregate; the six routes and twelve critics in this case leave the full assertion unresolved on their evidence.",
+      "scope": "Evidence-limited adjudication of the exact finite ordinary-tree target with x(T)+2<=p, strict 3p<2alpha(T)+1, fixed F(T,p), original support operations, and the complete selected sum; no controller verdict.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-1/C1-AT/REPORT.md", "cycles/cycle-1/C1-AT/EVIDENCE.md"],
+      "reason": "retained_narrowed: Both critics limit the source's open statement to what C1-T5 established. The verified transfer and incidence identities restate the missing global budget; a star-subfamily proof and finite negative controls do not prove the universal target, and no eligible S>0 witness is supplied."
+    },
+    {
+      "claim_id": "C1-T6-1",
+      "statement": "Ordinary homotopy type alone does not determine the rank-seven independence-count difference: the independence complexes of edgeless H_10 and H_11 are both contractible full simplices, but Delta_7(H_10)=-75 and Delta_7(H_11)=-165.",
+      "scope": "Exact information-loss diagnostic for local induced forests realizable as leaf-support deletions of stars; no eligible full-sum witness or primary-target inequality.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-1/C1-AT/REPORT.md"],
+      "reason": "retained: Direct binomial counts and full-simplex contractibility prove the contrast without an imported theorem. Both critics confirm the narrow scope and the relative chain-group rank interpretation; no selector or aggregate sign follows."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-AT/REPORT.md",
+  "limitations": [
+    "No proof of the selected global deficit budget or complete lower-region aggregate and no eligible positive full-sum counterexample is established by this case.",
+    "The T_22 and T_60 standing-control rows were re-summed from pinned JSON but their graph generation and tree dynamic programs were not independently rerun by this adjudicator; the F critic reports an independent two-tree recurrence replay.",
+    "The exact incidence and support-fibre formulas are reformulations, while the star proof has only star-family scope and the topology claim has only diagnostic scope.",
+    "The cited general forest homotopy theorem is not used to infer a rank sign or primary-target verdict; all statuses here are proposed and controller-owned."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-T1-1",
+    "C1-T2-1",
+    "C1-T3-1",
+    "C1-T3-2",
+    "C1-T4-1",
+    "C1-T5-1",
+    "C1-T6-1",
+    "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE"
+  ]
+}

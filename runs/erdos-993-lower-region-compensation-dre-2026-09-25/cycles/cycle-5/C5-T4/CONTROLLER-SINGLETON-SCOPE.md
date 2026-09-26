@@ -1,0 +1,3 @@
+# Controller boundary clarification
+
+The polynomial recurrence is valid for rooted finite graphs as stated. A COMPLETE original-leaf inventory after path attachment must also include root r if its old degree was0: r becomes a degree-one vertex. For an ordinary-tree parent this occurs for the singleton T=K1; after attachment both r and the new path endpoint are leaves. The statements about each old leaf v!=r, a root that WAS a leaf, and the new endpoint remain correct individually. Restrict an asserted complete leaf-list rule to parent order>=2, or explicitly add this isolated-root case. This small boundary issue is not a counterexample to the primary eligible aggregate.

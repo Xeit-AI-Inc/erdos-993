@@ -1,0 +1,11 @@
+lemma Erdos993G1.lowRankForestClassification {V : Type u} [Finite V]
+    (F : SimpleGraph V) (p : ℕ) (hF : F.IsAcyclic) (hp : p ≤ 5)
+    (hm : 2 * p - 3 < Nat.card V) (hx : Erdos993G1.firstDescent F < p - 2) :
+    p = 5 ∧ Nonempty (F ≃g SimpleGraph.pathGraph 8) ∧
+      Erdos993G1.delta F 3 = -15 := by
+  classical
+  letI := Fintype.ofFinite V
+  exact Erdos993G1.lowRankForestClassification_of_count_identities F p hF hp hm hx
+    (Erdos993G1.indepCount_two_add_edges F)
+    (Erdos993G1.indepCount_three_add_edge_incidence F hF)
+

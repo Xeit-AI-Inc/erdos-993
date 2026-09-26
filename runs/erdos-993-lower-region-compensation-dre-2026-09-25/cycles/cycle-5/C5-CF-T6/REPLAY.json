@@ -1,0 +1,438 @@
+{
+  "tree_connected": true,
+  "tree_edge_count": true,
+  "order": 24,
+  "leaves": [
+    2,
+    3,
+    4,
+    6,
+    7,
+    8,
+    10,
+    11,
+    12,
+    14,
+    15,
+    16,
+    18,
+    19,
+    20,
+    22,
+    23
+  ],
+  "independence_polynomial": [
+    1,
+    24,
+    253,
+    1566,
+    6400,
+    18419,
+    38970,
+    62650,
+    78593,
+    78515,
+    63348,
+    41582,
+    22199,
+    9548,
+    3240,
+    836,
+    154,
+    18,
+    1
+  ],
+  "alpha": 18,
+  "first_strict_descent": 8,
+  "p": 10,
+  "delta_p_T": -21766,
+  "lower_guard": true,
+  "strict_alpha_guard": true,
+  "all_leaf_checks": [
+    {
+      "leaf": 2,
+      "support": 1,
+      "delta_p_T_minus_v": -12357,
+      "selected": true
+    },
+    {
+      "leaf": 3,
+      "support": 1,
+      "delta_p_T_minus_v": -12357,
+      "selected": true
+    },
+    {
+      "leaf": 4,
+      "support": 1,
+      "delta_p_T_minus_v": -12357,
+      "selected": true
+    },
+    {
+      "leaf": 6,
+      "support": 5,
+      "delta_p_T_minus_v": -12357,
+      "selected": true
+    },
+    {
+      "leaf": 7,
+      "support": 5,
+      "delta_p_T_minus_v": -12357,
+      "selected": true
+    },
+    {
+      "leaf": 8,
+      "support": 5,
+      "delta_p_T_minus_v": -12357,
+      "selected": true
+    },
+    {
+      "leaf": 10,
+      "support": 9,
+      "delta_p_T_minus_v": -12357,
+      "selected": true
+    },
+    {
+      "leaf": 11,
+      "support": 9,
+      "delta_p_T_minus_v": -12357,
+      "selected": true
+    },
+    {
+      "leaf": 12,
+      "support": 9,
+      "delta_p_T_minus_v": -12357,
+      "selected": true
+    },
+    {
+      "leaf": 14,
+      "support": 13,
+      "delta_p_T_minus_v": -12357,
+      "selected": true
+    },
+    {
+      "leaf": 15,
+      "support": 13,
+      "delta_p_T_minus_v": -12357,
+      "selected": true
+    },
+    {
+      "leaf": 16,
+      "support": 13,
+      "delta_p_T_minus_v": -12357,
+      "selected": true
+    },
+    {
+      "leaf": 18,
+      "support": 17,
+      "delta_p_T_minus_v": -12357,
+      "selected": true
+    },
+    {
+      "leaf": 19,
+      "support": 17,
+      "delta_p_T_minus_v": -12357,
+      "selected": true
+    },
+    {
+      "leaf": 20,
+      "support": 17,
+      "delta_p_T_minus_v": -12357,
+      "selected": true
+    },
+    {
+      "leaf": 22,
+      "support": 21,
+      "delta_p_T_minus_v": -13234,
+      "selected": true
+    },
+    {
+      "leaf": 23,
+      "support": 21,
+      "delta_p_T_minus_v": -13234,
+      "selected": true
+    }
+  ],
+  "aggregate_row": {
+    "order": 24,
+    "rank": 10,
+    "alpha": 18,
+    "first_strict_descent": 8,
+    "favorable_leaves": [
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      10,
+      11,
+      12,
+      14,
+      15,
+      16,
+      18,
+      19,
+      20,
+      22,
+      23
+    ],
+    "favorable_count": 17,
+    "summands": [
+      {
+        "leaf": 2,
+        "support": 1,
+        "witness_vertices": [
+          0,
+          3,
+          4
+        ],
+        "h_order": 22,
+        "r_order": 19,
+        "c_rank": 23809,
+        "c_previous": 31346,
+        "g": -7537,
+        "pointwise_delta": -12357
+      },
+      {
+        "leaf": 3,
+        "support": 1,
+        "witness_vertices": [
+          0,
+          2,
+          4
+        ],
+        "h_order": 22,
+        "r_order": 19,
+        "c_rank": 23809,
+        "c_previous": 31346,
+        "g": -7537,
+        "pointwise_delta": -12357
+      },
+      {
+        "leaf": 4,
+        "support": 1,
+        "witness_vertices": [
+          0,
+          2,
+          3
+        ],
+        "h_order": 22,
+        "r_order": 19,
+        "c_rank": 23809,
+        "c_previous": 31346,
+        "g": -7537,
+        "pointwise_delta": -12357
+      },
+      {
+        "leaf": 6,
+        "support": 5,
+        "witness_vertices": [
+          0,
+          7,
+          8
+        ],
+        "h_order": 22,
+        "r_order": 19,
+        "c_rank": 23809,
+        "c_previous": 31346,
+        "g": -7537,
+        "pointwise_delta": -12357
+      },
+      {
+        "leaf": 7,
+        "support": 5,
+        "witness_vertices": [
+          0,
+          6,
+          8
+        ],
+        "h_order": 22,
+        "r_order": 19,
+        "c_rank": 23809,
+        "c_previous": 31346,
+        "g": -7537,
+        "pointwise_delta": -12357
+      },
+      {
+        "leaf": 8,
+        "support": 5,
+        "witness_vertices": [
+          0,
+          6,
+          7
+        ],
+        "h_order": 22,
+        "r_order": 19,
+        "c_rank": 23809,
+        "c_previous": 31346,
+        "g": -7537,
+        "pointwise_delta": -12357
+      },
+      {
+        "leaf": 10,
+        "support": 9,
+        "witness_vertices": [
+          0,
+          11,
+          12
+        ],
+        "h_order": 22,
+        "r_order": 19,
+        "c_rank": 23809,
+        "c_previous": 31346,
+        "g": -7537,
+        "pointwise_delta": -12357
+      },
+      {
+        "leaf": 11,
+        "support": 9,
+        "witness_vertices": [
+          0,
+          10,
+          12
+        ],
+        "h_order": 22,
+        "r_order": 19,
+        "c_rank": 23809,
+        "c_previous": 31346,
+        "g": -7537,
+        "pointwise_delta": -12357
+      },
+      {
+        "leaf": 12,
+        "support": 9,
+        "witness_vertices": [
+          0,
+          10,
+          11
+        ],
+        "h_order": 22,
+        "r_order": 19,
+        "c_rank": 23809,
+        "c_previous": 31346,
+        "g": -7537,
+        "pointwise_delta": -12357
+      },
+      {
+        "leaf": 14,
+        "support": 13,
+        "witness_vertices": [
+          0,
+          15,
+          16
+        ],
+        "h_order": 22,
+        "r_order": 19,
+        "c_rank": 23809,
+        "c_previous": 31346,
+        "g": -7537,
+        "pointwise_delta": -12357
+      },
+      {
+        "leaf": 15,
+        "support": 13,
+        "witness_vertices": [
+          0,
+          14,
+          16
+        ],
+        "h_order": 22,
+        "r_order": 19,
+        "c_rank": 23809,
+        "c_previous": 31346,
+        "g": -7537,
+        "pointwise_delta": -12357
+      },
+      {
+        "leaf": 16,
+        "support": 13,
+        "witness_vertices": [
+          0,
+          14,
+          15
+        ],
+        "h_order": 22,
+        "r_order": 19,
+        "c_rank": 23809,
+        "c_previous": 31346,
+        "g": -7537,
+        "pointwise_delta": -12357
+      },
+      {
+        "leaf": 18,
+        "support": 17,
+        "witness_vertices": [
+          0,
+          19,
+          20
+        ],
+        "h_order": 22,
+        "r_order": 19,
+        "c_rank": 23809,
+        "c_previous": 31346,
+        "g": -7537,
+        "pointwise_delta": -12357
+      },
+      {
+        "leaf": 19,
+        "support": 17,
+        "witness_vertices": [
+          0,
+          18,
+          20
+        ],
+        "h_order": 22,
+        "r_order": 19,
+        "c_rank": 23809,
+        "c_previous": 31346,
+        "g": -7537,
+        "pointwise_delta": -12357
+      },
+      {
+        "leaf": 20,
+        "support": 17,
+        "witness_vertices": [
+          0,
+          18,
+          19
+        ],
+        "h_order": 22,
+        "r_order": 19,
+        "c_rank": 23809,
+        "c_previous": 31346,
+        "g": -7537,
+        "pointwise_delta": -12357
+      },
+      {
+        "leaf": 22,
+        "support": 21,
+        "witness_vertices": [
+          0,
+          23
+        ],
+        "h_order": 22,
+        "r_order": 20,
+        "c_rank": 19290,
+        "c_previous": 24165,
+        "g": -4875,
+        "pointwise_delta": -13234
+      },
+      {
+        "leaf": 23,
+        "support": 21,
+        "witness_vertices": [
+          0,
+          22
+        ],
+        "h_order": 22,
+        "r_order": 20,
+        "c_rank": 19290,
+        "c_previous": 24165,
+        "g": -4875,
+        "pointwise_delta": -13234
+      }
+    ],
+    "aggregate": -122805
+  },
+  "source_evidence_matches": true
+}

@@ -1,0 +1,10 @@
+{
+  "claim_id": "C5-U5.support-star-sector",
+  "kind": "exact_restricted_proof",
+  "family": "Ordinary stars T=K_{1,d} with d>=12, under the exact primary eligibility conditions x(T)+2<=p and 3p<2alpha(T)+1.",
+  "graph_and_selector": "For each original leaf v, s_v is the center, H_v is edgeless on h=d-1 vertices, W_v=V(H_v), and R_v is empty. All T-v are isomorphic, so F is either empty or all d leaves.",
+  "rank_calculation": "For d>=4, i_0(T)=1, i_1(T)=d+1, i_j(T)=binomial(d,j) for 2<=j<=d, then zero. Delta_1>0. For j>=2, Delta_j<0 first at x=floor((d+1)/2). Hence eligibility gives k=p-1>=floor((d+1)/2)+1 and 2k+2>=d-1.",
+  "sector_counts": "For j>=1, q_v(j)=binomial(d-1,j), while q_v(0)=0. At rank k, Q=binomial(h,k); every such A has exactly h-k actual addable vertices, so E=(h-k)Q. Every (k+1)-set meets W at least twice because W=V(H_v) and k>=1, so C=U=binomial(h,k+1). Thus E=kU+C by Pascal's identity / (k+1)binomial(h,k+1)=(h-k)binomial(h,k).",
+  "conclusion": "If F is empty then S=0. Otherwise the pinned identity gives each summand q_v(k+1)-q_v(k), and q_v(k+1)/q_v(k)=(h-k)/(k+1)<=1 at eligible ranks. Therefore S<=0 for this specified family.",
+  "limitation": "No claim is made for H_v with edges or for the general primary target."
+}

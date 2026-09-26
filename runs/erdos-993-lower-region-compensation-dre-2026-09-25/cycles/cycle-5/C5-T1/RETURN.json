@@ -1,0 +1,26 @@
+{
+  "worker_id": "C5-T1",
+  "cycle": 5,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C5-T1.TM-LOWER-REGION-AGGREGATE",
+      "statement": "For every m>=1 and every p satisfying x(T_m)+2<=p and 3p<2alpha(T_m)+1, the complete ordinary favorable-leaf sum S(T_m,p) is strictly negative.",
+      "scope": "Only the ordinary trees T_m consisting of path a-b-r with m centers adjacent to r, each center having three private leaves; original leaves and the fixed strict selector are used. The proof uses the admitted forest descent bound n<=4x from the C5 common handoff and an exact finite Python base for m=3..999, with algebraic estimates for m>=1000. It makes no assertion for arbitrary trees.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-T1/REPLAY.py",
+        "cycles/cycle-5/C5-T1/RESULTS.json"
+      ],
+      "reason": "The central strict LC and mixed-minor inequalities are derived for m>=1000, and all stated finite-base margins plus eligible selector/full-sum rows are independently replayed with exact integers. The family consequence follows from the C5 handoff's admitted forest descent bound. The finite base is computer-assisted and not kernel checked; this is a family result only, not a verdict on the registered all-tree primary."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-T1/REPORT.md",
+  "limitations": [
+    "The result is restricted to the specified T_m family and does not settle the all-tree lower-region aggregate.",
+    "The finite base is exact Python arithmetic, not a Lean/kernel certificate.",
+    "The all-m selector bridge depends on the forest descent bound supplied by the C5 common handoff; this route does not reprove that separate result."
+  ],
+  "status_authority": "proposed_worker_only"
+}

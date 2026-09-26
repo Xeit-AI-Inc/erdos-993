@@ -1,0 +1,14 @@
+namespace Erdos993G1.ThirdWide
+open Finset Classical
+
+lemma catalan_pos_int (n : ℕ) : 0 < (catalan n : ℤ) := by
+  induction n with
+  | zero => norm_num [catalan_zero]
+  | succ n ih =>
+    have h := catalan_recurrence_int n
+    have hcoeff : 0 < (4 * (n : ℤ) + 2) := by omega
+    have hrhs : 0 < (4 * (n : ℤ) + 2) * catalan n := mul_pos hcoeff ih
+    have hnext : 0 ≤ (catalan (n+1) : ℤ) := Nat.cast_nonneg _
+    nlinarith
+
+end Erdos993G1.ThirdWide

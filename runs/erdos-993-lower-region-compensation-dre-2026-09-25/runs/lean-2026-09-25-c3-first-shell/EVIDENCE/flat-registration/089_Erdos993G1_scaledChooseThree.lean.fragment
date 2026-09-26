@@ -1,0 +1,12 @@
+lemma Erdos993G1.scaledChooseThree (n : ℕ) :
+    6 * (n.choose 3 : ℤ) = (n : ℤ) * ((n : ℤ) - 1) * ((n : ℤ) - 2) := by
+  induction n with
+  | zero => norm_num
+  | succ n ih =>
+    rw [Nat.choose_succ_succ]
+    simp only [Nat.cast_add, Nat.cast_succ]
+    change 6 * ((n.choose 2 : ℤ) + (n.choose 3 : ℤ)) =
+      ((n : ℤ) + 1) * ((n : ℤ) + 1 - 1) * ((n : ℤ) + 1 - 2)
+    nlinarith [Erdos993G1.scaledChooseTwo n]
+
+

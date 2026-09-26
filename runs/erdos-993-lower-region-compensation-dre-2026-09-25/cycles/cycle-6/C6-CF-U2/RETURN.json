@@ -1,0 +1,30 @@
+{
+  "worker_id": "C6-CF-U2",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C6-U2-CENSUS-M1-40",
+      "statement": "For every unordered arity profile r_i in {2,3,4} with 1<=m<=40 in the specified path-and-branches tree family, every rank satisfying x+2<=p and 3p<2alpha+1 has strictly negative complete original favorable-leaf sum S(T,p).",
+      "scope": "Exact bounded coefficient-recurrence census of all 12,340 profiles and all 191,016 eligible profile/rank pairs; six fixed actual-tree graph-DP cross-checks. No extension beyond this finite family and boundary is claimed.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CF-U2/REPLAY-EVIDENCE.json",
+        "cycles/cycle-6/C6-CF-U2/census_replay.py",
+        "cycles/cycle-6/C6-CF-U2/ordinary_tree_checked.py"
+      ],
+      "reason": "retained: independent exact replay reproduced every bounded count and found all complete sums strictly negative. The polynomial formulas, strict selector, eligibility guards, alpha=N+2, per-leaf summands, and multiplicities agree with the specified tree and original-leaf contract. The finite result does not resolve the arbitrary-tree target."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CF-U2/REPORT.md",
+  "limitations": [
+    "The audited boundary is only 1<=m<=40 for the specified path-and-branches family; larger prefixes and arbitrary trees are not covered.",
+    "Graph-DP fidelity was independently checked on six profiles only; the rest of the bounded enumeration relies on the audited exact coefficient recurrences.",
+    "Finite central-margin checks do not prove any uniform log-concavity argument or missing mixed-minor bounds."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-U2-CENSUS-M1-40"
+  ]
+}

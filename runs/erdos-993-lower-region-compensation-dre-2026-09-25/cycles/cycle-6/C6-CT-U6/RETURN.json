@@ -1,0 +1,33 @@
+{
+  "worker_id": "C6-CT-U6",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "T",
+  "covered_claim_ids": [
+    "U6-MARKED-RECURRENCE-TRANSPORT"
+  ],
+  "claims": [
+    {
+      "claim_id": "U6-MARKED-RECURRENCE-TRANSPORT",
+      "statement": "For the original fixed selector F(T,p), S(T,p)=Q_p-Q_(p-1), where q_v(j)=i_j(H_v)-i_j(R_v) counts independent j-sets of H_v meeting W_v and Q_j sums q_v(j) over the distinct selected leaf tags. Adjoining v bijects these sets with independent sets containing v whose deletion leaves a set meeting W_v. The stated rooted-component product recurrence is exact. The pinned bounded computations cover all labeled trees through order 8 (with no eligible rows) and T_m for m<=8 only; they do not establish the sign of the marked-rank difference generally.",
+      "scope": "Exact identities for finite ordinary trees with the original fixed F(T,p) and distinct original-leaf tags. Computation is limited to the stated census and T_m boundaries.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CT-U6/REPLAY-RESULTS.json",
+        "cycles/cycle-6/C6-CT-U6/ordinary_tree_checked.py",
+        "cycles/cycle-6/C6-CT-U6/transport_census.py",
+        "cycles/cycle-6/C6-CT-U6/transport_census.json",
+        "cycles/cycle-6/C6-CT-U6/t_family_transport.py",
+        "cycles/cycle-6/C6-CT-U6/t_family_transport.json"
+      ],
+      "reason": "retained_narrowed: the fixed-selector rank-difference and rooted recurrence identities are correct, and the bounded outputs replay exactly. Clarify that the q_v bijection targets sets containing v and meeting W_v, not every independent set containing v. There remains no bridge from first descent plus strict selector to Q_p<=Q_(p-1), and the bounded census contains no eligible rows; retain the underlying target only as open."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CT-U6/REPORT.md",
+  "limitations": [
+    "No proof of the arbitrary-tree marked-rank comparison was established.",
+    "The labeled-tree census through order 8 has no eligible rows, and the T_m computation is bounded to m<=8.",
+    "No eligible full-sum counterexample was established; no public theorem was imported."
+  ],
+  "status_authority": "proposed_worker_only"
+}

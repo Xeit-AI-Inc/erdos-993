@@ -1,0 +1,24 @@
+{
+  "result_type": "exact coefficient inequality",
+  "scope": {
+    "profile": "m factors B_(r_i)=(1+z)^(r_i)+z, with m>=1 and every r_i in {2,3,4}",
+    "total_arity": "N=sum_i r_i",
+    "rank_window": "N>=12 and 1<=j<=floor(2N/3)"
+  },
+  "proved_bounds": [
+    {
+      "statement": "For each integer h>=0 with 4h<=N, product_i B_(r_i) >= coefficientwise binom(m,h) z^h (1+z)^(N-4h).",
+      "proof": "Expand by choosing the additional z term in a subset S of h factors. Its summand is z^h(1+z)^(N-sum_(i in S) r_i), which coefficientwise dominates z^h(1+z)^(N-4h). Sum the binom(m,h) nonnegative summands."
+    },
+    {
+      "statement": "In the stated rank window, [z^j]Q >= m binom(N-4,j-1)>0 and [z^j](z(1+z)^(N+1))/[z^j]Q <= 24^5/m.",
+      "proof": "Take h=1. The exact ratio binom(N+1,j-1)/binom(N-4,j-1) is the product over s=1..5 of (N-4+s)/(N-j-3+s). Each numerator is <=2N; each denominator is >=N-j-2>=N/12 for N>=12 and j<=2N/3."
+    }
+  ],
+  "limitations": [
+    "The relative-coefficient estimate does not imply log-concavity, Poisson-ULC, or any mixed-minor inequality.",
+    "It is stated only through floor(2N/3), while the degree-based primary guard can permit up to floor((2N+4)/3).",
+    "No graph-to-selector bridge, deletion-polynomial rank domain, or complete selected aggregate is proved."
+  ],
+  "replay": "The proof is purely symbolic and is reproduced in REPORT.md."
+}

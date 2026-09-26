@@ -1,0 +1,10 @@
+namespace Erdos993G1.FirstWide
+
+lemma edgeless_expression_pos {r k : ℕ} (hk : k ≤ r) :
+    0 < binomCoeff (2 * r + 2) ((k : ℤ) + 1) -
+      binomCoeff (2 * r + 2) (k : ℤ) := by
+  rw [binomCoeff_nat_add_one, binomCoeff_nat]
+  have h := choose_step_strict (n := 2 * r + 2) (k := k) (by omega)
+  exact sub_pos.mpr (by exact_mod_cast h)
+
+end Erdos993G1.FirstWide

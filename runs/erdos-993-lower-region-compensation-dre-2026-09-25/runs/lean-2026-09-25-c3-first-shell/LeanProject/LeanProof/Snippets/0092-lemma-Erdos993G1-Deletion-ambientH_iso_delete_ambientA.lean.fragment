@@ -1,0 +1,5 @@
+lemma ambientH_iso_delete_ambientA {V : Type u} (T : SimpleGraph V) (v g : V) :
+    Nonempty (ambientH T v g ≃g
+      deleteVerts (ambientA T v) {a | a.val = g}) := by
+  exact deleteVerts_union_iso T (closedNeighborhood T v) {g}
+

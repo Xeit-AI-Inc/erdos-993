@@ -1,0 +1,33 @@
+lemma longestPath_support_closed {V : Type u} [Finite V] {G : SimpleGraph V}
+    {a b : V} (p : G.Walk a b) (hp : p.IsPath)
+    (hmax : ∀ (a' b' : V) (q : G.Walk a' b'), q.IsPath → q.length ≤ p.length)
+    (hdeg : ∀ v, Nat.card (G.neighborSet v) ≤ 2) :
+    ∀ v ∈ p.support, ∀ w, G.Adj v w → w ∈ p.support := by
+  classical
+  intro v hv w hadj
+  by_contra hw
+  obtain ⟨i, hi, hil⟩ := Walk.mem_support_iff_exists_getVert.mp hv
+  by_cases hi0 : i = 0
+  · have hva : v = a := by simpa [hi0] using hi.symm
+    rw [hva] at hadj
+    have hq := hmax w b (p.cons hadj.symm) (hp.cons hw)
+    simp only [Walk.length_cons] at hq
+    omega
+  by_cases hie : i = p.length
+  · have hvb : v = b := by simpa [hie] using hi.symm
+    rw [hvb] at hadj
+    have hq := hmax a w (p.concat hadj) (hp.concat hw hadj)
+    simp only [Walk.length_concat] at hq
+    omega
+  have hit : i < p.length := lt_of_le_of_ne hil hie
+  have hcard := hp.ncard_neighborSet_toSubgraph_internal_eq_two hi0 hit
+  have hsub : p.toSubgraph.neighborSet (p.getVert i) ⊆ G.neighborSet (p.getVert i) :=
+    fun _ h => p.toSubgraph.adj_sub h
+  have heq := Set.eq_of_subset_of_ncard_le hsub (by
+    rw [hcard]
+    exact hdeg (p.getVert i))
+  have hin : w ∈ p.toSubgraph.neighborSet (p.getVert i) := by
+    rw [heq, hi]
+    exact hadj
+  exact hw (p.mem_support_of_adj_toSubgraph hin.symm)
+

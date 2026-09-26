@@ -1,0 +1,43 @@
+{
+  "source_worker_id": "C2-F2",
+  "covered_claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+  "source_hashes_verified": true,
+  "replay_adaptation": "Both replay scripts were copied from the sealed source case, then changed only to load ordinary_tree_checked_copy.py from this directory. Outputs were written to this directory.",
+  "checks": [
+    {
+      "file": "EVIDENCE.json",
+      "order": 262,
+      "alpha": 196,
+      "x": 94,
+      "rank_p": 96,
+      "no_earlier_descent": true,
+      "descent_at_x": -106898255684011764406883204975671398516624594301487569039488,
+      "terminal_delta": -1,
+      "all_expanded_rows_selected": true,
+      "expanded_rows": 195,
+      "sum": "-23225611359279601736317404622011866341585648844974127116783136"
+    },
+    {
+      "file": "EVIDENCE-REMOVED-ARM.json",
+      "order": 239,
+      "alpha": 179,
+      "x": 86,
+      "rank_p": 90,
+      "no_earlier_descent": true,
+      "descent_at_x": -611250327424851877138546087610857830275515792601808681,
+      "terminal_delta": -1,
+      "all_expanded_rows_selected": true,
+      "expanded_rows": 178,
+      "sum": "-171264854442676707009763817014456168190942415840549034149"
+    }
+  ],
+  "source_copies": {
+    "ordinary_tree_checked_copy.py": "a012bb78915ccdfa2f729c0cdb520cd8f29572277123c92e80ba6091498f533d",
+    "replay_source_copy.py": "1eaf80b50e771753bb7c141304fa35fa5858ffe66694db7b0054369082fa60b8",
+    "removed_arm_source_copy.py": "eb7fad6b0b3c38357052a14229be746026804d4db63bae30d46722cd111544e3"
+  },
+  "replay_outputs": {
+    "EVIDENCE.json": "e8b0de825344de205cb03066cc510455ec626c824e2a4a30e94156c534c32a7a",
+    "EVIDENCE-REMOVED-ARM.json": "922822fa741b1a18627e0164c531b115701db2db7cc2939aa110196118bfebea"
+  }
+}

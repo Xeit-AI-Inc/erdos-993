@@ -1,0 +1,28 @@
+{
+  "worker_id": "C2-CF-T6",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C2-T6.relative-chain-rank-reduction",
+      "statement": "For the fixed original favorable set F(T,p), the primary sum equals the degree-dimension difference in the direct sum of relative simplicial chain complexes (Ind(H_v), Ind(R_v)); in rank and homology terms it is b_(k+1)-b_(k-1)+beta_k-beta_(k-1), where k=p-1.",
+      "scope": "Exact algebraic reduction for finite ordinary trees and eligible p in the primary contract, with the original fixed selector and each selected leaf retained as a distinct tag; it proves neither the required sign nor a counterexample.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CF-T6/EVIDENCE.md"
+      ],
+      "reason": "retained: relative-chain basis dimensions are exactly the tagged marked independent-set counts, and rank–nullity gives the claimed identity with the displayed indices. The direct sum preserves shared-support multiplicity. The selector constrains coefficient differences but the route supplies no bridge to the necessary boundary-rank/Betti inequality, so the primary aggregate remains unresolved."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CF-T6/REPORT.md",
+  "limitations": [
+    "No selector-conditioned inequality for the relative boundary ranks or homology dimensions is proved.",
+    "The direct sum aggregates tagged dimensions but does not itself provide a cross-tag cancellation map.",
+    "No full-sum counterexample, bounded computation, or primary-literature theorem application is supplied."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-T6.relative-chain-rank-reduction"
+  ]
+}

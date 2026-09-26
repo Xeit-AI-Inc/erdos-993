@@ -1,0 +1,41 @@
+{
+  "worker_id": "C5-CF-U3",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C5-U3-ALT-CUT",
+      "statement": "For each fixed selected original leaf v, the marked k-to-(k+1) independent-set incidence graph has left degrees e(A), right degrees k for singly marked upper sets and k+1 for multiply marked upper sets, so E_v=k U_v+C_v. Alternating reachability in a finite bipartite graph from S unmatched left vertices either reaches a free right vertex and augments or, if it closes without one, yields N(X)=Y and |X|-|N(X)|=|S|.",
+      "scope": "Exact finite incidence and matching identities for H_v, W_v, k=p-1, and the fixed original-leaf selector F(T,p); these identities alone establish no weighted across-tag budget for the primary.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CF-U3/REPORT.md",
+        "cycles/cycle-5/C5-CF-U3/EVIDENCE.json"
+      ],
+      "reason": "retained: Direct degree counting verifies the edge identity, with multiply marked upper sets counted once within each leaf tag. Standard alternating closure verifies the stated cut identity when no augmenting path exists."
+    },
+    {
+      "claim_id": "C5-U3-PRIMARY-GAP",
+      "statement": "The stated alternating-path decomposition and algebra establish no lower bound sum_{v in F}(D_v+C_v)>=(2a+1-3p)Q and no link from first descent to its cuts; the full primary remains unresolved by this route. This is a limitation of the supplied argument, not a claim that such a bound or link is impossible.",
+      "scope": "Audit of the supplied C5-U3 argument for the ordinary-tree lower-region favorable-leaf aggregate under the exact contract, preserving its fixed strict selector and original leaf tags.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CF-U3/REPORT.md",
+        "cycles/cycle-5/C5-CF-U3/EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: The algebraic rewrite is correct and the unweighted cut lemma supplies no demonstrated weighted threshold or selector/first-descent bridge. The route has no concrete refutation, and the logical absence of a proof in this route must not be generalized to impossibility."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CF-U3/REPORT.md",
+  "limitations": [
+    "The critique uses the pinned route case, common read-first sources, and the specifically permitted C5 critic brief only.",
+    "No computational replay or literature import applies to the route's proof-only evidence.",
+    "The weighted budget and first-descent-to-cut connection remain unresolved; the primary claim is not adjudicated by this review."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-U3-ALT-CUT",
+    "C5-U3-PRIMARY-GAP"
+  ]
+}

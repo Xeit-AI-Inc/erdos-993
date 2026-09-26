@@ -1,0 +1,27 @@
+{
+  "worker_id": "C6-CF-U4",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C6-U4-MATCHING-DEFICIENCY-BUDGET",
+      "statement": "The pointwise matching-deficiency decomposition and the resulting selected weighted-budget equivalence in the source claim are correct at the stated ordinary-tree lower-region scope; the decomposition does not prove that the first-descent selector supplies the required budget.",
+      "scope": "Critique of the single pinned C6-U4 claim, for eligible finite ordinary trees, fixed distinct favorable original-leaf tags, k=p-1, local residual forests H_v=T-{v,s_v}, and actual addability in H_v; the primary equivalence uses the exact tagged incidence count and k>0.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CF-U4/REPORT.md"
+      ],
+      "reason": "retained: e_v(A)=|V(H_v)|-k-|N_H_v(A)| for independent A, and alpha(H_v)=|V(H_v)|-nu(H_v) by finite bipartite matching-cover equality. Counting each marked extension once per tag gives E=kU+C; with D=2(h-k)Q-E and S=U-Q, the coefficient is 2h-3k=2a+1-3p. Eligibility ensures k>0. These are exact identities; they do not establish the missing selector-to-budget lower bound, which the source explicitly leaves open."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CF-U4/REPORT.md",
+  "limitations": [
+    "No tree census, finite-flow artifact, or external literature review was performed; these are unperformed checks, not mathematical defects.",
+    "The source claim is a sound reduction and does not prove the primary selected budget or refute the primary aggregate."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-U4-MATCHING-DEFICIENCY-BUDGET"
+  ]
+}

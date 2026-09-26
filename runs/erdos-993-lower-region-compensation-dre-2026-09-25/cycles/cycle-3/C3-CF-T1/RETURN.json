@@ -1,0 +1,30 @@
+{
+  "worker_id": "C3-CF-T1",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C3-T1.COVER-BUDGET-AND-FIRST-MARK-SUBCLASS",
+      "statement": "For a tree T, original leaf v with support s, H=T-{v,s}, W=N_T(s)\\{v}, and k=p-1, if |V(T)|=2p+2+d with d>=1 and there is an ordering of W for which every union N_H[w_i] with earlier mark vertices has size at least d+3, then the leaf summand is nonpositive. If this holds for every leaf in the fixed favorable set F(T,p), the complete selected sum is nonpositive.",
+      "scope": "Only the first-mark residual-size sufficient subclass in the source claim, for the primary tree definitions and eligible ranks p>=2. The source cover-number coefficient bound and its claimed early-descent consequence are rejected; the subclass condition is not shown to follow from primary eligibility or favorability.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-T1/EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: first-mark partition and incidence counting prove the structural-subclass implication, including repeated support tags. The cover-bound component is false: for K1,3 with C=V(T), N=0, r=1 the proposed expression is 2 while Delta_1=-1, because it overcounts positive s=-1 contributions from non-independent subsets. This auxiliary counterexample is not a primary-target refutation; the full target remains open."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CF-T1/REPORT.md",
+  "limitations": [
+    "The complete primary lower-region aggregate is neither proved nor refuted by this critique.",
+    "The retained first-mark condition is not derived from early descent, the strict alpha guard, or the favorable selector.",
+    "The source cover-budget inequality is invalid as stated at r-a=-1; its dependent necessary condition is not retained.",
+    "No literature result, exhaustive computation, census, or general sign for residuals of orders 2k and 2k+1 is established.",
+    "No eligible tree with a nonempty favorable set satisfying the retained structural condition is exhibited, so its practical reach is unestablished."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C3-T1.COVER-BUDGET-AND-FIRST-MARK-SUBCLASS"
+  ]
+}

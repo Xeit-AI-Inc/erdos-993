@@ -1,0 +1,37 @@
+{
+  "worker_id": "C4-T4",
+  "cycle": 4,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C4-T4-RELATIVE-CHAIN-IDENTITY",
+      "statement": "For every eligible ordinary-tree instance, the target sum equals dim_Q(K_{p})-dim_Q(K_{p-1}) for the fixed direct sum K_j of relative independence-complex chain spaces indexed by all original favorable leaves.",
+      "scope": "Finite ordinary trees; x(T)+2<=p; 3p<2alpha(T)+1; F(T,p) exactly the strict original-leaf selector; K_j as defined in the report.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-T4/REPORT.md",
+        "cycles/cycle-4/C4-T4/EVIDENCE.json"
+      ],
+      "reason": "The relative face basis is exactly the independent j-sets of H_v meeting W_v, so its dimension is q_v(j); the contract summand identity then sums to the stated rank difference."
+    },
+    {
+      "claim_id": "C4-T4-CROSS-TAG-INJECTIVITY-BRIDGE",
+      "statement": "The explicitly defined least-eligible-tag deletion map L:K_p->K_(p-1) is injective for every eligible ordinary-tree instance.",
+      "scope": "Same lower-region domain and fixed selector as the preceding claim; map L uses original leaf tags, original supports, W_v, and a fixed total order on leaves.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-T4/REPORT.md",
+        "cycles/cycle-4/C4-T4/EVIDENCE.json"
+      ],
+      "reason": "L is well-defined and mixes tags when deletion removes the sole marked neighbor, but no full-rank proof or counterexample was obtained. Injectivity would suffice for the target and is stronger than the target."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-T4/REPORT.md",
+  "limitations": [
+    "The proposed cross-tag map has no proved universal injectivity property.",
+    "A failure of injectivity alone would not refute the primary aggregate.",
+    "No exhaustive computation or literature theorem application was performed."
+  ],
+  "status_authority": "proposed_worker_only"
+}

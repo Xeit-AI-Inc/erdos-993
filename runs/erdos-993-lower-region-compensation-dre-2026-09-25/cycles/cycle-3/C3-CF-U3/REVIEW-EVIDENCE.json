@@ -1,0 +1,76 @@
+{
+  "schema": "e993.c3-critic-review-evidence.v1",
+  "stage": "critique",
+  "orientation": "F",
+  "source_replay": {
+    "method": "Reviewed local copies made under the assigned scratch root; sealed source files were not modified.",
+    "packet_hashes": {
+      "case_source_files_checked": 3,
+      "common_listed_source_hashes_checked": 115,
+      "mismatches": 0
+    },
+    "local_copies": [
+      {
+        "path": "cycles/cycle-3/C3-CF-U3/SOURCE-FIRST-SHELL-CANDIDATE.md",
+        "sha256": "f4f051cbb0bc6b18643775b88c0e2a113568af70aea5e6af504018ee0b00dad2"
+      },
+      {
+        "path": "cycles/cycle-3/C3-CF-U3/SOURCE-U3-REPORT.md",
+        "sha256": "241cf3458d5e605fd10152156bd9a4ab6cf96ce46e11841dd8a92b933089af1b"
+      },
+      {
+        "path": "cycles/cycle-3/C3-CF-U3/SOURCE-U3-EVIDENCE.json",
+        "sha256": "e6347e2caf28722ec4769edeb9c67a0279106f17917da29307e08bd6ac571c94"
+      },
+      {
+        "path": "cycles/cycle-3/C3-CF-U3/SOURCE-U3-RETURN.json",
+        "sha256": "bf798f60595495b097342885cd8cec03c1ac09279498328b56167ee36243703d"
+      },
+      {
+        "path": "cycles/cycle-3/C3-CF-U3/SOURCE-REGISTERED-CLAIM-IDENTITY.json",
+        "sha256": "123ae90d106d5bea1b14382f2b3b6eff6386b68c40db72a7c4187cdff53606b8"
+      }
+    ]
+  },
+  "reviewed_claims": [
+    {
+      "claim_id": "C3-U3-MARKED-COVER-SHELL",
+      "disposition": "retained",
+      "proposed_status": "proposed_informal",
+      "scope": "Finite simple G, |V(G)|=2k+2, k>=2, tau(G)>=3, arbitrary marked W containing a non-isolated vertex; q_(k+1)(G,W)<=q_k(G,W).",
+      "decisive_checks": [
+        "Verified the two-part split at a non-isolated mark and checked its exact residual orders.",
+        "At exact 2k residual order, the deleted pair is {w,z}; all crossing edges meet z, so at most one residual edge would imply a cover of size at most two.",
+        "The order-(2k+1) arbitrary-mark reduction preserves the >=2-edge condition in its exact 2k residual case.",
+        "Marked incidence count has at least k mark-preserving deletions per upper set and at most k extensions per lower set when order <=2k."
+      ],
+      "dependencies": [
+        "E993-GRAPH-FIRST-WIDE-SHARP-CLASSIFICATION at exact order 2r+2 and r=k-1>=1.",
+        "E993-BINOMIAL-DIFFERENCE-CATALAN-FLOOR is not needed for this graph claim."
+      ]
+    },
+    {
+      "claim_id": "C3-U3-FIRST-SHELL-POINTWISE",
+      "disposition": "retained",
+      "proposed_status": "proposed_informal",
+      "scope": "Ordinary trees with p>=3, |V(T)|=2p+2, x(T)+2<=p; every original leaf summand is nonpositive, and therefore the fixed favorable-leaf sum is nonpositive.",
+      "decisive_checks": [
+        "Cover-three decomposition gives Delta_r(T)>0 for every 0<=r<=p-2; checked r=0, r=1, and the Catalan ratio bound for r>=2.",
+        "Integer zero extension gives Delta_alpha(T)=-1, so x(T) exists and the early-descent contradiction is valid.",
+        "For each original leaf, alpha(T-{v,s})=alpha(T)-1 and tau(H)=tau(T)-1>=3.",
+        "Every component of H is an original support branch; tau(H)>=3 ensures a nontrivial branch and thus a non-isolated marked root.",
+        "The marked-count difference equals the original tagged leaf summand; the fixed strict selector and duplicate-support leaves are preserved."
+      ],
+      "dependencies": [
+        "C3-U3-MARKED-COVER-SHELL at k=p-1.",
+        "E993-BINOMIAL-DIFFERENCE-CATALAN-FLOOR at the stated integer ranks.",
+        "E993-GRAPH-FIRST-WIDE-SHARP-CLASSIFICATION only at its exact first-wide order."
+      ]
+    }
+  ],
+  "limitations": [
+    "Informal mathematical audit only; no Lean build or kernel award.",
+    "No conclusion for parent orders greater than 2p+2.",
+    "No refutation or proof of the complete all-order lower-region aggregate."
+  ]
+}

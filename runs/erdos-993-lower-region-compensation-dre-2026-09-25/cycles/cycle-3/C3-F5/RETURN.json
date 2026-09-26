@@ -1,0 +1,25 @@
+{
+  "worker_id": "C3-F5",
+  "cycle": 3,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C3-F5-FINITE-WEIGHTED-HALL",
+      "statement": "In an exact bounded sweep of 633 canonical hub-tree branch recipes of order at most 18, all 138 lower-region eligible rank rows had saturated deletion-plus-literal-two-for-one weighted transport, with no deficient cut; their directly computed original selected sums were all nonpositive.",
+      "scope": "Only the family and rank horizon specified in REPORT.md and EVIDENCE.json; a finite mechanism diagnostic, not a universal claim or a resolution of E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-F5/EVIDENCE.json",
+        "cycles/cycle-3/C3-F5/FLOW_SEARCH.py"
+      ],
+      "reason": "Exact integer enumeration and max flow found no bottleneck in the stated family, and direct original-leaf summation matched supply minus capacity. The bounded search supplies no structural argument outside its generation boundary, so the primary remains open."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-F5/REPORT.md",
+  "limitations": [
+    "The computation covers only canonical hub trees with 2–5 branches of types P1–P4 or C2–C4 and order at most 18.",
+    "No universal weighted-cut theorem, injection, or proof of the lower-region aggregate follows from the finite flow certificates."
+  ],
+  "status_authority": "proposed_worker_only"
+}

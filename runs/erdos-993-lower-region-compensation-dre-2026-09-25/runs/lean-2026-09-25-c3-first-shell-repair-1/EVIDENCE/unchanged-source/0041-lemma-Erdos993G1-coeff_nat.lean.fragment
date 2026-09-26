@@ -1,0 +1,3 @@
+lemma coeff_nat (k : ℕ) : coeff F (k : ℤ) = indepCount F k := by
+  simp [coeff]
+

@@ -1,0 +1,20 @@
+namespace Erdos993G1.FirstWide
+
+lemma edgeSet_one_endpoints {Y : Type u} [Finite Y]
+    (G : SimpleGraph Y) (hc : Nat.card G.edgeSet = 1) :
+    ∃ a b : Y, a ≠ b ∧ G.edgeSet = {s(a, b)} := by
+  classical
+  letI := Fintype.ofFinite Y
+  have hc' : G.edgeFinset.card = 1 := by
+    rw [← edgeSet_natCard_eq_edgeFinset_card]
+    exact hc
+  obtain ⟨e, he⟩ := Finset.card_eq_one.mp hc'
+  obtain ⟨a, b⟩ := e
+  have hmem : s(a, b) ∈ G.edgeFinset := by rw [he]; simp
+  have hadj : G.Adj a b := by
+    simpa only [SimpleGraph.mem_edgeFinset, SimpleGraph.mem_edgeSet] using hmem
+  refine ⟨a, b, hadj.ne, ?_⟩
+  have hset := congrArg (fun t : Finset (Sym2 Y) => (t : Set (Sym2 Y))) he
+  simpa only [SimpleGraph.coe_edgeFinset, Finset.coe_singleton] using hset
+
+end Erdos993G1.FirstWide

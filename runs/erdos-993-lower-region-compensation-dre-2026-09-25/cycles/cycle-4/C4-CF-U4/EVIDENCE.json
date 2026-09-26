@@ -1,0 +1,31 @@
+{
+  "claim_id": "C4-U4-COLORED-SHADOW-MIXED-BOUNDARY",
+  "disposition": "retained_narrowed",
+  "checks": [
+    {
+      "item": "colored matching-sector face poset",
+      "calculation": "Type (1,...,1), composition (2,...,2) has monomial basis with at most one variable per pair; degree-k monomials correspond exactly to rank-k independent sets of a disjoint-edge matching.",
+      "result": "Chong Theorems 1.2(i) and 2.1(iii)/(iv)(a) give an ordinary lower-shadow comparison for this poset."
+    },
+    {
+      "item": "normalized matching",
+      "calculation": "Each pair factor has rank sizes (1,2), which are log-concave; the product theorem yields adjacent-rank normalized transport in the matching-sector inclusion poset.",
+      "result": "This flow contains no external endpoint-specific insertion arcs or selected-tag Hall capacities."
+    },
+    {
+      "item": "toy insertion obstruction",
+      "vertices": ["a", "b", "h"],
+      "edges": [["a", "b"], ["a", "h"]],
+      "colored_pair": ["a", "b"],
+      "source_family_before": [["b"]],
+      "source_family_after": [["a"]],
+      "lower_shadow_before": [[]],
+      "lower_shadow_after": [[]],
+      "addable_before": ["h"],
+      "addable_after": [],
+      "counts": {"shadow_before": 1, "shadow_after": 1, "addable_before": 1, "addable_after": 0},
+      "result": "Ordinary shadow size is unchanged but endpoint-sensitive addability changes under the described compression."
+    }
+  ],
+  "scope_boundary": "This example is not a CB tree witness and does not decide the full mixed-boundary inequality or the primary aggregate."
+}

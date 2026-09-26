@@ -1,0 +1,279 @@
+{
+  "seed": 99320260925,
+  "generation": {
+    "cases": 1200,
+    "orders_uniform_integer": [
+      9,
+      36
+    ],
+    "mode": "cyclic modes: 0 weighted recursive tree parent weight 1+degree; 1 weighted recursive tree root parent weight 1+3*degree and other parent weight 2*degree+1; 2 1-3 vertex backbone with randomly sized (max 7) asymmetrically grown rooted gadgets attached at random backbone vertices; each new vertex attaches to one earlier vertex by weighted choice"
+  },
+  "counts": {
+    "trees": 1200,
+    "eligible_tree_rank_rows": 878,
+    "trees_with_at_least_one_eligible_rank": 650,
+    "rows_with_at_least_one_positive_leaf_term": 0,
+    "positive_leaf_terms_across_rows": 0,
+    "positive_complete_aggregates": 0
+  },
+  "best_tree_full_check": {
+    "index": 886,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        0,
+        9
+      ],
+      [
+        0,
+        10
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        1,
+        4
+      ],
+      [
+        1,
+        5
+      ]
+    ],
+    "independence_polynomial": [
+      1,
+      11,
+      45,
+      100,
+      140,
+      132,
+      85,
+      36,
+      9,
+      1
+    ],
+    "alpha": 9,
+    "x": 4,
+    "p": 6,
+    "selector_by_original_leaf": [
+      {
+        "leaf": 2,
+        "support": 1,
+        "delta_p_after_delete": -21
+      },
+      {
+        "leaf": 3,
+        "support": 1,
+        "delta_p_after_delete": -21
+      },
+      {
+        "leaf": 4,
+        "support": 1,
+        "delta_p_after_delete": -21
+      },
+      {
+        "leaf": 5,
+        "support": 1,
+        "delta_p_after_delete": -21
+      },
+      {
+        "leaf": 6,
+        "support": 0,
+        "delta_p_after_delete": -20
+      },
+      {
+        "leaf": 7,
+        "support": 0,
+        "delta_p_after_delete": -20
+      },
+      {
+        "leaf": 8,
+        "support": 0,
+        "delta_p_after_delete": -20
+      },
+      {
+        "leaf": 9,
+        "support": 0,
+        "delta_p_after_delete": -20
+      },
+      {
+        "leaf": 10,
+        "support": 0,
+        "delta_p_after_delete": -20
+      }
+    ],
+    "eligible": true,
+    "full_aggregate": -253,
+    "tagged_summands": [
+      {
+        "leaf": 2,
+        "support": 1,
+        "witness_vertices": [
+          0,
+          3,
+          4,
+          5
+        ],
+        "h_order": 9,
+        "r_order": 5,
+        "c_rank": 28,
+        "c_previous": 55,
+        "g": -27,
+        "pointwise_delta": -21
+      },
+      {
+        "leaf": 3,
+        "support": 1,
+        "witness_vertices": [
+          0,
+          2,
+          4,
+          5
+        ],
+        "h_order": 9,
+        "r_order": 5,
+        "c_rank": 28,
+        "c_previous": 55,
+        "g": -27,
+        "pointwise_delta": -21
+      },
+      {
+        "leaf": 4,
+        "support": 1,
+        "witness_vertices": [
+          0,
+          2,
+          3,
+          5
+        ],
+        "h_order": 9,
+        "r_order": 5,
+        "c_rank": 28,
+        "c_previous": 55,
+        "g": -27,
+        "pointwise_delta": -21
+      },
+      {
+        "leaf": 5,
+        "support": 1,
+        "witness_vertices": [
+          0,
+          2,
+          3,
+          4
+        ],
+        "h_order": 9,
+        "r_order": 5,
+        "c_rank": 28,
+        "c_previous": 55,
+        "g": -27,
+        "pointwise_delta": -21
+      },
+      {
+        "leaf": 6,
+        "support": 0,
+        "witness_vertices": [
+          1,
+          7,
+          8,
+          9,
+          10
+        ],
+        "h_order": 9,
+        "r_order": 4,
+        "c_rank": 28,
+        "c_previous": 57,
+        "g": -29,
+        "pointwise_delta": -20
+      },
+      {
+        "leaf": 7,
+        "support": 0,
+        "witness_vertices": [
+          1,
+          6,
+          8,
+          9,
+          10
+        ],
+        "h_order": 9,
+        "r_order": 4,
+        "c_rank": 28,
+        "c_previous": 57,
+        "g": -29,
+        "pointwise_delta": -20
+      },
+      {
+        "leaf": 8,
+        "support": 0,
+        "witness_vertices": [
+          1,
+          6,
+          7,
+          9,
+          10
+        ],
+        "h_order": 9,
+        "r_order": 4,
+        "c_rank": 28,
+        "c_previous": 57,
+        "g": -29,
+        "pointwise_delta": -20
+      },
+      {
+        "leaf": 9,
+        "support": 0,
+        "witness_vertices": [
+          1,
+          6,
+          7,
+          8,
+          10
+        ],
+        "h_order": 9,
+        "r_order": 4,
+        "c_rank": 28,
+        "c_previous": 57,
+        "g": -29,
+        "pointwise_delta": -20
+      },
+      {
+        "leaf": 10,
+        "support": 0,
+        "witness_vertices": [
+          1,
+          6,
+          7,
+          8,
+          9
+        ],
+        "h_order": 9,
+        "r_order": 4,
+        "c_rank": 28,
+        "c_previous": 57,
+        "g": -29,
+        "pointwise_delta": -20
+      }
+    ]
+  }
+}

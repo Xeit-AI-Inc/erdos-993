@@ -1,0 +1,26 @@
+{
+  "worker_id": "C1-F6",
+  "cycle": 1,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C1-F6-1",
+      "statement": "In the bounded exact searches recorded in the report, no ordinary tree and eligible rank had a positive complete lower-region selected aggregate: the spider family with 2-6 arms of lengths 1-5 had 456 trees and 53 eligible rows, and the seeded Prüfer sample had 1,760 trees and 2,022 eligible rows.",
+      "scope": "Finite observation for exactly the stated spider family and seeded Prüfer sample; it does not decide the universal lower-region aggregate assertion.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-F6/evidence/replay_search.py",
+        "cycles/cycle-1/C1-F6/evidence/search-results.json"
+      ],
+      "reason": "Exact integer tree-DP replay applies the corrected first-descent scan through alpha and checks the full selected sum under both rank guards. The largest spider aggregate is -230 and the largest sampled Prüfer aggregate is -2562; bounded nonpositive data cannot establish the universal claim."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-F6/REPORT.md",
+  "limitations": [
+    "The Prüfer search is a seeded finite sample, not an exhaustive tree census.",
+    "The systematic spider search covers only 2-6 arms with each arm length at most 5.",
+    "No proof, eligible counterexample, or universal matching/cover budget was found."
+  ],
+  "status_authority": "proposed_worker_only"
+}

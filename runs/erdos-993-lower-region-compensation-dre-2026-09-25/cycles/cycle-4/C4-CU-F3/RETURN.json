@@ -1,0 +1,30 @@
+{
+  "worker_id": "C4-CU-F3",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C4-F3-TM5-EXACT-REPLAY",
+      "statement": "For the ordinary tree T_5 consisting of path 0-1-2 and five three-leaf claws attached at 0, at p=10 one has alpha=17, x=8, all 16 original leaves are strictly favorable, and the complete aggregate is S=-84215.",
+      "scope": "One exact eligible instance of the stated T_m family at m=5 and p=10; no universal implication.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CU-F3/AUDIT.json",
+        "cycles/cycle-4/C4-CU-F3/audit.py"
+      ],
+      "reason": "retained. An independent rooted include/exclude recurrence reconstructs the graph, verifies all 16 original-leaf selector values and support deletions, checks x+2<=p and 3p<2alpha+1 with alpha=17, and obtains the exact complete sum -84215. The source report has an alpha typo, and its auxiliary C/E incidence arithmetic omits the H_v deletions; neither defect changes the independently recomputed direct S."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CU-F3/REPORT.md",
+  "limitations": [
+    "Only the single T_5, p=10 instance is verified; no universal T_m or primary aggregate conclusion follows.",
+    "The source report misstates alpha as 16; alpha=17 and the correct strict guard is 30<35.",
+    "The source replay omits the defining H_v deletions in its auxiliary C computation; its reported C and derived E are not accepted as incidence evidence. Actual addability E was not independently enumerated.",
+    "No mixed-network feasibility or Hall certificate is provided."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-F3-TM5-EXACT-REPLAY"
+  ]
+}

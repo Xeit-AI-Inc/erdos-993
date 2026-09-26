@@ -1,0 +1,52 @@
+{
+  "worker_id": "C5-PREP-DIRECTION-AUDIT",
+  "status_authority": "preparation_proposal_only",
+  "report_path": "scratchpad/C5-PREP-DIRECTION-AUDIT/REPORT.md",
+  "pin_verification": {
+    "listed_sources": 17,
+    "matched_sha256": 17,
+    "mismatches": 0
+  },
+  "isolation_deviation": "After pin verification, one wc -l glob counted lines in unlisted C4 proposal files. No content was displayed and no unlisted substantive premise was used; the report discloses this metadata-only deviation.",
+  "dispositions": [
+    {
+      "topic": "T_m LC/LR package",
+      "result": "Conditionally sufficient at every eligible rank. Three crossing-rank mixed minors plus three auxiliary LC tails suffice; all-rank mixed minors are stronger quantifier ranges. No universal property is proved."
+    },
+    {
+      "topic": "Actual r19 comparison",
+      "result": "R-I is absent in the new route; deletion minors coincide in orientation but differ in range and LC debt; R/P is shifted relative to r19 K/P. The two sufficient packages are not logical aliases. R19 deletion-ratio tests were independently checked only through m=16; its fresh m=513..2048 tests omitted them."
+    },
+    {
+      "topic": "Maximum-extension defect",
+      "result": "Exact reformulation, not a bound. A new local matching-slack decomposition is proved in REPORT.md; it does not settle the selected weighted inequality. The T22 selected arm tag has e_T(B)=34>k=33, L_B=nu_B=0."
+    },
+    {
+      "topic": "Neighborhood budget domain",
+      "result": "The H_v-neighborhood version has coefficient n-2p; the equivalent T-neighborhood version has n-2p+1, since N_T(A union {v}) equals N_H(A) disjoint union {s_v}."
+    },
+    {
+      "topic": "Quantitative perturbation",
+      "result": "A coefficientwise binomial comparison gives an explicit O(m^-2) bound for the z(1+z)^(3m+1) perturbation relative to B^m on m<=r<=2m+1, m>=5. This is not a curvature or aggregate proof."
+    }
+  ],
+  "new_local_lemma": {
+    "name": "forest_matching_slack_decomposition",
+    "scope": "finite forest T, independent B, any maximum matching M of T",
+    "identity": "alpha(T)-|B|-alpha(T-N[B]) = unmatched_M(N(B)) + M_edges_inside_N(B) + (nu(T-N[B]) - |M intersect E(T-N[B])|)",
+    "proof_location": "REPORT.md section Maximum-extension defect",
+    "award": false
+  },
+  "next_cycle_avenues": [
+    {"priority": 1, "orientation": "T", "name": "all-m T_m deletion orbit selectors", "deliverable": "Two crossing-rank minors and two LC tails, or an exact selector obstruction"},
+    {"priority": 2, "orientation": "T", "name": "all-m T_m coupled R sign", "deliverable": "R crossing-rank minor and LC tail or a direct universal coefficient certificate"},
+    {"priority": 3, "orientation": "U", "name": "selected matching-slack charging", "deliverable": "New weighted bound beyond the verified first shell or an exact selected obstruction"},
+    {"priority": 4, "orientation": "F", "name": "heterogeneous four-arity transfer", "deliverable": "A proved intermediate cross-arity selector compensation or an exact refuting tuple"},
+    {"priority": 5, "orientation": "F", "name": "proper-selector structural witness", "deliverable": "Exact eligible mixed selected/unselected tree with all leaf terms or a proved excluded subclass"},
+    {"priority": 6, "orientation": "U", "name": "cross-tag unsigned operator", "deliverable": "Explicit rank map and nontrivial theorem or exact kernel/cut obstruction"}
+  ],
+  "target_status_recommendation": "OPEN",
+  "registry_mutations": 0,
+  "lean_builds": 0,
+  "extra_agents": 0
+}

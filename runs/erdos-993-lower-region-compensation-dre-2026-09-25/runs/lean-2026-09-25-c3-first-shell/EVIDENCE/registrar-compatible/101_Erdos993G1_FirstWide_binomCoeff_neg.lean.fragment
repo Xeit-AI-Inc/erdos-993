@@ -1,0 +1,6 @@
+namespace Erdos993G1.FirstWide
+
+lemma binomCoeff_neg (n : ℕ) {k : ℤ} (hk : k < 0) : binomCoeff n k = 0 := by
+  simp [binomCoeff, not_le.mpr hk]
+
+end Erdos993G1.FirstWide

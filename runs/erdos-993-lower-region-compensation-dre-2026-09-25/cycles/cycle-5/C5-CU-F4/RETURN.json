@@ -1,0 +1,27 @@
+{
+  "worker_id": "C5-CU-F4",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C5-F4.BOUNDED-PROPER-SELECTOR-SEARCH",
+      "statement": "No proper favorable-leaf selector occurs among the 308 eligible tree-rank pairs in the two searched families; the 1,540 KL triples in the stated box have no eligible ranks.",
+      "scope": "Exact search of KL T(k1,k2,k3) with 1<=k1<=k2<=k3<=20, central path spiders with 3..5 arms of lengths 1..8, and the five named KL fixtures with a path of length 1..5 grafted at each nonleaf vertex; only integer ranks x+2<=p and 3p<2alpha+1 are included.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CU-F4/EVIDENCE.json"
+      ],
+      "reason": "retained: an independent scratch replay exactly reproduces the finite evidence and confirms its stated guards, selector evaluation over all original leaves, and control arithmetic. This remains a bounded computational result; it does not imply a universal selector property or resolve the primary aggregate."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CU-F4/REPORT.md",
+  "limitations": [
+    "The exact replay covers only the finite graph recipes and parameter cutoffs stated in the route; it is not a census of ordinary trees.",
+    "No proper-selector witness was found, so the route leaves its search objective unresolved and yields no all-tree result for the primary aggregate."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-F4.BOUNDED-PROPER-SELECTOR-SEARCH"
+  ]
+}

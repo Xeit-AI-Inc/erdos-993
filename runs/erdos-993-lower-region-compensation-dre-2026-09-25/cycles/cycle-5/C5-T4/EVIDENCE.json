@@ -1,0 +1,78 @@
+{
+  "result": "exact_pendant_path_rooted_state_and_selector_recurrence",
+  "definitions": {
+    "A": "I(G-r)",
+    "B": "z I(G-N[r])",
+    "P0": [
+      1
+    ],
+    "P1": [
+      1,
+      1
+    ],
+    "path_recurrence": "P_m=P_(m-1)+z P_(m-2)"
+  },
+  "identity": "I(G_m)=A*P_m+B*P_(m-1)",
+  "selector": "Delta_p(G_m)=coefficient(p+1)-coefficient(p) of A*P_m+B*P_(m-1); membership iff this integer is strictly negative",
+  "tree_leaf_handling": {
+    "old_leaf_v_not_r": "evaluate independently on G=T-v rooted at r; preserve one tag per original vertex, including equal supports",
+    "attachment_root_if_old_leaf": "r degree increases to 2 and is no longer an original leaf",
+    "new_endpoint": "selector uses T_(m-1), with T_0=T"
+  },
+  "example": {
+    "base_tree": "K_{1,7}",
+    "operation": "attach one new leaf to the center",
+    "tag": "any old leaf v",
+    "before": {
+      "T_minus_v": "K_{1,6}",
+      "independence_coefficients_low_to_high": [
+        1,
+        7,
+        15,
+        20,
+        15,
+        6,
+        1
+      ],
+      "Delta_3": -5
+    },
+    "root_state_for_T_minus_v": {
+      "A_coefficients": [
+        1,
+        6,
+        15,
+        20,
+        15,
+        6,
+        1
+      ],
+      "B_coefficients": [
+        0,
+        1
+      ]
+    },
+    "correction": {
+      "Delta_2_A": 5
+    },
+    "after": {
+      "Tprime_minus_v": "K_{1,7}",
+      "independence_coefficients_low_to_high": [
+        1,
+        8,
+        21,
+        35,
+        35,
+        21,
+        7,
+        1
+      ],
+      "Delta_3": 0
+    },
+    "eligibility_note": "not eligible for primary: x(K1,7)=4 and p=3"
+  },
+  "limitations": [
+    "No assertion that attachment preserves eligibility or primary S.",
+    "The example demonstrates selector non-preservation at a fixed rank, outside the primary eligibility range.",
+    "A lower-region closure theorem and any global selected-sum comparison remain open."
+  ]
+}

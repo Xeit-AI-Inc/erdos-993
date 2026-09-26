@@ -1,0 +1,25 @@
+{
+  "worker_id": "C1-T2",
+  "cycle": 1,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C1-T2-1",
+      "statement": "Leaf-support deletion satisfies P_T=(1+z)P_H+zP_R and P_(T-v)=P_H+zP_R, hence the original selector is Delta_p(H)+Delta_(p-1)(R)<0; pair pruning need not preserve the strict lower-region eligibility guards.",
+      "scope": "Exact polynomial identities for finite trees at an original leaf v, plus the explicit eligible K_(1,12), p=8 pruning example. This is a failed closure bridge for direct induction, not a verdict on the primary aggregate.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-T2/REPORT.md"
+      ],
+      "reason": "The coefficient identities follow by partitioning independent sets according to whether the support s_v is selected. The exact star computation has (a,x,p)=(12,6,8), all 12 leaves favorable and S=-1980, while deleting a leaf and its support leaves 11 isolated vertices with (a',x')=(11,6), so 3p<2a'+1 fails. No lower-region induction closure or positive aggregate witness follows."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-T2/REPORT.md",
+  "limitations": [
+    "This does not prove or refute the complete selected original-leaf aggregate inequality.",
+    "The star example only rules out direct induction that requires the pruned object to remain in the strict lower-region domain; an augmented invariant or compensation argument may still work.",
+    "No bounded enumeration or imported theorem was used."
+  ],
+  "status_authority": "proposed_worker_only"
+}

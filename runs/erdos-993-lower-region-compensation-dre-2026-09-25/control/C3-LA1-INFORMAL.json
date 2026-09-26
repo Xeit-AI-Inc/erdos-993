@@ -1,0 +1,73 @@
+{
+  "allowed_source_files": [
+    {
+      "path": "control/C3-LEAN-SELECTION.md",
+      "sha256": "5ac00aff02c64f4b120024e7785fa51c28016768d054b02342502ce18a0e8af6"
+    },
+    {
+      "path": "governance/proof-integrity-audit-SKILL.md",
+      "sha256": "07546ee2d46e3ea641d41bda6375c36221cdb1d8101cf1c595f8855de9991eed"
+    },
+    {
+      "path": "runs/lean-2026-09-25-c3-first-shell/THEOREM-CONTRACT.yaml",
+      "sha256": "1cf37db1ec45656b89d7b0fece737ec60cfc3f5f081707ae2d6c2c4d8fc8e122"
+    },
+    {
+      "path": "runs/lean-2026-09-25-c3-first-shell/RECEIPTS/theorem-contract.json",
+      "sha256": "f363716ce6384b376cf3930e09c098c32611e340bb182187427281d8669c63e1"
+    },
+    {
+      "path": "runs/lean-2026-09-25-c3-first-shell/RECEIPTS/reviewer-assignment.json",
+      "sha256": "7f56c96a8932478ab0bd8070e3600d7194306e290489093c72561182598e1f9d"
+    },
+    {
+      "path": "runs/lean-2026-09-25-c3-first-shell/SOURCE/FirstInteriorMain.lean",
+      "sha256": "8d864da290947d75ac0cb52644b8b5336a19076878fcb11eeed552e6a118d7a9"
+    },
+    {
+      "path": "runs/lean-2026-09-25-c3-first-shell/SOURCE/REGISTRATION-ORDER.md",
+      "sha256": "5e8320d63f812039e57d7845a7944eb3cba5ee9b3b551c3547cde5b95e2e6f42"
+    },
+    {
+      "path": "runs/lean-2026-09-25-c3-first-shell/SOURCE/FORMAL-INTAKE.md",
+      "sha256": "116f89472dbb4e73ad91a541c3537e94ad32f794afc5b40f2b0763ea4eb4cf34"
+    },
+    {
+      "path": "runs/lean-2026-09-25-c3-first-shell/SOURCE/R25Card5Main.lean",
+      "sha256": "f47ef6b4fcad06580bb97206950c604927753c2c30cd369dbe6a76d4f0409a2d"
+    },
+    {
+      "path": "runs/lean-2026-09-25-c3-first-shell/SOURCE/G1FirstWideMain.lean",
+      "sha256": "beabf73950968ea22e71fb7b02a946eb849b7cdce3a0541fa80a59f7bc485d89"
+    },
+    {
+      "path": "runs/lean-2026-09-25-c3-first-shell/SOURCE/INTENDED-PROOF.md",
+      "sha256": "f4f051cbb0bc6b18643775b88c0e2a113568af70aea5e6af504018ee0b00dad2"
+    },
+    {
+      "path": "runs/lean-2026-09-25-c3-first-shell/SOURCE/OrderBandMain.lean",
+      "sha256": "a45f8e2e218d27d528e2513e5cb8413d38780d9e6c01f8c34b171366f0bf3bde"
+    },
+    {
+      "path": "governance/audit-context/modules/project-regimes/mathematical-reasoning.md",
+      "sha256": "4efdd2e41d410b5d40e17acfc2ff7adf3047ba9c7d00e9fb8e44afe2104a2571"
+    },
+    {
+      "path": "governance/audit-context/modules/integrity/provenance.md",
+      "sha256": "4eb793f9586fe51fed1df973d6856df8d4ad07a12703791c1a59f7f0f3a81cba"
+    },
+    {
+      "path": "governance/audit-context/modules/integrity/validation-checks.md",
+      "sha256": "6992d08845afe6c3901d8575021d4b750209169608e907999c64be91b9d9438a"
+    },
+    {
+      "path": "governance/audit-context/modules/integrity/evidence-integrity.md",
+      "sha256": "352cab7ad08871235fb6587130fe9461007c332750f92c81468dfc38e759bd51"
+    }
+  ],
+  "model": "gpt-6-sol",
+  "reasoning_effort": "high",
+  "status_authority": "proposed_worker_only",
+  "task": "You are controller-assigned independent mathematical proof-integrity reviewer C3-LA1-INFORMAL, distinct from producer C3-LA1-PRODUCER and later fidelity reviewer. Audit the EXACT two-conjunct informal and planned Lean statement in the frozen contract, using the skill and pinned mathematical sources. Independently reason through cover-three all-earlier-ranks positivity, negative-rank Catalan guards, marked A/B/C or correct first-hit proof, exact first-wide scope, original leaf cover lifting, existence of a nonisolated marked vertex via connectivity, crossingIndex meaning, integer sign and fixed-selector sum. Do a hostile boundary pass, not a vote on prior reviews. Old Lean sources are dependency evidence and definition authority, not a transferred new award. No formalization or Lean builds. Output REPORT.md and RESULTS.json plus INFORMAL-AUDIT.md and a compact claim-by-claim LEDGER.csv. If any material gap remains, say so and do NOT mark the audit passed. If and only if your independent proof audit passes, use exact frontmatter: type: proof-integrity-audit-evidence; status: passed; authority: skills/proof-integrity-audit/skill.md; producer_id: C3-LA1-PRODUCER; critic_id: C3-LA1-INFORMAL; attestation_id: c3-la1-first-shell-informal-v1; claim_sha256: 6edd0595c52ead3821e2858f56beb1e24616c9d305bce26d728d16ce2384db74. Use YAML frontmatter with one field per line and required headings # Informal Proof Integrity Audit, ## Intended Claim, ## Reproduced Mathematical Evidence, ## Independent Critic Pass, ## Verdict. Quote the contract's exact informal statement and exact terminal header; confirm normalized informal claim hash yourself. The controller registers the unchanged artifact only after inspecting it. Your verdict is an independent informal review proposal, not a theorem registry award. Preserve all inputs, outputs only in your scratch, finish foreground work. No other agents.",
+  "worker_id": "C3-LA1-INFORMAL"
+}

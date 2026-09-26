@@ -1,0 +1,30 @@
+{
+  "worker_id": "C1-CU-F3",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C1-F3-1",
+      "statement": "For the exact pair t_family(22) and the tree obtained by grafting path 4-91-92-93 onto original leaf 4, at fixed p=35 both trees satisfy x+2<=p and 3p<2alpha+1, but the selected sum remains negative in both (-838171658290934690688 and -2341400510849661617965). Grafting removes old favorable leaf 4 from the leaf set, adds favorable leaf 93, and changes retained favorable leaf 2's summand from -212336130412243110 to +424672260824486220.",
+      "scope": "One exact finite pair of ordinary trees; this is a selector and summand instability observation only, not a proof or refutation of the universal lower-region aggregate.",
+      "status": "proposed_bounded_result",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CU-F3/evidence/graft_pair.replayed.json",
+        "cycles/cycle-1/C1-CU-F3/evidence/replay_summary.json",
+        "cycles/cycle-1/C1-CU-F3/evidence/audit.json",
+        "cycles/cycle-1/C1-CU-F3/evidence/graft_pair_replay.py",
+        "cycles/cycle-1/C1-CU-F3/evidence/ordinary_tree_checked.py"
+      ],
+      "reason": "retained. I replayed the exact graph recipe using scratch copies of the listed script and corrected evaluator, with import/output paths adapted into this worker directory. The complete data match structurally; both eligibility guards, all 67 selector values per tree, every selected term, and both full sums check. The positive grafted leaf-2 term is outweighed globally, so the source correctly limits its conclusion to a finite instability example."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CU-F3/REPORT.md",
+  "limitations": [
+    "The conclusion is limited to the exact replayed pair and fixed p=35; it does not resolve the universal lower-region aggregate.",
+    "The source's exploratory family searches were not independently replayed because their complete enumerations were not retained.",
+    "No proof or counterexample for the separately registered tagged incidence identity is supplied by this claim."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": ["C1-F3-1"]
+}

@@ -1,0 +1,32 @@
+{
+  "worker_id": "C4-CU-F6",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C4-F6-LOW-COVER-SHELL-FAMILY-CHECK",
+      "statement": "The bounded low-cover family check is correct: among the specified sorted positive branch profiles for n=2p+4 and p=10..13, exactly one profile is eligible, at p=10 with (2,3,3,3,3,3); its 17 favorable pendant leaves give separate tagged summands totaling -122805.",
+      "scope": "Only the root with c centers, 1<=c<=6, each with at least one pendant leaf, sorted branch sizes summing to 2p+3-c, for p=10..13. This does not cover all trees of vertex-cover number at most six or establish a universal shell or aggregate claim.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CU-F6/REPORT.md",
+        "cycles/cycle-4/C4-CU-F6/replay_copy.py",
+        "cycles/cycle-4/C4-CU-F6/low_cover_family.json",
+        "cycles/cycle-4/C4-CU-F6/independent_check.py",
+        "cycles/cycle-4/C4-CU-F6/independent_check.json"
+      ],
+      "reason": "retained: exact family enumeration and an independent root-conditioned polynomial derivation agree on candidate counts, eligibility, the first strict descent and terminal zero-extension, all original leaves and strict selector values in the sole eligible witness, each same-support tagged summand, and the full negative sum. The source's generic selector loop omits the root leaf for c=1, but that candidate is ineligible and this omission does not affect the claimed eligible witness or eligibility totals. The bounded result has no bearing on the omitted general low-cover shapes or universal target."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CU-F6/REPORT.md",
+  "limitations": [
+    "The exhaustive boundary is the listed root-and-pendant-arms family only, not all ordinary trees of vertex-cover number at most six.",
+    "The sole eligible example has a negative full aggregate and does not settle the universal lower-region aggregate or shell-sign questions.",
+    "The route script omits the root from its selector loop for c=1; this candidate is ineligible and does not alter the reviewed claim."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-F6-LOW-COVER-SHELL-FAMILY-CHECK"
+  ]
+}

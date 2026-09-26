@@ -1,0 +1,26 @@
+{
+  "worker_id": "C3-T1",
+  "cycle": 3,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C3-T1.COVER-BUDGET-AND-FIRST-MARK-SUBCLASS",
+      "statement": "An exact cover-number coefficient lower bound is necessary for early descent, and a first-mark residual-size condition proves the primary sum on a structural subclass of later shells.",
+      "scope": "For any finite graph with cover C of size c, the bound in REPORT.md applies rankwise; for the tree primary shell n=2p+2+d with d>=1, the stated first-mark deletion-size condition for every original leaf in F(T,p) implies S(T,p)<=0. This does not cover arbitrary eligible trees.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-T1/EVIDENCE.json"
+      ],
+      "reason": "Both statements follow from exact coefficient decomposition and incidence counting. The structural condition is not derived from the primary hypotheses, while the cover bound is only necessary; the complete registered aggregate remains unresolved."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-T1/REPORT.md",
+  "limitations": [
+    "The complete lower-region ordinary favorable-leaf aggregate for arbitrary eligible trees remains unresolved.",
+    "The first-mark sufficient condition is not shown to follow from early descent, the strict alpha guard, or the favorable selector.",
+    "The exact finite cover bound supplies no closed-form cover threshold and does not control marked residual signs at orders 2k and above.",
+    "No literature result, census, or universal conclusion beyond the stated subclass is used."
+  ],
+  "status_authority": "proposed_worker_only"
+}

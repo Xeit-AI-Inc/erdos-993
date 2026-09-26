@@ -1,0 +1,36 @@
+$ /Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean --version
+cwd: /Users/ashtonsperry/VerityOS/experiments/erdos-993-lower-region-compensation-dre-2026-09-25/runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject
+returncode: 0
+stdout:
+Lean (version 4.32.2, arm64-apple-darwin24.6.0, commit f3b06c705e6c85f5314019d5d3baab0fec5b580c, Release)
+stderr:
+
+$ /Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lake --version
+cwd: /Users/ashtonsperry/VerityOS/experiments/erdos-993-lower-region-compensation-dre-2026-09-25/runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject
+returncode: 0
+stdout:
+Lake version 5.0.0-src+f3b06c7 (Lean version 4.32.2)
+stderr:
+
+$ /Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lake build
+cwd: /Users/ashtonsperry/VerityOS/experiments/erdos-993-lower-region-compensation-dre-2026-09-25/runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject
+returncode: 0
+stdout:
+✔ [8655/8657] Built LeanProof.Main (12s)
+✔ [8656/8657] Built LeanProof (3.2s)
+Build completed successfully (8657 jobs).
+stderr:
+
+$ /Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lake env /Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean /Users/ashtonsperry/VerityOS/experiments/erdos-993-lower-region-compensation-dre-2026-09-25/runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean
+cwd: /Users/ashtonsperry/VerityOS/experiments/erdos-993-lower-region-compensation-dre-2026-09-25/runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject
+returncode: 0
+stdout:
+
+stderr:
+
+$ /Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lake env /Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean /Users/ashtonsperry/VerityOS/experiments/erdos-993-lower-region-compensation-dre-2026-09-25/runs/lean-2026-09-25-c2-order-bands-repair-1/EVIDENCE/axioms-probe-2v4myfoy.lean
+cwd: /Users/ashtonsperry/VerityOS/experiments/erdos-993-lower-region-compensation-dre-2026-09-25/runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject
+returncode: 0
+stdout:
+'E993OrderBand.markedIsolateAndOrdinaryLeafOrderBand' depends on axioms: [propext, Classical.choice, Quot.sound]
+stderr:

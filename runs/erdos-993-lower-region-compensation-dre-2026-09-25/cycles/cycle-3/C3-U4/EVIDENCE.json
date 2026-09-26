@@ -1,0 +1,31 @@
+{
+  "schema": "e993.worker-evidence.route.v1",
+  "worker_id": "C3-U4",
+  "items": [
+    {
+      "evidence_id": "cut_dual_and_submodularity",
+      "kind": "proved_general_reduction",
+      "scope": "Every finite bipartite transport network with nonnegative integer upper supplies, lower capacities, and uncapacitated legal arcs.",
+      "statement": "Saturation is equivalent to every weighted neighborhood inequality u(X) <= c(N(X)). The function g(X)=c(N(X))-u(X) is submodular, and its minimizers form a lattice under union and intersection.",
+      "argument": "The source-side min-cut formula is total supply minus max flow. For submodularity use N(X union Y)=N(X) union N(Y), N(X intersect Y) subset N(X) intersect N(Y), nonnegative additive c, and modular u. If X,Y minimize g, submodularity and minimality force their union and intersection to minimize it too.",
+      "limitations": ["This is an exact dual criterion but does not classify the minimizing cuts or prove that their deficits are nonnegative for the tree-derived network."]
+    },
+    {
+      "evidence_id": "automorphism_orbit_lift",
+      "kind": "proved_general_reduction",
+      "scope": "Finite bipartite relation invariant under a finite group acting on both sides, with orbit-invariant supplies and capacities; applicable to a fixed tree instance when its automorphism action preserves the original selector and legal moves.",
+      "statement": "The quotient with one node per vertex orbit and an arc for each nonempty allowed orbit pair is feasible exactly when the literal weighted network is feasible.",
+      "argument": "Literal flows aggregate. Conversely, any nonempty allowed relation between two vertex orbits is biregular by transitivity and group invariance. Spread each quotient flow uniformly over the relation edges; each endpoint in an orbit receives equal orbit-pair load. The quotient supplies/capacities imply literal vertex bounds. Integrality of the literal network then yields an integral flow if required.",
+      "limitations": ["Orbit compression does not guarantee a small quotient or a tractable cut family.", "The proposition does not imply the aggregate inequality for all eligible trees."]
+    },
+    {
+      "evidence_id": "ffk_scope_audit",
+      "kind": "primary_literature_scope_check",
+      "scope": "Frankl, Füredi, Kalai (1988), fixed-size r-colored set families and their one-step subset shadows.",
+      "statement": "The cited colored-shadow theorem does not directly prove the weighted deletion-plus-two-for-one cut inequalities.",
+      "argument": "The theorem concerns unweighted cardinality of (k-1)-subsets contained in k-sets. Two-for-one outputs insert a vertex absent in the source set, so are not subset-shadow elements. The target uses nonuniform selector-dependent vertex weights, and the candidate residual family cited by the common CB control is not downward closed.",
+      "citation": "https://doi.org/10.7146/math.scand.a-12231",
+      "limitations": ["A further theorem or decomposition might still use colored-shadow estimates after explicitly controlling the switch arcs, selected weights, and competing lower capacities."]
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "worker_id": "C2-CU-T2",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "The route establishes the fixed-selector weighted-rank identity for every instance in the exact primary lower-region scope and gives a sufficient cross-tag matching criterion for S(T,p)<=0; it does not establish the criterion or the universal sign.",
+      "scope": "Narrowed to the exact original-tree contract: finite ordinary trees, x(T)+2<=p, 3p<2alpha(T)+1, selector F(T,p) defined by strict Delta_p(T-v)<0, and original supports and neighborhoods with distinct leaf tags.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CU-T2/REPORT.md"
+      ],
+      "reason": "retained_narrowed: the deletion bijection, rank indices, fixed selector, tag multiplicity, and matching-implies-sign argument check out. The Hall or fractional capacity hypothesis is neither proved nor shown to follow from the favorable-selector and eligibility guards. This disposition retains only the exact reformulation and conditional criterion; it does not validate the primary sign assertion or refute it."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CU-T2/REPORT.md",
+  "limitations": [
+    "No tree-specific Hall inequality or fractional-capacity proof is supplied for the favorable fixed selector.",
+    "No eligible positive full-sum tree, exact finite census, or external theorem application is supplied.",
+    "The matching construction is only a sufficient certificate; its failure would not by itself refute the aggregate."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE"
+  ]
+}

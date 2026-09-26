@@ -1,0 +1,4 @@
+lemma vertexDegree_eq_degree (a : V) [Fintype (F.neighborSet a)] :
+    vertexDegree F a = F.degree a := by
+  rw [vertexDegree, Nat.card_eq_fintype_card, SimpleGraph.card_neighborSet_eq_degree]
+

@@ -1,0 +1,11 @@
+namespace Erdos993G1.FirstWide
+
+lemma shape_indep_on_edgeless {V : Type u} [DecidableEq V]
+    (G : SimpleGraph V) [DecidableRel G.Adj] (U : Finset V)
+    (hU : G.IsIndepSet U) (j : ℕ) :
+    ((U.powersetCard j).filter (fun S : Finset V => G.IsIndepSet S)).card = U.card.choose j := by
+  rw [Finset.filter_eq_self.mpr, Finset.card_powersetCard]
+  intro S hS
+  exact hU.mono (by simpa using (Finset.mem_powersetCard.mp hS).1)
+
+end Erdos993G1.FirstWide

@@ -1,0 +1,53 @@
+{
+  "schema": "e993.worker-ops.critique-evidence.v1",
+  "route_claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+  "source_integrity": {
+    "case_listed_files_checked": 4,
+    "case_listed_mismatches": 0,
+    "common_listed_files_checked": 115,
+    "common_listed_mismatches": 0
+  },
+  "replay": {
+    "method": "Copied the listed C3-F4 COMPUTE.py and inputs/ordinary_tree_checked.py into this worker directory, changed only the evaluator path in the copied script, and ran it to completion in the foreground.",
+    "script": "cycles/cycle-3/C3-CT-F4/replay.py",
+    "evaluator_copy": "cycles/cycle-3/C3-CT-F4/ordinary_tree_checked.py",
+    "marked_star": {
+      "graph": "K1,7",
+      "order": 8,
+      "k": 3,
+      "minimum_vertex_cover": 1,
+      "marked_vertices": [1],
+      "q_k": 15,
+      "q_k_plus_1": 20
+    },
+    "positive_but_ineligible_tree": {
+      "vertices": [0,1,2,3,4,5,6,7,8,9,10],
+      "edges": [[0,1],[0,2],[0,3],[0,4],[0,5],[0,6],[0,7],[0,8],[1,9],[9,10]],
+      "p": 4,
+      "independence_polynomial": [1,11,45,105,161,161,105,43,10,1],
+      "alpha": 9,
+      "x": 5,
+      "favorable_leaves": [2,3,4,5,6,7,8,10],
+      "summands_in_leaf_order": [19,19,19,19,19,19,19,14],
+      "sum": 147,
+      "eligibility_check": "x+2=7>p=4"
+    },
+    "seeded_prufer_sample": {
+      "seed": 20260925,
+      "draws_per_rank": 12000,
+      "rows": {
+        "6": {"order":15,"early_descent_rows":355,"positive_favorable_local_term_found":false},
+        "7": {"order":17,"early_descent_rows":10727,"positive_favorable_local_term_found":false},
+        "8": {"order":19,"early_descent_rows":11951,"positive_favorable_local_term_found":false},
+        "9": {"order":21,"early_descent_rows":11998,"positive_favorable_local_term_found":false},
+        "10": {"order":23,"early_descent_rows":12000,"positive_favorable_local_term_found":false}
+      },
+      "scope": "Seeded labeled-tree sample, not exhaustive."
+    },
+    "analytic_small_rank_checks": {
+      "p3_n9": "i_1=9 and i_2=C(9,2)-8=28, hence Delta_1=19>0 and eligibility x<=1 is impossible.",
+      "p4_n11": "i_2=45; i_3=C(11,3)-10*9+sum_v C(d(v),2), hence Delta_2=30+sum_v C(d(v),2)>0 and eligibility x<=2 is impossible. Delta_0 and Delta_1 are also positive."
+    }
+  },
+  "audit_conclusion": "The stated bounded controls reproduce. They neither refute nor prove the registered lower-region aggregate; the positive complete sum violates the selector eligibility guard, and the random sample is nonexhaustive."
+}

@@ -1,0 +1,53 @@
+{
+  "worker_id": "C3-CF-T3",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C3-T3-STAR-SYMMETRIC-CHAIN-SUBCASE",
+      "statement": "For a star K_{1,m}, any fixed leaf-tag set F, and 2<=p<=m-1 with p>(m-1)/2, the weighted upper tagged layer injects into the weighted lower tagged layer by a tag-preserving deletion.",
+      "scope": "Star trees only; arbitrary fixed subset of original leaf tags; ranks satisfying the displayed Boolean-layer conditions.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-T3/REPORT.md",
+        "cycles/cycle-3/C3-CF-T3/EVIDENCE.json"
+      ],
+      "reason": "retained: the symmetric-chain predecessor exists since n-p<=p-1; the witness condition holds on both ranks and the tag coordinate plus chain uniqueness proves injectivity."
+    },
+    {
+      "claim_id": "C3-T3-T67-EXACT-BOUNDED-ROW",
+      "statement": "The specified T_67 tree at p=99 is eligible, all 202 original leaves are favorable, and the exact complete selected sum equals the recorded negative integer.",
+      "scope": "One explicitly specified ordinary tree and rank only; exact bounded computation.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-T3/REPORT.md",
+        "cycles/cycle-3/C3-CF-T3/EVIDENCE.json"
+      ],
+      "reason": "retained: a scratch-copy replay matches the coefficient and delta vectors, eligibility guards, full selector, summand multiplicities, and complete sum. This row gives no Hall-flow conclusion."
+    },
+    {
+      "claim_id": "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL",
+      "statement": "For ordinary trees under the exact fixed-selector lower-region hypotheses, the bipartite weighted graph with deletion and two-for-one edges saturates all upper supply.",
+      "scope": "The registered weighted graph with deletion and two-for-one moves under the exact fixed-selector lower-region hypotheses; mechanism scope only, not equivalent to the primary aggregate.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-T3/REPORT.md",
+        "cycles/cycle-3/C3-CF-T3/EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: preserve the universal mechanism as open. No compatible general routing or Hall bound is supplied; a negative aggregate row is not a flow obstruction or target refutation."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CF-T3/REPORT.md",
+  "limitations": [
+    "The independent computation is one exact eligible T_67 row; it is not a census and does not construct a flow.",
+    "The symmetric-chain injection is limited to stars and does not control competing tags on branched trees.",
+    "No universal Hall proof, Hall obstruction, primary-literature bridge, or lower-region aggregate proof was established."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C3-T3-STAR-SYMMETRIC-CHAIN-SUBCASE",
+    "C3-T3-T67-EXACT-BOUNDED-ROW",
+    "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL"
+  ]
+}

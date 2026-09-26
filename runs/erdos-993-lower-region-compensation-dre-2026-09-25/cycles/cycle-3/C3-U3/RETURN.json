@@ -1,0 +1,38 @@
+{
+  "worker_id": "C3-U3",
+  "cycle": 3,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C3-U3-MARKED-COVER-SHELL",
+      "statement": "For every finite simple graph G with |V(G)|=2k+2, k>=2, tau(G)>=3, and marked set W containing a non-isolated vertex, q_(k+1)(G,W)<=q_k(G,W), where q_j counts independent j-sets meeting W.",
+      "scope": "Informal proof by the two-part marked-set split; relies on the registered exact first-wide graph classification and the arbitrary-mark order-(2k+1) reduction. No stronger order or rank scope is claimed.",
+      "status": "proposed_informal",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-U3/REPORT.md",
+        "cycles/cycle-3/C3-U3/EVIDENCE.json"
+      ],
+      "reason": "The proof splits at one non-isolated mark. The first residual has order at most 2k and uses the ordinary shadow or exact first-wide classification; the second has order 2k+1, at least two edges by the cover bound, and is covered by the arbitrary-mark reduction. The complete dependency and edge cases are written in the report."
+    },
+    {
+      "claim_id": "C3-U3-FIRST-SHELL-POINTWISE",
+      "statement": "For every finite ordinary tree T, p>=3, |V(T)|=2p+2, and x(T)+2<=p, each original-leaf summand Delta_(p-1)(T-{v,s_v})-Delta_(p-1)(T-N_T[s_v]) is nonpositive; consequently the sum over the fixed favorable leaves is nonpositive.",
+      "scope": "First parent-order shell only, informal. Uses the marked-cover lemma and the cover-three early-descent contradiction; it does not establish the all-order lower-region aggregate or a formal award.",
+      "status": "proposed_informal",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-U3/REPORT.md",
+        "cycles/cycle-3/C3-U3/EVIDENCE.json"
+      ],
+      "reason": "The cover contradiction gives tau(T)>=4. For each original leaf, H=T-{v,s_v} has tau(H)>=3 and W=N(s_v)-{v} has a non-isolated mark. The marked difference q_p-q_(p-1) is exactly the original tagged summand. Same-support leaves stay distinct."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-U3/REPORT.md",
+  "limitations": [
+    "The mathematical arguments are informal and have no Lean or kernel award.",
+    "The result addresses only |V(T)|=2p+2 and does not settle the primary lower-region claim at larger orders.",
+    "No external literature result or new computation was used.",
+    "The sealed case lists no required source claim IDs; this search proposes two new narrow auxiliary claims."
+  ],
+  "status_authority": "proposed_worker_only"
+}

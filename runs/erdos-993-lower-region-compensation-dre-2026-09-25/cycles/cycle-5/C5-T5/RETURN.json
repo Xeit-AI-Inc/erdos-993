@@ -1,0 +1,26 @@
+{
+  "worker_id": "C5-T5",
+  "cycle": 5,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C5-T5-MATCHING-UP-RANK",
+      "statement": "For J_h equal to a disjoint union of h edges, the unsigned independent-set inclusion operator U_r from rank r to rank r+1 is injective for every integer r with 0 <= r < h/2. The tag-preserving direct sum over matching blocks is injective under the corresponding per-block inequalities, and its restriction to columns meeting any fixed marked set in each block remains injective.",
+      "scope": "Finite matching graphs J_h without isolated vertices; real vector spaces on independent sets; integer rank 0 <= r < h/2. For finitely many distinct tags v, each H_v must be isomorphic to J_(h_v), with r < min_v h_v/2. The tagged map retains tags and does not assert a capacity inequality after blocks are merged or a sign for the registered tree aggregate.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-T5/REPORT.md"
+      ],
+      "reason": "The commutator identity D_(r+1)U_r-U_(r-1)D_r=(2h-3r)I-R_r follows by classifying diagonal, cancellable off-diagonal, and endpoint-swap terms. The swap graph is r-regular, so ||R_r||<=r; hence ||U_rf||^2-||D_rf||^2 >= (2h-4r)||f||^2, which is positive for nonzero f when r<h/2. Restriction to marked columns preserves injectivity. This is a restricted rank result only and does not establish the required cross-tag compensation or primary target."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-T5/REPORT.md",
+  "limitations": [
+    "The result applies only when every tagged graph in the stated direct sum is a matching with no isolated vertices and the rank is below half its edge count.",
+    "The block-diagonal map retains leaf tags; no cross-tag matching or capacity after identifying different tags is proved.",
+    "No implication from the primary eligibility and strict selector conditions to the matching and rank hypotheses is established.",
+    "The primary lower-region favorable-leaf aggregate remains unresolved by this route; no tree counterexample or universal conclusion is claimed."
+  ],
+  "status_authority": "proposed_worker_only"
+}

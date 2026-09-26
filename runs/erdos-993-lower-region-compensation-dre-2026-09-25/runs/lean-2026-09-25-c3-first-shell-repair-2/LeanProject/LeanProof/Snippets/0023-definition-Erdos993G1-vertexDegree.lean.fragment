@@ -1,0 +1,9 @@
+namespace Erdos993G1
+noncomputable section
+def vertexDegree {V : Type u}
+    (F : SimpleGraph V) (v : V) : ℕ :=
+  Nat.card (F.neighborSet v)
+
+end
+end Erdos993G1
+

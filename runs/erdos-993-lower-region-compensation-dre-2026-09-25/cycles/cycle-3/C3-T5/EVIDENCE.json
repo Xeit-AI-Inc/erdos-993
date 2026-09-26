@@ -1,0 +1,37 @@
+{
+  "family": "T_m, m >= 1, with the supplied polynomials P, D_arm, D_claw, q_arm, q_claw",
+  "computation": {
+    "replay": "python3 COMPUTE.py",
+    "arithmetic": "exact Python integers; no floating point",
+    "generation_boundary": "m=1,...,50; for each m, every integer p satisfying x(T_m)+2 <= p and 3p < 2 alpha(T_m)+1",
+    "family_parameters": "alpha(T_m)=3m+2, x(T_m) computed as the first j with Delta_j(P)<0, scanning through the zero-extended terminal rank",
+    "eligible_rows": 674,
+    "rows_with_arm_selected": 674,
+    "rows_with_claw_selected": 674,
+    "rows_with_both_selected": 674,
+    "positive_full_sums": 0,
+    "zero_full_sums": 0,
+    "conclusion_scope": "bounded exact evidence for the displayed T_m family only, not a universal theorem"
+  },
+  "exact_compensation_example": {
+    "m": 22,
+    "alpha": 68,
+    "x": 32,
+    "p": 34,
+    "strict_lower_guard": "3p=102 < 2alpha+1=137",
+    "selector": "both arm and claw leaf orbits are favorable",
+    "arm_orbit_size": 1,
+    "claw_orbit_size": 66,
+    "arm_summand": 212336130412243110,
+    "each_claw_summand": -7560098737536570631,
+    "complete_sum": -498754180547001418536
+  },
+  "symbolic_reduction": {
+    "Q_all": "(3m+1) z(1+z)^(3m) + 3m z(2+5z+2z^2)(1+4z+3z^2+z^3)^(m-1)",
+    "when_both_orbits_are_selected": "S(T_m,p) = [z^p]Q_all - [z^(p-1)]Q_all",
+    "strict_guard_simplification": "alpha=3m+2 implies p <= 2m+1",
+    "selector_gap": "No proof that both orbits (or either specified orbit subset) are selected for every eligible m,p",
+    "coefficient_gap": "No proof of the required sign for the selected coefficient difference over the full eligible region"
+  },
+  "input_integrity": "All 115 hashes listed in packets/C3-COMMON.json matched; packets/C3-T5.json listed no case-specific source files. The assigned coefficient direction was control/C3-TM-COEFFICIENT-DIRECTION.md."
+}

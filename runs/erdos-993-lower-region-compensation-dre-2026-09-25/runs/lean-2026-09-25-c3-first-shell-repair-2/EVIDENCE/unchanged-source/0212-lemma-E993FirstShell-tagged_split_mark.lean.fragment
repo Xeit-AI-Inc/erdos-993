@@ -1,0 +1,94 @@
+namespace E993FirstShell
+
+open Classical
+
+/-- Split a marked independent family at a chosen mark. -/
+lemma tagged_split_mark {V : Type u} [Fintype V] [DecidableEq V]
+    (G : SimpleGraph V) [DecidableRel G.Adj] (U W : Finset V)
+    (a : V) (haU : a ∈ U) (haW : a ∈ W) (j : ℕ) :
+    (E993Interior.taggedFamily G U W (j+1)).card =
+      (E993Interior.taggedFamily G (U.erase a) (W.erase a) (j+1)).card +
+      (((U.filter (fun x => x ≠ a ∧ ¬G.Adj a x)).powersetCard j).filter
+        (fun S : Finset V => G.IsIndepSet (S : Set V))).card := by
+  classical
+  let N := U.filter (fun x => x ≠ a ∧ ¬G.Adj a x)
+  let A := E993Interior.taggedFamily G U W (j+1)
+  have hexclude : A.filter (fun S => a ∉ S) =
+      E993Interior.taggedFamily G (U.erase a) (W.erase a) (j+1) := by
+    ext S
+    simp only [A, E993Interior.taggedFamily, Finset.mem_filter,
+      Finset.mem_powersetCard]
+    constructor
+    · rintro ⟨⟨⟨hSU, hcard⟩, hind, hmark⟩, hnot⟩
+      refine ⟨⟨?_, hcard⟩, hind, ?_⟩
+      · intro x hx
+        exact Finset.mem_erase.mpr ⟨fun h => hnot (h ▸ hx), hSU hx⟩
+      · obtain ⟨x, hxS, hxW⟩ := Finset.not_disjoint_iff.mp hmark
+        exact Finset.not_disjoint_iff.mpr
+          ⟨x, hxS, Finset.mem_erase.mpr ⟨fun h => hnot (h ▸ hxS), hxW⟩⟩
+    · rintro ⟨⟨hSU, hcard⟩, hind, hmark⟩
+      have hnot : a ∉ S := by
+        intro haS
+        exact (Finset.mem_erase.mp (hSU haS)).1 rfl
+      refine ⟨⟨⟨?_, hcard⟩, hind, ?_⟩, hnot⟩
+      · intro x hx
+        exact (Finset.mem_erase.mp (hSU hx)).2
+      · obtain ⟨x, hxS, hxW⟩ := Finset.not_disjoint_iff.mp hmark
+        exact Finset.not_disjoint_iff.mpr
+          ⟨x, hxS, (Finset.mem_erase.mp hxW).2⟩
+  have hinclude : (A.filter (fun S => a ∈ S)).card =
+      ((N.powersetCard j).filter
+        (fun S : Finset V => G.IsIndepSet (S : Set V))).card := by
+    apply Finset.card_bij (fun S _ => S.erase a)
+    · intro S hS
+      obtain ⟨hS, haS⟩ := Finset.mem_filter.mp hS
+      obtain ⟨⟨hSU, hcard⟩, hind, _⟩ :
+          (S ⊆ U ∧ S.card = j+1) ∧ G.IsIndepSet (S : Set V) ∧
+            ¬ Disjoint S W := by
+        simpa only [A, E993Interior.taggedFamily, Finset.mem_filter,
+          Finset.mem_powersetCard] using hS
+      apply Finset.mem_filter.mpr
+      refine ⟨Finset.mem_powersetCard.mpr ⟨?_, ?_⟩, ?_⟩
+      · intro x hx
+        obtain ⟨hxa, hxS⟩ := Finset.mem_erase.mp hx
+        exact Finset.mem_filter.mpr
+          ⟨hSU hxS, hxa, hind haS hxS (Ne.symm hxa)⟩
+      · simpa [hcard] using Finset.card_erase_of_mem haS
+      · exact hind.mono (by simpa using Finset.erase_subset a S)
+    · intro S hS T hT hST
+      have haS := (Finset.mem_filter.mp hS).2
+      have haT := (Finset.mem_filter.mp hT).2
+      calc S = insert a (S.erase a) := (Finset.insert_erase haS).symm
+           _ = insert a (T.erase a) := by rw [hST]
+           _ = T := Finset.insert_erase haT
+    · intro S hS
+      obtain ⟨hSN, hind⟩ := Finset.mem_filter.mp hS
+      obtain ⟨hSN, hcard⟩ := Finset.mem_powersetCard.mp hSN
+      have hnot : a ∉ S := by
+        intro h
+        exact (Finset.mem_filter.mp (hSN h)).2.1 rfl
+      have hSU : S ⊆ U := fun x hx => (Finset.mem_filter.mp (hSN hx)).1
+      have hnew : G.IsIndepSet (↑(insert a S) : Set V) := by
+        intro x hx y hy hxy hAdj
+        simp only [Finset.mem_coe, Finset.mem_insert] at hx hy
+        rcases hx with rfl | hx
+        · rcases hy with rfl | hy
+          · exact hxy rfl
+          · exact (Finset.mem_filter.mp (hSN hy)).2.2 hAdj
+        · rcases hy with rfl | hy
+          · exact (Finset.mem_filter.mp (hSN hx)).2.2 hAdj.symm
+          · exact hind hx hy hxy hAdj
+      refine ⟨insert a S, ?_, Finset.erase_insert hnot⟩
+      apply Finset.mem_filter.mpr
+      refine ⟨?_, Finset.mem_insert_self a S⟩
+      simp only [A, E993Interior.taggedFamily, Finset.mem_filter,
+        Finset.mem_powersetCard]
+      refine ⟨⟨Finset.insert_subset haU hSU, ?_⟩, hnew, ?_⟩
+      · rw [Finset.card_insert_of_notMem hnot, hcard]
+      · exact Finset.not_disjoint_iff.mpr
+          ⟨a, Finset.mem_insert_self a S, haW⟩
+  have hp := Finset.card_filter_add_card_filter_not (s := A) (fun S => a ∈ S)
+  rw [hinclude, hexclude] at hp
+  exact hp.symm.trans (Nat.add_comm _ _)
+
+end E993FirstShell

@@ -1,0 +1,3 @@
+# Controller scope calculation for the low-rank matching up-map
+
+This does not contradict the standalone operator lemma. If an actual leaf-deletion H_v=T-{v,s_v} is J_h with no isolated vertices, then |T|=2h+2. R27 |T|<=4x(T) and primary eligibility p>=x+2 imply r=p-1>=x+1>h/2. Thus the route condition r<h/2 cannot occur in the eligible primary region for such an H_v. This is stronger than merely failing to derive the rank condition. The lemma may be mathematically correct but has no direct overlap with its proposed ordinary-tree application at the required rank. Have origin adjudication verify this explicit calculation before assessing usefulness.

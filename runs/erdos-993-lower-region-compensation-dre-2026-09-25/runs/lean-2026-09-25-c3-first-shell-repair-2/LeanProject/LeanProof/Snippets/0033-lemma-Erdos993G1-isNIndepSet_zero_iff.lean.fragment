@@ -1,0 +1,5 @@
+lemma isNIndepSet_zero_iff (S : Finset V) :
+    F.IsNIndepSet 0 S ↔ S = ∅ := by
+  simpa only [SimpleGraph.isNClique_compl] using
+    (SimpleGraph.isNClique_zero (G := Fᶜ) (s := S))
+

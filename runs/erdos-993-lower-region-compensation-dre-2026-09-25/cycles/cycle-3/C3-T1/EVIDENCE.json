@@ -1,0 +1,17 @@
+{
+  "schema": "e993.worker-evidence.v1",
+  "items": [
+    {
+      "id": "cover-budget",
+      "kind": "exact-derivation",
+      "statement": "For any vertex cover C of size c in a graph T on n vertices, with N=n-c, the decomposition over independent X subset C gives Delta_r(T) >= d_r(N)+sum_{a=1}^{min(c,r+1)} binom(c,a)m_N(r-a), where d_s(b)=binom(b,s+1)-binom(b,s) with zero extension and m_N(s)=min_{0<=b<=N}d_s(b). Therefore eligibility x(T)+2<=p requires this lower bound to be negative for some 0<=r<=p-2.",
+      "replay": "Expand I_T(z)=sum_X z^|X|(1+z)^b_X, subtract coefficients of z^r and z^(r+1), bound each nonempty-X contribution by the finite minimum over b=0,...,N, and use that eligibility supplies an integer negative Delta_r at a rank r<=p-2."
+    },
+    {
+      "id": "first-mark-subclass",
+      "kind": "exact-derivation",
+      "statement": "For H=T-{v,s}, W=N_T(s)\\{v}, k=p-1, and first-mark residuals J_i=H-(N_H[w_i] union earlier marks), q_(k+1)-q_k=sum_i(i_k(J_i)-i_(k-1)(J_i)). If every |V(J_i)|<=2k-1, incidence counting gives each summand nonpositive. For |V(T)|=2p+2+d this follows when an ordering of W makes every deletion union have size at least d+3.",
+      "replay": "Partition marked independent sets by first included mark; after choosing w_i, the remaining vertices lie in J_i. For a graph J, count incidences (A,y) where A is independent of size k-1 and y extends it to an independent k-set: k*i_k(J)<= (|V(J)|-k+1)*i_(k-1)(J). Since |V(J)|<=2k-1, the multiplier is at most k."
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+lemma indepCount_two_add_edges [Finite V] :
+    indepCount F 2 + (Nat.card F.edgeSet : ℤ) = ((Nat.card V).choose 2 : ℤ) := by
+  classical
+  letI := Fintype.ofFinite V
+  have hd : Disjoint F.edgeFinset Fᶜ.edgeFinset :=
+    SimpleGraph.disjoint_edgeFinset.mpr disjoint_compl_right
+  have hu : F.edgeFinset ∪ Fᶜ.edgeFinset = (⊤ : SimpleGraph V).edgeFinset := by
+    ext e
+    induction e using Sym2.inductionOn with
+    | hf a b =>
+      by_cases hab : a = b
+      · subst b
+        simp
+      · simp [SimpleGraph.compl_adj, hab]
+        exact Classical.em _
+  have ht : F.edgeFinset.card + Fᶜ.edgeFinset.card = (Fintype.card V).choose 2 := by
+    rw [← Finset.card_union_of_disjoint hd, hu,
+      SimpleGraph.card_edgeFinset_top_eq_card_choose_two]
+  rw [indepCount_eq_card_indepSetFinset, indepSetFinset_two_eq,
+    Finset.card_image_of_injective _ sym2_toFinset_injective,
+    Nat.card_eq_fintype_card, Nat.card_eq_fintype_card,
+    ← SimpleGraph.edgeFinset_card]
+  exact_mod_cast (by omega : Fᶜ.edgeFinset.card + F.edgeFinset.card = (Fintype.card V).choose 2)
+
+end Erdos993G1
+
+
+namespace Erdos993G1
+
+variable {V : Type u} (F : SimpleGraph V)
+

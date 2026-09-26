@@ -1,0 +1,40 @@
+{
+  "worker_id": "C1-CT-U1",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C1-U1-1",
+      "statement": "For every finite bipartite H, marked W, integer h >= alpha(H), and 1 <= k <= h, the registered tagged-incidence identity holds with actual addable vertices and each multiply marked (k+1)-set counted once; D and C are nonnegative.",
+      "scope": "The tagged-incidence auxiliary exactly as defined in SOLUTION-CONTRACT.md, including k=h and q_k=0.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CT-U1/REPORT.md"
+      ],
+      "reason": "retained: the independent color-side bound proves e(A) <= 2(h-k), and counting extensions by their number of marks gives exactly k*q_(k+1)+C incidences. The boundary k=h is valid."
+    },
+    {
+      "claim_id": "C1-U1-2",
+      "statement": "In the tree specialization, the exact deficit-budget margin equals k*sum_F(q_v(k)-q_v(k+1))=-k*S(T,p), so the proposed budget is equivalent to the original fixed-selector aggregate and is not established by D,C >= 0 alone.",
+      "scope": "Every eligible lower-region ordinary tree and its original favorable leaf tags, with h=a-1 and k=p-1.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CT-U1/REPORT.md"
+      ],
+      "reason": "retained: alpha(H_v)=a-1, 1<=k<=h follows from eligibility, and substitution gives the stated identity and margin exactly. It is a reformulation, not a proof of the required selector-level monotonicity or primary aggregate."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CT-U1/REPORT.md",
+  "limitations": [
+    "The primary lower-region aggregate and equivalent selector-level monotonicity remain unresolved.",
+    "No eligible ordinary-tree counterexample is supplied.",
+    "Finite standing controls were inspected but their computations were not replayed; no exhaustive computational claim is made.",
+    "No external theorem bridge is used, and the separate high-tail obligation is outside scope."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-U1-1",
+    "C1-U1-2"
+  ]
+}

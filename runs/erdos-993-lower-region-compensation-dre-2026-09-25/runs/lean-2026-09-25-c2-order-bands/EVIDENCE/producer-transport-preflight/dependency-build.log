@@ -1,0 +1,132 @@
+⚠ [8655/8655] Built LeanProof.FirstInteriorMain (11s)
+warning: LeanProof/FirstInteriorMain.lean:340:96: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: LeanProof/FirstInteriorMain.lean:474:24: This simp argument is unused:
+  and_left_comm
+
+Hint: Omit it from the simp argument list.
+  simp [E, and_assoc, a̵n̵d̵_̵l̵e̵f̵t̵_̵c̵o̵m̵m̵,̵ ̵and_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanProof/FirstInteriorMain.lean:545:21: This simp argument is unused:
+  hab.symm
+
+Hint: Omit it from the simp argument list.
+  simp [Finset.powersetCard_eq_filter, Finset.powerset_insert,
+  ̵  ̵ ̵ ̵ ̵ ̵hsingle, Finset.filter_insert,
+  ̲  ̲ ̲ ̲ ̲ ̲Finset.filter_singleton, Finset.insert_comm,
+  ̵  ̵ ̵ ̵ ̵ ̵hab, hac, hbc, hab̵.̵s̵y̵m̵m̵,̵ ̵h̵a̵c.symm, hbc.symm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanProof/FirstInteriorMain.lean:545:31: This simp argument is unused:
+  hac.symm
+
+Hint: Omit it from the simp argument list.
+  simp [Finset.powersetCard_eq_filter, Finset.powerset_insert,
+  ̵  ̵ ̵ ̵ ̵ ̵hsingle, Finset.filter_insert,
+  ̲  ̲ ̲ ̲ ̲ ̲Finset.filter_singleton, Finset.insert_comm,
+  ̵  ̵ ̵ ̵ ̵ ̵hab, hac, hbc, hab.symm, ha̵c̵.̵s̵y̵m̵m̵,̵ ̵h̵bc.symm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanProof/FirstInteriorMain.lean:545:41: This simp argument is unused:
+  hbc.symm
+
+Hint: Omit it from the simp argument list.
+  simp [Finset.powersetCard_eq_filter, Finset.powerset_insert,
+  ̵  ̵ ̵ ̵ ̵ ̵hsingle, Finset.filter_insert,
+  ̲  ̲ ̲ ̲ ̲ ̲Finset.filter_singleton, Finset.insert_comm,
+  ̵  ̵ ̵ ̵ ̵ ̵hab, hac, hbc, hab.symm, ha̵a̲c.symm,̵ ̵h̵b̵c̵.̵s̵y̵m̵m̵]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanProof/FirstInteriorMain.lean:550:51: This simp argument is unused:
+  hpabac
+
+Hint: Omit it from the simp argument list.
+  simp_all [SimpleGraph.isIndepSet_iff, Set.Pairwise, F.adj_comm,
+  ̵  ̵ ̵ ̵Finset.filter_insert,
+  ̲  ̲ ̲ ̲Finset.filter_singleton, hpaba̵c̵,̵ ̵h̵p̵a̵bb̵c, hpacbc,
+  ̵  ̵ ̵ ̵hab, hac, hbc, hab.symm, hac.symm, hbc.symm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanProof/FirstInteriorMain.lean:550:59: This simp argument is unused:
+  hpabbc
+
+Hint: Omit it from the simp argument list.
+  simp_all [SimpleGraph.isIndepSet_iff, Set.Pairwise, F.adj_comm,
+  ̵  ̵ ̵ ̵Finset.filter_insert,
+  ̲  ̲ ̲ ̲Finset.filter_singleton, hpabac, hpab̵b̵c,̵ ̵h̵p̵a̵c̵bc,
+  ̵  ̵ ̵ ̵hab, hac, hbc, hab.symm, hac.symm, hbc.symm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanProof/FirstInteriorMain.lean:550:67: This simp argument is unused:
+  hpacbc
+
+Hint: Omit it from the simp argument list.
+  simp_all [SimpleGraph.isIndepSet_iff, Set.Pairwise, F.adj_comm,
+  ̵  ̵ ̵ ̵Finset.filter_insert,
+  ̲  ̲ ̲ ̲Finset.filter_singleton, hpabac, hpabbc, hp̵ac̵bc̵,
+  ̵  ̵ ̵ ̵hab̵,̵ ̵h̵a̵c, hbc, hab.symm, hac.symm, hbc.symm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanProof/FirstInteriorMain.lean:551:4: This simp argument is unused:
+  hab
+
+Hint: Omit it from the simp argument list.
+  simp_all [SimpleGraph.isIndepSet_iff, Set.Pairwise, F.adj_comm,
+  ̵  ̵ ̵ ̵Finset.filter_insert,
+  ̲  ̲ ̲ ̲Finset.filter_singleton, hpabac, hpabbc, hpacbc,
+  ̵  ̵ ̵ ̵hab̵,̵ ̵h̵a̵c, hbc, hab.symm, hac.symm, hbc.symm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanProof/FirstInteriorMain.lean:551:9: This simp argument is unused:
+  hac
+
+Hint: Omit it from the simp argument list.
+  simp_all [SimpleGraph.isIndepSet_iff, Set.Pairwise, F.adj_comm,
+  ̵  ̵ ̵ ̵Finset.filter_insert,
+  ̲  ̲ ̲ ̲Finset.filter_singleton, hpabac, hpabbc, hpacbc,
+  ̵  ̵ ̵ ̵hab, ha̵c̵,̵ ̵h̵bc, hab.symm, hac.symm, hbc.symm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanProof/FirstInteriorMain.lean:551:14: This simp argument is unused:
+  hbc
+
+Hint: Omit it from the simp argument list.
+  simp_all [SimpleGraph.isIndepSet_iff, Set.Pairwise, F.adj_comm,
+  ̵  ̵ ̵ ̵Finset.filter_insert,
+  ̲  ̲ ̲ ̲Finset.filter_singleton, hpabac, hpabbc, hpacbc,
+  ̵  ̵ ̵ ̵hab, hac, hb̵c̵,̵ ̵h̵ab.symm, hac.symm, hbc.symm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanProof/FirstInteriorMain.lean:946:5: Variable name `hk` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LeanProof/FirstInteriorMain.lean:1020:4: Try this: intro w hw hadj
+warning: LeanProof/FirstInteriorMain.lean:1200:57: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: LeanProof/FirstInteriorMain.lean:1228:6: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: LeanProof/FirstInteriorMain.lean:1250:30: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: LeanProof/FirstInteriorMain.lean:1251:12: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: LeanProof/FirstInteriorMain.lean:1231:8: automatically included section variable(s) unused in theorem `_private.LeanProof.FirstInteriorMain.0.E993Interior.Guard.order_ge_alpha_succ`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+warning: LeanProof/FirstInteriorMain.lean:1332:8: automatically included section variable(s) unused in theorem `_private.LeanProof.FirstInteriorMain.0.E993Interior.Guard.choose_degree_one_le_sum`:
+  [DecidableEq V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [DecidableEq V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+Build completed successfully (8655 jobs).

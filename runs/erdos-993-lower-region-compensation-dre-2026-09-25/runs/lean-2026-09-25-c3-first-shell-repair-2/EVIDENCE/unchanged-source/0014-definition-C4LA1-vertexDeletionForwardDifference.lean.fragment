@@ -1,0 +1,12 @@
+namespace C4LA1
+
+variable {V : Type*} [Fintype V] [DecidableEq V]
+
+/-- The forward coefficient difference `i_(p+1)(G-v) - i_p(G-v)`, with
+natural counts embedded in the integers. -/
+def vertexDeletionForwardDifference (G : SimpleGraph V) [DecidableRel G.Adj]
+    (v : V) (p : Nat) : Int :=
+  (vertexDeletionIndepSetCount G v (p + 1) : Int) -
+    vertexDeletionIndepSetCount G v p
+
+end C4LA1

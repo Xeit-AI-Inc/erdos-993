@@ -1,0 +1,8 @@
+lemma binomDelta_floor (m j : ℕ) :
+    -(catalan j : ℤ) ≤ (m.choose (j+1) : ℤ) - m.choose j := by
+  by_cases hj : j=0
+  · subst j; simp; omega
+  rw [← binomDelta_central j]
+  rcases le_total m (2*j) with hm | hm
+  · exact binomDelta_antitone (by omega) le_rfl hm
+  · exact binomDelta_mono_center le_rfl hm

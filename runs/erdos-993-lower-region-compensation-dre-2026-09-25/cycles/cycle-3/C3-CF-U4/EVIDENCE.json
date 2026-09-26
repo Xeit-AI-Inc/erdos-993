@@ -1,0 +1,32 @@
+{
+  "schema": "e993.worker-evidence.critique.v1",
+  "worker_id": "C3-CF-U4",
+  "source_worker_id": "C3-U4",
+  "source_claim_ids": [
+    "C3-U4.COLORED-SHADOW-SCOPE",
+    "C3-U4.CUT-DUAL",
+    "C3-U4.ORBIT-COMPRESSION"
+  ],
+  "checks": [
+    {
+      "claim_id": "C3-U4.CUT-DUAL",
+      "disposition": "retained",
+      "check": "For a finite bipartite relation with source supplies u, target capacities c, and uncapacitated relation arcs, max-flow/min-cut gives saturation iff u(X) <= c(N(X)) for every source subset X. Weighted neighborhood coverage is submodular; subtracting modular u preserves submodularity. Finite submodular minimizers are closed under union and intersection. This is only a feasibility criterion for the stated network."
+    },
+    {
+      "claim_id": "C3-U4.ORBIT-COMPRESSION",
+      "disposition": "retained",
+      "check": "For an invariant relation between transitive vertex orbits, any nonempty orbit-pair relation is biregular. A quotient flow amount on that orbit pair can be spread uniformly over its edges, giving equal per-vertex loads f/|U_i| and f/|L_j|. Quotient aggregate supply/capacity bounds then give literal per-vertex feasibility; the reverse direction follows by aggregation. Integer literal capacities yield integral flow. Tree automorphisms preserve original leaves, supports, selector membership, weights, and legal moves."
+    },
+    {
+      "claim_id": "C3-U4.COLORED-SHADOW-SCOPE",
+      "disposition": "retained",
+      "check": "The route's stated non-implication is appropriately limited: an unweighted one-step subset-shadow result does not alone establish weighted neighborhood inequalities for a relation that also contains switches inserting a vertex absent from the source set. A separate bridge would be needed. The citation is not used here to prove a positive tree result."
+    }
+  ],
+  "limitations": [
+    "No tree-derived cut was independently enumerated, and no flow failure or successful flow was replayed; these dispositions audit the general proofs and scope only.",
+    "No eligible full-sum counterexample or proof of S(T,p) <= 0 is supplied by these claims.",
+    "The bibliographic theorem was not independently retrieved; the narrow claim concerns only the mismatch between ordinary subset-shadow outputs and the stated weighted switch relation."
+  ]
+}

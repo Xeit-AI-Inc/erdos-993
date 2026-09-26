@@ -1,0 +1,33 @@
+{
+  "worker_id": "C4-CT-U3",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C4-U3.LOW-COVER-SKELETON",
+      "statement": "Every ordinary tree of order 24, 26, 28, or 30 with vertex-cover number at most six has a representation by a connected core on a padded six-vertex cover and at most five outside connector vertices, with the remaining vertices pendant leaves attached to the six cover vertices, satisfying e_C + sum_u(deg(u)-1)=5; the stated finite enumeration loops cover every such representation. The correct number of six-part weak compositions at fixed n,t is binom(n-t-1,5).",
+      "scope": "Structural representation and finite census domain for the low-cover portion of n=2p+4, p=10..13. This does not assert that a census was executed or establish a selector-weighted sign.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": ["cycles/cycle-4/C4-CT-U3/EVIDENCE.json"],
+      "reason": "The padding, connected-core reduction, edge-count budget, converse construction, enumeration boundary, and core-state polynomial identity check out. The source's step-2 composition count is off by one in the upper binomial argument: compositions of n-6-t into six parts number binom(n-t-1,5). Its separately stated maximum binom(29,5) is correct, and the explicit recipe remains exhaustive; narrow the claim to the corrected count and structural/census-domain result."
+    },
+    {
+      "claim_id": "C4-U3.LOW-COVER-SIGN",
+      "statement": "The selector-weighted third-shell sign for all low-cover trees in orders 24, 26, 28, and 30 is unresolved by the supplied route evidence: the route gives a finite census plan and exact polynomial formula, but reports no executed census or sign inequality.",
+      "scope": "Low-cover subcase only, as a description of the evidence supplied; it is not a mathematical counterexample or a status award.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-4/C4-CT-U3/EVIDENCE.json"],
+      "reason": "The route explicitly states that the census was not executed and that the exact formula supplies no sign bound. This accurately records the route's unresolved result and does not imply a counterexample or a verdict on the full target."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CT-U3/REPORT.md",
+  "limitations": [
+    "Only the two required source claims were reviewed; all required claim IDs are covered exactly.",
+    "The composition-count typo is corrected in the narrowed structural claim; no census was run.",
+    "No graph-specific selector replay or full aggregate computation was performed.",
+    "No conclusion is proposed for high-cover trees or the complete ordinary lower-region aggregate."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": ["C4-U3.LOW-COVER-SIGN", "C4-U3.LOW-COVER-SKELETON"]
+}

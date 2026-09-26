@@ -1,0 +1,19 @@
+namespace E993FirstShell
+
+lemma leaf_term_nonpos_of_marked_shadow {V : Type u} [Fintype V] [DecidableEq V]
+    (T : SimpleGraph V) [DecidableRel T.Adj] (v : V) (p : ℕ)
+    (hv : C4LA1.IsGraphLeaf T v) (hp : 1 ≤ p)
+    (hshadow :
+      (E993Interior.taggedFamily T (Finset.univ \ C5LA1.H T v)
+        (C5LA1.R T v \ C5LA1.H T v) p).card ≤
+      (E993Interior.taggedFamily T (Finset.univ \ C5LA1.H T v)
+        (C5LA1.R T v \ C5LA1.H T v) (p-1)).card) :
+    C5LA1.forwardDifferenceDel T (C5LA1.H T v) (p-1) -
+      C5LA1.forwardDifferenceDel T (C5LA1.R T v) (p-1) ≤ 0 := by
+  have heq := leaf_term_eq_tagged_delta T v hv (p-1)
+  have hpn : p-1+1=p := Nat.sub_add_cancel hp
+  rw [hpn] at heq
+  rw [heq]
+  exact sub_nonpos.mpr (by exact_mod_cast hshadow)
+
+end E993FirstShell

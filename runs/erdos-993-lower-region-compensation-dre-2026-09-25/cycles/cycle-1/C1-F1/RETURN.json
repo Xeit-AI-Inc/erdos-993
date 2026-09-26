@@ -1,0 +1,26 @@
+{
+  "worker_id": "C1-F1",
+  "cycle": 1,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C1-F1-1",
+      "statement": "A deterministic seeded bounded search over 30 order-91/order-243 root multi-hub tree recipes tested all 582 eligible tree/rank rows and found no positive full ordinary favorable-leaf aggregate; the two anchor trees reproduce their positive marked terms alongside negative complete sums.",
+      "scope": "Finite computation on the 30 generated recipes and all eligible p values for each recipe as specified in REPORT.md and search_families.py. It is not a universal result over ordinary trees.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-F1/evidence/search_families.py",
+        "cycles/cycle-1/C1-F1/evidence/search_results.json"
+      ],
+      "reason": "The pinned exact forest-polynomial evaluator computes the corrected first strict descent, strict eligibility, each original leaf's selector value, and every distinct leaf-tagged summand. The output records 582 exact complete sums with zero positive rows, and independent reruns of the two anchors recover the positive marked terms and their complete negative totals. This establishes only the stated finite observation."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-F1/REPORT.md",
+  "limitations": [
+    "The sampled parameterized family is not exhaustive over multi-hub trees or ordinary trees.",
+    "No proof of the universal lower-region aggregate and no eligible positive counterexample was obtained.",
+    "The finite sample's nonpositive totals do not establish a structural deficit-budget or compensation theorem."
+  ],
+  "status_authority": "proposed_worker_only"
+}

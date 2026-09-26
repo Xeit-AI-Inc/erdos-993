@@ -1,0 +1,24 @@
+namespace E993FirstShell
+
+/-- Removing an isolated vertex preserves the absence of a one-vertex cover. -/
+lemma no_one_cover_erase_isolated {V : Type u} [Fintype V] [DecidableEq V]
+    (G : SimpleGraph V) [DecidableRel G.Adj] (U : Finset V) (a : V)
+    (hiso : ∀ b ∈ U, ¬ G.Adj a b)
+    (hno : ∀ C : Finset V, C.card ≤ 1 →
+      ¬ (∀ x y, G.Adj x y → x ∈ U → y ∈ U → x ∈ C ∨ y ∈ C)) :
+    ∀ C : Finset V, C.card ≤ 1 →
+      ¬ (∀ x y, G.Adj x y → x ∈ U.erase a → y ∈ U.erase a →
+        x ∈ C ∨ y ∈ C) := by
+  intro C hC hcov
+  apply hno C hC
+  intro x y hxy hx hy
+  have hxa : x ≠ a := by
+    intro he
+    exact hiso y hy (he ▸ hxy)
+  have hya : y ≠ a := by
+    intro he
+    exact hiso x hx (by simpa [he] using hxy.symm)
+  exact hcov x y hxy (Finset.mem_erase.mpr ⟨hxa,hx⟩)
+    (Finset.mem_erase.mpr ⟨hya,hy⟩)
+
+end E993FirstShell

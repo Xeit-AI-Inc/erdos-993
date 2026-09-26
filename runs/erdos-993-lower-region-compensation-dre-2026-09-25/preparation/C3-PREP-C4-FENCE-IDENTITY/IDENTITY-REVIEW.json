@@ -1,0 +1,59 @@
+{
+  "authority": "proposed_worker_only",
+  "registry_compared": "control/C2-ORDER-BANDS-AWARDED-CLAIM-IDENTITY.json",
+  "existing_keys_examined": 418,
+  "transitive_refuted_keys_examined": 92,
+  "proposed_keys_examined": 3,
+  "dispositions": [
+    {
+      "claim_key": "E993-LOWER-REGION-PER-LEAF-DOWN-MAP-INJECTIVITY",
+      "disposition": "REFUTED_NEW_MECHANISM_FENCE_PROPOSED",
+      "registration_recommendation": "separate canonical mechanism fence warranted",
+      "witness_order": 91,
+      "nearest_existing_keys": [
+        "E993-BETA-TARGET",
+        "E993-BETA-AGG-SUPPORT",
+        "E993-R23-LITERAL-ACTUAL-TREE-FIXED-GAMMA-HALL",
+        "E993-R23-LITERAL-DELETE-ONLY-HALL"
+      ],
+      "identity_reason": "The proposed operator injectivity is stronger than its dimension consequence q_p<=q_(p-1), and is an ordinary-tree, selected-leaf, strict-lower-region assertion. The beta entries concern coefficient signs on a governed model; the r23 entries concern literal tagged relations and Hall neighborhoods. The T22 positive pointwise dimension gap independently kills this operator, but does not identify these different mechanisms.",
+      "witness_evidence": "INDEPENDENT-EVIDENCE.json#/t22",
+      "formal_award": false
+    },
+    {
+      "claim_key": "E993-LOWER-REGION-SAME-RANK-WEIGHTED-OCCUPANCY-DOMINATION",
+      "disposition": "REFUTED_NEW_COMPARISON_FENCE_PROPOSED",
+      "registration_recommendation": "separate canonical comparison fence warranted",
+      "witness_order": 14,
+      "nearest_existing_keys": [
+        "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+        "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL",
+        "E993-BETA-AGG"
+      ],
+      "identity_reason": "The inequality compares the w-weighted and unweighted occupancy means at the same rank p. CT_x compares the weighted mean at p with the unweighted mean at the first descent x, a different inequality. The aggregate is a scalar count difference, and the registered two-for-one Hall claim has different edges and capacities. The order-14 witness violates only the proposed same-rank inequality among these comparisons.",
+      "witness_evidence": "INDEPENDENT-EVIDENCE.json#/order14",
+      "formal_award": false
+    },
+    {
+      "claim_key": "E993-THIRD-SHELL-ALL-RANKS-COVER-SEVEN-THRESHOLD",
+      "disposition": "REFUTED_EXISTING_D6_FENCE_ALIAS_PROPOSED",
+      "registration_recommendation": "use a precise tree-scope alias or scope note under E993-R25-COVER-DIAGONAL-D6-SIGN; no duplicate canonical key needed for this witness",
+      "witness_order": 24,
+      "nearest_existing_keys": [
+        "E993-R25-COVER-DIAGONAL-D6-SIGN",
+        "E993-R25-COVER-THRESHOLD-MIN-D-5-FOREST",
+        "E993-R25-COVER-BRANCH-UNIFORM-PREHISTORY"
+      ],
+      "identity_reason": "Put r=p-1. Then |T|=2p+4 is |T|=2r+6, and x+2<=p is x<r. The proposed implication x<r => tau>=7 is the contrapositive of tau<=6 => x>=r on trees. The existing D6 record explicitly includes that x-form and certifies the same order-24 tree with tau=6, x=8, r=9, Delta_8=-78. Its stronger strict-positive wording is not logically equivalent to x>=r when an earlier difference is zero; use only the exact negative witness and the intended x-bound when aliasing.",
+      "witness_evidence": "INDEPENDENT-EVIDENCE.json#/order24",
+      "formal_award": false
+    }
+  ],
+  "blocked_transfers": [
+    "No refutation or award of the complete favorable-leaf aggregate follows from any of the three witnesses.",
+    "No Hall failure follows from the local dimension obstruction without specifying a relation and a cut.",
+    "The order-14 witness leaves its actual CT_x comparison satisfied; no universal CT_x claim is settled.",
+    "The p=10 cover witness does not test a p>=14 pointwise third-shell candidate or establish any p=10..13 third-shell sign theorem.",
+    "No governed-RTree semantic transport or Lean theorem is established here."
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "worker_id": "C6-F2",
+  "cycle": 6,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C6-F2-HETEROGENEOUS-CUTOFF2000-SCALAR-AUDIT",
+      "statement": "The proposed h=29 falling-factorial perturbation estimate yields 80328*m*epsilon(m)<1 for every integer m>=2000; conditional selector propagation is consistent with the stated central interval, but the full heterogeneous-family proof remains unverified in this route.",
+      "scope": "Exact scalar cutoff for path-plus-star branch arities 2..4 and m>=2000, plus a conditional rank/selector audit; not a proof of the family theorem or arbitrary-tree aggregate.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-F2/REPORT.md",
+        "cycles/cycle-6/C6-F2/f2_scalar_audit.py",
+        "cycles/cycle-6/C6-F2/f2_scalar_audit.json"
+      ],
+      "reason": "Independent Fraction arithmetic verifies the exact cutoff value below one and the factor monotonicity gives the infinite tail. The route identifies no defect in this scalar step. Graph/count formulas, full coefficient-shift envelopes, mixed minors, and their complete selector application were not independently closed, so the candidate theorem is not promoted beyond OPEN."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-F2/REPORT.md",
+  "limitations": [
+    "The exact h=29 scalar estimate was independently checked, but the full inherited structural proof was not independently rederived.",
+    "No profiles with m<2000, branch arities outside 2..4, or arbitrary-tree instances were resolved.",
+    "No profile census or Lean run was performed."
+  ],
+  "status_authority": "proposed_worker_only"
+}

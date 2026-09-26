@@ -1,0 +1,15 @@
+namespace Erdos993G1
+lemma degreeChoose_sum_equality {V : Type*} [Fintype V] (d : V → ℕ)
+    (h : (∑ v, ((d v).choose 2 : ℤ)) = (∑ v, (d v : ℤ)) - Fintype.card V) :
+    ∀ v, d v = 1 ∨ d v = 2 := by
+  have hsum : ∑ v, (((d v).choose 2 : ℤ) - (d v : ℤ) + 1) = 0 := by
+    simp only [Finset.sum_add_distrib, Finset.sum_sub_distrib, Finset.sum_const,
+      Finset.card_univ, nsmul_eq_mul, mul_one]
+    omega
+  have hz := (Finset.sum_eq_zero_iff_of_nonneg
+    (fun v (_ : v ∈ (Finset.univ : Finset V)) =>
+      Erdos993G1.degreeDefect_nonneg (d v))).mp hsum
+  intro v
+  exact (Erdos993G1.degreeDefect_eq_zero_iff (d v)).mp (hz v (Finset.mem_univ v))
+end Erdos993G1
+

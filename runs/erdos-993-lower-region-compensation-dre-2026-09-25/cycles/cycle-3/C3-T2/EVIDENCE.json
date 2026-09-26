@@ -1,0 +1,16 @@
+{
+  "evidence_type": "proved_combinatorial_decomposition_with_open_reduction",
+  "claim_scope": "Rooted decomposition of independent sets and the fixed-selector weight w_F on an arbitrary finite ordinary tree; exact description of root-centered legal two-for-one switches. No universal weighted Hall conclusion.",
+  "tree_decomposition": {
+    "root": "r",
+    "branches": "T_i are components of T-r at neighbors u_i; T_i_minus is T_i with u_i deleted.",
+    "root_absent_states": "Cartesian product of independent sets A_i in T_i; rank sum_i |A_i|.",
+    "root_present_states": "{r} union Cartesian product of independent sets A_i in T_i_minus; rank 1+sum_i |A_i|."
+  },
+  "weight_formula": "w_F(B)=sum_i w_i^epsilon(A_i)+1_{r notin B} sum_{i in J} z_i 1_{sum_{ell != i} z_ell > 0}; epsilon=1_{r in B}; w_i^epsilon counts selected leaves v in A_i with s_v != r for which W_v meets A_i or (epsilon=1 and r in W_v). The latter boundary event is possible when s_v=u_i. J={i:u_i is a selected original leaf}; z_i=1_{u_i in A_i}.",
+  "switch_boundary_fact": "A switch centered at r is possible only from the root-absent slice when exactly two branch roots are occupied. It removes those two roots, inserts r, and all other branch roots are already absent. A switch centered at u_i can also cross the root boundary when r and exactly one child of u_i are its two occupied neighbors. These are the only root-boundary-crossing switches and can alter root-supported tag weight.",
+  "proof_note": "Each independent set either contains r, forcing every u_i absent, or omits r and restricts independently to each T_i. A leaf with support other than r has all other support neighbors in its own branch. A selected leaf with support r is active exactly when its branch root is occupied and another root neighbor is occupied. The switch condition is exactly the stated count of occupied neighbors.",
+  "unproved_obligation": "A selector-preserving weighted Hall uncrossing/injection for arbitrary rank-constrained cuts in the coupled branch product, preserving interior states, root tag activation, root switch edges, and shared lower capacities.",
+  "computation": "None performed for this result.",
+  "literature": "No imported theorem."
+}

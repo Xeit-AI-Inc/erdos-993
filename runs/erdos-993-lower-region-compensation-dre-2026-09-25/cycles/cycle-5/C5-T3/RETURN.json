@@ -1,0 +1,26 @@
+{
+  "worker_id": "C5-T3",
+  "cycle": 5,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C5-T3-MATCHING-ONLY-SLACK-OBSTRUCTION",
+      "statement": "For a fixed maximum matching M of H, the proposed per-set lower bound 2(h-k)-e(A) >= 2(h-k-nu(H)) is false even for H=H_v and W_v arising from an original leaf deletion in an ordinary tree; the exact correction includes the adverse term -u(A), the unmatched addable vertices.",
+      "scope": "Exact intermediate addability-slack claim for finite graphs; counterexample H_v is the isolated vertex plus 2-leaf star specified in EVIDENCE.json. The example is outside primary rank eligibility and makes no conclusion about S(T,p).",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-T3/EVIDENCE.json"
+      ],
+      "reason": "Direct graph enumeration gives h=3, nu=1, k=1, e(A)=3, so the slack is 1 while the proposed lower bound is 2. The matching-category identity is an exact partition of addable vertices. No global selected-family budget follows."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-T3/REPORT.md",
+  "limitations": [
+    "The counterexample concerns a proposed local sufficient bound, not the registered full-sum assertion.",
+    "The example is not primary-eligible: x=2, p=2, a=4; both x+2<=p and 3p<2a+1 fail.",
+    "No across-tag estimate controlling unmatched addable vertices together with the multiply marked correction was proved.",
+    "No exhaustive search or public literature retrieval was performed; the primary aggregate remains unresolved."
+  ],
+  "status_authority": "proposed_worker_only"
+}

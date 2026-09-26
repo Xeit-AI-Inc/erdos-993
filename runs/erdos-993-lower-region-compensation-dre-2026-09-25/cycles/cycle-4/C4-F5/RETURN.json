@@ -1,0 +1,42 @@
+{
+  "worker_id": "C4-F5",
+  "cycle": 4,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "E993-ORDINARY-TM-LOWER-REGION-AGGREGATE",
+      "statement": "For the ordinary path-plus-m-claws family T_m and every eligible p, the complete original favorable-leaf aggregate is nonpositive.",
+      "scope": "All integers m>=1 and natural p satisfying x(T_m)+2<=p and 3p<2 alpha(T_m)+1; the two original leaf orbits must be selected by the strict Delta_p(T_m-v)<0 test.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-F5/COMPUTE.py",
+        "cycles/cycle-4/C4-F5/EVIDENCE.json",
+        "cycles/cycle-4/C4-F5/GRAPH-CROSSCHECK.py",
+        "cycles/cycle-4/C4-F5/GRAPH-CROSSCHECK.json"
+      ],
+      "reason": "Exact orbit polynomials and the derivative identity reduce the both-orbits case to an adjacent-coefficient comparison, but no uniform sign proof was found. Exact checks through m=100 and finite equal-arm and lopsided variants have no positive aggregate; those finite bounds do not prove the all-parameter claim."
+    },
+    {
+      "claim_id": "C4-F5-TM-EXACT-BOUNDED-CHECKS",
+      "statement": "The stated exact polynomial computations give nonpositive complete sums for every eligible row in the recorded finite T_m, equal-arm, and lopsided parameter ranges, with the recorded original selector tests.",
+      "scope": "T_m for m=1..100; equal-arm variants with 1..6 leaves per branch and m=1..15; lopsided variants with one branch size s in {1,2,4,5}, other branch sizes 3, and m=2..20. An independent graph-DP cross-check covers T_m m=1..20 and lopsided m=2..8.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-F5/COMPUTE.py",
+        "cycles/cycle-4/C4-F5/EVIDENCE.json",
+        "cycles/cycle-4/C4-F5/GRAPH-CROSSCHECK.py",
+        "cycles/cycle-4/C4-F5/GRAPH-CROSSCHECK.json"
+      ],
+      "reason": "The scripts use exact integer polynomial arithmetic and independently reconstruct edge-based tree counts with the permitted checked evaluator on the stated cross-check ranges; this is a bounded computation and implies no universal statement."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-F5/REPORT.md",
+  "limitations": [
+    "The all-parameter T_m inequality is not proved or refuted; finite parameter checks do not settle it.",
+    "No bound controls the adjacent coefficient correction uniformly near the orbit modes or eligible interval endpoints.",
+    "The lopsided variants vary only one branch size and use bounded ranges; they do not cover arbitrary unequal branch profiles.",
+    "No literature theorem was imported and no formal or authoritative award is claimed."
+  ],
+  "status_authority": "proposed_worker_only"
+}

@@ -1,0 +1,6 @@
+namespace Erdos993G1.FirstWide
+
+lemma binomCoeff_nat (n k : ℕ) : binomCoeff n (k : ℤ) = (n.choose k : ℤ) := by
+  simp [binomCoeff]
+
+end Erdos993G1.FirstWide

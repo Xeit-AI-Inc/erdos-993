@@ -1,0 +1,37 @@
+{
+  "schema": "e993.c3-u2.audit-evidence.v1",
+  "audit_scope": "E993-LOWER-REGION-AGGREGATE-RANK-LE-SEVEN; rank/order reduction and all named residual slices",
+  "packet_hash_check": {
+    "common_members_listed": 115,
+    "missing": [],
+    "mismatched": []
+  },
+  "order_band_check": {
+    "leaf_residual_order": "|H|=n-2",
+    "marked_set": "W=N_T(s)\\{v}; every isolate of H is in W by connectivity and v's degree-one condition",
+    "marked_isolate_cutoff": "n<=2p+1 implies |H|<=2(p-1)+1",
+    "summand_identity": "q_p-q_(p-1)=Delta_(p-1)(H)-Delta_(p-1)(H-W)",
+    "closed_ranks": [3, 4, 5]
+  },
+  "descent_maxima": {
+    "claim_id": "E993-R27-FOREST-DESCENT-MAXIMA-CENSUS",
+    "M_1_to_5": [4, 8, 11, 15, 18],
+    "grade": "bounded_computation",
+    "universal_horizon_bridge": "registered 4k descent-order bound is formally verified; the finite scan alone is not a global ceiling",
+    "order_ceilings_for_p_3_to_7": [4, 8, 11, 15, 18]
+  },
+  "residual_slices": [
+    {"p": 6, "order": 14, "free_trees": 3159, "eligible": 240, "subset_replayed": 240, "nonnegative_sums": 0, "maximum_sum": -222, "source": "instruments/p6-order14-15/RESULTS.json"},
+    {"p": 6, "order": 15, "free_trees": 7741, "eligible": 1, "subset_replayed": 1, "nonnegative_sums": 0, "maximum_sum": -192, "source": "instruments/p6-order14-15/RESULTS.json"},
+    {"p": 7, "order": 16, "free_trees": 19320, "eligible": 1696, "subset_replayed": 1696, "nonnegative_sums": 0, "maximum_sum": -906, "source": "cycles/cycle-2/C2-F1/RESULT.json"},
+    {"p": 7, "order": 17, "free_trees": 48629, "eligible": 2955, "subset_replayed": 2955, "nonnegative_sums": 0, "maximum_sum": -966, "source": "instruments/p7-order17-18/RESULTS.corrected-scope.json"},
+    {"p": 7, "order": 18, "free_trees": 123867, "eligible": 340, "subset_replayed": 340, "nonnegative_sums": 0, "maximum_sum": -864, "source": "instruments/p7-order17-18/RESULTS.corrected-scope.json"}
+  ],
+  "scope_correction": {
+    "raw_scope_label": "orders 14 and 15 at p=7",
+    "corrected_scope_label": "orders 17 and 18 at p=7",
+    "mathematical_rows_unchanged": true,
+    "receipt": "instruments/p7-order17-18/SCOPE-CORRECTION-RECEIPT.json"
+  },
+  "replay_boundary": "Reviewed pinned generation and replay code and sealed outputs; did not rerun full enumerations in this seat."
+}

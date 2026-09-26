@@ -1,0 +1,31 @@
+{
+  "worker_id": "C5-CF-T2",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C5-T2.HETEROGENEOUS-STAR-BOUNDED-CENSUS",
+      "statement": "For the path 0-1-2 with 1 through 10 star branches of arities 2, 3, or 4, all 913 eligible profile-rank rows in the complete nondecreasing-profile census have every original leaf selected and have exact aggregate S<0.",
+      "scope": "Finite family: every nondecreasing profile in {2,3,4}^m for 1<=m<=10 and every integer p satisfying x+2<=p and 3p<2alpha+1 for its specified tree. This is a bounded computational result, not an infinite-family theorem or a resolution of the registered primary.",
+      "status": "proposed_bounded_computational",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CF-T2/PROFILE-CENSUS.py",
+        "cycles/cycle-5/C5-CF-T2/PROFILE-CENSUS.json",
+        "cycles/cycle-5/C5-CF-T2/AUDIT-EVIDENCE.json"
+      ],
+      "reason": "retained: replay from a scratch copy reproduces the sealed census byte for byte. An independent branch-factor recalculation reproduces all 285 full independence vectors, all 24,786 original-leaf selector differences, and all 24,786 selected terms. The 913 rows satisfy the exact eligibility guards, all leaves are selected in those rows, and every full sum is negative (largest -275). This confirms only the stated finite computational claim; it gives no infinite extension."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CF-T2/REPORT.md",
+  "limitations": [
+    "The result covers only 285 canonical profiles with at most 10 branches and arities 2, 3, or 4.",
+    "All-leaf selection is observed only in the enumerated eligible rows and is not established beyond them.",
+    "The replay and independent factor recalculation use exact integer arithmetic but are not kernel-checked proofs.",
+    "No infinite heterogeneous extension or resolution of the registered lower-region aggregate is established."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-T2.HETEROGENEOUS-STAR-BOUNDED-CENSUS"
+  ]
+}

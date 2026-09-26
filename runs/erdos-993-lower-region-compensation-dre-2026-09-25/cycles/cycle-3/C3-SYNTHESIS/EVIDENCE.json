@@ -1,0 +1,162 @@
+{
+  "schema": "e993.c3.synthesis.evidence.v1",
+  "source_boundary": "Three case-listed adjudicator portfolios C3-AT, C3-AF, C3-AU, including case-listed append-only repairs; common contract and scope controls. No routes or critics reopened.",
+  "integrity": {
+    "case_listed_files": 20,
+    "case_mismatches": 0,
+    "common_listed_files": 115,
+    "common_mismatches": 0,
+    "source_return_claim_counts": {
+      "C3-AT": 8,
+      "C3-AF": 7,
+      "C3-AU": 12
+    },
+    "distinct_source_claim_ids": 23,
+    "matches_required_covered_claim_ids": true
+  },
+  "source_claim_origins": {
+    "C3-T1.COVER-BUDGET-AND-FIRST-MARK-SUBCLASS": [
+      "C3-AT"
+    ],
+    "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL": [
+      "C3-AT",
+      "C3-AF",
+      "C3-AU"
+    ],
+    "C3-T3-STAR-SYMMETRIC-CHAIN-SUBCASE": [
+      "C3-AT"
+    ],
+    "C3-T3-T67-EXACT-BOUNDED-ROW": [
+      "C3-AT"
+    ],
+    "C3-T4-ODD-SHELL-REDUCTION": [
+      "C3-AT"
+    ],
+    "T5-TM-COEFFICIENT-IDENTITY": [
+      "C3-AT"
+    ],
+    "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE": [
+      "C3-AT",
+      "C3-AF",
+      "C3-AU"
+    ],
+    "C3-T6-T4-PENDANT-GRAFT-SELECTOR-CLOSURE": [
+      "C3-AT"
+    ],
+    "C3-F1.literal-two-for-one-flow-prefix": [
+      "C3-AF"
+    ],
+    "C3-F2-CB-ELIGIBLE-REPLAY": [
+      "C3-AF"
+    ],
+    "C3-F2-HUB-ARM-ARC-CLASSIFICATION": [
+      "C3-AF"
+    ],
+    "C3-F2-QUALIFYING-CHOKE-ROUTING": [
+      "C3-AF"
+    ],
+    "C3-F5-FINITE-WEIGHTED-HALL": [
+      "C3-AF"
+    ],
+    "C3-U3-FIRST-SHELL-POINTWISE": [
+      "C3-AU"
+    ],
+    "C3-U3-MARKED-COVER-SHELL": [
+      "C3-AU"
+    ],
+    "C3-U4.COLORED-SHADOW-SCOPE": [
+      "C3-AU"
+    ],
+    "C3-U4.CUT-DUAL": [
+      "C3-AU"
+    ],
+    "C3-U4.ORBIT-COMPRESSION": [
+      "C3-AU"
+    ],
+    "C3-U5-EARLY-DESCENT-MARKED-OCCUPANCY-BRIDGE": [
+      "C3-AU"
+    ],
+    "C3-U6.marked-down-operator": [
+      "C3-AU"
+    ],
+    "C3-U6.star-subcase": [
+      "C3-AU"
+    ],
+    "E993-LOWER-REGION-AGGREGATE-RANK-LE-SEVEN": [
+      "C3-AU"
+    ],
+    "E993-U1-CLONE-PROJECTION": [
+      "C3-AU"
+    ]
+  },
+  "repair_checks": {
+    "AT_T6": {
+      "source_paths": [
+        "cycles/cycle-3/C3-AT/REPAIR-A1-REPORT.md",
+        "cycles/cycle-3/C3-AT/REPAIR-A1-RESULTS.json"
+      ],
+      "before": {
+        "selected_tags": 13,
+        "prior_partial_sum": -9792,
+        "omitted_leaf": 2,
+        "omitted_term": -297,
+        "complete_sum": -10089
+      },
+      "after": {
+        "selected_tags": 14,
+        "prior_partial_sum": -16983,
+        "omitted_leaf": 2,
+        "omitted_term": -297,
+        "complete_sum": -17280
+      },
+      "arithmetic_agrees": true
+    },
+    "AU_U6": {
+      "source_paths": [
+        "cycles/cycle-3/C3-AU/REPAIR-A1-REPORT.md",
+        "cycles/cycle-3/C3-AU/REPAIR-A1-RESULTS.json"
+      ],
+      "tree": "T22",
+      "p": 34,
+      "q33": 7007092303604022630,
+      "q34": 7219428434016265740,
+      "local_difference": 212336130412243110,
+      "claw_tag_count": 66,
+      "claw_term_each": -7560098737536570631,
+      "complete_S": -498754180547001418536,
+      "arithmetic_agrees": true
+    }
+  },
+  "review_checks": {
+    "coverage_exact": true,
+    "claim_count": 23,
+    "source_claim_occurrences": 27,
+    "all_claims_have_disposition": true
+  },
+  "disposition_by_claim_id": {
+    "C3-F1.literal-two-for-one-flow-prefix": "retained",
+    "C3-F2-CB-ELIGIBLE-REPLAY": "retained",
+    "C3-F2-HUB-ARM-ARC-CLASSIFICATION": "retained",
+    "C3-F2-QUALIFYING-CHOKE-ROUTING": "retained",
+    "C3-F5-FINITE-WEIGHTED-HALL": "retained",
+    "C3-T1.COVER-BUDGET-AND-FIRST-MARK-SUBCLASS": "retained_narrowed",
+    "C3-T3-STAR-SYMMETRIC-CHAIN-SUBCASE": "retained",
+    "C3-T3-T67-EXACT-BOUNDED-ROW": "retained",
+    "C3-T4-ODD-SHELL-REDUCTION": "retained_narrowed",
+    "C3-T6-T4-PENDANT-GRAFT-SELECTOR-CLOSURE": "rejected",
+    "C3-U3-FIRST-SHELL-POINTWISE": "retained",
+    "C3-U3-MARKED-COVER-SHELL": "retained",
+    "C3-U4.COLORED-SHADOW-SCOPE": "retained_narrowed",
+    "C3-U4.CUT-DUAL": "retained",
+    "C3-U4.ORBIT-COMPRESSION": "retained",
+    "C3-U5-EARLY-DESCENT-MARKED-OCCUPANCY-BRIDGE": "retained",
+    "C3-U6.marked-down-operator": "retained_narrowed",
+    "C3-U6.star-subcase": "retained",
+    "E993-LOWER-REGION-AGGREGATE-RANK-LE-SEVEN": "retained_narrowed",
+    "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE": "retained_narrowed",
+    "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL": "retained_narrowed",
+    "E993-U1-CLONE-PROJECTION": "retained_narrowed",
+    "T5-TM-COEFFICIENT-IDENTITY": "retained"
+  },
+  "limits": "No independent rerun of full generators, finite transport sweeps, or Lean; source computations retain their stated dependencies."
+}

@@ -1,0 +1,32 @@
+{
+  "source_case": "cycles/cycle-5/C5-T6/EVIDENCE.json",
+  "source_case_sha256": "ce18067d06987927b40fc1abc2e195055d73282c5f08c6e5eb895f781fc07d42",
+  "replay_source": "cycles/cycle-5/C5-T6 used inputs/ordinary_tree_checked.py; replay executed from a local scratch copy",
+  "replay_source_sha256": "a012bb78915ccdfa2f729c0cdb520cd8f29572277123c92e80ba6091498f533d",
+  "replay_script": "replay.py",
+  "checks": {
+    "vertices": 24,
+    "edges": 23,
+    "connected": true,
+    "acyclic_by_connected_tree_criterion": true,
+    "cover_vertices": [1, 5, 9, 13, 17, 21],
+    "cover_size": 6,
+    "cover_meets_every_edge": true,
+    "independence_polynomial": [1, 24, 253, 1566, 6400, 18419, 38970, 62650, 78593, 78515, 63348, 41582, 22199, 9548, 3240, 836, 154, 18, 1],
+    "polynomial_independently_recomputed_by_branch_factorization": true,
+    "branch_factorization": "P_T(z)=((1+z)^3+z)^5*((1+z)^2+z)+z*(1+z)^17",
+    "alpha": 18,
+    "first_strict_descent_x": 8,
+    "Delta_10_T": -21766,
+    "x_plus_2_le_p": true,
+    "three_p_lt_two_alpha_plus_one": true,
+    "p": 10,
+    "original_leaf_count": 17,
+    "favorable_leaf_count": 17,
+    "all_original_leaves_selected": true,
+    "all_recorded_selector_deltas_strictly_negative": true,
+    "all_leaf_supports_and_summands_match_source_evidence": true,
+    "full_aggregate_S": -122805
+  },
+  "review_conclusion": "Retain the finite witness that an eligible n=2p+4 tree can have a vertex cover of size at most 6. Narrow the implication: this refutes a universal assertion that all trees in the slice have tau>=7, but does not refute a conditional theorem whose premise is tau>=7. The witness has S<0 and does not refute the primary aggregate."
+}

@@ -1,0 +1,18 @@
+namespace E993FirstShell
+
+lemma crossingIndex_pos_of_order {V : Type u} [Fintype V] [DecidableEq V]
+    (T : SimpleGraph V) [DecidableRel T.Adj]
+    (horder : 2 ≤ Fintype.card V) :
+    0 < C5LA1.crossingIndex T := by
+  have hneg := crossingIndex_negative T
+  rw [empty_forwardDifference_eq_delta] at hneg
+  have hzero : Erdos993G1.delta T 0 = (Fintype.card V : ℤ) - 1 := by
+    simpa [Nat.card_eq_fintype_card] using Erdos993G1.delta_zero T
+  by_contra h
+  have hx : C5LA1.crossingIndex T = 0 := by omega
+  rw [hx] at hneg
+  norm_num only [Nat.cast_zero] at hneg
+  rw [hzero] at hneg
+  omega
+
+end E993FirstShell

@@ -1,0 +1,10 @@
+namespace Erdos993G1.ThirdWide
+open Finset Classical
+
+lemma catalan_mono {a b : ℕ} (hab : a ≤ b) :
+    (catalan a : ℤ) ≤ catalan b := by
+  induction b, hab using Nat.le_induction with
+  | base => exact le_rfl
+  | succ b hab ih => exact ih.trans (catalan_succ_ge b)
+
+end Erdos993G1.ThirdWide

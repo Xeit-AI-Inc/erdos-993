@@ -1,0 +1,31 @@
+{
+  "worker_id": "C4-U3",
+  "cycle": 4,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C4-U3.LOW-COVER-SKELETON",
+      "statement": "Every ordinary tree of order 24, 26, 28, or 30 with a vertex cover of size at most six admits a complete representation by a connected six-cover core, at most five outside connector vertices, and six pendant-leaf multiplicities satisfying e_C + sum_u(deg(u)-1)=5; the stated finite recipe covers all such representations.",
+      "scope": "Structural representation and finite census domain for the low-cover portion of the n=2p+4, p=10..13 third-shell rows.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-4/C4-U3/EVIDENCE.json"],
+      "reason": "The proof follows by deleting outside degree-one vertices, using connectivity of the remaining subtree and the exact tree edge count; the converse construction is checked. The fixed-order multiplicity domain is explicit and finite."
+    },
+    {
+      "claim_id": "C4-U3.LOW-COVER-SIGN",
+      "statement": "The selector-weighted third-shell sign for all low-cover trees in orders 24, 26, 28, and 30 remains unresolved by this route.",
+      "scope": "Low-cover subcase only; this is a statement about the evidence produced, not a mathematical counterexample or status award.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-4/C4-U3/EVIDENCE.json"],
+      "reason": "A reproducible finite census plan and exact polynomial formula are given, but the census was not executed and the formula has no proved sign bound."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-U3/REPORT.md",
+  "limitations": [
+    "The low-cover finite census was not executed.",
+    "The report proves a structural parametrization, not a sign result.",
+    "High-cover trees and the primary aggregate are not settled."
+  ],
+  "status_authority": "proposed_worker_only"
+}

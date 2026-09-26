@@ -1,0 +1,261 @@
+{
+  "worker_id": "C2-PREP-ORDER-AUDIT",
+  "status_authority": "proposed_worker_only",
+  "candidate_results": {
+    "E993-MARKED-ISOLATE-ORDER-BAND": {
+      "result": "pass",
+      "grade_proposed": "informal_proof",
+      "precise_scope": "finite simple graph; W contains every isolate; natural k>=2; m<=2k+1",
+      "reason": "Exact marked-extension incidence identity; B+C covers every marked lower set at the odd boundary.",
+      "formal_award": false
+    },
+    "E993-ORDINARY-LEAF-ORDER-BAND": {
+      "result": "pass",
+      "grade_proposed": "informal_corollary",
+      "precise_scope": "finite ordinary tree; original leaf and support; natural p>=3; |T|<=2p+1; original closed neighborhood; integer zero extension",
+      "reason": "All isolates of T-{v,s} lie in N_T(s)\\{v}; marked layer difference equals the original leaf term.",
+      "formal_award": false
+    },
+    "E993-LOWER-REGION-FIRST-ORDER-SHELL": {
+      "result": "uncertain",
+      "grade_proposed": "open",
+      "precise_scope": "lower-region eligible ordinary-tree complete favorable-leaf aggregate at |T|=2p+2",
+      "reason": "Disjoint, nonempty next order shell; no universal sign proof or counterexample.",
+      "formal_award": false
+    }
+  },
+  "source_checks": {
+    "listed_count": 11,
+    "all_match": true,
+    "files": [
+      {
+        "path": "control/C2-NEW-CLAIMS.json",
+        "expected_sha256": "2e6bfbb465a3bb9d345030436adf5f8724e78397a62fe9b79a44fd40ce567396",
+        "actual_sha256": "2e6bfbb465a3bb9d345030436adf5f8724e78397a62fe9b79a44fd40ce567396",
+        "match": true
+      },
+      {
+        "path": "control/C2-REGISTERED-CLAIM-IDENTITY.json",
+        "expected_sha256": "a02e53c2865e6b60a7ac97605ba806b08c31f032bae8b59a32c37067e2187da4",
+        "actual_sha256": "a02e53c2865e6b60a7ac97605ba806b08c31f032bae8b59a32c37067e2187da4",
+        "match": true
+      },
+      {
+        "path": "control/C2-ORDER-BAND-CANDIDATE.md",
+        "expected_sha256": "6a27d09bd8b78dc3aa5392047e31d630e95696a1995e39c4280c4909f92f6d89",
+        "actual_sha256": "6a27d09bd8b78dc3aa5392047e31d630e95696a1995e39c4280c4909f92f6d89",
+        "match": true
+      },
+      {
+        "path": "SOLUTION-CONTRACT.md",
+        "expected_sha256": "f3667bd6424d4f0d95714772ecf76af82ed8430bdd3ec9eda0c721f1a853390c",
+        "actual_sha256": "f3667bd6424d4f0d95714772ecf76af82ed8430bdd3ec9eda0c721f1a853390c",
+        "match": true
+      },
+      {
+        "path": "inputs/ordinary_tree_checked.py",
+        "expected_sha256": "a012bb78915ccdfa2f729c0cdb520cd8f29572277123c92e80ba6091498f533d",
+        "actual_sha256": "a012bb78915ccdfa2f729c0cdb520cd8f29572277123c92e80ba6091498f533d",
+        "match": true
+      },
+      {
+        "path": "inputs/standing-controls/t22-order91.json",
+        "expected_sha256": "2198f01fa5de1c192da190ac242f5af8a914b0b03bd5e6df979590d20c6a18ed",
+        "actual_sha256": "2198f01fa5de1c192da190ac242f5af8a914b0b03bd5e6df979590d20c6a18ed",
+        "match": true
+      },
+      {
+        "path": "inputs/standing-controls/t60-order243.json",
+        "expected_sha256": "871a3656ce328c800606a97bee60c2bc33b25c1381e0e716c54ff124372f23a2",
+        "actual_sha256": "871a3656ce328c800606a97bee60c2bc33b25c1381e0e716c54ff124372f23a2",
+        "match": true
+      },
+      {
+        "path": "receipts/CONTROLLER-ORDER-SHELL-SANITY.json",
+        "expected_sha256": "377258cf7ace64349bd05a6f0bd088687dcc3b8de55826b153ec13fa7f38a134",
+        "actual_sha256": "377258cf7ace64349bd05a6f0bd088687dcc3b8de55826b153ec13fa7f38a134",
+        "match": true
+      },
+      {
+        "path": "receipts/CONTROLLER-ORDER-BAND-LARGER-CONTROL.json",
+        "expected_sha256": "3b64b5e169d1fc34187ff4c6b2a01a5b9d8148867c21fc55202efd9cbc06208e",
+        "actual_sha256": "3b64b5e169d1fc34187ff4c6b2a01a5b9d8148867c21fc55202efd9cbc06208e",
+        "match": true
+      },
+      {
+        "path": "control-proposals/formal-intake/FirstInteriorMain.lean",
+        "expected_sha256": "8d864da290947d75ac0cb52644b8b5336a19076878fcb11eeed552e6a118d7a9",
+        "actual_sha256": "8d864da290947d75ac0cb52644b8b5336a19076878fcb11eeed552e6a118d7a9",
+        "match": true
+      },
+      {
+        "path": "control-proposals/formal-intake/SOURCE-PIN.json",
+        "expected_sha256": "a5801a2626be4368180598151f62889c6eb064baab3eb1fb2c17a3f2f207c86d",
+        "actual_sha256": "a5801a2626be4368180598151f62889c6eb064baab3eb1fb2c17a3f2f207c86d",
+        "match": true
+      }
+    ],
+    "source_hashes_verified_before_read": true
+  },
+  "registry_check": {
+    "claim_count": 412,
+    "distinct_key_count": 412,
+    "relevant_refutations": [
+      "E993-BETA-TARGET",
+      "R17-BETA-D2-PGE7"
+    ],
+    "refutations_outside_order_band": true,
+    "no_exact_scope_duplicate_identified": true
+  },
+  "sharpness": {
+    "generic_cutoff_plus_one_refuted": true,
+    "rank_k1_guard_counterexample": true,
+    "tree_embedding_excluded_by_first_descent": true,
+    "checked_k": [
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  },
+  "bounded_evidence": {
+    "script": "audit_check.py",
+    "receipt": "AUDIT-CHECK.json",
+    "generic": {
+      "exhaustive_orders": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "graphs": 1100,
+      "marked_graph_pairs": 29078,
+      "rank_cases": 173545,
+      "sample_orders": [
+        6,
+        7
+      ],
+      "sample_graphs": 1991,
+      "sample_marked_graph_pairs": 11560,
+      "sample_rank_cases": 75258
+    },
+    "ordinary_tree": {
+      "exhaustive_labeled_orders": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "trees": 18248,
+      "leaf_rank_cases": 405290,
+      "favorable_sum_cases": 0
+    },
+    "eligible_first_shell_example": {
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          3,
+          12
+        ],
+        [
+          3,
+          13
+        ],
+        [
+          4,
+          14
+        ],
+        [
+          4,
+          15
+        ],
+        [
+          5,
+          16
+        ],
+        [
+          5,
+          17
+        ]
+      ],
+      "order": 18,
+      "p": 8,
+      "alpha": 12,
+      "x": 6,
+      "independence_coefficients": [
+        1,
+        18,
+        136,
+        574,
+        1519,
+        2672,
+        3216,
+        2672,
+        1519,
+        574,
+        136,
+        18,
+        1
+      ],
+      "favorable_count": 12,
+      "aggregate": -4256,
+      "brute_force_matched_dp": true
+    },
+    "bounded_only": true
+  },
+  "limitations": [
+    "No Lean build or new formal proof was performed.",
+    "Finite enumeration and standing controls do not prove a universal statement.",
+    "The small-tree census contains zero eligible lower-region favorable-aggregate cases.",
+    "The first remaining order shell remains OPEN; one negative eligible example does not prove it.",
+    "Registry comparison is an exact statement and scope audit, not a proof of global semantic novelty."
+  ]
+}

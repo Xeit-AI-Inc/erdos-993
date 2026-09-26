@@ -1,0 +1,19 @@
+namespace E993FirstShell
+open Classical
+
+lemma leaf_term_eq_tagged_delta {V : Type u} [Fintype V] [DecidableEq V]
+    (T : SimpleGraph V) [DecidableRel T.Adj] (v : V)
+    (hv : C4LA1.IsGraphLeaf T v) (k : ℕ) :
+    C5LA1.forwardDifferenceDel T (C5LA1.H T v) k -
+      C5LA1.forwardDifferenceDel T (C5LA1.R T v) k =
+    ((E993Interior.taggedFamily T (Finset.univ \ C5LA1.H T v)
+        (C5LA1.R T v \ C5LA1.H T v) (k + 1)).card : ℤ) -
+      (E993Interior.taggedFamily T (Finset.univ \ C5LA1.H T v)
+        (C5LA1.R T v \ C5LA1.H T v) k).card := by
+  simp only [C5LA1.forwardDifferenceDel]
+  rw [E993OrderBand.leaf_count_split T v hv (k + 1),
+    E993OrderBand.leaf_count_split T v hv k]
+  push_cast
+  ring
+
+end E993FirstShell

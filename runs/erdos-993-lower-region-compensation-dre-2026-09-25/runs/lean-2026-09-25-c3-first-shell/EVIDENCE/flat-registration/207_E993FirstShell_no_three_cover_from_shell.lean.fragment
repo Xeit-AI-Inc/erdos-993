@@ -1,0 +1,12 @@
+namespace E993FirstShell
+
+lemma no_three_cover_from_shell {V : Type u} [Fintype V] [DecidableEq V]
+    (T : SimpleGraph V) [DecidableRel T.Adj] (p : ℕ)
+    (horder : Fintype.card V = 2*p+2)
+    (hcross : C5LA1.crossingIndex T + 2 ≤ p)
+    (C0 : Finset V) (hC0 : C0.card ≤ 3) :
+    ¬ (∀ x y, T.Adj x y → x ∈ C0 ∨ y ∈ C0) := by
+  exact no_three_cover_of_early_crossing T p
+    (three_le_of_early_crossing T p horder hcross) horder hcross C0 hC0
+
+end E993FirstShell

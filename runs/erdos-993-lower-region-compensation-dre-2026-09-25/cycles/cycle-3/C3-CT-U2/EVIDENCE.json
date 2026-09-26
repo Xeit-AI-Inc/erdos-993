@@ -1,0 +1,36 @@
+{
+  "schema": "e993.c3-critic.audit-evidence.v1",
+  "audit_scope": "E993-LOWER-REGION-AGGREGATE-RANK-LE-SEVEN; opposing orientation T",
+  "disposition": "retained",
+  "packet_hash_check": {
+    "case_files_checked": 3,
+    "case_mismatches": [],
+    "common_files_checked": 115,
+    "common_mismatches": []
+  },
+  "reduction": {
+    "eligibility": "For nonempty T, Delta_0=n-1>=0 and Delta_alpha=-1; hence x exists, x>=1, p>=3 and x<=p-2.",
+    "forest_ceiling": "Registered formal bound Delta_k<0 implies n<=4k; M(1..5) remain bounded-computation values 4,8,11,15,18.",
+    "order_caps_p3_to_p7": [4, 8, 11, 15, 18],
+    "band_covers": "n<=2p+1; covers all p=3,4,5 ceilings, p6 through n13, and p7 through n15.",
+    "residual_cases": ["p6:n14", "p6:n15", "p7:n16", "p7:n17", "p7:n18"]
+  },
+  "order_band_audit": {
+    "k": "p-1>=2",
+    "isolates_marked": "An isolate in H=T-{v,s_v} must connect in T to s_v; it cannot connect to the original leaf v; hence it lies in W=N_T(s_v)\\{v}.",
+    "residual": "R=T-N_T[s_v]=H-W",
+    "summand_identity": "q_p-q_(p-1)=Delta_(p-1)(H)-Delta_(p-1)(R), q_j=i_j(H)-i_j(H-W)",
+    "incidence_check": "k*q_(k+1)+C=(m-k)*q_k-B; for m=2k+1, B covers good marked sets and injection A->A union {y} covers bad isolate sets in C; no-nonisolated case is complementation."
+  },
+  "residual_census_summaries": [
+    {"p":6,"order":14,"free_trees":3159,"eligible":240,"subset_replayed":240,"nonnegative":0,"max_sum":-222,"stored_sum_check":-78526},
+    {"p":6,"order":15,"free_trees":7741,"eligible":1,"subset_replayed":1,"nonnegative":0,"max_sum":-192,"stored_sum_check":-192},
+    {"p":7,"order":16,"free_trees":19320,"eligible":1696,"subset_replayed":1696,"nonnegative":0,"max_sum":-906,"stored_sum_check":-2369025},
+    {"p":7,"order":17,"free_trees":48629,"eligible":2955,"subset_replayed":2955,"nonnegative":0,"max_sum":-966,"stored_sum_check":-4552313},
+    {"p":7,"order":18,"free_trees":123867,"eligible":340,"subset_replayed":340,"nonnegative":0,"max_sum":-864,"stored_sum_check":-465920}
+  ],
+  "scope_correction": "Applied the pinned p7 17/18 correction receipt; it changes only the result scope label, reports unchanged rows, and matches the corrected file hash.",
+  "replay_boundary": "No source program, tree generator, or subset enumeration was rerun in this seat. Stored per-tree arrays were summed for p6 orders14/15 and p7 orders17/18; p7 order16 was audited from its source report/result summary.",
+  "evidence_grade": "proposed rank<=7 composition; bounded-computation dependencies and informal order-band proof",
+  "formal_award": false
+}

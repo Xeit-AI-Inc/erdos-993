@@ -1,0 +1,4 @@
+lemma deleteVerts_isAcyclic (h : F.IsAcyclic) (S : Set V) :
+    (deleteVerts F S).IsAcyclic :=
+  h.induce _
+

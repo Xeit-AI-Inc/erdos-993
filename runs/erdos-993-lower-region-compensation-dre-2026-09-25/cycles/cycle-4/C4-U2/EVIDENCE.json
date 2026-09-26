@@ -1,0 +1,72 @@
+{
+  "schema": "e993.worker-evidence.cycle4.v1",
+  "claim_id": "C4-U2-MARKED-SHELL-REDUCTION",
+  "grade": "conditional_proof_with_inherited_theorem_applications",
+  "proved_conditional_statement": {
+    "tree_order": "n(T)=2p+s",
+    "rank": "p>=3; k=p-1; r=p-2",
+    "hypothesis": "tau(T)>=ceil(3s/2)+1",
+    "conclusion": "For every original leaf v, Delta_(p-1)(T-{v,s_v})-Delta_(p-1)(T-N_T[s_v])<=0. Consequently the sum over any fixed subset of original leaves is nonpositive.",
+    "marked_set": "W=N_T(s_v)\\{v}; H=T-{v,s_v}; R=H-W",
+    "hypotheses": [
+      "s>=2",
+      "tau(T)>=ceil(3s/2)+1",
+      "for every first-mark block with d>=3, p-2>=K(d)=2m(d)-d"
+    ]
+  },
+  "marked_shadow_identity": "q_j(H,W)=sum_i i_(j-1)(J_i), where marks are ordered with nonisolated marks first and J_i=H-(N_H[w_i] union earlier marks).",
+  "cover_loss": "For ell_i=|V(H)\\V(J_i)|>=2, tau(J_i)>=tau(H)-(ell_i-1). Proof: a vertex cover of J_i together with deleted vertices other than w_i covers H.",
+  "shell_parameters": {
+    "order_H": "2k+s",
+    "order_J": "2r+d",
+    "d": "s+2-ell"
+  },
+  "matching_budget": {
+    "parent_cover": "c=ceil(3s/2)",
+    "threshold": "m(d)=ceil(3d/2)-1 for d>=2",
+    "inequality": "ell-1+m(d)<=c",
+    "rank_condition": "r>=K(d)=2m(d)-d",
+    "forest_conversion": "tau(J)=nu(J)"
+  },
+  "boundary_cases": [
+    {
+      "d": "d<=1",
+      "handling": "Ordinary shadow: |J|<=2r+1 gives i_(r+1)<=i_r by double count."
+    },
+    {
+      "d": 2,
+      "handling": "m=K=2; exact first-wide two-edge result covers r=1, generic matching result covers r>=2."
+    },
+    {
+      "d": "d>=3",
+      "handling": "Requires both the large-rank matching threshold and r>=K(d)."
+    }
+  ],
+  "catalan_cutoff": {
+    "shell": 5,
+    "cover_size": 8,
+    "terminal_rank": "q=p-2",
+    "outside_size": "N=2p-3=2q+1",
+    "empty_fiber_difference": 0,
+    "first_negative_floor": "-8 Cat_(q-1)<0 for q>=1",
+    "conclusion": "The cover-Catalan lower bound cannot force tau(T)>=9 at this rank; this is a method failure, not a counterexample to the shell claim."
+  },
+  "small_rank_residual": {
+    "shell": 4,
+    "p_values": [
+      10,
+      11,
+      12,
+      13
+    ],
+    "meaning": "Low-cover six-cover cases are not handled by the uniform tau>=7 exclusion; a complete skeleton proof is needed before finite enumeration."
+  },
+  "scope_warning": "No unconditional shell theorem or primary aggregate result is established when the parent cover threshold fails.",
+  "source_dependencies": [
+    "C4-GENERAL-SHELL-MATCHING-THRESHOLD.md",
+    "C4-THIRD-SHELL-LOW-COVER-REDIRECTION.md",
+    "C4-THIRD-SHELL-SMALL-RANK-FOLLOWUP.md",
+    "r25-MATCHING-LARGE-RANK-SECOND-READ.md",
+    "R25Card5Main.lean"
+  ]
+}

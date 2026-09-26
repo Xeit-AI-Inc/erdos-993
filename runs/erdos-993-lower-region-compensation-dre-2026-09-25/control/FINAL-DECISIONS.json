@@ -1,0 +1,189 @@
+{
+  "controller_decision": "approved_for_registration",
+  "date": "2026-09-26",
+  "completed_cycles": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "independent_identity_review": "preparation/C6-FINAL-IDENTITY-REVIEW/REPORT.md",
+  "expected_registry_sha256": "02a9fdd3aac62391a57bdfeb9bd169230b094f71f1b20551591b6364c917ca45",
+  "expected_claim_count": 431,
+  "expected_project_sha256": "61ba68ab296d1399bee9def273e8b2b3af0110c73e56d1e1597b39e19162ad86",
+  "claim_updates": [
+    {
+      "claim_key": "E993-ORDINARY-PATH-STAR-ARITY-2-4-M2000-LOWER-REGION-AGGREGATE",
+      "expected_status": "OPEN",
+      "set_fields": {
+        "status": "VERIFIED",
+        "evidence_grade": "exact_factor_computer_assisted_analytic_proof_no_formal_award",
+        "formal_award": false,
+        "certificate": "experiments/erdos-993-lower-region-compensation-dre-2026-09-25/cycles/cycle-6/C6-AT/REPORT.md; experiments/erdos-993-lower-region-compensation-dre-2026-09-25/cycles/cycle-6/C6-AF/REPORT.md (arity12 uniform envelope and arity4 scalar audit); experiments/erdos-993-lower-region-compensation-dre-2026-09-25/cycles/cycle-6/C6-SYNTHESIS/REPORT.md; experiments/erdos-993-lower-region-compensation-dre-2026-09-25/preparation/C6-FINAL-IDENTITY-REVIEW/REPORT.md. Exact finite-factor certificates plus uniform analytic perturbation/minor proof, using Gurvits finite-order ULC convolution. Original supports, strict selector and pooled endpoint contribution checked; no family Lean certificate, no prefix or arbitrary-tree award."
+      },
+      "event": "Restricted cutoff theorem accepted after complete Cycle6 and independent final scope review; statement/scope unchanged."
+    },
+    {
+      "claim_key": "E993-ORDINARY-PATH-STAR-ARITY-2-12-M100000000-LOWER-REGION-AGGREGATE",
+      "expected_status": "OPEN",
+      "set_fields": {
+        "status": "VERIFIED",
+        "evidence_grade": "exact_factor_computer_assisted_analytic_proof_no_formal_award",
+        "formal_award": false,
+        "certificate": "experiments/erdos-993-lower-region-compensation-dre-2026-09-25/cycles/cycle-6/C6-AT/REPORT.md; experiments/erdos-993-lower-region-compensation-dre-2026-09-25/cycles/cycle-6/C6-AF/REPORT.md (arity12 uniform envelope and arity4 scalar audit); experiments/erdos-993-lower-region-compensation-dre-2026-09-25/cycles/cycle-6/C6-SYNTHESIS/REPORT.md; experiments/erdos-993-lower-region-compensation-dre-2026-09-25/preparation/C6-FINAL-IDENTITY-REVIEW/REPORT.md. Exact finite-factor certificates plus uniform analytic perturbation/minor proof, using Gurvits finite-order ULC convolution. Original supports, strict selector and pooled endpoint contribution checked; no family Lean certificate, no prefix or arbitrary-tree award."
+      },
+      "event": "Restricted cutoff theorem accepted after complete Cycle6 and independent final scope review; statement/scope unchanged."
+    },
+    {
+      "claim_key": "E993-ORDINARY-TM-LOWER-REGION-AGGREGATE",
+      "expected_status": "VERIFIED",
+      "set_fields": {
+        "certificate": "experiments/erdos-993-lower-region-compensation-dre-2026-09-25/cycles/cycle-5/CONTROLLER-CLOSEOUT.md; C5-AT, C5-AF and C5-SYNTHESIS complete proof, exact finite base m3..999 plus analytic tail m>=1000; Gurvits finite ULC convolution and existing R27 forest bound. No family Lean certificate. Additional smaller certificate: experiments/erdos-993-lower-region-compensation-dre-2026-09-25/cycles/cycle-6/C6-AT/REPORT.md; finite base m3..399 (242964 LC and242964 mixed margins), analytic tail m>=400, direct x>=m+1 bound for m>=2. Correct summand is R_(p-1)-R_(p-2); no need for general R27 bound in this replacement. Final synthesis and independent final scope review passed. Prior certificate retained."
+      },
+      "event": "Same theorem and evidence grade retained; append independently reviewed cutoff400 certificate and direct first-descent argument."
+    }
+  ],
+  "new_claims": [
+    {
+      "claim_key": "E993-EQUAL-LENGTH-THREE-SPIDER-EXACT-MODE",
+      "statement": "For every integer m>=2, let S_m be the tree with one root r and m internally disjoint paths r-a_i-b_i-c_i of length three. Its independence polynomial (1+3z+z^2)^m+z(1+2z)^m has coefficients strictly increasing from rank0 through rank m and strictly decreasing from rank m through rank2m, and its first strict zero-extended descent index is exactly m.",
+      "scope": "Exactly equal-length-three spiders with m>=2. An elementary coefficient proof; no novelty claimed. Distinct from the existing general-spider polynomial formula and fixed-background pendant-leg asymptotics. Not a theorem about every spider or tree.",
+      "status": "VERIFIED",
+      "evidence_grade": "proved_informal_adjudicated_no_formal_award",
+      "formal_award": false,
+      "certificate": {
+        "run": "erdos-993-lower-region-compensation-dre-2026-09-25",
+        "source_claim_id": "C6-ROOT-SPIDER-EXACT-MODE",
+        "adjudication": "experiments/erdos-993-lower-region-compensation-dre-2026-09-25/cycles/cycle-6/C6-AT/REPORT.md",
+        "synthesis": "experiments/erdos-993-lower-region-compensation-dre-2026-09-25/cycles/cycle-6/C6-SYNTHESIS/REPORT.md",
+        "identity_review": "experiments/erdos-993-lower-region-compensation-dre-2026-09-25/preparation/C6-FINAL-IDENTITY-REVIEW/REPORT.md",
+        "controller_decision": "experiments/erdos-993-lower-region-compensation-dre-2026-09-25/FINAL-RECONCILIATION.md",
+        "formal_award": false
+      },
+      "aliases": [],
+      "alias_patterns": [],
+      "novelty_claimed": false,
+      "registration_reason": "Fresh final Sol identity and proof-scope review against all431 existing identities; controller decision after complete Cycle6. Root spider proofs attributed separately; no novelty claimed.",
+      "terminal_history": [
+        {
+          "run": "erdos-993-lower-region-compensation-dre-2026-09-25",
+          "cycle": 6,
+          "date": "2026-09-26",
+          "event": "Registered after independent final review; exact informal scope only; no new formal award."
+        }
+      ]
+    },
+    {
+      "claim_key": "E993-EQUAL-LENGTH-THREE-SPIDER-LOWER-REGION-AGGREGATE",
+      "statement": "For every integer m>=2 let S_m have edges r-a_i,a_i-b_i,b_i-c_i for 1<=i<=m. For every natural p with x(S_m)+2<=p and 3p<2alpha(S_m)+1, the original strict favorable-leaf selector consists of all c_i and the complete original-leaf aggregate is strictly negative.",
+      "scope": "Exactly this infinite ordinary-tree family, alpha=2m and x=m; eligible p are m+2 through floor(4m/3), nonempty exactly when m>=6. Original support of c_i is b_i. No arbitrary-tree aggregate or governed transport. Separate from the general-spider closed-form identity.",
+      "status": "VERIFIED",
+      "evidence_grade": "proved_informal_adjudicated_no_formal_award",
+      "formal_award": false,
+      "certificate": {
+        "run": "erdos-993-lower-region-compensation-dre-2026-09-25",
+        "source_claim_id": "C6-ROOT-SPIDER-LOWER-REGION-AGGREGATE",
+        "adjudication": "experiments/erdos-993-lower-region-compensation-dre-2026-09-25/cycles/cycle-6/C6-AT/REPORT.md",
+        "synthesis": "experiments/erdos-993-lower-region-compensation-dre-2026-09-25/cycles/cycle-6/C6-SYNTHESIS/REPORT.md",
+        "identity_review": "experiments/erdos-993-lower-region-compensation-dre-2026-09-25/preparation/C6-FINAL-IDENTITY-REVIEW/REPORT.md",
+        "controller_decision": "experiments/erdos-993-lower-region-compensation-dre-2026-09-25/FINAL-RECONCILIATION.md",
+        "formal_award": false
+      },
+      "aliases": [],
+      "alias_patterns": [],
+      "novelty_claimed": false,
+      "registration_reason": "Fresh final Sol identity and proof-scope review against all431 existing identities; controller decision after complete Cycle6. Root spider proofs attributed separately; no novelty claimed.",
+      "terminal_history": [
+        {
+          "run": "erdos-993-lower-region-compensation-dre-2026-09-25",
+          "cycle": 6,
+          "date": "2026-09-26",
+          "event": "Registered after independent final review; exact informal scope only; no new formal award."
+        }
+      ]
+    },
+    {
+      "claim_key": "E993-FINITE-GROUP-WEIGHTED-ORBIT-FLOW-LIFT",
+      "statement": "Let a finite group act on two finite sets U,V and preserve a relation R subset U times V and nonnegative integer supplies s on U and capacities c on V, with s(g.u)=s(u) and c(g.v)=c(v) for every group element g. Form an orbit network with source supply sum_{u in A}s(u) at each U-orbit A, target capacity sum_{v in B}c(v) at each V-orbit B, and an uncapacitated edge A to B exactly when R meets A times B. If this quotient network has an integral flow saturating every source supply, then the original R network has an integral flow saturating every supply s(u) and respecting every capacity c(v).",
+      "scope": "Generic finite invariant relation; weights must be invariant and nonnegative integers, and orbit supplies/capacities are totals. Does not assert feasibility of any particular quotient. T_m orbit formulas and three bounded primal applications are evidence of applicability, not an all-parameter flow-feasibility theorem.",
+      "status": "VERIFIED",
+      "evidence_grade": "proved_informal_adjudicated_no_formal_award",
+      "formal_award": false,
+      "certificate": {
+        "run": "erdos-993-lower-region-compensation-dre-2026-09-25",
+        "source_claim_id": "C6-T5.ORBIT-QUOTIENT-LIFT",
+        "adjudication": "experiments/erdos-993-lower-region-compensation-dre-2026-09-25/cycles/cycle-6/C6-AT/REPORT.md",
+        "synthesis": "experiments/erdos-993-lower-region-compensation-dre-2026-09-25/cycles/cycle-6/C6-SYNTHESIS/REPORT.md",
+        "identity_review": "experiments/erdos-993-lower-region-compensation-dre-2026-09-25/preparation/C6-FINAL-IDENTITY-REVIEW/REPORT.md",
+        "controller_decision": "experiments/erdos-993-lower-region-compensation-dre-2026-09-25/FINAL-RECONCILIATION.md",
+        "formal_award": false
+      },
+      "aliases": [],
+      "alias_patterns": [],
+      "novelty_claimed": false,
+      "registration_reason": "Fresh final Sol identity and proof-scope review against all431 existing identities; controller decision after complete Cycle6. Root spider proofs attributed separately; no novelty claimed.",
+      "terminal_history": [
+        {
+          "run": "erdos-993-lower-region-compensation-dre-2026-09-25",
+          "cycle": 6,
+          "date": "2026-09-26",
+          "event": "Registered after independent final review; exact informal scope only; no new formal award."
+        }
+      ]
+    }
+  ],
+  "expected_final_counts": {
+    "VERIFIED": 262,
+    "REFUTED": 96,
+    "CONDITIONAL": 26,
+    "OPEN": 50
+  },
+  "update_note": "Six-cycle lower-region close: two restricted cutoff promotions, three distinct informal keys, smaller T_m certificate; four earlier formal keys retained; primary OPEN. No new final formal awards.",
+  "research_coordination": {
+    "as_of": "2026-09-26",
+    "latest_code_release": "723998c065d020453c7b9cf89150900a08527299",
+    "latest_completed_code_run": "erdos-993-high-tail-certification-dre-2026-09-25",
+    "research_notepad": "docs/research-notepad-2026-09-25.md",
+    "authorized_followups": {
+      "forest_census": "COMPLETED: M6=22 and K1 closure x<=6; 146271594 classes; census-dependent grades, no formal award.",
+      "r27_review": "COMPLETED: four package faces/receipts consistent; marked transfer not supplied; equality endpoints corrected; no Lean rebuild."
+    },
+    "claim_objects_changed": 3,
+    "historical_source_snapshots_preserved": true,
+    "new_claim_identities": 3,
+    "latest_public_orientation_commit": "6ceb47dc69613e9a7d82f2fc0e660846fb3fe6b8",
+    "latest_completed_controller_run": "erdos-993-lower-region-compensation-dre-2026-09-25",
+    "canonical_current_research_notepad": "experiments/erdos-993-lower-region-compensation-dre-2026-09-25/RESEARCH-NOTEPAD.md",
+    "lower_region_close": {
+      "completed_cycles": 6,
+      "primary": "OPEN",
+      "new_formal_awards_at_final_close": 0,
+      "formal_keys_awarded_during_run": 4,
+      "future_priorities": [
+        "uniform selected compensation or mixed-boundary Hall",
+        "rooted-triple closure beyond restricted families",
+        "exact implication chain to TREE/FOREST/governed targets"
+      ]
+    },
+    "prior_followup_reconciliation": {
+      "date": "2026-09-25",
+      "claim_objects_changed": 4,
+      "new_claim_identities": 2
+    }
+  },
+  "publication_metadata": {
+    "run": "erdos-993-lower-region-compensation-dre-2026-09-25",
+    "closed": "2026-09-26",
+    "completed_cycles": 6,
+    "formal_keys_awarded_during_run": 4,
+    "new_formal_awards_at_final_close": 0,
+    "source_public_head": "6ceb47dc69613e9a7d82f2fc0e660846fb3fe6b8",
+    "terminal_ledger": "TERMINAL-LEDGER.csv",
+    "final_analysis": "FINAL-ANALYSIS.md",
+    "historical_sources_preserved": true
+  },
+  "ledger_orientation": "**Current orientation, 2026-09-26 (six-cycle lower-region close):** 434 registered identities: 262 VERIFIED, 96 REFUTED, 26 CONDITIONAL, 50 OPEN. These have mixed evidence grades and are not a theorem count. Code r29 high-tail/endpoint/non-residual top-rank results are retained. This run adds four formally verified order-band/first-shell keys in two packages; T_m and the two exact heterogeneous cutoffs are retained at computer-assisted grade, and the equal-length-three spider pair and orbit-flow lift at informal grade. The unrestricted ordinary aggregate, uniform residual route, governed beta, TREE, FOREST, TRANSFER and Erdős #993 remain OPEN.",
+  "ledger_closeout": "The authorized six cycles each completed 18 search seats, 36 opposing critiques, three origin adjudicators and one neutral synthesis. The controller performed the Cycle3 and final analyses. No seventh cycle was opened.\n\nThe final change promotes only the existing arity2–4 m>=2000 and arity2–12 m>=100000000 keys, appends a smaller cutoff400 certificate to the already VERIFIED T_m key, and adds three separately reviewed informal identities: the equal-length-three spider exact mode, its complete eligible aggregate, and the finite-group weighted orbit-flow lift. No existing statement or scope is widened; the all-m heterogeneous key remains OPEN. No new formal award is made at this final registration.\n\nThe complete marked-incidence identity gives kS=(2alpha+1-3p)Q-D-C. Proving the required selected D+C budget remains the main gap. Two Cycle6 flow/sector records counted favorable leaves present instead of active tags; separately attributed corrections were independently checked. The corrected CB(8,92) deletion-only sector ratio is492/491, and mixed Hall remains OPEN.\n\nFormal coverage reaches n<=2p+2 under the exact guards. Low-rank census-dependent composition reaches p<=7 without becoming a standalone formal award; its registered certificate obligation remains OPEN. See the new terminal ledger and final identity snapshot, final analysis and current twelve-area research notepad in experiments/erdos-993-lower-region-compensation-dre-2026-09-25. Initial obligations and sealed historical snapshots are preserved. Code r29 and the completed order24 forest census and r27 review are incorporated into current priorities; the old sealed follow-up notepad is retained as history."
+}

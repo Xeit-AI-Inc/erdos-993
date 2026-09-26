@@ -1,0 +1,39 @@
+{
+  "worker_id": "C2-CT-U3",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C2-U3-ORDERED-SHELL-BOUND",
+      "statement": "For each eligible shell leaf tag with nonempty H_v, the marked count difference q_(k+1)-q_k decomposes by ordered component marks as sum_i(i_k(J_i)-i_(k-1)(J_i)); only the degree-one first root can give |J_i|=2k, and its positive excess is at most L_root/k.",
+      "scope": "Finite ordinary tree shell |T|=2p+2 with k=p-1 and one mark in each component of H_v; applies separately to every selected original leaf tag, preserving repeated supports.",
+      "status": "proposed_proved_informal",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CT-U3/REPORT.md"
+      ],
+      "reason": "retained_narrowed: the first-mark partition and order-2k shadow estimate are valid, but a second isolated mark cannot yield |J_i|=2k after the nonisolated first root's closed neighborhood is deleted. The corrected first-root-only positive-excess bound is proved in the report; no global compensation follows."
+    },
+    {
+      "claim_id": "E993-LOWER-REGION-FIRST-ORDER-SHELL",
+      "statement": "For ordinary trees T and p with x(T)+2<=p, 3p<2alpha(T)+1, and |T|=2p+2, the complete sum over original leaves satisfying Delta_p(T-v)<0 of Delta_(p-1)(T-{v,s_v})-Delta_(p-1)(T-N_T[s_v]) is nonpositive.",
+      "scope": "Exact registered first-order shell; original leaves remain distinct tags and use their original supports, neighborhoods, and the fixed strict favorable selector.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CT-U3/REPORT.md"
+      ],
+      "reason": "retained: this is the exact scoped shell assertion, but the source supplies only a conditional reduction and no proof of the selector-conditioned global budget or complete-sum counterexample."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CT-U3/REPORT.md",
+  "limitations": [
+    "Informal audit only; no formal proof or authoritative status award.",
+    "No exhaustive tree census or finite generation boundary was produced.",
+    "No proof of the global selector-conditioned compensation inequality or complete-sum counterexample was found."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-U3-ORDERED-SHELL-BOUND",
+    "E993-LOWER-REGION-FIRST-ORDER-SHELL"
+  ]
+}

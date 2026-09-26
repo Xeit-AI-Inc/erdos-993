@@ -1,0 +1,28 @@
+{
+  "worker_id": "C1-CT-F5",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C1-F5-1",
+      "statement": "The equation-only scalar incidence relaxation admits the displayed positive integer local value, and tree-derived leaf profiles satisfy the stated rooted-component factorization, selector coupling, and same-support all-or-none multiplicity; these facts do not decide the complete selected-sum assertion.",
+      "scope": "Only the one-leaf scalar equation with D,C>=0 and the exact necessary profile identities for an original leaf of a finite ordinary tree. The abstract tuple is not asserted realizable or selector-valid; no aggregate theorem or counterexample follows.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CT-F5/AUDIT-EVIDENCE.md"
+      ],
+      "reason": "retained_narrowed: direct substitution verifies both scalar-identity sides are 6 and the relaxed equation gives g=2. For a tree, deleting s leaves one component per neighbor root, rooted independence-polynomial factorization follows, and I(T-v)=I(H)+zI(R) yields the displayed strict selector formula. Same-support leaves are interchangeable and contribute with their full multiplicity. The scalar tuple has no graph realization, and T22/T60 controls exhibit positive local terms alongside negative complete sums, so no pointwise or LP-to-target inference is valid."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CT-F5/REPORT.md",
+  "limitations": [
+    "The abstract scalar tuple is not certified by a bipartite graph or tree-derived profile.",
+    "No global deficit budget is proved after imposing rooted-product and selector constraints.",
+    "Standing controls are finite checks and do not decide the universal primary claim."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-F5-1"
+  ]
+}

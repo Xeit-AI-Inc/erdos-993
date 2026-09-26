@@ -1,0 +1,51 @@
+{
+  "worker_id": "C3-CT-U4",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C3-U4.COLORED-SHADOW-SCOPE",
+      "statement": "The unweighted one-step subset-shadow result described in the route report does not, without an additional proved bridge, establish the selector-weighted deletion-plus-two-for-one cut inequalities.",
+      "scope": "Narrowed application check only: the mismatch between subset-shadow cardinality and absent-vertex switch outputs / selector-dependent weights. No independent verification of exact bibliographic hypotheses or residual-family observations; no refutation of the primary aggregate.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CT-U4/AUDIT.json"
+      ],
+      "reason": "retained_narrowed: switches insert a vertex absent from the upper state and the network uses selector-dependent weights. The described unweighted subset-shadow count does not directly bound these cuts absent a further bridge."
+    },
+    {
+      "claim_id": "C3-U4.CUT-DUAL",
+      "statement": "For a finite bipartite relation with nonnegative supplies and capacities and uncapacitated allowed arcs, a saturating flow exists exactly when u(X)<=c(N(X)) for every upper-state subset X; the deficit c(N(X))-u(X) is submodular and its global minimizers are closed under union and intersection.",
+      "scope": "Finite weighted transport instances only. This exact criterion and minimizer structure do not show that any universal tree-derived cut inequalities hold or imply the primary aggregate.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CT-U4/AUDIT.json"
+      ],
+      "reason": "retained: max-flow/min-cut gives the all-subset criterion, while weighted neighborhood coverage is submodular and the supply term is modular. The route also correctly distinguishes the full-set aggregate cut from the stronger all-subset condition."
+    },
+    {
+      "claim_id": "C3-U4.ORBIT-COMPRESSION",
+      "statement": "For a finite group action preserving supplies, capacities and allowed arcs on finite bipartite sides, quotienting by vertex orbits preserves saturating-flow feasibility; this applies to a fixed eligible tree instance when its automorphisms preserve the selector, weights and legal moves.",
+      "scope": "Finite fixed instances satisfying the invariance hypotheses. It gives no uniform bound over trees, no guarantee of a small quotient, and no tree-wide cut theorem.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CT-U4/AUDIT.json"
+      ],
+      "reason": "retained: each nonempty invariant orbit-pair relation is biregular, so spreading quotient flow uniformly over its edges yields equal per-vertex loads within each orbit. For a fixed ordinary tree its automorphisms preserve original-leaf selector data and the stated move relation."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CT-U4/REPORT.md",
+  "limitations": [
+    "No universal tree-derived cut inequalities, complete-sum proof, or complete-sum counterexample was established.",
+    "No source computation was replayed; the review checks the general flow and orbit arguments and narrows the literature-scope statement.",
+    "The exact cited primary-literature hypotheses and candidate residual-family observation were not independently verified.",
+    "No controller verdict or authoritative status is proposed."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C3-U4.COLORED-SHADOW-SCOPE",
+    "C3-U4.CUT-DUAL",
+    "C3-U4.ORBIT-COMPRESSION"
+  ]
+}

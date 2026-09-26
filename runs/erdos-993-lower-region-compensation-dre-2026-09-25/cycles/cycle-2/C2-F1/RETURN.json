@@ -1,0 +1,26 @@
+{
+  "worker_id": "C2-F1",
+  "cycle": 2,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-FIRST-ORDER-SHELL",
+      "statement": "For every finite ordinary tree T with independence counts i_j(T), first strict zero-extended descent x(T), and natural p satisfying x(T)+2<=p, 3p<2alpha(T)+1, and |V(T)|=2p+2, the complete sum over original leaves v with Delta_p(T-v)<0 of Delta_(p-1)(T-{v,s_v})-Delta_(p-1)(T-N_T[s_v]) is nonpositive.",
+      "scope": "Registered universal first-order-shell assertion; bounded exact search conducted only at p=7 and |V(T)|=16. All 19320 unlabeled ordinary trees at that order were generated; 1696 passed both rank guards.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-F1/RESULT.json",
+        "cycles/cycle-2/C2-F1/COMPUTE.py"
+      ],
+      "reason": "The exact bounded census found no nonnegative complete sum among the 1696 eligible trees at p=7 and order 16 (maximum -906). This supports the assertion only at that finite rank and order; it neither proves nor refutes the universal shell claim."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-F1/REPORT.md",
+  "limitations": [
+    "The exhaustive computation covers only p=7 and order 16, not any other shell rank or order.",
+    "Finite census evidence is bounded computation and does not establish a universal inequality.",
+    "All claims remain proposed_worker_only; no authoritative status is awarded."
+  ],
+  "status_authority": "proposed_worker_only"
+}

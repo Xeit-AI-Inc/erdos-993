@@ -1,0 +1,36 @@
+{
+  "worker_id": "C2-T5",
+  "cycle": 2,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C2-T5-PENDANT-P2-RECURRENCE",
+      "statement": "For a tree U rooted at r, adjoining a path r-s-v gives I(T;z)=(1+z)I(U;z)+zI(U-r;z), alpha(T)=alpha(U)+1, I(T-v;z)=I(U;z)+zI(U-r;z), and the new leaf summand is Delta_(p-1)(I(U)-I(U-r)).",
+      "scope": "Exact recurrence for every finite ordinary tree U and distinguished vertex r; the selector formula is the strict test Delta_p(T-v)<0, and the summand formula uses the original new leaf v and support s.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-T5/EVIDENCE.md"
+      ],
+      "reason": "Proved by partitioning independent sets according to whether the new support s is selected and by applying the original deletion definitions to v."
+    },
+    {
+      "claim_id": "E993-LOWER-REGION-FIRST-ORDER-SHELL",
+      "statement": "The exact pendant-P2 recurrence does not by itself establish the full favorable-leaf aggregate inequality at shell |T|=2p+2; the first-descent and complete selector/contribution bridges remain open.",
+      "scope": "Cycle 2 T5 investigation of the registered first-order shell, with all original leaf tags and the exact strict lower-region and first-descent guards.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-T5/EVIDENCE.md"
+      ],
+      "reason": "The recurrence transfers order and alpha under p to p-1, and the child alpha guard implies the parent guard with a one-unit boundary gap; x can change under attachment (the exact K_(1,4) example has x(U)=2 and x(T)=3), and no complete selector or sum comparison is proved."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-T5/REPORT.md",
+  "limitations": [
+    "No shell-wide proof or eligible positive complete-sum counterexample is established.",
+    "The K_(1,4) example is only a descent-index diagnostic and is not an eligible shell instance at the displayed rank.",
+    "The recurrence for the whole-tree polynomial does not determine the selector changes or contributions of all retained original leaves.",
+    "No census, external theorem, Lean build, or universal pruning reduction was performed."
+  ],
+  "status_authority": "proposed_worker_only"
+}

@@ -1,0 +1,384 @@
+{
+  "worker_id": "C6-PREP-COEFFICIENT-EXTENSIONS-AUDIT",
+  "authority": "independent preparatory mathematical audit; no award",
+  "source_pins": [
+    {
+      "path": "SOLUTION-CONTRACT.md",
+      "expected_sha256": "f3667bd6424d4f0d95714772ecf76af82ed8430bdd3ec9eda0c721f1a853390c",
+      "actual_sha256": "f3667bd6424d4f0d95714772ecf76af82ed8430bdd3ec9eda0c721f1a853390c",
+      "match": true
+    },
+    {
+      "path": "control-proposals/C5-CROSS-LC-LARGE-M-DIAGNOSTIC.json",
+      "expected_sha256": "c70ed2702d50475c74d9462138ba3fc32d642fe34bd054377073e7a3019d5dfa",
+      "actual_sha256": "c70ed2702d50475c74d9462138ba3fc32d642fe34bd054377073e7a3019d5dfa",
+      "match": true
+    },
+    {
+      "path": "control-proposals/C5-CROSS-PERTURBATION-SIGN-DIAGNOSTIC.json",
+      "expected_sha256": "124df2b7778527c947bf6d1da2a9e33da80a7f038231313b33b6fdab6a4c4937",
+      "actual_sha256": "124df2b7778527c947bf6d1da2a9e33da80a7f038231313b33b6fdab6a4c4937",
+      "match": true
+    },
+    {
+      "path": "control-proposals/C5-CROSS-TERM-SIGN-CAUTION.md",
+      "expected_sha256": "5921d2558e7db9d28aca7a227acfd1af58eecb94c94d350240b42564c9687c97",
+      "actual_sha256": "5921d2558e7db9d28aca7a227acfd1af58eecb94c94d350240b42564c9687c97",
+      "match": true
+    },
+    {
+      "path": "control-proposals/C5-TM-CENTRAL-LC-CANDIDATE.md",
+      "expected_sha256": "ed9961c253b5ae4b823ff3608f6c4a30018263de078f2dc07163a718ccf78fd5",
+      "actual_sha256": "ed9961c253b5ae4b823ff3608f6c4a30018263de078f2dc07163a718ccf78fd5",
+      "match": true
+    },
+    {
+      "path": "control-proposals/C5-TM-CENTRAL-LR-CANDIDATE.md",
+      "expected_sha256": "52be25ab2210325910ec9ffe722e5947879ca82c7e0b50ddf23dac605a546565",
+      "actual_sha256": "52be25ab2210325910ec9ffe722e5947879ca82c7e0b50ddf23dac605a546565",
+      "match": true
+    },
+    {
+      "path": "control-proposals/C6-HETEROGENEOUS-LARGE-BRANCH-ARITHMETIC.json",
+      "expected_sha256": "e2c382a67df6508dd0a72b16174601689e83f1ddecf71639334d5d874ad39d5d",
+      "actual_sha256": "e2c382a67df6508dd0a72b16174601689e83f1ddecf71639334d5d874ad39d5d",
+      "match": true
+    },
+    {
+      "path": "control-proposals/C6-HETEROGENEOUS-LARGE-BRANCH-CANDIDATE.md",
+      "expected_sha256": "e8a86ca340fd14e5690923ee66c08e934f816614bd1fe809cdbf1932d89cd4bc",
+      "actual_sha256": "e8a86ca340fd14e5690923ee66c08e934f816614bd1fe809cdbf1932d89cd4bc",
+      "match": true
+    },
+    {
+      "path": "control-proposals/C6-TM-CUTOFF400-CANDIDATE.md",
+      "expected_sha256": "76b0e61eb067ab201d9e3fdafdc64b2d7563a1a6687b9b88f141dff0982651ce",
+      "actual_sha256": "76b0e61eb067ab201d9e3fdafdc64b2d7563a1a6687b9b88f141dff0982651ce",
+      "match": true
+    },
+    {
+      "path": "control-proposals/C6-TM-CUTOFF400-PROBE.json",
+      "expected_sha256": "650a316d71d4d6b14ca6b725bbfef6dbc4f467a87d9b6529c694f036549a3927",
+      "actual_sha256": "650a316d71d4d6b14ca6b725bbfef6dbc4f467a87d9b6529c694f036549a3927",
+      "match": true
+    },
+    {
+      "path": "control-proposals/heterogeneous_large_branch_arithmetic.py",
+      "expected_sha256": "a2d4078dd36b602967ce072d25d3e695a550865acf14926e8301d5c70c1bd738",
+      "actual_sha256": "a2d4078dd36b602967ce072d25d3e695a550865acf14926e8301d5c70c1bd738",
+      "match": true
+    },
+    {
+      "path": "control-proposals/tm_cutoff400_probe.py",
+      "expected_sha256": "f5ba34cf851869cd77191739a401e755586fd5b4eabe27e2eec1ebfab6694f8f",
+      "actual_sha256": "f5ba34cf851869cd77191739a401e755586fd5b4eabe27e2eec1ebfab6694f8f",
+      "match": true
+    },
+    {
+      "path": "control/C5-NEUTRAL-HANDOFF.md",
+      "expected_sha256": "e117ff6455f6115c140222b42e06ac19df84cfb7ed81167656dcb9e4c0298e8c",
+      "actual_sha256": "e117ff6455f6115c140222b42e06ac19df84cfb7ed81167656dcb9e4c0298e8c",
+      "match": true
+    },
+    {
+      "path": "control/C5-REGISTERED-CLAIM-IDENTITY.json",
+      "expected_sha256": "bfbc7490d2acfdaca1fba3a5fb05d71eaca13df66865ea4920b18ed048c7a18d",
+      "actual_sha256": "bfbc7490d2acfdaca1fba3a5fb05d71eaca13df66865ea4920b18ed048c7a18d",
+      "match": true
+    },
+    {
+      "path": "control/EVALUATOR-ERRATUM.md",
+      "expected_sha256": "ff235f1e8cbe97e7ad41e98c77a48472d80ccc68549d5bcea7419d0c08cdfa9c",
+      "actual_sha256": "ff235f1e8cbe97e7ad41e98c77a48472d80ccc68549d5bcea7419d0c08cdfa9c",
+      "match": true
+    },
+    {
+      "path": "inputs/C4-r27-linear-bound-intake/Main.lean",
+      "expected_sha256": "dcecb681d019a29c625dcea1a2385de920fffa6b8f185e79372f31ae547c1936",
+      "actual_sha256": "dcecb681d019a29c625dcea1a2385de920fffa6b8f185e79372f31ae547c1936",
+      "match": true
+    },
+    {
+      "path": "inputs/C4-r27-linear-bound-intake/ORIGIN.json",
+      "expected_sha256": "7c505d4b5b41c3ab45af7976ad3321aca92001d4488ce0661ae6f1f3750dc994",
+      "actual_sha256": "7c505d4b5b41c3ab45af7976ad3321aca92001d4488ce0661ae6f1f3750dc994",
+      "match": true
+    },
+    {
+      "path": "inputs/C4-r27-linear-bound-intake/THEOREM-CONTRACT.yaml",
+      "expected_sha256": "a5d964540c9cc3aa05deb276256eacd28ab893612ce99abe9e50ea12ad2fbee8",
+      "actual_sha256": "a5d964540c9cc3aa05deb276256eacd28ab893612ce99abe9e50ea12ad2fbee8",
+      "match": true
+    },
+    {
+      "path": "inputs/C4-r27-linear-bound-intake/VERIFICATION-REPORT.md",
+      "expected_sha256": "8ee1e413587a694f4fe49c2fec38f045a476835b0198c315d8a7b9e420858d92",
+      "actual_sha256": "8ee1e413587a694f4fe49c2fec38f045a476835b0198c315d8a7b9e420858d92",
+      "match": true
+    },
+    {
+      "path": "inputs/C4-r27-linear-bound-intake/kernel-verification.json",
+      "expected_sha256": "2e4965968b77c9250979d427d38f7cfceecc5cfcd8778ba0123fc24e0a04a612",
+      "actual_sha256": "2e4965968b77c9250979d427d38f7cfceecc5cfcd8778ba0123fc24e0a04a612",
+      "match": true
+    },
+    {
+      "path": "inputs/ordinary_tree_checked.py",
+      "expected_sha256": "a012bb78915ccdfa2f729c0cdb520cd8f29572277123c92e80ba6091498f533d",
+      "actual_sha256": "a012bb78915ccdfa2f729c0cdb520cd8f29572277123c92e80ba6091498f533d",
+      "match": true
+    },
+    {
+      "path": "preparation/C5-PREP-TM-UNIFORM-CANDIDATE-AUDIT/REPLAY.py",
+      "expected_sha256": "01395c7507ece93eff4288c9ce7c59d542558ff81777a034bc4d7e999c7faaa1",
+      "actual_sha256": "01395c7507ece93eff4288c9ce7c59d542558ff81777a034bc4d7e999c7faaa1",
+      "match": true
+    },
+    {
+      "path": "preparation/C5-PREP-TM-UNIFORM-CANDIDATE-AUDIT/REPORT.md",
+      "expected_sha256": "91d316294b147c3af09cde641dc2916f2681d36ba6ca224fade92458b370757f",
+      "actual_sha256": "91d316294b147c3af09cde641dc2916f2681d36ba6ca224fade92458b370757f",
+      "match": true
+    }
+  ],
+  "external_primary_source": {
+    "url": "https://arxiv.org/pdf/0804.1181",
+    "theorem": "Gurvits Theorem 1.1, finite-order ULC convolution"
+  },
+  "verdicts": {
+    "tm_cutoff400": {
+      "disposition": "correct as an exact computer-assisted proof route for the existing T_m family claim",
+      "claim_key": "E993-ORDINARY-TM-LOWER-REGION-AGGREGATE",
+      "cutoff_m": 400,
+      "finite_m_range": [
+        3,
+        399
+      ],
+      "lc_checks": 242964,
+      "mixed_checks": 242964,
+      "eligible_rows_m1_to_399": 44105,
+      "finite_base_grade": "exact Python, not Lean kernel",
+      "all_tree_implication": false
+    },
+    "heterogeneous_large_branch": {
+      "disposition": "correct restricted infinite-family informal proof",
+      "proposed_claim_key": "E993-ORDINARY-PATH-STAR-ARITY-2-4-M100000-LOWER-REGION-AGGREGATE",
+      "arity_set": [
+        2,
+        3,
+        4
+      ],
+      "m_min": 100000,
+      "all_distributions_covered": true,
+      "finite_prefix_covered": false,
+      "arbitrary_tree_implication": false,
+      "formal_kernel_grade": false
+    }
+  },
+  "independent_evidence": {
+    "tm_lc_sha256": "f9091121f369d93d9e7abb54d614b61a780bda3f8e265459211eacdc76376a47",
+    "tm_mixed_sha256": "174a521a64a40f1ed0485b863748ac32db7bbb4a35664e6bbfc607a83dc454a7",
+    "tm_lc_min": [
+      1210,
+      3,
+      "Astar",
+      8
+    ],
+    "tm_mixed_min": [
+      1243,
+      3,
+      "Astar",
+      8
+    ],
+    "tm_cutoff_ratios_exact": {
+      "LC": [
+        "45852453866300849056961523896470940967051851073880441202147328000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "9462231308664913515808891539955971363351655681423184929580528166401153025264385678288723514664739229084712982057941104968397255780240204999334184923315498555902844464018002703"
+      ],
+      "A0": [
+        "89794388821505829403216317630588926060476541686349197354205184000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "9462231308664913515808891539955971363351655681423184929580528166401153025264385678288723514664739229084712982057941104968397255780240204999334184923315498555902844464018002703"
+      ],
+      "Astar": [
+        "823433650682319414314600699974123981533306158868436256588562432000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "9462231308664913515808891539955971363351655681423184929580528166401153025264385678288723514664739229084712982057941104968397255780240204999334184923315498555902844464018002703"
+      ],
+      "R": [
+        "1336271512675053315374307267840010279611225374153087143605436416000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "9462231308664913515808891539955971363351655681423184929580528166401153025264385678288723514664739229084712982057941104968397255780240204999334184923315498555902844464018002703"
+      ]
+    },
+    "tm_early_first_descents": {
+      "1": 2,
+      "2": 4,
+      "3": 5
+    },
+    "heterogeneous_graph_profiles": [
+      [
+        2
+      ],
+      [
+        3
+      ],
+      [
+        4
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        3,
+        3,
+        3
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        2,
+        3,
+        4
+      ]
+    ],
+    "heterogeneous_exact_cutoff_ratio": [
+      "347766182016712704",
+      "1490116119384765625"
+    ],
+    "heterogeneous_K": "290536219160925437952000000000",
+    "heterogeneous_factor_checks": {
+      "B1": {
+        "ulc_order": 1,
+        "normalized": [
+          "1",
+          "2"
+        ],
+        "ulc_margins": []
+      },
+      "B2": {
+        "ulc_order": 2,
+        "normalized": [
+          "1",
+          "3/2",
+          "1"
+        ],
+        "ulc_margins": [
+          "5/4"
+        ]
+      },
+      "B3": {
+        "ulc_order": 4,
+        "normalized": [
+          "1",
+          "1",
+          "1/2",
+          "1/4"
+        ],
+        "ulc_margins": [
+          "1/2",
+          "0"
+        ]
+      },
+      "B4": {
+        "ulc_order": 7,
+        "normalized": [
+          "1",
+          "5/7",
+          "2/7",
+          "4/35",
+          "1/35"
+        ],
+        "ulc_margins": [
+          "11/49",
+          "0",
+          "6/1225"
+        ]
+      },
+      "F2": {
+        "ulc_order": 0,
+        "normalized": [
+          "1"
+        ],
+        "ulc_margins": []
+      },
+      "F3": {
+        "ulc_order": 1,
+        "normalized": [
+          "2",
+          "1"
+        ],
+        "ulc_margins": []
+      },
+      "F4": {
+        "ulc_order": 3,
+        "normalized": [
+          "3",
+          "1",
+          "1/3"
+        ],
+        "ulc_margins": [
+          "0"
+        ]
+      },
+      "L": {
+        "ulc_order": 1,
+        "normalized": [
+          "1",
+          "1"
+        ],
+        "ulc_margins": []
+      },
+      "C": {
+        "ulc_order": 1,
+        "normalized": [
+          "1",
+          "2"
+        ],
+        "ulc_margins": []
+      }
+    },
+    "heterogeneous_minor_checks": {
+      "delete2": {
+        "min": 1,
+        "01": 1
+      },
+      "marked2": {
+        "min": 0,
+        "01": 3
+      },
+      "delete3": {
+        "min": 1,
+        "01": 1
+      },
+      "marked3": {
+        "min": 0,
+        "01": 7
+      },
+      "delete4": {
+        "min": 1,
+        "01": 1
+      },
+      "marked4": {
+        "min": 0,
+        "01": 12
+      }
+    },
+    "independent_method": "iterative polynomial multiplication, literal independent-set masks, rational arithmetic; no producer imports"
+  },
+  "gaps": [
+    "No result for heterogeneous m<100000 or arities outside 2..4.",
+    "No arbitrary-tree lower-region aggregate follows.",
+    "No Lean formalization of either extension; T_m finite base remains a computer-assisted exact check."
+  ],
+  "artifacts": {
+    "report": "/Users/ashtonsperry/Documents/Codex/2026-09-13/in-x20/work/erdos-993-lower-region-compensation-dre-2026-09-25/scratchpad/C6-PREP-COEFFICIENT-EXTENSIONS-AUDIT/REPORT.md",
+    "replay_script": "/Users/ashtonsperry/Documents/Codex/2026-09-13/in-x20/work/erdos-993-lower-region-compensation-dre-2026-09-25/scratchpad/C6-PREP-COEFFICIENT-EXTENSIONS-AUDIT/REPLAY.py",
+    "replay_results": "/Users/ashtonsperry/Documents/Codex/2026-09-13/in-x20/work/erdos-993-lower-region-compensation-dre-2026-09-25/scratchpad/C6-PREP-COEFFICIENT-EXTENSIONS-AUDIT/REPLAY-RESULTS.json"
+  },
+  "artifact_sha256": {
+    "REPORT.md": "5536207b797670a842077d7ea0933b7a54cbb22c913aedab8acd82b40dba46e8",
+    "REPLAY.py": "3d7c592ac836fb536c7a8f099ec83b8d6bb1865585f6e85e35dc7734f77874f8",
+    "REPLAY-RESULTS.json": "e07e6dc634398f7fa0447bb547213437909c6e400f3b4420731cd11c0426102d"
+  }
+}

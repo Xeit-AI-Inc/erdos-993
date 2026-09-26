@@ -1,0 +1,26 @@
+{
+  "worker_id": "C6-U1",
+  "cycle": 6,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C6-U1-TM-LEAN-DECOMPOSITION",
+      "statement": "A kernel proof of the retained all-m T_m lower-region aggregate can be organized through explicit graph/count fidelity, direct family descent, finite-order ULC and mixed-minor algebra, a kernel-checked central finite base, and exact selector propagation; the ULC convolution proof and finite base are the principal feasibility gates, with the remaining declaration obligations listed in the report.",
+      "scope": "Formalization contract and dependency decomposition for E993-ORDINARY-TM-LOWER-REGION-AGGREGATE on the specified ordinary T_m family only; no new proof, kernel result, or arbitrary-tree conclusion.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-U1/EVIDENCE.json"
+      ],
+      "reason": "The pinned sources establish a computer-assisted family proof but no Lean certificate. The Python finite base and candidate algebra do not themselves discharge Lean obligations; the proposed DAG identifies the exact mathematical interfaces that must be formalized."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-U1/REPORT.md",
+  "limitations": [
+    "No Lean or Lake command was run.",
+    "No finite-base computation was independently replayed in this route.",
+    "This is a proposed formalization plan, not a theorem proof or controller verdict.",
+    "The arbitrary-tree lower-region aggregate is outside the T_m scope reviewed here."
+  ],
+  "status_authority": "proposed_worker_only"
+}

@@ -1,0 +1,28 @@
+{
+  "scope": "Uniform T_m central polynomial candidate and its lower-region family consequence",
+  "independent_finite_replay": {
+    "method": "Exact integer recurrence for coefficients of B^m from B(B^m)'=mB'B^m, with B=1+4z+3z^2+z^3; direct coefficient formulas for P,A0,Astar,R",
+    "m_range_for_central_checks": [3, 999],
+    "rank_range": "m <= j <= 2m+2",
+    "polynomials": ["A0", "Astar", "R"],
+    "strict_log_concavity_checks": 1507464,
+    "strict_log_concavity_digest": "3fc21b23eab91c474e378400308dd61f7d4b6b45f835fdad74058ef189396e30",
+    "minimum_log_concavity_margin": {"value": "1210", "m": 3, "polynomial": "Astar", "rank": 8},
+    "strict_mixed_minor_checks": 1507464,
+    "strict_mixed_minor_digest": "90d72df905aa43a087ca9826c8aebc9377f8cfbddf00b83cc4b6e854937f6353",
+    "minimum_mixed_minor": {"value": "1243", "m": 3, "polynomial": "Astar", "rank": 8}
+  },
+  "independent_selector_replay": {
+    "m_range": [1, 999],
+    "eligible_rows": 276938,
+    "failures": 0,
+    "checked": "For each row, both leaf-orbit Delta_p selectors are strict negative and R_(p-1)-R_(p-2) is strict negative, using integer zero extension. Eligibility computed from the first strict descent of P and 3p<2alpha+1."
+  },
+  "large_m_exact_cutoff_ratios_at_m_1000_j_plus_1_2003": {
+    "LC": ["114463976515372641562517941338228411041200160980224609375", "4209007100772390509058978925077086614394939884704237891896"],
+    "A0_mixed": ["1793268965407504717812781080965578439645469188690185546875", "33672056806179124072471831400616692915159519077633903135168"],
+    "Astar_mixed": ["16444657959375202837815077572258815052919089794158935546875", "33672056806179124072471831400616692915159519077633903135168"],
+    "R_mixed": ["5837662802284004719688415008249648963101208209991455078125", "7365762426351683390853213118884901575191144798232416310818"]
+  },
+  "scope_limit": "The finite replay is exact arithmetic outside a proof kernel. The family argument depends on the registered forest descent bound and finite-order ULC convolution theorem; it proves no all-tree aggregate."
+}

@@ -1,0 +1,11 @@
+namespace FirstWide
+
+noncomputable section
+def stratum {X : Type u} [Fintype X]
+    (G : SimpleGraph X) (M : Finset X) (k j : ℕ) : Finset (Finset X) := by
+  classical
+  exact (G.indepSetFinset k).filter (fun S => (S ∩ M).card = j)
+
+end
+
+end FirstWide

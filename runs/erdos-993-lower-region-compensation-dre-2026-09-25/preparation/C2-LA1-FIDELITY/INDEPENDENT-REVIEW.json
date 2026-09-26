@@ -1,0 +1,18 @@
+{
+  "reviewer_id": "C2-LA1-FIDELITY",
+  "reviewer_kind": "independent-mathematical-formalization-fidelity-reviewer",
+  "attestation_id": "c2-la1-order-band-fidelity-v3",
+  "completed_at": "2026-09-25T09:39:09Z",
+  "contract_projection_sha256": "532b436e602a23cddd070ad1e78d963a10585510df244b6efd6386d07ecc212f",
+  "binding_projection_sha256": "d18f0a71642336ef1cc4e23b989a52da025b621d96094cdb4190364430028a2b",
+  "verdict": "match",
+  "findings": [
+    "All 179 brief-listed source files matched their pinned SHA-256 hashes.",
+    "The exact two-conjunct theorem header in Main.lean matches the v3 contract and both fidelity-input statement fields inside namespace E993OrderBand; the full declaration name is E993OrderBand.markedIsolateAndOrdinaryLeafOrderBand.",
+    "The v2-to-v3 revision changes only contract identity and theorem-header spelling/digest; the post-colon theorem type and informal claim are unchanged.",
+    "The graph-isolate coverage, marked independent-set count, original leaf and support, original closed-neighborhood deletion, integer forward difference, domains, quantifiers and guards match the intended claim.",
+    "The proof chain's relative-region counting and original-tree residual specialization preserve both claimed inequalities, including empty and unsupported-rank cases; no extra local assumption or weakened conclusion appears.",
+    "Eight inherited definitions and all 43 registered entry bodies match their pinned source fragments; the reviewed source hash, kernel receipt, allowed axioms and package identities agree.",
+    "The supplied projection hashes are copied exactly into this attestation, but their derivation cannot be independently reproduced from a direct canonical hash of the raw input sections without the unlisted projection algorithm; controller recomputation remains necessary."
+  ]
+}

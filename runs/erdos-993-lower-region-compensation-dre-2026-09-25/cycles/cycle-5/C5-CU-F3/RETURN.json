@@ -1,0 +1,33 @@
+{
+  "worker_id": "C5-CU-F3",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C5-F3-BOUNDED-ASYM-SEARCH",
+      "statement": "For the explicitly encoded order-13 asymmetric ordinary tree at p=6, the original-leaf selector is all eight leaves, the exact sum is S=-307, and the per-tag marked-neighborhood data satisfy E=kU+C and D+C-(2a+1-3p)Q=-kS=1535. In the stated finite seeded Prüfer sample and exhaustive ordered-arm profile family, no eligible row with nonempty selector has a proper selector.",
+      "scope": "The one graph and rank p=6 encoded in the source case, plus its seeded sample of 5,000 Prüfer trees of orders 10 through 17 (98 eligible rows with nonempty selector) and the 342 specified nonconstant ordered-arm profiles (536 eligible rows with nonempty selector). This is bounded evidence only.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CU-F3/REPLAY.py",
+        "cycles/cycle-5/C5-CU-F3/replay-output.json",
+        "cycles/cycle-5/C5-CU-F3/AUDIT.py",
+        "cycles/cycle-5/C5-CU-F3/independent-audit.json"
+      ],
+      "reason": "retained: the source replay reproduces the finite probe counts, and an independent direct subset enumeration verifies the fixture independence vector, terminal first descent, lower-region guard, every original-leaf selector value, every selected summand, and the full Q,U,E,C,D,S accounting. The stated finite ranges do not prove an all-tree result or exclude proper selectors outside those ranges."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CU-F3/REPORT.md",
+  "limitations": [
+    "The random sample is finite and is not exhaustive over ordinary trees or eligible ranks.",
+    "The ordered-arm family covers only its stated sizes and shape; no universal all-leaf selector conclusion follows.",
+    "The fixture has negative full S and does not refute the primary aggregate; no general across-tag charging inequality is proved.",
+    "The finite probes were replayed from producer code; only the fixture was independently recomputed by a separate subset-enumeration method.",
+    "The return proposes a bounded evidence disposition only and has no authoritative status."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-F3-BOUNDED-ASYM-SEARCH"
+  ]
+}

@@ -1,0 +1,12 @@
+namespace Erdos993G1
+lemma degreeDefect_nonneg (d : ℕ) :
+    (0 : ℤ) ≤ (d.choose 2 : ℤ) - (d : ℤ) + 1 := by
+  cases d with
+  | zero => norm_num
+  | succ n =>
+    rw [Nat.choose_succ_succ]
+    simp only [Nat.choose_one_right, Nat.cast_add, Nat.cast_succ]
+    have h := (Nat.cast_nonneg (n.choose 2) : (0 : ℤ) ≤ n.choose 2)
+    omega
+end Erdos993G1
+

@@ -1,0 +1,6 @@
+lemma binomDelta_mono_center {k a b : ℕ} (h : 2*k ≤ a) (hab : a ≤ b) :
+    (a.choose (k+1) : ℤ) - a.choose k ≤
+      (b.choose (k+1) : ℤ) - b.choose k := by
+  induction b, hab using Nat.le_induction with
+  | base => exact le_rfl
+  | succ b hab ih => exact ih.trans (binomDelta_step_up b k (by omega))

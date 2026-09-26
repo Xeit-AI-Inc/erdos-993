@@ -1,0 +1,48 @@
+{
+  "source_evidence_replayed_from_scratch_copies": true,
+  "replay_result_structurally_equal_to_sealed_graft_pair_json": true,
+  "path_adaptation": "Copied the listed evaluator into this worker's evidence directory and changed the copied replay script's import and output paths to remain within this scratch root.",
+  "base": {
+    "order": 91,
+    "edges": 90,
+    "alpha": 68,
+    "x_terminal_checked": 32,
+    "p": 35,
+    "x_plus_2_le_p": true,
+    "3p": 105,
+    "2alpha_plus_1": 137,
+    "strict_lower_region": true,
+    "original_leaf_count": 67,
+    "favorable_leaf_count": 67,
+    "all_original_leaf_selector_deltas_strictly_negative": true,
+    "sum_of_all_selected_terms": "-838171658290934690688",
+    "recorded_full_sum": "-838171658290934690688",
+    "leaf_2_term": "-212336130412243110",
+    "positive_selected_terms": []
+  },
+  "grafted": {
+    "order": 94,
+    "edges": 93,
+    "alpha": 69,
+    "x_terminal_checked": 33,
+    "p": 35,
+    "x_plus_2_le_p": true,
+    "3p": 105,
+    "2alpha_plus_1": 139,
+    "strict_lower_region": true,
+    "original_leaf_count": 67,
+    "favorable_leaf_count": 67,
+    "all_original_leaf_selector_deltas_strictly_negative": true,
+    "sum_of_all_selected_terms": "-2341400510849661617965",
+    "recorded_full_sum": "-2341400510849661617965",
+    "leaf_2_term": "424672260824486220",
+    "positive_selected_terms": [[2, "424672260824486220"]]
+  },
+  "selector_changes": {
+    "old_leaf_4_ceases_to_be_leaf": true,
+    "new_leaf_93_is_favorable": true,
+    "favorable_leaf_2_retained": true,
+    "leaf_2_term_changes_sign": true
+  },
+  "conclusion_boundary": "Finite instability example only; both complete sums are negative, so it is neither a proof nor a counterexample to the universal aggregate."
+}

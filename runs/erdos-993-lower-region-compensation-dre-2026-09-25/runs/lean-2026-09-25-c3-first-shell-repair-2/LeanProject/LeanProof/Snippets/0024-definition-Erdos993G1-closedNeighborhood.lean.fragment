@@ -1,0 +1,6 @@
+namespace Erdos993G1
+def closedNeighborhood {V : Type u}
+    (T : SimpleGraph V) (v : V) : Set V :=
+  {w | w = v ∨ T.Adj v w}
+end Erdos993G1
+

@@ -1,0 +1,40 @@
+{
+  "schema": "C4-U5.support-polynomial-evidence.v1",
+  "kind": "exact_symbolic_reduction",
+  "scope": "finite ordinary trees; fixed integer p >= 2; original leaves, supports, and neighborhoods",
+  "definitions": {
+    "independence_polynomial": "I_G(z)=sum_j i_j(G) z^j",
+    "support_multiplicity": "m_u=number of original degree-one neighbors of u",
+    "branch_polynomials": "For each w adjacent to u, C_w is the w-side component after deleting uw; J_w=I(C_w), A_w=I(C_w-w)."
+  },
+  "identities": [
+    {
+      "name": "leaf_deleted_tree_polynomial",
+      "formula": "P_{u,v}=product_{w in N(u)\\{v}} J_w + z product_{w in N(u)\\{v}} A_w = I(T-v)",
+      "reason": "Partition independent sets by whether u is excluded or included."
+    },
+    {
+      "name": "support_deletion_difference",
+      "formula": "Q_{u,v}=product_{w in N(u)\\{v}} J_w - product_{w in N(u)\\{v}} A_w = I(T-{u,v})-I(T-N[u])",
+      "reason": "After deleting u and v, each remaining branch is unrestricted; after deleting N[u], the root w of each remaining branch is deleted."
+    },
+    {
+      "name": "selected_sum_rewrite",
+      "formula": "S(T,p)=sum_u m_u * 1{[z^(p+1)]P_{u,v}-[z^p]P_{u,v}<0} * ([z^p]Q_{u,v}-[z^(p-1)]Q_{u,v})",
+      "reason": "The indicator is exactly Delta_p(T-v)<0; the Q coefficient difference is the contract summand at rank p-1. Since the v branch is a singleton, P and Q are constant across v in L(u), so multiplicity m_u preserves every tagged leaf."
+    },
+    {
+      "name": "rooted_independence_recurrence",
+      "formula": "E_r=product_c(E_c+O_c); O_r=z product_c E_c",
+      "reason": "Partition independent sets in the rooted subtree by root exclusion or inclusion."
+    }
+  ],
+  "fixed_rank_state": {
+    "polynomial_ring": "Z[z]/(z^(p+2)); retain coefficients 0 through p+1",
+    "additional_coordinate": "alpha(T), computed by the analogous excluded/included maximum recurrence",
+    "guard_check": "x(T)+2<=p iff at least one Delta_j(T)<0 for 0<=j<=p-2; this uses coefficients through p-1. The strict lower-region guard additionally uses 3p<2alpha(T)+1.",
+    "purpose": "Sufficient coefficient range for selector and summand evaluations at fixed p, not a bounded universal finite-state theorem."
+  },
+  "missing_step": "A context-closed transfer state and a proved global sign/compensation inequality for the selected support records. The reduction by itself implies no sign for S.",
+  "computation": "none"
+}

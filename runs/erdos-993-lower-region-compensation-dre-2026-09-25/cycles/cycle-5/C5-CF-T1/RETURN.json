@@ -1,0 +1,30 @@
+{
+  "worker_id": "C5-CF-T1",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C5-T1.TM-LOWER-REGION-AGGREGATE",
+      "statement": "For every m>=1 and every p satisfying x(T_m)+2<=p and 3p<2alpha(T_m)+1, the complete ordinary favorable-leaf sum S(T_m,p) is strictly negative.",
+      "scope": "Only the ordinary trees T_m consisting of path a-b-r with m centers adjacent to r, each center having three private leaves; original leaves and the fixed strict selector are used. The result depends on the admitted finite-forest strict-descent bound n<=4x and an exact finite Python base for m=3..999 with algebraic estimates for m>=1000. It makes no assertion for arbitrary trees.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CF-T1/SOURCE-REPLAY.py",
+        "cycles/cycle-5/C5-CF-T1/RESULTS.json"
+      ],
+      "reason": "retained \u2014 independent audit found the polynomial and support-deletion identities consistent, verified that the same fixed strict selector covers the two original-leaf orbits throughout the eligible rank window, checked the tagged global sum identity, and reproduced the exact finite replay with zero failures. The analytic tail argument supplies the remaining all-m inequalities. Evidence supports only this computer-assisted family theorem; it does not prove the all-tree primary."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CF-T1/REPORT.md",
+  "limitations": [
+    "The claim is restricted to the specified T_m family and does not settle the arbitrary-tree lower-region aggregate.",
+    "The finite base is exact Python arithmetic and is not Lean/kernel checked.",
+    "The all-m selector bridge depends on the admitted R27 forest strict-descent bound n<=4x; this critique does not reprove that theorem.",
+    "The proof imports Gurvits Theorem 1.1 for convolution of finite-order ULC sequences; its hypotheses and factor-order application are stated in the report."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-T1.TM-LOWER-REGION-AGGREGATE"
+  ]
+}

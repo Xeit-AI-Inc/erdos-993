@@ -1,0 +1,30 @@
+{
+  "worker_id": "C1-CU-T2",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C1-T2-1",
+      "statement": "Leaf-support deletion satisfies P_T=(1+z)P_H+zP_R and P_(T-v)=P_H+zP_R, hence the original selector is Delta_p(H)+Delta_(p-1)(R)<0; pair pruning need not preserve the strict lower-region eligibility guards.",
+      "scope": "retained. Exact polynomial identities for a finite tree at an original leaf, plus the explicit eligible K_(1,12), p=8 pruning example. This is a failed closure bridge for direct induction, not a verdict on the primary aggregate.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CU-T2/REPORT.md",
+        "cycles/cycle-1/C1-CU-T2/replay.py",
+        "cycles/cycle-1/C1-CU-T2/replay-output.json",
+        "cycles/cycle-1/C1-CU-T2/ordinary_tree_checked_copy.py"
+      ],
+      "reason": "The polynomial decompositions follow by partitioning independent sets according to whether the original support is selected, and coefficient extraction gives the selector and summand exactly. The K_(1,12) calculation verifies (a,x,p)=(12,6,8), all 12 original leaves selected, each summand -165 and full S=-1980; deleting one leaf/support leaves 11 isolates with (a',x')=(11,6), so the strict lower-region guard fails. Retained only as this exact identity and finite nonclosure example: the target remains unresolved, and T_22/T_60 show that other prunings preserve the guards and positive local terms can coexist with negative full sums."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CU-T2/REPORT.md",
+  "limitations": [
+    "The star pruning example is not a counterexample to the primary aggregate; its complete selected sum is negative.",
+    "The T_22 and T_60 computations are finite checks and establish no general pruning closure or failure thereof.",
+    "No compensation inequality, minimal-positive-witness reduction, proof, or counterexample for the primary target is established.",
+    "The replay covers only the three explicit tree recipes and is not an enumeration of trees."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": ["C1-T2-1"]
+}

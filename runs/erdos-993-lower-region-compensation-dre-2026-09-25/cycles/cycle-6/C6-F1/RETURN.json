@@ -1,0 +1,27 @@
+{
+  "worker_id": "C6-F1",
+  "cycle": 6,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C6-F1.Tm-cutoff400-audit",
+      "statement": "The finite m=3..399 central-margin computation, m=400 cutoff rational endpoint checks, tiny T_m graph polynomial identities, and the cited ULC order-parameter bridge all pass this route's independent checks; these checks identify no defect in the candidate but do not certify its full all-m T_m theorem.",
+      "scope": "Only the T_m family cutoff-400 candidate and the exact computations and literature statements described in REPORT.md; no conclusion for arbitrary ordinary trees or beyond checked analytic subclaims.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-F1/F1-EVIDENCE.py",
+        "cycles/cycle-6/C6-F1/F1-EVIDENCE.json"
+      ],
+      "reason": "Independent integer recurrence replay covered 242,964 central ranks for each of the LC and mixed margins and matched the candidate digests and minima. Exact rational cutoff evaluation puts all four endpoint quantities below one. Tree-DP checks for m=1,2,3 agree with the displayed graph polynomials, and direct coefficient lists establish the small m=1,2 ineligibility edge. Gurvits Definition (2)/Theorem 1.1 allows ULC order at least the sequence degree and adds orders under convolution; Saumard-Wellner Theorem 4.1(b) supplies the separately stated Poisson-ULC convolution closure. The complete analytic mixed-minor bounds and selector propagation were not independently reconstructed here, so this is not a proof-grade confirmation of the full family theorem and not an authoritative status decision."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-F1/REPORT.md",
+  "limitations": [
+    "The finite coefficient checks stop at m=399; the m>=400 computation checks endpoint rational constants, while the uniform inequalities remain analytic proof obligations.",
+    "This route did not independently derive all large-m mixed-minor neighbor-ratio constants or audit the entire selector-to-aggregate propagation.",
+    "Tiny graph dynamic-programming checks cover only T_m for m=1,2,3; the general graph identities rely on the stated family factorization, not a census.",
+    "No result here applies to arbitrary ordinary trees or resolves the primary lower-region aggregate."
+  ],
+  "status_authority": "proposed_worker_only"
+}

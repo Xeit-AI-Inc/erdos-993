@@ -1,0 +1,28 @@
+{
+  "worker_id": "C3-CT-F3",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL",
+      "statement": "For the five specified rooted claw-branch trees with branch-length lists [1,1,2], [1,1,3], [1,2,3], [1,1,2,3], and [1,1,2,4], at p=x(T)+2, the literal fixed-selector weighted network with all deletion and exact two-for-one switch arcs has an integral flow saturating all upper supply; each corresponding complete aggregate is negative.",
+      "scope": "Exactly those five trees and tested ranks, reconstructed from the recipes and edge lists in evidence.json. This is a bounded result, not the universal ordinary-tree claim or a generation-complete family.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CT-F3/evidence.json"
+      ],
+      "reason": "retained_narrowed: copied-source replay confirms all five exact selectors, complete sums, capacities, legal move networks, and saturated integer flows. The universal quantifier over all ordinary trees and all eligible p is unsupported; no supplied or replayed counterexample refutes it. Saturation implies the scalar inequality on these rows, while the universal flow claim is a stronger sufficient mechanism."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CT-F3/REPORT.md",
+  "limitations": [
+    "Only five hand-selected trees were replayed; no exhaustive tree generation or universal argument is supplied.",
+    "Every leaf in the five cases is favorable, and only p=x+2 was tested.",
+    "The stronger universal weighted-flow mechanism remains open; a deficient flow cut alone would not refute the scalar aggregate."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL"
+  ]
+}

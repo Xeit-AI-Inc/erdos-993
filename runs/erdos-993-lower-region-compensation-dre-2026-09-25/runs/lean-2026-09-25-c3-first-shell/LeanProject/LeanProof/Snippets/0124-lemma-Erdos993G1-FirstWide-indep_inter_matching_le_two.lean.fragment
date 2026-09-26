@@ -1,0 +1,26 @@
+namespace Erdos993G1.FirstWide
+
+lemma indep_inter_matching_le_two {X : Type u} [DecidableEq X]
+    (G : SimpleGraph X) (a b c d : X) (hab : G.Adj a b) (hcd : G.Adj c d)
+    (S : Finset X) (hS : G.IsIndepSet S) : (S ∩ {a,b,c,d}).card ≤ 2 := by
+  have hedge (x y : X) (hxy : G.Adj x y) : (S ∩ {x,y}).card ≤ 1 := by
+    apply Finset.card_le_one.mpr
+    intro p hp q hq
+    have hpS := (Finset.mem_inter.mp hp).1
+    have hqS := (Finset.mem_inter.mp hq).1
+    have hp' := (Finset.mem_inter.mp hp).2
+    have hq' := (Finset.mem_inter.mp hq).2
+    simp only [Finset.mem_insert,Finset.mem_singleton] at hp' hq'
+    rcases hp' with rfl | rfl <;> rcases hq' with rfl | rfl
+    · rfl
+    · exact False.elim (hS hpS hqS hxy.ne hxy)
+    · exact False.elim (hS hqS hpS hxy.ne hxy)
+    · rfl
+  have he : S ∩ {a,b,c,d} = (S ∩ {a,b}) ∪ (S ∩ {c,d}) := by
+    ext x
+    simp only [Finset.mem_inter,Finset.mem_insert,Finset.mem_singleton,Finset.mem_union]
+    tauto
+  rw [he]
+  exact (Finset.card_union_le _ _).trans (by have h1 := hedge a b hab; have h2 := hedge c d hcd; omega)
+
+end Erdos993G1.FirstWide

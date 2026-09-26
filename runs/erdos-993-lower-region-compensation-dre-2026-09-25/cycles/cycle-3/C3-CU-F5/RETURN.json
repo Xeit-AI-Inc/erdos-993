@@ -1,0 +1,29 @@
+{
+  "worker_id": "C3-CU-F5",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C3-F5-FINITE-WEIGHTED-HALL",
+      "statement": "In an exact bounded sweep of 633 canonical hub-tree branch recipes of order at most 18, all 138 lower-region eligible rank rows had saturated deletion-plus-literal-two-for-one weighted transport, with no deficient cut; their directly computed original selected sums were all nonpositive.",
+      "scope": "Only the family and rank horizon specified in C3-F5/REPORT.md and C3-F5/EVIDENCE.json; a finite mechanism diagnostic, not a universal claim or a resolution of E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CU-F5/EVIDENCE.json",
+        "cycles/cycle-3/C3-CU-F5/FLOW_SEARCH.py"
+      ],
+      "reason": "retained: the copied generator replay produces identical parsed JSON evidence and confirms the finite counts, saturation, exact representative row, and nonpositive full sums. This disposition validates only the bounded claim; its stated limits leave the primary aggregate unresolved."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CU-F5/REPORT.md",
+  "limitations": [
+    "The computation covers only canonical hub trees with 2–5 branches of types P1–P4 or C2–C4 and order at most 18.",
+    "The replay uses the route's algorithm with only its output redirected; it is not an independent implementation of the polynomial, weight, or flow algorithms.",
+    "No universal weighted-cut theorem, injection, or proof of the lower-region aggregate follows from the finite flow certificates."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C3-F5-FINITE-WEIGHTED-HALL"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "worker_id": "C5-CU-T3",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C5-T3-MATCHING-ONLY-SLACK-OBSTRUCTION",
+      "statement": "The pointwise bound 2(h-k)-e(A) >= 2(h-k-nu(H)) is false for the realizable original-leaf deletion graph H and marked independent set A specified in EVIDENCE.json; for any fixed maximum matching, the exact decomposition includes the adverse term -u(A).",
+      "scope": "Retained narrowly as a counterexample to this proposed matching-size-only pointwise sufficient bound and as the exact finite-graph matching decomposition. It does not establish anything about the primary selected aggregate S(T,p)<=0; the example fails x+2<=p.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-5/C5-CU-T3/EVIDENCE.json"],
+      "reason": "retained_narrowed: direct recalculation confirms slack 1 versus proposed lower bound 2 and proves the partition identity. The source evidence's matching-category tuple is impossible and its assertion that 3p<2a+1 fails is incorrect; corrected counts are in EVIDENCE.json. These defects do not alter the local counterexample, but require narrowing it to that intermediate bound."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CU-T3/REPORT.md",
+  "limitations": [
+    "The source's matching-category counts are wrong; for M={z,y1}, the correct tuple is (m2,m1,m0,u)=(1,0,0,1).",
+    "For the example, x=2, a=4, p=2: the early-descent gate fails, while the strict lower-region inequality holds (6<9).",
+    "The counterexample is to an intermediate pointwise sufficient bound, not to the full selected sum; no selected-family budget was established.",
+    "No exhaustive search or public literature retrieval was performed."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": ["C5-T3-MATCHING-ONLY-SLACK-OBSTRUCTION"]
+}

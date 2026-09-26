@@ -1,0 +1,20 @@
+{
+  "kind": "exact rooted-tree polynomial identities",
+  "definitions": {
+    "I(G;z)": "sum over independent vertex sets X of z^|X|",
+    "component C rooted at u": {
+      "A_u": "I(C-u;z)",
+      "B_u": "I(C-N[u];z)",
+      "component_polynomial": "A_u+z*B_u"
+    },
+    "coefficient_difference": "d_j(f)=[z^(j+1)]f-[z^j]f, with zero extension"
+  },
+  "identities": [
+    "For child components rooted at c: A_u=product_c(A_c+z*B_c), B_u=product_c A_c.",
+    "For a leaf v adjacent to support s, root T at s and let C_u be the component on each other neighbor branch u after deleting s; J_u=I(C_u;z), A_u=I(C_u-u;z). Then I(T-v;z)=product_(u!=v)J_u + z*product_(u!=v)A_u.",
+    "For the same tagged leaf: I(T-{v,s};z)=product_(u!=v)J_u.",
+    "For the same tagged leaf: I(T-N[s];z)=product_(u non-leaf-neighbor of s)A_u."
+  ],
+  "verification": "Each identity follows from unique independent-set decomposition by branches and, at a rooted vertex, by whether the root is included. Products are over disjoint components. The last identity removes s and every neighbor; each non-leaf branch root u is removed and leaves C_u-u, while pendant neighbors leave no component. Empty products equal 1.",
+  "limitation": "Identities give exact finite-input evaluation only. They do not prove a coefficient inequality for the selected sum or provide a uniform state invariant controlling the global first strict descent and favorable selectors."
+}

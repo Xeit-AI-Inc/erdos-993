@@ -1,0 +1,31 @@
+{
+  "worker_id": "C2-CT-F1",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-FIRST-ORDER-SHELL",
+      "statement": "For every finite ordinary tree T with alpha(T), first strict descent x(T), and natural p satisfying x(T)+2<=p, 3p<2alpha(T)+1, and |V(T)|=2p+2, the complete sum over original leaves v with Delta_p(T-v)<0 of Delta_(p-1)(T-{v,s_v})-Delta_(p-1)(T-N_T[s_v]) is nonpositive.",
+      "scope": "Registered universal first-order-shell assertion. The audited evidence narrows to all 19,320 unlabeled ordinary trees of order 16 at p=7: 1,696 satisfy both guards (each has alpha=11 and x=5), and all have S<0, with range -1759 through -906.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CT-F1/REPLAY-RESULT.json",
+        "cycles/cycle-2/C2-CT-F1/REPLAY.py",
+        "cycles/cycle-2/C2-CT-F1/ordinary_tree_checked.py",
+        "cycles/cycle-2/C2-CT-F1/forest24.py"
+      ],
+      "reason": "retained_narrowed: the registered universal shell assertion remains unproved and unrefuted. The source computation was replayed from scratch-local copies with only import/output paths redirected; the replay JSON exactly matches the sealed result across all 1,696 eligible rows. This verifies the stated finite census, not arbitrary shell order or rank."
+    }
+  ],
+  "covered_claim_ids": [
+    "E993-LOWER-REGION-FIRST-ORDER-SHELL"
+  ],
+  "report_path": "cycles/cycle-2/C2-CT-F1/REPORT.md",
+  "limitations": [
+    "The verified census is bounded to p=7 and |V(T)|=16 and cannot establish the universal shell assertion.",
+    "The canonical centroid generator was replayed and inspected but not independently formalized.",
+    "All dispositions and statuses are proposed_worker_only; controller adjudication remains required."
+  ],
+  "status_authority": "proposed_worker_only"
+}

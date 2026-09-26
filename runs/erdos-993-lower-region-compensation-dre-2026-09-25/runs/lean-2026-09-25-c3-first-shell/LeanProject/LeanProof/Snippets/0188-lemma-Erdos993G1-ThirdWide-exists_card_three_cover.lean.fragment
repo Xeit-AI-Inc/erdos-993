@@ -1,0 +1,17 @@
+namespace Erdos993G1.ThirdWide
+open Finset Classical
+
+lemma exists_card_three_cover {X : Type u} [Fintype X] [DecidableEq X]
+    (F : SimpleGraph X) [DecidableRel F.Adj]
+    (C0 : Finset X) (hC0 : C0.card ≤ 3) (hX : 3 ≤ Fintype.card X)
+    (hcover0 : ∀ x y, F.Adj x y → x ∈ C0 ∨ y ∈ C0) :
+    ∃ C : Finset X, C.card = 3 ∧ C0 ⊆ C ∧
+      ∀ x y, F.Adj x y → x ∈ C ∨ y ∈ C := by
+  obtain ⟨C, hC0C, hCcard⟩ := Finset.exists_superset_card_eq hC0
+    (by simpa using hX)
+  refine ⟨C, hCcard, hC0C, fun x y hxy => ?_⟩
+  rcases hcover0 x y hxy with h | h
+  · exact Or.inl (hC0C h)
+  · exact Or.inr (hC0C h)
+
+end Erdos993G1.ThirdWide

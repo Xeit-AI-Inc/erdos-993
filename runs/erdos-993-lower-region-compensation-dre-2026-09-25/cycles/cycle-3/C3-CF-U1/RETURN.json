@@ -1,0 +1,38 @@
+{
+  "worker_id": "C3-CF-U1",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL",
+      "statement": "For eligible ordinary finite trees and ranks in the stated lower region, the fixed-selector two-for-one weighted clone graph has a matching saturating every upper clone.",
+      "scope": "Universal ordinary finite trees with the original fixed F(T,p), tag multiplicities w_F, all deletion pairs, and legal exactly-two-neighbor support-insertion pairs. The route's universal assertion remains unresolved; three listed T_m rows pass bounded replay.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-3/C3-CF-U1/EVIDENCE.json"],
+      "reason": "retained: the route accurately presents an open universal mechanism. Copied-source replay confirms saturation and zero cut deficits for T22,p34; T60,p90; and T66,p98, with positive flow on added switch transitions. These finite cases do not prove universal Hall."
+    },
+    {
+      "claim_id": "E993-U1-CLONE-PROJECTION",
+      "statement": "For the fixed original selector, active tagged independent sets biject with weighted clone layers, every old literal Delete/Retag edge projects to an underlying deletion, and the expanded graph strictly enlarges the old relation on the replayed T_m cases.",
+      "scope": "Ordinary finite trees at the stated ranks, with H_v=T-{v,s_v}, W_v=N(s_v)\\{v}, R_v=T-N[s_v], distinct tags for each original selected leaf, and the specific bounded T_m rows recorded in EVIDENCE.json for the strictness witness.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-3/C3-CF-U1/EVIDENCE.json"],
+      "reason": "retained_narrowed: the set-theoretic bijections, aggregate layer identity, and projection of old edges follow directly from the definitions. The source's separate order-14 tagged-fiber example was not reconstructed here; strict enlargement is instead supported by replayed switch-only flow transitions on the three listed T_m cases."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CF-U1/REPORT.md",
+  "limitations": [
+    "The universal weighted Hall mechanism is neither proved nor refuted.",
+    "The source replay covers only T22,p34; T60,p90; and T66,p98. The exhaustive small transition replay covers only T_m for m=1,2,3.",
+    "Hall saturation is stronger than the complete scalar aggregate inequality; a failed Hall cut alone is not an aggregate counterexample.",
+    "The expanded CB(8,92) instance remains inconclusive in the allowed sources.",
+    "The source's separate order-14 tagged-fiber example was not reconstructed in this seat.",
+    "Old tagged-relation refutations and governed RTree results do not transfer to the changed ordinary-tree graph."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL",
+    "E993-U1-CLONE-PROJECTION"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "method": "separate bitmask enumeration and direct positive-flow feasibility check",
+  "profiles": [
+    {
+      "profile": [
+        2,
+        3,
+        4
+      ],
+      "tree_vector_verified": true,
+      "alpha": 11,
+      "x": 5,
+      "p": 7,
+      "original_leaves": 10,
+      "favorable_leaves": 10,
+      "all_selected_terms_verified": true,
+      "S": -1218,
+      "eligibility_guards_verified": true,
+      "upper_sets": 218,
+      "lower_sets": 480,
+      "positive_flow_arcs_checked": 431,
+      "flow": 1563,
+      "upper_supply": 1563,
+      "lower_capacity": 2969,
+      "flow_conservation_and_capacities_verified": true
+    },
+    {
+      "profile": [
+        2,
+        2,
+        4,
+        3
+      ],
+      "tree_vector_verified": true,
+      "alpha": 13,
+      "x": 6,
+      "p": 8,
+      "original_leaves": 12,
+      "favorable_leaves": 12,
+      "all_selected_terms_verified": true,
+      "S": -5434,
+      "eligibility_guards_verified": true,
+      "upper_sets": 1080,
+      "lower_sets": 2185,
+      "positive_flow_arcs_checked": 2127,
+      "flow": 8751,
+      "upper_supply": 8751,
+      "lower_capacity": 15468,
+      "flow_conservation_and_capacities_verified": true
+    }
+  ],
+  "scope": "the two encoded finite instances only"
+}

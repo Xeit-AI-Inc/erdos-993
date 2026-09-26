@@ -1,0 +1,172 @@
+{
+  "status_authority": "proposal_to_controller_only",
+  "source_hashes": {
+    "matched": 34,
+    "listed": 34,
+    "all_match": true
+  },
+  "identity_inventory": {
+    "canonical_count": 418,
+    "refutation_count": 92,
+    "proposed_count": 6,
+    "exact_key_collisions": []
+  },
+  "p10_cover_obstruction_independent_replay": {
+    "method": "edge-derived leaves and supports; independent deletion-contraction polynomial recurrence",
+    "order": 24,
+    "edge_count": 23,
+    "connected": true,
+    "alpha": 18,
+    "x": 8,
+    "p": 10,
+    "selector": [
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      10,
+      11,
+      12,
+      14,
+      15,
+      16,
+      18,
+      19,
+      20,
+      22,
+      23
+    ],
+    "summands": [
+      {
+        "leaf": 2,
+        "support": 1,
+        "term": -7537
+      },
+      {
+        "leaf": 3,
+        "support": 1,
+        "term": -7537
+      },
+      {
+        "leaf": 4,
+        "support": 1,
+        "term": -7537
+      },
+      {
+        "leaf": 6,
+        "support": 5,
+        "term": -7537
+      },
+      {
+        "leaf": 7,
+        "support": 5,
+        "term": -7537
+      },
+      {
+        "leaf": 8,
+        "support": 5,
+        "term": -7537
+      },
+      {
+        "leaf": 10,
+        "support": 9,
+        "term": -7537
+      },
+      {
+        "leaf": 11,
+        "support": 9,
+        "term": -7537
+      },
+      {
+        "leaf": 12,
+        "support": 9,
+        "term": -7537
+      },
+      {
+        "leaf": 14,
+        "support": 13,
+        "term": -7537
+      },
+      {
+        "leaf": 15,
+        "support": 13,
+        "term": -7537
+      },
+      {
+        "leaf": 16,
+        "support": 13,
+        "term": -7537
+      },
+      {
+        "leaf": 18,
+        "support": 17,
+        "term": -7537
+      },
+      {
+        "leaf": 19,
+        "support": 17,
+        "term": -7537
+      },
+      {
+        "leaf": 20,
+        "support": 17,
+        "term": -7537
+      },
+      {
+        "leaf": 22,
+        "support": 21,
+        "term": -4875
+      },
+      {
+        "leaf": 23,
+        "support": 21,
+        "term": -4875
+      }
+    ],
+    "S": -122805,
+    "cover_size": 6,
+    "disjoint_matching_size": 6,
+    "conclusion": "refutes cover>=7 extension only; all pointwise terms and S are negative"
+  },
+  "shell_arithmetic_replay": {
+    "second_shell_p6_p7_margins": {
+      "6": [
+        9,
+        38,
+        81,
+        90,
+        1
+      ],
+      "7": [
+        11,
+        58,
+        167,
+        295,
+        284,
+        0
+      ]
+    },
+    "third_shell_six_cover_N26_margins_r0_to_12": [
+      25,
+      293,
+      2254,
+      12303,
+      50735,
+      164230,
+      426971,
+      902685,
+      1556639,
+      2168811,
+      2352977,
+      1721965,
+      16848
+    ]
+  },
+  "limitations": [
+    "No raw matching injection certificate or Lean source was available in this brief.",
+    "The p10 replay is one encoded tree, not a census of low-cover trees.",
+    "The shell arithmetic checks numerical margins, not the universal graph reductions."
+  ]
+}

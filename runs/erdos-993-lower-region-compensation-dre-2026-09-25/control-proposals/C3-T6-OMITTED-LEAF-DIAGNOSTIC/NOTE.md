@@ -1,0 +1,3 @@
+# Controller full-selector diagnostic; withheld from isolated critics
+
+C3-T6 generator initializes leaves=[] and appends only claw leaves plus the grafted root leaf. It omits the original arm leaf2 entirely, rather than evaluating strict favorability. Independent adjacency-derived leaf enumeration shows the leaf is favorable in both trees. Therefore claimed complete selectors, full sums, M and Q totals are incomplete. Correct full rows are in EVIDENCE.json. No positive aggregate found. The polynomial pendant-graft recurrence may remain valid; reject/narrow the incomplete computation and rebuild before any aggregate use. Preserve original sealed artifacts, allow independent critics first, then append fresh correction if missed.

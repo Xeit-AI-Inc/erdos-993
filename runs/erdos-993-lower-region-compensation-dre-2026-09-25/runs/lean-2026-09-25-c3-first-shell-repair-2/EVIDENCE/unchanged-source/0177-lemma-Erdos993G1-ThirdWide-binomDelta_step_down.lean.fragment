@@ -1,0 +1,8 @@
+lemma binomDelta_step_down (m k : ℕ) (hk : 1 ≤ k) (hm : m < 2*k) :
+    ((m+1).choose (k+1) : ℤ) - (m+1).choose k ≤
+      (m.choose (k+1) : ℤ) - m.choose k := by
+  obtain ⟨j, rfl⟩ := Nat.exists_eq_add_of_le' hk
+  have hc := FirstWide.choose_step_nonpos (n := m) (k := j) (by omega)
+  have hc' : (m.choose (j+1) : ℤ) ≤ m.choose j := by exact_mod_cast hc
+  have hp := binomDelta_pascal m j
+  linarith

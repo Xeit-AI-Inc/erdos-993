@@ -1,0 +1,53 @@
+{
+  "worker_id": "C2-PREP-ORDER-AUDIT",
+  "model": "gpt-6-sol",
+  "reasoning_effort": "high",
+  "task": "Audit the two newly registered order-band candidates independently: generic marked-isolate graph bound m<=2k+1,k>=2; original-leaf corollary n<=2p+1,p>=3. Compare exact scopes against the412 registry for duplicates or collision with existing refutations. Reconstruct a complete proof or identify a precise defect, checking empty/edgeless graphs, isolates, k beyond alpha, marking, the once-per-upper-set correction, connectivity, and original neighborhood conventions. Independently falsify small instances as feasible, and check the claimed sharpness family including its first-descent exclusion. Decide whether the eligible first remaining order shell is disjoint and well posed, without claiming its truth. Review the pinned prior Lean source read-only for reusable definitions and an implementation plan; do not build Lean or extract Code's high-tail certificates. Produce a compact per-inference audit ledger, REPORT.md with proof/counterexample and precise scope recommendations, and RESULTS.json with separate pass/fail/uncertain results for each candidate, source checks, limitations, and status_authority=proposed_worker_only. This is Cycle2 preparation, not a C1 synthesis input or a formal award. No access to other current worker outputs. Public literature is unnecessary unless a source-dependent premise is introduced.",
+  "allowed_source_files": [
+    {
+      "path": "control/C2-NEW-CLAIMS.json",
+      "sha256": "2e6bfbb465a3bb9d345030436adf5f8724e78397a62fe9b79a44fd40ce567396"
+    },
+    {
+      "path": "control/C2-REGISTERED-CLAIM-IDENTITY.json",
+      "sha256": "a02e53c2865e6b60a7ac97605ba806b08c31f032bae8b59a32c37067e2187da4"
+    },
+    {
+      "path": "control/C2-ORDER-BAND-CANDIDATE.md",
+      "sha256": "6a27d09bd8b78dc3aa5392047e31d630e95696a1995e39c4280c4909f92f6d89"
+    },
+    {
+      "path": "SOLUTION-CONTRACT.md",
+      "sha256": "f3667bd6424d4f0d95714772ecf76af82ed8430bdd3ec9eda0c721f1a853390c"
+    },
+    {
+      "path": "inputs/ordinary_tree_checked.py",
+      "sha256": "a012bb78915ccdfa2f729c0cdb520cd8f29572277123c92e80ba6091498f533d"
+    },
+    {
+      "path": "inputs/standing-controls/t22-order91.json",
+      "sha256": "2198f01fa5de1c192da190ac242f5af8a914b0b03bd5e6df979590d20c6a18ed"
+    },
+    {
+      "path": "inputs/standing-controls/t60-order243.json",
+      "sha256": "871a3656ce328c800606a97bee60c2bc33b25c1381e0e716c54ff124372f23a2"
+    },
+    {
+      "path": "receipts/CONTROLLER-ORDER-SHELL-SANITY.json",
+      "sha256": "377258cf7ace64349bd05a6f0bd088687dcc3b8de55826b153ec13fa7f38a134"
+    },
+    {
+      "path": "receipts/CONTROLLER-ORDER-BAND-LARGER-CONTROL.json",
+      "sha256": "3b64b5e169d1fc34187ff4c6b2a01a5b9d8148867c21fc55202efd9cbc06208e"
+    },
+    {
+      "path": "control-proposals/formal-intake/FirstInteriorMain.lean",
+      "sha256": "8d864da290947d75ac0cb52644b8b5336a19076878fcb11eeed552e6a118d7a9"
+    },
+    {
+      "path": "control-proposals/formal-intake/SOURCE-PIN.json",
+      "sha256": "a5801a2626be4368180598151f62889c6eb064baab3eb1fb2c17a3f2f207c86d"
+    }
+  ],
+  "status_authority": "proposed_worker_only"
+}

@@ -1,0 +1,7 @@
+# Root clarification of two valid ULC formalization interfaces
+
+The need for a precise normalization is real, but C6-CF-U1's suggestion to replace the finite-order interface with a necessarily Poisson-only interface is too restrictive. As C6-CT-U1 notes, B=1+4z+3z²+z³ is finite-order ULC at order4, despite failing order3. The actual degree need not equal the normalization order. Existing pinned inputs give valid finite orders G,L:1; B:4; 1+3z+z²:2; 2+5z+2z²:2. Finite-order convolution adds orders and yields the needed Poisson curvature bound as a consequence. No limiting argument is needed for this implementation route.
+
+For 1<=j<d, binomial-normalized ULC of order d implies j(d-j)a_j² >= (j+1)(d-j+1)a_(j-1)a_(j+1), which implies j a_j² >= (j+1)a_(j-1)a_(j+1). Thus a_j²-a_(j-1)a_(j+1)>=a_j²/(j+1). At support boundaries the zero extension gives the same weaker bound directly. Support, positivity and index hypotheses must still be encoded.
+
+Either a finite-order convolution interface followed by this implication, or a directly formalized Poisson-ULC closure interface, can support the family proof. The mathematical plan is not a compiled declaration graph. Its old m3..999 finite base refers to the retained C5 certificate; the separately reviewed cutoff400 alternative belongs to a smaller certificate for the same claim, not to a new family scope. No Lean run or new award is implied here. Preserve the two original critiques and resolve their interface disagreement by these exact inequalities.

@@ -1,0 +1,9 @@
+namespace Erdos993G1
+noncomputable section
+def firstDescent {V : Type u}
+    (F : SimpleGraph V) : ℕ :=
+  sInf {k : ℕ | Erdos993G1.delta F (k : ℤ) < 0}
+
+end
+end Erdos993G1
+

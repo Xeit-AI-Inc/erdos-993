@@ -1,0 +1,39 @@
+{
+  "worker_id": "C5-U6",
+  "cycle": 5,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C5-U6-MARKED-SHELL-REDUCTION",
+      "statement": "For a fixed original leaf v and a fixed ordering of its support-neighbors W, the tagged shell difference q_p-q_(p-1) equals -sum over w in W of Delta_(p-2)(G_w), while the original leaf selector Delta_p(T-v)<0 is equivalent to -sum over w in W Delta_(p-1)(G_w)+i_(p+1)(R)-i_(p-1)(R)<0.",
+      "scope": "Every finite ordinary tree, each original leaf separately, with integer zero extension and the definitions in REPORT.md.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-5/C5-U6/EVIDENCE.json"],
+      "reason": "Both formulas follow by partitioning marked independent sets by their unique first W-vertex and by the exact leaf-deletion polynomial identity. This is a reduction only and proves no general sign."
+    },
+    {
+      "claim_id": "C5-U6-STAR-LOWER-REGION",
+      "statement": "For T=K_(1,m), every admissible pair (m,p) in the registered lower region satisfies S(T,p)=m*(binom(m-1,p)-binom(m-1,p-1))<0; the exact parameter window is ceil(3p/2)<=m<=2p-4, nonempty exactly for p>=8.",
+      "scope": "Ordinary stars K_(1,m) with m>=4 and the exact hypotheses x(T)+2<=p and 3p<2alpha(T)+1.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-5/C5-U6/EVIDENCE.json"],
+      "reason": "The binomial coefficient vector gives x=ceil(m/2); the inequalities yield the exact window, every original leaf satisfies the strict selector, and all m distinct tagged terms are the displayed negative binomial difference."
+    },
+    {
+      "claim_id": "C5-U6-PRIMARY-STATUS",
+      "statement": "This route leaves the complete ordinary-tree lower-region favorable-leaf aggregate unresolved.",
+      "scope": "The full target E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE; only the identities and star subfamily above were established here.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-5/C5-U6/EVIDENCE.json"],
+      "reason": "No general bound on the marked-shell residuals across the fixed selected set was proved, and no full-sum counterexample was produced."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-U6/REPORT.md",
+  "limitations": [
+    "The first-mark decomposition is an exact identity and supplies no general sign for the resulting forest differences.",
+    "The proven star family has no eligible examples at p=6 or p=7; those are not resolved for arbitrary trees.",
+    "No universal conclusion about the primary follows from this subfamily certificate."
+  ],
+  "status_authority": "proposed_worker_only"
+}

@@ -1,0 +1,31 @@
+{
+  "kind": "independent rooted-message and scope audit",
+  "source_hashes": "All 182 source hashes listed by C4-CU-T6.json and C4-COMMON.json matched before review.",
+  "checks": [
+    {
+      "check": "Rooted component recurrence",
+      "result": "For children c of u, I(C-u) is the product of I(C_c)=A_c+zB_c; I(C-N[u]) is the product of I(C_c-c)=A_c. Thus the stated A and B recurrences and I(C)=A+zB follow."
+    },
+    {
+      "check": "Tagged leaf deletion products",
+      "result": "Partitioning at support s gives the displayed I(T-v) formula. Removing v and s leaves every other branch intact. Removing N[s] leaves C_u-u in non-pendant branches and empty graphs in pendant branches. The formulas retain one term per original leaf tag, including tags sharing s."
+    },
+    {
+      "check": "Hand arithmetic, three-leaf star",
+      "result": "For a selected leaf v, I(T-v)=(1+z)^2+z=1+3z+z^2; I(T-{v,s})=(1+z)^2; I(T-N[s])=1. At k=1, d_1((1+z)^2)-d_1(1)=(1-2)-(0-1)=-1. This is a local formula check only; the tree is not asserted eligible."
+    },
+    {
+      "check": "Rank and selector scope",
+      "result": "The favorable selector uses d_p(I(T-v))<0; the summand uses d_(p-1) on its two deletion polynomials. The contract's x is the first strict negative difference with terminal zero extension. With k=p-1 the route's coefficient-difference notation agrees. No route example has numerical eligibility data or a global sum requiring recalculation."
+    },
+    {
+      "check": "Resolution grade and controls",
+      "result": "There is no imported theorem, counterexample, census, or asserted sign result. The recurrence is an exact evaluator, not a uniform inequality. No standing counterexample fence is triggered; no source replay or Lean build was performed."
+    }
+  ],
+  "limitations": [
+    "No uniform coefficient comparison or compositional sign invariant was established.",
+    "The hand calculation validates local identities only and is not a test of the eligible aggregate.",
+    "This critique does not determine the global primary claim from evidence beyond the assigned route."
+  ]
+}

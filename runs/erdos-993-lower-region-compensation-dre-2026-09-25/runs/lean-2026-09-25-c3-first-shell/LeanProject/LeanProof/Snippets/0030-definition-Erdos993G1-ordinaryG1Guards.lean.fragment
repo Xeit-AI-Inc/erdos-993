@@ -1,0 +1,17 @@
+namespace Erdos993G1
+def ordinaryG1Guards {V : Type u}
+    (T : SimpleGraph V) (v s g : V) (p : ℕ) : Prop :=
+  T.IsTree ∧
+  Erdos993G1.vertexDegree T v = 1 ∧ T.Adj v s ∧
+  Erdos993G1.vertexDegree T s = 2 ∧ T.Adj s g ∧ g ≠ v ∧
+  p = Erdos993G1.firstDescent T + 1 ∧
+  Erdos993G1.delta (Erdos993G1.ambientA T v) (p : ℤ) +
+    Erdos993G1.delta (Erdos993G1.ambientH T v g) ((p : ℤ) - 1) < 0 ∧
+  2 * p - 3 < Erdos993G1.residualOrder T v g ∧
+  Erdos993G1.firstDescent (Erdos993G1.residual T v g) < p - 2
+end Erdos993G1
+
+namespace Erdos993G1
+
+variable {V : Type u} (F : SimpleGraph V)
+

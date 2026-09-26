@@ -1,0 +1,239 @@
+{
+  "fixture": {
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        6,
+        8
+      ],
+      [
+        0,
+        9
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        9,
+        11
+      ],
+      [
+        9,
+        12
+      ]
+    ],
+    "n": 13,
+    "independence_vector": [
+      1,
+      13,
+      66,
+      173,
+      258,
+      231,
+      131,
+      47,
+      10,
+      1
+    ],
+    "alpha": 9,
+    "x": 4,
+    "i_x": 258,
+    "i_x_plus_1": 231,
+    "p": 6,
+    "k": 5,
+    "selector_leaf_deltas": {
+      "2": -46,
+      "4": -38,
+      "5": -38,
+      "7": -38,
+      "8": -38,
+      "10": -31,
+      "11": -31,
+      "12": -31
+    },
+    "original_leaves": [
+      2,
+      4,
+      5,
+      7,
+      8,
+      10,
+      11,
+      12
+    ],
+    "favorable_leaves": [
+      2,
+      4,
+      5,
+      7,
+      8,
+      10,
+      11,
+      12
+    ],
+    "tag_rows": [
+      {
+        "leaf": 2,
+        "support": 1,
+        "W": [
+          0
+        ],
+        "q_k": 35,
+        "q_k1": 21,
+        "E_v": 105,
+        "C_v": 0,
+        "D_v": 105,
+        "summand": -14
+      },
+      {
+        "leaf": 4,
+        "support": 3,
+        "W": [
+          0,
+          5
+        ],
+        "q_k": 69,
+        "q_k1": 34,
+        "E_v": 185,
+        "C_v": 15,
+        "D_v": 229,
+        "summand": -35
+      },
+      {
+        "leaf": 5,
+        "support": 3,
+        "W": [
+          0,
+          4
+        ],
+        "q_k": 69,
+        "q_k1": 34,
+        "E_v": 185,
+        "C_v": 15,
+        "D_v": 229,
+        "summand": -35
+      },
+      {
+        "leaf": 7,
+        "support": 6,
+        "W": [
+          0,
+          8
+        ],
+        "q_k": 69,
+        "q_k1": 34,
+        "E_v": 185,
+        "C_v": 15,
+        "D_v": 229,
+        "summand": -35
+      },
+      {
+        "leaf": 8,
+        "support": 6,
+        "W": [
+          0,
+          7
+        ],
+        "q_k": 69,
+        "q_k1": 34,
+        "E_v": 185,
+        "C_v": 15,
+        "D_v": 229,
+        "summand": -35
+      },
+      {
+        "leaf": 10,
+        "support": 9,
+        "W": [
+          0,
+          11,
+          12
+        ],
+        "q_k": 89,
+        "q_k1": 38,
+        "E_v": 223,
+        "C_v": 33,
+        "D_v": 311,
+        "summand": -51
+      },
+      {
+        "leaf": 11,
+        "support": 9,
+        "W": [
+          0,
+          10,
+          12
+        ],
+        "q_k": 89,
+        "q_k1": 38,
+        "E_v": 223,
+        "C_v": 33,
+        "D_v": 311,
+        "summand": -51
+      },
+      {
+        "leaf": 12,
+        "support": 9,
+        "W": [
+          0,
+          10,
+          11
+        ],
+        "q_k": 89,
+        "q_k1": 38,
+        "E_v": 223,
+        "C_v": 33,
+        "D_v": 311,
+        "summand": -51
+      }
+    ],
+    "Q": 578,
+    "U": 271,
+    "E": 1514,
+    "C": 159,
+    "D": 1954,
+    "S": -307,
+    "coefficient_2a1_minus_3p": 1,
+    "budget_margin": 1535,
+    "kS": -1535,
+    "E_equals_kU_plus_C": true,
+    "lower_region_guard": true
+  },
+  "bounded_search": {
+    "random_seed": 993,
+    "random_trees_sampled": 5000,
+    "random_eligible_rows": 98,
+    "random_proper_selector_rows": 0,
+    "ordered_arm_profiles": 342,
+    "ordered_arm_eligible_rows": 536,
+    "ordered_arm_proper_selector_rows": 0
+  }
+}

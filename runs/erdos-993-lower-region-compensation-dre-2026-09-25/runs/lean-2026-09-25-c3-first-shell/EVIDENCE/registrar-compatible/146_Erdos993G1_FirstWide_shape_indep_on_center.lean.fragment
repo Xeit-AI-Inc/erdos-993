@@ -1,0 +1,25 @@
+namespace Erdos993G1.FirstWide
+
+lemma shape_indep_on_center {V : Type u} [DecidableEq V]
+    (G : SimpleGraph V) [DecidableRel G.Adj] (U : Finset V) (a : V)
+    (ha : a ∈ U)
+    (hc : ∀ x ∈ U, ∀ y ∈ U, G.Adj x y → x = a ∨ y = a) (j : ℕ) :
+    ((U.powersetCard (j+1)).filter (fun S : Finset V => G.IsIndepSet S)).card =
+      (U.card-1).choose (j+1) +
+        (U.filter (fun x => x ≠ a ∧ ¬G.Adj a x)).card.choose j := by
+  have hi : G.IsIndepSet (↑(U.erase a) : Set V) := by
+    intro x hx y hy hxy hAdj
+    obtain ⟨hxa,hxU⟩ := Finset.mem_erase.mp hx
+    obtain ⟨hya,hyU⟩ := Finset.mem_erase.mp hy
+    rcases hc x hxU y hyU hAdj with h | h
+    · exact hxa h
+    · exact hya h
+  have hN : G.IsIndepSet (↑(U.filter (fun x => x ≠ a ∧ ¬G.Adj a x)) : Set V) := by
+    apply hi.mono
+    intro x hx
+    obtain ⟨hxU,hxa,_⟩ := Finset.mem_filter.mp hx
+    exact Finset.mem_erase.mpr ⟨hxa,hxU⟩
+  rw [shape_indep_on_succ G U a ha j, shape_indep_on_edgeless G _ hi,
+    shape_indep_on_edgeless G _ hN, Finset.card_erase_of_mem ha]
+
+end Erdos993G1.FirstWide

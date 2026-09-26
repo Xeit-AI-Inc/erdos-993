@@ -1,0 +1,29 @@
+{
+  "kind": "exact_algebraic_reformulation",
+  "scope": {
+    "graphs": "finite ordinary trees T",
+    "selector": "fixed original favorable-leaf tags F={v original leaf: Delta_p(T-v)<0}; distinct leaves remain distinct tags",
+    "rank": "eligible p with x(T)+2<=p and 3p<2 alpha(T)+1",
+    "additional_condition": "Q>0 for divided formulations; undivided formulation also holds when Q=0"
+  },
+  "definitions": {
+    "H_v": "T-{v,s_v}",
+    "W_v": "N_T(s_v)-{v}",
+    "q_v(k)": "number of independent k-sets A of H_v meeting W_v, k=p-1",
+    "w(B)": "number of v in F with v in B and B-{v} meeting W_v",
+    "Q": "sum over independent p-sets B of T of w(B) = sum over v in F q_v(p-1)",
+    "e(B)": "number of vertices addable to independent p-set B in T",
+    "E": "sum over independent p-sets B of T of w(B)e(B) = sum over v,A counted by q_v(p-1) of e_Hv(A)",
+    "mu_j": "(j+1)i_(j+1)(T)/i_j(T)"
+  },
+  "identities": [
+    "E_p[e]=mu_p by double-counting pairs (B,u) where |B|=p, B independent, and u extends B to an independent (p+1)-set.",
+    "E/Q=mu_p+Cov_p(w,e)/E_p[w] when Q>0, for the uniform distribution on independent p-sets.",
+    "CT_x i_x E<=(x+1)i_(x+1)Q is equivalent, when Q>0, to Cov_p(w,e)/E_p[w]<=mu_x-mu_p.",
+    "Writing I_u(B)=1[B cap N_T[u] is empty], e(B)=sum_u I_u(B), and E_p[I_u]=i_p(T-N_T[u])/i_p(T), gives the vertex-neighborhood covariance expansion recorded in REPORT.md."
+  ],
+  "proved_bridge": "For each tag v, (v,A) maps bijectively to (v,B=A union {v}); meeting W_v blocks its support s_v, so e_Hv(A)=e_T(B). Thus the marked Q,E are exactly the w-weighted rank-p quantities.",
+  "strict_descent_observation": "Delta_x<0 gives mu_x<x+1 when i_x>0. Eligibility p>=x+2 does not by itself order mu_p and mu_x or bound Cov_p(w,e).",
+  "open_obligation": "A universal upper bound Cov_p(w,e)/E_p[w]<=mu_x-mu_p under the exact selector and lower-region guards, or another proof/refutation of CT_x.",
+  "status_boundary": "Exact identities only; no universal CT_x or primary-aggregate verdict."
+}

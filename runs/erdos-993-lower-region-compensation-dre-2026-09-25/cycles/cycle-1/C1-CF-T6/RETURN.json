@@ -1,0 +1,28 @@
+{
+  "worker_id": "C1-CF-T6",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C1-T6-1",
+      "statement": "Ordinary homotopy type alone does not determine the specified rank-seven coefficient difference for these induced forest examples: Ind(H_10) and Ind(H_11) are both contractible, while Delta_7 is -75 and -165 respectively. This is an information-loss diagnosis only and implies no sign for the primary selected aggregate.",
+      "scope": "The exact diagnostic claim from C1-T6-1, with local H_v realizability but without primary-target eligibility or any conclusion about S(T,p).",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CF-T6/AUDIT.md"
+      ],
+      "reason": "retained: the binomial computations and contractibility of both full simplices are correct, the relative chain-group interpretation is valid, and the cited forest theorem has matching scope. The route explicitly limits its conclusion to information loss and supplies no proof, eligible counterexample, or bound for the selector-defined full sum."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CF-T6/REPORT.md",
+  "limitations": [
+    "This critique verifies only the route's narrow topological diagnostic; it does not resolve the primary lower-region aggregate.",
+    "The T_22 and T_60 rows were inspected as pinned control data but their graph computations were not replayed.",
+    "No source script or exhaustive generation was run, and no counterexample or proof of the primary target is provided."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-T6-1"
+  ]
+}

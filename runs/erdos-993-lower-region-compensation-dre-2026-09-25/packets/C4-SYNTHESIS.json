@@ -1,0 +1,88 @@
+{
+  "allowed_source_files": [
+    {
+      "path": "cycles/cycle-4/C4-AF/EVIDENCE.json",
+      "sha256": "a79a3199848299dba1a09d04202716e9f366dfed8948eb1a7f9ec46875ae2113"
+    },
+    {
+      "path": "cycles/cycle-4/C4-AF/REPORT.md",
+      "sha256": "89f3aa5fa9d71206bcff132d7b1c49f8505e8035e7707b454adfbca84053cf1d"
+    },
+    {
+      "path": "cycles/cycle-4/C4-AF/RETURN.json",
+      "sha256": "af3ffebcf719f4f54d539674afd8963c782b9ee25e271f71ea67d07203883558"
+    },
+    {
+      "path": "cycles/cycle-4/C4-AT/CHECK.json",
+      "sha256": "f7e01f5e9cf3b49a195f35192579478758ff1a15bc78d19241a1317e9a0a499f"
+    },
+    {
+      "path": "cycles/cycle-4/C4-AT/CHECK.py",
+      "sha256": "bfdd45c16db46dc8163b0e06614802655a8a2e2031ad98118ffbbb8fa53b651e"
+    },
+    {
+      "path": "cycles/cycle-4/C4-AT/REPORT.md",
+      "sha256": "c89600692e8d87f9a23ca6f670480fbbb102c6057747ece562d9bfbfe8932fd9"
+    },
+    {
+      "path": "cycles/cycle-4/C4-AT/RETURN.json",
+      "sha256": "c1b0d59fef16e8ccbc93b896a9341f468a2e86713bb0189784de59c643b230a1"
+    },
+    {
+      "path": "cycles/cycle-4/C4-AU/CONTROLLER-CB-SOURCE-SCOPE.md",
+      "sha256": "d94dfe7500ffb5ef75604b09300caa4101c0aa644645484bb2f8a6c7a66c47af"
+    },
+    {
+      "path": "cycles/cycle-4/C4-AU/EVIDENCE.json",
+      "sha256": "dffd1714efcfdced6cf0d841534c3238e38da90a1986dcdfb084c7afb12fc6dd"
+    },
+    {
+      "path": "cycles/cycle-4/C4-AU/REPORT.md",
+      "sha256": "bb677ea1d47f3da2fb88a58b6339c5f0d846fbec13e8cf3c0c757fada27eadf8"
+    },
+    {
+      "path": "cycles/cycle-4/C4-AU/RETURN.json",
+      "sha256": "3987cfc7bfa87b4c71ea62c8dfc6624778558e264c5607dda8bea0bfa08b523a"
+    }
+  ],
+  "cycle": 4,
+  "model": "gpt-6-sol",
+  "orientation": "N",
+  "reasoning_effort": "high",
+  "required_covered_claim_ids": [
+    "C4-F1-bounded-CTx-selector-search",
+    "C4-F2-BOUNDED-BUDGET-SEARCH",
+    "C4-F3-TM5-EXACT-REPLAY",
+    "C4-F4-BOUNDED-SELECTOR-RECURRENCE-PROBE",
+    "C4-F5-TM-EXACT-BOUNDED-CHECKS",
+    "C4-F6-LOW-COVER-SHELL-FAMILY-CHECK",
+    "C4-T1-CTx-SUFFICIENT-REDUCTION",
+    "C4-T1-ORDER24-POSITIVE-MARKED-ADDABILITY-COVARIANCE",
+    "C4-T2-NEIGHBORHOOD-REDUCTION",
+    "C4-T3-MATCHING-SECTOR-DELETION-BOUND",
+    "C4-T4-CROSS-TAG-INJECTIVITY-BRIDGE",
+    "C4-T4-RELATIVE-CHAIN-IDENTITY",
+    "C4-T5-TM-ALL-OPEN",
+    "C4-T5-TM80-BOUNDED",
+    "C4-T6-PRIMARY-GLOBAL-BOUND",
+    "C4-T6-ROOTED-MESSAGE-REDUCTION",
+    "C4-U1-COVARIANCE-DECOMPOSITION",
+    "C4-U2-MARKED-SHELL-REDUCTION",
+    "C4-U3.LOW-COVER-SIGN",
+    "C4-U3.LOW-COVER-SKELETON",
+    "C4-U4-COLORED-SHADOW-MIXED-BOUNDARY",
+    "C4-U5-SUPPORT-POLYNOMIAL-REDUCTION",
+    "C4-U6-first-shell-bridge",
+    "E993-ORDINARY-TM-LOWER-REGION-AGGREGATE"
+  ],
+  "schema": "e993.worker-ops.case.v1",
+  "scratch_absolute": "/Users/ashtonsperry/Documents/Codex/2026-09-13/in-x20/work/erdos-993-lower-region-compensation-dre-2026-09-25/scratchpad/C4-SYNTHESIS",
+  "source_worker_ids": [
+    "C4-AT",
+    "C4-AF",
+    "C4-AU"
+  ],
+  "stage": "synthesis",
+  "status_authority": "proposed_worker_only",
+  "worker_id": "C4-SYNTHESIS"
+}

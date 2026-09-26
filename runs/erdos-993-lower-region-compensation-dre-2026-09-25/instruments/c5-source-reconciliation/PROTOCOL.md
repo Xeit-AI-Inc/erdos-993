@@ -1,0 +1,3 @@
+# C5 source-gap reconciliation protocol
+
+Recompute exactly T22 at p34 from the already common-pinned evaluator t_family(22); no search or new claim. Save explicit edges, full polynomial, leaf-deletion and support-deletion polynomial vectors per original leaf, exact full row, and equality against pinned standing-controls/t22-order91.json. Explain that graph generator, orbit-flow relation and direct-set relation were all already authorized common sources. This is a controller replay of a known control, not an independent second evaluator or novel obstruction. Freeze script/protocol before execution. Output one REPLAY.json in this instrument directory. No model seat, no new status.

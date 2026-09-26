@@ -1,0 +1,52 @@
+{
+  "evidence_type": "independent_exact_counting_and_bounded_source_replay",
+  "source_pin_verification": {
+    "case_files": "3/3 match packet SHA-256 pins",
+    "common_files": "237/237 match packet SHA-256 pins"
+  },
+  "relevant_replay_source_sha256_in_scratch_copies": {
+    "instruments/cb-switch-cut/PROTOCOL.md": "5b09a7f34df388e1052d046590a6dae23b93bcc3f9cbea23fbaadd55c69ad952",
+    "instruments/cb-switch-cut/run.py": "94ced04667b1234844f13a681ec6a8a5cbd1ced813526fe856d4f9692b8a9d53",
+    "instruments/cb-switch-cut/RESULTS.json": "873cf9229923153d7626c6d721ab40b8ace8488b51343c66a00b6cfb0449d5d5",
+    "inputs/ordinary_tree_checked.py": "a012bb78915ccdfa2f729c0cdb520cd8f29572277123c92e80ba6091498f533d"
+  },
+  "pair_choice_counting": {
+    "pair_count": 736,
+    "residual_source_rank": 491,
+    "residual_deletion_rank": 490,
+    "residual_set_count": "R_s = 2^s * binom(736,s)",
+    "weight": "1 + number of selected branch-leaf endpoints; fixed arm contributes 1",
+    "weighted_mass": "W_s = R_s * (1+s/2)",
+    "ordinary_count_ratio": "492/491",
+    "ordinary_deletion_only_shortfall": "R_490/491",
+    "weighted_mass_ratio": "493/491",
+    "weighted_deletion_only_shortfall": "2*W_490/491",
+    "exact_integer_checks": {
+      "R_491-R_490_equals_R_490_over_491": true,
+      "W_491-W_490_equals_2W_490_over_491": true
+    },
+    "rank_convention": "491 and 490 are ranks in the residual 736-pair family after the two fixed vertices; the whole-graph sets have sizes 493 and 492."
+  },
+  "bounded_graph_replay": {
+    "recipe": "CB(8,92) from the pinned cb-switch-cut replay",
+    "checks_against_pinned_results": {
+      "order": true,
+      "alpha": true,
+      "x": true,
+      "eligible": true,
+      "aggregate": true,
+      "favorable_count": true,
+      "test_cut": true
+    },
+    "order": 1567,
+    "alpha": 829,
+    "x": 490,
+    "p": 492,
+    "eligible": true,
+    "favorable_original_leaf_count": 737,
+    "complete_selected_aggregate": "-748810430710227858618987651910033216703683417838216925198717803643429976026528835780589934131455008160734961984872181554253955973926828360343593801420958157569217597856332648092871718535396544094741662493496052937502544011852450401845369604971012815876222562893394568771491235318210974656559260615999226971281962526260215590753741136119108496073557120",
+    "switch_cut_lower_bound_positive": false,
+    "switch_cut_interpretation": "inconclusive: neighbor envelope is a conservative superset capacity, not an exact Hall neighborhood or feasible flow"
+  },
+  "critique_scope": "The counting establishes only a whole-sector necessary surplus for a deletion-only weighted capacity argument. It neither establishes mixed-boundary Hall for this sector nor a universal tree claim."
+}

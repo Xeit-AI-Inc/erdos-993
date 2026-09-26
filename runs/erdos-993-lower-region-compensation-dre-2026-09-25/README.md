@@ -1,0 +1,7 @@
+# Lower-region compensation DRE — completed
+
+Six authorized cycles completed on 26 September 2026. The arbitrary-tree primary remains OPEN. Start with [REPORT](REPORT.md), [FINAL-ANALYSIS](FINAL-ANALYSIS.md), [RESEARCH-NOTEPAD](RESEARCH-NOTEPAD.md), and [FINAL-RECONCILIATION](FINAL-RECONCILIATION.md). Final authority: [registry](control/FINAL-REGISTERED-CLAIM-IDENTITY.json) and [terminal CSV](TERMINAL-LEDGER.csv).
+
+Each cycle used18 search routes,36 opposing critiques,3 origin adjudicators and1 synthesis. Search/critique requested Luna high; other seats Sol high; Astra controller review at Cycle3 andCycle6. The logical stages ran in waves under3 model seats plus controller. CLI receipts attest requested configurations, not backend identity. Four formal keys in two governed packages, restricted nonformal family results and mechanism-specific refutations retain exact scopes; no headline solution or counterexample. Original evidence and append-only corrections are preserved.
+
+The public snapshot lists every included file in PUBLICATION-MANIFEST.json and explicitly declares one historical generated-cache omission in PUBLICATION-OMISSIONS.json. Run `python3 scripts/verify_public_archive.py` from the published root to verify bytes without executing research code. Canonical full seals retain the omitted cache. No raw private transcripts or scratch directories belong to the public archive.

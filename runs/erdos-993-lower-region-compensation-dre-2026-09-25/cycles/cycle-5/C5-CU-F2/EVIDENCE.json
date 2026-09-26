@@ -1,0 +1,125 @@
+{
+  "S_range": [
+    -2564670,
+    -275
+  ],
+  "all_full_sums_negative": true,
+  "all_rows_all_leaves_selected": true,
+  "all_selected_terms_nonpositive": true,
+  "direct_subset_spotcheck": {
+    "S": -1218,
+    "alpha": 11,
+    "favorable_leaves": [
+      2,
+      4,
+      5,
+      7,
+      8,
+      9,
+      11,
+      12,
+      13,
+      14
+    ],
+    "full_vector": [
+      1,
+      15,
+      91,
+      299,
+      601,
+      798,
+      737,
+      480,
+      218,
+      66,
+      12,
+      1
+    ],
+    "n": 15,
+    "p": 7,
+    "profile": [
+      2,
+      3,
+      4
+    ],
+    "summands": [
+      {
+        "leaf": 2,
+        "selector_delta": -151,
+        "support": 1,
+        "term": -42
+      },
+      {
+        "leaf": 4,
+        "selector_delta": -133,
+        "support": 3,
+        "term": -93
+      },
+      {
+        "leaf": 5,
+        "selector_delta": -133,
+        "support": 3,
+        "term": -93
+      },
+      {
+        "leaf": 7,
+        "selector_delta": -119,
+        "support": 6,
+        "term": -130
+      },
+      {
+        "leaf": 8,
+        "selector_delta": -119,
+        "support": 6,
+        "term": -130
+      },
+      {
+        "leaf": 9,
+        "selector_delta": -119,
+        "support": 6,
+        "term": -130
+      },
+      {
+        "leaf": 11,
+        "selector_delta": -110,
+        "support": 10,
+        "term": -150
+      },
+      {
+        "leaf": 12,
+        "selector_delta": -110,
+        "support": 10,
+        "term": -150
+      },
+      {
+        "leaf": 13,
+        "selector_delta": -110,
+        "support": 10,
+        "term": -150
+      },
+      {
+        "leaf": 14,
+        "selector_delta": -110,
+        "support": 10,
+        "term": -150
+      }
+    ],
+    "x": 5
+  },
+  "disposition_note": "The finite statement is reproduced and spot-checked; no universal heterogeneous extension follows.",
+  "eligible_rows": 62,
+  "formula_crosschecks_all_profiles": 55,
+  "formula_method": "Independent binomial convolution of A_r=(1+z)^r and B_r=(1+z)^r+z, followed by P=z(1+z)prod(A_r)+(1+2z)prod(B_r).",
+  "local_term_range": [
+    -126134,
+    -14
+  ],
+  "proper_selector_rows": 0,
+  "replay_summary": {
+    "first_positive_full_S": null,
+    "first_proper_selector": null,
+    "positive_full_S_witness_count": 0,
+    "proper_selector_witness_count": 0
+  },
+  "whole_tree_logconcavity_failure": null
+}

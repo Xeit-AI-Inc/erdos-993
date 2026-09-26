@@ -1,0 +1,28 @@
+{
+  "worker_id": "C5-CF-T3",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C5-T3-MATCHING-ONLY-SLACK-OBSTRUCTION",
+      "statement": "The proposed per-set matching-only lower bound for addability slack is false: for the specified H_v, W_v, k, and A, the slack is 1 while the proposed bound is 2. For any fixed maximum matching, the exact decomposition is 2(h-k)-e(A)=2(h-k-nu(H))+2m0(A)+m1(A)-u(A).",
+      "scope": "Retained narrowly as an exact intermediate finite-graph obstruction, witnessed by H_v=T-{v,s} for the listed ordinary tree and A={w}. It does not establish or refute the registered primary aggregate. The source\u2019s matching-category counts are incorrect; for the displayed matching the corrected counts are m2=1,m1=0,m0=0,u=1. The strict lower-region guard is true in this example, but the separate rank guard fails.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CF-T3/AUDIT-EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: independently recomputation confirms 2(h-k)-e(A)=4-3=1<2(h-k-nu(H))=2 and verifies the decomposition. Narrowed because the source category tally is wrong and its eligibility arithmetic wrongly marks 3p<2a+1 false; the example is nonetheless ineligible since x+2<=p fails. An exact positive S=8 at this ineligible rank gives no verdict on the target."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CF-T3/REPORT.md",
+  "limitations": [
+    "This audit concerns one intermediate per-set matching-only bound and does not prove the across-tag selected-family budget.",
+    "The positive full selected sum S=8 occurs at an ineligible rank because x+2<=p fails.",
+    "The source matching-category counts and strict lower-region guard flag are erroneous; their corrections are recorded in the report and evidence."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-T3-MATCHING-ONLY-SLACK-OBSTRUCTION"
+  ]
+}

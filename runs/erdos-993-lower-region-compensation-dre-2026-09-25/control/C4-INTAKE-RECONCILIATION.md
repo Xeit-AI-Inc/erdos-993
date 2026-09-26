@@ -1,0 +1,13 @@
+# Cycle 4 intake reconciliation
+
+Controller decision after C3 synthesis, Astra midpoint review and fresh Sol intake and fence reviews. Six exact proposals in C4-NEW-CLAIMS-DRAFT are registered OPEN: early-rank occupancy transfer, flat budget, current-rank budget, second shell, high-rank third shell, and the all-parameter ordinary T_m aggregate. They remain distinct sufficient mechanisms or restricted targets. Flat and current-rank bounds coincide at p=x+2; no strict separation theorem is asserted.
+
+Two separate mechanism fences are registered REFUTED at exact finite-replay grade: per-selected-leaf down-map injectivity (order91 T22 dimensions), and same-current-rank weighted occupancy domination (order14 exact literal subsets). Neither refutes CT_x, cross-tag maps or the complete aggregate. Known witness orders are not proven minimal.
+
+The third proposed fence is NOT a new claim. Its order24 six-cover witness already belongs to E993-R25-COVER-DIAGONAL-D6-SIGN. At r=p-1 it refutes the tree-scope weak cover implication. Add a precise occurrence note to that existing identity, preserving its statement and verdict. Strict positivity of every earlier difference is stronger than x>=r; they are not equivalent at zero differences. The shared negative witness refutes both. The prospective duplicate key is retired without registration.
+
+Source reconciliation: matching4 and matching5 finite certificates are supplied directly; the r27 formal linear-bound package supplies n<=4x; G1-C3-PROOFS and r25 large-rank second read supply actual inherited mathematical proofs. E993-C3-GRAPH-MATCHING5-THIRD-BAND-SIGN already owns the matching5/order2r+4 result; a new construction is an alternate proof, not a new theorem. The r19 synthesis is provided as historical context, not a full proof of its still-open four-ratio package. Routes must independently derive any ratio premise used.
+
+U6 receives frozen first-shell informal audit, contract, source-integration plan, corrected compiled prefix and preflight. It may inspect these mathematical interfaces without reading the live producer scratch or assuming a new formal award. The first-shell producer and all current-cycle routes remain separate. Source documents carry their original status; inclusion does not transfer an award.
+
+Independent criticism must reconstruct original leaves from edges and check exact selectors, supports, zero extension and integer arithmetic. C3 omitted-leaf and root-state errors remain preserved, with their corrections controlling this cycle. New counterexamples must satisfy every target guard and distinguish a failed sufficient premise from a positive full aggregate. No ordinary/governed bridge is supplied.

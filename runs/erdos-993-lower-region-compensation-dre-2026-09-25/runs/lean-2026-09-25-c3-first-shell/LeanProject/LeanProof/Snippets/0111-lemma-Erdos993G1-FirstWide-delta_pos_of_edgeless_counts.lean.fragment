@@ -1,0 +1,10 @@
+namespace Erdos993G1.FirstWide
+
+lemma delta_pos_of_edgeless_counts {Y : Type u} [Finite Y]
+    (G : SimpleGraph Y) (r : ℕ) (hn : Nat.card Y = 2 * r + 2)
+    (hc : ∀ j : ℕ, indepCount G j = binomCoeff (Nat.card Y) (j : ℤ))
+    {k : ℕ} (hk : k ≤ r) : 0 < delta G (k : ℤ) := by
+  rw [delta_nat, hc, hc, hn]
+  simpa only [Nat.cast_add, Nat.cast_one] using edgeless_expression_pos hk
+
+end Erdos993G1.FirstWide

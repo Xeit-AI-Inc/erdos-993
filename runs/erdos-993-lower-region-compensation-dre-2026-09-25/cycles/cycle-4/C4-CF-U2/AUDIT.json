@@ -1,0 +1,24 @@
+{
+  "schema": "e993.worker-critique-evidence.cycle4.v1",
+  "claim_id": "C4-U2-MARKED-SHELL-REDUCTION",
+  "disposition": "retained_narrowed",
+  "independent_checks": [
+    "Verified the first-mark partition as a disjoint bijection onto independent sets in J_i.",
+    "Verified ell_i>=2 and the cover-loss inequality tau(J_i)>=tau(H)-(ell_i-1).",
+    "Verified the leaf-exchange relation tau(H)=tau(T)-1 and the component coverage/non-isolated mark conditions.",
+    "Verified the d<=1 shadow count, the d>=2 matching-size arithmetic, the explicit residual rank condition, and the q_p-q_(p-1) identity with the target leaf term.",
+    "Verified the s=5 terminal-rank binomial equality and the sign of the first Catalan subtraction."
+  ],
+  "exact_scope": "Conditional pointwise shell implication under tau(T)>=ceil(3s/2)+1 and p-2>=K(d) for every first-mark block with d>=3, using the inherited matching theorem and the exact d=2 first-wide result; plus the stated s=5 Catalan-estimate cutoff.",
+  "not_established": [
+    "The parent cover threshold for all eligible trees.",
+    "The residual rank condition where it fails.",
+    "The registered global favorable-leaf aggregate or a counterexample to it."
+  ],
+  "inherited_dependencies": [
+    "C4-GENERAL-SHELL-MATCHING-THRESHOLD.md",
+    "r25-MATCHING-LARGE-RANK-SECOND-READ.md",
+    "GENERIC-ORDER-BAND-VIA-FIRST-WIDE.md",
+    "C3-FIRST-SHELL-CANDIDATE.md"
+  ]
+}

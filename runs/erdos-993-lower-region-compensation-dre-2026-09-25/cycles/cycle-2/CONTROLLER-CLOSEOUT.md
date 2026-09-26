@@ -1,0 +1,9 @@
+# Cycle2 DRE close and formalization carry
+
+All18 Luna-high search routes,36 Luna-high opposing critics,3 Sol-high origin portfolios and1 Sol-high neutral synthesis were completed, schema-checked and sealed. A separate fresh Sol-high correction repaired the U portfolio without replacing its original sealed bytes or creating a fourth vote. Synthesis carries the corrected two-boundary first-mark decomposition and the F3 actual-order correction. The primary lower-region aggregate remains OPEN. No formal award is made in this close.
+
+The complete informal marked-isolate order-band proof and ordinary-leaf consequence are selected for the exact governed pair e993-c2-order-band-pair-v2. Informal audit passed and the producer is active. Formalization, kernel and axiom verification, and independent fidelity are explicitly carried as ongoing Cycle2 formal work alongside successor research. Any eventual terminal result will appear in a fresh addendum, never by rewriting this close. Lean build of the byte-identical prior dependency proves no new order-band result.
+
+Controller preparation outside the Cycle2 source packets produced a separately audited first-shell candidate, literal and orbit flow evidence for an enlarged two-for-one relation, and a proposed census-dependent rank<=7 composition. Those are prospective Cycle3 inputs; they were not supplied to the neutral Cycle2 synthesis. Code's completed r29 is live at415 identities and is preserved in successor intake. The current C2 authority snapshot remains historical412.
+
+No early stop is invoked. Proceed to Cycle3 with the authorized18/36/3/1 topology, including broader exchange, asymmetrical falsification, exact coefficient, structural and algebraic directions. Astra's scheduled review remains after Cycle3. Finite evidence and proposed sublemmas confer no automatic registry promotion.

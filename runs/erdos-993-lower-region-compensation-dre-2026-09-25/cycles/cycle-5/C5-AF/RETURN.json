@@ -1,0 +1,99 @@
+{
+  "worker_id": "C5-AF",
+  "cycle": 5,
+  "stage": "adjudication",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "C5-F1-TM-CENTRAL-SURVIVAL",
+      "statement": "For the ordinary tree T_m formed by a path a-b-r and m three-tip centers at r, every m>=1 and every natural p with x(T_m)+2<=p and 3p<2alpha(T_m)+1 has every original leaf strictly favorable and complete S(T_m,p)<0.",
+      "scope": "All m>=1, exactly this path-plus-uniform-claws family and all eligible lower-region ranks; computer-assisted finite base m=3..999 plus analytic m>=1000, with m=1,2 vacuous.",
+      "status": "proposed_computer_assisted",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-AF/REPORT.md",
+        "cycles/cycle-5/C5-AF/AUDIT.json",
+        "cycles/cycle-5/C5-AF/AUDIT.py"
+      ],
+      "reason": "retained. The two critics correctly replayed the finite base but narrowed only because they did not complete the allowed analytic-source audit. The common-pinned LC and mixed-minor proofs close m>=1000: finite-order ULC4 for B, exact h=8 coefficient bound, positive Cauchy-Binet main minors, all four rational endpoint cutoffs below 1, and monotone decay. The pinned R27 finite-forest theorem gives x>=m+1; central strict minors and LC then give both original selector orbits and R descent, hence full S<0. Exact recurrence replays 1,507,464 margins of each type and 276,938 eligible rows through m=999. No failed inequality was found. This is an all-m family proof with unformalized exact finite computation, not an all-tree proof or kernel certificate."
+    },
+    {
+      "claim_id": "C5-F2-HETEROGENEOUS-BOUNDED-AUDIT",
+      "statement": "In the path-plus-star family with 1..5 branch arities drawn as multisets from {2,3,4}, all 62 eligible profile/rank rows across 55 profiles have every original leaf favorable, every selected local summand negative, and full S<0; the 55 whole-tree coefficient vectors pass ordinary log-concavity.",
+      "scope": "Exactly the 55 nondecreasing arity profiles of length 1..5 in {2,3,4}, all eligible integer ranks; finite arithmetic only.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-AF/REPORT.md"
+      ],
+      "reason": "retained. Both critics replayed all 55 vectors, 62 eligible rows, and 928 selected summands; independent rooted-forest DP confirms the original-support and terminal-descent checks. Maximum local term is -14 and maximum full S is -275. The finite result neither proves heterogeneous mixed minors nor a universal selector or global budget."
+    },
+    {
+      "claim_id": "C5-F3-BOUNDED-ASYM-SEARCH",
+      "statement": "The explicit 13-vertex asymmetric tree at p=6 has all eight original leaves favorable and complete S=-307, with exact marked counts (Q,U,E,C,D)=(578,271,1514,159,1954); the specified finite selector probes find no proper selector.",
+      "scope": "One labeled tree with edges 01,12,03,34,35,06,67,68,09,9-10,9-11,9-12 at p=6; 5000 seeded Pruefer samples and 342 ordered arity profiles with the reported generation bounds.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-AF/REPORT.md"
+      ],
+      "reason": "retained. Both critics independently checked alpha=9,x=4, strict guards, all eight selector values and summands, E=5U+C and -5S=1535, and replayed 98 eligible random-sample rows plus 536 eligible profile rows without a proper selector. The sample and profile box prove no all-tree selector or matching-slack inequality."
+    },
+    {
+      "claim_id": "C5-F4.BOUNDED-PROPER-SELECTOR-SEARCH",
+      "statement": "The stated finite KL triple, centered-path-spider and KL-path-graft searches contain 308 eligible tree/rank rows and no proper original-leaf strict selector; the eligible (7,7,7) spider has all three leaves selected and S=-2745.",
+      "scope": "Sorted KL triples with arm parameters 1..20; sorted 3..5 centered-path-spider arms of lengths 1..8; five named KL fixtures with paths of length 1..5 grafted at each nonleaf.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-AF/REPORT.md"
+      ],
+      "reason": "retained. Both critics replayed 1540 KL triples with no eligible rows, 1242 centered spiders with 166 eligible rows, and 425 graft constructions with 142 eligible rows. The strict integer guard and terminal descent are checked. Zero proper selectors in these boxes is not a universal all-leaf result."
+    },
+    {
+      "claim_id": "C5-F5.T22-tagwise-obstruction",
+      "statement": "The eligible ordinary T22 tree at p=34 has all 67 original leaves favorable, one path-leaf local term +212336130412243110, 66 arm-tip terms -7560098737536570631 each, and complete S=-498754180547001418536; it refutes any per-tag nonpositive-term rule.",
+      "scope": "One exactly encoded 91-vertex T22 path-plus-22-three-tip-claws tree, p=34; obstruction is pointwise/tagwise only. No full-network Hall cut or kernel follows.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-AF/REPORT.md",
+        "cycles/cycle-5/C5-AF/AUDIT.json",
+        "cycles/cycle-5/C5-AF/AUDIT.py"
+      ],
+      "reason": "retained_narrowed. Both critics correctly checked the arithmetic but incorrectly treated graph and network sources as unavailable. The allowed controller graph replay and independent polynomial formulas verify all 90 edges, alpha=68,x=32, strict p=34 guards, both deletion-orbit selector deltas, and all 67 terms. Common-pinned orbit-flow and p6-switch protocols define weights, deletion and literal two-for-one arcs; T22 quotient flow saturates its supply, with symmetry lifting still owed. A positive tag defeats pointwise charging but neither refutes complete S nor proves a deficient global cut."
+    },
+    {
+      "claim_id": "F6.low_cover_tau_ge_7",
+      "statement": "A 24-vertex root-plus-six-centers tree with arm counts (2,3,3,3,3,3) is eligible at p=10 and has minimum vertex-cover number tau=6, refuting the proposed universal eligible third-shell shortcut tau>=7; its 17 selected local terms and complete S=-122805 are negative.",
+      "scope": "This one labeled ordinary tree, p=10; only the tau>=7 shortcut is refuted, not pointwise shell sign or primary aggregate.",
+      "status": "proposed_refuted",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-AF/REPORT.md"
+      ],
+      "reason": "retained. Both critics independently compute alpha=18,x=8, x+2=p and 30<37, all 17 strict selectors, two local terms -4875 and fifteen -7537, and S=-122805. Six centers cover all edges and six disjoint pendant edges force tau>=6, so tau=6 exactly. This is a known control witness and refutes only the cover threshold."
+    },
+    {
+      "claim_id": "F6.six_arm_bounded_census",
+      "statement": "In the root-plus-six-centers family with sorted nonnegative arm counts summing to 2p-3 at p=10,11,12,13, exactly one profile/rank is eligible: (2,3,3,3,3,3) at p=10, with every selected term negative and S=-122805.",
+      "scope": "The 163,235,331,454 sorted six-tuples at the four respective p values, and no other ordinary trees or ranks.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-AF/REPORT.md"
+      ],
+      "reason": "retained. Both critics replayed the complete stated tuple generation and an independent generic forest DP. The sole eligible row has 17 favorable leaves and terms -4875 twice and -7537 fifteen times. The finite census does not settle the general third-shell pointwise sign or all-tree aggregate."
+    }
+  ],
+  "covered_claim_ids": [
+    "C5-F1-TM-CENTRAL-SURVIVAL",
+    "C5-F2-HETEROGENEOUS-BOUNDED-AUDIT",
+    "C5-F3-BOUNDED-ASYM-SEARCH",
+    "C5-F4.BOUNDED-PROPER-SELECTOR-SEARCH",
+    "C5-F5.T22-tagwise-obstruction",
+    "F6.low_cover_tau_ge_7",
+    "F6.six_arm_bounded_census"
+  ],
+  "report_path": "cycles/cycle-5/C5-AF/REPORT.md",
+  "limitations": [
+    "The complete selected lower-region aggregate for arbitrary ordinary trees remains open; the all-m proof applies only to T_m.",
+    "The T_m family proof uses an exact but unformalized Python finite base, Gurvits finite-order ULC convolution, and the pinned formally verified R27 forest descent bound; no Lean certificate for the family is asserted.",
+    "The T22 unsigned orbit-flow saturation is bounded quotient evidence with unresolved symmetry lifting, and no universal weighted Hall theorem or deficient full-network cut is established.",
+    "F2-F4 and the F6 census have only the explicit finite generation boundaries; negative samples do not imply universal selector or pointwise results."
+  ],
+  "status_authority": "proposed_worker_only"
+}

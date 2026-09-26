@@ -1,0 +1,24 @@
+namespace E993FirstShell
+
+open Classical
+
+/-- Positive-size independent subsets of `U` automatically meet the mark set `U`. -/
+lemma tagged_self {V : Type u} [Fintype V] [DecidableEq V]
+    (G : SimpleGraph V) [DecidableRel G.Adj] (U : Finset V)
+    (j : ℕ) (hj : 0 < j) :
+    E993Interior.taggedFamily G U U j =
+      (U.powersetCard j).filter (fun A : Finset V => G.IsIndepSet (A : Set V)) := by
+  classical
+  ext A
+  simp only [E993Interior.taggedFamily, Finset.mem_filter,
+    Finset.mem_powersetCard]
+  constructor
+  · rintro ⟨⟨hAU, hcard⟩, hI, _⟩
+    exact ⟨⟨hAU, hcard⟩, hI⟩
+  · rintro ⟨⟨hAU, hcard⟩, hI⟩
+    have hpos : 0 < A.card := by omega
+    obtain ⟨a, ha⟩ := Finset.card_pos.mp hpos
+    exact ⟨⟨hAU, hcard⟩, hI,
+      Finset.not_disjoint_iff.mpr ⟨a, ha, hAU ha⟩⟩
+
+end E993FirstShell

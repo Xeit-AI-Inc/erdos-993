@@ -1,0 +1,12 @@
+namespace E993FirstShell
+
+lemma indepSetCount_empty_eq {V : Type u} [Fintype V] [DecidableEq V]
+    (T : SimpleGraph V) [DecidableRel T.Adj] (k : ℕ) :
+    (C5LA1.indepSetCount T ∅ k : ℤ) = Erdos993G1.indepCount T k := by
+  have hsets : C5LA1.indepSetsAvoiding T ∅ k = T.indepSetFinset k := by
+    rw [Erdos993G1.indepSetFinset_eq_filter_powersetCard]
+    simp [C5LA1.indepSetsAvoiding]
+  rw [C5LA1.indepSetCount, hsets,
+    Erdos993G1.indepCount_eq_card_indepSetFinset]
+
+end E993FirstShell

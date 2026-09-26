@@ -1,0 +1,30 @@
+{
+  "worker_id": "C4-CF-U1",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C4-U1-COVARIANCE-DECOMPOSITION",
+      "statement": "For each eligible finite ordinary tree T with its fixed original favorable selector F, the tag lift identifies the route's marked rank-(p-1) counts with the w-weighted independent-p layer, preserving addability. For Q>0, E/Q=mu_p+Cov_p(w,e)/E_p[w], and the stated vertex-neighborhood covariance expansion is exact. These are identities only and do not prove a covariance budget or CT_x.",
+      "scope": "The exact algebraic identities for the original selector and eligible p; no universal covariance bound, CT_x verdict, or primary aggregate verdict.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CF-U1/EVIDENCE.json",
+        "cycles/cycle-4/C4-CF-U1/REPORT.md"
+      ],
+      "reason": "retained: the tag map is bijective; meeting W_v blocks the support and gives equality of addability counts. Extension double counting gives E_p[e]=mu_p, covariance expansion gives the ratio identity, and summing addability indicators gives the exact neighborhood formula. Eligibility makes i_p and i_x positive. No sign of the full covariance follows."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CF-U1/REPORT.md",
+  "limitations": [
+    "The quantitative covariance budget needed for CT_x remains unproved.",
+    "Neither mu_p<=mu_x nor a global covariance sign is established.",
+    "The cited finite diagnostic was not replayed; it is not needed for this algebraic claim.",
+    "No verdict on the primary lower-region aggregate is proposed."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-U1-COVARIANCE-DECOMPOSITION"
+  ]
+}

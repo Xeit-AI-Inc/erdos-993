@@ -1,0 +1,53 @@
+{
+  "worker_id": "C6-CU-T4",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C6-T4-MATCHING-SLACK-DECOMPOSITION",
+      "statement": "For each selected tag and marked k-set, the slack 2(h-k)-e equals 2(h-k-alpha(U_v(A))) plus the number of vertices unmatched by a maximum matching of the induced addable forest; the complete target reduces equivalently to a global weighted lower bound including these terms and the multiply-marked correction.",
+      "scope": "All eligible ordinary trees with h=alpha(T)-1, k=p-1, and the unchanged fixed selector F(T,p); this is an exact decomposition and reduction, not a proof of the resulting bound.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CU-T4/REPORT.md"
+      ],
+      "reason": "retained: the forest is bipartite, so Konig's matching-cover identity yields the stated unmatched-vertex term; the marked extension incidence count handles single and multiple marks with the claimed multiplicities. The report checks rank domains and keeps the missing global budget explicit."
+    },
+    {
+      "claim_id": "C6-T4-T22-ELIGIBLE-CROSS-TAG-CHECK",
+      "statement": "For the 91-vertex T_22 tree at p=34, the fixed selector is eligible and has 67 leaves, full aggregate S=-498754180547001418536, and one positive marked-arm summand +212336130412243110 offset by the other selected leaves.",
+      "scope": "One tree and rank only: one root-support-leaf arm and 22 root-adjacent K_1,3 branches; exact bounded tree-DP computation.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CU-T4/replay_t22_independent.py",
+        "cycles/cycle-6/C6-CU-T4/ordinary_tree_checked.py",
+        "cycles/cycle-6/C6-CU-T4/evidence_t22_replay.json"
+      ],
+      "reason": "retained: an independent replay from local copies reproduces the selector, both strict guards, every selected term by tag type, the full sum, and the incidence identity. This bounded instance is not a universal claim."
+    },
+    {
+      "claim_id": "C6-T4-UNIFORM-COMPENSATION-OPEN",
+      "statement": "The route does not establish or refute the lower-region aggregate for arbitrary eligible ordinary trees; the unresolved obligation is D+C >= (2 alpha(T)+1-3p)Q for the unchanged selector.",
+      "scope": "The full arbitrary ordinary-tree lower-region target under the exact contract guards.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CU-T4/REPORT.md"
+      ],
+      "reason": "retained: the decomposition proves no uniform estimate at the required scale, and the single T22 example supplies neither a proof nor a complete positive-sum counterexample. This is an accurate statement of the remaining gap."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CU-T4/REPORT.md",
+  "limitations": [
+    "The matching-slack identity does not prove the required global compensation budget.",
+    "The exact replay covers one tree and one eligible rank only.",
+    "I did not independently re-audit the frozen primal-flow artifacts; they are not used by the reviewed claims.",
+    "No proof or refutation of the arbitrary-tree target is offered."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-T4-MATCHING-SLACK-DECOMPOSITION",
+    "C6-T4-T22-ELIGIBLE-CROSS-TAG-CHECK",
+    "C6-T4-UNIFORM-COMPENSATION-OPEN"
+  ]
+}

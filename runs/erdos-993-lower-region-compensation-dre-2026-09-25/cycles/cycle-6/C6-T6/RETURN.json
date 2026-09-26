@@ -1,0 +1,27 @@
+{
+  "worker_id": "C6-T6",
+  "cycle": 6,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C6-T6-EQUAL-THREE-SPIDER-REDUCTION",
+      "statement": "For the equal-length-three spider T_m (m>=2), the root-conditioned polynomials are P_m=(1+3z+z^2)^m+z(1+2z)^m and A_m=(1+2z)(1+3z+z^2)^(m-1)+z(1+z)(1+2z)^(m-1); each tip summand is Delta_(p-2)((1+3z+z^2)^(m-1)), so when all tips are selected the full sum is m times that difference. Exact computation for m=2..60 finds x(P_m)=m and a negative full sum at every eligible rank, and m=6,p=8 is an explicitly checked eligible instance with S=-2130. The uniform crossing and selector inequalities remain unproved.",
+      "scope": "Exact formula for all equal-length-three spiders m>=2; computation only for 2<=m<=60 and eligible integer p in that finite range; one full graph check at m=6,p=8. No arbitrary-tree or universal family theorem is claimed.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-T6/EVIDENCE.py",
+        "cycles/cycle-6/C6-T6/EVIDENCE.json"
+      ],
+      "reason": "The decomposition and marked-sum reduction are exact. Finite exact arithmetic and one eligible instance support the route but do not prove x(P_m)>=m or endpoint favorability for all m; those uniform bridges are necessary for the proposed family conclusion."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-T6/REPORT.md",
+  "limitations": [
+    "The equal-length-three spider census is finite and does not prove a universal crossing, selector, or aggregate inequality.",
+    "The source lead's proposed injection has an unresolved disjoint-image gap; no chain decomposition repair was proved.",
+    "No broader rooted-branch family or arbitrary ordinary-tree conclusion was established.",
+    "The case packet has empty required_covered_claim_ids and no case-specific source worker files; this search return has no covered_claim_ids by protocol."
+  ],
+  "status_authority": "proposed_worker_only"
+}

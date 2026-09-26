@@ -1,0 +1,65 @@
+[
+  {
+    "status": "OPEN",
+    "evidence_grade": "open",
+    "formal_award": false,
+    "aliases": [],
+    "alias_patterns": [],
+    "novelty_claimed": false,
+    "terminal_history": [
+      {
+        "run": "erdos-993-lower-region-compensation-dre-2026-09-25",
+        "cycle": 2,
+        "date": "2026-09-25",
+        "event": "Registered OPEN before any Cycle2 search dispatch; no award"
+      }
+    ],
+    "claim_key": "E993-MARKED-ISOLATE-ORDER-BAND",
+    "statement": "For every finite simple graph G on m vertices, every W containing all isolated vertices of G, and every natural k>=2 with m<=2k+1, the number of independent (k+1)-sets meeting W is at most the number of independent k-sets meeting W.",
+    "scope": "Arbitrary finite simple graphs, not necessarily forests or bipartite; W is a vertex subset containing every isolate. Rank and order guards are essential. Generic marked counts, no selector, residual class or first-descent hypothesis.",
+    "certificate": "Cycle2 OPEN intake in experiments/erdos-993-lower-region-compensation-dre-2026-09-25/control/C2-ORDER-BAND-CANDIDATE.md; controller candidate, no independent or formal award.",
+    "registration_reason": "Exact-scope distinction after comparison against the current409 registry."
+  },
+  {
+    "status": "OPEN",
+    "evidence_grade": "open",
+    "formal_award": false,
+    "aliases": [],
+    "alias_patterns": [],
+    "novelty_claimed": false,
+    "terminal_history": [
+      {
+        "run": "erdos-993-lower-region-compensation-dre-2026-09-25",
+        "cycle": 2,
+        "date": "2026-09-25",
+        "event": "Registered OPEN before any Cycle2 search dispatch; no award"
+      }
+    ],
+    "claim_key": "E993-ORDINARY-LEAF-ORDER-BAND",
+    "statement": "For every finite ordinary tree T, every original leaf v with original support s, and every natural p>=3 with |V(T)|<=2p+1, Delta_(p-1)(T-{v,s})-Delta_(p-1)(T-N_T[s])<=0.",
+    "scope": "Original tree and original neighborhoods; integer zero-extended counts. A restricted order-band pointwise claim. It implies the complete favorable-leaf sum on this order band only. No transfer to the unrestricted pointwise beta claim, which remains REFUTED, or to the all-rank aggregate.",
+    "certificate": "Cycle2 OPEN intake in experiments/erdos-993-lower-region-compensation-dre-2026-09-25/control/C2-ORDER-BAND-CANDIDATE.md; controller candidate, no independent or formal award.",
+    "registration_reason": "Exact-scope distinction after comparison against the current409 registry."
+  },
+  {
+    "status": "OPEN",
+    "evidence_grade": "open",
+    "formal_award": false,
+    "aliases": [],
+    "alias_patterns": [],
+    "novelty_claimed": false,
+    "terminal_history": [
+      {
+        "run": "erdos-993-lower-region-compensation-dre-2026-09-25",
+        "cycle": 2,
+        "date": "2026-09-25",
+        "event": "Registered OPEN before any Cycle2 search dispatch; no award"
+      }
+    ],
+    "claim_key": "E993-LOWER-REGION-FIRST-ORDER-SHELL",
+    "statement": "For every finite ordinary tree T with a=alpha(T), first strict descent x(T), and natural p satisfying x(T)+2<=p, 3p<2a+1, and |V(T)|=2p+2, the complete favorable-original-leaf aggregate is nonpositive.",
+    "scope": "First remaining order shell of the registered lower-region target. Distinct from ordinary G1 residual order bands: here the bound concerns |T| and the full fixed favorable-leaf sum, not a residual forest or a pointwise summand.",
+    "certificate": "Cycle2 OPEN intake in experiments/erdos-993-lower-region-compensation-dre-2026-09-25/control/C2-ORDER-BAND-CANDIDATE.md; controller candidate, no independent or formal award.",
+    "registration_reason": "Exact-scope distinction after comparison against the current409 registry."
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "worker_id": "C1-F5",
+  "cycle": 1,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C1-F5-1",
+      "statement": "The scalar incidence-deficit relaxation admits an integer positive local profile, while any tree-derived profile must satisfy rooted-component product factorization and the strict selector equation on the same coefficients; these are necessary constraints for a stronger global LP, but no aggregate bound or tree counterexample is established.",
+      "scope": "The local identity k*g=(2h-3k)q_k-(D+C) for one leaf profile, and exact structural constraints on profiles derived from an ordinary tree; no theorem about the sign of the complete selected sum.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-F5/evidence/LP-RELAXATION.json"
+      ],
+      "reason": "The abstract positive point h=5,k=2,q_2=1,D=C=0,q_3=3 satisfies the scalar identity and yields g=2, proving that D,C>=0 alone do not close the budget. For an actual tree, H splits into rooted components at W, I(H) and I(R) factor as products with A_i=B_i+z I(H_i-N[w_i]), and Delta_p(T-v)=q_(p+1)-q_p+r_(p+1)-r_(p-1)<0 is imposed on that same profile. These exact necessary conditions identify omitted tree-realizability and selector couplings, but the abstract point has not been realized and the global target remains open."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-F5/REPORT.md",
+  "limitations": [
+    "The integer LP point is not certified by a bipartite graph, rooted forest, or ordinary tree.",
+    "No bound is proved after imposing rooted-product and strict-selector constraints.",
+    "No exhaustive finite computation or primary literature theorem is used to decide the universal target."
+  ],
+  "status_authority": "proposed_worker_only"
+}

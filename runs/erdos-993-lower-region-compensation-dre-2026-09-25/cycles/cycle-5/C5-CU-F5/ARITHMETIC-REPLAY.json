@@ -1,0 +1,53 @@
+{
+  "source_copy": "t22-order91.json",
+  "source_sha256_expected_and_verified": "2198f01fa5de1c192da190ac242f5af8a914b0b03bd5e6df979590d20c6a18ed",
+  "independent_arithmetic_replay": {
+    "n": 91,
+    "alpha": 68,
+    "x": 32,
+    "p": 34,
+    "k": 33,
+    "eligibility_checks": {
+      "x+2<=p": true,
+      "3p<2a+1": true
+    },
+    "favorable_leaf_count": 67,
+    "distinct_favorable_leaves": 67,
+    "positive_tag": {
+      "leaf": 2,
+      "g": 212336130412243110,
+      "k_times_g": 7007092303604022630
+    },
+    "negative_tag_count": 66,
+    "common_negative_g": -7560098737536570631,
+    "k_times_common_negative_g": -249483258338706830823,
+    "full_sum": -498754180547001418536,
+    "expanded_sum": "212336130412243110 + 66*(-7560098737536570631) = -498754180547001418536",
+    "k_times_full_sum": -16458887958051046811688,
+    "distribution": {
+      "-7560098737536570631": 66,
+      "212336130412243110": 1
+    }
+  },
+  "checks": {
+    "outer_row_fields_agree": true,
+    "summand_count_matches_favorable_count": true,
+    "summand_leaf_multiset_matches_favorable_leaves": true,
+    "each_reported_g_is_c_rank_minus_c_previous": true,
+    "each_reported_selector_delta_is_negative": true,
+    "all_summand_aggregates_sum_to_row_aggregate": true,
+    "outer_aggregate_matches_row": true,
+    "alpha_and_x_plus_2_le_p": true,
+    "strict_lower_region": true,
+    "one_positive_tag": true,
+    "sixty_six_equal_negative_tags": true,
+    "positive_marked_tag_is_leaf_2": true,
+    "outer_tag_summaries_match_rows": true
+  },
+  "limitations": [
+    "The replay verifies arithmetic and consistency of the pinned row only.",
+    "The pinned JSON has no explicit graph edge list or independence-count vectors; its polynomial_formula_matches_dp flag is not independently replayable from this file.",
+    "Thus ordinary-tree realizability, the first-descent value, and completeness of the favorable selector are not independently established here.",
+    "No global unsigned cross-tag network bases, incidence, or capacities are specified, so this is not a Hall-cut or kernel audit."
+  ]
+}

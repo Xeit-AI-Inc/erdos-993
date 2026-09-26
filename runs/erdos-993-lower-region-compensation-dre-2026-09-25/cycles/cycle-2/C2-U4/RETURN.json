@@ -1,0 +1,25 @@
+{
+  "worker_id": "C2-U4",
+  "cycle": 2,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "For each eligible ordinary tree and fixed strict favorable-leaf selector, the aggregate S has the exact fixed-selector weighted-layer representation S=sum_{B in I_{p+1}(T)} w_F(B)-sum_{A in I_p(T)} w_F(A). For a concrete (T,p), a saturating cross-tag one-vertex-deletion flow with upper supplies w_F(B) and lower capacities w_F(A) exists if and only if every deletion-neighborhood cut X satisfies sum_X w_F <= sum_{N_-(X)} w_F; such a flow certifies S<=0. The universal cut inequalities are not established here.",
+      "scope": "The registered lower-region ordinary-tree aggregate with x(T)+2<=p, 3p<2alpha(T)+1, original strict selector F(T,p), original supports and neighborhoods, and repeated leaves counted separately. The flow characterization applies to each such fixed finite instance; no universal sign conclusion is claimed.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-U4/EVIDENCE.md"
+      ],
+      "reason": "The tagwise bijection audits the supplied global weight identity. Integral max-flow/min-cut gives an exact primal and weighted Hall cut dual permitting transfers between supports. The universal cuts remain unproved, and no eligible cut failure or positive aggregate is exhibited."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-U4/REPORT.md",
+  "limitations": [
+    "No proof that all weighted deletion cuts hold for every eligible tree, and no eligible tree cut failure was computed.",
+    "Failure of a proper cut would refute this flow certificate only, not the scalar aggregate; the full-layer cut is the desired scalar inequality itself.",
+    "The reduction preserves the original strict selector and repeated leaf tags but does not establish either primary rank guard or favorable-set values for any new instance."
+  ],
+  "status_authority": "proposed_worker_only"
+}

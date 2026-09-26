@@ -1,0 +1,32 @@
+namespace Erdos993G1.FirstWide
+
+lemma indepSet_iff_omit_unique_endpoints {Y : Type u}
+    (G : SimpleGraph Y) (a b : Y) (hab : a ≠ b)
+    (he : G.edgeSet = {s(a, b)}) (S : Finset Y) :
+    G.IsIndepSet S ↔ a ∉ S ∨ b ∉ S := by
+  classical
+  have hadj : G.Adj a b := by
+    change s(a, b) ∈ G.edgeSet
+    rw [he]
+    exact Set.mem_singleton _
+  constructor
+  · intro hS
+    by_cases ha : a ∈ S
+    · right
+      intro hb
+      exact hS ha hb hab hadj
+    · exact Or.inl ha
+  · intro h x hx y hy hxy hAdj
+    have hmem : s(x, y) ∈ G.edgeSet := hAdj
+    have hexy : s(x, y) = s(a, b) := by simpa only [he, Set.mem_singleton_iff] using hmem
+    have haS : a ∈ S := by
+      have hm : a ∈ s(x, y) := by rw [hexy]; simp
+      rcases Sym2.mem_iff.mp hm with rfl | rfl <;> assumption
+    have hbS : b ∈ S := by
+      have hm : b ∈ s(x, y) := by rw [hexy]; simp
+      rcases Sym2.mem_iff.mp hm with rfl | rfl <;> assumption
+    rcases h with ha | hb
+    · exact ha haS
+    · exact hb hbS
+
+end Erdos993G1.FirstWide

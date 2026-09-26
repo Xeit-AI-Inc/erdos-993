@@ -1,0 +1,95 @@
+{
+  "worker_id": "C6-AU",
+  "cycle": 6,
+  "stage": "adjudication",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C6-U1-TM-LEAN-DECOMPOSITION",
+      "statement": "A proposed formalization roadmap for the existing ordinary T_m all-m lower-region result identifies graph/count fidelity, direct family descent, finite-order ULC with its quantitative Poisson-curvature consequence, mixed-minor and analytic inequalities, a kernel-checked central finite base, exact selector propagation, and final tagged-sum closure. It is not a completed declaration graph or Lean certificate.",
+      "scope": "Only the path-plus-m-claws ordinary T_m family, m>=1, with its original distinct leaf tags and exact lower-region guards; no new family proof or arbitrary-tree conclusion.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-AU/REPORT.md",
+        "cycles/cycle-6/C6-AU/INDEPENDENT-CHECKS.json",
+        "cycles/cycle-6/C6-AU/independent_checks.py"
+      ],
+      "reason": "retained_narrowed: CT-U1 correctly preserves finite binomial ULC at order exceeding degree; CF-U1 correctly asks for quantitative Poisson curvature but its exclusive Poisson-interface correction is too restrictive. Direct checks give B degree 3 and finite order 4, with factor orders 1,1,4,2,2. Either formally proved finite-order convolution followed by curvature implication or a directly proved Poisson closure can serve. Graph, arithmetic, selector, and kernel obligations remain open."
+    },
+    {
+      "claim_id": "C6-U2-CENSUS-M1-40",
+      "statement": "For all 12,340 unordered arity-2..4 profiles with 1<=m<=40 in the specified path-and-branches ordinary-tree family, all 191,016 ranks satisfying terminal-zero-extended x+2<=p and strict 3p<2alpha+1 have strictly negative complete original favorable-leaf sum S(T,p).",
+      "scope": "Exact bounded coefficient recurrence census for 1<=m<=40 and arities in {2,3,4}; six graph-DP samples with 164 polynomial comparisons; no larger prefix, infinite-family, or arbitrary-tree theorem.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-AU/REPORT.md",
+        "cycles/cycle-6/C6-AU/SOURCE-SUMMARY.json"
+      ],
+      "reason": "retained: The graph split, first descent scan, strict deletion selectors and all distinct same-support multiplicities match the contract. Producer evidence and both critics full scratch replays agree on 191,016 negative full sums, 19,131,028 selected tags, and zero graph-check mismatches. This is finite evidence only; 41<=m<2000 is uncovered."
+    },
+    {
+      "claim_id": "C6-U3-ABSORB-BOUNDED-20",
+      "statement": "For each 2<=r,s<=20, some q in {1,2,3,4} makes F_r B_s^q finite-order ULC; among the 361 pairs the least successful q occurs 273,80,7,1 times at q=1,2,3,4 respectively.",
+      "scope": "Exact bounded coefficient computation for F_r=((1+z)^(r-1)-1)/z, B_s=(1+z)^s+z, 2<=r,s<=20 and equal-type absorption q<=4 only; no uniform or tree implication.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-AU/REPORT.md",
+        "cycles/cycle-6/C6-AU/INDEPENDENT-CHECKS.json",
+        "cycles/cycle-6/C6-AU/independent_checks.py",
+        "cycles/cycle-6/C6-AU/SOURCE-SUMMARY.json"
+      ],
+      "reason": "retained: The cleared-denominator criterion (d-j)A_j>=R_j and least-order formula are correct for positive coefficients; both full critic replays agree with all 1,444 tests and the 121 pinned one-factor rows. Independent exact checks recover the exceptional (20,2) pair failing at q<=3 and passing at q=4 with least order 117. Universal absorption, mixed factors and selector bridges remain unproved."
+    },
+    {
+      "claim_id": "C6-U4-MATCHING-DEFICIENCY-BUDGET",
+      "statement": "For each marked independent k-set A in selected residual forest H_v, actual-addability deficit equals |V(H_v)|-2nu(H_v)+|N_H_v(A)|-k. Summing over the original fixed distinct leaf tags makes S<=0 equivalent to the selected matching-deficiency/neighborhood-expansion budget in REPORT.md, but does not derive that budget from first descent. The strict selector is Delta_p(H_v)+Delta_(p-1)(R_v)<0.",
+      "scope": "Eligible ordinary trees with original leaf supports, k=p-1, local residual neighborhoods, actual addable vertices, fixed F(T,p), and the exact tagged incidence identity; no universal sign proof.",
+      "status": "proposed_conditional",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-AU/REPORT.md",
+        "cycles/cycle-6/C6-AU/INDEPENDENT-CHECKS.json",
+        "cycles/cycle-6/C6-AU/independent_checks.py"
+      ],
+      "reason": "retained: The pointwise equality follows from local closed-neighborhood counting and alpha(H_v)=|V(H_v)|-nu(H_v). The equivalent budget follows from E=kU+C and S=U-Q. CT-U4 incorrectly substituted a minus sign for the selector; direct extraction from I(T-v)=I(H_v)+zI(R_v) confirms the source plus sign and root-origin correction. The positive lower-region budget is still unproved."
+    },
+    {
+      "claim_id": "C6-U5-CB-sector-deficit",
+      "statement": "In the eligible CB(8,92) root-plus-arm sector at p=492, every member has canonical active-tag weight 1. Its residual 736-pair rank-491 source and rank-490 positive-capacity ordinary-deletion layer have ratio 492/491 and a deletion-only whole-sector capacity shortfall |R_490|/491. The source 493/491 ratio belongs to a different weight and is invalid for the canonical network.",
+      "scope": "Only this fixed CB(8,92) sector and its ordinary-deletion boundary; no arbitrary-subfamily mixed Hall estimate, mixed-flow certificate, or aggregate refutation.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-AU/REPORT.md",
+        "cycles/cycle-6/C6-AU/INDEPENDENT-CHECKS.json",
+        "cycles/cycle-6/C6-AU/independent_checks.py",
+        "cycles/cycle-6/C6-AU/SOURCE-SUMMARY.json"
+      ],
+      "reason": "retained_narrowed: The producer and both critics correctly computed pair-family cardinalities and the mass of artificial weight 1 plus private leaves present, but misidentified that mass as active-tag supply. Root presence excludes every choke, making private tags inactive; only the arm tag is active. Deleting root or arm leaf yields zero active capacity. Independent integer checks give the corrected 492/491 ratio and |R_490|/491 deficit. Switch capacity and overlaps remain open; the complete CB aggregate is negative."
+    },
+    {
+      "claim_id": "U6-MARKED-RECURRENCE-TRANSPORT",
+      "statement": "With the original F(T,p) fixed, S(T,p)=Q_p-Q_(p-1), where q_v(j)=i_j(H_v)-i_j(R_v) counts H_v independent sets meeting W_v and Q_j sums over distinct selected leaf tags. The rooted-component product-difference recurrence is exact; it does not prove Q_p<=Q_(p-1).",
+      "scope": "Identity for every eligible finite ordinary tree with original supports and zero-extended integer ranks; finite data only for all labeled trees of orders 1..8 (no eligible rows) and T_m for m<=8 (13 eligible negative rows).",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-AU/REPORT.md",
+        "cycles/cycle-6/C6-AU/SOURCE-SUMMARY.json"
+      ],
+      "reason": "retained_narrowed: Both critics confirm the fixed-selector difference and positive component recurrence. The tag bijection must target sets containing v and meeting W_v, not all sets containing v. The 280,393-tree small census has no eligible row; the 13 T_m rows are bounded. Strict selector signs alone do not imply the needed two-rank forest drop or universal marked-rank transport."
+    }
+  ],
+  "covered_claim_ids": [
+    "C6-U1-TM-LEAN-DECOMPOSITION",
+    "C6-U2-CENSUS-M1-40",
+    "C6-U3-ABSORB-BOUNDED-20",
+    "C6-U4-MATCHING-DEFICIENCY-BUDGET",
+    "C6-U5-CB-sector-deficit",
+    "U6-MARKED-RECURRENCE-TRANSPORT"
+  ],
+  "report_path": "cycles/cycle-6/C6-AU/REPORT.md",
+  "limitations": [
+    "No new Lean build, kernel certificate, universal lower-region proof, or eligible positive complete-sum counterexample was produced in this adjudication.",
+    "U2, U3, and U6 are finite computations at their stated boundaries; the heterogeneous prefix m<2000, uniform factor absorption, and arbitrary-tree marked-rank transport remain unproved.",
+    "The corrected CB(8,92) sector shortfall concerns ordinary deletion only; no arbitrary-subfamily mixed-capacity or flow theorem follows."
+  ],
+  "status_authority": "proposed_worker_only"
+}

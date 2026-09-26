@@ -1,0 +1,29 @@
+{
+  "worker_id": "C2-CF-U1",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "E993-ORDINARY-LEAF-ORDER-BAND",
+      "statement": "For every finite ordinary tree T, every original leaf v with original support s, and every integer p>=3 with |V(T)|<=2p+1, Delta_(p-1)(T-{v,s})-Delta_(p-1)(T-N_T[s])<=0, using integer zero-extended independence counts and original-tree neighborhoods.",
+      "scope": "Exactly the registered ordinary-leaf order band: finite simple connected acyclic T; original degree-one leaf and support; p>=3; |V(T)|<=2p+1. No favorable-selector, alpha, first-descent, lower-region, or residual premise. Informal proof audit only.",
+      "status": "proposed_retained_informal",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CF-U1/REPORT.md"
+      ],
+      "reason": "retained — the component-root property supplies a nonisolated marked root whenever H has an edge; the ordered-first-mark partition and adjacent-rank incidence bound then give q_(k+1)<=q_k since |J_i|<=2k-1. In the edgeless case W=V(H), and the binomial adjacent-layer inequality holds for |H|<=2k+1. The audit checks q_j=i_j(H)-i_j(R), k=p-1, zero extension and the exact graph-order bounds. This establishes only the informal registered pointwise order-band claim, not the first shell or the primary aggregate."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CF-U1/REPORT.md",
+  "limitations": [
+    "Informal derivation only; no Lean file, kernel check, or formal award.",
+    "The exact p>=3 and |T|<=2p+1 pointwise scope is retained; no result is claimed for |T|=2p+2 or outside the order band.",
+    "The pointwise auxiliary result does not prove the primary complete favorable-leaf aggregate outside the order band.",
+    "No computation or public-literature result was used."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-ORDINARY-LEAF-ORDER-BAND"
+  ]
+}

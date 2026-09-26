@@ -1,0 +1,25 @@
+{
+  "transport": {
+    "worker_id": "C2-REMOTE-CLI-PREFLIGHT",
+    "transport": "remote fresh ephemeral codex exec",
+    "requested_model": "gpt-6-sol",
+    "reasoning_effort": "high",
+    "exit_code": 1,
+    "return_exists": false,
+    "prompt_sha256": "e34fd20b7477e2849884b371efeeb695f8ff8d3af0361914775e6f59ba1d93a5",
+    "stdout_sha256": "a4a8b5762773a60be81511a7be6c6306a6ed97bc9d068ce920b1a9f2813225fd",
+    "controller_prelaunch_note": "First launch attempt failed before CLI because remote scratchpad parent absent; created authorized parent, no worker was launched in failed attempt."
+  },
+  "errors": [
+    {
+      "type": "error",
+      "message": "{\"type\":\"error\",\"status\":400,\"error\":{\"type\":\"invalid_request_error\",\"message\":\"The 'gpt-6-sol' model is not supported when using Codex with a ChatGPT account.\"}}"
+    },
+    {
+      "type": "turn.failed",
+      "error": {
+        "message": "{\"type\":\"error\",\"status\":400,\"error\":{\"type\":\"invalid_request_error\",\"message\":\"The 'gpt-6-sol' model is not supported when using Codex with a ChatGPT account.\"}}"
+      }
+    }
+  ]
+}

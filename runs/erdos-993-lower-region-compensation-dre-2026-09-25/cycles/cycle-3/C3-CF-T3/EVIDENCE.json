@@ -1,0 +1,42 @@
+{
+  "source_integrity": {
+    "common_entries_checked": 115,
+    "case_entries_checked": 3,
+    "mismatches": 0
+  },
+  "star_injection_audit": {
+    "boolean_ground_set_size": "n=m-1",
+    "upper_rank": "p",
+    "lower_rank": "p-1",
+    "rank_condition": "p>n/2 implies n-p<=p-1",
+    "witness_condition": "both tagged layers meet all n other leaves since p-1>=1",
+    "move": "delete the unique element in A\\C where C is the preceding chain member",
+    "collision_control": "one member at each rank per chain; preserve tag coordinate",
+    "scope": "star trees and any fixed leaf-tag subset only"
+  },
+  "T67_replay": {
+    "recipe": "evaluator.t_family(67), root 0, marked arm 0-1-2 and 67 root-adjacent 3-leaf claws",
+    "order": 271,
+    "edge_count": 270,
+    "tree_coefficient_vector_matches_case": true,
+    "full_delta_vector_through_alpha_matches_case": true,
+    "alpha": 203,
+    "first_strict_descent_x": 97,
+    "rank_p": 99,
+    "guards": {
+      "p_ge_x_plus_2": true,
+      "three_p": 297,
+      "two_alpha_plus_one": 407,
+      "strict_lower_region": true
+    },
+    "original_leaf_count": 202,
+    "favorable_leaf_count": 202,
+    "selector_is_all_original_leaves": true,
+    "summand_multiplicities": [
+      {"count": 1, "value": 9796517609248850465985369472611545317259503273458850354500, "support": 1},
+      {"count": 201, "value": -13234166380529838122666159928849625141442673759254128694948346, "support_class": "claw centers"}
+    ],
+    "complete_selected_sum": -2660057645968888213805432160329302041884660166106806408834263046,
+    "conclusion": "one bounded eligible aggregate row; no flow or universal conclusion"
+  }
+}

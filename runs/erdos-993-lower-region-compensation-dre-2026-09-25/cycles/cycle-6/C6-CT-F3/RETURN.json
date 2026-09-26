@@ -1,0 +1,32 @@
+{
+  "worker_id": "C6-CT-F3",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "E993-ORDINARY-PATH-STAR-ARITY-2-12-M100000000-LOWER-REGION-AGGREGATE",
+      "statement": "The route's exact 121 grouped-factor arithmetic, cutoff scalar, and two bounded path-plus-private-star graph checks are reproducible; they do not establish the full arity-2..12 family theorem.",
+      "scope": "Narrowed to the case's reported F_r B_s finite-ULC checks for 2<=r,s<=12, its exact D=12,h=17,m=100000000 cutoff scalar, and independent subset enumeration for profiles [12] and [2,3]. No claim is made for all profiles or all m>=100000000.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CT-F3/EVIDENCE.json",
+        "cycles/cycle-6/C6-CT-F3/replay_copy.py",
+        "cycles/cycle-6/C6-CT-F3/replay_stdout.json",
+        "cycles/cycle-6/C6-CT-F3/graph_check.py",
+        "cycles/cycle-6/C6-CT-F3/graph_check.json"
+      ],
+      "reason": "retained_narrowed: the replay's exact finite-factor and cutoff assertions pass, and the bounded graph enumeration confirms the recipe, original tag count, selector, and full sum on the stated samples. The route does not independently establish its uniform perturbation and mixed-minor estimates; Gurvits convolution closure supplies only the factor-combination step. This is an unresolved proof bridge, not evidence refuting the family statement."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CT-F3/REPORT.md",
+  "limitations": [
+    "The candidate's uniform coefficientwise perturbation envelopes, shifted-index inequalities, and mixed-minor bounds were not independently proved across all profiles and eligible ranks.",
+    "Bounded graph checks cover only profiles [12] and [2,3]; they provide no universal inference.",
+    "No arbitrary-tree conclusion or authoritative status is proposed."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-ORDINARY-PATH-STAR-ARITY-2-12-M100000000-LOWER-REGION-AGGREGATE"
+  ]
+}

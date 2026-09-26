@@ -1,0 +1,33 @@
+{
+  "worker_id": "C5-CU-F2",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C5-F2-HETEROGENEOUS-BOUNDED-AUDIT",
+      "statement": "Retained: the reported exact census has S<0 at every eligible lower-region rank on the specified 55-profile boundary; every row has all original leaves selected and negative local terms, and no whole-tree independence polynomial in that census fails coefficient log-concavity.",
+      "scope": "Only the finite family and ranks in the source claim: path 0-1-2 with 1 to 5 star centers at 0, each with 2, 3, or 4 pendant leaves; every p with x+2<=p<=alpha and 3p<2alpha+1. No universal heterogeneous extension or primary-claim conclusion is covered.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CU-F2/REPLAY.py",
+        "cycles/cycle-5/C5-CU-F2/REPLAY-RESULTS.json",
+        "cycles/cycle-5/C5-CU-F2/INDEPENDENT-CHECK.py",
+        "cycles/cycle-5/C5-CU-F2/EVIDENCE.json"
+      ],
+      "reason": "retained — copied replay reproduces all 55 profiles and 62 eligible rows; an independently coded branch-factor convolution matches every whole-tree coefficient vector, and direct subset enumeration verifies all selectors and summands on profile (2,3,4), p=7. The exact bounded claim survives. Its evidence is finite and does not prove a general mixed-selector or global-budget result."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CU-F2/REPORT.md",
+  "limitations": [
+    "Review covers exactly the single case-listed claim ID and its finite census scope.",
+    "The replay and independently computed whole-tree factor vectors do not independently recalculate every deletion polynomial in every row; direct subset enumeration checks one representative row.",
+    "All eligible leaves are selected in every censused row, so mixed-selector behavior remains untested.",
+    "No general heterogeneous extension, distributed marked-polynomial inequality, global D+C budget, or resolution of the primary target follows.",
+    "The whole-tree coefficient log-concavity audit is bounded to the same 55 profiles."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-F2-HETEROGENEOUS-BOUNDED-AUDIT"
+  ]
+}

@@ -1,0 +1,9 @@
+namespace Erdos993G1.FirstWide
+
+lemma matching_endpoints_card {X : Type u} [DecidableEq X]
+    (G : SimpleGraph X) (a b c d : X) (hab : G.Adj a b) (hcd : G.Adj c d)
+    (hdis : Disjoint ({a,b} : Set X) {c,d}) : ({a,b,c,d} : Finset X).card = 4 := by
+  obtain ⟨h1,h2,h3,h4,h5,h6⟩ := matching_distinct G a b c d hab hcd hdis
+  simp [h1,h2,h3,h4,h5,h6]
+
+end Erdos993G1.FirstWide

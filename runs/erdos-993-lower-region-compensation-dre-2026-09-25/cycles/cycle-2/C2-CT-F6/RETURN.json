@@ -1,0 +1,30 @@
+{
+  "worker_id": "C2-CT-F6",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C2-F6.ROOT-PENDANT-T22-OBSTRUCTION",
+      "statement": "For T_22 with one new pendant leaf attached at root 0, the original marked leaf has a negative selected summand at every eligible rank and the complete favorable-leaf sum is strictly negative at every eligible rank.",
+      "scope": "Retained as an exact bounded result for the specified 91-vertex T_22 and its 92-vertex root-leaf extension only. The extension has alpha=68, x=33, and eligible integer ranks p=35,...,45. It asserts no result for other padding lengths, attachment vertices, source trees, or the universal primary claim.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CT-F6/replay_check.json",
+        "cycles/cycle-2/C2-CT-F6/replay_audit.py",
+        "cycles/cycle-2/C2-CT-F6/replay_ordinary_tree_checked.py",
+        "cycles/cycle-2/C2-CT-F6/replay_input_EVIDENCE.json"
+      ],
+      "reason": "retained: from the exact graph recipe, the tree counts, first strict descent and strict eligible interval replay correctly; copied-evaluator recomputation agrees with the pinned evidence on every coefficient, each leaf's strict selector value, all selected original-support summands, and every complete sum. The marked summand is negative and each full sum is negative for all eleven eligible padded ranks. This finite result does not prove or refute the universal aggregate or any wider padding-family statement."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CT-F6/REPORT.md",
+  "limitations": [
+    "The result is bounded to T_22 and one new leaf attached at root 0; no longer padding path or alternate attachment was checked.",
+    "A replay using the pinned evaluator corroborates the sealed route computation but is not a universal proof; the primary aggregate remains unresolved by this claim."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-F6.ROOT-PENDANT-T22-OBSTRUCTION"
+  ]
+}

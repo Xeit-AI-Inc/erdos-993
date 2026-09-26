@@ -1,0 +1,18 @@
+{
+  "claim_id": "C5-U4-LEMMA-1",
+  "independent_check": {
+    "polynomial_partition": "For an original leaf v with support s, independent sets avoiding v contribute I_(T-v)(z). Independent sets containing v correspond bijectively, after deleting v, to independent sets in T-{v,s}; hence I_T(z)=I_(T-v)(z)+z I_(T-{v,s})(z).",
+    "coefficient_identity": "Writing i_j(G)=0 outside the feasible range, i_j(T)=i_j(T-v)+i_(j-1)(T-{v,s}) for every integer j. Subtracting the identity at j from that at j+1 gives Delta_j(T)=Delta_j(T-v)+Delta_(j-1)(T-{v,s}).",
+    "sign_alternative": "If Delta_x(T)<0, the two integer terms in the identity at x cannot both be nonnegative. Thus at least one is strictly negative, separately for each original leaf v. Equal supports do not identify or remove tags."
+  },
+  "example_check": {
+    "tree": "K_(1,3)",
+    "independence_vector": [1, 4, 3, 1],
+    "deltas_rank_0_through_3": [3, -1, -2, -1],
+    "first_strict_descent": 1,
+    "after_deleting_one_leaf_vector": [1, 3, 1],
+    "zero_extended_delta_at_rank_3": 0,
+    "eligibility": "For p=3 and alpha=3, 3p=9 is not less than 2alpha+1=7; therefore this is not an eligible primary instance."
+  },
+  "audit_boundary": "The exact identity and local sign alternative are established. They do not imply a sign at p>=x+2 for the selected leaf deletion, and do not prove or refute the aggregate. The cited literature boundary was not independently needed or relied upon in this audit."
+}

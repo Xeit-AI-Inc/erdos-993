@@ -1,0 +1,12 @@
+namespace Erdos993G1.ThirdWide
+open Finset Classical
+
+lemma powerset_three_sum {X : Type u} [DecidableEq X]
+    (C : Finset X) (hC : C.card = 3) (b : ℕ → ℤ) :
+    ∑ S ∈ C.powerset, b S.card = b 0 + 3 * b 1 + 3 * b 2 + b 3 := by
+  rw [sum_powerset]
+  simp_rw [sum_powersetCard]
+  rw [hC]
+  norm_num [sum_range_succ, Nat.choose]
+
+end Erdos993G1.ThirdWide

@@ -1,0 +1,54 @@
+{
+  "claim_id": "C6-F1.Tm-cutoff400-audit",
+  "disposition": "retained",
+  "independent_replay": {
+    "method": "Copied the sealed F1-EVIDENCE.py and inputs/ordinary_tree_checked.py into a temporary subdirectory of this worker scratch, redirected the replay copy to that local copy, ran the prescribed Python 3.11 executable, compared the generated JSON byte-for-byte with the sealed F1-EVIDENCE.json, then removed the temporary copies.",
+    "exact_json_match": true,
+    "finite_m_range": [
+      3,
+      399
+    ],
+    "central_j_range": "m..2m+2 inclusive",
+    "checks_each_margin": 242964,
+    "minimum_lc": [
+      "1210",
+      3,
+      "Astar",
+      8
+    ],
+    "minimum_mixed": [
+      "1243",
+      3,
+      "Astar",
+      8
+    ],
+    "lc_sha256": "f9091121f369d93d9e7abb54d614b61a780bda3f8e265459211eacdc76376a47",
+    "mixed_sha256": "174a521a64a40f1ed0485b863748ac32db7bbb4a35664e6bbfc607a83dc454a7"
+  },
+  "cutoff_endpoint_arithmetic": {
+    "m": 400,
+    "quantities": [
+      "LC",
+      "A0",
+      "Astar",
+      "R"
+    ],
+    "all_exact_rational_values_strictly_below_one": true,
+    "largest_is_R": true,
+    "R_ratio": [
+      "1336271512675053315374307267840010279611225374153087143605436416000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "9462231308664913515808891539955971363351655681423184929580528166401153025264385678288723514664739229084712982057941104968397255780240204999334184923315498555902844464018002703"
+    ]
+  },
+  "ulc_reference_check": {
+    "gurvits": "Theorem 1.1 states convolution closure for ULC sequences with the orders added; Definition (2) allows order at least the sequence degree.",
+    "saumard_wellner": "Theorem 4.1(b) states convolution closure for ultra-log-concave distributions.",
+    "scope": "Confirms only the cited convolution/order point; does not validate every factor premise or its application to the whole family candidate."
+  },
+  "exact_scope_and_fences": {
+    "retained_scope": "The stated finite coefficient replay, m=400 exact rational endpoint arithmetic, tiny m=1..3 graph-polynomial cross-checks, and the narrow ULC reference point as described in the source claim.",
+    "not_established": "Uniform analytic tail bounds, every large-m mixed-minor constant, selector propagation to all eligible ranks, full weighted aggregate, or any arbitrary-tree assertion.",
+    "standing_controls": "Positive T22 local contribution blocks a pointwise shortcut; the route does not claim a pointwise theorem. Its checks do not expand the T_m family scope or decide the primary open aggregate."
+  },
+  "packet_hash_audit": "All 4 case pins and 237 common pins matched their listed SHA-256 values before source review."
+}

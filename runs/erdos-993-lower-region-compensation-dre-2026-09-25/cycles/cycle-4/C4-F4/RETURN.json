@@ -1,0 +1,27 @@
+{
+  "worker_id": "C4-F4",
+  "cycle": 4,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C4-F4-BOUNDED-SELECTOR-RECURRENCE-PROBE",
+      "statement": "The recorded exact bounded probe found no positive complete aggregate and no proper favorable selector among all eligible rows tested; it verifies root-independent polynomial recurrence evaluation on one fully specified eligible tree, but proves no universal selector or aggregate statement.",
+      "scope": "All labeled ordinary trees of orders 2 through 7, together with 40 deterministic Prüfer samples at each order 16 through 60 and every parameter satisfying x+2<=p and 3p<2 alpha+1 in those samples; root-invariance check on the first eligible order-17 sample only.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-F4/EVIDENCE.json",
+        "cycles/cycle-4/C4-F4/REPLAY.py"
+      ],
+      "reason": "Literal subset enumeration and an independent include/exclude tree recurrence give reproducible bounded arithmetic, including every sampled eligible row and all selected leaf tags. No changed-membership eligible selector example was found, so the probe leaves the target and that selector phenomenon unresolved."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-F4/REPORT.md",
+  "limitations": [
+    "No proof or refutation of the universal lower-region aggregate was obtained.",
+    "No eligible proper-selector example or changed selector membership was found in the stated finite search; this is not evidence of impossibility.",
+    "The large-order work is seeded sampling, not exhaustive enumeration, and the results do not extend beyond the exact generation boundary recorded in EVIDENCE.json.",
+    "The root-independence check covers one tree fixture and does not establish a general selector-dependent recurrence invariant."
+  ],
+  "status_authority": "proposed_worker_only"
+}

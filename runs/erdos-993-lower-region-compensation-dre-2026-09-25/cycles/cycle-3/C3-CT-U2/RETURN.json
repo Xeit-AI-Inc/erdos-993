@@ -1,0 +1,28 @@
+{
+  "worker_id": "C3-CT-U2",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-AGGREGATE-RANK-LE-SEVEN",
+      "statement": "For every finite ordinary tree T and natural p<=7 with x(T)+2<=p and 3p<2alpha(T)+1, the complete sum over original leaves v with Delta_p(T-v)<0 of Delta_(p-1)(T-{v,s_v})-Delta_(p-1)(T-N_T[s_v]) is nonpositive.",
+      "scope": "Ranks p=3..7, all eligible finite ordinary trees. Retained as a census-dependent composition of the informal marked-isolate order-band argument, the registered bounded-computation descent maxima M(1..5), and the five exact residual census slices at (p,n)=(6,14),(6,15),(7,16),(7,17),(7,18). No conclusion for p>=8 or governed-tree transport.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CT-U2/EVIDENCE.json"
+      ],
+      "reason": "retained: the x/order reduction covers every eligible rank through 7; the marked-set incidence proof and leaf specialization give the correct complete summand sign through n<=2p+1; the remaining five orders are exactly the pinned eligible census slices and each records exhaustive generation and subset replay with all complete sums negative. The p7 17/18 label correction is applied. The rank-restricted claim survives at its proposed bounded-computation grade only; the order-band proof is informal and no full generator replay was made in this critique."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CT-U2/REPORT.md",
+  "limitations": [
+    "The marked-isolate order-band argument remains informal in this review.",
+    "M(1..5) and five finite residual census inputs retain bounded-computation grades; this seat did not rerun the full generators or vertex-subset replays.",
+    "The conclusion covers ranks p=3..7 only and does not resolve the unrestricted primary claim or governed-tree transport."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-LOWER-REGION-AGGREGATE-RANK-LE-SEVEN"
+  ]
+}

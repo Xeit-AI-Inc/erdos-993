@@ -1,0 +1,59 @@
+namespace E993FirstShell
+
+open Classical
+
+/-- Count independent subsets of a vertex set as independent sets of its induced graph. -/
+lemma induced_count_bridge {V : Type u} [Fintype V] [DecidableEq V]
+    (G : SimpleGraph V) [DecidableRel G.Adj] (U : Finset V) (j : ℕ) :
+    ((G.induce (U : Set V)).indepSetFinset j).card =
+      ((U.powersetCard j).filter
+        (fun A : Finset V => G.IsIndepSet (A : Set V))).card := by
+  classical
+  let H := G.induce (U : Set V)
+  let e : U → V := Subtype.val
+  apply Finset.card_bij (fun S _ => S.image e)
+  · intro S hS
+    obtain ⟨hI, hcard⟩ := SimpleGraph.mem_indepSetFinset_iff.mp hS
+    apply Finset.mem_filter.mpr
+    refine ⟨Finset.mem_powersetCard.mpr ⟨?_, ?_⟩, ?_⟩
+    · intro x hx
+      obtain ⟨y, _, rfl⟩ := Finset.mem_image.mp hx
+      exact y.property
+    · rw [Finset.card_image_of_injective]
+      · exact hcard
+      · exact Subtype.val_injective
+    · intro x hx y hy hxy hadj
+      obtain ⟨x', hx', rfl⟩ := Finset.mem_image.mp hx
+      obtain ⟨y', hy', rfl⟩ := Finset.mem_image.mp hy
+      have hne : x' ≠ y' := by
+        intro he
+        exact hxy (congrArg e he)
+      exact hI hx' hy' hne hadj
+  · intro S hS T hT hST
+    exact (Finset.image_injective Subtype.val_injective) hST
+  · intro A hA
+    obtain ⟨hAU, hcard⟩ := Finset.mem_powersetCard.mp (Finset.mem_filter.mp hA).1
+    have hI := (Finset.mem_filter.mp hA).2
+    let S : Finset U := Finset.univ.filter (fun x : U => (x : V) ∈ A)
+    have himage : S.image e = A := by
+      ext x
+      constructor
+      · intro hx
+        obtain ⟨y, hy, rfl⟩ := Finset.mem_image.mp hx
+        exact (Finset.mem_filter.mp hy).2
+      · intro hx
+        exact Finset.mem_image.mpr
+          ⟨⟨x, hAU hx⟩, Finset.mem_filter.mpr ⟨Finset.mem_univ _, hx⟩, rfl⟩
+    have hSind : H.IsIndepSet (S : Set U) := by
+      intro x hx y hy hxy hadj
+      have hxA : (x : V) ∈ A := (Finset.mem_filter.mp hx).2
+      have hyA : (y : V) ∈ A := (Finset.mem_filter.mp hy).2
+      exact hI hxA hyA (fun he => hxy (Subtype.ext he)) hadj
+    have hScard : S.card = j := by
+      have hi : (S.image e).card = S.card :=
+        Finset.card_image_of_injective _ Subtype.val_injective
+      rw [himage, hcard] at hi
+      exact hi.symm
+    refine ⟨S, SimpleGraph.mem_indepSetFinset_iff.mpr ⟨hSind, hScard⟩, himage⟩
+
+end E993FirstShell

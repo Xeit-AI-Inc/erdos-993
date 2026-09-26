@@ -1,0 +1,8 @@
+lemma sum_card_filter_swap {A : Type u} {B : Type w}
+    (s : Finset A) (t : Finset B) (p : A → B → Prop)
+    [DecidableRel p] :
+    ∑ a ∈ s, (t.filter (p a)).card =
+      ∑ b ∈ t, (s.filter (fun a => p a b)).card := by
+  simp only [Finset.card_eq_sum_ones, Finset.sum_filter]
+  exact Finset.sum_comm
+

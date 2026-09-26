@@ -1,0 +1,352 @@
+{
+  "prufer": {
+    "conclusion": "No positive complete selected aggregate in this finite sample.",
+    "counts": {
+      "eligible_rows": 2022,
+      "eligible_rows_order_18": 10,
+      "eligible_rows_order_22": 29,
+      "eligible_rows_order_26": 147,
+      "eligible_rows_order_30": 207,
+      "eligible_rows_order_34": 237,
+      "eligible_rows_order_40": 345,
+      "eligible_rows_order_48": 454,
+      "eligible_rows_order_56": 593,
+      "positive_rows": 0,
+      "trees": 1760,
+      "trees_order_18": 220,
+      "trees_order_22": 220,
+      "trees_order_26": 220,
+      "trees_order_30": 220,
+      "trees_order_34": 220,
+      "trees_order_40": 220,
+      "trees_order_48": 220,
+      "trees_order_56": 220
+    },
+    "max_aggregate_row": {
+      "S": -2562,
+      "alpha": 12,
+      "edges": [
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          17
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          15
+        ],
+        [
+          4,
+          15
+        ],
+        [
+          5,
+          15
+        ],
+        [
+          5,
+          16
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          6,
+          12
+        ],
+        [
+          6,
+          14
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          10,
+          13
+        ],
+        [
+          10,
+          16
+        ],
+        [
+          11,
+          15
+        ],
+        [
+          11,
+          17
+        ],
+        [
+          12,
+          17
+        ]
+      ],
+      "favorable_leaves": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        7,
+        13,
+        14
+      ],
+      "independence_polynomial": [
+        1,
+        18,
+        136,
+        568,
+        1459,
+        2437,
+        2743,
+        2135,
+        1165,
+        441,
+        110,
+        16,
+        1
+      ],
+      "key": [
+        -2562,
+        18,
+        182,
+        12,
+        6,
+        8
+      ],
+      "order": 18,
+      "p": 8,
+      "prufer_index_within_order": 182,
+      "summands": [
+        {
+          "delta_p_after_leaf": -270,
+          "g": -433,
+          "leaf": 0,
+          "support": 6
+        },
+        {
+          "delta_p_after_leaf": -302,
+          "g": -359,
+          "leaf": 1,
+          "support": 17
+        },
+        {
+          "delta_p_after_leaf": -365,
+          "g": -185,
+          "leaf": 2,
+          "support": 5
+        },
+        {
+          "delta_p_after_leaf": -289,
+          "g": -387,
+          "leaf": 3,
+          "support": 15
+        },
+        {
+          "delta_p_after_leaf": -289,
+          "g": -387,
+          "leaf": 4,
+          "support": 15
+        },
+        {
+          "delta_p_after_leaf": -360,
+          "g": -208,
+          "leaf": 7,
+          "support": 9
+        },
+        {
+          "delta_p_after_leaf": -372,
+          "g": -170,
+          "leaf": 13,
+          "support": 10
+        },
+        {
+          "delta_p_after_leaf": -270,
+          "g": -433,
+          "leaf": 14,
+          "support": 6
+        }
+      ],
+      "x": 6
+    },
+    "method": "uniform seeded labeled Pr\u00fcfer sequences",
+    "orders": [
+      18,
+      22,
+      26,
+      30,
+      34,
+      40,
+      48,
+      56
+    ],
+    "seed": 9930601,
+    "sequences_per_order": 220
+  },
+  "spiders": {
+    "arm_count_range": [
+      2,
+      6
+    ],
+    "conclusion": "No positive complete selected aggregate in this bounded spider family.",
+    "counts": {
+      "eligible_rows": 53,
+      "eligible_rows_arm_count_2": 0,
+      "eligible_rows_arm_count_3": 0,
+      "eligible_rows_arm_count_4": 1,
+      "eligible_rows_arm_count_5": 11,
+      "eligible_rows_arm_count_6": 41,
+      "positive_rows": 0,
+      "trees": 456,
+      "trees_arm_count_2": 15,
+      "trees_arm_count_3": 35,
+      "trees_arm_count_4": 70,
+      "trees_arm_count_5": 126,
+      "trees_arm_count_6": 210
+    },
+    "max_aggregate_row": {
+      "S": -230,
+      "alpha": 9,
+      "arms": [
+        1,
+        3,
+        3,
+        3,
+        3
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          5
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          12,
+          13
+        ]
+      ],
+      "favorable_leaves": [
+        1,
+        4,
+        7,
+        10,
+        13
+      ],
+      "independence_polynomial": [
+        1,
+        14,
+        78,
+        226,
+        371,
+        355,
+        202,
+        70,
+        13,
+        1
+      ],
+      "key": [
+        -230,
+        [
+          1,
+          3,
+          3,
+          3,
+          3
+        ],
+        6
+      ],
+      "p": 6,
+      "summands": [
+        {
+          "delta_p_after_leaf": -46,
+          "g": -86,
+          "leaf": 1,
+          "support": 0
+        },
+        {
+          "delta_p_after_leaf": -67,
+          "g": -36,
+          "leaf": 4,
+          "support": 3
+        },
+        {
+          "delta_p_after_leaf": -67,
+          "g": -36,
+          "leaf": 7,
+          "support": 6
+        },
+        {
+          "delta_p_after_leaf": -67,
+          "g": -36,
+          "leaf": 10,
+          "support": 9
+        },
+        {
+          "delta_p_after_leaf": -67,
+          "g": -36,
+          "leaf": 13,
+          "support": 12
+        }
+      ],
+      "x": 4
+    },
+    "method": "rooted spiders with arm lengths sorted, each in 1..5"
+  }
+}

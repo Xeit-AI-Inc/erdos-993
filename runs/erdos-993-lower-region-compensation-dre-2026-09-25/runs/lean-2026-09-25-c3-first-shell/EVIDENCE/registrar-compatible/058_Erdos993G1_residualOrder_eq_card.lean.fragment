@@ -1,0 +1,12 @@
+lemma residualOrder_eq_card (v g : V) :
+    residualOrder F v g =
+      Nat.card {a : V // a ∉ closedNeighborhood F v ∪ closedNeighborhood F g} :=
+  rfl
+
+end Erdos993G1
+
+
+namespace Erdos993G1
+
+variable {V : Type u} (F : SimpleGraph V)
+

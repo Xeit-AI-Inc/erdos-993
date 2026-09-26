@@ -1,0 +1,30 @@
+{
+  "worker_id": "C5-CF-T5",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C5-T5-MATCHING-UP-RANK",
+      "statement": "For J_h equal to a disjoint union of h edges, the unsigned independent-set inclusion operator U_r from rank r to rank r+1 is injective for every integer r with 0 <= r < h/2. The tag-preserving direct sum over matching blocks is injective under the corresponding per-block inequalities, and its restriction to columns meeting any fixed marked set in each block remains injective.",
+      "scope": "Finite matching graphs J_h without isolated vertices; real vector spaces on independent sets; integer rank 0 <= r < h/2. For finitely many distinct tags v, each H_v must be isomorphic to J_(h_v), with r < min_v h_v/2. The tagged map retains tags and does not assert a capacity inequality after blocks are merged or a sign for the registered tree aggregate.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CF-T5/REPORT.md",
+        "cycles/cycle-5/C5-CF-T5/EVIDENCE.md"
+      ],
+      "reason": "retained: the transition count gives diagonal difference 2h-3r and off-diagonal difference -R_r, where R_r is the symmetric r-regular endpoint-swap graph. Thus ||U_r f||^2-||D_r f||^2 >= (2h-4r)||f||^2>0 for nonzero f when r<h/2. Rank zero is valid directly (or with D_0=0). Direct sums and restrictions to marked-column subspaces preserve injectivity. This establishes only the stated matching-block rank lemma, not cross-tag capacity or the primary aggregate."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CF-T5/REPORT.md",
+  "limitations": [
+    "The proof applies only to finite matching graphs with no isolated vertices and ranks 0 <= r < h/2; the rank-zero commutator formula uses the convention D_0=0.",
+    "Neither the matching hypothesis nor the rank hypothesis is derived from primary eligibility or the strict favorable-leaf selector.",
+    "Tags remain distinct under the direct sum; no capacity after merging blocks and no cross-tag budget is proved.",
+    "The primary lower-region aggregate remains unresolved by this claim."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-T5-MATCHING-UP-RANK"
+  ]
+}

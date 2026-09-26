@@ -1,0 +1,61 @@
+{
+  "worker_id": "C6-CU-T6",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C6-T6-EQUAL-THREE-SPIDER-REDUCTION",
+      "statement": "For the equal-length-three spider T_m (m>=2), the root-conditioned polynomials are P_m=(1+3z+z^2)^m+z(1+2z)^m and A_m=(1+2z)(1+3z+z^2)^(m-1)+z(1+z)(1+2z)^(m-1); each tip summand is Delta_(p-2)((1+3z+z^2)^(m-1)), so when all tips are selected the full sum is m times that difference. Exact computation for m=2..60 finds x(P_m)=m and a negative full sum at every eligible rank, and m=6,p=8 is an explicitly checked eligible instance with S=-2130. The uniform crossing and selector inequalities remain unproved.",
+      "scope": "Exact formula for all equal-length-three spiders m>=2; computation only for 2<=m<=60 and eligible integer p in that finite range; one full graph check at m=6,p=8. No arbitrary-tree or universal family theorem is claimed.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CU-T6/REPLAY.py",
+        "cycles/cycle-6/C6-CU-T6/REPLAY-STDOUT.json",
+        "cycles/cycle-6/C6-CU-T6/EVIDENCE.json",
+        "cycles/cycle-6/C6-CU-T6/ordinary_tree_checked.py",
+        "cycles/cycle-6/C6-CU-T6/INJECTION-REPLAY.py",
+        "cycles/cycle-6/C6-CU-T6/INJECTION-STDOUT.json"
+      ],
+      "reason": "retained: the all-m polynomial and marked-difference identities are exact, and independent scratch replay confirms the bounded evidence. The claim itself does not prove the all-m crossing or selector steps needed for a family result, so its proposed open status and bounded scope are preserved."
+    },
+    {
+      "claim_id": "C6-ROOT-SPIDER-EXACT-MODE",
+      "statement": "For every m>=2, the ordinary equal-length-three spider has P_m=(1+3z+z^2)^m+z(1+2z)^m with a unique mode at rank m: coefficients strictly increase through rank m and strictly decrease from rank m through the terminal nonzero rank 2m.",
+      "scope": "Only equal-length-three spiders with m>=2 arms; coefficient sequence is integer zero-extended at all ranks. Derived from the root-origin elementary coefficient proof, independently checked; distinct from the producer's bounded census and from arbitrary-tree claims.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CU-T6/REPORT.md",
+        "cycles/cycle-6/C6-CU-T6/REPLAY.py",
+        "cycles/cycle-6/C6-CU-T6/EVIDENCE.json",
+        "cycles/cycle-6/C6-CU-T6/INJECTION-REPLAY.py",
+        "cycles/cycle-6/C6-CU-T6/INJECTION-STDOUT.json"
+      ],
+      "reason": "retained: the weak left-half monotonicity of (1+z+z^2)^d, the positive retained binomial term for Delta_j(Q^m), and symmetry plus strict increase of Q^m prove the positive differences below m and negative differences through 2m. The perturbation z(1+2z)^m is nonpositive in the tail, so the mode is unique. Root-origin derived claim; proposed status only."
+    },
+    {
+      "claim_id": "C6-ROOT-SPIDER-LOWER-REGION-AGGREGATE",
+      "statement": "For every m>=2 and integer p satisfying x(P_m)+2<=p and 3p<2alpha(S_m)+1, every original leaf is favorable and the complete tagged aggregate is S(S_m,p)=m Delta_(p-2)((1+3z+z^2)^(m-1))<0. Here x=m, alpha=2m, and the eligible window is m+2<=p<=floor(4m/3), nonempty exactly for m>=6.",
+      "scope": "Only the ordinary equal-length-three spider family m>=2, using the original fixed selector, original supports, and one distinct tag per original leaf. Not the arbitrary-tree aggregate or any governed-tree formulation.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CU-T6/REPORT.md",
+        "cycles/cycle-6/C6-CU-T6/REPLAY.py",
+        "cycles/cycle-6/C6-CU-T6/EVIDENCE.json",
+        "cycles/cycle-6/C6-CU-T6/INJECTION-REPLAY.py",
+        "cycles/cycle-6/C6-CU-T6/INJECTION-STDOUT.json"
+      ],
+      "reason": "retained: eligibility places p-2 and p-1 in the strictly decreasing supported tail of Q^(m-1), so each tagged term is negative. The tip-deletion perturbation has degree m+1<p, and Delta_p((1+2z)Q^(m-1))<0 across the full eligible range, selecting all m original leaves. Summing gives the stated exact negative full sum. Root-origin derived claim; proposed status only."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CU-T6/REPORT.md",
+  "limitations": [
+    "The producer's finite census does not itself prove a uniform family result; the two all-m derived conclusions rely on separate root-origin proofs audited here.",
+    "Both retained derived results are confined to equal-length-three spiders and do not resolve the arbitrary ordinary-tree aggregate.",
+    "Literature statements are scope checks only; no external theorem is used as a proof premise."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-T6-EQUAL-THREE-SPIDER-REDUCTION"
+  ]
+}

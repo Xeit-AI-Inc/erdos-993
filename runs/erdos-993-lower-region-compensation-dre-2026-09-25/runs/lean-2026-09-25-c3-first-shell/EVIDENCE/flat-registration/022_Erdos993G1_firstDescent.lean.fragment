@@ -1,0 +1,4 @@
+noncomputable def Erdos993G1.firstDescent {V : Type u}
+    (F : SimpleGraph V) : ℕ :=
+  sInf {k : ℕ | Erdos993G1.delta F (k : ℤ) < 0}
+

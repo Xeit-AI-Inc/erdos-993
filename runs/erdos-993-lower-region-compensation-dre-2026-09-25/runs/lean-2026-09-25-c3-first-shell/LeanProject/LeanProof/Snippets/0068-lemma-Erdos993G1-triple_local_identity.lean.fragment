@@ -1,0 +1,46 @@
+lemma triple_local_identity [DecidableEq V] [DecidableRel F.Adj]
+    (hF : F.IsAcyclic) (B : Finset V) (hB : B.card = 3) :
+    (if F.IsIndepSet B then 1 else 0) +
+        ((B.powersetCard 2).filter (fun E : Finset V => ¬F.IsIndepSet E)).card =
+      1 + ∑ a ∈ B, ((B.filter (F.Adj a)).card).choose 2 := by
+  classical
+  obtain ⟨a, b, c, hab, hac, hbc, rfl⟩ := Finset.card_eq_three.mp hB
+  have hn : ¬(F.Adj a b ∧ F.Adj a c ∧ F.Adj b c) := by
+    intro h
+    exact (hF.cliqueFree (by omega : 3 ≤ 3)) {a, b, c}
+      ((F.is3Clique_triple_iff).mpr h)
+  have hsingle : ({c} : Finset V).powerset = {∅, {c}} := by
+    change (insert c ∅ : Finset V).powerset = _
+    rw [Finset.powerset_insert]
+    simp
+  have hpabac : ({a, b} : Finset V) ≠ {a, c} := by
+    intro h
+    have h' := congrArg (fun S : Finset V => b ∈ S) h
+    simp [hab.symm, hbc] at h'
+  have hpabbc : ({a, b} : Finset V) ≠ {b, c} := by
+    intro h
+    have h' := congrArg (fun S : Finset V => a ∈ S) h
+    simp [hab, hac] at h'
+  have hpacbc : ({a, c} : Finset V) ≠ {b, c} := by
+    intro h
+    have h' := congrArg (fun S : Finset V => a ∈ S) h
+    simp [hab, hac] at h'
+  have hp : ({a, b, c} : Finset V).powersetCard 2 =
+      {{a, b}, {a, c}, {b, c}} := by
+    simp [Finset.powersetCard_eq_filter, Finset.powerset_insert,
+      hsingle, Finset.filter_insert, Finset.filter_singleton, Finset.insert_comm,
+      hab, hac, hbc, hab.symm, hac.symm, hbc.symm]
+  rw [hp]
+  by_cases hab' : F.Adj a b <;> by_cases hac' : F.Adj a c <;>
+    by_cases hbc' : F.Adj b c
+  all_goals simp_all [SimpleGraph.isIndepSet_iff, Set.Pairwise, F.adj_comm,
+    Finset.filter_insert, Finset.filter_singleton, hpabac, hpabbc, hpacbc,
+    hab, hac, hbc, hab.symm, hac.symm, hbc.symm]
+
+end Erdos993G1
+
+
+namespace Erdos993G1
+
+variable {V : Type u} (F : SimpleGraph V)
+

@@ -1,0 +1,29 @@
+{
+  "worker_id": "C5-CU-F1",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "U",
+  "covered_claim_ids": ["C5-F1-TM-CENTRAL-SURVIVAL"],
+  "claims": [
+    {
+      "claim_id": "C5-F1-TM-CENTRAL-SURVIVAL",
+      "statement": "For the uniform T_m family, the complete selected lower-region sum is strictly negative for every eligible rank through m=999, as independently reproduced by exact integer replay. The proposed extension to all m is retained only conditionally on the stated m>=1000 perturbation bounds and the registered n<=4x forest descent estimate; this review does not independently certify those steps.",
+      "scope": "T_m is the path a-b-r with m three-leaf arms attached at r, for integer m>=1. The independently verified bounded statement covers every eligible p with x(T_m)+2<=p and 3p<2alpha(T_m)+1 for 1<=m<=999. Any all-m consequence remains conditional on the large-m inequalities and forest descent bound. No assertion for arbitrary ordinary trees.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CU-F1/REPLAY.py",
+        "cycles/cycle-5/C5-CU-F1/REPLAY-OUTPUT.txt",
+        "cycles/cycle-5/C5-CU-F1/REVIEW-EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: copied exact replay reproduces both finite central-check digests and all 276,938 selector/full-sum rows with no failures; the ULC hypotheses, theorem bridge, mixed-minor orientation, polynomial decomposition, rank transfer conditional on n<=4x, and total-sum coefficient shift check out. The allowed route files do not provide a reconstructible index-by-index derivation of the m>=1000 cutoff/error constants, and the cited forest descent proof is outside the case pins, so the all-m result is not independently verified here."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CU-F1/REPORT.md",
+  "limitations": [
+    "The exact replay is bounded to 1<=m<=999 and is not kernel checked.",
+    "The m>=1000 perturbation inequalities and their 27 index bounds are not fully expanded in the permitted case files.",
+    "The graph-to-selector transfer depends on the registered n<=4x forest descent bound, whose proof was not in this case packet.",
+    "No conclusion is given for arbitrary ordinary trees or the complete primary assertion."
+  ],
+  "status_authority": "proposed_worker_only"
+}

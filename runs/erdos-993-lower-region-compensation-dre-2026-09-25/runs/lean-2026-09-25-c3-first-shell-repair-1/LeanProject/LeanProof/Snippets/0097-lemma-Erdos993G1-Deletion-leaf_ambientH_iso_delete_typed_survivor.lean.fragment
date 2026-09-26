@@ -1,0 +1,11 @@
+lemma leaf_ambientH_iso_delete_typed_survivor {V : Type u} [Finite V]
+    (T : SimpleGraph V) (v s g : V) (hleaf : vertexDegree T v = 1)
+    (hvs : T.Adj v s) (hsg : T.Adj s g) (hgv : g ≠ v) :
+    Nonempty (ambientH T v g ≃g deleteVerts (ambientA T v)
+      {⟨g, other_support_neighbor_survives T v s g hleaf hvs hsg hgv⟩}) :=
+  ambientH_iso_delete_typed_survivor T v g
+    (other_support_neighbor_survives T v s g hleaf hvs hsg hgv)
+
+end Erdos993G1.Deletion
+
+

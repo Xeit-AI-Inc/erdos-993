@@ -1,0 +1,13 @@
+lemma firstDescent_le_of_delta_neg {k : ℕ} (hk : delta F (k : ℤ) < 0) :
+    firstDescent F ≤ k :=
+  Nat.sInf_le hk
+
+end Erdos993G1
+
+
+universe w
+
+namespace Erdos993G1
+
+variable {V : Type u} {W : Type w} {F : SimpleGraph V} {G : SimpleGraph W}
+

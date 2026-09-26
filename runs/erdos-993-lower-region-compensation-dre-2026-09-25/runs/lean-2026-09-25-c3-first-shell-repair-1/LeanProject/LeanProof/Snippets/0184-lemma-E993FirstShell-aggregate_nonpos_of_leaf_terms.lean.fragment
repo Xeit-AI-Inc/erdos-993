@@ -1,0 +1,18 @@
+namespace E993FirstShell
+open Classical
+
+lemma aggregate_nonpos_of_leaf_terms {V : Type u} [Fintype V] [DecidableEq V]
+    (T : SimpleGraph V) [DecidableRel T.Adj] (p : ℕ)
+    (h : ∀ v, C4LA1.IsGraphLeaf T v →
+      C5LA1.forwardDifferenceDel T (C5LA1.H T v) (p - 1) -
+        C5LA1.forwardDifferenceDel T (C5LA1.R T v) (p - 1) ≤ 0) :
+    C5LA1.aggregate T p ≤ 0 := by
+  unfold C5LA1.aggregate
+  apply Finset.sum_nonpos
+  intro v hv
+  have hleaf : C4LA1.IsGraphLeaf T v := by
+    have hmem := (Finset.mem_filter.mp hv).1
+    exact (Finset.mem_filter.mp hmem).2
+  exact h v hleaf
+
+end E993FirstShell

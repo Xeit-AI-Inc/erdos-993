@@ -1,0 +1,25 @@
+{
+  "worker_id": "C5-T6",
+  "cycle": 5,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C5-T6-THIRDSHELL-COVER6-P10",
+      "statement": "The ordinary tree formed by a root joined to six centers with pendant-leaf counts (3,3,3,3,3,2) is an eligible n=2p+4, p=10 instance with a vertex cover of size 6 and full favorable-leaf aggregate S=-122805; therefore tau(T)>=7 is not a valid universal sufficient hypothesis for this third-shell slice.",
+      "scope": "This exact 24-vertex tree and the failure of the proposed cover-size threshold as a universal third-shell sufficient condition. It does not refute the primary aggregate or decide any other tree or rank.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-T6/EVIDENCE.json"
+      ],
+      "reason": "The listed exact tree dynamic program gives alpha=18, first strict descent x=8, both eligibility guards, all 17 strict-selector leaves, their complete summands, and S=-122805. The six centers meet every edge. This is a finite obstruction to the cover threshold only; the full sum is negative."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-T6/REPORT.md",
+  "limitations": [
+    "The exact example does not prove or refute the primary global inequality, whose aggregate is negative here.",
+    "The cover-state polynomial identity is an exact decomposition but supplies no sign bound for the selector-weighted sum.",
+    "No exhaustive low-cover classification, all-rank theorem, or second independent evaluator was completed."
+  ],
+  "status_authority": "proposed_worker_only"
+}

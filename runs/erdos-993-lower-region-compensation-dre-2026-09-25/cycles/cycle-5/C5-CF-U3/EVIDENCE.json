@@ -1,0 +1,33 @@
+{
+  "hash_audit": {
+    "case_pins_checked": 3,
+    "common_pins_checked": 237,
+    "mismatches": 0
+  },
+  "claim_audits": [
+    {
+      "claim_id": "C5-U3-ALT-CUT",
+      "disposition": "retained",
+      "checks": [
+        "For eligible p, k=p-1 satisfies 1<=k<=h=a-1.",
+        "Left degree equals actual addability because the left set already meets W_v.",
+        "A singly marked upper set has k tagged left deletions; a multiply marked upper set has k+1, counted once in C_v.",
+        "The count is separate for each original leaf, including leaves with a common support.",
+        "Alternating closure from unmatched left set S either reaches a free right vertex and augments, or has N(X)=Y and |X|-|N(X)|=|S|."
+      ],
+      "scope_limit": "The Hall deficit is unweighted and gives no across-tag threshold bound by itself."
+    },
+    {
+      "claim_id": "C5-U3-PRIMARY-GAP",
+      "disposition": "retained_narrowed",
+      "checks": [
+        "With q_v(k)=|L_v|, q_v(k+1)=|R_v| and E_v=kq_v(k+1)+C_v, kS=E-C-kQ.",
+        "Each color class of addable vertices has size at most h-k, so D_v>=0.",
+        "Substitution gives kS=(2a+1-3p)Q-sum_v(D_v+C_v), with the same fixed F(T,p).",
+        "The coefficient 2a+1-3p is positive under the strict lower-region guard.",
+        "The route demonstrates no deduction of the required weighted budget or a first-descent-to-cut link; it does not establish that no such argument exists."
+      ],
+      "revised_scope": "Only the insufficiency of the route's stated decomposition and its unresolved primary conclusion; not a universal impossibility result."
+    }
+  ]
+}

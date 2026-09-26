@@ -1,0 +1,60 @@
+{
+  "allowed_source_files": [
+    {
+      "path": "SOLUTION-CONTRACT.md",
+      "sha256": "f3667bd6424d4f0d95714772ecf76af82ed8430bdd3ec9eda0c721f1a853390c"
+    },
+    {
+      "path": "EXECUTION-POLICY.md",
+      "sha256": "12ea2b244016f6f1544ea744948e2f1677cc2691519e4dfb8b69cff7d5bec0ab"
+    },
+    {
+      "path": "control/C3-NEXT-SHELL-NORMAL-PRODUCT-CANDIDATE.md",
+      "sha256": "e6f6389cbf507a526b5ec66e00cb59dfb135e99bdf7e30fe060f9a5ccdcd0eed"
+    },
+    {
+      "path": "control/C3-MATCHING4-BOOLEAN-LIFT-CERTIFICATE.json",
+      "sha256": "e7faacfe0b0e66391534d6a12505a4bca47a9503f9cf89699ae63f13e59c66ef"
+    },
+    {
+      "path": "preparation/C3-PREP-NEXT-SHELL-AUDIT/REPORT.md",
+      "sha256": "ee1e99cf4744676842fa52266732ecddbe5075db4daa3f26aa8001ad7aa77658"
+    },
+    {
+      "path": "preparation/C3-PREP-NEXT-SHELL-AUDIT/RESULTS.json",
+      "sha256": "84dcafe2d3ad89dfe2cd1b61bfb2484e35404e8dcc1a8c0882de08b691071280"
+    },
+    {
+      "path": "control-proposals/SECOND-SHELL-SMALL-RANK-COMPLETION-CANDIDATE.md",
+      "sha256": "ee5fcb38ecd43b01af84bb557dafbbb3e59d7ea2b9ab4ecd986b827a6bd1a58c"
+    },
+    {
+      "path": "control-proposals/SECOND-SHELL-SMALL-RANK-EXACT-CHECK.json",
+      "sha256": "c862a3777dcd04d855361d83d458d0c5c561e2d93dee338442c53691c18d161f"
+    },
+    {
+      "path": "inputs/C4-r27-linear-bound-intake/Main.lean",
+      "sha256": "dcecb681d019a29c625dcea1a2385de920fffa6b8f185e79372f31ae547c1936"
+    },
+    {
+      "path": "inputs/C4-r27-linear-bound-intake/ORIGIN.json",
+      "sha256": "7c505d4b5b41c3ab45af7976ad3321aca92001d4488ce0661ae6f1f3750dc994"
+    },
+    {
+      "path": "inputs/C4-r27-linear-bound-intake/THEOREM-CONTRACT.yaml",
+      "sha256": "a5d964540c9cc3aa05deb276256eacd28ab893612ce99abe9e50ea12ad2fbee8"
+    },
+    {
+      "path": "inputs/C4-r27-linear-bound-intake/VERIFICATION-REPORT.md",
+      "sha256": "8ee1e413587a694f4fe49c2fec38f045a476835b0198c315d8a7b9e420858d92"
+    },
+    {
+      "path": "inputs/C4-r27-linear-bound-intake/kernel-verification.json",
+      "sha256": "2e4965968b77c9250979d427d38f7cfceecc5cfcd8778ba0123fc24e0a04a612"
+    }
+  ],
+  "model": "gpt-6-sol",
+  "reasoning_effort": "high",
+  "task": "Independently audit a proposed extension of the second-shell pointwise theorem to ALL p>=3: for every finite ordinary tree T on n=2p+3 vertices, x(T)+2<=p implies every ORIGINAL leaf term Delta_(p-1)(T-{v,s})-Delta_(p-1)(T-N[s])<=0. No alpha or favorable-selector premise; no all-order conclusion. Existing independently audited candidate covers p>=8 only and is NOT a formal award. Freshly audit its core matching4/SCD injection, cover5 Catalan budget and exact first-mark cover-loss argument, including all boundary cases and finite injection maps. Then independently check the NEW p3..7 completion: p3..5 excluded by the exact formal forest descent bound n<=4x (verify actual theorem scope from pinned source and receipt; no rebuild). For p6/7, cover of size<=5 extends to5; independent outside N=2p-2; sum of cross degrees of the5 cover vertices <=n-1 forces one with outside degree<=floor((n-1)/5). Retain its actual singleton contribution; bound the other4 singleton terms by negative Catalan floor; higher nonempty independent cover subsets by their NONPOSITIVE floors only. Omit all positive negative-rank shifts. Check every r<=p-2, not merely the last rank, monotonicity in available outside size, and strict-vs-weak signs (p7 final bound zero is enough to exclude STRICT descent). Conclude whether tau(T)>=6 and tau(H)>=5 follow, and whether matching4 lemma is in range for the remaining p. Keep original vertices/marks/supports, later isolated marks, arbitrary earlier-mark overlap and empty/negative ranks explicit. No source status changes or Lean. Do not just repeat the prior PASS or controller arithmetic: write your own exact endpoint verification and explain the mathematical inequality chain. Output self-contained REPORT.md and RESULTS.json with verdict PASS/GAP/REFUTED, exact theorem, checked boundaries, dependencies and honest limitations; evidence/scripts in own scratch. This preparation review is disjoint from the live C3 opposing critics/adjudicators and does not change their frozen input.",
+  "worker_id": "C3-PREP-NEXT-SHELL-ALL-RANKS-AUDIT"
+}

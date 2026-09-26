@@ -1,0 +1,26 @@
+{
+  "worker_id": "C3-T2",
+  "cycle": 3,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL",
+      "statement": "For fixed selector F(T,p), independent-set states of a rooted ordinary tree admit an exact branch-product decomposition of ranks and w_F, with cross-branch dependence confined to selected leaves supported at the root; root-centered legal two-for-one switches couple exactly two occupied branch roots. This identifies a reduction route but does not establish weighted Hall feasibility or S(T,p)<=0.",
+      "scope": "Arbitrary finite ordinary tree and fixed selected-leaf set F; the decomposition is unconditional. The proposed universal deletion-plus-two-for-one weighted Hall theorem remains unresolved under the primary eligible lower-region hypotheses.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-T2/EVIDENCE.json",
+        "cycles/cycle-3/C3-T2/REPORT.md"
+      ],
+      "reason": "The rooted product and boundary-weight formulas follow directly from independence and the definition of w_F, and give an exact structural constraint on any cut compression. No selector-preserving uncrossing, capacitated injection, universal Hall proof, or eligible positive complete-sum counterexample is supplied."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-T2/REPORT.md",
+  "limitations": [
+    "The weighted Hall reduction remains open for arbitrary cuts; a branchwise product argument alone fails to account for root-supported tags and competing root-switch demands.",
+    "No primary aggregate proof or eligible positive-sum counterexample was obtained.",
+    "No exhaustive computation or external literature result was used; supplied bounded flows remain limited to their stated cases."
+  ],
+  "status_authority": "proposed_worker_only"
+}

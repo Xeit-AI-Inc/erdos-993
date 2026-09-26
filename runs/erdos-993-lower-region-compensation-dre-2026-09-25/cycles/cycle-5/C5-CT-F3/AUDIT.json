@@ -1,0 +1,261 @@
+{
+  "method": "exhaustive subset enumeration on each explicitly induced vertex subset",
+  "n": 13,
+  "edges": [
+    [
+      0,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      3,
+      4
+    ],
+    [
+      3,
+      5
+    ],
+    [
+      0,
+      6
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      6,
+      8
+    ],
+    [
+      0,
+      9
+    ],
+    [
+      9,
+      10
+    ],
+    [
+      9,
+      11
+    ],
+    [
+      9,
+      12
+    ]
+  ],
+  "independence_vector": [
+    1,
+    13,
+    66,
+    173,
+    258,
+    231,
+    131,
+    47,
+    10,
+    1
+  ],
+  "alpha": 9,
+  "x": 4,
+  "p": 6,
+  "k": 5,
+  "lower_region_guard": true,
+  "original_leaves": [
+    2,
+    4,
+    5,
+    7,
+    8,
+    10,
+    11,
+    12
+  ],
+  "selector_leaf_deltas": {
+    "2": -46,
+    "4": -38,
+    "5": -38,
+    "7": -38,
+    "8": -38,
+    "10": -31,
+    "11": -31,
+    "12": -31
+  },
+  "favorable_leaves": [
+    2,
+    4,
+    5,
+    7,
+    8,
+    10,
+    11,
+    12
+  ],
+  "tag_rows": [
+    {
+      "leaf": 2,
+      "support": 1,
+      "W": [
+        0
+      ],
+      "H_order": 11,
+      "H_alpha": 8,
+      "R_order": 10,
+      "R_alpha": 7,
+      "q_k": 35,
+      "q_k1": 21,
+      "E_v": 105,
+      "C_v": 0,
+      "D_v": 105,
+      "summand": -14
+    },
+    {
+      "leaf": 4,
+      "support": 3,
+      "W": [
+        0,
+        5
+      ],
+      "H_order": 11,
+      "H_alpha": 8,
+      "R_order": 9,
+      "R_alpha": 6,
+      "q_k": 69,
+      "q_k1": 34,
+      "E_v": 185,
+      "C_v": 15,
+      "D_v": 229,
+      "summand": -35
+    },
+    {
+      "leaf": 5,
+      "support": 3,
+      "W": [
+        0,
+        4
+      ],
+      "H_order": 11,
+      "H_alpha": 8,
+      "R_order": 9,
+      "R_alpha": 6,
+      "q_k": 69,
+      "q_k1": 34,
+      "E_v": 185,
+      "C_v": 15,
+      "D_v": 229,
+      "summand": -35
+    },
+    {
+      "leaf": 7,
+      "support": 6,
+      "W": [
+        0,
+        8
+      ],
+      "H_order": 11,
+      "H_alpha": 8,
+      "R_order": 9,
+      "R_alpha": 6,
+      "q_k": 69,
+      "q_k1": 34,
+      "E_v": 185,
+      "C_v": 15,
+      "D_v": 229,
+      "summand": -35
+    },
+    {
+      "leaf": 8,
+      "support": 6,
+      "W": [
+        0,
+        7
+      ],
+      "H_order": 11,
+      "H_alpha": 8,
+      "R_order": 9,
+      "R_alpha": 6,
+      "q_k": 69,
+      "q_k1": 34,
+      "E_v": 185,
+      "C_v": 15,
+      "D_v": 229,
+      "summand": -35
+    },
+    {
+      "leaf": 10,
+      "support": 9,
+      "W": [
+        0,
+        11,
+        12
+      ],
+      "H_order": 11,
+      "H_alpha": 8,
+      "R_order": 8,
+      "R_alpha": 5,
+      "q_k": 89,
+      "q_k1": 38,
+      "E_v": 223,
+      "C_v": 33,
+      "D_v": 311,
+      "summand": -51
+    },
+    {
+      "leaf": 11,
+      "support": 9,
+      "W": [
+        0,
+        10,
+        12
+      ],
+      "H_order": 11,
+      "H_alpha": 8,
+      "R_order": 8,
+      "R_alpha": 5,
+      "q_k": 89,
+      "q_k1": 38,
+      "E_v": 223,
+      "C_v": 33,
+      "D_v": 311,
+      "summand": -51
+    },
+    {
+      "leaf": 12,
+      "support": 9,
+      "W": [
+        0,
+        10,
+        11
+      ],
+      "H_order": 11,
+      "H_alpha": 8,
+      "R_order": 8,
+      "R_alpha": 5,
+      "q_k": 89,
+      "q_k1": 38,
+      "E_v": 223,
+      "C_v": 33,
+      "D_v": 311,
+      "summand": -51
+    }
+  ],
+  "Q": 578,
+  "U": 271,
+  "E": 1514,
+  "C": 159,
+  "D": 1954,
+  "S": -307,
+  "E_equals_kU_plus_C": true,
+  "coefficient_2a1_minus_3p": 1,
+  "budget_margin": 1535,
+  "kS": -1535,
+  "budget_identity": true,
+  "comparison_to_source_fixture": "all listed fixture fields match copied source evidence"
+}

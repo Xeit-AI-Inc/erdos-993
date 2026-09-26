@@ -1,0 +1,11 @@
+namespace Erdos993G1.FirstWide
+
+lemma delta_neg_of_triangle_counts {Y : Type u} [Finite Y]
+    (G : SimpleGraph Y) (r : ℕ) (hr : 1 ≤ r)
+    (hc : ∀ j : ℕ, indepCount G j = binomCoeff (2 * r - 1) (j : ℤ) +
+      3 * binomCoeff (2 * r - 1) ((j : ℤ) - 1)) : delta G (r : ℤ) < 0 := by
+  rw [delta_nat, hc, hc]
+  simpa only [Nat.cast_add, Nat.cast_one, add_sub_cancel_right] using
+    triangle_expression_neg hr
+
+end Erdos993G1.FirstWide

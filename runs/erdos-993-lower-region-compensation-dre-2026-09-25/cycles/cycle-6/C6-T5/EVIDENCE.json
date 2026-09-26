@@ -1,0 +1,108 @@
+{
+  "scope": "three specified T_m cases only",
+  "common_source_hash_check": {
+    "verified": 237,
+    "total": 237,
+    "mismatches": []
+  },
+  "relevant_source_pins": {
+    "control/C6-SEARCH-ALLOCATION.json": "643ca645eb3cab2b22c7c853af5e6496573533fa9db63988554c1d3728d10f4f",
+    "control/C6-SOURCE-MAP.md": "75ca13f29f27578e333d60a4156a2e29bf89ae31a86867471efa21b8f00a29e3",
+    "instruments/orbit-flow-twoforone/PROTOCOL.md": "14537939e2e37f7b844340dc62a80cd5b01c519adf4791d3a57d8cc68b777dc0",
+    "instruments/orbit-flow-twoforone/run.py": "d5caf24ae2c32445ea7a4a5d318f5c3fa2880c3e0f886eb07c0e22b4c47a153b",
+    "instruments/orbit-flow-twoforone/RESULTS.json": "737b69ecdfdfe22a42fa51513c6b0014716d24374aaf6aaf7236aae0e7f3a205",
+    "instruments/orbit-flow-twoforone/m22-p34.json": "484773a06823a3c93347ee43d97906dd40ca639daa612f369c6a9b9a616a69bc",
+    "instruments/orbit-flow-twoforone/m60-p90.json": "24adb10d201e11dc9b08863c5e1003d7ff67b2fa247c863194166c7d8597d5a6",
+    "instruments/orbit-flow-twoforone/m66-p98.json": "16a99486c908c78aa92a55a7c02c93c94113c5e101a7004c0d62a31806cdb318",
+    "inputs/ordinary_tree_checked.py": "a012bb78915ccdfa2f729c0cdb520cd8f29572277123c92e80ba6091498f533d"
+  },
+  "checks": [
+    {
+      "m": 22,
+      "p": 34,
+      "order": 91,
+      "alpha": 68,
+      "first_descent": 32,
+      "guards": {
+        "x_plus_2_le_p": true,
+        "3p_lt_2alpha_plus_1": true
+      },
+      "favorable_leaves": 67,
+      "all_selected_pointwise_deltas_strictly_negative": true,
+      "special_leaf_summand": 212336130412243110,
+      "each_arm_leaf_summand": -7560098737536570631,
+      "arm_leaf_summand_count": 66,
+      "orbit_group_order": 147942890910037001954640305565204480000,
+      "upper_orbits": 1686,
+      "lower_orbits": 1743,
+      "upper_actual_sets": 254400180721024303524,
+      "lower_actual_sets": 289115251921304851378,
+      "upper_tag_supply": 6533318342644086823410,
+      "lower_tag_capacity": 7032072523191088241946,
+      "full_aggregate": -498754180547001418536,
+      "listed_positive_arcs": 2967,
+      "flow": 6533318342644086823410,
+      "all_arcs_are_literal_neighbors": true,
+      "all_weighted_node_capacities_respected": true,
+      "flow_saturates_upper_supply": true
+    },
+    {
+      "m": 60,
+      "p": 90,
+      "order": 243,
+      "alpha": 182,
+      "first_descent": 87,
+      "guards": {
+        "x_plus_2_le_p": true,
+        "3p_lt_2alpha_plus_1": true
+      },
+      "favorable_leaves": 181,
+      "all_selected_pointwise_deltas_strictly_negative": true,
+      "special_leaf_summand": 2935177632783649903488454322226807645411570590073000,
+      "each_arm_leaf_summand": -5878584985140474340847544870681760577687103410521705741,
+      "arm_leaf_summand_count": 180,
+      "orbit_group_order": 406677244629587959614922747109370607517125950970034586517026351564157743829862110185849827166373365579849158728089600000000000000,
+      "upper_orbits": 27633,
+      "lower_orbits": 27976,
+      "upper_actual_sets": 281895898798646805303823355614801670910832103996679147372,
+      "lower_actual_sets": 304416652497412052533428885869354109658414216294378254166,
+      "upper_tag_supply": 18218546853926351167830731257168063662695945613618170468520,
+      "lower_tag_capacity": 19276689216074003765533385845436458339871978815941487428900,
+      "full_aggregate": -1058142362147652597702654588268394677176033202323316960380,
+      "listed_positive_arcs": 48532,
+      "flow": 18218546853926351167830731257168063662695945613618170468520,
+      "all_arcs_are_literal_neighbors": true,
+      "all_weighted_node_capacities_respected": true,
+      "flow_saturates_upper_supply": true
+    },
+    {
+      "m": 66,
+      "p": 98,
+      "order": 267,
+      "alpha": 200,
+      "first_descent": 96,
+      "guards": {
+        "x_plus_2_le_p": true,
+        "3p_lt_2alpha_plus_1": true
+      },
+      "favorable_leaves": 199,
+      "all_selected_pointwise_deltas_strictly_negative": true,
+      "special_leaf_summand": 1071292310408470758308567841641901213881535820520360726700,
+      "each_arm_leaf_summand": -2012661828314327213259729394485696864842804954130646540389566,
+      "arm_leaf_summand_count": 198,
+      "orbit_group_order": 1241242721449342858283262016830637295143085527090899297323364744029073946278656856925726933436737659783127408295011599736369053696000000000000000,
+      "upper_orbits": 36702,
+      "lower_orbits": 37090,
+      "upper_actual_sets": 152277856473894432811538617963354721510118870924802301595283064,
+      "lower_actual_sets": 160990631510042722684772167703070331087899322784986182857070384,
+      "upper_tag_supply": 10621175131261862108643497325635134690753959446180514839346249972,
+      "lower_tag_capacity": 11019681101975788488398165437175461028091620945562562333982657340,
+      "full_aggregate": -398505970713926379754668111540326337337661499382047494636407368,
+      "listed_positive_arcs": 65762,
+      "flow": 10621175131261862108643497325635134690753959446180514839346249972,
+      "all_arcs_are_literal_neighbors": true,
+      "all_weighted_node_capacities_respected": true,
+      "flow_saturates_upper_supply": true
+    }
+  ]
+}

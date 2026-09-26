@@ -1,0 +1,29 @@
+{
+  "worker_id": "C6-CU-F4",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C6-F4.MATCHING-SUPPORT-INJECTION",
+      "statement": "On the exact eligible ordinary tree T_22 at p=34 and the recorded independent set B, the rule assigning every active selected leaf tag in B to a distinct own-support vertex in N(B) fails: 33 active tags have only 11 available own-support vertices.",
+      "scope": "The one-tag-per-distinct-own-support injection rule on the single T_22,p=34,B witness in replay.json; this does not decide the primary aggregate or rule out weighted, multi-tag, or other transport mechanisms.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CU-F4/REPLAY-copy.py",
+        "cycles/cycle-6/C6-CU-F4/replay.json"
+      ],
+      "reason": "retained: independent scratch replay matches the sealed evidence; it confirms both strict eligibility guards, the fixed 67-leaf selector, independence of B, 33 active tags on 11 own-support vertices, and the negative complete sum. This verifies failure of the exact injection rule only, not the primary aggregate."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CU-F4/REPORT.md",
+  "limitations": [
+    "The witness concerns one tree and one independent set and does not establish a universal matching limitation.",
+    "The full selected aggregate is negative, so this is not a primary counterexample.",
+    "The result does not address weighted or multi-tag support charging, slack from other sets, or a global budget."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-F4.MATCHING-SUPPORT-INJECTION"
+  ]
+}

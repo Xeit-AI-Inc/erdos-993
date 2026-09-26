@@ -1,0 +1,37 @@
+{
+  "schema": "e993.c3-u3.search-evidence.v1",
+  "source_hash_audit": {
+    "packet": "packets/C3-COMMON.json",
+    "listed_sources_checked": 115,
+    "mismatches": 0,
+    "read_first_hashes": {
+      "EXECUTION-POLICY.md": "12ea2b244016f6f1544ea744948e2f1677cc2691519e4dfb8b69cff7d5bec0ab",
+      "SOLUTION-CONTRACT.md": "f3667bd6424d4f0d95714772ecf76af82ed8430bdd3ec9eda0c721f1a853390c",
+      "WORKER-PROTOCOL.md": "daa216d9e9ee83da2173108f6a9469c848f426be05e79ba1598232d89ab3f9c7",
+      "control/C3-NEUTRAL-HANDOFF.md": "4aeb4a3d403c6b2526f2aa09c9f579b10170e7dadb9f774ed210355cfb6822f6",
+      "control/C3-SEARCH-ALLOCATION.json": "bdced76c4e54d29d496ad15d8fdf15d61a75811510488ce4988ec36bdc8e812f"
+    }
+  },
+  "dependency_nodes": [
+    {"id": "A", "statement": "Marked shadow q_(k+1)<=q_k when |V(G)|<=2k by deletion-extension incidence counting."},
+    {"id": "B", "statement": "For |V(G)|<=2k+1, k>=2, and at least two edges, arbitrary marked family has q_(k+1)<=q_k; uses A, ordinary shadow, and first-wide classification."},
+    {"id": "C", "statement": "For |V(G)|=2k+2, tau(G)>=3, and W with a non-isolated mark, q_(k+1)<=q_k; uses the two-part split and B."},
+    {"id": "COVER", "statement": "On |V(T)|=2p+2, x(T)+2<=p forces tau(T)>=4; uses the registered Catalan floor and explicit all-ranks positivity."},
+    {"id": "LEAF", "statement": "For H=T-{v,s_v}, W=N(s_v)-{v}, tau(H)=tau(T)-1 and q_p-q_(p-1) equals the original tagged leaf summand."},
+    {"id": "SHELL", "statement": "All original leaf summands are nonpositive at this shell, hence the fixed favorable subset sum is nonpositive."}
+  ],
+  "edges": [["GRAPH-FIRST-WIDE", "B"], ["BINOMIAL-DIFFERENCE-CATALAN-FLOOR", "COVER"], ["A", "B"], ["B", "C"], ["COVER", "C"], ["C", "LEAF"], ["LEAF", "SHELL"]],
+  "registered_scopes": [
+    {"claim_key": "E993-GRAPH-FIRST-WIDE-SHARP-CLASSIFICATION", "status": "VERIFIED", "used_scope": "Exact order 2r+2, r=k-1>=1; at least two residual edges implies Delta_(k-1)<=0."},
+    {"claim_key": "E993-BINOMIAL-DIFFERENCE-CATALAN-FLOOR", "status": "VERIFIED", "used_scope": "All natural m,j, with registry zero-extension values at integer ranks -1 and <=-2."},
+    {"claim_key": "E993-R25-GAMMA-RESIDUE-SLACK-THRESHOLD", "status": "VERIFIED", "used_scope": "Optional shorthand only at tau=3, slack=1; no general-tau extrapolation."},
+    {"claim_key": "E993-FIRST-ORDER-SHELL-POINTWISE-EARLY-DESCENT", "status": "OPEN", "used_scope": "Informal route proof sketch only; no status award."},
+    {"claim_key": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE", "status": "OPEN", "used_scope": "Not resolved beyond the first parent-order shell."}
+  ],
+  "limitations": [
+    "Informal mathematical audit; no Lean build or kernel award.",
+    "No conclusion for parent orders greater than 2p+2.",
+    "The common allocation packet contains no source claim IDs.",
+    "No external literature theorem or new computation was used."
+  ]
+}

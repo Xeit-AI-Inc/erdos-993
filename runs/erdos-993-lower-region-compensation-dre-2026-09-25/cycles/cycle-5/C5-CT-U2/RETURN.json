@@ -1,0 +1,29 @@
+{
+  "worker_id": "C5-CT-U2",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C5-U2.STAR-PRODUCT-COEFFICIENT-BOUND",
+      "statement": "For Q=product_i((1+z)^{r_i}+z), where m>=1 and each r_i is in {2,3,4}, Q >= coefficientwise binom(m,h) z^h(1+z)^{N-4h} for every h with 4h<=N, where N=sum_i r_i. Consequently, for N>=12 and 1<=j<=floor(2N/3), [z^j]Q>=m binom(N-4,j-1)>0, and [z^j](z(1+z)^{N+1})/[z^j]Q<=24^5/m.",
+      "scope": "Exact algebraic coefficient bound for heterogeneous bounded-arity star-factor products; it does not establish the primary aggregate or T2 selector/curvature obligations.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CT-U2/EVIDENCE.json"
+      ],
+      "reason": "retained: the subset expansion proves the coefficientwise estimate, and the five-factor binomial ratio with the stated N,j bounds proves the rank-window estimate. The product is realizable as a disjoint union of stars, but no glued-tree, deletion, selector, curvature, or primary aggregate bridge is established by this claim."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CT-U2/REPORT.md",
+  "limitations": [
+    "The exact coefficient and ratio bounds hold only on the profile and rank windows displayed in the claim.",
+    "The relative-coefficient estimate proves no log-concavity, Poisson-ULC, coefficient-difference sign, or mixed-minor inequality.",
+    "The claim does not verify a glued-tree polynomial, deleted-graph domains, exact alpha or first descent, or the original-leaf favorable selector.",
+    "No conclusion on the complete selected aggregate or the broader heterogeneous extension follows from this coefficient lemma."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-U2.STAR-PRODUCT-COEFFICIENT-BOUND"
+  ]
+}

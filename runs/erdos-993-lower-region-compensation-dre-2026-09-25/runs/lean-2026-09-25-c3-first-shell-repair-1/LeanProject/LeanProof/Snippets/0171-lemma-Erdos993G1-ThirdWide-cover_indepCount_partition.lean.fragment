@@ -1,0 +1,25 @@
+lemma cover_indepCount_partition (F : SimpleGraph X) [DecidableRel F.Adj] (C : Finset X)
+    (hcover : ∀ x y, F.Adj x y → x ∈ C ∨ y ∈ C) (k : ℕ) :
+    indepCount F k =
+      ∑ S ∈ C.powerset.filter (fun S : Finset X => F.IsIndepSet S),
+        FirstWide.binomCoeff
+          ((univ : Finset X).filter (fun x => x ∉ C ∧ ∀ y ∈ S, ¬F.Adj y x)).card
+          ((k : ℤ) - S.card) := by
+  classical
+  rw [indepCount_eq_card_indepSetFinset]
+  have hc := card_eq_sum_card_fiberwise
+    (s := F.indepSetFinset k)
+    (t := C.powerset.filter (fun S : Finset X => F.IsIndepSet S))
+    (f := fun T => T ∩ C) (by
+      intro T hT
+      apply mem_filter.mpr
+      refine ⟨mem_powerset.mpr (inter_subset_right),?_⟩
+      exact (SimpleGraph.mem_indepSetFinset_iff.mp hT).isIndepSet.mono
+        (by simpa using (inter_subset_left (s₁ := T) (s₂ := C))))
+  rw [hc,Nat.cast_sum]
+  apply sum_congr rfl
+  intro S hS
+  obtain ⟨hSC,hS⟩ := mem_filter.mp hS
+  exact cover_fiber_count F C S (mem_powerset.mp hSC) hS hcover k
+
+-- ENTRY 167

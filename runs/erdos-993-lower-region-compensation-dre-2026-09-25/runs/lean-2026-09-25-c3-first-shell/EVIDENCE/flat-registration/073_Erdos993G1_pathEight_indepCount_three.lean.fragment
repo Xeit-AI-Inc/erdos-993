@@ -1,0 +1,7 @@
+lemma Erdos993G1.pathEight_indepCount_three :
+    Erdos993G1.indepCount (SimpleGraph.pathGraph 8) 3 = 20 := by
+  letI : DecidableRel (SimpleGraph.pathGraph 8).Adj := fun v w =>
+    decidable_of_iff (v.val + 1 = w.val ∨ w.val + 1 = v.val) SimpleGraph.pathGraph_adj.symm
+  rw [Erdos993G1.indepCount_eq_card_indepSetFinset]
+  decide
+

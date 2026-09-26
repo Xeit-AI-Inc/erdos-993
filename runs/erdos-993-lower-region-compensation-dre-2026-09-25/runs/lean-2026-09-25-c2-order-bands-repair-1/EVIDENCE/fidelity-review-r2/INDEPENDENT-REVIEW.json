@@ -1,0 +1,46 @@
+{
+  "reviewer_id": "C2-LA1-FIDELITY",
+  "reviewer_kind": "independent-mathematical-formalization-fidelity-reviewer",
+  "attestation_id": "c2-la1-order-band-fidelity-v3-r2",
+  "completed_at": "2026-09-25T09:47:29Z",
+  "contract_projection_sha256": "532b436e602a23cddd070ad1e78d963a10585510df244b6efd6386d07ecc212f",
+  "binding_projection_sha256": "d18f0a71642336ef1cc4e23b989a52da025b621d96094cdb4190364430028a2b",
+  "verdict": "match",
+  "findings": [
+    {
+      "category": "source_integrity",
+      "severity": "note",
+      "message": "All 184 brief-listed files matched their SHA-256 pins. The actual Main.lean header, its namespace, all 43 registered entry bodies, and eight inherited definitions were compared with the pinned fragments."
+    },
+    {
+      "category": "contract_binding",
+      "severity": "note",
+      "message": "The v3 contract, fidelity input, theorem-contract receipt, and actual E993OrderBand.markedIsolateAndOrdinaryLeafOrderBand header agree. The v2-to-v3 rebinding changes header spelling while preserving the post-colon theorem type and the informal claim."
+    },
+    {
+      "category": "generic_semantics",
+      "severity": "note",
+      "message": "IsolateCovered marks every original graph isolate; markedCount counts each independent set meeting W once. The relative incidence proof and bad/good correction yield q_(k+1) <= q_k for every finite graph under exactly k >= 2 and |V| <= 2k+1."
+    },
+    {
+      "category": "leaf_semantics",
+      "severity": "note",
+      "message": "IsGraphLeaf and support use original adjacency; H deletes the leaf and support, R deletes the original closed neighborhood of the support. Tree connectivity covers isolates of T-H, and the exact all-rank count split turns the marked inequality at k=p-1 into the stated integer forward-difference inequality."
+    },
+    {
+      "category": "kernel_contract_pins",
+      "severity": "note",
+      "message": "The source and contract hashes, verified kernel receipt hash, reported allowed axioms, toolchain and log hashes, 10 dependency rows, and nine manifest revisions agree with the listed pinned evidence."
+    },
+    {
+      "category": "fingerprint_canonicalization",
+      "severity": "note",
+      "message": "Both projection hashes were freshly recomputed. The earlier raw-section discrepancy is canonicalization: the audit script hashes sorted compact UTF-8 JSON with a terminal newline, and the binding projection wraps lean_binding together with kernel_evidence."
+    },
+    {
+      "category": "review_scope",
+      "severity": "warning",
+      "message": "This is a proposal for the exact two-conjunct theorem and pinned evidence. Lean and the authoritative fidelity audit were not rerun; external shared-package files were outside the listed sources, and the contract still marks broader formulation status open."
+    }
+  ]
+}

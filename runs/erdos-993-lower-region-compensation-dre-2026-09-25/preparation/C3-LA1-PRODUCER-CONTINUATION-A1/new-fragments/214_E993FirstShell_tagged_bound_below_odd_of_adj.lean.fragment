@@ -1,0 +1,42 @@
+namespace E993FirstShell
+
+open Classical
+
+/-- An odd-order marked shadow bound when a mark has a neighbor. -/
+lemma tagged_bound_below_odd_of_adj {V : Type u} [Fintype V] [DecidableEq V]
+    (G : SimpleGraph V) [DecidableRel G.Adj] (U W : Finset V)
+    (k : ℕ) (hk : 2 ≤ k) (hU : U.card ≤ 2*k+1)
+    (a b : V) (haU : a ∈ U) (haW : a ∈ W)
+    (hbU : b ∈ U) (hab : G.Adj a b) :
+    (E993Interior.taggedFamily G U W (k+1)).card ≤
+      (E993Interior.taggedFamily G U W k).card := by
+  classical
+  let N := U.filter (fun x => x ≠ a ∧ ¬G.Adj a x)
+  have hbne : b ≠ a := hab.ne.symm
+  have hbUa : b ∈ U.erase a := Finset.mem_erase.mpr ⟨hbne, hbU⟩
+  have hNU : N ⊆ (U.erase a).erase b := by
+    intro x hx
+    obtain ⟨hxU, hxa, hnotAdj⟩ := Finset.mem_filter.mp hx
+    apply Finset.mem_erase.mpr
+    refine ⟨?_, Finset.mem_erase.mpr ⟨hxa, hxU⟩⟩
+    intro hxb
+    exact (hxb ▸ hnotAdj) hab
+  have hNcard : N.card ≤ 2*(k-1)+1 := by
+    have hsub := Finset.card_le_card hNU
+    rw [Finset.card_erase_of_mem hbUa, Finset.card_erase_of_mem haU] at hsub
+    omega
+  have hUcard : (U.erase a).card ≤ 2*k := by
+    rw [Finset.card_erase_of_mem haU]
+    omega
+  have habsent := E993OrderBand.marked_bound_below_even
+    G (U.erase a) (W.erase a) k (by omega) hUcard
+  have hpresent := ordinary_bound_below_odd G N (k-1) (by omega) hNcard
+  have htop := tagged_split_mark G U W a haU haW k
+  have hbottom := tagged_split_mark G U W a haU haW (k-1)
+  have hk' : k-1+1=k := by omega
+  rw [hk'] at hbottom hpresent
+  dsimp only [N] at hpresent
+  rw [htop, hbottom]
+  omega
+
+end E993FirstShell

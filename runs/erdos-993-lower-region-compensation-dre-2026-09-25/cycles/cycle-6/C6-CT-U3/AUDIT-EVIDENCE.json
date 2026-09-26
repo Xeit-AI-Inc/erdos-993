@@ -1,0 +1,26 @@
+{
+  "reviewed_claim_id": "C6-U3-ABSORB-BOUNDED-20",
+  "source_replay_completed": true,
+  "tested_pairs": 361,
+  "polynomial_tests": 1444,
+  "polynomials_without_finite_order_through_q4": 97,
+  "minimum_q_distribution": {
+    "1": 273,
+    "2": 80,
+    "3": 7,
+    "4": 1
+  },
+  "pairs_without_success_by_q4": 0,
+  "maximum_least_orders_by_q": {
+    "1": 19664,
+    "2": 2842,
+    "3": 3935,
+    "4": 136
+  },
+  "pinned_121_pair_comparison_passed": true,
+  "finite_order_criterion": "For positive coefficients, degree n, and integer d>=n, normalized log concavity at 1<=j<n is equivalent to (d-j)A_j>=R_j, with A_j=j*a_j^2-(j+1)*a_(j-1)*a_(j+1) and R_j=(j+1)*a_(j-1)*a_(j+1)>0. A finite order exists iff every A_j>0; the least order is max(n,max_j(j+ceil(R_j/A_j))).",
+  "coefficient_signs": "F_r has positive coefficients on degrees 0 through r-2; B_s has positive coefficients on degrees 0 through s. Their products have positive coefficients at every degree in the interval.",
+  "disposition": "retained",
+  "status_proposed_only": "proposed_verified",
+  "scope_limit": "Exact finite arithmetic for 2<=r,s<=20 and 1<=q<=4. No uniform, mixed-factor, graph, selector, or tree implication was reviewed or established."
+}

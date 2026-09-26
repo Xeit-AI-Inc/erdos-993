@@ -1,0 +1,30 @@
+{
+  "worker_id": "C6-CF-T2",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "E993-ORDINARY-PATH-STAR-ARITY-2-4-M2000-LOWER-REGION-AGGREGATE",
+      "statement": "For the ordinary tree consisting of path 0-1-2 with m distinct centers attached to 0, branch i having r_i private leaves, for every m >= 2000, every r_i in {2,3,4}, and every p with x(T)+2 <= p and 3p < 2 alpha(T)+1, the complete sum over the original strict favorable-leaf selector satisfies S(T,p) < 0.",
+      "scope": "Restricted path-with-private-stars family; m >= 2000; arbitrary heterogeneous profile with each r_i in {2,3,4}; original distinct leaf tags, strict selector, and strict lower-region guard. Does not cover m < 2000 or arbitrary ordinary trees.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CF-T2/REPORT.md",
+        "cycles/cycle-6/C6-CF-T2/EVIDENCE.json",
+        "cycles/cycle-6/C6-CF-T2/cutoff2000_replay.json"
+      ],
+      "reason": "retained: the graph, deletion, and all-tag identities check; the finite ULC convolution hypotheses and central selector transfer apply in the stated scope. Exact cutoff replay matches the pinned rational output. I corrected a small marked mixed-minor constant undercount; the corrected bound is still strictly below the same cutoff threshold, so the theorem remains valid. Scope remains precisely the route statement."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CF-T2/REPORT.md",
+  "limitations": [
+    "The replay verifies exact cutoff arithmetic only; no exhaustive graph/profile census was run.",
+    "The ULC convolution theorem is imported and is not formalized in this review.",
+    "The disposition is limited to the specified path-with-private-stars family and m >= 2000; it does not resolve the arbitrary-tree primary claim."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-ORDINARY-PATH-STAR-ARITY-2-4-M2000-LOWER-REGION-AGGREGATE"
+  ]
+}

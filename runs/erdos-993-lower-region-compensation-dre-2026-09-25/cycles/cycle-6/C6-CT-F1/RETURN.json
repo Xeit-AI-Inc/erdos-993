@@ -1,0 +1,29 @@
+{
+  "worker_id": "C6-CT-F1",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C6-F1.Tm-cutoff400-audit",
+      "statement": "The finite m=3..399 central-margin computation, m=400 cutoff rational endpoint checks, tiny T_m graph polynomial identities, and the cited ULC order-parameter bridge pass independent checks; these checks identify no defect in the candidate portions reviewed but do not certify its full all-m T_m theorem.",
+      "scope": "Only the T_m cutoff-400 candidate\u2019s exactly replayed finite checks, stated endpoint arithmetic, m=1..3 polynomial cross-checks, and the cited ULC order/convolution point. No conclusion for arbitrary ordinary trees, uniform tail proof, full selector propagation, or beyond the reviewed subclaims.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CT-F1/CT-EVIDENCE.json"
+      ],
+      "reason": "retained: copied-script replay exactly reproduced the route evidence, including 242,964 checks per margin, both digests and minima; exact m=400 rational endpoint checks are all below one; the primary ULC references support the narrow order-parameter/convolution assertion. The route itself limits its conclusion. Uniform analytic tail derivations, all large-m mixed-minor constants, and strict-selector-to-full-sum propagation were not independently audited here and remain limitations, not counterexamples."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CT-F1/REPORT.md",
+  "limitations": [
+    "The uniform analytic inequalities for m>=400 were not independently reconstructed in full; endpoint rational arithmetic alone does not prove their monotonic extension.",
+    "I did not independently rederive every large-m mixed-minor neighbor-ratio constant or the complete selector-to-aggregate propagation.",
+    "Tiny graph dynamic-programming checks cover only T_m for m=1,2,3; finite coefficient checks stop at m=399.",
+    "This review establishes no arbitrary-tree result and does not decide the registered primary aggregate."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-F1.Tm-cutoff400-audit"
+  ]
+}

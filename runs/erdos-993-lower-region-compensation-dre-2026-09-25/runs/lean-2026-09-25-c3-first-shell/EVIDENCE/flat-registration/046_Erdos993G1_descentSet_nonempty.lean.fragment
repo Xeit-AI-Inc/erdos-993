@@ -1,0 +1,8 @@
+lemma descentSet_nonempty [Finite V] :
+    {k : ℕ | delta F (k : ℤ) < 0}.Nonempty := by
+  refine ⟨F.indepNum, ?_⟩
+  change delta F (F.indepNum : ℤ) < 0
+  rw [delta_nat, indepCount_eq_zero_of_indepNum_lt F (Nat.lt_succ_self _)]
+  have h := indepCount_indepNum_pos F
+  omega
+

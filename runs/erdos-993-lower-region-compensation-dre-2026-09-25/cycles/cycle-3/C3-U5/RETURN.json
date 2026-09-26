@@ -1,0 +1,37 @@
+{
+  "worker_id": "C3-U5",
+  "cycle": 3,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "For every finite ordinary tree T and natural p with x(T)+2<=p and 3p<2alpha(T)+1, the complete sum over original leaves v with Delta_p(T-v)<0 of Delta_(p-1)(T-{v,s_v})-Delta_(p-1)(T-N_T[s_v]) is nonpositive.",
+      "scope": "Exact lower-region ordinary-tree aggregate from SOLUTION-CONTRACT.md, with the fixed original strict selector and one summand per original leaf.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-U5/REPORT.md",
+        "cycles/cycle-3/C3-U5/EVIDENCE.json"
+      ],
+      "reason": "The first-descent count yields a conditional selected-tag deficit budget, but its marked occupancy transfer antecedent is not established universally."
+    },
+    {
+      "claim_id": "C3-U5-EARLY-DESCENT-MARKED-OCCUPANCY-BRIDGE",
+      "statement": "For an eligible T,p, if the total actual addability over the selector-tagged independent (p-1)-sets in the H_v graphs is at most their total count times the mean actual addability of independent x(T)-sets in T, then the complete selected aggregate is nonpositive.",
+      "scope": "Conditional theorem for the exact fixed F(T,p), H_v and W_v; every original leaf is separately tagged. The premise is not claimed universally.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-U5/REPORT.md",
+        "cycles/cycle-3/C3-U5/EVIDENCE.json"
+      ],
+      "reason": "Double counting gives the strict earlier-layer mean bound <x+1<=p-1. Substitution into the tagged bipartite deficit identity gives the complete-sum inequality, including the Q=0 case."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-U5/REPORT.md",
+  "limitations": [
+    "The universal marked occupancy transfer inequality remains open.",
+    "The work proves a conditional bridge only and does not settle the primary claim.",
+    "No exhaustive computation or external literature result is claimed."
+  ],
+  "status_authority": "proposed_worker_only"
+}

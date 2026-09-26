@@ -1,0 +1,6 @@
+lemma isNIndepSet_one_iff (S : Finset V) :
+    F.IsNIndepSet 1 S ↔ ∃ a, S = {a} := by
+  classical
+  simpa only [SimpleGraph.isNClique_compl] using
+    (SimpleGraph.isNClique_one (G := Fᶜ) (s := S))
+

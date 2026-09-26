@@ -1,0 +1,46 @@
+{
+  "worker_id": "C6-T4",
+  "cycle": 6,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C6-T4-MATCHING-SLACK-DECOMPOSITION",
+      "statement": "For the fixed selector on any eligible ordinary tree, each marked-set slack term decomposes exactly as 2(h-k-alpha(U_v(A))) plus the number of vertices unmatched by a maximum matching of the induced addable forest U_v(A); the global target is therefore equivalent to a weighted lower bound including these terms and the multiply-marked correction C.",
+      "scope": "All eligible ordinary trees, with h=alpha(T)-1, k=p-1, and the original fixed F(T,p). This proves a decomposition and exact reduction only; it does not prove the required lower bound.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-T4/REPORT.md"
+      ],
+      "reason": "The per-marked-set identity follows from alpha(U)=|U|-nu(U) for the bipartite induced forest, alpha(U)<=h-k, and the exact marked-extension incidence count kU+C. The report supplies the derivation and states the remaining global inequality explicitly."
+    },
+    {
+      "claim_id": "C6-T4-T22-ELIGIBLE-CROSS-TAG-CHECK",
+      "statement": "For the 91-vertex T_22 tree at p=34, the strict selector is eligible, contains 67 leaves, has full aggregate S=-498754180547001418536, and has a positive marked-arm summand +212336130412243110 offset by the other 66 selected leaves.",
+      "scope": "One exact tree and rank only: root with one path arm of length two and 22 root-adjacent K_1,3 branches. Bounded exact forest-DP computation; no census or universal inference.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-T4/replay_t22.py",
+        "cycles/cycle-6/C6-T4/evidence_t22.json"
+      ],
+      "reason": "The replay recomputes the graph row and per-type marked counts from the pinned tree-DP source, checks both eligibility guards, the full summand sum, and the incidence identity. It is an example of across-tag compensation, not a refutation or proof of the general claim."
+    },
+    {
+      "claim_id": "C6-T4-UNIFORM-COMPENSATION-OPEN",
+      "statement": "This route does not establish or refute the lower-region aggregate for all eligible ordinary trees; the unresolved obligation is to prove D+C >= (2 alpha(T)+1-3p)Q for the unchanged selector.",
+      "scope": "The full arbitrary ordinary-tree lower-region claim under the exact contract guards.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-T4/REPORT.md"
+      ],
+      "reason": "The matching decomposition identifies nonnegative slack sources but supplies no uniform lower estimate at the required scale. The T_22 computation is a single bounded instance, and the pinned flow diagnostics do not include a general orbit-lifting or arbitrary-tree argument."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-T4/REPORT.md",
+  "limitations": [
+    "The matching-slack decomposition is not a proof of the required global compensation inequality.",
+    "The exact computation covers only T_22 at p=34 and does not constitute a census.",
+    "No universal matching transport or flow lifting theorem was proved in this route."
+  ],
+  "status_authority": "proposed_worker_only"
+}

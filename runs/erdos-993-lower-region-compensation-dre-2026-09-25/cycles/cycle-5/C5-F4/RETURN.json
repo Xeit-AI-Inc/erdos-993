@@ -1,0 +1,25 @@
+{
+  "worker_id": "C5-F4",
+  "cycle": 5,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C5-F4.BOUNDED-PROPER-SELECTOR-SEARCH",
+      "statement": "No proper favorable-leaf selector occurs among the 308 eligible tree-rank pairs in the two searched families; the 1,540 KL triples in the stated box have no eligible ranks.",
+      "scope": "Exact search of KL T(k1,k2,k3) with 1<=k1<=k2<=k3<=20, central path spiders with 3..5 arms of lengths 1..8, and the five named KL fixtures with a path of length 1..5 grafted at each nonleaf vertex; only integer ranks x+2<=p and 3p<2alpha+1 are included.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-F4/F4_SEARCH.py",
+        "cycles/cycle-5/C5-F4/EVIDENCE.json"
+      ],
+      "reason": "Exact forest-DP coefficients and exhaustive leaf-selector evaluation on these finite generated families found zero mixed favorable/nonfavorable selectors. The finite bounds do not establish a universal selector property; the eligible control example has all leaves favorable and S=-2745."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-F4/REPORT.md",
+  "limitations": [
+    "This is a finite family search, not a census of ordinary trees; it leaves the requested proper-selector witness unresolved.",
+    "No primary theorem is imported and no conclusion is drawn about trees outside the listed recipes and parameter ranges."
+  ],
+  "status_authority": "proposed_worker_only"
+}

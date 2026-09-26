@@ -1,0 +1,32 @@
+{
+  "worker_id": "C6-CT-U5",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C6-U5-CB-sector-deficit",
+      "statement": "For the fixed hub-plus-arm sector of CB(8,92), the residual rank-491 and rank-490 families have selected-tag weight ratio 493/491 and weight difference 2W_490/491. This is a deficit only for a boundary whose capacities are confined to the same sector; it does not imply a switch-capacity threshold for the full deletion neighborhood.",
+      "scope": "The bounded CB(8,92) sector with 736 disjoint support-leaf pairs, residual source rank 491, residual target rank 490, and weight 1 plus the number of selected branch leaves. The graph is eligible at p=492 and has a negative complete selected aggregate. No mixed Hall result or universal ordinary-tree conclusion is established.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CT-U5/EVIDENCE.json",
+        "cycles/cycle-6/C6-CT-U5/instruments/cb-switch-cut/RESULTS.json",
+        "cycles/cycle-6/C6-CT-U5/instruments/cb-switch-cut/run.py",
+        "cycles/cycle-6/C6-CT-U5/instruments/cb-switch-cut/replay_critique.py",
+        "cycles/cycle-6/C6-CT-U5/inputs/ordinary_tree_checked.py"
+      ],
+      "reason": "Disposition: retained_narrowed. The two exact mass ratios and their difference are correct by integer cross-multiplication. However, the weight includes the fixed arm tag, and deleting that tag leaves the hub-plus-arm sector. Therefore the reported shortfall is not a Hall deficit when all deletion targets are available. Retain only the within-sector capacity comparison; the full deletion and mixed-boundary conclusions remain unproved."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CT-U5/REPORT.md",
+  "limitations": [
+    "The sector weight comparison does not include deletion targets outside the fixed hub-plus-arm sector.",
+    "The conservative CB switch-cut envelope is inconclusive and is not an exact Hall neighborhood or flow.",
+    "The bounded CB replay has a negative complete aggregate and neither proves nor refutes the universal ordinary-tree assertion."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-U5-CB-sector-deficit"
+  ]
+}

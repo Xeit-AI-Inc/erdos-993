@@ -1,0 +1,33 @@
+{
+  "worker_id": "C2-CU-F3",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-FIRST-ORDER-SHELL",
+      "statement": "retained: In the finite rooted branch-forest family generated and filtered as stated in C2-F3/REPORT.md, for p=3,...,7 every eligible generated tree has S<=0 and no eligible tree has a positive selected summand.",
+      "scope": "Only the filtered family with total branch order 2p, at least two components and at least two distinct rooted component types, with the primary eligibility guards; not all trees of order 2p+2.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CU-F3/REPORT.md",
+        "cycles/cycle-2/C2-CU-F3/evidence/replay_notes.md",
+        "cycles/cycle-2/C2-CU-F3/evidence/replay_search_f3.py",
+        "cycles/cycle-2/C2-CU-F3/evidence/ordinary_tree_checked.py",
+        "cycles/cycle-2/C2-CU-F3/evidence/search_f3_results.json"
+      ],
+      "reason": "retained as an exact bounded computation: I replayed the copied generator and evaluator, and the resulting JSON exactly matches the source result. The family generator, both primary guards, strict selector, original-support summands, same-support multiplicities, and terminal zero-extended descent are consistent with the stated bounded scope. This does not resolve the universal first-shell claim."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CU-F3/REPORT.md",
+  "limitations": [
+    "The replay covers only the stated asymmetric rooted family and p=3,...,7, not every ordinary tree in the first shell.",
+    "Rooted representatives may encode isomorphic unrooted trees more than once.",
+    "No positive local term appears, so the computation does not test compensation for positive summands.",
+    "The conclusion remains bounded computational evidence and does not prove or refute the registered universal claim."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-LOWER-REGION-FIRST-ORDER-SHELL"
+  ]
+}

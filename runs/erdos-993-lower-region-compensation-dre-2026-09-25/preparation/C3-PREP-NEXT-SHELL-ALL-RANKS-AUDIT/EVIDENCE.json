@@ -1,0 +1,217 @@
+{
+  "certificate": {
+    "upper_count": 48,
+    "lower_count": 56,
+    "distinct_subset_images": 48
+  },
+  "small_rank_rows": [
+    {
+      "p": 6,
+      "r": 0,
+      "n": 15,
+      "N": 10,
+      "b_min": 8,
+      "empty": 9,
+      "ordinary_budget": 0,
+      "ordinary_margin": 9,
+      "special_singleton_floor": 1,
+      "other_negative_budget": 0,
+      "improved_margin": 9
+    },
+    {
+      "p": 6,
+      "r": 1,
+      "n": 15,
+      "N": 10,
+      "b_min": 8,
+      "empty": 35,
+      "ordinary_budget": 5,
+      "ordinary_margin": 30,
+      "special_singleton_floor": 7,
+      "other_negative_budget": 4,
+      "improved_margin": 38
+    },
+    {
+      "p": 6,
+      "r": 2,
+      "n": 15,
+      "N": 10,
+      "b_min": 8,
+      "empty": 75,
+      "ordinary_budget": 15,
+      "ordinary_margin": 60,
+      "special_singleton_floor": 20,
+      "other_negative_budget": 14,
+      "improved_margin": 81
+    },
+    {
+      "p": 6,
+      "r": 3,
+      "n": 15,
+      "N": 10,
+      "b_min": 8,
+      "empty": 90,
+      "ordinary_budget": 30,
+      "ordinary_margin": 60,
+      "special_singleton_floor": 28,
+      "other_negative_budget": 28,
+      "improved_margin": 90
+    },
+    {
+      "p": 6,
+      "r": 4,
+      "n": 15,
+      "N": 10,
+      "b_min": 8,
+      "empty": 42,
+      "ordinary_budget": 60,
+      "ordinary_margin": -18,
+      "special_singleton_floor": 14,
+      "other_negative_budget": 55,
+      "improved_margin": 1
+    },
+    {
+      "p": 7,
+      "r": 0,
+      "n": 17,
+      "N": 12,
+      "b_min": 9,
+      "empty": 11,
+      "ordinary_budget": 0,
+      "ordinary_margin": 11,
+      "special_singleton_floor": 1,
+      "other_negative_budget": 0,
+      "improved_margin": 11
+    },
+    {
+      "p": 7,
+      "r": 1,
+      "n": 17,
+      "N": 12,
+      "b_min": 9,
+      "empty": 54,
+      "ordinary_budget": 5,
+      "ordinary_margin": 49,
+      "special_singleton_floor": 8,
+      "other_negative_budget": 4,
+      "improved_margin": 58
+    },
+    {
+      "p": 7,
+      "r": 2,
+      "n": 17,
+      "N": 12,
+      "b_min": 9,
+      "empty": 154,
+      "ordinary_budget": 15,
+      "ordinary_margin": 139,
+      "special_singleton_floor": 27,
+      "other_negative_budget": 14,
+      "improved_margin": 167
+    },
+    {
+      "p": 7,
+      "r": 3,
+      "n": 17,
+      "N": 12,
+      "b_min": 9,
+      "empty": 275,
+      "ordinary_budget": 30,
+      "ordinary_margin": 245,
+      "special_singleton_floor": 48,
+      "other_negative_budget": 28,
+      "improved_margin": 295
+    },
+    {
+      "p": 7,
+      "r": 4,
+      "n": 17,
+      "N": 12,
+      "b_min": 9,
+      "empty": 297,
+      "ordinary_budget": 60,
+      "ordinary_margin": 237,
+      "special_singleton_floor": 42,
+      "other_negative_budget": 55,
+      "improved_margin": 284
+    },
+    {
+      "p": 7,
+      "r": 5,
+      "n": 17,
+      "N": 12,
+      "b_min": 9,
+      "empty": 132,
+      "ordinary_budget": 146,
+      "ordinary_margin": -14,
+      "special_singleton_floor": 0,
+      "other_negative_budget": 132,
+      "improved_margin": 0
+    }
+  ],
+  "large_rank_endpoints": [
+    {
+      "r": 0,
+      "empty": 13,
+      "budget": 0,
+      "margin": 13
+    },
+    {
+      "r": 1,
+      "empty": 77,
+      "budget": 5,
+      "margin": 72
+    },
+    {
+      "r": 2,
+      "empty": 273,
+      "budget": 15,
+      "margin": 258
+    },
+    {
+      "r": 3,
+      "empty": 637,
+      "budget": 30,
+      "margin": 607
+    },
+    {
+      "r": 4,
+      "empty": 1001,
+      "budget": 60,
+      "margin": 941
+    },
+    {
+      "r": 5,
+      "empty": 1001,
+      "budget": 146,
+      "margin": 855
+    },
+    {
+      "r": 6,
+      "empty": 429,
+      "budget": 411,
+      "margin": 18
+    }
+  ],
+  "low_rank_exclusion": [
+    {
+      "p": 3,
+      "n": 9,
+      "max_order_if_eligible": 4,
+      "gap": 5
+    },
+    {
+      "p": 4,
+      "n": 11,
+      "max_order_if_eligible": 8,
+      "gap": 3
+    },
+    {
+      "p": 5,
+      "n": 13,
+      "max_order_if_eligible": 12,
+      "gap": 1
+    }
+  ],
+  "methods": "exact integer binomial arithmetic; complete finite nine-vertex core enumeration"
+}

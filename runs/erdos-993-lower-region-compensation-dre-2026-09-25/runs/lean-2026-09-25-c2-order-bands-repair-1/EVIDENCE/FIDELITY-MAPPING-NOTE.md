@@ -1,0 +1,5 @@
+# Source mapping for independent review
+
+The raw terminal header is extracted directly from Main.lean and compared byte-for-byte with contractv3. Its namespace is E993OrderBand; the kernel checks the full declaration name. Definitions are the eight exact inherited definition fragments and new IsolateCoveredOn/IsolateCovered/markedCount; the reviewer must independently interpret them, not treat the canonical descriptor text as proof. Every syntactic binder, guard, empty/out-of-range case, Nat subtraction and original-leaf deletion must be checked.
+
+Dependency content hashes are SHA256 of canonical JSON (sorted keys, compact separators, UTF8) of each actual kernel package_identity row, including pinned revision and recorded key-file digests. The toolchain content hash is the actual lean-toolchain file digest. All three dependency lists are the same actual kernel-derived rows. Formal source hash a45f8e2e218d27d528e2513e5cb8413d38780d9e6c01f8c34b171366f0bf3bde. v2->v3 only corrects the literal name spelling inside the existing namespace; the mathematical intent is unchanged.

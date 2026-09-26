@@ -1,0 +1,54 @@
+{
+  "schema": "e993.c3-u5.evidence.v1",
+  "scope": {
+    "target": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+    "conditions": [
+      "finite ordinary tree T",
+      "x(T)+2<=p",
+      "3p<2*alpha(T)+1"
+    ],
+    "selector": "the fixed original-leaf set F(T,p)={v: Delta_p(T-v)<0}",
+    "tagging": "one separate tag per original leaf, including equal-support leaves"
+  },
+  "proved_counting_facts": [
+    {
+      "name": "earlier_layer_extension_count",
+      "formula": "sum_{B independent in T, |B|=x} e_T(B) = (x+1)*i_{x+1}(T)",
+      "proof": "Count pairs (B,z) where |B|=x and z can be added. Each independent (x+1)-set contributes its x+1 deletions."
+    },
+    {
+      "name": "strict_descent_average",
+      "formula": "E_x(T)=(x+1)*i_{x+1}(T)/i_x(T)<x+1<=p-1=k",
+      "guards": "Delta_x(T)<0 implies i_x(T)>0; x+2<=p implies x+1<=k."
+    },
+    {
+      "name": "sufficient_transfer",
+      "formula": "E=sum_{v in F} sum_{A in I_k(H_v), A meets W_v} e_{H_v}(A) <= E_x(T)*Q, where Q=sum_{v in F} q_v(k)",
+      "consequence": "Using the tagged bipartite identity from SOLUTION-CONTRACT.md, this implies S(T,p)<=0. If Q>0 it implies S(T,p)<0; if Q=0 it implies S(T,p)<=0.",
+      "status": "conditional only; universal antecedent not established"
+    },
+    {
+      "name": "tagged_bipartite_identity_proof",
+      "formula": "k*q_(k+1)+C=2(h-k)*q_k-D",
+      "proof": "Count marked independent k-set/addable-vertex pairs. Extensions with exactly one W-vertex have k tag-preserving deletions; extensions with at least two W-vertices have k+1, giving k*q_(k+1)+C. In each bipartition class the addable vertices together with the original k-set form an independent set, so each class has at most h-k addables; hence e(A)<=2(h-k) and D>=0.",
+      "scope": "finite bipartite H, arbitrary marked W, h=alpha(H), 1<=k<=h"
+    },
+    {
+      "name": "tagged_deficit_algebra",
+      "formula": "k*S=(2a+1-3p)*Q-sum_v(D_v+C_v); D_v=2(h-k)*q_v(k)-E_v(k), h=a-1, k=p-1; C_v>=0",
+      "coefficient_check": "2(h-k)-k=2(a-1-(p-1))-(p-1)=2a+1-3p."
+    }
+  ],
+  "exact_bipartite_component_recipe": {
+    "graph": "G=L disjoint-union R, bipartite",
+    "for_A_subset_L": "R_A=R\\N(A)",
+    "independent_count": "i_j(G)=sum_{A subset L} binom(|R_A|,j-|A|)",
+    "actual_addability": "e_G(A union B)=|L\\N(B)|+|R_A|-j for B subset R_A, |A|+|B|=j",
+    "marked_count_filter": "for H_v retain only A union B intersect W_v nonempty at j=k; count each original leaf v separately"
+  },
+  "limitations": [
+    "The transfer inequality is not proved universally.",
+    "No claim about recovery or unimodality is made.",
+    "No census, literature theorem, or counterexample was used."
+  ]
+}

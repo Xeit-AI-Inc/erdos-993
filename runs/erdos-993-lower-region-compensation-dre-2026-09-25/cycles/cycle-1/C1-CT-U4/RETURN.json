@@ -1,0 +1,30 @@
+{
+  "worker_id": "C1-CT-U4",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C1-U4-1",
+      "statement": "For each original leaf tag v, I(T-v,z)=I(H_v,z)+zI(R_v,z), the favorable selector is the coefficient q_(p+1)-q_p+r_(p+1)-r_(p-1)<0, and the selected summand is q_p-q_(p-1). This is a correct per-leaf reformulation. The selector alone does not determine the summand or its selected global sum; this coefficient-comparison route needs a separate selector-aware bridge. Chudnovsky–Seymour real-rootedness does not apply uniformly to arbitrary trees and does not establish that bridge.",
+      "scope": "Per-leaf coefficient identities for an original leaf of a finite ordinary tree, plus the cited theorem-hypothesis audit. No proof or refutation of the lower-region selected aggregate or tagged-incidence identity is established.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CT-U4/REPORT.md",
+        "cycles/cycle-1/C1-CT-U4/evidence/audit-notes.md"
+      ],
+      "reason": "retained_narrowed: the coefficient decomposition and rank/sign calculations are correct, and the real-rootedness theorem has a genuine claw-free hypothesis absent from the target. The required bridge is only shown necessary for this displayed coefficient-comparison route; the evidence does not rule out other generating-function arguments. The supplied local-positive/full-negative controls reinforce that local signs do not settle the aggregate."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CT-U4/REPORT.md",
+  "limitations": [
+    "No eligible ordinary-tree counterexample or proof of the lower-region aggregate was produced.",
+    "The supplied T_22 and T_60 control rows were inspected but not replayed; no bounded computation is claimed.",
+    "The claw-free real-rootedness theorem does not apply uniformly to target trees and does not prove a selector-aware aggregate inequality.",
+    "The exact global D+C budget in the supplied tagged-incidence identity remains unproved in this review."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-U4-1"
+  ]
+}

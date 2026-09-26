@@ -1,0 +1,14 @@
+namespace Erdos993G1.FirstWide
+
+lemma matching_partner {X : Type u} [DecidableEq X]
+    (G : SimpleGraph X) (a b c d : X) (hab : G.Adj a b) (hcd : G.Adj c d)
+    (x : X) (hx : x ∈ ({a,b,c,d} : Finset X)) :
+    ∃ y ∈ ({a,b,c,d} : Finset X), G.Adj x y := by
+  simp only [Finset.mem_insert,Finset.mem_singleton] at hx
+  rcases hx with rfl | rfl | rfl | rfl
+  · exact ⟨b,by simp,hab⟩
+  · exact ⟨a,by simp,hab.symm⟩
+  · exact ⟨d,by simp,hcd⟩
+  · exact ⟨c,by simp,hcd.symm⟩
+
+end Erdos993G1.FirstWide

@@ -1,0 +1,30 @@
+{
+  "worker_id": "C6-CT-F6",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C6-F6.SPIDER-SELECTOR-BOUNDED",
+      "statement": "For the equal-length-three rooted spider T_m with 2<=m<=40, every eligible rank selects all m original endpoint leaves and has a negative complete aggregate; also x(T_m)=m throughout this finite range.",
+      "scope": "Retained only for the 39 graphs r-a_i-b_i-c_i (1<=i<=m), checking all 222 ranks satisfying x+2<=p and 3p<2alpha+1. It gives no conclusion for m>40 or arbitrary ordinary trees.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CT-F6/evidence.json",
+        "cycles/cycle-6/C6-CT-F6/replay.py",
+        "cycles/cycle-6/C6-CT-F6/replay_stdout.json"
+      ],
+      "reason": "retained: the copied exact forest-DP replay reproduces the sealed evidence byte for byte, and an independent output audit checks the profile and rank boundary, first descent, original endpoint/support tags, all selected summands, and all complete sums. This is a bounded computation only; it does not establish the all-m bridge or the primary aggregate."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CT-F6/REPORT.md",
+  "limitations": [
+    "The computation covers only 2<=m<=40 and does not establish any unbounded family statement.",
+    "The proposed all-m first-descent bridge and selector-transfer consequence remain unproved by this audit.",
+    "No arbitrary-tree proof or positive eligible counterexample is claimed."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-F6.SPIDER-SELECTOR-BOUNDED"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "worker_id": "C4-CF-T5",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C4-T5-TM80-BOUNDED",
+      "statement": "For the specified two-orbit tree family T_m, every eligible lower-region rank at each 1<=m<=80 has both original leaf orbits favorable and has a strictly negative complete selected sum, as verified by independent graph-derived recurrence with corrected claw selector values.",
+      "scope": "Exact finite coefficient computation on T_m for m=1,...,80 and every p satisfying x(T_m)+2<=p<=alpha(T_m) and 3p<2alpha(T_m)+1. No conclusion for m>80 or trees outside this family.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CF-T5/audit.py",
+        "cycles/cycle-4/C4-CF-T5/audit_evidence.json",
+        "cycles/cycle-4/C4-CF-T5/producer_evidence.json"
+      ],
+      "reason": "retained_narrowed: independent edge-graph recurrence checks all 1,749 eligible rows and literal subsets check the m=3 tree and all leaf-deletion/H/R graphs. The source replay omits a factor (1+2z) in its claw deletion polynomial, making all reported claw selector differences numerically incorrect; corrected selector booleans, q-terms, and complete sums nevertheless agree on every eligible row."
+    },
+    {
+      "claim_id": "C4-T5-TM-ALL-OPEN",
+      "statement": "The exact derivative identity for the all-leaf marked polynomial does not establish the selected aggregate sign for all eligible m and p; the all-parameter T_m sign and both universal orbit-selector claims remain unresolved.",
+      "scope": "The infinite specified T_m family under the ordinary-tree lower-region hypotheses; no universal conclusion is established.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CF-T5/audit.py",
+        "cycles/cycle-4/C4-CF-T5/audit_evidence.json",
+        "cycles/cycle-4/C4-CF-T5/producer_evidence.json"
+      ],
+      "reason": "retained: the derivative formula is an algebraic identity, and the fixed selector equals the all-leaf marked polynomial only after both strict selector tests are proved. The bounded checks do not supply those tests or a uniform coefficient comparison for all m,p."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CF-T5/REPORT.md",
+  "limitations": [
+    "The verified computation is limited to m=1,...,80 in the specified family and does not census ordinary trees.",
+    "The sealed producer replay omits the factor (1+2z) in the claw deletion polynomial; its claw selector differences are numerically wrong on every eligible row, although corrected selector signs and full sums were independently verified.",
+    "No all-parameter selector proof, all-parameter family sign proof, or proof of the primary ordinary-tree aggregate is supplied.",
+    "No external literature or Lean verification was used."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-T5-TM-ALL-OPEN",
+    "C4-T5-TM80-BOUNDED"
+  ]
+}

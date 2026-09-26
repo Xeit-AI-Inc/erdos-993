@@ -1,0 +1,44 @@
+{
+  "worker_id": "C5-CT-U1",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C5-U1.coefficient-window",
+      "statement": "For finite integer coefficient sequences with zero extension, if f=Gg+e and G(z)=sum_r c_r z^r, then Delta_p(f)=sum_r c_r Delta_(p-r)(g)+Delta_p(e). If the weighted window M=sum_r c_r Delta_(p-r)(g) is negative and |Delta_p(e)|<-M, then Delta_p(f)<0. This is an exact identity and conditional finite-window sign test; it gives no sign conclusion from central-only log-concavity or first descent alone.",
+      "scope": "Exact coefficient identity and stated conditional inequality for finite integer coefficient sequences at integer rank p under zero extension; no T_m-infinite or tree-wide conclusion.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CT-U1/REPORT.md"
+      ],
+      "reason": "The convolution identity and strict error margin are valid. The source correctly leaves shifted-window signs without no-recovery or a direct window certificate unresolved."
+    },
+    {
+      "claim_id": "C5-U1.Tm-bounded",
+      "statement": "For T_m consisting of path 0-1-2 and m disjoint three-tip claws attached at 0, for every eligible lower-region rank and each m=1,...,40, exact integer polynomial computation with the corrected tip-deletion polynomial gives S(T_m,p)<0; there are 427 eligible (m,p) rows.",
+      "scope": "Only the specified ordinary-tree family for m=1,...,40, with original leaves, original supports, strict favorable selector, both stated rank guards, distinct tip tags counted with multiplicity 3m, and the complete selected sum.",
+      "status": "proposed_bounded_computational",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CT-U1/REPLAY.py",
+        "cycles/cycle-5/C5-CT-U1/PRODUCER-EVIDENCE.json",
+        "cycles/cycle-5/C5-CT-U1/REPLAY-CORRECTED.py",
+        "cycles/cycle-5/C5-CT-U1/CORRECTED-EVIDENCE.json",
+        "cycles/cycle-5/C5-CT-U1/AUDIT-EVIDENCE.json"
+      ],
+      "reason": "The producer replay matches its pinned evidence, but its tip-deleted polynomial omits the isolated endpoint factor when 0 is selected. Correcting it changes 417 selector-difference values but zero strict selector signs among 854 comparisons. An independent exact replay verifies all 427 guards, original-orbit selectors, multiplicities, summands and negative full sums. No conclusion extends beyond m<=40 or this family."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CT-U1/REPORT.md",
+  "limitations": [
+    "The bounded T_m result has no implication for m>40 or arbitrary ordinary trees.",
+    "The source tip-deletion selector polynomial omits a factor (1+z); its selector difference values are not reliable even though the strict selector signs and full sums are unchanged in the corrected eligible rows.",
+    "Central-only log-concavity and first descent do not control the shifted coefficient window without an additional direct certificate or no-recovery premise.",
+    "No crossing-minor implication, infinite-family analytic proof, imported theorem application, global primary proof, refutation, or authoritative status is established."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-U1.coefficient-window",
+    "C5-U1.Tm-bounded"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "kind": "symbolic_exact_derivation",
+  "scope": "First-mark identities for one original leaf in any finite ordinary tree, plus the full eligible lower-region aggregate for stars K_{1,m}.",
+  "definitions": {
+    "H": "T minus {v,s_v}",
+    "W": "N_T(s_v) minus {v}",
+    "R": "T minus N_T[s_v] = H-W",
+    "G_w": "H minus (W_<w union N_H[w]) for a fixed total order on W",
+    "q_j": "i_j(H)-i_j(R), with integer zero extension",
+    "k": "p-1"
+  },
+  "identities": {
+    "marked_shell": "q_j = sum_{w in W} i_{j-1}(G_w)",
+    "first_mark_difference": "q_j-q_{j-1} = -sum_{w in W} Delta_{j-2}(G_w)",
+    "target_leaf_summand": "Delta_{p-1}(H)-Delta_{p-1}(R) = q_p-q_{p-1} = -sum_{w in W} Delta_{p-2}(G_w)",
+    "fixed_selector": "Delta_p(T-v) = -sum_{w in W} Delta_{p-1}(G_w) + i_{p+1}(R)-i_{p-1}(R)"
+  },
+  "star_certificate": {
+    "tree": "K_{1,m}, m>=4",
+    "independence_number": "a=m",
+    "first_descent": "x=ceil(m/2); Delta_0=m>0, Delta_1=binom(m,2)-(m+1)>0, and for j>=2 through m, Delta_j=binom(m,j+1)-binom(m,j); Delta_m=-1; later zero-extended differences are 0",
+    "exact_eligible_window": "ceil(3p/2) <= m <= 2p-4",
+    "window_nonempty": "p>=8; empty for p<=7 (p=6 would require 9<=m<=8, p=7 would require 11<=m<=10)",
+    "selector": "Every original leaf qualifies because Delta_p(K_{1,m-1})=binom(m-1,p+1)-binom(m-1,p)<0 in the exact window",
+    "per_tag_term": "binom(m-1,p)-binom(m-1,p-1)<0",
+    "aggregate": "S(K_{1,m},p)=m*(binom(m-1,p)-binom(m-1,p-1))<0"
+  },
+  "verification": "Direct binomial-ratio inequalities and the unique-first-mark bijection; no computation or imported theorem is used.",
+  "limitations": [
+    "The marked-shell identities do not establish the sign of the selected aggregate for general trees.",
+    "The star certificate does not cover p=6 or p=7 and resolves no general-tree exception at those ranks.",
+    "No universal conclusion follows from this family result."
+  ]
+}

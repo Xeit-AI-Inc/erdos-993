@@ -1,0 +1,50 @@
+{
+  "evidence_type": "bounded_structural_reduction_and_exact_replay",
+  "sector": {
+    "graph": "CB(8,92)",
+    "fixed_vertices": "hub and distinguished arm leaf",
+    "pair_count": 736,
+    "source_rank": 491,
+    "deletion_rank": 490,
+    "source_cardinality_formula": "2^491 * binom(736,491)",
+    "deletion_cardinality_formula": "2^490 * binom(736,490)",
+    "ordinary_deletion_ratio": "492/491",
+    "selected_tag_weight": "1 + number of selected branch leaves",
+    "source_weight_mass_formula": "2^491 * binom(736,491) * (1 + 491/2)",
+    "deletion_weight_mass_formula": "2^490 * binom(736,490) * (1 + 490/2)",
+    "weighted_mass_ratio": "493/491",
+    "unit_capacity_cardinality_deficit": "|R_490|/491",
+    "weighted_deletion_only_deficit": "2*W_490/491"
+  },
+  "bounded_graph_replay": {
+    "d": 8,
+    "m": 92,
+    "p": 492,
+    "order": 1567,
+    "alpha": 829,
+    "x": 490,
+    "eligible": true,
+    "favorable_original_leaf_count": 737,
+    "complete_selected_aggregate": "-748810430710227858618987651910033216703683417838216925198717803643429976026528835780589934131455008160734961984872181554253955973926828360343593801420958157569217597856332648092871718535396544094741662493496052937502544011852450401845369604971012815876222562893394568771491235318210974656559260615999226971281962526260215590753741136119108496073557120",
+    "conservative_cut": "hub and arm leaf present; no choke selected; every branch has support count unequal to one",
+    "upper_weight": "4101482524282706536636732941442225663895404582752087147205350593173831894688650981703735987466437564095657211831845605578873243884575043808229992143585377409693761649755306262928515643924423024603762327557519728831495266659489581339781121218559831439048800765373237966009669222210501351347582402376521510327775903765196607880512985222042615808",
+    "neighbor_weight_upper_bound": "73447368409458919912574727056655187171711099598240108532544667368639372962140273282952753519048289920558158809566654479728379014600157710807230272937568151647281707524958904271401673224657740933575457644122281582170625142088430688284700888203885164522798682948361480675939536758753257763263122182061240153082762924556471128140615421341483401216",
+    "lower_bound_on_deficit": "-69345885885176213375937994115212961507815695015488021385339316775465541067451622301249017531581852356462501597734808874149505770715582666999000280793982774237587945875203598008473157580733317908971695316564761853339129875428941106944919766985325333083749882182988242709929867536542756411915539779684718642754987020791274520260102436119440785408",
+    "cut_conclusion": "inconclusive; this is a conservative neighbor envelope, not an exact Hall neighborhood or flow"
+  },
+  "source_pins": {
+    "common_packet_hashes_verified": "237/237",
+    "graph_recipe": "instruments/cb-switch-cut/run.py",
+    "graph_replay": "instruments/cb-switch-cut/RESULTS.json",
+    "cut_protocol": "instruments/cb-switch-cut/PROTOCOL.md",
+    "relevant_direction_sources": [
+      "control/C3-CB-EXPORT-DIRECTION.md",
+      "control/C4-CB-COLORED-SHADOW-RESEARCH-DIRECTION.md"
+    ]
+  },
+  "limitations": [
+    "No Hall bound is established for arbitrary source subfamilies.",
+    "The two-for-one switch boundary has not been shown to cover the quantified deletion-only mass deficit.",
+    "The bounded CB calculation does not prove or refute the arbitrary-tree aggregate."
+  ]
+}

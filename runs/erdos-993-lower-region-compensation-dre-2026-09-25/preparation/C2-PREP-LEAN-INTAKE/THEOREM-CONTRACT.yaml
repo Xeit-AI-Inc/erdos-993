@@ -1,0 +1,324 @@
+{
+  "schema": "proposed.theorem-contract.json-compatible-yaml.v1",
+  "authority": "proposal_to_controller_only",
+  "contract_id": "C2-PREP-LEAN-INTAKE-ORDER-BAND-PAIR-PROPOSED",
+  "title": "Marked-isolate and ordinary-leaf order bands",
+  "informal_statement": "The two exact registered claims E993-MARKED-ISOLATE-ORDER-BAND and E993-ORDINARY-LEAF-ORDER-BAND, conjoined without additional graph or rank premises.",
+  "formulation_status": "registered OPEN; pinned independent informal audits pass exact scopes; proposed for formal intake only",
+  "known_counterexample_evidence": {
+    "within_scope": null,
+    "boundary_only": [
+      "k=1,m=3 can fail for the generic graph claim",
+      "m=2k+2 can fail for the generic graph claim"
+    ],
+    "other_claims": "unrestricted pointwise beta refutation does not address this order band"
+  },
+  "claims": [
+    "E993-MARKED-ISOLATE-ORDER-BAND",
+    "E993-ORDINARY-LEAF-ORDER-BAND"
+  ],
+  "definitions": [
+    {
+      "name": "E993OrderBand.IsolateCoveredOn",
+      "domain": "SimpleGraph V, U W : Finset V",
+      "meaning": "each vertex in U with no neighbor in U is in W",
+      "depends_on": [
+        "SimpleGraph.Adj",
+        "Finset membership"
+      ]
+    },
+    {
+      "name": "E993OrderBand.IsolateCovered",
+      "domain": "finite SimpleGraph V, W : Finset V",
+      "meaning": "all isolates of G are in W",
+      "depends_on": [
+        "E993OrderBand.IsolateCoveredOn",
+        "Finset.univ"
+      ]
+    },
+    {
+      "name": "E993OrderBand.markedCount",
+      "domain": "finite SimpleGraph V, W : Finset V, natural k",
+      "meaning": "cardinality of independent k-sets meeting W, zero beyond order",
+      "depends_on": [
+        "E993Interior.taggedFamily"
+      ]
+    },
+    {
+      "name": "C5LA1.H",
+      "domain": "original finite graph and original leaf v",
+      "meaning": "deletion set {v, support G v}",
+      "depends_on": [
+        "C5LA1.support"
+      ],
+      "reuse": "pinned FirstInteriorMain.lean, unchanged"
+    },
+    {
+      "name": "C5LA1.R",
+      "domain": "original finite graph and original leaf v",
+      "meaning": "deletion set N_G[support G v] in original G",
+      "depends_on": [
+        "C5LA1.support"
+      ],
+      "reuse": "pinned FirstInteriorMain.lean, unchanged"
+    },
+    {
+      "name": "C5LA1.forwardDifferenceDel",
+      "domain": "graph G, deletion finset D, natural rank",
+      "meaning": "integer i_(rank+1)(G-D)-i_rank(G-D), zero extended",
+      "depends_on": [
+        "C5LA1.indepSetCount"
+      ],
+      "reuse": "pinned FirstInteriorMain.lean, unchanged"
+    }
+  ],
+  "domains": [
+    {
+      "claim": "E993-MARKED-ISOLATE-ORDER-BAND",
+      "objects": "all finite simple graphs on arbitrary finite V; arbitrary W : Finset V; natural k",
+      "depends_on": [
+        "E993OrderBand.IsolateCovered",
+        "E993OrderBand.markedCount"
+      ]
+    },
+    {
+      "claim": "E993-ORDINARY-LEAF-ORDER-BAND",
+      "objects": "all finite ordinary trees on arbitrary finite V; every original degree-one leaf v; natural p",
+      "depends_on": [
+        "C4LA1.IsGraphLeaf",
+        "C5LA1.H",
+        "C5LA1.R",
+        "C5LA1.forwardDifferenceDel"
+      ]
+    }
+  ],
+  "quantified_binders": [
+    {
+      "conjunct": 1,
+      "binders": "∀ (V : Type u) [Fintype V] [DecidableEq V] (G : SimpleGraph V) [DecidableRel G.Adj] (W : Finset V) (k : ℕ)"
+    },
+    {
+      "conjunct": 2,
+      "binders": "∀ (V : Type u) [Fintype V] [DecidableEq V] (T : SimpleGraph V) [DecidableRel T.Adj] (v : V) (p : ℕ)"
+    }
+  ],
+  "hypotheses": [
+    {
+      "conjunct": 1,
+      "exact": [
+        "E993OrderBand.IsolateCovered G W",
+        "2 ≤ k",
+        "Fintype.card V ≤ 2 * k + 1"
+      ]
+    },
+    {
+      "conjunct": 2,
+      "exact": [
+        "T.IsTree",
+        "C4LA1.IsGraphLeaf T v",
+        "3 ≤ p",
+        "Fintype.card V ≤ 2 * p + 1"
+      ]
+    }
+  ],
+  "conclusion": [
+    {
+      "conjunct": 1,
+      "exact": "E993OrderBand.markedCount G W (k + 1) ≤ E993OrderBand.markedCount G W k"
+    },
+    {
+      "conjunct": 2,
+      "exact": "C5LA1.forwardDifferenceDel T (C5LA1.H T v) (p - 1) - C5LA1.forwardDifferenceDel T (C5LA1.R T v) (p - 1) ≤ 0"
+    }
+  ],
+  "dependency_dag": {
+    "nodes": [
+      {
+        "id": "old_base",
+        "kind": "pinned source",
+        "depends_on": [],
+        "output": "FirstInteriorMain.lean byte-identical"
+      },
+      {
+        "id": "new_defs",
+        "kind": "definition",
+        "depends_on": [
+          "old_base"
+        ],
+        "output": "DEFINITIONS.lean.fragment"
+      },
+      {
+        "id": "incidence",
+        "kind": "lemma",
+        "depends_on": [
+          "new_defs"
+        ],
+        "output": "relative-U marked incidence identity in Int"
+      },
+      {
+        "id": "odd_boundary",
+        "kind": "lemma",
+        "depends_on": [
+          "incidence"
+        ],
+        "output": "bad-set injection or edgeless equality"
+      },
+      {
+        "id": "relative_band",
+        "kind": "lemma",
+        "depends_on": [
+          "odd_boundary"
+        ],
+        "output": "relative-U marked order band"
+      },
+      {
+        "id": "leaf_bridge",
+        "kind": "lemma",
+        "depends_on": [
+          "old_base",
+          "new_defs"
+        ],
+        "output": "support, H/R, isolate coverage, count split"
+      },
+      {
+        "id": "terminal",
+        "kind": "theorem",
+        "depends_on": [
+          "relative_band",
+          "leaf_bridge"
+        ],
+        "output": "both registered conjuncts"
+      }
+    ],
+    "excluded_optional_source": "G1FirstWideMain.lean, because its 25 overlapping Erdos993G1 declarations collide with old_base and its first-wide classification is unnecessary for the recommended proof"
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructivity_policy": "Classical finite-graph reasoning allowed; no custom axioms, sorry, admit, or unproved theorem assumptions.",
+  "success_gates": [
+    "Controller binds exact source and statement hashes and chosen Lean/Mathlib pins.",
+    "Independent exact-scope informal audit remains attached.",
+    "Managed Lean source elaborates and kernel verifies the exact terminal statement with only permitted axioms.",
+    "Independent fidelity review checks original-tree, original-neighborhood, zero-extension, guards, and no hidden premises.",
+    "Controller alone assigns any status or registry change."
+  ],
+  "lean_binding": {
+    "planned_project_path": "LeanProject",
+    "planned_base_module_path": "LeanProject/LeanProof/FirstInteriorMain.lean",
+    "planned_source_path": "LeanProject/LeanProof/OrderBandMain.lean",
+    "declaration_name": "E993OrderBand.markedIsolateAndOrdinaryLeafOrderBand",
+    "declaration_kind": "theorem",
+    "exact_statement": "theorem E993OrderBand.markedIsolateAndOrdinaryLeafOrderBand :\n    (∀ (V : Type u) [Fintype V] [DecidableEq V]\n      (G : SimpleGraph V) [DecidableRel G.Adj]\n      (W : Finset V) (k : ℕ),\n      E993OrderBand.IsolateCovered G W →\n      2 ≤ k →\n      Fintype.card V ≤ 2 * k + 1 →\n      E993OrderBand.markedCount G W (k + 1) ≤\n        E993OrderBand.markedCount G W k) ∧\n    (∀ (V : Type u) [Fintype V] [DecidableEq V]\n      (T : SimpleGraph V) [DecidableRel T.Adj]\n      (v : V) (p : ℕ),\n      T.IsTree →\n      C4LA1.IsGraphLeaf T v →\n      3 ≤ p →\n      Fintype.card V ≤ 2 * p + 1 →\n      C5LA1.forwardDifferenceDel T (C5LA1.H T v) (p - 1) -\n        C5LA1.forwardDifferenceDel T (C5LA1.R T v) (p - 1) ≤ 0)",
+    "exact_statement_sha256": null,
+    "statement_hash_status": "MISSING CONTROLLER VALUE: compute from exact_statement after binding the managed source; no authority asserted by worker",
+    "run_root": null,
+    "run_root_status": "MISSING CONTROLLER VALUE: assign governed formalization run root",
+    "lean_toolchain_pin": null,
+    "mathlib_revision": null,
+    "pin_status": "MISSING CONTROLLER VALUES: assign approved exact Lean and Mathlib pins"
+  },
+  "source_materials": [
+    {
+      "path": "control/C2-REGISTERED-CLAIM-IDENTITY.json",
+      "role": "registered exact claim identity",
+      "sha256": "a02e53c2865e6b60a7ac97605ba806b08c31f032bae8b59a32c37067e2187da4",
+      "hash_authority": "brief pin, matched by worker; controller to recheck for formal intake"
+    },
+    {
+      "path": "control/C2-ORDER-BAND-CANDIDATE.md",
+      "role": "original marked-incidence candidate",
+      "sha256": "6a27d09bd8b78dc3aa5392047e31d630e95696a1995e39c4280c4909f92f6d89",
+      "hash_authority": "brief pin, matched by worker; controller to recheck for formal intake"
+    },
+    {
+      "path": "control/C2-ROOTED-MARK-ALTERNATIVE.md",
+      "role": "ordered component-root alternative",
+      "sha256": "a4967ed0f7b6c077ff01d06867a326861b5f86ac1e030f20601f69519a2519f6",
+      "hash_authority": "brief pin, matched by worker; controller to recheck for formal intake"
+    },
+    {
+      "path": "control-proposals/formal-intake/FirstInteriorMain.lean",
+      "role": "byte-identical proposed imported Lean base",
+      "sha256": "8d864da290947d75ac0cb52644b8b5336a19076878fcb11eeed552e6a118d7a9",
+      "hash_authority": "brief pin, matched by worker; controller to recheck for formal intake"
+    },
+    {
+      "path": "control-proposals/formal-intake/SOURCE-PIN.json",
+      "role": "origin pin for first-interior source",
+      "sha256": "a5801a2626be4368180598151f62889c6eb064baab3eb1fb2c17a3f2f207c86d",
+      "hash_authority": "brief pin, matched by worker; controller to recheck for formal intake"
+    },
+    {
+      "path": "control-proposals/formal-intake/G1FirstWideMain.lean",
+      "role": "read-only optional alternative, excluded from recommended dependency closure",
+      "sha256": "beabf73950968ea22e71fb7b02a946eb849b7cdce3a0541fa80a59f7bc485d89",
+      "hash_authority": "brief pin, matched by worker; controller to recheck for formal intake"
+    },
+    {
+      "path": "control-proposals/formal-intake/G1FirstWide-SOURCE-PIN.json",
+      "role": "origin pin for optional first-wide source",
+      "sha256": "b99961f3bdc1ee18c629847f3696072bae24e9dedc127ce816f1ffd94adcf541",
+      "hash_authority": "brief pin, matched by worker; controller to recheck for formal intake"
+    },
+    {
+      "path": "control-proposals/formal-intake/GENERIC-ORDER-BAND-VIA-FIRST-WIDE.md",
+      "role": "optional first-wide strategy",
+      "sha256": "4f90cec2034385220d24d00df65a336fbfccdbded4be32feaa05468f6fa6f16d",
+      "hash_authority": "brief pin, matched by worker; controller to recheck for formal intake"
+    },
+    {
+      "path": "control-proposals/formal-intake/FIRST-SHELL-TWO-PART-ROUTE.md",
+      "role": "A/B lemmas used only in optional comparison",
+      "sha256": "aa22b40fa85b6e7b0b9c5ae21f7014540e4953160f52af01a25da656a166877b",
+      "hash_authority": "brief pin, matched by worker; controller to recheck for formal intake"
+    },
+    {
+      "path": "governance/theorem-contract-SKILL.md",
+      "role": "contract policy",
+      "sha256": "583fab70f817541503a9671f9aadf20038df9dd70e4128027912ffb88fe1c2f4",
+      "hash_authority": "brief pin, matched by worker; controller to recheck for formal intake"
+    },
+    {
+      "path": "governance/lean-formalization-SKILL.md",
+      "role": "formalization policy",
+      "sha256": "c2bb1d81f0a5026673dcd58480f9634eb8e78bf9e6d37e1704c5b9c6a5b78cbd",
+      "hash_authority": "brief pin, matched by worker; controller to recheck for formal intake"
+    },
+    {
+      "path": "preparation/C2-PREP-ORDER-AUDIT/REPORT.md",
+      "role": "pinned independent informal generic and leaf audit",
+      "sha256": "e21da4f7d1485453a068e4510b2edc6ff4c694878dd438acad2865f3568be23c",
+      "hash_authority": "brief pin, matched by worker; controller to recheck for formal intake"
+    },
+    {
+      "path": "preparation/C2-PREP-ORDER-AUDIT/RESULTS.json",
+      "role": "pinned independent audit summary",
+      "sha256": "fe1651838bab59c28f0e598aea3dd22b74cb2fea770dd9273805768e144ffba4",
+      "hash_authority": "brief pin, matched by worker; controller to recheck for formal intake"
+    },
+    {
+      "path": "preparation/C2-PREP-STRATEGY/REPORT.md",
+      "role": "pinned independent ordered-root audit",
+      "sha256": "aeec2f82533b00ed2fdbe661cbd23cf9776ed3d82d51c8170e3a4defa8db69e6",
+      "hash_authority": "brief pin, matched by worker; controller to recheck for formal intake"
+    },
+    {
+      "path": "preparation/C2-PREP-STRATEGY/RESULTS.json",
+      "role": "pinned strategy summary",
+      "sha256": "7eb59b3ce84bdc021364452c42812528d321d93b816e4d827cbebb0f7b799280",
+      "hash_authority": "brief pin, matched by worker; controller to recheck for formal intake"
+    },
+    {
+      "path": "scratchpad/C2-PREP-LEAN-INTAKE/DEFINITIONS.lean.fragment",
+      "role": "new proposed definitions fragment; not Lean checked",
+      "sha256": "24b3bcaad6226f18ef562622b80736d4bd61ededd43147211fd9d377af726edc",
+      "hash_authority": "worker observation only; controller to bind"
+    }
+  ],
+  "source_hash_status": "Listed SHA-256 values came from the exact brief and matched worker rehashing; future managed source hashes and contract receipt remain controller owned.",
+  "formalization_status": "not_started_no_lean_commands",
+  "formal_award": false
+}

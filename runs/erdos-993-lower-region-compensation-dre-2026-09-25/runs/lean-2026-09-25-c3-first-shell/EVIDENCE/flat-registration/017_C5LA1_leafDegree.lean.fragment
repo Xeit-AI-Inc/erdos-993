@@ -1,0 +1,13 @@
+namespace C5LA1
+
+open SimpleGraph C4LA1
+
+variable {V : Type*} [Fintype V] [DecidableEq V]
+
+/-- `lambda(s)`: the number of leaves of `G` adjacent to `s`, zero off
+supports. -/
+noncomputable
+def leafDegree (G : SimpleGraph V) [DecidableRel G.Adj] (s : V) : Nat :=
+  ((leafSet G).filter fun v => G.Adj v s).card
+
+end C5LA1

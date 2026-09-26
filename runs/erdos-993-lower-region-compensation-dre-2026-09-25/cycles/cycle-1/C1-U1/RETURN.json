@@ -1,0 +1,35 @@
+{
+  "worker_id": "C1-U1",
+  "cycle": 1,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C1-U1-1",
+      "statement": "For every finite bipartite H, marked W, integer h >= alpha(H), and 1 <= k <= h, the registered identity k*q_(k+1)+C=2(h-k)*q_k-D holds with actual addable vertices and each multiply marked (k+1)-set counted once; D,C are nonnegative.",
+      "scope": "The tagged-incidence auxiliary exactly as defined in SOLUTION-CONTRACT.md, including k=h and q_k=0.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-U1/REPORT.md"
+      ],
+      "reason": "A direct incidence count gives k incidences for an extension with one mark and k+1 for any extension with at least two marks; the latter correction is exactly one per such set. Each color side of the actual addable set has at most h-k vertices, proving D>=0; C is nonnegative by definition."
+    },
+    {
+      "claim_id": "C1-U1-2",
+      "statement": "In the tree specialization, the exact deficit-budget margin equals k*sum_F(q_v(k)-q_v(k+1))=-k*S(T,p), so the proposed budget is equivalent to the original fixed-selector aggregate and does not follow from D,C>=0 alone.",
+      "scope": "Every eligible lower-region ordinary tree and its original favorable leaf tags, with h=a-1 and k=p-1.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-U1/REPORT.md"
+      ],
+      "reason": "Substitution of the exact identity proves the equivalence and exposes the remaining selector-level monotonicity bridge; no proof or eligible counterexample to that bridge was found."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-U1/REPORT.md",
+  "limitations": [
+    "The primary lower-region aggregate remains unresolved; the identity is not a global budget proof.",
+    "No ordinary-tree counterexample, universal monotonicity theorem, or external theorem bridge was established.",
+    "The report gives a direct proof and exact reformulation only; it makes no claim about the separately governed high-tail extraction obligation."
+  ],
+  "status_authority": "proposed_worker_only"
+}

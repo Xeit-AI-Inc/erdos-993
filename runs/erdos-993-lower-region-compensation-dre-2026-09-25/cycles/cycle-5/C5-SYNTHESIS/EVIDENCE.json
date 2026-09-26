@@ -1,0 +1,124 @@
+{
+  "schema": "e993.c5.synthesis.audit.v1",
+  "case_source_pins": 13,
+  "case_source_pins_match": true,
+  "common_scope_pins_checked": [
+    "SOLUTION-CONTRACT.md",
+    "WORKER-PROTOCOL.md",
+    "EXECUTION-POLICY.md",
+    "control/C5-NEUTRAL-HANDOFF.md",
+    "control/C5-INTAKE-RECONCILIATION.md",
+    "control/C5-SEARCH-ALLOCATION.json",
+    "inputs/C4-r27-linear-bound-intake/Main.lean",
+    "inputs/C4-r27-linear-bound-intake/THEOREM-CONTRACT.yaml",
+    "inputs/C4-r27-linear-bound-intake/VERIFICATION-REPORT.md",
+    "inputs/C4-r27-linear-bound-intake/kernel-verification.json"
+  ],
+  "common_scope_pins_match": true,
+  "source_claim_counts": [
+    6,
+    7,
+    11
+  ],
+  "covered_claim_ids": [
+    "C5-T1.TM-LOWER-REGION-AGGREGATE",
+    "C5-T2.HETEROGENEOUS-STAR-BOUNDED-CENSUS",
+    "C5-T3-MATCHING-ONLY-SLACK-OBSTRUCTION",
+    "C5-T4-SELECTOR-PENDANT-PATH-RECURRENCE",
+    "C5-T5-MATCHING-UP-RANK",
+    "C5-T6-THIRDSHELL-COVER6-P10",
+    "C5-F1-TM-CENTRAL-SURVIVAL",
+    "C5-F2-HETEROGENEOUS-BOUNDED-AUDIT",
+    "C5-F3-BOUNDED-ASYM-SEARCH",
+    "C5-F4.BOUNDED-PROPER-SELECTOR-SEARCH",
+    "C5-F5.T22-tagwise-obstruction",
+    "F6.low_cover_tau_ge_7",
+    "F6.six_arm_bounded_census",
+    "C5-U1.coefficient-window",
+    "C5-U1.Tm-bounded",
+    "C5-U2.STAR-PRODUCT-COEFFICIENT-BOUND",
+    "C5-U3-ALT-CUT",
+    "C5-U3-PRIMARY-GAP",
+    "C5-U4-LEMMA-1",
+    "C5-U5.support-star-sector",
+    "C5-U6-MARKED-SHELL-REDUCTION",
+    "C5-U6-STAR-LOWER-REGION",
+    "C5-U6-PRIMARY-STATUS",
+    "C5-AU.CORRECTED-MARKED-SHELL"
+  ],
+  "factor_checks": "finite-order ULC and displayed derivative inequalities pass",
+  "short_mixed_minor_leads": [
+    1,
+    1,
+    21
+  ],
+  "analytic_cutoffs": {
+    "LC": [
+      "114463976515372641562517941338228411041200160980224609375",
+      "4209007100772390509058978925077086614394939884704237891896"
+    ],
+    "A0": [
+      "1793268965407504717812781080965578439645469188690185546875",
+      "33672056806179124072471831400616692915159519077633903135168"
+    ],
+    "Astar": [
+      "16444657959375202837815077572258815052919089794158935546875",
+      "33672056806179124072471831400616692915159519077633903135168"
+    ],
+    "R": [
+      "5837662802284004719688415008249648963101208209991455078125",
+      "7365762426351683390853213118884901575191144798232416310818"
+    ]
+  },
+  "all_analytic_cutoffs_below_one": true,
+  "finite_base_reported": {
+    "m": [
+      3,
+      999
+    ],
+    "j": "m through 2m+2 inclusive",
+    "polynomials": [
+      "A0",
+      "Astar",
+      "R"
+    ],
+    "lc_checks": 1507464,
+    "mixed_minor_checks": 1507464,
+    "failure_counts": {
+      "lc": 0,
+      "mixed_minor": 0
+    },
+    "minimum_margins": {
+      "lc": [
+        "1210",
+        3,
+        "Astar",
+        8
+      ],
+      "mixed_minor": [
+        "1243",
+        3,
+        "Astar",
+        8
+      ]
+    }
+  },
+  "heterogeneous_stats_reported": {
+    "profiles": 285,
+    "eligible_rows": 913,
+    "positive_S": 0,
+    "empty_F_rows": 0,
+    "partial_F_rows": 0,
+    "all_F_rows": 913,
+    "all_rows_S_nonpositive": true
+  },
+  "u1_correction_reported": {
+    "eligible_rows": 427,
+    "selector_values_changed_from_wrong_source": 417,
+    "selector_strict_sign_changes": 0,
+    "nonnegative_full_sums": 0
+  },
+  "t22_full_sum_arithmetic_passes": true,
+  "cover6_full_sum_arithmetic_passes": true,
+  "limitation": "Does not replay the 1,507,464 finite margins or verify a Lean kernel; those remain pinned adjudicator evidence and imported receipts."
+}

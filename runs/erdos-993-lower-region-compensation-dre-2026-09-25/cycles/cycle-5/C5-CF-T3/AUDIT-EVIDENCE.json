@@ -1,0 +1,165 @@
+{
+  "audit_kind": "independent_exact_hand_audit",
+  "source_claim_id": "C5-T3-MATCHING-ONLY-SLACK-OBSTRUCTION",
+  "disposition": "retained_narrowed",
+  "local_graph_check": {
+    "H_vertices": [
+      "w",
+      "z",
+      "y1",
+      "y2"
+    ],
+    "H_edges": [
+      [
+        "z",
+        "y1"
+      ],
+      [
+        "z",
+        "y2"
+      ]
+    ],
+    "alpha_H": 3,
+    "maximum_matching_example": [
+      [
+        "z",
+        "y1"
+      ]
+    ],
+    "marked_set_W": [
+      "w",
+      "z"
+    ],
+    "rank_k": 1,
+    "marked_independent_set_A": [
+      "w"
+    ],
+    "addable_vertices": [
+      "z",
+      "y1",
+      "y2"
+    ],
+    "e_A": 3,
+    "h_minus_k": 2,
+    "actual_slack_2r_minus_e": 1,
+    "proposed_matching_only_lower_bound_2r_minus_2nu": 2,
+    "bound_fails": true,
+    "correct_matching_category_counts_for_displayed_matching": {
+      "m2_both_endpoints_addable": 1,
+      "m1_exactly_one_endpoint_addable": 0,
+      "m0_no_endpoint_addable": 0,
+      "u_unmatched_addable_vertices": 1
+    },
+    "matching_decomposition_check": "2r-e = 2(r-nu)+2m0+m1-u = 2 + 0 + 0 - 1 = 1"
+  },
+  "original_tree_check": {
+    "edges": [
+      [
+        "s",
+        "v"
+      ],
+      [
+        "s",
+        "w"
+      ],
+      [
+        "s",
+        "z"
+      ],
+      [
+        "z",
+        "y1"
+      ],
+      [
+        "z",
+        "y2"
+      ]
+    ],
+    "original_leaves": [
+      "v",
+      "w",
+      "y1",
+      "y2"
+    ],
+    "independence_counts_i0_through_i4": [
+      1,
+      6,
+      10,
+      6,
+      1
+    ],
+    "zero_extended_deltas_i1_through_i5": [
+      5,
+      4,
+      -4,
+      -5,
+      -1
+    ],
+    "alpha": 4,
+    "first_descent_x": 2,
+    "p": 2,
+    "selector_deltas_by_original_leaf": {
+      "v": -4,
+      "w": -4,
+      "y1": -4,
+      "y2": -4
+    },
+    "favorable_set": [
+      "v",
+      "w",
+      "y1",
+      "y2"
+    ],
+    "guard_x_plus_2_le_p": false,
+    "guard_3p_lt_2a_plus_1": true,
+    "guard_arithmetic": "3p=6 < 2a+1=9",
+    "rank1_summands_by_leaf": {
+      "v": 2,
+      "w": 2,
+      "y1": 2,
+      "y2": 2
+    },
+    "full_selected_sum_S": 8,
+    "eligibility_conclusion": "The positive full selected sum is outside the primary scope because p=2 does not satisfy x+2<=p (4<=2 is false); it is not a primary counterexample.",
+    "summand_replay": {
+      "v_and_w": {
+        "H_independence_counts_i0_through_i3": [
+          1,
+          4,
+          4,
+          1
+        ],
+        "R_independence_counts_i0_through_i2": [
+          1,
+          2,
+          1
+        ],
+        "delta_1_H": 3,
+        "delta_1_R": 1,
+        "summand": 2
+      },
+      "y1_and_y2": {
+        "H_independence_counts_i0_through_i3": [
+          1,
+          4,
+          4,
+          1
+        ],
+        "R_independence_counts_i0_through_i2": [
+          1,
+          2,
+          1
+        ],
+        "delta_1_H": 3,
+        "delta_1_R": 1,
+        "summand": 2
+      }
+    }
+  },
+  "review_limits": [
+    "The exact counterexample refutes only the proposed per-set matching-only lower bound.",
+    "The matching-category tuple in the source evidence/report is wrong for the displayed graph and matching; the corrected tuple is recorded above.",
+    "The source incorrectly labels the strict lower-region guard false; that guard is true, while the separate first-descent rank guard fails.",
+    "No conclusion about the registered lower-region aggregate follows from this ineligible positive sum."
+  ]
+}

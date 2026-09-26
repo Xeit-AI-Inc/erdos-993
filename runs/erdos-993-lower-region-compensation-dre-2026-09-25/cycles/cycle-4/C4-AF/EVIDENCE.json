@@ -1,0 +1,241 @@
+{
+  "pin_check": {
+    "common_files": 179,
+    "case_files": 112,
+    "mismatches": 0
+  },
+  "source_claim_union": [
+    "C4-F1-bounded-CTx-selector-search",
+    "C4-F2-BOUNDED-BUDGET-SEARCH",
+    "C4-F3-TM5-EXACT-REPLAY",
+    "C4-F4-BOUNDED-SELECTOR-RECURRENCE-PROBE",
+    "C4-F5-TM-EXACT-BOUNDED-CHECKS",
+    "C4-F6-LOW-COVER-SHELL-FAMILY-CHECK",
+    "E993-ORDINARY-TM-LOWER-REGION-AGGREGATE"
+  ],
+  "independent_arithmetic": {
+    "F1_order11": {
+      "x": 4,
+      "p": 6,
+      "i_x": 140,
+      "i_x_plus_1": 132,
+      "Q": 505,
+      "E": 1500,
+      "flat_gap": 1025,
+      "current_gap": 1025,
+      "actual_CTx_gap": 123300
+    },
+    "F2_star": {
+      "k": 11,
+      "q_per_tag": 31824,
+      "u_per_tag": 18564,
+      "E_per_tag": 222768,
+      "C_per_tag": 18564,
+      "term_per_tag": -13260,
+      "leaf_tags": 19,
+      "S": -251940
+    },
+    "F3_T5": {
+      "alpha": 17,
+      "x": 8,
+      "p": 10,
+      "selector_deltas": {
+        "endpoint": -8147,
+        "each_tip": -6751
+      },
+      "tags": {
+        "endpoint": 1,
+        "tip": 15
+      },
+      "terms": {
+        "endpoint": -1430,
+        "each_tip": -5519
+      },
+      "S": -84215,
+      "Q": 255270,
+      "U": 171055,
+      "correct_C_per_tip": 7263,
+      "correct_C_total": 108945,
+      "correct_E": 1648440,
+      "bad_source_C_per_tip": 16619,
+      "bad_source_C_total": 249285,
+      "bad_source_E": 1788780,
+      "C_polynomial_at_rank10_parts": [
+        2973,
+        4290
+      ]
+    },
+    "F4_fixture": {
+      "alpha": 11,
+      "x": 5,
+      "p": 7,
+      "tag_terms": [
+        -205,
+        -219,
+        -219,
+        -172,
+        -111,
+        -200,
+        -172,
+        -145
+      ],
+      "S": -1443,
+      "polynomial": [
+        1,
+        17,
+        120,
+        462,
+        1075,
+        1586,
+        1516,
+        945,
+        383,
+        99,
+        15,
+        1
+      ]
+    },
+    "F5_m3": {
+      "m": 3,
+      "p": 7,
+      "leaf_tags": 10,
+      "S": -1167
+    },
+    "F6_unique": {
+      "profile": [
+        2,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "alpha": 18,
+      "x": 8,
+      "p": 10,
+      "i_18": 1,
+      "delta_18": -1,
+      "delta_19": 0,
+      "leaf_tags": 17,
+      "S": -122805,
+      "independence_vector": [
+        1,
+        24,
+        253,
+        1566,
+        6400,
+        18419,
+        38970,
+        62650,
+        78593,
+        78515,
+        63348,
+        41582,
+        22199,
+        9548,
+        3240,
+        836,
+        154,
+        18,
+        1
+      ]
+    }
+  },
+  "bounded_populations": {
+    "F1": {
+      "seed": 993041,
+      "orders": [
+        8,
+        16
+      ],
+      "encodings": 1836,
+      "eligible": 37,
+      "proper": 0,
+      "p_above_x_plus_2": 0
+    },
+    "F2": {
+      "seed": 9930425,
+      "main_instances": 24067,
+      "main_eligible": 339,
+      "two_hub_eligible": 287,
+      "proper": 0,
+      "budget_violations": 0
+    },
+    "F3": {
+      "explicit_trees": 1,
+      "ranks": [
+        10
+      ]
+    },
+    "F4": {
+      "seed": 20260926,
+      "all_labeled_orders": [
+        2,
+        7
+      ],
+      "all_labeled_count": 18248,
+      "samples_per_order": 40,
+      "sampled_orders": [
+        16,
+        60
+      ],
+      "eligible_sample_rows": 2535,
+      "proper": 0,
+      "positive_S": 0
+    },
+    "F5": {
+      "Tm_m": [
+        1,
+        100
+      ],
+      "Tm_eligible": 2743,
+      "equal_arm_r": [
+        1,
+        6
+      ],
+      "equal_arm_m": [
+        1,
+        15
+      ],
+      "equal_arm_eligible": 347,
+      "lopsided_s": [
+        1,
+        2,
+        4,
+        5
+      ],
+      "lopsided_m": [
+        2,
+        20
+      ],
+      "lopsided_eligible": 400,
+      "graph_checked_Tm_eligible": 100,
+      "graph_checked_lopsided_eligible": 52
+    },
+    "F6": {
+      "seed": null,
+      "p": [
+        10,
+        13
+      ],
+      "sorted_positive_partition_candidates_by_p": [
+        199,
+        279,
+        384,
+        517
+      ],
+      "eligible_by_p": [
+        1,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "scope_corrections": {
+    "F1": "The source CT_x label names the flat gap; actual CT_x has i_x and i_(x+1) factors. Exact returned flat-budget assertion survives.",
+    "F3": "Report alpha prose and auxiliary C/E are wrong; exact RETURN alpha and direct complete S survive. Correct C uses H_v deletions.",
+    "F5": "Three tips share each of m distinct branch supports, not all 3m tips one support.",
+    "F6": "c=1 source selector omits original root leaf but has no eligible row; Delta_18=-1, Delta_19=0 in the eligible row."
+  }
+}

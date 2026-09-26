@@ -1,0 +1,42 @@
+{
+  "worker_id": "C3-CT-U3",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C3-U3-MARKED-COVER-SHELL",
+      "statement": "For every finite simple graph G with |V(G)|=2k+2, k>=2, tau(G)>=3, and marked set W containing a non-isolated vertex, q_(k+1)(G,W)<=q_k(G,W), where q_j counts independent j-sets meeting W.",
+      "scope": "Informal proof by the two-part marked-set split; relies on the registered exact first-wide graph classification and the arbitrary-mark order-(2k+1) reduction. No stronger order or rank scope is claimed.",
+      "status": "proposed_informal",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CT-U3/REPORT.md",
+        "cycles/cycle-3/C3-CT-U3/EVIDENCE.json"
+      ],
+      "reason": "retained: the marked split, incidence bounds, residual-order cases, cover argument, and exact first-wide theorem application check."
+    },
+    {
+      "claim_id": "C3-U3-FIRST-SHELL-POINTWISE",
+      "statement": "For every finite ordinary tree T, p>=3, |V(T)|=2p+2, and x(T)+2<=p, each original-leaf summand Delta_(p-1)(T-{v,s_v})-Delta_(p-1)(T-N_T[s_v]) is nonpositive; consequently the sum over the fixed favorable leaves is nonpositive.",
+      "scope": "First parent-order shell only, informal. Uses the marked-cover lemma and the cover-three early-descent contradiction; it does not establish the all-order lower-region aggregate or a formal award.",
+      "status": "proposed_informal",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CT-U3/REPORT.md",
+        "cycles/cycle-3/C3-CT-U3/EVIDENCE.json"
+      ],
+      "reason": "retained: the all-rank cover contradiction, leaf-cover identity, exact marked specialization, fixed selector, and separate same-support leaf tags check out within the first-shell scope."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CT-U3/REPORT.md",
+  "limitations": [
+    "The audit covers only the two source claims and does not resolve the primary aggregate outside order 2p+2.",
+    "The first-wide theorem is used at its exact registered scope; its separate proof was not reconstructed in this critique.",
+    "No replay, computation, Lean build, or external-literature search was performed.",
+    "The route report has one clerical sentence inconsistent with its own return claim IDs."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C3-U3-MARKED-COVER-SHELL",
+    "C3-U3-FIRST-SHELL-POINTWISE"
+  ]
+}

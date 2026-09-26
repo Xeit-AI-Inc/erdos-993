@@ -1,0 +1,10 @@
+namespace E993FirstShell
+
+lemma crossingIndex_negative {V : Type u} [Fintype V] [DecidableEq V]
+    (T : SimpleGraph V) [DecidableRel T.Adj] :
+    C5LA1.forwardDifferenceDel T ∅ (C5LA1.crossingIndex T) < 0 := by
+  classical
+  unfold C5LA1.crossingIndex
+  exact Nat.find_spec (p := fun k : ℕ => C5LA1.forwardDifferenceDel T ∅ k < 0) _
+
+end E993FirstShell

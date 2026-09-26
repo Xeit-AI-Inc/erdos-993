@@ -1,0 +1,15 @@
+# Unreviewed strengthening of audited second shell to all p>=3
+
+The sealed candidate and its independent audit prove n=2p+3,p>=8,x+2<=p pointwise. Do not rewrite them. The following additional argument may remove the p>=8 cutoff using tree edge count and the registered formal r27 linear descent bound. This is a controller proposal, not a new award or validated claim identity.
+
+For p3,4,5, the exact r27 bound E993-R27-FOREST-DESCENT-LINEAR-BOUND gives n<=4x at the actual negative first-descent rank x. Eligibility gives n<=4(p-2), whereas n=2p+3>4(p-2) for p<=5. Thus these ranks have no eligible parent. The bound includesk0 and allfiniteforests, delta aszero-extendedinteger; exactdeclaration Erdos993G1.forest_descent_linear_bound. Its source/receipt must be pinned before any new formal use; registry status alone is not copied proof text.
+
+For p6 or7, suppose a cover of size<=5 exists. Extend to C exactly5, with independent complement U of N=2p-2. Let d_c be each cover vertex's number of neighbors in U. Sum d_c is the number of cover-to-outside edges, at most |E(T)|=n-1=2p+2. Hence some c has d_c<=2 at p6, or d_c<=3 at p7. Every singleton {c} is an independent cover subset and actually occurs in the exact cover partition. Its coefficient contribution can therefore be kept exactly, rather than charged the worst Catalan floor. All other negative contributions keep the prior safe upper count; nonnegative shifted terms remain omitted.
+
+p6: N10. For r0..3, the original cover-five budget E(10,r)-sum_{a=1..min(5,r)}choose(5,a)Cat_(r-a) has margins9,30,60,60. At r4, E(10,4)=42; the special singleton has b=N-d_c>=8 and contributes E(b,3)>=E(8,3)=14. The other four singletons contribute at least -4Cat3=-20. The a2..4 terms contribute at least -10Cat2-10Cat1-5Cat0=-35. Thus Delta4>=42+14-20-35=1. Every Delta throughp-2=4 is positive, contradicting first strict descent x<=4.
+
+p7: N12. At r0..4, the original budget margins are11,49,139,245,237. At r5, E(12,5)=132; the special singleton has b>=9, E(b,4)>=E(9,4)=0. The other four singletons contribute at least-4Cat4=-56; the a2..5 budget is -10Cat3-10Cat2-5Cat1-Cat0=-76. Thus Delta5>=132-56-76=0. NONNEGATIVITY is enough: x is the first STRICT negative difference, so x<=5 is impossible. Do not incorrectly demand a strict positive margin here.
+
+Therefore for every possible eligible p>=6 at this parent order tau(T)>=6. The already audited first-hit and matching-four argument applies with k=p-1>=5, giving every original-leaf term<=0. Together with the vacuous p3..5 cases, this would prove the second-shell pointwise statement for all p>=3, without alpha or favorability assumptions. No extension to n>=2p+4, no general compensation/Hall/conjecture result.
+
+Needs independent audit of all constants, the cross-edge pigeonhole use, exact preservation of the chosen singleton term and the prior r27 bound's scope; then a fresh contract and formalization. Existing p>=8 review is not an attestation for this strengthened statement.

@@ -1,0 +1,25 @@
+{
+  "worker_id": "C4-T2",
+  "cycle": 4,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C4-T2-NEIGHBORHOOD-REDUCTION",
+      "statement": "For every eligible ordinary tree T and fixed favorable-leaf selector F, with k=p-1, Q the total marked independent k-set count, M the sum of open-neighborhood sizes over those marked sets, and C the per-tag count of multiply marked independent (k+1)-sets, the complete aggregate satisfies kS=(|V(T)|-2p)Q-M-C. In particular S<=0 whenever |V(T)|<=2p.",
+      "scope": "Exact algebraic reduction under the primary contract definitions; the conclusion S<=0 is asserted only in the subcase |V(T)|<=2p. No claim is made for |V(T)|>2p.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-T2/REPORT.md"
+      ],
+      "reason": "The addability incidence count is kU+C, each marked k-set has (n-2)-k-|N_H(A)| addable vertices, and S=U-Q. Substitution gives the formula. Nonnegativity of M and C proves the stated order subcase. The remaining universal compensation inequality is open in this work."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-T2/REPORT.md",
+  "limitations": [
+    "The required compensation M+C>=(|V(T)|-2p)Q is not established when |V(T)|>2p.",
+    "No universal flat or current-rank addability budget is proved or refuted.",
+    "No exact counterexample search, exhaustive census, external literature search, or formal verification was performed."
+  ],
+  "status_authority": "proposed_worker_only"
+}

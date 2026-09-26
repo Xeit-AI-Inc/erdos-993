@@ -1,0 +1,44 @@
+{
+  "worker_id": "C1-CU-T3",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C1-T3-1",
+      "statement": "For finite bipartite H with alpha(H)<=h, marked set W and 1<=k<=h, the stated exact marked incidence identity holds with D,C>=0. In the ordinary-tree specialization, each selected original leaf tag contributes q_v(k+1)-q_v(k), so the complete selected sum equals the sum of these tagged differences.",
+      "scope": "Exact finite bipartite incidence identity and its application to each selected original leaf of an eligible lower-region ordinary tree, retaining distinct tags for leaves with common support.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CU-T3/REPORT.md",
+        "cycles/cycle-1/C1-CU-T3/evidence/CONTROL-REPLAY.txt"
+      ],
+      "reason": "retained: The addability bound and incidence pair count prove the identity directly. The tree domain, alpha(H)=alpha(T)-1, 1<=k<=h, fixed selector and rank shift give the exact summand identity. This is an algebraic reformulation and does not prove the aggregate sign."
+    },
+    {
+      "claim_id": "C1-T3-2",
+      "statement": "The primary target is exactly the selected aggregate inequality sum_F q_v(k+1)<=sum_F q_v(k). An injection within each component of the disjoint union of per-tag incidence graphs is only sufficient and is too strong to hold universally: the T22 and T60 controls have a positive tag despite a negative complete sum. No proof of the aggregate inequality or eligible positive witness is established.",
+      "scope": "The fixed favorable selector F(T,p) in the exact lower-region ordinary-tree target; control obstruction to the proposed tagwise matching condition at T22 and T60 only.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CU-T3/REPORT.md",
+        "cycles/cycle-1/C1-CU-T3/evidence/CONTROL-REPLAY.txt",
+        "cycles/cycle-1/C1-CU-T3/evidence/t22-order91.json",
+        "cycles/cycle-1/C1-CU-T3/evidence/t60-order243.json"
+      ],
+      "reason": "retained_narrowed: The exact shadow reformulation leaves the target inequality unchanged. Positive summands in the standing controls prevent an upper-to-lower injection componentwise by tag, while their full sums remain negative. A cross-tag matching would require a new incidence rule and proof; none is supplied."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CU-T3/REPORT.md",
+  "limitations": [
+    "The global selected marked-shadow inequality remains unproved, and no eligible ordinary-tree counterexample is established.",
+    "The exact incidence identity is an equivalent reformulation of each summand and supplies no independent sign estimate.",
+    "T22 and T60 control rows were re-summed from pinned JSON copies; their graph generation and tree-DP computations were not independently rerun.",
+    "The K_(1,12) check is one finite control only; no exhaustive tree search or literature theorem was used."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-T3-1",
+    "C1-T3-2"
+  ]
+}

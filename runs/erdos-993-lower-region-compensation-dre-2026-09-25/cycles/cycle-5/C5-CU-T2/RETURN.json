@@ -1,0 +1,29 @@
+{
+  "worker_id": "C5-CU-T2",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C5-T2.HETEROGENEOUS-STAR-BOUNDED-CENSUS",
+      "statement": "For the path 0-1-2 with 1 through 10 star branches of arities 2, 3, or 4, all 913 eligible profile-rank rows in the complete nondecreasing-profile census have every original leaf selected and have exact aggregate S<0.",
+      "scope": "Finite family: every nondecreasing profile in {2,3,4}^m for 1<=m<=10 and every integer p satisfying x+2<=p and 3p<2alpha+1 for its specified tree. This is a bounded computational result, not an infinite-family theorem or a resolution of the registered primary.",
+      "status": "proposed_bounded_computational",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CU-T2/EVIDENCE.json",
+        "cycles/cycle-5/C5-CU-T2/PROFILE-CENSUS-replay.py",
+        "cycles/cycle-5/C5-CU-T2/PROFILE-CENSUS.json"
+      ],
+      "reason": "retained: the copied replay regenerated the pinned census exactly, and the finite profile boundary, graph encoding, selector tags, eligibility guards, deletion terms, and full row sums are consistent with the stated claim. This retains only the exact finite computational result; it supplies no proof beyond that boundary."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CU-T2/REPORT.md",
+  "limitations": [
+    "The replay uses the route implementation; a separately implemented polynomial engine was not run.",
+    "No analytic extension, selector theorem outside the census, or resolution of the registered lower-region aggregate is established."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-T2.HETEROGENEOUS-STAR-BOUNDED-CENSUS"
+  ]
+}

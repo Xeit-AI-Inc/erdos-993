@@ -1,0 +1,99 @@
+{
+  "worker_id": "C2-AU",
+  "cycle": 2,
+  "stage": "adjudication",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "E993-MARKED-ISOLATE-ORDER-BAND",
+      "statement": "For every finite simple graph G on m vertices, every W containing every isolate of G, and natural k>=2 with m<=2k+1, the numbers q_j of independent j-sets meeting W satisfy q_(k+1)<=q_k.",
+      "scope": "Arbitrary finite simple graphs, including empty marked families; isolate coverage, k>=2 and m<=2k+1 are retained. No tree, bipartite, selector, first-descent or alpha premise. Informal counting proof, not a formal award.",
+      "status": "proposed_proved_informal",
+      "evidence_paths": ["cycles/cycle-2/C2-AU/REPORT.md", "cycles/cycle-2/C2-AU/EVIDENCE.md"],
+      "reason": "retained: actual addability and marked-preserving deletion incidences give k(q_(k+1)-q_k)=(m-2k)q_k-B-C. At m=2k+1, B pays for sets meeting a non-isolate and adjoining one fixed non-isolate injects all-isolate k-sets into upper sets counted by C; edgeless equality follows by complementation. The route/critic prose that reverses the unique-mark deletion is corrected without changing the valid equation."
+    },
+    {
+      "claim_id": "E993-ORDINARY-LEAF-ORDER-BAND",
+      "statement": "For every finite ordinary tree T, original leaf v with original support s, and natural p>=3 with |V(T)|<=2p+1, Delta_(p-1)(T-{v,s})-Delta_(p-1)(T-N_T[s])<=0, with zero-extended counts and original-tree neighborhoods.",
+      "scope": "Exact registered pointwise ordinary-leaf order band; no favorable, alpha, x or residual premise. The selected complete sum is nonpositive only on this same order band. No claim on p=2 or |T|>=2p+2.",
+      "status": "proposed_proved_informal",
+      "evidence_paths": ["cycles/cycle-2/C2-AU/REPORT.md"],
+      "reason": "retained: H=T-{v,s} has |H|<=2(p-1)+1 and every H isolate is in W=N_T(s)\\{v}; the generic marked-isolate proof applies. Independently, the ordered-first-mark partition leaves residual graphs of order at most 2(p-1)-1 and the ordinary deletion/extension shadow inequality gives the same sign; edgeless and empty cases are checked. Both critics agree at the exact scope."
+    },
+    {
+      "claim_id": "C2-U3-ORDERED-SHELL-BOUND",
+      "statement": "For an original leaf tag v of an eligible ordinary shell tree |T|=2p+2, k=p-1, H=T-{v,s_v}, W=N_T(s_v)\\{v}, and marks ordered with a nonisolated component root w1 first, q_v(k+1)-q_v(k)=sum_i(i_k(J_i)-i_(k-1)(J_i)) for J_i=H-(N_H[w_i] union earlier marks). Only J_1 can have order 2k, exactly when deg_H(w1)=1; all later terms are nonpositive. With L_root=i_(k-1)(J_1) in that degree-one case and 0 otherwise, the sum of positive parts is at most L_root/k.",
+      "scope": "Per original leaf on the eligible first-order shell with |H|=2k+2; selector is not needed for the local lemma and remains fixed when summed. H is nonedgeless by shell eligibility. Repeated support tags remain distinct. Informal exact counting only.",
+      "status": "proposed_proved_informal",
+      "evidence_paths": ["cycles/cycle-2/C2-AU/REPORT.md", "cycles/cycle-2/C2-AU/EVIDENCE.md"],
+      "reason": "retained_narrowed: the first-mark bijection and shadow estimate are valid, but the route and CF critic incorrectly call an isolated second mark a second order-2k boundary. Its residual also deletes a neighbor of nonisolated w1, so its order is at most 2k-1. The corrected first-root-only bound follows; no aggregate sign follows."
+    },
+    {
+      "claim_id": "E993-LOWER-REGION-FIRST-ORDER-SHELL",
+      "statement": "For every finite ordinary tree T and natural p with |T|=2p+2, x(T)+2<=p and strict 3p<2alpha(T)+1, the complete original-favorable-leaf sum S(T,p) over distinct original leaves selected by Delta_p(T-v)<0 is nonpositive. This assertion is unresolved by the reviewed routes. A sufficient additional premise is Comp-root: k times the total nonnegative slack of all later ordered-root residuals over the fixed selected set is at least the total L_root of selected tags, where k=p-1.",
+      "scope": "Exact registered first-order shell; terminal-checked x, fixed strict original selector, original supports and neighborhoods, and complete same-support multiplicity. Comp-root is conditional and unproved under these guards.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-2/C2-AU/REPORT.md"],
+      "reason": "retained: the route states the correct open registered target. The corrected ordered decomposition makes Comp-root sufficient, but neither the guards nor strict selector have been connected to that global budget. No eligible positive complete-sum witness is supplied. CT's boundary correction prevails over the CF boundary account; both critics recognize the missing global bridge."
+    },
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "For each eligible ordinary-tree instance (T,p) and its one fixed original strict favorable set F, define w_F(B) as the number of selected leaves v in independent B for which (B minus {v}) meets W_v=N_T(s_v)\\{v}. Then S(T,p)=sum_(B in I_(p+1)(T))w_F(B)-sum_(A in I_p(T))w_F(A). On the actual one-vertex-deletion graph, an integral flow saturating upper supplies w_F(B) under lower capacities w_F(A) exists exactly when every upper-family X obeys sum_X w_F<=sum_(A in N_-(X))w_F; such a flow certifies S<=0. No universal cut or sign assertion is established.",
+      "scope": "Instancewise identities and conditional certificate for the registered lower-region aggregate x(T)+2<=p, strict 3p<2alpha(T)+1; fixed original selector, original supports/neighborhoods and distinct leaf tags. Failure of a flow cut does not refute S<=0.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-2/C2-AU/REPORT.md", "cycles/cycle-2/C2-AU/EVIDENCE.md"],
+      "reason": "retained_narrowed: tagwise adjoining of v proves the weighted-layer identity and finite max-flow/min-cut proves the flow criterion. A saturating flow is sufficient for the scalar sign. The full-upper-layer cut counts only lower sets extendable to that upper layer, so the route/CT identification of that cut with the scalar S inequality is not justified; CF correctly narrows it. No universal cut proof or positive full sum is given."
+    },
+    {
+      "claim_id": "U5-pendant-extension-tagged-sum-change",
+      "statement": "At p=8, the 18-vertex tree with center path 0-1-2-3-4-5 and two leaves 6+2i,7+2i at each center i=0,...,5, and its extension by vertex 18 adjacent to old leaf 10, both have alpha=12 and x=6 and satisfy the primary guards. Every current leaf is favorable, but old leaf tag 10 disappears, new tag 18 appears, and the complete sums change from -4256 to -6267. Pendant polynomial and selector recurrences hold with the corrected residual-deletion case distinction.",
+      "scope": "One exact 18-to-19-vertex pair at p=8, plus elementary conditional pendant recurrences. Neither sum is positive; no universal sign, extension reduction or census is asserted. The old and new supports and all repeated original leaf tags are checked.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-2/C2-AU/REPORT.md", "cycles/cycle-2/C2-AU/EVIDENCE.md"],
+      "reason": "retained_narrowed: an independent replay with the packet-listed checked evaluator confirms full coefficient vectors through terminal descent, all strict selector values, all original-support summands and both complete sums. The source's phrase that u survives outside R is corrected: if u is deleted from R as a neighbor of s, w survives isolated; if u=s, w is deleted too. The example shows only non-invariance, not a counterexample to nonpositivity."
+    },
+    {
+      "claim_id": "C2-U6.shell-state-framework",
+      "statement": "For each fixed p and ordinary shell tree |T|=2p+2, full I_T and, for every original leaf tag v, its support and full polynomials I_(T-v), I_(T-{v,s_v}), I_(T-N_T[s_v]), together with the leaf-indexed tag list, suffice to compute alpha(T), terminal-checked x(T), each strict selector bit and complete S(T,p) exactly. Rooted include/exclude polynomial messages and forest factorization compute the data.",
+      "scope": "Exact evaluation state at each fixed shell rank only; finite because the order is fixed. No useful compression, uniform finite kernel, completed census, or sign assertion.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-2/C2-AU/REPORT.md"],
+      "reason": "retained: B_Q=z product A_child, A_Q=product(A_child+B_child), and component products give exact deletion polynomials. Scanning I_T through its terminal zero coefficient gives x; P_v gives selectors; H_v and R_v give summands; the leaf-indexed list preserves equal-support multiplicity. Both critics confirm the exact fixed-p sufficiency and its limited scope."
+    },
+    {
+      "claim_id": "C2-U6.shell-vertex-cover-bound",
+      "statement": "Every ordinary shell tree with |T|=2p+2 and strict 3p<2alpha(T)+1 satisfies tau(T)=|T|-alpha(T)<=floor(p/2)+2.",
+      "scope": "A necessary arithmetic bound from the shell order and lower-region guard only; no x, selector, fixed-order or sum-sign consequence.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-2/C2-AU/REPORT.md"],
+      "reason": "retained: integer strictness gives 3p<=2alpha and alpha>=ceil(3p/2). Subtracting from 2p+2 yields floor(p/2)+2 for both parities. The bound grows with p and carries no sign conclusion; both critics agree."
+    },
+    {
+      "claim_id": "C2-U6.primary-shell-open",
+      "statement": "The C2-U6 fixed-p state representation and necessary vertex-cover bound leave the exact complete selected-sum inequality S(T,p)<=0 on the eligible first-order shell unresolved by that route.",
+      "scope": "Ordinary T with |T|=2p+2, terminal-checked x(T)+2<=p, strict 3p<2alpha(T)+1, fixed original strict favorable selector, original supports/neighborhoods and full repeated-tag sum. This describes a route limitation, not an authoritative mathematical status.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-2/C2-AU/REPORT.md"],
+      "reason": "retained: exact evaluation and a growing necessary vertex-cover bound neither prove the shell sign nor yield a realizable eligible positive complete sum. Both critics correctly preserve this route-level open limitation; the independent U3 conditional reduction also leaves the global budget unproved."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-AU/REPORT.md",
+  "limitations": [
+    "No Lean formalization, kernel receipt, or authoritative award is supplied; the universal order-band proofs are informal counting proofs.",
+    "The eligible first-order shell and unrestricted lower-region complete selected-sum assertion remain unresolved by these sources: the selector-conditioned global compensation budget and universal weighted rank comparison are unproved, and no positive full-sum witness was supplied.",
+    "The pendant-extension computation is one exactly encoded pair, not an exhaustive generation or census, and both complete sums are negative.",
+    "The weighted deletion-flow cuts are sufficient certificates for S<=0 but may be stronger than the scalar inequality; a failed cut alone would not refute the primary."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-U3-ORDERED-SHELL-BOUND",
+    "C2-U6.primary-shell-open",
+    "C2-U6.shell-state-framework",
+    "C2-U6.shell-vertex-cover-bound",
+    "E993-LOWER-REGION-FIRST-ORDER-SHELL",
+    "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+    "E993-MARKED-ISOLATE-ORDER-BAND",
+    "E993-ORDINARY-LEAF-ORDER-BAND",
+    "U5-pendant-extension-tagged-sum-change"
+  ]
+}

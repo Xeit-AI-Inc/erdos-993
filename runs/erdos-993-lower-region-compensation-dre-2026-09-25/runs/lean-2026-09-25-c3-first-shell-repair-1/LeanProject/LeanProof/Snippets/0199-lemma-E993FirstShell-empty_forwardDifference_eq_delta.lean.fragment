@@ -1,0 +1,9 @@
+namespace E993FirstShell
+
+lemma empty_forwardDifference_eq_delta {V : Type u} [Fintype V] [DecidableEq V]
+    (T : SimpleGraph V) [DecidableRel T.Adj] (k : ℕ) :
+    C5LA1.forwardDifferenceDel T ∅ k = Erdos993G1.delta T (k : ℤ) := by
+  rw [C5LA1.forwardDifferenceDel, Erdos993G1.delta_nat,
+    indepSetCount_empty_eq, indepSetCount_empty_eq]
+
+end E993FirstShell

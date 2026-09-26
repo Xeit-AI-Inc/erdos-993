@@ -1,0 +1,25 @@
+{
+  "worker_id": "C3-U2",
+  "cycle": 3,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-AGGREGATE-RANK-LE-SEVEN",
+      "statement": "For every finite ordinary tree T and natural p<=7 with x(T)+2<=p and 3p<2alpha(T)+1, the complete sum over original leaves v with Delta_p(T-v)<0 of Delta_(p-1)(T-{v,s_v})-Delta_(p-1)(T-N_T[s_v]) is nonpositive.",
+      "scope": "Ranks p=3..7; all nonempty ordinary trees at those eligible ranks. The argument reduces p=3..5 to the marked-isolate order band and p=6..7 to five exact residual census slices after applying the registered first-descent forest maxima. Census-dependent bounded-computation scope only; no p>=8 or governed-tree assertion.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-U2/EVIDENCE.json"
+      ],
+      "reason": "The rank/order split is exhaustive if the registered M(1..5) values and 4k global order bound and the informal marked-isolate order-band lemma are admitted at their stated grades. All five residual outputs report exact complete sums strictly negative, with every eligible row subset-replayed; the order-17/18 scope-label correction is identified and applied. This supports only the stated census-dependent composition. Full generators were not rerun in this seat and the universal primary status remains open to controller review."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-U2/REPORT.md",
+  "limitations": [
+    "The order-band lemma is informal and was audited from its stated proof, not formally verified here.",
+    "M(1..5) and the five residual slices retain their bounded-computation grades; the full tree generators were not rerun in this seat.",
+    "The composition establishes no conclusion for p>=8, the all-rank primary, or governed-tree transport."
+  ],
+  "status_authority": "proposed_worker_only"
+}

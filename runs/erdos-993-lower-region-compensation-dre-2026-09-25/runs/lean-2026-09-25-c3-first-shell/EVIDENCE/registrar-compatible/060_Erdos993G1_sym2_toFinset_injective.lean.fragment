@@ -1,0 +1,7 @@
+lemma sym2_toFinset_injective [DecidableEq V] :
+    Function.Injective (Sym2.toFinset : Sym2 V → Finset V) := by
+  intro a b h
+  apply Sym2.ext
+  intro v
+  simpa only [Sym2.mem_toFinset] using iff_of_eq (congrArg (v ∈ ·) h)
+

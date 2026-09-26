@@ -1,0 +1,11 @@
+lemma cover_available_empty (F : SimpleGraph X) [DecidableRel F.Adj] (C : Finset X) :
+    ((univ : Finset X).filter
+      (fun x => x ∉ C ∧ ∀ y ∈ (∅ : Finset X), ¬F.Adj y x)).card =
+      Fintype.card X - C.card := by
+  have he : (univ : Finset X).filter
+      (fun x => x ∉ C ∧ ∀ y ∈ (∅ : Finset X), ¬F.Adj y x) = univ \ C := by
+    ext x
+    simp
+  rw [he,card_sdiff_of_subset (subset_univ _),card_univ]
+
+-- Seat U3 Main.lean Step 1: renamed card-5 lemmas (rename done FIRST per charter)

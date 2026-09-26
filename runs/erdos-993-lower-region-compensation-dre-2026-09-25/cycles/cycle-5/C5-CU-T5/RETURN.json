@@ -1,0 +1,29 @@
+{
+  "worker_id": "C5-CU-T5",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C5-T5-MATCHING-UP-RANK",
+      "statement": "For J_h equal to a disjoint union of h edges, the unsigned independent-set inclusion operator U_r from rank r to rank r+1 is injective for every integer r with 0 <= r < h/2. The tag-preserving direct sum over matching blocks is injective under the corresponding per-block inequalities, and its restriction to columns meeting any fixed marked set in each block remains injective.",
+      "scope": "Finite matching graphs J_h without isolated vertices; real vector spaces on independent sets; integer rank 0 <= r < h/2. For finitely many distinct tags v, each H_v must be isomorphic to J_(h_v), with r < min_v h_v/2. The tagged map retains tags and does not assert a capacity inequality after blocks are merged or a sign for the registered tree aggregate.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CU-T5/EVIDENCE.json",
+        "cycles/cycle-5/C5-CU-T5/REPLAY.py"
+      ],
+      "reason": "retained: the diagonal terms are 2(h-r) and r; off-diagonal terms cancel except endpoint swaps, giving the stated commutator. The swap operator is symmetric with norm at most r, so the quadratic form is at least (2h-4r)||f||^2, strictly positive for nonzero f when r<h/2. The direct-sum and marked-column conclusions follow by restriction of an injective map. Exact finite replay corroborates the identity and ranks for h<=5; no cross-tag capacity or primary-tree bridge is shown."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CU-T5/REPORT.md",
+  "limitations": [
+    "The rank claim is limited to disjoint unions of edges and the strict range r<h/2; the exact finite replay is only corroborative.",
+    "The route does not establish matching structure or the required rank condition for selected leaf-deletion graphs H_v in an ordinary tree.",
+    "The tagged direct sum retains tags and supplies no capacity inequality after tags are merged, no bound for the D+C budget, and no proof of the primary aggregate."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-T5-MATCHING-UP-RANK"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "worker_id": "C5-U3",
+  "cycle": 5,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C5-U3-ALT-CUT",
+      "statement": "For each fixed selected leaf v, the marked k-to-(k+1) independent-set incidence graph has left degrees e(A), right degrees k for singly marked upper sets and k+1 for multiply marked upper sets, hence E_v=k U_v+C_v. In any finite bipartite graph, alternating reachability in a maximum matching from S unmatched left vertices yields N(X)=Y and |X|-|N(X)|=|S|.",
+      "scope": "Exact structural identities for H_v, W_v, k=p-1 and the fixed selector F(T,p) of the primary contract; no assertion that the resulting Hall cut proves the primary weighted budget.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-U3/REPORT.md",
+        "cycles/cycle-5/C5-U3/EVIDENCE.json"
+      ],
+      "reason": "The incidence count follows by counting edges by both endpoints and retaining every original leaf tag. The matching statement follows from maximum-matching alternating reachability: a reached right vertex cannot be free, and matching edges pair Y with X\\S."
+    },
+    {
+      "claim_id": "C5-U3-PRIMARY-GAP",
+      "statement": "The alternating-path decomposition supplies no weighted lower bound sum_{v in F}(D_v+C_v)>=(2a+1-3p)Q and no established link from the first-descent condition to the relevant Hall cuts; the full primary aggregate remains unresolved by this route.",
+      "scope": "Search conclusion for the ordinary-tree lower-region favorable-leaf aggregate under the exact contract hypotheses.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-U3/REPORT.md",
+        "cycles/cycle-5/C5-U3/EVIDENCE.json"
+      ],
+      "reason": "The derived cut identity is unweighted, while the target requires a weighted deficit bound at a positive lower-region coefficient. No map, charge, or concrete compensating cut inequality was established."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-U3/REPORT.md",
+  "limitations": [
+    "No case-listed worker source files or source claim IDs were supplied; no prior worker output was used.",
+    "The alternating-path lemma is not connected to a weighted charge controlled by Delta_j(T) or the strict selector.",
+    "No full T22 graph, weights, or numerical certificate was in the assigned source set, so no T22-specific conclusion is made.",
+    "No exhaustive computation or literature theorem was used; the primary aggregate is unresolved."
+  ],
+  "status_authority": "proposed_worker_only"
+}

@@ -1,0 +1,116 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "erdos-993-lower-region-compensation-dre-2026-09-25-v1",
+  "theorem": {
+    "title": "REPLACE WITH PRECISE THEOREM TITLE",
+    "informal_statement": "REPLACE WITH EXACT INTENDED STATEMENT"
+  },
+  "formulation_status": {
+    "status": "open",
+    "evidence": []
+  },
+  "definitions": [
+    {
+      "id": "def-example",
+      "description": "Define every nonstandard term.",
+      "lean_name": "ExampleDefinition",
+      "dependencies": []
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-example",
+      "description": "Describe the quantified domain and constraints.",
+      "lean_type": "Type",
+      "dependencies": []
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "x",
+      "kind": "forall",
+      "domain_id": "domain-example"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-example",
+      "statement": "State the hypothesis without strengthening it.",
+      "dependencies": [
+        "def-example",
+        "domain-example"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "State the exact intended conclusion.",
+    "dependencies": [
+      "hyp-example"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "def-example",
+        "kind": "definition"
+      },
+      {
+        "id": "domain-example",
+        "kind": "domain"
+      },
+      {
+        "id": "hyp-example",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "def-example",
+        "to": "hyp-example"
+      },
+      {
+        "from": "domain-example",
+        "to": "hyp-example"
+      },
+      {
+        "from": "hyp-example",
+        "to": "conclusion"
+      }
+    ]
+  },
+  "permitted_axioms": [],
+  "constructivity": {
+    "required": true,
+    "policy": "constructive_only",
+    "rationale": "No classical dependency is needed for this target."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "example_theorem",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "REPLACE WITH EXACT LEAN STATEMENT",
+    "expected_statement_sha256": "REPLACE WITH SHA256"
+  },
+  "source_materials": [
+    {
+      "id": "source-intent",
+      "path": "SOURCE/intended-theorem.txt",
+      "sha256": "REPLACE WITH SHA256",
+      "role": "theorem_intent"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+lemma binomDelta_step_up (m k : ℕ) (hm : 2*k ≤ m) :
+    (m.choose (k+1) : ℤ) - m.choose k ≤
+      ((m+1).choose (k+1) : ℤ) - (m+1).choose k := by
+  cases k with
+  | zero => simp
+  | succ j =>
+    have hc := FirstWide.choose_step_strict (n := m) (k := j) (by omega)
+    have hc' : (m.choose j : ℤ) ≤ m.choose (j+1) := by exact_mod_cast hc.le
+    have hp := binomDelta_pascal m j
+    linarith

@@ -1,0 +1,40 @@
+{
+  "worker_id": "C6-CU-F3",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "U",
+  "source_pin_check": {
+    "case_files_checked": 4,
+    "common_files_checked": 237,
+    "mismatches": 0
+  },
+  "independent_replay": {
+    "copied_case_replay": "REPLAY.py",
+    "output": "replay-output.json",
+    "grouped_factor_pairs": 121,
+    "largest_reported_least_ulc_order": 962,
+    "largest_order_pair": [12, 2],
+    "cutoff_parameters": {
+      "D": 12,
+      "h": 17,
+      "m": 100000000,
+      "C": 2384960530636
+    },
+    "9mC_epsilon_decimal": 0.013328111998270626,
+    "cutoff_scalar_below_one": true
+  },
+  "independent_graph_formula_check": {
+    "script": "audit_graph_formulas.py",
+    "output": "graph-formula-check.json",
+    "profiles": [[2], [2, 3]],
+    "enumeration_boundary": "All vertex subsets of the explicitly constructed 6-vertex and 10-vertex trees.",
+    "checks": [
+      "full independence polynomial against P",
+      "endpoint deletion polynomial against A0",
+      "endpoint marked difference polynomial",
+      "each distinct private-tip marked difference polynomial"
+    ],
+    "result": "all exact coefficient comparisons passed"
+  },
+  "review_boundary": "The exact factor table, cutoff scalar, and small-profile graph formulas were checked. The all-profile mixed-minor perturbation envelopes, shifted-index bounds, and uniform infinite-family transfer were not fully rederived in this review."
+}

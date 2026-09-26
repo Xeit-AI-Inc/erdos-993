@@ -1,0 +1,28 @@
+{
+  "worker_id": "C5-CU-T1",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C5-T1.TM-LOWER-REGION-AGGREGATE",
+      "statement": "For the specified T_m family, the complete ordinary favorable-leaf sum is strictly negative at every eligible lower-region rank, conditional on the admitted forest descent bound and the stated finite-base computation.",
+      "scope": "Only the ordinary trees T_m consisting of path a-b-r and m three-tip claws at r, with original leaves and the fixed strict selector. The algebraic decomposition and large-m argument are internally consistent. The finite computation for m=3..999 was not independently replayed in this critique; the result does not address arbitrary ordinary trees or the registered all-tree aggregate.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CU-T1/REPLAY.py"
+      ],
+      "reason": "retained_narrowed: retain the exact family-level conclusion subject to its stated forest-descent dependency and finite-base arithmetic, but keep it proposed open because the copied replay could not execute under the host Xcode license gate. The polynomials, original-tip tag multiplicity, full-sum identity, rank guards, and selector propagation were checked algebraically; no universal-tree inference is supported."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CU-T1/REPORT.md",
+  "limitations": [
+    "The pinned replay was copied to scratch but could not execute because the available Python invocation was blocked by the host Xcode license prompt; its finite checks and reported minima were not independently reproduced.",
+    "The family conclusion depends on the admitted forest descent bound and does not establish the all-tree lower-region aggregate.",
+    "No proof-kernel certificate was checked."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-T1.TM-LOWER-REGION-AGGREGATE"
+  ]
+}

@@ -1,0 +1,3 @@
+# Evidence: marked-isolate order-band proof audit
+
+The complete count identity and its boundary argument are given in `REPORT.md`, under the headings “Proof audit” and “Scope and limitations.” The proof is finite and exact: each marked lower set contributes its actual number of addable vertices; upper sets with multiple marks are counted once in `C` beyond their k marked-preserving deletions. At the odd boundary, the good/bad partition gives `B>=#good`, and the fixed-nonisolate injection gives `C>=#bad`. In the edgeless case complementation gives exact equality. Thus every case in `m<=2k+1` is covered.

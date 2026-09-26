@@ -1,0 +1,28 @@
+{
+  "worker_id": "C2-CU-T3",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C2-T3-shell-root-shadow",
+      "statement": "At the first shell n=2p+2, the complete fixed-selector sum is nonpositive for eligible ordinary trees when every selected leaf-deletion forest has no isolates and has a marked root of degree at least two; the empty selector is vacuous. The stated vertex-cover bound holds, while the residual order-2k boundary contributions remain uncompensated.",
+      "scope": "Ordinary finite trees T with n=2p+2, x(T)+2<=p, and 3p<2alpha(T)+1; F(T,p) is the original strict favorable-leaf selector, original supports and neighborhoods are used, and same-support leaf tags remain distinct. For each v in F, H_v has no isolates and some W_v root has H_v-degree at least two; F may be empty. No conclusion is made outside this subclass.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CU-T3/EVIDENCE.md"
+      ],
+      "reason": "retained: the first-mark partition is exact, and the deletion-shadow bound proves every selected summand is nonpositive when the specified root condition and absence of isolates hold. The shell cover arithmetic and exclusion of selected edgeless forests check out. The source correctly leaves isolate or degree-one-root boundary cases uncompensated, so neither the full shell claim nor the primary aggregate is established."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CU-T3/REPORT.md",
+  "limitations": [
+    "This review validates only the exact selected-tag subclass claim and does not prove the full first-shell sum or the lower-region aggregate.",
+    "The residual order-2k shadow excesses for selected forests with isolates or only degree-one marked roots have no established global compensation here.",
+    "No finite computation, imported theorem, or formal verification was performed; the status remains proposed_worker_only."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-T3-shell-root-shadow"
+  ]
+}

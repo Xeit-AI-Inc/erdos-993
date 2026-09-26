@@ -1,0 +1,521 @@
+{
+  "scope": {
+    "family": "root 0 joined to six centers 1..6, with l_i>=0 private leaves at center i",
+    "order": "n=2p+4, p in {10,11,12,13}",
+    "composition_boundary": "all ordered nonnegative 6-part compositions of 2p-3",
+    "cover_bound": "the six centers form a vertex cover",
+    "eligibility": "x+2<=p and 3p<2alpha+1, with x first strict descent of zero-extended polynomial"
+  },
+  "method": "Exact integer polynomial identities: P=prod_i((1+z)^l_i+z)+z(1+z)^L; per-leaf-deleted polynomial and H,R factors computed directly. Selected leaves reconstructed from Delta_p(T-v)<0. No random sampling.",
+  "independent_cross_checks": "ordinary_tree_checked.py forest DP on balanced tuple for each p and the supplied (3,3,3,3,3,2) p=10 row; exact full polynomial, x, selector size, every selected term and S compared.",
+  "enumeration": [
+    {
+      "p": 10,
+      "order": 24,
+      "positive_six_part_compositions": 26334,
+      "eligible_compositions": 6,
+      "eligible_rows_with_positive_pointwise_term": 0,
+      "eligible_rows_all_pointwise_terms_nonpositive": 6,
+      "first_descent_histogram_over_all_compositions": {
+        "11": 36,
+        "10": 7860,
+        "9": 18432,
+        "8": 6
+      },
+      "ineligibility_counts": {
+        "first_descent_guard": 26328
+      },
+      "minimum_pointwise_delta": -13234,
+      "minimum_pointwise_witness": {
+        "p": 10,
+        "order": 24,
+        "branch_leaf_counts": [
+          2,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "alpha": 18,
+        "x": 8,
+        "eligible": true,
+        "original_leaf_count": 17,
+        "favorable_branch_count": 6,
+        "favorable_leaf_count": 17,
+        "pointwise_delta_min": -13234,
+        "pointwise_delta_max": -12357,
+        "positive_pointwise_branch_count": 0,
+        "zero_pointwise_branch_count": 0,
+        "negative_pointwise_branch_count": 6,
+        "summands": [
+          {
+            "branch": 0,
+            "vertex_type": "private_leaf",
+            "leaf_multiplicity": 2,
+            "delta_p_T_minus_leaf": -13234,
+            "g": -4875,
+            "branch_contribution": -9750
+          },
+          {
+            "branch": 1,
+            "vertex_type": "private_leaf",
+            "leaf_multiplicity": 3,
+            "delta_p_T_minus_leaf": -12357,
+            "g": -7537,
+            "branch_contribution": -22611
+          },
+          {
+            "branch": 2,
+            "vertex_type": "private_leaf",
+            "leaf_multiplicity": 3,
+            "delta_p_T_minus_leaf": -12357,
+            "g": -7537,
+            "branch_contribution": -22611
+          },
+          {
+            "branch": 3,
+            "vertex_type": "private_leaf",
+            "leaf_multiplicity": 3,
+            "delta_p_T_minus_leaf": -12357,
+            "g": -7537,
+            "branch_contribution": -22611
+          },
+          {
+            "branch": 4,
+            "vertex_type": "private_leaf",
+            "leaf_multiplicity": 3,
+            "delta_p_T_minus_leaf": -12357,
+            "g": -7537,
+            "branch_contribution": -22611
+          },
+          {
+            "branch": 5,
+            "vertex_type": "private_leaf",
+            "leaf_multiplicity": 3,
+            "delta_p_T_minus_leaf": -12357,
+            "g": -7537,
+            "branch_contribution": -22611
+          }
+        ],
+        "aggregate": -122805,
+        "tree_polynomial": [
+          1,
+          24,
+          253,
+          1566,
+          6400,
+          18419,
+          38970,
+          62650,
+          78593,
+          78515,
+          63348,
+          41582,
+          22199,
+          9548,
+          3240,
+          836,
+          154,
+          18,
+          1
+        ]
+      },
+      "maximum_pointwise_delta": -12357,
+      "maximum_pointwise_witness": {
+        "p": 10,
+        "order": 24,
+        "branch_leaf_counts": [
+          2,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "alpha": 18,
+        "x": 8,
+        "eligible": true,
+        "original_leaf_count": 17,
+        "favorable_branch_count": 6,
+        "favorable_leaf_count": 17,
+        "pointwise_delta_min": -13234,
+        "pointwise_delta_max": -12357,
+        "positive_pointwise_branch_count": 0,
+        "zero_pointwise_branch_count": 0,
+        "negative_pointwise_branch_count": 6,
+        "summands": [
+          {
+            "branch": 0,
+            "vertex_type": "private_leaf",
+            "leaf_multiplicity": 2,
+            "delta_p_T_minus_leaf": -13234,
+            "g": -4875,
+            "branch_contribution": -9750
+          },
+          {
+            "branch": 1,
+            "vertex_type": "private_leaf",
+            "leaf_multiplicity": 3,
+            "delta_p_T_minus_leaf": -12357,
+            "g": -7537,
+            "branch_contribution": -22611
+          },
+          {
+            "branch": 2,
+            "vertex_type": "private_leaf",
+            "leaf_multiplicity": 3,
+            "delta_p_T_minus_leaf": -12357,
+            "g": -7537,
+            "branch_contribution": -22611
+          },
+          {
+            "branch": 3,
+            "vertex_type": "private_leaf",
+            "leaf_multiplicity": 3,
+            "delta_p_T_minus_leaf": -12357,
+            "g": -7537,
+            "branch_contribution": -22611
+          },
+          {
+            "branch": 4,
+            "vertex_type": "private_leaf",
+            "leaf_multiplicity": 3,
+            "delta_p_T_minus_leaf": -12357,
+            "g": -7537,
+            "branch_contribution": -22611
+          },
+          {
+            "branch": 5,
+            "vertex_type": "private_leaf",
+            "leaf_multiplicity": 3,
+            "delta_p_T_minus_leaf": -12357,
+            "g": -7537,
+            "branch_contribution": -22611
+          }
+        ],
+        "aggregate": -122805,
+        "tree_polynomial": [
+          1,
+          24,
+          253,
+          1566,
+          6400,
+          18419,
+          38970,
+          62650,
+          78593,
+          78515,
+          63348,
+          41582,
+          22199,
+          9548,
+          3240,
+          836,
+          154,
+          18,
+          1
+        ]
+      },
+      "minimum_full_aggregate": -122805,
+      "minimum_aggregate_witness": {
+        "p": 10,
+        "order": 24,
+        "branch_leaf_counts": [
+          2,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "alpha": 18,
+        "x": 8,
+        "eligible": true,
+        "original_leaf_count": 17,
+        "favorable_branch_count": 6,
+        "favorable_leaf_count": 17,
+        "pointwise_delta_min": -13234,
+        "pointwise_delta_max": -12357,
+        "positive_pointwise_branch_count": 0,
+        "zero_pointwise_branch_count": 0,
+        "negative_pointwise_branch_count": 6,
+        "summands": [
+          {
+            "branch": 0,
+            "vertex_type": "private_leaf",
+            "leaf_multiplicity": 2,
+            "delta_p_T_minus_leaf": -13234,
+            "g": -4875,
+            "branch_contribution": -9750
+          },
+          {
+            "branch": 1,
+            "vertex_type": "private_leaf",
+            "leaf_multiplicity": 3,
+            "delta_p_T_minus_leaf": -12357,
+            "g": -7537,
+            "branch_contribution": -22611
+          },
+          {
+            "branch": 2,
+            "vertex_type": "private_leaf",
+            "leaf_multiplicity": 3,
+            "delta_p_T_minus_leaf": -12357,
+            "g": -7537,
+            "branch_contribution": -22611
+          },
+          {
+            "branch": 3,
+            "vertex_type": "private_leaf",
+            "leaf_multiplicity": 3,
+            "delta_p_T_minus_leaf": -12357,
+            "g": -7537,
+            "branch_contribution": -22611
+          },
+          {
+            "branch": 4,
+            "vertex_type": "private_leaf",
+            "leaf_multiplicity": 3,
+            "delta_p_T_minus_leaf": -12357,
+            "g": -7537,
+            "branch_contribution": -22611
+          },
+          {
+            "branch": 5,
+            "vertex_type": "private_leaf",
+            "leaf_multiplicity": 3,
+            "delta_p_T_minus_leaf": -12357,
+            "g": -7537,
+            "branch_contribution": -22611
+          }
+        ],
+        "aggregate": -122805,
+        "tree_polynomial": [
+          1,
+          24,
+          253,
+          1566,
+          6400,
+          18419,
+          38970,
+          62650,
+          78593,
+          78515,
+          63348,
+          41582,
+          22199,
+          9548,
+          3240,
+          836,
+          154,
+          18,
+          1
+        ]
+      },
+      "maximum_full_aggregate": -122805,
+      "maximum_aggregate_witness": {
+        "p": 10,
+        "order": 24,
+        "branch_leaf_counts": [
+          2,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "alpha": 18,
+        "x": 8,
+        "eligible": true,
+        "original_leaf_count": 17,
+        "favorable_branch_count": 6,
+        "favorable_leaf_count": 17,
+        "pointwise_delta_min": -13234,
+        "pointwise_delta_max": -12357,
+        "positive_pointwise_branch_count": 0,
+        "zero_pointwise_branch_count": 0,
+        "negative_pointwise_branch_count": 6,
+        "summands": [
+          {
+            "branch": 0,
+            "vertex_type": "private_leaf",
+            "leaf_multiplicity": 2,
+            "delta_p_T_minus_leaf": -13234,
+            "g": -4875,
+            "branch_contribution": -9750
+          },
+          {
+            "branch": 1,
+            "vertex_type": "private_leaf",
+            "leaf_multiplicity": 3,
+            "delta_p_T_minus_leaf": -12357,
+            "g": -7537,
+            "branch_contribution": -22611
+          },
+          {
+            "branch": 2,
+            "vertex_type": "private_leaf",
+            "leaf_multiplicity": 3,
+            "delta_p_T_minus_leaf": -12357,
+            "g": -7537,
+            "branch_contribution": -22611
+          },
+          {
+            "branch": 3,
+            "vertex_type": "private_leaf",
+            "leaf_multiplicity": 3,
+            "delta_p_T_minus_leaf": -12357,
+            "g": -7537,
+            "branch_contribution": -22611
+          },
+          {
+            "branch": 4,
+            "vertex_type": "private_leaf",
+            "leaf_multiplicity": 3,
+            "delta_p_T_minus_leaf": -12357,
+            "g": -7537,
+            "branch_contribution": -22611
+          },
+          {
+            "branch": 5,
+            "vertex_type": "private_leaf",
+            "leaf_multiplicity": 3,
+            "delta_p_T_minus_leaf": -12357,
+            "g": -7537,
+            "branch_contribution": -22611
+          }
+        ],
+        "aggregate": -122805,
+        "tree_polynomial": [
+          1,
+          24,
+          253,
+          1566,
+          6400,
+          18419,
+          38970,
+          62650,
+          78593,
+          78515,
+          63348,
+          41582,
+          22199,
+          9548,
+          3240,
+          836,
+          154,
+          18,
+          1
+        ]
+      }
+    },
+    {
+      "p": 11,
+      "order": 26,
+      "positive_six_part_compositions": 42504,
+      "eligible_compositions": 0,
+      "eligible_rows_with_positive_pointwise_term": 0,
+      "eligible_rows_all_pointwise_terms_nonpositive": 0,
+      "first_descent_histogram_over_all_compositions": {
+        "12": 36,
+        "11": 10470,
+        "10": 31998
+      },
+      "ineligibility_counts": {
+        "first_descent_guard": 42504
+      },
+      "minimum_pointwise_delta": null,
+      "minimum_pointwise_witness": null,
+      "maximum_pointwise_delta": null,
+      "maximum_pointwise_witness": null,
+      "minimum_full_aggregate": null,
+      "minimum_aggregate_witness": null,
+      "maximum_full_aggregate": null,
+      "maximum_aggregate_witness": null
+    },
+    {
+      "p": 12,
+      "order": 28,
+      "positive_six_part_compositions": 65780,
+      "eligible_compositions": 0,
+      "eligible_rows_with_positive_pointwise_term": 0,
+      "eligible_rows_all_pointwise_terms_nonpositive": 0,
+      "first_descent_histogram_over_all_compositions": {
+        "13": 36,
+        "12": 13280,
+        "11": 52464
+      },
+      "ineligibility_counts": {
+        "first_descent_guard": 65780
+      },
+      "minimum_pointwise_delta": null,
+      "minimum_pointwise_witness": null,
+      "maximum_pointwise_delta": null,
+      "maximum_pointwise_witness": null,
+      "minimum_full_aggregate": null,
+      "minimum_aggregate_witness": null,
+      "maximum_full_aggregate": null,
+      "maximum_aggregate_witness": null
+    },
+    {
+      "p": 13,
+      "order": 30,
+      "positive_six_part_compositions": 98280,
+      "eligible_compositions": 0,
+      "eligible_rows_with_positive_pointwise_term": 0,
+      "eligible_rows_all_pointwise_terms_nonpositive": 0,
+      "first_descent_histogram_over_all_compositions": {
+        "14": 36,
+        "13": 16410,
+        "12": 81834
+      },
+      "ineligibility_counts": {
+        "first_descent_guard": 98280
+      },
+      "minimum_pointwise_delta": null,
+      "minimum_pointwise_witness": null,
+      "maximum_pointwise_delta": null,
+      "maximum_pointwise_witness": null,
+      "minimum_full_aggregate": null,
+      "minimum_aggregate_witness": null,
+      "maximum_full_aggregate": null,
+      "maximum_aggregate_witness": null
+    }
+  ],
+  "independent_checks": [
+    {
+      "p": 10,
+      "branch_leaf_counts": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        2
+      ],
+      "polynomial_match": true,
+      "x_match": true,
+      "selector_count_match": true,
+      "all_selected_terms_match": true,
+      "aggregate_match": true
+    },
+    {
+      "p": 10,
+      "branch_leaf_counts": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        2
+      ],
+      "polynomial_match": true,
+      "x_match": true,
+      "selector_count_match": true,
+      "all_selected_terms_match": true,
+      "aggregate_match": true
+    }
+  ],
+  "generation_count_total": 232898
+}

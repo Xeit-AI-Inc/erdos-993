@@ -1,0 +1,3 @@
+lemma firstDescent_iso (e : F ≃g G) : firstDescent F = firstDescent G := by
+  simp only [firstDescent, delta_iso e]
+

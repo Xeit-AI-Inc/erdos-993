@@ -1,0 +1,25 @@
+namespace Erdos993G1.FirstWide
+
+lemma intersecting_edges_count_shapes {V : Type u} [Finite V]
+    (G : SimpleGraph V) (r : ℕ) (hr : 1 ≤ r) (hn : Nat.card V = 2*r+2)
+    (hedge : 2 ≤ Nat.card G.edgeSet)
+    (hnone : ¬ ∃ a b c d : V, G.Adj a b ∧ G.Adj c d ∧
+      Disjoint ({a,b} : Set V) {c,d}) :
+    (∃ q : ℕ, q ≤ 2*r-1 ∧ ∀ j : ℕ,
+      Erdos993G1.indepCount G j = binomCoeff (2*r+1) (j : ℤ) +
+        binomCoeff q ((j : ℤ)-1)) ∨
+    (∀ j : ℕ, Erdos993G1.indepCount G j =
+      binomCoeff (2*r-1) (j : ℤ) + 3*binomCoeff (2*r-1) ((j : ℤ)-1)) := by
+  rcases intersecting_edges_center_or_triangle G hedge hnone with h | h
+  · obtain ⟨a,b,c,hab,hac,hbc,hc⟩ := h
+    obtain ⟨q,hq,hqcount⟩ := coeff_center G hab hac hbc hc
+    left
+    refine ⟨q,by omega,?_⟩
+    have hn' : Nat.card V-1 = 2*r+1 := by omega
+    simpa [hn'] using hqcount
+  · obtain ⟨a,b,c,hab,hac,hbc,hG⟩ := h
+    right
+    have hn' : Nat.card V-3 = 2*r-1 := by omega
+    simpa [hn'] using coeff_triangle G hab hac hbc hG
+
+end Erdos993G1.FirstWide

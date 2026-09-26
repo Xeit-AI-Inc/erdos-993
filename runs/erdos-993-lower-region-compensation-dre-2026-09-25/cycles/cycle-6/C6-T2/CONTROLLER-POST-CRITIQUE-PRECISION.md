@@ -1,0 +1,10 @@
+# Post-critique controller precision note; original outputs unchanged
+
+Both opposing critics retained the exact m>=2000 arity2..4 candidate. This note is supplied only after their completion for neutral adjudication, not as a status award. The final proof must independently check and state the following distinctions.
+
+1. A marked sequence Z_i must descend at index p-2 to give (Z_i)_(p-1)-(Z_i)_(p-2)<0. Producer and critics sometimes say p-1. Their crossing-at-x and LC propagation across every index through p cover the required p-2 because x<=p-2; state this correctly in the final theorem, without relying on descent at p-1 alone.
+2. Normalize marked perturbation estimates to b0=L^N, with actual b=t*b0 and t=(N+1)/N<2. For H=(1+2z)H_i and a=F_r H, the envelopes a_(j+1)<=35H_j, V_j<=6569H_j, d_j<=20(b0)_j, and b_(j+1)<=8(b0)_j bound the two adverse mixed products by53252 epsilon H_j^2. The first bound on d uses d=zL^(N+1), so d_j=(b0)_(j-1)+(b0)_(j-2)<=20(b0)_j; the last uses t<2 and the binomial ratio cap4. Since (b0)_j/H_j<=epsilon and the main minor is at least3H_j^2/(j+1), this is dominated by26776(j+1)epsilon<1. No extra t is needed with this explicit normalization. C6-CF-T2's conservative alternative700t+52552 also stays within the same controlling constant; resolve notation rather than treating either as an unqualified original formula.
+3. For deletions, b=zL^N, d_j<=5b_j and b_(j+1)<=4b_j; a_(j+1)<=100H_j and V_j<=6569H_j yield26776 epsilon H_j^2. Common H for tip/marked mixed minors is(1+2z)H_i of degree>=N-3; raw H_i may have degreeN-4 and is used for the coefficientwise epsilon domination. State exactly which factor receives each ratio bound.
+4. B1=1+2z is already the listed order1 linear factor; explicitly include its use for an arity2 tip deletion. All original tags remain distinct; Z_i redistributes only the endpoint contribution in the complete sum and is not the individual tip's marked polynomial.
+
+These are precise proof clarifications for independent adjudication. No sealed producer or critic record is rewritten, and the primary arbitrary-tree target remains unresolved.

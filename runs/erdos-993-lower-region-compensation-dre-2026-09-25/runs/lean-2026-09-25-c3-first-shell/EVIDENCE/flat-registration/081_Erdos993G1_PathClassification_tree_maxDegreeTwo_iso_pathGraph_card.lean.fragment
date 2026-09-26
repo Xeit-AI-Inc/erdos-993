@@ -1,0 +1,21 @@
+lemma tree_maxDegreeTwo_iso_pathGraph_card {V : Type u} [Finite V] {G : SimpleGraph V}
+    (hG : G.IsTree) (hdeg : ∀ v, Nat.card (G.neighborSet v) ≤ 2) :
+    Nonempty (G ≃g SimpleGraph.pathGraph (Nat.card V)) := by
+  classical
+  letI : Nonempty V := hG.connected.nonempty
+  obtain ⟨a, b, p, hp, hmax⟩ := Walk.exists_isPath_forall_isPath_length_le_length G
+  have hspan := longestPath_spanning hG.connected p hp hmax hdeg
+  let e := p.toSubgraph.spanningCoeEquivCoeOfSpanning hspan
+  have hc : p.toSubgraph.spanningCoe.Connected :=
+    e.connected_iff.mpr p.toSubgraph_connected.coe
+  have heq : p.toSubgraph.spanningCoe = G := le_antisymm
+    p.toSubgraph.spanningCoe_le ((isTree_iff_minimal_connected.mp hG).2 hc
+      p.toSubgraph.spanningCoe_le)
+  let e2 : G ≃g p.toSubgraph.coe :=
+    cast (congrArg (fun H : SimpleGraph V => H ≃g p.toSubgraph.coe) heq) e
+  let e3 : G ≃g SimpleGraph.pathGraph (p.length + 1) :=
+    e2.trans hp.pathGraphIsoToSubgraph.symm
+  have hlen : Nat.card V = p.length + 1 := by
+    simpa using Nat.card_congr e3.toEquiv
+  exact ⟨cast (congrArg (fun n => G ≃g SimpleGraph.pathGraph n) hlen.symm) e3⟩
+

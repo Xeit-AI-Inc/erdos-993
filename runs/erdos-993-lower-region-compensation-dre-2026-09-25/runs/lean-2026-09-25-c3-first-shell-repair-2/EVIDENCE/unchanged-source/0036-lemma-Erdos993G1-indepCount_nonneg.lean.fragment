@@ -1,0 +1,3 @@
+lemma indepCount_nonneg (k : ℕ) : 0 ≤ indepCount F k := by
+  exact Int.natCast_nonneg _
+

@@ -1,0 +1,28 @@
+{
+  "worker_id": "C1-CF-U2",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C1-U2-1",
+      "statement": "For every eligible ordinary tree T and p, if the exact selected sum S(T,p) is positive, then some original favorable leaf tag v and independent (p-1)-set A of H_v meeting W_v have at least p vertices addable in H_v. Consequently, if every such marked set for every selected tag has at most p-1 addable vertices, then S(T,p)<=0.",
+      "scope": "Retained as a conditional necessary criterion and sufficient obstruction to positivity under the exact contract eligibility, selector, original support and neighborhood definitions, and tag multiplicities. It does not resolve the primary aggregate target.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CF-U2/EVIDENCE.md"
+      ],
+      "reason": "retained: the bipartite addable-vertex capacity and exact marked-extension incidence count give (p-1)S=(2a+1-3p)Q-E with nonnegative per-set deficits and multiply marked extensions counted once in C. Since eligibility makes p-1 and 2a+1-3p positive, S>0 forces a selected deficit below 2a+1-3p, equivalent to e_v(A)>=p. Conversely, the asserted uniform bound makes D>=cQ and forces S<=0. The source proof checks alpha(H_v)=a-1 and uses the unchanged selector; no material proof gap was found. This remains conditional and supplies no primary verdict."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CF-U2/REPORT.md",
+  "limitations": [
+    "The conditional criterion does not prove the addability bound for all eligible ordinary trees and does not establish the primary aggregate inequality.",
+    "No positive witness or primary counterexample is supplied; the listed negative-sum controls do not exercise the positive-sum antecedent.",
+    "No computation was replayed because the audited claim is established by a direct exact incidence count."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-U2-1"
+  ]
+}

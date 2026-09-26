@@ -1,0 +1,9 @@
+lemma indepCount_zero [Finite V] : indepCount F 0 = 1 := by
+  classical
+  letI := Fintype.ofFinite V
+  rw [indepCount_eq_card_indepSetFinset]
+  have h : F.indepSetFinset 0 = {∅} := by
+    ext S
+    simp [SimpleGraph.mem_indepSetFinset_iff, isNIndepSet_zero_iff]
+  simp [h]
+

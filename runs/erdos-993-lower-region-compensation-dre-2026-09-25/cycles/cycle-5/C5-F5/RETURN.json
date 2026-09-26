@@ -1,0 +1,23 @@
+{
+  "worker_id": "C5-F5",
+  "cycle": 5,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C5-F5.T22-tagwise-obstruction",
+      "statement": "On the pinned T22 order-91 control, the eligible selected aggregate is -498754180547001418536 even though the distinguished selected tag has g=212336130412243110 (k*g=7007092303604022630 for k=33); therefore any budget requiring every tag to pay its own local demand fails on this control.",
+      "scope": "Exact arithmetic for the single pinned T22 control row in inputs/standing-controls/t22-order91.json; applies only to pointwise/tagwise charging and does not refute a global cross-tag map or the primary aggregate.",
+      "status": "proposed_bounded",
+      "evidence_paths": ["cycles/cycle-5/C5-F5/EVIDENCE.json"],
+      "reason": "The positive marked-tag contribution and all 66 equal negative star-tag contributions are listed in the hash-verified control row; exact multiplication and summation are replayed in the worker evidence. No full-network incidence data is specified in the read-first assignment, so this is a bounded mechanism obstruction, not a global Hall-cut or kernel certificate."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-F5/REPORT.md",
+  "limitations": [
+    "The read-first assignment does not provide enough basis, incidence, weight, and mixed-boundary rules to instantiate the named global unsigned two-for-one Hall relation.",
+    "The T22 control values are taken from the pinned standing-control row; this route replays their arithmetic but does not independently recompute the graph polynomial or selector.",
+    "The local positive tag is not a deficient cut for a network that permits cross-tag transfers, and the negative full aggregate does not resolve the primary claim."
+  ],
+  "status_authority": "proposed_worker_only"
+}

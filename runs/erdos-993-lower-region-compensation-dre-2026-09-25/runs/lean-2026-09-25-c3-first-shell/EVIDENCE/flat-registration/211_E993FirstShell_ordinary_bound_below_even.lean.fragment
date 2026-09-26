@@ -1,0 +1,17 @@
+namespace E993FirstShell
+
+open Classical
+
+/-- The elementary ordinary shadow inequality at an even-size bound. -/
+lemma ordinary_bound_below_even {V : Type u} [Fintype V] [DecidableEq V]
+    (G : SimpleGraph V) [DecidableRel G.Adj] (U : Finset V)
+    (k : ℕ) (hk : 1 ≤ k) (hU : U.card ≤ 2 * k) :
+    ((U.powersetCard (k + 1)).filter
+      (fun A : Finset V => G.IsIndepSet (A : Set V))).card ≤
+    ((U.powersetCard k).filter
+      (fun A : Finset V => G.IsIndepSet (A : Set V))).card := by
+  have h := E993OrderBand.marked_bound_below_even G U U k hk hU
+  rw [tagged_self G U (k+1) (by omega), tagged_self G U k (by omega)] at h
+  exact h
+
+end E993FirstShell

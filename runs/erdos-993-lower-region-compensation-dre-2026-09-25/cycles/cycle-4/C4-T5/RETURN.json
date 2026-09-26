@@ -1,0 +1,37 @@
+{
+  "worker_id": "C4-T5",
+  "cycle": 4,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C4-T5-TM80-BOUNDED",
+      "statement": "For the specified two-orbit tree family T_m, every eligible lower-region rank at each 1<=m<=80 has both original leaf orbits favorable and has a strictly negative complete selected sum.",
+      "scope": "Exact finite coefficient computation on the family T_m for m=1,...,80 and every p satisfying x(T_m)+2<=p, p<=alpha(T_m), and 3p<2alpha(T_m)+1. This does not cover m>80 or trees outside the family.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-T5/evidence.json",
+        "cycles/cycle-4/C4-T5/replay.py"
+      ],
+      "reason": "The included replay uses exact integer polynomial convolution, checks the terminal zero-extended descent and both strict orbit selectors separately, and records each complete selected sum. It yields 1,749 eligible rows and no nonnegative sum. This is only a bounded family result."
+    },
+    {
+      "claim_id": "C4-T5-TM-ALL-OPEN",
+      "statement": "The exact derivative identity for the all-leaf marked polynomial does not establish the selected aggregate sign for all eligible m and p; the all-parameter T_m sign and both universal orbit-selector claims remain unresolved here.",
+      "scope": "The infinite specified T_m family under the ordinary-tree lower-region hypotheses; no universal conclusion is claimed.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-T5/evidence.json",
+        "cycles/cycle-4/C4-T5/replay.py"
+      ],
+      "reason": "The derivative relation is an algebraic coefficient identity, while its marked polynomial equals the fixed selected polynomial only after both selector tests are proved. No uniform coefficient comparison or selector proof beyond the finite replay was established."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-T5/REPORT.md",
+  "limitations": [
+    "Exact results stop at m=80 in this family and do not constitute a census of ordinary trees.",
+    "The route does not prove the two orbit selector tests for all m or the selected-sum sign for all eligible m and p.",
+    "The primary ordinary lower-region aggregate remains open; no literature theorem or external source was used."
+  ],
+  "status_authority": "proposed_worker_only"
+}

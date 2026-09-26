@@ -1,0 +1,7 @@
+lemma binomDelta_pascal (m j : ℕ) :
+    ((m+1).choose (j+2) : ℤ) - (m+1).choose (j+1) =
+      ((m.choose (j+2) : ℤ) - m.choose (j+1)) +
+      ((m.choose (j+1) : ℤ) - m.choose j) := by
+  rw [show j+2=(j+1)+1 by omega, Nat.choose_succ_succ', Nat.choose_succ_succ']
+  push_cast
+  ring

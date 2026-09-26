@@ -1,0 +1,29 @@
+{
+  "worker_id": "C5-CF-U4",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C5-U4-LEMMA-1",
+      "statement": "The original-leaf deletion identity and its per-leaf sign alternative at the first strict descent are correct under integer zero extension; the K_(1,3) example refutes only an unguarded later-rank implication and lies outside the primary eligibility region.",
+      "scope": "Finite ordinary trees, each original leaf v and its support s, all integer ranks for the identity, and the route's stated out-of-scope K_(1,3) example. No conclusion on eligible p>=x+2 or on the aggregate.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CF-U4/EVIDENCE.json"
+      ],
+      "reason": "retained: partitioning independent sets by whether they contain v proves the polynomial identity; adjacent coefficient subtraction and the negative-sum argument prove the all-rank identity and local alternative. The K_(1,3) vectors and zero-extended rank-3 difference check exactly, and its strict alpha guard fails."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CF-U4/REPORT.md",
+  "limitations": [
+    "No cross-rank implication for eligible p>=x+2 is proved or disproved.",
+    "The K_(1,3) witness is outside the strict lower-region eligibility condition.",
+    "No eligible selector instance, complete favorable-leaf aggregate, or global sign is established.",
+    "The cited literature note was not independently used or validated in this audit."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-U4-LEMMA-1"
+  ]
+}

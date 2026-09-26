@@ -1,0 +1,27 @@
+{
+  "worker_id": "C4-F6",
+  "cycle": 4,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C4-F6-LOW-COVER-SHELL-FAMILY-CHECK",
+      "statement": "In the explicitly enumerated family of a root with one to six centers, each center carrying at least one pendant leaf, for n=2p+4 and p=10..13, the only eligible tree is the p=10 branch profile (2,3,3,3,3,3); its 17 favorable-leaf summands are all negative and its full sum is -122805.",
+      "scope": "Exact bounded family check only: sorted positive branch leaf counts m_1<=...<=m_c, 1<=c<=6, sum m_i=2p+3-c, p=10..13. It does not cover all trees of cover number at most six and does not resolve any universal shell or aggregate claim.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-F6/REPORT.md",
+        "cycles/cycle-4/C4-F6/low_cover_family.py",
+        "cycles/cycle-4/C4-F6/low_cover_family.json"
+      ],
+      "reason": "Exact graph-recursive independence counts and complete partition generation establish this bounded result. It recovers a cover-threshold obstruction but gives neither a pointwise-sign counterexample nor a positive aggregate, and it omits general low-cover skeletons; the universal questions remain unresolved."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-F6/REPORT.md",
+  "limitations": [
+    "The exhaustive boundary is only the stated root-and-pendant-arms family, not all ordinary trees with vertex-cover number at most six.",
+    "The computation does not prove a general low-cover classification, a pointwise third-shell theorem, or the primary selected aggregate.",
+    "No primary-literature theorem was imported or applied."
+  ],
+  "status_authority": "proposed_worker_only"
+}

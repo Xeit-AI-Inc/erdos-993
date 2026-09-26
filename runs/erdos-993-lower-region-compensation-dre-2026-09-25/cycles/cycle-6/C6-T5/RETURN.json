@@ -1,0 +1,27 @@
+{
+  "worker_id": "C6-T5",
+  "cycle": 6,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C6-T5.ORBIT-QUOTIENT-LIFT",
+      "statement": "For a finite group acting on a finite bipartite relation and preserving nonnegative integer supplies and capacities, an integral orbit-quotient flow saturating all source-orbit supply implies an integral saturating flow on the original relation. For the T_m family, the wreath-product orbit states and deletion/two-for-one transitions are exact for every m>=1; the three supplied quotient primal flows lift and pass the stated selector and full-sum checks.",
+      "scope": "General quotient-lifting theorem under the stated hypotheses; structural T_m orbit/adjacency description for m>=1; computational applications only to (m,p)=(22,34),(60,90),(66,98). This does not prove quotient feasibility for any other rank or m and does not resolve the arbitrary-tree aggregate.",
+      "status": "proposed_partial",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-T5/REPORT.md",
+        "cycles/cycle-6/C6-T5/EVIDENCE.json",
+        "cycles/cycle-6/C6-T5/verify_orbit_flows.py"
+      ],
+      "reason": "The group-theoretic lift is proved by an invariant maximizing-cut argument and integral max flow; the three pinned primal arc lists were independently checked against the exact orbit multiplicities, fixed tag weights, literal transitions, node capacities, graph guards, and complete sums. Finite control rows remain bounded evidence and do not establish an all-m flow family or the primary arbitrary-tree statement."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-T5/REPORT.md",
+  "limitations": [
+    "The quotient-flow applications are only the three frozen T_m cases; no all-m quotient-feasibility theorem was established.",
+    "The route establishes no resolution of the arbitrary-tree lower-region aggregate.",
+    "The replay imports the pinned ordinary_tree_checked.py for graph polynomial and selector arithmetic; the orbit multiplicity, relation transition audit, and finite-group lifting proof are given separately in the report and verifier."
+  ],
+  "status_authority": "proposed_worker_only"
+}

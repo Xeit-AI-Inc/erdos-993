@@ -1,0 +1,24 @@
+{
+  "worker_id": "C4-CT-U4",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C4-U4-COLORED-SHADOW-MIXED-BOUNDARY",
+      "statement": "For the matching-sector face poset, the colored quotient-ring result supports ordinary revlex lower-shadow minimization, and the cited normalized-matching result supports only unweighted flow on ordinary adjacent-rank cover edges. These results furnish no established control of an added endpoint-sensitive insertion boundary; the specified three-vertex example shows that its particular addability count can change from 1 to 0 under the stated compression while the ordinary lower shadow remains the same.",
+      "scope": "The exact ordinary-shadow application to the matching-sector face poset and the auxiliary graph example only. The example is not a CB tree, does not identify a CB hub target, and neither proves nor refutes a CB mixed inequality or the primary ordinary-tree aggregate.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-4/C4-CT-U4/EVIDENCE.json"],
+      "reason": "retained_narrowed: the quotient basis-to-matching mapping and shadow consequence are exact; direct recalculation confirms equal lower shadows {∅} and addability counts 1 versus 0 in the toy graph. The conclusions must remain limited to these settings: the cited sources do not give a tag-sensitive insertion bound, and the source supplies no full CB encoding, tree/selector audit, or primary-target result."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CT-U4/REPORT.md",
+  "limitations": [
+    "The source contains no full CB graph instance, so the toy obstruction is not a CB-tree witness.",
+    "No application from the toy addability statistic to every hub-insertion term in a concrete CB encoding was established.",
+    "No tree-wide selector audit, complete mixed-boundary proof or refutation, or primary aggregate resolution was established."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": ["C4-U4-COLORED-SHADOW-MIXED-BOUNDARY"]
+}

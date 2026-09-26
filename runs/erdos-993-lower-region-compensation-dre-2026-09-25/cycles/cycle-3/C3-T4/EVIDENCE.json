@@ -1,0 +1,38 @@
+{
+  "scope": "Exact first-mark residual order classification and matching-plus-isolate odd-order coefficient calculation; no claim of universal coverage.",
+  "notation": {
+    "parent_order": "2p+3",
+    "k": "p-1",
+    "H_order": "2k+3",
+    "first_mark_residual": "J_i = H - (N_H[w_i] union {w_1,...,w_(i-1)})"
+  },
+  "structural_facts": [
+    "Distinct marks in W are pairwise nonadjacent because all are neighbors of the deleted support in an ordinary tree.",
+    "Residual order 2k+1 requires a deletion union of size 2, hence i=1 and degree_H(w_1)=1.",
+    "Residual order 2k requires a deletion union of size 3: either i=1 and degree_H(w_1)=2, or i=2 and degree_H(w_2)=1 with the one earlier mark outside N_H[w_2].",
+    "Residual order at most 2k-1 has i_k(J) <= i_(k-1)(J) by the independent-set incidence count: k*i_k(J) <= (|V(J)|-k+1)*i_(k-1)(J) <= k*i_(k-1)(J)."
+  ],
+  "matching_plus_isolate": {
+    "graph": "k disjoint edges and one isolated vertex",
+    "independence_polynomial": "(1+2z)^k(1+z)",
+    "coefficient_difference": "i_k-i_(k-1) = 2^(k-2)*(4-binomial(k,2))",
+    "exact_values": [
+      {"k": 1, "i_k": 3, "i_(k-1)": 1, "difference": 2},
+      {"k": 2, "i_k": 8, "i_(k-1)": 5, "difference": 3},
+      {"k": 3, "i_k": 20, "i_(k-1)": 18, "difference": 2},
+      {"k": 4, "i_k": 48, "i_(k-1)": 56, "difference": -8},
+      {"k": 5, "i_k": 112, "i_(k-1)": 160, "difference": -48}
+    ],
+    "derivation": "i_r = 2^r*binomial(k,r) + 2^(r-1)*binomial(k,r-1); subtract at r=k and r=k-1."
+  },
+  "matching_m_plus_isolates": {
+    "graph": "m disjoint edges and L=2k+1-2m isolated vertices",
+    "coefficient_difference": "sum_(j=0)^m binomial(m,j)*2^j*(binomial(L,k-j)-binomial(L,k-1-j))",
+    "convention": "binomial(L,t)=0 for t<0 or t>L"
+  },
+  "limits": [
+    "No realizability claim is made for the matching residual within a guarded T, H, W, and selector instance.",
+    "The order-2k residuals at this parent order delete three vertices and are not covered by the supplied first-shell two-vertex edge classification.",
+    "No universal boundary sign or global compensation inequality has been proved."
+  ]
+}

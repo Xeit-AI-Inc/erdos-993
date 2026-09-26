@@ -1,0 +1,40 @@
+{
+  "worker_id": "C1-U3",
+  "cycle": 1,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C1-U3-1",
+      "statement": "For the fixed favorable-leaf selector F and k=p-1, the full selected sum equals sum over v in F of q_v(k+1)-q_v(k), where q_v(j) counts independent j-sets of H_v meeting W_v; hence the primary is exactly the aggregate tagged layer inequality sum_F q_v(k+1)<=sum_F q_v(k).",
+      "scope": "Every finite ordinary tree and every p satisfying x(T)+2<=p and 3p<2alpha(T)+1, with H_v,W_v,R_v and F as in the solution contract. This is an exact reformulation, not a proof of the inequality.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-1/C1-U3/REPORT.md"],
+      "reason": "Subtracting the two rank differences gives q_v(k+1)-q_v(k) row by row, and summing retains each original leaf exactly once. The report also checks the equivalent incidence-deficit algebra from the supplied identity."
+    },
+    {
+      "claim_id": "C1-U3-2",
+      "statement": "A unit-capacity fractional matching from the selected tagged upper layer to the selected tagged lower layer is a sound sufficient certificate for the primary; its exact dual obstruction is a Hall-deficient set in the tagged incidence graph, but such an obstruction alone does not refute the primary.",
+      "scope": "For a fixed eligible ordinary tree, fixed p, and exact selected set F; graph nodes carry original leaf tags and arcs are within-row set inclusions. The certificate is stronger than the aggregate count inequality.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-1/C1-U3/REPORT.md"],
+      "reason": "Flow conservation and unit capacities imply |U|<=|L|. The bipartite matching theorem characterizes feasibility by Hall's condition. A deficient Hall subset can coexist with |U|<=|L|, so it only obstructs this proof method. No universal feasibility claim is made."
+    },
+    {
+      "claim_id": "C1-U3-3",
+      "statement": "The tagged transport formulation does not resolve the universal lower-region aggregate because no proof is given that its stronger Hall condition holds for every selector-induced family of ordinary-tree rows, and no eligible positive full-sum tree is produced.",
+      "scope": "The present C1-U3 search result only.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-1/C1-U3/REPORT.md"],
+      "reason": "The exact eligible-tree realizability and fixed-selector conditions remain unproved for universal flow feasibility; an abstract profile or failed stronger certificate is not a counterexample."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-U3/REPORT.md",
+  "limitations": [
+    "No universal flow feasibility or selector-to-Hall theorem is established.",
+    "Hall failure would reject only the stronger matching certificate, not establish a positive aggregate.",
+    "Abstract bipartite profiles are not ordinary-tree witnesses; no eligible tree counterexample is supplied.",
+    "No new finite computation or external literature bridge is used."
+  ],
+  "status_authority": "proposed_worker_only"
+}

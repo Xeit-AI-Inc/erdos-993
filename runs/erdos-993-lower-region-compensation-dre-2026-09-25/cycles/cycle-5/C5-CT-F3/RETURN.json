@@ -1,0 +1,33 @@
+{
+  "worker_id": "C5-CT-F3",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C5-F3-BOUNDED-ASYM-SEARCH",
+      "statement": "For the explicit order-13 asymmetric ordinary tree and rank p=6 in the source report, the exact original-leaf selector is all eight leaves, S=-307, and the summed marked-neighborhood data satisfy E=kU+C and D+C-(2a+1-3p)Q=-kS=1535. In the stated finite random sample and exhaustive ordered-arm profile family, no eligible row has a proper nonempty favorable selector.",
+      "scope": "One explicitly encoded order-13 tree at p=6, plus the precisely bounded 5,000-tree seeded Prüfer sample and 342 ordered asymmetric arm profiles described in the source report and replayed by its copied program.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CT-F3/AUDIT.json",
+        "cycles/cycle-5/C5-CT-F3/AUDIT.py",
+        "cycles/cycle-5/C5-CT-F3/SOURCE-REPLAY.py",
+        "cycles/cycle-5/C5-CT-F3/SOURCE-REPLAY-OUTPUT.json",
+        "cycles/cycle-5/C5-CT-F3/SOURCE-EVIDENCE.json"
+      ],
+      "reason": "retained: independent direct subset enumeration confirms the exact tree, all original-leaf selector values, all eight tagged summands, the global arithmetic, and the auxiliary H_v rank domain. A replay of the copied producer program reproduces the two stated finite probe counts. These bounded facts establish no universal result and leave the primary claim open."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CT-F3/REPORT.md",
+  "limitations": [
+    "The fixture has S=-307 and therefore is not a counterexample to the primary inequality; all its original leaves are selected.",
+    "The finite random sample and ordered profile family do not exhaust ordinary trees or eligible ranks.",
+    "The budget identity is checked only on the fixture; no general across-tag inequality or selector propagation result is established.",
+    "All conclusions are bounded and proposed only."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-F3-BOUNDED-ASYM-SEARCH"
+  ]
+}

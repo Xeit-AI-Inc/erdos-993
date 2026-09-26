@@ -1,0 +1,31 @@
+{
+  "worker_id": "C3-CU-F4",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "The C3-F4 bounded controls are arithmetically reproducible, but neither resolve the lower-region complete aggregate nor prove an n=2p+3 pointwise extension; the positive example is ineligible and the seeded sample is non-exhaustive.",
+      "scope": "Review of the sole C3-F4 claim: exact marked-star and order-11 controls, analytic p=3,4 exclusions at n=2p+3, and seeded Pr\u00fcfer samples for p=6..10 only. No universal conclusion and no audit award for the imported first-shell proof.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CU-F4/REPLAY.json",
+        "cycles/cycle-3/C3-CU-F4/REPLAY-COMPUTE.py",
+        "cycles/cycle-3/C3-CU-F4/ordinary_tree_checked.py"
+      ],
+      "reason": "retained_narrowed: independent scratch replay reproduces the route's finite values, favorable set, separate same-support terms and aggregate. The full sum +147 violates x+2<=p (7>4); the marked-star example only falsifies omission of tau>=3 in a graph lemma; the random sample is not exhaustive. The route itself leaves the primary claim open and does not prove the n=2p+3 extension."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CU-F4/REPORT.md",
+  "limitations": [
+    "The replay is bounded and does not provide a generation-complete census.",
+    "The positive full-sum tree violates the required first-descent eligibility guard.",
+    "The candidate first-shell proof's imported graph classification and Catalan-floor inputs were not independently established by this review.",
+    "No proof or eligible counterexample for the registered complete-sum claim was found."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE"
+  ]
+}

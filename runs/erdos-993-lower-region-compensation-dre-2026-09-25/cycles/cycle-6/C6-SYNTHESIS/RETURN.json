@@ -1,0 +1,273 @@
+{
+  "worker_id": "C6-SYNTHESIS",
+  "cycle": 6,
+  "stage": "synthesis",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "C6-AF.F5-ACTIVE-WEIGHT-CORRECTED-FLOWS",
+      "statement": "For profiles (2,3,4),p=7 and (2,2,4,3),p=8, the target active-tag weighted literal deletion-plus-two-for-one networks have complete flow/supply 1483/1483 and 8033/8033, with capacities 2701 and 13467 and complete S=-1218 and -5434.",
+      "scope": "Two finite labeled ordinary trees at their only eligible ranks, based on the separately attributed post-critique correction and independently checked literal arcs, guards, selectors and weights; no orbit lifting or universal Hall theorem.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "synthesis retained derived adjudicator claim: the post-critique root-origin corrected generators have an independent adjudicator validator for graph guards, original selectors, active weights, every positive literal arc, conservation, saturation and equality of supply-minus-capacity with complete S at two finite rows."
+    },
+    {
+      "claim_id": "C6-F1.Tm-cutoff400-audit",
+      "statement": "For the path-plus-three-tip T_m family, the exact central LC and mixed-minor recurrence checks pass for 3<=m<=399, all four cutoff-400 rational endpoint quantities are <1, and literal T_m graph polynomial identities agree for m=1,2,3.",
+      "scope": "Finite coefficient ranks m<=j<=2m+2, 3<=m<=399; cutoff arithmetic at m=400; three tiny graph checks. No new all-m family or arbitrary-tree proof is awarded by this audit.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "synthesis retained from sealed adjudication: retained_narrowed: exact scratch replay agrees with source and two critics; unperformed inherited analytic and selector checks do not refute the candidate, but limit this source audit."
+    },
+    {
+      "claim_id": "C6-F2-HETEROGENEOUS-CUTOFF2000-SCALAR-AUDIT",
+      "statement": "For A=2/3-29/(2m), B=1/3-95/(2m), epsilon=29!/((m-29)^29 A^28 B^92), one has 80328 m epsilon<1 for every integer m>=2000.",
+      "scope": "Scalar perturbation lemma for path-plus-private-star arities 2..4; rank placement is conditional on n=N+m+3, alpha=N+2 and the forest descent bound. It does not by itself prove the family aggregate.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "synthesis retained from sealed adjudication: retained_narrowed: falling-factorial quotient is decreasing over the central interval, exact endpoint fraction is below one, and the scalar decreases for m>=2000. Both critics independently recomputed the arithmetic; graph and mixed-minor bridges were not completed in F2."
+    },
+    {
+      "claim_id": "C6-F4.MATCHING-SUPPORT-INJECTION",
+      "statement": "The rule matching each active selected leaf tag of every independent (p+1)-set to a distinct own-support vertex fails on the eligible T_22 tree at p=34: one rank-35 set has 33 active tags on 11 own supports.",
+      "scope": "One explicit ordinary tree and one independent set; only unit-capacity leaf-to-own-support injection. Its complete 67-term S is negative.",
+      "status": "proposed_refuted",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "synthesis retained from sealed adjudication: retained: scratch replay matches the sealed witness, selector and guards; pigeonhole proves failure of this exact mechanism. It is not a counterexample to the aggregate."
+    },
+    {
+      "claim_id": "C6-F5-HETEROGENEOUS-DIRECT-FLOW",
+      "statement": "On profiles (2,3,4) at p=7 and (2,2,4,3) at p=8, the producer’s deletion-plus-two-for-one networks with weight w_old(I)=|F intersect I| saturate supplies 1563 and 8751; independently computed complete sums are -1218 and -5434.",
+      "scope": "Two listed labeled ordinary trees and their unique eligible ranks; the producer flow uses w_old, not the active-tag target weight. No target-weight Hall inference follows from the original flow.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "synthesis retained_narrowed: the source old-weight flows are valid only for w_old=|F intersect I|; that weight is not the target active-tag weight, and its flow deficit does not equal S. The separately derived corrected active-weight finite flows are recorded under C6-AF.F5-ACTIVE-WEIGHT-CORRECTED-FLOWS."
+    },
+    {
+      "claim_id": "C6-F6.SPIDER-SELECTOR-BOUNDED",
+      "statement": "For equal-length-three rooted spiders r-a_i-b_i-c_i with 2<=m<=40, alpha=2m, x=m; every one of 222 eligible (m,p) rows selects all m original endpoint leaves and has a strictly negative complete sum.",
+      "scope": "Exactly 39 finite spiders and all eligible ranks in that boundary. No unbounded selector theorem or arbitrary-tree conclusion.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "synthesis retained from sealed adjudication: retained: scratch replay is byte-identical to sealed evidence and the root-conditioned polynomial formulas preserve every original tag and support."
+    },
+    {
+      "claim_id": "C6-ROOT-SPIDER-EXACT-MODE",
+      "statement": "For the ordinary equal-length-three spider S_m with m>=2, P_m=(1+3z+z²)^m+z(1+2z)^m is strictly increasing to rank m and strictly decreasing from m through the terminal nonzero rank 2m; its unique mode and first strict descent are x(S_m)=m.",
+      "scope": "Root-origin post-search, pre-critique appendix, separately attributed from C6-T6 and reviewed by both opposing critics; exact equal-arm length-three spider family m>=2 only, with zero extension and no novelty or arbitrary-tree claim.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "synthesis retained from sealed adjudication: retained: the elementary trinomial-power induction, quantitative retained binomial term, strict symmetric Q tail and explicit perturbation differences prove all indices. Both critics audited this root proof. CU’s Delta_0(P)=3m+1 typo is corrected to 3m; the conclusion remains."
+    },
+    {
+      "claim_id": "C6-ROOT-SPIDER-LOWER-REGION-AGGREGATE",
+      "statement": "For S_m, m>=2, exact eligibility is m+2<=p<=floor(4m/3), nonempty iff m>=6; every original endpoint is strictly favorable and the complete sum is S(S_m,p)=m Delta_(p-2)(1+3z+z²)^(m-1)<0.",
+      "scope": "Root-origin post-search, pre-critique proof, separately attributed from producer and reviewed by both opposing critics; only equal-arm length-three ordinary spiders and exact original fixed selector, all m distinct tags. No arbitrary-tree, unequal-spider, governed-tree or Lean claim.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "synthesis retained from sealed adjudication: retained: strict decrease of Q^(m-1) makes each tagged term negative; the deletion perturbation ends before eligible p and strict tail descent makes every endpoint selected. Exact x=m from the separate root mode proof gives the eligible window. Both critics accepted the elementary proof; the alternative injection and finite census are corroborative, not premises."
+    },
+    {
+      "claim_id": "C6-T1-TM-CUTOFF400",
+      "statement": "For the specified T_m ordinary trees with one root-adjacent length-two arm and m root-adjacent three-tip stars, m>=1, every p with x(T_m)+2<=p and 3p<2alpha(T_m)+1 has full original favorable-leaf sum S(T_m,p)<0.",
+      "scope": "Only T_m, the strict original selector and all 3m+1 distinct leaf tags; exact finite m=3..399 base plus analytic m>=400 tail and primary ULC convolution import. No arbitrary-tree or Lean family conclusion.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "synthesis retained_narrowed: alternate finite-base plus analytic-tail certificate for the already VERIFIED T_m key. The individual tag-index wording is corrected; the pooled S=R_(p-1)-R_(p-2), selector and strict sign survive. F1 independently audits the bounded margin and scalar portions."
+    },
+    {
+      "claim_id": "C6-T1-TM-DIRECT-FIRST-DESCENT",
+      "statement": "For the stated T_m family and every m>=2, x(T_m)>=m+1.",
+      "scope": "First-descent location for T_m only; m=1 is an exact ineligible separate case.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "synthesis retained from sealed adjudication: retained_narrowed: correct the displayed G derivative comparison vector to (2/3,0). The coefficientwise inequality and product rule remain valid and give strict increase through j=m without the R27 forest bound."
+    },
+    {
+      "claim_id": "C6-T4-MATCHING-SLACK-DECOMPOSITION",
+      "statement": "For every eligible ordinary tree with fixed original favorable selector, each marked k-set addability deficit equals 2(h-k-alpha(U_v(A))) plus the number of vertices unmatched by a maximum matching of its induced addable forest; consequently kS=(2a+1-3p)Q-D-C.",
+      "scope": "Universal exact identity/reduction only, with k=p-1, h=a-1, actual addable vertices, and C counting each multiply-marked upper set once per selected tag; it does not prove the positive-coefficient budget.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "synthesis retained from sealed adjudication: retained: bipartite matching-cover equality gives alpha(U)=|U|-nu and the marked extension incidence count gives sum e=kUcount+C. Both critics checked the exact algebra, including unmatched vertices and distinct tags."
+    },
+    {
+      "claim_id": "C6-T4-T22-ELIGIBLE-CROSS-TAG-CHECK",
+      "statement": "For T_22 at p=34, a=68, x=32, all 67 original leaves are favorable; one endpoint tag is +212336130412243110, each of 66 other tags is -7560098737536570631, and full S=-498754180547001418536.",
+      "scope": "One exact 91-vertex tree and rank with both eligibility guards; bounded forest-DP evidence, no census or universal inference.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "synthesis retained from sealed adjudication: retained: both critics scratch-replayed the original graph, zero-extended first descent, exact selector, each tag type, full sum and incidence identity. The positive local term is compensated in the complete selected sum."
+    },
+    {
+      "claim_id": "C6-T4-UNIFORM-COMPENSATION-OPEN",
+      "statement": "The T4 route leaves unproved and unrefuted the arbitrary-tree budget D+C>=(2alpha(T)+1-3p)Q for the original strict selector, equivalent to S(T,p)<=0.",
+      "scope": "All eligible finite ordinary trees; statement records this route’s unresolved proof obligation, not a theorem of nonexistence or authoritative registry verdict.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "synthesis retained: the exact T4/U4 reductions and finite checks do not establish the positive global D+C budget and give no eligible positive complete sum; the arbitrary-tree primary remains OPEN under the current registry."
+    },
+    {
+      "claim_id": "C6-T5.ORBIT-QUOTIENT-LIFT",
+      "statement": "For a finite group preserving a finite bipartite relation and orbit-constant nonnegative integer supplies/capacities, a source-saturating integral orbit quotient flow lifts to a source-saturating integral original flow. For T_m, the stated wreath-product states and deletion/two-for-one adjacency are exact for every m>=1; the three frozen quotient flows at (m,p)=(22,34),(60,90),(66,98) pass literal relation, selector and full-sum checks.",
+      "scope": "General finite-group theorem under invariant weights and exact quotient adjacency; all-m T_m orbit/transition classification; numerical applications strictly limited to the three listed rows, with no all-m flow feasibility or arbitrary-tree result.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "synthesis retained from sealed adjudication: retained: invariant maximization of the supermodular Hall deficit gives the lift, the T_m neighborhood cases exhaust the relation, and both critics verified three pinned primal flows. CF’s m=60 lower-capacity decimal in prose is a transcription error; its replay record and CU agree on the correct value."
+    },
+    {
+      "claim_id": "C6-T6-EQUAL-THREE-SPIDER-REDUCTION",
+      "statement": "For the equal-length-three spider S_m, m>=2, P_m=Q^m+zV^m, each endpoint deletion is VQ^(m-1)+z(1+z)V^(m-1), and each original leaf marked difference is zQ^(m-1), so when all m endpoints are selected S=m Delta_(p-2)Q^(m-1). The producer’s exact census for m=2..60 has 532 eligible negative rows, including m=6,p=8 with S=-2130.",
+      "scope": "All-m graph and tag formulas; bounded computation only for 2<=m<=60; producer did not prove the uniform crossing or selector theorem. Root-origin later proofs are separate claim identities.",
+      "status": "proposed_partial",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "synthesis retained_narrowed: producer graph and tag identities and bounded m<=60 census survive with the root-excluded pendant factor corrected to L=1+z. The unbounded root-origin exact-mode and aggregate proofs carry separate IDs and are not credited to this producer claim."
+    },
+    {
+      "claim_id": "C6-U1-TM-LEAN-DECOMPOSITION",
+      "statement": "A proposed formalization roadmap for the existing ordinary T_m all-m lower-region result identifies graph/count fidelity, direct family descent, finite-order ULC with its quantitative Poisson-curvature consequence, mixed-minor and analytic inequalities, a kernel-checked central finite base, exact selector propagation, and final tagged-sum closure. It is not a completed declaration graph or Lean certificate.",
+      "scope": "Only the path-plus-m-claws ordinary T_m family, m>=1, with its original distinct leaf tags and exact lower-region guards; no new family proof or arbitrary-tree conclusion.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "synthesis retained from sealed adjudication: retained_narrowed: CT-U1 correctly preserves finite binomial ULC at order exceeding degree; CF-U1 correctly asks for quantitative Poisson curvature but its exclusive Poisson-interface correction is too restrictive. Direct checks give B degree 3 and finite order 4, with factor orders 1,1,4,2,2. Either formally proved finite-order convolution followed by curvature implication or a directly proved Poisson closure can serve. Graph, arithmetic, selector, and kernel obligations remain open."
+    },
+    {
+      "claim_id": "C6-U2-CENSUS-M1-40",
+      "statement": "For all 12,340 unordered arity-2..4 profiles with 1<=m<=40 in the specified path-and-branches ordinary-tree family, all 191,016 ranks satisfying terminal-zero-extended x+2<=p and strict 3p<2alpha+1 have strictly negative complete original favorable-leaf sum S(T,p).",
+      "scope": "Exact bounded coefficient recurrence census for 1<=m<=40 and arities in {2,3,4}; six graph-DP samples with 164 polynomial comparisons; no larger prefix, infinite-family, or arbitrary-tree theorem.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "synthesis retained from sealed adjudication: retained: The graph split, first descent scan, strict deletion selectors and all distinct same-support multiplicities match the contract. Producer evidence and both critics full scratch replays agree on 191,016 negative full sums, 19,131,028 selected tags, and zero graph-check mismatches. This is finite evidence only; 41<=m<2000 is uncovered."
+    },
+    {
+      "claim_id": "C6-U3-ABSORB-BOUNDED-20",
+      "statement": "For each 2<=r,s<=20, some q in {1,2,3,4} makes F_r B_s^q finite-order ULC; among the 361 pairs the least successful q occurs 273,80,7,1 times at q=1,2,3,4 respectively.",
+      "scope": "Exact bounded coefficient computation for F_r=((1+z)^(r-1)-1)/z, B_s=(1+z)^s+z, 2<=r,s<=20 and equal-type absorption q<=4 only; no uniform or tree implication.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "synthesis retained from sealed adjudication: retained: The cleared-denominator criterion (d-j)A_j>=R_j and least-order formula are correct for positive coefficients; both full critic replays agree with all 1,444 tests and the 121 pinned one-factor rows. Independent exact checks recover the exceptional (20,2) pair failing at q<=3 and passing at q=4 with least order 117. Universal absorption, mixed factors and selector bridges remain unproved."
+    },
+    {
+      "claim_id": "C6-U4-MATCHING-DEFICIENCY-BUDGET",
+      "statement": "For each marked independent k-set A in selected residual forest H_v, actual-addability deficit equals |V(H_v)|-2nu(H_v)+|N_H_v(A)|-k. Summing over the original fixed distinct leaf tags makes S<=0 equivalent to the selected matching-deficiency/neighborhood-expansion budget in REPORT.md, but does not derive that budget from first descent. The strict selector is Delta_p(H_v)+Delta_(p-1)(R_v)<0.",
+      "scope": "Eligible ordinary trees with original leaf supports, k=p-1, local residual neighborhoods, actual addable vertices, fixed F(T,p), and the exact tagged incidence identity; no universal sign proof.",
+      "status": "proposed_conditional",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "synthesis retained from sealed adjudication: retained: The pointwise equality follows from local closed-neighborhood counting and alpha(H_v)=|V(H_v)|-nu(H_v). The equivalent budget follows from E=kU+C and S=U-Q. CT-U4 incorrectly substituted a minus sign for the selector; direct extraction from I(T-v)=I(H_v)+zI(R_v) confirms the source plus sign and root-origin correction. The positive lower-region budget is still unproved."
+    },
+    {
+      "claim_id": "C6-U5-CB-sector-deficit",
+      "statement": "In the eligible CB(8,92) root-plus-arm sector at p=492, every member has canonical active-tag weight 1. Its residual 736-pair rank-491 source and rank-490 positive-capacity ordinary-deletion layer have ratio 492/491 and a deletion-only whole-sector capacity shortfall |R_490|/491. The source 493/491 ratio belongs to a different weight and is invalid for the canonical network.",
+      "scope": "Only this fixed CB(8,92) sector and its ordinary-deletion boundary; no arbitrary-subfamily mixed Hall estimate, mixed-flow certificate, or aggregate refutation.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "synthesis retained_narrowed: canonical active weight is one in the fixed sector; 493/491 belongs to an artificial weight. The corrected 492/491 deletion-only deficit is exact, while switches leaving the sector keep the mixed Hall-cut obligation OPEN."
+    },
+    {
+      "claim_id": "E993-ORDINARY-PATH-STAR-ARITY-2-12-M100000000-LOWER-REGION-AGGREGATE",
+      "statement": "For path 0-1-2 with m>=100000000 root-attached private-star centers and arbitrary arities 2<=r_i<=12, every eligible strict-lower-region p has complete original favorable-leaf sum S(T,p)<0.",
+      "scope": "Only that path-star family with the displayed cutoff, all original distinct tips and endpoint, fixed selector and exact guards; prefix, other arities, arbitrary trees and Lean family certification excluded.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "synthesis retained_narrowed: AT and AF independently retain the restricted theorem after replacing the false individual q_tip=zZ_i with the correct per-tip formula and using Z_i only in the pooled identity. Both audit the 121 grouped-factor checks, uniform perturbation bound and selector propagation. This is an informal exact-factor plus analytic proof using Gurvits finite-order ULC convolution, not an arbitrary-tree or Lean result."
+    },
+    {
+      "claim_id": "E993-ORDINARY-PATH-STAR-ARITY-2-4-M2000-LOWER-REGION-AGGREGATE",
+      "statement": "For path 0-1-2 with m>=2000 root-attached private-star centers and arbitrary arities r_i in {2,3,4}, every eligible strict-lower-region p has complete original favorable-leaf sum S(T,p)<0.",
+      "scope": "Only that heterogeneous path-star family, m>=2000, every listed profile and eligible p; distinct original endpoint and tip tags. Prefix m<2000, other trees, and Lean family certification remain outside scope.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "synthesis retained from sealed adjudication: retained_narrowed: the correct weighted sign needs descent of each pooled Zi at p-2; the proof propagates from x through that rank. Correct marked perturbation normalization b=tL^N yields the stated 53252 bound under the controlling 26776 condition. B1 and common-versus-raw H_i degree scopes are explicit. Both critics retained the theorem; an unperformed full envelope rederivation is not a counterexample."
+    },
+    {
+      "claim_id": "U6-MARKED-RECURRENCE-TRANSPORT",
+      "statement": "With the original F(T,p) fixed, S(T,p)=Q_p-Q_(p-1), where q_v(j)=i_j(H_v)-i_j(R_v) counts H_v independent sets meeting W_v and Q_j sums over distinct selected leaf tags. The rooted-component product-difference recurrence is exact; it does not prove Q_p<=Q_(p-1).",
+      "scope": "Identity for every eligible finite ordinary tree with original supports and zero-extended integer ranks; finite data only for all labeled trees of orders 1..8 (no eligible rows) and T_m for m<=8 (13 eligible negative rows).",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "synthesis retained from sealed adjudication: retained_narrowed: Both critics confirm the fixed-selector difference and positive component recurrence. The tag bijection must target sets containing v and meeting W_v, not all sets containing v. The 280,393-tree small census has no eligible row; the 13 T_m rows are bounded. Strict selector signs alone do not imply the needed two-rank forest drop or universal marked-rank transport."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-SYNTHESIS/REPORT.md",
+  "limitations": [
+    "The arbitrary finite ordinary-tree lower-region selected aggregate and its equivalent fixed-selector D+C budget remain OPEN; no eligible positive complete-sum witness appears.",
+    "The arity 2-4 all-m key remains OPEN: bounded census covers m<=40 and the restricted uniform proof covers m>=2000, leaving 41<=m<2000; arity 2-12 below m=100000000 also remains outside its restricted theorem.",
+    "T_m and heterogeneous family proofs are informal/computer-assisted and use exact finite certificates and a primary finite-order ULC convolution import; no new Lean family certificate or formal award is supplied.",
+    "The spider all-m proofs are root-origin post-search, pre-critique results reviewed by both opposing critics at equal-arm length-three scope; T6 and F6 producer results retain only bounded census grades.",
+    "Finite quotient and active-weight flows do not establish all-m or universal mixed-flow feasibility; CB only proves a deletion-only sector shortfall, and U6 recurrence supplies no rank-transport inequality.",
+    "The current 431-claim registry remains authority until controller review; no seventh cycle is proposed."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-AF.F5-ACTIVE-WEIGHT-CORRECTED-FLOWS",
+    "C6-F1.Tm-cutoff400-audit",
+    "C6-F2-HETEROGENEOUS-CUTOFF2000-SCALAR-AUDIT",
+    "C6-F4.MATCHING-SUPPORT-INJECTION",
+    "C6-F5-HETEROGENEOUS-DIRECT-FLOW",
+    "C6-F6.SPIDER-SELECTOR-BOUNDED",
+    "C6-ROOT-SPIDER-EXACT-MODE",
+    "C6-ROOT-SPIDER-LOWER-REGION-AGGREGATE",
+    "C6-T1-TM-CUTOFF400",
+    "C6-T1-TM-DIRECT-FIRST-DESCENT",
+    "C6-T4-MATCHING-SLACK-DECOMPOSITION",
+    "C6-T4-T22-ELIGIBLE-CROSS-TAG-CHECK",
+    "C6-T4-UNIFORM-COMPENSATION-OPEN",
+    "C6-T5.ORBIT-QUOTIENT-LIFT",
+    "C6-T6-EQUAL-THREE-SPIDER-REDUCTION",
+    "C6-U1-TM-LEAN-DECOMPOSITION",
+    "C6-U2-CENSUS-M1-40",
+    "C6-U3-ABSORB-BOUNDED-20",
+    "C6-U4-MATCHING-DEFICIENCY-BUDGET",
+    "C6-U5-CB-sector-deficit",
+    "E993-ORDINARY-PATH-STAR-ARITY-2-12-M100000000-LOWER-REGION-AGGREGATE",
+    "E993-ORDINARY-PATH-STAR-ARITY-2-4-M2000-LOWER-REGION-AGGREGATE",
+    "U6-MARKED-RECURRENCE-TRANSPORT"
+  ]
+}

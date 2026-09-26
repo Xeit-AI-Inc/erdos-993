@@ -1,0 +1,14 @@
+namespace Erdos993G1.ThirdWide
+open Finset Classical
+
+lemma catalan_recurrence_int (n : ℕ) :
+    ((n:ℤ)+2) * catalan (n+1) = (4*n+2) * catalan n := by
+  have hc := Nat.succ_mul_centralBinom_succ n
+  rw [← succ_mul_catalan_eq_centralBinom (n+1),
+    ← succ_mul_catalan_eq_centralBinom n] at hc
+  have he : ((n:ℤ)+1) * (((n:ℤ)+2) * catalan (n+1)) =
+      2*(2*n+1)*(((n:ℤ)+1)*catalan n) := by exact_mod_cast hc
+  apply (mul_left_cancel₀ (show (n:ℤ)+1 ≠ 0 by omega))
+  nlinarith [he]
+
+end Erdos993G1.ThirdWide

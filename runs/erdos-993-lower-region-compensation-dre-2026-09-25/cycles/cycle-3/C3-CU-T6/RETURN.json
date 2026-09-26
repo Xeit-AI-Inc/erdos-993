@@ -1,0 +1,29 @@
+{
+  "worker_id": "C3-CU-T6",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C3-T6-T4-PENDANT-GRAFT-SELECTOR-CLOSURE",
+      "statement": "For the specified T4 path-and-four-claw tree at p=9, attaching one pendant leaf at its distinguished root preserves eligibility and keeps all 12 old leaves in the strict favorable selector while adding the new leaf; the full sums are -9792 before and -16983 after the graft.",
+      "scope": "Exact two-tree computation for T4 and T4 plus one leaf at root 0, p=9, with original supports and the complete strict selector; no general branch-composition or universal aggregate claim.",
+      "status": "proposed_bounded_verified",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CU-T6/REPLAY-COMPUTE.py",
+        "cycles/cycle-3/C3-CU-T6/REPLAY-EVIDENCE.json"
+      ],
+      "reason": "retained: independent graph, rank, eligibility, strict-selector, original-support, same-support multiplicity, coefficient-difference, and complete-sum checks agree with the deterministic replay. The disposition is confined to the two specified trees; no arbitrary graft closure or universal primary result is established."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CU-T6/REPORT.md",
+  "limitations": [
+    "The retained result is a bounded calculation for two specified trees at p=9, not a general selector-closure theorem.",
+    "The recurrence is checked for this graft only; no induction or arbitrary branch-shape argument is provided.",
+    "The negative sums do not resolve the universal lower-region aggregate."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C3-T6-T4-PENDANT-GRAFT-SELECTOR-CLOSURE"
+  ]
+}

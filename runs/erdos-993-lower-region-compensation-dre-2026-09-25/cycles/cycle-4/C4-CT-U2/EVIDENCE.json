@@ -1,0 +1,46 @@
+{
+  "schema": "e993.worker-evidence.critique.v1",
+  "claim_id": "C4-U2-MARKED-SHELL-REDUCTION",
+  "audit_orientation": "T",
+  "source_integrity": {
+    "case_packet": "packets/C4-CT-U2.json",
+    "common_packet": "packets/C4-COMMON.json",
+    "listed_common_members_checked": 179,
+    "listed_case_members_checked": 3,
+    "sha256_mismatches": 0
+  },
+  "independent_checks": [
+    {
+      "item": "first-mark partition",
+      "result": "verified",
+      "detail": "Each independent j-set meeting W has a unique first mark w_i. Its remaining j-1 vertices lie in J_i after removing N_H[w_i] and earlier mark vertices. Conversely each independent (j-1)-set in J_i extends by w_i, so the blocks are disjoint and q_j(H,W)=sum_i i_(j-1)(J_i). As q_j=i_j(H)-i_j(H-W), q_(k+1)-q_k=Delta_k(H)-Delta_k(H-W)."
+    },
+    {
+      "item": "cover loss",
+      "result": "verified",
+      "detail": "For D_i=N_H[w_i] union earlier marks and ell_i=|D_i|, cover J_i optimally and add D_i minus {w_i}; this covers H. Thus tau(H)<=tau(J_i)+ell_i-1 and tau(J_i)>=tau(H)-(ell_i-1). Nonisolated-first ordering and a nonisolated marked vertex ensure ell_i>=2 in every block."
+    },
+    {
+      "item": "tree specialization",
+      "result": "verified conditionally",
+      "detail": "For an original leaf v with support u, H=T-{v,u}; each component of H contains a neighbor of u in W, and tau(H)=tau(T)-1. Under tau(T)>=ceil(3s/2)+1, tau(H)>=c=ceil(3s/2). For d=s+2-ell>=2, m(d)=ceil(3d/2)-1, and ell-1+m(d)<=c; forest tau=matching number then supplies the size threshold. The separate rank condition r=p-2>=K(d)=2m(d)-d is still required for d>=3."
+    },
+    {
+      "item": "ordinary shadow boundary",
+      "result": "verified",
+      "detail": "When d<=1, |J_i|=2r+d<=2r+1. Double counting incidences between independent r-sets and (r+1)-sets gives (r+1)i_(r+1)<= (|J_i|-r)i_r <=(r+1)i_r."
+    },
+    {
+      "item": "s=5 Catalan cutoff",
+      "result": "verified",
+      "detail": "With c=8 and n=2p+5, the outside size is N=2p-3=2q+1 at q=p-2. Hence binom(N,q+1)-binom(N,q)=0. The first nonempty-cover floor is -8 Cat_(q-1)<0 for q>=1, so this bound cannot establish a positive terminal difference. This is a limitation of the bound, not a counterexample."
+    },
+    {
+      "item": "scope and primary target",
+      "result": "not established",
+      "detail": "The conditional pointwise result implies nonpositivity on any fixed subset of leaves only when its premises hold. It does not prove the parent cover threshold or residual rank gates for all eligible trees, nor the registered favorable-leaf aggregate."
+    }
+  ],
+  "review_disposition": "retained_narrowed",
+  "narrowed_statement": "For a finite forest H with marked set W meeting every component and with a nonisolated marked vertex, first-mark blocks give q_j(H,W)=sum_i i_(j-1)(J_i), with tau(J_i)>=tau(H)-(ell_i-1). Consequently q_j<=q_(j-1) whenever each residual J_i has Delta_(j-1)(J_i)<=0. In the leaf-deletion tree specialization, the stated parent cover and residual-rank conditions reduce the pointwise leaf sign to ordinary-shadow or matching-sign theorems at the exact displayed thresholds. The s=5 Catalan estimate fails to force the parent cover threshold at q=p-2. No unconditional shell theorem or primary aggregate resolution follows."
+}

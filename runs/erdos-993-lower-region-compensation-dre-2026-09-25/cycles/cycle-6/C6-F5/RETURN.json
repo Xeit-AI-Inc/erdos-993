@@ -1,0 +1,26 @@
+{
+  "worker_id": "C6-F5",
+  "cycle": 6,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C6-F5-HETEROGENEOUS-DIRECT-FLOW",
+      "statement": "For the explicitly encoded heterogeneous trees with branch profiles (2,3,4) at p=7 and (2,2,4,3) at p=8, the exact weighted deletion-plus-exactly-two-neighbor-insertion network saturates all upper supply: respectively 1563/1563 and 8751/8751. Their full selected aggregates are respectively -1218 and -5434.",
+      "scope": "Only the two labeled trees, their computed eligible ranks, and the finite relation networks specified in REPORT.md and EVIDENCE.json.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-F5/EVIDENCE.json",
+        "cycles/cycle-6/C6-F5/direct_audit.py"
+      ],
+      "reason": "The replay enumerates all independent sets, evaluates every original-leaf selector from T-v, computes every selected summand, constructs all literal deletion and exactly-two-neighbor switch edges, and checks exact integer flow conservation and capacities. This is complete for the two finite instances only."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-F5/REPORT.md",
+  "limitations": [
+    "The two bounded flows establish no result for other profiles or arbitrary ordinary trees.",
+    "No orbit quotient or symmetry-lifting theorem was used or reviewed; the separate homogeneous T_m certificates are outside this bounded direct-set computation.",
+    "The observed negative sums are not a universal conclusion, and the route found no eligible deficient cut counterexample."
+  ],
+  "status_authority": "proposed_worker_only"
+}

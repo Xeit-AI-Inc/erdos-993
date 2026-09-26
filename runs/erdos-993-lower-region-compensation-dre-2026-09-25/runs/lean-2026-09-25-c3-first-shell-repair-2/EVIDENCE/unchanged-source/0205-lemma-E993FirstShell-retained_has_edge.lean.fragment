@@ -1,0 +1,17 @@
+namespace E993FirstShell
+
+lemma retained_has_edge {V : Type u} [Fintype V] [DecidableEq V]
+    (T : SimpleGraph V) [DecidableRel T.Adj] (v : V) (p : ℕ)
+    (hv : C4LA1.IsGraphLeaf T v)
+    (hp : 3 ≤ p) (horder : Fintype.card V = 2*p+2)
+    (hcross : C5LA1.crossingIndex T + 2 ≤ p) :
+    ∃ a b, T.Adj a b ∧ a ∉ C5LA1.H T v ∧ b ∉ C5LA1.H T v := by
+  by_contra h
+  have hnocover := no_two_cover_retained T v p hv hp horder hcross
+    (∅ : Finset V) (by simp)
+  apply hnocover
+  intro a b hab ha hb
+  exfalso
+  exact h ⟨a,b,hab,ha,hb⟩
+
+end E993FirstShell

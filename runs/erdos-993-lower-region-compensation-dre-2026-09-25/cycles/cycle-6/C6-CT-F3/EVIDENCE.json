@@ -1,0 +1,36 @@
+{
+  "case_hash_verification": {
+    "case_sources_checked": 4,
+    "case_mismatches": 0,
+    "common_sources_checked": 237,
+    "common_mismatches": 0
+  },
+  "replay": {
+    "executed": "replay_copy.py copied from the pinned C6-F3 REPLAY.py using /Library/Frameworks/Python.framework/Versions/3.11/bin/python3",
+    "grouped_factor_pairs": 121,
+    "normalized_finite_ulc_inequalities_passed": true,
+    "largest_reported_order": 962,
+    "largest_pair": [12, 2],
+    "cutoff": {"D": 12, "h": 17, "m": 100000000, "C": 2384960530636},
+    "exact_cutoff_ratio_below_one": true,
+    "ratio_decimal": 0.013328111998270626
+  },
+  "independent_graph_enumeration": {
+    "method": "Enumerated all vertex subsets for graphs constructed directly from the stated path-plus-private-star recipe; computed independence polynomials and original-leaf selector/summands from induced subgraphs.",
+    "profiles": [
+      {"arities": [12], "n": 16, "alpha": 14, "x": 7, "eligible_p": 9, "selected_original_leaf_count": 13, "full_sum": -9141},
+      {"arities": [2, 3], "n": 10, "alpha": 7, "x": 3, "eligible_p_values": []}
+    ],
+    "polynomial_formula_match": true
+  },
+  "source_theorem": {
+    "citation": "Leonid Gurvits, A short, based on the mixed volume, proof of Liggett's theorem on the convolution of ultra-logconcave sequences, Definition (2), Theorem 1.1, Remark 1.2, https://arxiv.org/abs/0804.1181",
+    "application_check": "Definition permits order d at least degree; Theorem 1.1 adds orders under convolution. The factors in this proposed application have positive consecutive support.",
+    "scope_limit": "This verifies the cited closure bridge only, not the route's coefficient envelopes, perturbation bounds, or selector theorem."
+  },
+  "unverified_family_steps": [
+    "All coefficientwise perturbation envelopes and shifted-index bounds in the candidate's global mixed-minor estimate.",
+    "Full derivation and endpoint checks for the infinite-family monotonicity and uniform cutoff transfer.",
+    "A complete independent proof that all deletion and marked polynomials satisfy the required positive mixed minors over every eligible rank and profile."
+  ]
+}

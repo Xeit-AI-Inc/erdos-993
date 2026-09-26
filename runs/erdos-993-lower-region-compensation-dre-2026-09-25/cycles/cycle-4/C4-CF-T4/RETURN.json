@@ -1,0 +1,41 @@
+{
+  "worker_id": "C4-CF-T4",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C4-T4-CROSS-TAG-INJECTIVITY-BRIDGE",
+      "statement": "For every eligible ordinary-tree instance, the specified least-eligible-tag deletion rule defines a rational linear map L:K_p->K_(p-1); if L is injective, the fixed-selector aggregate satisfies S(T,p)<=0. Universal injectivity of L is not established here and remains open.",
+      "scope": "Finite ordinary trees with x(T)+2<=p and 3p<2alpha(T)+1; F(T,p) is the fixed strict original-leaf selector; K_j and L use the original supports and W_v and retain each favorable leaf as a separate tag.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CF-T4/evidence/independent-check.md",
+        "cycles/cycle-4/C4-CF-T4/evidence/source-copies/REPORT.md"
+      ],
+      "reason": "retained_narrowed — the map is well-defined and its injectivity would suffice by the retained dimension identity, but the sealed route gives no proof of universal full rank or matching certificate. The rank assertion is not refuted; noninjectivity alone would not imply a positive aggregate."
+    },
+    {
+      "claim_id": "C4-T4-RELATIVE-CHAIN-IDENTITY",
+      "statement": "For every eligible ordinary-tree instance, S(T,p)=dim_Q(K_p)-dim_Q(K_(p-1)) for the direct sum K_j of relative independence-complex face spaces indexed by all original favorable leaves.",
+      "scope": "Finite ordinary trees with x(T)+2<=p and 3p<2alpha(T)+1; F(T,p) is exactly the fixed strict original-leaf selector; K_j has tagged basis (v,A) with v in F(T,p), A independent in H_v of size j, and A meeting W_v.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CF-T4/evidence/independent-check.md",
+        "cycles/cycle-4/C4-CF-T4/evidence/source-copies/REPORT.md"
+      ],
+      "reason": "retained — for each tag, independent faces of H_v meeting W_v are counted by i_j(H_v)-i_j(R_v), as R_v=H_v-W_v. Expanding the difference of forward differences at k=p-1 yields q_v(k+1)-q_v(k); summing over the unchanged fixed selector proves the identity."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CF-T4/REPORT.md",
+  "limitations": [
+    "The universal injectivity or full-rank property of the cross-tag map remains unproved and was not refuted.",
+    "The exact dimension identity and conditional map do not resolve the sign of the complete aggregate.",
+    "No finite computational replay or external theorem application was performed."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-T4-CROSS-TAG-INJECTIVITY-BRIDGE",
+    "C4-T4-RELATIVE-CHAIN-IDENTITY"
+  ]
+}

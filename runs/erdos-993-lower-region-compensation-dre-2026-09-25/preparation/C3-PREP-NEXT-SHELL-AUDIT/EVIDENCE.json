@@ -1,0 +1,158 @@
+{
+  "status": "all_assertions_passed",
+  "certificate_rows": 48,
+  "domain_count": 48,
+  "codomain_count": 56,
+  "unique_images": 48,
+  "lift_checks": [
+    {
+      "k": 4,
+      "upper_count": 48,
+      "long_chain_sources": 0,
+      "two_element_chain_sources": 48,
+      "distinct_images": 48
+    },
+    {
+      "k": 5,
+      "upper_count": 168,
+      "long_chain_sources": 72,
+      "two_element_chain_sources": 96,
+      "distinct_images": 168
+    },
+    {
+      "k": 6,
+      "upper_count": 608,
+      "long_chain_sources": 368,
+      "two_element_chain_sources": 240,
+      "distinct_images": 608
+    },
+    {
+      "k": 7,
+      "upper_count": 2241,
+      "long_chain_sources": 1569,
+      "two_element_chain_sources": 672,
+      "distinct_images": 2241
+    },
+    {
+      "k": 8,
+      "upper_count": 8361,
+      "long_chain_sources": 6345,
+      "two_element_chain_sources": 2016,
+      "distinct_images": 8361
+    }
+  ],
+  "cover_five_cases": [
+    {
+      "r": 0,
+      "N": 14,
+      "empty_fiber": 13,
+      "negative_budget": 0,
+      "margin": 13
+    },
+    {
+      "r": 1,
+      "N": 14,
+      "empty_fiber": 77,
+      "negative_budget": 5,
+      "margin": 72
+    },
+    {
+      "r": 2,
+      "N": 14,
+      "empty_fiber": 273,
+      "negative_budget": 15,
+      "margin": 258
+    },
+    {
+      "r": 3,
+      "N": 14,
+      "empty_fiber": 637,
+      "negative_budget": 30,
+      "margin": 607
+    },
+    {
+      "r": 4,
+      "N": 14,
+      "empty_fiber": 1001,
+      "negative_budget": 60,
+      "margin": 941
+    },
+    {
+      "r": 5,
+      "N": 14,
+      "empty_fiber": 1001,
+      "negative_budget": 146,
+      "margin": 855
+    },
+    {
+      "r": 6,
+      "N": 14,
+      "empty_fiber": 429,
+      "negative_budget": 411,
+      "margin": 18
+    }
+  ],
+  "coefficient_checks": [
+    {
+      "a": 0,
+      "difference": -8,
+      "normalized": "-8"
+    },
+    {
+      "a": 1,
+      "difference": -24,
+      "normalized": "-8"
+    },
+    {
+      "a": 2,
+      "difference": -73,
+      "normalized": "-73/10"
+    },
+    {
+      "a": 3,
+      "difference": -230,
+      "normalized": "-46/7"
+    },
+    {
+      "a": 4,
+      "difference": -747,
+      "normalized": "-83/14"
+    },
+    {
+      "a": 5,
+      "difference": -2486,
+      "normalized": "-113/21"
+    },
+    {
+      "a": 6,
+      "difference": -8437,
+      "normalized": "-59/12"
+    },
+    {
+      "a": 7,
+      "difference": -29094,
+      "normalized": "-746/165"
+    },
+    {
+      "a": 8,
+      "difference": -101660,
+      "normalized": "-46/11"
+    },
+    {
+      "a": 9,
+      "difference": -359176,
+      "normalized": "-556/143"
+    },
+    {
+      "a": 10,
+      "difference": -1281018,
+      "normalized": "-661/182"
+    },
+    {
+      "a": 11,
+      "difference": -4605980,
+      "normalized": "-310/91"
+    }
+  ],
+  "limitations": "Finite checks only; universal arguments are in REPORT.md."
+}

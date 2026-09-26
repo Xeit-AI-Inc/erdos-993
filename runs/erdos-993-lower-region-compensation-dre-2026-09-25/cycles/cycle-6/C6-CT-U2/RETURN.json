@@ -1,0 +1,31 @@
+{
+  "worker_id": "C6-CT-U2",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C6-U2-CENSUS-M1-40",
+      "statement": "Retained: for every unordered profile r_i in {2,3,4} with 1<=m<=40 in the specified path-and-branches ordinary-tree family, every rank satisfying x+2<=p and 3p<2alpha+1 has strictly negative complete original favorable-leaf sum S(T,p).",
+      "scope": "Bounded exact coefficient-recurrence census of 12,340 profiles and 191,016 eligible profile/rank pairs, with six fixed actual-tree graph-DP checks (164 polynomial comparisons). No extension beyond this family and m-boundary.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CT-U2/replay/EVIDENCE-replay.json",
+        "cycles/cycle-6/C6-CT-U2/replay/census.py",
+        "cycles/cycle-6/C6-CT-U2/replay/inputs/ordinary_tree_checked.py"
+      ],
+      "reason": "retained \u2014 the recurrence split, terminal zero-extended descent, strict rank guards, strict deletion selectors, and distinct-leaf multiplicities are consistent with the contract. The scratch replay reproduces every reported census total and the six graph-DP checks with no mismatch. This establishes only the stated bounded family result; it does not resolve the arbitrary-tree claim."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CT-U2/REPORT.md",
+  "limitations": [
+    "The census covers only 1<=m<=40 in the specified path-and-branches family; it does not cover the full m<2000 prefix or an infinite family.",
+    "It does not prove or refute the arbitrary ordinary-tree favorable-leaf aggregate.",
+    "Actual graph-DP checks cover six fixed profiles; exhaustive bounded coverage depends on the exact coefficient recurrences.",
+    "Central log-concavity checks are finite and limited to the listed polynomials and central rank interval; they establish no mixed-minor or uniform analytic claim."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-U2-CENSUS-M1-40"
+  ]
+}

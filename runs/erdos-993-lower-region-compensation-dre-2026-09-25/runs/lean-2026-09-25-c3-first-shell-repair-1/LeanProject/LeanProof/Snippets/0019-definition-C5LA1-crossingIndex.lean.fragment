@@ -1,0 +1,35 @@
+namespace C5LA1
+
+open SimpleGraph C4LA1
+
+variable {V : Type*} [Fintype V] [DecidableEq V]
+
+open Classical in
+/-- `x(G)`: the least `k` with `Delta_k(G) < 0`; exists because
+`Delta_(alpha)(G) = -i_alpha(G) < 0`. -/
+noncomputable
+def crossingIndex (G : SimpleGraph V) [DecidableRel G.Adj] : Nat :=
+  Nat.find (p := fun k => forwardDifferenceDel G ∅ k < 0)
+    (by
+      classical
+      obtain ⟨s, hs⟩ := G.exists_isNIndepSet_indepNum
+      refine ⟨G.indepNum, ?_⟩
+      have hzero : indepSetCount G ∅ (G.indepNum + 1) = 0 := by
+        have hempty : indepSetsAvoiding G ∅ (G.indepNum + 1) = ∅ := by
+          rw [Finset.eq_empty_iff_forall_notMem]
+          intro t ht
+          simp only [indepSetsAvoiding, Finset.mem_filter, Finset.mem_powersetCard] at ht
+          have hle : t.card ≤ G.indepNum := ht.2.card_le_indepNum
+          omega
+        rw [indepSetCount, hempty, Finset.card_empty]
+      have hpos : 0 < indepSetCount G ∅ G.indepNum := by
+        rw [indepSetCount, Finset.card_pos]
+        refine ⟨s, ?_⟩
+        simp only [indepSetsAvoiding, Finset.mem_filter, Finset.mem_powersetCard]
+        refine ⟨⟨?_, hs.card_eq⟩, hs.isIndepSet⟩
+        intro x _
+        simp
+      simp only [forwardDifferenceDel, hzero]
+      omega)
+
+end C5LA1

@@ -1,0 +1,40 @@
+{
+  "worker_id": "C1-CF-U1",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C1-U1-1",
+      "statement": "For every finite bipartite H, marked W, h >= alpha(H), and 1 <= k <= h, the tagged incidence identity k*q_(k+1)+C=2(h-k)*q_k-D holds with actual addable vertices and each multiply marked extension counted once; D,C >= 0.",
+      "scope": "The registered auxiliary identity, including k=h and q_k=0; this is not a proof of the ordinary-tree aggregate.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CF-U1/REPORT.md"
+      ],
+      "reason": "retained: the color-side independence bound proves D >= 0, and the two incidence counts give the identity with exactly one correction per multiply marked extension; C >= 0 by definition. Boundary cases and the non-tight h domain are valid."
+    },
+    {
+      "claim_id": "C1-U1-2",
+      "statement": "In the eligible ordinary-tree specialization, the exact deficit-budget margin is -k*S(T,p)=k*sum_F(q_v(k)-q_v(k+1)); proving that budget is equivalent to proving the fixed-selector aggregate, and the identity plus D,C >= 0 does not itself establish the needed comparison.",
+      "scope": "Every eligible lower-region ordinary tree, using h=a-1, k=p-1 and the same tagged original-leaf selector F(T,p).",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CF-U1/REPORT.md"
+      ],
+      "reason": "retained_narrowed: the algebra and domain specialization are correct and useful as an exact reformulation, but the remaining selector-level monotonicity/global deficit budget is unproved. The nonnegativity statements alone give no positive-coefficient comparison when sum_F q_v(k)>0; no target verdict follows."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CF-U1/REPORT.md",
+  "limitations": [
+    "No proof or eligible counterexample for the primary lower-region ordinary-tree aggregate was established.",
+    "The supplied large-tree controls were read as admitted scope fences but their tree arithmetic was not independently replayed.",
+    "The identity and equivalent selector-level reformulation do not establish the global deficit budget; no literature bridge or bounded computation was used.",
+    "No claim is made about the separate high-tail extraction obligation or governed RTree scopes."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-U1-1",
+    "C1-U1-2"
+  ]
+}

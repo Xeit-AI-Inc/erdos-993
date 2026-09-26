@@ -1,0 +1,33 @@
+{
+  "scope": "Exact hand-checkable star-family calculation and a rank obstruction outside the selector range",
+  "packet_hash_audit": "All 115 common-packet source entries matched their listed SHA-256 values; the route packet listed no additional source files.",
+  "field": "Q",
+  "operator": {
+    "space": "M_j(H,W) has basis the independent j-sets of H meeting W",
+    "dimension": "q_j = i_j(H)-i_j(H-W)",
+    "map": "d_{j+1}(e_A)=sum_{u in A with (A\\{u}) intersect W nonempty} e_(A\\{u})",
+    "sufficient_condition": "Injectivity of d_{k+1} for each selected v implies q_v(k+1)<=q_v(k), hence S(T,p)<=0 for k=p-1"
+  },
+  "star_family": {
+    "tree": "T=K_{1,m}, m>=4",
+    "independence_counts": "i_0=1; i_1=m+1; i_j=binom(m,j) for 2<=j<=m; i_j=0 for j>m",
+    "terminal_descent": "x=floor((m-1)/2)+1",
+    "selector": "For any eligible p, every one of the m original leaves is selected because T-v=K_{1,m-1} and Delta_p(T-v)<0",
+    "residual": "H_v is edgeless on m-1 vertices, W_v=V(H_v), R_v is empty",
+    "marked_counts": "q_v(j)=binom(m-1,j) for 1<=j<=m-1",
+    "complete_sum": "S=m*(binom(m-1,p)-binom(m-1,p-1))<0",
+    "guards": "x+2<=p and 3p<2m+1; with k=p-1, k>=x+1>(m-1)/2"
+  },
+  "exact_examples": [
+    {"m": 20, "x": 10, "p": 12, "lower_guard": true, "strict_upper_guard": "36<41", "F_size": 20, "per_leaf": -25194, "S": -503880},
+    {"m": 20, "x": 10, "p": 13, "lower_guard": true, "strict_upper_guard": "39<41", "F_size": 20, "per_leaf": -23256, "S": -465120}
+  ],
+  "operator_obstruction": {
+    "tree": "K_{1,20}",
+    "residual": "edgeless H_v on 19 marked vertices",
+    "map": "d_6:M_6->M_5",
+    "dimensions": {"source": 27132, "target": 11628},
+    "conclusion": "d_6 cannot be injective by dimension; this rank is not selector-eligible and does not refute the target"
+  },
+  "topology_check": "Independence complex of K_{1,m} is the simplex on the leaves disjoint from the isolated center vertex; it is nonpure and disconnected."
+}

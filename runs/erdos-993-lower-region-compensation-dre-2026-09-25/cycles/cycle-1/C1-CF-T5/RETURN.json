@@ -1,0 +1,41 @@
+{
+  "worker_id": "C1-CF-T5",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C1-T5-1",
+      "statement": "For each original support fibre, every leaf has the same favorable selector value and summand, and the full sum equals the stated rooted support-fibre formula with multiplicity.",
+      "scope": "Every finite ordinary tree and integer p under integer zero-extension; the identity does not require the target eligibility guards.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CF-T5/evidence/critique-audit.md",
+        "cycles/cycle-1/C1-CF-T5/evidence/rooted_transfer_replay.json"
+      ],
+      "reason": "retained: The deletion operations yield P_s and Q_s exactly, partition at s gives I(T-v)=P_s+zQ_s, and the selected leaves contribute m_s identical rank-(p-1) differences. Independent replay matched direct deletion polynomials and selectors on both standing T22 and T60 controls."
+    },
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "C1-T5 establishes no proof or eligible counterexample for the complete lower-region aggregate; its transfer state leaves a global compensation inequality unresolved.",
+      "scope": "Only the result and evidence of source route C1-T5 concerning the contract's exact ordinary-tree lower-region assertion.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CF-T5/REPORT.md",
+        "cycles/cycle-1/C1-CF-T5/evidence/critique-audit.md"
+      ],
+      "reason": "retained_narrowed: The transfer formula is equivalent to the target sum and no sign bound follows. The required controls retain positive marked terms but negative full sums, and the route supplies no global compensation proof or eligible positive full sum; this is only an evidence report, not an authoritative status award."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CF-T5/REPORT.md",
+  "limitations": [
+    "The independent recurrence replay covers only the two prescribed T22 and T60 controls and is not exhaustive.",
+    "No universal compensation inequality, proof, or eligible refutation is established.",
+    "No imported theorem or literature bridge is used; the target status remains controller-owned."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-T5-1",
+    "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE"
+  ]
+}

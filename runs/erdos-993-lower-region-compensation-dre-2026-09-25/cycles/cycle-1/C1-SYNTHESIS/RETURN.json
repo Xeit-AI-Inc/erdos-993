@@ -1,0 +1,306 @@
+{
+  "worker_id": "C1-SYNTHESIS",
+  "cycle": 1,
+  "stage": "synthesis",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "C1-T1-1",
+      "statement": "For every star T=K_(1,m) with m>=4 and every natural p satisfying x(T)+2<=p and 3p<2alpha(T)+1, all m original leaves are favorable and S(T,p)=m[binom(m-1,p)-binom(m-1,p-1)]<0.",
+      "scope": "Exact symbolic theorem for the eligible star subfamily of finite ordinary trees, with all same-support leaf tags counted; no assertion for arbitrary trees.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md",
+        "cycles/cycle-1/C1-SYNTHESIS/EVIDENCE.md"
+      ],
+      "reason": "retained: The symbolic binomial proof covers every eligible star and every original leaf tag. It has no arbitrary-tree implication."
+    },
+    {
+      "claim_id": "C1-T2-1",
+      "statement": "At an original leaf v with H=T-{v,s_v} and R=T-N_T[s_v], I_T=(1+z)I_H+zI_R and I_(T-v)=I_H+zI_R, so Delta_p(T-v)=Delta_p(H)+Delta_(p-1)(R); pair pruning need not preserve the strict lower-region guard, as K_(1,12) at p=8 shows.",
+      "scope": "Universal zero-extended leaf-support polynomial identities for finite ordinary trees, plus the one exact eligible star pruning obstruction; no induction theorem or primary-target verdict.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md",
+        "cycles/cycle-1/C1-SYNTHESIS/EVIDENCE.md"
+      ],
+      "reason": "retained: Original support partition proves both polynomial identities; the eligible K_(1,12) instance demonstrates failure of direct guarded pair-pruning closure only."
+    },
+    {
+      "claim_id": "C1-T3-1",
+      "statement": "For finite bipartite H, arbitrary W, integer h>=alpha(H), and 1<=k<=h, marked independent-set counts Q_j obey k Q_(k+1)+C=2(h-k)Q_k-D with D,C>=0, where D sums actual addability deficits and C counts each multiply marked upper set once. For eligible ordinary trees this yields g_v=q_v(k+1)-q_v(k) and kS=(2a+1-3p)sum_F q_v(k)-sum_F(D_v+C_v).",
+      "scope": "Exact finite bipartite marked-incidence identity and its fixed-selector ordinary-tree specialization with original distinct leaf tags; no aggregate sign conclusion.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md",
+        "cycles/cycle-1/C1-SYNTHESIS/EVIDENCE.md"
+      ],
+      "reason": "retained: Bipartite color-side capacity and marked-extension incidence counting prove the exact identity; the fixed-selector tree specialization leaves the positive-coefficient global budget open."
+    },
+    {
+      "claim_id": "C1-T3-2",
+      "statement": "For the fixed favorable original-leaf set, the primary assertion is exactly sum_F q_v(k+1)<=sum_F q_v(k). A per-tag upper-to-lower containment matching is sufficient but cannot hold universally, since eligible T_22 and T_60 each have a positive selected tag while their complete sums are negative; no cross-tag matching or total inequality is proved.",
+      "scope": "Exact reformulation of the lower-region ordinary-tree target and a finite obstruction to universal tagwise matching only; distinct original leaves remain separate tags.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md",
+        "cycles/cycle-1/C1-SYNTHESIS/EVIDENCE.md"
+      ],
+      "reason": "retained_narrowed: The tagged-layer equivalence is exact. Positive tagged rows in two eligible controls rule out universal within-tag matching, not the complete-sum inequality."
+    },
+    {
+      "claim_id": "C1-T4-1",
+      "statement": "For each favorable original leaf v, i_p(T-v)>0 and Delta_p(T-v)<0 iff the mean number of addable vertices of a uniform independent p-set of T-v is less than p+1; the target summand is instead q_v(p)-q_v(p-1) in a marked slice of T-{v,s_v}.",
+      "scope": "Exact first-moment and marked-rank translation for eligible ordinary-tree pairs with the original strict selector; it supplies no coupling, deficit budget, or full-sum sign.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md",
+        "cycles/cycle-1/C1-SYNTHESIS/EVIDENCE.md"
+      ],
+      "reason": "retained: Addable-pair double counting proves the first-moment selector translation with a positive denominator; no coupling to the marked target slice is supplied."
+    },
+    {
+      "claim_id": "C1-T5-1",
+      "statement": "For every original support s with m_s leaf neighbors, P_s=(1+z)^(m_s-1) product_w J_(s,w) and Q_s=product_w E_(s,w) give I(T-v)=P_s+zQ_s, I(T-{v,s})=P_s, and I(T-N_T[s])=Q_s for every v in its leaf fibre; hence S(T,p)=sum_(s:Delta_p(P_s+zQ_s)<0) m_s Delta_(p-1)(P_s-Q_s).",
+      "scope": "Exact support-fibre polynomial identity for finite ordinary trees and integer zero-extended ranks, without needing the lower-region guards; original same-support leaves retain multiplicity.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md",
+        "cycles/cycle-1/C1-SYNTHESIS/EVIDENCE.md"
+      ],
+      "reason": "retained: Rooted component products and original-support partition yield the fibre identity with all m_s leaf tags; no cross-fibre sign bound follows."
+    },
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "The three sealed cycle-1 adjudications provide no proof of S(T,p)<=0 for every eligible finite ordinary tree and no reproducible eligible tree with positive complete S(T,p); the exact lower-region primary target remains unresolved on this evidence.",
+      "scope": "Evidence-limited proposed assessment of the registered primary target under x(T)+2<=p, strict 3p<2alpha(T)+1, fixed original-leaf selector, original graph operations and complete tagged sum; no controller status award.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md",
+        "cycles/cycle-1/C1-SYNTHESIS/EVIDENCE.md"
+      ],
+      "reason": "retained_narrowed: Across all three sealed adjudications, no universal selected-sum proof or eligible positive complete-sum witness is supplied. This is an evidence-limited proposed open assessment, not a controller verdict."
+    },
+    {
+      "claim_id": "C1-T6-1",
+      "statement": "Ordinary homotopy type alone does not determine the rank-seven independence-count difference: the independence complexes of edgeless H_10 and H_11 are both contractible full simplices, but Delta_7(H_10)=-75 and Delta_7(H_11)=-165.",
+      "scope": "Exact information-loss diagnostic for local induced forests realizable as leaf-support deletions of stars; no eligible full-sum witness or primary-target inequality.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md",
+        "cycles/cycle-1/C1-SYNTHESIS/EVIDENCE.md"
+      ],
+      "reason": "retained: Two full simplices have the stated different exact rank-seven differences; the diagnostic has no eligible primary-target consequence."
+    },
+    {
+      "claim_id": "C1-F1-1",
+      "statement": "For the fixed seed 99320260925, 14 generated order-91 and 14 generated order-243 root multi-hub recipes plus the two unperturbed anchors yield 582 eligible tree/rank rows (137 and 445 respectively); all complete fixed-selector sums are nonpositive, and the anchors each have a positive selected local term but a negative full sum.",
+      "scope": "Exactly the 30 generated recipes and every eligible rank in each, with no deduplication or exhaustive claim for the multi-hub family or ordinary trees.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md",
+        "cycles/cycle-1/C1-SYNTHESIS/EVIDENCE.md"
+      ],
+      "reason": "retained: The adjudicated 30 seeded recipes and 582 guarded rows are a finite sample with nonpositive complete sums; no family-wide inference."
+    },
+    {
+      "claim_id": "C1-F2-1",
+      "statement": "The actual seeded 1,200-case rooted-tree generator at orders 9 through 36 yields 878 eligible rows, none with a positive selected term or complete sum; its largest complete sum is -253. In mode 1 its executable non-root parent weight is 2d+2.",
+      "scope": "Exactly the draws from seed 99320260925 and the three source-code generation modes described in REPORT.md; the written 2d+1 mode-1 weight is corrected to the executable 2d+2. The draws are not an exhaustive tree census.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md",
+        "cycles/cycle-1/C1-SYNTHESIS/EVIDENCE.md"
+      ],
+      "reason": "retained_narrowed: The finite counts apply to the actual executable seeded generator. Its mode-1 non-root weight is 2d+2, correcting the written 2d+1."
+    },
+    {
+      "claim_id": "C1-F3-1",
+      "statement": "At p=35, the order-91 t_family(22) tree and its order-94 graft by path 4-91-92-93 are both eligible and have full sums -838171658290934690688 and -2341400510849661617965; old leaf 4 leaves the selector, new leaf 93 enters, and retained leaf 2 changes selected term from -212336130412243110 to +424672260824486220.",
+      "scope": "The one exactly encoded pair and fixed rank p=35, as an instance of selector and term instability with negative full sums; no general graft or aggregate sign theorem.",
+      "status": "proposed_bounded_result",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md",
+        "cycles/cycle-1/C1-SYNTHESIS/EVIDENCE.md"
+      ],
+      "reason": "retained: The one encoded eligible graft pair has checked selector and term changes while both complete sums remain negative; no general graft theorem."
+    },
+    {
+      "claim_id": "C1-F4-1",
+      "statement": "For all 80 parameter configurations 2<=m<=6, 1<=d<=4, 2<=L<=5 in the symmetric root-hub pendant-path construction, all 151 eligible configuration/rank rows have strictly negative complete fixed-selector sums.",
+      "scope": "Complete finite census of the stated parameter box only; 80 counts configurations, without asserting distinct unrooted isomorphism classes or any sign outside the box.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md",
+        "cycles/cycle-1/C1-SYNTHESIS/EVIDENCE.md"
+      ],
+      "reason": "retained: The 151 negative rows exhaust the stated 80-configuration parameter box only, with no assertion of distinct unrooted classes."
+    },
+    {
+      "claim_id": "C1-F5-1",
+      "statement": "The equation-only scalar tagged-incidence relaxation admits h=5,k=2,q_k=1,q_(k+1)=3,D=C=0 and local g=2>0. Actual tree-derived leaf profiles obey the rooted-component product identities, the strict selector equation Delta_p(T-v)=q_(p+1)-q_p+r_(p+1)-r_(p-1), and all-or-none same-support leaf multiplicity; these necessary constraints establish no full-sum sign.",
+      "scope": "Abstract scalar arithmetic and exact necessary identities for original-leaf profiles of finite ordinary trees; the scalar point is not certified by a graph or eligible tree, and no global deficit budget or counterexample is claimed.",
+      "status": "proposed_partial_result",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md",
+        "cycles/cycle-1/C1-SYNTHESIS/EVIDENCE.md"
+      ],
+      "reason": "retained_narrowed: The positive point is equation-only and has no graph/tree realization. Actual profiles obey the stated product and selector constraints, with r_(p+1)-r_(p-1) the correct selector term."
+    },
+    {
+      "claim_id": "C1-F6-1",
+      "statement": "The generated spider arm-length multisets (456 cases, 53 eligible rows) and seeded Prüfer-sequence draws (1,760 cases, 2,022 eligible rows) contain no positive complete fixed-selector sum; their largest sums are -230 and -2562 respectively.",
+      "scope": "All nondecreasing 2-6-arm tuples with lengths 1-5, and 220 Prüfer draws at each of orders 18,22,26,30,34,40,48,56 with seed 9930601; neither count asserts unique nonisomorphic trees or a universal sign.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md",
+        "cycles/cycle-1/C1-SYNTHESIS/EVIDENCE.md"
+      ],
+      "reason": "retained_narrowed: The negative rows concern exactly the 456 arm multisets and 1,760 seeded Pruefer draws, with no unbounded tree census."
+    },
+    {
+      "claim_id": "C1-U1-1",
+      "statement": "For every finite bipartite H, arbitrary marked W, integer h>=alpha(H), and 1<=k<=h, with q_j the count of independent j-sets meeting W, actual-addable e(A), D=sum_A[2(h-k)-e(A)], and C the count of independent (k+1)-sets meeting W at least twice once per set, k*q_(k+1)+C=2(h-k)*q_k-D and D,C>=0.",
+      "scope": "The registered tagged-incidence auxiliary, including k=h, q_k=0, and non-tight h.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md",
+        "cycles/cycle-1/C1-SYNTHESIS/EVIDENCE.md"
+      ],
+      "reason": "retained: A direct capacity and incidence proof independently confirms the exact registered bipartite tagged-incidence auxiliary, including endpoint and empty-marked-layer cases."
+    },
+    {
+      "claim_id": "C1-U1-2",
+      "statement": "For every eligible ordinary tree, the global deficit-budget margin sum_F(D_v+C_v)-(2a+1-3p)sum_F q_v(p-1) equals -(p-1)S(T,p). The budget is equivalent to the fixed-selector aggregate and is not implied by the identity and nonnegativity alone.",
+      "scope": "Exact lower-region ordinary-tree specialization using original leaves, supports, neighborhoods and all leaf tags; no primary sign conclusion.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md",
+        "cycles/cycle-1/C1-SYNTHESIS/EVIDENCE.md"
+      ],
+      "reason": "retained_narrowed: The exact margin equality follows, but nonnegativity alone does not imply its sign; a tree-specific global budget remains possible and unproved."
+    },
+    {
+      "claim_id": "C1-U2-1",
+      "statement": "For every eligible ordinary tree, S(T,p)>0 implies that some selected original leaf tag v and marked independent (p-1)-set A in H_v have at least p actual addable vertices. If every such selected marked set has at most p-1 addable vertices, then S(T,p)<=0.",
+      "scope": "Conditional necessary condition for a positive full sum and sufficient obstruction under the displayed uniform bound; not a universal bound or witness.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md",
+        "cycles/cycle-1/C1-SYNTHESIS/EVIDENCE.md"
+      ],
+      "reason": "retained: Integer deficit arithmetic gives the conditional addability threshold. Neither a universal upper bound nor a positive full-sum example is provided."
+    },
+    {
+      "claim_id": "C1-U3-1",
+      "statement": "For each eligible tree with fixed original favorable set F and k=p-1, S(T,p)=sum_(v in F)[q_v(k+1)-q_v(k)], where q_v(j) counts independent j-sets of H_v meeting W_v. Thus the primary is equivalent to sum_F q_v(k+1)<=sum_F q_v(k).",
+      "scope": "Every eligible finite ordinary tree and p, with original H_v,W_v,R_v and distinct original leaf tags; exact reformulation only.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md",
+        "cycles/cycle-1/C1-SYNTHESIS/EVIDENCE.md"
+      ],
+      "reason": "retained: R_v=H_v-W_v and zero-extended rank differences yield the exact fixed-selector tagged-layer reformulation."
+    },
+    {
+      "claim_id": "C1-U3-2",
+      "statement": "For a fixed eligible instance, a unit-capacity fractional matching from each marked tagged upper-layer set to a marked tagged lower-layer subset within the same leaf tag suffices for S<=0. Hall deficiency exactly obstructs this matching certificate but need not make S positive.",
+      "scope": "Fixed eligible ordinary tree and p with the exact F; conditional within-tag inclusion-graph certificate only, not universal feasibility.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md",
+        "cycles/cycle-1/C1-SYNTHESIS/EVIDENCE.md"
+      ],
+      "reason": "retained: Saturating within-tag inclusion flow suffices for the total inequality; Hall describes this certificate, and the positive-tag controls show it is not universally feasible."
+    },
+    {
+      "claim_id": "C1-U3-3",
+      "statement": "The U3 transport route does not resolve the universal lower-region aggregate. Its specific no-cross-tag unit-capacity matching certificate is not universally feasible, as the eligible T22 and T60 controls have Hall-deficient positive selected rows but negative complete sums.",
+      "scope": "Assessment of the U3 method and the two finite pinned controls only; no refutation of the primary.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md",
+        "cycles/cycle-1/C1-SYNTHESIS/EVIDENCE.md"
+      ],
+      "reason": "retained_narrowed: The finite controls defeat only the specified within-tag matching certificate; their complete sums remain negative."
+    },
+    {
+      "claim_id": "C1-U4-1",
+      "statement": "For each original leaf v, I(T-v,z)=I(H_v,z)+zI(R_v,z). With q_j=i_j(H_v)-i_j(R_v) and r_j=i_j(R_v), the selector is q_(p+1)-q_p+r_(p+1)-r_(p-1)<0, while its summand is q_p-q_(p-1). This leaves a missing comparison for the displayed direct coefficient route; claw-free real-rootedness does not apply uniformly to arbitrary trees or establish that comparison.",
+      "scope": "Exact per-leaf identities on finite ordinary trees and limited audit of Chudnovsky-Seymour Theorem 1.1; no claim about all generating-function methods or either registered target verdict.",
+      "status": "proposed_partial",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md",
+        "cycles/cycle-1/C1-SYNTHESIS/EVIDENCE.md"
+      ],
+      "reason": "retained_narrowed: The coefficient split and rank shifts are exact. The named claw-free theorem has no uniform arbitrary-tree bridge, a limitation only of that displayed route."
+    },
+    {
+      "claim_id": "C1-U5-1",
+      "statement": "For every ordinary tree of order at least three, its support-core polynomial and two-state rooted branch formulas exactly evaluate the original selector and local terms with all same-support leaf multiplicities. For every eligible ordinary star K_(1,m), the complete selected aggregate is strictly negative.",
+      "scope": "Exact representation for ordinary trees of order at least three; strict sign theorem only for stars satisfying x+2<=p and 3p<2m+1.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md",
+        "cycles/cycle-1/C1-SYNTHESIS/EVIDENCE.md"
+      ],
+      "reason": "retained: Independent-set partitions prove the decorated-core evaluation; binomial differences prove strict negativity only for eligible stars."
+    },
+    {
+      "claim_id": "C1-U6-1",
+      "statement": "For each fixed a=alpha(T), every ordinary tree has at most 2a vertices and lies in a finite isomorphism-class domain. Leaves at the same original support have equal strict selector values and equal summands, so their tagged contribution is their multiplicity times the common selected summand.",
+      "scope": "Exact fixed-a finite reduction and same-support compression; no uniform bound in a, executed census, or complete-sum sign result.",
+      "status": "proposed_partial",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md",
+        "cycles/cycle-1/C1-SYNTHESIS/EVIDENCE.md"
+      ],
+      "reason": "retained: Bipartition classes give |V(T)|<=2a and same-support automorphisms preserve selectors and terms; finiteness at fixed a gives no unbounded sign."
+    },
+    {
+      "claim_id": "E993-BIPARTITE-TAGGED-INCIDENCE-DEFICIT-IDENTITY",
+      "statement": "For every finite bipartite graph H, arbitrary marked vertex set W, integer h>=alpha(H), and 1<=k<=h, the marked independent-set counts satisfy k*q_(k+1)+C=2(h-k)*q_k-D with D,C>=0, where D uses actual addable vertices and C counts each multiply marked upper set once.",
+      "scope": "The separately registered exact bipartite tagged-incidence auxiliary at its full stated domain, including k=h, q_k=0, and non-tight h; no primary selected-sum sign follows.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md",
+        "cycles/cycle-1/C1-SYNTHESIS/EVIDENCE.md"
+      ],
+      "reason": "derived synthesis: C1-T3-1 and C1-U1-1 agree, and the direct bipartition-capacity and incidence proof in EVIDENCE.md verifies the exact auxiliary. Controller review is recommended without a primary-target transfer."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-SYNTHESIS/REPORT.md",
+  "limitations": [
+    "The primary lower-region ordinary favorable-leaf aggregate remains unresolved by the three sealed adjudications; the global deficit budget has no proof and no eligible positive complete-sum witness is supplied.",
+    "The F-origin searches and graft are finite, and the F5 scalar relaxation has no certified graph or selected-tree realization.",
+    "The order-91 and order-243 controls were re-summed from pinned rows here; their graph construction and full coefficient vectors were not independently regenerated in this synthesis.",
+    "Only the three sealed adjudicator outputs and packet-listed common inputs were examined. Route and critic files cited by adjudicators were not reopened.",
+    "The star theorem has only eligible-star scope, the matching condition is only sufficient, and no separate high-tail conclusion is proposed."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-F1-1",
+    "C1-F2-1",
+    "C1-F3-1",
+    "C1-F4-1",
+    "C1-F5-1",
+    "C1-F6-1",
+    "C1-T1-1",
+    "C1-T2-1",
+    "C1-T3-1",
+    "C1-T3-2",
+    "C1-T4-1",
+    "C1-T5-1",
+    "C1-T6-1",
+    "C1-U1-1",
+    "C1-U1-2",
+    "C1-U2-1",
+    "C1-U3-1",
+    "C1-U3-2",
+    "C1-U3-3",
+    "C1-U4-1",
+    "C1-U5-1",
+    "C1-U6-1",
+    "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE"
+  ]
+}

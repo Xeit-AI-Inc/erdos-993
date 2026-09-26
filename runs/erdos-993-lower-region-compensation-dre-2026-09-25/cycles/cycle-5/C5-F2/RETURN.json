@@ -1,0 +1,28 @@
+{
+  "worker_id": "C5-F2",
+  "cycle": 5,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C5-F2-HETEROGENEOUS-BOUNDED-AUDIT",
+      "statement": "For every hub-attached tree with path 0-1-2 and 1 to 5 branches, each branch center adjacent to 0 and having 2, 3, or 4 pendant leaves, every eligible lower-region rank in the specified exact finite census has S<0; no eligible row has a proper favorable-leaf selector or a positive local summand, and no whole-tree independence polynomial in this census fails coefficient log-concavity.",
+      "scope": "Exact bounded census of the 55 nondecreasing multisets of arities 2,3,4 of lengths 1 through 5, covering all ranks p with x+2<=p<=alpha and 3p<2alpha+1. This is computational evidence only and does not establish the heterogeneous extension or the universal primary claim.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-F2/COMPUTE.py",
+        "cycles/cycle-5/C5-F2/RESULTS.json"
+      ],
+      "reason": "Exact recurrence computation and an independent hub-factor coefficient formula agree on all 55 profiles. The finite result has no counterexample and supplies no general proof, mixed-selector witness, distributed marked-polynomial curvature theorem, or global D+C budget."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-F2/REPORT.md",
+  "limitations": [
+    "The graph family is restricted to a path 0-1-2 with 1 to 5 star branches at 0, each of arity 2, 3, or 4.",
+    "The finite census is not exhaustive over ordinary trees and cannot resolve the universal target.",
+    "Every eligible row in this family has all original leaves selected, so selector-change behavior was not tested.",
+    "Whole-tree coefficient log-concavity does not imply the proposed common-minor or distributed marked-polynomial inequalities.",
+    "No proof of the global D+C budget or of the heterogeneous extension is supplied."
+  ],
+  "status_authority": "proposed_worker_only"
+}

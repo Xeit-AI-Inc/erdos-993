@@ -1,0 +1,14 @@
+namespace Erdos993G1.FirstWide
+
+lemma matching_distinct {X : Type u} (G : SimpleGraph X) (a b c d : X)
+    (hab : G.Adj a b) (hcd : G.Adj c d)
+    (hdis : Disjoint ({a,b} : Set X) {c,d}) :
+    a ≠ b ∧ a ≠ c ∧ a ≠ d ∧ b ≠ c ∧ b ≠ d ∧ c ≠ d := by
+  have h := Set.disjoint_left.mp hdis
+  have hac : a ≠ c := by intro e; exact h (a := a) (by simp) (by simp [e])
+  have had : a ≠ d := by intro e; exact h (a := a) (by simp) (by simp [e])
+  have hbc : b ≠ c := by intro e; exact h (a := b) (by simp) (by simp [e])
+  have hbd : b ≠ d := by intro e; exact h (a := b) (by simp) (by simp [e])
+  exact ⟨hab.ne, hac, had, hbc, hbd, hcd.ne⟩
+
+end Erdos993G1.FirstWide

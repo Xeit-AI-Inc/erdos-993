@@ -1,0 +1,1 @@
+The primary evaluator returns compact exact rows rather than full polynomial vectors. This additive script supplies the full vectors promised by PROTOCOL.md for every original leaf of each already frozen case, and checks selectors and aggregate against the unchanged results. No old source or mathematical output is rewritten.

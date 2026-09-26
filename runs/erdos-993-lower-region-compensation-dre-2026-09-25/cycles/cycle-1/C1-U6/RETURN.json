@@ -1,0 +1,25 @@
+{
+  "worker_id": "C1-U6",
+  "cycle": 1,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C1-U6-1",
+      "statement": "For each fixed independence number a, every ordinary tree T with alpha(T)=a has order at most 2a and hence lies in a finite isomorphism-class search domain; furthermore, all original leaves sharing an original support have identical Delta_p(T-v) selector values and identical selected summands, so their full tagged contribution is exactly their multiplicity times the common summand.",
+      "scope": "Exact fixed-a finite reduction and same-support compression for finite ordinary trees, preserving the strict selector and tagged aggregate. This provides no uniform bound over a and no sign conclusion for the complete sum.",
+      "status": "proposed_partial",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-U6/evidence/fixed-alpha-kernel.md"
+      ],
+      "reason": "Bipartition classes are independent, giving |V(T)|<=2a. Swapping any two leaves with the same support is a tree automorphism, which preserves T-v up to isomorphism, maps T-{v,s_v} to the corresponding deletion for the other leaf, and leaves T-N[s_v] unchanged. Multiplicity therefore reproduces exactly the original selected-tag sum. The argument is elementary and complete for its stated scope, but parameterwise finiteness does not resolve the unbounded-a assertion or control compensation between supports."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-U6/REPORT.md",
+  "limitations": [
+    "The finite enumeration bound depends on a=alpha(T), which is unbounded in the primary target.",
+    "No global sign bound follows from support-profile compression; positive contributions may be offset elsewhere.",
+    "No exhaustive computation, witness, imported theorem, or resolution of the primary target is claimed."
+  ],
+  "status_authority": "proposed_worker_only"
+}

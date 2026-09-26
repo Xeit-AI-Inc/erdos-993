@@ -1,0 +1,57 @@
+{
+  "schema": "e993.c3-au.adjudication.evidence.v1",
+  "source_integrity": {
+    "case_packet": "packets/C3-AU.json",
+    "case_listed_files": 66,
+    "case_hash_mismatches": 0,
+    "common_packet": "packets/C3-COMMON.json",
+    "common_listed_files": 115,
+    "common_hash_mismatches": 0,
+    "method": "SHA-256 of every exact path listed in each packet was compared with that packet's expected digest. No unlisted file was needed for verification."
+  },
+  "source_coverage": {
+    "routes": ["C3-U1", "C3-U2", "C3-U3", "C3-U4", "C3-U5", "C3-U6"],
+    "critics": ["C3-CT-U1", "C3-CF-U1", "C3-CT-U2", "C3-CF-U2", "C3-CT-U3", "C3-CF-U3", "C3-CT-U4", "C3-CF-U4", "C3-CT-U5", "C3-CF-U5", "C3-CT-U6", "C3-CF-U6"],
+    "unique_route_claim_count": 12,
+    "dispositions": {
+      "C3-U3-FIRST-SHELL-POINTWISE": "retained",
+      "C3-U3-MARKED-COVER-SHELL": "retained",
+      "C3-U4.COLORED-SHADOW-SCOPE": "retained_narrowed",
+      "C3-U4.CUT-DUAL": "retained",
+      "C3-U4.ORBIT-COMPRESSION": "retained",
+      "C3-U5-EARLY-DESCENT-MARKED-OCCUPANCY-BRIDGE": "retained",
+      "C3-U6.marked-down-operator": "retained",
+      "C3-U6.star-subcase": "retained",
+      "E993-LOWER-REGION-AGGREGATE-RANK-LE-SEVEN": "retained_narrowed",
+      "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE": "retained_narrowed",
+      "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL": "retained",
+      "E993-U1-CLONE-PROJECTION": "retained_narrowed"
+    }
+  },
+  "rank_seven_composition": {
+    "forest_descent_maxima_ranks_1_to_5": [4, 8, 11, 15, 18],
+    "dependencies": ["informal marked-isolate order-band proof", "registered global 4k descent-order bound", "bounded forest maxima census", "five bounded residual free-tree censuses"],
+    "residual_rows": [
+      {"p": 6, "order": 14, "free_tree_classes": 3159, "eligible_and_subset_replayed": 240, "nonnegative_complete_sums": 0, "maximum_complete_sum": -222},
+      {"p": 6, "order": 15, "free_tree_classes": 7741, "eligible_and_subset_replayed": 1, "nonnegative_complete_sums": 0, "maximum_complete_sum": -192},
+      {"p": 7, "order": 16, "free_tree_classes": 19320, "eligible_and_subset_replayed": 1696, "nonnegative_complete_sums": 0, "maximum_complete_sum": -906},
+      {"p": 7, "order": 17, "free_tree_classes": 48629, "eligible_and_subset_replayed": 2955, "nonnegative_complete_sums": 0, "maximum_complete_sum": -966},
+      {"p": 7, "order": 18, "free_tree_classes": 123867, "eligible_and_subset_replayed": 340, "nonnegative_complete_sums": 0, "maximum_complete_sum": -864}
+    ],
+    "scope_correction": "The pinned p7 17/18 correction receipt changes only the erroneous raw top-level 14/15 order label; 3295 mathematical rows are unchanged.",
+    "adjudicator_replay": "No full free-tree generator or subset enumeration was rerun in this seat."
+  },
+  "weighted_hall_bounded_rows": [
+    {"m": 22, "p": 34, "upper_supply_equals_reported_flow": "6533318342644086823410", "expanded_cut_deficit": 0, "positive_non_deletion_orbit_arcs_in_f_critic_replay": 379},
+    {"m": 60, "p": 90, "upper_supply_equals_reported_flow": "18218546853926351167830731257168063662695945613618170468520", "expanded_cut_deficit": 0, "positive_non_deletion_orbit_arcs_in_f_critic_replay": 7231},
+    {"m": 66, "p": 98, "upper_supply_equals_reported_flow": "10621175131261862108643497325635134690753959446180514839346249972", "expanded_cut_deficit": 0, "positive_non_deletion_orbit_arcs_in_f_critic_replay": 10987}
+  ],
+  "dispute_resolutions": [
+    "U1 order-14 clone labels lack a complete ordinary-tree edge encoding; strict enlargement is carried only on the three T_m rows supported by the F critic's copied foreground replay.",
+    "U2 order-17/18 corrected scope is used; its raw scope string is not treated as the case horizon.",
+    "U3 route report's no-claim-ID sentence is clerical; its sealed return and both critics cover the two actual claims.",
+    "U4 literature assertion is limited to failure of direct application; exact external theorem hypotheses were not independently audited.",
+    "U5 marked occupancy transfer and U6 general injectivity remain unproved premises, so neither conditional route resolves the target."
+  ],
+  "new_work_limits": "No new census, graph construction, Lean build, large flow replay, or external literature retrieval was performed by this adjudicator."
+}

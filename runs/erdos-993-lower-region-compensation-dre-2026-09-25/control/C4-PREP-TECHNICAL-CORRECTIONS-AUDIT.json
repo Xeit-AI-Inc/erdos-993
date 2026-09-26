@@ -1,0 +1,217 @@
+{
+  "worker_id": "C4-PREP-TECHNICAL-CORRECTIONS-AUDIT",
+  "model": "gpt-6-sol",
+  "reasoning_effort": "high",
+  "status_authority": "proposed_worker_only",
+  "task": "Fresh independent technical second read of three possible controller-identified errors. Do not accept root notes on authority. (1) C4-U3 and BOTH critics endorse a closed-neighborhood core-state polynomial; test it on the exact eligible order24 six-center tree, derive the correct formula and composition count, preserve whatever structural representation is valid. (2) C4-U2 first-mark difference index and generic matching threshold vs special second-shell p6; distinguish harmless prose errors from a false stated conditional theorem. (3) F1 route and BOTH critiques conflate flat budget with CT_x at p=x+2. Independently derive all three budget gaps; use exact recorded counts to check true CT_x on all37 rows, and if practical use a separately implemented graphDP to verify i_x,i_(x+1) (don't reread raw transports). Explain what the actual finite claim proves and what it does not. Write REPORT.md, RESULTS.json, REPLAY.py/EVIDENCE.json and separate U3-CORRECTION.md,U2-CORRECTION.md,F1-CORRECTION.md suitable for append-only attachment to the review record. Sources and original critiques remain immutable; no awards, registry edits, Lean builds or other agents. Every conclusion is an independent review proposal, with exact scopes and explicit limited computation boundaries.",
+  "allowed_source_files": [
+    {
+      "path": "SOLUTION-CONTRACT.md",
+      "sha256": "f3667bd6424d4f0d95714772ecf76af82ed8430bdd3ec9eda0c721f1a853390c"
+    },
+    {
+      "path": "control/C4-GENERAL-SHELL-MATCHING-THRESHOLD.md",
+      "sha256": "ee5261473b8e0bc2d444ce7c1300d307d94cf769cc23d12bb0459698d84ffbf5"
+    },
+    {
+      "path": "control-proposals/C4-F1-ACTUAL-CTX-DIAGNOSTIC.json",
+      "sha256": "4aa0767d798fc1768ccc86aa663e67bdd9945373eb44d2f2a0462e1ac968fd12"
+    },
+    {
+      "path": "control-proposals/C4-F1-CONTROLLER-SCOPE-NOTE.md",
+      "sha256": "2abaa94eff018e836194cc09e3293f8ed23983132b8a41a506f17f4c029d950f"
+    },
+    {
+      "path": "control-proposals/C4-U2-CONTROLLER-INDEX-NOTE.md",
+      "sha256": "a84454e2b1f0e20ebf72eab1d9221bbb3044b63772f1e9c9155b4bb2a1f59683"
+    },
+    {
+      "path": "control-proposals/C4-U3-CONTROLLER-FORMULA-ERROR.md",
+      "sha256": "dfe73ff5cbc9f67bf6e3bd41056d36da9f28d5e0eadbae5b60748c1ae4e0060f"
+    },
+    {
+      "path": "cycles/cycle-4/C4-CF-U2/AUDIT.json",
+      "sha256": "2d6c80fc79be09cfbb57431f177d53098baba97874c7ee2a8596836f87866830"
+    },
+    {
+      "path": "cycles/cycle-4/C4-CF-U2/REPORT.md",
+      "sha256": "eca101e832df8a0cc4e770bfffecb715add6955475340cac41f9a98227d68326"
+    },
+    {
+      "path": "cycles/cycle-4/C4-CF-U2/RETURN.json",
+      "sha256": "75a7ad8846acc383cc0781b36e2c906175ba92145ff65cb4f4ec1e11a197a088"
+    },
+    {
+      "path": "cycles/cycle-4/C4-CF-U3/EVIDENCE.json",
+      "sha256": "9d238fd0c4c7d32c4826684ef7f459e95676f55e91e0d4889daf824eba2fa43d"
+    },
+    {
+      "path": "cycles/cycle-4/C4-CF-U3/REPORT.md",
+      "sha256": "5585759bca576e9137c12e69064f78c48ac9c732db5ec41f9bd14cdf520628cf"
+    },
+    {
+      "path": "cycles/cycle-4/C4-CF-U3/RETURN.json",
+      "sha256": "d8f3c1fd1ad86315b62fc44595ea95042f955424980f086516548202f42e0c06"
+    },
+    {
+      "path": "cycles/cycle-4/C4-CT-F1/AUDIT-RESULT.json",
+      "sha256": "2e966c6548633a4f732816955e83d7f8fdda8d745ca48e3d1d2c3b6de9bbbf1a"
+    },
+    {
+      "path": "cycles/cycle-4/C4-CT-F1/AUDIT.py",
+      "sha256": "4f5d9342d5b4fbf198f3802eab49b15b048246aa783806a96c583ed13b8cec21"
+    },
+    {
+      "path": "cycles/cycle-4/C4-CT-F1/CENSUS-AUDIT.py",
+      "sha256": "20a7ab2b9009507dd41c4f2cbea5528f9550953308cbadd9bda4c4a475d3a510"
+    },
+    {
+      "path": "cycles/cycle-4/C4-CT-F1/CENSUS-RESULT.json",
+      "sha256": "77f6a3067002b4ad3aed7ac087a1e7e7039e0e52d2aa2980d995162701ade053"
+    },
+    {
+      "path": "cycles/cycle-4/C4-CT-F1/EVIDENCE.json",
+      "sha256": "1171c50b2866e04cba54988fbe34b1cfcbba4bd88f834ffb347c157c1ae8c9e3"
+    },
+    {
+      "path": "cycles/cycle-4/C4-CT-F1/HASH-CHECK.json",
+      "sha256": "a7019a318a789577f77db897f0a23909ab1808347dbc1972b98e92621ba1a72e"
+    },
+    {
+      "path": "cycles/cycle-4/C4-CT-F1/REPLAY.py",
+      "sha256": "e14de0a3b8feccdbae748683ccf648831a68fd8a591868552d2e1f93d9d74e4b"
+    },
+    {
+      "path": "cycles/cycle-4/C4-CT-F1/REPORT.md",
+      "sha256": "6c2d62c03c5f059aa2e99aaa55d0719ee1a82267204d92f7182092ad6c4837d1"
+    },
+    {
+      "path": "cycles/cycle-4/C4-CT-F1/RETURN.json",
+      "sha256": "4db2ffcc566a132286f2b5fa8e0bc737c876ea5fcb1835acbf7d99872eb2cb39"
+    },
+    {
+      "path": "cycles/cycle-4/C4-CT-U2/EVIDENCE.json",
+      "sha256": "b0d1062ece381420c0b0cef5b283e755d228370aed49b66aeb5cb02f75365ecd"
+    },
+    {
+      "path": "cycles/cycle-4/C4-CT-U2/REPORT.md",
+      "sha256": "1b334c55655752bb49f08c88cbd9791ca9b01c883e0e481180b46a9440afdb84"
+    },
+    {
+      "path": "cycles/cycle-4/C4-CT-U2/RETURN.json",
+      "sha256": "dab92e21705660938a74c0695d95713c1d49f04da87444514aa8bec723dda560"
+    },
+    {
+      "path": "cycles/cycle-4/C4-CT-U3/EVIDENCE.json",
+      "sha256": "8a85d4611375c4dd4e7c2c180d78c6b2581dd5ac9ba2032e69ae045e50b12658"
+    },
+    {
+      "path": "cycles/cycle-4/C4-CT-U3/REPORT.md",
+      "sha256": "ac0d549361155ad3270197ad6d7d6dfd73ac9ec3ec7640851525c0e68d582c94"
+    },
+    {
+      "path": "cycles/cycle-4/C4-CT-U3/RETURN.json",
+      "sha256": "6599c6ddecf2496eae7e1e0ccb0eb24b95c819c56fcb7538b4ae27962050ad1d"
+    },
+    {
+      "path": "cycles/cycle-4/C4-CU-F1/AUDIT-EVIDENCE.json",
+      "sha256": "60ab0e40ba4207054204d0ffaf65afa4a23fbed8922f2925bf186a1975cb1436"
+    },
+    {
+      "path": "cycles/cycle-4/C4-CU-F1/EVIDENCE.json",
+      "sha256": "1171c50b2866e04cba54988fbe34b1cfcbba4bd88f834ffb347c157c1ae8c9e3"
+    },
+    {
+      "path": "cycles/cycle-4/C4-CU-F1/REPORT.md",
+      "sha256": "d2c9722147eafd4c86df02d374b0781317bf0f89a4797e05c054ddabd92363de"
+    },
+    {
+      "path": "cycles/cycle-4/C4-CU-F1/RETURN.json",
+      "sha256": "2b667dbcc6db3f21d59526eea8708561979b55a9ae60955f3d09c9ad4b970fe5"
+    },
+    {
+      "path": "cycles/cycle-4/C4-CU-F1/audit.py",
+      "sha256": "7ff30e1a8df1ae7e471de7e872fac126841c3cd808eeba6f220cff0b147e9138"
+    },
+    {
+      "path": "cycles/cycle-4/C4-CU-F1/replay_copy.py",
+      "sha256": "e14de0a3b8feccdbae748683ccf648831a68fd8a591868552d2e1f93d9d74e4b"
+    },
+    {
+      "path": "cycles/cycle-4/C4-F1/EVIDENCE.json",
+      "sha256": "1171c50b2866e04cba54988fbe34b1cfcbba4bd88f834ffb347c157c1ae8c9e3"
+    },
+    {
+      "path": "cycles/cycle-4/C4-F1/REPLAY.py",
+      "sha256": "e14de0a3b8feccdbae748683ccf648831a68fd8a591868552d2e1f93d9d74e4b"
+    },
+    {
+      "path": "cycles/cycle-4/C4-F1/REPORT.md",
+      "sha256": "83a2c42fd61466640e4b12a1ab08004c9466d363c6e4289da69abfdc23dd8b9b"
+    },
+    {
+      "path": "cycles/cycle-4/C4-F1/RETURN.json",
+      "sha256": "c0c2c109175ca9bb45cfd22c9dcf7fc6cb37b77f450eea7fffdb32f3028c8b47"
+    },
+    {
+      "path": "cycles/cycle-4/C4-U2/EVIDENCE.json",
+      "sha256": "5eba8d4403dd74859da7533195da25b00f77e935829693d6a1dc4670b7f5a495"
+    },
+    {
+      "path": "cycles/cycle-4/C4-U2/REPORT.md",
+      "sha256": "330ebff2f2250d84699b18cd99f45cb6de35f89400fa3ed57de9ae5670e39e69"
+    },
+    {
+      "path": "cycles/cycle-4/C4-U2/RETURN.json",
+      "sha256": "b4d5b3165b5e0bbec113303735044a282ad52210fca9094a3e665a6817efa13f"
+    },
+    {
+      "path": "cycles/cycle-4/C4-U3/EVIDENCE.json",
+      "sha256": "290815164355548d6c2e466ef22a272711fc1d2260518d2f0bd1a3508a7b33e4"
+    },
+    {
+      "path": "cycles/cycle-4/C4-U3/REPORT.md",
+      "sha256": "104b5bbf98cbec8bfa24db9f7f2613bdaf4e835a39d88d38e0c32619712d84a9"
+    },
+    {
+      "path": "cycles/cycle-4/C4-U3/RETURN.json",
+      "sha256": "f11e7fd8a7a4dd404c296d75b195c4ddba0424dae84e727dae0bfc10994234b7"
+    },
+    {
+      "path": "inputs/C4-prior-theorem-intake/G1-C3-PROOFS.md",
+      "sha256": "4dd97736cd5a7d9118011b0d242bc18c013457910d1f734a7ac0c566e9cdf17d"
+    },
+    {
+      "path": "inputs/C4-prior-theorem-intake/ORIGIN.json",
+      "sha256": "ba7700b16f22207735efa2e16edb6597d87abe5f9c33e32a10c813acc1979ed5"
+    },
+    {
+      "path": "inputs/C4-prior-theorem-intake/r19-TM-C3-SYNTHESIS.md",
+      "sha256": "eb9b2f3c21415bfbc7ad6541ad2fabd91f1baf6e1844aa1891cf0ab432bb5d12"
+    },
+    {
+      "path": "inputs/C4-prior-theorem-intake/r25-MATCHING-LARGE-RANK-SECOND-READ.md",
+      "sha256": "4e4edb02c6dd3f55a4a2ffbb19817875e2f348eeaf6740ed35aeb53890036db6"
+    },
+    {
+      "path": "inputs/ordinary_tree_checked.py",
+      "sha256": "a012bb78915ccdfa2f729c0cdb520cd8f29572277123c92e80ba6091498f533d"
+    },
+    {
+      "path": "preparation/C3-PREP-NEXT-SHELL-ALL-RANKS-AUDIT/EVIDENCE.json",
+      "sha256": "4162933a07ff3c7a12df997cbd0c9d77d02a1719a76b2acf24988d5917575c34"
+    },
+    {
+      "path": "preparation/C3-PREP-NEXT-SHELL-ALL-RANKS-AUDIT/REPORT.md",
+      "sha256": "3f68dcd003a5fecd46fed8702e29951dbf1b859eeb0828aaf014e042ca708606"
+    },
+    {
+      "path": "preparation/C3-PREP-NEXT-SHELL-ALL-RANKS-AUDIT/RESULTS.json",
+      "sha256": "87bba9348d3dd10ddeff2b8ccdd1617a03ac0b35238833cbdb861c1c86a644f9"
+    },
+    {
+      "path": "preparation/C3-PREP-NEXT-SHELL-ALL-RANKS-AUDIT/verify.py",
+      "sha256": "86ca3d38c9e4a3f73901ffba795f63e7c762303c97471a258c677bca240a85d5"
+    }
+  ]
+}

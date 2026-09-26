@@ -1,0 +1,27 @@
+{
+  "worker_id": "C5-F3",
+  "cycle": 5,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C5-F3-BOUNDED-ASYM-SEARCH",
+      "statement": "For the explicit order-13 asymmetric ordinary tree and rank p=6 in REPORT.md, the exact original-leaf selector is all eight leaves, S=-307, and the summed marked-neighborhood data satisfy E=kU+C and D+C-(2a+1-3p)Q=-kS=1535. In the stated finite random sample and exhaustive ordered-arm profile family, no eligible row has a proper nonempty favorable selector.",
+      "scope": "One explicitly encoded order-13 tree at p=6, plus the precisely bounded 5,000-tree seeded Prüfer sample and 342 ordered asymmetric arm profiles described in REPORT.md and replayed by REPLAY.py.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-F3/EVIDENCE.json",
+        "cycles/cycle-5/C5-F3/REPLAY.py"
+      ],
+      "reason": "Exact integer dynamic programming and explicit independent-set counts verify the fixture, every original-leaf selector value, every selected summand, and the global Q,E,C,U,D,S identity. The finite probes reproduce their stated counts but do not prove a universal claim or rule out proper selectors outside their generation scopes."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-F3/REPORT.md",
+  "limitations": [
+    "No proper-selector witness or positive full aggregate was found.",
+    "The seeded random sample and bounded arm-profile family are not exhaustive over ordinary trees or eligible ranks.",
+    "No general across-tag charging bound is proved; the exact budget arithmetic is limited to the encoded fixture.",
+    "All returned mathematical conclusions are bounded and proposed only."
+  ],
+  "status_authority": "proposed_worker_only"
+}

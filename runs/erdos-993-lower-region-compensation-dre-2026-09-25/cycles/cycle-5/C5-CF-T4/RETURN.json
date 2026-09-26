@@ -1,0 +1,28 @@
+{
+  "worker_id": "C5-CF-T4",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C5-T4-SELECTOR-PENDANT-PATH-RECURRENCE",
+      "statement": "Retained: for a finite rooted forest, attaching a pendant path at the root gives I(G_m)=I(G-r)P_m+zI(G-N[r])P_(m-1), and this identity computes the strict fixed-rank selector test separately for each surviving original leaf tag and for the new endpoint.",
+      "scope": "The exact selector propagation identity under pendant-path attachment, with zero-extended coefficients at every integer rank. It does not assert preservation of primary eligibility or any conclusion about the complete selected aggregate.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CF-T4/EVIDENCE.json"
+      ],
+      "reason": "retained — root-absent and root-present independent sets give disjoint exhaustive terms I(G-r)P_m and zI(G-N[r])P_(m-1). Applying the identity to each T-v proves the strict selector test per old leaf tag; deleting the new endpoint gives T_(m-1). The K1,7 calculation is correct but fails x+2<=p, so it establishes only selector non-preservation outside primary eligibility."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CF-T4/REPORT.md",
+  "limitations": [
+    "No preservation of x(T), alpha(T), or the primary lower-region eligibility guards is proved.",
+    "No bound or sign comparison for the complete selected sum S is established.",
+    "The strict sign-change example lies outside primary eligibility and does not refute the primary aggregate."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-T4-SELECTOR-PENDANT-PATH-RECURRENCE"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "worker_id": "C5-CU-T4",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C5-T4-SELECTOR-PENDANT-PATH-RECURRENCE",
+      "statement": "Retained: for a rooted finite forest (G,r), attaching a pendant path of length m>=1 gives I(G_m)=I(G-r)P_m+zI(G-N[r])P_(m-1), where P_m is the m-vertex path independence polynomial. The identity computes the strict Delta_p selector at every integer rank for each surviving old original leaf tag distinct from r after attachment, and the new endpoint separately; if r was an original degree-one leaf, it is removed from the old-leaf list.",
+      "scope": "Exact selector evaluation under pendant-path attachment at a specified root in finite ordinary trees, for surviving original leaf tags other than a root that ceases to be a leaf, and for the new endpoint. A singleton base can create an additional root leaf not covered by this stated interface. No eligibility or primary aggregate conclusion.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CU-T4/EVIDENCE.json"
+      ],
+      "reason": "retained — root absent/present partition proves the polynomial identity; the attachment indices, strict coefficient test, old-tag deletion interface, endpoint test, and K1,7 arithmetic check. The claim does not assert propagation of primary eligibility or S."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CU-T4/REPORT.md",
+  "limitations": [
+    "The recurrence establishes selector evaluation under the stated operation, not preservation of x(T), alpha(T), or the strict lower-region guard.",
+    "No bound for or verdict on the complete selected aggregate S is established.",
+    "The strict-sign example is outside primary eligibility and is not a counterexample to the primary assertion."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-T4-SELECTOR-PENDANT-PATH-RECURRENCE"
+  ]
+}

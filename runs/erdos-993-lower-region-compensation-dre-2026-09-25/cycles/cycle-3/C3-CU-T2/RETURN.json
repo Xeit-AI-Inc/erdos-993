@@ -1,0 +1,29 @@
+{
+  "worker_id": "C3-CU-T2",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL",
+      "statement": "The exact rooted branch-product partition, rank formulas, fixed-leaf weight decomposition including root-supported and support-at-branch-root boundary terms, and root-boundary legal-switch descriptions hold for arbitrary finite ordinary trees. They yield a structural reduction only; universal weighted Hall feasibility and the primary complete-sum inequality remain unresolved.",
+      "scope": "Unconditional structural identities for any finite ordinary tree, chosen root, and fixed selected original-leaf set. The primary target remains the complete original-selector sum under x(T)+2<=p and 3p<2alpha(T)+1; no proof, refutation, or Hall-feasibility result for that target is supplied.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CU-T2/REPORT.md",
+        "cycles/cycle-3/C3-CU-T2/EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: direct case analysis verifies the branch partition, rank and weight identities, same-support multiplicities, and switch boundary cases. The route supplies no selector-preserving uncrossing or capacitated matching for arbitrary cuts and no proof or eligible full-sum counterexample; Hall failure would not itself refute the scalar primary claim."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CU-T2/REPORT.md",
+  "limitations": [
+    "The exact identities only encode the state space and its boundary coupling; the required universal weighted Hall inequalities remain unproved.",
+    "No primary aggregate proof or eligible positive complete-sum counterexample was found.",
+    "No exhaustive computation, literature application, or Lean result was used."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL"
+  ]
+}

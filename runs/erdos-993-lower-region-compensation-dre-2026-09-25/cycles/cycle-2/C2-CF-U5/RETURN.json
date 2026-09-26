@@ -1,0 +1,31 @@
+{
+  "worker_id": "C2-CF-U5",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "U5-pendant-extension-tagged-sum-change",
+      "statement": "For the encoded eligible pair at p=8, extending original leaf 10 by one pendant edge changes the selected leaf-tag family and its complete aggregate; the general recurrence component is retained only with the corrected residual-graph case distinction.",
+      "scope": "The explicit 18-vertex path-of-six-centers tree with two leaves at each center and its 19-vertex extension at leaf 10; both satisfy x=6, alpha=12 and the primary guards at p=8. The example establishes change from S=-4256 to S=-6267 only; it is not a refutation or proof of the primary inequality. Pendant recurrences are retained in the corrected cases stated in the report.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CF-U5/EVIDENCE.md",
+        "cycles/cycle-2/C2-CF-U5/replay.py",
+        "cycles/cycle-2/C2-CF-U5/ordinary_tree_checked.py"
+      ],
+      "reason": "retained_narrowed: independent exact replay verifies both eligible rows, every strict selector, all tagged summands, and the complete sums; it confirms changed tags and aggregate. Both sums remain negative, and no universal extension claim follows. The source wording for the residual graph must say that u is deleted from R while w survives as an isolate, with u=s handled separately by deleting w too."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CF-U5/REPORT.md",
+  "limitations": [
+    "The evidence is one explicitly encoded pair, not an exhaustive tree generation or census.",
+    "Both complete sums are negative; the example does not refute the primary inequality or prove it universally.",
+    "No class-wide extension sign theorem or guard-preserving reduction was established.",
+    "The route's residual-graph recurrence phrase was corrected and narrowed as recorded in the report."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "U5-pendant-extension-tagged-sum-change"
+  ]
+}

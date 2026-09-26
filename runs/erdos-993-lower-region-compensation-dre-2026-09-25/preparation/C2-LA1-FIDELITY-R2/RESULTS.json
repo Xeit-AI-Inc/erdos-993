@@ -1,0 +1,38 @@
+{
+  "transport_seat": "C2-LA1-FIDELITY-R2",
+  "reviewer_id": "C2-LA1-FIDELITY",
+  "authority": "proposed_worker_only",
+  "attestation_id": "c2-la1-order-band-fidelity-v3-r2",
+  "completed_at": "2026-09-25T09:47:29Z",
+  "proposed_verdict": "match",
+  "brief_sha256": "11ff7169bbc086f8d597a91c178a43d423b46b40585c59bf0a3b3b19d175ffaa",
+  "source_hashes_verified": 184,
+  "source_hash_mismatches": [],
+  "declaration_name": "E993OrderBand.markedIsolateAndOrdinaryLeafOrderBand",
+  "declaration_source_sha256": "a45f8e2e218d27d528e2513e5cb8413d38780d9e6c01f8c34b171366f0bf3bde",
+  "theorem_contract_sha256": "2ce40be51ec0024f796cbd8bcc190fc0e577b2137cadced4512ed6d65620656b",
+  "kernel_receipt_sha256": "2323b5f2c76c322d0f61c1b7c8dd4f9dbfe7d26bbe44d6862bfe44e0f46fae9f",
+  "fidelity_input_sha256": "c5e57a8bdb094f1e2df7b623fa54b64a3fa54032d57fcf56608dd0258dfd4c67",
+  "contract_projection_sha256": "532b436e602a23cddd070ad1e78d963a10585510df244b6efd6386d07ecc212f",
+  "binding_projection_sha256": "d18f0a71642336ef1cc4e23b989a52da025b621d96094cdb4190364430028a2b",
+  "checks": {
+    "actual_theorem_header_equals_v3_contract_and_input": true,
+    "v2_to_v3_post_colon_type_unchanged": true,
+    "informal_claim_unchanged": true,
+    "main_entries_match_pinned_fragments": 43,
+    "inherited_definitions_match_prior_source": 8,
+    "dependency_identity_rows_match": 10,
+    "manifest_revisions_match": 9,
+    "kernel_receipt_reports_verified_and_all_checks_passed": true,
+    "reported_axioms_within_contract_allowlist": true,
+    "canonical_projection_hashes_recomputed": true,
+    "independent_semantic_mapping_match": true
+  },
+  "limitations": [
+    "No Lean build or authoritative fidelity audit was rerun in this seat.",
+    "External shared-package files were not read; dependency verification is against the pinned manifest and receipt identities.",
+    "This proposal covers only the exact two-conjunct theorem; the contract still labels broader formulation status open."
+  ],
+  "report": "REPORT.md",
+  "attestation": "INDEPENDENT-REVIEW.json"
+}

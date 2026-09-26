@@ -1,0 +1,29 @@
+{
+  "worker_id": "C5-CT-F4",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C5-F4.BOUNDED-PROPER-SELECTOR-SEARCH",
+      "statement": "No proper favorable-leaf selector occurs among the 308 eligible tree-rank pairs in the two searched families; the 1,540 KL triples in the stated box have no eligible ranks.",
+      "scope": "Exact search of KL T(k1,k2,k3) with 1<=k1<=k2<=k3<=20, central path spiders with 3..5 arms of lengths 1..8, and the five named KL fixtures with a path of length 1..5 grafted at each nonleaf vertex; only integer ranks x+2<=p and 3p<2alpha+1 are included.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CT-F4/F4_SEARCH.py",
+        "cycles/cycle-5/C5-CT-F4/ordinary_tree_checked.py",
+        "cycles/cycle-5/C5-CT-F4/REPLAY.json"
+      ],
+      "reason": "Disposition: retained. The pinned replay was executed from scratch copies and exactly reproduces the sealed evidence; the finite generation counts, eligibility guards, every original-leaf strict selector, and the complete selected-sum control were checked. This supports only the bounded negative search result, not a universal all-leaf selector property or the primary aggregate."
+    }
+  ],
+  "covered_claim_ids": [
+    "C5-F4.BOUNDED-PROPER-SELECTOR-SEARCH"
+  ],
+  "report_path": "cycles/cycle-5/C5-CT-F4/REPORT.md",
+  "limitations": [
+    "The checked result is bounded to the stated finite graph families and parameter boxes.",
+    "A proper-selector witness and any universal selector theorem remain unresolved; this calculation gives no proof or refutation of the primary aggregate."
+  ],
+  "status_authority": "proposed_worker_only"
+}

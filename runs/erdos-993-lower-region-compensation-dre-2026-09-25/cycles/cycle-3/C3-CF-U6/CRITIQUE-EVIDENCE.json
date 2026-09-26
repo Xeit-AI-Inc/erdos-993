@@ -1,0 +1,36 @@
+{
+  "source_audit": {
+    "common_packet_entries_checked": 115,
+    "common_packet_entries_matching": 115,
+    "case_packet_entries_checked": 3,
+    "case_packet_entries_matching": 3,
+    "replay_inputs": [
+      "SOURCE-C3-U6-EVIDENCE.json",
+      "SOURCE-C3-U6-REPORT.md",
+      "SOURCE-C3-U6-RETURN.json"
+    ],
+    "replay_program": "REPLAY.py",
+    "replay_scope": "Exact star-family formulas at m=20,p=12 and m=20,p=13, plus the stated rank-dimension obstruction."
+  },
+  "star_audit": {
+    "counts": "i_0=1, i_1=m+1, i_j=binom(m,j) for 2<=j<=m, and zero outside the range.",
+    "differences": "Delta_0=m; Delta_1=binom(m,2)-(m+1)>=0 for m>=4; for 2<=j<m, Delta_j=binom(m,j)*(m-2j-1)/(j+1); Delta_m=-1.",
+    "first_negative": "x=floor((m-1)/2)+1.",
+    "selector_check": "Deleting a leaf gives K_{1,m-1}; its first negative rank is at most x, and eligible p is at least x+2. The upper guard gives p<=m-1, so Delta_p(T-v)<0 for every leaf.",
+    "residual_check": "H_v is edgeless on m-1 vertices, W_v=V(H_v), R_v is empty, and each selected summand is binom(m-1,p)-binom(m-1,p-1). Since p-1>(m-1)/2, this is strictly negative.",
+    "replay_results": [
+      {"m":20,"x":10,"p":12,"delta_p_after_leaf_deletion":-23256,"F_size":20,"per_leaf":-25194,"S":-503880},
+      {"m":20,"x":10,"p":13,"delta_p_after_leaf_deletion":-15504,"F_size":20,"per_leaf":-23256,"S":-465120}
+    ]
+  },
+  "operator_audit": {
+    "dimension_argument": "The displayed basis makes dim M_j=q_j. If d_p:M_p->M_{p-1} is injective, finite-dimensional linear algebra gives q_p<=q_{p-1}. The contract summand equals q_p-q_{p-1}; summing over the fixed selector gives S<=0.",
+    "scope_limit": "This is a sufficient conditional criterion only. Neither injectivity nor another rank inequality is proved for general eligible residuals.",
+    "obstruction_replay": "For 19 marked isolated vertices, dim M_6=binom(19,6)=27132 and dim M_5=binom(19,5)=11628, so d_6 cannot be injective. This rank is not selector-eligible in the stated K_{1,20} example and is not a counterexample to the target."
+  },
+  "limitations": [
+    "The star calculation is a strict subfamily result and supplies no general-tree proof.",
+    "The operator criterion is not established from the contract hypotheses.",
+    "The dimension obstruction lies outside the eligible selector range and does not refute the aggregate."
+  ]
+}

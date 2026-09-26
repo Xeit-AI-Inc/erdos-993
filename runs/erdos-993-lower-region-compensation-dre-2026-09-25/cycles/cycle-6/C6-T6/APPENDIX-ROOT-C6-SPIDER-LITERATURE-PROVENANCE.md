@@ -1,0 +1,7 @@
+# Root literature provenance check, 26 September 2026
+
+This note was generated after the Cycle6 search intake and does not alter frozen search sources. No novelty is claimed for the spider polynomial, unimodality, or mode assertion. The root elementary argument must stand on its own reviewed proof.
+
+Kaixin Wang, *Unimodality of Independence Polynomials of Special Trees*, NHSJS (2022), https://nhsjs.com/wp-content/uploads/2022/08/Unimodality-of-Independence-Polynomials-of-Special-Trees.pdf, pp2-3, treats exactly (1+3z+z^2)^m+z(1+2z)^m. Theorem5 explicitly states unimodality and mode m for m>100. The introductory Theorem2 states a broader mixed-leg result; no independent audit of that paper is claimed here. This prior source must be acknowledged in any discussion of the root candidate's mode result; the local candidate gives a separate elementary argument at m>=2 and the exact fixed-selector aggregate application. Neither novelty nor priority follows from the local proof.
+
+Lei Zhang and Jianhua Tu, *Stability of independence polynomials of spiders*, arXiv:2609.04694v1, submitted4September2026, https://arxiv.org/abs/2609.04694v1, claims all independence roots of arbitrary spiders lie in the open left half-plane. Root read the abstract only at this checkpoint. This is a future literature lead, not an imported premise, and not by itself real-rootedness, ULC, or unimodality. Indeed 1+(1/10)z+z^2 has both roots with negative real part but a nonunimodal coefficient sequence. Any stability-to-rank inference needs additional proved hypotheses.

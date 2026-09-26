@@ -1,0 +1,40 @@
+{
+  "schema": "e993.c3-critic-evidence.v1",
+  "source_hash_audit": {
+    "case_and_common_unique_paths_checked": 118,
+    "missing": 0,
+    "mismatches": 0
+  },
+  "audited_claim_ids": [
+    "C3-U3-MARKED-COVER-SHELL",
+    "C3-U3-FIRST-SHELL-POINTWISE"
+  ],
+  "findings": {
+    "C3-U3-MARKED-COVER-SHELL": {
+      "disposition": "retained",
+      "key_checks": [
+        "marked split is disjoint and removes only the selected mark",
+        "incidence bound applies at order at most 2k",
+        "order-at-most-2k+1 residual cases are exhaustive",
+        "cover number at least 3 forces at least two edges in the exact first-wide residual",
+        "registered first-wide invocation has exact order 2r+2 with r=k-1>=1"
+      ]
+    },
+    "C3-U3-FIRST-SHELL-POINTWISE": {
+      "disposition": "retained",
+      "key_checks": [
+        "cover-three decomposition and all-rank positivity contradiction are valid",
+        "leaf exchange gives alpha(H)=alpha(T)-1 and tau(H)>=3",
+        "H-W equals T-N_T[s] using original support and neighborhood",
+        "marked q difference equals the tagged summand",
+        "pointwise sign applies to the fixed favorable set with separate same-support leaf tags"
+      ]
+    }
+  },
+  "clerical_note": "The source report says there are no allocated source claim IDs, but the source return lists the two covered claims.",
+  "limitations": [
+    "No replay or computation was required or performed.",
+    "No conclusion beyond parent order 2p+2 is made.",
+    "The first-wide classification is used at its registered scope and its separate proof was not reconstructed here."
+  ]
+}

@@ -1,0 +1,14 @@
+namespace Erdos993G1.FirstWide
+
+lemma center_expression_nonpos {r q : ℕ} (hr : 1 ≤ r) (hq : q ≤ 2 * r - 1) :
+    (binomCoeff (2 * r + 1) ((r : ℤ) + 1) + binomCoeff q (r : ℤ)) -
+      (binomCoeff (2 * r + 1) (r : ℤ) + binomCoeff q ((r : ℤ) - 1)) ≤ 0 := by
+  rw [binomCoeff_nat_add_one, binomCoeff_nat, binomCoeff_nat,
+    binomCoeff_nat_sub_one _ _ hr, Nat.choose_symm_half]
+  have h := choose_step_nonpos (n := q) (k := r - 1) (by omega)
+  have hpred : r - 1 + 1 = r := by omega
+  rw [hpred] at h
+  have h' : (q.choose r : ℤ) ≤ (q.choose (r - 1) : ℤ) := by exact_mod_cast h
+  linarith
+
+end Erdos993G1.FirstWide

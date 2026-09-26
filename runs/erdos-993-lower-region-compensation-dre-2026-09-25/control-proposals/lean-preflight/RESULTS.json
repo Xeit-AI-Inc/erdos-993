@@ -1,0 +1,47 @@
+{
+  "schema": "lower-region-lean-preflight-proposal/v1",
+  "date": "2026-09-25",
+  "status": "infrastructure_ready_for_future_assigned_gate",
+  "proposed_awards": [],
+  "current_experiment_has_lean_run": false,
+  "remote_host": "mini-away",
+  "shared_project": "/Users/ashtonsperry/.local/share/verityos/lean/mathlib-v4.32.2-project",
+  "shared_packages_root": "/Users/ashtonsperry/.local/share/verityos/lean/mathlib-v4.32.2-project/.lake/packages",
+  "toolchain_pin": "leanprover/lean4:v4.32.2",
+  "lean_binary": "/Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+  "lean_version": "Lean (version 4.32.2, arm64-apple-darwin24.6.0, commit f3b06c705e6c85f5314019d5d3baab0fec5b580c, Release)",
+  "lake_binary": "/Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lake",
+  "lake_version": "Lake version 5.0.0-src+f3b06c7 (Lean version 4.32.2)",
+  "mathlib_manifest_revision": "905b95818eb32af7874a58b427f50c1711a5e96c",
+  "mathlib_git_head": "905b95818eb32af7874a58b427f50c1711a5e96c",
+  "manifest_git_packages_checked": 9,
+  "manifest_git_packages_matching": 9,
+  "shared_packages_write_protected": true,
+  "mathlib_olean_present": true,
+  "seed_sha256": {
+    "lean-toolchain": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
+    "lakefile.toml": "ca1c03383fc8a9f117d09fa97527f4f1f84cadb11e53d64115737c7540de9a5a",
+    "lake-manifest.json": "5061b76dea7adff45cac844810dd202a44e5fe5b1f39fe5c3a04825bdd464ac0"
+  },
+  "read_only_smoke_test": {
+    "run": "/Users/ashtonsperry/VerityOS/experiments/erdos-993-g1-large-residual-dre-2026-09-13/runs/lean-2026-09-20-c3",
+    "verify_layout_exit": 0,
+    "verify_layout_ok": true,
+    "verify_shared_binding_exit": 0,
+    "verify_shared_binding_ok": true,
+    "symlink_target_matches_approved_root": true,
+    "warnings": [],
+    "failures": []
+  },
+  "required_future_evidence": [
+    "controller-assigned distinct producer, informal reviewer, and fidelity reviewer",
+    "exact informal proof-integrity audit and registered receipt",
+    "source-bound exact theorem contract and valid_for_formalization receipt",
+    "pinned formalization and shared dependency authority receipt",
+    "run-local kernel build log, axiom transcript, sandbox profile, and verified receipt",
+    "independent exact-binding fidelity attestation and passed receipt",
+    "fail-closed controller closeout"
+  ],
+  "remote_mutations": 0,
+  "lean_proofs_checked": 0
+}

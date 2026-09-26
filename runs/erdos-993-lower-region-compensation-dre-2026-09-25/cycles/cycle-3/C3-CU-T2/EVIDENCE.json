@@ -1,0 +1,22 @@
+{
+  "source_claim_id": "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL",
+  "disposition": "retained_narrowed",
+  "verified_scope": "For any finite ordinary tree rooted at r and any fixed selected original-leaf set F, independent sets partition into the root-absent product of branch independent-set families and the root-present product of T_i-u_i families; ranks are the corresponding sum and one plus sum. The stated weight formula is exact when root-supported tags and the possible r-in-W_v boundary term for support u_i are retained. Root-centered legal switches require exactly two occupied root neighbors; only centers u_i can otherwise cross the root-state boundary, when r and exactly one child are occupied neighbors.",
+  "not_established": [
+    "A weighted Hall inequality for arbitrary subsets of upper-layer states under deletion plus legal two-for-one switches.",
+    "A capacity saturation, uncrossing, or injection preserving fixed selector tags and root-boundary states.",
+    "The primary complete selected-sum inequality S(T,p)<=0 under its lower-region eligibility hypotheses.",
+    "An eligible ordinary-tree counterexample with positive full selected sum."
+  ],
+  "audit_checks": {
+    "branch_partition_exhaustive": true,
+    "root_present_branch_roots_absent": true,
+    "root_supported_tag_requires_another_occupied_root_neighbor": true,
+    "same_support_leaf_tags_counted_individually": true,
+    "switch_uses_actual_occupied_neighbors": true,
+    "root_boundary_switch_cases_reconstructed": true,
+    "all_listed_hashes_match": true,
+    "listed_hash_entries": 118
+  },
+  "evidence_grade": "direct combinatorial verification of structural identities; no result on Hall feasibility or the primary sum"
+}

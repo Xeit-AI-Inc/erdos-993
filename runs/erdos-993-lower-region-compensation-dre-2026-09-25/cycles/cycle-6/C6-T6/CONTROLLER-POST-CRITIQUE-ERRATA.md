@@ -1,0 +1,9 @@
+# Root reading of the spider critiques
+
+C6-CU-T6 retains both root-origin candidates, independently replays the producer census and root injection, and carries their separate provenance. Its proof contains a harmless new transcription error: Delta_0(P_m)=3m, not3m+1, because P_1=3m+1 and P_0=1. The root elementary source has the correct3m. Use the correct positive value in adjudication; preserve the critic report unchanged.
+
+For the deletion strict-tail explanation, the eligible m>=6 range gives p<=floor(4m/3)<=2m-2=2e, so both Delta_p Q^e and Delta_(p-1)Q^e are strictly negative. The root source also safely covers the unused endpoint p=2e+1 with one zero and one negative term. Either complete endpoint argument suffices; do not infer both terms negative just from the weaker p<=2e+1 bound.
+
+Literature scope: Wang2022 Theorem2(i), specialized to zero length2 legs, states unimodality and mode m for the all-length3 family; Theorem5 is a separate m>100 statement. The paper is not an imported premise and has not been independently audited end-to-end here. Phrase prior scope as a stated result; the local proof independently establishes strictness and unique mode. No novelty is claimed.
+
+C6-CF-T6's REPORT distinguishes root provenance correctly, but its RETURN widens the original producer ID C6-T6-EQUAL-THREE-SPIDER-REDUCTION to an all-m theorem while calling this retained_narrowed. That is not a narrowing of the producer's bounded mathematical achievement. In adjudication, retain the original ID for its exact formula/bounded computation and historical route-level gap. Attribute the all-m mode/aggregate proofs exclusively to the two separately reviewed C6-ROOT-SPIDER-* derived IDs. Both critics independently accepted those root candidates, so their independent proof reviews stand; no all-m result is credited to the search worker. Preserve original critic bytes and explicitly reconcile this identity/provenance discrepancy.

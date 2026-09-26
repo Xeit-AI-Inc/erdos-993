@@ -1,0 +1,18 @@
+namespace Erdos993G1.FirstWide
+
+lemma extension_fiber_bound {X : Type u} [DecidableEq X]
+    (U : Finset (Finset X)) (B Q : Finset X) (k : ℕ)
+    (hU : ∀ S ∈ U, S.card = k+1) (hB : B.card = k)
+    (hQ : ∀ a, a ∉ B → insert a B ∈ U → a ∈ Q) :
+    (U.filter (fun S => B ⊆ S)).card ≤ Q.card := by
+  classical
+  calc
+    _ ≤ (Q.image (fun a => insert a B)).card := Finset.card_le_card (by
+      intro S hS
+      obtain ⟨hSU,hBS⟩ := Finset.mem_filter.mp hS
+      obtain ⟨a,ha,he⟩ := Finset.exists_eq_insert_iff.mpr ⟨hBS,by rw [hB,hU S hSU]⟩
+      exact Finset.mem_image.mpr ⟨a,hQ a ha (by simpa [he] using hSU),he⟩)
+    _ ≤ _ := Finset.card_image_le
+
+
+end Erdos993G1.FirstWide

@@ -1,0 +1,7 @@
+namespace Erdos993G1.FirstWide
+
+lemma binomCoeff_nat_add_one (n k : ℕ) :
+    binomCoeff n ((k : ℤ) + 1) = (n.choose (k + 1) : ℤ) := by
+  simpa only [Nat.cast_add, Nat.cast_one] using binomCoeff_nat n (k + 1)
+
+end Erdos993G1.FirstWide

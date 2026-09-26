@@ -1,0 +1,40 @@
+{
+  "worker_id": "C1-CT-U3",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C1-U3-1",
+      "statement": "For the fixed favorable-leaf selector F and k=p-1, the full selected sum equals sum over v in F of q_v(k+1)-q_v(k), where q_v(j) counts independent j-sets of H_v meeting W_v; hence the primary is exactly the aggregate tagged layer inequality sum_F q_v(k+1)<=sum_F q_v(k).",
+      "scope": "Every finite ordinary tree and p satisfying x(T)+2<=p and 3p<2alpha(T)+1, with H_v,W_v,R_v and F exactly as in the contract; this is an exact identity and equivalence, not a proof of the inequality.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-1/C1-CT-U3/REPORT.md"],
+      "reason": "Disposition: retained. Rowwise expansion gives Delta_(p-1)(H_v)-Delta_(p-1)(R_v)=q_v(k+1)-q_v(k); summing preserves the original selector and one summand per leaf tag. It is only a reformulation and establishes no sign."
+    },
+    {
+      "claim_id": "C1-U3-2",
+      "statement": "A unit-capacity fractional matching from the selected tagged upper layer to the selected tagged lower layer is a sound sufficient certificate for the primary; its exact dual obstruction is a Hall-deficient set in the tagged incidence graph, but such an obstruction alone does not refute the primary.",
+      "scope": "For a fixed eligible ordinary tree, fixed p and exact selector-induced F, with vertices tagged by original leaf and inclusion edges only within each row. The certificate is stronger than the aggregate inequality.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-1/C1-CT-U3/REPORT.md", "cycles/cycle-1/C1-CT-U3/evidence/replay_controls_result.json"],
+      "reason": "Disposition: retained. Flow feasibility implies the desired count inequality, and finite bipartite unit-capacity feasibility is equivalent to Hall's condition. The same-tag construction fails on supplied eligible T22 and T60 controls: each has a positive complete row, hence that row alone has more upper nodes than lower nodes and cannot be saturated, while each complete tagged sum is negative. Thus the certificate is not universal and cannot account for cross-tag compensation."
+    },
+    {
+      "claim_id": "C1-U3-3",
+      "statement": "The tagged transport formulation does not resolve the universal lower-region aggregate because no proof is given that its stronger Hall condition holds for every selector-induced family of ordinary-tree rows, and no eligible positive full-sum tree is produced.",
+      "scope": "The C1-U3 route evidence under review, with the two supplied controls replayed in this critique.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-1/C1-CT-U3/REPORT.md", "cycles/cycle-1/C1-CT-U3/evidence/replay_controls_result.json"],
+      "reason": "Disposition: retained. The source provides no universal feasibility theorem or eligible positive complete sum. The controls further show failure of its stronger tag-preserving flow certificate without refuting the target, so the primary remains unresolved by this route."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CT-U3/REPORT.md",
+  "limitations": [
+    "The tagged flow condition is sufficient, not equivalent to the aggregate cardinality inequality, and fails on the supplied positive-row controls because it disallows movement between leaf tags.",
+    "The two control sums and selector values were replayed from packet-listed copies; their underlying trees and coefficient vectors were not independently regenerated.",
+    "No proof or eligible counterexample for the universal lower-region aggregate is established."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": ["C1-U3-1", "C1-U3-2", "C1-U3-3"]
+}

@@ -1,0 +1,242 @@
+{
+  "scope": "literal independent-set rank injection for m2..6 and0<=j<m only; proof of all-m outside this computation",
+  "tested_lower_sets": 7851,
+  "rows": [
+    {
+      "m": 2,
+      "j": 0,
+      "lower": 1,
+      "upper": 7,
+      "distinct_images": 1
+    },
+    {
+      "m": 2,
+      "j": 1,
+      "lower": 7,
+      "upper": 15,
+      "distinct_images": 7
+    },
+    {
+      "m": 3,
+      "j": 0,
+      "lower": 1,
+      "upper": 10,
+      "distinct_images": 1
+    },
+    {
+      "m": 3,
+      "j": 1,
+      "lower": 10,
+      "upper": 36,
+      "distinct_images": 10
+    },
+    {
+      "m": 3,
+      "j": 2,
+      "lower": 36,
+      "upper": 57,
+      "distinct_images": 36
+    },
+    {
+      "m": 4,
+      "j": 0,
+      "lower": 1,
+      "upper": 13,
+      "distinct_images": 1
+    },
+    {
+      "m": 4,
+      "j": 1,
+      "lower": 13,
+      "upper": 66,
+      "distinct_images": 13
+    },
+    {
+      "m": 4,
+      "j": 2,
+      "lower": 66,
+      "upper": 168,
+      "distinct_images": 66
+    },
+    {
+      "m": 4,
+      "j": 3,
+      "lower": 168,
+      "upper": 227,
+      "distinct_images": 168
+    },
+    {
+      "m": 5,
+      "j": 0,
+      "lower": 1,
+      "upper": 16,
+      "distinct_images": 1
+    },
+    {
+      "m": 5,
+      "j": 1,
+      "lower": 16,
+      "upper": 105,
+      "distinct_images": 16
+    },
+    {
+      "m": 5,
+      "j": 2,
+      "lower": 105,
+      "upper": 370,
+      "distinct_images": 105
+    },
+    {
+      "m": 5,
+      "j": 3,
+      "lower": 370,
+      "upper": 765,
+      "distinct_images": 370
+    },
+    {
+      "m": 5,
+      "j": 4,
+      "lower": 765,
+      "upper": 953,
+      "distinct_images": 765
+    },
+    {
+      "m": 6,
+      "j": 0,
+      "lower": 1,
+      "upper": 19,
+      "distinct_images": 1
+    },
+    {
+      "m": 6,
+      "j": 1,
+      "lower": 19,
+      "upper": 153,
+      "distinct_images": 19
+    },
+    {
+      "m": 6,
+      "j": 2,
+      "lower": 153,
+      "upper": 690,
+      "distinct_images": 153
+    },
+    {
+      "m": 6,
+      "j": 3,
+      "lower": 690,
+      "upper": 1930,
+      "distinct_images": 690
+    },
+    {
+      "m": 6,
+      "j": 4,
+      "lower": 1930,
+      "upper": 3498,
+      "distinct_images": 1930
+    },
+    {
+      "m": 6,
+      "j": 5,
+      "lower": 3498,
+      "upper": 4181,
+      "distinct_images": 3498
+    }
+  ],
+  "m6_p8_graph_replay": {
+    "order": 19,
+    "rank": 8,
+    "alpha": 12,
+    "first_strict_descent": 6,
+    "favorable_leaves": [
+      3,
+      6,
+      9,
+      12,
+      15,
+      18
+    ],
+    "favorable_count": 6,
+    "summands": [
+      {
+        "leaf": 3,
+        "support": 2,
+        "witness_vertices": [
+          1
+        ],
+        "h_order": 17,
+        "r_order": 16,
+        "c_rank": 330,
+        "c_previous": 685,
+        "g": -355,
+        "pointwise_delta": -550
+      },
+      {
+        "leaf": 6,
+        "support": 5,
+        "witness_vertices": [
+          4
+        ],
+        "h_order": 17,
+        "r_order": 16,
+        "c_rank": 330,
+        "c_previous": 685,
+        "g": -355,
+        "pointwise_delta": -550
+      },
+      {
+        "leaf": 9,
+        "support": 8,
+        "witness_vertices": [
+          7
+        ],
+        "h_order": 17,
+        "r_order": 16,
+        "c_rank": 330,
+        "c_previous": 685,
+        "g": -355,
+        "pointwise_delta": -550
+      },
+      {
+        "leaf": 12,
+        "support": 11,
+        "witness_vertices": [
+          10
+        ],
+        "h_order": 17,
+        "r_order": 16,
+        "c_rank": 330,
+        "c_previous": 685,
+        "g": -355,
+        "pointwise_delta": -550
+      },
+      {
+        "leaf": 15,
+        "support": 14,
+        "witness_vertices": [
+          13
+        ],
+        "h_order": 17,
+        "r_order": 16,
+        "c_rank": 330,
+        "c_previous": 685,
+        "g": -355,
+        "pointwise_delta": -550
+      },
+      {
+        "leaf": 18,
+        "support": 17,
+        "witness_vertices": [
+          16
+        ],
+        "h_order": 17,
+        "r_order": 16,
+        "c_rank": 330,
+        "c_previous": 685,
+        "g": -355,
+        "pointwise_delta": -550
+      }
+    ],
+    "aggregate": -2130
+  }
+}

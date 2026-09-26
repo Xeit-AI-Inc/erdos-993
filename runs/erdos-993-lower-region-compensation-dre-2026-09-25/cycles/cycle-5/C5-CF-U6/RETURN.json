@@ -1,0 +1,50 @@
+{
+  "worker_id": "C5-CF-U6",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C5-U6-MARKED-SHELL-REDUCTION",
+      "statement": "For a fixed original leaf v and a fixed ordering of its support-neighbors W, the tagged shell difference q_p-q_(p-1) equals -sum over w in W of Delta_(p-2)(G_w), while the original leaf selector Delta_p(T-v)<0 is equivalent to -sum over w in W Delta_(p-1)(G_w)+i_(p+1)(R)-i_(p-1)(R)<0.",
+      "scope": "The stated first-mark identities for each original leaf of a finite ordinary tree, with integer zero extension and the definitions in the source report.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CF-U6/EVIDENCE.json"
+      ],
+      "reason": "Rejected: the first-mark bijection yields q_j=sum_w i_(j-1)(G_w), hence q_j-q_(j-1)=+sum_w Delta_(j-2)(G_w); the selector expression likewise has +sum_w Delta_(p-1)(G_w). The two negative signs invalidate this reduction but do not refute the primary."
+    },
+    {
+      "claim_id": "C5-U6-STAR-LOWER-REGION",
+      "statement": "For T=K_(1,m), every admissible pair (m,p) in the registered lower region satisfies S(T,p)=m*(binom(m-1,p)-binom(m-1,p-1))<0; the exact parameter window is ceil(3p/2)<=m<=2p-4, nonempty exactly for p>=8.",
+      "scope": "Ordinary stars K_(1,m) with m>=4 under x(T)+2<=p and 3p<2alpha(T)+1.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CF-U6/EVIDENCE.json"
+      ],
+      "reason": "Retained: direct binomial counts give x=ceil(m/2), the exact integer gate interval and nonemptiness threshold; every original leaf is selected and each of the m distinct tagged terms is the displayed negative difference."
+    },
+    {
+      "claim_id": "C5-U6-PRIMARY-STATUS",
+      "statement": "This route leaves the complete ordinary-tree lower-region favorable-leaf aggregate unresolved.",
+      "scope": "The full target E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE; the route establishes only its stated identities and star subfamily result.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CF-U6/EVIDENCE.json"
+      ],
+      "reason": "Retained: no all-tree proof or complete eligible positive-sum counterexample is supplied, and the valid star result is restricted to a proper subfamily."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CF-U6/REPORT.md",
+  "limitations": [
+    "The marked-shell reduction claim has a sign error; this correction alone proves no general sign.",
+    "The star calculation covers only stars and does not resolve the arbitrary-tree primary.",
+    "No independent full-sum counterexample or universal proof was produced."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-U6-MARKED-SHELL-REDUCTION",
+    "C5-U6-PRIMARY-STATUS",
+    "C5-U6-STAR-LOWER-REGION"
+  ]
+}

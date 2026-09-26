@@ -1,0 +1,32 @@
+{
+  "worker_id": "C2-CU-F1",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-FIRST-ORDER-SHELL",
+      "statement": "For every ordinary-tree isomorphism class on 16 vertices at p=7 satisfying x(T)+2<=p and 3p<2alpha(T)+1, the complete sum over original leaves v with Delta_7(T-v)<0 of Delta_6(T-{v,s_v})-Delta_6(T-N_T[s_v]) is strictly negative. The exact census generated 19,320 classes, of which 1,696 satisfy the guards; all eligible sums lie from -1,759 through -906.",
+      "scope": "Retained only as a bounded finite result at order 16 and rank 7. The route's registered universal assertion for all ordinary trees and all p with |T|=2p+2 remains open.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CU-F1/COMPUTE_REPLAY.py",
+        "cycles/cycle-2/C2-CU-F1/ordinary_tree_checked_replay.py",
+        "cycles/cycle-2/C2-CU-F1/forest24_replay.py",
+        "cycles/cycle-2/C2-CU-F1/RESULT_REPLAY.json"
+      ],
+      "reason": "retained_narrowed: the finite result was independently replayed from scratch-local copies of the route program and its pinned dependencies; its complete replay JSON equals the route result exactly. The generator boundary, strict terminal-inclusive first-descent scan, both eligibility guards, strict selector on each original leaf deletion, original H/R deletion sets, repeated-support multiplicity, every selected summand, and the complete sum were checked. The result supports only order 16 at p=7 and supplies no proof for other shell ranks, so the universal statement is not resolved."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CU-F1/REPORT.md",
+  "limitations": [
+    "The exact replay covers only order 16 at p=7 and the 1,696 eligible isomorphism classes at that order.",
+    "The universal first-order-shell assertion remains open; finite enumeration cannot establish it for other orders or ranks.",
+    "The replay uses source-pinned generator and evaluator copies and is not a formal proof or a separately implemented generator.",
+    "The permitted order-252 shell control was inspected but not replayed and is not used as evidence."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-LOWER-REGION-FIRST-ORDER-SHELL"
+  ]
+}

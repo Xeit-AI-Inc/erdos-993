@@ -1,0 +1,56 @@
+{
+  "check": "explicit independent-set enumeration against P, endpoint deletion, and every original leaf marked polynomial",
+  "cases": [
+    {
+      "profile": [
+        2
+      ],
+      "vertices": 6,
+      "independence_polynomial": [
+        1,
+        6,
+        10,
+        5,
+        1
+      ],
+      "leaf_tag_count": 3,
+      "tip_tags_checked": 2,
+      "endpoint_marked_polynomial": [
+        0,
+        1,
+        2,
+        1
+      ],
+      "all_tip_marked_polynomials_match": true
+    },
+    {
+      "profile": [
+        2,
+        3
+      ],
+      "vertices": 10,
+      "independence_polynomial": [
+        1,
+        10,
+        36,
+        61,
+        54,
+        28,
+        8,
+        1
+      ],
+      "leaf_tag_count": 6,
+      "tip_tags_checked": 5,
+      "endpoint_marked_polynomial": [
+        0,
+        1,
+        5,
+        10,
+        10,
+        5,
+        1
+      ],
+      "all_tip_marked_polynomials_match": true
+    }
+  ]
+}

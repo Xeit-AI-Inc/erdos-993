@@ -1,0 +1,14 @@
+namespace Erdos993G1.FirstWide
+
+lemma shape_edges_overlap {V : Type u} (G : SimpleGraph V)
+    (hnone : ¬ ∃ a b c d : V, G.Adj a b ∧ G.Adj c d ∧
+      Disjoint ({a,b} : Set V) {c,d})
+    {a b c d : V} (hab : G.Adj a b) (hcd : G.Adj c d) :
+    a = c ∨ a = d ∨ b = c ∨ b = d := by
+  by_contra h
+  apply hnone
+  refine ⟨a,b,c,d,hab,hcd,?_⟩
+  simp only [Set.disjoint_left, Set.mem_insert_iff, Set.mem_singleton_iff]
+  aesop
+
+end Erdos993G1.FirstWide

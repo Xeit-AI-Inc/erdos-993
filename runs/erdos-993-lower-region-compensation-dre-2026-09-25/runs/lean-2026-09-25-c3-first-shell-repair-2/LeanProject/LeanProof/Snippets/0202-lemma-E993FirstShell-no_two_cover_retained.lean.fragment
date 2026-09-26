@@ -1,0 +1,19 @@
+namespace E993FirstShell
+
+lemma no_two_cover_retained {V : Type u} [Fintype V] [DecidableEq V]
+    (T : SimpleGraph V) [DecidableRel T.Adj] (v : V) (p : ℕ)
+    (hv : C4LA1.IsGraphLeaf T v)
+    (hp : 3 ≤ p) (horder : Fintype.card V = 2*p+2)
+    (hcross : C5LA1.crossingIndex T + 2 ≤ p)
+    (C : Finset V) (hC : C.card ≤ 2) :
+    ¬ (∀ a b, T.Adj a b → a ∉ C5LA1.H T v → b ∉ C5LA1.H T v →
+      a ∈ C ∨ b ∈ C) := by
+  intro hret
+  have hcard : (insert (C5LA1.support T v) C).card ≤ 3 := by
+    have h := Finset.card_insert_le (C5LA1.support T v) C
+    omega
+  exact no_three_cover_of_early_crossing T p hp horder hcross
+    (insert (C5LA1.support T v) C) hcard
+    (leaf_retained_cover_transfer T v hv C hret)
+
+end E993FirstShell

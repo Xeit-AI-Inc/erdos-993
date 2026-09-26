@@ -1,0 +1,43 @@
+{
+  "worker_id": "C2-CU-T4",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "The C2-T4 route establishes the fixed-selector occupancy identity for the primary aggregate and proves nonpositivity on eligible paths P_n for n>=4; it does not resolve the universal branching-tree assertion.",
+      "scope": "Primary original-tree selector and exact lower-region eligibility from the solution contract; proved nonpositive subcase is ordinary paths P_n, n>=4, with  x(P_n)+2<=p and 3p<2 alpha(P_n)+1.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CU-T4/REPORT.md",
+        "cycles/cycle-2/C2-CU-T4/EVIDENCE.md",
+        "cycles/cycle-2/C2-CU-T4/path_replay.py"
+      ],
+      "reason": "retained_narrowed: the fixed-selector weighted-layer identity and path proof check, but no adjacent weighted-rank inequality for arbitrary branching trees or eligible full-sum counterexample is supplied; therefore the universal claim remains unresolved."
+    },
+    {
+      "claim_id": "C2-T4-PATH-OCCUPANCY",
+      "statement": "For every eligible path P_n with n>=4, the complete fixed-selector aggregate is nonpositive, equivalently its fixed-selector weighted occupancy sum at size p+1 is at most that at size p.",
+      "scope": "Ordinary paths P_n, n>=4, satisfying x(P_n)+2<=p and 3p<2 alpha(P_n)+1; both original endpoint tags are selected and have distinct supports whenever eligibility is nonempty.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CU-T4/REPORT.md",
+        "cycles/cycle-2/C2-CU-T4/EVIDENCE.md",
+        "cycles/cycle-2/C2-CU-T4/path_replay.py"
+      ],
+      "reason": "retained: the endpoint selector follows from the path rank-ratio comparison and guards; the recurrence gives the exact full sum 2*(i_(p-1)(P_(n-4))-i_(p-2)(P_(n-4))), which is nonpositive by ratio monotonicity and zero extension. The bounded table also replays exactly."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CU-T4/REPORT.md",
+  "limitations": [
+    "The universal lower-region assertion for branching ordinary trees remains unresolved by this route.",
+    "The path replay is bounded to orders 4 through 150 and is not an exhaustive ordinary-tree census.",
+    "No external theorem or full-sum counterexample was used."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+    "C2-T4-PATH-OCCUPANCY"
+  ]
+}

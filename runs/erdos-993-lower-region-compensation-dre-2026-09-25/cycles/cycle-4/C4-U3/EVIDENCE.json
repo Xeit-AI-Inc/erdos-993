@@ -1,0 +1,50 @@
+{
+  "evidence_id": "C4-U3-low-cover-skeleton",
+  "grade": "proved structural parametrization and finite census specification; exact core-state polynomial formula; no census executed",
+  "scope": {
+    "orders": [24, 26, 28, 30],
+    "trees": "ordinary finite trees admitting a vertex cover of size at most six",
+    "claim": "complete six-cover core plus at most five outside connector vertices and six pendant-leaf multiplicities"
+  },
+  "proof_facts": [
+    "Pad any cover of size below six to size six because n>6.",
+    "The outside of a vertex cover is independent, so every outside vertex not of degree one is a connector adjacent only to cover vertices.",
+    "Deleting outside degree-one vertices leaves a connected tree containing the cover.",
+    "With t connectors and L outside leaves, n=6+t+L and n-1=e_C+sum_D deg(u)+L, hence e_C+sum_D(deg(u)-1)=5.",
+    "Each connector contributes at least one to the budget, so t<=5.",
+    "Conversely, each connected core tree satisfying the stated connector and budget constraints, with the prescribed pendant leaves, is a tree with the designated six-cover."
+  ],
+  "census_recipe": {
+    "orders": [24, 26, 28, 30],
+    "cover_cover_edge_slots": 15,
+    "connector_neighborhoods": "subsets of the six cover labels of size at least two, in lexicographic multiset order",
+    "budget": "e_C + sum_connector(|N(u)|-1) = 5",
+    "core_filter": "connected; budget fixes core edge count to 5+t, so retained core is a tree",
+    "multiplicity_domain": "all weak compositions of n-6-t into six nonnegative parts",
+    "largest_single_composition_count": "binom(29,5)=118755 at n=30,t=0",
+    "census_executed": false
+  },
+  "polynomial_formula": "P_T(z)=sum_{I independent in K} z^|I| product_{c in C\\N_K[I]}(1+z)^m_c",
+  "selector_requirements": [
+    "Reconstruct original leaves from full graph degrees, including cover vertices of degree one.",
+    "Compute x from zero-extended independence counts through terminal descent.",
+    "Check x+2<=p and 3p<2alpha+1.",
+    "Use the same fixed original-leaf selector Delta_p(T-v)<0 and include every favorable leaf tag separately."
+  ],
+  "input_context": [
+    "SOLUTION-CONTRACT.md",
+    "WORKER-PROTOCOL.md",
+    "control/C4-SEARCH-ALLOCATION.json",
+    "control/C4-THIRD-SHELL-LOW-COVER-REDIRECTION.md",
+    "control/C4-THIRD-SHELL-P10-COVER-OBSTRUCTION.json",
+    "control/C4-THIRD-SHELL-SMALL-RANK-FOLLOWUP.md",
+    "control/C4-THIRD-SHELL-SMALL-RANK-SINGLETON-DP.json",
+    "control/C4-GENERAL-SHELL-MATCHING-THRESHOLD.md"
+  ],
+  "limitations": [
+    "This does not prove a pointwise third-shell sign or the complete primary aggregate.",
+    "No low-cover skeleton and multiplicity census was executed.",
+    "No theorem for trees with cover number at least seven is established here.",
+    "The 64-state formula supplies exact evaluation but no sign inequality."
+  ]
+}

@@ -1,0 +1,7 @@
+# Alternative generic order-band route through the prior formal graph theorem
+
+Controller formalization strategy only; not an active C2 search input, scope change or award. Use the A/B lemmas in FIRST-SHELL-TWO-PART-ROUTE.md.
+
+For the registered generic marked-isolate theorem, m<=2k is automatic by marked shadow A. At m=2k+1 and at least2 edges, marked shadow B proves the result for arbitrary W, using the prior exact first-wide graph theorem at rank k-1. If G has at most1 edge and W contains all isolates, every independent set of size>=2 meets W: outside W all vertices are non-isolated, hence are contained in the two adjacent endpoints of the unique edge (or no vertices if G has no edge). Therefore q_k=i_k(G) and q_(k+1)=i_(k+1)(G) for k>=2. The ordinary unmarked shadow inequality gives i_(k+1)<=i_k whenever m<=2k+1. No binomial arithmetic or B+C correction is needed for this alternative proof.
+
+This may be easier to formalize than the generic marked-incidence correction identity. It requires the exact old first-wide graph classification and a single-mark counting split, and still keeps the generic k>=2 guard. The ordinary leaf corollary follows from all-isolate coverage and the original H/R marked-count split, as in the frozen candidate. Any implementation must preserve the old source pin and verify its actual theorem signature, avoid duplicate namespaces if composing the first-interior and first-wide source files, and earn new kernel and fidelity receipts for the new declaration. Prior compilation is not a new award.

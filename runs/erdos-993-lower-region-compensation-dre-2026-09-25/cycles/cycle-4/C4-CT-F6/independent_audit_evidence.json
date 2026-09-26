@@ -1,0 +1,301 @@
+{
+  "method": "Direct branch product P(z)=prod_i((1+z)^m_i+z)+z(1+z)^L, with closed deletion products for T-v, H_v, and R_v; integer polynomial arithmetic.",
+  "generation": "All sorted positive integer partitions m_1<=...<=m_c of 2p+3-c for c=1..6, p=10..13.",
+  "candidates": {
+    "10": {
+      "count": 199,
+      "strict_lower_region": 199,
+      "x_plus_2_le_p": 1,
+      "eligible": 1
+    },
+    "11": {
+      "count": 279,
+      "strict_lower_region": 279,
+      "x_plus_2_le_p": 0,
+      "eligible": 0
+    },
+    "12": {
+      "count": 384,
+      "strict_lower_region": 384,
+      "x_plus_2_le_p": 0,
+      "eligible": 0
+    },
+    "13": {
+      "count": 517,
+      "strict_lower_region": 517,
+      "x_plus_2_le_p": 0,
+      "eligible": 0
+    }
+  },
+  "eligible_rows": [
+    {
+      "p": 10,
+      "branch_leaf_counts": [
+        2,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "order": 24,
+      "edge_count": 23,
+      "original_leaf_count": 17,
+      "alpha": 18,
+      "delta_vector": [
+        23,
+        229,
+        1313,
+        4834,
+        12019,
+        20551,
+        23680,
+        15943,
+        -78,
+        -15167,
+        -21766,
+        -19383,
+        -12651,
+        -6308,
+        -2404,
+        -682,
+        -136,
+        -17,
+        -1,
+        0
+      ],
+      "x": 8,
+      "strict_lower_region": true,
+      "first_descent_guard": true,
+      "eligible": true,
+      "favorable_count": 17,
+      "favorable_vertices": [
+        {
+          "vertex": 2,
+          "center": 1,
+          "delta_p_T_minus_v": -13234,
+          "H_delta": -8532,
+          "R_delta": -3657,
+          "term": -4875
+        },
+        {
+          "vertex": 3,
+          "center": 1,
+          "delta_p_T_minus_v": -13234,
+          "H_delta": -8532,
+          "R_delta": -3657,
+          "term": -4875
+        },
+        {
+          "vertex": 5,
+          "center": 4,
+          "delta_p_T_minus_v": -12357,
+          "H_delta": -9409,
+          "R_delta": -1872,
+          "term": -7537
+        },
+        {
+          "vertex": 6,
+          "center": 4,
+          "delta_p_T_minus_v": -12357,
+          "H_delta": -9409,
+          "R_delta": -1872,
+          "term": -7537
+        },
+        {
+          "vertex": 7,
+          "center": 4,
+          "delta_p_T_minus_v": -12357,
+          "H_delta": -9409,
+          "R_delta": -1872,
+          "term": -7537
+        },
+        {
+          "vertex": 9,
+          "center": 8,
+          "delta_p_T_minus_v": -12357,
+          "H_delta": -9409,
+          "R_delta": -1872,
+          "term": -7537
+        },
+        {
+          "vertex": 10,
+          "center": 8,
+          "delta_p_T_minus_v": -12357,
+          "H_delta": -9409,
+          "R_delta": -1872,
+          "term": -7537
+        },
+        {
+          "vertex": 11,
+          "center": 8,
+          "delta_p_T_minus_v": -12357,
+          "H_delta": -9409,
+          "R_delta": -1872,
+          "term": -7537
+        },
+        {
+          "vertex": 13,
+          "center": 12,
+          "delta_p_T_minus_v": -12357,
+          "H_delta": -9409,
+          "R_delta": -1872,
+          "term": -7537
+        },
+        {
+          "vertex": 14,
+          "center": 12,
+          "delta_p_T_minus_v": -12357,
+          "H_delta": -9409,
+          "R_delta": -1872,
+          "term": -7537
+        },
+        {
+          "vertex": 15,
+          "center": 12,
+          "delta_p_T_minus_v": -12357,
+          "H_delta": -9409,
+          "R_delta": -1872,
+          "term": -7537
+        },
+        {
+          "vertex": 17,
+          "center": 16,
+          "delta_p_T_minus_v": -12357,
+          "H_delta": -9409,
+          "R_delta": -1872,
+          "term": -7537
+        },
+        {
+          "vertex": 18,
+          "center": 16,
+          "delta_p_T_minus_v": -12357,
+          "H_delta": -9409,
+          "R_delta": -1872,
+          "term": -7537
+        },
+        {
+          "vertex": 19,
+          "center": 16,
+          "delta_p_T_minus_v": -12357,
+          "H_delta": -9409,
+          "R_delta": -1872,
+          "term": -7537
+        },
+        {
+          "vertex": 21,
+          "center": 20,
+          "delta_p_T_minus_v": -12357,
+          "H_delta": -9409,
+          "R_delta": -1872,
+          "term": -7537
+        },
+        {
+          "vertex": 22,
+          "center": 20,
+          "delta_p_T_minus_v": -12357,
+          "H_delta": -9409,
+          "R_delta": -1872,
+          "term": -7537
+        },
+        {
+          "vertex": 23,
+          "center": 20,
+          "delta_p_T_minus_v": -12357,
+          "H_delta": -9409,
+          "R_delta": -1872,
+          "term": -7537
+        }
+      ],
+      "all_leaf_selector_values": [
+        {
+          "vertex": 2,
+          "center": 1,
+          "delta_p_T_minus_v": -13234
+        },
+        {
+          "vertex": 3,
+          "center": 1,
+          "delta_p_T_minus_v": -13234
+        },
+        {
+          "vertex": 5,
+          "center": 4,
+          "delta_p_T_minus_v": -12357
+        },
+        {
+          "vertex": 6,
+          "center": 4,
+          "delta_p_T_minus_v": -12357
+        },
+        {
+          "vertex": 7,
+          "center": 4,
+          "delta_p_T_minus_v": -12357
+        },
+        {
+          "vertex": 9,
+          "center": 8,
+          "delta_p_T_minus_v": -12357
+        },
+        {
+          "vertex": 10,
+          "center": 8,
+          "delta_p_T_minus_v": -12357
+        },
+        {
+          "vertex": 11,
+          "center": 8,
+          "delta_p_T_minus_v": -12357
+        },
+        {
+          "vertex": 13,
+          "center": 12,
+          "delta_p_T_minus_v": -12357
+        },
+        {
+          "vertex": 14,
+          "center": 12,
+          "delta_p_T_minus_v": -12357
+        },
+        {
+          "vertex": 15,
+          "center": 12,
+          "delta_p_T_minus_v": -12357
+        },
+        {
+          "vertex": 17,
+          "center": 16,
+          "delta_p_T_minus_v": -12357
+        },
+        {
+          "vertex": 18,
+          "center": 16,
+          "delta_p_T_minus_v": -12357
+        },
+        {
+          "vertex": 19,
+          "center": 16,
+          "delta_p_T_minus_v": -12357
+        },
+        {
+          "vertex": 21,
+          "center": 20,
+          "delta_p_T_minus_v": -12357
+        },
+        {
+          "vertex": 22,
+          "center": 20,
+          "delta_p_T_minus_v": -12357
+        },
+        {
+          "vertex": 23,
+          "center": 20,
+          "delta_p_T_minus_v": -12357
+        }
+      ],
+      "S": -122805
+    }
+  ],
+  "conclusion": "The bounded family claim is reproduced exactly. It does not imply a census of all six-cover trees or any universal aggregate/sign theorem."
+}

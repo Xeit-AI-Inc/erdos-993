@@ -1,0 +1,12 @@
+lemma deleteVerts_union_iso {V : Type u} (F : SimpleGraph V) (S Q : Set V) :
+    Nonempty (deleteVerts F (S ∪ Q) ≃g
+      deleteVerts (deleteVerts F S) {a | a.val ∈ Q}) := by
+  refine ⟨{
+    toFun := fun a => ⟨⟨a.val, fun hs => a.prop (Or.inl hs)⟩,
+      fun hq => a.prop (Or.inr hq)⟩
+    invFun := fun a => ⟨a.val.val, fun h => h.elim a.val.prop a.prop⟩
+    left_inv := by intro a; rfl
+    right_inv := by intro a; rfl
+    map_rel_iff' := by intros; rfl
+  }⟩
+

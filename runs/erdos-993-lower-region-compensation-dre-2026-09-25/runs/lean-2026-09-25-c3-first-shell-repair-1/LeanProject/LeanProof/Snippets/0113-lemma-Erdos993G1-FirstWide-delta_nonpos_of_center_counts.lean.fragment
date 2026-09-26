@@ -1,0 +1,11 @@
+namespace Erdos993G1.FirstWide
+
+lemma delta_nonpos_of_center_counts {Y : Type u} [Finite Y]
+    (G : SimpleGraph Y) (r q : ℕ) (hr : 1 ≤ r) (hq : q ≤ 2 * r - 1)
+    (hc : ∀ j : ℕ, indepCount G j = binomCoeff (2 * r + 1) (j : ℤ) +
+      binomCoeff q ((j : ℤ) - 1)) : delta G (r : ℤ) ≤ 0 := by
+  rw [delta_nat, hc, hc]
+  simpa only [Nat.cast_add, Nat.cast_one, add_sub_cancel_right] using
+    center_expression_nonpos hr hq
+
+end Erdos993G1.FirstWide

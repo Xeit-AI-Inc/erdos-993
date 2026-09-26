@@ -1,0 +1,13 @@
+id,claim,evidence,verdict,reason,limitation
+C01,source hashes and contract identity,brief pins; contract and receipt,verified,16 source hashes match; informal and terminal hashes recomputed,none
+C02,original leaf and selector semantics,OrderBandMain.lean; FirstInteriorMain.lean,verified,unique support; original H/R; strict vertex deletion filter; per-leaf summation,off-leaf support choice irrelevant
+C03,crossing index and p lower bound,FirstInteriorMain.lean:210-243; direct count,verified,first negative exists; Delta0=n-1>0; x+2<=p implies p>=3,order equation required
+C04,cover padding and fiber partition,R25Card5Main.lean:179-349; direct bijection,verified,cover size 3; U size 2p-1; polynomial fiber formula,p>=3
+C05,negative-rank Catalan guards,R25Card5Main.lean:993-1019; direct endpoint check,verified,a<=r floor; a=r+1 gives 1; a>=r+2 gives 0,integer ranks
+C06,all-earlier-ranks positivity,Catalan identities; Pascal monotonicity,verified,"margins 2 at r=0,1; at r>=2 margin >=Cat_(r-1)>0",all r<=p-2
+C07,early descent excludes cover three,C03; C06,verified,x<=p-2 contradicts Delta_x>0,strict descent
+C08,original leaf cover lift and mark,tree connectivity; original leaf property,verified,tau retained >=3; edge component yields nonisolated W vertex,ordinary connected tree
+C09,first-hit marked shadow,direct incidence; G1FirstWideMain.lean:2512-2524,verified,residual <=2k-1 shadow or exact 2k two-edge first-wide,first mark nonisolated; k>=2
+C10,signed H/R identity,OrderBandMain.lean:1011-1021,verified,term equals q_p-q_(p-1) in integers,original deletion sets
+C11,fixed-selector aggregate,FirstInteriorMain.lean:192-205; C10,verified,sum of nonpositive original-leaf terms; empty and shared-support cases,strict alpha guard retained
+C12,hostile boundary and scope,independent enumeration; counterexample,verified,m6 exhaustive zero violations; tau2 counterexample; no wider-order claim,finite test is not proof

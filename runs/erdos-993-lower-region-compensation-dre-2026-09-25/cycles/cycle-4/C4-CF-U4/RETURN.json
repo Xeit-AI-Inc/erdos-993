@@ -1,0 +1,24 @@
+{
+  "worker_id": "C4-CF-U4",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C4-U4-COLORED-SHADOW-MIXED-BOUNDARY",
+      "statement": "For the matching-sector face poset obtained after stripping the two fixed vertices, Chong Theorems 1.2(i) and 2.1(iii)/(iv)(a) imply revlex minimization of the ordinary lower shadow. The matching-sector normalized-matching flow also concerns ordinary adjacent-rank covers. By themselves, these results contain no endpoint-specific hub-incidence data and establish no preservation or bound for the additional CB mixed boundary. In the stated three-vertex path model, revlex compression preserves ordinary shadow size but changes the auxiliary addability count from 1 to 0.",
+      "scope": "The unweighted matching-sector ordinary shadow and normalized matching property, plus the exact toy obstruction to automatic compression preservation of an endpoint-sensitive insertion count. The toy graph is not a full CB encoding or counterexample, and the claim does not decide the CB mixed inequality or the primary aggregate.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-4/C4-CF-U4/EVIDENCE.json"],
+      "reason": "retained_narrowed: The cited results and the path arithmetic check. Narrowed to say these abstract unweighted results alone supply no endpoint-specific incidence data or mixed-boundary conclusion; no conclusion about a special CB instance follows without a separate bridge."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CF-U4/REPORT.md",
+  "limitations": [
+    "The toy path is not a full CB tree encoding or a counterexample to the CB mixed-boundary inequality.",
+    "No complete CB edge encoding, fixed-selector audit, or arbitrary-source weighted-Hall certificate was established.",
+    "The full mixed-boundary inequality and primary lower-region aggregate remain unresolved by this review."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": ["C4-U4-COLORED-SHADOW-MIXED-BOUNDARY"]
+}

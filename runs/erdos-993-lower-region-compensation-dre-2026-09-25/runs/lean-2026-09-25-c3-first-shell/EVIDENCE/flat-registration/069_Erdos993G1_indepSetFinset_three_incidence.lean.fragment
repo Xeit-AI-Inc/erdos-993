@@ -1,0 +1,20 @@
+lemma indepSetFinset_three_incidence [Fintype V] [DecidableEq V]
+    [DecidableRel F.Adj] (hF : F.IsAcyclic) :
+    (F.indepSetFinset 3).card + Nat.card F.edgeSet * (Fintype.card V - 2) =
+      (Fintype.card V).choose 3 +
+        ∑ B ∈ (Finset.univ : Finset V).powersetCard 3,
+          ∑ a ∈ B, ((B.filter (F.Adj a)).card).choose 2 := by
+  have hs :
+      (∑ B ∈ (Finset.univ : Finset V).powersetCard 3,
+        ((if F.IsIndepSet B then 1 else 0) +
+          ((B.powersetCard 2).filter (fun E : Finset V => ¬F.IsIndepSet E)).card)) =
+      ∑ B ∈ (Finset.univ : Finset V).powersetCard 3,
+        (1 + ∑ a ∈ B, ((B.filter (F.Adj a)).card).choose 2) := by
+    apply Finset.sum_congr rfl
+    intro B hB
+    exact triple_local_identity F hF B (Finset.mem_powersetCard.mp hB).2
+  simp only [Finset.sum_add_distrib] at hs
+  rw [sum_indep_indicator, sum_nonindep_pair_incidence] at hs
+  simpa only [Finset.sum_const, smul_eq_mul, mul_one,
+    Finset.card_powersetCard, Finset.card_univ] using hs
+

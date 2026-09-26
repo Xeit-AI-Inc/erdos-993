@@ -1,0 +1,42 @@
+{
+  "worker_id": "C5-CF-U1",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C5-U1.coefficient-window",
+      "statement": "For finite integer-coefficient polynomials g(z), G(z)=sum_{r=0}^d c_r z^r, and e(z), with coefficient zero extension, Delta_p(Gg+e)=sum_{r=0}^d c_r Delta_{p-r}(g)+Delta_p(e). If M=sum_r c_r Delta_{p-r}(g)<0 and |Delta_p(e)|<-M, then Delta_p(Gg+e)<0. This is an algebraic transfer test and does not derive the shifted-window signs from central log-concavity or first descent.",
+      "scope": "Exact finite polynomial identity and its stated strict perturbation margin only; no tree-wide, T_m-infinite, or primary theorem is established.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CF-U1/REPORT.md"
+      ],
+      "reason": "retained_narrowed: convolution proves the identity and strict error margin directly; coefficient notation is clarified and no sign control for the shifted window follows from the route's central-only information."
+    },
+    {
+      "claim_id": "C5-U1.Tm-bounded",
+      "statement": "For the path 0-1-2 with m disjoint three-tip claws attached at 0, for every eligible lower-region rank and 1<=m<=40, exact polynomial arithmetic gives S(T_m,p)<0; there are 427 eligible (m,p) rows.",
+      "scope": "Only the specified ordinary-tree family with original leaves and supports and m<=40. No conclusion for larger m or other trees.",
+      "status": "proposed_bounded_computational",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CF-U1/REPLAY.py",
+        "cycles/cycle-5/C5-CF-U1/EVIDENCE.json",
+        "cycles/cycle-5/C5-CF-U1/VERIFY.py",
+        "cycles/cycle-5/C5-CF-U1/VERIFICATION.json"
+      ],
+      "reason": "retained: copied recurrence replay and an independent generic tree dynamic program agree on x, alpha, all strict leaf selectors, selected per-leaf summands and full multiplicity-weighted S for all 427 eligible rows; every total is negative. The result remains bounded computational evidence."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CF-U1/REPORT.md",
+  "limitations": [
+    "The coefficient-window identity does not provide shifted-window sign information from central log-concavity or first descent alone.",
+    "The independently checked computation is finite at m<=40 and yields no conclusion for larger m or arbitrary ordinary trees.",
+    "The all-m T_m candidate, its analytic inequalities, and the primary aggregate remain unresolved by these claims; no authoritative status is proposed."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-U1.Tm-bounded",
+    "C5-U1.coefficient-window"
+  ]
+}

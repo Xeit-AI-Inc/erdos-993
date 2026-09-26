@@ -1,0 +1,24 @@
+{
+  "worker_id": "C4-CU-F2",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C4-F2-BOUNDED-BUDGET-SEARCH",
+      "statement": "Retained as a bounded observation: no flat, current-rank, or target addability-budget violation occurred in the stated main search, and no proper favorable subset occurred in either the main corpus or stated two-hub selector stress.",
+      "scope": "Exactly the finite generation boundary in C4-F2 EVIDENCE.json: 24,067 generated main instances with 339 eligible nonempty-selector pairs, plus 287 eligible pairs in the stated two-hub profile box. No universal statement is included.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-4/C4-CU-F2/REPLAY-RESULTS.json", "cycles/cycle-4/C4-CU-F2/STAR-CHECK.json"],
+      "reason": "Independent scratch-local replay reproduced the finite search counters and absence of budget violations. A separate binomial reconstruction verifies the reported eligible star stress row, including all original leaf tags, strict guards, summands, and aggregate identities. Since neither corpus yields a proper favorable subset and the search is finite, the evidence supports only the stated bounded observation; the universal budget and primary aggregate remain open."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CU-F2/REPORT.md",
+  "limitations": [
+    "The bounded corpus proves no universal addability budget or ordinary-tree aggregate.",
+    "Every eligible pair in both reported corpora has the full original leaf set selected, so proper-selector cancellation is untested.",
+    "The main replay runs the submitted algorithm against its pinned evaluator; the independent closed-form reconstruction is confined to the star stress row."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": ["C4-F2-BOUNDED-BUDGET-SEARCH"]
+}

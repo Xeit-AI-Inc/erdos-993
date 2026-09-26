@@ -1,0 +1,18 @@
+namespace Erdos993G1.FirstWide
+
+lemma subset_fiber_eq_image {X : Type u} [DecidableEq X]
+    (F : Finset (Finset X)) (S : Finset X) (k : ℕ)
+    (hF : ∀ B ∈ F, B.card = k) (hS : S.card = k + 1) :
+    F.filter (fun B => B ⊆ S) = (S.filter (fun a => S.erase a ∈ F)).image S.erase := by
+  classical
+  ext B
+  simp only [Finset.mem_filter, Finset.mem_image]
+  constructor
+  · rintro ⟨hBF,hBS⟩
+    obtain ⟨a,ha,he⟩ := Finset.exists_eq_insert_iff.mpr ⟨hBS, by rw [hF B hBF,hS]⟩
+    have he' : S.erase a = B := by rw [← he,Finset.erase_insert ha]
+    exact ⟨a,⟨by rw [← he]; simp,by simpa [he'] using hBF⟩,he'⟩
+  · rintro ⟨a,⟨ha,he⟩,rfl⟩
+    exact ⟨he,Finset.erase_subset _ _⟩
+
+end Erdos993G1.FirstWide

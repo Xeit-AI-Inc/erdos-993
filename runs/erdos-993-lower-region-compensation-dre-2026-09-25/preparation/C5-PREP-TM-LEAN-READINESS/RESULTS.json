@@ -1,0 +1,185 @@
+{
+  "worker_id": "C5-PREP-TM-LEAN-READINESS",
+  "status": "readiness_proposal_only",
+  "read_only_audit": true,
+  "lean_run_created": false,
+  "lean_compiled": false,
+  "kernel_verified": false,
+  "source_pins": [
+    {
+      "path": "SOLUTION-CONTRACT.md",
+      "expected_sha256": "f3667bd6424d4f0d95714772ecf76af82ed8430bdd3ec9eda0c721f1a853390c",
+      "observed_sha256": "f3667bd6424d4f0d95714772ecf76af82ed8430bdd3ec9eda0c721f1a853390c",
+      "matched": true
+    },
+    {
+      "path": "governance/lean-proof-workflow-SKILL.md",
+      "expected_sha256": "405c11ffb24a19ff608a717340f11b650c4ea17218b17a0e79020036822e1c6c",
+      "observed_sha256": "405c11ffb24a19ff608a717340f11b650c4ea17218b17a0e79020036822e1c6c",
+      "matched": true
+    },
+    {
+      "path": "governance/theorem-contract-SKILL.md",
+      "expected_sha256": "583fab70f817541503a9671f9aadf20038df9dd70e4128027912ffb88fe1c2f4",
+      "observed_sha256": "583fab70f817541503a9671f9aadf20038df9dd70e4128027912ffb88fe1c2f4",
+      "matched": true
+    },
+    {
+      "path": "governance/lean-formalization-SKILL.md",
+      "expected_sha256": "c2bb1d81f0a5026673dcd58480f9634eb8e78bf9e6d37e1704c5b9c6a5b78cbd",
+      "observed_sha256": "c2bb1d81f0a5026673dcd58480f9634eb8e78bf9e6d37e1704c5b9c6a5b78cbd",
+      "matched": true
+    },
+    {
+      "path": "governance/lean-kernel-verification-SKILL.md",
+      "expected_sha256": "5357221eb6c404bc745a061a6df33244b430258713b34388de1b25974a354bd2",
+      "observed_sha256": "5357221eb6c404bc745a061a6df33244b430258713b34388de1b25974a354bd2",
+      "matched": true
+    },
+    {
+      "path": "governance/formalization-fidelity-audit-SKILL.md",
+      "expected_sha256": "dbb8672c804a520678f0325b93c6db0ba5e3616ddc57f0353e621c36c2e20b21",
+      "observed_sha256": "dbb8672c804a520678f0325b93c6db0ba5e3616ddc57f0353e621c36c2e20b21",
+      "matched": true
+    },
+    {
+      "path": "inputs/C4-first-shell-frozen-intake/BASE.lean",
+      "expected_sha256": "bfcd5bfbc921b17f2c2f33a881d97daa593baeb00c7eb1f3b7c5804ecc1c9fe9",
+      "observed_sha256": "bfcd5bfbc921b17f2c2f33a881d97daa593baeb00c7eb1f3b7c5804ecc1c9fe9",
+      "matched": true
+    },
+    {
+      "path": "inputs/C4-r27-linear-bound-intake/THEOREM-CONTRACT.yaml",
+      "expected_sha256": "a5d964540c9cc3aa05deb276256eacd28ab893612ce99abe9e50ea12ad2fbee8",
+      "observed_sha256": "a5d964540c9cc3aa05deb276256eacd28ab893612ce99abe9e50ea12ad2fbee8",
+      "matched": true
+    },
+    {
+      "path": "preparation/C5-PREP-TM-UNIFORM-CANDIDATE-AUDIT/REPORT.md",
+      "expected_sha256": "91d316294b147c3af09cde641dc2916f2681d36ba6ca224fade92458b370757f",
+      "observed_sha256": "91d316294b147c3af09cde641dc2916f2681d36ba6ca224fade92458b370757f",
+      "matched": true
+    },
+    {
+      "path": "preparation/C5-PREP-TM-UNIFORM-CANDIDATE-AUDIT/REPLAY.py",
+      "expected_sha256": "01395c7507ece93eff4288c9ce7c59d542558ff81777a034bc4d7e999c7faaa1",
+      "observed_sha256": "01395c7507ece93eff4288c9ce7c59d542558ff81777a034bc4d7e999c7faaa1",
+      "matched": true
+    },
+    {
+      "path": "preparation/C5-PREP-TM-UNIFORM-CANDIDATE-AUDIT/RESULTS.json",
+      "expected_sha256": "ce854f8056cb9e08c18fa2b2bf239162a7c4332d27050085d8d7c0bd2b8a04b6",
+      "observed_sha256": "ce854f8056cb9e08c18fa2b2bf239162a7c4332d27050085d8d7c0bd2b8a04b6",
+      "matched": true
+    },
+    {
+      "path": "control/C3-FIRST-SHELL-FORMAL-AWARD.md",
+      "expected_sha256": "4be8a3e7d5238bdaaf3ffe2b93f9518029f4a4d00aef563b257ad636eae3d7ca",
+      "observed_sha256": "4be8a3e7d5238bdaaf3ffe2b93f9518029f4a4d00aef563b257ad636eae3d7ca",
+      "matched": true
+    }
+  ],
+  "source_pins_all_match": true,
+  "remote_library": {
+    "project": "/Users/ashtonsperry/.local/share/verityos/lean/mathlib-v4.32.2-project",
+    "source_root": ".lake/packages/mathlib/Mathlib",
+    "lean_toolchain": "leanprover/lean4:v4.32.2",
+    "mathlib_head": "905b95818eb32af7874a58b427f50c1711a5e96c",
+    "manifest_mathlib_rev": "905b95818eb32af7874a58b427f50c1711a5e96c",
+    "sha256": {
+      "lean-toolchain": "22bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273",
+      "lake-manifest.json": "5061b76dea7adff45cac844810dd202a44e5fe5b1f39fe5c3a04825bdd464ac0",
+      "Mathlib/Algebra/Polynomial/Coeff.lean": "6ee03ca5ac14ca0722b66ebc446fa93e3d5ace4a3ec5cf8d950bab976d815370",
+      "Mathlib/Algebra/Polynomial/Derivative.lean": "a7419f317106744e68279f30fc588015076f2a8baeb125f6ed74b59575e42f58",
+      "Mathlib/Data/Nat/Choose/Basic.lean": "e364d90ba28b43f131754ff4e27d81fd935a601369a46a218579703ff4e7c705",
+      "Mathlib/Combinatorics/SimpleGraph/Clique.lean": "77492c50707bb8c383aba7b46ba506516622871a4837780b308d36e7102a11d1",
+      "Mathlib/Combinatorics/SimpleGraph/Acyclic.lean": "3f86d83db30ace0d86f8f6631ff9f01c0f5051cc9455219754b1e32a762ee66a",
+      "Mathlib/Combinatorics/SimpleGraph/Finite.lean": "1137f10d50c86edcb68571f21327d3e861b5b3834d7be11de5ef7daad386df40",
+      "Mathlib/Tactic/Linter/DeprecatedSyntaxLinter.lean": "c06f1f319baca635625680f33c9b1692286ea24ca868b903a52c5eab8c4f534b",
+      "Mathlib/Algebra/BigOperators/NatAntidiagonal.lean": "64430c09500e0d0d7592534812ef6db6c51dea382ba8448b0a90cd3b60392d14"
+    }
+  },
+  "search_limits": [
+    {
+      "scope": "Mathlib",
+      "method": "find filenames",
+      "terms": [
+        "*LogConcav*",
+        "*Ultra*",
+        "*Convol*",
+        "*CauchyBinet*",
+        "*Independ*"
+      ],
+      "output_limit": 100
+    },
+    {
+      "scope": [
+        "Mathlib/Combinatorics",
+        "Mathlib/Analysis",
+        "Mathlib/Probability"
+      ],
+      "method": "grep -R -l *.lean",
+      "terms": "[Ll]og[Cc]oncav|log_concav|[Uu]ltra[Ll]og|ULC|Liggett",
+      "output_limit": 80,
+      "matching_paths": 0
+    },
+    {
+      "scope": [
+        "Mathlib/LinearAlgebra",
+        "Mathlib/Combinatorics",
+        "Mathlib/Analysis"
+      ],
+      "method": "grep -R -l *.lean",
+      "terms": "[Cc]auchy.?[Bb]inet|cauchyBinet|cauchy_binet|[Tt]otal[Pp]ositiv|[Pp]olya[Ff]requency",
+      "output_limit": 80,
+      "matching_paths": 0
+    },
+    {
+      "scope": "Mathlib",
+      "method": "grep -R -l *.lean",
+      "terms": "[Ll]og[Cc]oncav|log_concav|[Uu]ltra[Ll]og|ULC|Liggett|[Cc]auchy.?[Bb]inet|cauchyBinet|cauchy_binet",
+      "output_limit": 100,
+      "matching_paths": 0
+    }
+  ],
+  "actual_mathlib_declarations": [
+    "Polynomial.coeff_mul",
+    "Polynomial.coeff_one_add_X_pow",
+    "Polynomial.coeff_derivative",
+    "Nat.choose_succ_succ",
+    "Nat.choose_pos",
+    "Nat.choose_succ_right_eq",
+    "SimpleGraph.IsNIndepSet",
+    "SimpleGraph.indepNum",
+    "SimpleGraph.indepSetFinset",
+    "SimpleGraph.isTree_iff_connected_and_card",
+    "SimpleGraph.neighborFinset_eq_filter"
+  ],
+  "not_found_by_bounded_search": [
+    "finite-order ULC convolution closure",
+    "Liggett theorem",
+    "Cauchy-Binet/mixed-minor closure"
+  ],
+  "finite_base_candidate": {
+    "m_min": 3,
+    "m_max": 999,
+    "lc_checks": 1507464,
+    "mixed_checks": 1507464,
+    "eligible_rows_observed": 276938,
+    "python_evidence_only": true,
+    "kernel_runtime_feasibility": "unmeasured"
+  },
+  "proof_obligation_packages": [
+    "graph/count bridge",
+    "R27/index and eligibility bridge",
+    "ULC/LC/mixed-minor algebra",
+    "large-m rational and perturbation bounds",
+    "kernel-checked finite base",
+    "propagation and exact family theorem"
+  ],
+  "primary_feasibility_gates": [
+    "formal proof of ULC convolution or equivalent quantitative closure",
+    "resource-bounded kernel verification of complete finite base"
+  ],
+  "award_scope": "none"
+}

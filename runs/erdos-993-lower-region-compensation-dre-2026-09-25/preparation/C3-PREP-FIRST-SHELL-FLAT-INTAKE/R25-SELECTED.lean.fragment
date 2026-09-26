@@ -1,0 +1,288 @@
+-- VERITYOS ENTRY 16 BEGIN lemma Erdos993G1.ThirdWide.cover_fiber_count f116c6f46472401183d37aacb3ca4ac49a46a273a39aa70a473affe783dbf073
+namespace Erdos993G1.ThirdWide
+
+open Finset Classical
+
+variable {X : Type u} [Fintype X] [DecidableEq X]
+
+lemma cover_fiber_count (F : SimpleGraph X) [DecidableRel F.Adj] (C S : Finset X)
+    (hSC : S ⊆ C) (hS : F.IsIndepSet S)
+    (hcover : ∀ x y, F.Adj x y → x ∈ C ∨ y ∈ C) (k : ℕ) :
+    (((F.indepSetFinset k).filter (fun T => T ∩ C = S)).card : ℤ) =
+      FirstWide.binomCoeff
+        ((univ : Finset X).filter (fun x => x ∉ C ∧ ∀ y ∈ S, ¬F.Adj y x)).card
+        ((k : ℤ) - S.card) := by
+  classical
+  let B := (univ : Finset X).filter (fun x => x ∉ C ∧ ∀ y ∈ S, ¬F.Adj y x)
+  let A := (F.indepSetFinset k).filter (fun T => T ∩ C = S)
+  by_cases hsk : S.card ≤ k
+  · have hcount : A.card = (B.powersetCard (k-S.card)).card := by
+      apply Finset.card_bij (fun T _ => T \ C)
+      · intro T hT
+        obtain ⟨hT,hTC⟩ := mem_filter.mp hT
+        have hind := (SimpleGraph.mem_indepSetFinset_iff.mp hT).isIndepSet
+        have htcard := (SimpleGraph.mem_indepSetFinset_iff.mp hT).card_eq
+        refine mem_powersetCard.mpr ⟨?_,?_⟩
+        · intro x hx
+          obtain ⟨hxT,hxC⟩ := mem_sdiff.mp hx
+          refine mem_filter.mpr ⟨mem_univ _, hxC, ?_⟩
+          intro y hy hadj
+          have hyT : y ∈ T := (mem_inter.mp (hTC ▸ hy)).1
+          exact hind hyT hxT hadj.ne hadj
+        · have hc := card_sdiff_add_card_inter T C
+          rw [hTC,htcard] at hc
+          omega
+      · intro T hT U hU heq
+        have hTC := (mem_filter.mp hT).2
+        have hUC := (mem_filter.mp hU).2
+        have hTdec : T \ C ∪ S = T := by rw [← hTC]; exact sdiff_union_inter _ _
+        have hUdec : U \ C ∪ S = U := by rw [← hUC]; exact sdiff_union_inter _ _
+        rw [← hTdec, ← hUdec, heq]
+      · intro J hJ
+        obtain ⟨hJB,hJcard⟩ := mem_powersetCard.mp hJ
+        have hJC : Disjoint J C := disjoint_left.mpr (by
+          intro x hx hxC
+          exact (mem_filter.mp (hJB hx)).2.1 hxC)
+        have hJS : Disjoint J S := hJC.mono_right hSC
+        have hind : F.IsIndepSet (↑(J ∪ S) : Set X) := by
+          intro x hx y hy hxy hadj
+          rcases mem_union.mp hx with hx | hx <;> rcases mem_union.mp hy with hy | hy
+          · rcases hcover x y hadj with hxC | hyC
+            · exact (mem_filter.mp (hJB hx)).2.1 hxC
+            · exact (mem_filter.mp (hJB hy)).2.1 hyC
+          · exact (mem_filter.mp (hJB hx)).2.2 y hy hadj.symm
+          · exact (mem_filter.mp (hJB hy)).2.2 x hx hadj
+          · exact hS hx hy hxy hadj
+        refine ⟨J ∪ S, mem_filter.mpr ⟨?_,?_⟩, ?_⟩
+        · apply SimpleGraph.mem_indepSetFinset_iff.mpr
+          refine ⟨hind,?_⟩
+          rw [card_union_of_disjoint hJS,hJcard]
+          omega
+        · ext x
+          simp only [mem_inter,mem_union]
+          constructor
+          · rintro ⟨hx,hxC⟩
+            rcases hx with hx | hx
+            · exact False.elim ((disjoint_left.mp hJC hx) hxC)
+            · exact hx
+          · intro hx
+            exact ⟨Or.inr hx,hSC hx⟩
+        · ext x
+          simp only [mem_sdiff,mem_union]
+          constructor
+          · rintro ⟨hx,hxC⟩
+            rcases hx with hx | hx
+            · exact hx
+            · exact False.elim (hxC (hSC hx))
+          · intro hx
+            exact ⟨Or.inl hx,fun hxC => disjoint_left.mp hJC hx hxC⟩
+    rw [card_powersetCard] at hcount
+    have hz : (k : ℤ) - S.card = ((k-S.card : ℕ) : ℤ) := by omega
+    change (A.card : ℤ) = FirstWide.binomCoeff B.card _
+    rw [hcount,hz,FirstWide.binomCoeff_nat]
+  · have hA : A = ∅ := by
+      apply eq_empty_iff_forall_notMem.mpr
+      intro T hT
+      obtain ⟨hT,hTC⟩ := mem_filter.mp hT
+      have hc := card_le_card (inter_subset_left (s₁ := T) (s₂ := C))
+      rw [hTC,(SimpleGraph.mem_indepSetFinset_iff.mp hT).card_eq] at hc
+      exact hsk hc
+    have hz : (k : ℤ) - S.card < 0 := by omega
+    change (A.card : ℤ) = FirstWide.binomCoeff B.card _
+    rw [hA,card_empty,FirstWide.binomCoeff_neg _ hz]
+    rfl
+
+-- ENTRY 166
+-- VERITYOS ENTRY 16 END
+
+-- VERITYOS ENTRY 17 BEGIN lemma Erdos993G1.ThirdWide.cover_indepCount_partition b07bb93880d9e22709580b3cc614a8735d135737350237777a0d0ff9e440791e
+lemma cover_indepCount_partition (F : SimpleGraph X) [DecidableRel F.Adj] (C : Finset X)
+    (hcover : ∀ x y, F.Adj x y → x ∈ C ∨ y ∈ C) (k : ℕ) :
+    indepCount F k =
+      ∑ S ∈ C.powerset.filter (fun S : Finset X => F.IsIndepSet S),
+        FirstWide.binomCoeff
+          ((univ : Finset X).filter (fun x => x ∉ C ∧ ∀ y ∈ S, ¬F.Adj y x)).card
+          ((k : ℤ) - S.card) := by
+  classical
+  rw [indepCount_eq_card_indepSetFinset]
+  have hc := card_eq_sum_card_fiberwise
+    (s := F.indepSetFinset k)
+    (t := C.powerset.filter (fun S : Finset X => F.IsIndepSet S))
+    (f := fun T => T ∩ C) (by
+      intro T hT
+      apply mem_filter.mpr
+      refine ⟨mem_powerset.mpr (inter_subset_right),?_⟩
+      exact (SimpleGraph.mem_indepSetFinset_iff.mp hT).isIndepSet.mono
+        (by simpa using (inter_subset_left (s₁ := T) (s₂ := C))))
+  rw [hc,Nat.cast_sum]
+  apply sum_congr rfl
+  intro S hS
+  obtain ⟨hSC,hS⟩ := mem_filter.mp hS
+  exact cover_fiber_count F C S (mem_powerset.mp hSC) hS hcover k
+
+-- ENTRY 167
+-- VERITYOS ENTRY 17 END
+
+-- VERITYOS ENTRY 18 BEGIN lemma Erdos993G1.ThirdWide.cover_delta_partition 09c1f3f34ab5dbcc4dae97d966a7770ed4333dbdf28e5d46244742a62f8e2a36
+lemma cover_delta_partition (F : SimpleGraph X) [DecidableRel F.Adj] (C : Finset X)
+    (hcover : ∀ x y, F.Adj x y → x ∈ C ∨ y ∈ C) (k : ℕ) :
+    delta F (k : ℤ) =
+      ∑ S ∈ C.powerset.filter (fun S : Finset X => F.IsIndepSet S),
+        (FirstWide.binomCoeff
+          ((univ : Finset X).filter (fun x => x ∉ C ∧ ∀ y ∈ S, ¬F.Adj y x)).card
+          ((k : ℤ) - S.card + 1) -
+        FirstWide.binomCoeff
+          ((univ : Finset X).filter (fun x => x ∉ C ∧ ∀ y ∈ S, ¬F.Adj y x)).card
+          ((k : ℤ) - S.card)) := by
+  rw [delta_nat,cover_indepCount_partition F C hcover,
+    cover_indepCount_partition F C hcover,← sum_sub_distrib]
+  apply sum_congr rfl
+  intro S hS
+  congr 2
+  push_cast
+  ring
+
+-- ENTRY 168
+-- VERITYOS ENTRY 18 END
+
+-- VERITYOS ENTRY 19 BEGIN lemma Erdos993G1.ThirdWide.cover_sum_bound b4e87862e9788db0daf198f185cfca272be47f545a217cd8d7b4e5e53fa869da
+lemma cover_sum_bound (F : SimpleGraph X) [DecidableRel F.Adj] (C : Finset X)
+    (hcover : ∀ x y, F.Adj x y → x ∈ C ∨ y ∈ C) (k : ℕ)
+    (f : Finset X → ℤ)
+    (hmiss : ∀ S ⊆ C, ¬F.IsIndepSet S → f S ≤ 0)
+    (hterm : ∀ S ⊆ C, F.IsIndepSet S → f S ≤
+      FirstWide.binomCoeff
+        ((univ : Finset X).filter (fun x => x ∉ C ∧ ∀ y ∈ S, ¬F.Adj y x)).card
+        ((k : ℤ) - S.card + 1) -
+      FirstWide.binomCoeff
+        ((univ : Finset X).filter (fun x => x ∉ C ∧ ∀ y ∈ S, ¬F.Adj y x)).card
+        ((k : ℤ) - S.card)) :
+    ∑ S ∈ C.powerset, f S ≤ delta F (k : ℤ) := by
+  rw [cover_delta_partition F C hcover]
+  calc
+    ∑ S ∈ C.powerset, f S ≤
+        ∑ S ∈ C.powerset.filter (fun S : Finset X => F.IsIndepSet S), f S := by
+      rw [sum_filter]
+      apply sum_le_sum
+      intro S hSC
+      by_cases hS : F.IsIndepSet S
+      · simp [hS]
+      · simpa [hS] using hmiss S (mem_powerset.mp hSC) hS
+    _ ≤ _ := by
+      apply sum_le_sum
+      intro S hS
+      obtain ⟨hSC,hS⟩ := mem_filter.mp hS
+      exact hterm S (mem_powerset.mp hSC) hS
+
+-- ENTRY 172
+-- VERITYOS ENTRY 19 END
+
+-- VERITYOS ENTRY 22 BEGIN lemma Erdos993G1.ThirdWide.cover_available_empty e530a0c86d03a7daf7dcc9bca71300d330a0693013b22bbfd409192a8e2bc75d
+lemma cover_available_empty (F : SimpleGraph X) [DecidableRel F.Adj] (C : Finset X) :
+    ((univ : Finset X).filter
+      (fun x => x ∉ C ∧ ∀ y ∈ (∅ : Finset X), ¬F.Adj y x)).card =
+      Fintype.card X - C.card := by
+  have he : (univ : Finset X).filter
+      (fun x => x ∉ C ∧ ∀ y ∈ (∅ : Finset X), ¬F.Adj y x) = univ \ C := by
+    ext x
+    simp
+  rw [he,card_sdiff_of_subset (subset_univ _),card_univ]
+
+-- Seat U3 Main.lean Step 1: renamed card-5 lemmas (rename done FIRST per charter)
+-- VERITYOS ENTRY 22 END
+
+-- VERITYOS ENTRY 40 BEGIN lemma Erdos993G1.ThirdWide.binomDelta_pascal 97582ee01344b775cbe4d15b278588880e446c1b491d210a40f7eb6e6da88bb7
+lemma binomDelta_pascal (m j : ℕ) :
+    ((m+1).choose (j+2) : ℤ) - (m+1).choose (j+1) =
+      ((m.choose (j+2) : ℤ) - m.choose (j+1)) +
+      ((m.choose (j+1) : ℤ) - m.choose j) := by
+  rw [show j+2=(j+1)+1 by omega, Nat.choose_succ_succ', Nat.choose_succ_succ']
+  push_cast
+  ring
+-- VERITYOS ENTRY 40 END
+
+-- VERITYOS ENTRY 41 BEGIN lemma Erdos993G1.ThirdWide.binomDelta_step_up 6e4d10c62c7e80d9268bbabe83b13ec5d482348abd4ecf2d97e9454e3541a72d
+lemma binomDelta_step_up (m k : ℕ) (hm : 2*k ≤ m) :
+    (m.choose (k+1) : ℤ) - m.choose k ≤
+      ((m+1).choose (k+1) : ℤ) - (m+1).choose k := by
+  cases k with
+  | zero => simp
+  | succ j =>
+    have hc := FirstWide.choose_step_strict (n := m) (k := j) (by omega)
+    have hc' : (m.choose j : ℤ) ≤ m.choose (j+1) := by exact_mod_cast hc.le
+    have hp := binomDelta_pascal m j
+    linarith
+-- VERITYOS ENTRY 41 END
+
+-- VERITYOS ENTRY 42 BEGIN lemma Erdos993G1.ThirdWide.binomDelta_step_down 1611ccdf6868d476632bba9978c3c9a1d6ba1594c44a902be1f4eddb3e031f06
+lemma binomDelta_step_down (m k : ℕ) (hk : 1 ≤ k) (hm : m < 2*k) :
+    ((m+1).choose (k+1) : ℤ) - (m+1).choose k ≤
+      (m.choose (k+1) : ℤ) - m.choose k := by
+  obtain ⟨j, rfl⟩ := Nat.exists_eq_add_of_le' hk
+  have hc := FirstWide.choose_step_nonpos (n := m) (k := j) (by omega)
+  have hc' : (m.choose (j+1) : ℤ) ≤ m.choose j := by exact_mod_cast hc
+  have hp := binomDelta_pascal m j
+  linarith
+-- VERITYOS ENTRY 42 END
+
+-- VERITYOS ENTRY 43 BEGIN lemma Erdos993G1.ThirdWide.binomDelta_mono_center ec321ef0044a12f64c517c4af2506fa241a7c6c9d5fedf84304b4e337b0bfcc6
+lemma binomDelta_mono_center {k a b : ℕ} (h : 2*k ≤ a) (hab : a ≤ b) :
+    (a.choose (k+1) : ℤ) - a.choose k ≤
+      (b.choose (k+1) : ℤ) - b.choose k := by
+  induction b, hab using Nat.le_induction with
+  | base => exact le_rfl
+  | succ b hab ih => exact ih.trans (binomDelta_step_up b k (by omega))
+-- VERITYOS ENTRY 43 END
+
+-- VERITYOS ENTRY 45 BEGIN lemma Erdos993G1.ThirdWide.binomDelta_antitone e00587a59d623ae970a2e6b8449c42a95bcba7b09e722a7455893bea790fbc84
+lemma binomDelta_antitone {k a b : ℕ} (hk : 1 ≤ k) (hb : b ≤ 2*k) (hab : a ≤ b) :
+    (b.choose (k+1) : ℤ) - b.choose k ≤
+      (a.choose (k+1) : ℤ) - a.choose k := by
+  induction b, hab using Nat.le_induction with
+  | base => exact le_rfl
+  | succ b hab ih =>
+    exact (binomDelta_step_down b k hk (by omega)).trans (ih (by omega))
+-- VERITYOS ENTRY 45 END
+
+-- VERITYOS ENTRY 46 BEGIN lemma Erdos993G1.ThirdWide.binomDelta_central a9a0866e169a567f704ba70c3f94a3326b556a5d4d5e708757df0b069c9ab0b5
+lemma binomDelta_central (j : ℕ) :
+    ((2*j).choose (j+1) : ℤ) - (2*j).choose j = -(catalan j : ℤ) := by
+  have hn : 2*j-j=j := by omega
+  have he := Nat.choose_succ_right_eq (2*j) j
+  rw [hn] at he
+  have he' : ((2*j).choose (j+1) : ℤ) * (j+1) = (2*j).choose j * (j : ℤ) := by exact_mod_cast he
+  have hc : ((j:ℤ)+1) * catalan j = (2*j).choose j := by
+    exact_mod_cast succ_mul_catalan_eq_centralBinom j
+  apply (mul_right_cancel₀ (show (j : ℤ)+1 ≠ 0 by omega))
+  nlinarith
+-- VERITYOS ENTRY 46 END
+
+-- VERITYOS ENTRY 47 BEGIN lemma Erdos993G1.ThirdWide.binomDelta_floor a37ec000d0863f2d11fa44028722398d17cfaaad4ddfe20362bca6a82637fea3
+lemma binomDelta_floor (m j : ℕ) :
+    -(catalan j : ℤ) ≤ (m.choose (j+1) : ℤ) - m.choose j := by
+  by_cases hj : j=0
+  · subst j; simp; omega
+  rw [← binomDelta_central j]
+  rcases le_total m (2*j) with hm | hm
+  · exact binomDelta_antitone (by omega) le_rfl hm
+  · exact binomDelta_mono_center le_rfl hm
+-- VERITYOS ENTRY 47 END
+
+-- VERITYOS ENTRY 48 BEGIN lemma Erdos993G1.ThirdWide.binom_shift_floor a592cf3eb3f25da9df2ce8e06a06b0c4f24c62cebbf5feacd89aca6c0a7e1b36
+lemma binom_shift_floor (m k t : ℕ) :
+    -(if t ≤ k then (catalan (k-t) : ℤ) else 0) ≤
+      FirstWide.binomCoeff m ((k : ℤ)-t+1) -
+        FirstWide.binomCoeff m ((k : ℤ)-t) := by
+  by_cases htk : t ≤ k
+  · have hz : (k : ℤ)-t = ((k-t : ℕ) : ℤ) := by omega
+    rw [hz,FirstWide.binomCoeff_nat_add_one,FirstWide.binomCoeff_nat,if_pos htk]
+    exact binomDelta_floor m (k-t)
+  · rw [if_neg htk,neg_zero]
+    by_cases he : t = k+1
+    · have hz : (k : ℤ)-t = -1 := by omega
+      norm_num [hz,FirstWide.binomCoeff]
+    · have hz : (k : ℤ)-t+1 < 0 := by omega
+      rw [FirstWide.binomCoeff_neg _ hz,
+        FirstWide.binomCoeff_neg _ (show (k : ℤ)-t < 0 by omega)]
+      omega
+-- VERITYOS ENTRY 48 END

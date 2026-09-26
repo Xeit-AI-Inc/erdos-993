@@ -1,0 +1,997 @@
+{
+  "schema": "C3-F3.literal-asymmetric-flow-search.v1",
+  "method": "No orbit quotient. Enumerate every independent p- and p+1-set literally. Upper supply and lower capacity are w_F(B). Include all deletion arcs and every absent-s vertex switch when s has exactly two neighbors in B. Directed set-pair arcs have unlimited capacity relative to total supply; clones for a pair are fully compatible. Integral max flow is computed by Dinic in search.py.",
+  "tree_recipe": "Vertex 0 is a hub, with marked arm 0-1-2. For each listed L, add a hub-adjacent branch center c and three internally disjoint paths from c of lengths 1, 1, L. IDs are assigned consecutively in branch order, then path order. Leaves retain their original support.",
+  "generation_boundary": "Exactly the five listed trees, using L-lists [1,1,2], [1,1,3], [1,2,3], [1,1,2,3], [1,1,2,4], at p=x+2. No claim of exhaustive tree coverage.",
+  "cases": [
+    {
+      "branch_long_limb_lengths": [
+        1,
+        1,
+        2
+      ],
+      "vertices": 16,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          11,
+          13
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          14,
+          15
+        ]
+      ],
+      "independence_vector": [
+        1,
+        16,
+        105,
+        376,
+        823,
+        1175,
+        1145,
+        781,
+        372,
+        119,
+        23,
+        2
+      ],
+      "alpha": 11,
+      "terminal_delta_at_alpha": -2,
+      "x": 5,
+      "p": 7,
+      "guards": {
+        "x_plus_2_le_p": true,
+        "strict_lower_region": true
+      },
+      "selector_F_original_leaf_ids": [
+        2,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        12,
+        13,
+        15
+      ],
+      "selected_leaf_summands": [
+        {
+          "leaf": 2,
+          "support": 1,
+          "delta_p_tree_minus_leaf": -243,
+          "summand": -56
+        },
+        {
+          "leaf": 4,
+          "support": 3,
+          "delta_p_tree_minus_leaf": -194,
+          "summand": -193
+        },
+        {
+          "leaf": 5,
+          "support": 3,
+          "delta_p_tree_minus_leaf": -194,
+          "summand": -193
+        },
+        {
+          "leaf": 6,
+          "support": 3,
+          "delta_p_tree_minus_leaf": -194,
+          "summand": -193
+        },
+        {
+          "leaf": 8,
+          "support": 7,
+          "delta_p_tree_minus_leaf": -194,
+          "summand": -193
+        },
+        {
+          "leaf": 9,
+          "support": 7,
+          "delta_p_tree_minus_leaf": -194,
+          "summand": -193
+        },
+        {
+          "leaf": 10,
+          "support": 7,
+          "delta_p_tree_minus_leaf": -194,
+          "summand": -193
+        },
+        {
+          "leaf": 12,
+          "support": 11,
+          "delta_p_tree_minus_leaf": -203,
+          "summand": -168
+        },
+        {
+          "leaf": 13,
+          "support": 11,
+          "delta_p_tree_minus_leaf": -203,
+          "summand": -168
+        },
+        {
+          "leaf": 15,
+          "support": 14,
+          "delta_p_tree_minus_leaf": -246,
+          "summand": -27
+        }
+      ],
+      "full_aggregate_S": -1577,
+      "upper_positive_weight_states": 372,
+      "lower_positive_capacity_states": 781,
+      "legal_set_pair_arcs": 3516,
+      "upper_supply": 2241,
+      "lower_capacity": 3818,
+      "max_flow": 2241,
+      "residual_cut_deficit": 0
+    },
+    {
+      "branch_long_limb_lengths": [
+        1,
+        1,
+        3
+      ],
+      "vertices": 17,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          11,
+          13
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          15,
+          16
+        ]
+      ],
+      "independence_vector": [
+        1,
+        17,
+        120,
+        467,
+        1121,
+        1768,
+        1919,
+        1483,
+        825,
+        326,
+        87,
+        14,
+        1
+      ],
+      "alpha": 12,
+      "terminal_delta_at_alpha": -1,
+      "x": 6,
+      "p": 8,
+      "guards": {
+        "x_plus_2_le_p": true,
+        "strict_lower_region": true
+      },
+      "selector_F_original_leaf_ids": [
+        2,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        12,
+        13,
+        16
+      ],
+      "selected_leaf_summands": [
+        {
+          "leaf": 2,
+          "support": 1,
+          "delta_p_tree_minus_leaf": -261,
+          "summand": -118
+        },
+        {
+          "leaf": 4,
+          "support": 3,
+          "delta_p_tree_minus_leaf": -191,
+          "summand": -293
+        },
+        {
+          "leaf": 5,
+          "support": 3,
+          "delta_p_tree_minus_leaf": -191,
+          "summand": -293
+        },
+        {
+          "leaf": 6,
+          "support": 3,
+          "delta_p_tree_minus_leaf": -191,
+          "summand": -293
+        },
+        {
+          "leaf": 8,
+          "support": 7,
+          "delta_p_tree_minus_leaf": -191,
+          "summand": -293
+        },
+        {
+          "leaf": 9,
+          "support": 7,
+          "delta_p_tree_minus_leaf": -191,
+          "summand": -293
+        },
+        {
+          "leaf": 10,
+          "support": 7,
+          "delta_p_tree_minus_leaf": -191,
+          "summand": -293
+        },
+        {
+          "leaf": 12,
+          "support": 11,
+          "delta_p_tree_minus_leaf": -198,
+          "summand": -277
+        },
+        {
+          "leaf": 13,
+          "support": 11,
+          "delta_p_tree_minus_leaf": -198,
+          "summand": -277
+        },
+        {
+          "leaf": 16,
+          "support": 15,
+          "delta_p_tree_minus_leaf": -253,
+          "summand": -136
+        }
+      ],
+      "full_aggregate_S": -2566,
+      "upper_positive_weight_states": 326,
+      "lower_positive_capacity_states": 825,
+      "legal_set_pair_arcs": 3492,
+      "upper_supply": 2276,
+      "lower_capacity": 4842,
+      "max_flow": 2276,
+      "residual_cut_deficit": 0
+    },
+    {
+      "branch_long_limb_lengths": [
+        1,
+        2,
+        3
+      ],
+      "vertices": 18,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          0,
+          12
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          12,
+          14
+        ],
+        [
+          12,
+          15
+        ],
+        [
+          15,
+          16
+        ],
+        [
+          16,
+          17
+        ]
+      ],
+      "independence_vector": [
+        1,
+        18,
+        136,
+        572,
+        1495,
+        2572,
+        3021,
+        2485,
+        1449,
+        593,
+        163,
+        27,
+        2
+      ],
+      "alpha": 12,
+      "terminal_delta_at_alpha": -2,
+      "x": 6,
+      "p": 8,
+      "guards": {
+        "x_plus_2_le_p": true,
+        "strict_lower_region": true
+      },
+      "selector_F_original_leaf_ids": [
+        2,
+        4,
+        5,
+        6,
+        8,
+        9,
+        11,
+        13,
+        14,
+        17
+      ],
+      "selected_leaf_summands": [
+        {
+          "leaf": 2,
+          "support": 1,
+          "delta_p_tree_minus_leaf": -464,
+          "summand": -174
+        },
+        {
+          "leaf": 4,
+          "support": 3,
+          "delta_p_tree_minus_leaf": -343,
+          "summand": -483
+        },
+        {
+          "leaf": 5,
+          "support": 3,
+          "delta_p_tree_minus_leaf": -343,
+          "summand": -483
+        },
+        {
+          "leaf": 6,
+          "support": 3,
+          "delta_p_tree_minus_leaf": -343,
+          "summand": -483
+        },
+        {
+          "leaf": 8,
+          "support": 7,
+          "delta_p_tree_minus_leaf": -366,
+          "summand": -426
+        },
+        {
+          "leaf": 9,
+          "support": 7,
+          "delta_p_tree_minus_leaf": -366,
+          "summand": -426
+        },
+        {
+          "leaf": 11,
+          "support": 10,
+          "delta_p_tree_minus_leaf": -499,
+          "summand": -49
+        },
+        {
+          "leaf": 13,
+          "support": 12,
+          "delta_p_tree_minus_leaf": -357,
+          "summand": -451
+        },
+        {
+          "leaf": 14,
+          "support": 12,
+          "delta_p_tree_minus_leaf": -357,
+          "summand": -451
+        },
+        {
+          "leaf": 17,
+          "support": 16,
+          "delta_p_tree_minus_leaf": -447,
+          "summand": -215
+        }
+      ],
+      "full_aggregate_S": -3641,
+      "upper_positive_weight_states": 593,
+      "lower_positive_capacity_states": 1449,
+      "legal_set_pair_arcs": 6448,
+      "upper_supply": 3597,
+      "lower_capacity": 7238,
+      "max_flow": 3597,
+      "residual_cut_deficit": 0
+    },
+    {
+      "branch_long_limb_lengths": [
+        1,
+        1,
+        2,
+        3
+      ],
+      "vertices": 22,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          11,
+          13
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          0,
+          16
+        ],
+        [
+          16,
+          17
+        ],
+        [
+          16,
+          18
+        ],
+        [
+          16,
+          19
+        ],
+        [
+          19,
+          20
+        ],
+        [
+          20,
+          21
+        ]
+      ],
+      "independence_vector": [
+        1,
+        22,
+        210,
+        1158,
+        4134,
+        10150,
+        17804,
+        22926,
+        22114,
+        16185,
+        9018,
+        3790,
+        1169,
+        250,
+        33,
+        2
+      ],
+      "alpha": 15,
+      "terminal_delta_at_alpha": -2,
+      "x": 7,
+      "p": 9,
+      "guards": {
+        "x_plus_2_le_p": true,
+        "strict_lower_region": true
+      },
+      "selector_F_original_leaf_ids": [
+        2,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        12,
+        13,
+        15,
+        17,
+        18,
+        21
+      ],
+      "selected_leaf_summands": [
+        {
+          "leaf": 2,
+          "support": 1,
+          "delta_p_tree_minus_leaf": -4440,
+          "summand": -735
+        },
+        {
+          "leaf": 4,
+          "support": 3,
+          "delta_p_tree_minus_leaf": -3703,
+          "summand": -2939
+        },
+        {
+          "leaf": 5,
+          "support": 3,
+          "delta_p_tree_minus_leaf": -3703,
+          "summand": -2939
+        },
+        {
+          "leaf": 6,
+          "support": 3,
+          "delta_p_tree_minus_leaf": -3703,
+          "summand": -2939
+        },
+        {
+          "leaf": 8,
+          "support": 7,
+          "delta_p_tree_minus_leaf": -3703,
+          "summand": -2939
+        },
+        {
+          "leaf": 9,
+          "support": 7,
+          "delta_p_tree_minus_leaf": -3703,
+          "summand": -2939
+        },
+        {
+          "leaf": 10,
+          "support": 7,
+          "delta_p_tree_minus_leaf": -3703,
+          "summand": -2939
+        },
+        {
+          "leaf": 12,
+          "support": 11,
+          "delta_p_tree_minus_leaf": -3822,
+          "summand": -2575
+        },
+        {
+          "leaf": 13,
+          "support": 11,
+          "delta_p_tree_minus_leaf": -3822,
+          "summand": -2575
+        },
+        {
+          "leaf": 15,
+          "support": 14,
+          "delta_p_tree_minus_leaf": -4432,
+          "summand": -484
+        },
+        {
+          "leaf": 17,
+          "support": 16,
+          "delta_p_tree_minus_leaf": -3792,
+          "summand": -2691
+        },
+        {
+          "leaf": 18,
+          "support": 16,
+          "delta_p_tree_minus_leaf": -3792,
+          "summand": -2691
+        },
+        {
+          "leaf": 21,
+          "support": 20,
+          "delta_p_tree_minus_leaf": -4288,
+          "summand": -1167
+        }
+      ],
+      "full_aggregate_S": -30552,
+      "upper_positive_weight_states": 9018,
+      "lower_positive_capacity_states": 16185,
+      "legal_set_pair_arcs": 110856,
+      "upper_supply": 61967,
+      "lower_capacity": 92519,
+      "max_flow": 61967,
+      "residual_cut_deficit": 0
+    },
+    {
+      "branch_long_limb_lengths": [
+        1,
+        1,
+        2,
+        4
+      ],
+      "vertices": 23,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          11,
+          13
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          14,
+          15
+        ],
+        [
+          0,
+          16
+        ],
+        [
+          16,
+          17
+        ],
+        [
+          16,
+          18
+        ],
+        [
+          16,
+          19
+        ],
+        [
+          19,
+          20
+        ],
+        [
+          20,
+          21
+        ],
+        [
+          21,
+          22
+        ]
+      ],
+      "independence_vector": [
+        1,
+        23,
+        231,
+        1348,
+        5121,
+        13450,
+        25350,
+        35186,
+        36644,
+        28968,
+        17433,
+        7917,
+        2644,
+        615,
+        89,
+        6
+      ],
+      "alpha": 15,
+      "terminal_delta_at_alpha": -6,
+      "x": 8,
+      "p": 10,
+      "guards": {
+        "x_plus_2_le_p": true,
+        "strict_lower_region": true
+      },
+      "selector_F_original_leaf_ids": [
+        2,
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        12,
+        13,
+        15,
+        17,
+        18,
+        22
+      ],
+      "selected_leaf_summands": [
+        {
+          "leaf": 2,
+          "support": 1,
+          "delta_p_tree_minus_leaf": -5292,
+          "summand": -1727
+        },
+        {
+          "leaf": 4,
+          "support": 3,
+          "delta_p_tree_minus_leaf": -4041,
+          "summand": -5029
+        },
+        {
+          "leaf": 5,
+          "support": 3,
+          "delta_p_tree_minus_leaf": -4041,
+          "summand": -5029
+        },
+        {
+          "leaf": 6,
+          "support": 3,
+          "delta_p_tree_minus_leaf": -4041,
+          "summand": -5029
+        },
+        {
+          "leaf": 8,
+          "support": 7,
+          "delta_p_tree_minus_leaf": -4041,
+          "summand": -5029
+        },
+        {
+          "leaf": 9,
+          "support": 7,
+          "delta_p_tree_minus_leaf": -4041,
+          "summand": -5029
+        },
+        {
+          "leaf": 10,
+          "support": 7,
+          "delta_p_tree_minus_leaf": -4041,
+          "summand": -5029
+        },
+        {
+          "leaf": 12,
+          "support": 11,
+          "delta_p_tree_minus_leaf": -4256,
+          "summand": -4465
+        },
+        {
+          "leaf": 13,
+          "support": 11,
+          "delta_p_tree_minus_leaf": -4256,
+          "summand": -4465
+        },
+        {
+          "leaf": 15,
+          "support": 14,
+          "delta_p_tree_minus_leaf": -5623,
+          "summand": -563
+        },
+        {
+          "leaf": 17,
+          "support": 16,
+          "delta_p_tree_minus_leaf": -4200,
+          "summand": -4615
+        },
+        {
+          "leaf": 18,
+          "support": 16,
+          "delta_p_tree_minus_leaf": -4200,
+          "summand": -4615
+        },
+        {
+          "leaf": 22,
+          "support": 21,
+          "delta_p_tree_minus_leaf": -5228,
+          "summand": -1712
+        }
+      ],
+      "full_aggregate_S": -52336,
+      "upper_positive_weight_states": 7917,
+      "lower_positive_capacity_states": 17433,
+      "legal_set_pair_arcs": 105099,
+      "upper_supply": 59277,
+      "lower_capacity": 111613,
+      "max_flow": 59277,
+      "residual_cut_deficit": 0
+    }
+  ],
+  "conclusion": "All five literal networks saturate upper supply. This bounded result finds no deficient cut and proves neither universal weighted Hall nor the primary aggregate."
+}

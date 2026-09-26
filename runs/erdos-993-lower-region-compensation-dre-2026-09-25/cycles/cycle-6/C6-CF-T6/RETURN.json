@@ -1,0 +1,62 @@
+{
+  "worker_id": "C6-CF-T6",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C6-T6-EQUAL-THREE-SPIDER-REDUCTION",
+      "statement": "For the equal-length-three spider S_m (root r and m arms r-a_i-b_i-c_i, m>=2), P_m=Q^m+zV^m, A_m=VQ^(m-1)+zLV^(m-1), and I(H_i)-I(R_i)=zQ^(m-1), with Q=1+3z+z^2, V=1+2z, L=1+z. Its exact first strict descent is x(S_m)=m. For every eligible p, all m original endpoints are selected and the complete original-leaf sum is strictly negative; eligible ranks exist iff m>=6. This is a family result only.",
+      "scope": "Finite ordinary equal-length-three spiders S_m, m>=2, with distinct original endpoint tags. For the lower-region aggregate, p satisfies x(S_m)+2<=p and 3p<2alpha(S_m)+1; equivalently m+2<=p<=floor(4m/3), nonempty iff m>=6. No arbitrary-tree, unequal-spider, general rooted-branch, or governed interpretation.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CF-T6/REPORT.md",
+        "cycles/cycle-6/C6-CF-T6/EVIDENCE.json",
+        "cycles/cycle-6/C6-CF-T6/REPLAY-SPIDER-M6.json",
+        "cycles/cycle-6/C6-CF-T6/REPLAY.py",
+        "cycles/cycle-6/C6-CF-T6/ordinary_tree_checked.py",
+        "cycles/cycle-6/C6-CF-T6/REPLAY-INJECTION-M2-M6.json",
+        "cycles/cycle-6/C6-CF-T6/REPLAY_INJECTION.py"
+      ],
+      "reason": "retained_narrowed: The producer's route formulas and finite checks are correct, and the separately attributed root-origin elementary coefficient proof closes the uniform crossing and selector gaps for this exact spider family. The complete distinct-tag sum is negative throughout its eligible window. This does not prove the arbitrary-tree contract."
+    },
+    {
+      "claim_id": "C6-ROOT-SPIDER-EXACT-MODE",
+      "statement": "For every m>=2, P_m=(1+3z+z^2)^m+z(1+2z)^m has a unique mode at rank m and first strict descent x(P_m)=m, with zero-extended differences.",
+      "scope": "Coefficient sequence of the equal-length-three spider independence polynomial only, for m>=2. No claim about arbitrary spiders, arbitrary ordinary trees, or aggregate sums.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CF-T6/REPORT.md",
+        "cycles/cycle-6/C6-CF-T6/EVIDENCE.json",
+        "cycles/cycle-6/C6-CF-T6/REPLAY-INJECTION-M2-M6.json",
+        "cycles/cycle-6/C6-CF-T6/REPLAY_INJECTION.py"
+      ],
+      "reason": "retained_narrowed: The elementary expansion proves strict increase below m and strict decrease through the terminal supported rank; at j=2m+1 the zero-extended difference is 0, which is outside the strict-decrease interval. The exact scope is S_m only."
+    },
+    {
+      "claim_id": "C6-ROOT-SPIDER-LOWER-REGION-AGGREGATE",
+      "statement": "For every equal-length-three spider S_m with m>=2 and every p satisfying x(S_m)+2<=p and 3p<2alpha(S_m)+1, the complete original-leaf selector sum is strictly negative; such eligible p exist exactly for m>=6.",
+      "scope": "S_m only, with m distinct original leaves and original supports; eligible p=m+2,...,floor(4m/3). No arbitrary-tree or governed claim.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CF-T6/REPORT.md",
+        "cycles/cycle-6/C6-CF-T6/EVIDENCE.json",
+        "cycles/cycle-6/C6-CF-T6/REPLAY-SPIDER-M6.json",
+        "cycles/cycle-6/C6-CF-T6/REPLAY-INJECTION-M2-M6.json",
+        "cycles/cycle-6/C6-CF-T6/REPLAY_INJECTION.py"
+      ],
+      "reason": "retained_narrowed: The graph bridge gives identical per-leaf differences zQ^(m-1); every eligible endpoint is favorable, and strict decrease of Q^(m-1) makes every summand negative. The result is limited to the stated spider family."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CF-T6/REPORT.md",
+  "limitations": [
+    "The producer census m=2..60 is bounded and is not the proof of the all-m spider result.",
+    "No arbitrary ordinary-tree, unequal-spider, broader rooted-branch, or governed-tree conclusion is established.",
+    "The literature-provenance note was not independently retrieved; no outside theorem is used.",
+    "No Lean proof or formal certificate was reviewed."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-T6-EQUAL-THREE-SPIDER-REDUCTION"
+  ]
+}

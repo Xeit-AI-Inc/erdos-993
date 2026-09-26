@@ -1,0 +1,26 @@
+{
+  "worker_id": "C1-T6",
+  "cycle": 1,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C1-T6-1",
+      "statement": "Ordinary homotopy type of forest independence complexes is insufficient to determine the fixed-rank coefficient differences appearing locally in the target: the independence complexes of the edgeless forests H_10 and H_11 are both contractible, while their Delta_7 values are -75 and -165 respectively.",
+      "scope": "Information-loss diagnosis for homotopy type versus graded face data on induced forests; this is not a primary-target proof or counterexample.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-T6/evidence/topology-rank-data.md"
+      ],
+      "reason": "Direct binomial coefficient computation gives the two distinct rank-seven differences. The source theorem of Ehrenborg and Hetyei, Corollary 6.1, confirms that independence complexes of forests lie in the point-or-sphere homotopy regime; in this concrete pair both are full simplices."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-T6/REPORT.md",
+  "limitations": [
+    "No map or inequality proves the required global sum of D_v+C_v against the selector-weighted rank data.",
+    "The fixed selector Delta_p(T-v)<0 and the complete selected leaf aggregate are not analyzed by the homotopy-type diagnosis.",
+    "The chain-group interpretation preserves exact rank data but does not itself imply a sign; no eligible counterexample or proof of the primary claim is provided.",
+    "The comparison H_10 versus H_11 is an induced-forest local diagnostic, not a complete eligible ordinary-tree witness."
+  ],
+  "status_authority": "proposed_worker_only"
+}

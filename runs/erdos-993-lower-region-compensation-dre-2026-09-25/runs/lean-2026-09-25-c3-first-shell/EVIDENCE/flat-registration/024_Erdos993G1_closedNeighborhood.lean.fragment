@@ -1,0 +1,4 @@
+def Erdos993G1.closedNeighborhood {V : Type u}
+    (T : SimpleGraph V) (v : V) : Set V :=
+  {w | w = v ∨ T.Adj v w}
+

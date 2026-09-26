@@ -1,0 +1,40 @@
+{
+  "worker_id": "C2-CU-T5",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C2-T5-PENDANT-P2-RECURRENCE",
+      "statement": "For every finite ordinary tree U rooted at r, adjoining r-s-v gives I(T;z)=(1+z)I(U;z)+zI(U-r;z), alpha(T)=alpha(U)+1, I(T-v;z)=I(U;z)+zI(U-r;z), and the original new leaf v has summand Delta_(p-1)(I(U;z)-I(U-r;z)).",
+      "scope": "Exact polynomial, alpha, selector-polynomial, and new-leaf summand formulas for every finite ordinary U and distinguished root r; the new leaf selector is the strict rank-p test Delta_p(I(U)+zI(U-r))<0, with zero-extended integer coefficients.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CU-T5/EVIDENCE.md"
+      ],
+      "reason": "retained: independent partition by membership of s proves the recurrence; degree and positivity prove the alpha increment; the original deletions for v are U and U-r, giving the stated summand."
+    },
+    {
+      "claim_id": "E993-LOWER-REGION-FIRST-ORDER-SHELL",
+      "statement": "The pendant-P2 recurrence and the checks in C2-T5 evidence do not alone establish the complete favorable-leaf sum inequality on the registered first-order shell; first-descent transport, every retained original leaf selector, and a global comparison of all original-tagged contributions remain unproved by this method.",
+      "scope": "Method-specific limitation for pruning a shell tree T of order 2p+2 to U of order 2p via adjoining or deleting a pendant P2, under the strict lower-region, first-descent, and fixed original-leaf selector definitions. This is not a refutation of the shell inequality.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CU-T5/EVIDENCE.md"
+      ],
+      "reason": "retained_narrowed: order and alpha transfer are exact and the alpha guard has the stated one-unit reverse-boundary gap, but x can change (the exact K_(1,4) diagnostic has x(U)=2 and x(T)=3). Whole-tree recurrence does not determine old-leaf selectors or sum contributions; no eligible positive complete-sum witness or shell proof is supplied."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CU-T5/REPORT.md",
+  "limitations": [
+    "No universal shell proof or eligible positive complete-sum counterexample is established.",
+    "The K_(1,4) example diagnoses descent-index instability only and is not an eligible shell instance at the displayed rank.",
+    "The recurrence for I(T) does not determine selector changes and summand changes for all retained original leaf tags or their complete sum.",
+    "No tree census, external theorem, Lean build, or universal pruning reduction was performed."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-T5-PENDANT-P2-RECURRENCE",
+    "E993-LOWER-REGION-FIRST-ORDER-SHELL"
+  ]
+}

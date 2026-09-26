@@ -1,0 +1,31 @@
+{
+  "worker_id": "C6-CT-F4",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C6-F4.MATCHING-SUPPORT-INJECTION",
+      "statement": "For the exact eligible ordinary tree T_22 at p=34 and the independent (p+1)-set B recorded in EVIDENCE.json, the rule that matches every active selected leaf tag to a distinct vertex along its leaf-to-own-support incidence edge fails: 33 active tags have only 11 distinct own supports.",
+      "scope": "One replayable instance and the specified injective leaf-to-own-support charging rule only; no conclusion about the primary aggregate or other weighted/multi-tag charging mechanisms.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CT-F4/EVIDENCE.json",
+        "cycles/cycle-6/C6-CT-F4/REPLAY.py",
+        "cycles/cycle-6/C6-CT-F4/ordinary_tree_checked.py"
+      ],
+      "reason": "retained: an independent replay from worker-local copies reproduces the packet evidence exactly. It verifies the first-descent and strict alpha guards, the complete fixed selector, an independent rank-35 B, and 33 active leaves with 11 distinct supports. Since each leaf has only its own support as neighbor, the stated injective rule is impossible on this instance. The complete selected sum is negative, so this is not a counterexample to the primary aggregate."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CT-F4/REPORT.md",
+  "limitations": [
+    "The verified obstruction is limited to one T_22 instance and the stated one-tag-per-own-support incidence rule.",
+    "The complete selected aggregate for the witness is negative; the primary target remains undecided by this review.",
+    "No exhaustive coverage or general matching, weighted-flow, or multi-tag support theorem was established.",
+    "The independent replay used the packet-pinned common ordinary_tree_checked.py copied into this worker directory."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-F4.MATCHING-SUPPORT-INJECTION"
+  ]
+}

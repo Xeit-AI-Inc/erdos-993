@@ -1,0 +1,29 @@
+{
+  "schema": "e993.c3-ct-u1.evidence.v1",
+  "audit": {
+    "selector": "The source fixes F(T,p) at the original tree and rank. No argument in the reviewed route changes F after a move or collapses equal-support leaves.",
+    "clone_identity": {
+      "upper": "For fixed v in F, an independent A in H_v of size p meeting W_v maps to B=A union {v}; conversely a B clone tagged v has v in B and B\\{v} independent, avoids s_v, and meets W_v, so recovers A. The same bijection holds at size p-1 for lower clones.",
+      "count": "For each r, tagged clone occurrences at size r+1 are sum_v [i_r(H_v)-i_r(R_v)]. Subtracting ranks p and p-1 gives S(T,p), including distinct tags for shared supports.",
+      "edge_projection": "Under the source report's stated old operations (delete retaining the tag; retag while deleting the old tagged leaf), the underlying set pair is a one-vertex deletion. Thus it is admitted by the new complete clone fiber over deletion pairs."
+    },
+    "guard_arithmetic_from_reported_switch_row": {
+      "alpha": 9,
+      "x": 4,
+      "p": 6,
+      "x_plus_2_le_p": true,
+      "three_p": 18,
+      "two_alpha_plus_1": 19,
+      "strict_lower_region": true,
+      "finding": "The displayed numbers satisfy both guards, but no adjacency list or exact ordinary-tree encoding is provided, so the asserted row and switch were not reproducible here."
+    },
+    "flow_audit": {
+      "reported_instrument_values_match": true,
+      "cases": ["(m,p)=(22,34)", "(60,90)", "(66,98)"],
+      "values_checked_against_copied_common_instrument_summary": "state counts, transport arc counts, upper supply, lower capacity, flow, saturation, and zero cut deficit match the route report",
+      "independent_replay": false,
+      "limitation": "No per-case primal/cut artifacts were present among the case-listed files; the flow figures were not independently replayed. The code's bounded outputs do not prove universal Hall or the aggregate."
+    },
+    "scope_fence": "The matching assertion is stronger than S(T,p)<=0. A failed matching or Hall cut would not refute S(T,p)<=0; successful flows on three trees do not establish universal matching."
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "worker_id": "C4-AU",
+  "cycle": 4,
+  "stage": "adjudication",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "C4-U1-COVARIANCE-DECOMPOSITION",
+      "statement": "For every eligible ordinary tree and fixed favorable selector, the tagged lift preserves addability and gives E/Q=mu_p+Cov_p(w,e)/E_p[w] for Q>0, with exact neighborhood expansion; Q=0 makes CT_x trivial.",
+      "scope": "Exact identities only; no universal covariance bound, CT_x proof, or aggregate verdict.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AU/REPORT.md",
+        "cycles/cycle-4/C4-AU/EVIDENCE.json"
+      ],
+      "reason": "retained: tag bijection, extension double count, and indicator expansion prove the identities; the covariance budget is missing."
+    },
+    {
+      "claim_id": "C4-U2-MARKED-SHELL-REDUCTION",
+      "statement": "For |T|=2p+s, p>=3, s>=2, an original leaf has a nonpositive rank-(p-1) term if tau(T)>=ceil(3s/2)+1 and each d>=3 first-mark block meets p-2>=K(d), using the inherited matching results. The correct identity is q_j-q_(j-1)=sum_i Delta_(j-2)(J_i).",
+      "scope": "Conditional pointwise shell result for any fixed leaf subset, plus an s=5 Catalan-method cutoff; no universal cover or rank premise.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AU/REPORT.md",
+        "cycles/cycle-4/C4-AU/EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: the route generic Delta_(j-1) sentence is false, but its j=p specialization uses the correct p-2. The s=3,p=6,ell=2 block misses the generic gate and needs a separate inherited odd-order result."
+    },
+    {
+      "claim_id": "C4-U3.LOW-COVER-SKELETON",
+      "statement": "Every n=24,26,28,30 tree with cover number at most six has a six-cover core with at most five outside connectors, edge budget e_C+sum_D(deg-1)=5, and six pendant multiplicities. The correct polynomial uses c in C setminus I and the composition count is binom(n-t-1,5).",
+      "scope": "Exhaustive structural domain and corrected evaluator for four low-cover third-shell cells; no sign census.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AU/REPORT.md",
+        "cycles/cycle-4/C4-AU/EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: structure and finite domain survive, but the source and both critics used a false C setminus N_K[I] polynomial; a repaired eligible witness shows 17 omitted rank-two sets."
+    },
+    {
+      "claim_id": "C4-U3.LOW-COVER-SIGN",
+      "statement": "The selector-weighted sign for all low-cover trees in the four third-shell orders remains unresolved by the supplied evidence.",
+      "scope": "Evidence-scope statement, not a sign theorem or counterexample; cover number at most six, n=2p+4, p=10..13.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AU/REPORT.md",
+        "cycles/cycle-4/C4-AU/EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: no census was run and the proposed evaluator was wrong; a corrected one-witness complete sum is negative 122805."
+    },
+    {
+      "claim_id": "C4-U4-COLORED-SHADOW-MIXED-BOUNDARY",
+      "statement": "The matching-sector quotient supports a cited ordinary lower-shadow comparison and unweighted normalized-matching flow. In the toy tree with edges ab,ah, the specified singleton compression preserves lower-shadow size but changes extra addability from one to zero.",
+      "scope": "Matching-sector ordinary shadow and toy insertion statistic only; no CB mixed-boundary or primary result.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AU/REPORT.md",
+        "cycles/cycle-4/C4-AU/EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: cited tools do not encode external hub arcs or capacities. The toy is not a CB counterexample, and the imported papers were not independently retrieved here."
+    },
+    {
+      "claim_id": "C4-U5-SUPPORT-POLYNOMIAL-REDUCTION",
+      "statement": "For every ordinary tree and fixed p>=2, support products P=prod J+z prod A and Q=prod J-prod A encode I(T-v) and I(T-{u,v})-I(T-N[u]); multiplying each strict selected coefficient term by its original leaf multiplicity gives complete S. Rerooted messages truncated through p+1 plus alpha compute the guards and terms.",
+      "scope": "Exact support algebra and fixed-rank computation; no uniform induction state or aggregate sign.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AU/REPORT.md",
+        "cycles/cycle-4/C4-AU/EVIDENCE.json"
+      ],
+      "reason": "retained: original deletions, selector and summand coefficient indices, multiplicities, and rooted recurrence follow by independent-set partitions."
+    },
+    {
+      "claim_id": "C4-U6-first-shell-bridge",
+      "statement": "The pinned first-shell definitions encode original supports, deletion counts, strict selector, and full aggregate, with q_j=i_j(H_v)-i_j(R_v). The informal first-shell proof has |T|=2p+2, p>=3, x+2<=p; its exact-order step does not itself extend to arbitrary-order eligible trees.",
+      "scope": "Definition bridge and informal first-shell scope only; no terminal kernel/fidelity award or unrestricted target proof.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AU/REPORT.md",
+        "cycles/cycle-4/C4-AU/EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: frozen sources are permitted common files, contrary to the F critic read-boundary assertion. The preflight is not a terminal receipt and the order mismatch remains."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-AU/REPORT.md",
+  "limitations": [
+    "No U route proves or refutes the complete eligible ordinary lower-region selected aggregate; the needed global compensation remains open.",
+    "U2 is conditional on a cover threshold, residual rank gates, and inherited matching results; its generic index step required correction.",
+    "U3 supplies a finite structural domain but no sign census; its original polynomial was false and is corrected in the report.",
+    "U4 imported ordinary-shadow results were assessed through route and critic citations without independent retrieval; no CB mixed-boundary transport follows.",
+    "U6 first-shell proof remains informal and order-specific, without a terminal kernel and fidelity award in the frozen sources."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-U1-COVARIANCE-DECOMPOSITION",
+    "C4-U2-MARKED-SHELL-REDUCTION",
+    "C4-U3.LOW-COVER-SKELETON",
+    "C4-U3.LOW-COVER-SIGN",
+    "C4-U4-COLORED-SHADOW-MIXED-BOUNDARY",
+    "C4-U5-SUPPORT-POLYNOMIAL-REDUCTION",
+    "C4-U6-first-shell-bridge"
+  ]
+}

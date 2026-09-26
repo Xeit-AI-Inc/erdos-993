@@ -1,0 +1,27 @@
+{
+  "worker_id": "C6-U2",
+  "cycle": 6,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C6-U2-CENSUS-M1-40",
+      "statement": "For every unordered arity profile r_i in {2,3,4} with 1<=m<=40 in the specified path-and-branches tree family, every rank satisfying x+2<=p and 3p<2alpha+1 has strictly negative complete original favorable-leaf sum S(T,p).",
+      "scope": "Exact bounded coefficient-recurrence census of all 12,340 profiles and all 191,016 eligible profile/rank pairs; six fixed actual-tree graph-DP cross-checks. No extension beyond this finite family and boundary is claimed.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-U2/EVIDENCE.json",
+        "cycles/cycle-6/C6-U2/census.py"
+      ],
+      "reason": "Exact arbitrary-precision recurrence enumeration found 191,016 strictly negative full sums and no zero or positive eligible sums. All six independently constructed graph checks matched the recurrences. This is bounded evidence only and leaves the registered arbitrary-tree target open."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-U2/REPORT.md",
+  "limitations": [
+    "The finite boundary is 1<=m<=40 and does not cover the full m<2000 prefix or any infinite-family theorem.",
+    "The census is limited to the specified path-and-branches trees and does not resolve the arbitrary ordinary-tree aggregate.",
+    "Actual graph-DP checks cover six fixed profiles; exhaustive coverage relies on the exact coefficient recurrences.",
+    "Central log-concavity margins were checked only for P, A0, Ar, and Zr in the stated central interval; mixed minors and the uniform candidate proof were not established."
+  ],
+  "status_authority": "proposed_worker_only"
+}

@@ -1,0 +1,27 @@
+{
+  "worker_id": "C4-U5",
+  "cycle": 4,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C4-U5-SUPPORT-POLYNOMIAL-REDUCTION",
+      "statement": "For every finite ordinary tree and each fixed p >= 2, the full original-leaf selected aggregate admits the support-indexed polynomial expression recorded in EVIDENCE.json; rooted independence-polynomial messages truncated through degree p+1, together with alpha and rerooted branch messages, suffice to compute its selector and summands exactly.",
+      "scope": "Exact algebraic reduction and fixed-rank computation state only; this does not assert S(T,p)<=0 or furnish a context-closed compressed induction state.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-U5/EVIDENCE.json",
+        "cycles/cycle-4/C4-U5/REPORT.md"
+      ],
+      "reason": "The product formulas follow by partitioning independent sets at a support vertex and deleting original closed neighborhoods; the repeated-leaf multiplicity and coefficient indices have been derived explicitly. No universal sign or sufficiently compressed transfer state was proved."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-U5/REPORT.md",
+  "limitations": [
+    "The primary lower-region aggregate inequality remains unresolved by this route.",
+    "The fixed-p polynomial-vector recurrence is not a constant-size state independent of p or tree order.",
+    "No computational census or external literature search was used.",
+    "The optional tagged-incidence identity receives no result from this route."
+  ],
+  "status_authority": "proposed_worker_only"
+}

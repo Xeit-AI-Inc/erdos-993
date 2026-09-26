@@ -1,0 +1,8 @@
+namespace Erdos993G1.FirstWide
+
+lemma edgeSet_natCard_eq_edgeFinset_card {Y : Type u}
+    (G : SimpleGraph Y) [Fintype G.edgeSet] :
+    Nat.card G.edgeSet = G.edgeFinset.card := by
+  rw [Nat.card_eq_fintype_card, G.edgeFinset_card]
+
+end Erdos993G1.FirstWide

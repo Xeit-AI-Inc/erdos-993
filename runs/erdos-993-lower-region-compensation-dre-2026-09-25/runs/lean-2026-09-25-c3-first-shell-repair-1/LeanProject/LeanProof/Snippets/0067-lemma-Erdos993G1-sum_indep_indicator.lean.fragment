@@ -1,0 +1,14 @@
+lemma sum_indep_indicator [Fintype V] [DecidableEq V] [DecidableRel F.Adj]
+    (k : ℕ) :
+    ∑ B ∈ (Finset.univ : Finset V).powersetCard k,
+      (if F.IsIndepSet B then 1 else 0) = (F.indepSetFinset k).card := by
+  rw [indepSetFinset_eq_filter_powersetCard]
+  simp only [Finset.card_eq_sum_ones, Finset.sum_filter]
+
+end Erdos993G1
+
+
+namespace Erdos993G1
+
+variable {V : Type u} (F : SimpleGraph V)
+

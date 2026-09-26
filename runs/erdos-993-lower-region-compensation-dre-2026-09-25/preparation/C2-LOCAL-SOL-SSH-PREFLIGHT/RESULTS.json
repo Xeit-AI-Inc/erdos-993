@@ -1,0 +1,24 @@
+{
+  "worker_id": "C2-LOCAL-SOL-SSH-PREFLIGHT",
+  "status_authority": "proposed_worker_only",
+  "result": "transport_blocked",
+  "source_hashes_verified": {
+    "control-proposals/formal-transport/probe.py": "aadae9c28dc6ef4b44b49c55a4565809ec2d3b886991ed93ec673f7a92415edb",
+    "runs/lean-2026-09-25-c2-order-bands/THEOREM-CONTRACT.yaml": "007997997fb2c2aebf976cac6fcf5f1a25960a3f5776c798d517f79e045b4bc7"
+  },
+  "probe_executions": 1,
+  "probe_modified": false,
+  "probe_exit_code": 255,
+  "probe_stdout": "\ndial tcp: lookup ssh.xeit.ai: no such host\nConnection closed by UNKNOWN port 65535\n\n",
+  "probe_stderr": "",
+  "ssh_stdout": "",
+  "ssh_stderr": "dial tcp: lookup ssh.xeit.ai: no such host\nConnection closed by UNKNOWN port 65535\n",
+  "local_contract": {
+    "contract_id": "e993-c2-order-band-pair-v2",
+    "terminal_name": "E993OrderBand.markedIsolateAndOrdinaryLeafOrderBand",
+    "sha256": "007997997fb2c2aebf976cac6fcf5f1a25960a3f5776c798d517f79e045b4bc7"
+  },
+  "remote_contract": null,
+  "comparison": "not_possible_no_remote_output",
+  "limitation": "DNS lookup failure prevented the SSH read; no remote contract or mathematical claim was verified."
+}

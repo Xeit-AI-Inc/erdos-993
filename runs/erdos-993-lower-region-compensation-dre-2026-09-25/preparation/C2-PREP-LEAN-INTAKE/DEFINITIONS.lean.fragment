@@ -1,0 +1,21 @@
+-- Proposed additions after importing the pinned FirstInterior source.
+-- No theorem or proof body is asserted by this fragment.
+namespace E993OrderBand
+
+/-- Every vertex isolated in the graph induced on `U` is marked. -/
+def IsolateCoveredOn {V : Type*} (G : SimpleGraph V)
+    (U W : Finset V) : Prop :=
+  ∀ x, x ∈ U → (∀ y, y ∈ U → ¬ G.Adj x y) → x ∈ W
+
+/-- The registered whole-graph isolate condition. -/
+def IsolateCovered {V : Type*} [Fintype V]
+    (G : SimpleGraph V) (W : Finset V) : Prop :=
+  IsolateCoveredOn G Finset.univ W
+
+/-- Independent `k`-sets meeting `W`, using the pinned tagged-family semantics. -/
+noncomputable def markedCount {V : Type*} [Fintype V] [DecidableEq V]
+    (G : SimpleGraph V) [DecidableRel G.Adj]
+    (W : Finset V) (k : ℕ) : ℕ :=
+  (E993Interior.taggedFamily G Finset.univ W k).card
+
+end E993OrderBand

@@ -1,0 +1,65 @@
+namespace E993FirstShell
+
+open Classical
+
+/-- Exact first-wide marked shadow under a two-vertex-cover obstruction. -/
+lemma tagged_bound_firstWide_no_two_cover {V : Type u} [Fintype V] [DecidableEq V]
+    (G : SimpleGraph V) [DecidableRel G.Adj] (U W : Finset V)
+    (k : ℕ) (hk : 2 ≤ k) (hU : U.card = 2*k+2)
+    (hWU : W ⊆ U)
+    (hno : ∀ C : Finset V, C.card ≤ 2 →
+      ¬ (∀ x y, G.Adj x y → x ∈ U → y ∈ U → x ∈ C ∨ y ∈ C))
+    (a b : V) (haU : a ∈ U) (haW : a ∈ W)
+    (hbU : b ∈ U) (hab : G.Adj a b) :
+    (E993Interior.taggedFamily G U W (k+1)).card ≤
+      (E993Interior.taggedFamily G U W k).card := by
+  classical
+  let N := U.filter (fun x => x ≠ a ∧ ¬G.Adj a x)
+  have hUa : (U.erase a).card ≤ 2*k+1 := by
+    rw [Finset.card_erase_of_mem haU]
+    omega
+  have hWUa : W.erase a ⊆ U.erase a := by
+    intro x hx
+    obtain ⟨hxa,hxW⟩ := Finset.mem_erase.mp hx
+    exact Finset.mem_erase.mpr ⟨hxa,hWU hxW⟩
+  have hno1 := no_one_cover_after_erase G U hno a
+  have habsent := tagged_bound_below_odd_no_cover G (U.erase a) (W.erase a)
+    k hk hUa hWUa hno1
+  have hbUa : b ∈ U.erase a :=
+    Finset.mem_erase.mpr ⟨hab.ne.symm,hbU⟩
+  have hNsub : N ⊆ (U.erase a).erase b := by
+    intro x hx
+    obtain ⟨hxU,hxa,hnot⟩ := Finset.mem_filter.mp hx
+    refine Finset.mem_erase.mpr ⟨?_, Finset.mem_erase.mpr ⟨hxa,hxU⟩⟩
+    intro hxb
+    exact (hxb ▸ hnot) hab
+  have hNcard : N.card ≤ 2*k := by
+    have hc := Finset.card_le_card hNsub
+    rw [Finset.card_erase_of_mem hbUa, Finset.card_erase_of_mem haU] at hc
+    omega
+  have hpresent :
+      ((N.powersetCard k).filter
+        (fun S : Finset V => G.IsIndepSet (S : Set V))).card ≤
+      ((N.powersetCard (k-1)).filter
+        (fun S : Finset V => G.IsIndepSet (S : Set V))).card := by
+    by_cases heq : N.card = 2*k
+    · have hnoN := no_one_cover_residual_at_equality G U k hU hno
+        a b haU hbU hab heq
+      have hedge := two_edges_of_no_one_cover G N hnoN
+      have hsize : N.card = 2*(k-1)+2 := by omega
+      have hw := ordinary_bound_firstWide G N (k-1) (by omega) hsize hedge
+      have hk' : k-1+1=k := by omega
+      simpa only [hk'] using hw
+    · have hsize : N.card ≤ 2*(k-1)+1 := by omega
+      have hw := ordinary_bound_below_odd G N (k-1) (by omega) hsize
+      have hk' : k-1+1=k := by omega
+      simpa only [hk'] using hw
+  have htop := tagged_split_mark G U W a haU haW k
+  have hbottom := tagged_split_mark G U W a haU haW (k-1)
+  have hk' : k-1+1=k := by omega
+  rw [hk'] at hbottom
+  rw [htop, hbottom]
+  dsimp only [N] at hpresent
+  omega
+
+end E993FirstShell

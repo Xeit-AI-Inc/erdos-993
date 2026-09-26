@@ -1,0 +1,360 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "e993-c2-order-band-pair-v3",
+  "theorem": {
+    "title": "Marked-isolate and ordinary-leaf order bands",
+    "informal_statement": "For every finite simple graph G with m vertices, every vertex subset W containing all isolated vertices of G, and every natural k>=2 with m<=2k+1, the number of independent (k+1)-sets meeting W is at most the number of independent k-sets meeting W. Also, for every finite ordinary tree T, every original degree-one leaf v with its unique original support s, and every natural p>=3 with |V(T)|<=2p+1, Delta_(p-1)(T-{v,s})-Delta_(p-1)(T-N_T[s])<=0. Counts are zero outside supported natural ranks, and Delta_j(G)=i_(j+1)(G)-i_j(G) is an integer difference. All neighborhoods and leaf identities are those of the original tree."
+  },
+  "formulation_status": {
+    "status": "open",
+    "evidence": []
+  },
+  "definitions": [
+    {
+      "id": "def-marked",
+      "description": "Independent sets of size k meeting W, counted once each; zero beyond vertex order.",
+      "lean_name": "E993OrderBand.markedCount",
+      "dependencies": []
+    },
+    {
+      "id": "def-isolates",
+      "description": "Every isolated vertex of G belongs to W; relative-U version is internal only.",
+      "lean_name": "E993OrderBand.IsolateCovered",
+      "dependencies": []
+    },
+    {
+      "id": "def-leaf",
+      "description": "An original graph vertex with exactly one adjacent vertex.",
+      "lean_name": "C4LA1.IsGraphLeaf",
+      "dependencies": []
+    },
+    {
+      "id": "def-support",
+      "description": "The unique original neighbor of a degree-one leaf.",
+      "lean_name": "C5LA1.support",
+      "dependencies": [
+        "def-leaf"
+      ]
+    },
+    {
+      "id": "def-h",
+      "description": "Deletion set {v,s} in the original graph.",
+      "lean_name": "C5LA1.H",
+      "dependencies": [
+        "def-support"
+      ]
+    },
+    {
+      "id": "def-r",
+      "description": "Original closed neighborhood N_T[s] as deletion set.",
+      "lean_name": "C5LA1.R",
+      "dependencies": [
+        "def-support"
+      ]
+    },
+    {
+      "id": "def-delta",
+      "description": "Integer difference of deletion independent counts i_(j+1)-i_j, with natural counts zero beyond support.",
+      "lean_name": "C5LA1.forwardDifferenceDel",
+      "dependencies": []
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-graph",
+      "description": "Arbitrary finite simple graphs on arbitrary finite vertex types with decidable equality and adjacency; these are representational choices.",
+      "lean_type": "SimpleGraph V",
+      "dependencies": []
+    },
+    {
+      "id": "domain-marks",
+      "description": "Any finite subset of the same finite vertex type.",
+      "lean_type": "Finset V",
+      "dependencies": [
+        "domain-graph"
+      ]
+    },
+    {
+      "id": "domain-rank",
+      "description": "Natural ranks k and p.",
+      "lean_type": "Nat",
+      "dependencies": []
+    },
+    {
+      "id": "domain-vertex",
+      "description": "An original vertex v of the finite graph T.",
+      "lean_type": "V",
+      "dependencies": [
+        "domain-graph"
+      ]
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "G",
+      "kind": "forall",
+      "domain_id": "domain-graph"
+    },
+    {
+      "binder": "T",
+      "kind": "forall",
+      "domain_id": "domain-graph"
+    },
+    {
+      "binder": "W",
+      "kind": "forall",
+      "domain_id": "domain-marks"
+    },
+    {
+      "binder": "k",
+      "kind": "forall",
+      "domain_id": "domain-rank"
+    },
+    {
+      "binder": "p",
+      "kind": "forall",
+      "domain_id": "domain-rank"
+    },
+    {
+      "binder": "v",
+      "kind": "forall",
+      "domain_id": "domain-vertex"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-generic",
+      "statement": "Generic conjunct: W contains all graph isolates, 2<=k and Fintype.card V<=2*k+1. No bipartite, tree, alpha, selector or first-descent hypothesis.",
+      "dependencies": [
+        "domain-graph",
+        "domain-marks",
+        "domain-rank",
+        "def-isolates"
+      ]
+    },
+    {
+      "id": "hyp-leaf",
+      "statement": "Ordinary conjunct: T is a tree, v is an original degree-one leaf, 3<=p and Fintype.card V<=2*p+1. No favorability, alpha or first-descent hypothesis.",
+      "dependencies": [
+        "domain-graph",
+        "domain-vertex",
+        "domain-rank",
+        "def-leaf"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "The conjunction of markedCount G W (k+1)<=markedCount G W k under the generic hypotheses and forwardDifferenceDel T (H T v) (p-1)-forwardDifferenceDel T (R T v) (p-1)<=0 under the ordinary-leaf hypotheses.",
+    "dependencies": [
+      "hyp-generic",
+      "hyp-leaf",
+      "def-marked",
+      "def-h",
+      "def-r",
+      "def-delta"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "def-marked",
+        "kind": "definition"
+      },
+      {
+        "id": "def-isolates",
+        "kind": "definition"
+      },
+      {
+        "id": "def-leaf",
+        "kind": "definition"
+      },
+      {
+        "id": "def-support",
+        "kind": "definition"
+      },
+      {
+        "id": "def-h",
+        "kind": "definition"
+      },
+      {
+        "id": "def-r",
+        "kind": "definition"
+      },
+      {
+        "id": "def-delta",
+        "kind": "definition"
+      },
+      {
+        "id": "domain-graph",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-marks",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-rank",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-vertex",
+        "kind": "domain"
+      },
+      {
+        "id": "hyp-generic",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-leaf",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "def-leaf",
+        "to": "def-support"
+      },
+      {
+        "from": "def-support",
+        "to": "def-h"
+      },
+      {
+        "from": "def-support",
+        "to": "def-r"
+      },
+      {
+        "from": "domain-graph",
+        "to": "domain-marks"
+      },
+      {
+        "from": "domain-graph",
+        "to": "domain-vertex"
+      },
+      {
+        "from": "domain-graph",
+        "to": "hyp-generic"
+      },
+      {
+        "from": "domain-marks",
+        "to": "hyp-generic"
+      },
+      {
+        "from": "domain-rank",
+        "to": "hyp-generic"
+      },
+      {
+        "from": "def-isolates",
+        "to": "hyp-generic"
+      },
+      {
+        "from": "domain-graph",
+        "to": "hyp-leaf"
+      },
+      {
+        "from": "domain-vertex",
+        "to": "hyp-leaf"
+      },
+      {
+        "from": "domain-rank",
+        "to": "hyp-leaf"
+      },
+      {
+        "from": "def-leaf",
+        "to": "hyp-leaf"
+      },
+      {
+        "from": "hyp-generic",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-leaf",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-marked",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-h",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-r",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-delta",
+        "to": "conclusion"
+      }
+    ]
+  },
+  "permitted_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "explicit_axiom_allowlist",
+    "rationale": "Finite classical graph reasoning; no custom axioms or unproved mathematical assumptions."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "E993OrderBand.markedIsolateAndOrdinaryLeafOrderBand",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem markedIsolateAndOrdinaryLeafOrderBand :\n    (∀ (V : Type u) [Fintype V] [DecidableEq V]\n      (G : SimpleGraph V) [DecidableRel G.Adj]\n      (W : Finset V) (k : ℕ),\n      E993OrderBand.IsolateCovered G W →\n      2 ≤ k →\n      Fintype.card V ≤ 2 * k + 1 →\n      E993OrderBand.markedCount G W (k + 1) ≤\n        E993OrderBand.markedCount G W k) ∧\n    (∀ (V : Type u) [Fintype V] [DecidableEq V]\n      (T : SimpleGraph V) [DecidableRel T.Adj]\n      (v : V) (p : ℕ),\n      T.IsTree →\n      C4LA1.IsGraphLeaf T v →\n      3 ≤ p →\n      Fintype.card V ≤ 2 * p + 1 →\n      C5LA1.forwardDifferenceDel T (C5LA1.H T v) (p - 1) -\n        C5LA1.forwardDifferenceDel T (C5LA1.R T v) (p - 1) ≤ 0)",
+    "expected_statement_sha256": "18d27d657dd127d9c377529d9c626e68f1020e22b336b8e4cf0d378c11a44325"
+  },
+  "source_materials": [
+    {
+      "id": "source-0",
+      "path": "SOURCE/FirstInteriorMain.lean",
+      "sha256": "8d864da290947d75ac0cb52644b8b5336a19076878fcb11eeed552e6a118d7a9",
+      "role": "definition_authority"
+    },
+    {
+      "id": "source-1",
+      "path": "SOURCE/BASE-PIN.json",
+      "sha256": "a5801a2626be4368180598151f62889c6eb064baab3eb1fb2c17a3f2f207c86d",
+      "role": "reference"
+    },
+    {
+      "id": "source-2",
+      "path": "SOURCE/INTENDED-PROOF.md",
+      "sha256": "6a27d09bd8b78dc3aa5392047e31d630e95696a1995e39c4280c4909f92f6d89",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "source-3",
+      "path": "SOURCE/PRIOR-AUDIT.md",
+      "sha256": "e21da4f7d1485453a068e4510b2edc6ff4c694878dd438acad2865f3568be23c",
+      "role": "reference"
+    },
+    {
+      "id": "source-4",
+      "path": "SOURCE/FORMAL-PLAN.md",
+      "sha256": "b28c38d08896889259c6b9aa912c81f61c027f205f7fc4e135e0874ee1037b1b",
+      "role": "reference"
+    },
+    {
+      "id": "source-5",
+      "path": "SOURCE/DEFINITIONS.lean.fragment",
+      "sha256": "24b3bcaad6226f18ef562622b80736d4bd61ededd43147211fd9d377af726edc",
+      "role": "definition_authority"
+    }
+  ]
+}

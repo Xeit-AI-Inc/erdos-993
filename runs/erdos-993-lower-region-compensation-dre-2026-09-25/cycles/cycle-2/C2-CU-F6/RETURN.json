@@ -1,0 +1,25 @@
+{
+  "worker_id": "C2-CU-F6",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C2-F6.ROOT-PENDANT-T22-OBSTRUCTION",
+      "statement": "For the order-91 T_22 control, attaching one new pendant leaf at root 0 yields an order-92 tree in which the original marked leaf has a negative selected summand at every eligible rank and the complete favorable-leaf sum is strictly negative at every eligible rank.",
+      "scope": "The exact T_22 recipe in the source case with one new leaf 91 attached to root 0; all integer ranks p=35,...,45 with x=33, alpha=68, and 3p<2alpha+1. No other padding length, attachment vertex, or source tree.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CU-F6/REPLAY-CHECK.json"
+      ],
+      "reason": "retained — the graph is an ordinary tree, the exact polynomial recurrence and guards check, and a replay from a scratch copy of the pinned evaluator matches the coefficient vector, full selector set, all original-support summands, and full sum at every eligible rank."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CU-F6/REPORT.md",
+  "limitations": [
+    "This verifies only T_22 with a single new leaf attached at its root; it establishes no family-level padding result.",
+    "The finite computation does not prove or refute the universal lower-region favorable-leaf aggregate."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": ["C2-F6.ROOT-PENDANT-T22-OBSTRUCTION"]
+}

@@ -1,0 +1,29 @@
+{
+  "worker_id": "C6-U6",
+  "cycle": 6,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "U6-MARKED-RECURRENCE-TRANSPORT",
+      "statement": "For the original fixed selector F(T,p), the primary aggregate is exactly Q_p-Q_(p-1), where Q_j=sum over v in F of i_j(H_v)-i_j(R_v). For each v, H_v splits into rooted tree components and its marked polynomial is the product difference prod_i I(C_i)-prod_i I(C_i-w_i), with the positive component recurrence stated in REPORT.md. This reduces the route to a fixed marked-rank comparison but does not prove its sign.",
+      "scope": "Exact identities for every finite ordinary tree and eligible (T,p), with original distinct leaf tags and fixed F(T,p); bounded exact computations cover all labeled trees through order 8 (no eligible rows) and the pinned T_m family for m<=8 only.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-U6/transport_census.py",
+        "cycles/cycle-6/C6-U6/transport_census.json",
+        "cycles/cycle-6/C6-U6/t_family_transport.py",
+        "cycles/cycle-6/C6-U6/t_family_transport.json"
+      ],
+      "reason": "The recurrence and rank-difference identities are exact, and all 13 eligible bounded T_m rows replay with negative S. The order-1-through-8 labeled census has no eligible rows. No argument transports the first descent of I(T) to Q_p<=Q_(p-1) in general, and no eligible full-sum refutation was found; leave the primary assertion open."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-U6/REPORT.md",
+  "limitations": [
+    "No proof of the required aggregate marked-rank comparison for arbitrary ordinary trees was established.",
+    "The all-labeled-tree census ends at order 8 and contains no eligible rows; it gives no sign information on eligible inputs.",
+    "The T_m calculation covers only m=1 through 8 and is bounded computation, not a family theorem.",
+    "No public literature result was imported or used to close the transport gap."
+  ],
+  "status_authority": "proposed_worker_only"
+}

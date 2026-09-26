@@ -1,0 +1,48 @@
+{
+  "method": "Foreground replay of the listed forest-DP evaluator from a temporary copy in this worker scratch; source SHA-256 verified against the common packet pin. Also checked the stated root-decomposition polynomial directly.",
+  "source_evaluator": "inputs/ordinary_tree_checked.py",
+  "source_evaluator_sha256": "a012bb78915ccdfa2f729c0cdb520cd8f29572277123c92e80ba6091498f533d",
+  "replayed_cases": [
+    {
+      "padding_length": 0,
+      "order": 91,
+      "alpha": 68,
+      "x": 32,
+      "eligible_ranks": [34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45],
+      "coefficient_vector_matches_case_evidence": true,
+      "all_recorded_rows_match_leaf_by_leaf": true
+    },
+    {
+      "padding_length": 1,
+      "attachment": "new leaf 91 adjacent to root 0",
+      "order": 92,
+      "alpha": 68,
+      "x": 33,
+      "terminal_delta_at_alpha": -1,
+      "eligible_ranks": [35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45],
+      "coefficient_vector_matches_case_evidence": true,
+      "all_recorded_rows_match_leaf_by_leaf": true,
+      "favorable_leaf_count_at_each_rank": 68,
+      "rank_rows": [
+        {"p": 35, "marked_leaf_2_summand": -212336130412243110, "full_sum": -1385054486733687214684},
+        {"p": 36, "marked_leaf_2_summand": -600607911737487654, "full_sum": -1900020604270788101575},
+        {"p": 37, "marked_leaf_2_summand": -889789498870352080, "full_sum": -2115717975797519395049},
+        {"p": 38, "marked_leaf_2_summand": -1043699033810088656, "full_sum": -2053526405105798701837},
+        {"p": 39, "marked_leaf_2_summand": -1059393756123022320, "full_sum": -1789338575833081467601},
+        {"p": 40, "marked_leaf_2_summand": -962810849581892080, "full_sum": -1420918152592968682631},
+        {"p": 41, "marked_leaf_2_summand": -796507157381383448, "full_sum": -1037249829990671310013},
+        {"p": 42, "marked_leaf_2_summand": -605225888816998680, "full_sum": -699754627589654663246},
+        {"p": 43, "marked_leaf_2_summand": -424618798185894312, "full_sum": -437750405299345896868},
+        {"p": 44, "marked_leaf_2_summand": -275915087740492200, "full_sum": -254483218709044259680},
+        {"p": 45, "marked_leaf_2_summand": -166341153374650800, "full_sum": -137658965005642503754}
+      ]
+    }
+  ],
+  "comparison_checks": [
+    "At each eligible rank, every leaf is tested with the strict selector Delta_p(T-v)<0.",
+    "Every selected summand is recomputed from original support and original closed-neighborhood deletion.",
+    "The full selected sum retains each original leaf as a separate summand, including leaves with a shared support.",
+    "The p=35..45 interval is exhaustive for the single padded tree by alpha=68, x=33, and strict 3p<137."
+  ],
+  "grade": "bounded exact computation for the two specified trees; no universal theorem or aggregate resolution"
+}

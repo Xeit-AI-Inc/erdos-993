@@ -1,0 +1,431 @@
+{
+  "schema": "C2-AF-adjudication-evidence-v1",
+  "packet_sha256_checks": [
+    {
+      "packet": "C2-AF",
+      "listed_files": 87,
+      "sha256_mismatches": []
+    },
+    {
+      "packet": "C2-COMMON",
+      "listed_files": 27,
+      "sha256_mismatches": []
+    }
+  ],
+  "f3_generator_off_by_one_proof": "types_of_size(2p) returns a rooted type t with weight(t)=1+sum(weight(c) for c in t)=2p. The variable f iterated by make_tree is t's child tuple, so its attached branch weights sum to 2p-1. make_tree adds support 0 and leaf 1, giving 2p+1 vertices and 2p edges. Every generated row is one order below the first shell.",
+  "f3_rows": [
+    {
+      "p": 3,
+      "reported_order": 8,
+      "corrected_order": 7,
+      "generated_filtered_rooted_forest_count": 10,
+      "reported_eligible_count": 0,
+      "reported_min_S": null,
+      "reported_max_S": null
+    },
+    {
+      "p": 4,
+      "reported_order": 10,
+      "corrected_order": 9,
+      "generated_filtered_rooted_forest_count": 66,
+      "reported_eligible_count": 0,
+      "reported_min_S": null,
+      "reported_max_S": null
+    },
+    {
+      "p": 5,
+      "reported_order": 12,
+      "corrected_order": 11,
+      "generated_filtered_rooted_forest_count": 430,
+      "reported_eligible_count": 0,
+      "reported_min_S": null,
+      "reported_max_S": null
+    },
+    {
+      "p": 6,
+      "reported_order": 14,
+      "corrected_order": 13,
+      "generated_filtered_rooted_forest_count": 2923,
+      "reported_eligible_count": 418,
+      "reported_min_S": -387,
+      "reported_max_S": -212,
+      "maximum_row_independent_subset_replay": {
+        "vertex_count": 13,
+        "edge_count": 12,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            6,
+            7
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            7,
+            9
+          ],
+          [
+            9,
+            10
+          ],
+          [
+            10,
+            11
+          ],
+          [
+            10,
+            12
+          ]
+        ],
+        "independence_polynomial": [
+          1,
+          13,
+          66,
+          169,
+          240,
+          203,
+          111,
+          40,
+          9,
+          1
+        ],
+        "alpha": 9,
+        "x": 4,
+        "terminal_delta": -1,
+        "eligible_guards": {
+          "x_plus_2_le_p": true,
+          "3p_lt_2alpha_plus_1": true
+        },
+        "selector_values": [
+          {
+            "leaf": 1,
+            "support": 0,
+            "delta_p_T_minus_v": -29
+          },
+          {
+            "leaf": 2,
+            "support": 0,
+            "delta_p_T_minus_v": -29
+          },
+          {
+            "leaf": 5,
+            "support": 4,
+            "delta_p_T_minus_v": -30
+          },
+          {
+            "leaf": 8,
+            "support": 7,
+            "delta_p_T_minus_v": -30
+          },
+          {
+            "leaf": 11,
+            "support": 10,
+            "delta_p_T_minus_v": -29
+          },
+          {
+            "leaf": 12,
+            "support": 10,
+            "delta_p_T_minus_v": -29
+          }
+        ],
+        "selected_summands": [
+          {
+            "leaf": 1,
+            "support": 0,
+            "delta_p_minus_1_H": -42,
+            "delta_p_minus_1_R": -6,
+            "summand": -36
+          },
+          {
+            "leaf": 2,
+            "support": 0,
+            "delta_p_minus_1_H": -42,
+            "delta_p_minus_1_R": -6,
+            "summand": -36
+          },
+          {
+            "leaf": 5,
+            "support": 4,
+            "delta_p_minus_1_H": -41,
+            "delta_p_minus_1_R": -7,
+            "summand": -34
+          },
+          {
+            "leaf": 8,
+            "support": 7,
+            "delta_p_minus_1_H": -41,
+            "delta_p_minus_1_R": -7,
+            "summand": -34
+          },
+          {
+            "leaf": 11,
+            "support": 10,
+            "delta_p_minus_1_H": -42,
+            "delta_p_minus_1_R": -6,
+            "summand": -36
+          },
+          {
+            "leaf": 12,
+            "support": 10,
+            "delta_p_minus_1_H": -42,
+            "delta_p_minus_1_R": -6,
+            "summand": -36
+          }
+        ],
+        "S": -212
+      }
+    },
+    {
+      "p": 7,
+      "reported_order": 16,
+      "corrected_order": 15,
+      "generated_filtered_rooted_forest_count": 20486,
+      "reported_eligible_count": 1221,
+      "reported_min_S": -1495,
+      "reported_max_S": -844,
+      "maximum_row_independent_subset_replay": {
+        "vertex_count": 15,
+        "edge_count": 14,
+        "edges": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            7,
+            8
+          ],
+          [
+            8,
+            9
+          ],
+          [
+            8,
+            10
+          ],
+          [
+            8,
+            11
+          ],
+          [
+            11,
+            12
+          ],
+          [
+            12,
+            13
+          ],
+          [
+            12,
+            14
+          ]
+        ],
+        "independence_polynomial": [
+          1,
+          15,
+          91,
+          294,
+          569,
+          718,
+          634,
+          403,
+          183,
+          57,
+          11,
+          1
+        ],
+        "alpha": 11,
+        "x": 5,
+        "terminal_delta": -1,
+        "eligible_guards": {
+          "x_plus_2_le_p": true,
+          "3p_lt_2alpha_plus_1": true
+        },
+        "selector_values": [
+          {
+            "leaf": 1,
+            "support": 0,
+            "delta_p_T_minus_v": -95
+          },
+          {
+            "leaf": 2,
+            "support": 0,
+            "delta_p_T_minus_v": -95
+          },
+          {
+            "leaf": 5,
+            "support": 4,
+            "delta_p_T_minus_v": -105
+          },
+          {
+            "leaf": 6,
+            "support": 4,
+            "delta_p_T_minus_v": -105
+          },
+          {
+            "leaf": 9,
+            "support": 8,
+            "delta_p_T_minus_v": -95
+          },
+          {
+            "leaf": 10,
+            "support": 8,
+            "delta_p_T_minus_v": -95
+          },
+          {
+            "leaf": 13,
+            "support": 12,
+            "delta_p_T_minus_v": -105
+          },
+          {
+            "leaf": 14,
+            "support": 12,
+            "delta_p_T_minus_v": -105
+          }
+        ],
+        "selected_summands": [
+          {
+            "leaf": 1,
+            "support": 0,
+            "delta_p_minus_1_H": -125,
+            "delta_p_minus_1_R": -7,
+            "summand": -118
+          },
+          {
+            "leaf": 2,
+            "support": 0,
+            "delta_p_minus_1_H": -125,
+            "delta_p_minus_1_R": -7,
+            "summand": -118
+          },
+          {
+            "leaf": 5,
+            "support": 4,
+            "delta_p_minus_1_H": -115,
+            "delta_p_minus_1_R": -22,
+            "summand": -93
+          },
+          {
+            "leaf": 6,
+            "support": 4,
+            "delta_p_minus_1_H": -115,
+            "delta_p_minus_1_R": -22,
+            "summand": -93
+          },
+          {
+            "leaf": 9,
+            "support": 8,
+            "delta_p_minus_1_H": -125,
+            "delta_p_minus_1_R": -7,
+            "summand": -118
+          },
+          {
+            "leaf": 10,
+            "support": 8,
+            "delta_p_minus_1_H": -125,
+            "delta_p_minus_1_R": -7,
+            "summand": -118
+          },
+          {
+            "leaf": 13,
+            "support": 12,
+            "delta_p_minus_1_H": -115,
+            "delta_p_minus_1_R": -22,
+            "summand": -93
+          },
+          {
+            "leaf": 14,
+            "support": 12,
+            "delta_p_minus_1_H": -115,
+            "delta_p_minus_1_R": -22,
+            "summand": -93
+          }
+        ],
+        "S": -844
+      }
+    }
+  ],
+  "f1_source_result_checked": {
+    "generator": "centroid free-tree codes",
+    "order": 16,
+    "p": 7,
+    "all_classes_reported": 19320,
+    "eligible_rows": 1696,
+    "eligible_alpha_x_pairs": [
+      [
+        11,
+        5
+      ]
+    ],
+    "min_S": -1759,
+    "max_S": -906,
+    "nonnegative_count": 0,
+    "every_recorded_S_equals_tag_sum": true,
+    "every_recorded_selector_strict": true
+  },
+  "f5_source_result_checked": {
+    "order": 14,
+    "p": 6,
+    "all_classes_reported": 3159,
+    "eligible_rows": 240,
+    "eligible_alpha_x_pairs": [
+      [
+        9,
+        4
+      ]
+    ],
+    "min_S": -404,
+    "max_S": -222,
+    "nonnegative_count": 0
+  },
+  "method_limit": "F3 maximum rows were independently subset counted. F1 and F5 checks above are integrity checks of listed result files; their complete finite replay and generator audits are in the listed source and critic evidence, not rerun here."
+}

@@ -1,0 +1,6 @@
+lemma indepCount_eq_card_indepSetFinset [Fintype V] [DecidableEq V]
+    [DecidableRel F.Adj] (k : ℕ) :
+    indepCount F k = ((F.indepSetFinset k).card : ℤ) := by
+  simp only [indepCount, Nat.card_eq_fintype_card, Fintype.card_subtype,
+    SimpleGraph.indepSetFinset]
+

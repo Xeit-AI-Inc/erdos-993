@@ -1,0 +1,23 @@
+{
+  "worker_id": "C4-U4",
+  "cycle": 4,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C4-U4-COLORED-SHADOW-MIXED-BOUNDARY",
+      "statement": "For the CB matching sector obtained by stripping its fixed root and arm leaf, the colored quotient-ring theorem applies exactly to the ordinary lower shadow: Chong Theorems 1.2(i) and 2.1(iii) imply revlex shadow minimization for the matching-sector face poset. This theorem and its associated unweighted normalized-matching flow do not imply preservation or control of the additional hub-insertion boundary. A three-vertex colored graph gives an exact obstruction to automatic preservation of an endpoint-sensitive insertion count under revlex compression.",
+      "scope": "The matching-sector ordinary shadow and the general failure of an unweighted compression argument to preserve an endpoint-sensitive extra insertion count. The small obstruction is not a CB-tree counterexample and does not decide the full mixed inequality or the primary aggregate.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-4/C4-U4/EVIDENCE.json"],
+      "reason": "The quotient-ring/type bridge and its ordinary-shadow consequence are exact. The toy graph calculation is exact and shows the auxiliary count can change under compression. No argument transports all CB hub-insertion arcs for arbitrary source subsets, and no complete CB mixed-boundary cut or counterexample was established."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-U4/REPORT.md",
+  "limitations": [
+    "The CB direction note supplies a sector description but no complete CB edge encoding for this route, so the toy graph is only a compression obstruction model and not a CB witness.",
+    "The literature results control ordinary unweighted shadows or adjacent-rank matching flow; they do not include the selected-tag mixed boundary, competing hub-target demand, or the complete tree aggregate.",
+    "No universal theorem, counterexample, full selector audit, or weighted-Hall certificate was established."
+  ],
+  "status_authority": "proposed_worker_only"
+}

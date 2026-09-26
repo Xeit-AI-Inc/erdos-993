@@ -1,0 +1,44 @@
+{
+  "worker_id": "C5-CT-U6",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C5-U6-MARKED-SHELL-REDUCTION",
+      "statement": "For a fixed original leaf v and a fixed ordering of its support-neighbors W, the tagged shell difference q_p-q_(p-1) equals -sum over w in W of Delta_(p-2)(G_w), while the original leaf selector Delta_p(T-v)<0 is equivalent to -sum over w in W Delta_(p-1)(G_w)+i_(p+1)(R)-i_(p-1)(R)<0.",
+      "scope": "Every finite ordinary tree, each original leaf separately, with integer zero extension and the definitions in the source report.",
+      "status": "proposed_rejected",
+      "evidence_paths": ["cycles/cycle-5/C5-CT-U6/EVIDENCE.json"],
+      "reason": "rejected: the unique-first-mark partition is valid, but both differences have the opposite sign. The correct identities use +sum_w Delta_(p-2)(G_w) for the target term and +sum_w Delta_(p-1)(G_w)+i_(p+1)(R)-i_(p-1)(R) for the selector. The one-vertex check in the report gives a direct exact contradiction to the submitted signs."
+    },
+    {
+      "claim_id": "C5-U6-STAR-LOWER-REGION",
+      "statement": "For T=K_(1,m), every admissible pair (m,p) in the registered lower region satisfies S(T,p)=m*(binom(m-1,p)-binom(m-1,p-1))<0; the exact parameter window is ceil(3p/2)<=m<=2p-4, nonempty exactly for p>=8.",
+      "scope": "Ordinary stars K_(1,m) with m>=4 and the exact hypotheses x(T)+2<=p and 3p<2alpha(T)+1.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-5/C5-CT-U6/EVIDENCE.json"],
+      "reason": "retained: direct coefficient ratios give the stated first descent, exact guard interval, strict selector for every original leaf, and negative tagged summand. The full star sum is therefore as stated. This is only the star subfamily."
+    },
+    {
+      "claim_id": "C5-U6-PRIMARY-STATUS",
+      "statement": "This route leaves the complete ordinary-tree lower-region favorable-leaf aggregate unresolved.",
+      "scope": "The full target E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE; the source establishes only the star subfamily and valid parts of the marked-shell setup.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-5/C5-CT-U6/EVIDENCE.json"],
+      "reason": "retained: no general bound or positive full-sum counterexample is supplied. The marked-shell sign defect invalidates that reduction as written but does not decide the primary assertion."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CT-U6/REPORT.md",
+  "limitations": [
+    "The source has a decisive sign error in both marked-shell difference formulas; the positive-sign corrected identities do not establish a general aggregate bound.",
+    "The exact star proof applies only when ceil(3p/2)<=m<=2p-4; its lack of p=6,7 examples says nothing about other trees.",
+    "No independent replay or external theorem was needed, and no general conclusion about the primary follows from this review."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-U6-MARKED-SHELL-REDUCTION",
+    "C5-U6-STAR-LOWER-REGION",
+    "C5-U6-PRIMARY-STATUS"
+  ]
+}

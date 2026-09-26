@@ -1,0 +1,19 @@
+namespace E993FirstShell
+
+lemma no_three_cover_of_early_crossing {V : Type u} [Fintype V] [DecidableEq V]
+    (T : SimpleGraph V) [DecidableRel T.Adj] (p : ℕ)
+    (hp : 3 ≤ p) (horder : Fintype.card V = 2*p+2)
+    (hcross : C5LA1.crossingIndex T + 2 ≤ p)
+    (C0 : Finset V) (hC0 : C0.card ≤ 3) :
+    ¬ (∀ x y, T.Adj x y → x ∈ C0 ∨ y ∈ C0) := by
+  intro hcover0
+  obtain ⟨C,hC,_,hcover⟩ :=
+    Erdos993G1.ThirdWide.exists_card_three_cover T C0 hC0 (by omega) hcover0
+  have hr : C5LA1.crossingIndex T ≤ p-2 := by omega
+  have hpos := Erdos993G1.ThirdWide.cover_three_early_pos T C hC hcover
+    p (C5LA1.crossingIndex T) hp horder hr
+  have hneg := crossingIndex_negative T
+  rw [empty_forwardDifference_eq_delta] at hneg
+  omega
+
+end E993FirstShell

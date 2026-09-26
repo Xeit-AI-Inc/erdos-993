@@ -1,0 +1,13 @@
+lemma indepCount_three_incidence [Fintype V] [DecidableEq V]
+    [DecidableRel F.Adj] (hF : F.IsAcyclic) :
+    indepCount F 3 + (Nat.card F.edgeSet : ℤ) * ((Fintype.card V - 2 : ℕ) : ℤ) =
+      ((Fintype.card V).choose 3 : ℤ) +
+        ∑ B ∈ (Finset.univ : Finset V).powersetCard 3,
+          ∑ a ∈ B, (((B.filter (F.Adj a)).card).choose 2 : ℤ) := by
+  rw [indepCount_eq_card_indepSetFinset]
+  exact_mod_cast indepSetFinset_three_incidence F hF
+
+end Erdos993G1
+
+namespace Erdos993G1
+

@@ -1,0 +1,172 @@
+{
+  "method": "Foreground replay of the route's COMPUTE.py using scratch copies of COMPUTE.py and inputs/ordinary_tree_checked.py; the evaluator import path was redirected to the local copy.",
+  "marked_star": {
+    "order": 8,
+    "k": 3,
+    "tau": 1,
+    "W": [
+      1
+    ],
+    "q_k": 15,
+    "q_k_plus_1": 20
+  },
+  "next_order_tree": {
+    "order": 11,
+    "p": 4,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        1,
+        9
+      ],
+      [
+        9,
+        10
+      ]
+    ],
+    "independence_polynomial": [
+      1,
+      11,
+      45,
+      105,
+      161,
+      161,
+      105,
+      43,
+      10,
+      1
+    ],
+    "alpha": 9,
+    "x": 5,
+    "favorable_leaves": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10
+    ],
+    "terms": [
+      {
+        "leaf": 2,
+        "support": 0,
+        "delta_p_tree_minus_leaf": -19,
+        "term": 19
+      },
+      {
+        "leaf": 3,
+        "support": 0,
+        "delta_p_tree_minus_leaf": -19,
+        "term": 19
+      },
+      {
+        "leaf": 4,
+        "support": 0,
+        "delta_p_tree_minus_leaf": -19,
+        "term": 19
+      },
+      {
+        "leaf": 5,
+        "support": 0,
+        "delta_p_tree_minus_leaf": -19,
+        "term": 19
+      },
+      {
+        "leaf": 6,
+        "support": 0,
+        "delta_p_tree_minus_leaf": -19,
+        "term": 19
+      },
+      {
+        "leaf": 7,
+        "support": 0,
+        "delta_p_tree_minus_leaf": -19,
+        "term": 19
+      },
+      {
+        "leaf": 8,
+        "support": 0,
+        "delta_p_tree_minus_leaf": -19,
+        "term": 19
+      },
+      {
+        "leaf": 10,
+        "support": 9,
+        "delta_p_tree_minus_leaf": -14,
+        "term": 14
+      }
+    ],
+    "sum": 147,
+    "eligibility": "ineligible: x+2=7>p=4"
+  },
+  "seeded_prufer_sample": {
+    "seed": 20260925,
+    "draws_per_p": 12000,
+    "results": {
+      "6": {
+        "n": 15,
+        "early_descent_rows": 355,
+        "positive_favorable_term_found": false
+      },
+      "7": {
+        "n": 17,
+        "early_descent_rows": 10727,
+        "positive_favorable_term_found": false
+      },
+      "8": {
+        "n": 19,
+        "early_descent_rows": 11951,
+        "positive_favorable_term_found": false
+      },
+      "9": {
+        "n": 21,
+        "early_descent_rows": 11998,
+        "positive_favorable_term_found": false
+      },
+      "10": {
+        "n": 23,
+        "early_descent_rows": 12000,
+        "positive_favorable_term_found": false
+      }
+    },
+    "limit": "seeded labeled-tree sample only, not exhaustive"
+  },
+  "independent_arithmetic_check": {
+    "p3_n9": "i_2=28, i_1=9, Delta_1=19>0; x>=2 contradicts required x<=1",
+    "p4_n11": "i_2=45; i_3=75+sum_v binom(d(v),2), hence Delta_2=30+sum_v binom(d(v),2)>0 and Delta_0,Delta_1>0; x>=3 contradicts required x<=2"
+  },
+  "review_boundary": "The route's computations do not prove or refute the registered target. The positive tree is outside the first-descent guard. The K1,7 example only shows the marked-shadow inequality needs its tau>=3 premise. The first-shell candidate is not established by this replay."
+}

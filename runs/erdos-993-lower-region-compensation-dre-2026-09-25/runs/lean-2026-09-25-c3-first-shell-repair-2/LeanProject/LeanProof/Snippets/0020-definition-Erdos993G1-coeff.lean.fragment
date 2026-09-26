@@ -1,0 +1,9 @@
+namespace Erdos993G1
+noncomputable section
+def coeff {V : Type u}
+    (F : SimpleGraph V) (k : ℤ) : ℤ :=
+  if 0 ≤ k then Erdos993G1.indepCount F k.toNat else 0
+
+end
+end Erdos993G1
+

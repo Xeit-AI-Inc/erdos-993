@@ -1,0 +1,34 @@
+{
+  "worker_id": "C6-CU-T2",
+  "pin_audit": {
+    "common_pin_count": 237,
+    "case_pin_count": 4,
+    "mismatches": 0,
+    "missing": 0
+  },
+  "replay": {
+    "source": "cycles/cycle-6/C6-T2/cutoff2000_audit.py",
+    "local_copy": "cycles/cycle-6/C6-CU-T2/cutoff2000_replay.py",
+    "command": "/Library/Frameworks/Python.framework/Versions/3.11/bin/python3 cutoff2000_replay.py",
+    "stdout_file": "cycles/cycle-6/C6-CU-T2/cutoff2000_replay_stdout.json",
+    "checks": {
+      "cutoff_m": 2000,
+      "h": 29,
+      "A": "7913/12000",
+      "B": "743/2400",
+      "controlling_decimal_display_only": 0.00003299964639786117,
+      "strictly_below_one": true
+    },
+    "scope": "exact cutoff arithmetic only"
+  },
+  "identity_fence": {
+    "source": "inputs/C6-TRANSITIVE-REFUTED-CLAIMS.json",
+    "exact_claim_key_present": false,
+    "interpretation": "No exact-key refutation record found; nearby mechanism refutations do not settle this restricted scalar family claim."
+  },
+  "limitations": [
+    "No direct retrieval of the cited Gurvits paper in this critique; the finite-order theorem statement and bridge were checked through the pinned common preparation report and route citation.",
+    "No separate literal graph enumeration for arbitrary m.",
+    "No independent regeneration of every mixed-minor coefficient envelope."
+  ]
+}

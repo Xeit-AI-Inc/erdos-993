@@ -1,0 +1,65 @@
+{
+  "allowed_source_files": [
+    {
+      "path": "control/C2-REGISTERED-CLAIM-IDENTITY.json",
+      "sha256": "a02e53c2865e6b60a7ac97605ba806b08c31f032bae8b59a32c37067e2187da4"
+    },
+    {
+      "path": "control-proposals/first-shell-candidate/PROOF.md",
+      "sha256": "f4f051cbb0bc6b18643775b88c0e2a113568af70aea5e6af504018ee0b00dad2"
+    },
+    {
+      "path": "preparation/C2-PREP-SHELL-AUDIT-R2/REPORT.md",
+      "sha256": "cb4b06ea88900a4d3bccc78c95f49a9de10aa75a007dd5741791756eca902ac0"
+    },
+    {
+      "path": "preparation/C2-PREP-SHELL-AUDIT-R2/RESULTS.json",
+      "sha256": "7f81a49186e998db9bd55787f604182f317fe2936b8b45bc4374efcf4aaf65a7"
+    },
+    {
+      "path": "control-proposals/formal-intake/FIRST-SHELL-TWO-PART-ROUTE.md",
+      "sha256": "aa22b40fa85b6e7b0b9c5ae21f7014540e4953160f52af01a25da656a166877b"
+    },
+    {
+      "path": "control-proposals/formal-intake/FirstInteriorMain.lean",
+      "sha256": "8d864da290947d75ac0cb52644b8b5336a19076878fcb11eeed552e6a118d7a9"
+    },
+    {
+      "path": "control-proposals/formal-intake/SOURCE-PIN.json",
+      "sha256": "a5801a2626be4368180598151f62889c6eb064baab3eb1fb2c17a3f2f207c86d"
+    },
+    {
+      "path": "control-proposals/formal-intake/G1FirstWideMain.lean",
+      "sha256": "beabf73950968ea22e71fb7b02a946eb849b7cdce3a0541fa80a59f7bc485d89"
+    },
+    {
+      "path": "control-proposals/formal-intake/G1FirstWide-SOURCE-PIN.json",
+      "sha256": "b99961f3bdc1ee18c629847f3696072bae24e9dedc127ce816f1ffd94adcf541"
+    },
+    {
+      "path": "control-proposals/formal-intake/R25Card5Main.lean",
+      "sha256": "f47ef6b4fcad06580bb97206950c604927753c2c30cd369dbe6a76d4f0409a2d"
+    },
+    {
+      "path": "control-proposals/formal-intake/R25Card5-SOURCE-PIN.json",
+      "sha256": "e604662718b8d1f4c9aea74b30c31a4e9cc75ed7bbadd23427dab6d07ed2e318"
+    },
+    {
+      "path": "control-proposals/formal-intake/R25Card5-PRIOR-VERIFICATION.json",
+      "sha256": "bc66010f6e45f02bc9adda5ad592b2e606f1d036bc4ccd25cef77daf8ba75061"
+    },
+    {
+      "path": "governance/theorem-contract-SKILL.md",
+      "sha256": "583fab70f817541503a9671f9aadf20038df9dd70e4128027912ffb88fe1c2f4"
+    },
+    {
+      "path": "governance/lean-formalization-SKILL.md",
+      "sha256": "c2bb1d81f0a5026673dcd58480f9634eb8e78bf9e6d37e1704c5b9c6a5b78cbd"
+    }
+  ],
+  "model": "gpt-6-sol",
+  "reasoning_effort": "high",
+  "status_authority": "proposed_worker_only",
+  "task": "Prepare a bounded, concrete formalization intake for the independently audited FIRST SHELL proof, anchored exactly to registered E993-LOWER-REGION-FIRST-ORDER-SHELL. Do not build Lean, create a live project, or award status. This is controller preparation outside current C2 search/synthesis inputs. Inspect the pinned source of the exact first-wide graph theorem and the newly found r25 card5 package: it already contains formal binomDelta_floor, binom_shift_floor and binomial monotonicity helpers, despite the standalone registry floor key having only an informal award. Audit actual statements and identify reusable dependency closure, not just names. Compare the ordered-first-mark proof and the single-mark A/B/C decomposition for formal engineering. A useful simplification may avoid minimum-cover and alpha(T)-alpha(H) formalization: prove early descent excludes any cover of T of size<=3; then a cover of H of size<=2 extends by support s, giving the contradiction directly. Treat this as a proposed equivalent proof step to check.\n\nProduce REPORT.md, RESULTS.json, a precise lemma/dependency plan and a proposed exact terminal Lean statement with full definitions/domains/hypotheses explained. The terminal should retain the registered strict alpha guard and full original favorable-leaf aggregate; the stronger pointwise no-alpha conclusion may be an internal lemma, not a newly awarded terminal claim. Identify all duplicate namespaces across the older snapshots. Prefer byte-identical module reuse where feasible; if a deterministic namespace rename or dependency-closed extraction is needed, specify the exact transformation and semantic bridges and preserve the old snapshot. No pretending modified source is byte-identical. Also identify a viable simpler canonical notation if avoiding whole-source collisions, with fidelity obligations explicit. Check the cover-three bound at EVERY rank 0..p-2, all negative Catalan endpoints, and graph/tree component roots. Do not silently replace the theorem by a conditional version. End with clear remaining implementation obstacles and no new proof award.",
+  "worker_id": "C2-PREP-SHELL-FORMAL-INTAKE"
+}

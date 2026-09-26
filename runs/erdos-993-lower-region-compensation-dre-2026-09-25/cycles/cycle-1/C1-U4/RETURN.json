@@ -1,0 +1,26 @@
+{
+  "worker_id": "C1-U4",
+  "cycle": 1,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C1-U4-1",
+      "statement": "For each original leaf tag v, writing I(T-v,z)=I(H_v,z)+zI(R_v,z) and q_j=i_j(H_v)-i_j(R_v), the favorable selector is q_(p+1)-q_p+r_(p+1)-r_(p-1)<0 while the selected aggregate term is q_p-q_(p-1). The resulting coefficient-operator mismatch identifies the additional selector-aware global inequality needed by a generating-function route; the claw-free independence-polynomial real-rootedness theorem does not provide it for arbitrary trees.",
+      "scope": "Exact local decomposition for every original leaf of a finite ordinary tree; theorem-hypothesis audit for the lower-region target. This is a partial reformulation and obstruction to a blanket spectral argument, not a proof or refutation of either registered identity.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-U4/REPORT.md",
+        "cycles/cycle-1/C1-U4/evidence/chudnovsky-seymour.md"
+      ],
+      "reason": "The decomposition follows directly by splitting independent sets of T-v according to whether they contain s_v. It exposes that selector and summand use different coefficient differences. The cited theorem requires claw-freeness and concerns individual independence polynomials; arbitrary target trees can contain claws and no selector-aware compatibility or global budget is established here."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-U4/REPORT.md",
+  "limitations": [
+    "No eligible ordinary-tree counterexample or proof of the lower-region aggregate was produced.",
+    "The real-rootedness theorem is inapplicable to arbitrary trees with induced claws, and even a claw-free special case leaves the selector-aware aggregate comparison unproved.",
+    "The exact global D+C budget in the supplied tagged-incidence identity remains open; no status is proposed for the auxiliary identity."
+  ],
+  "status_authority": "proposed_worker_only"
+}

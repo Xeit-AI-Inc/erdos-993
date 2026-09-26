@@ -1,0 +1,211 @@
+{
+  "worker_id": "C2-PREP-SWITCH-IDENTITY",
+  "authority": "proposed_worker_only",
+  "evidence_grade": "semantic_proof_plus_bounded_independent_arc_and_polynomial_checks",
+  "formal_award": false,
+  "universal_claim_proved": false,
+  "registry_changed": false,
+  "source_hashes_verified": {
+    "control-proposals/SWITCH-RELATION-SEMANTIC-DISTINCTION.md": "7d20526b522f8f2ced6ceaf1b2f36cbc8dcaa1c3f8041e6c74b942cdb698997c",
+    "inputs/r23b-relation/SEMANTIC-CONTRACT.md": "024410566405f25007f36d3ab3995e2ac9758715204129943045e2b4c8000b74",
+    "inputs/r29-refresh/CLAIM-IDENTITY.json": "f5089e092692916c94897f27ed74cb55ac8047dc09beccff4444b03686445cae",
+    "inputs/TRANSITIVE-REFUTED-CLAIMS.json": "8a9cce75a7acdf56fe937d5735301a5819be606324db5f1fb9e4e00eede3608d",
+    "control/C2-GLOBAL-WEIGHT-COORDINATES.md": "37b3cd45eb038af04b0fb93cb7387eda084011975d633f78407459a6273e9af6",
+    "preparation/C2-PREP-ORBIT-AUDIT/REPORT.md": "6f884ed866ef50fc406431f27ee776d003a8d9e3faedf9cb493fdb9adbbb5b9b",
+    "preparation/C2-PREP-P6-SWITCH-AUDIT/REPORT.md": "f1c5ffb80d5ce7e4e460e0892c3c6effefa6a7cc4b12a45d468c7effe55ffa72",
+    "instruments/p6-switch-flow/RESULTS.json": "615394758aa1bbceb102b20de1eada3800231ddc81bc4274b533a8125812a868",
+    "instruments/cb-switch-cut/RESULTS.json": "873cf9229923153d7626c6d721ab40b8ace8488b51343c66a00b6cfb0449d5d5",
+    "instruments/cb-switch-cut/run.py": "94ced04667b1234844f13a681ec6a8a5cbd1ced813526fe856d4f9692b8a9d53",
+    "control-proposals/LOCAL-SWITCH-NEXT-DIRECTIONS.md": "2360a86a1cf98fb81217e2d39bd7ee52f5d9a8a9c70b06ef611ec374ba92f368"
+  },
+  "recommended_statement": "For every finite ordinary tree T, with x(T) the first strict descent of its zero-extended independence counts and alpha(T) its independence number, and every natural p satisfying x(T)+2 <= p and 3p < 2alpha(T)+1, fix F={original leaves v: Delta_p(T-v)<0}. Let w_F(B) count v in F intersect B for which N_T(s_v) intersects B\\{v}. Between independent (p+1)-sets B and p-sets D, join all w_F(B) upper clones to all w_F(D) lower clones exactly when D=B\\{q} for some q in B, or D=(B\\(N_T(s) intersect B)) union {s} for s not in B with |N_T(s) intersect B|=2. The resulting graph has a matching saturating every upper clone.",
+  "scope": {
+    "domain": "finite ordinary trees",
+    "guards": [
+      "x(T)+2 <= p",
+      "3p < 2alpha(T)+1"
+    ],
+    "selector": "original leaves v with Delta_p(T-v)<0, fixed on both ranks",
+    "weights": "original support incidence count with tag multiplicity",
+    "relation": [
+      "all-clone deletion",
+      "all-clone two-for-one switch"
+    ],
+    "governed_rtree_transfer": false
+  },
+  "semantic_findings": {
+    "tag_to_clone_bijection": true,
+    "old_edges_project_to_deletions": true,
+    "anonymous_deletion_superrelation_of_old": true,
+    "strict_superrelation_example": {
+      "upper_set": [
+        1,
+        3,
+        5,
+        8,
+        9,
+        10,
+        11
+      ],
+      "upper_clone_tag": 8,
+      "lower_set": [
+        3,
+        5,
+        8,
+        9,
+        10,
+        11
+      ],
+      "lower_clone_tag": 9,
+      "reason": "old Delete keeps tag 8; old Retag to 9 lands at B minus {8}"
+    },
+    "switch_is_genuinely_new": true,
+    "clone_saturation_equivalent_to_integral_weighted_flow": true,
+    "aggregate_identity": "S(T,p)=sum_{|B|=p+1}w_F(B)-sum_{|D|=p}w_F(D)",
+    "saturation_implies_nonpositive_ordinary_aggregate": true,
+    "converse_not_established": true
+  },
+  "literal_positive_switch_arc": {
+    "artifact_row_index": 0,
+    "order": 14,
+    "p": 6,
+    "x": 4,
+    "alpha": 9,
+    "favorable_leaves": [
+      6,
+      8,
+      9,
+      10,
+      12,
+      13
+    ],
+    "upper_mask": 3882,
+    "upper_vertices": [
+      1,
+      3,
+      5,
+      8,
+      9,
+      10,
+      11
+    ],
+    "lower_mask": 1833,
+    "lower_vertices": [
+      0,
+      3,
+      5,
+      8,
+      9,
+      10
+    ],
+    "inserted": 0,
+    "removed": [
+      1,
+      11
+    ],
+    "inserted_neighbors_in_upper": [
+      1,
+      11
+    ],
+    "upper_weight": 3,
+    "lower_weight": 3,
+    "saved_positive_flow": 3,
+    "independent_check_passed": true
+  },
+  "old_T22_cut": {
+    "order": 91,
+    "p": 34,
+    "upper_weight": "1020660578375268831042",
+    "lower_bound_or_neighborhood_capacity": "1006434057637648542672",
+    "deficit": "14226520737620288370",
+    "provenance": "already refuted literal Delete/Retag; same numerical anonymous deletion cut; supplied orbit audit reports switch saturation",
+    "new_counterexample": false
+  },
+  "p6_supplied_audit": {
+    "eligible_cases": 241,
+    "reported_saturated_cases": 241,
+    "this_seat_rechecked_all_flows": false
+  },
+  "cb_8_92_cut": {
+    "order": 1567,
+    "p": 492,
+    "x": 490,
+    "alpha": 829,
+    "aggregate_sign": "negative",
+    "A_coefficients": [
+      1,
+      8,
+      56,
+      280,
+      840,
+      1512,
+      1624,
+      968,
+      248
+    ],
+    "upper_weight": "4101482524282706536636732941442225663895404582752087147205350593173831894688650981703735987466437564095657211831845605578873243884575043808229992143585377409693761649755306262928515643924423024603762327557519728831495266659489581339781121218559831439048800765373237966009669222210501351347582402376521510327775903765196607880512985222042615808",
+    "neighbor_capacity_envelope": "73447368409458919912574727056655187171711099598240108532544667368639372962140273282952753519048289920558158809566654479728379014600157710807230272937568151647281707524958904271401673224657740933575457644122281582170625142088430688284700888203885164522798682948361480675939536758753257763263122182061240153082762924556471128140615421341483401216",
+    "deficit_lower_bound": "-69345885885176213375937994115212961507815695015488021385339316775465541067451622301249017531581852356462501597734808874149505770715582666999000280793982774237587945875203598008473157580733317908971695316564761853339129875428941106944919766985325333083749882182988242709929867536542756411915539779684718642754987020791274520260102436119440785408",
+    "bound_sign": "negative",
+    "arithmetic_independently_recomputed": true,
+    "switch_feasibility": "undecided",
+    "reason": "envelope is a superset of the actual positive-weight neighborhood"
+  },
+  "identity_review": [
+    {
+      "claim_key": "E993-R23-LITERAL-ACTUAL-TREE-FIXED-GAMMA-HALL",
+      "status": "REFUTED",
+      "relation": "not_same_claim",
+      "reason": "old tagged Delete/Retag graph; new graph enlarges deletion fibers and adds non-deletion switches"
+    },
+    {
+      "claim_key": "E993-R23-LITERAL-DELETE-ONLY-HALL",
+      "status": "REFUTED",
+      "relation": "not_same_claim",
+      "reason": "old tagged deletion only; new graph has all clone pairs and switches"
+    },
+    {
+      "claim_key": "E993-R23-TAG-CLOSED-CUT-HALL",
+      "status": "REFUTED",
+      "relation": "not_same_claim",
+      "reason": "old tagged relation and restricted cut family; new assertion quantifies all cuts of changed relation"
+    },
+    {
+      "claim_key": "E993-R23-HOT-TAG-SINGLETON-HALL",
+      "status": "REFUTED",
+      "relation": "not_same_claim",
+      "reason": "old complete singleton-tag cut; new assertion uses anonymous clones and added edges"
+    },
+    {
+      "claim_key": "E993-R23-ZERO-RETAG-EXPORT-IMPLIES-NONPOSITIVE-TAG",
+      "status": "REFUTED",
+      "relation": "not_same_claim",
+      "reason": "old local-tag sign shortcut; new assertion is global clone saturation"
+    },
+    {
+      "claim_key": "E993-C3-COMPLETE-TAG-DEFICIENCY-EQUALS-CONTRIBUTION",
+      "status": "REFUTED",
+      "relation": "not_same_claim",
+      "reason": "old single-tag deficiency equality; no such equality is asserted"
+    },
+    {
+      "claim_key": "E993-R19-FIXED-GAMMA-HALL",
+      "status": "OPEN",
+      "relation": "not_same_claim",
+      "reason": "governed RTree old relation; ordinary-to-governed transfer unresolved"
+    },
+    {
+      "claim_key": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "status": "OPEN",
+      "relation": "stronger_than_target",
+      "reason": "clone saturation implies aggregate sign by total capacity, but aggregate sign does not imply all Hall cuts"
+    }
+  ],
+  "supplied_counterexample_verdict": "No supplied certificate refutes the changed relation: T22 has reported switch saturation and CB(8,92) has only an inconclusive negative deficit lower bound. This does not assert universal truth or nonexistence of counterexamples.",
+  "unresolved_obligations": [
+    "prove or refute exact universal weighted Hall statement",
+    "decide CB(8,92) switch feasibility using exact neighborhood or flow",
+    "compute aggregate on same row before claiming aggregate refutation from any new Hall failure",
+    "keep governed RTree adequacy and old registered statuses separate"
+  ]
+}

@@ -1,0 +1,10 @@
+lemma binomDelta_central (j : ℕ) :
+    ((2*j).choose (j+1) : ℤ) - (2*j).choose j = -(catalan j : ℤ) := by
+  have hn : 2*j-j=j := by omega
+  have he := Nat.choose_succ_right_eq (2*j) j
+  rw [hn] at he
+  have he' : ((2*j).choose (j+1) : ℤ) * (j+1) = (2*j).choose j * (j : ℤ) := by exact_mod_cast he
+  have hc : ((j:ℤ)+1) * catalan j = (2*j).choose j := by
+    exact_mod_cast succ_mul_catalan_eq_centralBinom j
+  apply (mul_right_cancel₀ (show (j : ℤ)+1 ≠ 0 by omega))
+  nlinarith

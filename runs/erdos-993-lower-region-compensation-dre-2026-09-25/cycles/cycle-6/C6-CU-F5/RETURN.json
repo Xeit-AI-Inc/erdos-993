@@ -1,0 +1,30 @@
+{
+  "worker_id": "C6-CU-F5",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C6-F5-HETEROGENEOUS-DIRECT-FLOW",
+      "statement": "For the explicitly encoded heterogeneous trees with branch profiles (2,3,4) at p=7 and (2,2,4,3) at p=8, the exact weighted deletion-plus-exactly-two-neighbor-insertion network saturates all upper supply: respectively 1563/1563 and 8751/8751. Their full selected aggregates are respectively -1218 and -5434.",
+      "scope": "Only the two labeled trees, their computed eligible ranks, and the finite relation networks specified in the source report and EVIDENCE.json.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CU-F5/EVIDENCE.json",
+        "cycles/cycle-6/C6-CU-F5/direct_audit.py",
+        "cycles/cycle-6/C6-CU-F5/verify_certificate.py"
+      ],
+      "reason": "retained — the edge lists define the stated trees; replay confirms the independence vectors, first descents, strict eligibility guards, every original-leaf selector value, complete distinct-tag sums, and flow totals. A separate labeled-set checker verifies every emitted positive flow arc is a permitted deletion or exact-two-neighbor switch and checks endpoint ranks, capacities, and conservation. These exact checks support the finite claim only, not a universal theorem."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CU-F5/REPORT.md",
+  "limitations": [
+    "The evidence is bounded to the two listed trees and their finite networks; it proves no statement for other heterogeneous profiles or arbitrary ordinary trees.",
+    "The direct network computation does not audit or establish the separate homogeneous T_m orbit-lifting argument, which is not used by this claim.",
+    "The negative sums and saturated flows are not a refutation or proof of the primary universal aggregate."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-F5-HETEROGENEOUS-DIRECT-FLOW"
+  ]
+}

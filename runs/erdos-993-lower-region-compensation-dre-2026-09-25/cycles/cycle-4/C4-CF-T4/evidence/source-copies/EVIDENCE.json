@@ -1,0 +1,35 @@
+{
+  "result_type": "conditional_operator_reduction",
+  "field": "Q",
+  "scope": {
+    "graph": "finite ordinary tree T",
+    "selector": "F(T,p)={original leaf v: Delta_p(T-v)<0}, fixed throughout",
+    "guards": [
+      "x(T)+2 <= p",
+      "3p < 2*alpha(T)+1"
+    ],
+    "rank": "k=p-1"
+  },
+  "definitions": {
+    "H_v": "T-{v,s_v}",
+    "W_v": "N_T(s_v)\\{v}",
+    "R_v": "H_v-W_v",
+    "q_v_j": "i_j(H_v)-i_j(R_v) = number of independent j-sets of H_v meeting W_v",
+    "K_j": "Q-vector space on pairs (v,A) with v in F, A independent in H_v, |A|=j, A intersects W_v"
+  },
+  "proved_identity": "dim(K_j)=sum_{v in F} q_v(j); S(T,p)=dim(K_{k+1})-dim(K_k)",
+  "operator": {
+    "name": "L cross-tag deletion",
+    "domain": "K_{k+1}",
+    "codomain": "K_k",
+    "tag_order": "fixed total order on original leaves",
+    "definition": "For each (v,A), and each u in A, put B=A\\{u}. If B meets W_v tag it by v; otherwise tag it by the least w in F with B independent in H_w and B meeting W_w; omit term if no such w. Sum the resulting (tag,B) with simplicial deletion sign (-1)^(position(u,A)-1). Extend linearly over Q.",
+    "sufficient_missing_property": "L injective for every eligible T,p",
+    "stronger_matching_certificate": "A distinct displayed output tagged face for every input tagged face, with no output repeated, gives a full-rank minor."
+  },
+  "limitations": [
+    "No proof that L is injective.",
+    "Noninjectivity of L would not imply S(T,p)>0.",
+    "No finite computational horizon or universal conclusion is claimed."
+  ]
+}

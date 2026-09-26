@@ -1,0 +1,15 @@
+{
+  "source_claim_id": "C3-T4-ODD-SHELL-REDUCTION",
+  "disposition": "retained_narrowed",
+  "revised_statement": "At parent order n=2p+3 with k=p-1, fix a leaf v, H=T-{v,s_v}, and W=N_T(s_v)\\{v}. If W contains a nonisolated vertex, order a nonisolated mark first in the first-mark partition. Then every residual J_i has order at most 2k+1; order 2k+1 occurs only at i=1 with degree 1, and order 2k occurs only at (i,degree)=(1,2) or (2,1). Residuals of order at most 2k-1 satisfy i_k(J_i)<=i_(k-1)(J_i). The matching of k edges plus one isolate has exact difference 2^(k-2)(4-binomial(k,2)). If W has no nonisolated vertex in this tree specialization, H is edgeless with W=V(H), and this leaf is not strictly favorable at this shell.",
+  "decisive_correction": "The source does not require a nonisolated first mark. If w_1 is isolated, |N_H[w_1]|=1 and |J_1|=2k+2, so its asserted universal bound |J_i|<=2k+1 fails. In the tree specialization, placing a nonisolated mark first repairs the classification whenever one exists; the all-isolated case is edgeless and excluded from the strict favorable selector at n=2p+3.",
+  "verified_steps": [
+    "W is an independent set because two neighbors of the same support cannot be adjacent in an ordinary tree.",
+    "For independent marks and fixed order, |N_H[w_i] union {w_1,...,w_(i-1)}|=deg_H(w_i)+i.",
+    "With a nonisolated first mark, solving deg_H(w_i)+i=2 or 3 gives exactly the listed 2k+1 and 2k cases.",
+    "For |J|<=2k-1, k*i_k(J)<= (|V(J)|-k+1)*i_(k-1)(J)<=k*i_(k-1)(J).",
+    "The target summand equals q_(k+1)-q_k because q_j=i_j(H)-i_j(H-W), k=p-1.",
+    "(1+2z)^k(1+z) yields i_k-i_(k-1)=2^(k-2)(4-binomial(k,2)); values at k=1,...,5 are 2,3,2,-8,-48."
+  ],
+  "scope_boundary": "A narrowed shell decomposition and exact graph-subclass arithmetic only; no boundary sign theorem, guarded realization, global compensation, or complete selected-sum conclusion."
+}

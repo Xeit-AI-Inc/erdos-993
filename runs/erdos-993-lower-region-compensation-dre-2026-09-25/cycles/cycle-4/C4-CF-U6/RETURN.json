@@ -1,0 +1,24 @@
+{
+  "worker_id": "C4-CF-U6",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C4-U6-first-shell-bridge",
+      "statement": "For each original leaf v, the contract-level count definitions imply the exact summand identity Delta_(p-1)(T-{v,s_v})-Delta_(p-1)(T-N_T[s_v])=q_v(p)-q_v(p-1), where q_v(j) counts independent j-sets of T-{v,s_v} meeting N_T(s_v)\\{v}. The U6 report's stated first-shell exact-order argument, if its cited lemma has the reported order hypothesis, is confined to |V(T)|=2p+2 and by itself supplies no proof or refutation of the arbitrary-order primary aggregate. The underlying frozen-interface correspondence and first-shell proof are not independently verified in this critique.",
+      "scope": "Contract-level leaf count identity and conditional scope assessment of the reported first-shell route; no verdict on the primary lower-region aggregate.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-4/C4-CF-U6/EVIDENCE.json"],
+      "reason": "retained_narrowed: direct partition of independent sets in H into those meeting W and those avoiding W verifies q_j=i_j(H)-i_j(R), and subtraction at consecutive ranks gives the stated summand identity. The exact-order calculation is valid conditional on the first-shell premise, but the cited Lean interface, sharp lemma hypothesis, and informal proof are not among the case-listed worker files and were not independently checked. Neither identity nor scope limitation proves the global sign."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CF-U6/REPORT.md",
+  "limitations": [
+    "The underlying frozen Lean file, theorem contract, informal first-shell audit, and preflight receipt cited by the source worker were not case-listed worker files and were not opened.",
+    "No Lean build or literature check was performed; the first-shell proof itself and terminal verification gates were not audited.",
+    "The critique establishes a contract-level identity and conditional order arithmetic only; the primary aggregate remains unresolved."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": ["C4-U6-first-shell-bridge"]
+}

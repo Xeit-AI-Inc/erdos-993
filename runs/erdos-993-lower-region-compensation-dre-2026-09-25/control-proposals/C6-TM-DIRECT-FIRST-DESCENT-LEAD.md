@@ -1,0 +1,5 @@
+# Direct first-descent bound for the homogeneous family
+
+Controller candidate for independent Cycle6 review, not a status award. Set B=1+4z+3z^2+z^3 and G=1+2z. Coefficientwise B′ >= (2/3)(3B-zB′): the two sides have coefficient vectors (4,6,3) and (2,16/3,2). Similarly G′ >= (2/3)(G-zG′). The product rule gives M′ >= (2/3)((3m+1)M-zM′) for M=GB^m. Thus (j+1)M_(j+1) >= (2/3)(3m+1-j)M_j. For m>=2 and 0<=j<=m, the ratio is at least (4m+2)/(3m+3)>1. The perturbation z(1+z)^(3m+1) is also strictly increasing through these indices (at j=0 compare0 and1; at j>=1 compare binom(3m+1,j) and binom(3m+1,j-1)). Therefore Delta_j P>0 for every0<=j<=m, and x>=m+1 directly for m>=2. The m=1 case is finite and has no eligible rank.
+
+This removes the R27 forest-bound dependency from this family's central crossing bridge. It does not prove any subsequent mixed minor, selector, or aggregate inequality; those remain the separately checked coefficient argument. It is not a statement about general trees or heterogeneous arities.

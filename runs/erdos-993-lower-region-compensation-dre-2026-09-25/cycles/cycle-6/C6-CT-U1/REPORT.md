@@ -1,0 +1,29 @@
+# C6-CT-U1 — critique of the U1 Lean decomposition
+
+## Disposition
+
+**retained_narrowed** for `C6-U1-TM-LEAN-DECOMPOSITION`, as a useful proposed obligation map for the exact ordinary `T_m` family theorem. This review does not establish a Lean declaration graph, prove the family result, or resolve the arbitrary-tree lower-region aggregate. The source return accurately identifies itself as a plan and reports no Lean run or new proof.
+
+The route/case and common manifests were hash-checked: all 3 case pins and 237 common pins matched. The only source worker case was `C6-U1`; its case has one claim ID, and this review covers exactly that ID. I read the protocol and required common `read_first` inputs, the critic brief, and the relevant paths named by the source map, including both central-margin candidates, the direct-descent lead, the current family identity, the frozen C5 definitions, the R27 contract/receipt, and the C5 Lean readiness materials.
+
+## Mathematical and scope audit
+
+The report keeps the scopes separate correctly. The current family identity is the all-`m` (`m>=1`) ordinary `T_m` aggregate with its exact original-leaf selector and two tagged leaf orbits. It is recorded as computer-assisted proof, with no family Lean award. It does not imply the primary arbitrary-tree assertion. The report also correctly notes that `C5LA1.aggregate` uses natural subtraction in `p-1`; the eligibility condition `x+2<=p` supplies `p>=2`, but a formal contract still needs to bridge the natural-rank encoding to the intended integer/zero-extended ranks.
+
+The pinned `inputs/ordinary_tree_checked.py:t_family` constructor confirms realizability of the described family: a two-edge marked arm and `m` root-adjacent `K_{1,3}` arms, on `4m+3` vertices. The graph/count fidelity obligation is real, not cosmetic: the frozen definitions count deletions in the original graph, and the private leaves sharing a support remain separate summands. A proof of the polynomial identity `Q=zR` must preserve the multiplier `3m` and identify both original-leaf orbits before replacing the fixed-selector sum by an all-leaf polynomial. The report calls these out.
+
+The proposed direct descent route is arithmetically consistent with the pinned lead. For `B=1+4z+3z^2+z^3`, coefficientwise `B' >= (2/3)(3B-zB')`; the corresponding inequality for `G=1+2z` yields the stated coefficient-ratio bound for `G B^m`. For `m>=2`, this gives strict increase through ranks `0..m`; the perturbation `z(1+z)^(3m+1)` is strictly increasing there too. Thus `x>=m+1` follows for this family, while `m=1` is separately handled. The report appropriately treats this as a formalization obligation, not an already established kernel lemma. The strict region gives `p<=2m+1`; combined with descent eligibility and the lower bound it confines required ranks to the central interval used by the candidate.
+
+The remaining analytic outline tracks the pinned candidate: finite-order ULC with the order-4 condition for `B` (not order 3), convolution closure, mixed-minor identities with zero-extension boundaries, perturbation estimates, a separate exact finite base for `m=3..999`, and propagation to both selectors and the final full sum. The reported finite-base dimensions are internally consistent: each `m` has `m+3` ranks, three sequences are checked, giving `1,507,464` margins of each type. The Python table is not a kernel certificate, as the source says.
+
+The central mixed-minor and LC arguments can transfer the strict descent of `P` to both deletion polynomials and `R` only after their coefficient positivity, determinant orientation, rank boundaries, and graph-to-polynomial identities are formalized. The source lists these missing bridges rather than treating the formula `S=R_(p-1)-R_(p-2)<0` as already proved. The R27 order theorem is available in the pinned source contract and receipt; the new direct-descent lead is an alternative family-specific route. Neither source makes the required family graph/index bridge automatic.
+
+## Limits of the proposed dependency graph
+
+The high-level order is sound and useful, but it is not yet a declaration-level DAG. It leaves interfaces implicit: in particular the precise finite-order ULC hypotheses and convolution theorem, coefficient positivity/interval support, the polynomial coefficient recurrence and its relation to each displayed factorization, natural versus integer index conversion, and the exact theorem hypotheses feeding `tmSelectorPropagation`. It also labels the finite base as “kernel-checked” in the node description, which is a future requirement rather than evidence already supplied; the surrounding report clarifies this accurately. The graph/count and central arithmetic packages need not be ordered as tightly as drawn, but that is an efficiency issue rather than a mathematical defect.
+
+The two “principal feasibility gates” agree with the pinned readiness assessment: formal ULC/convolution and a kernel-acceptable finite base. They are not the only blockers, and the source correctly enumerates the other outstanding algebra, fidelity, selector, build, and audit obligations. Its blocker statement is properly limited to reviewed artifacts; I found no unsupported assertion that an equivalent result is unavailable globally.
+
+## Usefulness and evidence grade
+
+This is a useful contract/dependency decomposition for someone implementing a family proof: it identifies the graph-to-polynomial interface, a route to avoid R27 for the family descent bound, the two principal scale gates, and the exact final selector/sum closure. It provides no independent replay of the finite arithmetic, no theorem proof, and no formal certificate. I found no mathematical counterexample to this proposed plan; the narrowing is about its status as an audited roadmap rather than a completed or verified declaration graph.

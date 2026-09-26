@@ -1,0 +1,6 @@
+namespace Erdos993G1
+def deleteVerts {V : Type u}
+    (F : SimpleGraph V) (S : Set V) : SimpleGraph {w : V // w ∉ S} :=
+  F.induce Sᶜ
+end Erdos993G1
+

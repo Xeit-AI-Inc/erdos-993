@@ -1,0 +1,247 @@
+{
+  "method": "generic induced-subgraph recurrence P(G)=P(G-v)+zP(G-N[v]) with memoized vertex masks",
+  "vertices": 24,
+  "edges": 23,
+  "connected": true,
+  "tree": true,
+  "leaves": [
+    2,
+    3,
+    5,
+    6,
+    7,
+    9,
+    10,
+    11,
+    13,
+    14,
+    15,
+    17,
+    18,
+    19,
+    21,
+    22,
+    23
+  ],
+  "leaf_supports": {
+    "2": 1,
+    "3": 1,
+    "5": 4,
+    "6": 4,
+    "7": 4,
+    "9": 8,
+    "10": 8,
+    "11": 8,
+    "13": 12,
+    "14": 12,
+    "15": 12,
+    "17": 16,
+    "18": 16,
+    "19": 16,
+    "21": 20,
+    "22": 20,
+    "23": 20
+  },
+  "selectors": {
+    "2": {
+      "support": 1,
+      "Delta_p_T_minus_v": -13234,
+      "selected": true
+    },
+    "3": {
+      "support": 1,
+      "Delta_p_T_minus_v": -13234,
+      "selected": true
+    },
+    "5": {
+      "support": 4,
+      "Delta_p_T_minus_v": -12357,
+      "selected": true
+    },
+    "6": {
+      "support": 4,
+      "Delta_p_T_minus_v": -12357,
+      "selected": true
+    },
+    "7": {
+      "support": 4,
+      "Delta_p_T_minus_v": -12357,
+      "selected": true
+    },
+    "9": {
+      "support": 8,
+      "Delta_p_T_minus_v": -12357,
+      "selected": true
+    },
+    "10": {
+      "support": 8,
+      "Delta_p_T_minus_v": -12357,
+      "selected": true
+    },
+    "11": {
+      "support": 8,
+      "Delta_p_T_minus_v": -12357,
+      "selected": true
+    },
+    "13": {
+      "support": 12,
+      "Delta_p_T_minus_v": -12357,
+      "selected": true
+    },
+    "14": {
+      "support": 12,
+      "Delta_p_T_minus_v": -12357,
+      "selected": true
+    },
+    "15": {
+      "support": 12,
+      "Delta_p_T_minus_v": -12357,
+      "selected": true
+    },
+    "17": {
+      "support": 16,
+      "Delta_p_T_minus_v": -12357,
+      "selected": true
+    },
+    "18": {
+      "support": 16,
+      "Delta_p_T_minus_v": -12357,
+      "selected": true
+    },
+    "19": {
+      "support": 16,
+      "Delta_p_T_minus_v": -12357,
+      "selected": true
+    },
+    "21": {
+      "support": 20,
+      "Delta_p_T_minus_v": -12357,
+      "selected": true
+    },
+    "22": {
+      "support": 20,
+      "Delta_p_T_minus_v": -12357,
+      "selected": true
+    },
+    "23": {
+      "support": 20,
+      "Delta_p_T_minus_v": -12357,
+      "selected": true
+    }
+  },
+  "P": [
+    1,
+    24,
+    253,
+    1566,
+    6400,
+    18419,
+    38970,
+    62650,
+    78593,
+    78515,
+    63348,
+    41582,
+    22199,
+    9548,
+    3240,
+    836,
+    154,
+    18,
+    1
+  ],
+  "alpha": 18,
+  "x": 8,
+  "Delta_8": -78,
+  "alpha_guard": true,
+  "x_guard": true,
+  "selected_local_terms": {
+    "2": {
+      "Delta_p_minus_1_H": -8532,
+      "Delta_p_minus_1_R": -3657,
+      "G": -4875
+    },
+    "3": {
+      "Delta_p_minus_1_H": -8532,
+      "Delta_p_minus_1_R": -3657,
+      "G": -4875
+    },
+    "5": {
+      "Delta_p_minus_1_H": -9409,
+      "Delta_p_minus_1_R": -1872,
+      "G": -7537
+    },
+    "6": {
+      "Delta_p_minus_1_H": -9409,
+      "Delta_p_minus_1_R": -1872,
+      "G": -7537
+    },
+    "7": {
+      "Delta_p_minus_1_H": -9409,
+      "Delta_p_minus_1_R": -1872,
+      "G": -7537
+    },
+    "9": {
+      "Delta_p_minus_1_H": -9409,
+      "Delta_p_minus_1_R": -1872,
+      "G": -7537
+    },
+    "10": {
+      "Delta_p_minus_1_H": -9409,
+      "Delta_p_minus_1_R": -1872,
+      "G": -7537
+    },
+    "11": {
+      "Delta_p_minus_1_H": -9409,
+      "Delta_p_minus_1_R": -1872,
+      "G": -7537
+    },
+    "13": {
+      "Delta_p_minus_1_H": -9409,
+      "Delta_p_minus_1_R": -1872,
+      "G": -7537
+    },
+    "14": {
+      "Delta_p_minus_1_H": -9409,
+      "Delta_p_minus_1_R": -1872,
+      "G": -7537
+    },
+    "15": {
+      "Delta_p_minus_1_H": -9409,
+      "Delta_p_minus_1_R": -1872,
+      "G": -7537
+    },
+    "17": {
+      "Delta_p_minus_1_H": -9409,
+      "Delta_p_minus_1_R": -1872,
+      "G": -7537
+    },
+    "18": {
+      "Delta_p_minus_1_H": -9409,
+      "Delta_p_minus_1_R": -1872,
+      "G": -7537
+    },
+    "19": {
+      "Delta_p_minus_1_H": -9409,
+      "Delta_p_minus_1_R": -1872,
+      "G": -7537
+    },
+    "21": {
+      "Delta_p_minus_1_H": -9409,
+      "Delta_p_minus_1_R": -1872,
+      "G": -7537
+    },
+    "22": {
+      "Delta_p_minus_1_H": -9409,
+      "Delta_p_minus_1_R": -1872,
+      "G": -7537
+    },
+    "23": {
+      "Delta_p_minus_1_H": -9409,
+      "Delta_p_minus_1_R": -1872,
+      "G": -7537
+    }
+  },
+  "S": -122805,
+  "tau_certificate": "six centers cover all edges; six pairwise vertex-disjoint matching edges give tau=6"
+}

@@ -1,0 +1,7 @@
+# Cycle1 governed Lean selection gate
+
+The neutral synthesis nominates the registered bipartite tagged-incidence deficit identity. Its exact statement has independent direct proofs and cross-critiques, including non-tight h, k=h, empty marked families, actual addability and the once-per-multiply-marked-upper-set correction. The lower-region primary has neither a complete proof nor a qualifying counterexample.
+
+Controller centrality decision: carry the identity as an adjudicated informal proof and a possible formal dependency, but defer opening a Lean package for it. Formalizing only the identity would not discharge any part of the positive lower-region deficit budget; that budget is still equivalent to the target. Cycle2 preparation has registered a distinct order-band candidate with a direct consequence for the counterexample region, so formalization priority moves to a graph-level order-band contract if its independent reviews pass. This is a deliberate candidate-selection decision, not a failed build or a kernel result.
+
+No Lean build, kernel receipt, fidelity receipt or formal award is claimed in Cycle1. The identity's master key remains OPEN pending a governed award; mathematical evidence is preserved as an adjudicated informal derivation. No ordinary/global/governed claim receives a transferred status. The standing preflight confirms the pinned Lean and read-only Mathlib infrastructure, but infrastructure checks are not theorem verification.

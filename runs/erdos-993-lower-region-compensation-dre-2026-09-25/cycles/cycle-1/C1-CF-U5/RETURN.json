@@ -1,0 +1,28 @@
+{
+  "worker_id": "C1-CF-U5",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C1-U5-1",
+      "statement": "The support-core polynomial and rooted branch recursion exactly evaluate the selector and local leaf summands on ordinary trees of order at least three, retaining distinct same-support leaf tags; for every eligible ordinary star K_(1,m), the complete aggregate is strictly negative.",
+      "scope": "Exact representation for finite ordinary trees of order at least three. Star sign theorem for finite ordinary stars at ranks satisfying x(K_(1,m))+2<=p and 3p<2m+1. No global sign assertion for general decorated cores.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CF-U5/REPLAY.md"
+      ],
+      "reason": "retained: the independent-set partitions give the stated core and branch formulas, including isolated pendant leaves after deleting a support; replacing its multiplicity by m_s-1 evaluates T-v and shows all same-support tags share selector status while remaining distinct summands. For stars the exact polynomial and binomial-ratio signs establish x, eligibility consequences, favorable leaves, and strictly negative summands. The finite K_(1,12) replay matches. The recurrence contains no proved comparison of the global selector coefficient with the weighted local terms, so the primary remains unresolved outside the star subfamily."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CF-U5/REPORT.md",
+  "limitations": [
+    "No sign comparison follows from the support-core recurrence for arbitrary branching cores; the registered lower-region aggregate remains unresolved on that scope.",
+    "The independent coefficient loop checked only star orders 6 through 15; generality comes from the written binomial proof, not computation.",
+    "No counterexample or exhaustive tree search was produced."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-U5-1"
+  ]
+}

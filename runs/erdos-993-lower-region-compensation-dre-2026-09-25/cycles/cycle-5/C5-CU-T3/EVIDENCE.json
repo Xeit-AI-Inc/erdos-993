@@ -1,0 +1,44 @@
+{
+  "kind": "independent_exact_recalculation",
+  "source_claim_id": "C5-T3-MATCHING-ONLY-SLACK-OBSTRUCTION",
+  "tree_edges": [["s", "v"], ["s", "w"], ["s", "z"], ["z", "y1"], ["z", "y2"]],
+  "original_leaves": ["v", "w", "y1", "y2"],
+  "audited_leaf": "v",
+  "original_support": "s",
+  "H_vertices": ["w", "z", "y1", "y2"],
+  "H_edges": [["z", "y1"], ["z", "y2"]],
+  "W": ["w", "z"],
+  "alpha_H": 3,
+  "maximum_matching_example": [["z", "y1"]],
+  "maximum_matching_size": 1,
+  "k": 1,
+  "marked_independent_set_A": ["w"],
+  "addable_vertices_J_A": ["z", "y1", "y2"],
+  "e_A": 3,
+  "h_minus_k": 2,
+  "slack_2r_minus_e": 1,
+  "proposed_matching_only_lower_bound_2_times_r_minus_nu": 2,
+  "matching_partition_for_listed_M": {
+    "m2_both_matching_endpoints_addable": 1,
+    "m1_exactly_one_endpoint_addable": 0,
+    "m0_no_endpoint_addable": 0,
+    "u_unmatched_addable_vertices": 1,
+    "decomposition_right_side": "2*(2-1)+2*0+0-1=1"
+  },
+  "general_identity": "e(A)=2*m2(A)+m1(A)+u(A); 2*(h-k)-e(A)=2*((h-k)-nu(H))+2*m0(A)+m1(A)-u(A)",
+  "tree_independence_counts_i0_to_i4": [1, 6, 10, 6, 1],
+  "tree_alpha": 4,
+  "first_descent_deltas_delta0_to_delta3": [5, 4, -4, -5],
+  "first_descent_x": 2,
+  "p": 2,
+  "eligibility": {
+    "x_plus_2_le_p": false,
+    "three_p_lt_two_a_plus_one": true,
+    "strict_guard_arithmetic": "6 < 9"
+  },
+  "audit_corrections": [
+    "The producer evidence's matching_category_counts (m2=0,m1=0,m0=1,u=3) cannot arise from a maximum matching of this H and A: any maximum matching is one of {z,y1} or {z,y2}, whose two endpoints are both addable. For M={z,y1}, the correct categories are m2=1,m1=0,m0=0,u=1.",
+    "The producer report and limitations say the strict guard fails; it holds because 3p=6 and 2a+1=9. Primary eligibility still fails because x+2=4 is not <=p=2."
+  ],
+  "conclusion_limit": "This verifies a counterexample to the stated per-set matching-only slack lower bound and verifies the algebraic matching decomposition. It does not refute or prove the selected aggregate S(T,p)<=0; the example is ineligible because the early-descent gate fails."
+}

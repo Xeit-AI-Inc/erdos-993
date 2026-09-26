@@ -1,0 +1,42 @@
+{
+  "worker_id": "C5-CT-U3",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C5-U3-ALT-CUT",
+      "statement": "For each selected original leaf, the tagged marked k-to-(k+1) incidence graph has left degrees equal to actual addability and right degrees k or k+1 according as the upper set has one or at least two marks, so E_v=kU_v+C_v. Alternating reachability from unmatched left vertices under a maximum matching gives N(X)=Y and |X|-|N(X)|=|S|. The count and cut identity are valid, but do not establish the primary weighted budget.",
+      "scope": "Finite bipartite incidence graph for each fixed selected original leaf v with H_v, W_v and k=p-1 as defined by the contract; matching statement for any finite bipartite graph with a maximum matching and a set S of unmatched left vertices.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CT-U3/REPORT.md",
+        "cycles/cycle-5/C5-CT-U3/EVIDENCE.json"
+      ],
+      "reason": "retained: edge counting gives E_v=kU_v+C_v with multiplicity counted once per upper set per leaf tag. Maximum-matching alternating reachability pairs reached right vertices with reached left vertices outside S, proving the stated deficit identity. The route correctly preserves the per-leaf tags and does not claim this unweighted identity proves the weighted threshold."
+    },
+    {
+      "claim_id": "C5-U3-PRIMARY-GAP",
+      "statement": "The alternating-path decomposition does not supply the weighted lower bound sum_{v in F}(D_v+C_v)>=(2a+1-3p)Q, and the route establishes no link from first descent or the strict selector to the relevant Hall cuts. The primary aggregate remains unresolved by this route.",
+      "scope": "The primary ordinary-tree lower-region favorable-leaf aggregate under exactly the contract hypotheses; this is an assessment of the route's proof, not a refutation of the aggregate.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CT-U3/REPORT.md",
+        "cycles/cycle-5/C5-CT-U3/EVIDENCE.json"
+      ],
+      "reason": "retained: the derived Hall identity is unweighted, while the target requires a weighted deficit bound with positive coefficient 2a+1-3p. Neither that bound nor a map from first descent or selector values to those weighted cuts appears in the route evidence. Thus the gap and open status are properly stated."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CT-U3/REPORT.md",
+  "limitations": [
+    "No graph-specific compensating cut or across-tag weighted charge was established.",
+    "The matching cut identity does not itself give the required weighted deficit inequality.",
+    "The first-descent and strict selector hypotheses were not connected to the matching cuts.",
+    "No authoritative mathematical status is assigned by this critique."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-U3-ALT-CUT",
+    "C5-U3-PRIMARY-GAP"
+  ]
+}

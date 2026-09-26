@@ -1,0 +1,26 @@
+{
+  "checks": [
+    {
+      "args": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "/Users/ashtonsperry/VerityOS/skills/lean-proof-workflow/scripts/run_workflow.py",
+        "verify-shared-binding",
+        "--run-root",
+        "/Users/ashtonsperry/VerityOS/experiments/erdos-993-lower-region-compensation-dre-2026-09-25/runs/lean-2026-09-25-c2-order-bands"
+      ],
+      "exit_code": 0,
+      "log_sha256": "4117b245a0289c44670181f83f1d269b420aafbcab68942d5d0194ce1907e2c1"
+    },
+    {
+      "args": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "/Users/ashtonsperry/VerityOS/skills/lean-proof-workflow/scripts/audit_copied_packages.py",
+        "--experiments-root",
+        "/Users/ashtonsperry/VerityOS/experiments/erdos-993-lower-region-compensation-dre-2026-09-25"
+      ],
+      "exit_code": 0,
+      "log_sha256": "a9df76a40ebf69f669c2930e8619a470b48c52e0926a67babbe8f0cfe0f659a5"
+    }
+  ],
+  "prior_broad_check": "Broader ecosystem audit found unrelated historical fixture package directories; required per-run audit is authoritative for this dispatch. No other run modified."
+}

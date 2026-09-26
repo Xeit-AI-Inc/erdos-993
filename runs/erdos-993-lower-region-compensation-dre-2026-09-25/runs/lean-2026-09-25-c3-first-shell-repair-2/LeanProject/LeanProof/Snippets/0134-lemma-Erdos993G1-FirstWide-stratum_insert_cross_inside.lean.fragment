@@ -1,0 +1,14 @@
+namespace Erdos993G1.FirstWide
+
+lemma stratum_insert_cross_inside {X : Type u} [Fintype X] [DecidableEq X]
+    (G : SimpleGraph X) (M B : Finset X) (k j : ℕ)
+    (hB : B ∈ stratum G M k j) (a : X)
+    (hS : insert a B ∈ stratum G M (k+1) (j+1)) : a ∈ M := by
+  by_contra haM
+  have hb := (stratum_mem G M B k j).mp hB
+  have hs := (stratum_mem G M (insert a B) (k+1) (j+1)).mp hS
+  have he : insert a B ∩ M = B ∩ M := by ext x; simp only [Finset.mem_inter, Finset.mem_insert]; aesop
+  rw [he,hb.2] at hs
+  omega
+
+end Erdos993G1.FirstWide

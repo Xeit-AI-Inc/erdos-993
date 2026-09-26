@@ -1,0 +1,4 @@
+lemma delta_firstDescent_neg [Finite V] :
+    delta F (firstDescent F : ℤ) < 0 := by
+  exact Nat.sInf_mem (descentSet_nonempty F)
+

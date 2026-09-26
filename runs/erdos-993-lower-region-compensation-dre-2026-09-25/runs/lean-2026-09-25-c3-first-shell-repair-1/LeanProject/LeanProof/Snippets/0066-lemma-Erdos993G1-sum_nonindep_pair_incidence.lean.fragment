@@ -1,0 +1,33 @@
+lemma sum_nonindep_pair_incidence [Fintype V] [DecidableEq V]
+    [DecidableRel F.Adj] :
+    ∑ B ∈ (Finset.univ : Finset V).powersetCard 3,
+      ((B.powersetCard 2).filter (fun E : Finset V => ¬F.IsIndepSet E)).card =
+        Nat.card F.edgeSet * (Fintype.card V - 2) := by
+  classical
+  let E := ((Finset.univ : Finset V).powersetCard 2).filter
+    (fun S : Finset V => ¬F.IsIndepSet S)
+  have hlocal (B : Finset V) :
+      (B.powersetCard 2).filter (fun S : Finset V => ¬F.IsIndepSet S) =
+        E.filter (fun S => S ⊆ B) := by
+    ext S
+    simp [E, and_assoc, and_left_comm, and_comm]
+  calc
+    _ = ∑ B ∈ (Finset.univ : Finset V).powersetCard 3,
+        (E.filter (fun S => S ⊆ B)).card := by
+      apply Finset.sum_congr rfl
+      intro B _
+      rw [hlocal]
+    _ = ∑ S ∈ E, (((Finset.univ : Finset V).powersetCard 3).filter
+        (fun B => S ⊆ B)).card :=
+      sum_card_filter_swap _ _ (fun B S : Finset V => S ⊆ B)
+    _ = ∑ S ∈ E, (Fintype.card V - 2) := by
+      apply Finset.sum_congr rfl
+      intro S hS
+      have hcard : S.card = 2 := (Finset.mem_powersetCard.mp
+        (Finset.mem_filter.mp hS).1).2
+      rw [Finset.card_filter_powersetCard_subset S Finset.univ 3
+        (Finset.subset_univ _) (by omega), hcard, Finset.card_univ]
+      simp
+    _ = E.card * (Fintype.card V - 2) := by simp
+    _ = _ := by rw [show E.card = Nat.card F.edgeSet from card_nonindep_pairs F]
+

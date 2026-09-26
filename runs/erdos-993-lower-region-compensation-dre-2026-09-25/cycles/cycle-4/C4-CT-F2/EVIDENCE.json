@@ -1,0 +1,42 @@
+{
+  "schema": "e993.c4-ct-f2-independent-critique.v1",
+  "replay": {
+    "main": {
+      "method": "Foreground replay of scratch copies of pinned SEARCH.py and ordinary_tree_checked.py",
+      "generated_instances": 24067,
+      "eligible_nonempty_selector_pairs": 339,
+      "proper_selector_pairs": 0,
+      "flat_budget_violations": 0,
+      "current_budget_violations": 0,
+      "target_budget_violations": 0
+    },
+    "two_hub_selector_stress": {
+      "method": "Foreground replay of scratch copies of pinned PROFILE-SEARCH.py and ordinary_tree_checked.py",
+      "eligible_nonempty_selector_pairs": 287,
+      "proper_selector_pairs": 0,
+      "budgets_evaluated": false
+    }
+  },
+  "independent_star_check": {
+    "tree": "K1,19; center 0 and leaves 1..19",
+    "independence_polynomial": "(1+z)^19+z",
+    "alpha": 19,
+    "x": 10,
+    "p": 12,
+    "guards": [
+      "x+2=p",
+      "3p=36<39=2alpha+1"
+    ],
+    "favorable_original_leaf_count": 19,
+    "per_tag": {
+      "q_k": "C(18,11)=31824",
+      "q_k_plus_1": "C(18,12)=18564",
+      "actual_addable_vertices_per_marked_k_set": 7,
+      "E": "7*31824=222768",
+      "C": "18564",
+      "summand": "18564-31824=-13260"
+    },
+    "aggregate": "19*(-13260)=-251940"
+  },
+  "interpretation": "Bounded computational observation reproduced at stated finite scope; no universal conclusion."
+}

@@ -1,0 +1,31 @@
+{
+  "worker_id": "C5-CF-T6",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C5-T6-THIRDSHELL-COVER6-P10",
+      "statement": "For the ordinary tree formed by a root joined to six centers with pendant-leaf counts (3,3,3,3,3,2), the vertex-cover number is 6, and at p=10 the tree is eligible in the n=2p+4 lower-region slice with full favorable-leaf aggregate S=-122805. Consequently, any proposed argument that requires tau(T)>=7 for every eligible tree in this slice, or omits the tau(T)<=6 cases on that basis, does not cover the slice. This example does not refute the primary aggregate inequality.",
+      "scope": "This exact 24-vertex tree at p=10 only. It excludes a universal tau(T)>=7 premise for the stated third-shell slice; it does not disprove a theorem restricted to tau(T)>=7 or decide any other tree or rank.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CF-T6/REPLAY.py",
+        "cycles/cycle-5/C5-CF-T6/REPLAY.json",
+        "cycles/cycle-5/C5-CF-T6/SOURCE-EVIDENCE.json",
+        "cycles/cycle-5/C5-CF-T6/ordinary_tree_checked.py"
+      ],
+      "reason": "retained_narrowed: the exact graph, tau(T)=6, x=8, alpha=18, both strict eligibility guards, all 17 original-leaf selectors, all 17 summands, and S=-122805 are independently replayed from copies in this worker directory. This obstructs a universal cover-threshold premise only; the negative full sum is consistent with the primary inequality."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CF-T6/REPORT.md",
+  "limitations": [
+    "Replay used the same pinned evaluator implementation as the producer; a second independent polynomial algorithm was not implemented.",
+    "The one finite example does not refute the primary aggregate inequality or establish a result for other trees or ranks.",
+    "No exhaustive low-cover classification or pointwise sign theorem was established."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-T6-THIRDSHELL-COVER6-P10"
+  ]
+}

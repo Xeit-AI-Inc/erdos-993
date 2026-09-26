@@ -1,0 +1,76 @@
+{
+  "schema": "e993.c6-u1.evidence.v1",
+  "scope": "Proposed Lean contract and dependency decomposition for E993-ORDINARY-TM-LOWER-REGION-AGGREGATE only; no Lean execution or new proof",
+  "packet_checks": {
+    "common_manifest_entries": 237,
+    "common_manifest_hash_mismatches": 0,
+    "case_allowed_source_files": 0,
+    "case_required_covered_claim_ids": []
+  },
+  "current_family_identity": {
+    "claim_id": "E993-ORDINARY-TM-LOWER-REGION-AGGREGATE",
+    "registered_status": "VERIFIED",
+    "evidence_grade": "computer_assisted_proof_adjudicated_no_formal_award",
+    "formal_award": false,
+    "statement_scope": "All m>=1 and each eligible p, exact strict original-leaf selector and complete aggregate on the specified ordinary T_m family"
+  },
+  "finite_base": {
+    "m_range": [3, 999],
+    "rank_range": "m<=j<=2m+2",
+    "auxiliary_sequences": ["A0", "Astar", "R"],
+    "strict_lc_margin_checks": 1507464,
+    "strict_mixed_margin_checks": 1507464,
+    "lc_failures": 0,
+    "mixed_failures": 0,
+    "minimum_lc_margin": 1210,
+    "minimum_lc_location": [3, "Astar", 8],
+    "minimum_mixed_margin": 1243,
+    "minimum_mixed_location": [3, "Astar", 8],
+    "coefficient_recurrence": "B(B^m)'=mB'B^m",
+    "evidence_grade": "exact Python arithmetic; not kernel checked"
+  },
+  "proposed_dependency_order": [
+    {"node": "tmGraphFacts", "content": "finite simple graph, tree, order 4m+3, alpha 3m+2, original leaf/support orbits"},
+    {"node": "tmPolynomialBridge", "content": "P,A0,Astar,Q=zR identities and separate tagging of all 3m+1 leaves", "depends_on": ["tmGraphFacts"]},
+    {"node": "tmDescentLowerBound", "content": "x>=m+1 from the C6 direct coefficient lead; no R27 dependency needed", "depends_on": ["tmPolynomialBridge"]},
+    {"node": "finiteOrderULC", "content": "five factor checks, order-sensitive finite ULC convolution and quantitative LC margin"},
+    {"node": "mixedMinorAlgebra", "content": "coefficient double-sum identity, LC brackets, three pairs, zero-extension boundaries", "depends_on": ["finiteOrderULC"]},
+    {"node": "largeMEstimates", "content": "derivative/ratio bounds, h=8 lower coefficient, 27-factor quotient, perturbation and strict rational cutoffs", "depends_on": ["finiteOrderULC", "mixedMinorAlgebra"]},
+    {"node": "centralMarginsFiniteBase", "content": "proved recurrence and kernel-checked LC/mixed margins for m=3..999", "depends_on": ["tmPolynomialBridge"]},
+    {"node": "smallMNoEligibleRank", "content": "m=1,2: x=2,4 and alpha=5,8 imply no eligible p", "depends_on": ["tmPolynomialBridge"]},
+    {"node": "tmSelectorPropagation", "content": "strict descent, strict minors and margins imply both selectors; preserve all tags and endpoint ranks", "depends_on": ["tmDescentLowerBound", "mixedMinorAlgebra", "largeMEstimates", "centralMarginsFiniteBase"]},
+    {"node": "tmAggregateNonpos", "content": "literal complete favorable-leaf sum equals R_(p-1)-R_(p-2)<0", "depends_on": ["tmPolynomialBridge", "smallMNoEligibleRank", "tmSelectorPropagation"]}
+  ],
+  "kernel_blockers": [
+    "No T_m-specific formal graph/count/index/selector bridge to the frozen C5 contract",
+    "No formal finite-order ULC convolution theorem with the quantitative margin used by the proof",
+    "No kernel-checked replacement for the exact Python central-margin base m=3..999",
+    "No bound Lean proofs yet for the mixed-minor algebra, rank boundaries, perturbation estimates, and strict cutoff inequalities",
+    "No T_m selector propagation and final tagged-sum theorem declaration or kernel/fidelity receipt"
+  ],
+  "reviewed_source_map_paths": [
+    "control/C6-SEARCH-ALLOCATION.json",
+    "control/C6-SOURCE-MAP.md",
+    "control/C6-NEUTRAL-HANDOFF.md",
+    "control/C6-REGISTERED-CLAIM-IDENTITY.json",
+    "control-proposals/C5-TM-CENTRAL-LC-CANDIDATE.md",
+    "control-proposals/C5-TM-CENTRAL-LR-CANDIDATE.md",
+    "control-proposals/C6-TM-DIRECT-FIRST-DESCENT-LEAD.md",
+    "preparation/C5-PREP-TM-LEAN-READINESS/FORMALIZATION-CHECKLIST.md",
+    "preparation/C5-PREP-TM-LEAN-READINESS/REPORT.md",
+    "preparation/C5-PREP-TM-UNIFORM-CANDIDATE-AUDIT/REPORT.md",
+    "preparation/C5-PREP-TM-UNIFORM-CANDIDATE-AUDIT/RESULTS.json",
+    "inputs/C4-first-shell-frozen-intake/BASE.lean",
+    "inputs/C4-r27-linear-bound-intake/Main.lean",
+    "inputs/C4-r27-linear-bound-intake/THEOREM-CONTRACT.yaml",
+    "inputs/C4-r27-linear-bound-intake/VERIFICATION-REPORT.md",
+    "inputs/C4-r27-linear-bound-intake/kernel-verification.json"
+  ],
+  "limitations": [
+    "No Lean or Lake command was run, as prohibited by the route.",
+    "Finite-base outputs were read from the pinned independent audit; this route did not replay or independently recompute the census.",
+    "The dependency graph is a proposed formalization plan, not a compiled declaration graph.",
+    "The R27 source/receipt was inspected; its reuse would require an authorized import binding and an index/graph bridge. The C6 direct first-descent lead offers a T_m-specific alternative, but this route did not formalize it.",
+    "No conclusion about availability of equivalent declarations outside the reviewed pinned sources is made."
+  ]
+}

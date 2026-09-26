@@ -1,0 +1,25 @@
+{
+  "worker_id": "C6-U4",
+  "cycle": 6,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C6-U4-MATCHING-DEFICIENCY-BUDGET",
+      "statement": "For each selected original leaf v, residual forest H_v=T-{v,s_v}, marked rank-k independent set A, and actual addability deficit d_v(A)=2(alpha(H_v)-k)-e_v(A), one has d_v(A)=|V(H_v)|-2 nu(H_v)+|N_{H_v}(A)|-k. Consequently, using the exact tagged incidence identity in the contract, the primary S<=0 is equivalent to the weighted matching-deficiency/neighborhood-expansion budget stated in REPORT.md. The identity does not establish that budget from the strict first-descent selector.",
+      "scope": "Eligible ordinary-tree lower-region setup with fixed distinct favorable original-leaf tags, k=p-1, H_v=T-{v,s_v}, W_v=N_T(s_v)\\{v}, marked rank-k independent sets, and actual addable vertices in H_v. The pointwise decomposition uses that H_v is bipartite and alpha(H_v)=|V(H_v)|-nu(H_v); the primary equivalence uses the admitted exact tagged incidence identity. No universal resolution of the primary is claimed.",
+      "status": "proposed_conditional",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-U4/REPORT.md"
+      ],
+      "reason": "The pointwise formula follows exactly from e_v(A)=|V(H_v)|-|N_{H_v}[A]|, |N[A]|=k+|N(A)| for independent A, and König's theorem. Substitution into the exact D+C budget isolates the missing first-descent-to-selected-neighborhood-expansion implication."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-U4/REPORT.md",
+  "limitations": [
+    "The selected neighborhood-expansion budget is not proved from Delta_p(T-v)<0.",
+    "No new eligible complete positive-sum counterexample or universal proof was obtained.",
+    "No finite census, finite-flow certificate, or public-literature search was performed in this route."
+  ],
+  "status_authority": "proposed_worker_only"
+}

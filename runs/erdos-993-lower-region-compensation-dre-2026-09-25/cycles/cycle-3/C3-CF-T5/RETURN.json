@@ -1,0 +1,44 @@
+{
+  "worker_id": "C3-CF-T5",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "For the displayed T_m family with 1<=m<=50, every eligible lower-region rank has both original leaf orbits selected and a strictly negative complete selected sum; no conclusion is established here for m>50 or for arbitrary ordinary trees.",
+      "scope": "Bounded exact evidence only: the route's explicit T_m polynomials, m=1,...,50, and every integer p satisfying x(T_m)+2<=p and 3p<2 alpha(T_m)+1. The registered universal ordinary-tree assertion remains unresolved.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-T5/REPORT.md",
+        "cycles/cycle-3/C3-CF-T5/replay-C3-T5.py",
+        "cycles/cycle-3/C3-CF-T5/replay-output.txt"
+      ],
+      "reason": "retained_narrowed: the local exact replay reproduces 674 eligible rows, both orbits selected in all rows, and strictly negative complete sums. The route supplies no infinite selector classification or coefficient inequality, and bounded family evidence cannot resolve the universal target."
+    },
+    {
+      "claim_id": "T5-TM-COEFFICIENT-IDENTITY",
+      "statement": "For the displayed T_m polynomials, each leaf summand is [z^p]q-[z^(p-1)]q; with the original arm and claw multiplicities, when both orbits pass the fixed selector the full sum equals [z^p]Q_all-[z^(p-1)]Q_all, where Q_all=(3m+1)z(1+z)^(3m)+3m z(2+5z+2z^2)(1+4z+3z^2+z^3)^(m-1).",
+      "scope": "Exact algebraic identity for the displayed T_m deletion and marked polynomials, conditional on both original leaf orbits being selected. It gives no selector coincidence or universal coefficient sign.",
+      "status": "proposed_verified_informal",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-T5/REPORT.md",
+        "cycles/cycle-3/C3-CF-T5/replay-C3-T5.py",
+        "cycles/cycle-3/C3-CF-T5/replay-output.txt"
+      ],
+      "reason": "retained: root splitting gives the displayed independence polynomials; subtracting the support-neighborhood deletion polynomial gives q_arm and q_claw; the rank-p difference is the adjacent coefficient difference. Counting one arm leaf and 3m distinct claw leaves yields Q_all. The conditional scope is essential."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CF-T5/REPORT.md",
+  "limitations": [
+    "The exact arithmetic replay covers only m=1,...,50 and the eligible ranks in that finite range.",
+    "No proof is provided for selector behavior or the selected coefficient sign for all m.",
+    "The assigned route concerns one tree family and does not settle the universal ordinary-tree aggregate.",
+    "The polynomial-to-tree identities were audited by root splitting for the displayed construction; no independent graph enumeration beyond the exact coefficient replay was performed."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+    "T5-TM-COEFFICIENT-IDENTITY"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "claim_id": "C5-U4-LEMMA-1",
+  "result": "For every finite ordinary tree T and every original leaf v with support s, coefficientwise deletion gives Delta_j(T) = Delta_j(T-v) + Delta_(j-1)(T-{v,s}) for every integer j under zero extension. Consequently, if x is the first strict descent of T, then for every original leaf v at least one of Delta_x(T-v) and Delta_(x-1)(T-{v,s}) is strictly negative. This is a rank-local alternative only; it does not imply Delta_p(T-v)<0 for p>=x+2.",
+  "proof": "Partition independent sets according to whether they contain v. Since v is a leaf with support s, I_T(z)=I_(T-v)(z)+z I_(T-{v,s})(z). Taking the coefficient difference at j gives the displayed identity. If Delta_x(T)<0, its two integer summands cannot both be nonnegative.",
+  "exact_counterexample_to_unrestricted_transfer": {
+    "tree": "K_(1,3), center 0 and leaves 1,2,3",
+    "independence_vector_T_rank_0_through_3": [1, 4, 3, 1],
+    "delta_T_rank_0_through_3": [3, -1, -2, -1],
+    "alpha": 3,
+    "x": 1,
+    "chosen_leaf": 1,
+    "p": 3,
+    "independence_vector_T_minus_leaf_rank_0_through_2": [1, 3, 1],
+    "delta_T_minus_leaf_at_p_zero_extended": 0,
+    "scope_warning": "This disproves only the unguarded implication Delta_x(T)<0 => Delta_(x+2)(T-v)<0. It is outside the primary lower-region scope: 3p=9 is not less than 2alpha+1=7, and p is beyond alpha(T-v). It is not a primary counterexample."
+  },
+  "literature_boundary": {
+    "source": "Ferenc Bencs, On trees with real rooted independence polynomial, arXiv:1703.05409 (2017), Propositions 3.3 and 3.4",
+    "url": "https://arxiv.org/abs/1703.05409",
+    "scope": "The cited propositions establish real-rootedness for the n-centipede and n-caterpillar families defined in that paper. They do not state real-rootedness or unimodality for arbitrary trees and do not give a rank-transfer theorem for T-v.",
+    "use": "No theorem from this paper is used to infer a sign for the assigned general-tree selector."
+  },
+  "primary_obligation_remaining": "For eligible p with x(T)+2<=p and 3p<2alpha(T)+1, a useful transfer would require a new cross-rank bound connecting Delta_x(T) to Delta_p(T-v), or a direct proof about the strict selector. The deletion identity at rank x does not supply that bound. No such bound or eligible counterexample is established here."
+}

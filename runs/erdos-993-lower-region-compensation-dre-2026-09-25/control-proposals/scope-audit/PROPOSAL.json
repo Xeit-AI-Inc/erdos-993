@@ -1,0 +1,44 @@
+{
+  "schema": "e993.lower.scope-audit.proposal.v1",
+  "role": "scope-audit",
+  "preparation_only": true,
+  "status_authority": false,
+  "verified_inputs": {
+    "stage1_preparation_members": 14,
+    "standing_source_members": 7,
+    "all_sha256_match": true,
+    "registry_claim_count": 407
+  },
+  "primary": {
+    "proposed_claim_key": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+    "proposed_initial_status": "OPEN",
+    "statement": "For every finite ordinary tree T with a=alpha(T), first strict descent x(T) of its integer zero-extended independence counts, and natural p satisfying x(T)+2<=p and 3p<2a+1, the complete sum over original leaves v with Delta_p(T-v)<0 of Delta_(p-1)(T-{v,s_v})-Delta_(p-1)(T-N_T[s_v]) is nonpositive.",
+    "scope": "Connected acyclic finite simple graphs; original leaves are distinct tags even when supports coincide; original supports and original closed neighborhoods; empty selected set has sum zero; no residual hypothesis; no governed RTree transport.",
+    "relations": [
+      {"relation": "proper_region_subclaim_of", "claim_key": "E993-R23-ORDINARY-FAVORABLE-LEAF-AGGREGATE"},
+      {"relation": "disjoint_eligible_rank_slice_from", "claim_key": "E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE"},
+      {"relation": "different_rank_and_hypotheses_from", "claim_key": "E993-R26-TOP-RANK-RESIDUAL-SIGN"},
+      {"relation": "distinct_model_and_quantity_from", "claim_key": "E993-BETA-AGG"}
+    ],
+    "identity_check": "No exact statement, scope, key or alias among all 407 initial registry claims; strict lower boundary is the new material hypothesis. Do not award R23 or governed BETA-AGG from this key.",
+    "nonvacuity_control": "K_(1,12), alpha=12, x=6, p=8, twelve favorable original leaves and S=-1980."
+  },
+  "candidate_auxiliary": {
+    "proposed_claim_key": "E993-BIPARTITE-TAGGED-INCIDENCE-DEFICIT-IDENTITY",
+    "registration_recommendation": "Separate exact identity only if controller wants a governed auxiliary contract; otherwise keep as unawarded common handoff algebra.",
+    "proposed_initial_status_if_registered": "OPEN",
+    "statement": "For every finite bipartite graph H, vertex subset W, integer h>=alpha(H), and 1<=k<=h, let q_j count independent j-sets meeting W, e(A) count actual addable vertices for a tagged independent k-set A, D=sum_A(2(h-k)-e(A)), and C count independent (k+1)-sets meeting W in at least two vertices once each. Then k*q_(k+1)+C=2(h-k)*q_k-D, with D,C>=0.",
+    "scope_distinction": "Exact marked extension accounting with separately defined nonnegative deficits. It strictly refines the inequality-only E993-BIPARTITE-TAGGED-SHADOW-BOUND; it is not an alias of that bound, unmarked extension double-counting, or root-corrected degree lemmas.",
+    "checked_algebra": "Each tagged (k+1)-set has k tag-preserving deletions if exactly one marked vertex and k+1 if at least two. Bipartite color classes bound e(A)<=2(h-k).",
+    "tree_specialization": "For each original leaf, h=alpha(T)-1 exactly, H=T-{v,s}, W=N_T(s)\\{v}, k=p-1, and fixed selector F; hence k*S=(2alpha(T)+1-3p)*sum_F q_v(k)-sum_F(D_v+C_v).",
+    "unproved_obligation": "In the strict lower region, show sum_F(D_v+C_v)>=(2alpha(T)+1-3p)*sum_F q_v(k), or produce an exact eligible positive full S counterexample. The identity by itself has no verdict."
+  },
+  "critical_fences": [
+    "E993-BETA-TARGET and E993-BETA-AGG-SUPPORT remain REFUTED at their exact scopes.",
+    "R27 unmarked optimized root correction cannot be restricted to marked sets; the six-vertex diagnostic is ineligible.",
+    "E993-R28-TREE-LEAF-SLOT-DOMINANCE is REFUTED by order-22 T22; do not confuse it with ordinary T_22 of order 91 or T_60 of order 243.",
+    "Standing-control first_strict_descent helper omits the terminal zero-extension difference and must be corrected before eligibility use.",
+    "M(6)=22 and x<=6 isolate closure depend on bounded census, not a universal lower-region proof."
+  ],
+  "report_path": "control-proposals/scope-audit/REPORT.md"
+}

@@ -1,0 +1,14 @@
+lemma other_support_neighbor_survives {V : Type u} [Finite V] (T : SimpleGraph V)
+    (v s g : V) (hleaf : vertexDegree T v = 1)
+    (hvs : T.Adj v s) (hsg : T.Adj s g) (hgv : g ≠ v) :
+    g ∉ closedNeighborhood T v := by
+  have hset : ({s} : Set V) = T.neighborSet v := Set.eq_of_subset_of_ncard_le
+    (Set.singleton_subset_iff.mpr hvs) (by
+      rw [Set.ncard_singleton, ← Nat.card_coe_set_eq]
+      exact hleaf.le)
+  rintro (heq | hadj)
+  · exact hgv heq
+  · have hmem : g ∈ T.neighborSet v := hadj
+    rw [← hset] at hmem
+    exact hsg.ne (Set.mem_singleton_iff.mp hmem).symm
+

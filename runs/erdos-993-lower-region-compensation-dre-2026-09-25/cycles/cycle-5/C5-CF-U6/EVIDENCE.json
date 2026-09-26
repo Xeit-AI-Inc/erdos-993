@@ -1,0 +1,23 @@
+{
+  "kind": "independent_symbolic_audit",
+  "scope": "The three C5-U6 route claims; no verdict on the controller-owned primary.",
+  "case_source_hashes": "All 3 packet-listed case files matched; all 237 packet-listed common files matched.",
+  "marked_shell_check": {
+    "definitions": "q_j=i_j(H)-i_j(R); each independent j-set meeting W has a unique first w and maps after deleting w to an independent (j-1)-set of G_w.",
+    "correct_identities": [
+      "q_j=sum_w i_(j-1)(G_w)",
+      "q_j-q_(j-1)=sum_w Delta_(j-2)(G_w)",
+      "Delta_p(T-v)=sum_w Delta_(p-1)(G_w)+i_(p+1)(R)-i_(p-1)(R)"
+    ],
+    "defect": "The route states negative signs for both sums; the subtraction convention Delta_r=i_(r+1)-i_r forces positive signs.",
+    "status_effect": "Reject the claimed reduction. This is not a counterexample to the primary aggregate."
+  },
+  "star_check": {
+    "counts": "i_0=1, i_1=m+1, i_j=binom(m,j) for 2<=j<=m; zero thereafter.",
+    "first_descent": "For m>=4, Delta_0 and Delta_1 are positive; subsequent binomial differences first become negative at ceil(m/2), with Delta_m=-1.",
+    "eligible_window": "ceil(3p/2)<=m<=2p-4; nonempty exactly when p>=8.",
+    "selector_and_sum": "Every leaf qualifies since m<2p+2. Every tagged summand binom(m-1,p)-binom(m-1,p-1) is negative since m<2p. Hence S=m times that term is negative.",
+    "scope": "Stars only."
+  },
+  "primary_assessment": "Open: neither the star subfamily nor the corrected first-mark identities establish the complete arbitrary-tree aggregate; no full-sum counterexample is supplied."
+}

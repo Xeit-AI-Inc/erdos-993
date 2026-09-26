@@ -1,0 +1,1287 @@
+{
+  "grade": "controller arithmetic exploration, no independent review or formal award",
+  "all_earlier_rank_nonnegative": {
+    "6": true,
+    "7": true,
+    "8": true,
+    "9": true,
+    "10": false,
+    "11": false,
+    "12": false,
+    "13": false
+  },
+  "rows": [
+    {
+      "p": 6,
+      "r": 0,
+      "n": 16,
+      "N": 10,
+      "degree_budget": 15,
+      "lower_bound": 9,
+      "method": "omit all positive singleton shifts"
+    },
+    {
+      "p": 6,
+      "r": 1,
+      "n": 16,
+      "N": 10,
+      "degree_budget": 15,
+      "minimum_singleton_sum": 39,
+      "minimizing_outside_degrees": [
+        0,
+        0,
+        0,
+        0,
+        5,
+        10
+      ],
+      "empty_delta": 35,
+      "higher_size_floor_loss": 0,
+      "lower_bound": 74,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 6,
+      "r": 2,
+      "n": 16,
+      "N": 10,
+      "degree_budget": 15,
+      "minimum_singleton_sum": 102,
+      "minimizing_outside_degrees": [
+        2,
+        2,
+        2,
+        3,
+        3,
+        3
+      ],
+      "empty_delta": 75,
+      "higher_size_floor_loss": 15,
+      "lower_bound": 162,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 6,
+      "r": 3,
+      "n": 16,
+      "N": 10,
+      "degree_budget": 15,
+      "minimum_singleton_sum": 126,
+      "minimizing_outside_degrees": [
+        2,
+        2,
+        2,
+        3,
+        3,
+        3
+      ],
+      "empty_delta": 90,
+      "higher_size_floor_loss": 35,
+      "lower_bound": 181,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 6,
+      "r": 4,
+      "n": 16,
+      "N": 10,
+      "degree_budget": 15,
+      "minimum_singleton_sum": 42,
+      "minimizing_outside_degrees": [
+        2,
+        2,
+        2,
+        3,
+        3,
+        3
+      ],
+      "empty_delta": 42,
+      "higher_size_floor_loss": 65,
+      "lower_bound": 19,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 7,
+      "r": 0,
+      "n": 18,
+      "N": 12,
+      "degree_budget": 17,
+      "lower_bound": 11,
+      "method": "omit all positive singleton shifts"
+    },
+    {
+      "p": 7,
+      "r": 1,
+      "n": 18,
+      "N": 12,
+      "degree_budget": 17,
+      "minimum_singleton_sum": 49,
+      "minimizing_outside_degrees": [
+        0,
+        0,
+        0,
+        0,
+        5,
+        12
+      ],
+      "empty_delta": 54,
+      "higher_size_floor_loss": 0,
+      "lower_bound": 103,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 7,
+      "r": 2,
+      "n": 18,
+      "N": 12,
+      "degree_budget": 17,
+      "minimum_singleton_sum": 170,
+      "minimizing_outside_degrees": [
+        2,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "empty_delta": 154,
+      "higher_size_floor_loss": 15,
+      "lower_bound": 309,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 7,
+      "r": 3,
+      "n": 18,
+      "N": 12,
+      "degree_budget": 17,
+      "minimum_singleton_sum": 315,
+      "minimizing_outside_degrees": [
+        2,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "empty_delta": 275,
+      "higher_size_floor_loss": 35,
+      "lower_bound": 555,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 7,
+      "r": 4,
+      "n": 18,
+      "N": 12,
+      "degree_budget": 17,
+      "minimum_singleton_sum": 300,
+      "minimizing_outside_degrees": [
+        2,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "empty_delta": 297,
+      "higher_size_floor_loss": 65,
+      "lower_bound": 532,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 7,
+      "r": 5,
+      "n": 18,
+      "N": 12,
+      "degree_budget": 17,
+      "minimum_singleton_sum": 42,
+      "minimizing_outside_degrees": [
+        2,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "empty_delta": 132,
+      "higher_size_floor_loss": 136,
+      "lower_bound": 38,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 8,
+      "r": 0,
+      "n": 20,
+      "N": 14,
+      "degree_budget": 19,
+      "lower_bound": 13,
+      "method": "omit all positive singleton shifts"
+    },
+    {
+      "p": 8,
+      "r": 1,
+      "n": 20,
+      "N": 14,
+      "degree_budget": 19,
+      "minimum_singleton_sum": 59,
+      "minimizing_outside_degrees": [
+        0,
+        0,
+        0,
+        0,
+        5,
+        14
+      ],
+      "empty_delta": 77,
+      "higher_size_floor_loss": 0,
+      "lower_bound": 136,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 8,
+      "r": 2,
+      "n": 20,
+      "N": 14,
+      "degree_budget": 19,
+      "minimum_singleton_sum": 255,
+      "minimizing_outside_degrees": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        4
+      ],
+      "empty_delta": 273,
+      "higher_size_floor_loss": 15,
+      "lower_bound": 513,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 8,
+      "r": 3,
+      "n": 20,
+      "N": 14,
+      "degree_budget": 19,
+      "minimum_singleton_sum": 625,
+      "minimizing_outside_degrees": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        4
+      ],
+      "empty_delta": 637,
+      "higher_size_floor_loss": 35,
+      "lower_bound": 1227,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 8,
+      "r": 4,
+      "n": 20,
+      "N": 14,
+      "degree_budget": 19,
+      "minimum_singleton_sum": 915,
+      "minimizing_outside_degrees": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        4
+      ],
+      "empty_delta": 1001,
+      "higher_size_floor_loss": 65,
+      "lower_bound": 1851,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 8,
+      "r": 5,
+      "n": 20,
+      "N": 14,
+      "degree_budget": 19,
+      "minimum_singleton_sum": 702,
+      "minimizing_outside_degrees": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        4
+      ],
+      "empty_delta": 1001,
+      "higher_size_floor_loss": 136,
+      "lower_bound": 1567,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 8,
+      "r": 6,
+      "n": 20,
+      "N": 14,
+      "degree_budget": 19,
+      "minimum_singleton_sum": -42,
+      "minimizing_outside_degrees": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        4
+      ],
+      "empty_delta": 429,
+      "higher_size_floor_loss": 347,
+      "lower_bound": 40,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 9,
+      "r": 0,
+      "n": 22,
+      "N": 16,
+      "degree_budget": 21,
+      "lower_bound": 15,
+      "method": "omit all positive singleton shifts"
+    },
+    {
+      "p": 9,
+      "r": 1,
+      "n": 22,
+      "N": 16,
+      "degree_budget": 21,
+      "minimum_singleton_sum": 69,
+      "minimizing_outside_degrees": [
+        0,
+        0,
+        0,
+        0,
+        5,
+        16
+      ],
+      "empty_delta": 104,
+      "higher_size_floor_loss": 0,
+      "lower_bound": 173,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 9,
+      "r": 2,
+      "n": 22,
+      "N": 16,
+      "degree_budget": 21,
+      "minimum_singleton_sum": 357,
+      "minimizing_outside_degrees": [
+        3,
+        3,
+        3,
+        4,
+        4,
+        4
+      ],
+      "empty_delta": 440,
+      "higher_size_floor_loss": 15,
+      "lower_bound": 782,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 9,
+      "r": 3,
+      "n": 22,
+      "N": 16,
+      "degree_budget": 21,
+      "minimum_singleton_sum": 1086,
+      "minimizing_outside_degrees": [
+        3,
+        3,
+        3,
+        4,
+        4,
+        4
+      ],
+      "empty_delta": 1260,
+      "higher_size_floor_loss": 35,
+      "lower_bound": 2311,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 9,
+      "r": 4,
+      "n": 22,
+      "N": 16,
+      "degree_budget": 21,
+      "minimum_singleton_sum": 2112,
+      "minimizing_outside_degrees": [
+        3,
+        3,
+        3,
+        4,
+        4,
+        4
+      ],
+      "empty_delta": 2548,
+      "higher_size_floor_loss": 65,
+      "lower_bound": 4595,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 9,
+      "r": 5,
+      "n": 22,
+      "N": 16,
+      "degree_budget": 21,
+      "minimum_singleton_sum": 2607,
+      "minimizing_outside_degrees": [
+        3,
+        3,
+        3,
+        4,
+        4,
+        4
+      ],
+      "empty_delta": 3640,
+      "higher_size_floor_loss": 136,
+      "lower_bound": 6111,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 9,
+      "r": 6,
+      "n": 22,
+      "N": 16,
+      "degree_budget": 21,
+      "minimum_singleton_sum": 1683,
+      "minimizing_outside_degrees": [
+        3,
+        3,
+        3,
+        4,
+        4,
+        4
+      ],
+      "empty_delta": 3432,
+      "higher_size_floor_loss": 347,
+      "lower_bound": 4768,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 9,
+      "r": 7,
+      "n": 22,
+      "N": 16,
+      "degree_budget": 21,
+      "minimum_singleton_sum": -396,
+      "minimizing_outside_degrees": [
+        3,
+        3,
+        3,
+        4,
+        4,
+        4
+      ],
+      "empty_delta": 1430,
+      "higher_size_floor_loss": 998,
+      "lower_bound": 36,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 10,
+      "r": 0,
+      "n": 24,
+      "N": 18,
+      "degree_budget": 23,
+      "lower_bound": 17,
+      "method": "omit all positive singleton shifts"
+    },
+    {
+      "p": 10,
+      "r": 1,
+      "n": 24,
+      "N": 18,
+      "degree_budget": 23,
+      "minimum_singleton_sum": 79,
+      "minimizing_outside_degrees": [
+        0,
+        0,
+        0,
+        0,
+        5,
+        18
+      ],
+      "empty_delta": 135,
+      "higher_size_floor_loss": 0,
+      "lower_bound": 214,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 10,
+      "r": 2,
+      "n": 24,
+      "N": 18,
+      "degree_budget": 23,
+      "minimum_singleton_sum": 475,
+      "minimizing_outside_degrees": [
+        3,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "empty_delta": 663,
+      "higher_size_floor_loss": 15,
+      "lower_bound": 1123,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 10,
+      "r": 3,
+      "n": 24,
+      "N": 18,
+      "degree_budget": 23,
+      "minimum_singleton_sum": 1715,
+      "minimizing_outside_degrees": [
+        3,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "empty_delta": 2244,
+      "higher_size_floor_loss": 35,
+      "lower_bound": 3924,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 10,
+      "r": 4,
+      "n": 24,
+      "N": 18,
+      "degree_budget": 23,
+      "minimum_singleton_sum": 4095,
+      "minimizing_outside_degrees": [
+        3,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "empty_delta": 5508,
+      "higher_size_floor_loss": 65,
+      "lower_bound": 9538,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 10,
+      "r": 5,
+      "n": 24,
+      "N": 18,
+      "degree_budget": 23,
+      "minimum_singleton_sum": 6643,
+      "minimizing_outside_degrees": [
+        3,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "empty_delta": 9996,
+      "higher_size_floor_loss": 136,
+      "lower_bound": 16503,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 10,
+      "r": 6,
+      "n": 24,
+      "N": 18,
+      "degree_budget": 23,
+      "minimum_singleton_sum": 7007,
+      "minimizing_outside_degrees": [
+        3,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "empty_delta": 13260,
+      "higher_size_floor_loss": 347,
+      "lower_bound": 19920,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 10,
+      "r": 7,
+      "n": 24,
+      "N": 18,
+      "degree_budget": 23,
+      "minimum_singleton_sum": 3575,
+      "minimizing_outside_degrees": [
+        3,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "empty_delta": 11934,
+      "higher_size_floor_loss": 998,
+      "lower_bound": 14511,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 10,
+      "r": 8,
+      "n": 24,
+      "N": 18,
+      "degree_budget": 23,
+      "minimum_singleton_sum": -2145,
+      "minimizing_outside_degrees": [
+        3,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "empty_delta": 4862,
+      "higher_size_floor_loss": 3062,
+      "lower_bound": -345,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 11,
+      "r": 0,
+      "n": 26,
+      "N": 20,
+      "degree_budget": 25,
+      "lower_bound": 19,
+      "method": "omit all positive singleton shifts"
+    },
+    {
+      "p": 11,
+      "r": 1,
+      "n": 26,
+      "N": 20,
+      "degree_budget": 25,
+      "minimum_singleton_sum": 89,
+      "minimizing_outside_degrees": [
+        0,
+        0,
+        0,
+        0,
+        5,
+        20
+      ],
+      "empty_delta": 170,
+      "higher_size_floor_loss": 0,
+      "lower_bound": 259,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 11,
+      "r": 2,
+      "n": 26,
+      "N": 20,
+      "degree_budget": 25,
+      "minimum_singleton_sum": 610,
+      "minimizing_outside_degrees": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        5
+      ],
+      "empty_delta": 950,
+      "higher_size_floor_loss": 15,
+      "lower_bound": 1545,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 11,
+      "r": 3,
+      "n": 26,
+      "N": 20,
+      "degree_budget": 25,
+      "minimum_singleton_sum": 2550,
+      "minimizing_outside_degrees": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        5
+      ],
+      "empty_delta": 3705,
+      "higher_size_floor_loss": 35,
+      "lower_bound": 6220,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 11,
+      "r": 4,
+      "n": 26,
+      "N": 20,
+      "degree_budget": 25,
+      "minimum_singleton_sum": 7210,
+      "minimizing_outside_degrees": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        5
+      ],
+      "empty_delta": 10659,
+      "higher_size_floor_loss": 65,
+      "lower_bound": 17804,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 11,
+      "r": 5,
+      "n": 26,
+      "N": 20,
+      "degree_budget": 25,
+      "minimum_singleton_sum": 14378,
+      "minimizing_outside_degrees": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        5
+      ],
+      "empty_delta": 23256,
+      "higher_size_floor_loss": 136,
+      "lower_bound": 37498,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 11,
+      "r": 6,
+      "n": 26,
+      "N": 20,
+      "degree_budget": 25,
+      "minimum_singleton_sum": 20202,
+      "minimizing_outside_degrees": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        5
+      ],
+      "empty_delta": 38760,
+      "higher_size_floor_loss": 347,
+      "lower_bound": 58615,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 11,
+      "r": 7,
+      "n": 26,
+      "N": 20,
+      "degree_budget": 25,
+      "minimum_singleton_sum": 18590,
+      "minimizing_outside_degrees": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        5
+      ],
+      "empty_delta": 48450,
+      "higher_size_floor_loss": 998,
+      "lower_bound": 66042,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 11,
+      "r": 8,
+      "n": 26,
+      "N": 20,
+      "degree_budget": 25,
+      "minimum_singleton_sum": 7150,
+      "minimizing_outside_degrees": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        5
+      ],
+      "empty_delta": 41990,
+      "higher_size_floor_loss": 3062,
+      "lower_bound": 46078,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 11,
+      "r": 9,
+      "n": 26,
+      "N": 20,
+      "degree_budget": 25,
+      "minimum_singleton_sum": -8580,
+      "minimizing_outside_degrees": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "empty_delta": 16796,
+      "higher_size_floor_loss": 9794,
+      "lower_bound": -1578,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 12,
+      "r": 0,
+      "n": 28,
+      "N": 22,
+      "degree_budget": 27,
+      "lower_bound": 21,
+      "method": "omit all positive singleton shifts"
+    },
+    {
+      "p": 12,
+      "r": 1,
+      "n": 28,
+      "N": 22,
+      "degree_budget": 27,
+      "minimum_singleton_sum": 99,
+      "minimizing_outside_degrees": [
+        0,
+        0,
+        0,
+        0,
+        5,
+        22
+      ],
+      "empty_delta": 209,
+      "higher_size_floor_loss": 0,
+      "lower_bound": 308,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 12,
+      "r": 2,
+      "n": 28,
+      "N": 22,
+      "degree_budget": 27,
+      "minimum_singleton_sum": 762,
+      "minimizing_outside_degrees": [
+        4,
+        4,
+        4,
+        5,
+        5,
+        5
+      ],
+      "empty_delta": 1309,
+      "higher_size_floor_loss": 15,
+      "lower_bound": 2056,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 12,
+      "r": 3,
+      "n": 28,
+      "N": 22,
+      "degree_budget": 27,
+      "minimum_singleton_sum": 3621,
+      "minimizing_outside_degrees": [
+        4,
+        4,
+        4,
+        5,
+        5,
+        5
+      ],
+      "empty_delta": 5775,
+      "higher_size_floor_loss": 35,
+      "lower_bound": 9361,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 12,
+      "r": 4,
+      "n": 28,
+      "N": 22,
+      "degree_budget": 27,
+      "minimum_singleton_sum": 11832,
+      "minimizing_outside_degrees": [
+        4,
+        4,
+        4,
+        5,
+        5,
+        5
+      ],
+      "empty_delta": 19019,
+      "higher_size_floor_loss": 65,
+      "lower_bound": 30786,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 12,
+      "r": 5,
+      "n": 28,
+      "N": 22,
+      "degree_budget": 27,
+      "minimum_singleton_sum": 27948,
+      "minimizing_outside_degrees": [
+        4,
+        4,
+        4,
+        5,
+        5,
+        5
+      ],
+      "empty_delta": 48279,
+      "higher_size_floor_loss": 136,
+      "lower_bound": 76091,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 12,
+      "r": 6,
+      "n": 28,
+      "N": 22,
+      "degree_budget": 27,
+      "minimum_singleton_sum": 48552,
+      "minimizing_outside_degrees": [
+        4,
+        4,
+        4,
+        5,
+        5,
+        5
+      ],
+      "empty_delta": 95931,
+      "higher_size_floor_loss": 347,
+      "lower_bound": 144136,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 12,
+      "r": 7,
+      "n": 28,
+      "N": 22,
+      "degree_budget": 27,
+      "minimum_singleton_sum": 60996,
+      "minimizing_outside_degrees": [
+        4,
+        4,
+        4,
+        5,
+        5,
+        5
+      ],
+      "empty_delta": 149226,
+      "higher_size_floor_loss": 998,
+      "lower_bound": 209224,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 12,
+      "r": 8,
+      "n": 28,
+      "N": 22,
+      "degree_budget": 27,
+      "minimum_singleton_sum": 50388,
+      "minimizing_outside_degrees": [
+        4,
+        4,
+        4,
+        5,
+        5,
+        5
+      ],
+      "empty_delta": 177650,
+      "higher_size_floor_loss": 3062,
+      "lower_bound": 224976,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 12,
+      "r": 9,
+      "n": 28,
+      "N": 22,
+      "degree_budget": 27,
+      "minimum_singleton_sum": 14586,
+      "minimizing_outside_degrees": [
+        4,
+        4,
+        4,
+        5,
+        5,
+        5
+      ],
+      "empty_delta": 149226,
+      "higher_size_floor_loss": 9794,
+      "lower_bound": 154018,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 12,
+      "r": 10,
+      "n": 28,
+      "N": 22,
+      "degree_budget": 27,
+      "minimum_singleton_sum": -29172,
+      "minimizing_outside_degrees": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "empty_delta": 58786,
+      "higher_size_floor_loss": 32276,
+      "lower_bound": -2662,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 13,
+      "r": 0,
+      "n": 30,
+      "N": 24,
+      "degree_budget": 29,
+      "lower_bound": 23,
+      "method": "omit all positive singleton shifts"
+    },
+    {
+      "p": 13,
+      "r": 1,
+      "n": 30,
+      "N": 24,
+      "degree_budget": 29,
+      "minimum_singleton_sum": 109,
+      "minimizing_outside_degrees": [
+        0,
+        0,
+        0,
+        0,
+        5,
+        24
+      ],
+      "empty_delta": 252,
+      "higher_size_floor_loss": 0,
+      "lower_bound": 361,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 13,
+      "r": 2,
+      "n": 30,
+      "N": 24,
+      "degree_budget": 29,
+      "minimum_singleton_sum": 930,
+      "minimizing_outside_degrees": [
+        4,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "empty_delta": 1748,
+      "higher_size_floor_loss": 15,
+      "lower_bound": 2663,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 13,
+      "r": 3,
+      "n": 30,
+      "N": 24,
+      "degree_budget": 29,
+      "minimum_singleton_sum": 4940,
+      "minimizing_outside_degrees": [
+        4,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "empty_delta": 8602,
+      "higher_size_floor_loss": 35,
+      "lower_bound": 13507,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 13,
+      "r": 4,
+      "n": 30,
+      "N": 24,
+      "degree_budget": 29,
+      "minimum_singleton_sum": 18240,
+      "minimizing_outside_degrees": [
+        4,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "empty_delta": 31878,
+      "higher_size_floor_loss": 65,
+      "lower_bound": 50053,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 13,
+      "r": 5,
+      "n": 30,
+      "N": 24,
+      "degree_budget": 29,
+      "minimum_singleton_sum": 49419,
+      "minimizing_outside_degrees": [
+        4,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "empty_delta": 92092,
+      "higher_size_floor_loss": 136,
+      "lower_bound": 141375,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 13,
+      "r": 6,
+      "n": 30,
+      "N": 24,
+      "degree_budget": 29,
+      "minimum_singleton_sum": 100776,
+      "minimizing_outside_degrees": [
+        4,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "empty_delta": 211508,
+      "higher_size_floor_loss": 347,
+      "lower_bound": 311937,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 13,
+      "r": 7,
+      "n": 30,
+      "N": 24,
+      "degree_budget": 29,
+      "minimum_singleton_sum": 155040,
+      "minimizing_outside_degrees": [
+        4,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "empty_delta": 389367,
+      "higher_size_floor_loss": 998,
+      "lower_bound": 543409,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 13,
+      "r": 8,
+      "n": 30,
+      "N": 24,
+      "degree_budget": 29,
+      "minimum_singleton_sum": 174420,
+      "minimizing_outside_degrees": [
+        4,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "empty_delta": 572033,
+      "higher_size_floor_loss": 3062,
+      "lower_bound": 743391,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 13,
+      "r": 9,
+      "n": 30,
+      "N": 24,
+      "degree_budget": 29,
+      "minimum_singleton_sum": 125970,
+      "minimizing_outside_degrees": [
+        4,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "empty_delta": 653752,
+      "higher_size_floor_loss": 9794,
+      "lower_bound": 769928,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 13,
+      "r": 10,
+      "n": 30,
+      "N": 24,
+      "degree_budget": 29,
+      "minimum_singleton_sum": 16796,
+      "minimizing_outside_degrees": [
+        4,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "empty_delta": 534888,
+      "higher_size_floor_loss": 32276,
+      "lower_bound": 519408,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    },
+    {
+      "p": 13,
+      "r": 11,
+      "n": 30,
+      "N": 24,
+      "degree_budget": 29,
+      "minimum_singleton_sum": -100776,
+      "minimizing_outside_degrees": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "empty_delta": 208012,
+      "higher_size_floor_loss": 108799,
+      "lower_bound": -1563,
+      "method": "exact dynamic minimum over six nonnegative outside degrees, each<=N,total<=n-1"
+    }
+  ]
+}

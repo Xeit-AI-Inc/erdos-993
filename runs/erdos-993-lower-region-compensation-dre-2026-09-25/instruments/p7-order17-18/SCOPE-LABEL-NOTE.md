@@ -1,0 +1,3 @@
+# Pre-admission metadata correction required
+
+The byte-frozen script correctly executes orders17 and18 atp7, matching PROTOCOL.md, but its top-level result scope prose retains the words orders14 and15 from the source instrument. This was caught by the controller immediately after launch. Preserve the as-produced program, result and execution receipt. After completion, generate a separate controller-corrected result differing only in that prose field, bind both hashes, verify actual per-order rows/classes/ranks and use only the corrected scope in future handoffs. This does not change the loop, eligibility predicates, counts or arithmetic. Do not edit the already-frozen source or rerun merely for a prose label.

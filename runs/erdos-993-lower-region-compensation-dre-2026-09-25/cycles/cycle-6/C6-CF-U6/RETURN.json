@@ -1,0 +1,31 @@
+{
+  "worker_id": "C6-CF-U6",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "U6-MARKED-RECURRENCE-TRANSPORT",
+      "statement": "For the original fixed selector F(T,p), the exact identity S(T,p)=Q_p-Q_(p-1) and the rooted component recurrence in the source report are valid for every finite ordinary tree and eligible (T,p). The bounded computations are accurately scoped: all labeled trees through order 8 yield no eligible rows, and the T_m replay covers only m<=8. These facts reduce the target to a fixed marked-rank comparison but do not prove its sign.",
+      "scope": "Critique of the single source claim U6-MARKED-RECURRENCE-TRANSPORT under the solution contract\u2019s ordinary-tree domain, original distinct leaf tags, fixed F(T,p), and exact eligibility guards; finite computation only at its stated bounds.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CF-U6/EVIDENCE.json",
+        "cycles/cycle-6/C6-CF-U6/replay_census.json",
+        "cycles/cycle-6/C6-CF-U6/replay_t_family.json"
+      ],
+      "reason": "retained: the algebra, rooted component decomposition, original support deletions, fixed-selector use, and bounded evidence statements check. In particular each summand is q_v(p)-q_v(p-1), the unique component attachment follows from the tree property, and the delta_v substitution gives the stated bridge. The all-tree census has no eligible rows and the 13 T_m rows are bounded evidence only. No step establishes the universal aggregate marked-rank inequality, and no full eligible positive-sum counterexample is given; proposed status remains open."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CF-U6/REPORT.md",
+  "limitations": [
+    "This review verifies the exact reduction and replays the bounded scripts; it does not prove or refute the arbitrary-tree marked-rank comparison.",
+    "The all-labeled-tree census through order 8 has no eligible rows; it provides no eligible sign evidence.",
+    "The T_m replay is limited to m=1..8 and supplies no family theorem.",
+    "No external literature result was used."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "U6-MARKED-RECURRENCE-TRANSPORT"
+  ]
+}

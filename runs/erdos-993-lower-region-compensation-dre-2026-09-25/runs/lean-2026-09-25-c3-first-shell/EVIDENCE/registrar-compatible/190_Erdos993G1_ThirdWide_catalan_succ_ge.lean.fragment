@@ -1,0 +1,11 @@
+namespace Erdos993G1.ThirdWide
+open Finset Classical
+
+lemma catalan_succ_ge (n : ℕ) : (catalan n : ℤ) ≤ catalan (n + 1) := by
+  have h := catalan_recurrence_int n
+  have hc : 0 ≤ (catalan n : ℤ) := Nat.cast_nonneg _
+  have hn : 0 ≤ (n : ℤ) := Nat.cast_nonneg _
+  have hnext : 0 ≤ (catalan (n + 1) : ℤ) := Nat.cast_nonneg _
+  nlinarith [mul_nonneg (show 0 ≤ (3 * (n : ℤ)) by omega) hc]
+
+end Erdos993G1.ThirdWide

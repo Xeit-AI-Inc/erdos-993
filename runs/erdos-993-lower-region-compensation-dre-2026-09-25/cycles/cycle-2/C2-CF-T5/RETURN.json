@@ -1,0 +1,36 @@
+{
+  "worker_id": "C2-CF-T5",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C2-T5-PENDANT-P2-RECURRENCE",
+      "statement": "For a finite ordinary tree U rooted at r, adjoining r-s-v gives I(T;z)=(1+z)I(U;z)+zI(U-r;z), alpha(T)=alpha(U)+1, I(T-v;z)=I(U;z)+zI(U-r;z), and the new leaf contribution is Delta_(p-1)(I(U)-I(U-r)).",
+      "scope": "Exact for every finite ordinary tree U and distinguished vertex r; the selector is the strict test Delta_p(T-v)<0 and the contribution uses the original new leaf v and support s.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-2/C2-CF-T5/EVIDENCE.md"],
+      "reason": "retained: partitioning independent sets by whether the new support s is selected proves both polynomial identities; the original deletion sets for v are U and U-r, and the independence-number formula follows from the same partition."
+    },
+    {
+      "claim_id": "E993-LOWER-REGION-FIRST-ORDER-SHELL",
+      "statement": "The pendant-P2 recurrence alone does not establish the complete favorable-leaf aggregate inequality at the exact shell |T|=2p+2; first-descent transfer, every strict selector value, and comparison of the complete original-leaf sum remain unproved by this recurrence.",
+      "scope": "The recurrence-based argument for the registered first-order shell, preserving the exact primary guards, original supports, and one summand per selected original leaf; this is a proof-gap diagnosis, not a verdict on the shell assertion.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-2/C2-CF-T5/EVIDENCE.md"],
+      "reason": "retained_narrowed: the recurrence establishes order, alpha, and the new-leaf term, but neither transfers x or the strict selector for all retained leaves nor bounds the full recalculated sum. The K_(1,4) diagnostic confirms x can change (2 to 3), but is ineligible at every p and is not a shell refutation."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CF-T5/REPORT.md",
+  "limitations": [
+    "No eligible first-order-shell refutation or universal shell proof is established.",
+    "The K_(1,4) example only diagnoses first-descent instability and fails the primary guards at every integer p.",
+    "The recurrence gives no selector correspondence for all retained leaves and no complete-sum comparison.",
+    "No sealed-source computation was replayed; no exhaustive generation boundary or external theorem was used."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-T5-PENDANT-P2-RECURRENCE",
+    "E993-LOWER-REGION-FIRST-ORDER-SHELL"
+  ]
+}

@@ -1,0 +1,44 @@
+namespace Erdos993G1.FirstWide
+
+lemma outside_incidence_bound {X : Type u} [Fintype X] [DecidableEq X]
+    (G : SimpleGraph X) (M : Finset X) (hM : M.card = 4)
+    (r : ℕ) (hr : 2 ≤ r) (hn : Nat.card X = 2*r+2) (j : ℕ) (hj : j ≤ 2) :
+    (r+1-j) * (stratum G M (r+1) j).card ≤
+      (r+j-2) * (stratum G M r j).card := by
+  classical
+  have hcount := Finset.card_mul_le_card_mul (fun S B : Finset X => B ⊆ S)
+    (s := stratum G M (r+1) j) (t := stratum G M r j)
+    (m := r+1-j) (n := r+j-2) ?_ ?_
+  · simpa only [Nat.mul_comm] using hcount
+  · intro S hS
+    change r+1-j ≤ ((stratum G M r j).filter (fun B => B ⊆ S)).card
+    have hs := (stratum_mem G M S (r+1) j).mp hS
+    rw [subset_fiber_eq_image _ S r
+      (fun B hB => ((stratum_mem G M B r j).mp hB).1.card_eq) hs.1.card_eq]
+    have he : S.filter (fun a => S.erase a ∈ stratum G M r j) = S \ M := by
+      ext a
+      simp only [Finset.mem_filter,Finset.mem_sdiff]
+      exact and_congr_right (fun ha => stratum_erase_outside_iff G M S r j hS a ha)
+    rw [he,erase_image_card S (S \ M) Finset.sdiff_subset]
+    have hc := Finset.card_sdiff_add_card_inter S M
+    rw [hs.2,hs.1.card_eq] at hc
+    omega
+  · intro B hB
+    change ((stratum G M (r+1) j).filter (fun S => B ⊆ S)).card ≤ r+j-2
+    have hb := (stratum_mem G M B r j).mp hB
+    have hbound := extension_fiber_bound (stratum G M (r+1) j) B
+      (Finset.univ \ (M ∪ B)) r
+      (fun S hS => ((stratum_mem G M S (r+1) j).mp hS).1.card_eq) hb.1.card_eq
+      (fun a ha hS => by
+        have haM := stratum_insert_same_outside G M B r j hB a ha hS
+        simp [ha,haM])
+    have hc := Finset.card_union_add_card_inter M B
+    have hi : (M ∩ B).card = j := by rw [Finset.inter_comm,hb.2]
+    rw [hM,hb.1.card_eq,hi] at hc
+    have hn' : (Finset.univ : Finset X).card = 2*r+2 := by simpa [Nat.card_eq_fintype_card] using hn
+    rw [Finset.card_sdiff_of_subset (Finset.subset_univ _),hn'] at hbound
+    have he : 2*r+2 - (M ∪ B).card = r+j-2 := by omega
+    simpa only [he] using hbound
+
+
+end Erdos993G1.FirstWide

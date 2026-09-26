@@ -1,0 +1,13 @@
+lemma Erdos993G1.ordinaryG1_lowRank {W : Type u} [Finite W]
+    (T : SimpleGraph W) (v s g : W) (pT : ℕ)
+    (hG : Erdos993G1.ordinaryG1Guards T v s g pT) (hp : pT ≤ 5) :
+    Erdos993G1.delta (Erdos993G1.residual T v g) ((pT : ℤ) - 2) ≤ 0 := by
+  rcases hG with ⟨hT, hleaf, hvs, hsupport, hsg, hgv, hpT, hgamma, hsize, hcross⟩
+  have hF := Erdos993G1.residual_isAcyclic hT.isAcyclic v g
+  obtain ⟨hp5, hiso, hdelta⟩ := Erdos993G1.lowRankForestClassification
+    (Erdos993G1.residual T v g) pT hF hp hsize hcross
+  have hr : (pT : ℤ) - 2 = 3 := by omega
+  rw [hr, hdelta]
+  norm_num
+
+

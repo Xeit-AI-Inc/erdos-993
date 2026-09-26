@@ -1,0 +1,16 @@
+lemma connected_of_components_card_eq_one {V : Type u}
+    (F : SimpleGraph V) (hc : Nat.card F.ConnectedComponent = 1) :
+    F.Connected := by
+  obtain ⟨hsub, hnonempty⟩ := Nat.card_eq_one_iff_unique.mp hc
+  letI := hsub
+  obtain ⟨c⟩ := hnonempty
+  haveI : Nonempty V := ⟨c.out⟩
+  exact ⟨fun v w => SimpleGraph.ConnectedComponent.exact (Subsingleton.elim _ _)⟩
+
+end Erdos993G1
+
+
+namespace Erdos993G1.PathClassification
+
+open SimpleGraph
+

@@ -1,0 +1,283 @@
+{
+  "worker_id": "C4-SYNTHESIS",
+  "cycle": 4,
+  "stage": "synthesis",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "C4-F1-bounded-CTx-selector-search",
+      "statement": "The exact specified F1 Prüfer sample has 37 eligible rows, all with p=x+2, full original-leaf selector, negative S and E<=(x+1)Q; no proper selector occurs.",
+      "scope": "1,836 labeled encodings, 204 at each order 8..16, seed 993041 plus four fixed words per order; isomorphic duplicates retained. Flat-budget statement only.",
+      "status": "proposed_bounded",
+      "reason": "synthesis disposition from C4-AF: retained: independent critics audit the bounded selector and sum. The source and both critics misname the flat gap as CT_x; case-listed correction gives the actual formula and positive actual gaps for recorded rows, without changing the exact returned flat assertion. No universal inference.",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md"
+      ]
+    },
+    {
+      "claim_id": "C4-F2-BOUNDED-BUDGET-SEARCH",
+      "statement": "No flat, current-rank or target budget violation occurs in the specified main F2 search; no proper selector occurs in its main or separate two-hub stress.",
+      "scope": "Main: 24,067 generated instances and 339 eligible pairs across stated small exhaustive, seeded, broom, graft and spider populations. Two-hub selector-only stress: 287 eligible pairs. Seed 9930425.",
+      "status": "proposed_bounded",
+      "reason": "synthesis disposition from C4-AF: retained: both critics replayed the finite scripts and independently checked the star arithmetic. The two-hub run checks selector incidence only. Neither universal budget nor primary aggregate follows.",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md"
+      ]
+    },
+    {
+      "claim_id": "C4-F3-TM5-EXACT-REPLAY",
+      "statement": "For T_5 formed from path 0-1-2 with five three-tip claws attached to 0, at p=10 one has alpha=17, x=8, all 16 original leaves strictly favorable, and complete S=-84215.",
+      "scope": "Exactly one ordinary tree and rank, m=5,p=10; 30<35 and x+2=p. Endpoint term -1430 and fifteen distinct tip terms -5519.",
+      "status": "proposed_verified",
+      "reason": "synthesis disposition from C4-AF: retained: both critics independently reconstruct the tree, strict selector and direct complete S. Report alpha=16 prose is wrong; auxiliary source C/E omit H_v deletions. Correct C=108945 and E=1648440. These errors do not alter the exact RETURN claim; no Hall or universal result follows.",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md"
+      ]
+    },
+    {
+      "claim_id": "C4-F4-BOUNDED-SELECTOR-RECURRENCE-PROBE",
+      "statement": "The F4 bounded probe has no positive full S or proper selector in tested eligible rows; all-root polynomial evaluation agrees on its first eligible order-17 fixture.",
+      "scope": "All 18,248 labeled trees orders 2..7, with no eligible rows; 40 seed-20260926 Prüfer samples at each order 16..60, with 2,535 eligible rows; root check on one 17-vertex fixture.",
+      "status": "proposed_bounded",
+      "reason": "synthesis disposition from C4-AF: retained: critics replay the inventory and independently verify the displayed eligible fixture and its eight tagged terms. The full large sample was not independently regenerated; the rooted check concerns one tree. No universal selector or aggregate assertion follows.",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md"
+      ]
+    },
+    {
+      "claim_id": "C4-F5-TM-EXACT-BOUNDED-CHECKS",
+      "statement": "Every eligible row in the specified finite T_m, equal-arm, and lopsided parameter boxes has nonpositive complete original favorable-leaf sum.",
+      "scope": "T_m m=1..100: 2,743 eligible rows; equal-arm r=1..6,m=1..15: 347; lopsided s in {1,2,4,5},m=2..20: 400. Graph cross-check covers 100 T_m and 52 lopsided eligible rows. No all-m or all-tree theorem.",
+      "status": "proposed_bounded",
+      "reason": "retained with corrected ID: C4-AF REPORT.md gives these three finite boxes under F5. The C4-AF RETURN.json assignment of the all-m open statement to F5 is rejected as an ID permutation. Exact finite horizons and direct selected sums survive; no universal sign follows.",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md"
+      ]
+    },
+    {
+      "claim_id": "C4-F6-LOW-COVER-SHELL-FAMILY-CHECK",
+      "statement": "In the sorted positive-arm root-with-centers family at n=2p+4,p=10..13, the sole eligible profile is p=10,(2,3,3,3,3,3), with 17 selected negative terms and S=-122805.",
+      "scope": "Complete integer partitions with 1<=c<=6, m_i>=1 sorted, sum m_i=2p+3-c; candidate counts 199,279,384,517. Excludes other low-cover skeletons. Source c=1 root omission affects ineligible rows only; Delta_18=-1 and Delta_19=0 in the eligible profile.",
+      "status": "proposed_bounded",
+      "reason": "retained with corrected ID: C4-AF REPORT.md gives this finite sorted-arm census under F6, corroborated by its top-level evidence. The C4-AF RETURN.json assignment of the three finite T_m/variant boxes to F6 is rejected as an ID permutation. The append-only terminal-difference clarification is incorporated.",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md"
+      ]
+    },
+    {
+      "claim_id": "C4-T1-CTx-SUFFICIENT-REDUCTION",
+      "statement": "For an eligible ordinary tree with fixed strict original-leaf selector, the aggregate premise i_x(T)E <= (x+1)i_(x+1)(T)Q implies S(T,p)<=0.",
+      "scope": "All finite ordinary trees satisfying x(T)+2<=p and 3p<2alpha(T)+1; k=p-1, actual marked addability E, marked count Q, and multiply marked correction C summed over the same fixed separate leaf tags. This is conditional; universal CT_x is not established.",
+      "status": "proposed_verified",
+      "reason": "synthesis disposition from C4-AT: retained: E=kU+C and kS=E-C-kQ. For Q>0, i_x>i_(x+1) and k>=x+1 make E<kQ under the premise. Q=0 forces U=S=0.",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md"
+      ]
+    },
+    {
+      "claim_id": "C4-T1-ORDER24-POSITIVE-MARKED-ADDABILITY-COVARIANCE",
+      "statement": "One eligible order-24 tree has strictly positive rank-9 covariance between meeting W_0 and actual addability in H_0 for selected leaf 0; its complete selected sum is -51095.",
+      "scope": "Only the 23-edge labeled tree, alpha=15, x=8, p=10, k=9, leaf 0, and all eleven original leaves listed in REPORT.md. Local covariance is 1773113/13677^2>0; no universal covariance or aggregate conclusion.",
+      "status": "proposed_verified",
+      "reason": "synthesis disposition from C4-AT: retained: independent forest recurrence reconstructs every original leaf, strict selector and summand; literal addability E_0=58429 gives positive covariance. The full S is negative, so this is a shortcut fence only.",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md"
+      ]
+    },
+    {
+      "claim_id": "C4-T2-NEIGHBORHOOD-REDUCTION",
+      "statement": "With Q the marked rank-k count, M the summed open-neighborhood sizes of marked k-sets, and C the tagged multiply marked upper-set count, kS=(|V(T)|-2p)Q-M-C; hence S<=0 when |V(T)|<=2p.",
+      "scope": "Eligible finite ordinary trees with one fixed strict favorable-leaf selector, k=p-1, original supports and separate tags. For |V(T)|>2p the needed M+C>=(|V(T)|-2p)Q remains unproved.",
+      "status": "proposed_verified",
+      "reason": "synthesis disposition from C4-AT: retained: actual addability gives E=(n-2-k)Q-M, marked upper-set double count gives E=kU+C, and S=U-Q. Q,M,C>=0 prove the order subcase.",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md"
+      ]
+    },
+    {
+      "claim_id": "C4-T3-MATCHING-SECTOR-DELETION-BOUND",
+      "statement": "Every source subfamily A of the rank-491 level with 736 disjoint two-choice color classes has deletion boundary D(A) satisfying 491|A|<=492|D(A)|; equality holds for the full level, whose deletion-only shortfall is source/492.",
+      "scope": "Only ordinary one-element deletions retaining the two fixed vertices in the CB(8,92) matching sector; no insertion arcs, competing demands, full Hall assertion, fixed full-tree selector, or aggregate sign.",
+      "status": "proposed_verified",
+      "reason": "synthesis disposition from C4-AT: retained: each source has 491 deletions and each rank-490 target at most 2(736-490)=492 extensions. Full-level sizes binom(736,491)2^491 and binom(736,490)2^490 attain equality.",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md"
+      ]
+    },
+    {
+      "claim_id": "C4-T4-CROSS-TAG-INJECTIVITY-BRIDGE",
+      "statement": "The specific alternating-sign, least-eligible-tag deletion map L:K_p->K_(p-1) is well defined and its injectivity would imply S<=0, but its asserted universal injectivity is false: on eligible K_{1,12} at p=8 it has a nonzero nine-term alternating-boundary kernel.",
+      "scope": "Exact C4-T4 map with original strict selector and separate tags; star center 0 and leaves 1..12, alpha=12, x=6, p=8, every leaf selected. This does not refute other maps, weighted Hall, or the full aggregate, which equals -1980 here.",
+      "status": "proposed_refuted",
+      "reason": "synthesis disposition from C4-AT: rejected: universal injectivity of the exact signed map is refuted by append-only REPAIR-A1. For tag 1 and C={2,...,10}, z=sum_j(-1)^j(1,C-{c_j}) is nonzero and Lz=0 by paired signed deletions; all selectors and guards pass. The conditional implication survives. Hall holds for the support graph but does not preclude signed cancellation.",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md"
+      ]
+    },
+    {
+      "claim_id": "C4-T4-RELATIVE-CHAIN-IDENTITY",
+      "statement": "For K_j on tagged independent j-sets of H_v meeting W_v, the complete target sum is S(T,p)=dim_Q K_p-dim_Q K_(p-1).",
+      "scope": "Every eligible finite ordinary tree with its fixed strict original-leaf selector; same-support leaves are distinct direct-sum tags. The identity alone gives no dimension inequality.",
+      "status": "proposed_verified",
+      "reason": "synthesis disposition from C4-AT: retained: R_v=H_v-W_v, so q_v(j)=i_j(H_v)-i_j(R_v) counts the relative faces; each selected summand is q_v(p)-q_v(p-1). The signed-map correction does not affect this identity.",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md"
+      ]
+    },
+    {
+      "claim_id": "C4-T5-TM-ALL-OPEN",
+      "statement": "The exact T_m all-leaf marked polynomial derivative identity holds, but neither both orbit selectors nor the selected aggregate sign are established for every eligible m,p.",
+      "scope": "Infinite two-orbit family T_m (path a-b-r and m three-leaf claws at r); m>=1 and all eligible lower-region p. This is a route gap and no assertion that the all-parameter inequality is false.",
+      "status": "proposed_open",
+      "reason": "synthesis disposition from C4-AT: retained: Q_m=P_m'-2B^m-(1+z)^(3m+1)-4m(1+2z)B^(m-1) by differentiation, but Q_m is the selected polynomial only when both strict orbit selectors hold, and no uniform coefficient sign is proved.",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md"
+      ]
+    },
+    {
+      "claim_id": "C4-T5-TM80-BOUNDED",
+      "statement": "For T_m and every eligible lower-region p at each 1<=m<=80, both original leaf orbits are strictly favorable and the complete selected sum is strictly negative, using the corrected claw deletion polynomial.",
+      "scope": "Exactly m=1..80, 1749 eligible rows over m=3..80; all p with x+2<=p<=alpha and 3p<2alpha+1. No statement for m>80 or other trees.",
+      "status": "proposed_verified",
+      "reason": "synthesis disposition from C4-AT: retained_narrowed: source replay omits (1+2z) in the claw deletion polynomial, so all 1749 printed claw selector differences are wrong. Two critic audits and separate exact convolution correct the differences; selector booleans and complete sums remain unchanged and negative on every row.",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md"
+      ]
+    },
+    {
+      "claim_id": "C4-T6-PRIMARY-GLOBAL-BOUND",
+      "statement": "The C4-T6 rooted-message recurrence resolves neither the universal lower-region selected aggregate inequality nor an eligible positive complete-sum counterexample.",
+      "scope": "Only the evidentiary reach of the C4-T6 route on contract-eligible finite ordinary trees; no claim that another recurrence or invariant is impossible and no authoritative registry verdict.",
+      "status": "proposed_open",
+      "reason": "synthesis disposition from C4-AT: retained_narrowed: the exact evaluator has no uniform coefficient comparison after whole-tree first descent and fixed strict leaf selectors. This route supplies no proof or positive full-S witness.",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md"
+      ]
+    },
+    {
+      "claim_id": "C4-T6-ROOTED-MESSAGE-REDUCTION",
+      "statement": "Rooted independence-polynomial messages give exact product formulas for I(T-v), I(T-{v,s_v}), and I(T-N[s_v]) for every original leaf tag.",
+      "scope": "All finite ordinary trees as polynomial identities, including shared-support leaves and empty products; the selector and summand follow by zero-extended coefficient differences at p and p-1, respectively. No uniform sign follows.",
+      "status": "proposed_verified",
+      "reason": "synthesis disposition from C4-AT: retained: root include/exclude gives A_u=prod(A_c+zB_c), B_u=prod A_c; support splitting gives the three formulas in REPORT.md. Both critics independently checked branch indexing and same-support multiplicity.",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md"
+      ]
+    },
+    {
+      "claim_id": "C4-U1-COVARIANCE-DECOMPOSITION",
+      "statement": "For every eligible ordinary tree and fixed favorable selector, the tagged lift preserves addability and gives E/Q=mu_p+Cov_p(w,e)/E_p[w] for Q>0, with exact neighborhood expansion; Q=0 makes CT_x trivial.",
+      "scope": "Exact identities only; no universal covariance bound, CT_x proof, or aggregate verdict.",
+      "status": "proposed_verified",
+      "reason": "synthesis disposition from C4-AU: retained: tag bijection, extension double count, and indicator expansion prove the identities; the covariance budget is missing.",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md"
+      ]
+    },
+    {
+      "claim_id": "C4-U2-MARKED-SHELL-REDUCTION",
+      "statement": "For |T|=2p+s, p>=3, s>=2, an original leaf has a nonpositive rank-(p-1) term if tau(T)>=ceil(3s/2)+1 and each d>=3 first-mark block meets p-2>=K(d), using the inherited matching results. The correct identity is q_j-q_(j-1)=sum_i Delta_(j-2)(J_i).",
+      "scope": "Conditional pointwise shell result for any fixed leaf subset, plus an s=5 Catalan-method cutoff; no universal cover or rank premise.",
+      "status": "proposed_open",
+      "reason": "synthesis disposition from C4-AU: retained_narrowed: the route generic Delta_(j-1) sentence is false, but its j=p specialization uses the correct p-2. The s=3,p=6,ell=2 block misses the generic gate and needs a separate inherited odd-order result.",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md"
+      ]
+    },
+    {
+      "claim_id": "C4-U3.LOW-COVER-SIGN",
+      "statement": "The selector-weighted sign for all low-cover trees in the four third-shell orders remains unresolved by the supplied evidence.",
+      "scope": "Evidence-scope statement, not a sign theorem or counterexample; cover number at most six, n=2p+4, p=10..13.",
+      "status": "proposed_open",
+      "reason": "synthesis disposition from C4-AU: retained_narrowed: no census was run and the proposed evaluator was wrong; a corrected one-witness complete sum is negative 122805.",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md"
+      ]
+    },
+    {
+      "claim_id": "C4-U3.LOW-COVER-SKELETON",
+      "statement": "Every n=24,26,28,30 tree with cover number at most six has a six-cover core with at most five outside connectors, edge budget e_C+sum_D(deg-1)=5, and six pendant multiplicities. The correct polynomial uses c in C setminus I and the composition count is binom(n-t-1,5).",
+      "scope": "Exhaustive structural domain and corrected evaluator for four low-cover third-shell cells; no sign census.",
+      "status": "proposed_verified",
+      "reason": "synthesis disposition from C4-AU: retained_narrowed: structure and finite domain survive, but the source and both critics used a false C setminus N_K[I] polynomial; a repaired eligible witness shows 17 omitted rank-two sets.",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md"
+      ]
+    },
+    {
+      "claim_id": "C4-U4-COLORED-SHADOW-MIXED-BOUNDARY",
+      "statement": "The matching-sector quotient supports a cited ordinary lower-shadow comparison and unweighted normalized-matching flow. In the toy tree with edges ab,ah, the specified singleton compression preserves lower-shadow size but changes extra addability from one to zero.",
+      "scope": "Matching-sector ordinary shadow and toy insertion statistic only; no CB mixed-boundary or primary result.",
+      "status": "proposed_open",
+      "reason": "synthesis disposition from C4-AU: retained_narrowed: cited tools do not encode external hub arcs or capacities. The toy is not a CB counterexample, and the imported papers were not independently retrieved here.",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md"
+      ]
+    },
+    {
+      "claim_id": "C4-U5-SUPPORT-POLYNOMIAL-REDUCTION",
+      "statement": "For every ordinary tree and fixed p>=2, support products P=prod J+z prod A and Q=prod J-prod A encode I(T-v) and I(T-{u,v})-I(T-N[u]); multiplying each strict selected coefficient term by its original leaf multiplicity gives complete S. Rerooted messages truncated through p+1 plus alpha compute the guards and terms.",
+      "scope": "Exact support algebra and fixed-rank computation; no uniform induction state or aggregate sign.",
+      "status": "proposed_verified",
+      "reason": "synthesis disposition from C4-AU: retained: original deletions, selector and summand coefficient indices, multiplicities, and rooted recurrence follow by independent-set partitions.",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md"
+      ]
+    },
+    {
+      "claim_id": "C4-U6-first-shell-bridge",
+      "statement": "The pinned first-shell definitions encode original supports, deletion counts, strict selector, and full aggregate, with q_j=i_j(H_v)-i_j(R_v). The informal first-shell proof has |T|=2p+2, p>=3, x+2<=p; its exact-order step does not itself extend to arbitrary-order eligible trees.",
+      "scope": "Definition bridge and informal first-shell scope only; no terminal kernel/fidelity award or unrestricted target proof.",
+      "status": "proposed_open",
+      "reason": "synthesis disposition from C4-AU: retained_narrowed: frozen sources are permitted common files, contrary to the F critic read-boundary assertion. The preflight is not a terminal receipt and the order mismatch remains.",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md"
+      ]
+    },
+    {
+      "claim_id": "E993-ORDINARY-TM-LOWER-REGION-AGGREGATE",
+      "statement": "For every m>=1 and every eligible p in the path-plus-m-three-tip-claws family T_m, the complete original favorable-leaf sum is conjectured nonpositive.",
+      "scope": "All m>=1 and p with x(T_m)+2<=p and strict 3p<2alpha(T_m)+1; endpoint and each of 3m tip leaves use the strict original selector, with three tips per distinct claw support. This registered family target remains unproved for unbounded m.",
+      "status": "proposed_open",
+      "reason": "retained with corrected registered identity: C4-AF REPORT.md assigns the all-m family question to this ID, and the common registered claim identity agrees. Exact orbit and derivative formulas are reductions, but no uniform selector or coefficient sign proof exists. The C4-AF RETURN.json finite sorted-arm assignment to this ID is rejected as an ID permutation.",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md"
+      ]
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-SYNTHESIS/REPORT.md",
+  "limitations": [
+    "The complete original-leaf selected lower-region sum remains unresolved for general eligible ordinary trees with n>2p; no eligible positive complete-sum counterexample is supplied.",
+    "CT_x, flat and current-rank addability budgets, the all-m T_m family assertion, mixed CB Hall capacity, and low-cover six-cover sign remain open at their respective scopes.",
+    "Finite searches and family computations retain only their recorded horizons; local covariance, a signed-map kernel, and deletion-only sector shortfall do not refute the primary.",
+    "C4-AF RETURN.json permutes the statements for F5, F6, and the registered all-m E993 identity. This synthesis uses C4-AF REPORT.md and common identity controls for the corrected dispositions, and rejects the three mismatched attachments.",
+    "The C4-U6 first-shell evidence is frozen historical material; no live formal award or later-cycle finding is inferred. All synthesis statuses are proposed worker-only."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-F1-bounded-CTx-selector-search",
+    "C4-F2-BOUNDED-BUDGET-SEARCH",
+    "C4-F3-TM5-EXACT-REPLAY",
+    "C4-F4-BOUNDED-SELECTOR-RECURRENCE-PROBE",
+    "C4-F5-TM-EXACT-BOUNDED-CHECKS",
+    "C4-F6-LOW-COVER-SHELL-FAMILY-CHECK",
+    "C4-T1-CTx-SUFFICIENT-REDUCTION",
+    "C4-T1-ORDER24-POSITIVE-MARKED-ADDABILITY-COVARIANCE",
+    "C4-T2-NEIGHBORHOOD-REDUCTION",
+    "C4-T3-MATCHING-SECTOR-DELETION-BOUND",
+    "C4-T4-CROSS-TAG-INJECTIVITY-BRIDGE",
+    "C4-T4-RELATIVE-CHAIN-IDENTITY",
+    "C4-T5-TM-ALL-OPEN",
+    "C4-T5-TM80-BOUNDED",
+    "C4-T6-PRIMARY-GLOBAL-BOUND",
+    "C4-T6-ROOTED-MESSAGE-REDUCTION",
+    "C4-U1-COVARIANCE-DECOMPOSITION",
+    "C4-U2-MARKED-SHELL-REDUCTION",
+    "C4-U3.LOW-COVER-SIGN",
+    "C4-U3.LOW-COVER-SKELETON",
+    "C4-U4-COLORED-SHADOW-MIXED-BOUNDARY",
+    "C4-U5-SUPPORT-POLYNOMIAL-REDUCTION",
+    "C4-U6-first-shell-bridge",
+    "E993-ORDINARY-TM-LOWER-REGION-AGGREGATE"
+  ]
+}

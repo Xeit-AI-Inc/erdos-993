@@ -1,0 +1,41 @@
+{
+  "worker_id": "C4-CU-T4",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "U",
+  "covered_claim_ids": [
+    "C4-T4-CROSS-TAG-INJECTIVITY-BRIDGE",
+    "C4-T4-RELATIVE-CHAIN-IDENTITY"
+  ],
+  "claims": [
+    {
+      "claim_id": "C4-T4-RELATIVE-CHAIN-IDENTITY",
+      "statement": "For every eligible ordinary-tree instance under the source's fixed selector, the target sum equals dim_Q(K_p)-dim_Q(K_(p-1)) for the direct sum over all favorable original-leaf tags, with each K_j based on independent j-sets of H_v meeting W_v.",
+      "scope": "Finite ordinary trees with x(T)+2<=p and 3p<2alpha(T)+1; exact strict favorable-leaf selector; original supports and neighborhoods; separate tags for leaves sharing a support.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CU-T4/REPORT.md",
+        "cycles/cycle-4/C4-CU-T4/EVIDENCE.json"
+      ],
+      "reason": "retained: q_v(j) counts exactly the independent j-sets meeting W_v, and the contract summand is q_v(p)-q_v(p-1); summing over the unchanged F proves the stated dimension identity."
+    },
+    {
+      "claim_id": "C4-T4-CROSS-TAG-INJECTIVITY-BRIDGE",
+      "statement": "The stated least-eligible-tag deletion rule is a well-defined linear map K_p to K_(p-1); its injectivity would suffice for the selected aggregate, but universal injectivity is not established.",
+      "scope": "Same eligible ordinary-tree domain and fixed selector as the source; original leaf tags, supports, W_v, and a fixed total order for tag choice.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CU-T4/REPORT.md",
+        "cycles/cycle-4/C4-CU-T4/EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: every output is a valid codomain basis vector and injectivity would imply the required dimension inequality; the route gives no argument excluding collisions or signed cancellation, so its stronger universal injectivity assertion remains an open sufficient mechanism only."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CU-T4/REPORT.md",
+  "limitations": [
+    "No universal injectivity proof or eligible counterexample to this exact operator was established.",
+    "No computation, literature theorem, or source replay establishes the primary aggregate.",
+    "The prior T22 local injectivity obstruction is a different map and does not refute this cross-tag operator."
+  ],
+  "status_authority": "proposed_worker_only"
+}

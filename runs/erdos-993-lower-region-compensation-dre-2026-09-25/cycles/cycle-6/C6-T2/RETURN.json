@@ -1,0 +1,27 @@
+{
+  "worker_id": "C6-T2",
+  "cycle": 6,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "E993-ORDINARY-PATH-STAR-ARITY-2-4-M2000-LOWER-REGION-AGGREGATE",
+      "statement": "For the ordinary tree consisting of path 0-1-2 with m distinct centers attached to 0 and r_i private leaves at center i, for every m >= 2000, every r_i in {2,3,4}, and every p with x(T)+2 <= p and 3p < 2 alpha(T)+1, the complete sum over the original strict favorable-leaf selector satisfies S(T,p) < 0.",
+      "scope": "Restricted path-with-private-stars family; m >= 2000; arbitrary heterogeneous profile with each r_i in {2,3,4}; original distinct leaf tags, strict selector, and strict lower-region guard. Does not cover m < 2000 or arbitrary ordinary trees.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-T2/REPORT.md",
+        "cycles/cycle-6/C6-T2/cutoff2000_audit.py",
+        "cycles/cycle-6/C6-T2/cutoff2000_audit.json"
+      ],
+      "reason": "The graph, support-deletion, and complete tag-sum formulas were derived directly. Finite-order ULC convolution supplies central curvature; exact quotient monotonicity and rational cutoff arithmetic establish uniform perturbation control from m=2000. Mixed minors transfer first descent to both deletion types and every distributed marked factor, yielding the complete strict negative sum. The restricted proof uses the cited primary ULC theorem and leaves the universal-tree claim unresolved."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-T2/REPORT.md",
+  "limitations": [
+    "This proves only the specified path-with-private-stars family for m >= 2000 and branch arities 2, 3, or 4; the prefix m < 2000 and arbitrary ordinary trees remain unresolved.",
+    "The finite-order ULC convolution theorem is imported from Gurvits, arXiv:0804.1181, Theorem 1.1; its stated sequence-order hypotheses were checked, but no kernel-level formalization is provided.",
+    "The rational replay verifies the cutoff arithmetic, not an exhaustive census of profiles or independent graph enumeration."
+  ],
+  "status_authority": "proposed_worker_only"
+}

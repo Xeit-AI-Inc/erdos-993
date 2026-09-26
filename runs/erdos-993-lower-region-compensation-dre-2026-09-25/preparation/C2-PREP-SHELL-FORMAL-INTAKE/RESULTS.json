@@ -1,0 +1,89 @@
+{
+  "worker_id": "C2-PREP-SHELL-FORMAL-INTAKE",
+  "status_authority": "proposed_worker_only",
+  "registered_claim_key": "E993-LOWER-REGION-FIRST-ORDER-SHELL",
+  "registered_status_at_input": "OPEN",
+  "result": "bounded_formalization_intake_prepared",
+  "formal_award": false,
+  "lean_build_performed": false,
+  "theorem_contract_validated": false,
+  "source_pin_evidence": "SOURCES.json",
+  "source_hashes_verified": true,
+  "source_count": 14,
+  "exact_terminal_header": "namespace E993FirstShell\n\ntheorem registeredFirstOrderShell\n    {V : Type*} [Fintype V] [DecidableEq V]\n    (T : SimpleGraph V) [DecidableRel T.Adj]\n    (hTree : T.IsTree) (p : ℕ)\n    (hEarly : C5LA1.crossingIndex T + 2 ≤ p)\n    (hAlpha : 3 * p < 2 * T.indepNum + 1)\n    (hOrder : Fintype.card V = 2 * p + 2) :\n    C5LA1.aggregate T p ≤ 0\n\nend E993FirstShell",
+  "terminal_meaning": "For every finite ordinary tree T and natural p with x(T)+2<=p, strict 3p<2alpha(T)+1, and |V(T)|=2p+2, the full sum over all original leaves v satisfying Delta_p(T-v)<0 of Delta_(p-1)(T-{v,s_v})-Delta_(p-1)(T-N_T[s_v]) is <=0. The favorable filter and strict alpha guard are retained exactly.",
+  "proposed_internal_pointwise_lemma": "Under tree, x(T)+2<=p, and |T|=2p+2, every original leaf term is <=0; this stronger assertion has no new award.",
+  "mathematical_route": {
+    "cover_three_exclusion": "For every rank 0<=r<=p-2, a cover of T of size <=3 yields Delta_r(T)>0 via the exact cover partition, the Catalan floor with guarded negative indices, binomial-difference monotonicity, and strict Gamma_3 arithmetic; this contradicts x(T)+2<=p.",
+    "leaf_cover_simplification": "Any cover of H=T-{v,s} of size <=2 extends with s to a cover of T of size <=3; no alpha(T)-alpha(H) or minimum-cover equality is required.",
+    "marked_route": "Single-mark partition plus A (order<=2k), B (order<=2k+1 and >=2 edges), C (order=2k+2, no cover<=2, nonisolated mark); C uses pinned first-wide at r=k-1 in its exact-order branch.",
+    "endpoint_checks": [
+      "Natural j>=0: binomDelta_floor gives E(m,j)>=-Cat_j.",
+      "Shift t=k+1: integer rank -1 gives E(m,-1)=1.",
+      "Shift t>=k+2: integer rank <=-2 gives E(m,j)=0.",
+      "r=0 and r=1 three-cover margins are each 2; r>=2 has positive Catalan lower margin.",
+      "A nontrivial H component has a W-root nonisolated in H; H cannot be all isolates under no-cover<=2."
+    ]
+  },
+  "pinned_dependencies": [
+    {
+      "source": "control-proposals/formal-intake/G1FirstWideMain.lean",
+      "declaration": "Erdos993G1.firstWide_nonpos_of_two_edges",
+      "needed_statement": "r>=1, Nat.card Y=2*r+2, at least two graph edges imply delta_r<=0",
+      "current_check": "exact source and hash inspected; no rebuild"
+    },
+    {
+      "source": "control-proposals/formal-intake/R25Card5Main.lean",
+      "declarations": [
+        "Erdos993G1.ThirdWide.binomDelta_mono_center",
+        "Erdos993G1.ThirdWide.binomDelta_floor",
+        "Erdos993G1.ThirdWide.binom_shift_floor",
+        "Erdos993G1.ThirdWide.cover_delta_partition",
+        "Erdos993G1.ThirdWide.cover_sum_bound"
+      ],
+      "needed_statement": "binomial monotonicity, natural Catalan floor and shifted endpoint lower bound, exact finite cover partition and lower summation",
+      "current_check": "actual declarations and dependency closure inspected; extraction and new shell lemmas unbuilt"
+    },
+    {
+      "source": "control-proposals/formal-intake/FirstInteriorMain.lean",
+      "declarations": [
+        "C4LA1.IsGraphLeaf",
+        "C4LA1.IsFavorableAt",
+        "C5LA1.support",
+        "C5LA1.H",
+        "C5LA1.R",
+        "C5LA1.crossingIndex",
+        "C5LA1.aggregate"
+      ],
+      "needed_statement": "exact original-leaf selector, deleted-graph coefficients, first descent, and full favorable aggregate",
+      "current_check": "definitions in entries 1-14 inspected; full snapshot conflicts with G1 namespace"
+    }
+  ],
+  "duplicate_declarations": {
+    "distinct_names": 31,
+    "all_three": 8,
+    "interior_and_g1_only": 17,
+    "g1_and_r25_only": 6,
+    "inventory": "SOURCES.json"
+  },
+  "preferred_integration": "Keep G1 whole source byte-identical as the canonical graph module. Extract exact C4/C5 prefix entries 1-14 from FirstInterior. Extract dependency-closed r25 entries 16-19, 22, and 40-48 using G1 shared definitions. Treat extracted modules as modified new artifacts with new hashes; prove semantic bridges for subtype graph counts and source notation.",
+  "remaining_implementation_obstacles": [
+    "Create and elaborate collision-free pinned dependency modules without altering preserved snapshots.",
+    "Prove finite subtype/induced-graph count, difference, and cardinality bridges to C5LA1 aggregate.",
+    "Formalize marked A/B/C incidence counts, exact edge-cover cases, and the first-wide call at r=k-1.",
+    "Formalize three-cover partition and strict positivity at every rank 0..p-2, including negative integer coefficient endpoints and guarded Catalan indices.",
+    "Prove early-descent minimality, direct cover extension, and existence of a nonisolated marked component root.",
+    "Freeze and independently review the exact terminal declaration, then perform a separate no-placeholder Lean kernel verification."
+  ],
+  "limitations": [
+    "No Lean project was created or built in this intake.",
+    "No new formal verification or proof award is claimed.",
+    "No conclusion is proposed for |T|>=2p+3 or the unrestricted lower-region target.",
+    "Prior r25 kernel status does not certify any extraction or new shell proof."
+  ],
+  "artifacts": [
+    "REPORT.md",
+    "RESULTS.json",
+    "SOURCES.json"
+  ]
+}

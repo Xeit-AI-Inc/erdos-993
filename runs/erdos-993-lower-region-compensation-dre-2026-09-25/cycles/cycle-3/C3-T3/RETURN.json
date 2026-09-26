@@ -1,0 +1,46 @@
+{
+  "worker_id": "C3-T3",
+  "cycle": 3,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL",
+      "statement": "For ordinary trees under the exact fixed-selector lower-region hypotheses, the bipartite weighted graph with deletion and two-for-one edges saturates all upper supply.",
+      "scope": "Universal ordinary-tree mechanism as defined in the registered claim; this route does not prove or refute it.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-T3/REPORT.md",
+        "cycles/cycle-3/C3-T3/EVIDENCE.json"
+      ],
+      "reason": "A symmetric-chain injection proves only the star subcase. A fresh eligible T_67 full-sum computation gives no set-level flow. The general map, collision bound, and recovery rule remain missing."
+    },
+    {
+      "claim_id": "C3-T3-STAR-SYMMETRIC-CHAIN-SUBCASE",
+      "statement": "For a star K_{1,m}, any fixed leaf-tag set F, and 2<=p<=m-1 with p>(m-1)/2, the weighted upper tagged layer injects into the weighted lower tagged layer by a tag-preserving deletion, hence the corresponding weighted graph saturates.",
+      "scope": "Star trees only; arbitrary fixed subset of original leaf tags; ranks satisfying the displayed Boolean-layer conditions.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-T3/REPORT.md"
+      ],
+      "reason": "The Boolean fibers are B_{m-1}; a fixed symmetric-chain decomposition maps each rank-p member to the rank-(p-1) member in its chain. The witness condition holds on both ranks, and the tag coordinate makes images for different tags distinct."
+    },
+    {
+      "claim_id": "C3-T3-T67-EXACT-BOUNDED-ROW",
+      "statement": "The specified T_67 ordinary tree at p=99 is eligible with all 202 original leaves favorable and has the exact complete selected sum recorded in EVIDENCE.json.",
+      "scope": "One tree, graph recipe and rank only; exact bounded computation.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-T3/EVIDENCE.json"
+      ],
+      "reason": "The listed exact forest evaluator and aggregate-row calculation verify the coefficient vectors, first descent, both selector leaf orbits, strict lower-region guard, all summands and full sum. This does not test or certify a flow."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-T3/REPORT.md",
+  "limitations": [
+    "The symmetric-chain construction applies only to stars and does not handle competing tags in branched trees.",
+    "No set-level flow was computed for the fresh T_67 instance; its aggregate sign is not a Hall certificate.",
+    "The exact T_67 calculation is a single bounded result and does not resolve the universal mechanism or the primary aggregate."
+  ],
+  "status_authority": "proposed_worker_only"
+}

@@ -1,0 +1,13 @@
+namespace C5LA1
+
+open SimpleGraph C4LA1
+
+variable {V : Type*} [Fintype V] [DecidableEq V]
+
+open Classical in
+/-- The set of original leaves of `G`. -/
+noncomputable
+def leafSet (G : SimpleGraph V) : Finset V :=
+  Finset.univ.filter (C4LA1.IsGraphLeaf G)
+
+end C5LA1

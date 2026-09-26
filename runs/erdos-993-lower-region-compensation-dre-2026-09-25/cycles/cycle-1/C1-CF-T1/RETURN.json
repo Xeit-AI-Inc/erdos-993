@@ -1,0 +1,27 @@
+{
+  "worker_id": "C1-CF-T1",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C1-T1-1",
+      "statement": "For every star T=K_{1,m} with m>=4 and every p satisfying x(T)+2<=p and 3p<2 alpha(T)+1, all m original leaves are favorable and S(T,p)=m*(binom(m-1,p)-binom(m-1,p-1))<0.",
+      "scope": "Exact symbolic theorem for the star subfamily under the registered lower-region eligibility guards; it does not establish the aggregate for arbitrary ordinary trees.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CF-T1/REPORT.md"
+      ],
+      "reason": "retained: the independence polynomial, first strict descent, eligibility bounds, strict favorable-leaf test through p=m-1, original deletion operations, all m distinct leaf tags, and the strict summand sign are checked symbolically. The claim is correctly limited to stars and supplies no transport to general trees."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CF-T1/REPORT.md",
+  "limitations": [
+    "The exact proof is restricted to stars and does not resolve the registered lower-region aggregate for arbitrary finite ordinary trees.",
+    "The optional bipartite tagged-incidence identity and its global deficit budget are not established by this route."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-T1-1"
+  ]
+}

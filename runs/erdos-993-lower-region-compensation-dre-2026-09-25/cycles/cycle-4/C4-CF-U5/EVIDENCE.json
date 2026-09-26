@@ -1,0 +1,21 @@
+{
+  "schema": "C4-CF-U5.critique-evidence.v1",
+  "audited_claim_id": "C4-U5-SUPPORT-POLYNOMIAL-REDUCTION",
+  "disposition": "retained",
+  "independent_derivation": {
+    "branch_partition": "For each neighbor w of support u other than the tagged leaf v, let C_w be the w-side after cutting uw. In T-v, sets omitting u contribute product I(C_w); sets containing u contribute z times product I(C_w-w). This is exactly P_{u,v}.",
+    "deletion_difference": "In T-{u,v}, the remaining C_w components are unrestricted, giving product J_w. In T-N[u], each w is removed and the remainder of each branch contributes I(C_w-w), giving product A_w. Their difference is Q_{u,v}.",
+    "coefficient_indices": "Delta_p(T-v) is [z^(p+1)]P-[z^p]P. For Q=I(T-{u,v})-I(T-N[u]), its coefficient at p minus its coefficient at p-1 is precisely Delta_(p-1)(T-{u,v})-Delta_(p-1)(T-N[u]).",
+    "tag_multiplicity": "For any two original leaves v,v' adjacent to the same u, their branch lists differ only by exchanging identical singleton branches. Each singleton has J=1+z and A=1. Thus P and Q, and hence selector and summand, are equal; multiplying once by m_u retains all distinct tagged leaves.",
+    "root_recurrence": "For a rooted subtree, root-excluded sets independently choose any child-subtree independent set, giving E=product(E_c+O_c); root-included sets require every child root excluded, giving O=z product E_c.",
+    "truncation_and_guards": "Products in nonnegative powers of z preserve coefficients through degree p+1 under truncation modulo z^(p+2). This covers the selector through degree p+1 and Q through degree p. The guard x+2<=p is equivalent to some Delta_j<0 for 0<=j<=p-2, decided from coefficients through p-1. The strict lower-region guard uses separately computed alpha(T)."
+  },
+  "sanity_instance": {
+    "tree": "Star with center u and m>=1 original leaves.",
+    "per_leaf_P": "(1+z)^(m-1)+z = I(T-v).",
+    "per_leaf_Q": "(1+z)^(m-1)-1 = I(T-{u,v})-I(T-N[u]).",
+    "aggregate_encoding": "All m leaf tags have the same selector and same coefficient difference, so the formula gives m times that tagged contribution, including zero when the tag is not favorable."
+  },
+  "scope_check": "These identities are unconditional algebra for finite ordinary trees and fixed p>=2. They do not establish S(T,p)<=0, a bounded census, or a context-closed compressed transfer state.",
+  "method_limit": "Independent symbolic derivation and a star sanity instance; no source algorithm replay or computational census was performed."
+}

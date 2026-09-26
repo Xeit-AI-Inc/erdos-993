@@ -1,0 +1,100 @@
+{
+  "worker_id": "C6-FINAL-IDENTITY-REVIEW",
+  "authority": "independent_proposed_disposition_only",
+  "sources": {
+    "control": "control/C6-FINAL-IDENTITY-REVIEW.json",
+    "allowed_source_count": 36,
+    "sha256_all_matched": true,
+    "registry_identity_count": 431,
+    "registry_keys_unique": true
+  },
+  "registry_before": {
+    "VERIFIED": 257,
+    "REFUTED": 96,
+    "CONDITIONAL": 26,
+    "OPEN": 52
+  },
+  "claims": [
+    {
+      "claim_key": "E993-EQUAL-LENGTH-THREE-SPIDER-EXACT-MODE",
+      "disposition": "accept_new_verified",
+      "exact_scope": "Ordinary equal-length-three spider S_m, m>=2; P_m=(1+3z+z^2)^m+z(1+2z)^m strictly rises through rank m and strictly falls from m through terminal rank 2m; first strict zero-extended descent x=m.",
+      "evidence_grade": "proved_informal_no_formal_award",
+      "nearest_existing_keys": ["E993-PAIR-SPIDER-CLOSED-FORM", "E993-PAIR-GENERAL-L-DOMINATION"],
+      "scope_duplicate": false,
+      "mathematical_defects": [],
+      "precision_notes": ["No general-spider mode or novelty claim.", "Root-origin proof is separate from the producer's bounded spider reduction."],
+      "formal_award": false
+    },
+    {
+      "claim_key": "E993-EQUAL-LENGTH-THREE-SPIDER-LOWER-REGION-AGGREGATE",
+      "disposition": "accept_new_verified",
+      "exact_scope": "The same S_m; eligible m+2<=p<=floor(4m/3), nonempty iff m>=6; original distinct endpoint tags c_i and supports b_i; every tag selected and complete S=m Delta_(p-2)(1+3z+z^2)^(m-1)<0.",
+      "evidence_grade": "proved_informal_no_formal_award",
+      "nearest_existing_keys": ["E993-PAIR-SPIDER-CLOSED-FORM", "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE"],
+      "scope_duplicate": false,
+      "mathematical_defects": [],
+      "precision_notes": ["No arbitrary ordinary-tree or governed transport conclusion.", "The bounded producer census is corroboration, not the all-m proof."],
+      "formal_award": false
+    },
+    {
+      "claim_key": "E993-FINITE-GROUP-WEIGHTED-ORBIT-FLOW-LIFT",
+      "disposition": "accept_new_verified_with_explicit_invariance_wording",
+      "exact_scope": "Finite group preserving finite relation R and orbit-constant nonnegative integer source supplies and target capacities; orbit nodes carry total weights and arcs exactly reflect nonempty original relation blocks; a source-saturating integral quotient flow implies an integral source-saturating original flow.",
+      "evidence_grade": "proved_informal_no_formal_award",
+      "nearest_existing_keys": ["E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL"],
+      "scope_duplicate": false,
+      "mathematical_defects": [],
+      "precision_notes": ["State invariance of both weight functions explicitly; without it the implication is false.", "Conditional lift only: no all-parameter quotient feasibility or universal Hall claim."],
+      "formal_award": false
+    },
+    {
+      "claim_key": "E993-ORDINARY-PATH-STAR-ARITY-2-4-M2000-LOWER-REGION-AGGREGATE",
+      "disposition": "promote_registered_open_to_verified_in_place",
+      "exact_scope": "Registered path 0-1-2 private-star family, m>=2000, each arity in {2,3,4}, every eligible strict-lower-region p, original strict selector, distinct leaf tags, complete S<0.",
+      "evidence_grade": "exact_factor_computer_assisted_analytic_proof_no_formal_award",
+      "nearest_existing_keys": ["E993-ORDINARY-PATH-STAR-ARITY-2-4-ALL-M-LOWER-REGION-AGGREGATE", "E993-ORDINARY-TM-LOWER-REGION-AGGREGATE"],
+      "scope_duplicate": "already_registered_same_key",
+      "mathematical_defects": [],
+      "precision_notes": ["Pooled Z_i is not an individual tip tag.", "Descent of each Z_i must propagate through p-2.", "The all-m arities-2..4 key remains OPEN."],
+      "formal_award": false
+    },
+    {
+      "claim_key": "E993-ORDINARY-PATH-STAR-ARITY-2-12-M100000000-LOWER-REGION-AGGREGATE",
+      "disposition": "promote_registered_open_to_verified_in_place",
+      "exact_scope": "Registered path 0-1-2 private-star family, m>=100000000, each arity 2..12, every eligible strict-lower-region p, original strict selector, distinct leaf tags, complete S<0.",
+      "evidence_grade": "exact_factor_computer_assisted_analytic_proof_no_formal_award",
+      "nearest_existing_keys": ["E993-ORDINARY-PATH-STAR-ARITY-2-4-M2000-LOWER-REGION-AGGREGATE", "E993-ORDINARY-PATH-STAR-ARITY-2-4-ALL-M-LOWER-REGION-AGGREGATE"],
+      "scope_duplicate": "already_registered_same_key",
+      "mathematical_defects": [],
+      "precision_notes": ["Correct q_tip=z[(1+2z)F_r H_i+L^N]; only the pooled sum equals z sum_i r_i Z_i.", "Uses one actual other branch for F_r B_s ULC absorption and the explicit uniform analytic envelope.", "No prefix m<100000000 or arity>12 conclusion."],
+      "formal_award": false
+    },
+    {
+      "claim_key": "E993-ORDINARY-TM-LOWER-REGION-AGGREGATE",
+      "disposition": "retain_registered_verified_update_certificate_only",
+      "exact_scope": "Existing all-m>=1 homogeneous three-tip path-star ordinary-tree claim, all eligible original strict-selector ranks, complete S<=0; cutoff-400 certificate is an alternative proof of this same scope.",
+      "evidence_grade": "computer_assisted_proof_adjudicated_no_formal_award",
+      "nearest_existing_keys": ["E993-R19-TM-RATIO-PACKAGE"],
+      "scope_duplicate": "same_registered_identity_no_new_key",
+      "mathematical_defects": [],
+      "precision_notes": ["Exact base m=3..399 and analytic tail m>=400; m=1,2 ineligible.", "Use corrected pooled index S=R_(p-1)-R_(p-2) after selection.", "No count change or formal award."],
+      "formal_award": false
+    }
+  ],
+  "open_fences": [
+    "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+    "E993-ORDINARY-PATH-STAR-ARITY-2-4-ALL-M-LOWER-REGION-AGGREGATE",
+    "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL",
+    "E993-BETA-AGG"
+  ],
+  "conditional_registry_after_if_all_dispositions_adopted": {
+    "total": 434,
+    "VERIFIED": 262,
+    "REFUTED": 96,
+    "CONDITIONAL": 26,
+    "OPEN": 50
+  },
+  "no_formal_awards": true,
+  "report_path": "scratchpad/C6-FINAL-IDENTITY-REVIEW/REPORT.md"
+}

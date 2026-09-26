@@ -1,0 +1,242 @@
+{
+  "finite_certificates": {
+    "matching5": [
+      {
+        "rank": 4,
+        "prefix_chain_edges": 0,
+        "domain": 80,
+        "codomain": 80,
+        "distinct_images": 80
+      },
+      {
+        "rank": 5,
+        "prefix_chain_edges": 2,
+        "domain": 192,
+        "codomain": 200,
+        "distinct_images": 192
+      }
+    ],
+    "matching4": [
+      {
+        "rank": 4,
+        "prefix_chain_edges": 1,
+        "domain": 48,
+        "codomain": 56,
+        "distinct_images": 48
+      }
+    ]
+  },
+  "matching5_bounded_lift": [
+    {
+      "k": 4,
+      "outside_vertices": 0,
+      "upper": 80,
+      "distinct_images": 80,
+      "cases": {
+        "predecessor": 0,
+        "prefix_2": 0,
+        "prefix_1": 0,
+        "prefix_0": 80
+      }
+    },
+    {
+      "k": 5,
+      "outside_vertices": 2,
+      "upper": 272,
+      "distinct_images": 272,
+      "cases": {
+        "predecessor": 0,
+        "prefix_2": 192,
+        "prefix_1": 0,
+        "prefix_0": 80
+      }
+    },
+    {
+      "k": 6,
+      "outside_vertices": 4,
+      "upper": 968,
+      "distinct_images": 968,
+      "cases": {
+        "predecessor": 232,
+        "prefix_2": 576,
+        "prefix_1": 0,
+        "prefix_0": 160
+      }
+    },
+    {
+      "k": 7,
+      "outside_vertices": 6,
+      "upper": 3530,
+      "distinct_images": 3530,
+      "cases": {
+        "predecessor": 1402,
+        "prefix_2": 1728,
+        "prefix_1": 0,
+        "prefix_0": 400
+      }
+    },
+    {
+      "k": 8,
+      "outside_vertices": 8,
+      "upper": 13073,
+      "distinct_images": 13073,
+      "cases": {
+        "predecessor": 6577,
+        "prefix_2": 5376,
+        "prefix_1": 0,
+        "prefix_0": 1120
+      }
+    }
+  ],
+  "matching4_bounded_lift": [
+    {
+      "k": 4,
+      "outside_vertices": 1,
+      "upper": 48,
+      "distinct_images": 48,
+      "cases": {
+        "predecessor": 0,
+        "prefix_2": 0,
+        "prefix_1": 48,
+        "prefix_0": 0
+      }
+    },
+    {
+      "k": 5,
+      "outside_vertices": 3,
+      "upper": 168,
+      "distinct_images": 168,
+      "cases": {
+        "predecessor": 72,
+        "prefix_2": 0,
+        "prefix_1": 96,
+        "prefix_0": 0
+      }
+    },
+    {
+      "k": 6,
+      "outside_vertices": 5,
+      "upper": 608,
+      "distinct_images": 608,
+      "cases": {
+        "predecessor": 368,
+        "prefix_2": 0,
+        "prefix_1": 240,
+        "prefix_0": 0
+      }
+    },
+    {
+      "k": 7,
+      "outside_vertices": 7,
+      "upper": 2241,
+      "distinct_images": 2241,
+      "cases": {
+        "predecessor": 1569,
+        "prefix_2": 0,
+        "prefix_1": 672,
+        "prefix_0": 0
+      }
+    }
+  ],
+  "cover_six_N26_r0_to_11": [
+    {
+      "r": 0,
+      "N": 26,
+      "empty": 25,
+      "debt": 0,
+      "margin": 25
+    },
+    {
+      "r": 1,
+      "N": 26,
+      "empty": 299,
+      "debt": 6,
+      "margin": 293
+    },
+    {
+      "r": 2,
+      "N": 26,
+      "empty": 2275,
+      "debt": 21,
+      "margin": 2254
+    },
+    {
+      "r": 3,
+      "N": 26,
+      "empty": 12350,
+      "debt": 47,
+      "margin": 12303
+    },
+    {
+      "r": 4,
+      "N": 26,
+      "empty": 50830,
+      "debt": 95,
+      "margin": 50735
+    },
+    {
+      "r": 5,
+      "N": 26,
+      "empty": 164450,
+      "debt": 220,
+      "margin": 164230
+    },
+    {
+      "r": 6,
+      "N": 26,
+      "empty": 427570,
+      "debt": 599,
+      "margin": 426971
+    },
+    {
+      "r": 7,
+      "N": 26,
+      "empty": 904475,
+      "debt": 1790,
+      "margin": 902685
+    },
+    {
+      "r": 8,
+      "N": 26,
+      "empty": 1562275,
+      "debt": 5636,
+      "margin": 1556639
+    },
+    {
+      "r": 9,
+      "N": 26,
+      "empty": 2187185,
+      "debt": 18374,
+      "margin": 2168811
+    },
+    {
+      "r": 10,
+      "N": 26,
+      "empty": 2414425,
+      "debt": 61448,
+      "margin": 2352977
+    },
+    {
+      "r": 11,
+      "N": 26,
+      "empty": 1931540,
+      "debt": 209575,
+      "margin": 1721965
+    }
+  ],
+  "cover_six_r12": {
+    "r": 12,
+    "N": 26,
+    "empty": 742900,
+    "debt": 726052,
+    "margin": 16848
+  },
+  "next_residual_order_boundary": {
+    "k": 13,
+    "graph": "5K2 plus 19 isolated vertices",
+    "order": 29,
+    "i_k": 20753396,
+    "i_k_minus_1": 19550544
+  },
+  "scope": "finite enumeration and bounded lift checks; universal proof is in REPORT.md"
+}

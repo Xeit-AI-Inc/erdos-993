@@ -1,0 +1,27 @@
+{
+  "worker_id": "C2-F2",
+  "cycle": 2,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "The universal lower-region favorable-leaf aggregate remains unresolved by this route. Exact checks of the specified one-arm deletion and a fresh 262-vertex mixed-arm perturbation are both eligible and have negative complete sums, including the latter's positive selected local term.",
+      "scope": "The two exact ordinary trees and ranks detailed in REPORT.md and encoded in EVIDENCE-REMOVED-ARM.json and EVIDENCE.json; this is bounded family evidence and makes no universal sign conclusion.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-F2/EVIDENCE-REMOVED-ARM.json",
+        "cycles/cycle-2/C2-F2/EVIDENCE.json",
+        "cycles/cycle-2/C2-F2/removed_arm.py",
+        "cycles/cycle-2/C2-F2/replay.py"
+      ],
+      "reason": "The approved exact tree dynamic program verifies both eligibility guards, the first strict descent, every selected leaf class and its multiplicity, and each full sum. The perturbed examples do not prove the universal inequality or refute it."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-F2/REPORT.md",
+  "limitations": [
+    "The calculations cover only two constructed trees and do not establish a theorem for all ordinary trees or all eligible ranks.",
+    "No positive complete-sum counterexample or universal compensation inequality was found."
+  ],
+  "status_authority": "proposed_worker_only"
+}

@@ -1,0 +1,41 @@
+{
+  "worker_id": "C2-CF-U3",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-FIRST-ORDER-SHELL",
+      "statement": "For eligible ordinary trees T with |T|=2p+2, the fixed-selector complete sum is nonpositive if the route's selector-conditioned compensation inequality (Comp) holds for that same selected set.",
+      "scope": "Conditional sufficient reduction for the exact registered first-order shell, with x(T)+2<=p, 3p<2alpha(T)+1, original supports and neighborhoods, and distinct original-leaf tags. The unconditional shell assertion remains open.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CF-U3/REPORT.md",
+        "cycles/cycle-2/C2-CF-U3/EVIDENCE.md"
+      ],
+      "reason": "retained_narrowed: the ordered decomposition and positive-boundary estimate make (Comp) sufficient by summation, but the route does not derive (Comp) from eligibility and the fixed strict selector. It supplies neither a proof nor a complete-sum counterexample for the shell assertion."
+    },
+    {
+      "claim_id": "C2-U3-ORDERED-SHELL-BOUND",
+      "statement": "For each original leaf v of an eligible ordinary shell tree with |T|=2p+2, k=p-1, and H=T-{v,s_v} nonempty, q_j=i_j(H)-i_j(H-W) for W=N_T(s_v)\\{v} satisfies q_j=Σ_i i_(j-1)(J_i) under the stated mark ordering. Only the first degree-one mark and the second isolated mark can yield |J_i|=2k; their combined positive difference is at most (L_root+L_iso)/k.",
+      "scope": "Per-original-leaf lemma on the exact shell |T|=2p+2; it does not require v to be selected. When summed over selected leaves, original tags and the fixed set F(T,p) are preserved. The eligible-shell guards ensure H is nonempty and not edgeless.",
+      "status": "proposed_proved_informal",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CF-U3/REPORT.md",
+        "cycles/cycle-2/C2-CF-U3/EVIDENCE.md"
+      ],
+      "reason": "retained_narrowed: the first-mark partition and deletion/extension count prove the decomposition and order bounds. The result controls positive parts only and does not assert a sign for a leaf term or for the full selected sum."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CF-U3/REPORT.md",
+  "limitations": [
+    "The selector-conditioned compensation inequality (Comp) is not established, so the first-order shell assertion remains open.",
+    "No proof or refutation of the unrestricted lower-region aggregate, pointwise sign, or support-fibre sign is supplied.",
+    "The audit is informal and contains no code replay, computational census, or finite-generation claim."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-LOWER-REGION-FIRST-ORDER-SHELL",
+    "C2-U3-ORDERED-SHELL-BOUND"
+  ]
+}

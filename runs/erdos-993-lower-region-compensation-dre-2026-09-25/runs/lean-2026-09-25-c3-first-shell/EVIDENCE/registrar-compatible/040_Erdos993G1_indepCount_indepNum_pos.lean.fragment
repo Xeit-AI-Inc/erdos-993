@@ -1,0 +1,7 @@
+lemma indepCount_indepNum_pos [Finite V] :
+    0 < indepCount F F.indepNum := by
+  obtain ⟨S, hS⟩ := F.exists_isNIndepSet_indepNum
+  haveI : Nonempty {S : Finset V // F.IsNIndepSet F.indepNum S} := ⟨⟨S, hS⟩⟩
+  unfold indepCount
+  exact_mod_cast (Nat.card_pos (α := {S : Finset V // F.IsNIndepSet F.indepNum S}))
+

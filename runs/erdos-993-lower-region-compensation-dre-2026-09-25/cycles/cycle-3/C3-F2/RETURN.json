@@ -1,0 +1,48 @@
+{
+  "worker_id": "C3-F2",
+  "cycle": 3,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C3-F2-CB-ELIGIBLE-REPLAY",
+      "statement": "For CB(8,92) at p=492 and CB(8,93) at p=498, exact tree-polynomial replay gives eligible lower-region rows with every original leaf favorable and complete aggregate S<0.",
+      "scope": "Only the two choked-broom trees and ranks listed; bounded exact computation, with no universal inference.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-F2/EVIDENCE.json",
+        "cycles/cycle-3/C3-F2/REPLAY.py"
+      ],
+      "reason": "Exact polynomial recurrence, per-orbit selector checks, complete sums, alpha, and first strict descents are replayed; this is finite evidence only."
+    },
+    {
+      "claim_id": "C3-F2-QUALIFYING-CHOKE-ROUTING",
+      "statement": "In each of the two specified CB rows, the h,v-containing upper sources having a branch with one occupied support and at least four leaves admit a capacity-respecting unit routing through the legal choke insertion that deletes h and that support; the exact routed supply and uncovered upper demand are recorded.",
+      "scope": "The stated source subfamily in CB(8,92), p=492 and CB(8,93), p=498; no claim of saturation for the full weighted graph.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-F2/EVIDENCE.json",
+        "cycles/cycle-3/C3-F2/REPLAY.py"
+      ],
+      "reason": "The route is injectively described up to fibers; each output has at most 8-ell preimages and capacity at least ell for ell>=4. Other source families and capacities remain outside this routing."
+    },
+    {
+      "claim_id": "C3-F2-HUB-ARM-ARC-CLASSIFICATION",
+      "statement": "For every independent upper set containing h and v in either specified CB graph, the complete set of legal two-for-one targets consists of the arm support s and the choke c_i for exactly those branches with one occupied support; the exact aggregate arc counts are recorded.",
+      "scope": "Only upper independent sets containing h and v in the two specified CB graphs and ranks; it is an arc classification, not a full-flow result.",
+      "status": "proposed_bounded_exact",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-F2/EVIDENCE.json",
+        "cycles/cycle-3/C3-F2/REPLAY.py"
+      ],
+      "reason": "The vertex neighborhoods in the CB recipe exhaust the possibilities for an absent vertex to have exactly two neighbors in such a source set."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-F2/REPORT.md",
+  "limitations": [
+    "The supplied CB(8,92) cut envelope and its CB(8,93) counterpart have negative deficit lower bounds, so neither proves a deficient cut.",
+    "The constructed flow covers only the stated h,v-containing qualifying subfamily and does not establish saturation of the full two-for-one weighted graph.",
+    "The two exact negative aggregate values are bounded evidence and do not imply a universal conclusion."
+  ],
+  "status_authority": "proposed_worker_only"
+}

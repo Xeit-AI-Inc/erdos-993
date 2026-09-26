@@ -1,0 +1,35 @@
+{
+  "worker_id": "C2-CT-F2",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "The C2-F2 bounded conclusion is supported: the two specified ordinary-tree examples satisfy the primary eligibility guards, have the complete strict favorable-leaf selector checked with original supports and neighborhoods and distinct leaf multiplicities, and have the reported negative complete sums. The universal lower-region aggregate remains unresolved by this evidence.",
+      "scope": "Only the one-arm deletion of the order-243 T_family(60) control at p=90 (order 239) and the specified mixed-arm tree of order 262 at p=96; no family-wide inequality or universal conclusion.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CT-F2/CRITIQUE-EVIDENCE.json",
+        "cycles/cycle-2/C2-CT-F2/EVIDENCE-REMOVED-ARM.json",
+        "cycles/cycle-2/C2-CT-F2/EVIDENCE.json",
+        "cycles/cycle-2/C2-CT-F2/critique_replay.py",
+        "cycles/cycle-2/C2-CT-F2/critique_removed_arm.py",
+        "cycles/cycle-2/C2-CT-F2/ordinary_tree_checked_copy.py",
+        "cycles/cycle-2/C2-CT-F2/replay_source_copy.py",
+        "cycles/cycle-2/C2-CT-F2/removed_arm_source_copy.py"
+      ],
+      "reason": "retained. The copied and scratch-adapted exact replays reproduce both complete sums and verify every eligibility guard and selected original leaf tag. The data establish only these two bounded rows; they supply neither the requested family-wide inequality nor a proof or counterexample for the primary assertion."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CT-F2/REPORT.md",
+  "limitations": [
+    "The arithmetic replay uses the pinned tree dynamic-programming evaluator, copied into scratch; it is not an independent second implementation.",
+    "Only two constructed ordinary trees were checked. The route's evidence is not exhaustive over a perturbation family and leaves the universal aggregate unresolved.",
+    "The route's finite negative sums do not prove the primary inequality and do not refute it."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE"
+  ]
+}

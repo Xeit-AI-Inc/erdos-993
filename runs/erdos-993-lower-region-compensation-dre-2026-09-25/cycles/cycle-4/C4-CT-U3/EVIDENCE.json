@@ -1,0 +1,30 @@
+{
+  "evidence_id": "C4-CT-U3-critique",
+  "stage": "critique",
+  "orientation": "T",
+  "source_worker": "C4-U3",
+  "source_hashes": {
+    "cycles/cycle-4/C4-U3/EVIDENCE.json": "290815164355548d6c2e466ef22a272711fc1d2260518d2f0bd1a3508a7b33e4",
+    "cycles/cycle-4/C4-U3/REPORT.md": "104b5bbf98cbec8bfa24db9f7f2613bdaf4e835a39d88d38e0c32619712d84a9",
+    "cycles/cycle-4/C4-U3/RETURN.json": "f11e7fd8a7a4dd404c296d75b195c4ddba0424dae84e727dae0bfc10994234b7"
+  },
+  "packet_hash_check": "all 3 case-listed and all 179 common-listed source hashes matched",
+  "checks": [
+    "Padding a cover to six is valid for n>6; its complement is independent.",
+    "Deleting the outside degree-one vertices leaves a connected tree containing the designated cover.",
+    "Tree vertex and edge counts yield e_C + sum_u(deg(u)-1)=5 and t<=5.",
+    "The converse core-plus-pendant construction is a tree with the designated six-set as a cover.",
+    "The explicit finite skeleton and weak-composition loops are exhaustive; duplicate representations do not cause omissions.",
+    "Weak compositions of n-6-t into six parts number binom(n-t-1,5). At n=30,t=0 this is binom(29,5)=118755; at n=24,t=0 it is binom(23,5)=33649.",
+    "The core-state polynomial counts independent sets once by conditioning on their intersection with the core and allowing pendant choices only at unblocked cover vertices."
+  ],
+  "disposition": {
+    "C4-U3.LOW-COVER-SKELETON": "retained_narrowed: retain the structural representation and finite enumeration recipe; correct the stated composition-count formula.",
+    "C4-U3.LOW-COVER-SIGN": "retained: the route's sign remains unresolved because no census or sign bound is supplied."
+  },
+  "not_performed": [
+    "No low-cover census was executed.",
+    "No tree-specific selector replay or complete selected aggregate was computed.",
+    "No proof for cover number at least seven or the full primary target was assessed beyond the stated scope boundary."
+  ]
+}

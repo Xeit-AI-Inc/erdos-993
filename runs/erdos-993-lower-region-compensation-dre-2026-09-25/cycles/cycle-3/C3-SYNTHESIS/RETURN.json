@@ -1,0 +1,273 @@
+{
+  "worker_id": "C3-SYNTHESIS",
+  "cycle": 3,
+  "stage": "synthesis",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "C3-F1.literal-two-for-one-flow-prefix",
+      "statement": "The literal fixed-selector deletion-plus-two-for-one weighted network has an integral flow saturating all upper supply on the deterministic first five stored eligible p=7 rows at each of orders 16, 17, and 18, 15 rows total. Their complete original-leaf sums are negative.",
+      "scope": "Only those 15 stored-order rows from the pinned order-16 and corrected-scope order-17/18 census results; original strict selector and all original leaf tags; no regenerated census or universal inference.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/EVIDENCE.json"
+      ],
+      "reason": "retained: route and both critics agree; adjudicator checked guards, selected terms, S=upper-lower, saturation totals, and zero deficits in the packaged exact rows. Critics replayed the network and CU audited arc legality and capacities. The remaining 4,976 reported eligible p=7 rows were not flow-tested."
+    },
+    {
+      "claim_id": "C3-F2-CB-ELIGIBLE-REPLAY",
+      "statement": "CB(8,92) at p=492 and CB(8,93) at p=498 are eligible strict lower-region ordinary-tree rows, all original leaves are favorable, and each exact complete selected sum S is negative.",
+      "scope": "Exactly the two CB(8,m) trees and ranks, with arm leaf multiplicity one and branch leaf multiplicity 8m; exact bounded polynomial computation only.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/EVIDENCE.json"
+      ],
+      "reason": "retained: both rows have terminal-aware first descent, all original arm and branch tags, strict selector checks and negative multiplicity-weighted complete sums. The supplied cut-envelope lower bounds are negative and prove no deficient cut."
+    },
+    {
+      "claim_id": "C3-F2-HUB-ARM-ARC-CLASSIFICATION",
+      "statement": "For each independent upper set containing h and v in the two stated CB rows, the complete legal exact two-neighbor switch targets are arm support s and precisely those chokes c_i whose branch has one occupied support; aggregate arc counts are exact.",
+      "scope": "Only h,v-containing upper sets in CB(8,92),p=492 and CB(8,93),p=498; no classification for other source sets and no full-flow claim.",
+      "status": "proposed_bounded_exact",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/EVIDENCE.json"
+      ],
+      "reason": "retained: direct neighborhood exhaustion verifies s has occupied neighbors h,v; c_i has h plus its occupied supports; absent supports and leaves have at most one. Both critics agree and branch-polynomial arc counts are preserved in the packaged evidence."
+    },
+    {
+      "claim_id": "C3-F2-QUALIFYING-CHOKE-ROUTING",
+      "statement": "In each stated CB row, every h,v-containing upper source with a branch having one occupied support and at least four occupied leaves among its other seven pairs can route one unit by its first qualifying choke switch within lower node capacities; the exact routed and unrouted supplies are recorded.",
+      "scope": "Only the specified qualifying source subfamily of CB(8,92),p=492 and CB(8,93),p=498; full upper-supply saturation is unproved.",
+      "status": "proposed_bounded_routing",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/EVIDENCE.json"
+      ],
+      "reason": "retained: the move deletes exactly h and the occupied support, then inserts its choke. A destination with ell>=4 branch leaves has at most 8-ell preimages and capacity at least ell. The coefficient formula counts the routed family exactly; both critics verified the proof and positive unrouted supply remains."
+    },
+    {
+      "claim_id": "C3-F5-FINITE-WEIGHTED-HALL",
+      "statement": "Among 633 canonical hub-tree branch-multiset recipes of order at most 18, all 138 eligible rank rows have nonpositive complete selected sums and saturated integral flow under all deletion and literal two-for-one arcs.",
+      "scope": "Only 2..5 sorted branches of types P1..P4 or C2..C4, order <=18, and all ranks satisfying both target guards within that family; same-implementation replay, not a universal result.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/EVIDENCE.json"
+      ],
+      "reason": "retained: both critics reproduce the 633/138 counts, flow saturation and S range -9828..-224; the adjudicator checked the exact P2,C3,C4 representative including all eight leaf tags and S=-275=259-534. The full sweep depends on the source generator and its replays."
+    },
+    {
+      "claim_id": "C3-T1.COVER-BUDGET-AND-FIRST-MARK-SUBCLASS",
+      "statement": "For n=2p+2+d (d>=1), k=p-1, H_v=T-{v,s_v}, W_v=N_T(s_v)\\{v}, an ordering of W_v whose every union N_H[w_i] with earlier mark vertices has size at least d+3 makes the v summand nonpositive. If every v in the fixed F(T,p) has such an ordering, S(T,p)<=0. The source cover-number lower bound is false.",
+      "scope": "Exact sufficient structural subclass of the primary ordinary-tree setting; no implication from eligibility or favorability to the size condition. Cover bound rejected even for K2.",
+      "status": "proposed_partial",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: first-mark partition and independent-set incidence prove the subclass. K2 with full vertex cover at r=1 has claimed L=-1 but actual Delta_1=-2; the positive a=r+1 cover contribution was replaced by an upper bound. Both critics found this defect."
+    },
+    {
+      "claim_id": "C3-T3-STAR-SYMMETRIC-CHAIN-SUBCASE",
+      "statement": "For T=K_{1,m}, arbitrary fixed subset F of original leaf tags, 2<=p<=m-1 and p>(m-1)/2, each upper weighted clone injects into a lower clone through a tag-preserving deletion, saturating the weighted upper layer.",
+      "scope": "Stars only, stated Boolean rank range; no general ordinary-tree, favorable-selector, or eligibility assertion.",
+      "status": "proposed_verified_informal",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/EVIDENCE.json"
+      ],
+      "reason": "retained: a symmetric chain on the m-1 leaves other than each tag contains ranks p and p-1; its predecessor is a one-leaf deletion, retains a witness since p-1>=1, and is injective within and across tag fibers."
+    },
+    {
+      "claim_id": "C3-T3-T67-EXACT-BOUNDED-ROW",
+      "statement": "The explicitly encoded 271-vertex T_67 at p=99 has alpha=203, first strict descent x=97, all 202 original leaves strictly favorable, 297<407, and complete S=-2660057645968888213805432160329302041884660166106806408834263046.",
+      "scope": "One tree and rank; exact bounded coefficient calculation only, with one arm and 201 claw leaf tags.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/EVIDENCE.json"
+      ],
+      "reason": "retained: the full vectors and polynomial replay verify terminal descent, both orbit selector deltas, one positive arm term, 201 negative claw terms, and exact negative full sum. The row supplies no set-level weighted flow."
+    },
+    {
+      "claim_id": "C3-T4-ODD-SHELL-REDUCTION",
+      "statement": "At n=2p+3, k=p-1, first-mark residuals satisfy |J_i|=2k+3-deg_H(w_i)-i because marks are pairwise nonadjacent. Thus size 2k+2 can arise at (i,deg)=(1,0), size 2k+1 at (1,1) or (2,0), and size 2k at (1,2),(2,1), or (3,0). Residuals of order <=2k-1 have i_k<=i_(k-1); for k edges plus one isolate the difference is 2^(k-2)(4-binomial(k,2)).",
+      "scope": "Odd parent shell structural and exact graph-subclass results only; no full selected-sum sign or guarded matching realization.",
+      "status": "proposed_partial",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: the first-mark identity, small-residual shadow bound, and matching coefficient formula survive. The source and F-critic boundary inventories omit isolated marks. The U-critic 23-vertex eligible example has an isolated second mark and a size-2k+1 residual despite ordering a nonisolated mark first; its full S=-44250."
+    },
+    {
+      "claim_id": "C3-T6-T4-PENDANT-GRAFT-SELECTOR-CLOSURE",
+      "statement": "At p=9, explicit T4 and its one-leaf graft at root 0 both have alpha=14, x=7, and 27<29. All 13 old original leaves remain strictly favorable and new leaf 19 is favorable. Their complete selected sums are -10089 and -17280.",
+      "scope": "Exactly the encoded 19- and 20-vertex ordinary trees at rank 9; corrected two-tree computation only.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/EVIDENCE.json"
+      ],
+      "reason": "rejected: as written, the original adjudication omitted original path leaf 2 and reported partial sums as complete. The case-listed AT repair independently enumerates every subset and restores leaf 2 with summand -297 in both trees; corrected bounded replacement proposed."
+    },
+    {
+      "claim_id": "C3-U3-FIRST-SHELL-POINTWISE",
+      "statement": "For every finite ordinary tree T with p>=3, |V(T)|=2p+2 and x(T)+2<=p, each original leaf v has Delta_(p-1)(T-{v,s_v})-Delta_(p-1)(T-N_T[s_v])<=0; hence the sum over the fixed strict favorable selector is nonpositive.",
+      "scope": "Exact first parent-order shell; no alpha-region premise is needed for the pointwise assertion. Informal proof depends on the marked-cover shell lemma, registered exact first-wide graph classification and binomial-difference Catalan floor.",
+      "status": "proposed_informal",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/EVIDENCE.json"
+      ],
+      "reason": "retained: the cover-three all-earlier-ranks contradiction forces tau(T)>=4; pendant exchange gives tau(H_v)>=3 and a nonisolated mark, so the marked-cover lemma applies at k=p-1. Both critics checked the boundaries. No larger-order conclusion."
+    },
+    {
+      "claim_id": "C3-U3-MARKED-COVER-SHELL",
+      "statement": "For a finite simple graph G with |V(G)|=2k+2, k>=2, tau(G)>=3, and marks W containing a nonisolated vertex, the number q_(k+1) of independent sets meeting W is at most q_k.",
+      "scope": "Exact graph order, cover and mark hypotheses; informal deduction using only the registered first-wide classification at order 2(k-1)+2=2k.",
+      "status": "proposed_informal",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/EVIDENCE.json"
+      ],
+      "reason": "retained: split marked sets at a nonisolated mark; smaller residuals satisfy incidence shadow bounds, while exact-order residuals retain at least two edges by tau>=3 and satisfy the first-wide classification. The second split term uses the proved order-at-most-2k+1 auxiliary bound."
+    },
+    {
+      "claim_id": "C3-U4.COLORED-SHADOW-SCOPE",
+      "statement": "An unweighted one-step subset-shadow statement, including the colored-shadow result described by C3-U4, does not by itself establish fixed-selector weighted deletion-plus-two-for-one cut inequalities.",
+      "scope": "Direct-application check only; switch outputs insert an absent vertex and the network has selector-dependent capacities. The exact external bibliographic theorem and any refined bridge are outside the verified claim.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: both critics identified the subset-versus-switch and unweighted-versus-weighted mismatches; neither independently audited the precise primary-paper hypotheses, so only direct non-implication survives."
+    },
+    {
+      "claim_id": "C3-U4.CUT-DUAL",
+      "statement": "For a finite bipartite transport relation with nonnegative upper supplies u, lower capacities c and uncapacitated relation arcs, full supply saturation holds iff u(X)<=c(N(X)) for every upper subset X; g(X)=c(N(X))-u(X) is submodular and its minimizers are closed under union and intersection.",
+      "scope": "General finite transport with the stated arc capacities; this criterion does not show tree-derived cuts pass, and a failed cut alone does not refute the scalar aggregate.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/EVIDENCE.json"
+      ],
+      "reason": "retained: max-flow/min-cut yields the all-subset criterion, weighted neighborhood coverage is submodular, and subtraction of modular supply preserves it. Both critics checked the finite-network argument."
+    },
+    {
+      "claim_id": "C3-U4.ORBIT-COMPRESSION",
+      "statement": "For a finite group action preserving a finite bipartite transport relation, supplies and capacities, quotienting by vertex orbits preserves saturating-flow feasibility exactly; it applies to each fixed eligible tree under selector-preserving automorphisms.",
+      "scope": "Fixed finite invariant instances, retaining actual orbit-pair adjacency; no uniform tree cut inequality or guaranteed small quotient.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/EVIDENCE.json"
+      ],
+      "reason": "retained: nonempty orbit-pair relations are biregular, so quotient flow spreads uniformly to literal edges; literal flow aggregates back. Integral max-flow converts lifted fractional feasibility to integral feasibility for integer capacities."
+    },
+    {
+      "claim_id": "C3-U5-EARLY-DESCENT-MARKED-OCCUPANCY-BRIDGE",
+      "statement": "For an eligible ordinary tree T,p with fixed F, let k=p-1, Q be the total number of selected-leaf-tagged independent k-sets in H_v meeting W_v, E their total actual addable-vertex count, and E_x=(x+1)i_(x+1)(T)/i_x(T). If E<=E_x Q, then S(T,p)<=0, strictly if Q>0.",
+      "scope": "Conditional theorem at the exact contract selector and rank guards; the transfer premise E<=E_x Q is not established for all eligible trees.",
+      "status": "proposed_verified_conditional",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/EVIDENCE.json"
+      ],
+      "reason": "retained: first descent gives E_x<x+1<=k; marked bipartite extension counting gives kS=(2a+1-3p)Q-sum(D_v+C_v), with sum D_v=2(a-p)Q-E and C_v>=0. The premise supplies the missing budget; Q=0 is handled separately."
+    },
+    {
+      "claim_id": "C3-U6.marked-down-operator",
+      "statement": "If every selected marked deletion map d_p:M_p(H_v,W_v)->M_(p-1)(H_v,W_v) is injective, then S(T,p)<=0. The universal per-selected-leaf injectivity premise is false on eligible T22,p=34.",
+      "scope": "Valid conditional dimension criterion at exact fixed selector; explicit 91-vertex T22 obstruction to its universal premise, with negative complete S.",
+      "status": "proposed_partial",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: injectivity implies the inequality by dimensions. The case-listed AU repair gives a selected arm leaf with q_34=7219428434016265740>q_33=7007092303604022630, hence local +212336130412243110; 66 negative claw terms give full S=-498754180547001418536."
+    },
+    {
+      "claim_id": "C3-U6.star-subcase",
+      "statement": "For every eligible T=K_(1,m), m>=4, all m original leaves are selected and S(T,p)=m*(binom(m-1,p)-binom(m-1,p-1))<0.",
+      "scope": "Ordinary stars only, with x(T)+2<=p and strict 3p<2m+1; instances with no eligible p are vacuous.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/EVIDENCE.json"
+      ],
+      "reason": "retained: zero-extended counts give x=floor((m-1)/2)+1; deletion of each leaf has Delta_p<0; each marked residual is edgeless on m-1 vertices and its adjacent binomial counts decrease in the eligible range."
+    },
+    {
+      "claim_id": "E993-LOWER-REGION-AGGREGATE-RANK-LE-SEVEN",
+      "statement": "For every eligible finite ordinary tree T and natural p<=7, the complete fixed-selector sum S(T,p) is nonpositive.",
+      "scope": "Rank p=3..7 only; census-dependent composition of the informal marked-isolate order band, bounded forest maxima M(1..5)=(4,8,11,15,18), and five complete residual slices (6,14),(6,15),(7,16),(7,17),(7,18). No p>=8 conclusion.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: order-band, registered forest maxima and five residual census slices compose to the stated p<=7 result, with 241+4991 eligible negative recorded rows. Full generators and subset replays were not rerun here; retain census dependence and no p>=8 inference."
+    },
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "For every finite ordinary tree and natural p with x(T)+2<=p and strict 3p<2alpha(T)+1, the complete fixed original-favorable-leaf sum S(T,p) is nonpositive. This universal assertion remains unresolved on the three portfolios.",
+      "scope": "Exact registered ordinary-tree target, original strict selector, original supports and neighborhoods, and separate same-support leaf tags.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: rank-through-seven, first-shell, stars and finite-family evidence have narrower scopes. T22 and T67 have positive local terms but negative complete sums; the F4 positive full sum is ineligible. No universal proof or eligible positive complete sum is supplied."
+    },
+    {
+      "claim_id": "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL",
+      "statement": "The fixed-selector weighted clone graph with every deletion and legal exactly-two-neighbor support-insertion edge saturates upper supply for every eligible ordinary tree and rank. This stronger universal mechanism remains unresolved.",
+      "scope": "Universal expanded relation; finite saturated rows and the star injection retain only their stated scopes. Saturation implies the scalar aggregate.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: T star chains, F finite networks and U three T_m orbit flows are bounded successes. CB routing is partial; no tree-wide all-cut proof or expanded-relation deficient cut is supplied. Old deletion-only cuts do not decide this relation."
+    },
+    {
+      "claim_id": "E993-U1-CLONE-PROJECTION",
+      "statement": "For fixed original F, independent rank-r sets of H_v meeting W_v biject with active clones tagged v at rank r+1; upper minus lower clone totals equal S(T,p), and every stated old literal Delete/Retag edge projects to a one-vertex deletion. The expanded relation is strictly larger on the three replayed T_m rows.",
+      "scope": "General set-theoretic bijection, identity and old-edge projection; strictness only for replayed (m,p)=(22,34),(60,90),(66,98), not the underencoded order-14 source examples.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: the bijection and projection follow from the exact definitions; the F critic replay found positive non-deletion flow in each T_m row. The standalone order-14 clone example lacks a complete ordinary-tree encoding and is excluded as a verified witness."
+    },
+    {
+      "claim_id": "T5-TM-COEFFICIENT-IDENTITY",
+      "statement": "For explicit T_m with L=1+z and B=1+4z+3z^2+z^3, if both original leaf orbits pass the fixed strict selector, Q_all=(3m+1)zL^(3m)+3m z(2+5z+2z^2)B^(m-1) and S(T_m,p)=[z^p]Q_all-[z^(p-1)]Q_all.",
+      "scope": "Exact conditional identity for m>=1 and both arm and claw orbits selected; no uniform selector coincidence or sign theorem.",
+      "status": "proposed_verified_informal",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/EVIDENCE.json"
+      ],
+      "reason": "retained: root splitting yields q_arm=zL^(3m) and q_claw=z(2+5z+2z^2)B^(m-1)+zL^(3m); q_p-q_(p-1) is each leaf summand, with multiplicities 1 and 3m. Critics checked this conditional algebra."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-SYNTHESIS/REPORT.md",
+  "limitations": [
+    "The universal ordinary-tree lower-region complete selected aggregate is neither proved nor refuted by the three adjudicator portfolios.",
+    "The universal expanded two-for-one weighted Hall assertion has no all-cut proof or deficient expanded-relation cut; it is stronger than the scalar target.",
+    "The corrected graft computation covers two trees at p=9; the original reported complete sums omitted an original selected leaf.",
+    "The universal per-selected-leaf marked-down injectivity premise is refuted on eligible T22, although its conditional implication remains valid.",
+    "The first-shell proof is informal and the rank-through-seven composition depends on registered forest maxima and complete residual censuses that were not rerun here.",
+    "Finite flow and family sweeps retain their stored-row, generation-boundary and replay dependencies; no new census, full flow replay, Lean build or external theorem audit was performed."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C3-F1.literal-two-for-one-flow-prefix",
+    "C3-F2-CB-ELIGIBLE-REPLAY",
+    "C3-F2-HUB-ARM-ARC-CLASSIFICATION",
+    "C3-F2-QUALIFYING-CHOKE-ROUTING",
+    "C3-F5-FINITE-WEIGHTED-HALL",
+    "C3-T1.COVER-BUDGET-AND-FIRST-MARK-SUBCLASS",
+    "C3-T3-STAR-SYMMETRIC-CHAIN-SUBCASE",
+    "C3-T3-T67-EXACT-BOUNDED-ROW",
+    "C3-T4-ODD-SHELL-REDUCTION",
+    "C3-T6-T4-PENDANT-GRAFT-SELECTOR-CLOSURE",
+    "C3-U3-FIRST-SHELL-POINTWISE",
+    "C3-U3-MARKED-COVER-SHELL",
+    "C3-U4.COLORED-SHADOW-SCOPE",
+    "C3-U4.CUT-DUAL",
+    "C3-U4.ORBIT-COMPRESSION",
+    "C3-U5-EARLY-DESCENT-MARKED-OCCUPANCY-BRIDGE",
+    "C3-U6.marked-down-operator",
+    "C3-U6.star-subcase",
+    "E993-LOWER-REGION-AGGREGATE-RANK-LE-SEVEN",
+    "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+    "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL",
+    "E993-U1-CLONE-PROJECTION",
+    "T5-TM-COEFFICIENT-IDENTITY"
+  ]
+}

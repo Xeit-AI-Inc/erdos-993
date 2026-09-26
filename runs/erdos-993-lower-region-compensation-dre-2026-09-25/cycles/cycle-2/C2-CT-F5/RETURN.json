@@ -1,0 +1,27 @@
+{
+  "worker_id": "C2-CT-F5",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C2-F5-P6-SHELL-LP",
+      "statement": "For every ordinary tree T of order 14 with p=6 satisfying x(T)+2<=6 and 18<2alpha(T)+1, the full fixed-selector aggregate S(T,6) is at most -222; equality occurs.",
+      "scope": "Retained only as bounded exact evidence over all unlabeled ordinary trees of order 14 at p=6, the |T|=2p+2 slice. No conclusion is made for another shell order, p value, or the universal shell or primary statement.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CT-F5/EVIDENCE.json"
+      ],
+      "reason": "retained: I replayed the order-14 instrument from copies in this scratch root, independently subset-replayed all 240 eligible trees, and matched all 240 sealed rows exactly. The strict lower-region guards, terminal zero-extended descent, fixed strict selector, original support/neighborhood operations, same-support leaf multiplicities, complete sums, and finite LP maximum are verified for this bounded slice. This supports no universal inference."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CT-F5/REPORT.md",
+  "limitations": [
+    "Evidence is restricted to order 14 and p=6 and does not prove or refute the broader first-order shell or primary assertion.",
+    "The replay uses the pinned centroid generator; finite completeness rests on its recursive rooted-code and one-center/two-center decomposition and checked class count."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-F5-P6-SHELL-LP"
+  ]
+}

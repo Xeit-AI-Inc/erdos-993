@@ -1,0 +1,28 @@
+{
+  "worker_id": "C3-PREP-THIRD-SHELL-AUDIT",
+  "status_authority": "proposed_worker_only",
+  "verdict": "pass",
+  "grade": "informal_mathematical_audit_conditional_on_pinned_first_wide_theorem",
+  "exact_scope": {
+    "object": "finite ordinary tree T",
+    "parameters": "natural p >= 14, |V(T)| = 2p+4, crossingIndex(T)+2 <= p",
+    "conclusion": "for every original leaf v with original support s, Delta_(p-1)(T-{v,s}) - Delta_(p-1)(T-N_T[s]) <= 0"
+  },
+  "evidence": {
+    "source_hashes": "23 of 23 brief-listed sources matched SHA-256 pins",
+    "matching5_certificates": "complete 80/80 rank-4 core map and 192/200 rank-5 three-prefix map; all rows distinct legal subset images",
+    "matching4_dependency": "complete 48/56 rank-4 to rank-3 map independently checked",
+    "universal_lifts": "symmetric-chain arguments cover every bottom rank, including k=4; bounded examples are computational corroboration",
+    "cover_six": "12 exact N=26 margins positive, r=12 Catalan margin 16848, normalized loss decreases thereafter",
+    "first_hit": "all d=2,3,4,>=5 residual orders and cover-loss cases handled",
+    "leaf_bridge": "original leaf/support deletion sets and original filtered aggregate checked"
+  },
+  "falsification": "No counterexample to the exact shell claim found; five matching edges plus one additional isolate can have positive local difference, so the local lemma does not extend to the next residual order.",
+  "remaining_obligations": [
+    "No Lean formalization or kernel check of the new pointwise theorem, SCD lift, cover budget, or graph/count bridges was performed.",
+    "The pinned first-wide theorem was inspected at its exact signature but not rebuilt in this worker run.",
+    "No conclusion at p<14, larger order excess, all-order aggregate, compensation, weighted Hall, governed aggregate, or Erdos 993 is established."
+  ],
+  "artifacts": ["REPORT.md", "RESULTS.json", "HASHES.json", "EVIDENCE.json", "verify_third_shell.py"],
+  "award": "none"
+}

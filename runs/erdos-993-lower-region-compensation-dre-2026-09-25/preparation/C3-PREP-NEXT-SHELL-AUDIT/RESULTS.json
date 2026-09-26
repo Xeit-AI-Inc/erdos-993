@@ -1,0 +1,41 @@
+{
+  "worker_id": "C3-PREP-NEXT-SHELL-AUDIT",
+  "status_authority": "proposed_worker_only",
+  "verdict": "pass",
+  "grade": "informal_mathematical_audit_conditional_on_pinned_first_wide_theorem",
+  "exact_scope": {
+    "object": "finite ordinary tree T",
+    "parameters": "natural p >= 8, |V(T)| = 2p+3, crossingIndex(T)+2 <= p",
+    "conclusion": "for every original leaf v with original support s, Delta_(p-1)(T-{v,s}) - Delta_(p-1)(T-N_T[s]) <= 0",
+    "excluded": [
+      "smaller p",
+      "arbitrary larger orders",
+      "governed aggregate or registered claim award",
+      "weighted Hall",
+      "Erdos 993"
+    ]
+  },
+  "findings": {
+    "source_hashes": "all 16 brief-listed sources matched",
+    "finite_certificate": "all 48 rows independently checked; complete rank-four domain, distinct rank-three subset images",
+    "boolean_chain_lift": "elementary recursive symmetric-chain construction and both offset cases checked mathematically; bounded tests k=4..8 passed",
+    "normal_product_route": "algebra and normalized-shadow orientation checked conditionally; primary literature theorem unverified in allowed packet",
+    "cover_five": "positive shifts omitted; r=0..5 exact margins 13,72,258,607,941,855; r=6 margin 18; Catalan-ratio argument covers all r>=6",
+    "first_hit_and_cover_loss": "exact first-mark partition and tau(J)>=tau(H)-(|D|-1) checked including later isolated marks",
+    "leaf_and_forest_bridges": "cover extension, nonisolated marked component, and forest matching-cover equality justified",
+    "formal_contracts": "pinned first-wide and Catalan-floor signatures inspected; second-shell theorem not present or built"
+  },
+  "unresolved_obligations": [
+    "No Lean formalization or kernel check of the new pointwise theorem or its count/deletion bridges was performed.",
+    "The general normal-product literature premise was not checked against primary text; the constructive proof avoids it.",
+    "The imported pinned first-wide theorem was inspected at its exact signature but not rebuilt in this worker run."
+  ],
+  "artifacts": [
+    "REPORT.md",
+    "RESULTS.json",
+    "HASHES.json",
+    "verify_lift.py",
+    "EVIDENCE.json"
+  ],
+  "award": "none"
+}

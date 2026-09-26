@@ -1,0 +1,30 @@
+{
+  "worker_id": "C6-CT-U3",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C6-U3-ABSORB-BOUNDED-20",
+      "statement": "For every 2<=r,s<=20, the polynomial F_r(z) B_s(z)^q with F_r=((1+z)^(r-1)-1)/z and B_s=(1+z)^s+z has finite-order ULC for at least one q in {1,2,3,4}; the least such q occurs 273, 80, 7, and 1 times for q=1,2,3,4, respectively, in the exact census.",
+      "scope": "Bounded coefficient computation only: 2<=r,s<=20 and q<=4, with exact coefficients, least finite ULC orders, and blocking indices recorded in the replayed census. No conclusion beyond this finite grid or about trees.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CT-U3/AUDIT-EVIDENCE.json",
+        "cycles/cycle-6/C6-CT-U3/ABSORPTION-CENSUS.json",
+        "cycles/cycle-6/C6-CT-U3/absorption_census_replay.py"
+      ],
+      "reason": "retained: Independent exact-integer replay completed all 1,444 cases, reproduced the least-q distribution (273, 80, 7, 1), and passed the pinned 121-row comparison. The normalized finite-ULC criterion and least-order formula are valid, including orders greater than degree. This disposition covers only the bounded coefficient claim and does not establish a family, graph, selector, or tree bridge."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CT-U3/REPORT.md",
+  "limitations": [
+    "The review confirms only the finite equal-type grid 2<=r,s<=20 and q<=4.",
+    "No uniform absorption result, mixed-arity result, general convolution application, graph/deletion correspondence, selector propagation, or ordinary-tree aggregate implication was established.",
+    "No primary-literature theorem was needed for the finite arithmetic claim."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-U3-ABSORB-BOUNDED-20"
+  ]
+}

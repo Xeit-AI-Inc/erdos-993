@@ -1,0 +1,58 @@
+namespace Erdos993G1.ThirdWide
+open Finset Classical
+
+lemma binom_gap_two_catalan (r : ℕ) :
+    2 * (catalan (r + 1) : ℤ) ≤
+      ((2*r+3).choose (r+1) : ℤ) - (2*r+3).choose r := by
+  let A : ℤ := (2*r+3).choose (r+1)
+  let B : ℤ := (2*r+3).choose r
+  let C : ℤ := (2*r+2).choose (r+1)
+  let D : ℤ := (2*r+2).choose r
+  have hp : A = C + D := by
+    have h := Nat.choose_succ_succ' (2*r+2) r
+    dsimp [A,C,D]
+    convert congrArg (fun x : ℕ => (x : ℤ)) h using 1 <;> omega
+  have hchoose : C * ((r:ℤ)+1) = D * ((r:ℤ)+2) := by
+    have h := Nat.choose_succ_right_eq (2*r+2) r
+    have hr : 2*r+2-r = r+2 := by omega
+    rw [hr] at h
+    dsimp [C,D]
+    exact_mod_cast h
+  have hc : ((r:ℤ)+2) * catalan (r+1) = C := by
+    have h := succ_mul_catalan_eq_centralBinom (r+1)
+    have h' : (r+2) * catalan (r+1) = (2*r+2).choose (r+1) := by
+      dsimp [Nat.centralBinom] at h
+      have ha : r + 1 + 1 = r + 2 := by omega
+      have hb : 2 * (r + 1) = 2 * r + 2 := by omega
+      rw [ha, hb] at h
+      exact h
+    dsimp [C]
+    exact_mod_cast h'
+  have hD : D = ((r:ℤ)+1) * catalan (r+1) := by
+    apply (mul_left_cancel₀ (show (r:ℤ)+2 ≠ 0 by omega))
+    have hcm := congrArg (fun x : ℤ => x*((r:ℤ)+1)) hc
+    nlinarith [hchoose, hcm]
+  have hA : A = (2*(r:ℤ)+3) * catalan (r+1) := by
+    nlinarith [hp,hc,hD]
+  have hab : A * ((r:ℤ)+1) = B * ((r:ℤ)+3) := by
+    have h := Nat.choose_succ_right_eq (2*r+3) r
+    have hr : 2*r+3-r = r+3 := by omega
+    rw [hr] at h
+    dsimp [A,B]
+    exact_mod_cast h
+  have hid : ((r:ℤ)+3) * (A-B) = 2*(2*(r:ℤ)+3)*catalan (r+1) := by
+    nlinarith [hab,hA]
+  have hcat : 0 ≤ (catalan (r+1) : ℤ) := Nat.cast_nonneg _
+  have hnonneg : 0 ≤ (2*(r:ℤ)) * catalan (r+1) :=
+    mul_nonneg (by omega) hcat
+  have hmult : ((r:ℤ)+3) * (2*(catalan (r+1):ℤ)) ≤
+      ((r:ℤ)+3) * (A-B) := by nlinarith [hid,hnonneg]
+  have hpos : (0:ℤ) < (r:ℤ)+3 := by omega
+  have hres : 2*(catalan (r+1):ℤ) ≤ A-B := by
+    by_contra hn
+    have hlt : A-B < 2*(catalan (r+1):ℤ) := lt_of_not_ge hn
+    have hprod := mul_lt_mul_of_pos_left hlt hpos
+    omega
+  exact hres
+
+end Erdos993G1.ThirdWide

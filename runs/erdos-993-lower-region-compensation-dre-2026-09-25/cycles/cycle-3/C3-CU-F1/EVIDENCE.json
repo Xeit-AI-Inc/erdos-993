@@ -1,0 +1,928 @@
+{
+  "evidence_grade": "bounded_exact_computation_and_certificate_audit",
+  "independent_certificate_audit": {
+    "all_positive_upper_supply_saturated": true,
+    "generator_boundary": "No census generation was run; these are only the stored first five eligible rows at each of orders 16, 17, and 18.",
+    "per_row_flow_equals_upper_supply": true,
+    "per_row_supply_minus_capacity_equals_full_selected_sum": true,
+    "per_vertex_flow_within_computed_weight_or_capacity": true,
+    "positive_flow_arcs_independently_reconstructed_as_legal_deletions_or_exact_two_neighbor_switches": true,
+    "rows_checked": 15,
+    "upper_and_lower_independent_set_layers_independently_enumerated": true
+  },
+  "replay": {
+    "byte_for_byte_reproduces_sealed_route_evidence": true,
+    "method": "Copied the pinned route replay program, route evidence, and two pinned census result inputs into this scratch root; adjusted only local input/output roots in the copied script; ran it in the foreground.",
+    "order16_input_sha256": "3ca4842362f1945434c7e8e3be2280a5b16a187f6fa1f101c50826088d64faac",
+    "orders17_18_input_sha256": "76dc83ff8b460cae3fa5082c1afe98855c6f61263353dcb71ce0d03b7f42a923",
+    "rows_replayed": 15,
+    "source_program_copy_sha256": "d69d5bf5620e5c2e1da3f11f17ec67be92c7973fb119e512a17ab7b4d42cf62c"
+  },
+  "rows": [
+    {
+      "aggregate_S": -1386,
+      "alpha": 11,
+      "centroid_code": "U:(((((((()))))))((()()()()))()())",
+      "distinct_legal_arcs_from_positive_supply_nodes": 3407,
+      "favorable_leaves": [
+        7,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "first_strict_descent_x": 5,
+      "flow": 1717,
+      "flow_saturates_upper_supply": true,
+      "lower_capacity": 3103,
+      "lower_layer_sets": 777,
+      "order": 16,
+      "p": 7,
+      "positive_flow_arc_count": 721,
+      "residual_cut_deficit": 0,
+      "selected_terms": [
+        {
+          "leaf": 7,
+          "support": 6,
+          "term": -64
+        },
+        {
+          "leaf": 10,
+          "support": 9,
+          "term": -233
+        },
+        {
+          "leaf": 11,
+          "support": 9,
+          "term": -233
+        },
+        {
+          "leaf": 12,
+          "support": 9,
+          "term": -233
+        },
+        {
+          "leaf": 13,
+          "support": 9,
+          "term": -233
+        },
+        {
+          "leaf": 14,
+          "support": 0,
+          "term": -195
+        },
+        {
+          "leaf": 15,
+          "support": 0,
+          "term": -195
+        }
+      ],
+      "stored_prefix_index_at_order": 1,
+      "upper_layer_sets": 361,
+      "upper_supply": 1717
+    },
+    {
+      "aggregate_S": -1356,
+      "alpha": 11,
+      "centroid_code": "U:(((((((()))))))((()()()))()()())",
+      "distinct_legal_arcs_from_positive_supply_nodes": 3365,
+      "favorable_leaves": [
+        7,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "first_strict_descent_x": 5,
+      "flow": 1708,
+      "flow_saturates_upper_supply": true,
+      "lower_capacity": 3064,
+      "lower_layer_sets": 767,
+      "order": 16,
+      "p": 7,
+      "positive_flow_arc_count": 719,
+      "residual_cut_deficit": 0,
+      "selected_terms": [
+        {
+          "leaf": 7,
+          "support": 6,
+          "term": -63
+        },
+        {
+          "leaf": 10,
+          "support": 9,
+          "term": -208
+        },
+        {
+          "leaf": 11,
+          "support": 9,
+          "term": -208
+        },
+        {
+          "leaf": 12,
+          "support": 9,
+          "term": -208
+        },
+        {
+          "leaf": 13,
+          "support": 0,
+          "term": -223
+        },
+        {
+          "leaf": 14,
+          "support": 0,
+          "term": -223
+        },
+        {
+          "leaf": 15,
+          "support": 0,
+          "term": -223
+        }
+      ],
+      "stored_prefix_index_at_order": 2,
+      "upper_layer_sets": 358,
+      "upper_supply": 1708
+    },
+    {
+      "aggregate_S": -1571,
+      "alpha": 11,
+      "centroid_code": "U:(((((((()))))))(()()()())()()())",
+      "distinct_legal_arcs_from_positive_supply_nodes": 3486,
+      "favorable_leaves": [
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "first_strict_descent_x": 5,
+      "flow": 1980,
+      "flow_saturates_upper_supply": true,
+      "lower_capacity": 3551,
+      "lower_layer_sets": 789,
+      "order": 16,
+      "p": 7,
+      "positive_flow_arc_count": 728,
+      "residual_cut_deficit": 0,
+      "selected_terms": [
+        {
+          "leaf": 7,
+          "support": 6,
+          "term": -68
+        },
+        {
+          "leaf": 9,
+          "support": 8,
+          "term": -222
+        },
+        {
+          "leaf": 10,
+          "support": 8,
+          "term": -222
+        },
+        {
+          "leaf": 11,
+          "support": 8,
+          "term": -222
+        },
+        {
+          "leaf": 12,
+          "support": 8,
+          "term": -222
+        },
+        {
+          "leaf": 13,
+          "support": 0,
+          "term": -205
+        },
+        {
+          "leaf": 14,
+          "support": 0,
+          "term": -205
+        },
+        {
+          "leaf": 15,
+          "support": 0,
+          "term": -205
+        }
+      ],
+      "stored_prefix_index_at_order": 3,
+      "upper_layer_sets": 362,
+      "upper_supply": 1980
+    },
+    {
+      "aggregate_S": -1410,
+      "alpha": 11,
+      "centroid_code": "U:(((((((()))))))((()()))()()()())",
+      "distinct_legal_arcs_from_positive_supply_nodes": 3567,
+      "favorable_leaves": [
+        7,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "first_strict_descent_x": 5,
+      "flow": 1738,
+      "flow_saturates_upper_supply": true,
+      "lower_capacity": 3148,
+      "lower_layer_sets": 811,
+      "order": 16,
+      "p": 7,
+      "positive_flow_arc_count": 742,
+      "residual_cut_deficit": 0,
+      "selected_terms": [
+        {
+          "leaf": 7,
+          "support": 6,
+          "term": -68
+        },
+        {
+          "leaf": 10,
+          "support": 9,
+          "term": -169
+        },
+        {
+          "leaf": 11,
+          "support": 9,
+          "term": -169
+        },
+        {
+          "leaf": 12,
+          "support": 0,
+          "term": -251
+        },
+        {
+          "leaf": 13,
+          "support": 0,
+          "term": -251
+        },
+        {
+          "leaf": 14,
+          "support": 0,
+          "term": -251
+        },
+        {
+          "leaf": 15,
+          "support": 0,
+          "term": -251
+        }
+      ],
+      "stored_prefix_index_at_order": 4,
+      "upper_layer_sets": 371,
+      "upper_supply": 1738
+    },
+    {
+      "aggregate_S": -1577,
+      "alpha": 11,
+      "centroid_code": "U:(((((((()))))))(()()())()()()())",
+      "distinct_legal_arcs_from_positive_supply_nodes": 3595,
+      "favorable_leaves": [
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "first_strict_descent_x": 5,
+      "flow": 1991,
+      "flow_saturates_upper_supply": true,
+      "lower_capacity": 3568,
+      "lower_layer_sets": 815,
+      "order": 16,
+      "p": 7,
+      "positive_flow_arc_count": 749,
+      "residual_cut_deficit": 0,
+      "selected_terms": [
+        {
+          "leaf": 7,
+          "support": 6,
+          "term": -70
+        },
+        {
+          "leaf": 9,
+          "support": 8,
+          "term": -173
+        },
+        {
+          "leaf": 10,
+          "support": 8,
+          "term": -173
+        },
+        {
+          "leaf": 11,
+          "support": 8,
+          "term": -173
+        },
+        {
+          "leaf": 12,
+          "support": 0,
+          "term": -247
+        },
+        {
+          "leaf": 13,
+          "support": 0,
+          "term": -247
+        },
+        {
+          "leaf": 14,
+          "support": 0,
+          "term": -247
+        },
+        {
+          "leaf": 15,
+          "support": 0,
+          "term": -247
+        }
+      ],
+      "stored_prefix_index_at_order": 5,
+      "upper_layer_sets": 371,
+      "upper_supply": 1991
+    },
+    {
+      "aggregate_S": -1544,
+      "alpha": 11,
+      "centroid_code": "U:((((((((())))))))(((()()()))()()))",
+      "distinct_legal_arcs_from_positive_supply_nodes": 4895,
+      "favorable_leaves": [
+        8,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "first_strict_descent_x": 5,
+      "flow": 1964,
+      "flow_saturates_upper_supply": true,
+      "lower_capacity": 3508,
+      "lower_layer_sets": 1069,
+      "order": 17,
+      "p": 7,
+      "positive_flow_arc_count": 988,
+      "residual_cut_deficit": 0,
+      "selected_terms": [
+        {
+          "leaf": 8,
+          "support": 7,
+          "term": -92
+        },
+        {
+          "leaf": 12,
+          "support": 11,
+          "term": -300
+        },
+        {
+          "leaf": 13,
+          "support": 11,
+          "term": -300
+        },
+        {
+          "leaf": 14,
+          "support": 11,
+          "term": -300
+        },
+        {
+          "leaf": 15,
+          "support": 9,
+          "term": -276
+        },
+        {
+          "leaf": 16,
+          "support": 9,
+          "term": -276
+        }
+      ],
+      "stored_prefix_index_at_order": 1,
+      "upper_layer_sets": 489,
+      "upper_supply": 1964
+    },
+    {
+      "aggregate_S": -1811,
+      "alpha": 11,
+      "centroid_code": "U:((((((((())))))))(()()())(()()()))",
+      "distinct_legal_arcs_from_positive_supply_nodes": 4981,
+      "favorable_leaves": [
+        8,
+        10,
+        11,
+        12,
+        14,
+        15,
+        16
+      ],
+      "first_strict_descent_x": 5,
+      "flow": 2325,
+      "flow_saturates_upper_supply": true,
+      "lower_capacity": 4136,
+      "lower_layer_sets": 1087,
+      "order": 17,
+      "p": 7,
+      "positive_flow_arc_count": 1003,
+      "residual_cut_deficit": 0,
+      "selected_terms": [
+        {
+          "leaf": 8,
+          "support": 7,
+          "term": -95
+        },
+        {
+          "leaf": 10,
+          "support": 9,
+          "term": -286
+        },
+        {
+          "leaf": 11,
+          "support": 9,
+          "term": -286
+        },
+        {
+          "leaf": 12,
+          "support": 9,
+          "term": -286
+        },
+        {
+          "leaf": 14,
+          "support": 13,
+          "term": -286
+        },
+        {
+          "leaf": 15,
+          "support": 13,
+          "term": -286
+        },
+        {
+          "leaf": 16,
+          "support": 13,
+          "term": -286
+        }
+      ],
+      "stored_prefix_index_at_order": 2,
+      "upper_layer_sets": 493,
+      "upper_supply": 2325
+    },
+    {
+      "aggregate_S": -1480,
+      "alpha": 11,
+      "centroid_code": "U:(((((((()()))))))((((()()()))())))",
+      "distinct_legal_arcs_from_positive_supply_nodes": 4350,
+      "favorable_leaves": [
+        7,
+        8,
+        13,
+        14,
+        15,
+        16
+      ],
+      "first_strict_descent_x": 5,
+      "flow": 1746,
+      "flow_saturates_upper_supply": true,
+      "lower_capacity": 3226,
+      "lower_layer_sets": 968,
+      "order": 17,
+      "p": 7,
+      "positive_flow_arc_count": 840,
+      "residual_cut_deficit": 0,
+      "selected_terms": [
+        {
+          "leaf": 7,
+          "support": 6,
+          "term": -201
+        },
+        {
+          "leaf": 8,
+          "support": 6,
+          "term": -201
+        },
+        {
+          "leaf": 13,
+          "support": 12,
+          "term": -295
+        },
+        {
+          "leaf": 14,
+          "support": 12,
+          "term": -295
+        },
+        {
+          "leaf": 15,
+          "support": 12,
+          "term": -295
+        },
+        {
+          "leaf": 16,
+          "support": 10,
+          "term": -193
+        }
+      ],
+      "stored_prefix_index_at_order": 3,
+      "upper_layer_sets": 419,
+      "upper_supply": 1746
+    },
+    {
+      "aggregate_S": -1396,
+      "alpha": 11,
+      "centroid_code": "U:(((((((()()))))))((((()()))()())))",
+      "distinct_legal_arcs_from_positive_supply_nodes": 4227,
+      "favorable_leaves": [
+        7,
+        8,
+        13,
+        14,
+        15,
+        16
+      ],
+      "first_strict_descent_x": 5,
+      "flow": 1678,
+      "flow_saturates_upper_supply": true,
+      "lower_capacity": 3074,
+      "lower_layer_sets": 942,
+      "order": 17,
+      "p": 7,
+      "positive_flow_arc_count": 798,
+      "residual_cut_deficit": 0,
+      "selected_terms": [
+        {
+          "leaf": 7,
+          "support": 6,
+          "term": -202
+        },
+        {
+          "leaf": 8,
+          "support": 6,
+          "term": -202
+        },
+        {
+          "leaf": 13,
+          "support": 12,
+          "term": -224
+        },
+        {
+          "leaf": 14,
+          "support": 12,
+          "term": -224
+        },
+        {
+          "leaf": 15,
+          "support": 10,
+          "term": -272
+        },
+        {
+          "leaf": 16,
+          "support": 10,
+          "term": -272
+        }
+      ],
+      "stored_prefix_index_at_order": 4,
+      "upper_layer_sets": 405,
+      "upper_supply": 1678
+    },
+    {
+      "aggregate_S": -1664,
+      "alpha": 11,
+      "centroid_code": "U:(((((((()()))))))(((()()())()())))",
+      "distinct_legal_arcs_from_positive_supply_nodes": 4585,
+      "favorable_leaves": [
+        7,
+        8,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "first_strict_descent_x": 5,
+      "flow": 2018,
+      "flow_saturates_upper_supply": true,
+      "lower_capacity": 3682,
+      "lower_layer_sets": 1016,
+      "order": 17,
+      "p": 7,
+      "positive_flow_arc_count": 853,
+      "residual_cut_deficit": 0,
+      "selected_terms": [
+        {
+          "leaf": 7,
+          "support": 6,
+          "term": -217
+        },
+        {
+          "leaf": 8,
+          "support": 6,
+          "term": -217
+        },
+        {
+          "leaf": 12,
+          "support": 11,
+          "term": -260
+        },
+        {
+          "leaf": 13,
+          "support": 11,
+          "term": -260
+        },
+        {
+          "leaf": 14,
+          "support": 11,
+          "term": -260
+        },
+        {
+          "leaf": 15,
+          "support": 10,
+          "term": -225
+        },
+        {
+          "leaf": 16,
+          "support": 10,
+          "term": -225
+        }
+      ],
+      "stored_prefix_index_at_order": 5,
+      "upper_layer_sets": 432,
+      "upper_supply": 2018
+    },
+    {
+      "aggregate_S": -1550,
+      "alpha": 11,
+      "centroid_code": "U:(((((((()()))))))((((((()()))))))())",
+      "distinct_legal_arcs_from_positive_supply_nodes": 6143,
+      "favorable_leaves": [
+        7,
+        8,
+        15,
+        16,
+        17
+      ],
+      "first_strict_descent_x": 5,
+      "flow": 1792,
+      "flow_saturates_upper_supply": true,
+      "lower_capacity": 3342,
+      "lower_layer_sets": 1382,
+      "order": 18,
+      "p": 7,
+      "positive_flow_arc_count": 995,
+      "residual_cut_deficit": 0,
+      "selected_terms": [
+        {
+          "leaf": 7,
+          "support": 6,
+          "term": -320
+        },
+        {
+          "leaf": 8,
+          "support": 6,
+          "term": -320
+        },
+        {
+          "leaf": 15,
+          "support": 14,
+          "term": -320
+        },
+        {
+          "leaf": 16,
+          "support": 14,
+          "term": -320
+        },
+        {
+          "leaf": 17,
+          "support": 0,
+          "term": -270
+        }
+      ],
+      "stored_prefix_index_at_order": 1,
+      "upper_layer_sets": 550,
+      "upper_supply": 1792
+    },
+    {
+      "aggregate_S": -1369,
+      "alpha": 11,
+      "centroid_code": "U:(((((((()()))))))((((((()))()))))())",
+      "distinct_legal_arcs_from_positive_supply_nodes": 5754,
+      "favorable_leaves": [
+        7,
+        8,
+        15,
+        16,
+        17
+      ],
+      "first_strict_descent_x": 5,
+      "flow": 1544,
+      "flow_saturates_upper_supply": true,
+      "lower_capacity": 2913,
+      "lower_layer_sets": 1325,
+      "order": 18,
+      "p": 7,
+      "positive_flow_arc_count": 901,
+      "residual_cut_deficit": 0,
+      "selected_terms": [
+        {
+          "leaf": 7,
+          "support": 6,
+          "term": -329
+        },
+        {
+          "leaf": 8,
+          "support": 6,
+          "term": -329
+        },
+        {
+          "leaf": 15,
+          "support": 14,
+          "term": -162
+        },
+        {
+          "leaf": 16,
+          "support": 12,
+          "term": -275
+        },
+        {
+          "leaf": 17,
+          "support": 0,
+          "term": -274
+        }
+      ],
+      "stored_prefix_index_at_order": 2,
+      "upper_layer_sets": 510,
+      "upper_supply": 1544
+    },
+    {
+      "aggregate_S": -1366,
+      "alpha": 11,
+      "centroid_code": "U:(((((((()()))))))((((((()))))()))())",
+      "distinct_legal_arcs_from_positive_supply_nodes": 5877,
+      "favorable_leaves": [
+        7,
+        8,
+        15,
+        16,
+        17
+      ],
+      "first_strict_descent_x": 5,
+      "flow": 1572,
+      "flow_saturates_upper_supply": true,
+      "lower_capacity": 2938,
+      "lower_layer_sets": 1341,
+      "order": 18,
+      "p": 7,
+      "positive_flow_arc_count": 941,
+      "residual_cut_deficit": 0,
+      "selected_terms": [
+        {
+          "leaf": 7,
+          "support": 6,
+          "term": -325
+        },
+        {
+          "leaf": 8,
+          "support": 6,
+          "term": -325
+        },
+        {
+          "leaf": 15,
+          "support": 14,
+          "term": -145
+        },
+        {
+          "leaf": 16,
+          "support": 10,
+          "term": -285
+        },
+        {
+          "leaf": 17,
+          "support": 0,
+          "term": -286
+        }
+      ],
+      "stored_prefix_index_at_order": 3,
+      "upper_layer_sets": 525,
+      "upper_supply": 1572
+    },
+    {
+      "aggregate_S": -1452,
+      "alpha": 11,
+      "centroid_code": "U:(((((((()()))))))((((())(()))()))())",
+      "distinct_legal_arcs_from_positive_supply_nodes": 5985,
+      "favorable_leaves": [
+        7,
+        8,
+        13,
+        15,
+        16,
+        17
+      ],
+      "first_strict_descent_x": 5,
+      "flow": 1749,
+      "flow_saturates_upper_supply": true,
+      "lower_capacity": 3201,
+      "lower_layer_sets": 1381,
+      "order": 18,
+      "p": 7,
+      "positive_flow_arc_count": 1015,
+      "residual_cut_deficit": 0,
+      "selected_terms": [
+        {
+          "leaf": 7,
+          "support": 6,
+          "term": -335
+        },
+        {
+          "leaf": 8,
+          "support": 6,
+          "term": -335
+        },
+        {
+          "leaf": 13,
+          "support": 12,
+          "term": -117
+        },
+        {
+          "leaf": 15,
+          "support": 14,
+          "term": -117
+        },
+        {
+          "leaf": 16,
+          "support": 10,
+          "term": -257
+        },
+        {
+          "leaf": 17,
+          "support": 0,
+          "term": -291
+        }
+      ],
+      "stored_prefix_index_at_order": 4,
+      "upper_layer_sets": 537,
+      "upper_supply": 1749
+    },
+    {
+      "aggregate_S": -1262,
+      "alpha": 11,
+      "centroid_code": "U:(((((((()()))))))((((()))((()))))())",
+      "distinct_legal_arcs_from_positive_supply_nodes": 5609,
+      "favorable_leaves": [
+        7,
+        8,
+        13,
+        16,
+        17
+      ],
+      "first_strict_descent_x": 5,
+      "flow": 1426,
+      "flow_saturates_upper_supply": true,
+      "lower_capacity": 2688,
+      "lower_layer_sets": 1299,
+      "order": 18,
+      "p": 7,
+      "positive_flow_arc_count": 870,
+      "residual_cut_deficit": 0,
+      "selected_terms": [
+        {
+          "leaf": 7,
+          "support": 6,
+          "term": -330
+        },
+        {
+          "leaf": 8,
+          "support": 6,
+          "term": -330
+        },
+        {
+          "leaf": 13,
+          "support": 12,
+          "term": -158
+        },
+        {
+          "leaf": 16,
+          "support": 15,
+          "term": -158
+        },
+        {
+          "leaf": 17,
+          "support": 0,
+          "term": -286
+        }
+      ],
+      "stored_prefix_index_at_order": 5,
+      "upper_layer_sets": 496,
+      "upper_supply": 1426
+    }
+  ],
+  "source_integrity": {
+    "case_source_files_verified": 4,
+    "common_listed_source_files_verified": 115,
+    "mismatches": 0
+  }
+}

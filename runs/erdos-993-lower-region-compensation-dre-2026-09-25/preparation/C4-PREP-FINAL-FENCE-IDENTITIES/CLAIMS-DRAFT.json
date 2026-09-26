@@ -1,0 +1,23 @@
+{
+  "schema": "e993.claim-identity-draft.v1",
+  "authority": "scratchpad proposal only; no registry mutation",
+  "canonical_prior_claim_count": 426,
+  "claims": [
+    {
+      "claim_key": "E993-LOWER-REGION-C4-T4-SIGNED-CROSS-TAG-INJECTIVITY",
+      "proposed_status": "REFUTED",
+      "statement": "For every finite ordinary tree T and natural p with x(T)+2<=p and 3p<2alpha(T)+1, let F be the original leaves v with Delta_p(T-v)<0. Over Q, let K_j have basis pairs (v,A) with v in F and A an independent j-set of H_v=T-{v,s_v} meeting W_v=N_T(s_v) minus {v}. Fix total orders on vertices and F. The linear map L:K_p -> K_(p-1) deletes each u in increasing position from A with coefficient (-1)^(position(u,A)-1); for B=A minus {u}, it retains v if (v,B) is a destination basis pair, otherwise uses the least w in F for which (w,B) is a destination basis pair, and omits the term if no such w exists. Then L is injective.",
+      "scope": "The exact C4-T4 signed face-only, least-eligible-favorable-tag retagging map on rational tagged relative-face spaces, with the fixed strict original-leaf selector and original supports. Refuted by T=K_(1,12), p=8, ordered vertices 0<1<...<12 and ordered tags 1<...<12: the nine-term boundary of C={2,...,10} at tag 1 is nonzero and maps to zero. The same vector uses only retained-tag branches, so changing the tag order does not repair it. No assertion about another map, unsigned local deletion, Hall, or the scalar aggregate.",
+      "witness": "EVIDENCE.json:star",
+      "grade": "exact finite refutation; proposed worker-only"
+    },
+    {
+      "claim_key": "E993-LOWER-REGION-LOCAL-MARKED-ADDABILITY-NONPOSITIVE-COVARIANCE",
+      "proposed_status": "REFUTED",
+      "statement": "For every finite ordinary tree T and natural p with x(T)+2<=p and 3p<2alpha(T)+1, and every original leaf v in the fixed strict selector F={v: Delta_p(T-v)<0}, put k=p-1, H_v=T-{v,s_v}, and W_v=N_T(s_v) minus {v}. If i_k(H_v)>0, take A uniformly from the independent k-sets of H_v, let M_v(A)=1 if A meets W_v and 0 otherwise, and let e_v(A) be the number of actual vertices of H_v addable to A. Then Cov(M_v,e_v)<=0.",
+      "scope": "Local, single-selected-leaf rank-k covariance under the uniform independent-k-set measure in H_v; actual addability is counted in H_v. Refuted on the specified labeled order-24 tree at p=10, k=9, selected leaf v=0, with Cov=1773113/13677^2>0. This does not assert a positive full favorable-leaf sum, a universal positive covariance, or failure of the early-rank occupancy transfer CT_x.",
+      "witness": "EVIDENCE.json:order24",
+      "grade": "exact finite refutation; proposed worker-only"
+    }
+  ]
+}

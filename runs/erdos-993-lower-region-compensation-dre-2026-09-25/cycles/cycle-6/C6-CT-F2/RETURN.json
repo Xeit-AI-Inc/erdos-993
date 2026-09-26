@@ -1,0 +1,30 @@
+{
+  "worker_id": "C6-CT-F2",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C6-F2-HETEROGENEOUS-CUTOFF2000-SCALAR-AUDIT",
+      "statement": "For h=29, the proposed falling-factorial perturbation estimate yields 80328*m*epsilon(m)<1 for every integer m>=2000. The route's simple selector interval inequalities are consistent conditional on the candidate graph parameters and the cited forest descent bound; the full heterogeneous-family proof remains unestablished by this review.",
+      "scope": "Retained only as an exact scalar-cutoff result for the proposed arity-2-to-4 family at m>=2000, plus its elementary conditional rank-interval check. It is not a proof of the heterogeneous-family theorem or of the arbitrary-tree aggregate.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CT-F2/REPORT.md",
+        "cycles/cycle-6/C6-CT-F2/scalar_replay.py",
+        "cycles/cycle-6/C6-CT-F2/scalar_replay.json"
+      ],
+      "reason": "retained_narrowed: independent exact rational recomputation confirms A=7913/12000, B=743/2400 and the endpoint scalar 80328*2000*epsilon=3.299964639786117e-05; the algebraic consecutive-quotient and monotonicity arguments establish the infinite m>=2000 scalar bound. The elementary rank interval is consistent under the stated graph and forest-bound premises. Candidate graph formulas, coefficient envelopes, central curvature, mixed-minor positivity, and full fixed-selector transfer are not independently closed here, so the scalar result cannot carry the family theorem."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CT-F2/REPORT.md",
+  "limitations": [
+    "The scalar cutoff and elementary conditional rank interval were audited; the heterogeneous graph, coefficient, curvature, mixed-minor, and complete selector arguments were not independently proved.",
+    "No m<2000 profiles, other branch arities, arbitrary-tree instances, family census, or Lean proof were reviewed.",
+    "The scalar result is not a counterexample or proof for the registered primary aggregate, and it displaces no standing refutation."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-F2-HETEROGENEOUS-CUTOFF2000-SCALAR-AUDIT"
+  ]
+}

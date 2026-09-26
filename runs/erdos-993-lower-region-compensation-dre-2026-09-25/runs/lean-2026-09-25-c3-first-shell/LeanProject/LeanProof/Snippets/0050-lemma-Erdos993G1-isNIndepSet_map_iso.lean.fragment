@@ -1,0 +1,16 @@
+lemma isNIndepSet_map_iso (e : F ≃g G) (k : ℕ) (S : Finset V) :
+    G.IsNIndepSet k (S.map e.toEquiv.toEmbedding) ↔ F.IsNIndepSet k S := by
+  constructor
+  · intro h
+    refine ⟨?_, by simpa using h.card_eq⟩
+    intro a ha b hb hab hAdj
+    exact h.isIndepSet (by simpa using ha) (by simpa using hb)
+      (e.injective.ne hab) (e.map_adj_iff.mpr hAdj)
+  · intro h
+    refine ⟨?_, by simpa using h.card_eq⟩
+    intro a ha b hb hab hAdj
+    obtain ⟨x, hx, rfl⟩ := Finset.mem_map.mp ha
+    obtain ⟨y, hy, rfl⟩ := Finset.mem_map.mp hb
+    exact h.isIndepSet hx hy (fun hxy => hab (congrArg e hxy))
+      (e.map_adj_iff.mp hAdj)
+

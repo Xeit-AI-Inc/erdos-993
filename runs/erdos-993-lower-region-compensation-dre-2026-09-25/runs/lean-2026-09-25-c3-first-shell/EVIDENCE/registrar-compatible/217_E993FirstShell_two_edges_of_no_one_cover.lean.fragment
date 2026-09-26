@@ -1,0 +1,40 @@
+namespace E993FirstShell
+
+open Classical
+
+/-- A graph with no one-vertex cover inside `U` has at least two induced edges. -/
+lemma two_edges_of_no_one_cover {V : Type u} [Fintype V] [DecidableEq V]
+    (G : SimpleGraph V) [DecidableRel G.Adj] (U : Finset V)
+    (hno : ∀ C : Finset V, C.card ≤ 1 →
+      ¬ (∀ x y, G.Adj x y → x ∈ U → y ∈ U → x ∈ C ∨ y ∈ C)) :
+    2 ≤ Nat.card (G.induce (U : Set V)).edgeSet := by
+  classical
+  let H := G.induce (U : Set V)
+  change 2 ≤ Nat.card H.edgeSet
+  by_contra h
+  have hle : Nat.card H.edgeSet ≤ 1 := by omega
+  by_cases hzero : Nat.card H.edgeSet = 0
+  · letI : IsEmpty H.edgeSet := Finite.card_eq_zero_iff.mp hzero
+    apply hno ∅ (by simp)
+    intro x y hxy hx hy
+    exfalso
+    exact isEmptyElim (⟨s((⟨x,hx⟩ : U), (⟨y,hy⟩ : U)), hxy⟩ : H.edgeSet)
+  · have hone : Nat.card H.edgeSet = 1 := by omega
+    obtain ⟨a,b,_,he⟩ := Erdos993G1.FirstWide.edgeSet_one_endpoints H hone
+    apply hno ({(a : V)} : Finset V) (by simp)
+    intro x y hxy hx hy
+    have hmem : s((⟨x,hx⟩ : U), (⟨y,hy⟩ : U)) ∈ H.edgeSet := hxy
+    have hexy : s((⟨x,hx⟩ : U), (⟨y,hy⟩ : U)) = s(a,b) := by
+      simpa only [he, Set.mem_singleton_iff] using hmem
+    have ha : a ∈ s((⟨x,hx⟩ : U), (⟨y,hy⟩ : U)) := by
+      rw [hexy]
+      simp
+    rcases Sym2.mem_iff.mp ha with hax | hay
+    · left
+      have hv : (a : V) = x := congrArg Subtype.val hax
+      simp [hv]
+    · right
+      have hv : (a : V) = y := congrArg Subtype.val hay
+      simp [hv]
+
+end E993FirstShell

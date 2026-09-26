@@ -1,0 +1,379 @@
+{
+  "schema_version": "formalization-fidelity-audit-input.v1",
+  "run_id": "lean-2026-09-25-c3-first-shell-repair-1",
+  "artifact_producer_id": "C3-LA1-PRODUCER",
+  "theorem_contract": {
+    "definitions": [
+      {
+        "name": "def-leaf",
+        "canonical": "An original degree-one vertex."
+      },
+      {
+        "name": "def-support",
+        "canonical": "The unique original neighbor of a degree-one leaf."
+      },
+      {
+        "name": "def-h",
+        "canonical": "Original deletion set {v,s_v}; the retained graph is its complement."
+      },
+      {
+        "name": "def-r",
+        "canonical": "Original closed neighborhood N_T[s_v] as a deletion set."
+      },
+      {
+        "name": "def-delta",
+        "canonical": "Integer forward difference of zero-extended independent-set counts in an original-graph vertex deletion."
+      },
+      {
+        "name": "def-crossing",
+        "canonical": "First natural rank with strictly negative full-tree forward difference."
+      },
+      {
+        "name": "def-selector",
+        "canonical": "Strict original single-vertex-deletion difference at p is negative."
+      },
+      {
+        "name": "def-aggregate",
+        "canonical": "Sum over original leaves passing the strict selector, each counted separately, of the original H/R difference at p-1."
+      },
+      {
+        "name": "def-alpha",
+        "canonical": "Maximum cardinality of an independent set of T."
+      }
+    ],
+    "domains": [
+      {
+        "variable": "T",
+        "lean_type": "SimpleGraph V",
+        "forbidden_narrowings": []
+      },
+      {
+        "variable": "p",
+        "lean_type": "Nat",
+        "forbidden_narrowings": []
+      },
+      {
+        "variable": "v",
+        "lean_type": "V",
+        "forbidden_narrowings": []
+      }
+    ],
+    "quantifiers": [
+      {
+        "variable": "T",
+        "kind": "forall",
+        "domain": "SimpleGraph V"
+      },
+      {
+        "variable": "p",
+        "kind": "forall",
+        "domain": "Nat"
+      },
+      {
+        "variable": "v",
+        "kind": "forall",
+        "domain": "V"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "hyp-pointwise",
+        "canonical": "First conjunct: T.IsTree, original leaf v, p>=3, |V|=2p+2, crossingIndex T+2<=p. No alpha or favorable-selector assumption."
+      },
+      {
+        "id": "hyp-aggregate",
+        "canonical": "Second conjunct: T.IsTree, |V|=2p+2, crossingIndex T+2<=p and STRICT 3p<2*indepNum(T)+1. No extra selected-leaf premise."
+      }
+    ],
+    "conclusion": {
+      "canonical": "Conjunction of the original-leaf integer H/R term being nonpositive under hyp-pointwise and the exact fixed-selector aggregate being nonpositive under hyp-aggregate.",
+      "clauses": [
+        "Conjunction of the original-leaf integer H/R term being nonpositive under hyp-pointwise and the exact fixed-selector aggregate being nonpositive under hyp-aggregate."
+      ]
+    },
+    "lean_statement": "theorem firstShellPointwiseAndAggregate :\n    (\u2200 (V : Type u) [Fintype V] [DecidableEq V]\n      (T : SimpleGraph V) [DecidableRel T.Adj]\n      (v : V) (p : \u2115),\n      T.IsTree \u2192 C4LA1.IsGraphLeaf T v \u2192 3 \u2264 p \u2192\n      Fintype.card V = 2 * p + 2 \u2192\n      C5LA1.crossingIndex T + 2 \u2264 p \u2192\n      C5LA1.forwardDifferenceDel T (C5LA1.H T v) (p - 1) -\n        C5LA1.forwardDifferenceDel T (C5LA1.R T v) (p - 1) \u2264 0) \u2227\n    (\u2200 (V : Type u) [Fintype V] [DecidableEq V]\n      (T : SimpleGraph V) [DecidableRel T.Adj] (p : \u2115),\n      T.IsTree \u2192 Fintype.card V = 2 * p + 2 \u2192\n      C5LA1.crossingIndex T + 2 \u2264 p \u2192\n      3 * p < 2 * T.indepNum + 1 \u2192 C5LA1.aggregate T p \u2264 0)",
+    "dependencies": [
+      {
+        "name": "Cli",
+        "version": "88679d088c9720c27ebdf2ba4dafe17341747f94",
+        "content_hash": "b07df8f9afd11d6c39537f6c886d1d0188a629f125f84b04f20679c442c217d2"
+      },
+      {
+        "name": "LeanSearchClient",
+        "version": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843",
+        "content_hash": "2e76840dffccb2d5c7aa8c5dda454f5e808357b32e5105ad47cb00ccf2261d66"
+      },
+      {
+        "name": "Qq",
+        "version": "38d591e778f100aec9762bb582f9c7f55f50e9dc",
+        "content_hash": "bee90132cc35fca0e737fb4a10f2ea9db0fe30898f238545218e24bfd4bc1a5a"
+      },
+      {
+        "name": "aesop",
+        "version": "a7dbf0c63b694e47f425f3dcddbc0e178bb432d3",
+        "content_hash": "655d582663231cb6485a913e8feaee9a698915f48f0be7621ddca716dc0854d8"
+      },
+      {
+        "name": "batteries",
+        "version": "023ce7d62a0531e22a5331e20b587817a80d49ff",
+        "content_hash": "e87475196d0adca922c73201f387682b28be1c651589fbdc6a5b01c32fe8ce7e"
+      },
+      {
+        "name": "importGraph",
+        "version": "7e9612bf0b9ee66db3cb5b9988a35afc706f5a12",
+        "content_hash": "b7508b309f800acc92912f3de3d5c180f15049a8a0b097c795d54a9bf4311b8c"
+      },
+      {
+        "name": "lean-toolchain",
+        "version": "leanprover/lean4:v4.32.2",
+        "content_hash": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273"
+      },
+      {
+        "name": "mathlib",
+        "version": "905b95818eb32af7874a58b427f50c1711a5e96c",
+        "content_hash": "cc2016257ad23c4dd693c873740d99bc191a6e5e971506a962b1833da4db69ef"
+      },
+      {
+        "name": "plausible",
+        "version": "e12c1910fe855cbfc38803cd4e55543906d5fa62",
+        "content_hash": "eaeb7f08924b82e082039285e106a63e44507b988612116b29df91bda6fbb9ce"
+      },
+      {
+        "name": "proofwidgets",
+        "version": "6e311e2a844da9b2cc3971187df2fe0066947b93",
+        "content_hash": "e1c4a41a41964577df80142c4b036ec0460fb3256d0e16c618b4eedf7925f11f"
+      }
+    ],
+    "contract_id": "e993-c3-first-shell-pair-v1",
+    "contract_sha256": "1cf37db1ec45656b89d7b0fece737ec60cfc3f5f081707ae2d6c2c4d8fc8e122",
+    "theorem_name": "E993FirstShell.firstShellPointwiseAndAggregate",
+    "permitted_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "constructivity_requirement": "classical_allowed"
+  },
+  "lean_binding": {
+    "definitions": [
+      {
+        "name": "def-leaf",
+        "canonical": "An original degree-one vertex."
+      },
+      {
+        "name": "def-support",
+        "canonical": "The unique original neighbor of a degree-one leaf."
+      },
+      {
+        "name": "def-h",
+        "canonical": "Original deletion set {v,s_v}; the retained graph is its complement."
+      },
+      {
+        "name": "def-r",
+        "canonical": "Original closed neighborhood N_T[s_v] as a deletion set."
+      },
+      {
+        "name": "def-delta",
+        "canonical": "Integer forward difference of zero-extended independent-set counts in an original-graph vertex deletion."
+      },
+      {
+        "name": "def-crossing",
+        "canonical": "First natural rank with strictly negative full-tree forward difference."
+      },
+      {
+        "name": "def-selector",
+        "canonical": "Strict original single-vertex-deletion difference at p is negative."
+      },
+      {
+        "name": "def-aggregate",
+        "canonical": "Sum over original leaves passing the strict selector, each counted separately, of the original H/R difference at p-1."
+      },
+      {
+        "name": "def-alpha",
+        "canonical": "Maximum cardinality of an independent set of T."
+      }
+    ],
+    "domains": [
+      {
+        "variable": "T",
+        "lean_type": "SimpleGraph V"
+      },
+      {
+        "variable": "p",
+        "lean_type": "Nat"
+      },
+      {
+        "variable": "v",
+        "lean_type": "V"
+      }
+    ],
+    "quantifiers": [
+      {
+        "variable": "T",
+        "kind": "forall",
+        "domain": "SimpleGraph V"
+      },
+      {
+        "variable": "p",
+        "kind": "forall",
+        "domain": "Nat"
+      },
+      {
+        "variable": "v",
+        "kind": "forall",
+        "domain": "V"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "hyp-pointwise",
+        "canonical": "First conjunct: T.IsTree, original leaf v, p>=3, |V|=2p+2, crossingIndex T+2<=p. No alpha or favorable-selector assumption."
+      },
+      {
+        "id": "hyp-aggregate",
+        "canonical": "Second conjunct: T.IsTree, |V|=2p+2, crossingIndex T+2<=p and STRICT 3p<2*indepNum(T)+1. No extra selected-leaf premise."
+      }
+    ],
+    "conclusion": {
+      "canonical": "Conjunction of the original-leaf integer H/R term being nonpositive under hyp-pointwise and the exact fixed-selector aggregate being nonpositive under hyp-aggregate.",
+      "clauses": [
+        "Conjunction of the original-leaf integer H/R term being nonpositive under hyp-pointwise and the exact fixed-selector aggregate being nonpositive under hyp-aggregate."
+      ]
+    },
+    "lean_statement": "theorem firstShellPointwiseAndAggregate :\n    (\u2200 (V : Type u) [Fintype V] [DecidableEq V]\n      (T : SimpleGraph V) [DecidableRel T.Adj]\n      (v : V) (p : \u2115),\n      T.IsTree \u2192 C4LA1.IsGraphLeaf T v \u2192 3 \u2264 p \u2192\n      Fintype.card V = 2 * p + 2 \u2192\n      C5LA1.crossingIndex T + 2 \u2264 p \u2192\n      C5LA1.forwardDifferenceDel T (C5LA1.H T v) (p - 1) -\n        C5LA1.forwardDifferenceDel T (C5LA1.R T v) (p - 1) \u2264 0) \u2227\n    (\u2200 (V : Type u) [Fintype V] [DecidableEq V]\n      (T : SimpleGraph V) [DecidableRel T.Adj] (p : \u2115),\n      T.IsTree \u2192 Fintype.card V = 2 * p + 2 \u2192\n      C5LA1.crossingIndex T + 2 \u2264 p \u2192\n      3 * p < 2 * T.indepNum + 1 \u2192 C5LA1.aggregate T p \u2264 0)",
+    "dependencies": [
+      {
+        "name": "Cli",
+        "version": "88679d088c9720c27ebdf2ba4dafe17341747f94",
+        "content_hash": "b07df8f9afd11d6c39537f6c886d1d0188a629f125f84b04f20679c442c217d2"
+      },
+      {
+        "name": "LeanSearchClient",
+        "version": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843",
+        "content_hash": "2e76840dffccb2d5c7aa8c5dda454f5e808357b32e5105ad47cb00ccf2261d66"
+      },
+      {
+        "name": "Qq",
+        "version": "38d591e778f100aec9762bb582f9c7f55f50e9dc",
+        "content_hash": "bee90132cc35fca0e737fb4a10f2ea9db0fe30898f238545218e24bfd4bc1a5a"
+      },
+      {
+        "name": "aesop",
+        "version": "a7dbf0c63b694e47f425f3dcddbc0e178bb432d3",
+        "content_hash": "655d582663231cb6485a913e8feaee9a698915f48f0be7621ddca716dc0854d8"
+      },
+      {
+        "name": "batteries",
+        "version": "023ce7d62a0531e22a5331e20b587817a80d49ff",
+        "content_hash": "e87475196d0adca922c73201f387682b28be1c651589fbdc6a5b01c32fe8ce7e"
+      },
+      {
+        "name": "importGraph",
+        "version": "7e9612bf0b9ee66db3cb5b9988a35afc706f5a12",
+        "content_hash": "b7508b309f800acc92912f3de3d5c180f15049a8a0b097c795d54a9bf4311b8c"
+      },
+      {
+        "name": "lean-toolchain",
+        "version": "leanprover/lean4:v4.32.2",
+        "content_hash": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273"
+      },
+      {
+        "name": "mathlib",
+        "version": "905b95818eb32af7874a58b427f50c1711a5e96c",
+        "content_hash": "cc2016257ad23c4dd693c873740d99bc191a6e5e971506a962b1833da4db69ef"
+      },
+      {
+        "name": "plausible",
+        "version": "e12c1910fe855cbfc38803cd4e55543906d5fa62",
+        "content_hash": "eaeb7f08924b82e082039285e106a63e44507b988612116b29df91bda6fbb9ce"
+      },
+      {
+        "name": "proofwidgets",
+        "version": "6e311e2a844da9b2cc3971187df2fe0066947b93",
+        "content_hash": "e1c4a41a41964577df80142c4b036ec0460fb3256d0e16c618b4eedf7925f11f"
+      }
+    ],
+    "declaration_name": "E993FirstShell.firstShellPointwiseAndAggregate",
+    "declaration_source_path": "LeanProject/LeanProof/Main.lean",
+    "declaration_source_sha256": "0397b7bedd1ff695d8debd73a24cff430434e88f2d9ac56c49459843d155f17f",
+    "declared_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "kernel_evidence": {
+    "receipt_sha256": "0dbcddc48cf6b7127d1cac84e39708183e804aae6615c38ceee2c2884830d759",
+    "verdict": "verified",
+    "reported_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "dependencies": [
+      {
+        "name": "Cli",
+        "version": "88679d088c9720c27ebdf2ba4dafe17341747f94",
+        "content_hash": "b07df8f9afd11d6c39537f6c886d1d0188a629f125f84b04f20679c442c217d2"
+      },
+      {
+        "name": "LeanSearchClient",
+        "version": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843",
+        "content_hash": "2e76840dffccb2d5c7aa8c5dda454f5e808357b32e5105ad47cb00ccf2261d66"
+      },
+      {
+        "name": "Qq",
+        "version": "38d591e778f100aec9762bb582f9c7f55f50e9dc",
+        "content_hash": "bee90132cc35fca0e737fb4a10f2ea9db0fe30898f238545218e24bfd4bc1a5a"
+      },
+      {
+        "name": "aesop",
+        "version": "a7dbf0c63b694e47f425f3dcddbc0e178bb432d3",
+        "content_hash": "655d582663231cb6485a913e8feaee9a698915f48f0be7621ddca716dc0854d8"
+      },
+      {
+        "name": "batteries",
+        "version": "023ce7d62a0531e22a5331e20b587817a80d49ff",
+        "content_hash": "e87475196d0adca922c73201f387682b28be1c651589fbdc6a5b01c32fe8ce7e"
+      },
+      {
+        "name": "importGraph",
+        "version": "7e9612bf0b9ee66db3cb5b9988a35afc706f5a12",
+        "content_hash": "b7508b309f800acc92912f3de3d5c180f15049a8a0b097c795d54a9bf4311b8c"
+      },
+      {
+        "name": "lean-toolchain",
+        "version": "leanprover/lean4:v4.32.2",
+        "content_hash": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273"
+      },
+      {
+        "name": "mathlib",
+        "version": "905b95818eb32af7874a58b427f50c1711a5e96c",
+        "content_hash": "cc2016257ad23c4dd693c873740d99bc191a6e5e971506a962b1833da4db69ef"
+      },
+      {
+        "name": "plausible",
+        "version": "e12c1910fe855cbfc38803cd4e55543906d5fa62",
+        "content_hash": "eaeb7f08924b82e082039285e106a63e44507b988612116b29df91bda6fbb9ce"
+      },
+      {
+        "name": "proofwidgets",
+        "version": "6e311e2a844da9b2cc3971187df2fe0066947b93",
+        "content_hash": "e1c4a41a41964577df80142c4b036ec0460fb3256d0e16c618b4eedf7925f11f"
+      }
+    ]
+  },
+  "audit_policy": {
+    "require_independent_review": true
+  },
+  "independent_review": {
+    "reviewer_id": "C3-LA1-FIDELITY",
+    "reviewer_kind": "independent-mathematical-formalization-fidelity-reviewer",
+    "attestation_id": "c3-la1-first-shell-repair1-fidelity-v1",
+    "completed_at": "2026-09-26T04:03:02Z",
+    "contract_projection_sha256": "0112514a50fec2648b0edd08d8f825d41ead752f4300caa3c178f7e17e644caf",
+    "binding_projection_sha256": "90e05e93c46e6309f4931f85d61268cbeeffceff7f71b831aedd80df1e602aad",
+    "verdict": "match",
+    "findings": []
+  }
+}

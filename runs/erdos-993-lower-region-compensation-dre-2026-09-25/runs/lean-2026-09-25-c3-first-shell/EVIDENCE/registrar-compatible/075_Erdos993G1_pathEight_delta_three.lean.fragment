@@ -1,0 +1,11 @@
+namespace Erdos993G1
+lemma pathEight_delta_three :
+    Erdos993G1.delta (SimpleGraph.pathGraph 8) 3 = -15 := by
+  have h := Erdos993G1.delta_nat (SimpleGraph.pathGraph 8) 3
+  norm_num [Erdos993G1.pathEight_indepCount_three,
+    Erdos993G1.pathEight_indepCount_four] at h
+  exact h
+end Erdos993G1
+
+namespace Erdos993G1
+

@@ -1,0 +1,18 @@
+namespace E993FirstShell
+
+theorem firstShellPointwiseAndAggregate :
+    (∀ (V : Type u) [Fintype V] [DecidableEq V]
+      (T : SimpleGraph V) [DecidableRel T.Adj]
+      (v : V) (p : ℕ),
+      T.IsTree → C4LA1.IsGraphLeaf T v → 3 ≤ p →
+      Fintype.card V = 2 * p + 2 →
+      C5LA1.crossingIndex T + 2 ≤ p →
+      C5LA1.forwardDifferenceDel T (C5LA1.H T v) (p - 1) -
+        C5LA1.forwardDifferenceDel T (C5LA1.R T v) (p - 1) ≤ 0) ∧
+    (∀ (V : Type u) [Fintype V] [DecidableEq V]
+      (T : SimpleGraph V) [DecidableRel T.Adj] (p : ℕ),
+      T.IsTree → Fintype.card V = 2 * p + 2 →
+      C5LA1.crossingIndex T + 2 ≤ p →
+      3 * p < 2 * T.indepNum + 1 → C5LA1.aggregate T p ≤ 0)
+
+end E993FirstShell

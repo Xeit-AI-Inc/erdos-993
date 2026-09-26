@@ -1,0 +1,19 @@
+lemma cover_delta_partition (F : SimpleGraph X) [DecidableRel F.Adj] (C : Finset X)
+    (hcover : ∀ x y, F.Adj x y → x ∈ C ∨ y ∈ C) (k : ℕ) :
+    delta F (k : ℤ) =
+      ∑ S ∈ C.powerset.filter (fun S : Finset X => F.IsIndepSet S),
+        (FirstWide.binomCoeff
+          ((univ : Finset X).filter (fun x => x ∉ C ∧ ∀ y ∈ S, ¬F.Adj y x)).card
+          ((k : ℤ) - S.card + 1) -
+        FirstWide.binomCoeff
+          ((univ : Finset X).filter (fun x => x ∉ C ∧ ∀ y ∈ S, ¬F.Adj y x)).card
+          ((k : ℤ) - S.card)) := by
+  rw [delta_nat,cover_indepCount_partition F C hcover,
+    cover_indepCount_partition F C hcover,← sum_sub_distrib]
+  apply sum_congr rfl
+  intro S hS
+  congr 2
+  push_cast
+  ring
+
+-- ENTRY 168

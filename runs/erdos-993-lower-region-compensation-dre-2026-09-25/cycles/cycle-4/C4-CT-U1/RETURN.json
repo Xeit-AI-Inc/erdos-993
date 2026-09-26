@@ -1,0 +1,29 @@
+{
+  "worker_id": "C4-CT-U1",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C4-U1-COVARIANCE-DECOMPOSITION",
+      "statement": "The tag lift from marked independent (p-1)-sets in H_v to tagged independent p-sets in T preserves addability, and the stated covariance decomposition and vertex-neighborhood expansion are exact for the fixed original favorable-leaf selector in the eligible ordinary-tree scope.",
+      "scope": "Exact algebraic identities for the claim's stated scope; no universal covariance bound, CT_x proof, or primary-aggregate verdict.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CT-U1/EVIDENCE.json",
+        "cycles/cycle-4/C4-CT-U1/REPORT.md"
+      ],
+      "reason": "retained — independent tag-by-tag bijection verifies Q and E, and extension-pair double counting gives E_p[e]=mu_p. The expectation/covariance identity follows for Q>0; linearity over addability indicators gives the neighborhood expansion. The guards ensure i_p(T)>0, while Q=0 is trivial only for the undivided inequality. The route correctly leaves the required covariance budget and primary aggregate open."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CT-U1/REPORT.md",
+  "limitations": [
+    "The exact identities do not bound the total selector-addability covariance, whose neighborhood terms can have either sign.",
+    "The route supplies no proof or refutation of CT_x or the primary aggregate and no new finite census.",
+    "The Q=0 case justifies only the undivided CT_x inequality; the normalized covariance identity is stated for Q>0."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-U1-COVARIANCE-DECOMPOSITION"
+  ]
+}

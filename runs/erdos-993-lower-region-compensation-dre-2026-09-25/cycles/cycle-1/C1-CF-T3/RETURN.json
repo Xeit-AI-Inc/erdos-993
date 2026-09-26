@@ -1,0 +1,44 @@
+{
+  "worker_id": "C1-CF-T3",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C1-T3-1",
+      "statement": "The source's bipartite marked-incidence identity and its ordinary-tree specialization yield the exact selected tagged-shadow formula S(T,p)=sum_{v in F(T,p)}(q_v(p)-q_v(p-1)); the identity is valid under the stated finite graph, rank, and marked-set hypotheses.",
+      "scope": "Finite bipartite H with alpha(H)<=h, 1<=k<=h, and the contract's eligible ordinary-tree specialization using each favorable original leaf tag.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CF-T3/REPORT.md",
+        "cycles/cycle-1/C1-CF-T3/evidence/AUDIT.md",
+        "cycles/cycle-1/C1-CF-T3/evidence/SOURCE-HASHES.txt"
+      ],
+      "reason": "Disposition retained. Same-color addable vertices give e(A)<=2(h-k); the pair count gives kQ_(k+1)+C=2(h-k)Q_k-D with C,D>=0. In the tree case R=H-W and the contract specialization cancels to k*g=k(q(k+1)-q(k)). This verifies the identity and formula only, with no sign conclusion for S."
+    },
+    {
+      "claim_id": "C1-T3-2",
+      "statement": "For the contract-defined selected leaf tags, the primary inequality is equivalent to the selector-weighted aggregate shadow inequality sum_{v in F(T,p)}q_v(p)<=sum_{v in F(T,p)}q_v(p-1). An injection matching upper tagged marked sets into lower tagged marked sets would suffice, but the source establishes no such matching or aggregate inequality.",
+      "scope": "Exact lower-region ordinary-tree target, retaining distinct original leaves even when supports coincide.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CF-T3/REPORT.md",
+        "cycles/cycle-1/C1-CF-T3/evidence/AUDIT.md",
+        "cycles/cycle-1/C1-CF-T3/evidence/SOURCE-HASHES.txt"
+      ],
+      "reason": "Disposition retained_narrowed. The shadow-sum equivalence follows exactly from the summand identity. Matching is only a sufficient approach, not a necessary criterion for the cardinality inequality; there is no selector bridge, Hall proof, abstract-to-tree realization, or proof of the remaining sign."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CF-T3/REPORT.md",
+  "limitations": [
+    "The selector-weighted aggregate shadow inequality remains unproved, so the primary target is unresolved.",
+    "The cited K_(1,12), T22, and T60 controls are finite observations; T22 and T60 graph generations were not independently replayed in this review.",
+    "No universal matching or Hall statement is claimed, and no abstract incidence obstruction is realized as an ordinary-tree counterexample.",
+    "The incidence graphs themselves were not independently enumerated; the audit is a proof-level count of the source identity and its stated algebraic specialization."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-T3-1",
+    "C1-T3-2"
+  ]
+}

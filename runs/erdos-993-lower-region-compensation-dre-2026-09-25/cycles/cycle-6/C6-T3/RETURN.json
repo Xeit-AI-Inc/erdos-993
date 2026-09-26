@@ -1,0 +1,26 @@
+{
+  "worker_id": "C6-T3",
+  "cycle": 6,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "E993-ORDINARY-PATH-STAR-ARITY-2-12-M100000000-LOWER-REGION-AGGREGATE",
+      "statement": "For the finite tree formed from path 0-1-2 by attaching m distinct centers to 0 and r_i private leaves to center i, where every r_i is in {2,...,12} and m>=100000000, the complete original strict-favorable-leaf aggregate S(T,p) is strictly negative for every natural p satisfying x(T)+2<=p and 3p<2 alpha(T)+1.",
+      "scope": "Only the displayed path-plus-private-star family, all arity profiles with 2<=r_i<=12, m>=100000000, original leaf supports and distinct tags, and the stated eligible strict-lower-region ranks.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-T3/EVIDENCE.json",
+        "cycles/cycle-6/C6-T3/independent_replay.py"
+      ],
+      "reason": "The report gives an informal proof from the graph and tagged-polynomial identities, a one-branch finite-ULC absorption using all 121 exact factor pairs, an exact uniform cutoff bound, and a first-descent-to-full-selector transfer. The exact factor and cutoff arithmetic replayed successfully. This is a worker-only proof proposal and is not a kernel or controller award."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-T3/REPORT.md",
+  "limitations": [
+    "The conclusion covers only the stated path-plus-private-star family with arities 2 through 12 and at least 100000000 branches; it does not cover the finite prefix or arbitrary ordinary trees.",
+    "The proof imports the finite-order ULC convolution theorem and the pinned formal forest descent bound at their stated hypotheses; this worker did not produce a Lean certificate for the family theorem.",
+    "The return proposes worker-only status and makes no authoritative registry or claim award."
+  ],
+  "status_authority": "proposed_worker_only"
+}

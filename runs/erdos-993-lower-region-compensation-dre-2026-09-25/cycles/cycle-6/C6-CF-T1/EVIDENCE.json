@@ -1,0 +1,39 @@
+{
+  "source_pin_audit": {
+    "case_packet": "C6-CF-T1.json",
+    "common_packet": "C6-COMMON.json",
+    "listed_files_checked": 241,
+    "sha256_mismatches": 0
+  },
+  "finite_cutoff_replay": {
+    "artifact": "CUTOFF400-REPLAY.json",
+    "script": "cutoff400_audit.py",
+    "method": "scratch copy of the exact case-listed replay; exact integer recurrence and margin checks",
+    "m_range": [3, 399],
+    "j_range": "m through 2m+2 inclusive",
+    "each_margin_checks": 242964,
+    "total_lc_and_mixed_checks": 485928,
+    "lc_sha256": "f9091121f369d93d9e7abb54d614b61a780bda3f8e265459211eacdc76376a47",
+    "mixed_minor_sha256": "174a521a64a40f1ed0485b863748ac32db7bbb4a35664e6bbfc607a83dc454a7",
+    "minimum_lc": ["1210", 3, "Astar", 8],
+    "minimum_mixed_minor": ["1243", 3, "Astar", 8]
+  },
+  "independent_graph_replay": {
+    "artifact": "SMALL-GRAPH-EVIDENCE.json",
+    "script": "small_graph_replay.py",
+    "scope": "T_m for 3<=m<=6 only",
+    "checks": [
+      "tree-DP independence polynomial agrees with (1+2z)B^m+z(1+z)^(3m+1)",
+      "endpoint and all 3m private-leaf tagged q polynomials sum to zR",
+      "all eligible rows have every original leaf in the selector",
+      "direct full S equals R_(p-1)-R_(p-2)"
+    ],
+    "status": "bounded corroboration only"
+  },
+  "algebraic_review": {
+    "direct_descent": "Correct coefficientwise inequality is G'=2 >= (2/3)(G-zG')=2/3 for G=1+2z; product rule yields the stated lower bound for (j+1)M_(j+1)/M_j. The route's displayed right-hand coefficient vector (2/3,2/3) is incorrect; it should be (2/3,0).",
+    "contract_index": "For q_v(j)=[z^j](I(H_v)-I(R_v)), the contract summand at Delta_(p-1) equals q_v(p)-q_v(p-1), not q_v(p-1)-q_v(p-2). Summing q_v=zR gives the route's final expression R_(p-1)-R_(p-2).",
+    "ulc_import": "Gurvits, arXiv:0804.1181, Definition (2), Theorem 1.1, Remark 1.2: finite-order ULC permits normalization order at least degree and convolution adds orders. Strict Poisson inequalities on each finite factor permit all sufficiently large orders; taking the finite coefficientwise limit gives Poisson ULC. This is an informal proof, not kernel checked."
+  },
+  "scope_boundary": "No conclusion about arbitrary ordinary trees follows from this T_m-family audit."
+}

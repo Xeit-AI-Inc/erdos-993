@@ -1,0 +1,7 @@
+lemma binomDelta_antitone {k a b : ℕ} (hk : 1 ≤ k) (hb : b ≤ 2*k) (hab : a ≤ b) :
+    (b.choose (k+1) : ℤ) - b.choose k ≤
+      (a.choose (k+1) : ℤ) - a.choose k := by
+  induction b, hab using Nat.le_induction with
+  | base => exact le_rfl
+  | succ b hab ih =>
+    exact (binomDelta_step_down b k hk (by omega)).trans (ih (by omega))

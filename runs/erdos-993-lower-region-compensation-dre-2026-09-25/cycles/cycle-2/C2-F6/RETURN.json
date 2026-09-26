@@ -1,0 +1,24 @@
+{
+  "worker_id": "C2-F6",
+  "cycle": 2,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C2-F6.ROOT-PENDANT-T22-OBSTRUCTION",
+      "statement": "For the order-91 T_22 control, attaching one new pendant leaf at the root yields an eligible order-92 tree for which the original marked leaf has a negative selected summand at every eligible rank and the complete favorable-leaf sum is strictly negative at every eligible rank.",
+      "scope": "Exact finite computation for T_22 with one new leaf attached at root 0; p=35,...,45, with x=33, alpha=68, and strict 3p<2alpha+1. No other padding length, attachment vertex, or source tree is covered.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-F6/EVIDENCE.json"
+      ],
+      "reason": "Pinned exact forest-DP coefficient counts and direct evaluations of every leaf selector and selected summand cover all eligible integer ranks for this fixed padded tree. The result is a bounded obstruction for this instance, not a general theorem or a resolution of the registered aggregate."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-F6/REPORT.md",
+  "limitations": [
+    "Only the supplied T_22 positive-fibre control and a single root-adjacent pendant leaf were evaluated; no uniform obstruction for pendant-path padding was proved.",
+    "The exact finite result does not prove or refute the universal ordinary favorable-leaf aggregate."
+  ],
+  "status_authority": "proposed_worker_only"
+}

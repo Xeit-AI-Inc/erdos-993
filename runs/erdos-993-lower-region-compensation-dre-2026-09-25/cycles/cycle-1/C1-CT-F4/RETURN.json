@@ -1,0 +1,29 @@
+{
+  "worker_id": "C1-CT-F4",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C1-F4-1",
+      "statement": "For the symmetric root-hub family with 2<=m<=6, 1<=d<=4, and 2<=L<=5, all 151 eligible lower-region parameter rows across 80 trees have strictly negative complete fixed-selector aggregate; no positive row occurs in this bounded census.",
+      "scope": "Finite exact census only for one root joined to m identical hubs, each carrying d pendant paths of L edges, within the stated parameter box. No conclusion is claimed beyond this box or family.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CT-F4/evidence/replay.json",
+        "cycles/cycle-1/C1-CT-F4/evidence/source_replay.py",
+        "cycles/cycle-1/C1-CT-F4/evidence/ordinary_tree_checked.py"
+      ],
+      "reason": "retained: copying the pinned replay and evaluator to this seat and adapting only the helper lookup regenerated JSON exactly equal to the source census. Audit confirms the finite family construction, alpha and terminal zero-extension descent check, strict lower-region p filter, per-original-leaf strict selector, p-1 rank shift, original support/neighborhood deletions, distinct same-support leaf tags, and complete aggregate. This verifies only the bounded computational claim, not the universal target."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CT-F4/REPORT.md",
+  "limitations": [
+    "The result is a replayed finite computation in the stated symmetric family box and does not establish a universal sign.",
+    "The primary lower-region aggregate remains unresolved by this source claim."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-F4-1"
+  ]
+}

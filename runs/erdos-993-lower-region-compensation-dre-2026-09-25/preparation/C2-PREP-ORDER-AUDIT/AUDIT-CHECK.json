@@ -1,0 +1,176 @@
+{
+  "generic": {
+    "exhaustive_orders": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "graphs": 1100,
+    "marked_graph_pairs": 29078,
+    "rank_cases": 173545,
+    "sample_orders": [
+      6,
+      7
+    ],
+    "sample_graphs": 1991,
+    "sample_marked_graph_pairs": 11560,
+    "sample_rank_cases": 75258
+  },
+  "tree": {
+    "exhaustive_labeled_orders": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "trees": 18248,
+    "leaf_rank_cases": 405290,
+    "favorable_sum_cases": 0
+  },
+  "sharpness": [
+    {
+      "k": 2,
+      "p": 3,
+      "order": 8,
+      "alpha": 6,
+      "x": 3,
+      "local_excess": 2,
+      "favorable": true
+    },
+    {
+      "k": 3,
+      "p": 4,
+      "order": 10,
+      "alpha": 8,
+      "x": 4,
+      "local_excess": 5,
+      "favorable": true
+    },
+    {
+      "k": 4,
+      "p": 5,
+      "order": 12,
+      "alpha": 10,
+      "x": 5,
+      "local_excess": 14,
+      "favorable": true
+    },
+    {
+      "k": 5,
+      "p": 6,
+      "order": 14,
+      "alpha": 12,
+      "x": 6,
+      "local_excess": 42,
+      "favorable": true
+    },
+    {
+      "k": 6,
+      "p": 7,
+      "order": 16,
+      "alpha": 14,
+      "x": 7,
+      "local_excess": 132,
+      "favorable": true
+    }
+  ],
+  "eligible_first_shell_example": {
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        1,
+        8
+      ],
+      [
+        1,
+        9
+      ],
+      [
+        2,
+        10
+      ],
+      [
+        2,
+        11
+      ],
+      [
+        3,
+        12
+      ],
+      [
+        3,
+        13
+      ],
+      [
+        4,
+        14
+      ],
+      [
+        4,
+        15
+      ],
+      [
+        5,
+        16
+      ],
+      [
+        5,
+        17
+      ]
+    ],
+    "order": 18,
+    "p": 8,
+    "alpha": 12,
+    "x": 6,
+    "independence_coefficients": [
+      1,
+      18,
+      136,
+      574,
+      1519,
+      2672,
+      3216,
+      2672,
+      1519,
+      574,
+      136,
+      18,
+      1
+    ],
+    "favorable_count": 12,
+    "aggregate": -4256,
+    "brute_force_matched_dp": true
+  }
+}

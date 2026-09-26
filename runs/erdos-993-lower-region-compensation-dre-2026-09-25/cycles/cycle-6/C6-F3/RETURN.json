@@ -1,0 +1,26 @@
+{
+  "worker_id": "C6-F3",
+  "cycle": 6,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "E993-ORDINARY-PATH-STAR-ARITY-2-12-M100000000-LOWER-REGION-AGGREGATE",
+      "statement": "For the path 0-1-2 with m>=100000000 branch centers adjacent to 0 and 2<=r_i<=12 private leaves at center i, the complete strict-selector sum over all original distinct leaves is <0 at every eligible lower-region rank.",
+      "scope": "Exact heterogeneous path-plus-private-star family at m>=100000000, all profiles with r_i in {2,...,12}, the strict original-leaf selector, and every p satisfying x+2<=p and 3p<2alpha+1.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-F3/EVIDENCE.json",
+        "cycles/cycle-6/C6-F3/REPLAY.py"
+      ],
+      "reason": "No counterexample or decisive defect was found in the assigned grouped-factor, mixed-ratio, or graph-to-leaf bridges. Exact replay verifies all 121 finite-ULC grouped-factor orders and the cutoff scalar. The complete all-profile mixed-minor perturbation estimates and their infinite-family bridge were not independently certified here, so this route does not establish the theorem and leaves the registered claim open."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-F3/REPORT.md",
+  "limitations": [
+    "The infinite-family coefficientwise perturbation envelopes and all shifted-index bounds were not independently certified in full.",
+    "The convolution-minor expansion was checked through its factor ratios and use conditions but was not independently formalized from scratch.",
+    "The result is restricted to the assigned path-plus-private-star family and does not decide the arbitrary-tree primary claim."
+  ],
+  "status_authority": "proposed_worker_only"
+}

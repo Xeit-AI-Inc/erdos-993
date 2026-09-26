@@ -1,0 +1,48 @@
+{
+  "worker_id": "C3-CF-U6",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C3-U6.marked-down-operator",
+      "statement": "For a fixed eligible pair and its contract selector, injectivity of the mark-preserving map d_p:M_p(H_v,W_v)->M_{p-1}(H_v,W_v) for every selected original leaf implies S(T,p)<=0.",
+      "scope": "Conditional criterion for the exact residuals H_v=T-{v,s_v}, W_v=N_T(s_v)\\{v}, p-1 rank, and fixed F(T,p); no injectivity premise is proved for general eligible trees.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-U6/REPORT.md",
+        "cycles/cycle-3/C3-CF-U6/CRITIQUE-EVIDENCE.json",
+        "cycles/cycle-3/C3-CF-U6/SOURCE-C3-U6-REPORT.md",
+        "cycles/cycle-3/C3-CF-U6/SOURCE-C3-U6-EVIDENCE.json",
+        "cycles/cycle-3/C3-CF-U6/REPLAY.py"
+      ],
+      "reason": "retained: finite-dimensional injectivity gives q_p<=q_{p-1} for each selected leaf, and the contract summand equals q_p-q_{p-1}. The 19-vertex Boolean example only obstructs an unselected rank and proves no target counterexample."
+    },
+    {
+      "claim_id": "C3-U6.star-subcase",
+      "statement": "For every eligible lower-region pair (T,p) with T=K_{1,m}, m>=4, every original leaf is selected and S(T,p)=m*(binom(m-1,p)-binom(m-1,p-1))<0.",
+      "scope": "Ordinary stars only, under x(T)+2<=p and 3p<2alpha(T)+1, with alpha(T)=m and each original leaf counted separately.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-U6/REPORT.md",
+        "cycles/cycle-3/C3-CF-U6/CRITIQUE-EVIDENCE.json",
+        "cycles/cycle-3/C3-CF-U6/SOURCE-C3-U6-REPORT.md",
+        "cycles/cycle-3/C3-CF-U6/SOURCE-C3-U6-EVIDENCE.json",
+        "cycles/cycle-3/C3-CF-U6/REPLAY.py"
+      ],
+      "reason": "retained: exact zero-extended counts establish x=floor((m-1)/2)+1; deleting any leaf gives K_{1,m-1} with Delta_p<0 throughout the eligible rank range; the complete sum is the stated negative binomial difference times m."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CF-U6/REPORT.md",
+  "limitations": [
+    "The star subcase does not prove the aggregate for arbitrary ordinary trees.",
+    "The operator criterion remains conditional; no general residual injectivity or aggregate rank inequality was established.",
+    "The dimension obstruction is outside the selector-eligible range and is not a counterexample.",
+    "The arithmetic replay covered the two supplied m=20 examples and the stated dimension example, while the universal star formulas were checked symbolically."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C3-U6.star-subcase",
+    "C3-U6.marked-down-operator"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "worker_id": "C3-CT-U6",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C3-U6.star-subcase",
+      "statement": "The C3-U6 star-family calculation is valid under its stated lower-region guards: every original leaf is selected and the complete sum is strictly negative.",
+      "scope": "Only T=K_{1,m}, m>=4, for eligible pairs satisfying x(T)+2<=p and 3p<2alpha(T)+1.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CT-U6/REPORT.md",
+        "cycles/cycle-3/C3-CT-U6/EVIDENCE.json"
+      ],
+      "reason": "retained: the zero-extended counts give the stated first-descent index; the strict guards ensure all original leaf tags are selected in the binomial decreasing range, and the complete tagged sum and examples recalculate exactly."
+    },
+    {
+      "claim_id": "C3-U6.marked-down-operator",
+      "statement": "Injectivity of each selected residual's mark-preserving down map implies the corresponding complete fixed-selector sum is nonpositive; the general-tree injectivity premise remains open.",
+      "scope": "Conditional implication for H_v=T-{v,s_v}, W_v=N_T(s_v)\\{v}, R_v=H_v-W_v, k=p-1, and the contract's fixed selector.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CT-U6/REPORT.md",
+        "cycles/cycle-3/C3-CT-U6/EVIDENCE.json"
+      ],
+      "reason": "retained: the map is well-defined on the marked-face bases, injectivity gives the dimension inequality, and the original summand is q_v(k+1)-q_v(k). The stated dimensional obstruction is outside the eligible range and does not prove or refute the missing premise."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CT-U6/REPORT.md",
+  "limitations": [
+    "No arbitrary-tree injectivity theorem or alternate aggregate inequality is proved.",
+    "The star calculation is only a family subcase and does not resolve the primary aggregate.",
+    "No eligible complete-sum counterexample or executable source replay was produced."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C3-U6.marked-down-operator",
+    "C3-U6.star-subcase"
+  ]
+}

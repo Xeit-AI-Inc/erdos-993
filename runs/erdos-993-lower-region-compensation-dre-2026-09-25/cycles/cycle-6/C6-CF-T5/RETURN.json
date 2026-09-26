@@ -1,0 +1,29 @@
+{
+  "worker_id": "C6-CF-T5",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "F",
+  "covered_claim_ids": [
+    "C6-T5.ORBIT-QUOTIENT-LIFT"
+  ],
+  "claims": [
+    {
+      "claim_id": "C6-T5.ORBIT-QUOTIENT-LIFT",
+      "statement": "Retained: the finite-group quotient-flow lifting theorem is valid when the relation is invariant and nonnegative integer supplies and capacities are orbit-constant; the stated S3 wreath-product states and deletion/two-for-one adjacency describe T_m for every m>=1; and the pinned quotient flows yield valid complete-sum checks for the three specified (m,p) rows.",
+      "scope": "General finite-group lifting theorem under the stated hypotheses; structural orbit and adjacency description for the designated T_m family, m>=1; bounded flow applications only at (22,34), (60,90), and (66,98). No quotient feasibility at other parameters and no resolution of the arbitrary-tree aggregate.",
+      "status": "proposed_partial",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CF-T5/REPORT.md",
+        "cycles/cycle-6/C6-CF-T5/ORBIT-AUDIT.json"
+      ],
+      "reason": "retained — the invariant-maximizer argument proves the lift, the state multiplicities and relation transitions exhaust the T_m configurations, and scratch-copy replay verified exact selectors, guards, literal positive arcs, orbit capacities, saturation, and the complete sums in the three pinned rows. These finite examples do not establish a uniform flow family or the primary target."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CF-T5/REPORT.md",
+  "limitations": [
+    "The quotient-flow applications are bounded to (m,p)=(22,34),(60,90),(66,98); no all-m quotient-feasibility result was established.",
+    "The structural orbit and adjacency proof applies to the designated T_m family and the audited deletion-plus-exactly-two-neighbor relation.",
+    "This critique establishes no proof or counterexample for the arbitrary-tree lower-region aggregate."
+  ],
+  "status_authority": "proposed_worker_only"
+}

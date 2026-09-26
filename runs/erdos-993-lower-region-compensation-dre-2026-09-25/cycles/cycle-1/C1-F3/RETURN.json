@@ -1,0 +1,26 @@
+{
+  "worker_id": "C1-F3",
+  "cycle": 1,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C1-F3-1",
+      "statement": "For the exact pair t_family(22) and the tree obtained by grafting path 4-91-92-93 onto original leaf 4, at fixed p=35 both trees satisfy x+2<=p and 3p<2alpha+1, but the selected sum remains negative in both (-838171658290934690688 and -2341400510849661617965). Grafting removes old favorable leaf 4 from the leaf set, adds favorable leaf 93, and changes retained favorable leaf 2's summand from -212336130412243110 to +424672260824486220.",
+      "scope": "One exact finite pair of ordinary trees; this is a selector and summand instability observation only, not a proof or refutation of the universal lower-region aggregate.",
+      "status": "proposed_bounded_result",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-F3/evidence/graft_pair.py",
+        "cycles/cycle-1/C1-F3/evidence/graft_pair.json"
+      ],
+      "reason": "The pinned corrected tree-DP evaluator was used to compute exact independence vectors, all terminally checked x values, all original leaf selector values, every selected summand, and both full sums. Both guards hold. The complete sums are negative, so this is not a counterexample; the result blocks a termwise graft-monotonicity inference but does not establish the target inequality."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-F3/REPORT.md",
+  "limitations": [
+    "The exact graft pair is a bounded observation and does not resolve the primary aggregate inequality.",
+    "The exploratory family searches were finite and their complete enumeration output was not retained; no exhaustive coverage or universal conclusion is claimed.",
+    "No proof or counterexample for the separately registered bipartite tagged incidence identity is supplied."
+  ],
+  "status_authority": "proposed_worker_only"
+}

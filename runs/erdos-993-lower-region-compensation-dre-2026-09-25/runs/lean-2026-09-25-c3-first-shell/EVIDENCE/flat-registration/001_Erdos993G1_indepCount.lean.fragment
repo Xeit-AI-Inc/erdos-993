@@ -1,0 +1,6 @@
+universe u
+
+noncomputable def Erdos993G1.indepCount {V : Type u}
+    (F : SimpleGraph V) (k : ℕ) : ℤ :=
+  (Nat.card {S : Finset V // F.IsNIndepSet k S} : ℤ)
+

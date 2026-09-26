@@ -1,0 +1,101 @@
+{
+  "worker_id": "C3-PREP-THIRD-SHELL-AUDIT",
+  "model": "gpt-6-sol",
+  "reasoning_effort": "high",
+  "status_authority": "proposed_worker_only",
+  "allowed_source_files": [
+    {
+      "path": "control/C3-FIRST-SHELL-CANDIDATE.md",
+      "sha256": "f4f051cbb0bc6b18643775b88c0e2a113568af70aea5e6af504018ee0b00dad2"
+    },
+    {
+      "path": "control/C3-MATCHING4-BOOLEAN-LIFT-CERTIFICATE.json",
+      "sha256": "e7faacfe0b0e66391534d6a12505a4bca47a9503f9cf89699ae63f13e59c66ef"
+    },
+    {
+      "path": "control/C3-NEXT-SHELL-NORMAL-PRODUCT-CANDIDATE.md",
+      "sha256": "e6f6389cbf507a526b5ec66e00cb59dfb135e99bdf7e30fe060f9a5ccdcd0eed"
+    },
+    {
+      "path": "inputs/C3-formal-intake/DIRECT-PROOF-SIMPLIFICATION.md",
+      "sha256": "4341f0ff3bb8d6dd55910defe530756aea21c20e7e0865072e1d6ea47cd3e95d"
+    },
+    {
+      "path": "inputs/C3-formal-intake/FIRST-SHELL-TWO-PART-ROUTE.md",
+      "sha256": "aa22b40fa85b6e7b0b9c5ae21f7014540e4953160f52af01a25da656a166877b"
+    },
+    {
+      "path": "inputs/C3-formal-intake/FirstInteriorMain.lean",
+      "sha256": "8d864da290947d75ac0cb52644b8b5336a19076878fcb11eeed552e6a118d7a9"
+    },
+    {
+      "path": "inputs/C3-formal-intake/G1FirstWide-SOURCE-PIN.json",
+      "sha256": "b99961f3bdc1ee18c629847f3696072bae24e9dedc127ce816f1ffd94adcf541"
+    },
+    {
+      "path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "sha256": "beabf73950968ea22e71fb7b02a946eb849b7cdce3a0541fa80a59f7bc485d89"
+    },
+    {
+      "path": "inputs/C3-formal-intake/GENERIC-ORDER-BAND-VIA-FIRST-WIDE.md",
+      "sha256": "4f90cec2034385220d24d00df65a336fbfccdbded4be32feaa05468f6fa6f16d"
+    },
+    {
+      "path": "inputs/C3-formal-intake/R25Card5-PRIOR-VERIFICATION.json",
+      "sha256": "bc66010f6e45f02bc9adda5ad592b2e606f1d036bc4ccd25cef77daf8ba75061"
+    },
+    {
+      "path": "inputs/C3-formal-intake/R25Card5-SOURCE-PIN.json",
+      "sha256": "e604662718b8d1f4c9aea74b30c31a4e9cc75ed7bbadd23427dab6d07ed2e318"
+    },
+    {
+      "path": "inputs/C3-formal-intake/R25Card5Main.lean",
+      "sha256": "f47ef6b4fcad06580bb97206950c604927753c2c30cd369dbe6a76d4f0409a2d"
+    },
+    {
+      "path": "inputs/C3-formal-intake/SOURCE-PIN.json",
+      "sha256": "a5801a2626be4368180598151f62889c6eb064baab3eb1fb2c17a3f2f207c86d"
+    },
+    {
+      "path": "inputs/ordinary_tree_checked.py",
+      "sha256": "a012bb78915ccdfa2f729c0cdb520cd8f29572277123c92e80ba6091498f533d"
+    },
+    {
+      "path": "preparation/C2-PREP-SHELL-AUDIT-R2/REPORT.md",
+      "sha256": "cb4b06ea88900a4d3bccc78c95f49a9de10aa75a007dd5741791756eca902ac0"
+    },
+    {
+      "path": "preparation/C2-PREP-SHELL-FORMAL-INTAKE/REPORT.md",
+      "sha256": "448f030c5b3457205e3b906f605a30b13705d3f8d11bdb18ef6d76243e75e5b6"
+    },
+    {
+      "path": "control/C3-THIRD-SHELL-MATCHING5-DIRECTION.md",
+      "sha256": "10ff0af3999e9202e493cadae47c8cb5aa057fb7c5b070b747a35de0e207e4c9"
+    },
+    {
+      "path": "control/C3-MATCHING5-EVEN-FINITE-CERTIFICATES.json",
+      "sha256": "a955a061f94d945c1269c694900440789437ecf912031c6c360728b28a895297"
+    },
+    {
+      "path": "preparation/C3-PREP-NEXT-SHELL-AUDIT/EVIDENCE.json",
+      "sha256": "af97b7dca6e5b21a723d818a98138459e389d539d232cf27eb7084ca8b5823cd"
+    },
+    {
+      "path": "preparation/C3-PREP-NEXT-SHELL-AUDIT/REPORT.md",
+      "sha256": "ee1e99cf4744676842fa52266732ecddbe5075db4daa3f26aa8001ad7aa77658"
+    },
+    {
+      "path": "preparation/C3-PREP-NEXT-SHELL-AUDIT/RESULTS.json",
+      "sha256": "84dcafe2d3ad89dfe2cd1b61bfb2484e35404e8dcc1a8c0882de08b691071280"
+    },
+    {
+      "path": "preparation/C3-PREP-NEXT-SHELL-AUDIT/HASHES.json",
+      "sha256": "0cad1af1ad8c25e7cbf12f37724b148658e593ff8940e899756228bfbe910792"
+    },
+    {
+      "path": "preparation/C3-PREP-NEXT-SHELL-AUDIT/verify_lift.py",
+      "sha256": "e298cdd80204bf93cf7b668d3d83b6e6055f94cda31e3bf9b4385ea40975b17b"
+    }
+  ],
+  "task": "Fresh independent audit of proposed third-shell pointwise claim n=2p+4,p>=14,x+2<=p, for each original leaf. This is preliminary C4 preparation outside frozen C3 search/critique packets. Read C3-THIRD-SHELL-MATCHING5-DIRECTION and the two finite matching5 injection certificates. Independently verify complete domains, distinct subset images, prefix-chain restrictions, then reconstruct the universal matching5-even SCD lift including k=4 endpoint and every chain-bottom case. Check cover-six Catalan exclusion at every earlier rank, exact twelve margins and r>=12 monotonic normalized budget, matching-cover equality, general first-hit cover-loss and all residual orders, and original leaf/count bridges. The second-shell independent report is permitted but do not blindly inherit it; audit the exact dependencies you use. No Lean build. Try to falsify the statement or find a missing hypothesis. Write REPORT.md, RESULTS.json verdict pass/fail/uncertain, exact scope, self-contained corrected proof if justified and remaining obligations. Explain how narrowly this supports the all-order aggregate and why it does not fix compensation at large order excess. Do not produce registry awards or claim a proof of Hall/governed aggregate/conjecture. All output scratch only; honest finite-vs-universal distinction."
+}

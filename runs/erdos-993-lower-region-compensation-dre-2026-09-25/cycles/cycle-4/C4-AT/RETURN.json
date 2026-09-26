@@ -1,0 +1,134 @@
+{
+  "worker_id": "C4-AT",
+  "cycle": 4,
+  "stage": "adjudication",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "C4-T1-CTx-SUFFICIENT-REDUCTION",
+      "statement": "For an eligible ordinary tree with fixed strict original-leaf selector, the aggregate premise i_x(T)E <= (x+1)i_(x+1)(T)Q implies S(T,p)<=0.",
+      "scope": "All finite ordinary trees satisfying x(T)+2<=p and 3p<2alpha(T)+1; k=p-1, actual marked addability E, marked count Q, and multiply marked correction C summed over the same fixed separate leaf tags. This is conditional; universal CT_x is not established.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AT/REPORT.md"
+      ],
+      "reason": "retained: E=kU+C and kS=E-C-kQ. For Q>0, i_x>i_(x+1) and k>=x+1 make E<kQ under the premise. Q=0 forces U=S=0."
+    },
+    {
+      "claim_id": "C4-T1-ORDER24-POSITIVE-MARKED-ADDABILITY-COVARIANCE",
+      "statement": "One eligible order-24 tree has strictly positive rank-9 covariance between meeting W_0 and actual addability in H_0 for selected leaf 0; its complete selected sum is -51095.",
+      "scope": "Only the 23-edge labeled tree, alpha=15, x=8, p=10, k=9, leaf 0, and all eleven original leaves listed in REPORT.md. Local covariance is 1773113/13677^2>0; no universal covariance or aggregate conclusion.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AT/REPORT.md",
+        "cycles/cycle-4/C4-AT/CHECK.py",
+        "cycles/cycle-4/C4-AT/CHECK.json"
+      ],
+      "reason": "retained: independent forest recurrence reconstructs every original leaf, strict selector and summand; literal addability E_0=58429 gives positive covariance. The full S is negative, so this is a shortcut fence only."
+    },
+    {
+      "claim_id": "C4-T2-NEIGHBORHOOD-REDUCTION",
+      "statement": "With Q the marked rank-k count, M the summed open-neighborhood sizes of marked k-sets, and C the tagged multiply marked upper-set count, kS=(|V(T)|-2p)Q-M-C; hence S<=0 when |V(T)|<=2p.",
+      "scope": "Eligible finite ordinary trees with one fixed strict favorable-leaf selector, k=p-1, original supports and separate tags. For |V(T)|>2p the needed M+C>=(|V(T)|-2p)Q remains unproved.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AT/REPORT.md"
+      ],
+      "reason": "retained: actual addability gives E=(n-2-k)Q-M, marked upper-set double count gives E=kU+C, and S=U-Q. Q,M,C>=0 prove the order subcase."
+    },
+    {
+      "claim_id": "C4-T3-MATCHING-SECTOR-DELETION-BOUND",
+      "statement": "Every source subfamily A of the rank-491 level with 736 disjoint two-choice color classes has deletion boundary D(A) satisfying 491|A|<=492|D(A)|; equality holds for the full level, whose deletion-only shortfall is source/492.",
+      "scope": "Only ordinary one-element deletions retaining the two fixed vertices in the CB(8,92) matching sector; no insertion arcs, competing demands, full Hall assertion, fixed full-tree selector, or aggregate sign.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AT/REPORT.md"
+      ],
+      "reason": "retained: each source has 491 deletions and each rank-490 target at most 2(736-490)=492 extensions. Full-level sizes binom(736,491)2^491 and binom(736,490)2^490 attain equality."
+    },
+    {
+      "claim_id": "C4-T4-CROSS-TAG-INJECTIVITY-BRIDGE",
+      "statement": "The specific alternating-sign, least-eligible-tag deletion map L:K_p->K_(p-1) is well defined and its injectivity would imply S<=0, but its asserted universal injectivity is false: on eligible K_{1,12} at p=8 it has a nonzero nine-term alternating-boundary kernel.",
+      "scope": "Exact C4-T4 map with original strict selector and separate tags; star center 0 and leaves 1..12, alpha=12, x=6, p=8, every leaf selected. This does not refute other maps, weighted Hall, or the full aggregate, which equals -1980 here.",
+      "status": "proposed_refuted",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AT/REPORT.md",
+        "cycles/cycle-4/C4-AT/CHECK.py",
+        "cycles/cycle-4/C4-AT/CHECK.json"
+      ],
+      "reason": "rejected: universal injectivity of the exact signed map is refuted by append-only REPAIR-A1. For tag 1 and C={2,...,10}, z=sum_j(-1)^j(1,C-{c_j}) is nonzero and Lz=0 by paired signed deletions; all selectors and guards pass. The conditional implication survives. Hall holds for the support graph but does not preclude signed cancellation."
+    },
+    {
+      "claim_id": "C4-T4-RELATIVE-CHAIN-IDENTITY",
+      "statement": "For K_j on tagged independent j-sets of H_v meeting W_v, the complete target sum is S(T,p)=dim_Q K_p-dim_Q K_(p-1).",
+      "scope": "Every eligible finite ordinary tree with its fixed strict original-leaf selector; same-support leaves are distinct direct-sum tags. The identity alone gives no dimension inequality.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AT/REPORT.md"
+      ],
+      "reason": "retained: R_v=H_v-W_v, so q_v(j)=i_j(H_v)-i_j(R_v) counts the relative faces; each selected summand is q_v(p)-q_v(p-1). The signed-map correction does not affect this identity."
+    },
+    {
+      "claim_id": "C4-T5-TM-ALL-OPEN",
+      "statement": "The exact T_m all-leaf marked polynomial derivative identity holds, but neither both orbit selectors nor the selected aggregate sign are established for every eligible m,p.",
+      "scope": "Infinite two-orbit family T_m (path a-b-r and m three-leaf claws at r); m>=1 and all eligible lower-region p. This is a route gap and no assertion that the all-parameter inequality is false.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AT/REPORT.md"
+      ],
+      "reason": "retained: Q_m=P_m'-2B^m-(1+z)^(3m+1)-4m(1+2z)B^(m-1) by differentiation, but Q_m is the selected polynomial only when both strict orbit selectors hold, and no uniform coefficient sign is proved."
+    },
+    {
+      "claim_id": "C4-T5-TM80-BOUNDED",
+      "statement": "For T_m and every eligible lower-region p at each 1<=m<=80, both original leaf orbits are strictly favorable and the complete selected sum is strictly negative, using the corrected claw deletion polynomial.",
+      "scope": "Exactly m=1..80, 1749 eligible rows over m=3..80; all p with x+2<=p<=alpha and 3p<2alpha+1. No statement for m>80 or other trees.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AT/REPORT.md",
+        "cycles/cycle-4/C4-AT/CHECK.py",
+        "cycles/cycle-4/C4-AT/CHECK.json"
+      ],
+      "reason": "retained_narrowed: source replay omits (1+2z) in the claw deletion polynomial, so all 1749 printed claw selector differences are wrong. Two critic audits and separate exact convolution correct the differences; selector booleans and complete sums remain unchanged and negative on every row."
+    },
+    {
+      "claim_id": "C4-T6-PRIMARY-GLOBAL-BOUND",
+      "statement": "The C4-T6 rooted-message recurrence resolves neither the universal lower-region selected aggregate inequality nor an eligible positive complete-sum counterexample.",
+      "scope": "Only the evidentiary reach of the C4-T6 route on contract-eligible finite ordinary trees; no claim that another recurrence or invariant is impossible and no authoritative registry verdict.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AT/REPORT.md"
+      ],
+      "reason": "retained_narrowed: the exact evaluator has no uniform coefficient comparison after whole-tree first descent and fixed strict leaf selectors. This route supplies no proof or positive full-S witness."
+    },
+    {
+      "claim_id": "C4-T6-ROOTED-MESSAGE-REDUCTION",
+      "statement": "Rooted independence-polynomial messages give exact product formulas for I(T-v), I(T-{v,s_v}), and I(T-N[s_v]) for every original leaf tag.",
+      "scope": "All finite ordinary trees as polynomial identities, including shared-support leaves and empty products; the selector and summand follow by zero-extended coefficient differences at p and p-1, respectively. No uniform sign follows.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AT/REPORT.md"
+      ],
+      "reason": "retained: root include/exclude gives A_u=prod(A_c+zB_c), B_u=prod A_c; support splitting gives the three formulas in REPORT.md. Both critics independently checked branch indexing and same-support multiplicity."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-AT/REPORT.md",
+  "limitations": [
+    "The universal ordinary lower-region complete aggregate remains unresolved: for n>2p no proof of M+C>=(n-2p)Q or alternate global compensation is supplied, and no eligible positive full S is exhibited.",
+    "The CT_x, flat, current-rank, all-parameter T_m, and mixed-boundary Hall mechanisms remain separate open questions; failure of the exact signed C4-T4 operator does not settle them.",
+    "The T1 covariance is one finite local witness; the T3 bound is a deletion-only sector result; the corrected T5 computation stops at m=80. None is a universal ordinary-tree census.",
+    "All claims are proposed worker dispositions. The controller alone can register or promote statuses."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-T1-CTx-SUFFICIENT-REDUCTION",
+    "C4-T1-ORDER24-POSITIVE-MARKED-ADDABILITY-COVARIANCE",
+    "C4-T2-NEIGHBORHOOD-REDUCTION",
+    "C4-T3-MATCHING-SECTOR-DELETION-BOUND",
+    "C4-T4-CROSS-TAG-INJECTIVITY-BRIDGE",
+    "C4-T4-RELATIVE-CHAIN-IDENTITY",
+    "C4-T5-TM-ALL-OPEN",
+    "C4-T5-TM80-BOUNDED",
+    "C4-T6-PRIMARY-GLOBAL-BOUND",
+    "C4-T6-ROOTED-MESSAGE-REDUCTION"
+  ]
+}

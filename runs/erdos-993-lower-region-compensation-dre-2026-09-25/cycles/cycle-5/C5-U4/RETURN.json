@@ -1,0 +1,26 @@
+{
+  "worker_id": "C5-U4",
+  "cycle": 5,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C5-U4-LEMMA-1",
+      "statement": "For every ordinary tree T and original leaf v with support s, Delta_j(T)=Delta_j(T-v)+Delta_(j-1)(T-{v,s}) for every integer j under zero extension; hence Delta_x(T)<0 forces at least one of Delta_x(T-v), Delta_(x-1)(T-{v,s}) to be negative for each v. This is a rank-local alternative, not a transfer to p>=x+2.",
+      "scope": "Exact deletion identity and its sign alternative at the first strict descent for finite ordinary trees; the K_(1,3) example only refutes the unguarded later-rank implication and is outside the primary eligibility region.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-U4/EVIDENCE.json"
+      ],
+      "reason": "The polynomial partition by whether the original leaf is chosen proves the identity coefficientwise. The exact example shows the unrestricted proposed later-rank closure fails, but its rank is ineligible; no conclusion is drawn for the assigned aggregate."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-U4/REPORT.md",
+  "limitations": [
+    "No cross-rank transfer theorem was proved for eligible p satisfying x(T)+2<=p and 3p<2alpha(T)+1.",
+    "The counterexample K_(1,3) violates the strict lower-region alpha guard and is not a primary counterexample.",
+    "No eligible proper-selector witness, full favorable set with positive aggregate, or proof of the primary global inequality is supplied.",
+    "No assumption of forest unimodality, log-concavity, or no-recovery is used."
+  ],
+  "status_authority": "proposed_worker_only"
+}

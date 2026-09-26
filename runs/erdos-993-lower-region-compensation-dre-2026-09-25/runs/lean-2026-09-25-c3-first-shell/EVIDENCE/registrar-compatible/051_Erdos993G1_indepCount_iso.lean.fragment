@@ -1,0 +1,16 @@
+lemma indepCount_iso (e : F ≃g G) (k : ℕ) :
+    indepCount F k = indepCount G k := by
+  let eS : {S : Finset V // F.IsNIndepSet k S} ≃
+      {S : Finset W // G.IsNIndepSet k S} :=
+    { toFun := fun S => ⟨S.val.map e.toEquiv.toEmbedding,
+        (isNIndepSet_map_iso e k S.val).mpr S.property⟩
+      invFun := fun S => ⟨S.val.map e.symm.toEquiv.toEmbedding,
+        (isNIndepSet_map_iso e.symm k S.val).mpr S.property⟩
+      left_inv := fun S => by
+        apply Subtype.ext
+        simp [Finset.map_map]
+      right_inv := fun S => by
+        apply Subtype.ext
+        simp [Finset.map_map] }
+  exact congrArg (fun n : ℕ => (n : ℤ)) (Nat.card_congr eS)
+

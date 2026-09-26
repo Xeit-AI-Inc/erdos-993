@@ -1,0 +1,29 @@
+{
+  "worker_id": "C1-CF-U6",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C1-U6-1",
+      "statement": "For each fixed independence number a, every ordinary tree T with alpha(T)=a has order at most 2a and hence lies in a finite isomorphism-class search domain; furthermore, all original leaves sharing an original support have identical Delta_p(T-v) selector values and identical selected summands, so their full tagged contribution is exactly their multiplicity times the common summand.",
+      "scope": "Exact fixed-a finite reduction and same-support compression for finite ordinary trees, preserving the strict selector and tagged aggregate. This provides no uniform bound over a and no sign conclusion for the complete sum.",
+      "status": "proposed_partial",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CF-U6/evidence/audit.md"
+      ],
+      "reason": "retained: the bipartition classes are independent, yielding |V(T)|<=2a; at fixed a this bounds a finite isomorphism-class domain. Transposing same-support leaves is an automorphism, preserving T-v, T-{v,s}, and T-N[s] up to the required identity/isomorphism, so strict selector values and summands coincide and multiplicity weighting is exact. This is an elementary fixed-parameter reduction only; it neither runs a census nor bounds compensation across supports, so it gives no universal sign conclusion."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CF-U6/REPORT.md",
+  "limitations": [
+    "The finite search bound depends on the unbounded parameter a=alpha(T).",
+    "No enumeration was run or claimed; fixed-a finiteness is only a decision reduction.",
+    "Compression preserves tagged contributions but supplies no sign control across distinct supports.",
+    "The primary lower-region aggregate remains unresolved by this review."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-U6-1"
+  ]
+}

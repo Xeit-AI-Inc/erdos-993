@@ -1,0 +1,18 @@
+lemma binom_shift_floor (m k t : ℕ) :
+    -(if t ≤ k then (catalan (k-t) : ℤ) else 0) ≤
+      FirstWide.binomCoeff m ((k : ℤ)-t+1) -
+        FirstWide.binomCoeff m ((k : ℤ)-t) := by
+  by_cases htk : t ≤ k
+  · have hz : (k : ℤ)-t = ((k-t : ℕ) : ℤ) := by omega
+    rw [hz,FirstWide.binomCoeff_nat_add_one,FirstWide.binomCoeff_nat,if_pos htk]
+    exact binomDelta_floor m (k-t)
+  · rw [if_neg htk,neg_zero]
+    by_cases he : t = k+1
+    · have hz : (k : ℤ)-t = -1 := by omega
+      norm_num [hz,FirstWide.binomCoeff]
+    · have hz : (k : ℤ)-t+1 < 0 := by omega
+      rw [FirstWide.binomCoeff_neg _ hz,
+        FirstWide.binomCoeff_neg _ (show (k : ℤ)-t < 0 by omega)]
+      omega
+
+end Erdos993G1.ThirdWide

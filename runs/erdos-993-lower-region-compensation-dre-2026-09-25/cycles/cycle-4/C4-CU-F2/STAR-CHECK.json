@@ -1,0 +1,14 @@
+{
+  "tree": "K1,19 with center 0 and leaves 1 through 19",
+  "independence_counts": {"i_0": 1, "i_1": 20, "i_j_for_2_le_j_le_19": "binomial(19,j)"},
+  "alpha": 19,
+  "first_strict_descent": 10,
+  "descent_check": {"i_9": 92378, "i_10": 92378, "i_11": 75582, "Delta_9": 0, "Delta_10": -16796},
+  "rank": 12,
+  "guards": {"x_plus_2_equals_p": true, "3p": 36, "2alpha_plus_1": 39, "strict_lower_region": true},
+  "favorable_leaves": "all 19 original leaves; in K1,18, Delta_12 = binomial(18,13)-binomial(18,12) = -9996",
+  "per_leaf_tag": {"H_isolated_vertices": 18, "W_size": 18, "R_is_empty": true, "q_11": 31824, "q_12": 18564, "addable_count_per_marked_11_set": 7, "E_per_tag": 222768, "C_per_tag": 18564, "summand": -13260},
+  "aggregate": {"Q": 604656, "E": 4232592, "C": 352716, "U": 352716, "S": -251940, "flat_gap": 2418624, "current_gap": 2418624, "target_gap": 2771340},
+  "identities": {"E_equals_kU_plus_C": "4232592 = 11*352716 + 352716", "kS_equals_E_minus_C_minus_kQ": "-2771340 = 4232592 - 352716 - 11*604656"},
+  "derivation": "The center is adjacent to every leaf. Removing one leaf leaves K1,18, whose ranks 12 and 13 have counts binomial(18,12) and binomial(18,13), establishing strict favorability. For that leaf tag H consists of the other 18 isolated leaves and W is all of H; R is empty. Hence q_j=binomial(18,j), every marked 11-set has seven addable vertices, every 12-set is multiply marked, and the summand is Delta_11(H)=-13260."
+}

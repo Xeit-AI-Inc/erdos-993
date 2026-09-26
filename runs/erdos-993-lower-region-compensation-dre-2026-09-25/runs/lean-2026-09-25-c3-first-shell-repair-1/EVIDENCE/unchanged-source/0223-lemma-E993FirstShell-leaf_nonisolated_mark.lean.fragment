@@ -1,0 +1,61 @@
+namespace E993FirstShell
+
+open Classical
+
+/-- Connectivity forces an original neighbor of the support to meet a retained
+edge once the retained graph contains an edge. -/
+lemma leaf_nonisolated_mark {V : Type u} [Fintype V] [DecidableEq V]
+    (T : SimpleGraph V) [DecidableRel T.Adj] (v : V) (p : ℕ)
+    (hT : T.IsTree) (hv : C4LA1.IsGraphLeaf T v)
+    (hp : 3 ≤ p) (horder : Fintype.card V = 2*p+2)
+    (hcross : C5LA1.crossingIndex T + 2 ≤ p) :
+    ∃ a ∈ C5LA1.R T v \ C5LA1.H T v,
+      ∃ b ∈ Finset.univ \ C5LA1.H T v, T.Adj a b := by
+  classical
+  let s := C5LA1.support T v
+  let H := C5LA1.H T v
+  let R := C5LA1.R T v
+  let U := Finset.univ \ H
+  have hsR : s ∈ R := Finset.mem_insert_self _ _
+  by_contra hnone
+  have hclosed : ∀ x ∈ R, ∀ y, T.Adj x y → y ∈ R := by
+    intro x hx y hxy
+    change x ∈ insert s (T.neighborFinset s) at hx
+    change y ∈ insert s (T.neighborFinset s)
+    rcases Finset.mem_insert.mp hx with hxs | hxN
+    · subst x
+      exact Finset.mem_insert_of_mem ((T.mem_neighborFinset s y).mpr hxy)
+    · have hsx : T.Adj s x := (T.mem_neighborFinset s x).mp hxN
+      by_cases hxv : x = v
+      · have hy : y = s := E993OrderBand.support_unique T v hv (hxv ▸ hxy)
+        exact Finset.mem_insert.mpr (Or.inl hy)
+      · have hxH : x ∉ H := by
+          simp only [H, C5LA1.H, Finset.mem_insert, Finset.mem_singleton]
+          intro h
+          rcases h with h | h
+          · exact hxv h
+          · exact hsx.ne.symm h
+        have hxW : x ∈ R \ H := Finset.mem_sdiff.mpr ⟨by
+          change x ∈ insert s (T.neighborFinset s)
+          exact Finset.mem_insert_of_mem hxN, hxH⟩
+        by_cases hyH : y ∈ H
+        · exact E993OrderBand.H_subset_R T v hv hyH
+        · have hyU : y ∈ U := Finset.mem_sdiff.mpr ⟨Finset.mem_univ _, hyH⟩
+          exfalso
+          exact hnone ⟨x,hxW,y,hyU,hxy⟩
+  have hreach : ∀ y : V, y ∈ R := by
+    intro y
+    have hwalk := (hT.1 s y).some
+    have hwalk_closed : ∀ {x z : V} (q : T.Walk x z), x ∈ R → z ∈ R := by
+      intro x z q
+      induction q with
+      | nil => exact id
+      | cons hadj q ih => exact fun hx => ih (hclosed _ hx _ hadj)
+    exact hwalk_closed hwalk hsR
+  obtain ⟨a,b,hab,haH,hbH⟩ := retained_has_edge T v p hv hp horder hcross
+  have haR : a ∈ R := hreach a
+  have haW : a ∈ R \ H := Finset.mem_sdiff.mpr ⟨haR,haH⟩
+  have hbU : b ∈ U := Finset.mem_sdiff.mpr ⟨Finset.mem_univ _,hbH⟩
+  exact hnone ⟨a,haW,b,hbU,hab⟩
+
+end E993FirstShell

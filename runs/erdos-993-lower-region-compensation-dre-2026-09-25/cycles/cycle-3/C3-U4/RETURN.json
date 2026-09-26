@@ -1,0 +1,40 @@
+{
+  "worker_id": "C3-U4",
+  "cycle": 3,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C3-U4.ORBIT-COMPRESSION",
+      "statement": "For every fixed eligible tree instance, quotienting its deletion-plus-two-for-one weighted transport by a finite automorphism group that preserves the fixed original selector, weights, and legal moves preserves saturating-flow feasibility exactly.",
+      "scope": "Finite tree instance at its specified rank and selector; the general finite-group orbit-lifting proposition is proved in REPORT.md and EVIDENCE.json. This gives no uniform bound over all eligible trees.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-3/C3-U4/EVIDENCE.json"],
+      "reason": "Flows aggregate over vertex orbits. Every nonempty invariant relation between two transitive vertex orbits is biregular, so a quotient flow can be spread uniformly over literal edges while preserving per-vertex loads. The literal integral network then has an integral saturating flow whenever the quotient is feasible."
+    },
+    {
+      "claim_id": "C3-U4.CUT-DUAL",
+      "statement": "The weighted transport is feasible exactly when every upper-state set X satisfies u(X)<=c(N(X)); the cut deficit c(N(X))-u(X) is submodular and its minimizers are closed under union and intersection.",
+      "scope": "All finite bipartite weighted transport instances with the stated legal relation; this is a criterion and minimizer structure, not a proof that all tree-derived cuts pass.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-3/C3-U4/EVIDENCE.json"],
+      "reason": "This follows from the capacitated Hall/max-flow min-cut theorem and the submodularity of weighted neighborhood coverage minus a modular supply function. The universal tree cut inequalities remain unproved."
+    },
+    {
+      "claim_id": "C3-U4.COLORED-SHADOW-SCOPE",
+      "statement": "The Frankl-Füredi-Kalai colored one-step shadow theorem does not by itself imply the fixed-selector weighted deletion-plus-two-for-one cut inequalities.",
+      "scope": "Application check for the cited theorem against the present transport relation; it is not a refutation of any possible refinement or of the primary aggregate.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-3/C3-U4/EVIDENCE.json"],
+      "reason": "The cited theorem counts unweighted subset shadows, while legal switches insert an absent vertex and the present capacities are selector-dependent weights. A separate bridge accounting for switches and competing capacities is missing."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-U4/REPORT.md",
+  "limitations": [
+    "No universal cut classification, capacitated Hall proof, eligible full-sum counterexample, or resolution of the primary aggregate is obtained.",
+    "The automorphism quotient is exact but may be large; asymmetric trees can have little compression.",
+    "The colored-shadow literature result has no direct application to switch arcs or selector-weighted capacities without additional proved structure.",
+    "The source packet and handoff contain finite instrument results and a partial choked-broom export only; those scopes are not enlarged here."
+  ],
+  "status_authority": "proposed_worker_only"
+}

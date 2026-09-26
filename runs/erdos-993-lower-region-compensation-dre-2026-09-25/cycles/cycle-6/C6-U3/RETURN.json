@@ -1,0 +1,27 @@
+{
+  "worker_id": "C6-U3",
+  "cycle": 6,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C6-U3-ABSORB-BOUNDED-20",
+      "statement": "For every 2<=r,s<=20, the polynomial F_r(z) B_s(z)^q with F_r=((1+z)^(r-1)-1)/z and B_s=(1+z)^s+z has finite-order ULC for at least one q in {1,2,3,4}; the least such q occurs 273, 80, 7, and 1 times for q=1,2,3,4, respectively, in the exact census.",
+      "scope": "Bounded coefficient computation only: 2<=r,s<=20 and q<=4, with the exact coefficients, least finite ULC orders, and blocking indices recorded in ABSORPTION-CENSUS.json and replayed by absorption_census.py. No conclusion beyond this finite grid or about trees.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-U3/ABSORPTION-CENSUS.json",
+        "cycles/cycle-6/C6-U3/absorption_census.py"
+      ],
+      "reason": "Exact integer convolution and the necessary-and-sufficient finite-order criterion A_j>0 were applied to all 1444 cases. The replay independently matches the pinned 121 one-factor certificates for 2<=r,s<=12. This establishes only the stated finite computation; a uniform absorption theorem, mixed-factor theorem, convolution application, and graph/selector bridge were not proved."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-U3/REPORT.md",
+  "limitations": [
+    "Finite scope only: r,s<=20 and at most four absorbed equal-type factors; no arbitrary-arity conclusion.",
+    "No proof of a uniform analytic bound on the number of absorbed factors or on the resulting finite ULC orders.",
+    "No arbitrary mixed-arity absorption analysis or independent proof of the general finite-ULC convolution theorem and unmarked B_s bounds.",
+    "No graph, selector, perturbation, or ordinary-tree aggregate implication was established."
+  ],
+  "status_authority": "proposed_worker_only"
+}

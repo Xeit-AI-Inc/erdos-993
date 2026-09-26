@@ -1,0 +1,26 @@
+namespace E993FirstShell
+
+open Classical
+
+/-- Transport the exact first-wide two-edge theorem to a retained vertex set. -/
+lemma ordinary_bound_firstWide {V : Type u} [Fintype V] [DecidableEq V]
+    (G : SimpleGraph V) [DecidableRel G.Adj] (U : Finset V)
+    (k : ℕ) (hk : 1 ≤ k) (hU : U.card = 2*k+2)
+    (he : 2 ≤ Nat.card (G.induce (U : Set V)).edgeSet) :
+    ((U.powersetCard (k+1)).filter
+      (fun A : Finset V => G.IsIndepSet (A : Set V))).card ≤
+    ((U.powersetCard k).filter
+      (fun A : Finset V => G.IsIndepSet (A : Set V))).card := by
+  classical
+  let H := G.induce (U : Set V)
+  have hn : Nat.card U = 2*k+2 := by
+    simpa [Nat.card_eq_fintype_card] using hU
+  have hd := Erdos993G1.firstWide_nonpos_of_two_edges H k hk hn he
+  rw [Erdos993G1.delta_nat, Erdos993G1.indepCount_eq_card_indepSetFinset,
+    Erdos993G1.indepCount_eq_card_indepSetFinset] at hd
+  have hnat : (H.indepSetFinset (k+1)).card ≤ (H.indepSetFinset k).card := by
+    exact_mod_cast (sub_nonpos.mp hd)
+  rw [induced_count_bridge G U (k+1), induced_count_bridge G U k] at hnat
+  exact hnat
+
+end E993FirstShell

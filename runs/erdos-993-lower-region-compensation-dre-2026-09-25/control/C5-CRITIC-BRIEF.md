@@ -1,0 +1,7 @@
+# Cycle5 independent criticism
+
+Independently audit every case claim, exact claim-ID/statement assignment, domain and evidence grade; do not merely repeat a producer algorithm. Retained/retained_narrowed/rejected with every covered ID. A finite computation is not an all-parameter result. Verify all original leaves, supports, selectors, terminal first descent and full sum. C must be counted inside H_v and once per upper marked set per tag; wrong E/C may cancel. No statuses from votes.
+
+The T_m root proof and earlier Sol audit are challengeable: check finite-order ULC4 for B, exact cited convolution hypotheses, Poisson margin, mixed-minor orientation, falling-factorial ranges, rational cutoff, finite base and original-graph bridge. Smaller certificates need independent exact verification. Positive mixtures of LC sequences are not automatically LC. No P no-recovery assumption is allowed. Formal versus computer-assisted versus conditional evidence must stay separate.
+
+Preserve current96 exact refutation fences. Signed boundary cancellation refutes the specified map, not unsigned Hall; local/global/current/early covariance statements are different. Source corrections and neutral handoff are binding scope information, not mathematical premises beyond their evidence. Copy producer replays into own scratch before execution; no sealed-source writes, agents, registry changes or Lean builds.

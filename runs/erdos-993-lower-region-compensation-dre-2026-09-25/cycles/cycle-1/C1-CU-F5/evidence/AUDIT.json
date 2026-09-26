@@ -1,0 +1,27 @@
+{
+  "claim_id": "C1-F5-1",
+  "disposition": "retained",
+  "checks": {
+    "scalar_point": {
+      "h": 5,
+      "k": 2,
+      "coefficient_2h_minus_3k": 4,
+      "q_k": 1,
+      "q_k_plus_1": 3,
+      "D": 0,
+      "C": 0,
+      "identity_left": 6,
+      "identity_right": 6,
+      "k_times_g": 4,
+      "g": 2,
+      "scope": "abstract scalar relaxation only"
+    },
+    "tree_structure": {
+      "component_argument": "After deleting s from a tree, each resulting component has exactly one neighbor of s; after also deleting the leaf v, these component roots are precisely the vertices W=N(s)\\{v}.",
+      "rooted_factorization": "For each rooted component H_i at w_i, A_i=I(H_i)=B_i+z I(H_i-N[w_i]), B_i=I(H_i-w_i); hence I(H)=product_i A_i and I(R)=product_i B_i.",
+      "selector_identity": "I(T-v)=I(H)+zI(R)=q(z)+(1+z)I(R), so Delta_p(T-v)=q_(p+1)-q_p+r_p-r_(p-1).",
+      "same_support_tags": "Leaves sharing a support have isomorphic deletion pairs and equal Delta_p(T-v), hence the strict selector includes all such leaves or none; the sum counts each selected leaf tag."
+    },
+    "primary_scope": "No aggregate deficit budget is established. The point is not shown realizable by a bipartite graph, rooted forest, or ordinary tree and is not a counterexample."
+  }
+}

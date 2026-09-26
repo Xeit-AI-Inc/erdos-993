@@ -1,0 +1,28 @@
+{
+  "worker_id": "C1-CT-U2",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C1-U2-1",
+      "statement": "For every eligible ordinary tree T and p, if the selected sum S(T,p) is positive, then some original favorable leaf tag v and some independent (p-1)-set A of H_v meeting W_v have at least p vertices addable in H_v. Consequently, if every such marked set for every selected tag has at most p-1 addable vertices, then S(T,p)<=0.",
+      "scope": "Conditional necessary criterion for positive witnesses and sufficient obstruction to positivity under the stated addability bound; exact original favorable selector and original leaf-tag multiplicities; does not resolve the primary target.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CT-U2/EVIDENCE.md"
+      ],
+      "reason": "retained: the rank/alpha domains hold, actual addable vertices in each bipartition class give the per-set capacity bound, and the marked-extension incidence count yields (p-1)S=(2a+1-3p)Q-E. Nonnegative deficits prove both implications. The standing complete-sum controls are compatible and do not establish threshold realizability or a primary resolution."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CT-U2/REPORT.md",
+  "limitations": [
+    "The criterion does not prove or refute the primary complete aggregate inequality.",
+    "No eligible instance with a selected tagged marked set having at least p actual addable vertices is exhibited; threshold realizability and its search usefulness remain open.",
+    "Standing K_(1,12), T_22, and T_60 controls were used as supplied bounded facts and were not replayed."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-U2-1"
+  ]
+}

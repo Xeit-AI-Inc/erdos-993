@@ -1,0 +1,17 @@
+{
+  "allowed_source_files": [
+    {
+      "path": "control-proposals/formal-transport/probe.py",
+      "sha256": "aadae9c28dc6ef4b44b49c55a4565809ec2d3b886991ed93ec673f7a92415edb"
+    },
+    {
+      "path": "runs/lean-2026-09-25-c2-order-bands/THEOREM-CONTRACT.yaml",
+      "sha256": "007997997fb2c2aebf976cac6fcf5f1a25960a3f5776c798d517f79e045b4bc7"
+    }
+  ],
+  "model": "gpt-6-sol",
+  "reasoning_effort": "high",
+  "status_authority": "proposed_worker_only",
+  "task": "Transport probe only. Execute the pinned probe.py once, unchanged; it makes one SSH read of the exact remote order-band contract. Compare returned contract id, terminal name and SHA256 against the pinned local contract. Write REPORT.md and RESULTS.json recording success or the exact transport failure. Do not inspect credentials, change settings, modify the probe, request escalation, run Lean, or launch agents. If blocked, report honestly and stop. This authorizes only the exact read-only SSH command in the pinned probe.",
+  "worker_id": "C2-LOCAL-SOL-SSH-PREFLIGHT"
+}

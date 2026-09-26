@@ -1,0 +1,21 @@
+{
+  "kind": "independent_symbolic_critique",
+  "claim_id": "C4-U1-COVARIANCE-DECOMPOSITION",
+  "disposition": "retained",
+  "scope": "Exact tag-weighted addability and covariance identities for every eligible finite ordinary tree T, its fixed original strict favorable selector F, and eligible p. No covariance bound, CT_x proof, or primary aggregate verdict.",
+  "checks": {
+    "eligible_layer_domains": "3p<2a+1 with integers implies 3p<=2a, hence p<a and i_p(T)>0. The first negative Delta occurs no later than a because Delta_a=-i_a<0, so i_x(T)>0.",
+    "tag_bijection": "For each v, (v,A) with A independent in H_v and meeting W_v maps bijectively to (v,B=A union {v}) counted by w(B). v is adjacent only to the deleted support s_v; the inverse is A=B-{v}. Separate leaf tags remain distinct.",
+    "addability_bridge": "Each u in H_v is not adjacent to v; the support s_v is blocked because A meets W_v; v itself belongs to B. Thus e_Hv(A)=e_T(B), including all vertices of T.",
+    "extension_double_count": "Each independent (p+1)-set has p+1 deletions to a p-set, so sum over independent p-sets B of e(B)=(p+1)i_(p+1)(T), and E_p[e]=mu_p.",
+    "covariance_identity": "Q=N E_p[w], E=N E_p[we], N=i_p(T). For Q>0, E/Q=E_p[e]+Cov_p(w,e)/E_p[w]=mu_p+Cov_p(w,e)/E_p[w].",
+    "neighborhood_expansion": "I_u(B)=1 iff B cap N_T[u] is empty; e=sum_u I_u and sum_B I_u=i_p(T-N_T[u]). Linearity of covariance gives the reported expansion.",
+    "ctx_equivalence": "For Q>0, dividing i_x E<=(x+1)i_(x+1)Q by i_x Q gives E/Q<=mu_x, equivalent to Cov_p(w,e)/E_p[w]<=mu_x-mu_p. If Q=0, the undivided inequality is 0<=0 and the divided form is inapplicable."
+  },
+  "limitations": [
+    "No sign or sufficient upper bound for the total covariance is proved.",
+    "No universal comparison mu_p<=mu_x is inferred.",
+    "The route's cited bounded order-14 diagnostic was not replayed and is not required to establish this identity claim."
+  ],
+  "evidence_basis": "Direct symbolic derivation from the definitions in the reviewed route and the common solution contract; no external theorem or computation."
+}

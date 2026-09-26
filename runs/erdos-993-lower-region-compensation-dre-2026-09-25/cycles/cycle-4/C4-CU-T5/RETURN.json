@@ -1,0 +1,44 @@
+{
+  "worker_id": "C4-CU-T5",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C4-T5-TM80-BOUNDED",
+      "statement": "For the specified two-orbit tree family T_m, every eligible lower-region rank at each 1<=m<=80 has both original leaf orbits favorable and has a strictly negative complete selected sum, using the graph-derived claw-deletion polynomial (1+2z)(1+3z+z^2)B^(m-1)+z(1+z)^(3m).",
+      "scope": "Exact finite coefficient audit on T_m for m=1,...,80 and every p satisfying x(T_m)+2<=p, p<=alpha(T_m), and 3p<2alpha(T_m)+1. The source replay's claw selector differences are erroneous because it omits a path factor, though all selectors and complete sums agree after recomputation. No claim is made for m>80 or trees outside this family.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CU-T5/audit.py",
+        "cycles/cycle-4/C4-CU-T5/audit-evidence.json",
+        "cycles/cycle-4/C4-CU-T5/source-replay.py",
+        "cycles/cycle-4/C4-CU-T5/source-replay-evidence.json"
+      ],
+      "reason": "retained_narrowed: independent exact coefficient recomputation and literal subset checks for m=1,2,3 verify the bounded conclusion with the correct graph-derived deletion polynomial. The source replay has 1,749 incorrect claw-difference values, but no selector-flag or complete-sum changes over the eligible rows."
+    },
+    {
+      "claim_id": "C4-T5-TM-ALL-OPEN",
+      "statement": "The derivative identity alone does not establish the selected aggregate sign for all eligible m and p; the all-parameter T_m sign and both universal orbit-selector claims remain unresolved by this route.",
+      "scope": "The specified infinite T_m family under the ordinary-tree lower-region hypotheses; no universal conclusion about the sign is claimed.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CU-T5/audit.py",
+        "cycles/cycle-4/C4-CU-T5/audit-evidence.json"
+      ],
+      "reason": "retained: the coefficient identity is algebraic and the finite audit reaches only m<=80; neither proves universal selector hypotheses or the all-parameter coefficient sign, and no refutation or uniform comparison is supplied."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CU-T5/REPORT.md",
+  "limitations": [
+    "The independent exact coefficient audit covers only the specified T_m family with m=1,...,80.",
+    "The source replay omits the factor (1+2z) in its claw-deletion polynomial, corrupting every recorded claw selector difference; recomputation shows no selector or full-sum changes on the audited eligible rows.",
+    "Literal subset reconstruction is limited to m=1,2,3; larger family members are checked by exact component-product polynomial formulas.",
+    "The all-parameter family sign, universal orbit selectors, and primary ordinary lower-region aggregate remain unresolved."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-T5-TM-ALL-OPEN",
+    "C4-T5-TM80-BOUNDED"
+  ]
+}

@@ -1,0 +1,360 @@
+{
+  "producer": "C2-AU-REPAIR-A1",
+  "status_authority": "proposed_worker_only",
+  "source_integrity": {
+    "brief": "control/C2-AU-REPAIR-A1.json",
+    "brief_sha256": "0e640b56d336ed0b81fef4ee54ad5d5f1d1a73b8423974d903e6f4b7c49a814a",
+    "listed_sources": 83,
+    "matches": 83,
+    "mismatches": []
+  },
+  "method": {
+    "algorithm_1": "memoized independent-set deletion recurrence P(G)=P(G-v)+zP(G-N[v])",
+    "algorithm_2": "independent literal-subset enumeration for T, J1 and J2",
+    "script": "replay_fixture.py",
+    "raw_exact_result": "fixture_replay.json",
+    "random_seed": null,
+    "generation_boundary": "one specified 18-vertex tree, with all original leaves evaluated; no class census"
+  },
+  "fixture": {
+    "recipe": {
+      "vertices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          1,
+          9
+        ],
+        [
+          2,
+          10
+        ],
+        [
+          2,
+          11
+        ],
+        [
+          3,
+          12
+        ],
+        [
+          3,
+          13
+        ],
+        [
+          4,
+          14
+        ],
+        [
+          4,
+          15
+        ],
+        [
+          5,
+          16
+        ],
+        [
+          5,
+          17
+        ]
+      ],
+      "p": 8
+    },
+    "original": {
+      "polynomial": [
+        1,
+        18,
+        136,
+        574,
+        1519,
+        2672,
+        3216,
+        2672,
+        1519,
+        574,
+        136,
+        18,
+        1
+      ],
+      "alpha": 12,
+      "x": 6,
+      "differences_through_terminal": [
+        17,
+        118,
+        438,
+        945,
+        1153,
+        544,
+        -544,
+        -1153,
+        -945,
+        -438,
+        -118,
+        -17,
+        -1
+      ],
+      "eligible": true
+    },
+    "tag": {
+      "leaf": 6,
+      "support": 0,
+      "H_order": 16,
+      "marks_ordered": [
+        1,
+        7
+      ],
+      "residuals": [
+        {
+          "index": 1,
+          "mark": 1,
+          "deleted": [
+            1,
+            2,
+            8,
+            9
+          ],
+          "vertices": [
+            3,
+            4,
+            5,
+            7,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "order": 12,
+          "polynomial": [
+            1,
+            12,
+            58,
+            152,
+            241,
+            241,
+            152,
+            58,
+            12,
+            1
+          ],
+          "difference_i_k_minus_i_k_minus_1": -94
+        },
+        {
+          "index": 2,
+          "mark": 7,
+          "deleted": [
+            1,
+            7
+          ],
+          "vertices": [
+            2,
+            3,
+            4,
+            5,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          "order": 14,
+          "polynomial": [
+            1,
+            14,
+            80,
+            250,
+            479,
+            592,
+            479,
+            250,
+            80,
+            14,
+            1
+          ],
+          "difference_i_k_minus_i_k_minus_1": -229
+        }
+      ]
+    },
+    "all_leaf_rows": [
+      {
+        "leaf": 6,
+        "support": 0,
+        "selector_delta_p": -452,
+        "selected": true,
+        "summand": -323
+      },
+      {
+        "leaf": 7,
+        "support": 0,
+        "selector_delta_p": -452,
+        "selected": true,
+        "summand": -323
+      },
+      {
+        "leaf": 8,
+        "support": 1,
+        "selector_delta_p": -430,
+        "selected": true,
+        "summand": -375
+      },
+      {
+        "leaf": 9,
+        "support": 1,
+        "selector_delta_p": -430,
+        "selected": true,
+        "summand": -375
+      },
+      {
+        "leaf": 10,
+        "support": 2,
+        "selector_delta_p": -434,
+        "selected": true,
+        "summand": -366
+      },
+      {
+        "leaf": 11,
+        "support": 2,
+        "selector_delta_p": -434,
+        "selected": true,
+        "summand": -366
+      },
+      {
+        "leaf": 12,
+        "support": 3,
+        "selector_delta_p": -434,
+        "selected": true,
+        "summand": -366
+      },
+      {
+        "leaf": 13,
+        "support": 3,
+        "selector_delta_p": -434,
+        "selected": true,
+        "summand": -366
+      },
+      {
+        "leaf": 14,
+        "support": 4,
+        "selector_delta_p": -430,
+        "selected": true,
+        "summand": -375
+      },
+      {
+        "leaf": 15,
+        "support": 4,
+        "selector_delta_p": -430,
+        "selected": true,
+        "summand": -375
+      },
+      {
+        "leaf": 16,
+        "support": 5,
+        "selector_delta_p": -452,
+        "selected": true,
+        "summand": -323
+      },
+      {
+        "leaf": 17,
+        "support": 5,
+        "selector_delta_p": -452,
+        "selected": true,
+        "summand": -323
+      }
+    ],
+    "favorable_set": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "complete_sum": -4256,
+    "methods": [
+      "memoized vertex deletion recurrence",
+      "literal subset enumeration for T, J1, J2"
+    ]
+  },
+  "logical_check": {
+    "J_definition": "H-(N_H[w_i] union earlier marks)",
+    "isolated_second_mark_deletion": [
+      1,
+      7
+    ],
+    "earlier_mark_neighbors_remaining": [
+      2,
+      8,
+      9
+    ],
+    "k": 7,
+    "later_claimed_ceiling": 13,
+    "actual_second_order": 14,
+    "classification_disproved": true,
+    "first_root_only_numerical_estimate_disproved": false,
+    "shell_aggregate_disproved": false
+  }
+}

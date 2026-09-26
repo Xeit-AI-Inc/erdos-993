@@ -1,0 +1,432 @@
+{
+  "authority": "controller arithmetic probe only, not an independent audit or proof award",
+  "factors": {
+    "L": {
+      "coefficients": [
+        1,
+        1
+      ],
+      "ulc_order": 1,
+      "normalized": [
+        "1",
+        "1"
+      ],
+      "ulc_margins": [],
+      "derivative_lower_margins": [
+        "2/3",
+        "0"
+      ],
+      "derivative_upper_margins": [
+        1,
+        0
+      ]
+    },
+    "one_plus_2z": {
+      "coefficients": [
+        1,
+        2
+      ],
+      "ulc_order": 1,
+      "normalized": [
+        "1",
+        "2"
+      ],
+      "ulc_margins": [],
+      "derivative_lower_margins": [
+        "5/3",
+        "0"
+      ],
+      "derivative_upper_margins": [
+        0,
+        0
+      ]
+    },
+    "B1": {
+      "coefficients": [
+        1,
+        2
+      ],
+      "ulc_order": 1,
+      "normalized": [
+        "1",
+        "2"
+      ],
+      "ulc_margins": [],
+      "derivative_lower_margins": [
+        "5/3",
+        "0"
+      ],
+      "derivative_upper_margins": [
+        0,
+        0
+      ]
+    },
+    "B2": {
+      "coefficients": [
+        1,
+        3,
+        1
+      ],
+      "ulc_order": 2,
+      "normalized": [
+        "1",
+        "3/2",
+        "1"
+      ],
+      "ulc_margins": [
+        "5/4"
+      ],
+      "derivative_lower_margins": [
+        "7/3",
+        "1",
+        "0"
+      ],
+      "derivative_upper_margins": [
+        1,
+        4,
+        0
+      ]
+    },
+    "B3": {
+      "coefficients": [
+        1,
+        4,
+        3,
+        1
+      ],
+      "ulc_order": 4,
+      "normalized": [
+        "1",
+        "1",
+        "1/2",
+        "1/4"
+      ],
+      "ulc_margins": [
+        "1/2",
+        "0"
+      ],
+      "derivative_lower_margins": [
+        "3",
+        "10/3",
+        "2",
+        "0"
+      ],
+      "derivative_upper_margins": [
+        2,
+        10,
+        3,
+        0
+      ]
+    },
+    "B4": {
+      "coefficients": [
+        1,
+        5,
+        6,
+        4,
+        1
+      ],
+      "ulc_order": 7,
+      "normalized": [
+        "1",
+        "5/7",
+        "2/7",
+        "4/35",
+        "1/35"
+      ],
+      "ulc_margins": [
+        "11/49",
+        "0",
+        "6/1225"
+      ],
+      "derivative_lower_margins": [
+        "11/3",
+        "7",
+        "8",
+        "8/3",
+        "0"
+      ],
+      "derivative_upper_margins": [
+        3,
+        18,
+        12,
+        4,
+        0
+      ]
+    },
+    "F2": {
+      "coefficients": [
+        1
+      ],
+      "ulc_order": 0,
+      "normalized": [
+        "1"
+      ],
+      "ulc_margins": [],
+      "derivative_lower_margins": [
+        "0"
+      ],
+      "derivative_upper_margins": [
+        0
+      ]
+    },
+    "F3": {
+      "coefficients": [
+        2,
+        1
+      ],
+      "ulc_order": 1,
+      "normalized": [
+        "2",
+        "1"
+      ],
+      "ulc_margins": [],
+      "derivative_lower_margins": [
+        "1/3",
+        "0"
+      ],
+      "derivative_upper_margins": [
+        3,
+        0
+      ]
+    },
+    "F4": {
+      "coefficients": [
+        3,
+        3,
+        1
+      ],
+      "ulc_order": 3,
+      "normalized": [
+        "3",
+        "1",
+        "1/3"
+      ],
+      "ulc_margins": [
+        "0"
+      ],
+      "derivative_lower_margins": [
+        "1",
+        "1",
+        "0"
+      ],
+      "derivative_upper_margins": [
+        9,
+        4,
+        0
+      ]
+    }
+  },
+  "minors": {
+    "deletion_arity2": [
+      {
+        "r": 0,
+        "s": 1,
+        "value": 1
+      },
+      {
+        "r": 0,
+        "s": 2,
+        "value": 1
+      },
+      {
+        "r": 1,
+        "s": 2,
+        "value": 2
+      }
+    ],
+    "marked_arity2": [
+      {
+        "r": 0,
+        "s": 1,
+        "value": 3
+      },
+      {
+        "r": 0,
+        "s": 2,
+        "value": 1
+      },
+      {
+        "r": 1,
+        "s": 2,
+        "value": 0
+      }
+    ],
+    "deletion_arity3": [
+      {
+        "r": 0,
+        "s": 1,
+        "value": 1
+      },
+      {
+        "r": 0,
+        "s": 2,
+        "value": 2
+      },
+      {
+        "r": 0,
+        "s": 3,
+        "value": 1
+      },
+      {
+        "r": 1,
+        "s": 2,
+        "value": 5
+      },
+      {
+        "r": 1,
+        "s": 3,
+        "value": 3
+      },
+      {
+        "r": 2,
+        "s": 3,
+        "value": 1
+      }
+    ],
+    "marked_arity3": [
+      {
+        "r": 0,
+        "s": 1,
+        "value": 7
+      },
+      {
+        "r": 0,
+        "s": 2,
+        "value": 6
+      },
+      {
+        "r": 0,
+        "s": 3,
+        "value": 2
+      },
+      {
+        "r": 1,
+        "s": 2,
+        "value": 3
+      },
+      {
+        "r": 1,
+        "s": 3,
+        "value": 1
+      },
+      {
+        "r": 2,
+        "s": 3,
+        "value": 0
+      }
+    ],
+    "deletion_arity4": [
+      {
+        "r": 0,
+        "s": 1,
+        "value": 1
+      },
+      {
+        "r": 0,
+        "s": 2,
+        "value": 3
+      },
+      {
+        "r": 0,
+        "s": 3,
+        "value": 3
+      },
+      {
+        "r": 0,
+        "s": 4,
+        "value": 1
+      },
+      {
+        "r": 1,
+        "s": 2,
+        "value": 9
+      },
+      {
+        "r": 1,
+        "s": 3,
+        "value": 11
+      },
+      {
+        "r": 1,
+        "s": 4,
+        "value": 4
+      },
+      {
+        "r": 2,
+        "s": 3,
+        "value": 6
+      },
+      {
+        "r": 2,
+        "s": 4,
+        "value": 3
+      },
+      {
+        "r": 3,
+        "s": 4,
+        "value": 1
+      }
+    ],
+    "marked_arity4": [
+      {
+        "r": 0,
+        "s": 1,
+        "value": 12
+      },
+      {
+        "r": 0,
+        "s": 2,
+        "value": 17
+      },
+      {
+        "r": 0,
+        "s": 3,
+        "value": 12
+      },
+      {
+        "r": 0,
+        "s": 4,
+        "value": 3
+      },
+      {
+        "r": 1,
+        "s": 2,
+        "value": 13
+      },
+      {
+        "r": 1,
+        "s": 3,
+        "value": 12
+      },
+      {
+        "r": 1,
+        "s": 4,
+        "value": 3
+      },
+      {
+        "r": 2,
+        "s": 3,
+        "value": 4
+      },
+      {
+        "r": 2,
+        "s": 4,
+        "value": 1
+      },
+      {
+        "r": 3,
+        "s": 4,
+        "value": 0
+      }
+    ]
+  },
+  "K": "290536219160925437952000000000",
+  "cutoff_m": 100000,
+  "exact_cutoff_ratio": {
+    "numerator": "347766182016712704",
+    "denominator": "1490116119384765625"
+  },
+  "display_only": 0.23338193412758818,
+  "remaining": "Uniform graph/count bridge, coefficient and index inequalities, mixed-minor argument and selector propagation require independent mathematical review."
+}

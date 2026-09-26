@@ -1,0 +1,792 @@
+{
+  "authority": "independent scratchpad arithmetic only",
+  "source_sha256": {
+    "SOLUTION-CONTRACT.md": "f3667bd6424d4f0d95714772ecf76af82ed8430bdd3ec9eda0c721f1a853390c",
+    "control/C4-REGISTERED-CLAIM-IDENTITY.json": "b66ff18b4a3a898d5027969035e5ffa4baf14ea389efe130aad601fa37c184e3",
+    "packets/C4-AT.json": "97706481eafe1ac72e946ed33c603316ee8f0e79a8d4370f7c9b1a06619e0316",
+    "cycles/cycle-4/C4-AT/REPORT.md": "c89600692e8d87f9a23ca6f670480fbbb102c6057747ece562d9bfbfe8932fd9",
+    "cycles/cycle-4/C4-AT/RETURN.json": "c1b0d59fef16e8ccbc93b896a9341f468a2e86713bb0189784de59c643b230a1",
+    "preparation/C4-PREP-SIGNED-MAP-AUDIT/REPORT.md": "c45ee98df04e1a864999e39183aab0659d29ef1cbeddf356e035186c04b9847f",
+    "preparation/C4-PREP-SIGNED-MAP-AUDIT/RESULTS.json": "d9757cd51528759b297f5c4b6764a349fc4a2bb9478ac5449742d295922e2b9d",
+    "preparation/C4-PREP-SIGNED-MAP-AUDIT/EVIDENCE.json": "d01908044a7e9569c5088cc44a57a7ed356dd60c44fd87dc2a0c9abfed32f7ed",
+    "cycles/cycle-4/C4-CF-T1/REPORT.md": "ae061aaff7cf48b55611ea307bf60426c9393851652f42358b37dbba39a00fc5",
+    "cycles/cycle-4/C4-CF-T1/RETURN.json": "96224e6c4bd328e3286714d939d05ca731c5ad4628863662391bb88c6558341c",
+    "cycles/cycle-4/C4-CF-T1/independent_audit.json": "31263f5ac2ad13d769569d3e42cc9d2b9fb745cbcc23709f915805a2010c681f",
+    "cycles/cycle-4/C4-CF-T1/independent_audit.py": "4ca2f41e989a862f612711fddb90bb56042bae1016d2074594e1d881892af69c",
+    "cycles/cycle-4/C4-CF-T1/replay_compute.py": "5e22acb9bf3e7ac7ce30be595056c53725906046aba2299d9b3becf8e2cee0de",
+    "cycles/cycle-4/C4-CF-T1/replay_result.json": "49635130db48986b7772185ca9d525ef18f8d4bb5627009144e8a5935f39ed22",
+    "cycles/cycle-4/C4-CU-T1/C4-T1-COMPUTE-SOURCE.py": "5e22acb9bf3e7ac7ce30be595056c53725906046aba2299d9b3becf8e2cee0de",
+    "cycles/cycle-4/C4-CU-T1/INDEPENDENT-EVIDENCE.json": "ab6ebc34ffe68c8dbc227b9b26d30302f0955625df75784448a8e7d3edd7d6b7",
+    "cycles/cycle-4/C4-CU-T1/REPLAY.py": "5ac28bc501e139b075bdd4cfca9c7642fd1313315737c1ef34b2ae2047cf02b8",
+    "cycles/cycle-4/C4-CU-T1/REPORT.md": "bd1f5863cf7a5c7829d3b5eb63dded625261d7e32209ba0ee34d90b7ac58a9bf",
+    "cycles/cycle-4/C4-CU-T1/RETURN.json": "3de34b9ed29746bf20ad9dc0a9379b5565647beb743136a4bfecec34caa2b3f8",
+    "cycles/cycle-4/C4-CU-T1/SOURCE-REPLAY.json": "49635130db48986b7772185ca9d525ef18f8d4bb5627009144e8a5935f39ed22",
+    "cycles/cycle-4/C4-T1/COMPUTE.py": "5e22acb9bf3e7ac7ce30be595056c53725906046aba2299d9b3becf8e2cee0de",
+    "cycles/cycle-4/C4-T1/EVIDENCE.json": "49635130db48986b7772185ca9d525ef18f8d4bb5627009144e8a5935f39ed22",
+    "cycles/cycle-4/C4-T1/RANDOM-RESULTS.json": "268c3658823d59a8ab8545901038452e99fbf054b5dbeed379f0a7d6c70b507b",
+    "cycles/cycle-4/C4-T1/REPORT.md": "d04252c3a9f48bb21d9c04a51a01621aa2ca0231949d1c46ba353d5fd4d1929d",
+    "cycles/cycle-4/C4-T1/RETURN.json": "5c7d8901c1af6e77f7631e8d331a4ae1d5906173d2316fdb6320466366f3bd8b",
+    "cycles/cycle-4/C4-T1/SEARCH-RESULTS.json": "cbbd781a7977097d79c1d441f2a0db1433f45eb7aebb4bf51baf9a1c071d2b16",
+    "cycles/cycle-4/C4-T1/random_probe.py": "1d9550ac14cffb4fd3f1c3198352eb32f06ff29d40168e1226d693f25c59bff8",
+    "cycles/cycle-4/C4-T1/search.py": "872588279a1fa2288744179b074dfe1086fec86d98b68d0443f03bae1dd00376"
+  },
+  "star": {
+    "vertices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        0,
+        9
+      ],
+      [
+        0,
+        10
+      ],
+      [
+        0,
+        11
+      ],
+      [
+        0,
+        12
+      ]
+    ],
+    "connected_acyclic": true,
+    "tree_counts": [
+      1,
+      13,
+      66,
+      220,
+      495,
+      792,
+      924,
+      792,
+      495,
+      220,
+      66,
+      12,
+      1
+    ],
+    "alpha": 12,
+    "deltas_through_alpha": [
+      12,
+      53,
+      154,
+      275,
+      297,
+      132,
+      -132,
+      -297,
+      -275,
+      -154,
+      -54,
+      -11,
+      -1
+    ],
+    "x": 6,
+    "p": 8,
+    "guards": {
+      "x_plus_2_le_p": true,
+      "three_p_lt_two_alpha_plus_one": true
+    },
+    "original_leaves": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "F": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "selector_deltas": {
+      "1": -110,
+      "2": -110,
+      "3": -110,
+      "4": -110,
+      "5": -110,
+      "6": -110,
+      "7": -110,
+      "8": -110,
+      "9": -110,
+      "10": -110,
+      "11": -110,
+      "12": -110
+    },
+    "H1_counts": [
+      1,
+      11,
+      55,
+      165,
+      330,
+      462,
+      462,
+      330,
+      165,
+      55,
+      11,
+      1
+    ],
+    "R1_counts": [
+      1
+    ],
+    "q7_per_tag": 330,
+    "q8_per_tag": 165,
+    "K7_dimension": 3960,
+    "K8_dimension": 1980,
+    "S": -1980,
+    "C": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "kernel_vector": [
+      {
+        "tag": 1,
+        "A": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "coefficient": 1
+      },
+      {
+        "tag": 1,
+        "A": [
+          2,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "coefficient": -1
+      },
+      {
+        "tag": 1,
+        "A": [
+          2,
+          3,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "coefficient": 1
+      },
+      {
+        "tag": 1,
+        "A": [
+          2,
+          3,
+          4,
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        "coefficient": -1
+      },
+      {
+        "tag": 1,
+        "A": [
+          2,
+          3,
+          4,
+          5,
+          7,
+          8,
+          9,
+          10
+        ],
+        "coefficient": 1
+      },
+      {
+        "tag": 1,
+        "A": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          10
+        ],
+        "coefficient": -1
+      },
+      {
+        "tag": 1,
+        "A": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          9,
+          10
+        ],
+        "coefficient": 1
+      },
+      {
+        "tag": 1,
+        "A": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          10
+        ],
+        "coefficient": -1
+      },
+      {
+        "tag": 1,
+        "A": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "coefficient": 1
+      }
+    ],
+    "image_distinct_faces": 36,
+    "image_nonzero_coefficients": [],
+    "action_branches": {
+      "retained": 72
+    }
+  },
+  "order24": {
+    "vertices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        4,
+        17
+      ],
+      [
+        5,
+        10
+      ],
+      [
+        6,
+        19
+      ],
+      [
+        10,
+        18
+      ],
+      [
+        12,
+        7
+      ],
+      [
+        14,
+        11
+      ],
+      [
+        11,
+        13
+      ],
+      [
+        15,
+        8
+      ],
+      [
+        17,
+        9
+      ],
+      [
+        18,
+        19
+      ],
+      [
+        19,
+        13
+      ],
+      [
+        13,
+        7
+      ],
+      [
+        20,
+        8
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        9,
+        1
+      ],
+      [
+        21,
+        1
+      ],
+      [
+        22,
+        1
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        7,
+        16
+      ],
+      [
+        16,
+        23
+      ]
+    ],
+    "connected_acyclic": true,
+    "tree_counts": [
+      1,
+      24,
+      253,
+      1553,
+      6202,
+      17052,
+      33321,
+      47118,
+      48648,
+      36729,
+      20148,
+      7898,
+      2146,
+      384,
+      41,
+      2
+    ],
+    "alpha": 15,
+    "deltas_through_alpha": [
+      23,
+      229,
+      1300,
+      4649,
+      10850,
+      16269,
+      13797,
+      1530,
+      -11919,
+      -16581,
+      -12250,
+      -5752,
+      -1762,
+      -343,
+      -39,
+      -2
+    ],
+    "x": 8,
+    "p": 10,
+    "k": 9,
+    "guards": {
+      "x_plus_2_le_p": true,
+      "three_p_lt_two_alpha_plus_one": true
+    },
+    "original_leaves": [
+      0,
+      3,
+      5,
+      6,
+      12,
+      14,
+      15,
+      20,
+      21,
+      22,
+      23
+    ],
+    "F": [
+      0,
+      3,
+      5,
+      6,
+      12,
+      14,
+      15,
+      20,
+      21,
+      22,
+      23
+    ],
+    "leaf_rows": [
+      {
+        "leaf": 0,
+        "support": 1,
+        "W": [
+          7,
+          9,
+          21,
+          22
+        ],
+        "delta_p_T_minus_v": -4599,
+        "selected": true,
+        "iH_k": 13677,
+        "iH_k1": 6026,
+        "q_k": 13232,
+        "q_k1": 5949,
+        "summand": -7283
+      },
+      {
+        "leaf": 3,
+        "support": 2,
+        "W": [
+          4
+        ],
+        "delta_p_T_minus_v": -6417,
+        "selected": true,
+        "iH_k": 10440,
+        "iH_k1": 4607,
+        "q_k": 5339,
+        "q_k1": 2729,
+        "summand": -2610
+      },
+      {
+        "leaf": 5,
+        "support": 10,
+        "W": [
+          18
+        ],
+        "delta_p_T_minus_v": -6279,
+        "selected": true,
+        "iH_k": 10800,
+        "iH_k1": 4829,
+        "q_k": 6281,
+        "q_k1": 3258,
+        "summand": -3023
+      },
+      {
+        "leaf": 6,
+        "support": 19,
+        "W": [
+          13,
+          18
+        ],
+        "delta_p_T_minus_v": -5715,
+        "selected": true,
+        "iH_k": 11873,
+        "iH_k1": 5338,
+        "q_k": 8936,
+        "q_k1": 4431,
+        "summand": -4505
+      },
+      {
+        "leaf": 12,
+        "support": 7,
+        "W": [
+          1,
+          13,
+          16
+        ],
+        "delta_p_T_minus_v": -5818,
+        "selected": true,
+        "iH_k": 11504,
+        "iH_k1": 5072,
+        "q_k": 7932,
+        "q_k1": 3792,
+        "summand": -4140
+      },
+      {
+        "leaf": 14,
+        "support": 11,
+        "W": [
+          13
+        ],
+        "delta_p_T_minus_v": -6471,
+        "selected": true,
+        "iH_k": 10392,
+        "iH_k1": 4613,
+        "q_k": 5249,
+        "q_k1": 2755,
+        "summand": -2494
+      },
+      {
+        "leaf": 15,
+        "support": 8,
+        "W": [
+          9,
+          20
+        ],
+        "delta_p_T_minus_v": -5345,
+        "selected": true,
+        "iH_k": 12545,
+        "iH_k1": 5640,
+        "q_k": 10582,
+        "q_k1": 5106,
+        "summand": -5476
+      },
+      {
+        "leaf": 20,
+        "support": 8,
+        "W": [
+          9,
+          15
+        ],
+        "delta_p_T_minus_v": -5345,
+        "selected": true,
+        "iH_k": 12545,
+        "iH_k1": 5640,
+        "q_k": 10582,
+        "q_k1": 5106,
+        "summand": -5476
+      },
+      {
+        "leaf": 21,
+        "support": 1,
+        "W": [
+          0,
+          7,
+          9,
+          22
+        ],
+        "delta_p_T_minus_v": -4599,
+        "selected": true,
+        "iH_k": 13677,
+        "iH_k1": 6026,
+        "q_k": 13232,
+        "q_k1": 5949,
+        "summand": -7283
+      },
+      {
+        "leaf": 22,
+        "support": 1,
+        "W": [
+          0,
+          7,
+          9,
+          21
+        ],
+        "delta_p_T_minus_v": -4599,
+        "selected": true,
+        "iH_k": 13677,
+        "iH_k1": 6026,
+        "q_k": 13232,
+        "q_k1": 5949,
+        "summand": -7283
+      },
+      {
+        "leaf": 23,
+        "support": 16,
+        "W": [
+          7
+        ],
+        "delta_p_T_minus_v": -6769,
+        "selected": true,
+        "iH_k": 9392,
+        "iH_k1": 3911,
+        "q_k": 2547,
+        "q_k1": 1025,
+        "summand": -1522
+      }
+    ],
+    "Q": 97144,
+    "U": 46049,
+    "S": -51095,
+    "covariance_tag": 0,
+    "covariance_W": [
+      7,
+      9,
+      21,
+      22
+    ],
+    "covariance_domain": "uniform independent 9-sets of H_0=T-{0,1}",
+    "rank9_independent_sets_enumerated": 13677,
+    "marked_rank9_sets_enumerated": 13232,
+    "actual_marked_addability_enumerated": 58429,
+    "rank10_independent_sets": 6026,
+    "covariance_numerator": 1773113,
+    "covariance_denominator": 187060329
+  },
+  "registry_comparison": {
+    "canonical_prior_claim_count": 426,
+    "proposed_keys": [
+      "E993-LOWER-REGION-C4-T4-SIGNED-CROSS-TAG-INJECTIVITY",
+      "E993-LOWER-REGION-LOCAL-MARKED-ADDABILITY-NONPOSITIVE-COVARIANCE"
+    ],
+    "proposed_key_collisions": [],
+    "exact_statement_collisions": [],
+    "exact_alias_collisions": [],
+    "related_registered_claims": [
+      {
+        "claim_key": "E993-R19-U2-UNIVERSAL-FACES",
+        "status": "OPEN",
+        "statement": "For every eligible governed row under the frozen unweighted support-mean convention, S_ORB<=0 and C<=-S_ORB.",
+        "scope": "The two universal orbit/covariance sign faces used by the r19 conditional composition theorem; stronger than and not equivalent to E993-BETA-AGG."
+      },
+      {
+        "claim_key": "E993-R23-LITERAL-ACTUAL-TREE-FIXED-GAMMA-HALL",
+        "status": "REFUTED",
+        "statement": "For every eligible finite ordinary tree and rank in the r23 semantic contract, the literal fixed Delete/Retag relation Gamma_actual satisfies Hall's subset inequality.",
+        "scope": "Literal ordinary-tree instantiation fixed by the r23 semantic contract; not every legacy governed RTree encoding. A changed or enlarged relation is a different claim."
+      },
+      {
+        "claim_key": "E993-R23-LITERAL-DELETE-ONLY-HALL",
+        "status": "REFUTED",
+        "statement": "For every finite ordinary tree T, natural p>=x(T)+2 under the r23 literal contract, and every X subset of the complete tagged top side P, |X|<=|Gamma_Delete(X)|.",
+        "scope": "Literal ordinary-tree universal Delete-only Hall. Restricted deletion faces remain separate."
+      },
+      {
+        "claim_key": "E993-C3-G1-POINTWISE-ADDABILITY-BOUND",
+        "status": "REFUTED",
+        "statement": "For every full ordinary G1 tuple with i_r(U)>0, every independent r-set S of U has at most r addable vertices.",
+        "scope": "Literal full ordinary G1 scope at r=p-2; universal over all independent r-sets in each residual. r29 Cycle 1 (2026-09-25) scope note: distinct from the r29 high-tail keys: the registered refutation witnesses fail 3p \u2265 2\u03b1 + 1 (a theorem given E993-BIPARTITE-LEAF-HIGH-TAIL-POINTWISE, not a data check); E993-BIPARTITE-TAGGED-SHADOW-BOUND is a size-restricted incidence count whose constants k and 2(a \u2212 k) are incomparable with the refuted per-set bound. Status REFUTED unchanged."
+      },
+      {
+        "claim_key": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+        "status": "OPEN",
+        "statement": "For every finite ordinary tree T with a=alpha(T), first strict descent x(T) of its integer zero-extended independence counts, and natural p satisfying x(T)+2<=p and 3p<2a+1, the complete sum over original leaves v with Delta_p(T-v)<0 of Delta_(p-1)(T-{v,s_v})-Delta_(p-1)(T-N_T[s_v]) is nonpositive.",
+        "scope": "Connected acyclic finite simple graphs; original leaves are distinct tags even when supports coincide; original supports and original closed neighborhoods; empty selected set has sum zero; no residual hypothesis; no governed RTree transport."
+      },
+      {
+        "claim_key": "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL",
+        "status": "OPEN",
+        "statement": "For every finite ordinary tree T and natural p with x(T)+2<=p and 3p<2alpha(T)+1, fix F={original leaves v: Delta_p(T-v)<0}. For each independent B define w_F(B)=#{v in F intersect B: (N_T(s_v) intersect (B minus {v})) is nonempty}. The capacitated bipartite graph from independent (p+1)-sets B with supply w_F(B) to independent p-sets D with capacity w_F(D), with an edge exactly when D=B minus {q} for q in B or D=(B minus (N_T(s) intersect B)) union {s} for s notin B with exactly two neighbors in B, has an integral flow saturating every upper supply.",
+        "scope": "Ordinary trees only; fixed strict original selector and original supports; all clone pairs over each allowed set pair are permitted. A sufficient mechanism for the lower-region aggregate, not equivalent to its scalar assertion. Distinct from the refuted literal Delete/Retag and deletion-only mechanisms because their clone compatibility and edge sets differ. No governed RTree assertion."
+      },
+      {
+        "claim_key": "E993-LOWER-REGION-EARLY-MARKED-OCCUPANCY-TRANSFER",
+        "status": "OPEN",
+        "statement": "For every finite ordinary tree T, natural p with x(T)+2<=p and 3p<2alpha(T)+1, fix the original strict selector F={degree-one leaves v: Delta_p(T-v)<0} and original supports s_v. Put k=p-1, H_v=T-{v,s_v}, W_v=N_T(s_v) minus {v}, q_v(k)=#{independent k-sets of H_v meeting W_v}, Q=sum_F q_v(k), and E=sum_F sum_{A independent k-set of H_v meeting W_v} #{vertices of H_v addable to A}. Then i_x(T)*E <= (x+1)*i_(x+1)(T)*Q.",
+        "scope": "Universal CT_x premise itself, not the already established conditional implication. All selected tags counted separately, zero-extended coefficients; i_x>0 on the guard. Distinct from refuted pointwise addability, same-rank covariance shortcut, and governed RTree assertions."
+      },
+      {
+        "claim_key": "E993-LOWER-REGION-PER-LEAF-DOWN-MAP-INJECTIVITY",
+        "status": "REFUTED",
+        "statement": "For every finite ordinary tree T and natural p with x(T)+2<=p and 3p<2alpha(T)+1, and every original leaf v with Delta_p(T-v)<0, the rational linear map d_p from the vector space on marked independent p-sets of H_v=T-{v,s_v} to the space on marked independent (p-1)-sets, sending each basis set to the sum of its one-vertex deletions still meeting W_v=N_T(s_v) minus {v}, is injective.",
+        "scope": "Universal LOCAL per-selected-leaf operator, distinct from any operator mixing tags or the scalar aggregate. Mechanism refutation by selected T22 arm dimensions."
+      },
+      {
+        "claim_key": "E993-LOWER-REGION-SAME-RANK-WEIGHTED-OCCUPANCY-DOMINATION",
+        "status": "REFUTED",
+        "statement": "For every finite ordinary tree T and natural p with x(T)+2<=p and 3p<2alpha(T)+1, let F be its fixed original strict favorable-leaf selector, w_F(B) the number of active tags v in F intersect B with (B minus {v}) meeting N_T(s_v) minus {v}, Q=sum over independent p-sets B of w_F(B), and E=sum over these B of w_F(B) times the number e_T(B) of addable vertices. Then i_p(T)*E <= (p+1)*i_(p+1)(T)*Q.",
+        "scope": "Universal same-CURRENT-rank weighted versus unweighted occupancy comparison. Distinct from CT_x using first-descent rank x. Mechanism refutation on an eligible order14 tree; not aggregate refutation."
+      }
+    ]
+  }
+}

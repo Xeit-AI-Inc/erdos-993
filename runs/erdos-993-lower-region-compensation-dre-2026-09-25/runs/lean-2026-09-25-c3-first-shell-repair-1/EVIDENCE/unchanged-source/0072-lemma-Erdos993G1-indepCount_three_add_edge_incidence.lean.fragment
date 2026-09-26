@@ -1,0 +1,13 @@
+lemma indepCount_three_add_edge_incidence {V : Type u} [Fintype V] [DecidableEq V]
+    (F : SimpleGraph V) [DecidableRel F.Adj] (hF : F.IsAcyclic) :
+    indepCount F 3 + (Nat.card F.edgeSet : ℤ) * ((Fintype.card V - 2 : ℕ) : ℤ) =
+      ((Fintype.card V).choose 3 : ℤ) +
+        ∑ a : V, ((F.degree a).choose 2 : ℤ) := by
+  have h := indepSetFinset_three_incidence F hF
+  rw [sum_triple_centered_neighbor_pairs] at h
+  rw [indepCount_eq_card_indepSetFinset]
+  exact_mod_cast h
+
+end Erdos993G1
+
+

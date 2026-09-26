@@ -1,0 +1,37 @@
+{
+  "worker_id": "C2-U3",
+  "cycle": 2,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-FIRST-ORDER-SHELL",
+      "statement": "For ordinary trees T and p with x(T)+2<=p, 3p<2alpha(T)+1, and |T|=2p+2, the complete sum over original leaves satisfying Delta_p(T-v)<0 of Delta_(p-1)(T-{v,s_v})-Delta_(p-1)(T-N_T[s_v]) is nonpositive.",
+      "scope": "Exact registered first-order shell; original leaves remain distinct tags and use their original supports, neighborhoods, and the fixed strict favorable selector.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-U3/REPORT.md",
+        "cycles/cycle-2/C2-U3/EVIDENCE.md"
+      ],
+      "reason": "The ordered-root decomposition bounds all positive terms by first-root and first-isolate lower counts, but the necessary selector-conditioned global compensation inequality (Comp) is not proved, and no complete-sum counterexample is supplied."
+    },
+    {
+      "claim_id": "C2-U3-ORDERED-SHELL-BOUND",
+      "statement": "For each eligible shell leaf tag with nonempty H_v, the marked count difference q_(k+1)-q_k decomposes by ordered component marks as sum_i(i_k(J_i)-i_(k-1)(J_i)); only the degree-one first root and the second isolated mark can give |J_i|=2k, and their total positive excess is at most (L_root+L_iso)/k.",
+      "scope": "Finite ordinary tree shell |T|=2p+2 with k=p-1 and one mark in each component of H_v; applies to each selected leaf without merging repeated supports.",
+      "status": "proposed_proved_informal",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-U3/REPORT.md",
+        "cycles/cycle-2/C2-U3/EVIDENCE.md"
+      ],
+      "reason": "A first-mark partition gives the exact identity, and the deletion/extension double count yields the asserted order-based sign and excess estimate. The edgeless H_v case is excluded by the shell eligibility guard."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-U3/REPORT.md",
+  "limitations": [
+    "The global selector-conditioned compensation inequality (Comp) remains unproved.",
+    "This route neither proves nor refutes the full first-order shell aggregate or the unrestricted lower-region aggregate.",
+    "No computational census or external theorem was used."
+  ],
+  "status_authority": "proposed_worker_only"
+}

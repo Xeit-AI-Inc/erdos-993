@@ -1,0 +1,131 @@
+-- VERITYOS ENTRY 1 BEGIN definition C4LA1.vertexDeletionIndepSetCount 7e0a588e243735a611c919ea1080816911a3e27e4523478af0c0f560ce1b3b48
+namespace C4LA1
+
+open SimpleGraph
+
+variable {V : Type*} [Fintype V] [DecidableEq V]
+
+/-- The coefficient `i_k(G-v)`, represented without changing vertex types:
+independent `k`-subsets of the original finite vertex type that avoid `v`. -/
+def vertexDeletionIndepSetCount (G : SimpleGraph V) [DecidableRel G.Adj]
+    (v : V) (k : Nat) : Nat :=
+  (((Finset.univ.erase v).powersetCard k).filter fun s : Finset V =>
+    G.IsIndepSet (s : Set V)).card
+
+end C4LA1
+-- VERITYOS ENTRY 1 END
+
+-- VERITYOS ENTRY 2 BEGIN definition C4LA1.vertexDeletionForwardDifference c2da50eb16ee788c439b146577efeedd7dd42811c6943fb437585edcf63b5880
+namespace C4LA1
+
+variable {V : Type*} [Fintype V] [DecidableEq V]
+
+/-- The forward coefficient difference `i_(p+1)(G-v) - i_p(G-v)`, with
+natural counts embedded in the integers. -/
+def vertexDeletionForwardDifference (G : SimpleGraph V) [DecidableRel G.Adj]
+    (v : V) (p : Nat) : Int :=
+  (vertexDeletionIndepSetCount G v (p + 1) : Int) -
+    vertexDeletionIndepSetCount G v p
+
+end C4LA1
+-- VERITYOS ENTRY 2 END
+
+-- VERITYOS ENTRY 3 BEGIN definition C4LA1.IsFavorableAt 25d8f7d274f9080468bf6d46acc6db3d4a469c2e399e7faee6cdcee24290a0db
+namespace C4LA1
+
+variable {V : Type*} [Fintype V] [DecidableEq V]
+
+/-- Literal strict favorability of an original leaf at rank `p`. -/
+def IsFavorableAt (G : SimpleGraph V) [DecidableRel G.Adj] (v : V) (p : Nat) : Prop :=
+  vertexDeletionForwardDifference G v p < 0
+
+end C4LA1
+-- VERITYOS ENTRY 3 END
+
+-- VERITYOS ENTRY 6 BEGIN definition C5LA1.leafSet 78ec65517bde90cc2fc5e542fc7c60d6a5147b243b74b9ac3de33d4efd1df697
+namespace C5LA1
+
+open SimpleGraph C4LA1
+
+variable {V : Type*} [Fintype V] [DecidableEq V]
+
+open Classical in
+/-- The set of original leaves of `G`. -/
+noncomputable
+def leafSet (G : SimpleGraph V) : Finset V :=
+  Finset.univ.filter (C4LA1.IsGraphLeaf G)
+
+end C5LA1
+-- VERITYOS ENTRY 6 END
+
+-- VERITYOS ENTRY 7 BEGIN definition C5LA1.leafDegree ccfc9b2f549aa8c9986931152d249096ce49e3ccd3b67f4afd8678a749d93a68
+namespace C5LA1
+
+open SimpleGraph C4LA1
+
+variable {V : Type*} [Fintype V] [DecidableEq V]
+
+/-- `lambda(s)`: the number of leaves of `G` adjacent to `s`, zero off
+supports. -/
+noncomputable
+def leafDegree (G : SimpleGraph V) [DecidableRel G.Adj] (s : V) : Nat :=
+  ((leafSet G).filter fun v => G.Adj v s).card
+
+end C5LA1
+-- VERITYOS ENTRY 7 END
+
+-- VERITYOS ENTRY 13 BEGIN definition C5LA1.aggregate d66e776c5cf49b2a78a2d9713e4a41de2cbaf5de0af7b6d580075064d1daea8b
+namespace C5LA1
+
+open SimpleGraph C4LA1
+
+variable {V : Type*} [Fintype V] [DecidableEq V]
+
+open Classical in
+/-- `S(G,p) = sum_{v in F} (b_v - B_v)`, the literal top-rank residual
+aggregate, summed over the favorable filter of the leaf set. -/
+noncomputable
+def aggregate (G : SimpleGraph V) [DecidableRel G.Adj] (p : Nat) : Int :=
+  ∑ v ∈ (leafSet G).filter fun v => C4LA1.IsFavorableAt G v p,
+    (forwardDifferenceDel G (H G v) (p - 1) - forwardDifferenceDel G (R G v) (p - 1))
+
+end C5LA1
+-- VERITYOS ENTRY 13 END
+
+-- VERITYOS ENTRY 14 BEGIN definition C5LA1.crossingIndex 378868ab2e660af8a36ea0b1045c55bc60f8383dca3d31dd85c4b52fa8a898fb
+namespace C5LA1
+
+open SimpleGraph C4LA1
+
+variable {V : Type*} [Fintype V] [DecidableEq V]
+
+open Classical in
+/-- `x(G)`: the least `k` with `Delta_k(G) < 0`; exists because
+`Delta_(alpha)(G) = -i_alpha(G) < 0`. -/
+noncomputable
+def crossingIndex (G : SimpleGraph V) [DecidableRel G.Adj] : Nat :=
+  Nat.find (p := fun k => forwardDifferenceDel G ∅ k < 0)
+    (by
+      classical
+      obtain ⟨s, hs⟩ := G.exists_isNIndepSet_indepNum
+      refine ⟨G.indepNum, ?_⟩
+      have hzero : indepSetCount G ∅ (G.indepNum + 1) = 0 := by
+        have hempty : indepSetsAvoiding G ∅ (G.indepNum + 1) = ∅ := by
+          rw [Finset.eq_empty_iff_forall_notMem]
+          intro t ht
+          simp only [indepSetsAvoiding, Finset.mem_filter, Finset.mem_powersetCard] at ht
+          have hle : t.card ≤ G.indepNum := ht.2.card_le_indepNum
+          omega
+        rw [indepSetCount, hempty, Finset.card_empty]
+      have hpos : 0 < indepSetCount G ∅ G.indepNum := by
+        rw [indepSetCount, Finset.card_pos]
+        refine ⟨s, ?_⟩
+        simp only [indepSetsAvoiding, Finset.mem_filter, Finset.mem_powersetCard]
+        refine ⟨⟨?_, hs.card_eq⟩, hs.isIndepSet⟩
+        intro x _
+        simp
+      simp only [forwardDifferenceDel, hzero]
+      omega)
+
+end C5LA1
+-- VERITYOS ENTRY 14 END

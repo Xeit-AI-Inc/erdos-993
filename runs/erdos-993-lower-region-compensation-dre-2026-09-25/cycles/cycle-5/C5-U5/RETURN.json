@@ -1,0 +1,23 @@
+{
+  "worker_id": "C5-U5",
+  "cycle": 5,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C5-U5.support-star-sector",
+      "statement": "For every ordinary star T=K_{1,d} with d>=12 and every p satisfying the primary eligibility conditions, the full selected favorable-leaf aggregate S(T,p) is nonpositive.",
+      "scope": "Only ordinary stars K_{1,d}, d>=12, with the exact x(T)+2<=p and 3p<2alpha(T)+1 guards and the original strict favorable-leaf selector.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-5/C5-U5/EVIDENCE.json"],
+      "reason": "Every leaf has the same deletion selector and support. Its marked graph H_v is edgeless with all vertices marked, so q_v(j)=binomial(d-1,j). The exact first descent of K_{1,d} forces k=p-1 onto the decreasing side of this binomial row; summing identical selected terms proves the claim."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-U5/REPORT.md",
+  "limitations": [
+    "The proof treats only stars with at least twelve leaves; it does not establish a cut or compression inequality when H_v has edges.",
+    "The result does not resolve the primary aggregate for general ordinary trees or mixed marked/unmarked sectors.",
+    "No external literature or computational census was used."
+  ],
+  "status_authority": "proposed_worker_only"
+}

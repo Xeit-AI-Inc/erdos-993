@@ -1,0 +1,29 @@
+{
+  "worker_id": "C4-CT-F2",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C4-F2-BOUNDED-BUDGET-SEARCH",
+      "statement": "No violation of the flat addability budget, current-rank addability budget, or target budget occurred in the stated finite search; no eligible pair in the main or two-hub selector corpus had a proper favorable subset.",
+      "scope": "24,067 generated tree instances and 339 eligible tree/rank pairs in the main corpus; additionally 287 eligible pairs in the stated two-hub graft selector stress, with the exact families and ranges recorded in the source evidence. The conclusion is bounded to these computations.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CT-F2/EVIDENCE.json"
+      ],
+      "reason": "Retained as a bounded observation: scratch-copy replay confirms the reported finite counts and no budget violations, and the fully specified K1,19 stress row independently checks exactly. The finite search has no proper selector and cannot establish or refute the universal aggregate or the proposed budgets."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CT-F2/REPORT.md",
+  "limitations": [
+    "All conclusions are limited to the finite generation boundaries and profile families stated in the source evidence.",
+    "The main corpus was confirmed by replaying the producer script and pinned helper, not by a second full enumeration implementation.",
+    "No proper favorable selector occurred, so selector-induced cancellation remains untested.",
+    "No universal proof, positive full aggregate, or counterexample is established."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-F2-BOUNDED-BUDGET-SEARCH"
+  ]
+}

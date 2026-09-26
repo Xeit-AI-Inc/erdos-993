@@ -1,0 +1,26 @@
+{
+  "worker_id": "C5-CT-F2",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C5-F2-HETEROGENEOUS-BOUNDED-AUDIT",
+      "statement": "For every hub-attached tree with path 0-1-2 and 1 to 5 branches, each branch center adjacent to 0 and having 2, 3, or 4 pendant leaves, every eligible lower-region rank in the specified exact finite census has S<0; no eligible row has a proper favorable-leaf selector or a positive selected local summand, and no whole-tree independence polynomial in this census fails coefficient log-concavity.",
+      "scope": "Exact bounded census of the 55 nondecreasing multisets of arities 2,3,4 of lengths 1 through 5, covering every integer p with x+2<=p<=alpha and 3p<2alpha+1. This is computational evidence only and does not establish the heterogeneous extension or the universal primary claim.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-5/C5-CT-F2/EVIDENCE.json"],
+      "reason": "Retained as a bounded exact computation. The pinned script replay matches RESULTS.json, and an independent rooted-forest polynomial DP reproduced all 55 coefficient vectors, 62 eligible rows, and 928 selected summands; the largest local summand is -14 and largest full S is -275. Exact rank gates, all original leaf tags and supports, and terminal first descent were checked. The finite family has no proper selector; its whole-tree log-concavity data does not establish the proposed mixed or distributed marked-polynomial inequalities, a global D+C budget, or any universal extension."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CT-F2/REPORT.md",
+  "limitations": [
+    "The audit covers only the 55 multisets of 1 to 5 branch arities from {2,3,4} on the specified path-and-star construction.",
+    "The 62 eligible ranks are a bounded census and do not resolve the universal ordinary-tree aggregate.",
+    "Every eligible selector selected all original leaves, so changing-selector behavior was not tested.",
+    "Whole-tree coefficient log-concavity does not prove the heterogeneous common-minor or distributed marked-polynomial inequalities.",
+    "No global D+C budget or proof of the heterogeneous extension is supplied."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": ["C5-F2-HETEROGENEOUS-BOUNDED-AUDIT"]
+}

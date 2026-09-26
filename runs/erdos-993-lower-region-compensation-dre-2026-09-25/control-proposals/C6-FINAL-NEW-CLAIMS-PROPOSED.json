@@ -1,0 +1,47 @@
+[
+  {
+    "claim_key": "E993-EQUAL-LENGTH-THREE-SPIDER-EXACT-MODE",
+    "statement": "For every integer m>=2, let S_m be the tree with one root r and m internally disjoint paths r-a_i-b_i-c_i of length three. Its independence polynomial (1+3z+z^2)^m+z(1+2z)^m has coefficients strictly increasing from rank0 through rank m and strictly decreasing from rank m through rank2m, and its first strict zero-extended descent index is exactly m.",
+    "scope": "Exactly equal-length-three spiders with m>=2. An elementary coefficient proof; no novelty claimed. Distinct from the existing general-spider polynomial formula and fixed-background pendant-leg asymptotics. Not a theorem about every spider or tree.",
+    "status": "OPEN",
+    "evidence_grade": "proposed_for_fresh_identity_review",
+    "formal_award": false,
+    "certificate": {
+      "source_claim_id": "C6-ROOT-SPIDER-EXACT-MODE",
+      "run": "erdos-993-lower-region-compensation-dre-2026-09-25",
+      "pending": "Cycle6 adjudication, synthesis and final identity review"
+    },
+    "aliases": [],
+    "alias_patterns": []
+  },
+  {
+    "claim_key": "E993-EQUAL-LENGTH-THREE-SPIDER-LOWER-REGION-AGGREGATE",
+    "statement": "For every integer m>=2 let S_m have edges r-a_i,a_i-b_i,b_i-c_i for 1<=i<=m. For every natural p with x(S_m)+2<=p and 3p<2alpha(S_m)+1, the original strict favorable-leaf selector consists of all c_i and the complete original-leaf aggregate is strictly negative.",
+    "scope": "Exactly this infinite ordinary-tree family, alpha=2m and x=m; eligible p are m+2 through floor(4m/3), nonempty exactly when m>=6. Original support of c_i is b_i. No arbitrary-tree aggregate or governed transport. Separate from the general-spider closed-form identity.",
+    "status": "OPEN",
+    "evidence_grade": "proposed_for_fresh_identity_review",
+    "formal_award": false,
+    "certificate": {
+      "source_claim_id": "C6-ROOT-SPIDER-LOWER-REGION-AGGREGATE",
+      "run": "erdos-993-lower-region-compensation-dre-2026-09-25",
+      "pending": "Cycle6 adjudication, synthesis and final identity review"
+    },
+    "aliases": [],
+    "alias_patterns": []
+  },
+  {
+    "claim_key": "E993-FINITE-GROUP-WEIGHTED-ORBIT-FLOW-LIFT",
+    "statement": "Let a finite group act on two finite sets U,V and preserve a relation R subset U times V and nonnegative integer supplies s on U and capacities c on V. Form an orbit network with source supply sum_{u in A}s(u) at each U-orbit A, target capacity sum_{v in B}c(v) at each V-orbit B, and an uncapacitated edge A to B exactly when R meets A times B. If this quotient network has an integral flow saturating every source supply, then the original R network has an integral flow saturating every supply s(u) and respecting every capacity c(v).",
+    "scope": "Generic finite invariant relation; weights must be invariant and nonnegative integers, and orbit supplies/capacities are totals. Does not assert feasibility of any particular quotient. T_m orbit formulas and three bounded primal applications are evidence of applicability, not an all-parameter flow-feasibility theorem.",
+    "status": "OPEN",
+    "evidence_grade": "proposed_for_fresh_identity_review",
+    "formal_award": false,
+    "certificate": {
+      "source_claim_id": "C6-T5.ORBIT-QUOTIENT-LIFT",
+      "run": "erdos-993-lower-region-compensation-dre-2026-09-25",
+      "pending": "Cycle6 adjudication, synthesis and final identity review"
+    },
+    "aliases": [],
+    "alias_patterns": []
+  }
+]

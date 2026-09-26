@@ -1,0 +1,96 @@
+{
+  "worker_id": "C4-AF",
+  "cycle": 4,
+  "stage": "adjudication",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "C4-F1-bounded-CTx-selector-search",
+      "statement": "The exact specified F1 Pr\u00fcfer sample has 37 eligible rows, all with p=x+2, full original-leaf selector, negative S and E<=(x+1)Q; no proper selector occurs.",
+      "scope": "1,836 labeled encodings, 204 at each order 8..16, seed 993041 plus four fixed words per order; isomorphic duplicates retained. Flat-budget statement only.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AF/EVIDENCE.json"
+      ],
+      "reason": "retained: independent critics audit the bounded selector and sum. The source and both critics misname the flat gap as CT_x; case-listed correction gives the actual formula and positive actual gaps for recorded rows, without changing the exact returned flat assertion. No universal inference."
+    },
+    {
+      "claim_id": "C4-F2-BOUNDED-BUDGET-SEARCH",
+      "statement": "No flat, current-rank or target budget violation occurs in the specified main F2 search; no proper selector occurs in its main or separate two-hub stress.",
+      "scope": "Main: 24,067 generated instances and 339 eligible pairs across stated small exhaustive, seeded, broom, graft and spider populations. Two-hub selector-only stress: 287 eligible pairs. Seed 9930425.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AF/EVIDENCE.json"
+      ],
+      "reason": "retained: both critics replayed the finite scripts and independently checked the star arithmetic. The two-hub run checks selector incidence only. Neither universal budget nor primary aggregate follows."
+    },
+    {
+      "claim_id": "C4-F3-TM5-EXACT-REPLAY",
+      "statement": "For T_5 formed from path 0-1-2 with five three-tip claws attached to 0, at p=10 one has alpha=17, x=8, all 16 original leaves strictly favorable, and complete S=-84215.",
+      "scope": "Exactly one ordinary tree and rank, m=5,p=10; 30<35 and x+2=p. Endpoint term -1430 and fifteen distinct tip terms -5519.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AF/EVIDENCE.json"
+      ],
+      "reason": "retained: both critics independently reconstruct the tree, strict selector and direct complete S. Report alpha=16 prose is wrong; auxiliary source C/E omit H_v deletions. Correct C=108945 and E=1648440. These errors do not alter the exact RETURN claim; no Hall or universal result follows."
+    },
+    {
+      "claim_id": "C4-F4-BOUNDED-SELECTOR-RECURRENCE-PROBE",
+      "statement": "The F4 bounded probe has no positive full S or proper selector in tested eligible rows; all-root polynomial evaluation agrees on its first eligible order-17 fixture.",
+      "scope": "All 18,248 labeled trees orders 2..7, with no eligible rows; 40 seed-20260926 Pr\u00fcfer samples at each order 16..60, with 2,535 eligible rows; root check on one 17-vertex fixture.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AF/EVIDENCE.json"
+      ],
+      "reason": "retained: critics replay the inventory and independently verify the displayed eligible fixture and its eight tagged terms. The full large sample was not independently regenerated; the rooted check concerns one tree. No universal selector or aggregate assertion follows."
+    },
+    {
+      "claim_id": "C4-F5-TM-EXACT-BOUNDED-CHECKS",
+      "statement": "For every m>=1 and every eligible p in the path-plus-m-three-tip-claws family T_m, the complete original favorable-leaf sum is conjectured nonpositive.",
+      "scope": "All m>=1 and p with x(T_m)+2<=p and strict 3p<2alpha(T_m)+1; selector applied separately to endpoint and tip orbits. Family scope only.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AF/EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: retain solely as the exact T_m open subproblem, strictly narrower than the ordinary-tree target. Exact orbit polynomials and a both-orbits derivative identity are reductions; no uniform selector or adjacent-coefficient sign proof exists. Three tips share each of m distinct supports, as the case-listed clarification says."
+    },
+    {
+      "claim_id": "C4-F6-LOW-COVER-SHELL-FAMILY-CHECK",
+      "statement": "Every eligible row in the stated finite T_m, equal-arm and lopsided boxes has nonpositive full S under the strict original selector.",
+      "scope": "T_m m=1..100: 2,743 eligible rows; equal-arm r=1..6,m=1..15: 347; lopsided s in {1,2,4,5},m=2..20: 400. Graph cross-check covers 100 T_m and 52 lopsided eligible rows.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AF/EVIDENCE.json"
+      ],
+      "reason": "retained: exact coefficient replay, graph-DP cross-check and small literal enumeration support these exact finite boxes. The all-m assertion and general ordinary-tree aggregate remain open."
+    },
+    {
+      "claim_id": "E993-ORDINARY-TM-LOWER-REGION-AGGREGATE",
+      "statement": "In the sorted positive-arm root-with-centers family at n=2p+4,p=10..13, the sole eligible profile is p=10,(2,3,3,3,3,3), with 17 selected negative terms and S=-122805.",
+      "scope": "Complete integer partitions with 1<=c<=6, m_i>=1 sorted, sum m_i=2p+3-c; candidate counts 199,279,384,517. Excludes other low-cover skeletons.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AF/EVIDENCE.json"
+      ],
+      "reason": "retained: independent branch-product census confirms counts and complete eligible sum. Source c=1 selector omits a root leaf only in ineligible cases. The case-listed clarification correctly identifies Delta_18=-1 and Delta_19=0. No universal shell or aggregate result."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-AF/REPORT.md",
+  "limitations": [
+    "No source gives a proof or eligible positive complete-sum counterexample for the ordinary-tree lower-region aggregate; its proposed status remains open.",
+    "F1, F2, F4, F5 bounded and F6 finite populations are restricted to their explicit recipes, seeds and generation boundaries; no unbounded conclusion follows.",
+    "The all-m T_m family assertion lacks a uniform orbit-selector and adjacent-coefficient sign proof.",
+    "F3 source auxiliary incidence counts require correction to H_v; a total orbit count is not a Hall cut or mixed-flow certificate.",
+    "No ordinary-to-governed bridge or high-tail conclusion is provided."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-F1-bounded-CTx-selector-search",
+    "C4-F2-BOUNDED-BUDGET-SEARCH",
+    "C4-F3-TM5-EXACT-REPLAY",
+    "C4-F4-BOUNDED-SELECTOR-RECURRENCE-PROBE",
+    "C4-F5-TM-EXACT-BOUNDED-CHECKS",
+    "C4-F6-LOW-COVER-SHELL-FAMILY-CHECK",
+    "E993-ORDINARY-TM-LOWER-REGION-AGGREGATE"
+  ]
+}

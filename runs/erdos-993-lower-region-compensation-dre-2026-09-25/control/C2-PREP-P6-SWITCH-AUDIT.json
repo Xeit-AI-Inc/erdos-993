@@ -1,0 +1,49 @@
+{
+  "allowed_source_files": [
+    {
+      "path": "instruments/p6-switch-flow/run.py",
+      "sha256": "0e6180b4a755318b66a966e0cc81ca56c4aec0f1aa299983f54f4cc7b3704302"
+    },
+    {
+      "path": "instruments/p6-switch-flow/PROTOCOL.md",
+      "sha256": "ace9063b460ee995ee998ec8b9965fd4ccc867e16914f2886b6bbc824c6178ba"
+    },
+    {
+      "path": "instruments/p6-switch-flow/RESULTS.json",
+      "sha256": "615394758aa1bbceb102b20de1eada3800231ddc81bc4274b533a8125812a868"
+    },
+    {
+      "path": "instruments/orbit-flow-twoforone/run.py",
+      "sha256": "d5caf24ae2c32445ea7a4a5d318f5c3fa2880c3e0f886eb07c0e22b4c47a153b"
+    },
+    {
+      "path": "instruments/orbit-flow/run.py",
+      "sha256": "5d89cc1e18df9e32b15a20f881e3f66a9cff45eb689dec00cb41f8393afaaa9a"
+    },
+    {
+      "path": "instruments/p6-order14-15/RESULTS.json",
+      "sha256": "eba40e10d2045112753bcad82a7f3e3ef753db3ee38e06c0870bd3891243974b"
+    },
+    {
+      "path": "inputs/ordinary_tree_checked.py",
+      "sha256": "a012bb78915ccdfa2f729c0cdb520cd8f29572277123c92e80ba6091498f533d"
+    },
+    {
+      "path": "control/C2-GLOBAL-WEIGHT-COORDINATES.md",
+      "sha256": "37b3cd45eb038af04b0fb93cb7387eda084011975d633f78407459a6273e9af6"
+    },
+    {
+      "path": "preparation/C2-PREP-ORBIT-AUDIT/REPORT.md",
+      "sha256": "6f884ed866ef50fc406431f27ee776d003a8d9e3faedf9cb493fdb9adbbb5b9b"
+    },
+    {
+      "path": "control/C2-REGISTERED-CLAIM-IDENTITY.json",
+      "sha256": "a02e53c2865e6b60a7ac97605ba806b08c31f032bae8b59a32c37067e2187da4"
+    }
+  ],
+  "model": "gpt-6-sol",
+  "reasoning_effort": "high",
+  "status_authority": "proposed_worker_only",
+  "task": "Independently audit the bounded p=6 literal-set switch-flow certificates for all 241 eligible census trees. Independently reconstruct original trees, alpha, first strict descent, fixed original favorable leaves, q and full aggregate from bitmask independent sets. Independently validate every positive-flow arc (deletion or remove exactly two neighbors and insert their absent common vertex), weighted source capacity, lower capacity, and conservation. Verify completeness against the pinned census and scope n14/15 p6. Do not rerun producers in place. Write your own independent checker in scratch and REPORT.md/RESULTS.json with explicit computational-only grade and exact coverage. Distinguish flow feasibility from universal theorem. Prior orbit audit is context, not substitute for literal verification. No Lean, registry edits, extra workers, or status award. This is later-cycle controller preparation, not C2 synthesis input.",
+  "worker_id": "C2-PREP-P6-SWITCH-AUDIT"
+}

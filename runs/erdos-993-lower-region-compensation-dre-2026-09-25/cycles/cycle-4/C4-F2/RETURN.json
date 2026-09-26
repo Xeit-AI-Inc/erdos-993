@@ -1,0 +1,27 @@
+{
+  "worker_id": "C4-F2",
+  "cycle": 4,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C4-F2-BOUNDED-BUDGET-SEARCH",
+      "statement": "No violation of the flat addability budget, current-rank addability budget, or target budget occurred in the stated finite search; no eligible pair in the main or two-hub selector corpus had a proper favorable subset.",
+      "scope": "24,067 generated tree instances and 339 eligible tree/rank pairs in the main corpus; additionally 287 eligible pairs in the stated two-hub graft selector stress. These are finite samples and profile families exactly as detailed in EVIDENCE.json.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-F2/EVIDENCE.json",
+        "cycles/cycle-4/C4-F2/SEARCH.py",
+        "cycles/cycle-4/C4-F2/PROFILE-SEARCH.py"
+      ],
+      "reason": "Exact bounded arithmetic found no budget violation, but every eligible favorable set equaled the full original leaf set and the generation is not exhaustive beyond its stated small orders and families. It settles neither universal validity nor falsity, and it did not test proper-selector cancellation."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-F2/REPORT.md",
+  "limitations": [
+    "The search is finite and gives no universal conclusion about the ordinary-tree aggregate or any budget.",
+    "No proper favorable subset occurred in the eligible main corpus or the stated two-hub profile family, leaving the assigned proper-selector adversarial regime untested.",
+    "The two-hub profile companion search tested selector membership only; all three budgets were evaluated in the main corpus."
+  ],
+  "status_authority": "proposed_worker_only"
+}

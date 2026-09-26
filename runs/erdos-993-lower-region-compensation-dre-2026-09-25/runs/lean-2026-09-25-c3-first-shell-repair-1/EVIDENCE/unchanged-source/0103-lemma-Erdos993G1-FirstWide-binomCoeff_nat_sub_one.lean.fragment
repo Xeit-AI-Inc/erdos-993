@@ -1,0 +1,8 @@
+namespace Erdos993G1.FirstWide
+
+lemma binomCoeff_nat_sub_one (n k : ℕ) (hk : 1 ≤ k) :
+    binomCoeff n ((k : ℤ) - 1) = (n.choose (k - 1) : ℤ) := by
+  have h : (k : ℤ) - 1 = ((k - 1 : ℕ) : ℤ) := by omega
+  rw [h, binomCoeff_nat]
+
+end Erdos993G1.FirstWide

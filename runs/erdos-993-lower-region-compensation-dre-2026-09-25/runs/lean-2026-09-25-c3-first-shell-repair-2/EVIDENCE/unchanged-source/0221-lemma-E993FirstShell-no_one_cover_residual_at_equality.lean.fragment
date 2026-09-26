@@ -1,0 +1,70 @@
+namespace E993FirstShell
+
+open Classical
+
+/-- At the two-vertex deletion boundary, a cover of the residual extends to a
+two-vertex cover of the original graph. -/
+lemma no_one_cover_residual_at_equality {V : Type u} [Fintype V] [DecidableEq V]
+    (G : SimpleGraph V) [DecidableRel G.Adj] (U : Finset V)
+    (k : ℕ) (hU : U.card = 2*k+2)
+    (hno : ∀ C : Finset V, C.card ≤ 2 →
+      ¬ (∀ x y, G.Adj x y → x ∈ U → y ∈ U → x ∈ C ∨ y ∈ C))
+    (a b : V) (haU : a ∈ U) (hbU : b ∈ U) (hab : G.Adj a b)
+    (hNcard : (U.filter (fun x => x ≠ a ∧ ¬G.Adj a x)).card = 2*k) :
+    ∀ C : Finset V, C.card ≤ 1 →
+      ¬ (∀ x y, G.Adj x y →
+          x ∈ U.filter (fun z => z ≠ a ∧ ¬G.Adj a z) →
+          y ∈ U.filter (fun z => z ≠ a ∧ ¬G.Adj a z) →
+          x ∈ C ∨ y ∈ C) := by
+  classical
+  let N := U.filter (fun x => x ≠ a ∧ ¬G.Adj a x)
+  change N.card = 2*k at hNcard
+  have hbUa : b ∈ U.erase a :=
+    Finset.mem_erase.mpr ⟨hab.ne.symm, hbU⟩
+  have hsub : N ⊆ (U.erase a).erase b := by
+    intro x hx
+    obtain ⟨hxU,hxa,hnot⟩ := Finset.mem_filter.mp hx
+    refine Finset.mem_erase.mpr ⟨?_, Finset.mem_erase.mpr ⟨hxa,hxU⟩⟩
+    intro hxb
+    exact (hxb ▸ hnot) hab
+  have hEq : N = (U.erase a).erase b := by
+    apply Finset.eq_of_subset_of_card_le hsub
+    rw [Finset.card_erase_of_mem hbUa, Finset.card_erase_of_mem haU]
+    omega
+  have hneigh : ∀ x ∈ U, G.Adj a x → x = b := by
+    intro x hx hax
+    by_contra hxb
+    have hxN : x ∉ N := by
+      intro hxN
+      exact (Finset.mem_filter.mp hxN).2.2 hax
+    have hxE : x ∈ (U.erase a).erase b := by
+      exact Finset.mem_erase.mpr
+        ⟨hxb, Finset.mem_erase.mpr ⟨hax.ne.symm,hx⟩⟩
+    exact hxN (hEq.symm ▸ hxE)
+  intro C hC hcov
+  have hcard : (insert b C).card ≤ 2 := by
+    have hi := Finset.card_insert_le b C
+    omega
+  apply hno (insert b C) hcard
+  intro x y hxy hx hy
+  by_cases hxb : x = b
+  · left; simp [hxb]
+  by_cases hyb : y = b
+  · right; simp [hyb]
+  have hxa : x ≠ a := by
+    intro he
+    exact hyb (hneigh y hy (he ▸ hxy))
+  have hya : y ≠ a := by
+    intro he
+    exact hxb (hneigh x hx (by simpa [he] using hxy.symm))
+  have hxN : x ∈ N := by
+    rw [hEq]
+    exact Finset.mem_erase.mpr ⟨hxb, Finset.mem_erase.mpr ⟨hxa,hx⟩⟩
+  have hyN : y ∈ N := by
+    rw [hEq]
+    exact Finset.mem_erase.mpr ⟨hyb, Finset.mem_erase.mpr ⟨hya,hy⟩⟩
+  rcases hcov x y hxy hxN hyN with hxC | hyC
+  · exact Or.inl (Finset.mem_insert_of_mem hxC)
+  · exact Or.inr (Finset.mem_insert_of_mem hyC)
+
+end E993FirstShell

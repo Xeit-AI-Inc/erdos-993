@@ -1,0 +1,26 @@
+{
+  "worker_id": "C1-F2",
+  "cycle": 1,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C1-F2-1",
+      "statement": "In the fixed-seed bounded search of 1,200 asymmetric rooted-tree cases of orders 9 through 36, all 878 eligible tree-rank rows had nonpositive complete favorable-leaf aggregates; none had a positive individual tagged summand.",
+      "scope": "Only the generated sample defined by seed 99320260925 and the three documented rooted-tree generation modes; this does not assert the inequality for all ordinary trees.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-F2/evidence/search.py",
+        "cycles/cycle-1/C1-F2/evidence/search_results.json"
+      ],
+      "reason": "Exact integer DP and the corrected terminal-descent evaluator checked alpha, x, both strict rank guards, every original leaf selector, tag multiplicity, and the full aggregate in each eligible row. The finite seeded sample found no positive aggregate and cannot decide the universal statement."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-F2/REPORT.md",
+  "limitations": [
+    "The random generation is restricted to rooted recursive trees and small-backbone trees with independently grown rooted gadgets, at orders 9 through 36; it is not exhaustive over ordinary trees.",
+    "No positive local tagged term occurred in the sample, so this search provides no observed example of compensation across positive and negative terms.",
+    "The search does not prove or refute the registered universal aggregate inequality."
+  ],
+  "status_authority": "proposed_worker_only"
+}

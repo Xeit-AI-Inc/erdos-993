@@ -1,0 +1,42 @@
+{
+  "worker_id": "C2-CF-T4",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C2-T4-PATH-OCCUPANCY",
+      "statement": "For every eligible path P_n with n>=4, the complete fixed-selector aggregate is nonpositive, equivalently its fixed-selector weighted occupancy sum at size p+1 is at most that at size p.",
+      "scope": "Ordinary paths P_n, n>=4, satisfying x(P_n)+2<=p and 3p<2 alpha(P_n)+1; both original endpoint tags are selected and have distinct supports.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CF-T4/REPORT.md",
+        "cycles/cycle-2/C2-CF-T4/AUDIT-EVIDENCE.md",
+        "cycles/cycle-2/C2-CF-T4/replay_path.py"
+      ],
+      "reason": "retained: the endpoint selector follows from the path rank-ratio comparison and the path recurrence gives the exact two-tag sum 2*(i_(p-1)(P_(n-4))-i_(p-2)(P_(n-4))), which is nonpositive under the stated first-descent guard, including zero-extended ranks."
+    },
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "The complete fixed-selector favorable-original-leaf sum is nonpositive for every eligible ordinary tree.",
+      "scope": "Primary registered scope: ordinary finite trees, x(T)+2<=p, 3p<2 alpha(T)+1, with the original strict selector and all original leaf tags counted with multiplicity.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CF-T4/REPORT.md",
+        "cycles/cycle-2/C2-CF-T4/AUDIT-EVIDENCE.md"
+      ],
+      "reason": "retained as the exact registered open target only: the weighted occupancy reformulation is correct, but no adjacent-rank comparison for branching trees or complete-sum counterexample is established. No universal truth disposition is inferred."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CF-T4/REPORT.md",
+  "limitations": [
+    "The branching-tree aggregate remains open; the route supplies no global weighted adjacent-rank inequality or full-sum counterexample.",
+    "The replay checks only the stated finite path range and is not an exhaustive ordinary-tree census.",
+    "No external theorem, generic graph-order result, or pointwise leaf-sign assertion was used to extend the path result."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-T4-PATH-OCCUPANCY",
+    "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE"
+  ]
+}

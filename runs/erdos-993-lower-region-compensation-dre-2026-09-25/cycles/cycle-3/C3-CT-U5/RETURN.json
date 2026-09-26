@@ -1,0 +1,40 @@
+{
+  "worker_id": "C3-CT-U5",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C3-U5-EARLY-DESCENT-MARKED-OCCUPANCY-BRIDGE",
+      "statement": "Conditional on the source route's selected-tag addability total being at most the total tagged-set count times the mean addability of independent x(T)-sets in T, the complete selected sum is nonpositive.",
+      "scope": "Exact fixed F(T,p), each original leaf tagged separately, H_v and W_v from the solution contract; all original lower-region rank guards apply. The transfer premise remains unproved universally.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CT-U5/REPORT.md",
+        "cycles/cycle-3/C3-CT-U5/EVIDENCE.json"
+      ],
+      "reason": "retained — the double count, bipartite addability bound, tagged extension identity and coefficient algebra establish the conditional implication, including Q=0."
+    },
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "For every finite ordinary tree T and natural p with x(T)+2<=p and 3p<2alpha(T)+1, the complete sum over original leaves v with Delta_p(T-v)<0 of Delta_(p-1)(T-{v,s_v})-Delta_(p-1)(T-N_T[s_v]) is nonpositive.",
+      "scope": "Exact lower-region ordinary-tree aggregate from SOLUTION-CONTRACT.md, with fixed original strict selector and a separate summand for every original leaf.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CT-U5/REPORT.md",
+        "cycles/cycle-3/C3-CT-U5/EVIDENCE.json"
+      ],
+      "reason": "retained — the source leaves the exact target open and identifies a material universal transfer premise that is not proved; this critique finds no resolution of the target."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CT-U5/REPORT.md",
+  "limitations": [
+    "The universal marked occupancy transfer premise is not established, so the conditional lemma does not prove the primary aggregate.",
+    "No exhaustive computation, counterexample, or imported theorem was used or claimed."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C3-U5-EARLY-DESCENT-MARKED-OCCUPANCY-BRIDGE",
+    "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE"
+  ]
+}

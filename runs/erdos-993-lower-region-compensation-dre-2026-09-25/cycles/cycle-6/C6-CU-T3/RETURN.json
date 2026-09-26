@@ -1,0 +1,31 @@
+{
+  "worker_id": "C6-CU-T3",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "E993-ORDINARY-PATH-STAR-ARITY-2-12-M100000000-LOWER-REGION-AGGREGATE",
+      "statement": "For the finite tree formed from path 0-1-2 by attaching m distinct centers to 0 and r_i private leaves to center i, where every r_i is in {2,...,12} and m>=100000000, the complete original strict-favorable-leaf aggregate S(T,p) is strictly negative for every natural p satisfying x(T)+2<=p and 3p<2 alpha(T)+1.",
+      "scope": "Only the displayed path-plus-private-stars family, all arity profiles with 2<=r_i<=12, m>=100000000, original leaves and supports with each tip separately tagged, the fixed strict selector Delta_p(T-v)<0, and eligible strict-lower-region ranks. The endpoint tag is pooled by spreading its zL^N contribution across tip weights only after summing; no per-tip identity with that redistributed polynomial is asserted.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CU-T3/EVIDENCE.json",
+        "cycles/cycle-6/C6-CU-T3/DIRECT-GRAPH-CHECKS.json",
+        "cycles/cycle-6/C6-CU-T3/independent_replay.py",
+        "cycles/cycle-6/C6-CU-T3/audit_replay.py"
+      ],
+      "reason": "retained_narrowed: the family conclusion and full pooled sum survive after correcting the route's false individual tip identity q_tip=zZ_i. Direct deletion gives q_tip=z[(1+2z)F_(r_i)H_i+L^N] and q_endpoint=zL^N; summing all N distinct tips and the endpoint gives exactly z sum_i r_i Z_i with Z_i=(1+2z)F_(r_i)H_i+((N+1)/N)L^N. The selector uses A_0 and A_i, and the pooled S identity then follows. The finite factor and cutoff arithmetic replayed, and no scope or selector counterexample was found. I did not independently rederive the full uniform mixed-minor and perturbation-envelope estimates, so the family proof remains proposed open rather than independently verified."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CU-T3/REPORT.md",
+  "limitations": [
+    "The central mixed-minor and perturbation-envelope estimates were not independently rederived in full; the route replay checks factor rows and cutoff arithmetic but not every symbolic bridge.",
+    "The two direct tree enumerations verify formulas only for profiles (2,3) and (4,2,2), not the large-m family theorem.",
+    "The critique proposes no arbitrary-tree conclusion and no authoritative status change."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-ORDINARY-PATH-STAR-ARITY-2-12-M100000000-LOWER-REGION-AGGREGATE"
+  ]
+}

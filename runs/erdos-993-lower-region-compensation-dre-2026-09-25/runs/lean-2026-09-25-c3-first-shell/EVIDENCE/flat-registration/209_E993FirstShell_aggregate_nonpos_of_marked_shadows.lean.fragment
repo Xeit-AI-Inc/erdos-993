@@ -1,0 +1,15 @@
+namespace E993FirstShell
+
+lemma aggregate_nonpos_of_marked_shadows {V : Type u} [Fintype V] [DecidableEq V]
+    (T : SimpleGraph V) [DecidableRel T.Adj] (p : ℕ) (hp : 1 ≤ p)
+    (hshadow : ∀ v, C4LA1.IsGraphLeaf T v →
+      (E993Interior.taggedFamily T (Finset.univ \ C5LA1.H T v)
+        (C5LA1.R T v \ C5LA1.H T v) p).card ≤
+      (E993Interior.taggedFamily T (Finset.univ \ C5LA1.H T v)
+        (C5LA1.R T v \ C5LA1.H T v) (p-1)).card) :
+    C5LA1.aggregate T p ≤ 0 := by
+  apply aggregate_nonpos_of_leaf_terms T p
+  intro v hv
+  exact leaf_term_nonpos_of_marked_shadow T v p hv hp (hshadow v hv)
+
+end E993FirstShell

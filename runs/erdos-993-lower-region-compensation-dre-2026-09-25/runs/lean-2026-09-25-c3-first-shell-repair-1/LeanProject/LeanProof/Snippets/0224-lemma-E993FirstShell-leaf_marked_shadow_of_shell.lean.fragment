@@ -1,0 +1,39 @@
+namespace E993FirstShell
+
+open Classical
+
+/-- The marked shadow inequality for every original leaf under the shell guards. -/
+lemma leaf_marked_shadow_of_shell {V : Type u} [Fintype V] [DecidableEq V]
+    (T : SimpleGraph V) [DecidableRel T.Adj] (v : V) (p : ℕ)
+    (hT : T.IsTree) (hv : C4LA1.IsGraphLeaf T v)
+    (hp : 3 ≤ p) (horder : Fintype.card V = 2*p+2)
+    (hcross : C5LA1.crossingIndex T + 2 ≤ p) :
+    (E993Interior.taggedFamily T (Finset.univ \ C5LA1.H T v)
+      (C5LA1.R T v \ C5LA1.H T v) p).card ≤
+    (E993Interior.taggedFamily T (Finset.univ \ C5LA1.H T v)
+      (C5LA1.R T v \ C5LA1.H T v) (p-1)).card := by
+  classical
+  let U := Finset.univ \ C5LA1.H T v
+  let W := C5LA1.R T v \ C5LA1.H T v
+  have hWU : W ⊆ U := by
+    intro x hx
+    exact Finset.mem_sdiff.mpr
+      ⟨Finset.mem_univ _, (Finset.mem_sdiff.mp hx).2⟩
+  have hno : ∀ C : Finset V, C.card ≤ 2 →
+      ¬ (∀ x y, T.Adj x y → x ∈ U → y ∈ U → x ∈ C ∨ y ∈ C) := by
+    intro C hC hc
+    apply no_two_cover_retained T v p hv hp horder hcross C hC
+    intro x y hxy hx hy
+    exact hc x y hxy
+      (Finset.mem_sdiff.mpr ⟨Finset.mem_univ _,hx⟩)
+      (Finset.mem_sdiff.mpr ⟨Finset.mem_univ _,hy⟩)
+  have hU : U.card = 2*(p-1)+2 :=
+    leaf_retained_card_firstWide T v p hv (by omega) horder
+  obtain ⟨a,haW,b,hbU,hab⟩ := leaf_nonisolated_mark T v p hT hv hp horder hcross
+  have haU : a ∈ U := hWU haW
+  have hshadow := tagged_bound_firstWide_no_two_cover T U W (p-1)
+    (by omega) hU hWU hno a b haU haW hbU hab
+  have hp' : p-1+1=p := by omega
+  simpa only [U, W, hp'] using hshadow
+
+end E993FirstShell

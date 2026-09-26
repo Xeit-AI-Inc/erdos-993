@@ -1,0 +1,33 @@
+{
+  "worker_id": "C4-CT-F3",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C4-F3-TM5-EXACT-REPLAY",
+      "statement": "For the ordinary tree T_5 consisting of path 0-1-2 and five three-leaf claws attached at 0, at p=10 one has alpha=17, x=8, both original leaf orbits are strictly favorable, the complete favorable set has 16 leaves, and the exact full aggregate is S=-84215.",
+      "scope": "One exact eligible instance of the registered T_m family at m=5 and p=10; no universal implication.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CT-F3/REPORT.md",
+        "cycles/cycle-4/C4-CT-F3/replay.py",
+        "cycles/cycle-4/C4-CT-F3/replay-output.json",
+        "cycles/cycle-4/C4-CT-F3/independent_audit.py",
+        "cycles/cycle-4/C4-CT-F3/independent-audit.json"
+      ],
+      "reason": "retained: independent graph reconstruction and a separate rooted forest polynomial recurrence verify the claimed order, alpha=17, x=8, eligibility guards, all 16 original leaves and their strict selector values, and the complete sum -1430+15(-5519)=-84215. The source report's isolated alpha=16 sentence is contradicted by its own evidence and both computations; it is a prose typo and does not undermine the claim as stated. This is one bounded row only."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CT-F3/REPORT.md",
+  "limitations": [
+    "Only the single T_5 graph at p=10 was checked; this is not a census or a universal theorem.",
+    "The source report has an alpha=16 prose typo; the graph, evidence, return claim, and independent calculations give alpha=17.",
+    "No general proof for the lower-region aggregate or all-parameter T_m family follows from this negative-sum row.",
+    "No full mixed Hall flow or deficient-cut certificate was established by this audit."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-F3-TM5-EXACT-REPLAY"
+  ]
+}

@@ -1,0 +1,52 @@
+namespace Erdos993G1.FirstWide
+
+lemma indepCount_one_edge {Y : Type u} [Finite Y]
+    (G : SimpleGraph Y) (hc : Nat.card G.edgeSet = 1) (k : ℕ) :
+    indepCount G k = binomCoeff (Nat.card Y - 2) (k : ℤ) +
+      2 * binomCoeff (Nat.card Y - 2) ((k : ℤ) - 1) := by
+  classical
+  letI := Fintype.ofFinite Y
+  by_cases hk0 : k = 0
+  · subst k
+    simp [indepCount_zero, binomCoeff]
+  have hk1 : 1 ≤ k := by omega
+  obtain ⟨a, b, hab, he⟩ := edgeSet_one_endpoints G hc
+  have hn2 : 2 ≤ Fintype.card Y := by
+    have h := Finset.card_le_card (Finset.subset_univ ({a, b} : Finset Y))
+    simpa [hab] using h
+  let A := ((Finset.univ : Finset Y).erase a).powersetCard k
+  let B := ((Finset.univ : Finset Y).erase b).powersetCard k
+  let C := (((Finset.univ : Finset Y).erase a).erase b).powersetCard k
+  have hu : G.indepSetFinset k = A ∪ B := by
+    ext S
+    simp only [SimpleGraph.mem_indepSetFinset_iff, SimpleGraph.isNIndepSet_iff,
+      indepSet_iff_omit_unique_endpoints G a b hab he, A, B, Finset.mem_union,
+      Finset.mem_powersetCard, Finset.subset_erase, Finset.subset_univ, true_and]
+    tauto
+  have hi : A ∩ B = C := by
+    ext S
+    simp only [A, B, C, Finset.mem_inter, Finset.mem_powersetCard,
+      Finset.subset_erase, Finset.subset_univ, true_and]
+    tauto
+  have hAc : A.card = (Fintype.card Y - 1).choose k := by simp [A]
+  have hBc : B.card = (Fintype.card Y - 1).choose k := by simp [B]
+  have hCc : C.card = (Fintype.card Y - 2).choose k := by
+    simp [C, Finset.card_erase_of_mem (show b ∈ (Finset.univ : Finset Y).erase a by
+      simp [hab.symm]), Nat.sub_sub]
+  have hcard := Finset.card_union_add_card_inter A B
+  rw [← hu, hi, hAc, hBc, hCc] at hcard
+  have hcount : indepCount G k + ((Fintype.card Y - 2).choose k : ℤ) =
+      2 * ((Fintype.card Y - 1).choose k : ℤ) := by
+    rw [indepCount_eq_card_indepSetFinset]
+    exact_mod_cast (by omega : (G.indepSetFinset k).card +
+      (Fintype.card Y - 2).choose k = 2 * (Fintype.card Y - 1).choose k)
+  have hrec := Nat.choose_succ_left (Fintype.card Y - 2) k (by omega : 0 < k)
+  have hnminus : Fintype.card Y - 2 + 1 = Fintype.card Y - 1 := by omega
+  rw [hnminus] at hrec
+  have hrec' : ((Fintype.card Y - 1).choose k : ℤ) =
+      ((Fintype.card Y - 2).choose (k - 1) : ℤ) +
+      ((Fintype.card Y - 2).choose k : ℤ) := by exact_mod_cast hrec
+  rw [binomCoeff_nat, binomCoeff_nat_sub_one _ _ hk1, Nat.card_eq_fintype_card]
+  linarith
+
+end Erdos993G1.FirstWide

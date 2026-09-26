@@ -1,0 +1,45 @@
+namespace Erdos993G1.FirstWide
+
+lemma intersecting_edges_center_or_triangle {V : Type u} [Finite V]
+    (G : SimpleGraph V) (hedge : 2 ≤ Nat.card G.edgeSet)
+    (hnone : ¬ ∃ a b c d : V, G.Adj a b ∧ G.Adj c d ∧
+      Disjoint ({a,b} : Set V) {c,d}) :
+    (∃ a b c : V, G.Adj a b ∧ G.Adj a c ∧ b ≠ c ∧
+      ∀ x y : V, G.Adj x y → x = a ∨ y = a) ∨
+    (∃ a b c : V, a ≠ b ∧ a ≠ c ∧ b ≠ c ∧
+      ∀ x y : V, G.Adj x y ↔ x ≠ y ∧
+        (x = a ∨ x = b ∨ x = c) ∧ (y = a ∨ y = b ∨ y = c)) := by
+  classical
+  obtain ⟨a,b,c,hab,hac,hbc⟩ := shape_two_incident G hedge hnone
+  by_cases hc : ∀ x y : V, G.Adj x y → x = a ∨ y = a
+  · exact Or.inl ⟨a,b,c,hab,hac,hbc,hc⟩
+  push Not at hc
+  obtain ⟨x,y,hxy,hxa,hya⟩ := hc
+  have hb := shape_edges_overlap G hnone hab hxy
+  have hc := shape_edges_overlap G hnone hac hxy
+  have hadj : G.Adj b c := by
+    have hyx := hxy.symm
+    clear hnone hedge
+    aesop
+  clear hb hc hxy hxa hya
+  right
+  refine ⟨a,b,c,hab.ne,hac.ne,hbc,?_⟩
+  intro x y
+  constructor
+  · intro h
+    have h1 := shape_edges_overlap G hnone h hab
+    have h2 := shape_edges_overlap G hnone h hac
+    have h3 := shape_edges_overlap G hnone h hadj
+    have hn := h.ne
+    have habn := hab.ne
+    have hacn := hac.ne
+    clear hnone hedge hab hac hadj
+    aesop
+  · rintro ⟨hne,hx,hy⟩
+    have hba := hab.symm
+    have hca := hac.symm
+    have hcb := hadj.symm
+    clear hnone hedge
+    aesop
+
+end Erdos993G1.FirstWide

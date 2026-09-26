@@ -1,0 +1,29 @@
+{
+  "worker_id": "C5-CF-U2",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C5-U2.STAR-PRODUCT-COEFFICIENT-BOUND",
+      "statement": "For Q=product_i((1+z)^{r_i}+z), where m>=1 and each r_i is in {2,3,4}, Q >= coefficientwise binom(m,h) z^h(1+z)^{N-4h} for every integer h>=0 with 4h<=N, where N=sum_i r_i. Consequently, for N>=12 and 1<=j<=floor(2N/3), [z^j]Q>=m binom(N-4,j-1)>0 and [z^j](z(1+z)^{N+1})/[z^j]Q<=24^5/m.",
+      "scope": "Exact algebraic coefficient bound for heterogeneous bounded-arity star-factor products on the stated integer rank window only; it gives no curvature, graph realization, selector, or primary aggregate result.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CF-U2/EVIDENCE.json"
+      ],
+      "reason": "retained: the subset expansion, h=1 coefficient extraction, exact five-factor binomial ratio, and all rank and denominator bounds check on the source scope. The result has no demonstrated implication for curvature signs or the full selected tree aggregate."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CF-U2/REPORT.md",
+  "limitations": [
+    "The coefficient window stops at floor(2N/3), while the degree-based strict lower-region guard can allow ranks up to floor((2N+4)/3).",
+    "The relative coefficient bound establishes no coefficient-difference sign, log-concavity, Poisson-ULC, or mixed-minor inequality.",
+    "No graph-to-polynomial bridge, exact independence number or deletion-polynomial rank domain, or original-leaf favorable selector is established.",
+    "The complete selected aggregate remains unresolved; this review supplies no verdict on the primary target."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-U2.STAR-PRODUCT-COEFFICIENT-BOUND"
+  ]
+}

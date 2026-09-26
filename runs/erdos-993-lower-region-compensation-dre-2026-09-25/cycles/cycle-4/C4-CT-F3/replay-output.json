@@ -1,0 +1,52 @@
+{
+  "family": "T_m: path 0-1-2; m claws attached at 0; three private leaves per claw",
+  "m": 5,
+  "computation_scope": {
+    "explicit_graphs": 1,
+    "ranks_checked": [
+      10
+    ],
+    "random_seed": null
+  },
+  "order": 23,
+  "alpha": 17,
+  "x": 8,
+  "p": 10,
+  "k": 9,
+  "guards": {
+    "x_plus_2_le_p": true,
+    "three_p_lt_two_alpha_plus_one": true
+  },
+  "orbit_selector": {
+    "path_endpoint_delta_p_after_leaf_deletion": -8147,
+    "claw_leaf_delta_p_after_leaf_deletion": -6751,
+    "selected_orbits": [
+      "path endpoint",
+      "all 15 claw leaves"
+    ],
+    "complete_favorable_set_size": 16
+  },
+  "marked_counts": {
+    "q_arm_k": 6435,
+    "q_claw_k_per_leaf": 16589,
+    "q_arm_k_plus_1": 5005,
+    "q_claw_k_plus_1_per_leaf": 11070,
+    "Q": 255270,
+    "U": 171055,
+    "C_claw_per_tag": 16619,
+    "C_total": 249285,
+    "E_from_incidence_identity_kU_plus_C": 1788780
+  },
+  "full_aggregate": {
+    "arm_summand": -1430,
+    "claw_summand_per_leaf": -5519,
+    "S_direct": -84215,
+    "S_from_E_minus_C_minus_kQ_over_k": -84215,
+    "identity_check": true
+  },
+  "limits": [
+    "One eligible symmetric family member only; this is not a census or a universal proof.",
+    "No exact deficient cut in the enlarged mixed Hall network was found or certified.",
+    "Orbit counts Q,U,C do not encode arbitrary-neighborhood capacities and are not a Hall certificate."
+  ]
+}

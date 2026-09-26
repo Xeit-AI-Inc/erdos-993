@@ -1,0 +1,7 @@
+# Required adjudication distinction; no award
+
+Neither opposing critic detects the active-tag mismatch. Both retain algebra for the weight one plus the number of selected private leaves. This is not w_F of the canonical weighted network: root presence excludes every choke and therefore every private leaf tag is inactive. Independently reconstruct original supports and neighborhoods before deciding the corrected root note.
+
+At the correct active weight, each root-plus-arm member has weight1. Deleting the root or arm leaf produces zero active tags, so the positive-capacity full deletion neighborhood is exactly the residual rank490 pair layer. Its whole-sector deletion-only deficit is |R490|/491, not 2W490/491. C6-CT-U5's outside-sector deletion-capacity objection concerns the erroneous weight; it does not remove this corrected obstruction. C6-CF-U5's surplus threshold also uses the erroneous weight. Preserve both historical reviews without treating their agreement as mathematical validation.
+
+The mixed relation remains OPEN. Two-for-one insertion of a choke with exactly root plus one support occupied can exit the sector and activate selected private-leaf tags in that branch. Additional capacity and overlap still need control for arbitrary source subfamilies. No new aggregate refutation or universal flow follows. Attribute any accepted correction to the root and independently check it in adjudication.

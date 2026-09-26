@@ -1,0 +1,31 @@
+{
+  "worker_id": "C4-CT-F4",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C4-F4-BOUNDED-SELECTOR-RECURRENCE-PROBE",
+      "statement": "The route's recorded bounded probe found no positive complete aggregate and no proper favorable selector among its tested eligible rows; on one fully specified eligible tree, independent checks confirm the polynomial recurrence gives the same whole-tree polynomial at every root. The probe proves no universal selector or aggregate statement.",
+      "scope": "All labeled ordinary trees of orders 2 through 7 and 40 deterministic Prufer samples at each order 16 through 60, for every integer p satisfying x+2<=p and 3p<2 alpha+1 in those samples; root-independence independently checked on the recorded order-17 eligible tree only.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CT-F4/INDEPENDENT-CHECK.json",
+        "cycles/cycle-4/C4-CT-F4/EVIDENCE.json",
+        "cycles/cycle-4/C4-CT-F4/REPLAY.py"
+      ],
+      "reason": "retained: the pinned replay regenerates its evidence exactly, and the first eligible row independently checks by literal subset enumeration with the correct strict guards, full original-leaf selector, separate same-support tags, every selected summand, full nonpositive S, and all-root polynomial agreement. The 2,535-row inventory counts are replay output and were not independently recomputed in full; none of these bounded results proves or refutes the universal aggregate or selector behavior."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CT-F4/REPORT.md",
+  "limitations": [
+    "The universal lower-region aggregate remains unresolved by this bounded evidence.",
+    "The 2,535 sampled eligible rows were not independently re-enumerated; their zero-positive-sum and zero-proper-selector totals are the deterministic replay's recorded output.",
+    "The order-17 literal subset audit and all-root recurrence check are a single fixture and establish no universal selector or recurrence principle.",
+    "No proper-selector or changed-membership example was found in the stated finite sample; absence in this sample is not impossibility."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-F4-BOUNDED-SELECTOR-RECURRENCE-PROBE"
+  ]
+}

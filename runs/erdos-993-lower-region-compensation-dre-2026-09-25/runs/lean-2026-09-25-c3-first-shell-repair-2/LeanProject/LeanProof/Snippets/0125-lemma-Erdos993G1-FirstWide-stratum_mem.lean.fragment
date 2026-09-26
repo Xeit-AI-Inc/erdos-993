@@ -1,0 +1,13 @@
+namespace Erdos993G1.FirstWide
+
+lemma stratum_mem {X : Type u} [Fintype X] [dX : DecidableEq X]
+    (G : SimpleGraph X) (M S : Finset X) (k j : ℕ) :
+    S ∈ stratum G M k j ↔ G.IsNIndepSet k S ∧ (S ∩ M).card = j := by
+  classical
+  simp only [stratum, Finset.mem_filter, SimpleGraph.mem_indepSetFinset_iff]
+  have hd : (fun a b : X => Classical.propDecidable (a = b)) =
+      dX := Subsingleton.elim _ _
+  cases hd
+  rfl
+
+end Erdos993G1.FirstWide

@@ -1,0 +1,36 @@
+{
+  "route": "C4-U4",
+  "scope": "Colored matching-sector unweighted lower shadow, normalized matching, and whether these preserve an added insertion boundary.",
+  "literature_bridge": {
+    "source": "Kai Fong Ernest Chong, arXiv:1403.3158v2",
+    "results": ["Theorem 1.2(i)", "Theorem 2.1(iii)"],
+    "ring": "K[x_1,y_1,...,x_n,y_n]/((x_1,y_1)^2+...+(x_n,y_n)^2)",
+    "type": "(1,...,1)",
+    "composition": "(2,...,2)",
+    "basis_semantics": "degree-k monomials are independent k-sets in an n-edge matching",
+    "consequence": "revlex rank-k family has a lower shadow no larger than the original family in the matching-sector face poset",
+    "not_concluded": "No tag-sensitive or hub-insertion/mixed-boundary bound follows."
+  },
+  "normalized_matching": {
+    "source": "West, Harper, Daykin, JCTA 35 (1983), p.303",
+    "factor": "one empty face and two singleton choices, rank sizes (1,2)",
+    "application": "product matching-sector face poset has normalized matching via the product theorem and log-concave rank sizes",
+    "not_concluded": "The flow is for ordinary adjacent-rank cover edges, not the extra hub-insertion relation or a selected-tag weighted Hall cut."
+  },
+  "exact_compression_obstruction": {
+    "vertices": ["a", "b", "h"],
+    "edges": [["a", "b"], ["a", "h"]],
+    "color_pair": ["a", "b"],
+    "rank": 1,
+    "family_before": [["b"]],
+    "family_after_revlex": [["a"]],
+    "revlex_order": "{a} precedes {b}",
+    "lower_shadow_before": [[]],
+    "lower_shadow_after": [[]],
+    "addable_before": ["h"],
+    "addable_after": [],
+    "arithmetic": "|lower shadows|=1 in both; extra addability changes from 1 to 0",
+    "scope_limit": "Model obstruction to automatic preservation when external adjacency distinguishes endpoints; not an instance or refutation of a pinned CB mixed inequality."
+  },
+  "primary_target_status": "No proof or refutation supplied; no universal conclusion from this bounded model."
+}

@@ -1,0 +1,29 @@
+{
+  "worker_id": "C3-CF-T6",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C3-T6-T4-PENDANT-GRAFT-SELECTOR-CLOSURE",
+      "statement": "The specified T4 and T4 with one pendant leaf attached at root 0, at p=9, have the reported complete strict favorable selectors and full sums -9792 and -16983; the finite computation is correct.",
+      "scope": "Exactly the two encoded ordinary trees T4 and T4 plus one root-0 pendant leaf, at p=9, with original leaf supports and the full strict selector. This confirms no general branch-graft closure or universal aggregate result.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-T6/COMPUTE.py",
+        "cycles/cycle-3/C3-CF-T6/REPLAY.json"
+      ],
+      "reason": "retained: the rooted tree recipe gives orders 19 and 20; the exact vectors give alpha=14 and first descent x=7 in each, meeting p=x+2=9 and 27<29. Replaying a scratch copy reproduces the sealed route evidence exactly, including every original leaf selector sign, all same-support leaf summands, and the totals 12(-816)=-9792 and 12(-1344)-855=-16983. The finite claim is valid at this scope; no broader graft rule follows."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CF-T6/REPORT.md",
+  "limitations": [
+    "The result concerns only two explicit trees, one graft at root 0, and p=9; it gives no induction or general selector-closure theorem.",
+    "The computation does not resolve the universal lower-region aggregate. Its negative finite sums are examples, not a proof for all eligible trees.",
+    "The scratch replay reruns the route's exact-integer recursion; it is bounded evidence and not a separately formalized proof."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C3-T6-T4-PENDANT-GRAFT-SELECTOR-CLOSURE"
+  ]
+}

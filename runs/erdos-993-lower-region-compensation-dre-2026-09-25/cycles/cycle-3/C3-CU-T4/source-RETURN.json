@@ -1,0 +1,25 @@
+{
+  "worker_id": "C3-T4",
+  "cycle": 3,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C3-T4-ODD-SHELL-REDUCTION",
+      "statement": "At parent order n=2p+3, the first-mark expansion reduces the marked difference to residuals J_i of order at most 2k+1 (k=p-1); order 2k+1 occurs only for the first mark of degree one, and order 2k occurs only in the two stated three-vertex deletion configurations. For residuals of order at most 2k-1, i_k(J_i)-i_(k-1)(J_i) is nonpositive. An exact sign formula is established for the subclass consisting of k disjoint edges and one isolated vertex.",
+      "scope": "Structural first-mark reduction at n=2p+3 and exact matching-plus-isolate residual calculation; not the complete favorable-leaf sum.",
+      "status": "proposed_partial",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-T4/EVIDENCE.json"
+      ],
+      "reason": "The result isolates the new odd and even boundary residuals and supplies exact arithmetic for one odd-order forest subclass. No sign theorem for all boundary residuals, guarded tree lift of the matching subclass, or global compensation bound is proved, so the primary assertion remains unresolved."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-T4/REPORT.md",
+  "limitations": [
+    "No universal sign bound is established for order-2k+1 or order-2k first-mark residuals at this parent order.",
+    "No full-sum counterexample or proof is established; local residual signs alone would not decide S(T,p).",
+    "The matching-plus-isolate calculation is not shown realizable under the ordinary-tree selector and rank guards."
+  ],
+  "status_authority": "proposed_worker_only"
+}

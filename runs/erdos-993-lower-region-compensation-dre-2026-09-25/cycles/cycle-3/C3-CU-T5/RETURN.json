@@ -1,0 +1,43 @@
+{
+  "worker_id": "C3-CU-T5",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "T5-TM-COEFFICIENT-IDENTITY",
+      "statement": "For the explicit T_m family and its displayed polynomials, Q_all=(3m+1)z(1+z)^(3m)+3m z(2+5z+2z^2)(1+4z+3z^2+z^3)^(m-1), and when both original leaf orbits pass the strict selector, the complete selected sum is [z^p]Q_all-[z^(p-1)]Q_all.",
+      "scope": "Exact conditional algebraic identity for T_m; no selector-coincidence theorem or universal sign conclusion.",
+      "status": "proposed_proved_informal",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CU-T5/REPORT.md",
+        "cycles/cycle-3/C3-CU-T5/COMPUTE-replay.py",
+        "cycles/cycle-3/C3-CU-T5/EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: the root split and tagged q_p-q_(p-1) relation establish the identity under the both-orbits-selected condition. The route does not establish that condition uniformly or a coefficient sign."
+    },
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "The copied route computation gives negative complete selected sums for every eligible T_m row with 1<=m<=50.",
+      "scope": "Bounded exact evidence for the explicit T_m family, m=1,...,50, over every integer p with x(T_m)+2<=p and 3p<2alpha(T_m)+1; not the universal ordinary-tree assertion.",
+      "status": "proposed_computational_bounded",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CU-T5/REPORT.md",
+        "cycles/cycle-3/C3-CU-T5/COMPUTE-replay.py",
+        "cycles/cycle-3/C3-CU-T5/EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: the copied exact-integer replay reproduces all 674 eligible rows and the stated compensation example. No infinite-family selector/sign proof or general-tree proof is supplied, so the registered primary claim remains open."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CU-T5/REPORT.md",
+  "limitations": [
+    "The computation replay is a rerun of a copied route script, not an independent second implementation.",
+    "Symbolic formulas are checked against the allowed T_m coefficient direction and root split; the underlying independent-set polynomials were not exhaustively recomputed from graph encodings for every m.",
+    "The evidence is bounded to T_m for 1<=m<=50 and does not settle the infinite family or arbitrary ordinary trees."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+    "T5-TM-COEFFICIENT-IDENTITY"
+  ]
+}

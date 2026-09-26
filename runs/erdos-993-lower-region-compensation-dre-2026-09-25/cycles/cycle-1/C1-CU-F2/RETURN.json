@@ -1,0 +1,31 @@
+{
+  "worker_id": "C1-CU-F2",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C1-F2-1",
+      "statement": "In the fixed-seed bounded search of 1,200 asymmetric rooted-tree cases of orders 9 through 36, all 878 eligible tree-rank rows had nonpositive complete favorable-leaf aggregates; none had a positive individual tagged summand.",
+      "scope": "Retained only for the seeded sample (99320260925), three documented rooted-tree generation modes and orders 9-36; no assertion for all finite ordinary trees. Replay confirmed the sample result after a disclosed path/output adaptation.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CU-F2/evidence/search_replay.py",
+        "cycles/cycle-1/C1-CU-F2/evidence/search_results_replay.json",
+        "cycles/cycle-1/C1-CU-F2/evidence/replay_comparison.json",
+        "cycles/cycle-1/C1-CU-F2/evidence/source_result_summary.json"
+      ],
+      "reason": "retained \u2014 The copied replay exactly reproduces all 1,200 cases, 878 eligible rows, no positive terms/aggregates, and the complete best-row arithmetic using the authorized corrected evaluator. This is bounded computation only. The source script\u2019s literal import path is wrong at its sealed location and its output path overwrites sealed evidence; the copied replay fixes both paths without changing the generator or evaluator logic. The result supplies no proof or refutation of the universal inequality."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CU-F2/REPORT.md",
+  "limitations": [
+    "The result covers only the fixed-seed sample, generator modes and orders 9-36; no exhaustive generation boundary for all ordinary trees is established.",
+    "The source replay cannot safely be run at its sealed location because its import path resolves incorrectly and its output path overwrites sealed results; the adapted copy and path change are disclosed.",
+    "The result does not prove or refute the universal lower-region aggregate, and the sample contains no positive tagged summands."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-F2-1"
+  ]
+}

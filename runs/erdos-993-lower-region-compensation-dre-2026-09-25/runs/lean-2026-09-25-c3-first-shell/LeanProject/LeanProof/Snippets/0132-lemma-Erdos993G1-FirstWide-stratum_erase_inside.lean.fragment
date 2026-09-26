@@ -1,0 +1,17 @@
+namespace Erdos993G1.FirstWide
+
+lemma stratum_erase_inside {X : Type u} [Fintype X] [DecidableEq X]
+    (G : SimpleGraph X) (M S : Finset X) (k j : ℕ)
+    (hS : S ∈ stratum G M (k+1) (j+1)) (a : X) (ha : a ∈ S ∩ M) :
+    S.erase a ∈ stratum G M k j := by
+  have hs := (stratum_mem G M S (k+1) (j+1)).mp hS
+  apply (stratum_mem G M (S.erase a) k j).mpr
+  refine ⟨⟨hs.1.isIndepSet.mono (by exact Finset.erase_subset a S), ?_⟩, ?_⟩
+  · have hc := Finset.card_erase_add_one (Finset.mem_inter.mp ha).1
+    rw [hs.1.card_eq] at hc
+    omega
+  · have hc := Finset.card_erase_add_one ha
+    rw [← erase_inter_eq, hs.2] at hc
+    omega
+
+end Erdos993G1.FirstWide

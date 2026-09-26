@@ -1,0 +1,30 @@
+{
+  "worker_id": "C1-CT-F6",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C1-F6-1",
+      "statement": "The exact bounded searches find no positive complete selected aggregate in 456 generated spider arm-length multisets (2-6 arms, each length 1-5) and 1,760 seeded Prüfer sequence draws at the eight stated orders; these are finite observations only.",
+      "scope": "Retained only for the generated spider parameter multisets and the stated seeded Prüfer draws and eligible rank rows. The 456 count is not asserted to be a count of distinct isomorphism classes, and the Prüfer draws are not deduplicated or exhaustive. No conclusion follows for all ordinary trees.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CT-F6/evidence/replay_search.py",
+        "cycles/cycle-1/C1-CT-F6/evidence/ordinary_tree.py",
+        "cycles/cycle-1/C1-CT-F6/evidence/replayed-results.json"
+      ],
+      "reason": "retained_narrowed: replay from scratch-local copies produced JSON structurally identical to the sealed results. The corrected scan includes ranks through alpha; both strict rank guards and the fixed selector are used, and the complete sum is computed with exact integer tree-DP coefficients. Narrowing makes explicit that the spider count is parameter multisets rather than unique trees and the seeded Prüfer count is draws rather than distinct trees. The bounded evidence neither proves nor refutes the universal assertion."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CT-F6/REPORT.md",
+  "limitations": [
+    "The Prüfer sequences form a seeded finite sample and may produce repeated labeled trees; the sample is not exhaustive.",
+    "The spider search covers only arm counts 2 through 6 and arm lengths 1 through 5; parameter multisets can encode isomorphic trees.",
+    "The result supplies no proof, eligible counterexample, or universal deficit budget for the lower-region assertion."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-F6-1"
+  ]
+}

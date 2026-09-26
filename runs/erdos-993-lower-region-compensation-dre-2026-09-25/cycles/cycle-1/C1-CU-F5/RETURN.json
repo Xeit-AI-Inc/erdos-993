@@ -1,0 +1,28 @@
+{
+  "worker_id": "C1-CU-F5",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C1-F5-1",
+      "statement": "The scalar incidence-deficit relaxation admits the reported positive local profile, and profiles arising from an ordinary tree must obey the stated rooted-component factorization, selector equation, and same-support all-or-none selection rule; these constraints do not establish the lower-region aggregate inequality or a counterexample.",
+      "scope": "Audit of C1-F5-1 only: its abstract scalar profile and structural necessary conditions for leaf profiles in finite ordinary trees; no sign conclusion for the complete selected sum.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CU-F5/evidence/AUDIT.json"
+      ],
+      "reason": "retained: the scalar arithmetic is exact, and deleting a support vertex in a tree gives rooted components with one root each; the stated factorization and selector equation follow by the include/exclude decomposition at each root and at the support. The scalar profile is not certified tree-realizable and gives no full selected sum. The structural constraints are necessary only, leaving the global deficit budget and primary target unresolved."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CU-F5/REPORT.md",
+  "limitations": [
+    "The abstract scalar profile is not realized by a bipartite graph, rooted forest, or ordinary tree in the evidence.",
+    "No aggregate deficit budget is proved after imposing the tree factorization and selector constraints.",
+    "The shared finite controls were not independently recomputed and do not decide the universal target."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-F5-1"
+  ]
+}

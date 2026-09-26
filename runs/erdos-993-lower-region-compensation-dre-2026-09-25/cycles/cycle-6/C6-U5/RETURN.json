@@ -1,0 +1,25 @@
+{
+  "worker_id": "C6-U5",
+  "cycle": 6,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C6-U5-CB-sector-deficit",
+      "statement": "For the full distinguished root-plus-arm sector of CB(8,92) at p=492, ordinary rank-491-to-rank-490 deletion alone has a selected-tag weighted mass ratio 493/491, so a deletion-only capacity argument is short by 2 W_490/491; this yields a necessary whole-sector surplus threshold for switch targets under the stated weighting.",
+      "scope": "The CB(8,92) root-plus-arm sector with 736 disjoint support-leaf pairs, source rank 491, deletion rank 490, and weight 1 plus the number of selected branch leaves. This is not a mixed Hall theorem for arbitrary subfamilies or trees.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-U5/EVIDENCE.json"
+      ],
+      "reason": "The rank and weighted-mass ratios follow by exact counting in the colored pair-choice sector. The result isolates a necessary amount of usable two-for-one switch capacity but does not establish that capacity, control overlap or competing demand, or settle the primary aggregate."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-U5/REPORT.md",
+  "limitations": [
+    "The selected-tag mass calculation is confined to one whole sector and is not an arbitrary-subfamily weighted Hall bound.",
+    "The available CB(8,92) conservative switch-cut envelope is inconclusive and does not certify a feasible flow or deficient cut.",
+    "No universal conclusion for ordinary trees follows from this bounded structural analysis."
+  ],
+  "status_authority": "proposed_worker_only"
+}

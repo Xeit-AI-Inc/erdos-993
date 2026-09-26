@@ -1,0 +1,263 @@
+{
+  "worker_id": "C2-LA1-PRODUCER",
+  "status": "complete_compiled_proposal",
+  "contract_id": "e993-c2-order-band-pair-v2",
+  "candidate_path": "Candidate.lean",
+  "candidate_sha256": "fe214c6a60e5d5847bd2ca927fec43574d874a635e61dfc1930be0c1c900f6e1",
+  "terminal_name": "E993OrderBand.markedIsolateAndOrdinaryLeafOrderBand",
+  "terminal_header_matches_contract": true,
+  "terminal_statement_sha256": "2f76927cdaeade070834c224eae8d5a846ee9a05cb4d04aade9524be58ad0437",
+  "brief_source_hashes_verified": 12,
+  "final_successful_compile_request_id": "terminal_004",
+  "final_successful_compile_exit_code": 0,
+  "completed_definitions": [
+    "E993OrderBand.IsolateCoveredOn",
+    "E993OrderBand.IsolateCovered",
+    "E993OrderBand.markedCount",
+    "E993OrderBand.badFamily",
+    "E993OrderBand.multiFamily",
+    "E993OrderBand.extensionSet",
+    "E993OrderBand.goodFamily"
+  ],
+  "completed_lemmas": [
+    "E993OrderBand.bad_into_multi",
+    "E993OrderBand.multi_deletion_marked",
+    "E993OrderBand.multi_lower_degree",
+    "E993OrderBand.lower_degree",
+    "E993OrderBand.upper_degree_le_extensions",
+    "E993OrderBand.extensionSet_subset",
+    "E993OrderBand.extensionSet_card_le",
+    "E993OrderBand.extensionSet_card_lt_of_neighbor",
+    "E993OrderBand.incidence_bound",
+    "E993OrderBand.marked_incidence_bound",
+    "E993OrderBand.bad_good_partition",
+    "E993OrderBand.marked_bound_of_nonisolate",
+    "E993OrderBand.marked_bound_below_even",
+    "E993OrderBand.bad_into_multi_edgeless",
+    "E993OrderBand.relativeOrderBand",
+    "E993OrderBand.wholeGraphOrderBand",
+    "E993OrderBand.support_spec",
+    "E993OrderBand.support_adj",
+    "E993OrderBand.support_unique",
+    "E993OrderBand.H_subset_R",
+    "E993OrderBand.H_card",
+    "E993OrderBand.leaf_isolate_covered",
+    "E993OrderBand.retained_card",
+    "E993OrderBand.tagged_count_split",
+    "E993OrderBand.tagged_marks_sdiff",
+    "E993OrderBand.leaf_count_split",
+    "E993OrderBand.ordinaryLeafOrderBand"
+  ],
+  "completed_terminal": [
+    "E993OrderBand.markedIsolateAndOrdinaryLeafOrderBand"
+  ],
+  "unfinished_lemmas": [],
+  "registration_plan_path": "REGISTRATION-PLAN.json",
+  "registrar_fragment_count": 35,
+  "registrar_fragments_reordered_compile_status": "bridge_transport_error_before_lean",
+  "compile_requests": [
+    {
+      "id": "defs_001",
+      "bridge_ok": true,
+      "lean_exit_code": 0
+    },
+    {
+      "id": "inj_001",
+      "bridge_ok": true,
+      "lean_exit_code": 1
+    },
+    {
+      "id": "inj_002",
+      "bridge_ok": true,
+      "lean_exit_code": 1
+    },
+    {
+      "id": "inj_003",
+      "bridge_ok": true,
+      "lean_exit_code": 0
+    },
+    {
+      "id": "multi_001",
+      "bridge_ok": true,
+      "lean_exit_code": 1
+    },
+    {
+      "id": "multi_002",
+      "bridge_ok": true,
+      "lean_exit_code": 0
+    },
+    {
+      "id": "lower_001",
+      "bridge_ok": true,
+      "lean_exit_code": 1
+    },
+    {
+      "id": "lower_002",
+      "bridge_ok": true,
+      "lean_exit_code": 0
+    },
+    {
+      "id": "upper_001",
+      "bridge_ok": true,
+      "lean_exit_code": 1
+    },
+    {
+      "id": "upper_002",
+      "bridge_ok": true,
+      "lean_exit_code": 0
+    },
+    {
+      "id": "good_001",
+      "bridge_ok": true,
+      "lean_exit_code": 0
+    },
+    {
+      "id": "inc_001",
+      "bridge_ok": true,
+      "lean_exit_code": 1
+    },
+    {
+      "id": "inc_002",
+      "bridge_ok": true,
+      "lean_exit_code": 1
+    },
+    {
+      "id": "inc_003",
+      "bridge_ok": true,
+      "lean_exit_code": 0
+    },
+    {
+      "id": "bound_001",
+      "bridge_ok": true,
+      "lean_exit_code": 1
+    },
+    {
+      "id": "bound_002",
+      "bridge_ok": true,
+      "lean_exit_code": 0
+    },
+    {
+      "id": "base_001",
+      "bridge_ok": true,
+      "lean_exit_code": 0
+    },
+    {
+      "id": "empty_001",
+      "bridge_ok": true,
+      "lean_exit_code": 1
+    },
+    {
+      "id": "empty_002",
+      "bridge_ok": true,
+      "lean_exit_code": 0
+    },
+    {
+      "id": "generic_001",
+      "bridge_ok": true,
+      "lean_exit_code": 0
+    },
+    {
+      "id": "probe_001",
+      "bridge_ok": true,
+      "lean_exit_code": 0
+    },
+    {
+      "id": "probe_002",
+      "bridge_ok": true,
+      "lean_exit_code": 1
+    },
+    {
+      "id": "leaf_001",
+      "bridge_ok": true,
+      "lean_exit_code": 0
+    },
+    {
+      "id": "cover_001",
+      "bridge_ok": true,
+      "lean_exit_code": 1
+    },
+    {
+      "id": "cover_002",
+      "bridge_ok": true,
+      "lean_exit_code": 0
+    },
+    {
+      "id": "split_001",
+      "bridge_ok": true,
+      "lean_exit_code": 0
+    },
+    {
+      "id": "cor_001",
+      "bridge_ok": true,
+      "lean_exit_code": 1
+    },
+    {
+      "id": "cor_002",
+      "bridge_ok": true,
+      "lean_exit_code": 0
+    },
+    {
+      "id": "terminal_001",
+      "bridge_ok": true,
+      "lean_exit_code": 0,
+      "source_sha256": "fe214c6a60e5d5847bd2ca927fec43574d874a635e61dfc1930be0c1c900f6e1"
+    },
+    {
+      "id": "final_001",
+      "bridge_ok": false,
+      "error": "SyntaxError: Non-UTF-8 code starting with '\\xe2' in file <stdin> on line 6, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details\n"
+    },
+    {
+      "id": "final_002",
+      "bridge_ok": false,
+      "error": "SyntaxError: Non-UTF-8 code starting with '\\xe2' in file <stdin> on line 6, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details\n"
+    },
+    {
+      "id": "terminal_002",
+      "bridge_ok": true,
+      "lean_exit_code": 0,
+      "source_sha256": "fe214c6a60e5d5847bd2ca927fec43574d874a635e61dfc1930be0c1c900f6e1"
+    },
+    {
+      "id": "final_003",
+      "bridge_ok": false,
+      "error": "SyntaxError: Non-UTF-8 code starting with '\\xe2' in file <stdin> on line 6, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details\n"
+    },
+    {
+      "id": "terminal_003",
+      "bridge_ok": false,
+      "error": "SyntaxError: Non-UTF-8 code starting with '\\xe2' in file <stdin> on line 6, but no encoding declared; see http://python.org/dev/peps/pep-0263/ for details\n"
+    },
+    {
+      "id": "terminal_004",
+      "bridge_ok": true,
+      "lean_exit_code": 0,
+      "source_sha256": "fe214c6a60e5d5847bd2ca927fec43574d874a635e61dfc1930be0c1c900f6e1"
+    }
+  ],
+  "mathlib_request_ids": [
+    "search_001",
+    "search_002",
+    "search_003",
+    "search_004",
+    "search_005",
+    "search_006",
+    "search_007",
+    "search_008",
+    "search_009",
+    "search_010",
+    "search_011",
+    "search_012",
+    "read_001",
+    "read_002",
+    "read_003"
+  ],
+  "limitations": [
+    "Controller registration and concatenated-fragment compile pending",
+    "Controller kernel and axiom checks pending",
+    "Controller source and statement fingerprint checks pending",
+    "Fresh independent fidelity review pending",
+    "Reordered assembly and formatting variant bridge requests final_001, final_002, final_003, terminal_003 failed before Lean with a Python non-UTF-8 SyntaxError"
+  ],
+  "claim_scope": "proposal_to_controller_only"
+}

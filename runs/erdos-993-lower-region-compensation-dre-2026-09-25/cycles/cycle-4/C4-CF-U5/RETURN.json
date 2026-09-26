@@ -1,0 +1,28 @@
+{
+  "worker_id": "C4-CF-U5",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C4-U5-SUPPORT-POLYNOMIAL-REDUCTION",
+      "statement": "The support-indexed polynomial identities and the fixed-p coefficient state compute the full original-leaf selector and its summands exactly for finite ordinary trees; no universal sign or compressed induction state is implied.",
+      "scope": "Exact algebraic reduction and fixed-rank computation sufficiency for each integer p>=2, preserving all original leaf tags and original-tree supports and neighborhoods.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CF-U5/EVIDENCE.json"
+      ],
+      "reason": "retained: independent branch partition, deletion, coefficient-index, multiplicity, recurrence, truncation, and guard checks validate the route's exact reduction. The route does not claim the primary aggregate sign, and none follows from this identity."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CF-U5/REPORT.md",
+  "limitations": [
+    "The primary lower-region aggregate inequality remains unresolved by the audited reduction.",
+    "No context-closed compressed state or global compensation bound is established.",
+    "No computational census or producer source replay was performed."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-U5-SUPPORT-POLYNOMIAL-REDUCTION"
+  ]
+}

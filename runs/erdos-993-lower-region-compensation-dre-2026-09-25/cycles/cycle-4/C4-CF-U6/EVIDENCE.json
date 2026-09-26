@@ -1,0 +1,24 @@
+{
+  "schema": "e993.worker-ops.evidence.v1",
+  "worker_id": "C4-CF-U6",
+  "items": [
+    {
+      "id": "contract-level-q-identity",
+      "finding": "For each original leaf v with support s, H=T-{v,s}, W=N_T(s)\\{v}, and R=T-N_T[s]=H-W. Independent j-sets in H partition into sets meeting W and sets avoiding W; the latter are precisely independent j-sets in R. Therefore q_j=i_j(H)-i_j(R) counts those meeting W, and Delta_(p-1)(H)-Delta_(p-1)(R)=q_p-q_(p-1). This is an identity and yields no aggregate sign.",
+      "sources": [
+        {"path": "SOLUTION-CONTRACT.md", "lines": "Primary target and leaf-deletion definitions"},
+        {"path": "cycles/cycle-4/C4-U6/REPORT.md", "lines": "Canonical-definition bridge"}
+      ],
+      "grade": "independent contract-level set partition and integer algebra"
+    },
+    {
+      "id": "conditional-first-shell-order-check",
+      "finding": "Under the reported first-shell order |V(T)|=2p+2, deleting distinct vertices v and s leaves 2p vertices, equal to 2(p-1)+2. This arithmetic explains a possible exact-order match but does not extend such a result to arbitrary target orders. The source-specific lemma hypothesis and proof were not independently accessed.",
+      "sources": [
+        {"path": "cycles/cycle-4/C4-U6/REPORT.md", "lines": "What the first-shell argument establishes, and its boundary"},
+        {"path": "SOLUTION-CONTRACT.md", "lines": "Primary target"}
+      ],
+      "grade": "conditional order arithmetic; first-shell proof not independently audited"
+    }
+  ]
+}

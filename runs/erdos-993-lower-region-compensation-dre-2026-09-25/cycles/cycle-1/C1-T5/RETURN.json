@@ -1,0 +1,36 @@
+{
+  "worker_id": "C1-T5",
+  "cycle": 1,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C1-T5-1",
+      "statement": "For each support fibre L_s of original leaves, its leaves have identical selector values and summands, and the full aggregate equals the support-fibre transfer formula stated in the report.",
+      "scope": "Every finite ordinary tree and integer p in the target's rank domain; the identity itself does not require eligibility.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-T5/evidence/rooted-transfer.md"
+      ],
+      "reason": "Deleting the support separates the rooted branches. Their independence polynomials multiply, the remaining pendant leaves contribute (1+z)^(m_s-1), and sets containing the support contribute z times the root-deleted branch product. Coefficient extraction gives the selector and summand fibrewise while retaining multiplicity m_s."
+    },
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "No proof or eligible counterexample for the complete lower-region ordinary favorable-leaf aggregate was established by this search; it remains open on this evidence.",
+      "scope": "Finite ordinary trees T and natural p satisfying x(T)+2<=p and 3p<2alpha(T)+1, with the fixed favorable selector and original-leaf summands of the contract.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-T5/REPORT.md",
+        "cycles/cycle-1/C1-T5/evidence/rooted-transfer.md"
+      ],
+      "reason": "The transfer state computes each support-fibre selector and contribution but yields no compensation inequality across selected fibres. Positive local terms in supplied controls prevent a pointwise sign argument, and no proof or positive complete sum is supplied."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-T5/REPORT.md",
+  "limitations": [
+    "The rooted recurrence is an exact computation scheme, not a proof of the required global sign.",
+    "No eligible refutation or independent finite computation was produced.",
+    "No imported theorem was used."
+  ],
+  "status_authority": "proposed_worker_only"
+}

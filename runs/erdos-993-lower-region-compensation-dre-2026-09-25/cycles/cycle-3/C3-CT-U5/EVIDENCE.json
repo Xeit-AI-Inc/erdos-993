@@ -1,0 +1,28 @@
+{
+  "schema": "e993.c3-ct-u5.evidence.v1",
+  "audited_source": "C3-U5",
+  "hash_check": {
+    "common_entries_matching": 115,
+    "case_entries_matching": 3
+  },
+  "checks": [
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "disposition": "retained",
+      "finding": "The source claim is the exact registered target, left open; its report explicitly does not prove the missing universal marked occupancy transfer."
+    },
+    {
+      "claim_id": "C3-U5-EARLY-DESCENT-MARKED-OCCUPANCY-BRIDGE",
+      "disposition": "retained",
+      "finding": "The rank guards, actual-addability count, once-counted multiply-marked correction, leaf-tag sum algebra, and both Q>0 and Q=0 cases check. The conclusion depends on the stated conditional transfer premise."
+    }
+  ],
+  "arithmetic": {
+    "k": "p-1",
+    "h": "a-1",
+    "coefficient": "2(h-k)-k = 2(a-1-(p-1))-(p-1) = 2a+1-3p",
+    "descent": "E_x=(x+1)i_(x+1)(T)/i_x(T) < x+1 <= k",
+    "aggregate": "k*S=(2a+1-3p)*Q-sum_F(D_v+C_v)"
+  },
+  "limitation": "No proof or counterexample for the universal transfer premise; primary status remains open."
+}

@@ -1,0 +1,4618 @@
+{
+  "authority": "proposed_worker_only",
+  "hash_convention": "fragment bytes start immediately after BEGIN marker newline and end immediately before END marker line; offsets are zero based, end exclusive",
+  "integration_order": [
+    "G1",
+    "C2",
+    "Interior",
+    "R25"
+  ],
+  "selection": {
+    "G1": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132
+    ],
+    "C2": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      13,
+      14,
+      15,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      28,
+      32,
+      33,
+      34,
+      35,
+      36,
+      38,
+      39,
+      40,
+      41
+    ],
+    "Interior": [
+      1,
+      2,
+      3,
+      6,
+      7,
+      13,
+      14
+    ],
+    "R25": [
+      16,
+      17,
+      18,
+      19,
+      22,
+      40,
+      41,
+      42,
+      43,
+      45,
+      46,
+      47,
+      48
+    ]
+  },
+  "sources": {
+    "G1": {
+      "path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "sha256": "beabf73950968ea22e71fb7b02a946eb849b7cdce3a0541fa80a59f7bc485d89"
+    },
+    "C2": {
+      "path": "runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean",
+      "sha256": "a45f8e2e218d27d528e2513e5cb8413d38780d9e6c01f8c34b171366f0bf3bde"
+    },
+    "Interior": {
+      "path": "inputs/C3-formal-intake/FirstInteriorMain.lean",
+      "sha256": "8d864da290947d75ac0cb52644b8b5336a19076878fcb11eeed552e6a118d7a9"
+    },
+    "R25": {
+      "path": "inputs/C3-formal-intake/R25Card5Main.lean",
+      "sha256": "f47ef6b4fcad06580bb97206950c604927753c2c30cd369dbe6a76d4f0409a2d"
+    }
+  },
+  "declarations": [
+    {
+      "entry": 1,
+      "kind": "definition",
+      "name": "Erdos993G1.indepCount",
+      "marker_sha256": "858f5de3d80b67c1390e828786f252d3d6d020b7311b0039071e14bd1407c4a9",
+      "fragment_sha256": "858f5de3d80b67c1390e828786f252d3d6d020b7311b0039071e14bd1407c4a9",
+      "fragment_byte_start": 290,
+      "fragment_byte_end_exclusive": 454,
+      "block_byte_start": 166,
+      "block_byte_end_exclusive": 478,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:1",
+      "dependencies": {
+        "conservative_source_order": "none",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 2,
+      "kind": "definition",
+      "name": "Erdos993G1.coeff",
+      "marker_sha256": "92ee6695ec9af348314ae6543d4102a54df31fa504644e0a0f386d6b81bd44cd",
+      "fragment_sha256": "92ee6695ec9af348314ae6543d4102a54df31fa504644e0a0f386d6b81bd44cd",
+      "fragment_byte_start": 598,
+      "fragment_byte_end_exclusive": 747,
+      "block_byte_start": 479,
+      "block_byte_end_exclusive": 771,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:2",
+      "dependencies": {
+        "conservative_source_order": "G1:1..1",
+        "detected_name_references": [
+          "G1:1"
+        ]
+      }
+    },
+    {
+      "entry": 3,
+      "kind": "definition",
+      "name": "Erdos993G1.delta",
+      "marker_sha256": "b34fa17ed22bb7174290541832e4f5abe5ec3e5ea329b7ab516d5b2db76eb201",
+      "fragment_sha256": "b34fa17ed22bb7174290541832e4f5abe5ec3e5ea329b7ab516d5b2db76eb201",
+      "fragment_byte_start": 891,
+      "fragment_byte_end_exclusive": 1035,
+      "block_byte_start": 772,
+      "block_byte_end_exclusive": 1059,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:3",
+      "dependencies": {
+        "conservative_source_order": "G1:1..2",
+        "detected_name_references": [
+          "G1:2"
+        ]
+      }
+    },
+    {
+      "entry": 4,
+      "kind": "definition",
+      "name": "Erdos993G1.firstDescent",
+      "marker_sha256": "313f419876bd7051ace88951c422a36bde99b098190313d6954d65d888befd99",
+      "fragment_sha256": "313f419876bd7051ace88951c422a36bde99b098190313d6954d65d888befd99",
+      "fragment_byte_start": 1186,
+      "fragment_byte_end_exclusive": 1327,
+      "block_byte_start": 1060,
+      "block_byte_end_exclusive": 1351,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:4",
+      "dependencies": {
+        "conservative_source_order": "G1:1..3",
+        "detected_name_references": [
+          "G1:3"
+        ]
+      }
+    },
+    {
+      "entry": 5,
+      "kind": "definition",
+      "name": "Erdos993G1.vertexDegree",
+      "marker_sha256": "0abc03201f8e96696be3a79d027d32bf1b282c722165cf63bf228b01ed59d555",
+      "fragment_sha256": "0abc03201f8e96696be3a79d027d32bf1b282c722165cf63bf228b01ed59d555",
+      "fragment_byte_start": 1478,
+      "fragment_byte_end_exclusive": 1604,
+      "block_byte_start": 1352,
+      "block_byte_end_exclusive": 1628,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:5",
+      "dependencies": {
+        "conservative_source_order": "G1:1..4",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 6,
+      "kind": "definition",
+      "name": "Erdos993G1.closedNeighborhood",
+      "marker_sha256": "589a193da9846f7dfa34a178b346f3466b219affcd372591acccba327bc5c9a3",
+      "fragment_sha256": "589a193da9846f7dfa34a178b346f3466b219affcd372591acccba327bc5c9a3",
+      "fragment_byte_start": 1761,
+      "fragment_byte_end_exclusive": 1880,
+      "block_byte_start": 1629,
+      "block_byte_end_exclusive": 1904,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:6",
+      "dependencies": {
+        "conservative_source_order": "G1:1..5",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 7,
+      "kind": "definition",
+      "name": "Erdos993G1.deleteVerts",
+      "marker_sha256": "8044160bd96993004323eaebfb80e42820d15779af6158f7906dd76e79c61378",
+      "fragment_sha256": "8044160bd96993004323eaebfb80e42820d15779af6158f7906dd76e79c61378",
+      "fragment_byte_start": 2030,
+      "fragment_byte_end_exclusive": 2159,
+      "block_byte_start": 1905,
+      "block_byte_end_exclusive": 2183,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:7",
+      "dependencies": {
+        "conservative_source_order": "G1:1..6",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 8,
+      "kind": "definition",
+      "name": "Erdos993G1.ambientA",
+      "marker_sha256": "b504fd5411779932120471f20ba7398be72724b13e87404b5b6ad5a7df9a3a55",
+      "fragment_sha256": "b504fd5411779932120471f20ba7398be72724b13e87404b5b6ad5a7df9a3a55",
+      "fragment_byte_start": 2306,
+      "fragment_byte_end_exclusive": 2442,
+      "block_byte_start": 2184,
+      "block_byte_end_exclusive": 2466,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:8",
+      "dependencies": {
+        "conservative_source_order": "G1:1..7",
+        "detected_name_references": [
+          "G1:6",
+          "G1:7"
+        ]
+      }
+    },
+    {
+      "entry": 9,
+      "kind": "definition",
+      "name": "Erdos993G1.ambientH",
+      "marker_sha256": "0c426523e170fbac06f689b2cbcb0d97f5ee5bdd220162360724a82b4c7fe0be",
+      "fragment_sha256": "0c426523e170fbac06f689b2cbcb0d97f5ee5bdd220162360724a82b4c7fe0be",
+      "fragment_byte_start": 2589,
+      "fragment_byte_end_exclusive": 2735,
+      "block_byte_start": 2467,
+      "block_byte_end_exclusive": 2759,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:9",
+      "dependencies": {
+        "conservative_source_order": "G1:1..8",
+        "detected_name_references": [
+          "G1:6",
+          "G1:7"
+        ]
+      }
+    },
+    {
+      "entry": 10,
+      "kind": "definition",
+      "name": "Erdos993G1.residual",
+      "marker_sha256": "8ed38df1b3849e3213fd89fae58371f9982b84585b2a180e44dc62857cd71d7e",
+      "fragment_sha256": "8ed38df1b3849e3213fd89fae58371f9982b84585b2a180e44dc62857cd71d7e",
+      "fragment_byte_start": 2883,
+      "fragment_byte_end_exclusive": 3063,
+      "block_byte_start": 2760,
+      "block_byte_end_exclusive": 3088,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:10",
+      "dependencies": {
+        "conservative_source_order": "G1:1..9",
+        "detected_name_references": [
+          "G1:6",
+          "G1:7"
+        ]
+      }
+    },
+    {
+      "entry": 11,
+      "kind": "definition",
+      "name": "Erdos993G1.residualOrder",
+      "marker_sha256": "f78b693e38755673f5859f82b106377d6e270f5001ef539f0bc8704ac2287450",
+      "fragment_sha256": "f78b693e38755673f5859f82b106377d6e270f5001ef539f0bc8704ac2287450",
+      "fragment_byte_start": 3217,
+      "fragment_byte_end_exclusive": 3421,
+      "block_byte_start": 3089,
+      "block_byte_end_exclusive": 3446,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:11",
+      "dependencies": {
+        "conservative_source_order": "G1:1..10",
+        "detected_name_references": [
+          "G1:6"
+        ]
+      }
+    },
+    {
+      "entry": 12,
+      "kind": "definition",
+      "name": "Erdos993G1.ordinaryG1Guards",
+      "marker_sha256": "d2845e8dec482006b4613d96fb63af68333d7ee29c1ceba51751342ec01a07ed",
+      "fragment_sha256": "d2845e8dec482006b4613d96fb63af68333d7ee29c1ceba51751342ec01a07ed",
+      "fragment_byte_start": 3578,
+      "fragment_byte_end_exclusive": 4158,
+      "block_byte_start": 3447,
+      "block_byte_end_exclusive": 4183,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:12",
+      "dependencies": {
+        "conservative_source_order": "G1:1..11",
+        "detected_name_references": [
+          "G1:3",
+          "G1:4",
+          "G1:5",
+          "G1:8",
+          "G1:9",
+          "G1:10",
+          "G1:11"
+        ]
+      }
+    },
+    {
+      "entry": 13,
+      "kind": "definition",
+      "name": "Erdos993G1.FirstWide.stratum",
+      "marker_sha256": "40bf47352e6afe078b65c1712a28f55d023bf8006cb8700f480a42e4dc27925c",
+      "fragment_sha256": "40bf47352e6afe078b65c1712a28f55d023bf8006cb8700f480a42e4dc27925c",
+      "fragment_byte_start": 4316,
+      "fragment_byte_end_exclusive": 4558,
+      "block_byte_start": 4184,
+      "block_byte_end_exclusive": 4583,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:13",
+      "dependencies": {
+        "conservative_source_order": "G1:1..12",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 14,
+      "kind": "definition",
+      "name": "Erdos993G1.FirstWide.binomCoeff",
+      "marker_sha256": "15be04fe3358ec671f28da2db52c757627e101992d8d40791181b1b1e5f06a6d",
+      "fragment_sha256": "15be04fe3358ec671f28da2db52c757627e101992d8d40791181b1b1e5f06a6d",
+      "fragment_byte_start": 4719,
+      "fragment_byte_end_exclusive": 4849,
+      "block_byte_start": 4584,
+      "block_byte_end_exclusive": 4874,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:14",
+      "dependencies": {
+        "conservative_source_order": "G1:1..13",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 15,
+      "kind": "lemma",
+      "name": "Erdos993G1.isNIndepSet_zero_iff",
+      "marker_sha256": "9df9b861d801c09b5ab131b483e26dacc5056eb6ffb7867c7523a51e8ed843fb",
+      "fragment_sha256": "9df9b861d801c09b5ab131b483e26dacc5056eb6ffb7867c7523a51e8ed843fb",
+      "fragment_byte_start": 5005,
+      "fragment_byte_end_exclusive": 5193,
+      "block_byte_start": 4875,
+      "block_byte_end_exclusive": 5218,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:15",
+      "dependencies": {
+        "conservative_source_order": "G1:1..14",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 16,
+      "kind": "lemma",
+      "name": "Erdos993G1.isNIndepSet_one_iff",
+      "marker_sha256": "b12f77f59d3690c92c7c8bada90d9b4c5f1449b5b17c2e5574308cfbf54a0536",
+      "fragment_sha256": "b12f77f59d3690c92c7c8bada90d9b4c5f1449b5b17c2e5574308cfbf54a0536",
+      "fragment_byte_start": 5348,
+      "fragment_byte_end_exclusive": 5553,
+      "block_byte_start": 5219,
+      "block_byte_end_exclusive": 5578,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:16",
+      "dependencies": {
+        "conservative_source_order": "G1:1..15",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 17,
+      "kind": "lemma",
+      "name": "Erdos993G1.indepCount_eq_card_indepSetFinset",
+      "marker_sha256": "4c59444af666076a0ce8c355415235545a1d9c97ae721113599f63dcfb489a31",
+      "fragment_sha256": "4c59444af666076a0ce8c355415235545a1d9c97ae721113599f63dcfb489a31",
+      "fragment_byte_start": 5722,
+      "fragment_byte_end_exclusive": 5994,
+      "block_byte_start": 5579,
+      "block_byte_end_exclusive": 6019,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:17",
+      "dependencies": {
+        "conservative_source_order": "G1:1..16",
+        "detected_name_references": [
+          "G1:1"
+        ]
+      }
+    },
+    {
+      "entry": 18,
+      "kind": "lemma",
+      "name": "Erdos993G1.indepCount_nonneg",
+      "marker_sha256": "d5a62e3c3455c4d50f47db7e930f327551be59af8aaf1acfb08fff9a88e86136",
+      "fragment_sha256": "d5a62e3c3455c4d50f47db7e930f327551be59af8aaf1acfb08fff9a88e86136",
+      "fragment_byte_start": 6147,
+      "fragment_byte_end_exclusive": 6240,
+      "block_byte_start": 6020,
+      "block_byte_end_exclusive": 6265,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:18",
+      "dependencies": {
+        "conservative_source_order": "G1:1..17",
+        "detected_name_references": [
+          "G1:1"
+        ]
+      }
+    },
+    {
+      "entry": 19,
+      "kind": "lemma",
+      "name": "Erdos993G1.indepCount_zero",
+      "marker_sha256": "acffad838916a1b13c96fef7c654f39104b03af428110c4da5e9d500b0e07674",
+      "fragment_sha256": "acffad838916a1b13c96fef7c654f39104b03af428110c4da5e9d500b0e07674",
+      "fragment_byte_start": 6391,
+      "fragment_byte_end_exclusive": 6667,
+      "block_byte_start": 6266,
+      "block_byte_end_exclusive": 6692,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:19",
+      "dependencies": {
+        "conservative_source_order": "G1:1..18",
+        "detected_name_references": [
+          "G1:1",
+          "G1:15",
+          "G1:17"
+        ]
+      }
+    },
+    {
+      "entry": 20,
+      "kind": "lemma",
+      "name": "Erdos993G1.indepCount_one",
+      "marker_sha256": "2c3536cb34ec79e12b8147cd94b40ec4f4c21269c2fc1c9efd90a558e487a31e",
+      "fragment_sha256": "2c3536cb34ec79e12b8147cd94b40ec4f4c21269c2fc1c9efd90a558e487a31e",
+      "fragment_byte_start": 6817,
+      "fragment_byte_end_exclusive": 7404,
+      "block_byte_start": 6693,
+      "block_byte_end_exclusive": 7429,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:20",
+      "dependencies": {
+        "conservative_source_order": "G1:1..19",
+        "detected_name_references": [
+          "G1:1",
+          "G1:16",
+          "G1:17"
+        ]
+      }
+    },
+    {
+      "entry": 21,
+      "kind": "lemma",
+      "name": "Erdos993G1.indepCount_eq_zero_of_indepNum_lt",
+      "marker_sha256": "123be264ea42836f1785056098a62c5d48fa1d801d8b6a9393f0f5b0f96e0bb6",
+      "fragment_sha256": "123be264ea42836f1785056098a62c5d48fa1d801d8b6a9393f0f5b0f96e0bb6",
+      "fragment_byte_start": 7573,
+      "fragment_byte_end_exclusive": 7909,
+      "block_byte_start": 7430,
+      "block_byte_end_exclusive": 7934,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:21",
+      "dependencies": {
+        "conservative_source_order": "G1:1..20",
+        "detected_name_references": [
+          "G1:1"
+        ]
+      }
+    },
+    {
+      "entry": 22,
+      "kind": "lemma",
+      "name": "Erdos993G1.indepCount_indepNum_pos",
+      "marker_sha256": "c554d650c08283f9a98deb95737d52a97e95ae100d09a228280fd7cd658e6202",
+      "fragment_sha256": "c554d650c08283f9a98deb95737d52a97e95ae100d09a228280fd7cd658e6202",
+      "fragment_byte_start": 8068,
+      "fragment_byte_end_exclusive": 8394,
+      "block_byte_start": 7935,
+      "block_byte_end_exclusive": 8419,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:22",
+      "dependencies": {
+        "conservative_source_order": "G1:1..21",
+        "detected_name_references": [
+          "G1:1"
+        ]
+      }
+    },
+    {
+      "entry": 23,
+      "kind": "lemma",
+      "name": "Erdos993G1.coeff_nat",
+      "marker_sha256": "03f00ca029c7e10a6278ad907c2d6e5891668cdff802ec6768f9f93e51ed47f7",
+      "fragment_sha256": "03f00ca029c7e10a6278ad907c2d6e5891668cdff802ec6768f9f93e51ed47f7",
+      "fragment_byte_start": 8539,
+      "fragment_byte_end_exclusive": 8624,
+      "block_byte_start": 8420,
+      "block_byte_end_exclusive": 8649,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:23",
+      "dependencies": {
+        "conservative_source_order": "G1:1..22",
+        "detected_name_references": [
+          "G1:1",
+          "G1:2"
+        ]
+      }
+    },
+    {
+      "entry": 24,
+      "kind": "lemma",
+      "name": "Erdos993G1.coeff_of_neg",
+      "marker_sha256": "bcf669545ab3401ca5ba88ac2a8cf77144df87049057892e19b7f7728b3174fc",
+      "fragment_sha256": "bcf669545ab3401ca5ba88ac2a8cf77144df87049057892e19b7f7728b3174fc",
+      "fragment_byte_start": 8772,
+      "fragment_byte_end_exclusive": 8869,
+      "block_byte_start": 8650,
+      "block_byte_end_exclusive": 8894,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:24",
+      "dependencies": {
+        "conservative_source_order": "G1:1..23",
+        "detected_name_references": [
+          "G1:2"
+        ]
+      }
+    },
+    {
+      "entry": 25,
+      "kind": "lemma",
+      "name": "Erdos993G1.delta_nat",
+      "marker_sha256": "a7a02236294541ef40fa02c9d9f0dd02052d13536f6523f462e2d5b96ff04f9e",
+      "fragment_sha256": "a7a02236294541ef40fa02c9d9f0dd02052d13536f6523f462e2d5b96ff04f9e",
+      "fragment_byte_start": 9014,
+      "fragment_byte_end_exclusive": 9230,
+      "block_byte_start": 8895,
+      "block_byte_end_exclusive": 9255,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:25",
+      "dependencies": {
+        "conservative_source_order": "G1:1..24",
+        "detected_name_references": [
+          "G1:1",
+          "G1:3",
+          "G1:23"
+        ]
+      }
+    },
+    {
+      "entry": 26,
+      "kind": "lemma",
+      "name": "Erdos993G1.delta_zero",
+      "marker_sha256": "c43a89269ad4d7bad8f5c8faa0222710d3815a826516edd0955a80bef67ebcb8",
+      "fragment_sha256": "c43a89269ad4d7bad8f5c8faa0222710d3815a826516edd0955a80bef67ebcb8",
+      "fragment_byte_start": 9376,
+      "fragment_byte_end_exclusive": 9512,
+      "block_byte_start": 9256,
+      "block_byte_end_exclusive": 9537,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:26",
+      "dependencies": {
+        "conservative_source_order": "G1:1..25",
+        "detected_name_references": [
+          "G1:3",
+          "G1:19",
+          "G1:20",
+          "G1:25"
+        ]
+      }
+    },
+    {
+      "entry": 27,
+      "kind": "lemma",
+      "name": "Erdos993G1.delta_neg_one",
+      "marker_sha256": "bfc4d805f6742022ecad22b2e0a4815d4b9dbdf74ee1a0c0d9029447718946dc",
+      "fragment_sha256": "bfc4d805f6742022ecad22b2e0a4815d4b9dbdf74ee1a0c0d9029447718946dc",
+      "fragment_byte_start": 9661,
+      "fragment_byte_end_exclusive": 9757,
+      "block_byte_start": 9538,
+      "block_byte_end_exclusive": 9782,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:27",
+      "dependencies": {
+        "conservative_source_order": "G1:1..26",
+        "detected_name_references": [
+          "G1:2",
+          "G1:3",
+          "G1:19"
+        ]
+      }
+    },
+    {
+      "entry": 28,
+      "kind": "lemma",
+      "name": "Erdos993G1.descentSet_nonempty",
+      "marker_sha256": "a350a656e5d6dc22c0ce9c46cfdf112a3e20b1d02183576c24f5e68684fb6e37",
+      "fragment_sha256": "a350a656e5d6dc22c0ce9c46cfdf112a3e20b1d02183576c24f5e68684fb6e37",
+      "fragment_byte_start": 9912,
+      "fragment_byte_end_exclusive": 10196,
+      "block_byte_start": 9783,
+      "block_byte_end_exclusive": 10221,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:28",
+      "dependencies": {
+        "conservative_source_order": "G1:1..27",
+        "detected_name_references": [
+          "G1:3",
+          "G1:21",
+          "G1:22",
+          "G1:25"
+        ]
+      }
+    },
+    {
+      "entry": 29,
+      "kind": "lemma",
+      "name": "Erdos993G1.delta_firstDescent_neg",
+      "marker_sha256": "89b0cab7b8771183c2d0b5ac70403180c74b49b516232480839218649f06509c",
+      "fragment_sha256": "89b0cab7b8771183c2d0b5ac70403180c74b49b516232480839218649f06509c",
+      "fragment_byte_start": 10354,
+      "fragment_byte_end_exclusive": 10487,
+      "block_byte_start": 10222,
+      "block_byte_end_exclusive": 10512,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:29",
+      "dependencies": {
+        "conservative_source_order": "G1:1..28",
+        "detected_name_references": [
+          "G1:3",
+          "G1:4",
+          "G1:28"
+        ]
+      }
+    },
+    {
+      "entry": 30,
+      "kind": "lemma",
+      "name": "Erdos993G1.delta_nonneg_of_lt_firstDescent",
+      "marker_sha256": "3392871c932e55446fbc42daf9e9c43a4e1cb08354049e72cb027cb6d19bf932",
+      "fragment_sha256": "3392871c932e55446fbc42daf9e9c43a4e1cb08354049e72cb027cb6d19bf932",
+      "fragment_byte_start": 10654,
+      "fragment_byte_end_exclusive": 10813,
+      "block_byte_start": 10513,
+      "block_byte_end_exclusive": 10838,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:30",
+      "dependencies": {
+        "conservative_source_order": "G1:1..29",
+        "detected_name_references": [
+          "G1:3",
+          "G1:4"
+        ]
+      }
+    },
+    {
+      "entry": 31,
+      "kind": "lemma",
+      "name": "Erdos993G1.firstDescent_le_of_delta_neg",
+      "marker_sha256": "28265626e5cf310d23d33068a703ee3331532a0e2606bec2f98f236af0c037d9",
+      "fragment_sha256": "28265626e5cf310d23d33068a703ee3331532a0e2606bec2f98f236af0c037d9",
+      "fragment_byte_start": 10977,
+      "fragment_byte_end_exclusive": 11226,
+      "block_byte_start": 10839,
+      "block_byte_end_exclusive": 11251,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:31",
+      "dependencies": {
+        "conservative_source_order": "G1:1..30",
+        "detected_name_references": [
+          "G1:3",
+          "G1:4"
+        ]
+      }
+    },
+    {
+      "entry": 32,
+      "kind": "lemma",
+      "name": "Erdos993G1.isNIndepSet_map_iso",
+      "marker_sha256": "bd57ae9ed83550b3ae866881446b3f65e474c92abf31958c2ec9fceb1ecebea4",
+      "fragment_sha256": "bd57ae9ed83550b3ae866881446b3f65e474c92abf31958c2ec9fceb1ecebea4",
+      "fragment_byte_start": 11381,
+      "fragment_byte_end_exclusive": 12030,
+      "block_byte_start": 11252,
+      "block_byte_end_exclusive": 12055,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:32",
+      "dependencies": {
+        "conservative_source_order": "G1:1..31",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 33,
+      "kind": "lemma",
+      "name": "Erdos993G1.indepCount_iso",
+      "marker_sha256": "f71434b13438181169e26ebd673578c3c4195847c1f0e972ecc94516cacde2c6",
+      "fragment_sha256": "f71434b13438181169e26ebd673578c3c4195847c1f0e972ecc94516cacde2c6",
+      "fragment_byte_start": 12180,
+      "fragment_byte_end_exclusive": 12853,
+      "block_byte_start": 12056,
+      "block_byte_end_exclusive": 12878,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:33",
+      "dependencies": {
+        "conservative_source_order": "G1:1..32",
+        "detected_name_references": [
+          "G1:1",
+          "G1:32"
+        ]
+      }
+    },
+    {
+      "entry": 34,
+      "kind": "lemma",
+      "name": "Erdos993G1.coeff_iso",
+      "marker_sha256": "3631b58dff1d09b36ceb6d30994a98a373baa90c430e6b6848fce34a00f7c1a9",
+      "fragment_sha256": "3631b58dff1d09b36ceb6d30994a98a373baa90c430e6b6848fce34a00f7c1a9",
+      "fragment_byte_start": 12998,
+      "fragment_byte_end_exclusive": 13108,
+      "block_byte_start": 12879,
+      "block_byte_end_exclusive": 13133,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:34",
+      "dependencies": {
+        "conservative_source_order": "G1:1..33",
+        "detected_name_references": [
+          "G1:2",
+          "G1:33"
+        ]
+      }
+    },
+    {
+      "entry": 35,
+      "kind": "lemma",
+      "name": "Erdos993G1.delta_iso",
+      "marker_sha256": "6827baaeefaade9988a5b47db939fb51b758021e44a3205b90ae8ca504f80599",
+      "fragment_sha256": "6827baaeefaade9988a5b47db939fb51b758021e44a3205b90ae8ca504f80599",
+      "fragment_byte_start": 13253,
+      "fragment_byte_end_exclusive": 13358,
+      "block_byte_start": 13134,
+      "block_byte_end_exclusive": 13383,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:35",
+      "dependencies": {
+        "conservative_source_order": "G1:1..34",
+        "detected_name_references": [
+          "G1:3",
+          "G1:34"
+        ]
+      }
+    },
+    {
+      "entry": 36,
+      "kind": "lemma",
+      "name": "Erdos993G1.firstDescent_iso",
+      "marker_sha256": "f953a9d539a63b112ee6ea9442f78bdee854281e3ae2a6ab9c778bea34fe54dc",
+      "fragment_sha256": "f953a9d539a63b112ee6ea9442f78bdee854281e3ae2a6ab9c778bea34fe54dc",
+      "fragment_byte_start": 13510,
+      "fragment_byte_end_exclusive": 13629,
+      "block_byte_start": 13384,
+      "block_byte_end_exclusive": 13654,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:36",
+      "dependencies": {
+        "conservative_source_order": "G1:1..35",
+        "detected_name_references": [
+          "G1:4",
+          "G1:35"
+        ]
+      }
+    },
+    {
+      "entry": 37,
+      "kind": "lemma",
+      "name": "Erdos993G1.vertexDegree_eq_degree",
+      "marker_sha256": "1d25716bb2cfa9c9539a083cbf0540c1058822084e51f30235b21366df7eec48",
+      "fragment_sha256": "1d25716bb2cfa9c9539a083cbf0540c1058822084e51f30235b21366df7eec48",
+      "fragment_byte_start": 13787,
+      "fragment_byte_end_exclusive": 13981,
+      "block_byte_start": 13655,
+      "block_byte_end_exclusive": 14006,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:37",
+      "dependencies": {
+        "conservative_source_order": "G1:1..36",
+        "detected_name_references": [
+          "G1:5"
+        ]
+      }
+    },
+    {
+      "entry": 38,
+      "kind": "lemma",
+      "name": "Erdos993G1.deleteVerts_isAcyclic",
+      "marker_sha256": "fa008ac82c212d1670b3452bfae66fd9cdc7d0daf5cf0730113bca4db67f24d6",
+      "fragment_sha256": "fa008ac82c212d1670b3452bfae66fd9cdc7d0daf5cf0730113bca4db67f24d6",
+      "fragment_byte_start": 14138,
+      "fragment_byte_end_exclusive": 14247,
+      "block_byte_start": 14007,
+      "block_byte_end_exclusive": 14272,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:38",
+      "dependencies": {
+        "conservative_source_order": "G1:1..37",
+        "detected_name_references": [
+          "G1:7"
+        ]
+      }
+    },
+    {
+      "entry": 39,
+      "kind": "lemma",
+      "name": "Erdos993G1.residual_isAcyclic",
+      "marker_sha256": "171132e213d52d4989b295159e09daa1eaaf63f1c17c19916ef0fd2154c70202",
+      "fragment_sha256": "171132e213d52d4989b295159e09daa1eaaf63f1c17c19916ef0fd2154c70202",
+      "fragment_byte_start": 14401,
+      "fragment_byte_end_exclusive": 14504,
+      "block_byte_start": 14273,
+      "block_byte_end_exclusive": 14529,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:39",
+      "dependencies": {
+        "conservative_source_order": "G1:1..38",
+        "detected_name_references": [
+          "G1:10"
+        ]
+      }
+    },
+    {
+      "entry": 40,
+      "kind": "lemma",
+      "name": "Erdos993G1.residualOrder_eq_card",
+      "marker_sha256": "849a5567c708fcc6b316d35358f7d832501d64d77ea0e18262b92d5a4e589d95",
+      "fragment_sha256": "849a5567c708fcc6b316d35358f7d832501d64d77ea0e18262b92d5a4e589d95",
+      "fragment_byte_start": 14661,
+      "fragment_byte_end_exclusive": 14901,
+      "block_byte_start": 14530,
+      "block_byte_end_exclusive": 14926,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:40",
+      "dependencies": {
+        "conservative_source_order": "G1:1..39",
+        "detected_name_references": [
+          "G1:6",
+          "G1:11"
+        ]
+      }
+    },
+    {
+      "entry": 41,
+      "kind": "lemma",
+      "name": "Erdos993G1.isNIndepSet_pair_iff",
+      "marker_sha256": "c7fe22b14d4127788420f1fc872c6908e1c8e03d5089db1a4512366a1c6011cd",
+      "fragment_sha256": "c7fe22b14d4127788420f1fc872c6908e1c8e03d5089db1a4512366a1c6011cd",
+      "fragment_byte_start": 15057,
+      "fragment_byte_end_exclusive": 15354,
+      "block_byte_start": 14927,
+      "block_byte_end_exclusive": 15379,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:41",
+      "dependencies": {
+        "conservative_source_order": "G1:1..40",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 42,
+      "kind": "lemma",
+      "name": "Erdos993G1.sym2_toFinset_injective",
+      "marker_sha256": "b6bb80d1fc0be2dc048f714854ea2d7ae9649fbceb0e5bbffbd1fae3d1947acd",
+      "fragment_sha256": "b6bb80d1fc0be2dc048f714854ea2d7ae9649fbceb0e5bbffbd1fae3d1947acd",
+      "fragment_byte_start": 15513,
+      "fragment_byte_end_exclusive": 15743,
+      "block_byte_start": 15380,
+      "block_byte_end_exclusive": 15768,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:42",
+      "dependencies": {
+        "conservative_source_order": "G1:1..41",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 43,
+      "kind": "lemma",
+      "name": "Erdos993G1.indepSetFinset_two_eq",
+      "marker_sha256": "39a4bb3841ed900d0110289548de64819de9508cc2754cd12dd313c2afe30cc8",
+      "fragment_sha256": "39a4bb3841ed900d0110289548de64819de9508cc2754cd12dd313c2afe30cc8",
+      "fragment_byte_start": 15900,
+      "fragment_byte_end_exclusive": 16751,
+      "block_byte_start": 15769,
+      "block_byte_end_exclusive": 16776,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:43",
+      "dependencies": {
+        "conservative_source_order": "G1:1..42",
+        "detected_name_references": [
+          "G1:41"
+        ]
+      }
+    },
+    {
+      "entry": 44,
+      "kind": "lemma",
+      "name": "Erdos993G1.indepCount_two_add_edges",
+      "marker_sha256": "a01f026068c216985f79412914a708de863f8d52ac60d7369e2b85a21c58c014",
+      "fragment_sha256": "a01f026068c216985f79412914a708de863f8d52ac60d7369e2b85a21c58c014",
+      "fragment_byte_start": 16911,
+      "fragment_byte_end_exclusive": 18077,
+      "block_byte_start": 16777,
+      "block_byte_end_exclusive": 18102,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:44",
+      "dependencies": {
+        "conservative_source_order": "G1:1..43",
+        "detected_name_references": [
+          "G1:1",
+          "G1:17",
+          "G1:42",
+          "G1:43"
+        ]
+      }
+    },
+    {
+      "entry": 45,
+      "kind": "lemma",
+      "name": "Erdos993G1.indepSetFinset_eq_filter_powersetCard",
+      "marker_sha256": "ec9d1ede162d82ed94a34a38672bad65fc69ea0b778b5162ae78c5fec73a5628",
+      "fragment_sha256": "ec9d1ede162d82ed94a34a38672bad65fc69ea0b778b5162ae78c5fec73a5628",
+      "fragment_byte_start": 18250,
+      "fragment_byte_end_exclusive": 18574,
+      "block_byte_start": 18103,
+      "block_byte_end_exclusive": 18599,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:45",
+      "dependencies": {
+        "conservative_source_order": "G1:1..44",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 46,
+      "kind": "lemma",
+      "name": "Erdos993G1.card_nonindep_pairs",
+      "marker_sha256": "96c84ad8516cd9224be112085b17e6b4dceb988fd19ce9e39ffaad28a4804cbc",
+      "fragment_sha256": "96c84ad8516cd9224be112085b17e6b4dceb988fd19ce9e39ffaad28a4804cbc",
+      "fragment_byte_start": 18729,
+      "fragment_byte_end_exclusive": 19321,
+      "block_byte_start": 18600,
+      "block_byte_end_exclusive": 19346,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:46",
+      "dependencies": {
+        "conservative_source_order": "G1:1..45",
+        "detected_name_references": [
+          "G1:17",
+          "G1:44",
+          "G1:45"
+        ]
+      }
+    },
+    {
+      "entry": 47,
+      "kind": "lemma",
+      "name": "Erdos993G1.sum_card_filter_swap",
+      "marker_sha256": "db506bda8bc6b666134551b5bc0fd50e22daf1b537ec59f21be1da84eb4ffe98",
+      "fragment_sha256": "db506bda8bc6b666134551b5bc0fd50e22daf1b537ec59f21be1da84eb4ffe98",
+      "fragment_byte_start": 19477,
+      "fragment_byte_end_exclusive": 19791,
+      "block_byte_start": 19347,
+      "block_byte_end_exclusive": 19816,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:47",
+      "dependencies": {
+        "conservative_source_order": "G1:1..46",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 48,
+      "kind": "lemma",
+      "name": "Erdos993G1.sum_nonindep_pair_incidence",
+      "marker_sha256": "da829ee128471804d3016cd47dc81dc700c969ffe760cdfe792d805388f36292",
+      "fragment_sha256": "da829ee128471804d3016cd47dc81dc700c969ffe760cdfe792d805388f36292",
+      "fragment_byte_start": 19954,
+      "fragment_byte_end_exclusive": 21379,
+      "block_byte_start": 19817,
+      "block_byte_end_exclusive": 21404,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:48",
+      "dependencies": {
+        "conservative_source_order": "G1:1..47",
+        "detected_name_references": [
+          "G1:46",
+          "G1:47"
+        ]
+      }
+    },
+    {
+      "entry": 49,
+      "kind": "lemma",
+      "name": "Erdos993G1.sum_indep_indicator",
+      "marker_sha256": "e8656c5832d89388faa9e5fbe465d97c9212944d86545795e43360d7cf446d54",
+      "fragment_sha256": "e8656c5832d89388faa9e5fbe465d97c9212944d86545795e43360d7cf446d54",
+      "fragment_byte_start": 21534,
+      "fragment_byte_end_exclusive": 21939,
+      "block_byte_start": 21405,
+      "block_byte_end_exclusive": 21964,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:49",
+      "dependencies": {
+        "conservative_source_order": "G1:1..48",
+        "detected_name_references": [
+          "G1:45"
+        ]
+      }
+    },
+    {
+      "entry": 50,
+      "kind": "lemma",
+      "name": "Erdos993G1.triple_local_identity",
+      "marker_sha256": "1987228dfddb76922331fd7897112e6fbb9500d655adc833b004028ebafcd53d",
+      "fragment_sha256": "1987228dfddb76922331fd7897112e6fbb9500d655adc833b004028ebafcd53d",
+      "fragment_byte_start": 22096,
+      "fragment_byte_end_exclusive": 23931,
+      "block_byte_start": 21965,
+      "block_byte_end_exclusive": 23956,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:50",
+      "dependencies": {
+        "conservative_source_order": "G1:1..49",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 51,
+      "kind": "lemma",
+      "name": "Erdos993G1.indepSetFinset_three_incidence",
+      "marker_sha256": "80322d36a50c5f8eedef153e69e935eaf0bebd0f6e842e96267c37f5a18cb932",
+      "fragment_sha256": "80322d36a50c5f8eedef153e69e935eaf0bebd0f6e842e96267c37f5a18cb932",
+      "fragment_byte_start": 24097,
+      "fragment_byte_end_exclusive": 25107,
+      "block_byte_start": 23957,
+      "block_byte_end_exclusive": 25132,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:51",
+      "dependencies": {
+        "conservative_source_order": "G1:1..50",
+        "detected_name_references": [
+          "G1:48",
+          "G1:49",
+          "G1:50"
+        ]
+      }
+    },
+    {
+      "entry": 52,
+      "kind": "lemma",
+      "name": "Erdos993G1.indepCount_three_incidence",
+      "marker_sha256": "3adc3e522766311fc9fcd178eccb3be21853afe0f6f45f08e276fee0469da6e6",
+      "fragment_sha256": "3adc3e522766311fc9fcd178eccb3be21853afe0f6f45f08e276fee0469da6e6",
+      "fragment_byte_start": 25269,
+      "fragment_byte_end_exclusive": 25771,
+      "block_byte_start": 25133,
+      "block_byte_end_exclusive": 25796,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:52",
+      "dependencies": {
+        "conservative_source_order": "G1:1..51",
+        "detected_name_references": [
+          "G1:1",
+          "G1:17",
+          "G1:51"
+        ]
+      }
+    },
+    {
+      "entry": 53,
+      "kind": "lemma",
+      "name": "Erdos993G1.sum_triple_centered_neighbor_pairs",
+      "marker_sha256": "5d6d13f96ef2b45f6ff273927629e027fd51f7516517e36611d6551eb587a326",
+      "fragment_sha256": "5d6d13f96ef2b45f6ff273927629e027fd51f7516517e36611d6551eb587a326",
+      "fragment_byte_start": 25941,
+      "fragment_byte_end_exclusive": 28518,
+      "block_byte_start": 25797,
+      "block_byte_end_exclusive": 28543,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:53",
+      "dependencies": {
+        "conservative_source_order": "G1:1..52",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 54,
+      "kind": "lemma",
+      "name": "Erdos993G1.indepCount_three_add_edge_incidence",
+      "marker_sha256": "b398a1f04b7b79977e8c1fc91c4eff3e3af0fec8c9def9962f181c902fe781da",
+      "fragment_sha256": "b398a1f04b7b79977e8c1fc91c4eff3e3af0fec8c9def9962f181c902fe781da",
+      "fragment_byte_start": 28689,
+      "fragment_byte_end_exclusive": 29195,
+      "block_byte_start": 28544,
+      "block_byte_end_exclusive": 29220,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:54",
+      "dependencies": {
+        "conservative_source_order": "G1:1..53",
+        "detected_name_references": [
+          "G1:1",
+          "G1:17",
+          "G1:51",
+          "G1:53"
+        ]
+      }
+    },
+    {
+      "entry": 55,
+      "kind": "lemma",
+      "name": "Erdos993G1.pathEight_indepCount_three",
+      "marker_sha256": "0e29db059505f864e12c75ec433be8e57e84a96d1e97e6398d27fb771cca9bdd",
+      "fragment_sha256": "0e29db059505f864e12c75ec433be8e57e84a96d1e97e6398d27fb771cca9bdd",
+      "fragment_byte_start": 29357,
+      "fragment_byte_end_exclusive": 29690,
+      "block_byte_start": 29221,
+      "block_byte_end_exclusive": 29715,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:55",
+      "dependencies": {
+        "conservative_source_order": "G1:1..54",
+        "detected_name_references": [
+          "G1:1",
+          "G1:17"
+        ]
+      }
+    },
+    {
+      "entry": 56,
+      "kind": "lemma",
+      "name": "Erdos993G1.pathEight_indepCount_four",
+      "marker_sha256": "f9906c059d315b180581ede34ccec23534348d14c27029f28598cc0ccd0cb0c0",
+      "fragment_sha256": "f9906c059d315b180581ede34ccec23534348d14c27029f28598cc0ccd0cb0c0",
+      "fragment_byte_start": 29851,
+      "fragment_byte_end_exclusive": 30182,
+      "block_byte_start": 29716,
+      "block_byte_end_exclusive": 30207,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:56",
+      "dependencies": {
+        "conservative_source_order": "G1:1..55",
+        "detected_name_references": [
+          "G1:1",
+          "G1:17"
+        ]
+      }
+    },
+    {
+      "entry": 57,
+      "kind": "lemma",
+      "name": "Erdos993G1.pathEight_delta_three",
+      "marker_sha256": "0c20bb8db1477bcbdfafbf318f9399d38469e5bca9071fe57a29f54b76a338df",
+      "fragment_sha256": "0c20bb8db1477bcbdfafbf318f9399d38469e5bca9071fe57a29f54b76a338df",
+      "fragment_byte_start": 30339,
+      "fragment_byte_end_exclusive": 30633,
+      "block_byte_start": 30208,
+      "block_byte_end_exclusive": 30658,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:57",
+      "dependencies": {
+        "conservative_source_order": "G1:1..56",
+        "detected_name_references": [
+          "G1:3",
+          "G1:25",
+          "G1:55",
+          "G1:56"
+        ]
+      }
+    },
+    {
+      "entry": 58,
+      "kind": "lemma",
+      "name": "Erdos993G1.forest_card_edges_add_components",
+      "marker_sha256": "0c2fc141909dd6efa072639e3071ed6f5e6b14787697f3dd2ee2579560bb017f",
+      "fragment_sha256": "0c2fc141909dd6efa072639e3071ed6f5e6b14787697f3dd2ee2579560bb017f",
+      "fragment_byte_start": 30801,
+      "fragment_byte_end_exclusive": 33010,
+      "block_byte_start": 30659,
+      "block_byte_end_exclusive": 33035,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:58",
+      "dependencies": {
+        "conservative_source_order": "G1:1..57",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 59,
+      "kind": "lemma",
+      "name": "Erdos993G1.components_card_pos_of_card_pos",
+      "marker_sha256": "bd55e00b7dabf7179733a98d36feec04246ff14e0711a9213ddea4545442ebba",
+      "fragment_sha256": "bd55e00b7dabf7179733a98d36feec04246ff14e0711a9213ddea4545442ebba",
+      "fragment_byte_start": 33177,
+      "fragment_byte_end_exclusive": 33405,
+      "block_byte_start": 33036,
+      "block_byte_end_exclusive": 33430,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:59",
+      "dependencies": {
+        "conservative_source_order": "G1:1..58",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 60,
+      "kind": "lemma",
+      "name": "Erdos993G1.connected_of_components_card_eq_one",
+      "marker_sha256": "d1fa40fce26c4bacfa1c0213caf51f70364e8df2ff028548f79d089919d34f6a",
+      "fragment_sha256": "d1fa40fce26c4bacfa1c0213caf51f70364e8df2ff028548f79d089919d34f6a",
+      "fragment_byte_start": 33576,
+      "fragment_byte_end_exclusive": 34031,
+      "block_byte_start": 33431,
+      "block_byte_end_exclusive": 34056,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:60",
+      "dependencies": {
+        "conservative_source_order": "G1:1..59",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 61,
+      "kind": "lemma",
+      "name": "Erdos993G1.PathClassification.longestPath_support_closed",
+      "marker_sha256": "eb014ed9e3bba006ccd1bfec10b3c8919996695ec39461ac245621e58d2bc87f",
+      "fragment_sha256": "eb014ed9e3bba006ccd1bfec10b3c8919996695ec39461ac245621e58d2bc87f",
+      "fragment_byte_start": 34212,
+      "fragment_byte_end_exclusive": 35578,
+      "block_byte_start": 34057,
+      "block_byte_end_exclusive": 35603,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:61",
+      "dependencies": {
+        "conservative_source_order": "G1:1..60",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 62,
+      "kind": "lemma",
+      "name": "Erdos993G1.PathClassification.longestPath_spanning",
+      "marker_sha256": "36b63e828d4fb832735cac7939db6767d6c1bda373c2c2e1903de4ee5e0d00bf",
+      "fragment_sha256": "36b63e828d4fb832735cac7939db6767d6c1bda373c2c2e1903de4ee5e0d00bf",
+      "fragment_byte_start": 35753,
+      "fragment_byte_end_exclusive": 36424,
+      "block_byte_start": 35604,
+      "block_byte_end_exclusive": 36449,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:62",
+      "dependencies": {
+        "conservative_source_order": "G1:1..61",
+        "detected_name_references": [
+          "G1:61"
+        ]
+      }
+    },
+    {
+      "entry": 63,
+      "kind": "lemma",
+      "name": "Erdos993G1.PathClassification.tree_maxDegreeTwo_iso_pathGraph_card",
+      "marker_sha256": "29ac2e202882dce5f177871f54ca5f2de2b04889ab0c3c813bc2c99d6e75d30b",
+      "fragment_sha256": "29ac2e202882dce5f177871f54ca5f2de2b04889ab0c3c813bc2c99d6e75d30b",
+      "fragment_byte_start": 36615,
+      "fragment_byte_end_exclusive": 37765,
+      "block_byte_start": 36450,
+      "block_byte_end_exclusive": 37790,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:63",
+      "dependencies": {
+        "conservative_source_order": "G1:1..62",
+        "detected_name_references": [
+          "G1:62"
+        ]
+      }
+    },
+    {
+      "entry": 64,
+      "kind": "lemma",
+      "name": "Erdos993G1.PathClassification.tree_order_eight_maxDegreeTwo_iso_pathGraph",
+      "marker_sha256": "532fc845394e40f375e4dfd3b0fe4d6cb419a03f6e0ce849a7f2ede4000acc3b",
+      "fragment_sha256": "532fc845394e40f375e4dfd3b0fe4d6cb419a03f6e0ce849a7f2ede4000acc3b",
+      "fragment_byte_start": 37963,
+      "fragment_byte_end_exclusive": 38382,
+      "block_byte_start": 37791,
+      "block_byte_end_exclusive": 38407,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:64",
+      "dependencies": {
+        "conservative_source_order": "G1:1..63",
+        "detected_name_references": [
+          "G1:63"
+        ]
+      }
+    },
+    {
+      "entry": 65,
+      "kind": "lemma",
+      "name": "Erdos993G1.lowRankArithmetic",
+      "marker_sha256": "46e31bf020e3711e0bf5e2bb3f54ba1fbb1136760a2b4b25fab8b5c6c69dfa95",
+      "fragment_sha256": "46e31bf020e3711e0bf5e2bb3f54ba1fbb1136760a2b4b25fab8b5c6c69dfa95",
+      "fragment_byte_start": 38535,
+      "fragment_byte_end_exclusive": 40516,
+      "block_byte_start": 38408,
+      "block_byte_end_exclusive": 40541,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:65",
+      "dependencies": {
+        "conservative_source_order": "G1:1..64",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 66,
+      "kind": "lemma",
+      "name": "Erdos993G1.degreeDefect_nonneg",
+      "marker_sha256": "36d264dd1540fb3c551965bb8704a04e73dffb2748e1497c1638b7d3407c7d8e",
+      "fragment_sha256": "36d264dd1540fb3c551965bb8704a04e73dffb2748e1497c1638b7d3407c7d8e",
+      "fragment_byte_start": 40671,
+      "fragment_byte_end_exclusive": 41008,
+      "block_byte_start": 40542,
+      "block_byte_end_exclusive": 41033,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:66",
+      "dependencies": {
+        "conservative_source_order": "G1:1..65",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 67,
+      "kind": "lemma",
+      "name": "Erdos993G1.degreeDefect_eq_zero_iff",
+      "marker_sha256": "53d6ffa1551d55b391d6ca657b12f47e7be6bc8842ecb9e8ae7528700baed7d9",
+      "fragment_sha256": "53d6ffa1551d55b391d6ca657b12f47e7be6bc8842ecb9e8ae7528700baed7d9",
+      "fragment_byte_start": 41168,
+      "fragment_byte_end_exclusive": 41832,
+      "block_byte_start": 41034,
+      "block_byte_end_exclusive": 41857,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:67",
+      "dependencies": {
+        "conservative_source_order": "G1:1..66",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 68,
+      "kind": "lemma",
+      "name": "Erdos993G1.degreeChoose_sum_lower",
+      "marker_sha256": "32408765453e657cc5f7832829d929966472874f342ca4c81d8899d5d346784e",
+      "fragment_sha256": "32408765453e657cc5f7832829d929966472874f342ca4c81d8899d5d346784e",
+      "fragment_byte_start": 41990,
+      "fragment_byte_end_exclusive": 42434,
+      "block_byte_start": 41858,
+      "block_byte_end_exclusive": 42459,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:68",
+      "dependencies": {
+        "conservative_source_order": "G1:1..67",
+        "detected_name_references": [
+          "G1:66"
+        ]
+      }
+    },
+    {
+      "entry": 69,
+      "kind": "lemma",
+      "name": "Erdos993G1.degreeChoose_sum_equality",
+      "marker_sha256": "69a77469b5e1465d40f99e5c096dad7b2a81bc1de12f0b88b6971afc3ef62763",
+      "fragment_sha256": "69a77469b5e1465d40f99e5c096dad7b2a81bc1de12f0b88b6971afc3ef62763",
+      "fragment_byte_start": 42595,
+      "fragment_byte_end_exclusive": 43256,
+      "block_byte_start": 42460,
+      "block_byte_end_exclusive": 43281,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:69",
+      "dependencies": {
+        "conservative_source_order": "G1:1..68",
+        "detected_name_references": [
+          "G1:66",
+          "G1:67"
+        ]
+      }
+    },
+    {
+      "entry": 70,
+      "kind": "lemma",
+      "name": "Erdos993G1.scaledChooseTwo",
+      "marker_sha256": "c526653f5ce4c90392e252c3e28e6ce164135670fdd12d5664f120646f2671d8",
+      "fragment_sha256": "c526653f5ce4c90392e252c3e28e6ce164135670fdd12d5664f120646f2671d8",
+      "fragment_byte_start": 43407,
+      "fragment_byte_end_exclusive": 43777,
+      "block_byte_start": 43282,
+      "block_byte_end_exclusive": 43802,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:70",
+      "dependencies": {
+        "conservative_source_order": "G1:1..69",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 71,
+      "kind": "lemma",
+      "name": "Erdos993G1.scaledChooseThree",
+      "marker_sha256": "bcef58787034fa165d746e7fa2a863cc1a20b351dafb9951cc1178ad9b01fc1b",
+      "fragment_sha256": "bcef58787034fa165d746e7fa2a863cc1a20b351dafb9951cc1178ad9b01fc1b",
+      "fragment_byte_start": 43930,
+      "fragment_byte_end_exclusive": 44361,
+      "block_byte_start": 43803,
+      "block_byte_end_exclusive": 44386,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:71",
+      "dependencies": {
+        "conservative_source_order": "G1:1..70",
+        "detected_name_references": [
+          "G1:70"
+        ]
+      }
+    },
+    {
+      "entry": 72,
+      "kind": "lemma",
+      "name": "Erdos993G1.lowRankForestClassification_of_count_identities",
+      "marker_sha256": "220e0b030714563a8724d6ffb5c60b4f9e242de52a313d58cf04fe1d2a8e6bfc",
+      "fragment_sha256": "220e0b030714563a8724d6ffb5c60b4f9e242de52a313d58cf04fe1d2a8e6bfc",
+      "fragment_byte_start": 44544,
+      "fragment_byte_end_exclusive": 49233,
+      "block_byte_start": 44387,
+      "block_byte_end_exclusive": 49258,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:72",
+      "dependencies": {
+        "conservative_source_order": "G1:1..71",
+        "detected_name_references": [
+          "G1:1",
+          "G1:3",
+          "G1:4",
+          "G1:20",
+          "G1:25",
+          "G1:26",
+          "G1:29",
+          "G1:35",
+          "G1:57",
+          "G1:58",
+          "G1:59",
+          "G1:60",
+          "G1:64",
+          "G1:65",
+          "G1:68",
+          "G1:69",
+          "G1:70",
+          "G1:71"
+        ]
+      }
+    },
+    {
+      "entry": 73,
+      "kind": "lemma",
+      "name": "Erdos993G1.Deletion.deleteVerts_union_iso",
+      "marker_sha256": "84567459ae6e5bc695dfa19c17afc6bb310c8826f9edac168b186ef817a46594",
+      "fragment_sha256": "84567459ae6e5bc695dfa19c17afc6bb310c8826f9edac168b186ef817a46594",
+      "fragment_byte_start": 49399,
+      "fragment_byte_end_exclusive": 49882,
+      "block_byte_start": 49259,
+      "block_byte_end_exclusive": 49907,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:73",
+      "dependencies": {
+        "conservative_source_order": "G1:1..72",
+        "detected_name_references": [
+          "G1:7"
+        ]
+      }
+    },
+    {
+      "entry": 74,
+      "kind": "lemma",
+      "name": "Erdos993G1.Deletion.ambientH_iso_delete_ambientA",
+      "marker_sha256": "769b68f49bb5a60a0b07c05242ca0c137d2384e08b8244b46302a6ebf4c54759",
+      "fragment_sha256": "769b68f49bb5a60a0b07c05242ca0c137d2384e08b8244b46302a6ebf4c54759",
+      "fragment_byte_start": 50055,
+      "fragment_byte_end_exclusive": 50287,
+      "block_byte_start": 49908,
+      "block_byte_end_exclusive": 50312,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:74",
+      "dependencies": {
+        "conservative_source_order": "G1:1..73",
+        "detected_name_references": [
+          "G1:6",
+          "G1:7",
+          "G1:8",
+          "G1:9",
+          "G1:73"
+        ]
+      }
+    },
+    {
+      "entry": 75,
+      "kind": "lemma",
+      "name": "Erdos993G1.Deletion.original_residual_deletion_set_eq",
+      "marker_sha256": "8e7124c437efa47597a6ff309c3511759132571e7f6e12f8c10af4890b741a42",
+      "fragment_sha256": "8e7124c437efa47597a6ff309c3511759132571e7f6e12f8c10af4890b741a42",
+      "fragment_byte_start": 50465,
+      "fragment_byte_end_exclusive": 50838,
+      "block_byte_start": 50313,
+      "block_byte_end_exclusive": 50863,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:75",
+      "dependencies": {
+        "conservative_source_order": "G1:1..74",
+        "detected_name_references": [
+          "G1:6"
+        ]
+      }
+    },
+    {
+      "entry": 76,
+      "kind": "lemma",
+      "name": "Erdos993G1.Deletion.residual_iso_delete_ambientH",
+      "marker_sha256": "36d14d97e9d35db700fda92549e71479c33ef1c5144afedcd7f7c30dafcf9ffd",
+      "fragment_sha256": "36d14d97e9d35db700fda92549e71479c33ef1c5144afedcd7f7c30dafcf9ffd",
+      "fragment_byte_start": 51011,
+      "fragment_byte_end_exclusive": 51536,
+      "block_byte_start": 50864,
+      "block_byte_end_exclusive": 51561,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:76",
+      "dependencies": {
+        "conservative_source_order": "G1:1..75",
+        "detected_name_references": [
+          "G1:6",
+          "G1:7",
+          "G1:9",
+          "G1:10",
+          "G1:73",
+          "G1:75"
+        ]
+      }
+    },
+    {
+      "entry": 77,
+      "kind": "lemma",
+      "name": "Erdos993G1.Deletion.other_support_neighbor_survives",
+      "marker_sha256": "759d52f4d9f8cfa0ac2ee0493e3e1ff7003954d01a5e8ce54da8fa6bbb7a4dbd",
+      "fragment_sha256": "759d52f4d9f8cfa0ac2ee0493e3e1ff7003954d01a5e8ce54da8fa6bbb7a4dbd",
+      "fragment_byte_start": 51712,
+      "fragment_byte_end_exclusive": 52306,
+      "block_byte_start": 51562,
+      "block_byte_end_exclusive": 52331,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:77",
+      "dependencies": {
+        "conservative_source_order": "G1:1..76",
+        "detected_name_references": [
+          "G1:5",
+          "G1:6"
+        ]
+      }
+    },
+    {
+      "entry": 78,
+      "kind": "lemma",
+      "name": "Erdos993G1.Deletion.ambientH_iso_delete_typed_survivor",
+      "marker_sha256": "ea96d8a8c373dc902349ab1bbe029041639fc399ea5006f88346305fea97a1fe",
+      "fragment_sha256": "ea96d8a8c373dc902349ab1bbe029041639fc399ea5006f88346305fea97a1fe",
+      "fragment_byte_start": 52485,
+      "fragment_byte_end_exclusive": 53041,
+      "block_byte_start": 52332,
+      "block_byte_end_exclusive": 53066,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:78",
+      "dependencies": {
+        "conservative_source_order": "G1:1..77",
+        "detected_name_references": [
+          "G1:6",
+          "G1:7",
+          "G1:8",
+          "G1:9",
+          "G1:74"
+        ]
+      }
+    },
+    {
+      "entry": 79,
+      "kind": "lemma",
+      "name": "Erdos993G1.Deletion.leaf_ambientH_iso_delete_typed_survivor",
+      "marker_sha256": "5e04878ee268c444211ced7b140695f5d81c75d0207a1892d19938d73463f14a",
+      "fragment_sha256": "5e04878ee268c444211ced7b140695f5d81c75d0207a1892d19938d73463f14a",
+      "fragment_byte_start": 53225,
+      "fragment_byte_end_exclusive": 53694,
+      "block_byte_start": 53067,
+      "block_byte_end_exclusive": 53719,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:79",
+      "dependencies": {
+        "conservative_source_order": "G1:1..78",
+        "detected_name_references": [
+          "G1:5",
+          "G1:7",
+          "G1:8",
+          "G1:9",
+          "G1:77",
+          "G1:78"
+        ]
+      }
+    },
+    {
+      "entry": 80,
+      "kind": "lemma",
+      "name": "Erdos993G1.lowRankForestClassification",
+      "marker_sha256": "87931db520d541292d805b40c26e574756d1edcc5ddecaa17dc0939e6fb593dc",
+      "fragment_sha256": "87931db520d541292d805b40c26e574756d1edcc5ddecaa17dc0939e6fb593dc",
+      "fragment_byte_start": 53857,
+      "fragment_byte_end_exclusive": 54397,
+      "block_byte_start": 53720,
+      "block_byte_end_exclusive": 54422,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:80",
+      "dependencies": {
+        "conservative_source_order": "G1:1..79",
+        "detected_name_references": [
+          "G1:3",
+          "G1:4",
+          "G1:44",
+          "G1:54",
+          "G1:72"
+        ]
+      }
+    },
+    {
+      "entry": 81,
+      "kind": "lemma",
+      "name": "Erdos993G1.ordinaryG1_lowRank",
+      "marker_sha256": "6f43a8c7ebe501315351076f7f437f0d0620934a9696bba3efdb0c3a30c2f054",
+      "fragment_sha256": "6f43a8c7ebe501315351076f7f437f0d0620934a9696bba3efdb0c3a30c2f054",
+      "fragment_byte_start": 54551,
+      "fragment_byte_end_exclusive": 55153,
+      "block_byte_start": 54423,
+      "block_byte_end_exclusive": 55178,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:81",
+      "dependencies": {
+        "conservative_source_order": "G1:1..80",
+        "detected_name_references": [
+          "G1:3",
+          "G1:10",
+          "G1:12",
+          "G1:39",
+          "G1:80"
+        ]
+      }
+    },
+    {
+      "entry": 82,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.binomCoeff_nat",
+      "marker_sha256": "586e57d9bbf57356d8d3f141a64048b60b0025dd334aa3cb43cf0c05b86fd40b",
+      "fragment_sha256": "586e57d9bbf57356d8d3f141a64048b60b0025dd334aa3cb43cf0c05b86fd40b",
+      "fragment_byte_start": 55313,
+      "fragment_byte_end_exclusive": 55476,
+      "block_byte_start": 55179,
+      "block_byte_end_exclusive": 55501,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:82",
+      "dependencies": {
+        "conservative_source_order": "G1:1..81",
+        "detected_name_references": [
+          "G1:14"
+        ]
+      }
+    },
+    {
+      "entry": 83,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.binomCoeff_neg",
+      "marker_sha256": "0fd093d56b6fbbc606c172582bf0269994ddb4b44a43255450640e15ac99592f",
+      "fragment_sha256": "0fd093d56b6fbbc606c172582bf0269994ddb4b44a43255450640e15ac99592f",
+      "fragment_byte_start": 55636,
+      "fragment_byte_end_exclusive": 55810,
+      "block_byte_start": 55502,
+      "block_byte_end_exclusive": 55835,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:83",
+      "dependencies": {
+        "conservative_source_order": "G1:1..82",
+        "detected_name_references": [
+          "G1:14"
+        ]
+      }
+    },
+    {
+      "entry": 84,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.binomCoeff_nat_add_one",
+      "marker_sha256": "76f6bc26fab79b1f54a080fdcc272777f055775d5150d9b65db3ba4ebe8c4f1a",
+      "fragment_sha256": "76f6bc26fab79b1f54a080fdcc272777f055775d5150d9b65db3ba4ebe8c4f1a",
+      "fragment_byte_start": 55978,
+      "fragment_byte_end_exclusive": 56218,
+      "block_byte_start": 55836,
+      "block_byte_end_exclusive": 56243,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:84",
+      "dependencies": {
+        "conservative_source_order": "G1:1..83",
+        "detected_name_references": [
+          "G1:14",
+          "G1:82"
+        ]
+      }
+    },
+    {
+      "entry": 85,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.binomCoeff_nat_sub_one",
+      "marker_sha256": "fa5eacaa79aa247673c3bd77e20ab7280a3496796f6c6fe1d9bca152cf171c62",
+      "fragment_sha256": "fa5eacaa79aa247673c3bd77e20ab7280a3496796f6c6fe1d9bca152cf171c62",
+      "fragment_byte_start": 56386,
+      "fragment_byte_end_exclusive": 56654,
+      "block_byte_start": 56244,
+      "block_byte_end_exclusive": 56679,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:85",
+      "dependencies": {
+        "conservative_source_order": "G1:1..84",
+        "detected_name_references": [
+          "G1:14",
+          "G1:82"
+        ]
+      }
+    },
+    {
+      "entry": 86,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.choose_step_strict",
+      "marker_sha256": "a77a46e8e0db35c873c8c5bcfe3054e7201a5ddde6de100392fa5146d748b0a2",
+      "fragment_sha256": "a77a46e8e0db35c873c8c5bcfe3054e7201a5ddde6de100392fa5146d748b0a2",
+      "fragment_byte_start": 56818,
+      "fragment_byte_end_exclusive": 57215,
+      "block_byte_start": 56680,
+      "block_byte_end_exclusive": 57240,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:86",
+      "dependencies": {
+        "conservative_source_order": "G1:1..85",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 87,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.choose_step_nonpos",
+      "marker_sha256": "708d7e4957a1c64891a918c1199c643b3442f186a588790b914669abafaa6a4b",
+      "fragment_sha256": "708d7e4957a1c64891a918c1199c643b3442f186a588790b914669abafaa6a4b",
+      "fragment_byte_start": 57379,
+      "fragment_byte_end_exclusive": 57740,
+      "block_byte_start": 57241,
+      "block_byte_end_exclusive": 57765,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:87",
+      "dependencies": {
+        "conservative_source_order": "G1:1..86",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 88,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.choose_step_strict_down",
+      "marker_sha256": "305669e8111e1d6db019e3060bddd15634031e5adaec725c4093fb24e2ef154f",
+      "fragment_sha256": "305669e8111e1d6db019e3060bddd15634031e5adaec725c4093fb24e2ef154f",
+      "fragment_byte_start": 57909,
+      "fragment_byte_end_exclusive": 58318,
+      "block_byte_start": 57766,
+      "block_byte_end_exclusive": 58343,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:88",
+      "dependencies": {
+        "conservative_source_order": "G1:1..87",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 89,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.edgeless_expression_pos",
+      "marker_sha256": "59973140081fcd6f5a79d037bb406542ef7339ee2c5626efcad1b6652747a85e",
+      "fragment_sha256": "59973140081fcd6f5a79d037bb406542ef7339ee2c5626efcad1b6652747a85e",
+      "fragment_byte_start": 58487,
+      "fragment_byte_end_exclusive": 58854,
+      "block_byte_start": 58344,
+      "block_byte_end_exclusive": 58879,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:89",
+      "dependencies": {
+        "conservative_source_order": "G1:1..88",
+        "detected_name_references": [
+          "G1:14",
+          "G1:82",
+          "G1:84",
+          "G1:86"
+        ]
+      }
+    },
+    {
+      "entry": 90,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.one_edge_expression_pos",
+      "marker_sha256": "cf9dea25b395f63394ba326710679e7151f6777e79be14e92ee54b872628e186",
+      "fragment_sha256": "cf9dea25b395f63394ba326710679e7151f6777e79be14e92ee54b872628e186",
+      "fragment_byte_start": 59023,
+      "fragment_byte_end_exclusive": 60343,
+      "block_byte_start": 58880,
+      "block_byte_end_exclusive": 60368,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:90",
+      "dependencies": {
+        "conservative_source_order": "G1:1..89",
+        "detected_name_references": [
+          "G1:14",
+          "G1:82",
+          "G1:84",
+          "G1:85",
+          "G1:86"
+        ]
+      }
+    },
+    {
+      "entry": 91,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.center_expression_nonpos",
+      "marker_sha256": "b895ef3085345a90b75294f9d1e35cbeadb516c06c0b7b3513d5b8f6939cd6ed",
+      "fragment_sha256": "b895ef3085345a90b75294f9d1e35cbeadb516c06c0b7b3513d5b8f6939cd6ed",
+      "fragment_byte_start": 60513,
+      "fragment_byte_end_exclusive": 61146,
+      "block_byte_start": 60369,
+      "block_byte_end_exclusive": 61171,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:91",
+      "dependencies": {
+        "conservative_source_order": "G1:1..90",
+        "detected_name_references": [
+          "G1:14",
+          "G1:82",
+          "G1:84",
+          "G1:85",
+          "G1:87"
+        ]
+      }
+    },
+    {
+      "entry": 92,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.triangle_expression_neg",
+      "marker_sha256": "0d48996514007adc12fa19659b5b5ad485218f6d6764d136ef85229c475a9f9e",
+      "fragment_sha256": "0d48996514007adc12fa19659b5b5ad485218f6d6764d136ef85229c475a9f9e",
+      "fragment_byte_start": 61315,
+      "fragment_byte_end_exclusive": 62029,
+      "block_byte_start": 61172,
+      "block_byte_end_exclusive": 62054,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:92",
+      "dependencies": {
+        "conservative_source_order": "G1:1..91",
+        "detected_name_references": [
+          "G1:14",
+          "G1:82",
+          "G1:84",
+          "G1:85",
+          "G1:88"
+        ]
+      }
+    },
+    {
+      "entry": 93,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.delta_pos_of_edgeless_counts",
+      "marker_sha256": "c30bada5713a560a315d3aa627387479a741f4fc16240a009a035ebe456372f1",
+      "fragment_sha256": "c30bada5713a560a315d3aa627387479a741f4fc16240a009a035ebe456372f1",
+      "fragment_byte_start": 62203,
+      "fragment_byte_end_exclusive": 62622,
+      "block_byte_start": 62055,
+      "block_byte_end_exclusive": 62647,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:93",
+      "dependencies": {
+        "conservative_source_order": "G1:1..92",
+        "detected_name_references": [
+          "G1:1",
+          "G1:3",
+          "G1:14",
+          "G1:25",
+          "G1:89"
+        ]
+      }
+    },
+    {
+      "entry": 94,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.delta_pos_of_one_edge_counts",
+      "marker_sha256": "f74414a03a900086794954e466ea63fc1e2bf77d023ebaf28de34f29b60ce9bb",
+      "fragment_sha256": "f74414a03a900086794954e466ea63fc1e2bf77d023ebaf28de34f29b60ce9bb",
+      "fragment_byte_start": 62796,
+      "fragment_byte_end_exclusive": 63368,
+      "block_byte_start": 62648,
+      "block_byte_end_exclusive": 63393,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:94",
+      "dependencies": {
+        "conservative_source_order": "G1:1..93",
+        "detected_name_references": [
+          "G1:1",
+          "G1:3",
+          "G1:14",
+          "G1:25",
+          "G1:90"
+        ]
+      }
+    },
+    {
+      "entry": 95,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.delta_nonpos_of_center_counts",
+      "marker_sha256": "cfeea82027a48154c86e8e65aef0d0424e543f6b7558edc837a2ea5eb3129d1e",
+      "fragment_sha256": "cfeea82027a48154c86e8e65aef0d0424e543f6b7558edc837a2ea5eb3129d1e",
+      "fragment_byte_start": 63543,
+      "fragment_byte_end_exclusive": 64008,
+      "block_byte_start": 63394,
+      "block_byte_end_exclusive": 64033,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:95",
+      "dependencies": {
+        "conservative_source_order": "G1:1..94",
+        "detected_name_references": [
+          "G1:1",
+          "G1:3",
+          "G1:14",
+          "G1:25",
+          "G1:91"
+        ]
+      }
+    },
+    {
+      "entry": 96,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.delta_neg_of_triangle_counts",
+      "marker_sha256": "68fad36276c13facb0b04954b337de9a124051a465e50f88b2bceb1bdfdeefc2",
+      "fragment_sha256": "68fad36276c13facb0b04954b337de9a124051a465e50f88b2bceb1bdfdeefc2",
+      "fragment_byte_start": 64182,
+      "fragment_byte_end_exclusive": 64629,
+      "block_byte_start": 64034,
+      "block_byte_end_exclusive": 64654,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:96",
+      "dependencies": {
+        "conservative_source_order": "G1:1..95",
+        "detected_name_references": [
+          "G1:1",
+          "G1:3",
+          "G1:14",
+          "G1:25",
+          "G1:92"
+        ]
+      }
+    },
+    {
+      "entry": 97,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.firstDescent_gt_of_positive_history",
+      "marker_sha256": "bd19f6ab2d00df81b8aad74fd5e3dcfecee3812230f5080376e7b4d2aa1327d9",
+      "fragment_sha256": "bd19f6ab2d00df81b8aad74fd5e3dcfecee3812230f5080376e7b4d2aa1327d9",
+      "fragment_byte_start": 64810,
+      "fragment_byte_end_exclusive": 65204,
+      "block_byte_start": 64655,
+      "block_byte_end_exclusive": 65229,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:97",
+      "dependencies": {
+        "conservative_source_order": "G1:1..96",
+        "detected_name_references": [
+          "G1:3",
+          "G1:4",
+          "G1:29"
+        ]
+      }
+    },
+    {
+      "entry": 98,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.ordinaryG1_firstWide_rank",
+      "marker_sha256": "a0779e97094008be3df4fb829485a0bab6b18a0e338b9a7588e6fe0ce08675a3",
+      "fragment_sha256": "a0779e97094008be3df4fb829485a0bab6b18a0e338b9a7588e6fe0ce08675a3",
+      "fragment_byte_start": 65375,
+      "fragment_byte_end_exclusive": 66127,
+      "block_byte_start": 65230,
+      "block_byte_end_exclusive": 66152,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:98",
+      "dependencies": {
+        "conservative_source_order": "G1:1..97",
+        "detected_name_references": [
+          "G1:4",
+          "G1:6",
+          "G1:10",
+          "G1:11",
+          "G1:12"
+        ]
+      }
+    },
+    {
+      "entry": 99,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.edgeSet_natCard_eq_edgeFinset_card",
+      "marker_sha256": "173afaea29333238363411afefbda96929468184e2246a92b678b19529e126e1",
+      "fragment_sha256": "173afaea29333238363411afefbda96929468184e2246a92b678b19529e126e1",
+      "fragment_byte_start": 66307,
+      "fragment_byte_end_exclusive": 66565,
+      "block_byte_start": 66153,
+      "block_byte_end_exclusive": 66590,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:99",
+      "dependencies": {
+        "conservative_source_order": "G1:1..98",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 100,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.indepCount_edgeless",
+      "marker_sha256": "65f447028fbab531a1ab9d37c8485f02dc5b12b52002d438703c6308017fe3bd",
+      "fragment_sha256": "65f447028fbab531a1ab9d37c8485f02dc5b12b52002d438703c6308017fe3bd",
+      "fragment_byte_start": 66731,
+      "fragment_byte_end_exclusive": 67424,
+      "block_byte_start": 66591,
+      "block_byte_end_exclusive": 67450,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:100",
+      "dependencies": {
+        "conservative_source_order": "G1:1..99",
+        "detected_name_references": [
+          "G1:1",
+          "G1:14",
+          "G1:17",
+          "G1:45",
+          "G1:82"
+        ]
+      }
+    },
+    {
+      "entry": 101,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.edgeSet_one_endpoints",
+      "marker_sha256": "6e97c5b582b476b8ea43649632fffd288f4baabb9e24dc0f6a6d5a86a534a4e6",
+      "fragment_sha256": "6e97c5b582b476b8ea43649632fffd288f4baabb9e24dc0f6a6d5a86a534a4e6",
+      "fragment_byte_start": 67593,
+      "fragment_byte_end_exclusive": 68386,
+      "block_byte_start": 67451,
+      "block_byte_end_exclusive": 68412,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:101",
+      "dependencies": {
+        "conservative_source_order": "G1:1..100",
+        "detected_name_references": [
+          "G1:99"
+        ]
+      }
+    },
+    {
+      "entry": 102,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.indepSet_iff_omit_unique_endpoints",
+      "marker_sha256": "0cc04950f0336870793246695e3513f0241182363d502893c08033fc6146414b",
+      "fragment_sha256": "0cc04950f0336870793246695e3513f0241182363d502893c08033fc6146414b",
+      "fragment_byte_start": 68568,
+      "fragment_byte_end_exclusive": 69601,
+      "block_byte_start": 68413,
+      "block_byte_end_exclusive": 69627,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:102",
+      "dependencies": {
+        "conservative_source_order": "G1:1..101",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 103,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.indepCount_one_edge",
+      "marker_sha256": "07f1da65efa1980dd45e15eed8b0d3b5e6faa30ea20f7afb1c60836cb4f135d6",
+      "fragment_sha256": "07f1da65efa1980dd45e15eed8b0d3b5e6faa30ea20f7afb1c60836cb4f135d6",
+      "fragment_byte_start": 69768,
+      "fragment_byte_end_exclusive": 72239,
+      "block_byte_start": 69628,
+      "block_byte_end_exclusive": 72265,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:103",
+      "dependencies": {
+        "conservative_source_order": "G1:1..102",
+        "detected_name_references": [
+          "G1:1",
+          "G1:14",
+          "G1:17",
+          "G1:19",
+          "G1:82",
+          "G1:85",
+          "G1:101",
+          "G1:102"
+        ]
+      }
+    },
+    {
+      "entry": 104,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.matching_distinct",
+      "marker_sha256": "a449a8fd573a2b348e91e1610f6f79a685e38909fe0739a27b72066a59de837d",
+      "fragment_sha256": "a449a8fd573a2b348e91e1610f6f79a685e38909fe0739a27b72066a59de837d",
+      "fragment_byte_start": 72404,
+      "fragment_byte_end_exclusive": 73092,
+      "block_byte_start": 72266,
+      "block_byte_end_exclusive": 73118,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:104",
+      "dependencies": {
+        "conservative_source_order": "G1:1..103",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 105,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.matching_endpoints_card",
+      "marker_sha256": "ce4e0346c857d4aeb91938f538f0b180ff8c28c85b5e927b85f0e3e3b9e4cbd6",
+      "fragment_sha256": "ce4e0346c857d4aeb91938f538f0b180ff8c28c85b5e927b85f0e3e3b9e4cbd6",
+      "fragment_byte_start": 73263,
+      "fragment_byte_end_exclusive": 73642,
+      "block_byte_start": 73119,
+      "block_byte_end_exclusive": 73668,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:105",
+      "dependencies": {
+        "conservative_source_order": "G1:1..104",
+        "detected_name_references": [
+          "G1:104"
+        ]
+      }
+    },
+    {
+      "entry": 106,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.indep_inter_matching_le_two",
+      "marker_sha256": "997ea066a7aff492e2c104d8916155048fa7e5e7403f8e064ccc69587b207acb",
+      "fragment_sha256": "997ea066a7aff492e2c104d8916155048fa7e5e7403f8e064ccc69587b207acb",
+      "fragment_byte_start": 73817,
+      "fragment_byte_end_exclusive": 74924,
+      "block_byte_start": 73669,
+      "block_byte_end_exclusive": 74950,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:106",
+      "dependencies": {
+        "conservative_source_order": "G1:1..105",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 107,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.stratum_mem",
+      "marker_sha256": "504d4af084832f88d2563028e2faf28c0bb1338a3f4b6a51a6fcff6564656f73",
+      "fragment_sha256": "504d4af084832f88d2563028e2faf28c0bb1338a3f4b6a51a6fcff6564656f73",
+      "fragment_byte_start": 75083,
+      "fragment_byte_end_exclusive": 75540,
+      "block_byte_start": 74951,
+      "block_byte_end_exclusive": 75566,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:107",
+      "dependencies": {
+        "conservative_source_order": "G1:1..106",
+        "detected_name_references": [
+          "G1:13"
+        ]
+      }
+    },
+    {
+      "entry": 108,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.stratum_partition",
+      "marker_sha256": "6d086dd15c11fe70589d5707d757c100ef39058297f73df4b5446c345068440b",
+      "fragment_sha256": "6d086dd15c11fe70589d5707d757c100ef39058297f73df4b5446c345068440b",
+      "fragment_byte_start": 75705,
+      "fragment_byte_end_exclusive": 76873,
+      "block_byte_start": 75567,
+      "block_byte_end_exclusive": 76899,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:108",
+      "dependencies": {
+        "conservative_source_order": "G1:1..107",
+        "detected_name_references": [
+          "G1:1",
+          "G1:13",
+          "G1:17",
+          "G1:107"
+        ]
+      }
+    },
+    {
+      "entry": 109,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.erase_inter_eq",
+      "marker_sha256": "80fd100398812f2e356dc20bec0b214775918fcc2b6d277d944b97f58dc20dd1",
+      "fragment_sha256": "80fd100398812f2e356dc20bec0b214775918fcc2b6d277d944b97f58dc20dd1",
+      "fragment_byte_start": 77035,
+      "fragment_byte_end_exclusive": 77228,
+      "block_byte_start": 76900,
+      "block_byte_end_exclusive": 77254,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:109",
+      "dependencies": {
+        "conservative_source_order": "G1:1..108",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 110,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.subset_fiber_eq_image",
+      "marker_sha256": "e80b8cbb8d4e06d57ce70402981d36db3353854c32af7e06a56f22ed2af0f310",
+      "fragment_sha256": "e80b8cbb8d4e06d57ce70402981d36db3353854c32af7e06a56f22ed2af0f310",
+      "fragment_byte_start": 77397,
+      "fragment_byte_end_exclusive": 78140,
+      "block_byte_start": 77255,
+      "block_byte_end_exclusive": 78166,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:110",
+      "dependencies": {
+        "conservative_source_order": "G1:1..109",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 111,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.erase_image_card",
+      "marker_sha256": "bce886ffb6829c7053b6b56d89c1adfe62f5407b0a58185245bded59618aee00",
+      "fragment_sha256": "bce886ffb6829c7053b6b56d89c1adfe62f5407b0a58185245bded59618aee00",
+      "fragment_byte_start": 78304,
+      "fragment_byte_end_exclusive": 78589,
+      "block_byte_start": 78167,
+      "block_byte_end_exclusive": 78615,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:111",
+      "dependencies": {
+        "conservative_source_order": "G1:1..110",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 112,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.extension_fiber_bound",
+      "marker_sha256": "77c89a89044242a6a606c8e315ed0195a061f1e9df5ffd54ca1bba94b0cee8cb",
+      "fragment_sha256": "77c89a89044242a6a606c8e315ed0195a061f1e9df5ffd54ca1bba94b0cee8cb",
+      "fragment_byte_start": 78758,
+      "fragment_byte_end_exclusive": 79472,
+      "block_byte_start": 78616,
+      "block_byte_end_exclusive": 79498,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:112",
+      "dependencies": {
+        "conservative_source_order": "G1:1..111",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 113,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.stratum_erase_outside_iff",
+      "marker_sha256": "757fa20557947ef6c340f03672327a4d2e51c127821d73a88a4c0eb1a4f4c51b",
+      "fragment_sha256": "757fa20557947ef6c340f03672327a4d2e51c127821d73a88a4c0eb1a4f4c51b",
+      "fragment_byte_start": 79645,
+      "fragment_byte_end_exclusive": 80437,
+      "block_byte_start": 79499,
+      "block_byte_end_exclusive": 80463,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:113",
+      "dependencies": {
+        "conservative_source_order": "G1:1..112",
+        "detected_name_references": [
+          "G1:13",
+          "G1:107",
+          "G1:109"
+        ]
+      }
+    },
+    {
+      "entry": 114,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.stratum_erase_inside",
+      "marker_sha256": "d08583874e7cb5bc39103f6cbe245aaf447740802812596ba5eee7d19484efd9",
+      "fragment_sha256": "d08583874e7cb5bc39103f6cbe245aaf447740802812596ba5eee7d19484efd9",
+      "fragment_byte_start": 80605,
+      "fragment_byte_end_exclusive": 81280,
+      "block_byte_start": 80464,
+      "block_byte_end_exclusive": 81306,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:114",
+      "dependencies": {
+        "conservative_source_order": "G1:1..113",
+        "detected_name_references": [
+          "G1:13",
+          "G1:107",
+          "G1:109"
+        ]
+      }
+    },
+    {
+      "entry": 115,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.stratum_insert_same_outside",
+      "marker_sha256": "4912eb459f7be5241cab85f68d8e0ba38e15b28b2bc499e53fbaac3995017df0",
+      "fragment_sha256": "4912eb459f7be5241cab85f68d8e0ba38e15b28b2bc499e53fbaac3995017df0",
+      "fragment_byte_start": 81455,
+      "fragment_byte_end_exclusive": 82111,
+      "block_byte_start": 81307,
+      "block_byte_end_exclusive": 82137,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:115",
+      "dependencies": {
+        "conservative_source_order": "G1:1..114",
+        "detected_name_references": [
+          "G1:13",
+          "G1:107"
+        ]
+      }
+    },
+    {
+      "entry": 116,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.stratum_insert_cross_inside",
+      "marker_sha256": "6812c84b0d422aaeefc22bc3abeac557902e65ec37c3e6d767f380ae3ba07b3b",
+      "fragment_sha256": "6812c84b0d422aaeefc22bc3abeac557902e65ec37c3e6d767f380ae3ba07b3b",
+      "fragment_byte_start": 82286,
+      "fragment_byte_end_exclusive": 82836,
+      "block_byte_start": 82138,
+      "block_byte_end_exclusive": 82862,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:116",
+      "dependencies": {
+        "conservative_source_order": "G1:1..115",
+        "detected_name_references": [
+          "G1:13",
+          "G1:107"
+        ]
+      }
+    },
+    {
+      "entry": 117,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.outside_incidence_bound",
+      "marker_sha256": "cc9d1f4b9812be6d690e03db3481726c1e9fa303be0790d6a54e04d47f006fd2",
+      "fragment_sha256": "cc9d1f4b9812be6d690e03db3481726c1e9fa303be0790d6a54e04d47f006fd2",
+      "fragment_byte_start": 83007,
+      "fragment_byte_end_exclusive": 85069,
+      "block_byte_start": 82863,
+      "block_byte_end_exclusive": 85095,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:117",
+      "dependencies": {
+        "conservative_source_order": "G1:1..116",
+        "detected_name_references": [
+          "G1:13",
+          "G1:107",
+          "G1:110",
+          "G1:111",
+          "G1:112",
+          "G1:113",
+          "G1:115"
+        ]
+      }
+    },
+    {
+      "entry": 118,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.matching_partner",
+      "marker_sha256": "259d75877bc12cbbc42be914263de232da90e97e15b3690baa0fc9ef8d418759",
+      "fragment_sha256": "259d75877bc12cbbc42be914263de232da90e97e15b3690baa0fc9ef8d418759",
+      "fragment_byte_start": 85233,
+      "fragment_byte_end_exclusive": 85753,
+      "block_byte_start": 85096,
+      "block_byte_end_exclusive": 85779,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:118",
+      "dependencies": {
+        "conservative_source_order": "G1:1..117",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 119,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.matching_cross_incidence_bound",
+      "marker_sha256": "12af7ed015f585a0312634023f0a0684d50afa6857b54d1580d6ab0d45f38801",
+      "fragment_sha256": "12af7ed015f585a0312634023f0a0684d50afa6857b54d1580d6ab0d45f38801",
+      "fragment_byte_start": 85931,
+      "fragment_byte_end_exclusive": 88369,
+      "block_byte_start": 85780,
+      "block_byte_end_exclusive": 88395,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:119",
+      "dependencies": {
+        "conservative_source_order": "G1:1..118",
+        "detected_name_references": [
+          "G1:13",
+          "G1:105",
+          "G1:107",
+          "G1:111",
+          "G1:112",
+          "G1:114",
+          "G1:116",
+          "G1:118"
+        ]
+      }
+    },
+    {
+      "entry": 120,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.stratum_univ_empty",
+      "marker_sha256": "fc80060f69804a645caad6e008c8d8371e942720ab9fbcf49c9028bb3f77e41d",
+      "fragment_sha256": "fc80060f69804a645caad6e008c8d8371e942720ab9fbcf49c9028bb3f77e41d",
+      "fragment_byte_start": 88535,
+      "fragment_byte_end_exclusive": 88968,
+      "block_byte_start": 88396,
+      "block_byte_end_exclusive": 88994,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:120",
+      "dependencies": {
+        "conservative_source_order": "G1:1..119",
+        "detected_name_references": [
+          "G1:13",
+          "G1:107"
+        ]
+      }
+    },
+    {
+      "entry": 121,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.delta_nonpos_of_disjoint_edges",
+      "marker_sha256": "bc5f1254c9d31ae39347aa6af57b869504a2c26e0ec9e99aa67b3b4298f64da2",
+      "fragment_sha256": "bc5f1254c9d31ae39347aa6af57b869504a2c26e0ec9e99aa67b3b4298f64da2",
+      "fragment_byte_start": 89146,
+      "fragment_byte_end_exclusive": 91895,
+      "block_byte_start": 88995,
+      "block_byte_end_exclusive": 91921,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:121",
+      "dependencies": {
+        "conservative_source_order": "G1:1..120",
+        "detected_name_references": [
+          "G1:3",
+          "G1:13",
+          "G1:25",
+          "G1:105",
+          "G1:106",
+          "G1:108",
+          "G1:117",
+          "G1:119",
+          "G1:120"
+        ]
+      }
+    },
+    {
+      "entry": 122,
+      "kind": "lemma",
+      "name": "Erdos993G1.firstWide_exceptional_history",
+      "marker_sha256": "7241d7166debed6cbff2ad02fc9192d4493a39178bdfa34dfaeca471a9a08b8c",
+      "fragment_sha256": "7241d7166debed6cbff2ad02fc9192d4493a39178bdfa34dfaeca471a9a08b8c",
+      "fragment_byte_start": 92062,
+      "fragment_byte_end_exclusive": 92663,
+      "block_byte_start": 91922,
+      "block_byte_end_exclusive": 92689,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:122",
+      "dependencies": {
+        "conservative_source_order": "G1:1..121",
+        "detected_name_references": [
+          "G1:3",
+          "G1:93",
+          "G1:94",
+          "G1:100",
+          "G1:103"
+        ]
+      }
+    },
+    {
+      "entry": 123,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.shape_edges_overlap",
+      "marker_sha256": "c7a18cb14f679409132fad56f06cda44eec7dd3a5b84519f848ab596aa3aad7f",
+      "fragment_sha256": "c7a18cb14f679409132fad56f06cda44eec7dd3a5b84519f848ab596aa3aad7f",
+      "fragment_byte_start": 92830,
+      "fragment_byte_end_exclusive": 93293,
+      "block_byte_start": 92690,
+      "block_byte_end_exclusive": 93319,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:123",
+      "dependencies": {
+        "conservative_source_order": "G1:1..122",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 124,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.shape_two_incident",
+      "marker_sha256": "a347e4eb45f7d367392f11b85662c6b3c734264865cdb89aa40a5944fbf2fbdc",
+      "fragment_sha256": "a347e4eb45f7d367392f11b85662c6b3c734264865cdb89aa40a5944fbf2fbdc",
+      "fragment_byte_start": 93459,
+      "fragment_byte_end_exclusive": 94524,
+      "block_byte_start": 93320,
+      "block_byte_end_exclusive": 94550,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:124",
+      "dependencies": {
+        "conservative_source_order": "G1:1..123",
+        "detected_name_references": [
+          "G1:123"
+        ]
+      }
+    },
+    {
+      "entry": 125,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.intersecting_edges_center_or_triangle",
+      "marker_sha256": "1cd4ea3d6eb1664face4bc3a848c07c50ea76be77e3f3d629f8b7c073058d207",
+      "fragment_sha256": "1cd4ea3d6eb1664face4bc3a848c07c50ea76be77e3f3d629f8b7c073058d207",
+      "fragment_byte_start": 94709,
+      "fragment_byte_end_exclusive": 96221,
+      "block_byte_start": 94551,
+      "block_byte_end_exclusive": 96247,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:125",
+      "dependencies": {
+        "conservative_source_order": "G1:1..124",
+        "detected_name_references": [
+          "G1:123",
+          "G1:124"
+        ]
+      }
+    },
+    {
+      "entry": 126,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.shape_indep_on_edgeless",
+      "marker_sha256": "8d1f03b1dd503525f9843dfda50dd92574a58231497237fca86e4cf3494e8bee",
+      "fragment_sha256": "8d1f03b1dd503525f9843dfda50dd92574a58231497237fca86e4cf3494e8bee",
+      "fragment_byte_start": 96392,
+      "fragment_byte_end_exclusive": 96844,
+      "block_byte_start": 96248,
+      "block_byte_end_exclusive": 96870,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:126",
+      "dependencies": {
+        "conservative_source_order": "G1:1..125",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 127,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.shape_indep_on_succ",
+      "marker_sha256": "8bce84601f17028aa6b5281a6709b267fc112a5de410ed07a0bcef70f551c148",
+      "fragment_sha256": "8bce84601f17028aa6b5281a6709b267fc112a5de410ed07a0bcef70f551c148",
+      "fragment_byte_start": 97011,
+      "fragment_byte_end_exclusive": 100464,
+      "block_byte_start": 96871,
+      "block_byte_end_exclusive": 100490,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:127",
+      "dependencies": {
+        "conservative_source_order": "G1:1..126",
+        "detected_name_references": []
+      }
+    },
+    {
+      "entry": 128,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.shape_indep_on_center",
+      "marker_sha256": "0fa259df3c1afda8858ce7e3e9effea405b4e5ff2e39fe173dc207168776fb4f",
+      "fragment_sha256": "0fa259df3c1afda8858ce7e3e9effea405b4e5ff2e39fe173dc207168776fb4f",
+      "fragment_byte_start": 100633,
+      "fragment_byte_end_exclusive": 101724,
+      "block_byte_start": 100491,
+      "block_byte_end_exclusive": 101750,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:128",
+      "dependencies": {
+        "conservative_source_order": "G1:1..127",
+        "detected_name_references": [
+          "G1:126",
+          "G1:127"
+        ]
+      }
+    },
+    {
+      "entry": 129,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.coeff_center",
+      "marker_sha256": "ebb0a7aec5871bfe38c9779ca5ca49c878c4fb83f4c2b0e09f3e0500fe186868",
+      "fragment_sha256": "ebb0a7aec5871bfe38c9779ca5ca49c878c4fb83f4c2b0e09f3e0500fe186868",
+      "fragment_byte_start": 101884,
+      "fragment_byte_end_exclusive": 103647,
+      "block_byte_start": 101751,
+      "block_byte_end_exclusive": 103673,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:129",
+      "dependencies": {
+        "conservative_source_order": "G1:1..128",
+        "detected_name_references": [
+          "G1:1",
+          "G1:14",
+          "G1:17",
+          "G1:19",
+          "G1:45",
+          "G1:128"
+        ]
+      }
+    },
+    {
+      "entry": 130,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.coeff_triangle",
+      "marker_sha256": "68801e620bc92e155e0a73688a6f255bdd45798379f051be63a9236b3e1ea258",
+      "fragment_sha256": "68801e620bc92e155e0a73688a6f255bdd45798379f051be63a9236b3e1ea258",
+      "fragment_byte_start": 103809,
+      "fragment_byte_end_exclusive": 107636,
+      "block_byte_start": 103674,
+      "block_byte_end_exclusive": 107662,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:130",
+      "dependencies": {
+        "conservative_source_order": "G1:1..129",
+        "detected_name_references": [
+          "G1:1",
+          "G1:14",
+          "G1:17",
+          "G1:19",
+          "G1:45",
+          "G1:126",
+          "G1:127",
+          "G1:128"
+        ]
+      }
+    },
+    {
+      "entry": 131,
+      "kind": "lemma",
+      "name": "Erdos993G1.FirstWide.intersecting_edges_count_shapes",
+      "marker_sha256": "2ef1af9291a95162818c1c19180c72a1fa95692f5f9b7af236a5f7c0078da68a",
+      "fragment_sha256": "2ef1af9291a95162818c1c19180c72a1fa95692f5f9b7af236a5f7c0078da68a",
+      "fragment_byte_start": 107815,
+      "fragment_byte_end_exclusive": 108880,
+      "block_byte_start": 107663,
+      "block_byte_end_exclusive": 108906,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:131",
+      "dependencies": {
+        "conservative_source_order": "G1:1..130",
+        "detected_name_references": [
+          "G1:1",
+          "G1:14",
+          "G1:125",
+          "G1:129",
+          "G1:130"
+        ]
+      }
+    },
+    {
+      "entry": 132,
+      "kind": "lemma",
+      "name": "Erdos993G1.firstWide_nonpos_of_two_edges",
+      "marker_sha256": "faec7f6b03d4b2a9a2b48b2bf0589cbd323c4b04517f46bdf0d4612ffb919b0c",
+      "fragment_sha256": "faec7f6b03d4b2a9a2b48b2bf0589cbd323c4b04517f46bdf0d4612ffb919b0c",
+      "fragment_byte_start": 109047,
+      "fragment_byte_end_exclusive": 109819,
+      "block_byte_start": 108907,
+      "block_byte_end_exclusive": 109845,
+      "source": "G1",
+      "source_path": "inputs/C3-formal-intake/G1FirstWideMain.lean",
+      "id": "G1:132",
+      "dependencies": {
+        "conservative_source_order": "G1:1..131",
+        "detected_name_references": [
+          "G1:3",
+          "G1:95",
+          "G1:96",
+          "G1:121",
+          "G1:131"
+        ]
+      }
+    },
+    {
+      "entry": 1,
+      "kind": "definition",
+      "name": "C4LA1.IsGraphLeaf",
+      "marker_sha256": "65acd314d3bfd74aca476e00dd8866434c67682b627bce5e105d372a556f7ae5",
+      "fragment_sha256": "65acd314d3bfd74aca476e00dd8866434c67682b627bce5e105d372a556f7ae5",
+      "fragment_byte_start": 286,
+      "fragment_byte_end_exclusive": 463,
+      "block_byte_start": 166,
+      "block_byte_end_exclusive": 487,
+      "source": "C2",
+      "source_path": "runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean",
+      "id": "C2:1",
+      "dependencies": {
+        "declared_direct": [],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 2,
+      "kind": "definition",
+      "name": "C5LA1.support",
+      "marker_sha256": "8e1e1a689393f555eb5c216207b1368c7415a8543c569884b2fc86954b7bc2b4",
+      "fragment_sha256": "8e1e1a689393f555eb5c216207b1368c7415a8543c569884b2fc86954b7bc2b4",
+      "fragment_byte_start": 604,
+      "fragment_byte_end_exclusive": 1187,
+      "block_byte_start": 488,
+      "block_byte_end_exclusive": 1211,
+      "source": "C2",
+      "source_path": "runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean",
+      "id": "C2:2",
+      "dependencies": {
+        "declared_direct": [
+          "C2:1"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 3,
+      "kind": "definition",
+      "name": "C5LA1.H",
+      "marker_sha256": "55f37d9161901d6006e571cf548c4e56675c9d786a1aba83e7889ad9d443224d",
+      "fragment_sha256": "55f37d9161901d6006e571cf548c4e56675c9d786a1aba83e7889ad9d443224d",
+      "fragment_byte_start": 1322,
+      "fragment_byte_end_exclusive": 1579,
+      "block_byte_start": 1212,
+      "block_byte_end_exclusive": 1603,
+      "source": "C2",
+      "source_path": "runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean",
+      "id": "C2:3",
+      "dependencies": {
+        "declared_direct": [
+          "C2:2"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 4,
+      "kind": "definition",
+      "name": "C5LA1.R",
+      "marker_sha256": "a0407d82ab112a65a0f9d85970e9d6217b66201680cc079a4ba13751e53dc6b8",
+      "fragment_sha256": "a0407d82ab112a65a0f9d85970e9d6217b66201680cc079a4ba13751e53dc6b8",
+      "fragment_byte_start": 1714,
+      "fragment_byte_end_exclusive": 2027,
+      "block_byte_start": 1604,
+      "block_byte_end_exclusive": 2051,
+      "source": "C2",
+      "source_path": "runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean",
+      "id": "C2:4",
+      "dependencies": {
+        "declared_direct": [
+          "C2:2"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 5,
+      "kind": "definition",
+      "name": "C5LA1.indepSetsAvoiding",
+      "marker_sha256": "ac0e331eec99650eca7a18e9fe98829bb5495850685b8f31936169f0a6d8e368",
+      "fragment_sha256": "ac0e331eec99650eca7a18e9fe98829bb5495850685b8f31936169f0a6d8e368",
+      "fragment_byte_start": 2178,
+      "fragment_byte_end_exclusive": 2595,
+      "block_byte_start": 2052,
+      "block_byte_end_exclusive": 2619,
+      "source": "C2",
+      "source_path": "runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean",
+      "id": "C2:5",
+      "dependencies": {
+        "declared_direct": [],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 6,
+      "kind": "definition",
+      "name": "C5LA1.indepSetCount",
+      "marker_sha256": "e22635d8697e49b38dd521080f34c3eefe56a93964120c70f53ad9899b4a7f71",
+      "fragment_sha256": "e22635d8697e49b38dd521080f34c3eefe56a93964120c70f53ad9899b4a7f71",
+      "fragment_byte_start": 2742,
+      "fragment_byte_end_exclusive": 2995,
+      "block_byte_start": 2620,
+      "block_byte_end_exclusive": 3019,
+      "source": "C2",
+      "source_path": "runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean",
+      "id": "C2:6",
+      "dependencies": {
+        "declared_direct": [
+          "C2:5"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 7,
+      "kind": "definition",
+      "name": "C5LA1.forwardDifferenceDel",
+      "marker_sha256": "60bd8efcc88e8e511a7caacac5867f7845243ccab08f1660e8c3962af544dd8f",
+      "fragment_sha256": "60bd8efcc88e8e511a7caacac5867f7845243ccab08f1660e8c3962af544dd8f",
+      "fragment_byte_start": 3149,
+      "fragment_byte_end_exclusive": 3464,
+      "block_byte_start": 3020,
+      "block_byte_end_exclusive": 3488,
+      "source": "C2",
+      "source_path": "runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean",
+      "id": "C2:7",
+      "dependencies": {
+        "declared_direct": [
+          "C2:6"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 8,
+      "kind": "definition",
+      "name": "E993Interior.taggedFamily",
+      "marker_sha256": "cb43feebd48bdf3a82d95db4c0475a34a83acdd8c55f13ac44433ea26141fa1e",
+      "fragment_sha256": "cb43feebd48bdf3a82d95db4c0475a34a83acdd8c55f13ac44433ea26141fa1e",
+      "fragment_byte_start": 3617,
+      "fragment_byte_end_exclusive": 3950,
+      "block_byte_start": 3489,
+      "block_byte_end_exclusive": 3974,
+      "source": "C2",
+      "source_path": "runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean",
+      "id": "C2:8",
+      "dependencies": {
+        "declared_direct": [],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 13,
+      "kind": "definition",
+      "name": "E993OrderBand.multiFamily",
+      "marker_sha256": "88a19664e1476ee366c6208b772713fb3edf9887bed94e488b2eac972157f983",
+      "fragment_sha256": "88a19664e1476ee366c6208b772713fb3edf9887bed94e488b2eac972157f983",
+      "fragment_byte_start": 5729,
+      "fragment_byte_end_exclusive": 6043,
+      "block_byte_start": 5600,
+      "block_byte_end_exclusive": 6068,
+      "source": "C2",
+      "source_path": "runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean",
+      "id": "C2:13",
+      "dependencies": {
+        "declared_direct": [
+          "C2:8"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 14,
+      "kind": "definition",
+      "name": "E993OrderBand.extensionSet",
+      "marker_sha256": "0ac43a1cff9e6eb8701df19a7df816ce9ef83a1cdcfea0891f5103151effb6eb",
+      "fragment_sha256": "0ac43a1cff9e6eb8701df19a7df816ce9ef83a1cdcfea0891f5103151effb6eb",
+      "fragment_byte_start": 6199,
+      "fragment_byte_end_exclusive": 6489,
+      "block_byte_start": 6069,
+      "block_byte_end_exclusive": 6514,
+      "source": "C2",
+      "source_path": "runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean",
+      "id": "C2:14",
+      "dependencies": {
+        "declared_direct": [],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 15,
+      "kind": "definition",
+      "name": "E993OrderBand.goodFamily",
+      "marker_sha256": "d021fafb8ef81ef622b83b32409613d0dd6dc501674422dc62edb0708f81a62e",
+      "fragment_sha256": "d021fafb8ef81ef622b83b32409613d0dd6dc501674422dc62edb0708f81a62e",
+      "fragment_byte_start": 6643,
+      "fragment_byte_end_exclusive": 6965,
+      "block_byte_start": 6515,
+      "block_byte_end_exclusive": 6990,
+      "source": "C2",
+      "source_path": "runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean",
+      "id": "C2:15",
+      "dependencies": {
+        "declared_direct": [
+          "C2:8"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 17,
+      "kind": "lemma",
+      "name": "E993OrderBand.multi_deletion_marked",
+      "marker_sha256": "bbdedcdcc8715fc72b3eac7f6e64109398db34fc5ef78f27a8fd37a569089a01",
+      "fragment_sha256": "bbdedcdcc8715fc72b3eac7f6e64109398db34fc5ef78f27a8fd37a569089a01",
+      "fragment_byte_start": 9992,
+      "fragment_byte_end_exclusive": 11437,
+      "block_byte_start": 9858,
+      "block_byte_end_exclusive": 11462,
+      "source": "C2",
+      "source_path": "runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean",
+      "id": "C2:17",
+      "dependencies": {
+        "declared_direct": [
+          "C2:13",
+          "C2:8"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 18,
+      "kind": "lemma",
+      "name": "E993OrderBand.multi_lower_degree",
+      "marker_sha256": "f76deeb36c2fbe0ebcc55b70cab9ab1b738ac5b8faaf15fa85d76885ca3c7fe7",
+      "fragment_sha256": "f76deeb36c2fbe0ebcc55b70cab9ab1b738ac5b8faaf15fa85d76885ca3c7fe7",
+      "fragment_byte_start": 11594,
+      "fragment_byte_end_exclusive": 12645,
+      "block_byte_start": 11463,
+      "block_byte_end_exclusive": 12670,
+      "source": "C2",
+      "source_path": "runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean",
+      "id": "C2:18",
+      "dependencies": {
+        "declared_direct": [
+          "C2:17"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 19,
+      "kind": "lemma",
+      "name": "E993OrderBand.lower_degree",
+      "marker_sha256": "09a61a2d71c81906e2e1ae9413431a5359cadf3f7b50dc07aaad58a4a091f5c3",
+      "fragment_sha256": "09a61a2d71c81906e2e1ae9413431a5359cadf3f7b50dc07aaad58a4a091f5c3",
+      "fragment_byte_start": 12796,
+      "fragment_byte_end_exclusive": 14601,
+      "block_byte_start": 12671,
+      "block_byte_end_exclusive": 14626,
+      "source": "C2",
+      "source_path": "runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean",
+      "id": "C2:19",
+      "dependencies": {
+        "declared_direct": [
+          "C2:8"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 20,
+      "kind": "lemma",
+      "name": "E993OrderBand.upper_degree_le_extensions",
+      "marker_sha256": "6abf0ab0bf6a36d6dbd821de0bfedd3018c9640c8204fb34c72879fce1b7ef1c",
+      "fragment_sha256": "6abf0ab0bf6a36d6dbd821de0bfedd3018c9640c8204fb34c72879fce1b7ef1c",
+      "fragment_byte_start": 14766,
+      "fragment_byte_end_exclusive": 16644,
+      "block_byte_start": 14627,
+      "block_byte_end_exclusive": 16669,
+      "source": "C2",
+      "source_path": "runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean",
+      "id": "C2:20",
+      "dependencies": {
+        "declared_direct": [
+          "C2:14",
+          "C2:8"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 21,
+      "kind": "lemma",
+      "name": "E993OrderBand.extensionSet_subset",
+      "marker_sha256": "ebfb7cfd6943e870450ef74275fc7d364d0c5f798523b8f830c1d7ea968e5b92",
+      "fragment_sha256": "ebfb7cfd6943e870450ef74275fc7d364d0c5f798523b8f830c1d7ea968e5b92",
+      "fragment_byte_start": 16802,
+      "fragment_byte_end_exclusive": 17142,
+      "block_byte_start": 16670,
+      "block_byte_end_exclusive": 17167,
+      "source": "C2",
+      "source_path": "runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean",
+      "id": "C2:21",
+      "dependencies": {
+        "declared_direct": [
+          "C2:14"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 22,
+      "kind": "lemma",
+      "name": "E993OrderBand.extensionSet_card_le",
+      "marker_sha256": "e17e205121315f5ba7b647f3bb7945c7fa23a1ee418df7026e997f14186edfed",
+      "fragment_sha256": "e17e205121315f5ba7b647f3bb7945c7fa23a1ee418df7026e997f14186edfed",
+      "fragment_byte_start": 17301,
+      "fragment_byte_end_exclusive": 17720,
+      "block_byte_start": 17168,
+      "block_byte_end_exclusive": 17745,
+      "source": "C2",
+      "source_path": "runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean",
+      "id": "C2:22",
+      "dependencies": {
+        "declared_direct": [
+          "C2:21"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 23,
+      "kind": "lemma",
+      "name": "E993OrderBand.extensionSet_card_lt_of_neighbor",
+      "marker_sha256": "00bc8a3d1d27b6b01b905f0c139f3355899d6939aa210d8d3fe300753423c686",
+      "fragment_sha256": "00bc8a3d1d27b6b01b905f0c139f3355899d6939aa210d8d3fe300753423c686",
+      "fragment_byte_start": 17891,
+      "fragment_byte_end_exclusive": 18956,
+      "block_byte_start": 17746,
+      "block_byte_end_exclusive": 18981,
+      "source": "C2",
+      "source_path": "runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean",
+      "id": "C2:23",
+      "dependencies": {
+        "declared_direct": [
+          "C2:21"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 24,
+      "kind": "lemma",
+      "name": "E993OrderBand.incidence_bound",
+      "marker_sha256": "d511f56f022dbea03070935fcf325973e6efa9b5e5c684d70c7e05d520e4fe93",
+      "fragment_sha256": "d511f56f022dbea03070935fcf325973e6efa9b5e5c684d70c7e05d520e4fe93",
+      "fragment_byte_start": 19110,
+      "fragment_byte_end_exclusive": 20307,
+      "block_byte_start": 18982,
+      "block_byte_end_exclusive": 20332,
+      "source": "C2",
+      "source_path": "runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean",
+      "id": "C2:24",
+      "dependencies": {
+        "declared_direct": [],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 25,
+      "kind": "lemma",
+      "name": "E993OrderBand.marked_incidence_bound",
+      "marker_sha256": "d3ec8a224a68536858a5391099ab826e63b9f08310dbf1b5019ea3ff3332ac69",
+      "fragment_sha256": "d3ec8a224a68536858a5391099ab826e63b9f08310dbf1b5019ea3ff3332ac69",
+      "fragment_byte_start": 20468,
+      "fragment_byte_end_exclusive": 22053,
+      "block_byte_start": 20333,
+      "block_byte_end_exclusive": 22078,
+      "source": "C2",
+      "source_path": "runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean",
+      "id": "C2:25",
+      "dependencies": {
+        "declared_direct": [
+          "C2:13",
+          "C2:15",
+          "C2:18",
+          "C2:19",
+          "C2:20",
+          "C2:23",
+          "C2:22",
+          "C2:24"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 28,
+      "kind": "lemma",
+      "name": "E993OrderBand.marked_bound_below_even",
+      "marker_sha256": "68154e9aeec357883e1aa2f208f4cbf9f5d2e511d0e11ec801825dc308df4abb",
+      "fragment_sha256": "68154e9aeec357883e1aa2f208f4cbf9f5d2e511d0e11ec801825dc308df4abb",
+      "fragment_byte_start": 24297,
+      "fragment_byte_end_exclusive": 24829,
+      "block_byte_start": 24161,
+      "block_byte_end_exclusive": 24854,
+      "source": "C2",
+      "source_path": "runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean",
+      "id": "C2:28",
+      "dependencies": {
+        "declared_direct": [
+          "C2:25"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 32,
+      "kind": "lemma",
+      "name": "E993OrderBand.support_spec",
+      "marker_sha256": "06eb6e39a78dcc278cdbf39e88a7a80ccc95380429b923534af4aae2abcc0963",
+      "fragment_sha256": "06eb6e39a78dcc278cdbf39e88a7a80ccc95380429b923534af4aae2abcc0963",
+      "fragment_byte_start": 29469,
+      "fragment_byte_end_exclusive": 30073,
+      "block_byte_start": 29344,
+      "block_byte_end_exclusive": 30098,
+      "source": "C2",
+      "source_path": "runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean",
+      "id": "C2:32",
+      "dependencies": {
+        "declared_direct": [
+          "C2:1",
+          "C2:2"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 33,
+      "kind": "lemma",
+      "name": "E993OrderBand.support_adj",
+      "marker_sha256": "b3951f0851be5056028203045c0270a2e3fcd32ea44ae32b99a40fe52cc12fc2",
+      "fragment_sha256": "b3951f0851be5056028203045c0270a2e3fcd32ea44ae32b99a40fe52cc12fc2",
+      "fragment_byte_start": 30223,
+      "fragment_byte_end_exclusive": 30465,
+      "block_byte_start": 30099,
+      "block_byte_end_exclusive": 30490,
+      "source": "C2",
+      "source_path": "runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean",
+      "id": "C2:33",
+      "dependencies": {
+        "declared_direct": [
+          "C2:32"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 34,
+      "kind": "lemma",
+      "name": "E993OrderBand.support_unique",
+      "marker_sha256": "a2726530c4acfa5a926fe94b75980c80abf420115d327b532db4f95870e612dd",
+      "fragment_sha256": "a2726530c4acfa5a926fe94b75980c80abf420115d327b532db4f95870e612dd",
+      "fragment_byte_start": 30618,
+      "fragment_byte_end_exclusive": 30887,
+      "block_byte_start": 30491,
+      "block_byte_end_exclusive": 30912,
+      "source": "C2",
+      "source_path": "runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean",
+      "id": "C2:34",
+      "dependencies": {
+        "declared_direct": [
+          "C2:32"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 35,
+      "kind": "lemma",
+      "name": "E993OrderBand.H_subset_R",
+      "marker_sha256": "920c66b4c98faa8fffbb4714d43c940bcbcb907df37e00df875e14783749143d",
+      "fragment_sha256": "920c66b4c98faa8fffbb4714d43c940bcbcb907df37e00df875e14783749143d",
+      "fragment_byte_start": 31036,
+      "fragment_byte_end_exclusive": 31573,
+      "block_byte_start": 30913,
+      "block_byte_end_exclusive": 31598,
+      "source": "C2",
+      "source_path": "runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean",
+      "id": "C2:35",
+      "dependencies": {
+        "declared_direct": [
+          "C2:3",
+          "C2:4",
+          "C2:33"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 36,
+      "kind": "lemma",
+      "name": "E993OrderBand.H_card",
+      "marker_sha256": "15b4dd5570b1695d5b599e0023d7b36f0cdc9500fe2a73d6214c37e6bf280a62",
+      "fragment_sha256": "15b4dd5570b1695d5b599e0023d7b36f0cdc9500fe2a73d6214c37e6bf280a62",
+      "fragment_byte_start": 31718,
+      "fragment_byte_end_exclusive": 32013,
+      "block_byte_start": 31599,
+      "block_byte_end_exclusive": 32038,
+      "source": "C2",
+      "source_path": "runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean",
+      "id": "C2:36",
+      "dependencies": {
+        "declared_direct": [
+          "C2:3",
+          "C2:33"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 38,
+      "kind": "lemma",
+      "name": "E993OrderBand.retained_card",
+      "marker_sha256": "058f3891961e554c4e922ce094cc01daee41d94c14357e65ec567c5646312c89",
+      "fragment_sha256": "058f3891961e554c4e922ce094cc01daee41d94c14357e65ec567c5646312c89",
+      "fragment_byte_start": 33643,
+      "fragment_byte_end_exclusive": 34122,
+      "block_byte_start": 33517,
+      "block_byte_end_exclusive": 34147,
+      "source": "C2",
+      "source_path": "runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean",
+      "id": "C2:38",
+      "dependencies": {
+        "declared_direct": [
+          "C2:36"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 39,
+      "kind": "lemma",
+      "name": "E993OrderBand.tagged_count_split",
+      "marker_sha256": "85527f25b4e7399f44404ebc52f3e95d34169f9a59e77955850efdac449e3203",
+      "fragment_sha256": "85527f25b4e7399f44404ebc52f3e95d34169f9a59e77955850efdac449e3203",
+      "fragment_byte_start": 34279,
+      "fragment_byte_end_exclusive": 35891,
+      "block_byte_start": 34148,
+      "block_byte_end_exclusive": 35916,
+      "source": "C2",
+      "source_path": "runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean",
+      "id": "C2:39",
+      "dependencies": {
+        "declared_direct": [
+          "C2:5",
+          "C2:6",
+          "C2:8"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 40,
+      "kind": "lemma",
+      "name": "E993OrderBand.tagged_marks_sdiff",
+      "marker_sha256": "a72d9eb3d7c8053bf7c31173cdd8b6757caf27469d7552a8034330488ad23c22",
+      "fragment_sha256": "a72d9eb3d7c8053bf7c31173cdd8b6757caf27469d7552a8034330488ad23c22",
+      "fragment_byte_start": 36048,
+      "fragment_byte_end_exclusive": 37021,
+      "block_byte_start": 35917,
+      "block_byte_end_exclusive": 37046,
+      "source": "C2",
+      "source_path": "runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean",
+      "id": "C2:40",
+      "dependencies": {
+        "declared_direct": [
+          "C2:8"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 41,
+      "kind": "lemma",
+      "name": "E993OrderBand.leaf_count_split",
+      "marker_sha256": "9cc4366ab56b8b3b84d4dd65a3a06cc30bb1752d4fe2356c052a9fbe9d66cb67",
+      "fragment_sha256": "9cc4366ab56b8b3b84d4dd65a3a06cc30bb1752d4fe2356c052a9fbe9d66cb67",
+      "fragment_byte_start": 37176,
+      "fragment_byte_end_exclusive": 37753,
+      "block_byte_start": 37047,
+      "block_byte_end_exclusive": 37778,
+      "source": "C2",
+      "source_path": "runs/lean-2026-09-25-c2-order-bands-repair-1/LeanProject/LeanProof/Main.lean",
+      "id": "C2:41",
+      "dependencies": {
+        "declared_direct": [
+          "C2:35",
+          "C2:39",
+          "C2:40"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 1,
+      "kind": "definition",
+      "name": "C4LA1.vertexDeletionIndepSetCount",
+      "marker_sha256": "7e0a588e243735a611c919ea1080816911a3e27e4523478af0c0f560ce1b3b48",
+      "fragment_sha256": "7e0a588e243735a611c919ea1080816911a3e27e4523478af0c0f560ce1b3b48",
+      "fragment_byte_start": 302,
+      "fragment_byte_end_exclusive": 759,
+      "block_byte_start": 166,
+      "block_byte_end_exclusive": 783,
+      "source": "Interior",
+      "source_path": "inputs/C3-formal-intake/FirstInteriorMain.lean",
+      "id": "Interior:1",
+      "dependencies": {
+        "declared_direct": [],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 2,
+      "kind": "definition",
+      "name": "C4LA1.vertexDeletionForwardDifference",
+      "marker_sha256": "c2da50eb16ee788c439b146577efeedd7dd42811c6943fb437585edcf63b5880",
+      "fragment_sha256": "c2da50eb16ee788c439b146577efeedd7dd42811c6943fb437585edcf63b5880",
+      "fragment_byte_start": 924,
+      "fragment_byte_end_exclusive": 1315,
+      "block_byte_start": 784,
+      "block_byte_end_exclusive": 1339,
+      "source": "Interior",
+      "source_path": "inputs/C3-formal-intake/FirstInteriorMain.lean",
+      "id": "Interior:2",
+      "dependencies": {
+        "declared_direct": [
+          "Interior:1"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 3,
+      "kind": "definition",
+      "name": "C4LA1.IsFavorableAt",
+      "marker_sha256": "25d8f7d274f9080468bf6d46acc6db3d4a469c2e399e7faee6cdcee24290a0db",
+      "fragment_sha256": "25d8f7d274f9080468bf6d46acc6db3d4a469c2e399e7faee6cdcee24290a0db",
+      "fragment_byte_start": 1462,
+      "fragment_byte_end_exclusive": 1739,
+      "block_byte_start": 1340,
+      "block_byte_end_exclusive": 1763,
+      "source": "Interior",
+      "source_path": "inputs/C3-formal-intake/FirstInteriorMain.lean",
+      "id": "Interior:3",
+      "dependencies": {
+        "declared_direct": [
+          "Interior:2"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 6,
+      "kind": "definition",
+      "name": "C5LA1.leafSet",
+      "marker_sha256": "78ec65517bde90cc2fc5e542fc7c60d6a5147b243b74b9ac3de33d4efd1df697",
+      "fragment_sha256": "78ec65517bde90cc2fc5e542fc7c60d6a5147b243b74b9ac3de33d4efd1df697",
+      "fragment_byte_start": 2926,
+      "fragment_byte_end_exclusive": 3191,
+      "block_byte_start": 2810,
+      "block_byte_end_exclusive": 3215,
+      "source": "Interior",
+      "source_path": "inputs/C3-formal-intake/FirstInteriorMain.lean",
+      "id": "Interior:6",
+      "dependencies": {
+        "declared_direct": [
+          "C2:1"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 7,
+      "kind": "definition",
+      "name": "C5LA1.leafDegree",
+      "marker_sha256": "ccfc9b2f549aa8c9986931152d249096ce49e3ccd3b67f4afd8678a749d93a68",
+      "fragment_sha256": "ccfc9b2f549aa8c9986931152d249096ce49e3ccd3b67f4afd8678a749d93a68",
+      "fragment_byte_start": 3335,
+      "fragment_byte_end_exclusive": 3655,
+      "block_byte_start": 3216,
+      "block_byte_end_exclusive": 3679,
+      "source": "Interior",
+      "source_path": "inputs/C3-formal-intake/FirstInteriorMain.lean",
+      "id": "Interior:7",
+      "dependencies": {
+        "declared_direct": [
+          "Interior:6"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 13,
+      "kind": "definition",
+      "name": "C5LA1.aggregate",
+      "marker_sha256": "d66e776c5cf49b2a78a2d9713e4a41de2cbaf5de0af7b6d580075064d1daea8b",
+      "fragment_sha256": "d66e776c5cf49b2a78a2d9713e4a41de2cbaf5de0af7b6d580075064d1daea8b",
+      "fragment_byte_start": 6082,
+      "fragment_byte_end_exclusive": 6578,
+      "block_byte_start": 5963,
+      "block_byte_end_exclusive": 6603,
+      "source": "Interior",
+      "source_path": "inputs/C3-formal-intake/FirstInteriorMain.lean",
+      "id": "Interior:13",
+      "dependencies": {
+        "declared_direct": [
+          "Interior:3",
+          "Interior:6",
+          "C2:3",
+          "C2:4",
+          "C2:7"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 14,
+      "kind": "definition",
+      "name": "C5LA1.crossingIndex",
+      "marker_sha256": "378868ab2e660af8a36ea0b1045c55bc60f8383dca3d31dd85c4b52fa8a898fb",
+      "fragment_sha256": "378868ab2e660af8a36ea0b1045c55bc60f8383dca3d31dd85c4b52fa8a898fb",
+      "fragment_byte_start": 6727,
+      "fragment_byte_end_exclusive": 8008,
+      "block_byte_start": 6604,
+      "block_byte_end_exclusive": 8033,
+      "source": "Interior",
+      "source_path": "inputs/C3-formal-intake/FirstInteriorMain.lean",
+      "id": "Interior:14",
+      "dependencies": {
+        "declared_direct": [
+          "C2:5",
+          "C2:6",
+          "C2:7"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 16,
+      "kind": "lemma",
+      "name": "Erdos993G1.ThirdWide.cover_fiber_count",
+      "marker_sha256": "f116c6f46472401183d37aacb3ca4ac49a46a273a39aa70a473affe783dbf073",
+      "fragment_sha256": "f116c6f46472401183d37aacb3ca4ac49a46a273a39aa70a473affe783dbf073",
+      "fragment_byte_start": 7642,
+      "fragment_byte_end_exclusive": 11696,
+      "block_byte_start": 7505,
+      "block_byte_end_exclusive": 11721,
+      "source": "R25",
+      "source_path": "inputs/C3-formal-intake/R25Card5Main.lean",
+      "id": "R25:16",
+      "dependencies": {
+        "declared_direct": [
+          "G1:14",
+          "G1:82",
+          "G1:83"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 17,
+      "kind": "lemma",
+      "name": "Erdos993G1.ThirdWide.cover_indepCount_partition",
+      "marker_sha256": "b07bb93880d9e22709580b3cc614a8735d135737350237777a0d0ff9e440791e",
+      "fragment_sha256": "b07bb93880d9e22709580b3cc614a8735d135737350237777a0d0ff9e440791e",
+      "fragment_byte_start": 11868,
+      "fragment_byte_end_exclusive": 12922,
+      "block_byte_start": 11722,
+      "block_byte_end_exclusive": 12947,
+      "source": "R25",
+      "source_path": "inputs/C3-formal-intake/R25Card5Main.lean",
+      "id": "R25:17",
+      "dependencies": {
+        "declared_direct": [
+          "R25:16",
+          "G1:17"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 18,
+      "kind": "lemma",
+      "name": "Erdos993G1.ThirdWide.cover_delta_partition",
+      "marker_sha256": "09c1f3f34ab5dbcc4dae97d966a7770ed4333dbdf28e5d46244742a62f8e2a36",
+      "fragment_sha256": "09c1f3f34ab5dbcc4dae97d966a7770ed4333dbdf28e5d46244742a62f8e2a36",
+      "fragment_byte_start": 13089,
+      "fragment_byte_end_exclusive": 13849,
+      "block_byte_start": 12948,
+      "block_byte_end_exclusive": 13874,
+      "source": "R25",
+      "source_path": "inputs/C3-formal-intake/R25Card5Main.lean",
+      "id": "R25:18",
+      "dependencies": {
+        "declared_direct": [
+          "R25:17",
+          "G1:25"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 19,
+      "kind": "lemma",
+      "name": "Erdos993G1.ThirdWide.cover_sum_bound",
+      "marker_sha256": "b4e87862e9788db0daf198f185cfca272be47f545a217cd8d7b4e5e53fa869da",
+      "fragment_sha256": "b4e87862e9788db0daf198f185cfca272be47f545a217cd8d7b4e5e53fa869da",
+      "fragment_byte_start": 14010,
+      "fragment_byte_end_exclusive": 15153,
+      "block_byte_start": 13875,
+      "block_byte_end_exclusive": 15178,
+      "source": "R25",
+      "source_path": "inputs/C3-formal-intake/R25Card5Main.lean",
+      "id": "R25:19",
+      "dependencies": {
+        "declared_direct": [
+          "R25:18"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 22,
+      "kind": "lemma",
+      "name": "Erdos993G1.ThirdWide.cover_available_empty",
+      "marker_sha256": "e530a0c86d03a7daf7dcc9bca71300d330a0693013b22bbfd409192a8e2bc75d",
+      "fragment_sha256": "e530a0c86d03a7daf7dcc9bca71300d330a0693013b22bbfd409192a8e2bc75d",
+      "fragment_byte_start": 18068,
+      "fragment_byte_end_exclusive": 18580,
+      "block_byte_start": 17927,
+      "block_byte_end_exclusive": 18605,
+      "source": "R25",
+      "source_path": "inputs/C3-formal-intake/R25Card5Main.lean",
+      "id": "R25:22",
+      "dependencies": {
+        "declared_direct": [],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 40,
+      "kind": "lemma",
+      "name": "Erdos993G1.ThirdWide.binomDelta_pascal",
+      "marker_sha256": "97582ee01344b775cbe4d15b278588880e446c1b491d210a40f7eb6e6da88bb7",
+      "fragment_sha256": "97582ee01344b775cbe4d15b278588880e446c1b491d210a40f7eb6e6da88bb7",
+      "fragment_byte_start": 43147,
+      "fragment_byte_end_exclusive": 43437,
+      "block_byte_start": 43010,
+      "block_byte_end_exclusive": 43462,
+      "source": "R25",
+      "source_path": "inputs/C3-formal-intake/R25Card5Main.lean",
+      "id": "R25:40",
+      "dependencies": {
+        "declared_direct": [],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 41,
+      "kind": "lemma",
+      "name": "Erdos993G1.ThirdWide.binomDelta_step_up",
+      "marker_sha256": "6e4d10c62c7e80d9268bbabe83b13ec5d482348abd4ecf2d97e9454e3541a72d",
+      "fragment_sha256": "6e4d10c62c7e80d9268bbabe83b13ec5d482348abd4ecf2d97e9454e3541a72d",
+      "fragment_byte_start": 43601,
+      "fragment_byte_end_exclusive": 44006,
+      "block_byte_start": 43463,
+      "block_byte_end_exclusive": 44031,
+      "source": "R25",
+      "source_path": "inputs/C3-formal-intake/R25Card5Main.lean",
+      "id": "R25:41",
+      "dependencies": {
+        "declared_direct": [
+          "R25:40",
+          "G1:86"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 42,
+      "kind": "lemma",
+      "name": "Erdos993G1.ThirdWide.binomDelta_step_down",
+      "marker_sha256": "1611ccdf6868d476632bba9978c3c9a1d6ba1594c44a902be1f4eddb3e031f06",
+      "fragment_sha256": "1611ccdf6868d476632bba9978c3c9a1d6ba1594c44a902be1f4eddb3e031f06",
+      "fragment_byte_start": 44172,
+      "fragment_byte_end_exclusive": 44588,
+      "block_byte_start": 44032,
+      "block_byte_end_exclusive": 44613,
+      "source": "R25",
+      "source_path": "inputs/C3-formal-intake/R25Card5Main.lean",
+      "id": "R25:42",
+      "dependencies": {
+        "declared_direct": [
+          "R25:40",
+          "G1:87"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 43,
+      "kind": "lemma",
+      "name": "Erdos993G1.ThirdWide.binomDelta_mono_center",
+      "marker_sha256": "ec321ef0044a12f64c517c4af2506fa241a7c6c9d5fedf84304b4e337b0bfcc6",
+      "fragment_sha256": "ec321ef0044a12f64c517c4af2506fa241a7c6c9d5fedf84304b4e337b0bfcc6",
+      "fragment_byte_start": 44756,
+      "fragment_byte_end_exclusive": 45069,
+      "block_byte_start": 44614,
+      "block_byte_end_exclusive": 45094,
+      "source": "R25",
+      "source_path": "inputs/C3-formal-intake/R25Card5Main.lean",
+      "id": "R25:43",
+      "dependencies": {
+        "declared_direct": [
+          "R25:41"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 45,
+      "kind": "lemma",
+      "name": "Erdos993G1.ThirdWide.binomDelta_antitone",
+      "marker_sha256": "e00587a59d623ae970a2e6b8449c42a95bcba7b09e722a7455893bea790fbc84",
+      "fragment_sha256": "e00587a59d623ae970a2e6b8449c42a95bcba7b09e722a7455893bea790fbc84",
+      "fragment_byte_start": 45596,
+      "fragment_byte_end_exclusive": 45944,
+      "block_byte_start": 45457,
+      "block_byte_end_exclusive": 45969,
+      "source": "R25",
+      "source_path": "inputs/C3-formal-intake/R25Card5Main.lean",
+      "id": "R25:45",
+      "dependencies": {
+        "declared_direct": [
+          "R25:42"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 46,
+      "kind": "lemma",
+      "name": "Erdos993G1.ThirdWide.binomDelta_central",
+      "marker_sha256": "a9a0866e169a567f704ba70c3f94a3326b556a5d4d5e708757df0b069c9ab0b5",
+      "fragment_sha256": "a9a0866e169a567f704ba70c3f94a3326b556a5d4d5e708757df0b069c9ab0b5",
+      "fragment_byte_start": 46108,
+      "fragment_byte_end_exclusive": 46604,
+      "block_byte_start": 45970,
+      "block_byte_end_exclusive": 46629,
+      "source": "R25",
+      "source_path": "inputs/C3-formal-intake/R25Card5Main.lean",
+      "id": "R25:46",
+      "dependencies": {
+        "declared_direct": [],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 47,
+      "kind": "lemma",
+      "name": "Erdos993G1.ThirdWide.binomDelta_floor",
+      "marker_sha256": "a37ec000d0863f2d11fa44028722398d17cfaaad4ddfe20362bca6a82637fea3",
+      "fragment_sha256": "a37ec000d0863f2d11fa44028722398d17cfaaad4ddfe20362bca6a82637fea3",
+      "fragment_byte_start": 46766,
+      "fragment_byte_end_exclusive": 47085,
+      "block_byte_start": 46630,
+      "block_byte_end_exclusive": 47110,
+      "source": "R25",
+      "source_path": "inputs/C3-formal-intake/R25Card5Main.lean",
+      "id": "R25:47",
+      "dependencies": {
+        "declared_direct": [
+          "R25:43",
+          "R25:45",
+          "R25:46"
+        ],
+        "Mathlib": true
+      }
+    },
+    {
+      "entry": 48,
+      "kind": "lemma",
+      "name": "Erdos993G1.ThirdWide.binom_shift_floor",
+      "marker_sha256": "a592cf3eb3f25da9df2ce8e06a06b0c4f24c62cebbf5feacd89aca6c0a7e1b36",
+      "fragment_sha256": "a592cf3eb3f25da9df2ce8e06a06b0c4f24c62cebbf5feacd89aca6c0a7e1b36",
+      "fragment_byte_start": 47248,
+      "fragment_byte_end_exclusive": 47955,
+      "block_byte_start": 47111,
+      "block_byte_end_exclusive": 47980,
+      "source": "R25",
+      "source_path": "inputs/C3-formal-intake/R25Card5Main.lean",
+      "id": "R25:48",
+      "dependencies": {
+        "declared_direct": [
+          "R25:47",
+          "G1:82",
+          "G1:83",
+          "G1:84"
+        ],
+        "Mathlib": true
+      }
+    }
+  ],
+  "omitted_duplicates": [
+    {
+      "name": "C4LA1.IsGraphLeaf",
+      "omitted": "Interior:4",
+      "retained": "C2:1",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "65acd314d3bfd74aca476e00dd8866434c67682b627bce5e105d372a556f7ae5",
+      "retained_fragment_sha256": "65acd314d3bfd74aca476e00dd8866434c67682b627bce5e105d372a556f7ae5",
+      "byte_identical": true,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "a1eb0f2942ed7dd23f243d9cc5c1215cf6ae1db0adaa6c7cdca7177110a94901",
+      "retained_normalized_declaration_sha256": "a1eb0f2942ed7dd23f243d9cc5c1215cf6ae1db0adaa6c7cdca7177110a94901",
+      "reason": "exact fragment identity"
+    },
+    {
+      "name": "C5LA1.H",
+      "omitted": "Interior:8",
+      "retained": "C2:3",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "55f37d9161901d6006e571cf548c4e56675c9d786a1aba83e7889ad9d443224d",
+      "retained_fragment_sha256": "55f37d9161901d6006e571cf548c4e56675c9d786a1aba83e7889ad9d443224d",
+      "byte_identical": true,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "03ef4db62e7fb9a975d1edc355a766e8f6742a79318493d15e70e9d68de8dcec",
+      "retained_normalized_declaration_sha256": "03ef4db62e7fb9a975d1edc355a766e8f6742a79318493d15e70e9d68de8dcec",
+      "reason": "exact fragment identity"
+    },
+    {
+      "name": "C5LA1.R",
+      "omitted": "Interior:9",
+      "retained": "C2:4",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "a0407d82ab112a65a0f9d85970e9d6217b66201680cc079a4ba13751e53dc6b8",
+      "retained_fragment_sha256": "a0407d82ab112a65a0f9d85970e9d6217b66201680cc079a4ba13751e53dc6b8",
+      "byte_identical": true,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "7f2a6896de93fc1aba409fc9d7f21c6813696f3ab9d80d418e2d91511e8819e6",
+      "retained_normalized_declaration_sha256": "7f2a6896de93fc1aba409fc9d7f21c6813696f3ab9d80d418e2d91511e8819e6",
+      "reason": "exact fragment identity"
+    },
+    {
+      "name": "C5LA1.forwardDifferenceDel",
+      "omitted": "Interior:12",
+      "retained": "C2:7",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "60bd8efcc88e8e511a7caacac5867f7845243ccab08f1660e8c3962af544dd8f",
+      "retained_fragment_sha256": "60bd8efcc88e8e511a7caacac5867f7845243ccab08f1660e8c3962af544dd8f",
+      "byte_identical": true,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "81939664f3b4c5d065d29abf849e40737d74003748e89ab3a4d064b461bba129",
+      "retained_normalized_declaration_sha256": "81939664f3b4c5d065d29abf849e40737d74003748e89ab3a4d064b461bba129",
+      "reason": "exact fragment identity"
+    },
+    {
+      "name": "C5LA1.indepSetCount",
+      "omitted": "Interior:11",
+      "retained": "C2:6",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "e22635d8697e49b38dd521080f34c3eefe56a93964120c70f53ad9899b4a7f71",
+      "retained_fragment_sha256": "e22635d8697e49b38dd521080f34c3eefe56a93964120c70f53ad9899b4a7f71",
+      "byte_identical": true,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "90825d0b98713b156b1cef87f45e0fc27e60a703e233d31aceeed2c8a4b18bfd",
+      "retained_normalized_declaration_sha256": "90825d0b98713b156b1cef87f45e0fc27e60a703e233d31aceeed2c8a4b18bfd",
+      "reason": "exact fragment identity"
+    },
+    {
+      "name": "C5LA1.indepSetsAvoiding",
+      "omitted": "Interior:10",
+      "retained": "C2:5",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "ac0e331eec99650eca7a18e9fe98829bb5495850685b8f31936169f0a6d8e368",
+      "retained_fragment_sha256": "ac0e331eec99650eca7a18e9fe98829bb5495850685b8f31936169f0a6d8e368",
+      "byte_identical": true,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "1fee993216b7e7346515f6fdd707adadeb9a93c4864511a59498f0ad2613b20b",
+      "retained_normalized_declaration_sha256": "1fee993216b7e7346515f6fdd707adadeb9a93c4864511a59498f0ad2613b20b",
+      "reason": "exact fragment identity"
+    },
+    {
+      "name": "C5LA1.support",
+      "omitted": "Interior:5",
+      "retained": "C2:2",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "8e1e1a689393f555eb5c216207b1368c7415a8543c569884b2fc86954b7bc2b4",
+      "retained_fragment_sha256": "8e1e1a689393f555eb5c216207b1368c7415a8543c569884b2fc86954b7bc2b4",
+      "byte_identical": true,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "4df0d350c27739cd1ca2a8d2724f540be58b1b4e4959eb93d79f52438aae00a9",
+      "retained_normalized_declaration_sha256": "4df0d350c27739cd1ca2a8d2724f540be58b1b4e4959eb93d79f52438aae00a9",
+      "reason": "exact fragment identity"
+    },
+    {
+      "name": "E993Interior.taggedFamily",
+      "omitted": "Interior:18",
+      "retained": "C2:8",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "cb43feebd48bdf3a82d95db4c0475a34a83acdd8c55f13ac44433ea26141fa1e",
+      "retained_fragment_sha256": "cb43feebd48bdf3a82d95db4c0475a34a83acdd8c55f13ac44433ea26141fa1e",
+      "byte_identical": true,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "0246cf5b7b813f8f78e2b66e7d0a536c14ea4b9919f8202713f9935f3c3411b6",
+      "retained_normalized_declaration_sha256": "0246cf5b7b813f8f78e2b66e7d0a536c14ea4b9919f8202713f9935f3c3411b6",
+      "reason": "exact fragment identity"
+    },
+    {
+      "name": "Erdos993G1.card_nonindep_pairs",
+      "omitted": "Interior:27",
+      "retained": "G1:46",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "6e86164cc77740b70b633979f1bb9f55b1379ed261467391fe51ffb0836f3fcf",
+      "retained_fragment_sha256": "96c84ad8516cd9224be112085b17e6b4dceb988fd19ce9e39ffaad28a4804cbc",
+      "byte_identical": false,
+      "normalized_declaration_equal": false,
+      "omitted_normalized_declaration_sha256": "5e90100a92a8b400f88211d9e795210c8613060762d143ed8336acf0c636466f",
+      "retained_normalized_declaration_sha256": "d354b1fe2705d38de46e94d7c0ece8a46887dbb5ee40a564412980b6e5fca86c",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.coeff",
+      "omitted": "Interior:16",
+      "retained": "G1:2",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "15ce5e3474a249e2ae5d727a1012a8f6bea52cbbf8188b13cfe247eb844d5cf8",
+      "retained_fragment_sha256": "92ee6695ec9af348314ae6543d4102a54df31fa504644e0a0f386d6b81bd44cd",
+      "byte_identical": false,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "d56740740209ad89e261f112580c117da793af64e7497c9427244d098dcf90d6",
+      "retained_normalized_declaration_sha256": "d56740740209ad89e261f112580c117da793af64e7497c9427244d098dcf90d6",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.coeff_nat",
+      "omitted": "Interior:20",
+      "retained": "G1:23",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "91c74d915628f89477cb21d889b1e6cb464d34247520df6084260b72ec796440",
+      "retained_fragment_sha256": "03f00ca029c7e10a6278ad907c2d6e5891668cdff802ec6768f9f93e51ed47f7",
+      "byte_identical": false,
+      "normalized_declaration_equal": false,
+      "omitted_normalized_declaration_sha256": "783e06998bf838d6bd3b8b91e598f8b10a028f79a00be1510f39352a3c5c0b02",
+      "retained_normalized_declaration_sha256": "4c2f09a25f973236e072d5f36a4d3490d008410c73c6e3fd7332f5fe95456075",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.components_card_pos_of_card_pos",
+      "omitted": "Interior:36",
+      "retained": "G1:59",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "2948f2bea2afbc682160cd1afae04ff4f83f519d4413e437dddd787c6d33f3a8",
+      "retained_fragment_sha256": "bd55e00b7dabf7179733a98d36feec04246ff14e0711a9213ddea4545442ebba",
+      "byte_identical": false,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "6da2b4a0ccb1078a4d3c20b5c05f969ac62322b14fa4cbf3468889edcb1dc4bd",
+      "retained_normalized_declaration_sha256": "6da2b4a0ccb1078a4d3c20b5c05f969ac62322b14fa4cbf3468889edcb1dc4bd",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.degreeChoose_sum_lower",
+      "omitted": "Interior:38",
+      "retained": "G1:68",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "990ee7b780b0a7a0c7c6a7c34cf026d13ded3d7de15d826aec6ea560dc1bff35",
+      "retained_fragment_sha256": "32408765453e657cc5f7832829d929966472874f342ca4c81d8899d5d346784e",
+      "byte_identical": false,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "f3281b2aec64b726346e7b1cef58204d7a27f6b5930b6315d7ac35d598682aa3",
+      "retained_normalized_declaration_sha256": "f3281b2aec64b726346e7b1cef58204d7a27f6b5930b6315d7ac35d598682aa3",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.degreeDefect_nonneg",
+      "omitted": "Interior:37",
+      "retained": "G1:66",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "e13b00906721b8a815d185d3bc4f38148fccc231d200b3bb820579c0f05fdb8f",
+      "retained_fragment_sha256": "36d264dd1540fb3c551965bb8704a04e73dffb2748e1497c1638b7d3407c7d8e",
+      "byte_identical": false,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "bf5c35a80095eab3b48db34c4de180f7efbaba660709e5e52df30607084b333c",
+      "retained_normalized_declaration_sha256": "bf5c35a80095eab3b48db34c4de180f7efbaba660709e5e52df30607084b333c",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.delta",
+      "omitted": "Interior:17",
+      "retained": "G1:3",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "d7dc776c79754ed209810ad69194b3b65d71e3bf718124b0133c53d1bee1a42c",
+      "retained_fragment_sha256": "b34fa17ed22bb7174290541832e4f5abe5ec3e5ea329b7ab516d5b2db76eb201",
+      "byte_identical": false,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "6348b501581e9957662e35400e51ca59a016ae3912037195c85a9cfd3691d8ca",
+      "retained_normalized_declaration_sha256": "6348b501581e9957662e35400e51ca59a016ae3912037195c85a9cfd3691d8ca",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.delta_nat",
+      "omitted": "Interior:21",
+      "retained": "G1:25",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "61f3c4d43f5847c9c65da6c606c0fa3083078cfbc394be9e5d90b14463c042a9",
+      "retained_fragment_sha256": "a7a02236294541ef40fa02c9d9f0dd02052d13536f6523f462e2d5b96ff04f9e",
+      "byte_identical": false,
+      "normalized_declaration_equal": false,
+      "omitted_normalized_declaration_sha256": "d48ca0bf643f610762167be189a5aef7fa7089e9f275b60d2fffae2f989141e9",
+      "retained_normalized_declaration_sha256": "fb364a0906fd48025bb3109b56dfd8c6b0497889c5d5ae7f8905fd271045b1dd",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.forest_card_edges_add_components",
+      "omitted": "Interior:35",
+      "retained": "G1:58",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "7eef4f723871eb13f3132efb877cda06e5b4a7498589fca0a012eb49339ea183",
+      "retained_fragment_sha256": "0c2fc141909dd6efa072639e3071ed6f5e6b14787697f3dd2ee2579560bb017f",
+      "byte_identical": false,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "68455eafdd35a1bb2ef0ab0146f36078d181645d0f3e56ffb61e264db17cee59",
+      "retained_normalized_declaration_sha256": "68455eafdd35a1bb2ef0ab0146f36078d181645d0f3e56ffb61e264db17cee59",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.indepCount",
+      "omitted": "Interior:15",
+      "retained": "G1:1",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "f6bc96fd41a76a97b28a866a483e2b1d637d371832690897422edeeb9b65bc2b",
+      "retained_fragment_sha256": "858f5de3d80b67c1390e828786f252d3d6d020b7311b0039071e14bd1407c4a9",
+      "byte_identical": false,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "7e71b1d516b90ea5f2da69b3da04fe79b06c38f1a10a7d4fbfbca46eacd23269",
+      "retained_normalized_declaration_sha256": "7e71b1d516b90ea5f2da69b3da04fe79b06c38f1a10a7d4fbfbca46eacd23269",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.indepCount_eq_card_indepSetFinset",
+      "omitted": "Interior:19",
+      "retained": "G1:17",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "01ee774fedf7bb37cb52000e541f0c8196f3882ce0e4c5a77cc46e05ba98e876",
+      "retained_fragment_sha256": "4c59444af666076a0ce8c355415235545a1d9c97ae721113599f63dcfb489a31",
+      "byte_identical": false,
+      "normalized_declaration_equal": false,
+      "omitted_normalized_declaration_sha256": "6a467799cd7af35f732d128c6dc52d9cc63ecc0acd460533772acbca64fd9539",
+      "retained_normalized_declaration_sha256": "d56aa978860ad90836b443307d03ffee8148e56321b93f8fb047086a29417fbe",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.indepCount_three_add_edge_incidence",
+      "omitted": "Interior:34",
+      "retained": "G1:54",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "2f67af0812ec6608bd511d62e5579e86d21d3d59da08da663d11a124768a627e",
+      "retained_fragment_sha256": "b398a1f04b7b79977e8c1fc91c4eff3e3af0fec8c9def9962f181c902fe781da",
+      "byte_identical": false,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "69353c0d4227a31a5c52981ddf84714f81d1fc8202dacbb88aff192ca0a1ad7c",
+      "retained_normalized_declaration_sha256": "69353c0d4227a31a5c52981ddf84714f81d1fc8202dacbb88aff192ca0a1ad7c",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.indepCount_two_add_edges",
+      "omitted": "Interior:25",
+      "retained": "G1:44",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "889082ae5e0ef42ec09114ff404a94b0e30b0f5d9d2f4e621868328930e53ce3",
+      "retained_fragment_sha256": "a01f026068c216985f79412914a708de863f8d52ac60d7369e2b85a21c58c014",
+      "byte_identical": false,
+      "normalized_declaration_equal": false,
+      "omitted_normalized_declaration_sha256": "d1d7ff30ed7a08429b8c31768406cdf5cb3b96b0dee85879301749f944b20f41",
+      "retained_normalized_declaration_sha256": "0cd71744b50518d9e9e929fb4db5459f051ee740e1129bf45420be107ab54dfa",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.indepSetFinset_eq_filter_powersetCard",
+      "omitted": "Interior:26",
+      "retained": "G1:45",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "5dae608f7a4c0080d5baf5c3d9c7f348b9ca8c8fe0696a8ff41609ad9715e16b",
+      "retained_fragment_sha256": "ec9d1ede162d82ed94a34a38672bad65fc69ea0b778b5162ae78c5fec73a5628",
+      "byte_identical": false,
+      "normalized_declaration_equal": false,
+      "omitted_normalized_declaration_sha256": "6418b2fb543ca688f492007348073fb0ec52a0d166a35a93f034cb4c15d8d670",
+      "retained_normalized_declaration_sha256": "e5617cb1621df48f2c41e65d5c686eb6be01fe8ff02bb4f3455399d176d3479e",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.indepSetFinset_three_incidence",
+      "omitted": "Interior:32",
+      "retained": "G1:51",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "e75d6c9bdb5332d9efa9c20535c35c0f047fcbf29add7232eaabf570bdb871a2",
+      "retained_fragment_sha256": "80322d36a50c5f8eedef153e69e935eaf0bebd0f6e842e96267c37f5a18cb932",
+      "byte_identical": false,
+      "normalized_declaration_equal": false,
+      "omitted_normalized_declaration_sha256": "e120a9a168e2bf644378a8416291c34880fac88c2c7b4655637dc8354bec4d5f",
+      "retained_normalized_declaration_sha256": "041fe1415cc49837a12930282833228958ae364997b3c1b27cc5aa7599598f80",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.indepSetFinset_two_eq",
+      "omitted": "Interior:24",
+      "retained": "G1:43",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "9a618f5577e807ae3ba07edfc6fb09ddfe732dc3bca7f5260288a798c219a0d1",
+      "retained_fragment_sha256": "39a4bb3841ed900d0110289548de64819de9508cc2754cd12dd313c2afe30cc8",
+      "byte_identical": false,
+      "normalized_declaration_equal": false,
+      "omitted_normalized_declaration_sha256": "6272c886543071f280bc56ac4836d702802c247f740b81d0a40e7c344f69c8ab",
+      "retained_normalized_declaration_sha256": "8d504391fc8c7f14e872e84f2a64c200724a591426f19519fd871ec83147467c",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.isNIndepSet_pair_iff",
+      "omitted": "Interior:22",
+      "retained": "G1:41",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "a5eb6d6e8d552c64fa2cb4001d5f440637a38ef7c2e15e179c1eaaab1db9d412",
+      "retained_fragment_sha256": "c7fe22b14d4127788420f1fc872c6908e1c8e03d5089db1a4512366a1c6011cd",
+      "byte_identical": false,
+      "normalized_declaration_equal": false,
+      "omitted_normalized_declaration_sha256": "eeda87013584f9a7b9eced726e7b8507e66e7ea6c55549c8f10f7e9ce23ef631",
+      "retained_normalized_declaration_sha256": "33cf863bb4883cf335b9fc80642cb90c7ef9f9f8968689b753fedd3e6fd57e81",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.scaledChooseThree",
+      "omitted": "Interior:40",
+      "retained": "G1:71",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "d6f3427951f65a5d5b754f7876b5fa0b8e855ce52dfa70173a4ab26edf87aff0",
+      "retained_fragment_sha256": "bcef58787034fa165d746e7fa2a863cc1a20b351dafb9951cc1178ad9b01fc1b",
+      "byte_identical": false,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "2182455069bc636b5090f930b5d73a05719017936fa0b50b250abc4a0f2fc2c3",
+      "retained_normalized_declaration_sha256": "2182455069bc636b5090f930b5d73a05719017936fa0b50b250abc4a0f2fc2c3",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.scaledChooseTwo",
+      "omitted": "Interior:39",
+      "retained": "G1:70",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "998f5e2749af9a08a08bf161dcce06d9fe4036299593a66572a2f1d12eee0ca4",
+      "retained_fragment_sha256": "c526653f5ce4c90392e252c3e28e6ce164135670fdd12d5664f120646f2671d8",
+      "byte_identical": false,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "29df97190cd4b94121cdc83dbd8e14e7cd7ceb5b395d902480ffe4ec806df1cd",
+      "retained_normalized_declaration_sha256": "29df97190cd4b94121cdc83dbd8e14e7cd7ceb5b395d902480ffe4ec806df1cd",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.sum_card_filter_swap",
+      "omitted": "Interior:28",
+      "retained": "G1:47",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "8a32f504cb65462cc407e7d76e8cfa05f1df7f218b7072b70414f24aba94a68f",
+      "retained_fragment_sha256": "db506bda8bc6b666134551b5bc0fd50e22daf1b537ec59f21be1da84eb4ffe98",
+      "byte_identical": false,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "024d75169ae80e61567023412799bb9f0e11b196fc5c127d83115ea3821de202",
+      "retained_normalized_declaration_sha256": "024d75169ae80e61567023412799bb9f0e11b196fc5c127d83115ea3821de202",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.sum_indep_indicator",
+      "omitted": "Interior:30",
+      "retained": "G1:49",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "967e8cea5583894061db4c306ff05690dfe200422d9c6fd62d559a8ffbb1b3a8",
+      "retained_fragment_sha256": "e8656c5832d89388faa9e5fbe465d97c9212944d86545795e43360d7cf446d54",
+      "byte_identical": false,
+      "normalized_declaration_equal": false,
+      "omitted_normalized_declaration_sha256": "4b76e69e3a796f4f6b63c65001111d718e65d6cbca6f0b4d78d2799faac64c7c",
+      "retained_normalized_declaration_sha256": "20e613371c6418744ccc3025a4d51da861cd8aae9d3522b0bed54331a1ef909b",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.sum_nonindep_pair_incidence",
+      "omitted": "Interior:29",
+      "retained": "G1:48",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "bafc19d498fd73893dbbd27856e681905568a5a1ed659a421802e2d1f4c4b1d9",
+      "retained_fragment_sha256": "da829ee128471804d3016cd47dc81dc700c969ffe760cdfe792d805388f36292",
+      "byte_identical": false,
+      "normalized_declaration_equal": false,
+      "omitted_normalized_declaration_sha256": "5b67be2e46c1b070c3916e6c6461f745cdf7e58337101d567b50637376b0c011",
+      "retained_normalized_declaration_sha256": "45a88a49d67d3c9584d9230aa068d0c78f4e5477ce9fbbfe45ba3be5fd296343",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.sum_triple_centered_neighbor_pairs",
+      "omitted": "Interior:33",
+      "retained": "G1:53",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "2d8c865096680299876ca4ee7a094c41cf849dd15d7c4ac33ae166f43d34e549",
+      "retained_fragment_sha256": "5d6d13f96ef2b45f6ff273927629e027fd51f7516517e36611d6551eb587a326",
+      "byte_identical": false,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "72f179a29c774e4b4eedc710c0f0db321d75dcc44c2fabb3287049a2914c017f",
+      "retained_normalized_declaration_sha256": "72f179a29c774e4b4eedc710c0f0db321d75dcc44c2fabb3287049a2914c017f",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.sym2_toFinset_injective",
+      "omitted": "Interior:23",
+      "retained": "G1:42",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "d90c2a73eb34028360b6e19de80ccb0f42b1901ef4a1fec0e9cc0281ba551a02",
+      "retained_fragment_sha256": "b6bb80d1fc0be2dc048f714854ea2d7ae9649fbceb0e5bbffbd1fae3d1947acd",
+      "byte_identical": false,
+      "normalized_declaration_equal": false,
+      "omitted_normalized_declaration_sha256": "bb045ee59d25633001cf0e6d44d5f7b92fda8eff9d48b8b6e81aad20952f5e20",
+      "retained_normalized_declaration_sha256": "c6a2380bdfd1dee6da01c3a1884012ce1daf7adc973cb0a1d2aa1f76fb3ce1a7",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.triple_local_identity",
+      "omitted": "Interior:31",
+      "retained": "G1:50",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "b2a3d62321344a280924b2701b63fda6abb7f1fd6e8bba69fd46b6fc7538fbe7",
+      "retained_fragment_sha256": "1987228dfddb76922331fd7897112e6fbb9500d655adc833b004028ebafcd53d",
+      "byte_identical": false,
+      "normalized_declaration_equal": false,
+      "omitted_normalized_declaration_sha256": "b5c5ae358f9963baead4fd000e44a599587606cfa48ccf2936e40fff701fb795",
+      "retained_normalized_declaration_sha256": "5fd6472cc71051c6d876d88109622e5823bc32a8329d3844a280ff8947c79302",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.FirstWide.binomCoeff",
+      "omitted": "R25:4",
+      "retained": "G1:14",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "2b9a3dd523cf91b9343ced154619861b1a2e932c7b815a5cd56401f45e483ddf",
+      "retained_fragment_sha256": "15be04fe3358ec671f28da2db52c757627e101992d8d40791181b1b1e5f06a6d",
+      "byte_identical": false,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "80ca12395c8dcc8b296a612878bd0019ae3c880a704182c725efdd7e5951842e",
+      "retained_normalized_declaration_sha256": "80ca12395c8dcc8b296a612878bd0019ae3c880a704182c725efdd7e5951842e",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.FirstWide.binomCoeff_nat",
+      "omitted": "R25:6",
+      "retained": "G1:82",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "6f2bf47a74c48621cd4b689a71df8989a360264d0f79753bb34a5c026db071b0",
+      "retained_fragment_sha256": "586e57d9bbf57356d8d3f141a64048b60b0025dd334aa3cb43cf0c05b86fd40b",
+      "byte_identical": false,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "3e1614dd2f0d5e15ba4a921d651d4059be25e95d7cc07b4b4dcbe40c95490b08",
+      "retained_normalized_declaration_sha256": "3e1614dd2f0d5e15ba4a921d651d4059be25e95d7cc07b4b4dcbe40c95490b08",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.FirstWide.binomCoeff_nat_add_one",
+      "omitted": "R25:8",
+      "retained": "G1:84",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "ad18281f74d760e4131fbebfe297f5ffd5d914001422d28b1bd71ee0da0a0dd4",
+      "retained_fragment_sha256": "76f6bc26fab79b1f54a080fdcc272777f055775d5150d9b65db3ba4ebe8c4f1a",
+      "byte_identical": false,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "de54467699add54a9ff5d159968f511505da88b39319b91317de78b76a80248c",
+      "retained_normalized_declaration_sha256": "de54467699add54a9ff5d159968f511505da88b39319b91317de78b76a80248c",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.FirstWide.binomCoeff_neg",
+      "omitted": "R25:7",
+      "retained": "G1:83",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "2df80ed8860538f62588ff4ebcfafe6571c3ffc733ac5f4c2deaa90a097fcbf4",
+      "retained_fragment_sha256": "0fd093d56b6fbbc606c172582bf0269994ddb4b44a43255450640e15ac99592f",
+      "byte_identical": false,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "5fa81f44b7dabb22ed72630a74fa44d4167190ceb4f3cf2f723f1eac16f4d1a7",
+      "retained_normalized_declaration_sha256": "5fa81f44b7dabb22ed72630a74fa44d4167190ceb4f3cf2f723f1eac16f4d1a7",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.FirstWide.choose_step_nonpos",
+      "omitted": "R25:10",
+      "retained": "G1:87",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "bea71e474d71f06a4212a4bc19aa4a9cc4b2db80810577a10e007e20d5938a85",
+      "retained_fragment_sha256": "708d7e4957a1c64891a918c1199c643b3442f186a588790b914669abafaa6a4b",
+      "byte_identical": false,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "81e432ae8271e70ae3d388e507ff2c69b336d4d8c592cba8af18e3c8fc1a15dd",
+      "retained_normalized_declaration_sha256": "81e432ae8271e70ae3d388e507ff2c69b336d4d8c592cba8af18e3c8fc1a15dd",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.FirstWide.choose_step_strict",
+      "omitted": "R25:9",
+      "retained": "G1:86",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "941725fb51cad360193ad6c1b920a892824f8d3e0a634279432ab848cf0b2169",
+      "retained_fragment_sha256": "a77a46e8e0db35c873c8c5bcfe3054e7201a5ddde6de100392fa5146d748b0a2",
+      "byte_identical": false,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "b5bb8bb45c1fcfc6637dbee459e49d2727182f016683d2f0e18b7b22287aba1e",
+      "retained_normalized_declaration_sha256": "b5bb8bb45c1fcfc6637dbee459e49d2727182f016683d2f0e18b7b22287aba1e",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.coeff",
+      "omitted": "R25:2",
+      "retained": "G1:2",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "fc4774bffebcad3c2ee74e7f5ec229b731b98ebb0942d7d8e7d81dfdc0f52bb7",
+      "retained_fragment_sha256": "92ee6695ec9af348314ae6543d4102a54df31fa504644e0a0f386d6b81bd44cd",
+      "byte_identical": false,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "d56740740209ad89e261f112580c117da793af64e7497c9427244d098dcf90d6",
+      "retained_normalized_declaration_sha256": "d56740740209ad89e261f112580c117da793af64e7497c9427244d098dcf90d6",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.coeff_nat",
+      "omitted": "R25:12",
+      "retained": "G1:23",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "45fd37044ac9a85e1fc66164a12d4bbc64e144605956f198b103a8b51a7f56ee",
+      "retained_fragment_sha256": "03f00ca029c7e10a6278ad907c2d6e5891668cdff802ec6768f9f93e51ed47f7",
+      "byte_identical": false,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "4c2f09a25f973236e072d5f36a4d3490d008410c73c6e3fd7332f5fe95456075",
+      "retained_normalized_declaration_sha256": "4c2f09a25f973236e072d5f36a4d3490d008410c73c6e3fd7332f5fe95456075",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.components_card_pos_of_card_pos",
+      "omitted": "R25:15",
+      "retained": "G1:59",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "9a22fc778bbe688e4ec782dce9016a022e14a07d1604f1fe342fceccb7429307",
+      "retained_fragment_sha256": "bd55e00b7dabf7179733a98d36feec04246ff14e0711a9213ddea4545442ebba",
+      "byte_identical": false,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "6da2b4a0ccb1078a4d3c20b5c05f969ac62322b14fa4cbf3468889edcb1dc4bd",
+      "retained_normalized_declaration_sha256": "6da2b4a0ccb1078a4d3c20b5c05f969ac62322b14fa4cbf3468889edcb1dc4bd",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.delta",
+      "omitted": "R25:3",
+      "retained": "G1:3",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "4252917adac16311e266d18962cb4e0e9305edd41cb61cb6a7df752395975a12",
+      "retained_fragment_sha256": "b34fa17ed22bb7174290541832e4f5abe5ec3e5ea329b7ab516d5b2db76eb201",
+      "byte_identical": false,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "6348b501581e9957662e35400e51ca59a016ae3912037195c85a9cfd3691d8ca",
+      "retained_normalized_declaration_sha256": "6348b501581e9957662e35400e51ca59a016ae3912037195c85a9cfd3691d8ca",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.delta_nat",
+      "omitted": "R25:13",
+      "retained": "G1:25",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "3149be260540cf229947aff0f569979183e7137c18c74cf10479e81b5931cdcf",
+      "retained_fragment_sha256": "a7a02236294541ef40fa02c9d9f0dd02052d13536f6523f462e2d5b96ff04f9e",
+      "byte_identical": false,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "fb364a0906fd48025bb3109b56dfd8c6b0497889c5d5ae7f8905fd271045b1dd",
+      "retained_normalized_declaration_sha256": "fb364a0906fd48025bb3109b56dfd8c6b0497889c5d5ae7f8905fd271045b1dd",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.forest_card_edges_add_components",
+      "omitted": "R25:14",
+      "retained": "G1:58",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "9360c82d0a4f0c575fcaa87d76dd4823d05904574a45d98a458b9c0461201072",
+      "retained_fragment_sha256": "0c2fc141909dd6efa072639e3071ed6f5e6b14787697f3dd2ee2579560bb017f",
+      "byte_identical": false,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "68455eafdd35a1bb2ef0ab0146f36078d181645d0f3e56ffb61e264db17cee59",
+      "retained_normalized_declaration_sha256": "68455eafdd35a1bb2ef0ab0146f36078d181645d0f3e56ffb61e264db17cee59",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.indepCount",
+      "omitted": "R25:1",
+      "retained": "G1:1",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "820deb6e2988cd78614c4982336ebbfac792cbaa6e482aca3955e818e62eed66",
+      "retained_fragment_sha256": "858f5de3d80b67c1390e828786f252d3d6d020b7311b0039071e14bd1407c4a9",
+      "byte_identical": false,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "7e71b1d516b90ea5f2da69b3da04fe79b06c38f1a10a7d4fbfbca46eacd23269",
+      "retained_normalized_declaration_sha256": "7e71b1d516b90ea5f2da69b3da04fe79b06c38f1a10a7d4fbfbca46eacd23269",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    },
+    {
+      "name": "Erdos993G1.indepCount_eq_card_indepSetFinset",
+      "omitted": "R25:11",
+      "retained": "G1:17",
+      "omission_scope": "not selected from source at all",
+      "omitted_fragment_sha256": "e79e8910cdb4cc64d2cb9189e8ed79d46708680064fa123794a52416bbfa81c1",
+      "retained_fragment_sha256": "4c59444af666076a0ce8c355415235545a1d9c97ae721113599f63dcfb489a31",
+      "byte_identical": false,
+      "normalized_declaration_equal": true,
+      "omitted_normalized_declaration_sha256": "d56aa978860ad90836b443307d03ffee8148e56321b93f8fb047086a29417fbe",
+      "retained_normalized_declaration_sha256": "d56aa978860ad90836b443307d03ffee8148e56321b93f8fb047086a29417fbe",
+      "reason": "same fully qualified name; use retained original declaration, do not redefine"
+    }
+  ]
+}

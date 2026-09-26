@@ -1,0 +1,28 @@
+{
+  "worker_id": "C6-CT-U4",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C6-U4-MATCHING-DEFICIENCY-BUDGET",
+      "statement": "For each selected original leaf tag and marked independent k-set A in H_v, d_v(A)=|V(H_v)|-2 nu(H_v)+|N_{H_v}(A)|-k. Given the contract's exact tagged incidence identity, substitution yields the stated equivalent weighted budget for S<=0; this algebra alone does not establish that budget from the selector.",
+      "scope": "Eligible ordinary-tree setup with k=p-1, H_v=T-{v,s_v}, distinct selected original-leaf tags, and actual addable vertices in H_v. The pointwise identity uses bipartiteness and Konig's theorem; the aggregate equivalence is conditional on the exact tagged incidence identity. The source report's displayed selector expression has a sign error: the correct expression is Delta_p(H_v)-Delta_{p-1}(R_v)<0.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CT-U4/REPORT.md"
+      ],
+      "reason": "retained_narrowed: the pointwise formula and conditional budget equivalence follow by direct counting and substitution, with local residual-graph neighborhoods and distinct tags. The source report incorrectly writes a plus sign in the selector formula; this narrows the explanatory claim but does not supply or refute the missing budget implication."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CT-U4/REPORT.md",
+  "limitations": [
+    "The selector-to-budget implication is not proved from the corrected strict selector condition.",
+    "The separate tagged incidence identity is used conditionally and was not independently proved in this critique.",
+    "No new eligible full-sum counterexample, exhaustive computation, flow replay, or literature review was performed."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-U4-MATCHING-DEFICIENCY-BUDGET"
+  ]
+}

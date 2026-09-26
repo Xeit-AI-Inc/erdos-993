@@ -1,0 +1,37 @@
+{
+  "worker_id": "C1-T3",
+  "cycle": 1,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C1-T3-1",
+      "statement": "For a bipartite graph H with alpha(H)<=h and marked set W, the exact marked-incidence identity kQ_(k+1)+C=2(h-k)Q_k-D holds, where Q_j counts independent j-sets meeting W, D sums 2(h-k)-e(A) over marked independent k-sets, and C counts (k+1)-sets meeting W at least twice once each; D,C are nonnegative. In the ordinary-tree specialization under the fixed favorable-leaf selector, this gives the exact aggregate formula S(T,p)=sum_v(q_v(k+1)-q_v(k)).",
+      "scope": "Finite bipartite H with 1<=k<=h and alpha(H)<=h; tree specialization for every selected original leaf tag with h=alpha(T)-1 and k=p-1, retaining repeated supports.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-T3/REPORT.md",
+        "cycles/cycle-1/C1-T3/evidence/SOURCE-HASHES.txt"
+      ],
+      "reason": "Direct addability and incidence double counting proves the identity; substituting it into the supplied exact specialization cancels the deficit terms and leaves the tagged-shadow difference."
+    },
+    {
+      "claim_id": "C1-T3-2",
+      "statement": "The matching/cover route reduces the primary target to the selector-weighted aggregate inequality sum_v q_v(k+1)<=sum_v q_v(k) on the disjoint union of tagged incidence graphs. No proof of that inequality or eligible positive ordinary-tree witness was obtained.",
+      "scope": "Exact lower-region ordinary-tree target; all v range over original leaves satisfying Delta_p(T-v)<0, counted as distinct tags.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-T3/REPORT.md"
+      ],
+      "reason": "The identity does not supply the required Hall/cover bound or total cardinality inequality; no bridge from the selector and rank guards to such a bound is established."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-T3/REPORT.md",
+  "limitations": [
+    "The global tagged-shadow inequality required for the primary target remains unproved.",
+    "No eligible ordinary-tree counterexample or universal matching theorem is claimed.",
+    "The K_(1,12) arithmetic is a single finite control and does not imply a universal result.",
+    "No outside literature theorem or exhaustive computational search was used."
+  ],
+  "status_authority": "proposed_worker_only"
+}

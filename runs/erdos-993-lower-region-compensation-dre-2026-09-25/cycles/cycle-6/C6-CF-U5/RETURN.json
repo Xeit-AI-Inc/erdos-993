@@ -1,0 +1,28 @@
+{
+  "worker_id": "C6-CF-U5",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C6-U5-CB-sector-deficit",
+      "statement": "In the CB(8,92) root-plus-arm sector, after fixing the hub and distinguished arm leaf, the residual 736-pair rank-491 family has selected-tag weight ratio 493/491 relative to rank 490. Thus deletion-only weighted capacity for this entire sector is short by exactly 2 W_490/491, a necessary whole-sector surplus threshold for any mixed argument using these weights.",
+      "scope": "Residual ranks 491 and 490 in the 736 disjoint support\u2013leaf pairs of CB(8,92), with the two fixed vertices contributing one arm tag and each selected branch leaf contributing one tag. Whole-graph source and deletion set sizes are 493 and 492. This is not a mixed Hall theorem for arbitrary source subfamilies or a conclusion for arbitrary trees.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CF-U5/EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: exact counting proves the stated deletion-only deficit and necessary threshold. It does not show that switch targets supply the deficit after overlap and competing demand, establish mixed Hall, or resolve the primary aggregate."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CF-U5/REPORT.md",
+  "limitations": [
+    "The result is only a whole-sector deletion-only mass deficit, not an arbitrary-subfamily weighted Hall bound.",
+    "The bounded CB(8,92) switch-cut replay is inconclusive and does not certify a feasible flow or deficient cut.",
+    "No universal conclusion for ordinary trees follows from this sector calculation."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-U5-CB-sector-deficit"
+  ]
+}

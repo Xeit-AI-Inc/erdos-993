@@ -1,0 +1,6 @@
+namespace Erdos993G1.FirstWide
+
+lemma erase_inter_eq {X : Type u} [DecidableEq X] (S M : Finset X) (a : X) :
+    S.erase a ∩ M = (S ∩ M).erase a := by ext x; simp
+
+end Erdos993G1.FirstWide

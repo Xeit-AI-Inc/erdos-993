@@ -1,0 +1,33 @@
+{
+  "worker_id": "C6-CU-F3",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "E993-ORDINARY-PATH-STAR-ARITY-2-12-M100000000-LOWER-REGION-AGGREGATE",
+      "statement": "The exact 121 grouped-factor finite-ULC checks, the stated cutoff scalar, and the path-plus-private-star graph-to-leaf polynomial identities on profiles (2) and (2,3) are supported; the full infinite-family aggregate conclusion remains unestablished by this review.",
+      "scope": "Narrowed evidence only: exact factor pairs F_r B_s for 2<=r,s<=12; the scalar cutoff at D=12,h=17,m=100000000; and full subset enumeration for the two explicitly listed small profiles. No arbitrary-tree or full all-profile theorem conclusion.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CU-F3/EVIDENCE.json",
+        "cycles/cycle-6/C6-CU-F3/REPLAY.py",
+        "cycles/cycle-6/C6-CU-F3/replay-output.json",
+        "cycles/cycle-6/C6-CU-F3/audit_graph_formulas.py",
+        "cycles/cycle-6/C6-CU-F3/graph-formula-check.json"
+      ],
+      "reason": "retained_narrowed: The arithmetic replay passes, and independent finite subset enumeration supports the graph and distinct-tag formulas on the stated small profiles. The full theorem depends on all-profile coefficientwise mixed-minor envelopes, shifted-index bounds, and uniform selector transfer that this review did not completely rederive. This is an explicit review limitation, not a mathematical counterexample or a finding that those steps are false."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CU-F3/REPORT.md",
+  "limitations": [
+    "The infinite-family mixed-minor perturbation envelopes and all shifted-index endpoint conditions were not completely rederived independently.",
+    "The graph formulas were independently checked by subset enumeration only for profiles (2) and (2,3), far below the assigned m cutoff.",
+    "The cutoff arithmetic replay does not establish the full uniform all-profile coefficient and selector argument.",
+    "No arbitrary-tree or below-cutoff conclusion is supported."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-ORDINARY-PATH-STAR-ARITY-2-12-M100000000-LOWER-REGION-AGGREGATE"
+  ]
+}

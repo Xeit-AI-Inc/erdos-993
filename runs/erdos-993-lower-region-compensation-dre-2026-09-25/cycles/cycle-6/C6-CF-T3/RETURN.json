@@ -1,0 +1,31 @@
+{
+  "worker_id": "C6-CF-T3",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "E993-ORDINARY-PATH-STAR-ARITY-2-12-M100000000-LOWER-REGION-AGGREGATE",
+      "statement": "For the finite tree formed from path 0-1-2 by attaching m distinct centers to 0 and r_i private leaves to center i, where every r_i is in {2,...,12} and m>=100000000, the complete original strict-favorable-leaf aggregate S(T,p) is strictly negative for every natural p satisfying x(T)+2<=p and 3p<2 alpha(T)+1.",
+      "scope": "Only the displayed path-plus-private-star family, all arity profiles with 2<=r_i<=12, m>=100000000, original leaf supports and distinct tags, and the stated eligible strict-lower-region ranks.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CF-T3/AUDIT.json",
+        "cycles/cycle-6/C6-CF-T3/EVIDENCE.json",
+        "cycles/cycle-6/C6-CF-T3/independent_replay.py"
+      ],
+      "reason": "retained: the stated family proof has consistent graph and distinct-tag formulas, its first-descent and strict-selector bridges respect the exact guards, the finite-order ULC convolution import applies at the recorded orders, and the copied exact replay reproduces all 121 factor checks and the strict cutoff margin. The conclusion remains an informal family proof at exactly the stated scope; no family Lean certificate is claimed."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CF-T3/REPORT.md",
+  "limitations": [
+    "This disposition is proposed worker evidence only and awards no authoritative claim status.",
+    "The retained argument is informal and depends on the cited finite-order ULC convolution theorem and the pinned formal forest descent bound; no family Lean certificate was checked.",
+    "The claim covers only the displayed path-plus-private-star family with arities 2 through 12 and at least 100000000 branches; it does not cover the finite prefix or arbitrary ordinary trees.",
+    "The exact replay verifies finite factor arithmetic and the cutoff scalar, not a finite census of tree profiles; the infinite-family step is the accompanying analytical bound."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-ORDINARY-PATH-STAR-ARITY-2-12-M100000000-LOWER-REGION-AGGREGATE"
+  ]
+}

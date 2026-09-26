@@ -1,0 +1,29 @@
+namespace E993FirstShell
+
+/-- Removing one vertex from a graph without a two-vertex cover leaves no one-vertex cover. -/
+lemma no_one_cover_after_erase {V : Type u} [Fintype V] [DecidableEq V]
+    (G : SimpleGraph V) [DecidableRel G.Adj] (U : Finset V)
+    (hno : ∀ C : Finset V, C.card ≤ 2 →
+      ¬ (∀ x y, G.Adj x y → x ∈ U → y ∈ U → x ∈ C ∨ y ∈ C))
+    (a : V) :
+    ∀ C : Finset V, C.card ≤ 1 →
+      ¬ (∀ x y, G.Adj x y → x ∈ U.erase a → y ∈ U.erase a →
+        x ∈ C ∨ y ∈ C) := by
+  intro C hC hcov
+  have hcard : (insert a C).card ≤ 2 := by
+    have hi := Finset.card_insert_le a C
+    omega
+  apply hno (insert a C) hcard
+  intro x y hxy hx hy
+  by_cases hxa : x = a
+  · left
+    simp [hxa]
+  by_cases hya : y = a
+  · right
+    simp [hya]
+  rcases hcov x y hxy (Finset.mem_erase.mpr ⟨hxa,hx⟩)
+      (Finset.mem_erase.mpr ⟨hya,hy⟩) with hxC | hyC
+  · exact Or.inl (Finset.mem_insert_of_mem hxC)
+  · exact Or.inr (Finset.mem_insert_of_mem hyC)
+
+end E993FirstShell

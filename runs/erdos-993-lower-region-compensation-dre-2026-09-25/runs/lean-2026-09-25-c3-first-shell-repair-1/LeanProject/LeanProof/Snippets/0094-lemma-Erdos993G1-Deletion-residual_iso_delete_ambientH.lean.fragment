@@ -1,0 +1,11 @@
+lemma residual_iso_delete_ambientH {V : Type u} (T : SimpleGraph V)
+    (v s g : V) (hvs : T.Adj v s) :
+    Nonempty (residual T v g ≃g
+      deleteVerts (ambientH T v g) {a | T.Adj g a.val ∧ a.val ≠ s}) := by
+  obtain ⟨e⟩ := deleteVerts_union_iso T (closedNeighborhood T v ∪ {g})
+    {w | T.Adj g w ∧ w ≠ s}
+  exact ⟨cast (congrArg (fun S : Set V =>
+    deleteVerts T S ≃g
+      deleteVerts (ambientH T v g) {a | T.Adj g a.val ∧ a.val ≠ s})
+    (original_residual_deletion_set_eq T v s g hvs)) e⟩
+

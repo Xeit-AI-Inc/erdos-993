@@ -1,0 +1,31 @@
+{
+  "worker_id": "C1-CT-F2",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C1-F2-1",
+      "statement": "In the fixed-seed bounded search of 1,200 asymmetric rooted-tree cases of orders 9 through 36, all 878 eligible tree-rank rows had nonpositive complete favorable-leaf aggregates; none had a positive individual tagged summand.",
+      "scope": "Only the generated sample defined by seed 99320260925 and the three documented rooted-tree generation modes; this does not assert the inequality for all ordinary trees.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CT-F2/replay_results.json",
+        "cycles/cycle-1/C1-CT-F2/brute_best_row.json",
+        "cycles/cycle-1/C1-CT-F2/source_search.py",
+        "cycles/cycle-1/C1-CT-F2/ordinary_tree_checked.py"
+      ],
+      "reason": "retained: scratch-local replay of copied search/evaluator code exactly matches all sealed sample results; independent exhaustive subset enumeration verifies the reported closest row, its full favorable set, rank guards, and S=-253. This is a bounded observation with no exhaustive generation boundary, so it does not settle the universal claim."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CT-F2/REPORT.md",
+  "limitations": [
+    "The full sample replay reuses copied source search and evaluator logic; independent subset enumeration checks only the reported closest row.",
+    "The randomized generator is not exhaustive over finite trees, so the sample does not prove or refute the universal lower-region aggregate.",
+    "No proof or counterexample for the primary universal claim is established by this bounded search."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-F2-1"
+  ]
+}

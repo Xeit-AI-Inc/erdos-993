@@ -1,0 +1,24 @@
+{
+  "worker_id": "C5-CF-U5",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C5-U5.support-star-sector",
+      "statement": "For every ordinary star T=K_{1,d} with d>=12 and every p satisfying the primary eligibility conditions, the full selected favorable-leaf aggregate S(T,p) is nonpositive.",
+      "scope": "Only ordinary stars K_{1,d}, d>=12, with the exact x(T)+2<=p and 3p<2alpha(T)+1 guards and the original strict favorable-leaf selector.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-5/C5-CF-U5/EVIDENCE.json"],
+      "reason": "retained: direct independence-count, terminal-descent, selector, and summand checks prove the stated star-family result. The report's weaker displayed inequality does not by itself imply its ratio bound, but the stronger 2k>=d-2 follows from the eligibility lower bound and repairs the proof without changing scope."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CF-U5/REPORT.md",
+  "limitations": [
+    "The result covers only ordinary stars K_{1,d} with d>=12; it does not establish the primary aggregate for general ordinary trees.",
+    "The boundary-count verification is confined to edgeless H_v with all vertices marked and gives no mixed-sector cut or compression inequality.",
+    "No computation or external theorem was used; the star-family proof is a restricted result only."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": ["C5-U5.support-star-sector"]
+}

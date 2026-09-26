@@ -1,0 +1,30 @@
+namespace E993FirstShell
+
+lemma leaf_retained_cover_transfer {V : Type u} [Fintype V] [DecidableEq V]
+    (T : SimpleGraph V) [DecidableRel T.Adj] (v : V)
+    (hv : C4LA1.IsGraphLeaf T v) (C : Finset V)
+    (hret : ∀ a b, T.Adj a b → a ∉ C5LA1.H T v → b ∉ C5LA1.H T v →
+      a ∈ C ∨ b ∈ C) :
+    ∀ a b, T.Adj a b →
+      a ∈ insert (C5LA1.support T v) C ∨
+      b ∈ insert (C5LA1.support T v) C := by
+  intro a b hab
+  by_cases has : a = C5LA1.support T v
+  · exact Or.inl (by simp [has])
+  by_cases hbs : b = C5LA1.support T v
+  · exact Or.inr (by simp [hbs])
+  have hav : a ≠ v := by
+    intro h
+    subst a
+    exact hbs (E993OrderBand.support_unique T v hv hab)
+  have hbv : b ≠ v := by
+    intro h
+    subst b
+    exact has (E993OrderBand.support_unique T v hv hab.symm)
+  have haH : a ∉ C5LA1.H T v := by simp [C5LA1.H, hav, has]
+  have hbH : b ∉ C5LA1.H T v := by simp [C5LA1.H, hbv, hbs]
+  rcases hret a b hab haH hbH with haC | hbC
+  · exact Or.inl (Finset.mem_insert_of_mem haC)
+  · exact Or.inr (Finset.mem_insert_of_mem hbC)
+
+end E993FirstShell

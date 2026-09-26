@@ -1,0 +1,10 @@
+lemma tree_order_eight_maxDegreeTwo_iso_pathGraph {V : Type u} [Finite V]
+    {G : SimpleGraph V} (hG : G.IsTree) (horder : Nat.card V = 8)
+    (hdeg : ∀ v, Nat.card (G.neighborSet v) ≤ 2) :
+    Nonempty (G ≃g SimpleGraph.pathGraph 8) := by
+  exact cast (congrArg (fun n => Nonempty (G ≃g SimpleGraph.pathGraph n)) horder)
+    (tree_maxDegreeTwo_iso_pathGraph_card hG hdeg)
+
+end Erdos993G1.PathClassification
+
+

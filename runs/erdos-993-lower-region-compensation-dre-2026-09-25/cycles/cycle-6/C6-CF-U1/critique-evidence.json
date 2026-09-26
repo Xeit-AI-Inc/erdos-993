@@ -1,0 +1,26 @@
+{
+  "schema": "e993.c6-critic.evidence.v1",
+  "worker_id": "C6-CF-U1",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "F",
+  "source_worker_ids": ["C6-U1"],
+  "required_covered_claim_ids": ["C6-U1-TM-LEAN-DECOMPOSITION"],
+  "source_hash_audit": {
+    "case_manifest_entries": 3,
+    "case_hash_mismatches": 0,
+    "common_manifest_entries": 237,
+    "common_hash_mismatches": 0
+  },
+  "review": {
+    "claim_id": "C6-U1-TM-LEAN-DECOMPOSITION",
+    "disposition": "retained_narrowed",
+    "revised_scope": "Proposed Lean formalization plan for the all-m homogeneous T_m lower-region aggregate only; no theorem proof or kernel award. Specify the central curvature interface as Poisson-normalized ULC with support and zero-extension hypotheses, then prove the separately listed graph/count, finite-base, mixed-minor, selector, and tagged-sum obligations.",
+    "decisive_reason": "The T_m scope, graph/tag counts, direct descent alternative, guard propagation range, and finite-base check count are consistent. The central-LC source uses Poisson ULC, while the route's finite-order ULC wording is underspecified and could denote a different normalization. This warrants a precise narrowing of the formalization plan, not rejection of the mathematical family claim.",
+    "limitations": [
+      "No Lean or Lake command was run.",
+      "The finite base was not independently replayed.",
+      "The full T_m family aggregate was not independently proved in this critique."
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "case_id": "E993-ORDINARY-PATH-STAR-ARITY-2-4-M2000-LOWER-REGION-AGGREGATE",
+  "disposition": "retained",
+  "source_hashes_verified": {
+    "case_files": 4,
+    "common_pins": 237,
+    "mismatches": 0
+  },
+  "replay": {
+    "copied_source": "cutoff2000_replay.py",
+    "output": "cutoff2000_replay.json",
+    "byte_identical_to_pinned_output": true,
+    "python": "/Library/Frameworks/Python.framework/Versions/3.11/bin/python3",
+    "scope": "exact rational cutoff arithmetic only"
+  },
+  "corrected_marked_minor_bound": {
+    "N_min": 4000,
+    "t_upper": "4001/4000",
+    "unscaled_adverse_constant_upper": "53252.175",
+    "divisor_lower_bound": 3,
+    "resulting_constant_upper": "17750.725",
+    "common_threshold": 26776,
+    "conclusion": "corrected bound remains below the route threshold"
+  },
+  "source_bridge": "Gurvits, arXiv:0804.1181, Theorem 1.1 and definition of ULC(d), checked directly against the cited primary PDF.",
+  "limitations": [
+    "No exhaustive graph/profile census was run.",
+    "Imported ULC convolution theorem is not formalized.",
+    "No conclusion outside the exact family and cutoff scope."
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "scope": "Replay of the hash-pinned T22 order-91 control row only; no independent graph or polynomial reconstruction.",
+  "input_copy": "T22-control-copy.json",
+  "source_file": "inputs/standing-controls/t22-order91.json",
+  "source_digest": "2198f01fa5de1c192da190ac242f5af8a914b0b03bd5e6df979590d20c6a18ed",
+  "row_checks": {
+    "order": 91,
+    "alpha": 68,
+    "first_strict_descent_x": 32,
+    "rank_p": 34,
+    "eligibility_x_plus_2_le_p": true,
+    "strict_lower_region_3p_lt_2a_plus_1": true,
+    "favorable_leaf_count": 67,
+    "summand_count": 67,
+    "all_selector_witness_deltas_negative": true,
+    "summand_identity_replayed": true,
+    "summand_sum": "-498754180547001418536",
+    "recorded_full_aggregate": "-498754180547001418536"
+  },
+  "tagwise_arithmetic": {
+    "k": 33,
+    "marked_leaf": 2,
+    "marked_g": "212336130412243110",
+    "k_times_marked_g": "7007092303604022630",
+    "star_leaf_count": 66,
+    "star_g_each": "-7560098737536570631",
+    "k_times_star_g": "-249483258338706830823",
+    "aggregate_replay": "212336130412243110 + 66*(-7560098737536570631) = -498754180547001418536"
+  },
+  "limitation": "Record lacks a graph encoding and independence-count vectors. This replay does not establish that the tabulated row is realized by an ordinary tree or independently validate x, alpha, or the favorable selector."
+}

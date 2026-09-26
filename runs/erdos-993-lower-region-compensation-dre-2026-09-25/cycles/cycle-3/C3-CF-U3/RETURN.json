@@ -1,0 +1,48 @@
+{
+  "worker_id": "C3-CF-U3",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C3-U3-MARKED-COVER-SHELL",
+      "statement": "For every finite simple graph G with |V(G)|=2k+2, k>=2, tau(G)>=3, and marked set W containing a non-isolated vertex, q_(k+1)(G,W)<=q_k(G,W), where q_j counts independent j-sets meeting W.",
+      "scope": "Retained at the exact graph order, rank, cover, and mark hypotheses stated. Informal proof using the two-part split, the order-(2k+1) reduction, ordinary shadows, and the registered exact first-wide graph classification. No larger-order extension or formal award.",
+      "status": "proposed_informal",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-U3/REPORT.md",
+        "cycles/cycle-3/C3-CF-U3/REVIEW-EVIDENCE.json",
+        "cycles/cycle-3/C3-CF-U3/SOURCE-U3-REPORT.md",
+        "cycles/cycle-3/C3-CF-U3/SOURCE-U3-RETURN.json",
+        "cycles/cycle-3/C3-CF-U3/SOURCE-REGISTERED-CLAIM-IDENTITY.json"
+      ],
+      "reason": "Disposition retained. Exact residual orders and the two-vertex deletion case check out: a residual with at most one edge would give a two-vertex cover. The second split term has at least two edges after deleting the non-isolated mark, so the arbitrary-mark order reduction applies. All first-wide invocations have exact order 2r+2 with r=k-1>=1."
+    },
+    {
+      "claim_id": "C3-U3-FIRST-SHELL-POINTWISE",
+      "statement": "For every finite ordinary tree T, p>=3, |V(T)|=2p+2, and x(T)+2<=p, each original-leaf summand Delta_(p-1)(T-{v,s_v})-Delta_(p-1)(T-N_T[s_v]) is nonpositive; consequently the sum over the fixed favorable leaves is nonpositive.",
+      "scope": "Retained for the first parent-order shell and early first strict descent. The proof first forces tau(T)>=4 by an all-ranks cover-three contradiction, then applies the marked-cover bound to each original leaf with its original support and neighborhood. No result for larger parent orders or all-order lower-region scope.",
+      "status": "proposed_informal",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-U3/REPORT.md",
+        "cycles/cycle-3/C3-CF-U3/REVIEW-EVIDENCE.json",
+        "cycles/cycle-3/C3-CF-U3/SOURCE-FIRST-SHELL-CANDIDATE.md",
+        "cycles/cycle-3/C3-CF-U3/SOURCE-U3-REPORT.md",
+        "cycles/cycle-3/C3-CF-U3/SOURCE-U3-EVIDENCE.json",
+        "cycles/cycle-3/C3-CF-U3/SOURCE-REGISTERED-CLAIM-IDENTITY.json"
+      ],
+      "reason": "Disposition retained. The cover decomposition proves Delta_r(T)>0 for every r<=p-2, including the arithmetic endpoints; Delta_alpha(T)=-1 ensures the terminal zero-extended descent exists. For H=T-{v,s_v}, alpha(H)=alpha(T)-1 and tau(H)>=3; a nontrivial support branch supplies the required non-isolated mark. The marked difference is exactly the original leaf summand, so the unchanged strict selector and all same-support leaf tags are respected."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CF-U3/REPORT.md",
+  "limitations": [
+    "Both dispositions retain informal mathematical arguments only; no Lean build or kernel award was made.",
+    "The claims establish no result for parent orders greater than 2p+2 and do not resolve the complete all-order lower-region aggregate.",
+    "The graph proof depends on the registered first-wide classification at its exact scope and the tree proof depends on the stated Catalan floor; no unlisted results or external literature were used."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C3-U3-FIRST-SHELL-POINTWISE",
+    "C3-U3-MARKED-COVER-SHELL"
+  ]
+}

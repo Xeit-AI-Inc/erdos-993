@@ -1,0 +1,36 @@
+{
+  "schema": "e993.worker-ops.evidence.v1",
+  "worker_id": "C4-U6",
+  "items": [
+    {
+      "id": "definition-bridge",
+      "finding": "On an original leaf, the frozen support, H, R, avoided-set coefficient, forward-difference, strict favorable selector, original leaf inventory, and aggregate definitions encode the corresponding canonical target objects. The helper leaf_count_split gives the exact marked-count partition and hence the summand identity q_p-q_(p-1).",
+      "sources": [
+        {"path": "inputs/C4-first-shell-frozen-intake/BASE.lean", "lines": "11-104"},
+        {"path": "inputs/C4-first-shell-frozen-intake/BASE.lean", "lines": "177-240"},
+        {"path": "inputs/C4-first-shell-frozen-intake/BASE.lean", "lines": "2826-3000"}
+      ],
+      "grade": "definition and finite-partition audit; not a new kernel-checked declaration"
+    },
+    {
+      "id": "first-shell-scope",
+      "finding": "The first-shell contract requires |V|=2p+2 and the informal audit's retained graph has exactly 2p vertices, the exact order used by its first-wide lemma. The proof is therefore scoped to the first shell and does not establish the primary target at arbitrary order.",
+      "sources": [
+        {"path": "runs/lean-2026-09-25-c3-first-shell/THEOREM-CONTRACT.yaml", "lines": "1-40,332-347"},
+        {"path": "preparation/C3-LA1-INFORMAL/REPORT.md", "lines": "25-66,91-100"},
+        {"path": "inputs/C4-first-shell-frozen-intake/BASE.lean", "lines": "2512-2528"}
+      ],
+      "grade": "scope comparison and exact order arithmetic"
+    },
+    {
+      "id": "verification-boundary",
+      "finding": "The frozen preflight is a prior successful compilation receipt with warnings. The contract separately requires kernel verification and fidelity audit, and the informal audit does not claim those gates were performed for the terminal assembly.",
+      "sources": [
+        {"path": "receipts/C3-LA1-BASE-PREFLIGHT.json", "lines": "1"},
+        {"path": "preparation/C3-LA1-INFORMAL/REPORT.md", "lines": "89-100"},
+        {"path": "runs/lean-2026-09-25-c3-first-shell/THEOREM-CONTRACT.yaml", "lines": "332-340"}
+      ],
+      "grade": "receipt and contract scope audit"
+    }
+  ]
+}

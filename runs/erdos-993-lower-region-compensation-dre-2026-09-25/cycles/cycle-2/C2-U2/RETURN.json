@@ -1,0 +1,24 @@
+{
+  "worker_id": "C2-U2",
+  "cycle": 2,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "E993-MARKED-ISOLATE-ORDER-BAND",
+      "statement": "For every finite simple graph G on m vertices, every W containing all isolated vertices of G, and every integer k>=2 with m<=2k+1, if q_j counts independent j-sets meeting W, then q_(k+1)<=q_k.",
+      "scope": "Arbitrary finite simple graphs; W contains all isolates; integer k>=2 and m<=2k+1. No tree, bipartite, favorable-selector, or first-descent hypothesis.",
+      "status": "proposed_proved_informal",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-U2/EVIDENCE.md"
+      ],
+      "reason": "The addability incidence identity reduces the claim to B+C>=q_k at m=2k+1. Good sets contribute to B; bad all-isolate sets inject, by adjoining a fixed non-isolate, into multiply marked upper sets counted by C. The edgeless case is equality by complementation."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-U2/REPORT.md",
+  "limitations": [
+    "This is an informal proof audit; no Lean formalization or kernel receipt is provided.",
+    "No conclusion is transferred to leaf-specific order bands or the lower-region favorable-leaf aggregate."
+  ],
+  "status_authority": "proposed_worker_only"
+}

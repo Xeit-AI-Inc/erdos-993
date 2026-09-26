@@ -1,0 +1,32 @@
+{
+  "worker_id": "C3-CU-F6",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "Retain C3-F6's claim that its specified graft and gluing computation found no positive complete selected-leaf sum among 985 eligible parameter/rank rows.",
+      "scope": "Only the finite ranges and eligible rows listed in C3-F6/REPORT.md and its result data: root path grafts (254 rows), support or first-claw-center path grafts (254 rows), and two-core path gluings (477 rows). This does not establish the assertion for all ordinary trees or for unbounded parameter ranges.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CU-F6/REPORT.md",
+        "cycles/cycle-3/C3-CU-F6/F6_COMPUTE_REPLAY.py",
+        "cycles/cycle-3/C3-CU-F6/F6_RESULTS_SEALED_COPY.json",
+        "cycles/cycle-3/C3-CU-F6/F6_RESULTS.json",
+        "cycles/cycle-3/C3-CU-F6/INDEPENDENT_CHECK.json"
+      ],
+      "reason": "retained: copied-source replay reproduces all 985 nonpositive rows and the recorded family totals; independent subset enumeration confirms the fully displayed eligible row, its complete favorable set, separate same-support leaf tags, and S=-334. This exact finite computation does not prove or refute the universal target."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CU-F6/REPORT.md",
+  "limitations": [
+    "The full sweep replay uses the route's computation script; independent direct subset enumeration was performed only for the displayed 13-vertex row.",
+    "The parameter ranges are finite and omit arbitrary ordinary trees and all parameters outside the stated bounds.",
+    "No universal graft-family inequality or proof/refutation of the registered lower-region aggregate follows from these computations."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE"
+  ]
+}

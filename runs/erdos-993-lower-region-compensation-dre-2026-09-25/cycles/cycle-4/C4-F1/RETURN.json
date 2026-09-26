@@ -1,0 +1,27 @@
+{
+  "worker_id": "C4-F1",
+  "cycle": 4,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C4-F1-bounded-CTx-selector-search",
+      "statement": "In the specified 1,836-encoding labeled Prüfer sample of orders 8 through 16, there are 37 eligible parameter rows; all have p=x+2, select every original leaf, have S<0, and satisfy E<=(x+1)Q. No sampled eligible row has a proper favorable-leaf selector.",
+      "scope": "Only the seeded, shape-biased labeled Prüfer sample and exact arithmetic protocol in REPORT.md and EVIDENCE.json. This is bounded evidence and makes no universal claim about ordinary trees.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-F1/EVIDENCE.json",
+        "cycles/cycle-4/C4-F1/REPLAY.py"
+      ],
+      "reason": "The complete eligible-row ledger records graph edges, original leaves, every leaf's Delta_p(T-v), selector membership, selected supports and summands, and exact aggregate counts; the replay script asserts the stated identities. The run found zero proper-selector examples and zero positive aggregates, so it neither proves nor refutes the universal target."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-F1/REPORT.md",
+  "limitations": [
+    "The Prüfer protocol samples labeled trees and retains isomorphic duplicates; it is not exhaustive at any searched order.",
+    "No proper favorable-leaf selector occurred in the eligible sample, so the route did not achieve the primary proper-selector stress objective.",
+    "All eligible rows had p=x+2, so this sample does not separate the CT_x and current-rank addability budgets.",
+    "Finite negative aggregates and positive budget gaps do not prove the universal aggregate or CT_x bound."
+  ],
+  "status_authority": "proposed_worker_only"
+}

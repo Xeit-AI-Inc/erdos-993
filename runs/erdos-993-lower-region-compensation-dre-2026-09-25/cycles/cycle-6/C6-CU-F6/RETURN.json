@@ -1,0 +1,31 @@
+{
+  "worker_id": "C6-CU-F6",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C6-F6.SPIDER-SELECTOR-BOUNDED",
+      "statement": "Disposition retained: the exact bounded census is correct for the equal-length-three rooted spiders T_m with 2<=m<=40; every eligible rank selects all m original endpoint leaves and the complete aggregate is negative, with x(T_m)=m throughout this finite range.",
+      "scope": "The 39 ordinary trees r-a_i-b_i-c_i (1<=i<=m), 2<=m<=40, and all integer p satisfying x(T_m)+2<=p and 3p<2alpha(T_m)+1. This is a bounded result only.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CU-F6/evidence.json",
+        "cycles/cycle-6/C6-CU-F6/replay.py",
+        "cycles/cycle-6/C6-CU-F6/formula_audit.py",
+        "cycles/cycle-6/C6-CU-F6/formula-audit.json"
+      ],
+      "reason": "The copied replay reproduces the sealed evidence exactly. An independent root-conditioned formula check confirms the polynomial vectors, terminal zero-extended first descent, both eligibility guards, all identical endpoint selector values, each distinct original support-tagged summand, and all 222 complete sums. The claim is retained on its stated finite scope. The computation does not establish the all-m selector-transfer bridge or the arbitrary-tree target."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CU-F6/REPORT.md",
+  "limitations": [
+    "The replay and independent formula audit cover only m=2..40; they give no result for m>40.",
+    "The proposed first-descent bound and all-m selector transfer remain unproved, including the non-star lead's disjoint-image step.",
+    "This case establishes no proof or counterexample for the arbitrary ordinary-tree lower-region aggregate."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-F6.SPIDER-SELECTOR-BOUNDED"
+  ]
+}

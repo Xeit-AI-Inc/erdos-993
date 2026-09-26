@@ -1,0 +1,28 @@
+{
+  "worker_id": "C3-CT-F1",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C3-F1.literal-two-for-one-flow-prefix",
+      "statement": "The literal weighted Hall graph has an integer flow saturating all positive upper-layer supply on each of the first five stored eligible rank-7 census rows at each of orders 16, 17, and 18.",
+      "scope": "Exactly the deterministic first five eligible p=7 rows in stored order at each of orders 16, 17, and 18 in the supplied census results; 15 literal-set networks total. The selector is the fixed original strict favorable-leaf selector, the layers are independent sets of sizes 8 and 7, and legal arcs are all one-vertex deletions and the specified absent-vertex switches with exactly two neighbors in the upper set. This is finite flow feasibility only.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CT-F1/EVIDENCE.json"
+      ],
+      "reason": "retained: an independent foreground replay from scratch copies exactly matches the stored evidence on all 15 rows. It reconstructs the trees; checks alpha, first descent, eligibility, every strict selector value, original supports, each selected term and complete S; verifies S=supply-capacity; and checks legal arcs, integral flow, node capacities, conservation totals and zero residual-cut deficit. The result is retained only for this finite deterministic prefix."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CT-F1/REPORT.md",
+  "limitations": [
+    "Only the first five eligible stored rows at each of orders 16, 17 and 18 were flow-tested; no claim is made about the remaining 4,976 eligible p=7 rows.",
+    "Census generation was not rerun; the finite result depends on the two supplied hash-pinned census result files.",
+    "The finite flows establish neither a universal weighted Hall mechanism nor the primary aggregate for all eligible ordinary trees; no formal or authoritative status is proposed."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C3-F1.literal-two-for-one-flow-prefix"
+  ]
+}

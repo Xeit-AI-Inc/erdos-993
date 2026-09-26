@@ -1,0 +1,94 @@
+namespace Erdos993G1.ThirdWide
+
+open Finset Classical
+
+variable {X : Type u} [Fintype X] [DecidableEq X]
+
+lemma cover_fiber_count (F : SimpleGraph X) [DecidableRel F.Adj] (C S : Finset X)
+    (hSC : S ⊆ C) (hS : F.IsIndepSet S)
+    (hcover : ∀ x y, F.Adj x y → x ∈ C ∨ y ∈ C) (k : ℕ) :
+    (((F.indepSetFinset k).filter (fun T => T ∩ C = S)).card : ℤ) =
+      FirstWide.binomCoeff
+        ((univ : Finset X).filter (fun x => x ∉ C ∧ ∀ y ∈ S, ¬F.Adj y x)).card
+        ((k : ℤ) - S.card) := by
+  classical
+  let B := (univ : Finset X).filter (fun x => x ∉ C ∧ ∀ y ∈ S, ¬F.Adj y x)
+  let A := (F.indepSetFinset k).filter (fun T => T ∩ C = S)
+  by_cases hsk : S.card ≤ k
+  · have hcount : A.card = (B.powersetCard (k-S.card)).card := by
+      apply Finset.card_bij (fun T _ => T \ C)
+      · intro T hT
+        obtain ⟨hT,hTC⟩ := mem_filter.mp hT
+        have hind := (SimpleGraph.mem_indepSetFinset_iff.mp hT).isIndepSet
+        have htcard := (SimpleGraph.mem_indepSetFinset_iff.mp hT).card_eq
+        refine mem_powersetCard.mpr ⟨?_,?_⟩
+        · intro x hx
+          obtain ⟨hxT,hxC⟩ := mem_sdiff.mp hx
+          refine mem_filter.mpr ⟨mem_univ _, hxC, ?_⟩
+          intro y hy hadj
+          have hyT : y ∈ T := (mem_inter.mp (hTC ▸ hy)).1
+          exact hind hyT hxT hadj.ne hadj
+        · have hc := card_sdiff_add_card_inter T C
+          rw [hTC,htcard] at hc
+          omega
+      · intro T hT U hU heq
+        have hTC := (mem_filter.mp hT).2
+        have hUC := (mem_filter.mp hU).2
+        have hTdec : T \ C ∪ S = T := by rw [← hTC]; exact sdiff_union_inter _ _
+        have hUdec : U \ C ∪ S = U := by rw [← hUC]; exact sdiff_union_inter _ _
+        rw [← hTdec, ← hUdec, heq]
+      · intro J hJ
+        obtain ⟨hJB,hJcard⟩ := mem_powersetCard.mp hJ
+        have hJC : Disjoint J C := disjoint_left.mpr (by
+          intro x hx hxC
+          exact (mem_filter.mp (hJB hx)).2.1 hxC)
+        have hJS : Disjoint J S := hJC.mono_right hSC
+        have hind : F.IsIndepSet (↑(J ∪ S) : Set X) := by
+          intro x hx y hy hxy hadj
+          rcases mem_union.mp hx with hx | hx <;> rcases mem_union.mp hy with hy | hy
+          · rcases hcover x y hadj with hxC | hyC
+            · exact (mem_filter.mp (hJB hx)).2.1 hxC
+            · exact (mem_filter.mp (hJB hy)).2.1 hyC
+          · exact (mem_filter.mp (hJB hx)).2.2 y hy hadj.symm
+          · exact (mem_filter.mp (hJB hy)).2.2 x hx hadj
+          · exact hS hx hy hxy hadj
+        refine ⟨J ∪ S, mem_filter.mpr ⟨?_,?_⟩, ?_⟩
+        · apply SimpleGraph.mem_indepSetFinset_iff.mpr
+          refine ⟨hind,?_⟩
+          rw [card_union_of_disjoint hJS,hJcard]
+          omega
+        · ext x
+          simp only [mem_inter,mem_union]
+          constructor
+          · rintro ⟨hx,hxC⟩
+            rcases hx with hx | hx
+            · exact False.elim ((disjoint_left.mp hJC hx) hxC)
+            · exact hx
+          · intro hx
+            exact ⟨Or.inr hx,hSC hx⟩
+        · ext x
+          simp only [mem_sdiff,mem_union]
+          constructor
+          · rintro ⟨hx,hxC⟩
+            rcases hx with hx | hx
+            · exact hx
+            · exact False.elim (hxC (hSC hx))
+          · intro hx
+            exact ⟨Or.inl hx,fun hxC => disjoint_left.mp hJC hx hxC⟩
+    rw [card_powersetCard] at hcount
+    have hz : (k : ℤ) - S.card = ((k-S.card : ℕ) : ℤ) := by omega
+    change (A.card : ℤ) = FirstWide.binomCoeff B.card _
+    rw [hcount,hz,FirstWide.binomCoeff_nat]
+  · have hA : A = ∅ := by
+      apply eq_empty_iff_forall_notMem.mpr
+      intro T hT
+      obtain ⟨hT,hTC⟩ := mem_filter.mp hT
+      have hc := card_le_card (inter_subset_left (s₁ := T) (s₂ := C))
+      rw [hTC,(SimpleGraph.mem_indepSetFinset_iff.mp hT).card_eq] at hc
+      exact hsk hc
+    have hz : (k : ℤ) - S.card < 0 := by omega
+    change (A.card : ℤ) = FirstWide.binomCoeff B.card _
+    rw [hA,card_empty,FirstWide.binomCoeff_neg _ hz]
+    rfl
+
+-- ENTRY 166

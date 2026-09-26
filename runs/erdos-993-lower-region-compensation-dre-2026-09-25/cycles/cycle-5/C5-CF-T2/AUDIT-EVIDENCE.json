@@ -1,0 +1,22 @@
+{
+  "source_replay_byte_identical": true,
+  "profiles": 285,
+  "eligible_rows": 913,
+  "rows_all_original_leaf_tags_selected": 913,
+  "empty_selector_rows": 0,
+  "proper_selector_rows": 0,
+  "positive_full_sums": 0,
+  "maximum_S": -275,
+  "minimum_S": -3351112008120,
+  "source_json_sha256": "cba928e8426209ae5c10c5d7a13acda077be2d36a315829204b5dac7b9ad9eb7",
+  "replay_json_sha256": "cba928e8426209ae5c10c5d7a13acda077be2d36a315829204b5dac7b9ad9eb7",
+  "replay_script_sha256": "cbe720d1328a713bc1456ef487c360527ebb81f9de6afe039bbf3af944ee1669",
+  "checks": "For every row, checked profile domain/order, vertex-count formula, alpha, first negative zero-extended difference, eligibility, selector from recorded leaf-deletion differences, selected-tag/term correspondence, exact sum, and sign.",
+  "independent_factor_recalculation": {
+    "method": "Recomputed P and every original leaf deletion selector/summand using explicit branch factors B_r=(1+z)^r+z and closed-form deletion polynomials; no tree traversal or producer DP used.",
+    "profile_polynomials_checked": 285,
+    "leaf_selector_differences_checked": 24786,
+    "selected_terms_checked": 24786,
+    "all_match": true
+  }
+}

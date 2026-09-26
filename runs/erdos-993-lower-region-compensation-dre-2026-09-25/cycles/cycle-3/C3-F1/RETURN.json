@@ -1,0 +1,26 @@
+{
+  "worker_id": "C3-F1",
+  "cycle": 3,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C3-F1.literal-two-for-one-flow-prefix",
+      "statement": "The literal weighted Hall graph has an integer flow saturating all positive upper-layer supply on each of the first five stored eligible rank-7 census rows at each order 16, 17, and 18.",
+      "scope": "Exactly 15 rows: the first five eligible rows in stored order from the supplied order-16, order-17, and order-18 p=7 results. For each tree, F is its original strict favorable selector; upper/lower layers are independent sets of sizes 8/7; arcs are all one-vertex deletions and the specified absent-vertex switches with exactly two neighbors in the upper set. This is a finite feasibility result only.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-F1/EVIDENCE.json",
+        "cycles/cycle-3/C3-F1/run_flow.py"
+      ],
+      "reason": "Exact integer max-flow certificates were computed and checked for legal arcs, node capacities, conservation, and saturation on these 15 literal-set graphs. The 4,976 other eligible p=7 rows and all larger cases are untested, so this bounded sample does not establish the weighted Hall mechanism or decide the primary universal aggregate."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-F1/REPORT.md",
+  "limitations": [
+    "The flow sample is the deterministic first-five prefix at each order, not a random or representative sample.",
+    "Only 15 of the supplied 4,991 eligible p=7 rows were flow-tested; the remaining 4,976 rows and all larger cases remain untested.",
+    "Feasible flows certify the mechanism only on the tested graphs and do not establish a universal theorem or an authoritative status."
+  ],
+  "status_authority": "proposed_worker_only"
+}

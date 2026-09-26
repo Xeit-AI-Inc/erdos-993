@@ -1,0 +1,39 @@
+{
+  "worker_id": "C3-U1",
+  "cycle": 3,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL",
+      "statement": "For every eligible finite ordinary tree T and rank p with x(T)+2<=p and 3p<2alpha(T)+1, the fixed-selector clone graph with all-clone deletion edges and exactly-two-neighbor support-insertion edges has a matching saturating every upper clone.",
+      "scope": "Universal ordinary finite trees; F is the fixed set of original leaves v with Delta_p(T-v)<0; clone multiplicity w_F counts active selected-leaf tags; edges are precisely all clone pairs over a one-deletion set-pair or an independent two-for-one support insertion. This mechanism is sufficient and stronger than S(T,p)<=0.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-U1/EVIDENCE.json"
+      ],
+      "reason": "The semantic reduction and strict distinction from old relations are established, and three bounded T_m cases pass; the universal matching claim has no proof or counterexample in the permitted evidence. CB(8,92) remains undecided."
+    },
+    {
+      "claim_id": "E993-U1-CLONE-PROJECTION",
+      "statement": "The tagged active-set occurrences for the fixed original selector are bijective with weighted clones, every literal old Delete/Retag edge projects to a deletion edge, and the changed graph strictly enlarges the old projected graph by clone compatibility and legal two-for-one edges.",
+      "scope": "Ordinary-tree definitions; the clone bijection is rankwise at p+1 and p; strictness is witnessed by the explicit order-14 p=6 switch and explicit clone-fiber example in EVIDENCE.json.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-U1/EVIDENCE.json"
+      ],
+      "reason": "Direct set-theoretic proof gives the bijection, projection, and aggregate identity; explicit exact examples establish strict enlargement. This auxiliary claim does not assert universal weighted Hall or governed RTree transfer."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-U1/REPORT.md",
+  "limitations": [
+    "The weighted Hall saturation assertion remains unproved and unrefuted.",
+    "The T_m results are bounded orbit-flow computations only; the symmetry lift is justified for those cases but does not extend the computed families.",
+    "The 241 p6 flows are reported by the pinned audit but were not independently rerun in this seat.",
+    "No minimum-cardinality set of switch edges repairing a deficient cut is established.",
+    "The expanded graph on CB(8,92) has no supplied exact flow or cut; its supplied capacity envelope is inconclusive.",
+    "S(T,p)<=0 does not imply all-cut Hall, and a Hall failure alone does not refute the aggregate.",
+    "No ordinary-to-governed RTree adequacy bridge is provided or claimed."
+  ],
+  "status_authority": "proposed_worker_only"
+}

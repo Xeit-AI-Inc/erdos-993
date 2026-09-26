@@ -1,0 +1,26 @@
+{
+  "worker_id": "C6-F6",
+  "cycle": 6,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C6-F6.SPIDER-SELECTOR-BOUNDED",
+      "statement": "For the equal-length-three rooted spider T_m with 2<=m<=40, every eligible rank selects all m original endpoint leaves and has a negative complete aggregate; also x(T_m)=m throughout this finite range.",
+      "scope": "Exact bounded computation on the 39 graphs r-a_i-b_i-c_i (1<=i<=m), checking all 222 ranks satisfying x+2<=p and 3p<2alpha+1; no conclusion for m>40 or arbitrary trees.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-F6/evidence.json",
+        "cycles/cycle-6/C6-F6/replay.py"
+      ],
+      "reason": "Exact forest-DP replay validates the branch polynomial and leaf-deletion/support formulas against the literal graph and checks every eligible selector and distinct summand in the stated boundary. The result confirms this finite portion of the specified transfer lead but neither proves its universal first-descent bridge nor resolves the registered arbitrary-tree claim."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-F6/REPORT.md",
+  "limitations": [
+    "The family census stops at m=40 and does not establish a statement for unbounded m.",
+    "No arbitrary-tree proof or positive eligible counterexample was found or claimed.",
+    "The proposed x(P_m)>=m-1 bridge and its all-m selector-transfer consequences remain unproved by this bounded computation."
+  ],
+  "status_authority": "proposed_worker_only"
+}

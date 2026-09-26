@@ -1,0 +1,36 @@
+{
+  "audit_kind": "independent_critique_replay_and_reconstruction",
+  "source_claim_id": "C4-F1-bounded-CTx-selector-search",
+  "packet_hash_validation": {
+    "case_files_checked": 4,
+    "case_file_hashes_matched": 4,
+    "common_listed_sources_checked": 179,
+    "common_source_hashes_matched": 179
+  },
+  "producer_replay": {
+    "executed": "replay_copy.py",
+    "sample_encodings": 1836,
+    "orders": "8 through 16 inclusive, 204 encodings per order",
+    "eligible_rows": 37,
+    "proper_selector_rows": 0,
+    "per_order_eligible_rows": {"8": 0, "9": 0, "10": 0, "11": 1, "12": 0, "13": 9, "14": 18, "15": 5, "16": 4}
+  },
+  "independent_crosscheck": {
+    "script": "audit.py",
+    "eligible_rows_reconstructed": 37,
+    "graph_checks": "For every eligible row, reconstructed the full edge set, confirmed n-1 edges, connectivity and acyclicity, and independently listed all degree-one vertices.",
+    "polynomial_method": "Generic induced-forest recurrence P(G)=P(G-v)+zP(G-N[v]), memoized on vertex masks; not the producer's independent-subset polynomial accumulator.",
+    "literal_subset_checks": "For every selected leaf tag, enumerated independent k-sets in H to count actual addable vertices E and independent (k+1)-sets meeting W at least twice to count C once per upper set.",
+    "all_original_tree_polynomials_and_first_descents_match": true,
+    "all_original_leaf_selector_values_and_memberships_match": true,
+    "all_selected_supports_and_per_tag_summands_match": true,
+    "all_aggregate_S_values_match_and_are_negative": true,
+    "all_Q_U_E_C_totals_match": true,
+    "E_equals_kU_plus_C_for_every_tagged_row": true,
+    "E_le_(x_plus_1)Q_for_every_eligible_row": true,
+    "eligible_rows_with_root_label_0_as_an_original_leaf": 16,
+    "rows_with_multiple_leaf_tags_sharing_a_support": 36,
+    "selected_leaf_tags_checked": 310
+  },
+  "conclusion_boundary": "These checks validate the finite sampled claim and its recorded arithmetic only. The seeded labeled sample is not exhaustive and supplies neither a proof nor a counterexample to the universal lower-region aggregate or CT_x inequality."
+}

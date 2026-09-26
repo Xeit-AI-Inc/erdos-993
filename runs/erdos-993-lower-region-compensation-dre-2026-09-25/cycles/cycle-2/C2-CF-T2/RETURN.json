@@ -1,0 +1,28 @@
+{
+  "worker_id": "C2-CF-T2",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "For the exact registered lower-region target and fixed selector, the route's aggregate admits the identity S(T,p)=sum_{|B|=p+1} w_F(B)-sum_{|B|=p} w_F(B); saturation of its described cross-tag deletion graph would suffice for S(T,p)<=0, but no saturation bound or counterexample is established.",
+      "scope": "Finite ordinary trees T and natural p satisfying x(T)+2<=p and 3p<2alpha(T)+1, with zero-extended independence counts, original supports and neighborhoods, strict selector F(T,p), and distinct original-leaf tags; the identity is exact and the matching assertion is only conditional.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CF-T2/REPORT.md"
+      ],
+      "reason": "Disposition: retained_narrowed. Independent derivation confirms the q-rank and fixed-selector weighted-rank identities, including same-support multiplicities, and the matching-saturation implication. The route omits the required Hall/capacity proof and gives no eligible positive complete sum, so it does not resolve the registered universal inequality."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CF-T2/REPORT.md",
+  "limitations": [
+    "No cross-tag Hall inequality, matching, or fractional capacity estimate is proved under the fixed favorable selector.",
+    "No eligible positive full-sum counterexample is supplied; failure of the proposed matching alone would not refute the primary assertion.",
+    "The critique establishes no universal verdict and uses no external theorem or computation."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE"
+  ]
+}

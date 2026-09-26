@@ -1,0 +1,30 @@
+{
+  "worker_id": "C3-LA1-FIDELITY-REPAIR1",
+  "status_authority": "proposed_worker_only",
+  "completed_at": "2026-09-26T04:03:02Z",
+  "verdict": "match",
+  "findings": [],
+  "source_files_verified": 251,
+  "source_hashes_matched": true,
+  "run_id": "lean-2026-09-25-c3-first-shell-repair-1",
+  "main_sha256": "0397b7bedd1ff695d8debd73a24cff430434e88f2d9ac56c49459843d155f17f",
+  "contract_sha256": "1cf37db1ec45656b89d7b0fece737ec60cfc3f5f081707ae2d6c2c4d8fc8e122",
+  "kernel_receipt_sha256": "0dbcddc48cf6b7127d1cac84e39708183e804aae6615c38ceee2c2884830d759",
+  "contract_projection_sha256": "0112514a50fec2648b0edd08d8f825d41ead752f4300caa3c178f7e17e644caf",
+  "binding_projection_sha256": "90e05e93c46e6309f4931f85d61268cbeeffceff7f71b831aedd80df1e602aad",
+  "checks": {
+    "parent_child_main_bytes_equal": true,
+    "parent_child_contract_bytes_equal": true,
+    "exact_claim_matches_contract": true,
+    "main_terminal_statement_matches_contract": true,
+    "all_225_registered_snippets_match_main": true,
+    "child_formalization_state_and_receipt_run_id_canonical": true,
+    "child_assignment_and_informal_receipts_run_id_canonical": true,
+    "fresh_child_kernel_receipt_verified": true,
+    "child_axioms_permitted": true,
+    "dependency_hashes_verified": true,
+    "pre_review_projection_hashes_recomputed": true,
+    "semantic_fidelity_inherited_by_exact_byte_identity_and_rechecked": true
+  },
+  "workflow_close_status": "not performed by reviewer; canonical final input and audit remain controller actions"
+}

@@ -1,0 +1,5 @@
+# First-shell production continuation
+
+The initial Sol producer returned27 compiled helpers and explicitly no terminal theorem. This partial output is preserved and admitted as draft proof production, not registered managed source or an award. Its successful draft compilation is not kernel verification of the contract. A fresh Sol high continuation implements the remaining marked-family shadow and exact terminal. It belongs to the same logical C3-LA1-PRODUCER production role, is not an independent audit, and inherits no review authority. The assigned informal and fidelity reviewers remain distinct. No managed registration or failed workflow close occurred; this is unfinished source production, not a repair of a closed or failed award. Contract, intended statement and permitted axioms remain unchanged.
+
+A simpler audited A/B/C decomposition is recommended rather than a full arbitrary first-mark partition. The production continuation may use both routes, with complete proved premises. Original partial artifacts remain immutable. Final managed registration, actual kernel/axiom checks and fresh fidelity review remain mandatory before any promotion.

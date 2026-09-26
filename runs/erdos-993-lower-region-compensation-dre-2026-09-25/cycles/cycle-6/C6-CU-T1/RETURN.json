@@ -1,0 +1,48 @@
+{
+  "worker_id": "C6-CU-T1",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C6-T1-TM-CUTOFF400",
+      "statement": "For the ordinary-tree family T_m consisting of one root-adjacent P3 arm and m root-adjacent K1,3 arms, for every m>=1 and every integer p satisfying x(T_m)+2<=p and 3p<2*alpha(T_m)+1, the complete original favorable-leaf sum satisfies S(T_m,p)<0.",
+      "scope": "Only the explicitly defined T_m family, with original leaves, original supports, the fixed selector F(T_m,p), distinct leaf tags, and the strict lower-region guard. This does not establish the arbitrary ordinary-tree aggregate.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CU-T1/REPORT.md",
+        "cycles/cycle-6/C6-CU-T1/replay_cutoff400.py",
+        "cycles/cycle-6/C6-CU-T1/EVIDENCE.json",
+        "cycles/cycle-6/C6-CU-T1/replay_independent.py",
+        "cycles/cycle-6/C6-CU-T1/REPLAY-RESULTS.json"
+      ],
+      "reason": "Disposition: retained. The graph and tagged-polynomial formulas retain all original leaves. Direct coefficient inequalities locate the first descent; the selector transfer follows from the positive central mixed minors and LC propagation. I copied and ran both the exact recurrence replay and a separate iterative-convolution replay: each verifies the 242,964 finite central LC and 242,964 mixed margins, and their streams and minima agree. The exact cutoff ratios support the analytic m>=400 tail. The source report has a one-line q-index wording error, but its final zR coefficient identity is the contract's correct aggregate. The conclusion is family-specific and computer-assisted, with an informal ULC limiting bridge."
+    },
+    {
+      "claim_id": "C6-T1-TM-DIRECT-FIRST-DESCENT",
+      "statement": "For the defined family T_m, x(T_m)>=m+1 for every m>=2, without using the R27 forest-order theorem.",
+      "scope": "Only first-descent location for the T_m independence polynomial; m=1 is handled separately as an exact ineligible case.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CU-T1/REPORT.md",
+        "cycles/cycle-6/C6-CU-T1/replay_cutoff400.py",
+        "cycles/cycle-6/C6-CU-T1/EVIDENCE.json",
+        "cycles/cycle-6/C6-CU-T1/replay_independent.py",
+        "cycles/cycle-6/C6-CU-T1/REPLAY-RESULTS.json"
+      ],
+      "reason": "Disposition: retained. The coefficientwise derivative inequalities for G=1+2z and B=1+4z+3z^2+z^3 imply strict coefficient increase of GB^m through j=m when m>=2; the root-included term z(1+z)^(3m+1) is also strictly increasing there. The exact m=1,2 rows were replayed and separately give no eligible rank under the strict alpha guard. This establishes only the stated T_m first-descent bound."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CU-T1/REPORT.md",
+  "limitations": [
+    "The result is restricted to the specified T_m family and does not resolve the arbitrary ordinary-tree aggregate.",
+    "The finite coefficient base is exact Python arithmetic without Lean or kernel certification.",
+    "The finite-order ULC convolution import and limiting bridge are informal mathematics, not a formalized proof.",
+    "The review did not independently re-enumerate every graph in the infinite family; it checked the root-splitting formulas and the independent small-profile literal replay."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-T1-TM-CUTOFF400",
+    "C6-T1-TM-DIRECT-FIRST-DESCENT"
+  ]
+}

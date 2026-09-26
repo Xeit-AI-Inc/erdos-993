@@ -1,0 +1,2 @@
+# Inherited evaluator endpoint repair
+The historical r23/first-interior ordinary_tree.py under inputs/standing-controls remains unchanged. The new inputs/ordinary_tree_checked.py differs only by scanning range(len(poly)) in first_strict_descent, thus including the last positive coefficient followed by zero. It is a helper, not a verified universal theorem. Control checks include the empty polynomial [1], plateau [1,1], and ordinary strict descents; coefficients remain integer zero-extended.

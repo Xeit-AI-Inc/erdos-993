@@ -1,0 +1,29 @@
+{
+  "worker_id": "C6-CU-T5",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C6-T5.ORBIT-QUOTIENT-LIFT",
+      "statement": "The finite-group orbit-quotient lifting implication is valid under the stated invariance and nonnegative integer supply/capacity hypotheses; the T_m orbit partition and deletion/two-for-one transitions are structurally exact for m>=1; the three pinned quotient primal flows pass the stated checks.",
+      "scope": "General finite invariant bipartite relation for the lifting theorem; structural T_m orbit and adjacency description for m>=1; flow applications only at (m,p)=(22,34),(60,90),(66,98). No arbitrary-tree aggregate conclusion.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CU-T5/REPORT.md",
+        "cycles/cycle-6/C6-CU-T5/EVIDENCE.json"
+      ],
+      "reason": "retained: the invariant-maximizer Hall argument is valid; the wreath-product state classification, exhaustive graph-neighborhood transitions, fixed-tag weights, and each supplied primal flow were checked. Exact arithmetic confirms eligibility, favorable sets, flow feasibility and full sums for only the three pinned controls."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CU-T5/REPORT.md",
+  "limitations": [
+    "Flow feasibility was verified only for the three pinned T_m cases; no all-m or all-rank flow family was proved.",
+    "The route does not resolve the arbitrary-tree lower-region aggregate.",
+    "The numeric replay uses the pinned ordinary_tree_checked.py evaluator; the group-lifting argument and orbit/transition classification were audited separately."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-T5.ORBIT-QUOTIENT-LIFT"
+  ]
+}

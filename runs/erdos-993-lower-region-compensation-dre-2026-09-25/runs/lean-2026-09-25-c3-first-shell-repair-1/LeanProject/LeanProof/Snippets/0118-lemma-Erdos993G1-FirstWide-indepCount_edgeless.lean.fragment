@@ -1,0 +1,16 @@
+namespace Erdos993G1.FirstWide
+
+lemma indepCount_edgeless {Y : Type u} [Finite Y]
+    (G : SimpleGraph Y) (he : Nat.card G.edgeSet = 0) (k : ℕ) :
+    indepCount G k = binomCoeff (Nat.card Y) (k : ℤ) := by
+  classical
+  letI := Fintype.ofFinite Y
+  letI : IsEmpty G.edgeSet := Finite.card_eq_zero_iff.mp he
+  have hi : ∀ S : Finset Y, G.IsIndepSet S := by
+    intro S a ha b hb hab hadj
+    exact isEmptyElim (⟨s(a, b), hadj⟩ : G.edgeSet)
+  rw [indepCount_eq_card_indepSetFinset, indepSetFinset_eq_filter_powersetCard,
+    Finset.filter_eq_self.mpr (fun S _ => hi S), Finset.card_powersetCard,
+    Finset.card_univ, binomCoeff_nat, Nat.card_eq_fintype_card]
+
+end Erdos993G1.FirstWide

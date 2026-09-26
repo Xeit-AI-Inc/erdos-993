@@ -1,0 +1,11 @@
+namespace Erdos993G1.FirstWide
+
+lemma choose_step_nonpos {n k : ℕ} (h : n ≤ 2 * k + 1) :
+    n.choose (k + 1) ≤ n.choose k := by
+  have he := Nat.choose_succ_right_eq n k
+  have hd : n - k ≤ k + 1 := by omega
+  have hm := Nat.mul_le_mul_left (n.choose k) hd
+  rw [← he] at hm
+  exact Nat.le_of_mul_le_mul_right hm (by omega)
+
+end Erdos993G1.FirstWide

@@ -1,0 +1,44 @@
+{
+  "worker_id": "C2-CT-U6",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C2-U6.primary-shell-open",
+      "statement": "The complete selected-sum inequality on the eligible first-order shell has not been resolved by the C2-U6 route.",
+      "scope": "Ordinary trees T with |T|=2p+2, x(T)+2<=p, and 3p<2alpha(T)+1; x uses zero-extended counts, and selector, supports, neighborhoods, and the complete sum use the original tree.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-2/C2-CT-U6/REPORT.md"],
+      "reason": "retained: the exact state data preserve the full eligible shell assertion, but the route supplies no universal sign proof or realizable positive full sum. This is a proposed report of the route's result, not a verdict on the mathematical assertion."
+    },
+    {
+      "claim_id": "C2-U6.shell-state-framework",
+      "statement": "For each fixed p on the first-order shell, the complete exact polynomial data for T and each original leaf-tag deletion, together with original support tags, suffice to evaluate alpha(T), terminal-checked x(T), every strict selector bit, and the complete S(T,p).",
+      "scope": "Finite ordinary trees with |T|=2p+2; exact fixed-p evaluation only, with no uniform kernel or sign conclusion.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-2/C2-CT-U6/REPORT.md"],
+      "reason": "retained: the rooted include/exclude recurrences are correct; deletion polynomials factor over remaining forest components; I_T through degree alpha plus its zero extension checks x, I_(T-v) checks the selector, and the two original deletion polynomials determine each summand. Keeping the leaf-tag list preserves repeated supports. The claim does not establish efficient compression or a bounded enumeration."
+    },
+    {
+      "claim_id": "C2-U6.shell-vertex-cover-bound",
+      "statement": "Every first-order shell tree satisfying 3p<2alpha(T)+1 has tau(T)=|T|-alpha(T)<=floor(p/2)+2.",
+      "scope": "Finite ordinary trees with |T|=2p+2 and the strict lower-region guard; necessary bound only.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-2/C2-CT-U6/REPORT.md"],
+      "reason": "retained: integrality gives alpha(T)>=ceil(3p/2)=floor((3p+1)/2), and subtracting from 2p+2 gives floor(p/2)+2 for even and odd p. The bound grows with p and implies no sign result."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CT-U6/REPORT.md",
+  "limitations": [
+    "The fixed-p state has no bound uniform in p and no useful compression operation is established.",
+    "No exhaustive tree generation, finite census, primary proof, or realizable positive shell counterexample is supplied by the route or established by this critique.",
+    "The proposed open disposition reports only that this route leaves the exact eligible shell assertion unresolved; it is not an authoritative mathematical status."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-U6.primary-shell-open",
+    "C2-U6.shell-state-framework",
+    "C2-U6.shell-vertex-cover-bound"
+  ]
+}

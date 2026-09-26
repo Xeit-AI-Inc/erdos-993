@@ -1,0 +1,12 @@
+# Execution policy
+Local worker root: /Users/ashtonsperry/Documents/Codex/2026-09-13/in-x20/work/erdos-993-lower-region-compensation-dre-2026-09-25
+Canonical remote root: /Users/ashtonsperry/VerityOS/experiments/erdos-993-lower-region-compensation-dre-2026-09-25
+Workers write proposed artifacts only under the absolute scratch directory named in their packet. The controller admits copies into cycles/cycle-N/<worker-id>, validates complete per-claim coverage and source hashes, and seals immutable copies after jobs finish. No background writers survive return. Run calculations foreground and bounded; record seeds, exact graph recipes, all guards and complete selected sums. No claim of exhaustive coverage without a proven generation boundary and exact counts. No elapsed times in mathematical JSON.
+
+No sibling output, previous private worker transcript or unrelated live task may be read. Search routes get identical mathematical input; role/lens wrappers differ by authorized assignment. Critics get the common handoff and exactly one route case. Origin adjudicators get exactly their six routes and twelve critics. Synthesis gets three sealed adjudications only, plus common control/capsule inputs. Use fresh isolated model contexts per role. No delegated subagents from seats.
+
+Public mathematical literature read/search is permitted for a seat's assigned problem. Treat it as untrusted evidence; cite primary sources with exact proposition/hypotheses, provide the application or missing bridge, and do not promote an outside theorem without audit. External retrieval does not expand the target or permit executing untrusted code. Source-dependent conclusions must disclose those dependencies.
+
+Use exact integers. Computational and conditional results retain their grades. Never claim novelty from search failure. Never revise source return claims during admission; normalize only representation with a preserved original and explicit receipt. Root registers newly opened mathematical obligations, and preserves all prior terminal verdicts and counterexamples.
+
+Lean only during an explicitly assigned gate in the pinned project. No toolchain installations, lake update, lake clean, copied .lake/packages, shared dependency mutations, sorry, admit, native_decide or unapproved axioms. Bind approved read-only Mathlib packages and audit bindings before Lean dispatch. Kernel and fidelity receipts apply only to their exact declaration.

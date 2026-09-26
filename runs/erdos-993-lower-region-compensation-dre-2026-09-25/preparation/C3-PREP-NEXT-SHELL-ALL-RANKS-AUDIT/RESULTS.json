@@ -1,0 +1,72 @@
+{
+  "worker_id": "C3-PREP-NEXT-SHELL-ALL-RANKS-AUDIT",
+  "status_authority": "proposal_to_controller_only",
+  "verdict": "PASS",
+  "grade": "informal_mathematical_audit_with_pinned_forest_descent_dependency",
+  "exact_theorem": {
+    "object": "finite ordinary tree T",
+    "hypotheses": [
+      "p is a natural number and p >= 3",
+      "|V(T)| = 2p+3",
+      "x(T) is the first natural rank with Delta_x(T) < 0 and x(T)+2 <= p"
+    ],
+    "conclusion": "for every original leaf v with original support s, Delta_(p-1)(T-{v,s}) - Delta_(p-1)(T-N_T[s]) <= 0",
+    "not_claimed": [
+      "alpha or favorable-selector premise",
+      "all-order pointwise theorem",
+      "selected aggregate or registered claim resolution",
+      "governed RTree, weighted Hall, or Erdos 993"
+    ]
+  },
+  "source_verification": {
+    "brief_listed_files": 13,
+    "sha256_matches": 13,
+    "forest_bound_source": "inputs/C4-r27-linear-bound-intake/Main.lean:1458-1460",
+    "forest_bound_scope": "every finite acyclic simple graph, every natural k including zero; strict delta at k implies order <= 4k",
+    "receipt": "inputs/C4-r27-linear-bound-intake/kernel-verification.json records compiled unchanged Main source; no rebuild in this seat"
+  },
+  "checked_boundaries": {
+    "p3_to_p5_order_gaps": [5, 3, 1],
+    "p6": {
+      "outside_size": 10,
+      "cross_degree_cap": 2,
+      "special_singleton_outside_min": 8,
+      "lower_bounds_r0_to_r4": [9, 38, 81, 90, 1]
+    },
+    "p7": {
+      "outside_size": 12,
+      "cross_degree_cap": 3,
+      "special_singleton_outside_min": 9,
+      "lower_bounds_r0_to_r5": [11, 58, 167, 295, 284, 0],
+      "endpoint_note": "zero excludes a strict negative first descent"
+    },
+    "p8_and_above": {
+      "r0_to_r5_margins_at_N14": [13, 72, 258, 607, 941, 855],
+      "r6_margin": 18,
+      "r_ge_6": "positive by decreasing Catalan-floor ratios and N >= 2r+2"
+    },
+    "matching4_range": "k=p-1 >= 5 for all nonvacuous eligible cases; lemma proved for k>=4",
+    "cover_conclusions": "for eligible p>=6, tau(T)>=6 and tau(T-{v,s})>=5; p3..5 have no eligible T"
+  },
+  "injections_and_marks": {
+    "matching4_certificate": "all 48 sources and distinct rank-three subset images checked against complete core enumeration",
+    "matching4_lift": "Boolean symmetric chains; predecessor on noncentral chains and 48-row core injection on central two-element chains",
+    "two_edge_even_order": "independent explicit Boolean-chain injections for disjoint and adjacent two-edge cores",
+    "first_mark": "exact first-hit partition excludes earlier mark vertices; closed-neighborhood overlap arbitrary",
+    "cover_loss": "tau(J_i) >= tau(H)-(|D_i|-1), including later isolated marks",
+    "negative_ranks": "shift -1 contributes +1 and lower shifts contribute zero; omitted from lower-bound budgets"
+  },
+  "dependencies": [
+    "Pinned Erdos993G1.forest_descent_linear_bound for vacuity of p=3,4,5",
+    "Finite 48-row matching-four certificate, independently checked in this scratch",
+    "Elementary finite-forest equality of minimum vertex cover and maximum matching"
+  ],
+  "limitations": [
+    "No new Lean formalization, kernel check, or source status change for the proposed all-p theorem.",
+    "Pinned descent-bound receipt and source were inspected but not rebuilt; its theorem contract records contingent earlier provenance not inspected here.",
+    "Previous first-wide source and primary normal-product literature were not listed; the proof here supplies direct finite injections instead.",
+    "The rank enumeration is finite evidence; universality comes from the stated symmetric-chain induction and graph reductions."
+  ],
+  "artifacts": ["REPORT.md", "RESULTS.json", "verify.py", "EVIDENCE.json"],
+  "award": "none"
+}

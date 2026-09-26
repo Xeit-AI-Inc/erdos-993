@@ -1,0 +1,28 @@
+{
+  "worker_id": "C3-CF-U2",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-AGGREGATE-RANK-LE-SEVEN",
+      "statement": "For every finite ordinary tree T and natural p<=7 with x(T)+2<=p and 3p<2alpha(T)+1, the complete sum over original leaves v with Delta_p(T-v)<0 of Delta_(p-1)(T-{v,s_v})-Delta_(p-1)(T-N_T[s_v]) is nonpositive.",
+      "scope": "Retained_narrowed to the rank-3-through-7 composition conditional on the registered M(1..5) bounded-computation maxima and the five cited exhaustive residual census outputs; original leaf tags and the fixed strict selector are preserved. No claim beyond p<=7.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-U2/CRITIQUE-EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: the order-band incidence argument is valid, the maximum-based order split covers p=3..7 exhaustively, and the recorded residual counts and maxima fit the stated slices. The p7 17-18 stale raw scope label is repaired by the listed label-only receipt. This seat did not rerun the full generators, so the result remains conditional on the pinned bounded computations and no award follows."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CF-U2/REPORT.md",
+  "limitations": [
+    "The full residual generators and the forest maxima census were not rerun in this seat.",
+    "The rank-at-most-seven composition depends on bounded census completeness and correctness; its status remains proposed_open.",
+    "No conclusion is made for p>=8, the all-rank target, governed-tree transport, or any authoritative verdict."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-LOWER-REGION-AGGREGATE-RANK-LE-SEVEN"
+  ]
+}

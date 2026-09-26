@@ -1,0 +1,35 @@
+{
+  "worker_id": "C4-CT-F1",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C4-F1-bounded-CTx-selector-search",
+      "statement": "In the specified 1,836-encoding labeled Pr\u00fcfer sample of orders 8 through 16, there are 37 eligible parameter rows; all have p=x+2, select every original leaf, have S<0, and satisfy E<=(x+1)Q. No sampled eligible row has a proper favorable-leaf selector.",
+      "scope": "Only the seeded, shape-biased labeled Pr\u00fcfer sample and exact arithmetic protocol in the source REPORT.md and EVIDENCE.json. This is bounded evidence and makes no universal claim about ordinary trees.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CT-F1/EVIDENCE.json",
+        "cycles/cycle-4/C4-CT-F1/REPLAY.py",
+        "cycles/cycle-4/C4-CT-F1/CENSUS-AUDIT.py",
+        "cycles/cycle-4/C4-CT-F1/CENSUS-RESULT.json",
+        "cycles/cycle-4/C4-CT-F1/AUDIT.py",
+        "cycles/cycle-4/C4-CT-F1/AUDIT-RESULT.json",
+        "cycles/cycle-4/C4-CT-F1/HASH-CHECK.json"
+      ],
+      "reason": "Disposition: retained. The copied source replay reproduces the sealed EVIDENCE.json byte-for-byte. An independent heap-based Pr\u00fcfer regeneration and direct all-subset census confirms the 37 eligible rows and zero proper selectors across the full specified sample; separate direct subset enumeration verifies every eligible row, original leaf selector, exact summand and aggregate. All observed rows have S<0 and E<=(x+1)Q. The scope is expressly finite and does not prove or refute a universal assertion."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CT-F1/REPORT.md",
+  "limitations": [
+    "The Pr\u00fcfer protocol samples labeled trees with replacement; isomorphic duplicates are retained, and it is not exhaustive at any searched order.",
+    "All 37 eligible rows have p=x+2 and select every original leaf, so the sample tests neither higher eligible ranks nor proper selectors.",
+    "Finite negative aggregates and positive CT_x gaps do not prove the universal aggregate or the CT_x compensation bound.",
+    "Independent arithmetic checks cover every row in the specified sample but do not establish a general theorem or a counterexample."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-F1-bounded-CTx-selector-search"
+  ]
+}

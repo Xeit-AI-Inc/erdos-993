@@ -1,0 +1,28 @@
+{
+  "worker_id": "C4-CF-T2",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C4-T2-NEIGHBORHOOD-REDUCTION",
+      "statement": "For every eligible ordinary tree T and the fixed favorable-leaf selector F, with k=p-1, Q the total marked independent k-set count, M the sum of open-neighborhood sizes over those marked sets, and C the per-tag count of multiply marked independent (k+1)-sets, the aggregate identity kS=(|V(T)|-2p)Q-M-C holds. In the subcase |V(T)|<=2p, it implies S<=0.",
+      "scope": "Retained at the source claim's exact scope: eligible ordinary trees under x(T)+2<=p and 3p<2alpha(T)+1, using the same fixed F at all ranks. The identity is global over all selected leaf tags, including tags sharing a support. The sign conclusion is only for |V(T)|<=2p; no result is established for larger order.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CF-T2/EVIDENCE.md"
+      ],
+      "reason": "retained: the extension incidence count is E=kU+C when C counts each multiply marked upper set once per tag; direct addability counting gives E=(n-2-k)Q-M, while S=U-Q. Substitution proves the identity, and nonnegativity proves the stated order subcase. A hand-checked eligible K_{1,20} instance confirms this subcase is realizable. The required compensation M+C>=(n-2p)Q for n>2p remains unproved, so the full primary aggregate remains open."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CF-T2/REPORT.md",
+  "limitations": [
+    "The identity does not establish the primary aggregate when |V(T)|>2p; the compensation inequality M+C>=(|V(T)|-2p)Q remains open.",
+    "The audit is symbolic with a hand-checked star instance; it is not an exhaustive computation or formal verification.",
+    "No external literature was searched or used."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-T2-NEIGHBORHOOD-REDUCTION"
+  ]
+}

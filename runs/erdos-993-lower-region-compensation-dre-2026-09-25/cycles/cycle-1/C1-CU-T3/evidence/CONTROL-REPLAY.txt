@@ -1,0 +1,15 @@
+C1-CU-T3 exact row replay (all inputs copied to this worker's evidence directory before parsing)
+
+Inputs and packet pin hashes:
+inputs/standing-controls/t22-order91.json  2198f01fa5de1c192da190ac242f5af8a914b0b03bd5e6df979590d20c6a18ed
+inputs/standing-controls/t60-order243.json  871a3656ce328c800606a97bee60c2bc33b25c1381e0e716c54ff124372f23a2
+inputs/standing-controls/summary.json  fb764f1d7fd891e4b5d4f66bf81b7346125b672c0222c007bf2dde6ea1f2af1f
+
+Replay procedure: Python's built-in JSON parser read the scratch copies. For each `complete_row`, sum each integer `summands[].g`; compare with both `complete_row.aggregate` and top-level `aggregate`. Also compare `len(summands)` with `complete_row.favorable_count` and top-level `favorable_count`.
+
+T22: x=32, a=68, p=34, selected=67, positive summands=1, sum=-498754180547001418536. All three comparisons passed.
+T60: x=87, a=182, p=90, selected=181, positive summands=1, sum=-1058142362147652597702654588268394677176033202323316960380. All three comparisons passed.
+
+K_(1,12) handoff arithmetic: h=11, k=7; q(7)=330, q(8)=165; per-tag difference=-165; twelve tags give -1980. This was evaluated from the stated star structure and binomial coefficients, not by running a sealed source script.
+
+Scope limitation: the row replay checks exact arithmetic and counts in the admitted JSON but does not rerun the graph generator or independence-polynomial dynamic program. The control source scripts were inspected but not executed. No exhaustive coverage is asserted.

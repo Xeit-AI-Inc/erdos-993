@@ -1,0 +1,20 @@
+{
+  "audit": "independent symbolic replay of the coefficient argument",
+  "claim_id": "C5-U2.STAR-PRODUCT-COEFFICIENT-BOUND",
+  "profile": "m>=1, r_i in {2,3,4}, N=sum_i r_i",
+  "checks": [
+    {
+      "step": "subset expansion",
+      "result": "For each size-h subset S, the term is z^h(1+z)^(N-sum_{i in S}r_i); 4h<=N gives exponent at least N-4h. Also N<=4m, so h<=m. Summing the binom(m,h) terms proves the coefficientwise lower bound."
+    },
+    {
+      "step": "h=1 rank bound",
+      "result": "For N>=12 and 1<=j<=floor(2N/3), 0<=j-1<=N-4; hence Q_j>=m*binom(N-4,j-1)>0."
+    },
+    {
+      "step": "ratio bound",
+      "result": "With k=j-1, binom(N+1,k)/binom(N-4,k)=product_{s=1}^5 (N-4+s)/(N-j-3+s). Each numerator <=2N and each denominator >=N-j-2>=N/3-2>=N/12. Thus the ratio divided by Q_j's lower bound is <=24^5/m."
+    }
+  ],
+  "scope_boundary": "No coefficient-difference, curvature, mixed-minor, graph realization, selector, or primary aggregate conclusion follows."
+}

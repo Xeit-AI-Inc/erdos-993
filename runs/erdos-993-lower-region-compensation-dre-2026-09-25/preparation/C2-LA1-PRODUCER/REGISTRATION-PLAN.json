@@ -1,0 +1,192 @@
+{
+  "contract_id": "e993-c2-order-band-pair-v2",
+  "candidate_path": "Candidate.lean",
+  "namespace": "E993OrderBand",
+  "universe": "u",
+  "fragments": [
+    {
+      "name": "E993OrderBand.IsolateCoveredOn",
+      "kind": "definition",
+      "relative_fragment_path": "fragments/001_IsolateCoveredOn.lean"
+    },
+    {
+      "name": "E993OrderBand.IsolateCovered",
+      "kind": "definition",
+      "relative_fragment_path": "fragments/002_IsolateCovered.lean"
+    },
+    {
+      "name": "E993OrderBand.markedCount",
+      "kind": "definition",
+      "relative_fragment_path": "fragments/003_markedCount.lean"
+    },
+    {
+      "name": "E993OrderBand.badFamily",
+      "kind": "definition",
+      "relative_fragment_path": "fragments/004_badFamily.lean"
+    },
+    {
+      "name": "E993OrderBand.multiFamily",
+      "kind": "definition",
+      "relative_fragment_path": "fragments/005_multiFamily.lean"
+    },
+    {
+      "name": "E993OrderBand.extensionSet",
+      "kind": "definition",
+      "relative_fragment_path": "fragments/006_extensionSet.lean"
+    },
+    {
+      "name": "E993OrderBand.goodFamily",
+      "kind": "definition",
+      "relative_fragment_path": "fragments/007_goodFamily.lean"
+    },
+    {
+      "name": "E993OrderBand.bad_into_multi",
+      "kind": "lemma",
+      "relative_fragment_path": "fragments/008_bad_into_multi.lean"
+    },
+    {
+      "name": "E993OrderBand.multi_deletion_marked",
+      "kind": "lemma",
+      "relative_fragment_path": "fragments/009_multi_deletion_marked.lean"
+    },
+    {
+      "name": "E993OrderBand.multi_lower_degree",
+      "kind": "lemma",
+      "relative_fragment_path": "fragments/010_multi_lower_degree.lean"
+    },
+    {
+      "name": "E993OrderBand.lower_degree",
+      "kind": "lemma",
+      "relative_fragment_path": "fragments/011_lower_degree.lean"
+    },
+    {
+      "name": "E993OrderBand.upper_degree_le_extensions",
+      "kind": "lemma",
+      "relative_fragment_path": "fragments/012_upper_degree_le_extensions.lean"
+    },
+    {
+      "name": "E993OrderBand.extensionSet_subset",
+      "kind": "lemma",
+      "relative_fragment_path": "fragments/013_extensionSet_subset.lean"
+    },
+    {
+      "name": "E993OrderBand.extensionSet_card_le",
+      "kind": "lemma",
+      "relative_fragment_path": "fragments/014_extensionSet_card_le.lean"
+    },
+    {
+      "name": "E993OrderBand.extensionSet_card_lt_of_neighbor",
+      "kind": "lemma",
+      "relative_fragment_path": "fragments/015_extensionSet_card_lt_of_neighbor.lean"
+    },
+    {
+      "name": "E993OrderBand.incidence_bound",
+      "kind": "lemma",
+      "relative_fragment_path": "fragments/016_incidence_bound.lean"
+    },
+    {
+      "name": "E993OrderBand.marked_incidence_bound",
+      "kind": "lemma",
+      "relative_fragment_path": "fragments/017_marked_incidence_bound.lean"
+    },
+    {
+      "name": "E993OrderBand.bad_good_partition",
+      "kind": "lemma",
+      "relative_fragment_path": "fragments/018_bad_good_partition.lean"
+    },
+    {
+      "name": "E993OrderBand.marked_bound_of_nonisolate",
+      "kind": "lemma",
+      "relative_fragment_path": "fragments/019_marked_bound_of_nonisolate.lean"
+    },
+    {
+      "name": "E993OrderBand.marked_bound_below_even",
+      "kind": "lemma",
+      "relative_fragment_path": "fragments/020_marked_bound_below_even.lean"
+    },
+    {
+      "name": "E993OrderBand.bad_into_multi_edgeless",
+      "kind": "lemma",
+      "relative_fragment_path": "fragments/021_bad_into_multi_edgeless.lean"
+    },
+    {
+      "name": "E993OrderBand.relativeOrderBand",
+      "kind": "lemma",
+      "relative_fragment_path": "fragments/022_relativeOrderBand.lean"
+    },
+    {
+      "name": "E993OrderBand.wholeGraphOrderBand",
+      "kind": "lemma",
+      "relative_fragment_path": "fragments/023_wholeGraphOrderBand.lean"
+    },
+    {
+      "name": "E993OrderBand.support_spec",
+      "kind": "lemma",
+      "relative_fragment_path": "fragments/024_support_spec.lean"
+    },
+    {
+      "name": "E993OrderBand.support_adj",
+      "kind": "lemma",
+      "relative_fragment_path": "fragments/025_support_adj.lean"
+    },
+    {
+      "name": "E993OrderBand.support_unique",
+      "kind": "lemma",
+      "relative_fragment_path": "fragments/026_support_unique.lean"
+    },
+    {
+      "name": "E993OrderBand.H_subset_R",
+      "kind": "lemma",
+      "relative_fragment_path": "fragments/027_H_subset_R.lean"
+    },
+    {
+      "name": "E993OrderBand.H_card",
+      "kind": "lemma",
+      "relative_fragment_path": "fragments/028_H_card.lean"
+    },
+    {
+      "name": "E993OrderBand.leaf_isolate_covered",
+      "kind": "lemma",
+      "relative_fragment_path": "fragments/029_leaf_isolate_covered.lean"
+    },
+    {
+      "name": "E993OrderBand.retained_card",
+      "kind": "lemma",
+      "relative_fragment_path": "fragments/030_retained_card.lean"
+    },
+    {
+      "name": "E993OrderBand.tagged_count_split",
+      "kind": "lemma",
+      "relative_fragment_path": "fragments/031_tagged_count_split.lean"
+    },
+    {
+      "name": "E993OrderBand.tagged_marks_sdiff",
+      "kind": "lemma",
+      "relative_fragment_path": "fragments/032_tagged_marks_sdiff.lean"
+    },
+    {
+      "name": "E993OrderBand.leaf_count_split",
+      "kind": "lemma",
+      "relative_fragment_path": "fragments/033_leaf_count_split.lean"
+    },
+    {
+      "name": "E993OrderBand.ordinaryLeafOrderBand",
+      "kind": "lemma",
+      "relative_fragment_path": "fragments/034_ordinaryLeafOrderBand.lean"
+    },
+    {
+      "name": "E993OrderBand.markedIsolateAndOrdinaryLeafOrderBand",
+      "kind": "theorem",
+      "relative_fragment_path": "fragments/035_markedIsolateAndOrdinaryLeafOrderBand.lean"
+    }
+  ],
+  "terminal_name": "E993OrderBand.markedIsolateAndOrdinaryLeafOrderBand",
+  "terminal_header_raw_in_namespace": "theorem markedIsolateAndOrdinaryLeafOrderBand :\n    (∀ (V : Type u) [Fintype V] [DecidableEq V]\n      (G : SimpleGraph V) [DecidableRel G.Adj]\n      (W : Finset V) (k : ℕ),\n      E993OrderBand.IsolateCovered G W →\n      2 ≤ k →\n      Fintype.card V ≤ 2 * k + 1 →\n      E993OrderBand.markedCount G W (k + 1) ≤\n        E993OrderBand.markedCount G W k) ∧\n    (∀ (V : Type u) [Fintype V] [DecidableEq V]\n      (T : SimpleGraph V) [DecidableRel T.Adj]\n      (v : V) (p : ℕ),\n      T.IsTree →\n      C4LA1.IsGraphLeaf T v →\n      3 ≤ p →\n      Fintype.card V ≤ 2 * p + 1 →\n      C5LA1.forwardDifferenceDel T (C5LA1.H T v) (p - 1) -\n        C5LA1.forwardDifferenceDel T (C5LA1.R T v) (p - 1) ≤ 0)",
+  "compiled_candidate_sha256": "fe214c6a60e5d5847bd2ca927fec43574d874a635e61dfc1930be0c1c900f6e1",
+  "last_successful_compile_request_id": "terminal_004",
+  "terminal_header_qualified": "theorem E993OrderBand.markedIsolateAndOrdinaryLeafOrderBand :\n    (∀ (V : Type u) [Fintype V] [DecidableEq V]\n      (G : SimpleGraph V) [DecidableRel G.Adj]\n      (W : Finset V) (k : ℕ),\n      E993OrderBand.IsolateCovered G W →\n      2 ≤ k →\n      Fintype.card V ≤ 2 * k + 1 →\n      E993OrderBand.markedCount G W (k + 1) ≤\n        E993OrderBand.markedCount G W k) ∧\n    (∀ (V : Type u) [Fintype V] [DecidableEq V]\n      (T : SimpleGraph V) [DecidableRel T.Adj]\n      (v : V) (p : ℕ),\n      T.IsTree →\n      C4LA1.IsGraphLeaf T v →\n      3 ≤ p →\n      Fintype.card V ≤ 2 * p + 1 →\n      C5LA1.forwardDifferenceDel T (C5LA1.H T v) (p - 1) -\n        C5LA1.forwardDifferenceDel T (C5LA1.R T v) (p - 1) ≤ 0)",
+  "terminal_header_qualified_sha256": "2f76927cdaeade070834c224eae8d5a846ee9a05cb4d04aade9524be58ad0437",
+  "terminal_namespace_open": "namespace E993OrderBand",
+  "terminal_namespace_close": "end E993OrderBand",
+  "terminal_header_path": "TERMINAL-HEADER.txt"
+}

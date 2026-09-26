@@ -1,0 +1,102 @@
+{
+  "worker_id": "C2-AT",
+  "cycle": 2,
+  "stage": "adjudication",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "C2-T1-SHELL-ORDERED-ROOT-SUBCLASS",
+      "statement": "For every eligible ordinary tree T with |T|=2p+2, the complete fixed-selector sum S(T,p) is nonpositive if, for every selected original leaf v, the one-per-component marks W_v of H_v=T-{v,s_v} can be ordered with the first mark of H_v-degree at least 2 and the second mark, when present, of H_v-degree at least 1.",
+      "scope": "Finite ordinary tree T; original leaves tagged separately with original supports and neighborhoods; x(T) is the first strict descent of zero-extended independent-set counts; fixed F(T,p) selected by Delta_p(T-v)<0; x(T)+2<=p and strict 3p<2alpha(T)+1. First-order shell |T|=2p+2; the displayed per-selected-tag root-order condition, with empty F allowed.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AT/REPORT.md",
+        "cycles/cycle-2/C2-AT/EVIDENCE.md"
+      ],
+      "reason": "retained: First-mark partition gives each tagged summand as sum_i[i_k(J_i)-i_(k-1)(J_i)] for k=p-1. The degree condition makes every |J_i|<=2k-1, where deletion incidence or the zero-extended out-of-range case gives nonpositivity. Sum over all fixed selected tags. The condition is not shown to follow from favorability."
+    },
+    {
+      "claim_id": "C2-T3-shell-root-shadow",
+      "statement": "On the eligible first shell, if every selected H_v has no isolates and some marked component root of H_v-degree at least 2, then the complete fixed-selector sum S(T,p) is nonpositive. Also tau(H_v)=p+1-(alpha(T)-p)<=floor(p/2)+1. The ordered-root proof leaves possible positive order-2k residual parts without a global compensation argument.",
+      "scope": "Finite ordinary tree T; original leaves tagged separately with original supports and neighborhoods; x(T) is the first strict descent of zero-extended independent-set counts; fixed F(T,p) selected by Delta_p(T-v)<0; x(T)+2<=p and strict 3p<2alpha(T)+1. |T|=2p+2; for each selected v, H_v has no isolates and a W_v root of degree at least 2; F may be empty. The cover identity holds for each original leaf on the shell.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AT/REPORT.md",
+        "cycles/cycle-2/C2-AT/EVIDENCE.md"
+      ],
+      "reason": "retained: The stated structure implies T1 ordering, so the complete selected sum follows from the rank-shift and shadow proof. Alpha(H_v)=alpha(T)-1 and strict integer eligibility give the cover bound. This does not prove the unrestricted shell; no-isolate and root-degree hypotheses are substantive."
+    },
+    {
+      "claim_id": "C2-T4-PATH-OCCUPANCY",
+      "statement": "For every eligible path P_n with n>=4, both endpoint leaves satisfy the original strict selector, their supports are distinct, and S(P_n,p)=2[i_(p-1)(P_(n-4))-i_(p-2)(P_(n-4))]<=0. Equivalently its fixed-selector weighted occupancy total at rank p+1 is at most that at rank p.",
+      "scope": "Finite ordinary tree T; original leaves tagged separately with original supports and neighborhoods; x(T) is the first strict descent of zero-extended independent-set counts; fixed F(T,p) selected by Delta_p(T-v)<0; x(T)+2<=p and strict 3p<2alpha(T)+1. T=P_n, n>=4; exact path-class conclusion, including zero-extended ranks.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AT/REPORT.md",
+        "cycles/cycle-2/C2-AT/EVIDENCE.md"
+      ],
+      "reason": "retained: The path coefficient binomial formula and decreasing-in-rank, increasing-in-order adjacent ratio establish endpoint favorability and the final sign under the x guard. The path recurrence gives the exact two-tag sum. Foreground replay covers 449 eligible rows over 117 path orders through n=150 only as a bounded cross-check."
+    },
+    {
+      "claim_id": "C2-T5-PENDANT-P2-RECURRENCE",
+      "statement": "For any finite ordinary tree U rooted at r, adjoining new r-s-v gives I(T;z)=(1+z)I(U;z)+zI(U-r;z), alpha(T)=alpha(U)+1, I(T-v;z)=I(U;z)+zI(U-r;z), and the new original leaf contribution is Delta_(p-1)(I(U)-I(U-r)); its selector is the strict rank-p difference of I(U)+zI(U-r).",
+      "scope": "Every finite ordinary rooted tree U, any integer rank p for which the displayed zero-extended differences are read; new vertices s,v and original new support s. No primary eligibility is required for the identities.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AT/REPORT.md",
+        "cycles/cycle-2/C2-AT/EVIDENCE.md"
+      ],
+      "reason": "retained: Partition independent sets by membership of new support s. The s-absent class attains alpha(U)+1, and the s-present class cannot exceed it. Original deletion graphs for v are U and U-r. Neither x nor old-leaf selectors and contributions transfer automatically."
+    },
+    {
+      "claim_id": "C2-T6.relative-chain-rank-reduction",
+      "statement": "For fixed F(T,p), let C be the direct sum over selected leaf tags of relative independence chain complexes (Ind(H_v),Ind(R_v)) over Q, k=p-1, b_r the boundary ranks and beta_r the homology dimensions. Then S(T,p)=b_(k+1)-b_(k-1)+beta_k-beta_(k-1). The primary sign is equivalent to b_(k+1)+beta_k<=b_(k-1)+beta_(k-1), which is not established.",
+      "scope": "Finite ordinary tree T; original leaves tagged separately with original supports and neighborhoods; x(T) is the first strict descent of zero-extended independent-set counts; fixed F(T,p) selected by Delta_p(T-v)<0; x(T)+2<=p and strict 3p<2alpha(T)+1. Exact algebraic identity for the fixed tagged relative complex; positive ranks k>=1. It is a reduction, not a sign assertion.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AT/REPORT.md",
+        "cycles/cycle-2/C2-AT/EVIDENCE.md"
+      ],
+      "reason": "retained: Relative degree j-1 has basis the independent j-sets of H_v meeting W_v, so its tagged dimension is sum_F q_v(j). Rank-nullity yields the formula. The direct-sum differential does not move between tags, and no selector-conditioned rank or Betti inequality is proved."
+    },
+    {
+      "claim_id": "E993-LOWER-REGION-FIRST-ORDER-SHELL",
+      "statement": "The registered assertion is S(T,p)<=0 for every eligible ordinary tree T with |T|=2p+2 and the complete original strict favorable-leaf selector. This case proves only the T1 and T3 structural subclasses, gives exact order-2k boundary localization, and supplies a pendant-P2 recurrence; the unrestricted assertion remains unresolved.",
+      "scope": "Finite ordinary tree T; original leaves tagged separately with original supports and neighborhoods; x(T) is the first strict descent of zero-extended independent-set counts; fixed F(T,p) selected by Delta_p(T-v)<0; x(T)+2<=p and strict 3p<2alpha(T)+1. Additional exact order guard |V(T)|=2p+2; no per-tag structural condition in the registered assertion.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AT/REPORT.md",
+        "cycles/cycle-2/C2-AT/EVIDENCE.md"
+      ],
+      "reason": "retained_narrowed: T1/T3 conditions are not consequences of favorability. An exceptional J of order 2k has possible positive Delta_(k-1) only when it has at most one edge, by the registered first-wide classification with r=k-1, but no selector-conditioned complete-sum compensation is proved. T5 neither transports x nor recalculates all old leaf tags. No eligible positive complete sum is supplied."
+    },
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "The registered assertion is S(T,p)<=0 for every finite ordinary tree under x(T)+2<=p and strict 3p<2alpha(T)+1, using exactly the original strict favorable selector and one summand per original leaf. This case establishes exact fixed-selector weighted-rank coordinates and the path class, but leaves the universal complete-sum sign unresolved.",
+      "scope": "Finite ordinary tree T; original leaves tagged separately with original supports and neighborhoods; x(T) is the first strict descent of zero-extended independent-set counts; fixed F(T,p) selected by Delta_p(T-v)<0; x(T)+2<=p and strict 3p<2alpha(T)+1. All eligible ordinary trees, without shell/order, residual, structural, or governed-tree restriction.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AT/REPORT.md",
+        "cycles/cycle-2/C2-AT/EVIDENCE.md"
+      ],
+      "reason": "retained_narrowed: S equals the difference of fixed-selector weighted independent-set totals at ranks p+1 and p. T2 gives a sufficient cross-tag matching criterion without a Hall proof; T4 proves only paths; T6 gives a relative-chain identity without the required rank/Betti budget. Neither an all-tree proof nor an eligible positive full-sum counterexample is present."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-AT/REPORT.md",
+  "limitations": [
+    "The unrestricted first-order-shell and primary complete selected-sum inequalities remain unproved and unrefuted; no eligible positive full-sum ordinary-tree witness is provided.",
+    "The shell first-mark proof leaves sparse order-2k boundary residuals without a selector-conditioned global compensation inequality; registered first-wide classification only narrows which residuals can be positive.",
+    "Cross-tag matching, weighted occupancy, and relative-chain rank comparisons are exact reductions or sufficient criteria whose needed global inequalities are not proved.",
+    "The path replay is bounded to paths of order 4 through 150; no exhaustive ordinary-tree census, Lean build, or external theorem application was performed."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-T1-SHELL-ORDERED-ROOT-SUBCLASS",
+    "C2-T3-shell-root-shadow",
+    "C2-T4-PATH-OCCUPANCY",
+    "C2-T5-PENDANT-P2-RECURRENCE",
+    "C2-T6.relative-chain-rank-reduction",
+    "E993-LOWER-REGION-FIRST-ORDER-SHELL",
+    "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE"
+  ]
+}

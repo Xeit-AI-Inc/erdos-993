@@ -1,0 +1,327 @@
+{
+  "worker_id": "C6-PREP-INTAKE-REVIEW",
+  "authority": "preparatory intake only; no claims awarded, no dispatch or canonical writes",
+  "source_pin_count": 29,
+  "source_pins": [
+    {
+      "path": "EXECUTION-POLICY.md",
+      "expected_sha256": "12ea2b244016f6f1544ea744948e2f1677cc2691519e4dfb8b69cff7d5bec0ab",
+      "actual_sha256": "12ea2b244016f6f1544ea744948e2f1677cc2691519e4dfb8b69cff7d5bec0ab",
+      "match": true
+    },
+    {
+      "path": "SOLUTION-CONTRACT.md",
+      "expected_sha256": "f3667bd6424d4f0d95714772ecf76af82ed8430bdd3ec9eda0c721f1a853390c",
+      "actual_sha256": "f3667bd6424d4f0d95714772ecf76af82ed8430bdd3ec9eda0c721f1a853390c",
+      "match": true
+    },
+    {
+      "path": "WORKER-PROTOCOL.md",
+      "expected_sha256": "daa216d9e9ee83da2173108f6a9469c848f426be05e79ba1598232d89ab3f9c7",
+      "actual_sha256": "daa216d9e9ee83da2173108f6a9469c848f426be05e79ba1598232d89ab3f9c7",
+      "match": true
+    },
+    {
+      "path": "control-proposals/C6-ARITY-EXTENSION-FACTOR-LEAD.md",
+      "expected_sha256": "98e7cfa42b6139a1a0a3bc8ef47cf06025ce53752abd14fa0f94920f87e7ff81",
+      "actual_sha256": "98e7cfa42b6139a1a0a3bc8ef47cf06025ce53752abd14fa0f94920f87e7ff81",
+      "match": true
+    },
+    {
+      "path": "control-proposals/C6-ARITY12-CANDIDATE.md",
+      "expected_sha256": "09d34cf147b5e87cd91ae10bf183202c09ddba4ff153a4138152785e71a05212",
+      "actual_sha256": "09d34cf147b5e87cd91ae10bf183202c09ddba4ff153a4138152785e71a05212",
+      "match": true
+    },
+    {
+      "path": "control-proposals/C6-ARITY12-CUTOFF-ARITHMETIC.json",
+      "expected_sha256": "d7d2b3b95829dfc4ccd04041d266b7fef336ab5051c04f2e8af2b1df57364034",
+      "actual_sha256": "d7d2b3b95829dfc4ccd04041d266b7fef336ab5051c04f2e8af2b1df57364034",
+      "match": true
+    },
+    {
+      "path": "control-proposals/C6-HETEROGENEOUS-CUTOFF2000-ARITHMETIC.json",
+      "expected_sha256": "1e8bc6d38b4311580d6b93eb261f3af8d63f66dba03fb3482491637aca6f2b1a",
+      "actual_sha256": "1e8bc6d38b4311580d6b93eb261f3af8d63f66dba03fb3482491637aca6f2b1a",
+      "match": true
+    },
+    {
+      "path": "control-proposals/C6-HETEROGENEOUS-CUTOFF2000-CANDIDATE.md",
+      "expected_sha256": "39abee7c1b02100b1e30f663017e69c71c931e1f06e857ccbe2e1678d895ccbc",
+      "actual_sha256": "39abee7c1b02100b1e30f663017e69c71c931e1f06e857ccbe2e1678d895ccbc",
+      "match": true
+    },
+    {
+      "path": "control-proposals/C6-HETEROGENEOUS-LARGE-BRANCH-CANDIDATE.md",
+      "expected_sha256": "e8a86ca340fd14e5690923ee66c08e934f816614bd1fe809cdbf1932d89cd4bc",
+      "actual_sha256": "e8a86ca340fd14e5690923ee66c08e934f816614bd1fe809cdbf1932d89cd4bc",
+      "match": true
+    },
+    {
+      "path": "control-proposals/C6-MARKED-FACTOR-ABSORPTION-LEAD.md",
+      "expected_sha256": "b09631aedb7b57f4c982b2cc10bb81aaecf69b31b70a2e0e308ff8f980194e2a",
+      "actual_sha256": "b09631aedb7b57f4c982b2cc10bb81aaecf69b31b70a2e0e308ff8f980194e2a",
+      "match": true
+    },
+    {
+      "path": "control-proposals/C6-MARKED-FACTOR-ABSORPTION.json",
+      "expected_sha256": "98e12fd1a712dd13ab3c47ae6a585fd79865aa2c7ee477acc66eeb036ae65aea",
+      "actual_sha256": "98e12fd1a712dd13ab3c47ae6a585fd79865aa2c7ee477acc66eeb036ae65aea",
+      "match": true
+    },
+    {
+      "path": "control-proposals/C6-NONSTAR-SPIDER-LEAD.md",
+      "expected_sha256": "8a8854495d89a57f2397dc67b9bbc2f8e34aa1a4be879383aaaffb27095ae05c",
+      "actual_sha256": "8a8854495d89a57f2397dc67b9bbc2f8e34aa1a4be879383aaaffb27095ae05c",
+      "match": true
+    },
+    {
+      "path": "control-proposals/C6-SEARCH-ALLOCATION-DRAFT.json",
+      "expected_sha256": "18dee0d64a1e9c72b5fdc511d3d65466d617898358f47a81b1c2fe66655aa5be",
+      "actual_sha256": "18dee0d64a1e9c72b5fdc511d3d65466d617898358f47a81b1c2fe66655aa5be",
+      "match": true
+    },
+    {
+      "path": "control-proposals/marked_factor_absorption.py",
+      "expected_sha256": "be1ce85b5212c13178474f15cbb226930c2eb705664db5f46c88dcb500fbf766",
+      "actual_sha256": "be1ce85b5212c13178474f15cbb226930c2eb705664db5f46c88dcb500fbf766",
+      "match": true
+    },
+    {
+      "path": "control-proposals/prepare_c5_controller.py",
+      "expected_sha256": "8f4b89b6da187b4a3162c062375b06884c71633245e538bcd18efa424e40f816",
+      "actual_sha256": "8f4b89b6da187b4a3162c062375b06884c71633245e538bcd18efa424e40f816",
+      "match": true
+    },
+    {
+      "path": "control/C5-REGISTERED-CLAIM-IDENTITY.json",
+      "expected_sha256": "bfbc7490d2acfdaca1fba3a5fb05d71eaca13df66865ea4920b18ed048c7a18d",
+      "actual_sha256": "bfbc7490d2acfdaca1fba3a5fb05d71eaca13df66865ea4920b18ed048c7a18d",
+      "match": true
+    },
+    {
+      "path": "inputs/ordinary_tree_checked.py",
+      "expected_sha256": "a012bb78915ccdfa2f729c0cdb520cd8f29572277123c92e80ba6091498f533d",
+      "actual_sha256": "a012bb78915ccdfa2f729c0cdb520cd8f29572277123c92e80ba6091498f533d",
+      "match": true
+    },
+    {
+      "path": "packets/C5-COMMON.json",
+      "expected_sha256": "ccc640946331d75697ab298e109153d5784d6e56a674d033ddda369a53954e39",
+      "actual_sha256": "ccc640946331d75697ab298e109153d5784d6e56a674d033ddda369a53954e39",
+      "match": true
+    },
+    {
+      "path": "preparation/C6-PREP-COEFFICIENT-EXTENSIONS-AUDIT/REPLAY-RESULTS.json",
+      "expected_sha256": "e07e6dc634398f7fa0447bb547213437909c6e400f3b4420731cd11c0426102d",
+      "actual_sha256": "e07e6dc634398f7fa0447bb547213437909c6e400f3b4420731cd11c0426102d",
+      "match": true
+    },
+    {
+      "path": "preparation/C6-PREP-COEFFICIENT-EXTENSIONS-AUDIT/REPLAY-STDOUT.json",
+      "expected_sha256": "d67eca9beeeb38ff77ca92ee0e9b90f407ca7bf1089f9d46e36885c6612fa8a9",
+      "actual_sha256": "d67eca9beeeb38ff77ca92ee0e9b90f407ca7bf1089f9d46e36885c6612fa8a9",
+      "match": true
+    },
+    {
+      "path": "preparation/C6-PREP-COEFFICIENT-EXTENSIONS-AUDIT/REPLAY.py",
+      "expected_sha256": "3d7c592ac836fb536c7a8f099ec83b8d6bb1865585f6e85e35dc7734f77874f8",
+      "actual_sha256": "3d7c592ac836fb536c7a8f099ec83b8d6bb1865585f6e85e35dc7734f77874f8",
+      "match": true
+    },
+    {
+      "path": "preparation/C6-PREP-COEFFICIENT-EXTENSIONS-AUDIT/REPORT.md",
+      "expected_sha256": "5536207b797670a842077d7ea0933b7a54cbb22c913aedab8acd82b40dba46e8",
+      "actual_sha256": "5536207b797670a842077d7ea0933b7a54cbb22c913aedab8acd82b40dba46e8",
+      "match": true
+    },
+    {
+      "path": "preparation/C6-PREP-COEFFICIENT-EXTENSIONS-AUDIT/RESULTS.json",
+      "expected_sha256": "4acaecd63fa4ae5b9645938756296e3d74e62189a4e438fb0cca9b529869fdca",
+      "actual_sha256": "4acaecd63fa4ae5b9645938756296e3d74e62189a4e438fb0cca9b529869fdca",
+      "match": true
+    },
+    {
+      "path": "preparation/C6-PREP-WIDE-ARITY-IDENTITY-AUDIT/INDEPENDENT_EVIDENCE.json",
+      "expected_sha256": "63c2aa262adfbccb65cab654f54fda2a470e3ea201e6937ca5428260ce593824",
+      "actual_sha256": "63c2aa262adfbccb65cab654f54fda2a470e3ea201e6937ca5428260ce593824",
+      "match": true
+    },
+    {
+      "path": "preparation/C6-PREP-WIDE-ARITY-IDENTITY-AUDIT/INDEPENDENT_REPLAY.py",
+      "expected_sha256": "847395c031c030cfb5ae6f2cc6ff7c6cc0855c467115f6bd4a2b23ab60cca824",
+      "actual_sha256": "847395c031c030cfb5ae6f2cc6ff7c6cc0855c467115f6bd4a2b23ab60cca824",
+      "match": true
+    },
+    {
+      "path": "preparation/C6-PREP-WIDE-ARITY-IDENTITY-AUDIT/REPORT.md",
+      "expected_sha256": "8404f07b0e602dce37642d73f8ea3cd55c19373894ad93b4add706fb5a089e03",
+      "actual_sha256": "8404f07b0e602dce37642d73f8ea3cd55c19373894ad93b4add706fb5a089e03",
+      "match": true
+    },
+    {
+      "path": "preparation/C6-PREP-WIDE-ARITY-IDENTITY-AUDIT/RESULTS.json",
+      "expected_sha256": "d75190eff6f07e89eab661e233704df73922087d4aacc2356113f6a91372b401",
+      "actual_sha256": "d75190eff6f07e89eab661e233704df73922087d4aacc2356113f6a91372b401",
+      "match": true
+    },
+    {
+      "path": "scripts/run_cli_queue_v4.py",
+      "expected_sha256": "8597dd0c3a373dcd204aaf501d0749bb52905162a47f9ae4eb66b19772046833",
+      "actual_sha256": "8597dd0c3a373dcd204aaf501d0749bb52905162a47f9ae4eb66b19772046833",
+      "match": true
+    },
+    {
+      "path": "scripts/run_cli_worker_v3.py",
+      "expected_sha256": "1f32fb7ca04571629e6680a2f73938b79689f15206f1f529c85fa52c9ef91f06",
+      "actual_sha256": "1f32fb7ca04571629e6680a2f73938b79689f15206f1f529c85fa52c9ef91f06",
+      "match": true
+    }
+  ],
+  "review_disposition": "allocation retain with packet corrections; cannot freeze final C6 common before C5 synthesis",
+  "source_boundary": "C5-COMMON read only as inherited name/hash index; member contents neither opened nor verified unless independently pinned in intake brief",
+  "independent_exact_checks": {
+    "grouped_factor_pairs": 121,
+    "grouped_factor_max_order": 962,
+    "cutoffs": {
+      "arity_2_to_4": {
+        "arity_max": 4,
+        "h": 29,
+        "m_cutoff": 2000,
+        "controlling_multiplier_per_m": 80328,
+        "checks": {
+          "A": true,
+          "B": true,
+          "epsilon": true,
+          "control_ratio": true,
+          "strictly_below_one": true
+        },
+        "control_ratio_approx": 3.299964639786117e-05
+      },
+      "arity_2_to_12": {
+        "arity_max": 12,
+        "h": 17,
+        "m_cutoff": 100000000,
+        "controlling_multiplier_per_m": 21464644775724,
+        "checks": {
+          "A": true,
+          "B": true,
+          "epsilon": true,
+          "control_ratio": true,
+          "strictly_below_one": true
+        },
+        "control_ratio_approx": 0.013328111998270626
+      }
+    },
+    "unordered_arity_2_to_4_profiles_m_1_to_40": 12340
+  },
+  "current_pinned_registry_observation": {
+    "claim_count": 428,
+    "refuted_count": 96,
+    "selected_statuses": {
+      "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE": "OPEN",
+      "E993-ORDINARY-TM-LOWER-REGION-AGGREGATE": "OPEN",
+      "E993-BIPARTITE-TAGGED-INCIDENCE-DEFICIT-IDENTITY": "OPEN",
+      "E993-BIPARTITE-TAGGED-SHADOW-BOUND": "VERIFIED",
+      "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL": "OPEN"
+    },
+    "proposed_new_keys_absent": [
+      "E993-ORDINARY-PATH-STAR-ARITY-2-4-ALL-M-LOWER-REGION-AGGREGATE",
+      "E993-ORDINARY-PATH-STAR-ARITY-2-4-M2000-LOWER-REGION-AGGREGATE",
+      "E993-ORDINARY-PATH-STAR-ARITY-2-12-M100000000-LOWER-REGION-AGGREGATE"
+    ],
+    "subject_to_post_C5_reconciliation": true
+  },
+  "route_focus": {
+    "T1": "complete T_m cutoff400 coefficient, graph and selector certificate",
+    "F1": "adversarial T_m theorem and finite-base audit",
+    "U1": "post-C5 retained T_m Lean dependency contract, no Lean run",
+    "T2": "arity2..4 m>=2000 analytic proof audit",
+    "F2": "arity2..4 cutoff and mixed-profile challenge",
+    "U2": "all 12340 unordered arity2..4 profiles m<=40, exact selected sums",
+    "T3": "arity2..12 m>=100000000 grouped-factor proof",
+    "F3": "grouped factor, minors, envelopes and selector challenge",
+    "U3": "finite r,s2..20 bounded absorption criterion/certificate",
+    "T4": "across-tag matching-slack budget",
+    "F4": "eligible obstruction to specified matching charging rule",
+    "U4": "matching-weight/first-descent alternative, separate from CT_x",
+    "T5": "invariant orbit-quotient integral-flow lift and T_m application",
+    "F5": "literal expanded two-for-one weighted flow/cut on eligible profiles",
+    "U5": "CB mixed weighted cut using named recipe",
+    "T6": "nonstar rooted-branch class with graph and selector bridge",
+    "F6": "fresh bounded nonstar family proper-selector witness or transfer attack",
+    "U6": "early-rank marked-measure transport or exact failure"
+  },
+  "source_map_names": {
+    "core_inherited": [
+      "control/C5-NEUTRAL-HANDOFF.md",
+      "control/C5-REGISTERED-CLAIM-IDENTITY.json",
+      "inputs/C5-TRANSITIVE-REFUTED-CLAIMS.json",
+      "inputs/ordinary_tree_checked.py"
+    ],
+    "axis1_inherited": [
+      "control-proposals/C5-TM-CENTRAL-LC-CANDIDATE.md",
+      "control-proposals/C5-TM-CENTRAL-LC-BASE.json",
+      "control-proposals/C5-TM-CENTRAL-LR-CANDIDATE.md",
+      "preparation/C5-PREP-TM-UNIFORM-CANDIDATE-AUDIT/REPORT.md",
+      "preparation/C5-PREP-TM-UNIFORM-CANDIDATE-AUDIT/REPLAY.py",
+      "preparation/C5-PREP-TM-LEAN-READINESS/FORMALIZATION-CHECKLIST.md",
+      "inputs/C4-r27-linear-bound-intake/Main.lean"
+    ],
+    "axis2_direct_C6": [
+      "control-proposals/C6-HETEROGENEOUS-LARGE-BRANCH-CANDIDATE.md",
+      "control-proposals/C6-HETEROGENEOUS-CUTOFF2000-CANDIDATE.md",
+      "control-proposals/C6-HETEROGENEOUS-CUTOFF2000-ARITHMETIC.json",
+      "preparation/C6-PREP-WIDE-ARITY-IDENTITY-AUDIT/REPORT.md",
+      "preparation/C6-PREP-WIDE-ARITY-IDENTITY-AUDIT/RESULTS.json",
+      "preparation/C6-PREP-WIDE-ARITY-IDENTITY-AUDIT/INDEPENDENT_EVIDENCE.json"
+    ],
+    "axis3_direct_C6": [
+      "control-proposals/C6-ARITY-EXTENSION-FACTOR-LEAD.md",
+      "control-proposals/C6-MARKED-FACTOR-ABSORPTION-LEAD.md",
+      "control-proposals/C6-MARKED-FACTOR-ABSORPTION.json",
+      "control-proposals/marked_factor_absorption.py",
+      "control-proposals/C6-ARITY12-CANDIDATE.md",
+      "control-proposals/C6-ARITY12-CUTOFF-ARITHMETIC.json",
+      "preparation/C6-PREP-WIDE-ARITY-IDENTITY-AUDIT/REPORT.md"
+    ],
+    "axis4_inherited": [
+      "control/C2-GLOBAL-WEIGHT-COORDINATES.md",
+      "control/C4-OCCUPANCY-SAME-TREE-COVARIANCE-REFORMULATION.md",
+      "inputs/standing-controls/t22-order91.json"
+    ],
+    "axis5_inherited": [
+      "instruments/orbit-flow-twoforone/PROTOCOL.md",
+      "instruments/orbit-flow-twoforone/run.py",
+      "instruments/orbit-flow-twoforone/RESULTS.json",
+      "instruments/orbit-flow/PROTOCOL.md",
+      "instruments/orbit-flow/run.py",
+      "instruments/orbit-flow/RESULTS.json",
+      "instruments/cb-switch-cut/PROTOCOL.md",
+      "instruments/cb-switch-cut/run.py",
+      "instruments/cb-switch-cut/RESULTS.json",
+      "control/C3-CB-EXPORT-DIRECTION.md",
+      "control/C4-CB-COLORED-SHADOW-RESEARCH-DIRECTION.md"
+    ],
+    "axis6_direct_C6": [
+      "control-proposals/C6-NONSTAR-SPIDER-LEAD.md"
+    ]
+  },
+  "pending_gates": [
+    "sealed C5 synthesis and controller closeout",
+    "post-C5 registry and refutation fence reconciliation",
+    "controller decision on three distinct heterogeneous claim identities",
+    "direct C6 pins for new candidates and audits",
+    "exact three-control flow certificate list for T5 if its application is retained",
+    "exact CB graph and selected-weight pins for U5"
+  ],
+  "report_path": "scratchpad/C6-PREP-INTAKE-REVIEW/REPORT.md",
+  "report_sha256": "8055e0167151d208f16a88596f4ba5ca0c575ec94d1621ce48dceca806133c0e",
+  "limitations": [
+    "No imported ULC theorem independently retrieved or verified in this intake.",
+    "No C5 synthesis or final C6 common packet yet exists in this preparatory authority.",
+    "Inherited C5 common members were indexed by name only; contents were not opened.",
+    "Scalar and factor arithmetic checks do not by themselves prove graph or selector bridges."
+  ],
+  "search_source_rule": "identical mathematical source pins for all 18 search routes; role/lens wrappers only differ"
+}

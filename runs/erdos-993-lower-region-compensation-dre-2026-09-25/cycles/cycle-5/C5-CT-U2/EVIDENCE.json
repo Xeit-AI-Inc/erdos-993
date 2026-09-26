@@ -1,0 +1,36 @@
+{
+  "audit_type": "independent algebraic audit",
+  "source_claim_id": "C5-U2.STAR-PRODUCT-COEFFICIENT-BOUND",
+  "source_pins": "All three C5-U2 case pins and all 237 C5-COMMON pins matched their packet SHA-256 values.",
+  "notation": {
+    "L": "1+z",
+    "B_r": "L^r+z",
+    "Q": "product over i=1..m of B_(r_i)",
+    "N": "sum over i=1..m of r_i",
+    "r_i": "2, 3, or 4"
+  },
+  "independent_checks": [
+    {
+      "claim": "For integer h>=0 with 4h<=N, Q >=_coeff binom(m,h) z^h L^(N-4h).",
+      "verification": "Expand the product by the set S of factors from which z is chosen. For each |S|=h the term is z^h L^(N-sum_(i in S) r_i). Since sum_(i in S) r_i<=4h, its L exponent is at least N-4h. For a>=b>=0, L^a=L^b L^(a-b) and L^(a-b) has nonnegative coefficients, so L^a>=_coeff L^b. There are binom(m,h) such distinct terms; all omitted terms are coefficientwise nonnegative. Also h<=m follows from N<=4m and 4h<=N, so the binomial coefficient and subset count agree."
+    },
+    {
+      "claim": "For N>=12 and 1<=j<=floor(2N/3), [z^j]Q>=m binom(N-4,j-1)>0.",
+      "verification": "Take h=1 in the first bound. The coefficient is m binom(N-4,j-1). The index is in range since j-1<=N-4: it suffices that j<=N-3, which follows from 2N/3<=N-3 for N>=9. The stated N>=12 is therefore sufficient, and m>=1 gives strict positivity."
+    },
+    {
+      "claim": "[z^j](z L^(N+1))/[z^j]Q <= 24^5/m on the stated rank window.",
+      "verification": "Set k=j-1. The numerator is binom(N+1,k), and the lower bound for the denominator is m binom(N-4,k). Their binomial ratio is product_(s=1..5) (N-4+s)/(N-4-k+s), equivalently denominator N-j-3+s. Every numerator is at most N+1<=2N. Every denominator is at least the s=1 value N-j-2 >= N/3-2 >= N/12, where the last inequality holds for N>=12. Thus each of the five factors is at most 24. The denominator coefficient is positive by the preceding check."
+    }
+  ],
+  "scope_audit": {
+    "status": "The displayed coefficient inequalities are proved for every stated heterogeneous profile; no counterexample or arithmetic defect found.",
+    "realizability": "Each B_r is the independence polynomial of the star K_(1,r); Q is realized by the disjoint union of those stars. This establishes realizability of the product alone, not the polynomial or selector identities for the glued tree candidate.",
+    "not_established": [
+      "A coefficient lower bound does not imply log-concavity, Poisson-ULC, coefficient-difference signs, or mixed-minor inequalities.",
+      "The bound ends at floor(2N/3). A degree-based guard for a separate polynomial of degree N+2 may allow p up to floor((2N+4)/3); this estimate does not cover all of those ranks.",
+      "No alpha, first-descent, deleted-graph polynomial, original-leaf selector, or complete selected-sum bridge is established here.",
+      "The coarse 24^5/m relative bound becomes small for large m but supplies no lower bound on a curvature margin; it therefore does not prove the motivating heterogeneous extension or primary aggregate."
+    ]
+  }
+}

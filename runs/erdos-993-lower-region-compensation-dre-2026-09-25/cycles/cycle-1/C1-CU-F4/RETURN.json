@@ -1,0 +1,32 @@
+{
+  "worker_id": "C1-CU-F4",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C1-F4-1",
+      "statement": "For the symmetric root-hub family with 2<=m<=6, 1<=d<=4, and 2<=L<=5, all 151 eligible lower-region parameter rows across 80 trees have strictly negative complete fixed-selector aggregate; no positive row occurs in this bounded census.",
+      "scope": "Finite exact census only for one root joined to m identical hubs, each carrying d pendant paths of L edges, within the stated parameter box. No conclusion is established outside this box or family.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CU-F4/evidence/replayed_census.json",
+        "cycles/cycle-1/C1-CU-F4/evidence/replay.py",
+        "cycles/cycle-1/C1-CU-F4/evidence/replay_inputs/ordinary_tree_checked.py",
+        "cycles/cycle-1/C1-CU-F4/evidence/structural_checks.json",
+        "cycles/cycle-1/C1-CU-F4/evidence/critique_checks.py"
+      ],
+      "reason": "retained — the source replay exactly reproduces all 80 configurations, 151 eligible rows, their negative/zero/positive counts, and the selected sample rows. The tree-polynomial formula independently matches the forest-DP polynomial for all 80 constructions; the strict selector, p-1 rank, original-tree deletions, and separate leaf tags are implemented consistently. This verifies only the bounded census claim."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CU-F4/REPORT.md",
+  "limitations": [
+    "This is a bounded exact census and does not prove the aggregate inequality for arbitrary ordinary trees or beyond the listed family box.",
+    "The full leaf-deletion coefficient arithmetic is evaluated using the pinned forest dynamic-programming helper; the independent formula check covers each whole-tree polynomial, not a second implementation of every deleted-forest coefficient.",
+    "The census contains no positive complete-sum witness and gives no result for mixed hub degrees or mixed path lengths."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-F4-1"
+  ]
+}

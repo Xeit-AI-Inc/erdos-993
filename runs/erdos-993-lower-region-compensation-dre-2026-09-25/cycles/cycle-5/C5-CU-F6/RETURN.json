@@ -1,0 +1,45 @@
+{
+  "worker_id": "C5-CU-F6",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "F6.low_cover_tau_ge_7",
+      "statement": "The proposed sufficient condition tau(T) >= 7 for every eligible third-shell tree is false: the n=24, p=10 six-arm tree with arm leaf counts (2,3,3,3,3,3) has tau(T)=6.",
+      "scope": "One exact eligible ordinary tree at n=2p+4, p=10; this refutes the cover-threshold shortcut only, and the witness has negative selected pointwise terms and full aggregate.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CU-F6/COMPUTE.py",
+        "cycles/cycle-5/C5-CU-F6/REPLAY.json",
+        "cycles/cycle-5/C5-CU-F6/AUDIT.py",
+        "cycles/cycle-5/C5-CU-F6/AUDIT-RESULTS.json"
+      ],
+      "reason": "retained: the explicit 24-vertex tree has a six-center vertex cover and a matching of six disjoint pendant edges, so tau=6. Independent explicit-edge polynomial computation gives alpha=18, x=8, valid p=10 guards, all 17 original leaves selected, and S=-122805. This defeats only the proposed tau>=7 shortcut, not the shell sign or primary aggregate."
+    },
+    {
+      "claim_id": "F6.six_arm_bounded_census",
+      "statement": "In the enumerated six-arm rooted family at n=2p+4 for p=10..13, the exact sorted-multiset census has one eligible row at p=10 and none at p=11,12,13; the eligible p=10 row has no positive selected pointwise term.",
+      "scope": "Only root-plus-six-centers trees with pendant-leaf counts d_i >= 0 and sum d_i=2p-3; finite census of 163, 235, 331, and 454 sorted multisets respectively.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CU-F6/COMPUTE.py",
+        "cycles/cycle-5/C5-CU-F6/REPLAY.json",
+        "cycles/cycle-5/C5-CU-F6/AUDIT.py",
+        "cycles/cycle-5/C5-CU-F6/AUDIT-RESULTS.json"
+      ],
+      "reason": "retained: the producer replay and an independent explicit-edge forest dynamic program enumerate all sorted six-part tuples at each stated total and reproduce the counts and eligibility outcomes. The sole eligible row has 17 selected terms, each negative (two -4875 and fifteen -7537). The bounded family scope is essential; this supplies no all-tree conclusion."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CU-F6/REPORT.md",
+  "limitations": [
+    "The exact census is limited to the stated root-plus-six-centers family and p=10..13; it is not exhaustive over all trees at those orders or all low-cover trees.",
+    "The tau=6 witness refutes only the proposed tau>=7 shortcut; all its selected pointwise terms and its full aggregate are negative.",
+    "No proof or refutation of the general third-shell pointwise sign, a complete low-cover replacement inequality, or the primary aggregate is obtained."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "F6.low_cover_tau_ge_7",
+    "F6.six_arm_bounded_census"
+  ]
+}

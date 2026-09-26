@@ -1,0 +1,41 @@
+{
+  "task": "Independent critique of C6-T6 plus separately attributed root-origin appendices",
+  "hash_audit": {
+    "case_pins": 12,
+    "case_mismatches": 0,
+    "common_pins": 237,
+    "common_mismatches": 0,
+    "method": "SHA-256 recomputed for every allowed_source_files entry in the two packets before review."
+  },
+  "producer_claim_verbatim": {
+    "claim_id": "C6-T6-EQUAL-THREE-SPIDER-REDUCTION",
+    "statement": "For the equal-length-three spider T_m (m>=2), the root-conditioned polynomials are P_m=(1+3z+z^2)^m+z(1+2z)^m and A_m=(1+2z)(1+3z+z^2)^(m-1)+z(1+z)(1+2z)^(m-1); each tip summand is Delta_(p-2)((1+3z+z^2)^(m-1)), so when all tips are selected the full sum is m times that difference. Exact computation for m=2..60 finds x(P_m)=m and a negative full sum at every eligible rank, and m=6,p=8 is an explicitly checked eligible instance with S=-2130. The uniform crossing and selector inequalities remain unproved.",
+    "scope": "Exact formula for all equal-length-three spiders m>=2; computation only for 2<=m<=60 and eligible integer p in that finite range; one full graph check at m=6,p=8. No arbitrary-tree or universal family theorem is claimed.",
+    "status": "proposed_open",
+    "evidence_paths": [
+      "cycles/cycle-6/C6-T6/EVIDENCE.py",
+      "cycles/cycle-6/C6-T6/EVIDENCE.json"
+    ],
+    "reason": "The decomposition and marked-sum reduction are exact. Finite exact arithmetic and one eligible instance support the route but do not prove x(P_m)>=m or endpoint favorability for all m; those uniform bridges are necessary for the proposed family conclusion."
+  },
+  "mathematical_review": {
+    "graph_formulas": "Root exclusion/inclusion yields P=Q^m+zV^m and endpoint deletion A=VQ^(m-1)+zLV^(m-1); direct support/closed-neighborhood deletion gives I(H_i)-I(R_i)=zQ^(m-1). All tags are the m distinct original endpoints, for m>=2.",
+    "elementary_coefficient_proof": "Accepted for all m>=2. The induction proves Delta_t(C^d)>=0 for every integer t<d; the s=j-1 term gives Delta_j(Q^m)>=binom(m,j-1)2^(j-1)binom(m-j+1,2)>=b_j, hence Delta_j(P)>0 for 1<=j<m, while Delta_0(P)=3m. Strict left-half growth and symmetry give strict descent of Q^m from m; the perturbation zV^m is nonpositive in Delta at j=m and negative at j=m+1, proving x(P)=m.",
+    "selector_and_aggregate": "Eligibility gives m+2<=p<=floor(4m/3), so it exists iff m>=6 and p<=2m-1. With e=m-1, Q^e is symmetric and strictly increasing below e, hence strictly decreasing on its supported upper half. Each leaf summand is Delta_(p-1)(zQ^e)=Q^e_(p-1)-Q^e_(p-2)<0. The perturbation zLV^e has degree m+1<p, and Delta_p(VQ^e)=Delta_p(Q^e)+2Delta_(p-1)(Q^e)<0 including the possible terminal-zero endpoint; therefore all m original leaves are selected and S<0.",
+    "alternative_injection": "Accepted for the same x>=m bridge. The root-excluded product blocks are indexed by exact b/c singleton labels; the only overlap risk is the block s=j-1,t=1. There, the root-included image is reserved as {a_i0,c_i0}; root-excluded singleton states map injectively to distinct pairs avoiding that image. Other blocks use successor maps along an inductively constructed symmetric chain decomposition. A pure b/c singleton (j+1)-set has s=j+1 and lies outside all images, proving strict surplus. No disjoint-image gap remains in this construction.",
+    "literature_scope": "The root provenance appendix reports Wang (2022), Theorem 5, for unimodality/mode m of this polynomial when m>100; this overlaps the mode claim but does not supply the m>=2 proof or the selector aggregate. The cited Zhang-Tu 2026 spider stability paper is recorded as abstract-only and is not used; stability alone does not imply coefficient unimodality. No imported literature theorem is needed for the accepted proofs."
+  },
+  "bounded_replays": {
+    "spider_m6": "Literal copied-evaluator replay: 19 vertices, alpha=12, x=6, p=8, all six original leaves selected; each Delta_7(H)-Delta_7(R)=-355, each selector Delta_8(T-v)=-550, full S=-2130. Full coefficient vectors and edges are in REPLAY-SPIDER-M6.json.",
+    "injection": "Literal independent-set replay of the stated injection for m=2..6 and all 0<=j<m: 20 rows, every image set injective and valid, with strict upper-rank surplus. This finite replay corroborates but does not replace the all-m block proof."
+  },
+  "limitations": [
+    "The producer census m=2..60 remains bounded; it is not the basis for the all-m spider theorem.",
+    "No extension to arbitrary ordinary trees, unequal spiders, general rooted branches, or governed interpretations is established.",
+    "Literature provenance was read from the pinned appendix and not independently retrieved; no literature result is relied upon.",
+    "No Lean proof or formal certificate was reviewed."
+  ],
+  "copied_source_hashes": {
+    "ordinary_tree_checked.py": "a012bb78915ccdfa2f729c0cdb520cd8f29572277123c92e80ba6091498f533d"
+  }
+}

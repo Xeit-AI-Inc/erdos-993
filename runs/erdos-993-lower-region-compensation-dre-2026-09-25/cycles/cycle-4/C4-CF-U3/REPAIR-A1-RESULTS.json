@@ -1,0 +1,57 @@
+{
+  "worker_id": "C4-PREP-TECHNICAL-CORRECTIONS-AUDIT",
+  "status_authority": "independent_review_proposal_only",
+  "pinned_files_checked": 52,
+  "source_mutations": 0,
+  "awards_or_registry_edits": 0,
+  "U3": {
+    "disposition": "retain structural six-cover representation and finite domain; replace false polynomial; correct composition count; sign remains open",
+    "correct_polynomial": "sum_{I independent in K} z^|I| product_{c in C\\I}(1+z)^{m_c}",
+    "false_polynomial": "sum_{I independent in K} z^|I| product_{c in C\\N_K[I]}(1+z)^{m_c}",
+    "composition_count": "binom(n-t-1,5)",
+    "witness": {
+      "n": 24,
+      "p": 10,
+      "alpha": 18,
+      "x": 8,
+      "six_center_multiplicities": [2, 3, 3, 3, 3, 3],
+      "rank_two_correct": 253,
+      "rank_two_submitted": 236,
+      "rank_two_deficit": 17,
+      "favorable_leaf_count": 17,
+      "selected_sum": -122805
+    },
+    "computed_boundary": "One exact eligible order-24 witness and arithmetic counts; no four-order skeleton census"
+  },
+  "U2": {
+    "disposition": "correct marked-shadow index and generic second-shell application prose; retain main conditional theorem at its explicit rank gate",
+    "correct_index": "q_j-q_{j-1}=sum_i Delta_{j-2}(J_i)",
+    "counterexample_to_reported_index_step": {
+      "H_edges": [[0, 1]],
+      "isolates": [2, 3],
+      "mark_order": [0, 2, 3],
+      "residual_Delta_1": [-1, -1, -1],
+      "q_1": 3,
+      "q_2": 5
+    },
+    "s3_p6_generic_gate": {"d": 3, "r": 4, "m": 4, "K": 5, "holds": false},
+    "special_boundary": "Pinned second-shell odd-order four-matching injection supplies i_5<=i_4 on 11 vertices, conditional on four matching edges",
+    "computed_boundary": "Four-vertex counterexample and exact parameter arithmetic; inherited special injection not reproved"
+  },
+  "F1": {
+    "disposition": "retain exact bounded RETURN flat-budget claim; correct mislabeled CT_x gap and unsupported equivalence language",
+    "flat_gap": "(x+1)Q-E",
+    "current_gap": "(p-1)Q-E",
+    "true_CTx_gap": "(x+1)i_{x+1}(T)Q-i_x(T)E",
+    "recorded_eligible_rows_checked": 37,
+    "all_at_p_equals_x_plus_2": true,
+    "proper_selectors": 0,
+    "flat_gap_failures": 0,
+    "current_gap_failures": 0,
+    "true_CTx_gap_failures": 0,
+    "minimum_flat_and_current_gap": 1001,
+    "minimum_true_CTx_gap": 123300,
+    "computed_boundary": "Independent graph DP checked all 37 recorded eligible rows, their polynomials, selectors, selected sums, and true CT_x arithmetic using recorded E; no independent 1836-word sample regeneration or raw E transport recount"
+  },
+  "artifacts": ["REPORT.md", "RESULTS.json", "REPLAY.py", "EVIDENCE.json", "U3-CORRECTION.md", "U2-CORRECTION.md", "F1-CORRECTION.md"]
+}

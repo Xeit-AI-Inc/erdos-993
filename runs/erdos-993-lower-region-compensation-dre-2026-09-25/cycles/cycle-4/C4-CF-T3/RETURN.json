@@ -1,0 +1,27 @@
+{
+  "worker_id": "C4-CF-T3",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C4-T3-MATCHING-SECTOR-DELETION-BOUND",
+      "statement": "For any subfamily A of the rank-491 matching sector with 736 two-vertex color classes, its union D(A) of one-element deletion targets satisfies 491|A| <= 492|D(A)|. For the full level, the source-to-target ratio is 492/491 and the source-minus-target cardinality is exactly one 492nd of the source level.",
+      "scope": "CB(8,92) matching sector formed after fixing and stripping the central root and an arm leaf; only deletions retaining those two vertices are counted. The bound does not cover insertion arcs, competing demands, or the complete ordinary-tree aggregate.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CF-T3/EVIDENCE.json"
+      ],
+      "reason": "retained: independent incidence counting gives 491 deletion incidences per source and at most 492 extensions per target; exact binomial recomputation confirms both level sizes and the integer shortfall. The source claim is valid at its stated sector-only scope, but supplies no mixed-boundary or aggregate conclusion."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CF-T3/REPORT.md",
+  "limitations": [
+    "The audit certifies only the colored matching-sector deletion boundary; hub-insertion capacities and competing demands remain unexamined.",
+    "No full selected-tag Hall inequality or complete favorable-leaf aggregate proof or refutation was established."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-T3-MATCHING-SECTOR-DELETION-BOUND"
+  ]
+}

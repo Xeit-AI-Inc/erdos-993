@@ -1,0 +1,43 @@
+{
+  "reviewer": "C3-CU-T5",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "U",
+  "source_worker": "C3-T5",
+  "source_hash_check": {
+    "common_listed_files": 115,
+    "case_listed_files": 4,
+    "checked_total": 119,
+    "mismatches": []
+  },
+  "replay": {
+    "method": "Copied the pinned route COMPUTE.py to COMPUTE-replay.py in this scratch root and ran that copy with Python 3.",
+    "horizon": "m=1..50; every integer p satisfying x+2<=p and 3p<2alpha+1",
+    "eligible_rows": 674,
+    "arm_selected_rows": 674,
+    "claw_selected_rows": 674,
+    "both_orbits_selected_rows": 674,
+    "positive_full_sums": 0,
+    "zero_full_sums": 0,
+    "m22_p34": {
+      "alpha": 68,
+      "x": 32,
+      "strict_guard": "102 < 137",
+      "arm_orbit_size": 1,
+      "claw_orbit_size": 66,
+      "arm_term": 212336130412243110,
+      "each_claw_term": -7560098737536570631,
+      "full_sum": -498754180547001418536
+    }
+  },
+  "symbolic_checks": [
+    "The tree T_m has path 0-1-2 and m claws attached at root 0, each consisting of a center adjacent to 0 and three pendant leaves. Splitting independent sets according as 0 is absent or present gives P=(1+2z)B^m+z(1+z)^(3m+1), B=1+4z+3z^2+z^3.",
+    "There is one path leaf and 3m claw leaves. Under the displayed q polynomials, summing one path-leaf tag and 3m claw-leaf tags gives Q_all=(3m+1)z(1+z)^(3m)+3m z(2+5z+2z^2)B^(m-1).",
+    "For q_j=I(H)-I(R), the tagged summand is Delta_(p-1)(H)-Delta_(p-1)(R)=q_p-q_(p-1). Replacing the selected tagged sum by Q_all is valid only when both leaf orbits satisfy the strict selector.",
+    "Direct root decomposition gives q_arm=z(1+z)^(3m) and q_claw=z(2+z)(1+2z)B^(m-1)+z(1+z)^(3m), with the original path leaf and claw leaf tags kept separate."
+  ],
+  "audit_limits": [
+    "Replay executes the copied route computation; it is not an independent second implementation of the 674-row enumeration.",
+    "No claim about m>50 or trees outside T_m follows. The route itself states the selector-classification and coefficient-sign proofs remain missing."
+  ]
+}

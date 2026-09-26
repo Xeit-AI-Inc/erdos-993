@@ -1,0 +1,16 @@
+{
+  "claim_id": "C5-U5.support-star-sector",
+  "audit_type": "independent_exact_derivation",
+  "disposition": "retained",
+  "family_and_guards": "T=K_{1,d}, d>=12, alpha(T)=d, x(T)+2<=p, 3p<2d+1; k=p-1 and h=d-1.",
+  "first_descent": "i_0=1, i_1=d+1, i_j=C(d,j) for 2<=j<=d, and zero thereafter. Delta_0=d>0; Delta_1=C(d,2)-(d+1)>0 for d>=4. For j>=2 the binomial row first has negative difference at floor((d+1)/2); terminal zero extension remains negative at j=d.",
+  "selector_check": "For each original leaf, T-v=K_{1,d-1}, whose first negative difference is floor(d/2). The lower guard gives p>=floor((d+1)/2)+2>floor(d/2). The strict upper guard gives p<(2d+1)/3<=d-1 for d>=4, so p<d-1 and is within the binomial row. Hence Delta_p(T-v)<0 for every original leaf and F(T,p) is exactly all d leaves.",
+  "summand_check": "For every original leaf, H_v is edgeless on h=d-1 vertices, W_v=V(H_v), and R_v is empty. At positive ranks q_v(j)=i_j(H_v)-i_j(R_v)=C(h,j). The defining summand is Delta_k(H_v)-Delta_k(R_v)=q_v(k+1)-q_v(k), since k=p-1>=1 and R_v has no positive-rank independent sets.",
+  "sign_check": "The lower guard gives k>=floor((d+1)/2)+1, hence 2k+2>=d. Since h=d-1, h-k<=k+1. Thus C(h,k+1)<=C(h,k) wherever both are in range; at zero-extended ranks their difference is also nonpositive. Every selected leaf term is nonpositive, so the complete sum S is nonpositive.",
+  "boundary_count_check": "Q=C(h,k), U=C(h,k+1), E=(h-k)Q because each marked k-set has exactly h-k actual addable vertices, and C=U because every (k+1)-set has at least two marked vertices when W=V(H_v) and k>=1. Pascal's identity gives E=kU+C. The handoff formula kS=E-C-kQ therefore gives kS=k(U-Q), agreeing with the direct definition S=U-Q.",
+  "source_report_correction": "The source REPORT.md has a factor-k typo in the sentence claiming kS=sum_v(q_v(k+1)-q_v(k)); the defining summands give S=sum_v(q_v(k+1)-q_v(k)). The mistake does not affect the restricted conclusion, which follows from the direct summand calculation.",
+  "limitations": [
+    "This is an exact proof only for stars K_{1,d} with d>=12 and the stated primary guards.",
+    "It gives no result when H_v has edges and does not settle the primary aggregate for general ordinary trees."
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "worker_id": "C5-U2",
+  "cycle": 5,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C5-U2.STAR-PRODUCT-COEFFICIENT-BOUND",
+      "statement": "For Q=product_i((1+z)^{r_i}+z), where m>=1 and each r_i is in {2,3,4}, Q >= coefficientwise binom(m,h) z^h(1+z)^{N-4h} for every h with 4h<=N, where N=sum_i r_i. Consequently, for N>=12 and 1<=j<=floor(2N/3), [z^j]Q>=m binom(N-4,j-1)>0, and [z^j](z(1+z)^{N+1})/[z^j]Q<=24^5/m.",
+      "scope": "Exact algebraic coefficient bound for heterogeneous bounded-arity star-factor products; it does not establish the primary aggregate or T2 selector/curvature obligations.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-U2/EVIDENCE.json"
+      ],
+      "reason": "Subset expansion proves the coefficientwise estimate, and the rank-window ratio follows from an exact five-factor binomial ratio. The estimate is valid uniformly over the stated profiles but is too weak to imply coefficient-difference signs or mixed minors."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-U2/REPORT.md",
+  "limitations": [
+    "The rank window stops at floor(2N/3); the degree-based strict lower-region guard can permit ranks up to floor((2N+4)/3).",
+    "The perturbation coefficient bound supplies no curvature margin and proves no mixed-minor inequality for Q, the full polynomial, or any deletion polynomial.",
+    "The graph-to-polynomial source domains, exact alpha and first-descent ranks, original-leaf favorable selector, and complete selected aggregate remain unresolved.",
+    "No universal conclusion for the primary claim or heterogeneous extension follows from this bounded coefficient result."
+  ],
+  "status_authority": "proposed_worker_only"
+}

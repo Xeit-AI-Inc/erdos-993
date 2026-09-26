@@ -1,0 +1,48 @@
+lemma forest_card_edges_add_components {V : Type u} [Finite V]
+    (F : SimpleGraph V) (hF : F.IsAcyclic) :
+    Nat.card F.edgeSet + Nat.card F.ConnectedComponent = Nat.card V := by
+  classical
+  letI := Fintype.ofFinite V
+  have hvertices :
+      (∑ c : F.ConnectedComponent, Fintype.card c) = Fintype.card V := by
+    have hv := Fintype.sum_fiberwise F.connectedComponentMk (fun _ : V => (1 : ℕ))
+    simp only [Finset.sum_const, Finset.card_univ, smul_eq_mul, mul_one] at hv
+    calc
+      _ = ∑ c : F.ConnectedComponent,
+          Fintype.card {v : V // F.connectedComponentMk v = c} := by
+        apply Finset.sum_congr rfl
+        intro c _
+        exact Fintype.card_congr (Equiv.refl _)
+      _ = _ := hv
+  have hdegrees :
+      (∑ c : F.ConnectedComponent, ∑ v : c, F.degree v.val) =
+        ∑ v : V, F.degree v := by
+    exact Fintype.sum_fiberwise F.connectedComponentMk (fun v : V => F.degree v)
+  have hcomponent (c : F.ConnectedComponent) :
+      (∑ v : c, F.degree v.val) + 2 = 2 * Fintype.card c := by
+    have ht := (hF.isTree_connectedComponent c).card_edgeFinset
+    have hd := c.toSimpleGraph.sum_degrees_eq_twice_card_edges
+    have heq : (∑ v : c, F.degree v.val) =
+        ∑ v : c, c.toSimpleGraph.degree v := by
+      apply Finset.sum_congr rfl
+      intro v _
+      symm
+      rw [← SimpleGraph.card_neighborSet_eq_degree,
+        ← SimpleGraph.card_neighborSet_eq_degree]
+      exact Fintype.card_congr
+        { toFun := fun w => ⟨w.val.val, w.property⟩
+          invFun := fun w =>
+            ⟨⟨w.val, c.mem_supp_of_adj_mem_supp v.property w.property⟩, w.property⟩
+          left_inv := fun _ => rfl
+          right_inv := fun _ => rfl }
+    rw [heq, hd]
+    omega
+  have hsum := congrArg
+    (fun f : F.ConnectedComponent → ℕ => ∑ c, f c) (funext hcomponent)
+  simp only [Finset.sum_add_distrib, Finset.sum_const, Finset.card_univ,
+    smul_eq_mul, ← Finset.mul_sum] at hsum
+  rw [hdegrees, hvertices, F.sum_degrees_eq_twice_card_edges] at hsum
+  have hcount : F.edgeFinset.card + Fintype.card F.ConnectedComponent =
+      Fintype.card V := by omega
+  simpa only [Nat.card_eq_fintype_card, ← SimpleGraph.edgeFinset_card] using hcount
+

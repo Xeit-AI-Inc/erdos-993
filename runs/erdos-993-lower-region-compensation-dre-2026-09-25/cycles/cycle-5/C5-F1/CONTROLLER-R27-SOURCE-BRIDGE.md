@@ -1,0 +1,7 @@
+# Controller source reconciliation: R27 order bound
+
+The mathematical dependency is already directly included among C5 common pins, not merely asserted in the handoff. In inputs/C4-r27-linear-bound-intake/Main.lean at line1458, Erdos993G1.forest_descent_linear_bound has exact type: for finite vertex type X, simple graph G with G.IsAcyclic, natural k, and Erdos993G1.delta G (k:Z)<0, Nat.card X<=4*k. It has no DlHyp binder. The same intake contains THEOREM-CONTRACT.yaml, kernel-verification.json and VERIFICATION-REPORT.md (formally_verified, informal and fidelity checks passed). All these files were common source authority before C5 dispatch.
+
+For the explicit ordinary tree T_m, take X its4m+3 vertices, G its path-plus-claws tree, and k=x(T_m). The first strict descent definition supplies Delta_x<0, including terminal zero extension, and tree acyclicity/finite vertices meet the exact hypotheses. Hence4m+3<=4x, sox>=m+1. This is the exact graph/hypothesis bridge; it is not an assumed primary conjecture or extra unproved DL hypothesis. The arity-profile graph uses n=N+m+3 analogously.
+
+A critic's inability or decision not to replay an allowed source is an explicit review limitation, not a mathematical counterexample or evidence that the source is unavailable. Origin adjudication must independently assess the analytic inequalities and available completed exact replays; do not decide by the number of retained/open votes. A proof-kernel certificate for the full family remains absent even though this one dependency is formally verified.

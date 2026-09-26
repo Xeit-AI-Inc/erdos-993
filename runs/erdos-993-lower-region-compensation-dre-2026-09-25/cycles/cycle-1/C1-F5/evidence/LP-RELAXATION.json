@@ -1,0 +1,16 @@
+{
+  "relaxation": "single-tag scalar incidence identity plus D>=0 and C>=0, with coefficient-array/tree-realizability constraints omitted",
+  "parameters": {"h": 5, "k": 2, "coefficient": "2h-3k=4"},
+  "abstract_profile": {"q_k": 1, "D": 0, "C": 0, "q_k_plus_1": 3},
+  "identity_check": "k*q_(k+1)+C = 2*(h-k)*q_k-D = 6",
+  "implied_local_difference": "q_(k+1)-q_k=2",
+  "implied_relaxed_value": "k*g=(2h-3k)*q_k-D-C=4, hence g=2>0",
+  "selector_coordinate": "For a tree-derived rooted profile q(z)=I(H)-I(R), with H=T-{v,s}, R=T-N[s], and r_j=[z^j]I(R), favorability is q_(p+1)-q_p+r_(p+1)-r_(p-1)<0 at p=k+1.",
+  "tree_realizability_constraints_not_in_relaxation": [
+    "H is a forest whose every component contains exactly one marked root w in W=N(s)\\{v}; each such component is a rooted tree at w.",
+    "Writing components H_i rooted at w_i, I(H)=product_i A_i and I(R)=product_i B_i, where A_i=I(H_i), B_i=I(H_i-w_i), and A_i=B_i+z*I(H_i-N[w_i]).",
+    "The strict favorable selector is coupled to the same rooted products by q_(p+1)-q_p+r_(p+1)-r_(p-1)<0.",
+    "For a support with m original leaf neighbors, its m leaf tags have the same coefficient profile and selector value; all m tags enter F together or none do, with aggregate weight m."
+  ],
+  "conclusion": "This integer point demonstrates failure of the scalar relaxation only. It is not certified to arise from any rooted forest or eligible ordinary tree and does not refute the target."
+}

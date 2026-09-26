@@ -1,0 +1,31 @@
+{
+  "schema": "e993.c3-critic.evidence.v1",
+  "source_hash_check": {"listed_case_and_common_sources": 118, "mismatches": 0},
+  "copied_source_replay": {
+    "instrument": "orbit-flow-twoforone/run.py",
+    "method": "Copied the listed run.py and ordinary_tree_checked.py into this scratch root's replay directory and ran in the foreground. The three generated result artifact hashes match those printed in the listed RESULTS.json.",
+    "rows": [
+      {"m":22,"p":34,"upper_states":1686,"lower_states":1743,"transport_orbit_arcs":8907,"upper_supply":"6533318342644086823410","lower_capacity":"7032072523191088241946","flow":"6533318342644086823410","cut_deficit":"0","positive_switch_orbit_arcs":379,"switch_flow":"696430246253209317927"},
+      {"m":60,"p":90,"upper_states":27633,"lower_states":27976,"transport_orbit_arcs":152406,"upper_supply":"18218546853926351167830731257168063662695945613618170468520","lower_capacity":"19276689216074003765533385845436458339871978815941487428900","flow":"18218546853926351167830731257168063662695945613618170468520","cut_deficit":"0","positive_switch_orbit_arcs":7231,"switch_flow":"2183381638003030875397486434851121308556078867654442422210"},
+      {"m":66,"p":98,"upper_states":36702,"lower_states":37090,"transport_orbit_arcs":202870,"upper_supply":"10621175131261862108643497325635134690753959446180514839346249972","lower_capacity":"11019681101975788488398165437175461028091620945562562333982657340","flow":"10621175131261862108643497325635134690753959446180514839346249972","cut_deficit":"0","positive_switch_orbit_arcs":10987,"switch_flow":"1718986626855327476520867745377377595364661910869700456907584390"}
+    ]
+  },
+  "small_neighbor_replay": [
+    {"m":1,"independent_sets":43,"orbits":23,"neighbor_orbits_match":true,"multiplicities_match":true},
+    {"m":2,"independent_sets":371,"orbits":65,"neighbor_orbits_match":true,"multiplicities_match":true},
+    {"m":3,"independent_sets":3211,"orbits":145,"neighbor_orbits_match":true,"multiplicities_match":true}
+  ],
+  "set_correspondence_check": {
+    "fixed_selector": "F(T,p) remains fixed at the original tree and rank; leaves sharing a support remain separate tags.",
+    "upper_layer": "For v in F, A in Ind_p(H_v) meeting W_v maps to B=A union {v}, a size-(p+1) independent set with active tag v; the inverse removes v.",
+    "lower_layer": "The same construction at rank p-1 maps to size-p lower clones.",
+    "count_identity": "|C_r(v)|=i_r(H_v)-i_r(R_v); subtracting ranks p and p-1 gives the summand Delta_(p-1)(H_v)-Delta_(p-1)(R_v). Summing tags gives upper clone count minus lower clone count equal to S(T,p).",
+    "edge_check": "Every old Delete removes one vertex; every old Retag projects to deleting the retagged leaf. A legal switch preserves independence and changes size p+1 to p by deleting exactly two neighbors and inserting the absent support. Replayed positive non-deletion orbit transitions occur in all three listed T_m cases."
+  },
+  "scope_fences": [
+    "Replay covers only T22,p34; T60,p90; and T66,p98, plus full set-level transition checks for m=1,2,3.",
+    "A matching saturating all upper clones is stronger than the scalar inequality S(T,p)<=0.",
+    "The old T22 deletion-only cut is an inherited old-relation obstruction; it does not refute the expanded relation or the primary aggregate. The supplied T22 complete aggregate is negative.",
+    "The CB(8,92) expanded relation remains without an exact flow or deficient cut in the allowed evidence."
+  ]
+}

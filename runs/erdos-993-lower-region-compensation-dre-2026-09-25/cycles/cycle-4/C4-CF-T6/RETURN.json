@@ -1,0 +1,40 @@
+{
+  "worker_id": "C4-CF-T6",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C4-T6-ROOTED-MESSAGE-REDUCTION",
+      "statement": "Rooted independence-polynomial messages give exact product formulas for each leaf-deleted selector polynomial and each selected leaf summand in the ordinary-tree aggregate.",
+      "scope": "All finite ordinary trees; these polynomial identities hold for each original leaf treated as its own tag, including multiple leaves sharing one support. They give an evaluator and no uniform aggregate sign.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CF-T6/EVIDENCE.md"
+      ],
+      "reason": "retained: independently decomposing by root and support inclusion proves the recurrences and all three leaf formulas. The branch products include every other support branch, preserve distinct same-support tags, and handle empty products and zero-extended coefficient extraction. This does not prove the target inequality."
+    },
+    {
+      "claim_id": "C4-T6-PRIMARY-GLOBAL-BOUND",
+      "statement": "The lower-region ordinary favorable-leaf aggregate is not resolved by this route; the recurrence derived here establishes neither S(T,p)<=0 nor a counterexample.",
+      "scope": "The contract's eligible finite ordinary trees with x(T)+2<=p and 3p<2 alpha(T)+1.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CF-T6/REPORT.md",
+        "cycles/cycle-4/C4-CF-T6/EVIDENCE.md"
+      ],
+      "reason": "retained: the route provides an exact evaluator but no uniform coefficient comparison, proof, or eligible positive full-sum witness. This disposition records nonresolution of the route and leaves the mathematical target open; it does not assert that the target is false."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CF-T6/REPORT.md",
+  "limitations": [
+    "The audit verifies symbolic recurrences but supplies no global compensation argument or eligible full-sum counterexample.",
+    "No graph census or numerical replay was applicable to the algebraic-only route; the formulas were independently derived directly.",
+    "The route-specific nonresolution does not show that a suitable message invariant cannot exist."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-T6-PRIMARY-GLOBAL-BOUND",
+    "C4-T6-ROOTED-MESSAGE-REDUCTION"
+  ]
+}

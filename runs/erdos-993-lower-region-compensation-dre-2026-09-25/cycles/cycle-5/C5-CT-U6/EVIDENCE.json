@@ -1,0 +1,36 @@
+{
+  "kind": "independent_exact_audit",
+  "source_worker": "C5-U6",
+  "hash_checks": {
+    "common_listed_files": 237,
+    "common_mismatches": 0,
+    "case_listed_files": 3,
+    "case_mismatches": 0
+  },
+  "marked_shell_audit": {
+    "valid_partition": "q_j=sum_w i_(j-1)(G_w) by the unique first W vertex",
+    "correct_difference": "q_j-q_(j-1)=sum_w Delta_(j-2)(G_w)",
+    "correct_target_leaf_term": "Delta_(p-1)(H)-Delta_(p-1)(R)=q_p-q_(p-1)=sum_w Delta_(p-2)(G_w)",
+    "correct_selector": "Delta_p(T-v)=sum_w Delta_(p-1)(G_w)+i_(p+1)(R)-i_(p-1)(R)",
+    "sign_check": {
+      "H": "K1",
+      "W": "V(H)",
+      "R": "empty graph",
+      "j": 2,
+      "q_j_minus_q_previous": -1,
+      "sole_G": "empty graph",
+      "Delta_(j-2)_of_G": -1,
+      "route_negative_sum_value": 1
+    }
+  },
+  "star_audit": {
+    "independence_counts": "i0=1, i1=m+1, i_j=binom(m,j) for 2<=j<=m, then zero",
+    "first_descent": "x=ceil(m/2)",
+    "eligible_window": "ceil(3p/2)<=m<=2p-4",
+    "window_nonempty": "p>=8",
+    "all_original_leaves_selected": "Delta_p(K_(1,m-1))=binom(m-1,p+1)-binom(m-1,p)<0 throughout the window",
+    "per_tag_summand": "binom(m-1,p)-binom(m-1,p-1)<0",
+    "full_sum": "m*(binom(m-1,p)-binom(m-1,p-1))<0"
+  },
+  "primary": "No general proof or realizable positive full-sum counterexample is supplied by this source; unresolved by this case."
+}

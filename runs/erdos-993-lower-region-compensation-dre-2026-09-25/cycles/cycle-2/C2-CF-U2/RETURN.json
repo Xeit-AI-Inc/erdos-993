@@ -1,0 +1,28 @@
+{
+  "worker_id": "C2-CF-U2",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "E993-MARKED-ISOLATE-ORDER-BAND",
+      "statement": "For every finite simple graph G on m vertices, every W containing all isolated vertices of G, and every integer k>=2 with m<=2k+1, if q_j counts independent j-sets meeting W, then q_(k+1)<=q_k.",
+      "scope": "Arbitrary finite simple graphs; W contains all isolates; integer k>=2 and m<=2k+1. No tree, bipartite, favorable-selector, or first-descent hypothesis.",
+      "status": "proposed_proved_informal",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CF-U2/EVIDENCE.md"
+      ],
+      "reason": "retained \u2014 the exact addability-incidence identity is correct when an upper set with one mark contributes k lower-to-upper incidences (delete any unmarked vertex); the route report reverses that deletion description in prose, which this critique corrects. At m=2k+1, positive-neighborhood sets pay for B while bad all-isolate sets inject into the once-counted multiply marked upper sets C. The edgeless case is equality by complementation. The k>=2 guard is used. Do not extend the order cutoff: K_(1,2k+1) with one marked pendant vertex gives q_(k+1)>q_k at m=2k+2. This remains a proposed informal disposition and does not settle the primary beyond the valid |T|<=2p+1 ordinary-leaf subregion."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CF-U2/REPORT.md",
+  "limitations": [
+    "Informal combinatorial audit only; no Lean formalization or kernel receipt.",
+    "No code replay was required or performed.",
+    "The ordinary-leaf corollary only reaches |T|<=2p+1; this claim does not resolve the |T|=2p+2 shell or the complete lower-region primary target."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-MARKED-ISOLATE-ORDER-BAND"
+  ]
+}

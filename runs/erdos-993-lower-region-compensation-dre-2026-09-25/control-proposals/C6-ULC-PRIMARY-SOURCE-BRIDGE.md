@@ -1,0 +1,5 @@
+# Primary-source bridge for finite ULC convolution
+
+Controller primary-source readback26 September2026: Leonid Gurvits, arXiv0804.1181, https://arxiv.org/pdf/0804.1181, page1 Definition(2), Theorem1.1 and Remark1.2. The definition explicitly allows normalization order d at least the sequence degree. Theorem1.1 states closure under convolution with the two orders added. The nonnegative extension is addressed through approximation by positive sequences. In our applications all factors have positive consecutive support; no internal-zero ambiguity is used. Thus a degree3 factor can legitimately carry order4, and a grouped marked factor can carry order962 despite much smaller degree.
+
+This citation supplies the informal convolution theorem only. It is not a Lean import or an axiom authorization. Individual factor normalization, support, coefficient-to-graph formulas, perturbation estimates and strict-selector transfer are separate obligations. Public source retrieval is permitted for independent workers; verify the hypothesis bridge instead of treating this note as authority.

@@ -1,0 +1,5 @@
+# Literal Lean header correction v2 to v3
+
+The mathematical statement, quantifiers, guards, definitions, source materials, permitted axioms, and fully qualified declaration_name are unchanged. The exact expected source header now uses the unqualified leaf declaration name actually written inside namespace E993OrderBand. Lean kernel already verified the fully qualified declaration. The workflow checks literal source text and the registrar requires an unqualified name in a namespace; v2 instead expected an outside-namespace qualified spelling.
+
+Only contract_id and expected_statement (plus its digest) changed. No source proof or theorem type changed. Original v2 bytes and receipt are preserved here and in the failed parent. The unchanged informal audit's exact mathematical-claim hash remains applicable. Fresh independent fidelity must inspect actual namespace context and certify this syntax-only rebinding, rather than trusting textual normalization. No fake comment, alias declaration, validator bypass, or weakened hypothesis was introduced. Kernel source hash remains a45f8e2e218d27d528e2513e5cb8413d38780d9e6c01f8c34b171366f0bf3bde.

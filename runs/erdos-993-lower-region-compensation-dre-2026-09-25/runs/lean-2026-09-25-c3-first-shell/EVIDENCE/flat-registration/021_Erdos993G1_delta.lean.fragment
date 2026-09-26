@@ -1,0 +1,4 @@
+noncomputable def Erdos993G1.delta {V : Type u}
+    (F : SimpleGraph V) (k : ℤ) : ℤ :=
+  Erdos993G1.coeff F (k + 1) - Erdos993G1.coeff F k
+

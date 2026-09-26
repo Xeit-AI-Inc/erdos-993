@@ -1,0 +1,38 @@
+{
+  "worker_id": "C2-U6",
+  "cycle": 2,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C2-U6.shell-state-framework",
+      "statement": "For each fixed p in the first-order shell |T|=2p+2, the augmented exact state consisting of full rooted independent-set messages, original leaf-tag deletion polynomials P_v, H_v, R_v, support tags, and derived selector and sum suffices to evaluate alpha(T), terminal-checked x(T), every strict selector bit, and the complete S(T,p) without loss.",
+      "scope": "Finite ordinary trees T with |T|=2p+2; exact fixed-p state/evaluation framework only. It is not a uniform finite kernel across p and implies no sign for S.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-2/C2-U6/REPORT.md"],
+      "reason": "The rooted include/exclude recurrence is exact; induced-tree deletion polynomials factor over the remaining forest components, and the listed per-tag profiles directly compute the original selector and each summand while preserving repeated support tags."
+    },
+    {
+      "claim_id": "C2-U6.shell-vertex-cover-bound",
+      "statement": "Every first-order shell tree satisfying 3p<2alpha(T)+1 has tau(T)=|T|-alpha(T)<=floor(p/2)+2.",
+      "scope": "Finite ordinary trees with |T|=2p+2 and the strict lower-region guard; a necessary bound only.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-2/C2-U6/REPORT.md"],
+      "reason": "The guard implies alpha(T)>=floor((3p+1)/2); subtracting this from 2p+2 gives floor(p/2)+2 for even and odd p."
+    },
+    {
+      "claim_id": "C2-U6.primary-shell-open",
+      "statement": "The complete selected-sum inequality S(T,p)<=0 for every eligible first-order shell tree remains unresolved by this route.",
+      "scope": "Ordinary T with |T|=2p+2, x(T)+2<=p, and 3p<2alpha(T)+1; selector and supports are those of the original tree.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-2/C2-U6/REPORT.md"],
+      "reason": "The exact state representation preserves the target but gives neither a uniform kernel nor a sign bound or positive realizable witness."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-U6/REPORT.md",
+  "limitations": [
+    "The finite state space is only finite separately for each fixed p; its size grows with p.",
+    "No selector-preserving compression, cross-support cancellation inequality, universal shell proof, or counterexample is established."
+  ],
+  "status_authority": "proposed_worker_only"
+}

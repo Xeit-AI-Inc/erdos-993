@@ -1,0 +1,38 @@
+{
+  "worker_id": "C6-T1",
+  "cycle": 6,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C6-T1-TM-CUTOFF400",
+      "statement": "For the ordinary-tree family T_m consisting of one root-adjacent P3 arm and m root-adjacent K1,3 arms, for every m>=1 and every integer p satisfying x(T_m)+2<=p and 3p<2*alpha(T_m)+1, the complete original favorable-leaf sum satisfies S(T_m,p)<0.",
+      "scope": "Only this explicitly defined T_m family, with original leaves, original supports, the fixed selector F(T_m,p), distinct leaf tags, and the strict lower-region guard. The proof is a computer-assisted exact family proof with an analytic tail; it makes no claim for arbitrary trees.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-T1/REPORT.md",
+        "cycles/cycle-6/C6-T1/cutoff400_audit.py",
+        "cycles/cycle-6/C6-T1/EVIDENCE.json"
+      ],
+      "reason": "The graph and tagged-polynomial formulas are derived for every m; a direct derivative inequality supplies x>=m+1 for m>=2 and exact m=1,2 rows are ineligible. The three central LC and mixed-minor families are checked by exact integers for 3<=m<400 and proved analytically for m>=400 using the explicitly bridged Gurvits finite-order ULC theorem. The selector is shown to include every original leaf and the complete sum reduces to a strict R coefficient descent. The finite base is not kernel-checked and the result is family-specific."
+    },
+    {
+      "claim_id": "C6-T1-TM-DIRECT-FIRST-DESCENT",
+      "statement": "For the defined family T_m, x(T_m)>=m+1 for every m>=2, without using the R27 forest-order theorem.",
+      "scope": "Only first-descent location for the T_m independence polynomial; m=1 is handled as a separate exact ineligible case.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-T1/REPORT.md",
+        "cycles/cycle-6/C6-T1/EVIDENCE.json"
+      ],
+      "reason": "The factor derivative inequalities give strict coefficient increase through rank m for (1+2z)B^m, and the root-included term z(1+z)^(3m+1) is also strictly increasing through that range. Therefore no Delta_j is negative for j<=m."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-T1/REPORT.md",
+  "limitations": [
+    "The family conclusion applies only to the specified T_m graphs and does not resolve the arbitrary ordinary-tree primary claim.",
+    "The finite base is exact integer computation and has no Lean/kernel certificate.",
+    "Poisson-ULC convolution closure uses a primary finite-order theorem and an informal limiting bridge that has not been formalized."
+  ],
+  "status_authority": "proposed_worker_only"
+}

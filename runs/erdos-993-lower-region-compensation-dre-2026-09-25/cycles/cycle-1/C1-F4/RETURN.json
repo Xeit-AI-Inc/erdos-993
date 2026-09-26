@@ -1,0 +1,25 @@
+{
+  "worker_id": "C1-F4",
+  "cycle": 1,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C1-F4-1",
+      "statement": "For the symmetric root-hub family with 2<=m<=6, 1<=d<=4, and 2<=L<=5, all 151 eligible lower-region parameter rows across 80 trees have strictly negative complete fixed-selector aggregate; no positive row occurs in this bounded census.",
+      "scope": "Finite exact census only for one root joined to m identical hubs, each carrying d pendant paths of L edges, within the stated parameter box. No conclusion is claimed beyond this box or family.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-F4/evidence/census.json",
+        "cycles/cycle-1/C1-F4/evidence/symmetric_hub_census.py"
+      ],
+      "reason": "An exact replay script constructs all 80 ordinary trees, obtains integer independence polynomials by the pinned forest dynamic program, checks x through alpha with zero extension, applies the strict Delta_p(T-v)<0 selector to each original leaf, and computes the entire selected sum for every eligible p. Its output records 151 negative rows and no zero or positive rows."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-F4/REPORT.md",
+  "limitations": [
+    "This bounded census neither proves the target nor supplies a positive complete-sum witness.",
+    "Only symmetric hub branches and the finite parameter ranges recorded in the claim were examined; no asymptotic estimate, mixed-branch search, or universal sign argument is established."
+  ],
+  "status_authority": "proposed_worker_only"
+}

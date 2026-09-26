@@ -1,0 +1,147 @@
+{
+  "worker_id": "C6-AT",
+  "cycle": 6,
+  "stage": "adjudication",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "C6-T1-TM-CUTOFF400",
+      "statement": "For the specified T_m ordinary trees with one root-adjacent length-two arm and m root-adjacent three-tip stars, m>=1, every p with x(T_m)+2<=p and 3p<2alpha(T_m)+1 has full original favorable-leaf sum S(T_m,p)<0.",
+      "scope": "Only T_m, the strict original selector and all 3m+1 distinct leaf tags; exact finite m=3..399 base plus analytic m>=400 tail and primary ULC convolution import. No arbitrary-tree or Lean family conclusion.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-AT/REPORT.md",
+        "cycles/cycle-6/C6-AT/T1-REPLAY.json",
+        "cycles/cycle-6/C6-AT/t1_cutoff_replay.py"
+      ],
+      "reason": "retained_narrowed: the source report misindexed an individual q summand, but its pooled formula S=R_(p-1)-R_(p-2) is correct. Both critics confirm graph/selector fidelity, central margins and finite replay; the direct first-descent proof and analytic tail close the family scope."
+    },
+    {
+      "claim_id": "C6-T1-TM-DIRECT-FIRST-DESCENT",
+      "statement": "For the stated T_m family and every m>=2, x(T_m)>=m+1.",
+      "scope": "First-descent location for T_m only; m=1 is an exact ineligible separate case.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-AT/REPORT.md",
+        "cycles/cycle-6/C6-AT/T1-REPLAY.json"
+      ],
+      "reason": "retained_narrowed: correct the displayed G derivative comparison vector to (2/3,0). The coefficientwise inequality and product rule remain valid and give strict increase through j=m without the R27 forest bound."
+    },
+    {
+      "claim_id": "E993-ORDINARY-PATH-STAR-ARITY-2-4-M2000-LOWER-REGION-AGGREGATE",
+      "statement": "For path 0-1-2 with m>=2000 root-attached private-star centers and arbitrary arities r_i in {2,3,4}, every eligible strict-lower-region p has complete original favorable-leaf sum S(T,p)<0.",
+      "scope": "Only that heterogeneous path-star family, m>=2000, every listed profile and eligible p; distinct original endpoint and tip tags. Prefix m<2000, other trees, and Lean family certification remain outside scope.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-AT/REPORT.md",
+        "cycles/cycle-6/C6-AT/T2-REPLAY.json",
+        "cycles/cycle-6/C6-AT/t2_cutoff_replay.py"
+      ],
+      "reason": "retained_narrowed: the correct weighted sign needs descent of each pooled Zi at p-2; the proof propagates from x through that rank. Correct marked perturbation normalization b=tL^N yields the stated 53252 bound under the controlling 26776 condition. B1 and common-versus-raw H_i degree scopes are explicit. Both critics retained the theorem; an unperformed full envelope rederivation is not a counterexample."
+    },
+    {
+      "claim_id": "E993-ORDINARY-PATH-STAR-ARITY-2-12-M100000000-LOWER-REGION-AGGREGATE",
+      "statement": "For path 0-1-2 with m>=100000000 root-attached private-star centers and arbitrary arities 2<=r_i<=12, every eligible strict-lower-region p has complete original favorable-leaf sum S(T,p)<0.",
+      "scope": "Only that path-star family with the displayed cutoff, all original distinct tips and endpoint, fixed selector and exact guards; prefix, other arities, arbitrary trees and Lean family certification excluded.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-AT/REPORT.md",
+        "cycles/cycle-6/C6-AT/T3-REPLAY.json",
+        "cycles/cycle-6/C6-AT/t3_factor_replay.py"
+      ],
+      "reason": "retained_narrowed: the producer’s individual identity q_tip=zZi is false and is replaced by q_tip=z[(1+2z)F_r H_i+L^N]. The pooled identity sum q=z sum_i r_i Zi is correct. I checked the uniform falling-factorial and envelope-to-C bounds left unperformed by CU; exact 121-pair ULC and cutoff replays plus selector transfer close this restricted theorem. CF retained it; incomplete review is not refutation."
+    },
+    {
+      "claim_id": "C6-T4-MATCHING-SLACK-DECOMPOSITION",
+      "statement": "For every eligible ordinary tree with fixed original favorable selector, each marked k-set addability deficit equals 2(h-k-alpha(U_v(A))) plus the number of vertices unmatched by a maximum matching of its induced addable forest; consequently kS=(2a+1-3p)Q-D-C.",
+      "scope": "Universal exact identity/reduction only, with k=p-1, h=a-1, actual addable vertices, and C counting each multiply-marked upper set once per selected tag; it does not prove the positive-coefficient budget.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-AT/REPORT.md"
+      ],
+      "reason": "retained: bipartite matching-cover equality gives alpha(U)=|U|-nu and the marked extension incidence count gives sum e=kUcount+C. Both critics checked the exact algebra, including unmatched vertices and distinct tags."
+    },
+    {
+      "claim_id": "C6-T4-T22-ELIGIBLE-CROSS-TAG-CHECK",
+      "statement": "For T_22 at p=34, a=68, x=32, all 67 original leaves are favorable; one endpoint tag is +212336130412243110, each of 66 other tags is -7560098737536570631, and full S=-498754180547001418536.",
+      "scope": "One exact 91-vertex tree and rank with both eligibility guards; bounded forest-DP evidence, no census or universal inference.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-AT/REPORT.md"
+      ],
+      "reason": "retained: both critics scratch-replayed the original graph, zero-extended first descent, exact selector, each tag type, full sum and incidence identity. The positive local term is compensated in the complete selected sum."
+    },
+    {
+      "claim_id": "C6-T4-UNIFORM-COMPENSATION-OPEN",
+      "statement": "The T4 route leaves unproved and unrefuted the arbitrary-tree budget D+C>=(2alpha(T)+1-3p)Q for the original strict selector, equivalent to S(T,p)<=0.",
+      "scope": "All eligible finite ordinary trees; statement records this route’s unresolved proof obligation, not a theorem of nonexistence or authoritative registry verdict.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-AT/REPORT.md"
+      ],
+      "reason": "retained_narrowed: matching slack and one T22 check do not yield the required global estimate. Both critics agree; no complete positive-sum counterexample was supplied."
+    },
+    {
+      "claim_id": "C6-T5.ORBIT-QUOTIENT-LIFT",
+      "statement": "For a finite group preserving a finite bipartite relation and orbit-constant nonnegative integer supplies/capacities, a source-saturating integral orbit quotient flow lifts to a source-saturating integral original flow. For T_m, the stated wreath-product states and deletion/two-for-one adjacency are exact for every m>=1; the three frozen quotient flows at (m,p)=(22,34),(60,90),(66,98) pass literal relation, selector and full-sum checks.",
+      "scope": "General finite-group theorem under invariant weights and exact quotient adjacency; all-m T_m orbit/transition classification; numerical applications strictly limited to the three listed rows, with no all-m flow feasibility or arbitrary-tree result.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-AT/REPORT.md"
+      ],
+      "reason": "retained: invariant maximization of the supermodular Hall deficit gives the lift, the T_m neighborhood cases exhaust the relation, and both critics verified three pinned primal flows. CF’s m=60 lower-capacity decimal in prose is a transcription error; its replay record and CU agree on the correct value."
+    },
+    {
+      "claim_id": "C6-T6-EQUAL-THREE-SPIDER-REDUCTION",
+      "statement": "For the equal-length-three spider S_m, m>=2, P_m=Q^m+zV^m, each endpoint deletion is VQ^(m-1)+z(1+z)V^(m-1), and each original leaf marked difference is zQ^(m-1), so when all m endpoints are selected S=m Delta_(p-2)Q^(m-1). The producer’s exact census for m=2..60 has 532 eligible negative rows, including m=6,p=8 with S=-2130.",
+      "scope": "All-m graph and tag formulas; bounded computation only for 2<=m<=60; producer did not prove the uniform crossing or selector theorem. Root-origin later proofs are separate claim identities.",
+      "status": "proposed_partial",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-AT/REPORT.md"
+      ],
+      "reason": "retained_narrowed: correct the producer’s prose that the root-excluded pendant has polynomial V; it is L. The displayed q and bounded arithmetic survive. CU preserves the producer’s bounded scope; CF’s RETURN improperly widens this ID by associating later root appendices."
+    },
+    {
+      "claim_id": "C6-ROOT-SPIDER-EXACT-MODE",
+      "statement": "For the ordinary equal-length-three spider S_m with m>=2, P_m=(1+3z+z²)^m+z(1+2z)^m is strictly increasing to rank m and strictly decreasing from m through the terminal nonzero rank 2m; its unique mode and first strict descent are x(S_m)=m.",
+      "scope": "Root-origin post-critique appendix, separately attributed from C6-T6; exact equal-arm length-three spider family m>=2 only, with zero extension and no novelty or arbitrary-tree claim.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-AT/REPORT.md"
+      ],
+      "reason": "retained: the elementary trinomial-power induction, quantitative retained binomial term, strict symmetric Q tail and explicit perturbation differences prove all indices. Both critics audited this root proof. CU’s Delta_0(P)=3m+1 typo is corrected to 3m; the conclusion remains."
+    },
+    {
+      "claim_id": "C6-ROOT-SPIDER-LOWER-REGION-AGGREGATE",
+      "statement": "For S_m, m>=2, exact eligibility is m+2<=p<=floor(4m/3), nonempty iff m>=6; every original endpoint is strictly favorable and the complete sum is S(S_m,p)=m Delta_(p-2)(1+3z+z²)^(m-1)<0.",
+      "scope": "Root-origin post-critique proof, separately attributed from producer; only equal-arm length-three ordinary spiders and exact original fixed selector, all m distinct tags. No arbitrary-tree, unequal-spider, governed-tree or Lean claim.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-AT/REPORT.md"
+      ],
+      "reason": "retained: strict decrease of Q^(m-1) makes each tagged term negative; the deletion perturbation ends before eligible p and strict tail descent makes every endpoint selected. Exact x=m from the separate root mode proof gives the eligible window. Both critics accepted the elementary proof; the alternative injection and finite census are corroborative, not premises."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-AT/REPORT.md",
+  "limitations": [
+    "The arbitrary ordinary-tree lower-region aggregate remains unresolved; T4 gives only an equivalent weighted budget.",
+    "T1, T2 and T3 are restricted computer-assisted or exact-factor plus analytic family proofs using Gurvits finite-order ULC convolution; no family Lean certificate was produced.",
+    "The T2 prefix m<2000, T3 prefix m<100000000, other arities and arbitrary trees are outside their exact conclusions.",
+    "T5 quotient feasibility is checked only for the three frozen rows; its all-m orbit description does not supply an all-m flow.",
+    "T6 producer evidence remains bounded. The all-m spider mode and aggregate proofs are separately attributed root-origin appendices with no broader-tree extension or novelty claim."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-ROOT-SPIDER-EXACT-MODE",
+    "C6-ROOT-SPIDER-LOWER-REGION-AGGREGATE",
+    "C6-T1-TM-CUTOFF400",
+    "C6-T1-TM-DIRECT-FIRST-DESCENT",
+    "C6-T4-MATCHING-SLACK-DECOMPOSITION",
+    "C6-T4-T22-ELIGIBLE-CROSS-TAG-CHECK",
+    "C6-T4-UNIFORM-COMPENSATION-OPEN",
+    "C6-T5.ORBIT-QUOTIENT-LIFT",
+    "C6-T6-EQUAL-THREE-SPIDER-REDUCTION",
+    "E993-ORDINARY-PATH-STAR-ARITY-2-12-M100000000-LOWER-REGION-AGGREGATE",
+    "E993-ORDINARY-PATH-STAR-ARITY-2-4-M2000-LOWER-REGION-AGGREGATE"
+  ]
+}

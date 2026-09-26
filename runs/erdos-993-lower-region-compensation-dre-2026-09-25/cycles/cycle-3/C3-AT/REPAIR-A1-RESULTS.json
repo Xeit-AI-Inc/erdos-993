@@ -1,0 +1,72 @@
+{
+  "producerID": "C3-AT-REPAIR-A1",
+  "status_authority": "proposed_worker_only",
+  "source_hash_verification": {
+    "brief": "control/C3-AT-REPAIR-A1.json",
+    "listed_source_count": 192,
+    "matched_count": 192,
+    "mismatch_count": 0
+  },
+  "claimID": "C3-T6-T4-PENDANT-GRAFT-SELECTOR-CLOSURE",
+  "original_disposition_proposed": "rejected as written: the asserted complete selectors and full sums omit original leaf 2",
+  "replacement_status": "proposed_bounded_computation",
+  "replacement_statement": "At p=9, the specified T4 and its single pendant graft at vertex 0 have alpha=14 and x=7, satisfy 27<29, and have complete strict selectors of 13 and 14 original leaves. All 13 old leaves remain favorable and new leaf 19 is favorable. Their complete S values are -10089 and -17280 respectively.",
+  "scope": "Exactly the two encoded 19- and 20-vertex ordinary trees at p=9; no general graft or universal aggregate theorem",
+  "cases": [
+    {
+      "tree": "T4",
+      "order": 19,
+      "edges": 18,
+      "alpha": 14,
+      "x": 7,
+      "p": 9,
+      "strict_selector": [2, 4, 5, 6, 8, 9, 10, 12, 13, 14, 16, 17, 18],
+      "M": 8674,
+      "Q_at_8": 21528,
+      "Q_at_9": 11439,
+      "S": -10089
+    },
+    {
+      "tree": "T4_plus_root_leaf_19",
+      "order": 20,
+      "edges": 19,
+      "alpha": 14,
+      "x": 7,
+      "p": 9,
+      "strict_selector": [2, 4, 5, 6, 8, 9, 10, 12, 13, 14, 16, 17, 18, 19],
+      "M": 20034,
+      "Q_at_8": 40782,
+      "Q_at_9": 23502,
+      "S": -17280
+    }
+  ],
+  "omitted_old_leaf_2": {
+    "support": 1,
+    "selector_before": -850,
+    "selector_after": -1758,
+    "q_8_each": 792,
+    "q_9_each": 495,
+    "summand_each": -297
+  },
+  "surviving_exact_recurrence": "I(G+;z)=I(G;z)+zI(G-0;z); for old leaf v, Delta_9(G+-v)=Delta_9(G-v)+Delta_8(G-{v,0})",
+  "unaffected_claim_ids": [
+    "C3-T1.COVER-BUDGET-AND-FIRST-MARK-SUBCLASS",
+    "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL",
+    "C3-T3-STAR-SYMMETRIC-CHAIN-SUBCASE",
+    "C3-T3-T67-EXACT-BOUNDED-ROW",
+    "C3-T4-ODD-SHELL-REDUCTION",
+    "T5-TM-COEFFICIENT-IDENTITY",
+    "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE"
+  ],
+  "specific_unaffected_repairs": {
+    "T2_selected_root_term": "unaffected; remains required in the rooted weight identity",
+    "T4_isolated_mark_classification": "unaffected; the corrected boundary inventory including isolated marks remains required"
+  },
+  "limitations": [
+    "The exact computation covers only these two trees at p=9.",
+    "No general pendant-graft selector closure or potential inequality is proved.",
+    "Neither corrected sum is positive; the universal primary aggregate remains open.",
+    "No controller or registry authority is claimed."
+  ],
+  "evidence_files": ["REPORT.md", "EVIDENCE.json", "INDEPENDENT-AUDIT.py"]
+}

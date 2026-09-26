@@ -1,0 +1,5 @@
+def Erdos993G1.residual {V : Type u}
+    (T : SimpleGraph V) (v g : V) :=
+  Erdos993G1.deleteVerts T
+    (Erdos993G1.closedNeighborhood T v ∪ Erdos993G1.closedNeighborhood T g)
+

@@ -1,0 +1,42 @@
+{
+  "worker_id": "C4-CU-T6",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C4-T6-ROOTED-MESSAGE-REDUCTION",
+      "statement": "The rooted independence-polynomial message identities in the assigned route correctly evaluate the stated deletion polynomials and tagged leaf summands for finite ordinary trees.",
+      "scope": "All finite ordinary trees; each original leaf remains a separate tag, including multiple leaves with one support. The identities are polynomial identities and imply no aggregate sign.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CU-T6/EVIDENCE.json",
+        "cycles/cycle-4/C4-CU-T6/REPORT.md"
+      ],
+      "reason": "retained — Independent root/branch decomposition verifies the component recurrence and all three leaf-tagged deletion products, including empty products and same-support multiplicity. A three-leaf-star hand calculation confirms the coefficient arithmetic locally."
+    },
+    {
+      "claim_id": "C4-T6-PRIMARY-GLOBAL-BOUND",
+      "statement": "The assigned recurrence establishes neither the lower-region aggregate bound nor an eligible positive full-sum counterexample.",
+      "scope": "The route's proposed evaluator for contract-eligible finite ordinary trees satisfying x(T)+2<=p and 3p<2 alpha(T)+1; no conclusion about evidence outside this route.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CU-T6/EVIDENCE.json",
+        "cycles/cycle-4/C4-CU-T6/REPORT.md"
+      ],
+      "reason": "retained_narrowed — The exact evaluator does not provide a uniform comparison after the fixed selectors are applied, and no eligible positive aggregate is supplied. This route's failure to resolve the claim is not a refutation and cannot by itself establish the global registry status."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CU-T6/REPORT.md",
+  "limitations": [
+    "No uniform compositional inequality or invariant was found.",
+    "The hand check is a local formula validation, not an eligible aggregate computation.",
+    "No exhaustive search, source replay, external literature bridge, or Lean build was performed.",
+    "The review covers exactly the two source claims listed in the assigned route; no global verdict is awarded."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-T6-PRIMARY-GLOBAL-BOUND",
+    "C4-T6-ROOTED-MESSAGE-REDUCTION"
+  ]
+}

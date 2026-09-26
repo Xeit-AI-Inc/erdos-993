@@ -1,0 +1,132 @@
+{
+  "worker_id": "C3-PREP-INTAKE",
+  "status_authority": "proposal_to_controller_only",
+  "task_scope": "bounded Cycle3 identity, lens, correction and proof intake review",
+  "brief_sha256": "7299bafdf8425d2c9b6475b31b9db5cc8816eb16a719e524cbb636989813e8f0",
+  "source_hashes": {
+    "listed": 34,
+    "matched": 34,
+    "all_match": true,
+    "paths": [
+      "SOLUTION-CONTRACT.md",
+      "WORKER-PROTOCOL.md",
+      "control-proposals/C3-ALLOCATION-DRAFT.md",
+      "control-proposals/C3-NEW-CLAIMS-DRAFT.json",
+      "control-proposals/C3-COUNTEREXAMPLE-GATE-DRAFT.md",
+      "inputs/r29-refresh/CLAIM-IDENTITY.json",
+      "inputs/TRANSITIVE-REFUTED-CLAIMS.json",
+      "cycles/cycle-2/C2-SYNTHESIS/REPORT.md",
+      "control-proposals/first-shell-candidate/PROOF.md",
+      "control-proposals/LOWER-RANK-LE7-COMPOSITION.md",
+      "control-proposals/SWITCH-IDENTITY-REVIEW-READING-NOTE.md",
+      "preparation/C2-PREP-SHELL-AUDIT-R2/LEDGER.csv",
+      "preparation/C2-PREP-SHELL-AUDIT-R2/REPORT.md",
+      "preparation/C2-PREP-SHELL-AUDIT-R2/INDEPENDENT-CHECK.json",
+      "preparation/C2-PREP-SHELL-AUDIT-R2/RESULTS.json",
+      "preparation/C2-PREP-SHELL-AUDIT-R2/HASHES.json",
+      "preparation/C2-PREP-SHELL-AUDIT-R2/LOOP-STATE.md",
+      "preparation/C2-PREP-SHELL-AUDIT-R2/ESCALATIONS.md",
+      "preparation/C2-PREP-SHELL-AUDIT-R2/independent_check.py",
+      "preparation/C2-PREP-SHELL-FORMAL-INTAKE/SOURCES.json",
+      "preparation/C2-PREP-SHELL-FORMAL-INTAKE/REPORT.md",
+      "preparation/C2-PREP-SHELL-FORMAL-INTAKE/RESULTS.json",
+      "preparation/C2-PREP-SWITCH-IDENTITY/REPORT.md",
+      "preparation/C2-PREP-SWITCH-IDENTITY/RESULTS.json",
+      "preparation/C2-PREP-ORBIT-AUDIT/LEDGER.csv",
+      "preparation/C2-PREP-ORBIT-AUDIT/audit.py",
+      "preparation/C2-PREP-ORBIT-AUDIT/REPORT.md",
+      "preparation/C2-PREP-ORBIT-AUDIT/RESULTS.json",
+      "preparation/C2-PREP-ORBIT-AUDIT/independent-evidence.json",
+      "preparation/C2-PREP-ORBIT-AUDIT/LOOP-STATE.md",
+      "preparation/C2-PREP-ORBIT-AUDIT/ESCALATIONS.md",
+      "preparation/C2-PREP-P6-SWITCH-AUDIT/audit.py",
+      "preparation/C2-PREP-P6-SWITCH-AUDIT/REPORT.md",
+      "preparation/C2-PREP-P6-SWITCH-AUDIT/RESULTS.json"
+    ]
+  },
+  "identity_review": {
+    "artifact": "IDENTITY-REVIEW.json",
+    "registered_keys": 415,
+    "refuted_keys": 92,
+    "pairwise_not_same_claim_decisions": 1245,
+    "exact_key_or_statement_collisions": 0,
+    "r29_scope_note_extensions": [
+      "E993-BETA-TARGET",
+      "E993-BETA-AGG-SUPPORT",
+      "E993-C3-G1-POINTWISE-ADDABILITY-BOUND"
+    ]
+  },
+  "prospective_intake": [
+    {
+      "claim_key": "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL",
+      "identity_gate": "PASS",
+      "open_registration_gate": "PASS",
+      "proof_award_gate": "FAIL",
+      "reason": "Exact changed ordinary-tree complete-clone deletion and two-for-one relation is semantically distinct from old refuted tagged relations; finite flows and an inconclusive CB envelope do not prove universality."
+    },
+    {
+      "claim_key": "E993-FIRST-ORDER-SHELL-POINTWISE-EARLY-DESCENT",
+      "identity_gate": "PASS",
+      "open_registration_gate": "PASS",
+      "proof_award_gate": "FAIL",
+      "reason": "Exact shell-order early-descent pointwise strengthening is distinct; informal proof passes this mathematical scope audit conditional on the reported pinned first-wide theorem, with no Lean build or new formal award."
+    },
+    {
+      "claim_key": "E993-LOWER-REGION-AGGREGATE-RANK-LE-SEVEN",
+      "identity_gate": "PASS",
+      "evidence_backed_intake_gate": "FAIL",
+      "proof_award_gate": "FAIL",
+      "reason": "Order partition is valid conditional on M(1..5) and residual censuses, but this packet lacks direct n17/18 census manifests and final C2-F1 disposition; census grade must remain explicit."
+    }
+  ],
+  "mathematical_findings": {
+    "shell_cover_threshold": "n=2p+2 and x+2<=p exclude covers of size <=3; each leaf-deleted H has cover >=3",
+    "c2_correction": "isolated second first-mark root yields a second possible order-2k residual; prior first-root-only bound cannot be used",
+    "rank_le7_residual_orders": {
+      "p6": [
+        14,
+        15
+      ],
+      "p7": [
+        16,
+        17,
+        18
+      ]
+    },
+    "source_reported_residual_eligible_counts": {
+      "p6": 241,
+      "p7": 4991
+    },
+    "changed_flow_implication": "saturation implies full scalar S<=0; converse not established"
+  },
+  "allocation": {
+    "search_routes": 18,
+    "orientation_counts": {
+      "T": 6,
+      "F": 6,
+      "U": 6
+    },
+    "critics": 36,
+    "adjudicators": 3,
+    "synthesis": 1,
+    "cycles_authorized": 6,
+    "worker_models_preserved": true
+  },
+  "primary_status_recommendation": "remain unresolved and OPEN",
+  "governed_status_recommendation": "remain separate and OPEN",
+  "formal_award": false,
+  "expensive_computation_repeated": false,
+  "lean_run": false,
+  "limitations": [
+    "No direct p7 n17/18 census instruments or C2-F1 final adjudication in the allowed packet.",
+    "The first-wide Lean source itself was not listed; its exact theorem is used through the pinned audit report, not independently rebuilt.",
+    "Finite flow certificates and negative sums do not prove universal Hall saturation or the unrestricted primary.",
+    "Every statement is a proposal to the controller; no source or registry status was changed."
+  ],
+  "artifacts": {
+    "report": "REPORT.md",
+    "identity_matrix": "IDENTITY-REVIEW.json",
+    "identity_matrix_sha256": "1b3e392a0abca792fcb6e4703b6ed0a1bbc86230a2ae1be05b02064439ebc000",
+    "matrix_builder": "build_identity_review.py"
+  }
+}

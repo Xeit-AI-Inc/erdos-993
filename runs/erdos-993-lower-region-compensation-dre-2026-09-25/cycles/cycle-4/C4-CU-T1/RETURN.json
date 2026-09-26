@@ -1,0 +1,42 @@
+{
+  "worker_id": "C4-CU-T1",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C4-T1-CTx-SUFFICIENT-REDUCTION",
+      "statement": "Under the target hypotheses and for the fixed favorable selector, the aggregate bridge i_x(T)E <= (x+1)i_(x+1)(T)Q implies S(T,p) <= 0.",
+      "scope": "Ordinary finite trees, x+2<=p, 3p<2alpha(T)+1, k=p-1, with E, C, Q and U summed over every selected original leaf tag as defined in the route and contract. The universal bridge premise remains unproved.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CU-T1/REPORT.md"
+      ],
+      "reason": "retained — the marked-extension double count gives E=kU+C and kS=E-C-kQ. First descent and k>=x+1 show the proposed bridge forces E<kQ when Q>0; Q=0 forces U=0. This verifies only the conditional implication, not its universal premise."
+    },
+    {
+      "claim_id": "C4-T1-ORDER24-POSITIVE-MARKED-ADDABILITY-COVARIANCE",
+      "statement": "The stated eligible order-24 ordinary-tree instance has positive uniform-rank-9 covariance between meeting W and actual addability in H for selected original leaf tag v=0.",
+      "scope": "The exact 23-edge tree, alpha=15, x=8, p=10, k=9, and leaf v=0 specified in the pinned C4-T1 case; this is a local covariance statement and not a positive aggregate witness.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CU-T1/INDEPENDENT-EVIDENCE.json",
+        "cycles/cycle-4/C4-CU-T1/REPLAY.py",
+        "cycles/cycle-4/C4-CU-T1/SOURCE-REPLAY.json"
+      ],
+      "reason": "retained — independent polynomial recurrence reconstructs the tree, all original leaves, strict selectors, and full S=-51095; literal rank-9 enumeration gives E_v=58429 and covariance numerator 1,773,113>0. The full aggregate is negative, so the local witness does not refute the target."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CU-T1/REPORT.md",
+  "limitations": [
+    "The universal CT_x budget and primary aggregate remain unresolved.",
+    "Direct independent addability enumeration was performed for the v=0 covariance witness; other per-tag E and C values were reproduced only by replaying the route computation from a scratch copy.",
+    "The bounded order-8 census and seeded random search do not establish universal statements.",
+    "No literature theorem was imported."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-T1-CTx-SUFFICIENT-REDUCTION",
+    "C4-T1-ORDER24-POSITIVE-MARKED-ADDABILITY-COVARIANCE"
+  ]
+}

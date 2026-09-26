@@ -1,0 +1,30 @@
+{
+  "worker_id": "C4-CT-U5",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C4-U5-SUPPORT-POLYNOMIAL-REDUCTION",
+      "statement": "For every finite ordinary tree and each fixed integer p >= 2, the full original-leaf selected aggregate has the support-indexed polynomial expression in EVIDENCE.json, and rooted independence-polynomial messages truncated through degree p+1, together with alpha and directed-edge branch messages, suffice to compute its selector and summands exactly.",
+      "scope": "Retained as an exact algebraic reduction and fixed-rank computation statement only; no assertion that S(T,p)<=0, no constant-size state uniform in p or tree order, and no context-closed compressed induction state.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CT-U5/EVIDENCE.json",
+        "cycles/cycle-4/C4-CT-U5/REPORT.md"
+      ],
+      "reason": "retained: independent partition-at-support derivations establish both polynomial identities, preserve every same-support leaf through its multiplicity, and the coefficient ranges and rooted recurrences suffice for the stated fixed-p selector, summands, and eligibility checks."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CT-U5/REPORT.md",
+  "limitations": [
+    "The primary lower-region aggregate inequality remains unresolved by this critique.",
+    "The retained reduction does not prove a global sign or compensation bound.",
+    "The fixed-p polynomial-vector recurrence is not a constant-size state independent of p or tree order.",
+    "No computational census, source replay, or external literature search was used."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-U5-SUPPORT-POLYNOMIAL-REDUCTION"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "worker_id": "C4-CF-U2",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C4-U2-MARKED-SHELL-REDUCTION",
+      "statement": "Conditionally, for n(T)=2p+s with p>=3 and s>=2, if tau(T)>=ceil(3s/2)+1 and p-2>=K(d) for every first-mark residual block with d>=3, then each original-leaf term Delta_(p-1)(T-{v,s_v})-Delta_(p-1)(T-N_T[s_v]) is nonpositive, using the stated inherited matching theorem and exact d=2 first-wide result. The stated s=5 terminal-rank Catalan estimate does not force the analogous cover threshold.",
+      "scope": "Conditional pointwise shell reduction and method cutoff only. It does not establish the parent cover or residual rank hypotheses for every eligible tree and does not resolve or refute the registered lower-region favorable-leaf aggregate.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CF-U2/AUDIT.json"
+      ],
+      "reason": "retained_narrowed: the ordered first-mark partition, cover-loss bound, residual matching arithmetic, rank condition, and s=5 cutoff check out at the displayed scope. The matching theorem and d=2 boundary are inherited dependencies; neither the parent cover threshold nor the global aggregate follows unconditionally."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CF-U2/REPORT.md",
+  "limitations": [
+    "The parent cover threshold is not established for every eligible tree; the s=4, p=10..13 low-cover cases remain outside this reduction.",
+    "The residual rank condition for blocks with d>=3 is explicit and is not supplied by the cover-loss calculation.",
+    "The large-rank matching theorem and d=2 first-wide boundary result are inherited and were not reproved in this critique.",
+    "No new finite graph census or source-code replay was performed, and the registered aggregate remains unresolved by this conditional route."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-U2-MARKED-SHELL-REDUCTION"
+  ]
+}

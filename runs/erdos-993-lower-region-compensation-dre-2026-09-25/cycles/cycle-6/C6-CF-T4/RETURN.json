@@ -1,0 +1,55 @@
+{
+  "worker_id": "C6-CF-T4",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C6-T4-MATCHING-SLACK-DECOMPOSITION",
+      "statement": "For each selected tag and marked k-set in the fixed selector, the slack 2(h-k)-e on its induced addable forest equals 2(h-k-alpha(U)) plus the number of vertices unmatched by a maximum matching; the marked-extension identity reduces the target to a global weighted lower bound including these terms and the multiply-marked correction C.",
+      "scope": "All eligible ordinary trees with h=alpha(T)-1, k=p-1, and the unchanged original F(T,p); this is an exact decomposition and reduction, not a proof of the global budget.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CF-T4/REPORT.md",
+        "cycles/cycle-6/C6-CF-T4/critic_evidence.json"
+      ],
+      "reason": "Disposition: retained. The induced addable graph is a forest and hence bipartite; König's identity and alpha(U)<=h-k give the exact formula. The extension count charges multiply-marked upper sets once per tag."
+    },
+    {
+      "claim_id": "C6-T4-T22-ELIGIBLE-CROSS-TAG-CHECK",
+      "statement": "For the stated 91-vertex T_22 tree at p=34, the strict selector is eligible, has 67 leaves, and has complete aggregate S=-498754180547001418536 despite a positive marked-arm summand +212336130412243110.",
+      "scope": "One exact T_22 tree and rank only; bounded exact tree-DP computation.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CF-T4/replay_t22.py",
+        "cycles/cycle-6/C6-CF-T4/replay_t22_output.json",
+        "cycles/cycle-6/C6-CF-T4/critic_evidence.json"
+      ],
+      "reason": "Disposition: retained. Scratch replay exactly matches the pinned evidence, confirms x=32, alpha=68 and both strict eligibility guards, and verifies the full selected sum and incidence identity. This is neither an aggregate counterexample nor a universal proof."
+    },
+    {
+      "claim_id": "C6-T4-UNIFORM-COMPENSATION-OPEN",
+      "statement": "The route does not prove or refute the arbitrary-tree lower-region aggregate; its matching decomposition leaves the weighted lower bound D+C >= (2alpha(T)+1-3p)Q unresolved.",
+      "scope": "The exact arbitrary ordinary-tree claim under the contract's unchanged selector and guards; limited to what this route establishes.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CF-T4/REPORT.md",
+        "cycles/cycle-6/C6-CF-T4/critic_evidence.json"
+      ],
+      "reason": "Disposition: retained_narrowed. This accurately records the route's missing estimate and the contract's current OPEN status, but says nothing about whether a proof exists elsewhere."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CF-T4/REPORT.md",
+  "limitations": [
+    "The route's matching decomposition does not establish the required uniform global compensation bound.",
+    "The T_22 replay is one bounded eligible instance, not a census or universal result.",
+    "The all-m orbit lift and arbitrary-tree matching transport were not proved; relevant graph and relation source files were present and inspected.",
+    "The proposed dispositions are critic findings only and carry no authoritative status."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-T4-MATCHING-SLACK-DECOMPOSITION",
+    "C6-T4-T22-ELIGIBLE-CROSS-TAG-CHECK",
+    "C6-T4-UNIFORM-COMPENSATION-OPEN"
+  ]
+}

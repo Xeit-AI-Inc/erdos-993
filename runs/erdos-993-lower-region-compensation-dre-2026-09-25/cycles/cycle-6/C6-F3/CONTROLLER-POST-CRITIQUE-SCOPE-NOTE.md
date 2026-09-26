@@ -1,0 +1,5 @@
+# Root appendix for independent F adjudication; no award
+
+The producer and both opposing reviewers retain only checked portions of the arity12 candidate, without a specific counterexample. Their unperformed estimates are not evidence that the inequalities fail. The attached root-origin envelope derivation makes those steps explicit; it is a byte-identical copy of the separately attributed T-side appendix, added here only after both F3 critics finished. Independently audit it before any full-scope conclusion. This supplies no extra critic vote and does not retroactively widen a producer's performed review.
+
+F3's prose also equates an individual tip polynomial with redistributed z Z_i in one sentence. The actual tip difference is z[(1+2z)F_r H_i+L^N]; only the complete sum uses sum_i r_i Z_i with Z_i=(1+2z)F_r H_i+((N+1)/N)L^N. Keep the endpoint contribution and the original distinct tags. The appendix states the required propagated descent at p-2 for Z_i. Preserve original files and their limited statuses.

@@ -1,0 +1,32 @@
+namespace Erdos993G1.ThirdWide
+open Finset Classical
+
+lemma cover_catalan_bound_three {X : Type u} [Fintype X] [DecidableEq X]
+    (F : SimpleGraph X) [DecidableRel F.Adj] (C : Finset X)
+    (hC : C.card = 3)
+    (hcover : ∀ x y, F.Adj x y → x ∈ C ∨ y ∈ C)
+    (n k : ℕ) (hn : Fintype.card X = n + 3) :
+    (n.choose (k + 1) : ℤ) - n.choose k -
+      3 * (if 1 ≤ k then (catalan (k - 1) : ℤ) else 0) -
+      3 * (if 2 ≤ k then (catalan (k - 2) : ℤ) else 0) -
+      (if 3 ≤ k then (catalan (k - 3) : ℤ) else 0) ≤
+      delta F (k : ℤ) := by
+  let b : ℕ → ℤ := fun t => if t = 0 then
+    (n.choose (k + 1) : ℤ) - n.choose k else
+    -(if t ≤ k then (catalan (k - t) : ℤ) else 0)
+  have h := cover_rank_bound_three F C hC hcover k b ?_ ?_
+  · convert h using 1 <;> dsimp [b] <;> ring
+  · intro t ht
+    simp only [b, if_neg (by omega : t ≠ 0)]
+    split_ifs <;> omega
+  · intro S hSC hS
+    by_cases hzero : S.card = 0
+    · have he : S = ∅ := card_eq_zero.mp hzero
+      subst S
+      rw [cover_available_empty F C, hn, hC]
+      norm_num only [Nat.add_sub_cancel, card_empty, Nat.cast_zero, sub_zero]
+      simp [b, FirstWide.binomCoeff_nat_add_one, FirstWide.binomCoeff_nat]
+    · simpa only [b, if_neg hzero] using binom_shift_floor
+        ((univ : Finset X).filter (fun x => x ∉ C ∧ ∀ y ∈ S, ¬F.Adj y x)).card k S.card
+
+end Erdos993G1.ThirdWide

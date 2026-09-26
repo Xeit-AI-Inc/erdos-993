@@ -1,0 +1,35 @@
+{
+  "worker_id": "C2-CF-T1",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C2-T1-SHELL-ORDERED-ROOT-SUBCLASS",
+      "statement": "For every eligible ordinary tree T with |T|=2p+2 satisfying the route's stated per-selected-tag ordering condition on the component marks of H_v, the complete fixed-selector sum S(T,p) is nonpositive.",
+      "scope": "First-order shell |T|=2p+2; ordinary finite trees with x(T)+2<=p and 3p<2alpha(T)+1; original supports, neighborhoods, and strict favorable selector; for each selected original leaf, first component mark has H_v-degree at least 2 and the second, if present, has degree at least 1.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-2/C2-CF-T1/REPORT.md"],
+      "reason": "retained: The component-root partition and rank shift are exact, the ordering condition forces every residual J_i to have order at most 2k-1, and the independent-set shadow incidence proves each term nonpositive. The zero-extension proof needs the trivial separate case |J_i|<k-1, which is supplied in this critique. Distinct leaves sharing a support retain their multiplicity."
+    },
+    {
+      "claim_id": "E993-LOWER-REGION-FIRST-ORDER-SHELL",
+      "statement": "The complete favorable-original-leaf sum is nonpositive for every eligible ordinary tree with |T|=2p+2.",
+      "scope": "Registered first-order shell: finite ordinary tree T, p with x(T)+2<=p, 3p<2alpha(T)+1, fixed selector F(T,p)={v original leaf: Delta_p(T-v)<0}, and original supports and neighborhoods.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-2/C2-CF-T1/REPORT.md"],
+      "reason": "retained: The route correctly leaves the full shell unresolved. The exact first-wide graph classification further shows that an order-2k exceptional residual J_i can be positive only if it has at most one edge, but no argument controls those sparse cases globally or compensates across selected tags."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CF-T1/REPORT.md",
+  "limitations": [
+    "The structural root-order condition is not shown to follow from the strict favorable selector.",
+    "The first-wide classification narrows possible positive boundary residuals to order-2k graphs with at most one edge, but no global compensation inequality for these residuals is proved.",
+    "No full-shell proof, full-sum counterexample, fresh exhaustive computation, external theorem application, or formal verification is supplied."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-T1-SHELL-ORDERED-ROOT-SUBCLASS",
+    "E993-LOWER-REGION-FIRST-ORDER-SHELL"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "worker_id": "C4-T1",
+  "cycle": 4,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C4-T1-CTx-SUFFICIENT-REDUCTION",
+      "statement": "Under the target hypotheses, the aggregate bridge i_x(T)E <= (x+1)i_(x+1)(T)Q implies S(T,p) <= 0.",
+      "scope": "Ordinary finite trees and the fixed favorable selector in the solution contract; k=p-1, with x+2<=p and 3p<2alpha(T)+1. The proof uses E=kU+C, kS=E-C-kQ, Delta_x<0, and C>=0.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-4/C4-T1/REPORT.md"],
+      "reason": "The exact marked upper-set double count gives E=kU+C; the first-descent and rank guards make the stated bridge a sufficient global budget. This does not establish the bridge universally."
+    },
+    {
+      "claim_id": "C4-T1-ORDER24-POSITIVE-MARKED-ADDABILITY-COVARIANCE",
+      "statement": "There is an eligible order-24 ordinary-tree instance and selected original leaf tag for which the uniform-rank-k covariance between meeting W and actual addability in H is strictly positive.",
+      "scope": "The exact 23-edge tree, alpha=15, x=8, p=10, k=9, and leaf v=0 specified in COMPUTE.py and EVIDENCE.json; the full selector and aggregate are also computed.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-4/C4-T1/COMPUTE.py", "cycles/cycle-4/C4-T1/EVIDENCE.json"],
+      "reason": "Exact recurrence and subset enumeration give covariance numerator 1,773,113 over denominator 13,677^2. The full selected sum is -51,095, so this is a local covariance witness, not a counterexample to the target."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-T1/REPORT.md",
+  "limitations": [
+    "The universal CT_x budget and the primary aggregate remain unresolved by this route.",
+    "The order-24 exact computation is a single witness and does not establish a universal covariance or aggregate statement.",
+    "No imported literature theorem or universal computational census was used."
+  ],
+  "status_authority": "proposed_worker_only"
+}

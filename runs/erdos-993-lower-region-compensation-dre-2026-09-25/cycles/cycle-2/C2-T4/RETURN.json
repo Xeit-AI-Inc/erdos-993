@@ -1,0 +1,37 @@
+{
+  "worker_id": "C2-T4",
+  "cycle": 2,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "The complete fixed-selector favorable-original-leaf sum is nonpositive for every eligible ordinary tree.",
+      "scope": "Primary registered scope: ordinary finite trees, x(T)+2<=p, 3p<2 alpha(T)+1, with the original strict selector and all original leaf tags counted with multiplicity.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-T4/REPORT.md",
+        "cycles/cycle-2/C2-T4/EVIDENCE.md"
+      ],
+      "reason": "The fixed-selector occupancy identity is exact and the target is proved on eligible paths with two distinct supports, but no adjacent weighted-rank comparison has been established for general branching trees and no full-sum counterexample was found."
+    },
+    {
+      "claim_id": "C2-T4-PATH-OCCUPANCY",
+      "statement": "For every eligible path P_n with n>=4, the complete fixed-selector aggregate is nonpositive, equivalently its fixed-selector weighted occupancy sum at size p+1 is at most that at size p.",
+      "scope": "Ordinary paths P_n, n>=4, satisfying x(P_n)+2<=p and 3p<2 alpha(P_n)+1; both original endpoint tags are selected and have distinct supports.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-T4/REPORT.md",
+        "cycles/cycle-2/C2-T4/EVIDENCE.md"
+      ],
+      "reason": "The endpoint selector is checked from the path rank-ratio formula, and the recurrence reduces the full sum to twice a consecutive coefficient difference in P_(n-4), whose sign follows from the fixed-rank and rank-monotonicity of that ratio."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-T4/REPORT.md",
+  "limitations": [
+    "The global weighted adjacent-rank inequality for branching trees remains unproved.",
+    "No census, external literature result, or universal negative-association premise supports the general target.",
+    "The path result is a scoped subcase and cannot determine the registered universal claim."
+  ],
+  "status_authority": "proposed_worker_only"
+}

@@ -1,0 +1,67 @@
+namespace E993FirstShell
+
+open Classical
+
+/-- Odd-order marked shadow from the absence of a one-vertex cover. -/
+lemma tagged_bound_below_odd_no_cover {V : Type u} [Fintype V] [DecidableEq V]
+    (G : SimpleGraph V) [DecidableRel G.Adj] (U W : Finset V)
+    (k : ℕ) (hk : 2 ≤ k) (hU : U.card ≤ 2*k+1)
+    (hWU : W ⊆ U)
+    (hno : ∀ C : Finset V, C.card ≤ 1 →
+      ¬ (∀ x y, G.Adj x y → x ∈ U → y ∈ U → x ∈ C ∨ y ∈ C)) :
+    (E993Interior.taggedFamily G U W (k+1)).card ≤
+      (E993Interior.taggedFamily G U W k).card := by
+  classical
+  by_cases hW : W.Nonempty
+  · obtain ⟨a,haW⟩ := hW
+    have haU : a ∈ U := hWU haW
+    by_cases hnon : ∃ b ∈ U, G.Adj a b
+    · obtain ⟨b,hbU,hab⟩ := hnon
+      exact tagged_bound_below_odd_of_adj G U W k hk hU a b haU haW hbU hab
+    · have hiso : ∀ b ∈ U, ¬G.Adj a b := by
+        intro b hb hab
+        exact hnon ⟨b,hb,hab⟩
+      let N := U.filter (fun x => x ≠ a ∧ ¬G.Adj a x)
+      have hN : N = U.erase a := by
+        ext x
+        simp only [N, Finset.mem_filter, Finset.mem_erase]
+        constructor
+        · rintro ⟨hxU,hxa,_⟩
+          exact ⟨hxa,hxU⟩
+        · rintro ⟨hxa,hxU⟩
+          exact ⟨hxU,hxa,hiso x hxU⟩
+      have hUerase : (U.erase a).card ≤ 2*k := by
+        rw [Finset.card_erase_of_mem haU]
+        omega
+      have habsent := E993OrderBand.marked_bound_below_even
+        G (U.erase a) (W.erase a) k (by omega) hUerase
+      have hpresent :
+          ((N.powersetCard k).filter
+            (fun S : Finset V => G.IsIndepSet (S : Set V))).card ≤
+          ((N.powersetCard (k-1)).filter
+            (fun S : Finset V => G.IsIndepSet (S : Set V))).card := by
+        rw [hN]
+        by_cases heq : (U.erase a).card = 2*k
+        · have hno' := no_one_cover_erase_isolated G U a hiso hno
+          have hedge := two_edges_of_no_one_cover G (U.erase a) hno'
+          have hsize : (U.erase a).card = 2*(k-1)+2 := by omega
+          have hw := ordinary_bound_firstWide G (U.erase a) (k-1)
+            (by omega) hsize hedge
+          have hk' : k-1+1=k := by omega
+          simpa only [hk'] using hw
+        · have hsize : (U.erase a).card ≤ 2*(k-1)+1 := by omega
+          have hw := ordinary_bound_below_odd G (U.erase a) (k-1)
+            (by omega) hsize
+          have hk' : k-1+1=k := by omega
+          simpa only [hk'] using hw
+      have htop := tagged_split_mark G U W a haU haW k
+      have hbottom := tagged_split_mark G U W a haU haW (k-1)
+      have hk' : k-1+1=k := by omega
+      rw [hk'] at hbottom
+      rw [htop, hbottom]
+      dsimp only [N] at hpresent
+      omega
+  · have hempty : W = ∅ := Finset.not_nonempty_iff_eq_empty.mp hW
+    simp [E993Interior.taggedFamily, hempty]
+
+end E993FirstShell

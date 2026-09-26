@@ -1,0 +1,24 @@
+{
+  "worker_id": "C1-T1",
+  "cycle": 1,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C1-T1-1",
+      "statement": "For every star T=K_{1,m} with m>=4 and every p satisfying x(T)+2<=p and 3p<2 alpha(T)+1, all m original leaves are favorable and S(T,p)=m*(binom(m-1,p)-binom(m-1,p-1))<0.",
+      "scope": "Exact symbolic proof for the star subfamily of the registered lower-region ordinary favorable-leaf aggregate; no conclusion for trees outside this family.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-T1/REPORT.md"
+      ],
+      "reason": "The star independence polynomial is (1+z)^m+z; the first descent, eligibility bounds, every strict favorable-leaf test, each original-leaf summand, multiplicity, and the zero-extended endpoint are checked explicitly in the report."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-T1/REPORT.md",
+  "limitations": [
+    "The registered global lower-region aggregate for arbitrary finite ordinary trees remains unresolved by this result.",
+    "No proof of the optional bipartite tagged-incidence identity or its global deficit budget is supplied."
+  ],
+  "status_authority": "proposed_worker_only"
+}

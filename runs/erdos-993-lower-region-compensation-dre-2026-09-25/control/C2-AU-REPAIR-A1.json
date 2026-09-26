@@ -1,0 +1,341 @@
+{
+  "allowed_source_files": [
+    {
+      "path": "EXECUTION-POLICY.md",
+      "sha256": "12ea2b244016f6f1544ea744948e2f1677cc2691519e4dfb8b69cff7d5bec0ab"
+    },
+    {
+      "path": "SOLUTION-CONTRACT.md",
+      "sha256": "f3667bd6424d4f0d95714772ecf76af82ed8430bdd3ec9eda0c721f1a853390c"
+    },
+    {
+      "path": "WORKER-PROTOCOL.md",
+      "sha256": "daa216d9e9ee83da2173108f6a9469c848f426be05e79ba1598232d89ab3f9c7"
+    },
+    {
+      "path": "control-proposals/C2-U-ADJUDICATION-REPAIR/FIXTURE.json",
+      "sha256": "aec702b19533ab7c594c0725d5a4fc3d52533bd48b0073d7428153b7e3ce2574"
+    },
+    {
+      "path": "control-proposals/C2-U-ADJUDICATION-REPAIR/ISSUE.md",
+      "sha256": "5cab5e7d2bfcca7b8b2d25028d3b512802d179ef70ecf3c2f2bd8e63ace690b7"
+    },
+    {
+      "path": "control-proposals/C2-U-ADJUDICATION-REPAIR/fixture.py",
+      "sha256": "3ae05214798469d1799f5cdf6dd6e6dde68b929034e329291a2233816aaa0b6f"
+    },
+    {
+      "path": "control/ADJUDICATION-ADDENDUM-POLICY.md",
+      "sha256": "3b4613676b575090eccb68fdbec42bcf3b6e6090dcde9dcc2026f7c0b325ed6a"
+    },
+    {
+      "path": "control/C2-COUNTEREXAMPLE-GATE.md",
+      "sha256": "c9d3fd077dda7a8899dfcdf54fc8be9db8dbeff381ec5b058ccc82472fc60d0e"
+    },
+    {
+      "path": "control/C2-GLOBAL-WEIGHT-COORDINATES.md",
+      "sha256": "37b3cd45eb038af04b0fb93cb7387eda084011975d633f78407459a6273e9af6"
+    },
+    {
+      "path": "control/C2-NEUTRAL-HANDOFF.md",
+      "sha256": "7abe1d3405643de0e4a903261c882382197e8ec03a5a6c283174c05a8bf88248"
+    },
+    {
+      "path": "control/C2-ORDER-BAND-CANDIDATE.md",
+      "sha256": "6a27d09bd8b78dc3aa5392047e31d630e95696a1995e39c4280c4909f92f6d89"
+    },
+    {
+      "path": "control/C2-REGISTERED-CLAIM-IDENTITY.json",
+      "sha256": "a02e53c2865e6b60a7ac97605ba806b08c31f032bae8b59a32c37067e2187da4"
+    },
+    {
+      "path": "control/C2-ROOTED-MARK-ALTERNATIVE.md",
+      "sha256": "a4967ed0f7b6c077ff01d06867a326861b5f86ac1e030f20601f69519a2519f6"
+    },
+    {
+      "path": "control/C2-SEARCH-ALLOCATION.json",
+      "sha256": "e54dfd39303a36b8c150aa849ae79744fe015dfe8c1a13549bc4ac81f873ea1d"
+    },
+    {
+      "path": "cycles/cycle-1/C1-SYNTHESIS/EVIDENCE.md",
+      "sha256": "b7c38e5a91cdb9623ce99c4ac5a2e647797caf4a04e02ff33232526d8c298028"
+    },
+    {
+      "path": "cycles/cycle-1/C1-SYNTHESIS/REPORT.md",
+      "sha256": "5474acf38c0b61451a6fad3ff8b3d035ff878520ad4981ce48730d195b81252b"
+    },
+    {
+      "path": "cycles/cycle-1/LEAN-GATE.md",
+      "sha256": "f3e55b46c1005231a9b592761dac7d99ec81e3b7c99cdf880c85988ae0235b9f"
+    },
+    {
+      "path": "cycles/cycle-2/C2-AU/EVIDENCE.md",
+      "sha256": "140329b9243d900870f9c064ad0676e16bb70f2c1883cc75cbf05c531c76c610"
+    },
+    {
+      "path": "cycles/cycle-2/C2-AU/REPORT.md",
+      "sha256": "e98417bc0ee785820ece4d1057e0897b4e9227abc392a4c0071213e5d320f9fd"
+    },
+    {
+      "path": "cycles/cycle-2/C2-AU/RETURN.json",
+      "sha256": "9a7c1806ee26e31d9ab298d7418762321b97dc6bb018fc45e6014deb843afd72"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CF-U1/REPORT.md",
+      "sha256": "a407e2608d79a1d1de21e06fa763f41391db12a7f30baf0ac4c74ce228a1073d"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CF-U1/RETURN.json",
+      "sha256": "39277d4cfc401a5cadd8e74c945df1272d13a3e7917036b9c03e08291cc60aa2"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CF-U2/EVIDENCE.md",
+      "sha256": "f1b5a35e464df0aba9208df70386045284dc83631981a437f92b60c83bb2430a"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CF-U2/REPORT.md",
+      "sha256": "0f55ed00acdb8945435c8ea1428161585978f339cfa33ad949947dc8b2f5fdb2"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CF-U2/RETURN.json",
+      "sha256": "ecc73caca497eb615d48b3a63d75dc9ce45afbd538fda4a61585c3c42d6abffe"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CF-U3/EVIDENCE.md",
+      "sha256": "707e9973607e80f0dc82e2154e61bf42bbab4e0d284494c572f67e044550a824"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CF-U3/REPORT.md",
+      "sha256": "4b6106d6fa4e930c154077c5c523565acf24e71439b71b6d4ce01d7e6f0aef43"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CF-U3/RETURN.json",
+      "sha256": "f7a3d5fa0becd52bb1a3ee55e4bfef4eefba63f56813091fad6a4cf17ba96365"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CF-U4/EVIDENCE.md",
+      "sha256": "b5b713b46775c4577a8bac41652ffb10ea5f1686bea67886c12157e2bfcf6b2e"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CF-U4/REPORT.md",
+      "sha256": "fda789a5a14f52824e3cc89704e7b9d199dffe82a20fde53c03b550c8a9f9158"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CF-U4/RETURN.json",
+      "sha256": "626c0af41ef62fb7d632966bbbf18f561435bd73353390cf5e80b3e836a7e6f6"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CF-U5/EVIDENCE.md",
+      "sha256": "874bdc8ba6a61e0aaa25e36f24f8135284c999cdc76de27725279eddddc5626d"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CF-U5/REPORT.md",
+      "sha256": "d7f14dd1a752460756d7564558df5c2a5f8afb9e497d9a57df49916997f03b3c"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CF-U5/RETURN.json",
+      "sha256": "5b4b8faab657cadb1eee36bbfe7bf07ab91c9ef383e045cb76bbdaa98df45408"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CF-U5/ordinary_tree_checked.py",
+      "sha256": "a012bb78915ccdfa2f729c0cdb520cd8f29572277123c92e80ba6091498f533d"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CF-U5/replay.py",
+      "sha256": "f8eb91d95e54b4a6a7d9641974ce2e765642cee7aa04e8f58b063f5897db72cb"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CF-U6/REPORT.md",
+      "sha256": "4600254dfcf7529d9dd910e178b6f1855fcc3e66c388c4f92d01fa1450118fd8"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CF-U6/RETURN.json",
+      "sha256": "1b4a2e24af001312c76f6d6e0da7ef39c8a56ec2fc78227f3e3ebc4341e59cbb"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CT-U1/REPORT.md",
+      "sha256": "01ddf361694d2dea3cdafb66a86d1278a6f0689361415b931fad4de735a3a31c"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CT-U1/RETURN.json",
+      "sha256": "4671879c17b86d180de9a5dc44741ec9364cffde363cb8a0f772f5ea849dfe4e"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CT-U2/EVIDENCE.md",
+      "sha256": "3a860f19f150a57a854ffe7bb4f3bcc1347b534c8065f570f0b94453cbb8cbea"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CT-U2/REPORT.md",
+      "sha256": "6c749e1d20d68fdaa3da27883a45cc86b1d2435b9839803a89dc50a4ea88b3a5"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CT-U2/RETURN.json",
+      "sha256": "d1dac95fba2d41da30b23f9e612fdf525ac90ca43a98eceb8b8ebb65a4499051"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CT-U3/REPORT.md",
+      "sha256": "b84ed7d982eb1a0f162196d727409a67848e2d461cb80225e95c7b3b685d3dcb"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CT-U3/RETURN.json",
+      "sha256": "d273e3dd8d21af86e2cdd19eb4531e4a1f9dc2750ffd851d6047e0f48b951ad9"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CT-U4/EVIDENCE.md",
+      "sha256": "e10a950426b0e7592e0654ffb78b49c76661c1d2932197653fe1691a34bc18db"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CT-U4/REPORT.md",
+      "sha256": "48a9c82551f9660fa758118c37a6992080aadf3f287273d4b3fd3aacab360f8b"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CT-U4/RETURN.json",
+      "sha256": "550a4418cd90c66573803d28fb686a464160b0a7588a93fb487adcdf845ba7a4"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CT-U5/EVIDENCE.md",
+      "sha256": "913f7549d5496f1018a12802fbb9fb15fd942e244729b9ad5cbe9519dbb61694"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CT-U5/REPORT.md",
+      "sha256": "1ea18a59b4b07ce5e46309d640e63679a7a3f2ad9275e834d4fba277581b509b"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CT-U5/RETURN.json",
+      "sha256": "557b38b462aae9ae6681674301c23279d1f40e5d89b1591e07b1259129512b7d"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CT-U6/REPORT.md",
+      "sha256": "1481f97e0f4a526973b2255fbec5f8077ec82e7f39056b62b4050f490c8d4934"
+    },
+    {
+      "path": "cycles/cycle-2/C2-CT-U6/RETURN.json",
+      "sha256": "ac5de38e9116247f31e508abac93a8931a184fbf34736e6fd16342e44588dc4f"
+    },
+    {
+      "path": "cycles/cycle-2/C2-U1/REPORT.md",
+      "sha256": "78c14231e9d891e414ff2d9387e4ac34a2293ba38582964813cc620493ec03b6"
+    },
+    {
+      "path": "cycles/cycle-2/C2-U1/RETURN.json",
+      "sha256": "8309c8981fb522e2cabe95f2ff4d3a06d388fe024557b3fa44295387234b52ea"
+    },
+    {
+      "path": "cycles/cycle-2/C2-U2/EVIDENCE.md",
+      "sha256": "8411b315762d5d4586382ecc43af9ec270f77026c03004eccf48dad7c2c71d13"
+    },
+    {
+      "path": "cycles/cycle-2/C2-U2/REPORT.md",
+      "sha256": "598ce705d7018087a64bf5771bd9c75ff25579590dc0c4aaf03f7550865107d6"
+    },
+    {
+      "path": "cycles/cycle-2/C2-U2/RETURN.json",
+      "sha256": "52b3f3b85328f9deff6ee5ff704ceb00a0af14782c09590ea23e606180f6df9c"
+    },
+    {
+      "path": "cycles/cycle-2/C2-U3/EVIDENCE.md",
+      "sha256": "776387a4319c4fc62c87c55cd188323ef866a869b71b11a38d636c69ea56df32"
+    },
+    {
+      "path": "cycles/cycle-2/C2-U3/REPORT.md",
+      "sha256": "851000e87728a31209f550de00038223694cbe6e0a5031f2880018e51059d598"
+    },
+    {
+      "path": "cycles/cycle-2/C2-U3/RETURN.json",
+      "sha256": "363cc0f0a58adc145ff234ca9797e628f0295f635992aaa09c92eeb30a45a2b4"
+    },
+    {
+      "path": "cycles/cycle-2/C2-U4/EVIDENCE.md",
+      "sha256": "1d9f60001432f183b210f1dc4882ec2c396640af578b6bb085c75f5d50df3427"
+    },
+    {
+      "path": "cycles/cycle-2/C2-U4/REPORT.md",
+      "sha256": "61fcfb0cdc1ebda0ac740d80846602e7dcc4d52ee89e5e5a448d93533377ec0b"
+    },
+    {
+      "path": "cycles/cycle-2/C2-U4/RETURN.json",
+      "sha256": "d0a45d7dc80afff0dc063d23a84e156baa8008625eb23170a7d36a72dcaa9983"
+    },
+    {
+      "path": "cycles/cycle-2/C2-U5/EVIDENCE.md",
+      "sha256": "b710d882cb7aa304800bb869439bf426245926f1a61b36e3ea643b8dc93ed21c"
+    },
+    {
+      "path": "cycles/cycle-2/C2-U5/REPORT.md",
+      "sha256": "e355577cf260d42792be1de9289e3b5a8dcd931b6a145076644c0b4a46482671"
+    },
+    {
+      "path": "cycles/cycle-2/C2-U5/RETURN.json",
+      "sha256": "3c47a7d763712e6d2f3b83826c95c18395ef7be3a6fb8a3a88e278a2d587e0c6"
+    },
+    {
+      "path": "cycles/cycle-2/C2-U6/REPORT.md",
+      "sha256": "c1b3f8854ea07daf6f67f0c5169f233ee114ca88ff5aa7224272bf4851eb2f83"
+    },
+    {
+      "path": "cycles/cycle-2/C2-U6/RETURN.json",
+      "sha256": "f3b8e677e733b2f0ad51c94d26092b471ba6bd728664e535d61ba8b905e57134"
+    },
+    {
+      "path": "inputs/C2-FRESH-ORDER252-SHELL.json",
+      "sha256": "424e2a1d27e0b8db0f668dc1b73d9fc9ede517ea92e536f83a5355db5438f91a"
+    },
+    {
+      "path": "inputs/TRANSITIVE-REFUTED-CLAIMS.json",
+      "sha256": "8a9cce75a7acdf56fe937d5735301a5819be606324db5f1fb9e4e00eede3608d"
+    },
+    {
+      "path": "inputs/ordinary_tree_checked.py",
+      "sha256": "a012bb78915ccdfa2f729c0cdb520cd8f29572277123c92e80ba6091498f533d"
+    },
+    {
+      "path": "inputs/standing-controls/kl-non-lc-fixtures.json",
+      "sha256": "36ef741655174e908011edafd9db1110f7f5e9bedc35b3d6e6089fa4bd928881"
+    },
+    {
+      "path": "inputs/standing-controls/t22-order91.json",
+      "sha256": "2198f01fa5de1c192da190ac242f5af8a914b0b03bd5e6df979590d20c6a18ed"
+    },
+    {
+      "path": "inputs/standing-controls/t60-order243.json",
+      "sha256": "871a3656ce328c800606a97bee60c2bc33b25c1381e0e716c54ff124372f23a2"
+    },
+    {
+      "path": "instruments/p6-order14-15/PROTOCOL.md",
+      "sha256": "f2f579fd098f07aa51f940f22ef6f0e15c9da15f8fa91c7ecc2f33324ebf5b0e"
+    },
+    {
+      "path": "instruments/p6-order14-15/RESULTS.json",
+      "sha256": "eba40e10d2045112753bcad82a7f3e3ef753db3ee38e06c0870bd3891243974b"
+    },
+    {
+      "path": "instruments/p6-order14-15/forest24.py",
+      "sha256": "72fa4ee0ffee32a3e022e1467e8a24185f5f509ce968521df3285298d35fc836"
+    },
+    {
+      "path": "instruments/p6-order14-15/run.py",
+      "sha256": "9b3fcc28e61942830f6ad4d4d310e465172a1d2e19054962c71edb6aa2163af3"
+    },
+    {
+      "path": "ledgers/C2-OBLIGATIONS.csv",
+      "sha256": "0e454684c42e8d8bfd372a3b80c6a0678c724fc094d7548120e1fd0453775960"
+    },
+    {
+      "path": "preparation/C2-PREP-ORDER-AUDIT/AUDIT-CHECK.json",
+      "sha256": "81284a9a4c88b7a3c2eae437dc970ba1ee3131a3623dbca5e494b892d12cefcc"
+    },
+    {
+      "path": "preparation/C2-PREP-ORDER-AUDIT/REPORT.md",
+      "sha256": "e21da4f7d1485453a068e4510b2edc6ff4c694878dd438acad2865f3568be23c"
+    },
+    {
+      "path": "preparation/C2-PREP-STRATEGY/REPORT.md",
+      "sha256": "aeec2f82533b00ed2fdbe661cbd23cf9776ed3d82d51c8170e3a4defa8db69e6"
+    }
+  ],
+  "model": "gpt-6-sol",
+  "reasoning_effort": "high",
+  "status_authority": "proposed_worker_only",
+  "task": "You are the fresh neutral correction seat for the C2-AU logical U-origin adjudication, under the pinned addendum policy. Independently check the controller ISSUE and literal eligible fixture, then re-adjudicate C2-U3-ORDERED-SHELL-BOUND and every dependent statement in C2-AU sections3/4/carry. In the defined J_i only the current mark has its closed neighborhood removed; earlier marks alone are deleted. Do not accept either route, critic, adjudicator or controller by authority: derive the actual partition, residual-order classification, valid positive-part estimate and sufficient global compensation condition. Check any sharper conclusion at exact scope; do not claim falsehood of an inequality merely from a failed argument. Reproduce the explicit fixture independently as feasible. Preserve original files and identify which original critic disposition is overturned. State whether any of the other seven claim dispositions or the order-band Lean nomination is affected. Write self-contained REPORT.md, RESULTS.json and EVIDENCE.json directly in scratch; these will be copied under fresh REPAIR-A1 top-level filenames in the original U portfolio, with your distinct producer identity recorded. Keep exactly the existing target scopes, no new mathematical candidate or status award, no controller first-shell proof, no other sources, no Lean and no extra agents. Synthesis must be able to use your correction without reopening any raw worker file. Finish all foreground jobs before exit.",
+  "worker_id": "C2-AU-REPAIR-A1"
+}

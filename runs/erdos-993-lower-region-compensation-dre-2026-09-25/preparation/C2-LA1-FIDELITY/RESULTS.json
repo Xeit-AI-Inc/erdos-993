@@ -1,0 +1,31 @@
+{
+  "worker_id": "C2-LA1-FIDELITY",
+  "authority": "proposed_worker_only",
+  "task": "independent mathematical/formalization fidelity review of the exact two-conjunct order-band theorem",
+  "proposed_verdict": "match",
+  "source_hashes_verified": 179,
+  "source_hash_mismatches": [],
+  "declaration_name": "E993OrderBand.markedIsolateAndOrdinaryLeafOrderBand",
+  "declaration_source_sha256": "a45f8e2e218d27d528e2513e5cb8413d38780d9e6c01f8c34b171366f0bf3bde",
+  "theorem_contract_sha256": "2ce40be51ec0024f796cbd8bcc190fc0e577b2137cadced4512ed6d65620656b",
+  "kernel_receipt_sha256": "2323b5f2c76c322d0f61c1b7c8dd4f9dbfe7d26bbe44d6862bfe44e0f46fae9f",
+  "contract_projection_sha256": "532b436e602a23cddd070ad1e78d963a10585510df244b6efd6386d07ecc212f",
+  "binding_projection_sha256": "d18f0a71642336ef1cc4e23b989a52da025b621d96094cdb4190364430028a2b",
+  "checked": {
+    "actual_theorem_header_equals_contract_and_input": true,
+    "v3_change_syntax_only": true,
+    "informal_claim_unchanged": true,
+    "inherited_definitions_byte_identical": 8,
+    "main_entries_match_registered_fragments": 43,
+    "kernel_bound_source_hash_matches": true,
+    "dependency_identity_rows_match": true,
+    "reported_axioms_within_contract_allowlist": true,
+    "semantic_fidelity": true
+  },
+  "limitations": [
+    "The supplied projection fingerprint derivation could not be reproduced from raw-section canonical JSON without the unlisted projection algorithm; the exact supplied values are carried for controller recomputation.",
+    "No Lean build or controller fidelity audit was run by this reviewer; kernel evidence was independently compared to its pinned source and receipt."
+  ],
+  "report": "REPORT.md",
+  "attestation": "INDEPENDENT-REVIEW.json"
+}

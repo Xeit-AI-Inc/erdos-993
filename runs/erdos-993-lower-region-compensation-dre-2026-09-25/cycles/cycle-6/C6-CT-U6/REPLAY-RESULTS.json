@@ -1,0 +1,30 @@
+{
+  "case": "C6-CT-U6",
+  "source_worker": "C6-U6",
+  "orientation": "T",
+  "source_hash_checks": "All six case source hashes and all 237 common source hashes matched the packet manifests.",
+  "replay_method": "Copied the two route scripts and inputs/ordinary_tree_checked.py into this scratch directory. Rewrote only the scripts' B/sys.path setup to import the local helper copy; ran both copies with /Library/Frameworks/Python.framework/Versions/3.11/bin/python3. The generated JSON objects exactly equal the pinned route JSON objects.",
+  "census": {
+    "orders": "1 through 8",
+    "labeled_tree_count": 280393,
+    "eligible_tree_rank_rows": 0,
+    "subset_enumeration_crosschecks": 1444
+  },
+  "t_family": {
+    "m_range": "1 through 8",
+    "eligible_rows": 13,
+    "all_S_negative": true,
+    "minimum_S": -58083912,
+    "maximum_S": -1167
+  },
+  "identity_review": {
+    "selected_leaf_term": "Delta_(p-1)(H_v)-Delta_(p-1)(R_v) = q_v(p)-q_v(p-1)",
+    "aggregate": "S(T,p)=Q_p-Q_(p-1) for the unchanged F(T,p)",
+    "map_scope": "Adjoining v bijects independent j-sets of H_v meeting W_v with independent (j+1)-sets of T containing v and meeting W_v after deletion of v; it does not enumerate all independent sets containing v."
+  },
+  "limitations": [
+    "The census has no eligible rows, so it gives no sign evidence on the target domain.",
+    "The 13 T_m rows are finite instances only.",
+    "No first-descent-to-marked-rank inequality or eligible full-sum counterexample was established."
+  ]
+}

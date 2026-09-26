@@ -1,0 +1,9 @@
+namespace C4LA1
+
+variable {V : Type*} [Fintype V] [DecidableEq V]
+
+/-- Literal strict favorability of an original leaf at rank `p`. -/
+def IsFavorableAt (G : SimpleGraph V) [DecidableRel G.Adj] (v : V) (p : Nat) : Prop :=
+  vertexDeletionForwardDifference G v p < 0
+
+end C4LA1

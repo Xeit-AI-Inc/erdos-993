@@ -1,0 +1,7 @@
+# Controller factor lead for wider bounded arities (unawarded)
+
+For B_r=(1+z)^r+z, r>=2, the tight finite ULC order from the altered rank2 comparison is d=binom(r,2)+1. At rank2 the normalized LC condition simplifies to2d>=r(r-1)+2. At rank1 it holds for this d, and for ranks>=3 it is the usual comparison of binomial rows r and d. Thus B5 is ULC11. This needs independent review, not automatic use.
+
+The marked factor F_r=((1+z)^(r-1)-1)/z is more restrictive. F5=(4,6,4,1) is ULC9: its rank1 normalized condition requires d>=9 and rank2 only d>=4. F6=(5,10,10,5,1) is Poisson-ULC at rank1 with equality but is NOT finite-order ULC for any d: 100/d^2 <100/[d(d-1)]. F7=(6,15,20,15,6,1) is not even Poisson-ULC:15^2<2*6*20. Thus the present factor-by-factor finite ULC import cannot be extended unchanged beyond arity5. This does not refute LC of the many-branch product H_i F_r; convolution may restore curvature, which is a separate possible route.
+
+For r5 the small marked-vs-full coefficient ratios are4,1,2/5,1/10,0,0 and all minors are nonnegative; the rank0,1 minor is18. Therefore an arities2..5 analogue may follow by revising the omitted-branch coefficient bound and envelopes. No cutoff or complete original-tree theorem is asserted by this note. This is a concrete cross-discipline coefficient question for the next cycle: establish restoration of sufficient curvature after convolution with many B factors, or identify the exact obstruction.

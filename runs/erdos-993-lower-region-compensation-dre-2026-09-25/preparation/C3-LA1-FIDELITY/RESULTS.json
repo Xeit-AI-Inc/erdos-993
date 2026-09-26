@@ -1,0 +1,28 @@
+{
+  "worker_id": "C3-LA1-FIDELITY",
+  "status_authority": "proposed_worker_only",
+  "completed_at": "2026-09-26T03:51:25Z",
+  "verdict": "match",
+  "material_findings": [],
+  "verified_source_file_count": 709,
+  "verified_source_hashes": true,
+  "contract_projection_sha256": "0112514a50fec2648b0edd08d8f825d41ead752f4300caa3c178f7e17e644caf",
+  "binding_projection_sha256": "5c3bba04b2202aae3adc85f29132ed26403e7372e652a7b3b01ce0d98251c657",
+  "contract_source_sha256": "1cf37db1ec45656b89d7b0fece737ec60cfc3f5f081707ae2d6c2c4d8fc8e122",
+  "main_source_sha256": "0397b7bedd1ff695d8debd73a24cff430434e88f2d9ac56c49459843d155f17f",
+  "terminal_statement_sha256": "4546fe679579b0f8cafc43d01be9c42a35cafd162ebf4a84ab55773aa7a10286",
+  "kernel_receipt_sha256": "a916df3baf4e440df0a62e7dede1ac7718882d37caa2d5192cbbec21928b9e89",
+  "checks": {
+    "actual_main_matches_pinned_hash": true,
+    "actual_terminal_header_matches_contract": true,
+    "all_225_fragments_match_actual_main_and_snippets": true,
+    "all_28_rewrites_only_scope_or_noncomputable_syntax": true,
+    "core_definitions_match_intended_mathematics": true,
+    "both_conjuncts_match_exact_claim": true,
+    "fingerprints_independently_recomputed": true,
+    "dependency_hash_recipe_verified_for_all_10": true,
+    "kernel_receipt_verified_and_axioms_allowlisted": true,
+    "no_source_edits_or_builds": true
+  },
+  "limitations": "Review is a semantic fidelity proposal using pinned sources and a verified kernel receipt; no fresh Lean build or external dependency checkout inspection was performed."
+}

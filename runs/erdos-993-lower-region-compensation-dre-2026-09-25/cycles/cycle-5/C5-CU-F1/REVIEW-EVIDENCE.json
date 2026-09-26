@@ -1,0 +1,26 @@
+{
+  "source_hashes": {
+    "case_files": 4,
+    "common_files": 237,
+    "mismatches": 0
+  },
+  "finite_replay": {
+    "method": "Copied the pinned CHECK.py into this worker scratch and ran that copy with exact integer arithmetic.",
+    "strict_log_concavity_checks": 1507464,
+    "strict_log_concavity_digest": "3fc21b23eab91c474e378400308dd61f7d4b6b45f835fdad74058ef189396e30",
+    "minimum_log_concavity_margin": {"value": "1210", "m": 3, "polynomial": "Astar", "rank": 8},
+    "strict_mixed_minor_checks": 1507464,
+    "strict_mixed_minor_digest": "90d72df905aa43a087ca9826c8aebc9377f8cfbddf00b83cc4b6e854937f6353",
+    "minimum_mixed_minor": {"value": "1243", "m": 3, "polynomial": "Astar", "rank": 8},
+    "eligible_rows": 276938,
+    "selector_and_total_failures": 0
+  },
+  "analytical_review": {
+    "finite_order_ulc": "Checked the normalized coefficient sequences: B=(1,4,3,1) is ULC(4), L and (1,2) are ULC(1), and (1,3,1),(2,5,2) are ULC(2), with nonnegative interval support. Gurvits Theorem 1.1 applies to these nonnegative finite sequences and preserves the summed ULC order under convolution.",
+    "poisson_margin": "The stated Poisson-ULC margin is the ULC inequality a_j^2 >= ((j+1)/j) a_(j-1)a_(j+1), hence it implies ordinary strict LC when coefficients are positive.",
+    "mixed_minor_orientation": "For r=0,s=1, the Cauchy-Binet bracket is H_j^2-H_(j-1)H_(j+1), and the displayed factor minor has the positive orientation needed for Z_j P_(j+1)-Z_(j+1)P_j.",
+    "family_bridge": "The displayed P,A0,Astar,R factorizations match the path-plus-m-claw decomposition; the private-leaf selector multiplicity 3m and the factor L in the r-selected branch are accounted for. The total selected expression from sum_v q_v=zR is R_(p-1)-R_(p-2).",
+    "unresolved": "The m>=1000 perturbation argument is only summarized in REPORT.md. The exact 27-index falling-factorial enclosures and derivations of the 24, 47, 431, and 14688 error constants are not expanded enough there to independently reconstruct every inequality. The n<=4x descent estimate is cited as registered but its proof is outside the exact allowed case files."
+  },
+  "literature_check": "Gurvits, arXiv:0804.1181, Theorem 1.1 defines ULC(d) by log-concavity after binomial normalization and states that convolution of ULC(l), ULC(d) sequences is ULC(l+d). Applied here only to the listed finite, nonnegative factor sequences."
+}

@@ -1,0 +1,28 @@
+{
+  "worker_id": "C2-CT-F4",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "For T_v with adjacent hubs, one pendant leaf at one hub and v pendant leaves at the other (v>=8), the complete strict favorable-leaf sum is nonpositive for every p satisfying x(T_v)+2<=p and 3p<2alpha(T_v)+1.",
+      "scope": "Restricted uneven two-hub family only; alpha(T_v)=v+1; every original leaf is checked by the strict selector Delta_p(T_v-leaf)<0 and each leaf tag is counted separately. This does not resolve the registered assertion for arbitrary ordinary trees.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CT-F4/REPORT.md",
+        "cycles/cycle-2/C2-CT-F4/EVIDENCE.md"
+      ],
+      "reason": "retained_narrowed — the source proof establishes the family-restricted complete sum: its coefficient formulas give x>=ceil(v/2)-1, every leaf is strictly selected under the eligible p bound, and each original-support summand is nonpositive with the v repeated B-leaf tags counted. Exact v=11 arithmetic was independently replayed. The universal registered primary remains open; this family result cannot be generalized from the supplied evidence."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CT-F4/REPORT.md",
+  "limitations": [
+    "The route proves only the stated two-hub family with pendant-leaf multiplicities 1 and v; trees outside that family are not decided.",
+    "No exhaustive tree-generation boundary or universal primary proof or counterexample is supplied."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE"
+  ]
+}

@@ -1,0 +1,5 @@
+# Controller audit of what the verification script checks
+
+The report says the route polynomial formulas agree with direct graph decomposition. That statement is false for the tip-deletion polynomial, as independently corrected by C5-CT-U1: the root-included term needs z(1+z)^3 B^(m-1), not z(1+z)^2 B^(m-1).
+
+Inspection of this critic's VERIFY.py shows it uses correctly computed graph deletion deltas only to test negativity; it does not compare their numerical values against each source delta_p_deleted. It asserts the first descent, alpha, selector counts, per-orbit summands, and complete S. Its success is therefore compatible with417 wrong source selector-difference magnitudes and zero changed selector signs. The generic graph replay does support the bounded sign/full-sum conclusion. It does not validate the incorrect displayed polynomial or magnitude data. Adjudication should retain the corrected finite result and explicitly reject this overstatement of the checks; do not resolve this disagreement by votes.

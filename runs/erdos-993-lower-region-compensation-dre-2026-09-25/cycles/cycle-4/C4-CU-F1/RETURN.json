@@ -1,0 +1,30 @@
+{
+  "worker_id": "C4-CU-F1",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C4-F1-bounded-CTx-selector-search",
+      "statement": "In the specified 1,836-encoding labeled Prüfer sample of orders 8 through 16, there are 37 eligible parameter rows; all have p=x+2, select every original leaf, have S<0, and satisfy E<=(x+1)Q. No sampled eligible row has a proper favorable-leaf selector.",
+      "scope": "Only the seeded, shape-biased labeled Prüfer sample and exact arithmetic protocol in the C4-F1 report and evidence. Bounded evidence only; no universal conclusion about ordinary trees.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CU-F1/AUDIT-EVIDENCE.json",
+        "cycles/cycle-4/C4-CU-F1/EVIDENCE.json",
+        "cycles/cycle-4/C4-CU-F1/audit.py",
+        "cycles/cycle-4/C4-CU-F1/replay_copy.py"
+      ],
+      "reason": "retained: scratch replay reproduces the finite sample totals, and an independent induced-forest polynomial recurrence plus literal subset counts reconstruct every eligible graph, original leaf selector, per-tag summand, full S, and E=kU+C count. These checks support the bounded statement only; the sample is not exhaustive and does not prove or refute the universal aggregate or CT_x inequality."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CU-F1/REPORT.md",
+  "limitations": [
+    "The source computation samples labeled trees at orders 8 through 16 and is not exhaustive at any searched order.",
+    "No proper favorable-leaf selector occurred in this sampled eligible population; this does not establish that proper selectors are impossible.",
+    "Every eligible sample row has p=x+2, so the run does not separate CT_x from the current-rank addability budget.",
+    "All sampled full aggregates are negative; these finite cases provide neither a proof nor a counterexample to the universal lower-region aggregate."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": ["C4-F1-bounded-CTx-selector-search"]
+}

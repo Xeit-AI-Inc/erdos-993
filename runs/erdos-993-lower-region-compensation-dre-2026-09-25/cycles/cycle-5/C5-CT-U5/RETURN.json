@@ -1,0 +1,24 @@
+{
+  "worker_id": "C5-CT-U5",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C5-U5.support-star-sector",
+      "statement": "For every ordinary star T=K_{1,d} with d>=12 and every p satisfying the primary eligibility conditions, the full selected favorable-leaf aggregate S(T,p) is nonpositive.",
+      "scope": "Only ordinary stars K_{1,d}, d>=12, with the exact x(T)+2<=p and 3p<2alpha(T)+1 guards and the original strict favorable-leaf selector.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-5/C5-CT-U5/EVIDENCE.json"],
+      "reason": "retained: the exact strict selector includes every original leaf, and direct evaluation gives each summand C(d-1,k+1)-C(d-1,k)<=0 at every eligible rank. The source report has a factor-k typo in an auxiliary equation, but the claim follows from the defining summands; the corrected matching identity is kS=E-C-kQ=k(U-Q)."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CT-U5/REPORT.md",
+  "limitations": [
+    "The result covers only ordinary stars K_{1,d} with d>=12 under the stated guards.",
+    "It does not establish a cut or compression inequality when H_v has edges, or settle the general ordinary-tree aggregate.",
+    "The producer report contains an auxiliary factor-k typo, corrected in this critique; it does not change the restricted claim."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": ["C5-U5.support-star-sector"]
+}

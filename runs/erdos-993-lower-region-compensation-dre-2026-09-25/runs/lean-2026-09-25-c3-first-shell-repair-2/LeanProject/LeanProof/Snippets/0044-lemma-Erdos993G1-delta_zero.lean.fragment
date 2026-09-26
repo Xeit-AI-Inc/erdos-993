@@ -1,0 +1,3 @@
+lemma delta_zero [Finite V] : delta F 0 = (Nat.card V : ℤ) - 1 := by
+  simpa [indepCount_zero, indepCount_one] using (delta_nat F 0)
+

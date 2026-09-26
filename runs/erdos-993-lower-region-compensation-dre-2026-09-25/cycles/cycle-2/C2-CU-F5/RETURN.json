@@ -1,0 +1,27 @@
+{
+  "worker_id": "C2-CU-F5",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C2-F5-P6-SHELL-LP",
+      "statement": "For every ordinary tree T of order 14 with p=6 satisfying x(T)+2<=6 and 18<2alpha(T)+1, the full fixed-selector aggregate S(T,6) is at most -222; equality occurs.",
+      "scope": "Bounded exact computation over all ordinary tree isomorphism classes of order 14 at p=6, the order-14 instance of |T|=2p+2, subject to the stated guards.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CU-F5/EVIDENCE.json"
+      ],
+      "reason": "retained. Scratch replay regenerated 3,159 order-14 free-tree codes, selected the same 240 eligible classes, subset-replayed every complete sum, and matched all 240 source (tree_code,S) pairs. The exact finite convex-combination bound is sharp at -222. The route claim is valid at this bounded scope only."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CU-F5/REPORT.md",
+  "limitations": [
+    "The result covers only order 14 and p=6; it does not prove the first-order shell for arbitrary p or settle the universal primary aggregate.",
+    "Replay reused the pinned centroid generator. It independently checked polynomial coefficients, strict eligibility, selectors, deletion counts, and full sums by subset enumeration, but did not implement a second free-tree generation algorithm."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-F5-P6-SHELL-LP"
+  ]
+}

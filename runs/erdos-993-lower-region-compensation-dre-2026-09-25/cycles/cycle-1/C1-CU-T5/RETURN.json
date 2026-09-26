@@ -1,0 +1,40 @@
+{
+  "worker_id": "C1-CU-T5",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C1-T5-1",
+      "statement": "For each original support fibre, the favorable selector and per-leaf summand are constant, and the aggregate equals the support-fibre transfer formula with the original leaf multiplicity.",
+      "scope": "Every finite ordinary tree and every integer rank for which the zero-extended coefficient differences are defined; no eligibility guard is needed for this identity.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CU-T5/evidence/critique.md"
+      ],
+      "reason": "retained: conditioning independent sets on whether the support is included gives I(T-v)=P_s+zQ_s, while the two deleted graphs have polynomials P_s and Q_s. Linearity gives each selected leaf Delta_(p-1)(P_s-Q_s); summing the distinct leaves in the fibre gives m_s times that value. The algebra also covers empty branch products."
+    },
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "The C1-T5 route establishes neither a proof nor an eligible counterexample for the lower-region ordinary favorable-leaf aggregate; its transfer identity leaves the global sign unresolved.",
+      "scope": "Only the evidence and work reported by C1-T5 for finite ordinary trees satisfying x(T)+2<=p and 3p<2alpha(T)+1.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CU-T5/REPORT.md",
+        "cycles/cycle-1/C1-CU-T5/evidence/critique.md"
+      ],
+      "reason": "retained_narrowed: the route's no-result statement is supported, but it is not a proof that the mathematical assertion is open beyond this route's evidence. The exact transfer supplies no global compensation bound. The eligible T22 and T60 controls have positive selected terms and negative full sums, so they rule out pointwise nonpositivity without resolving the target."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CU-T5/REPORT.md",
+  "limitations": [
+    "T22 and T60 checks sum and group pinned recorded summands but do not independently reconstruct their graph encodings or recompute their independence polynomials.",
+    "No proof or eligible refutation of the universal lower-region aggregate is established.",
+    "The support-fibre transfer is an exact reformulation and does not supply the missing global sign inequality."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-T5-1",
+    "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE"
+  ]
+}

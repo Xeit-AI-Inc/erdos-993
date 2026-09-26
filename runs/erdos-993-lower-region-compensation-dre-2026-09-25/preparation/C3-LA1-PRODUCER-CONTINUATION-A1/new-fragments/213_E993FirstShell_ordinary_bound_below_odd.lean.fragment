@@ -1,0 +1,39 @@
+namespace E993FirstShell
+
+open Classical
+
+/-- The ordinary independent-set shadow bound up to the odd middle rank. -/
+lemma ordinary_bound_below_odd {V : Type u} [Fintype V] [DecidableEq V]
+    (G : SimpleGraph V) [DecidableRel G.Adj] (U : Finset V)
+    (k : ℕ) (hk : 1 ≤ k) (hU : U.card ≤ 2 * k + 1) :
+    ((U.powersetCard (k + 1)).filter
+      (fun A : Finset V => G.IsIndepSet (A : Set V))).card ≤
+    ((U.powersetCard k).filter
+      (fun A : Finset V => G.IsIndepSet (A : Set V))).card := by
+  classical
+  have hmulti : E993OrderBand.multiFamily G U U k =
+      E993Interior.taggedFamily G U U (k+1) := by
+    unfold E993OrderBand.multiFamily
+    apply Finset.filter_eq_self.mpr
+    intro B hB
+    obtain ⟨⟨hBU, hcard⟩, _, _⟩ :
+        (B ⊆ U ∧ B.card = k+1) ∧ G.IsIndepSet (B : Set V) ∧
+          ¬ Disjoint B U := by
+      simpa only [E993Interior.taggedFamily, Finset.mem_filter,
+        Finset.mem_powersetCard] using hB
+    have hinter : B ∩ U = B := Finset.inter_eq_left.mpr hBU
+    rw [hinter, hcard]
+    omega
+  have hi := E993OrderBand.marked_incidence_bound G U U k
+  rw [hmulti] at hi
+  have hkpos : 0 < k+1 := by omega
+  have hbound :
+      (E993Interior.taggedFamily G U U (k+1)).card ≤
+        (E993Interior.taggedFamily G U U k).card := by
+    have hm := Nat.mul_le_mul_right
+      (E993Interior.taggedFamily G U U k).card hU
+    nlinarith
+  rw [tagged_self G U (k+1) hkpos, tagged_self G U k (by omega)] at hbound
+  exact hbound
+
+end E993FirstShell

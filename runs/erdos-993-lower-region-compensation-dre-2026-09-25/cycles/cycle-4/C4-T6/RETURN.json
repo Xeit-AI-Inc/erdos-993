@@ -1,0 +1,36 @@
+{
+  "worker_id": "C4-T6",
+  "cycle": 4,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C4-T6-ROOTED-MESSAGE-REDUCTION",
+      "statement": "Rooted independence-polynomial messages give exact product formulas for each leaf-deleted selector polynomial and each selected leaf summand in the ordinary-tree aggregate.",
+      "scope": "All finite ordinary trees; the identities hold as polynomials and preserve each original leaf as a separate tag, including multiple leaves with one support.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-T6/EVIDENCE.json",
+        "cycles/cycle-4/C4-T6/REPORT.md"
+      ],
+      "reason": "The formulas follow by partitioning independent sets at the root and multiplying over disjoint branches. The report gives the recurrences, selector placement, and product formulas, including empty products and same-support multiplicity. This is an evaluator reduction, not a proof of the target sign."
+    },
+    {
+      "claim_id": "C4-T6-PRIMARY-GLOBAL-BOUND",
+      "statement": "The lower-region ordinary favorable-leaf aggregate is not resolved by this route; in particular, the recurrence derived here establishes neither S(T,p)<=0 nor a counterexample.",
+      "scope": "The contract's eligible finite ordinary trees with x(T)+2<=p and 3p<2 alpha(T)+1.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-T6/REPORT.md"
+      ],
+      "reason": "The message recurrences exactly evaluate the finite selector inputs but yield no uniform coefficient comparison after applying the whole-tree first-descent and leaf-deletion selectors. No universal conclusion follows from the evaluator."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-T6/REPORT.md",
+  "limitations": [
+    "No uniform sign invariant for the compositional messages was established.",
+    "No exhaustive census, external literature result, proof, or eligible positive full-sum counterexample is supplied.",
+    "The recurrence is an exact finite-tree evaluator and does not imply a universal conclusion."
+  ],
+  "status_authority": "proposed_worker_only"
+}

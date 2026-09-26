@@ -1,0 +1,81 @@
+{
+  "worker_id": "C3-PREP-C4-INTAKE",
+  "status_authority": "proposed_worker_only",
+  "source_snapshot": {
+    "canonical_claims": 418,
+    "refuted_claims": 92,
+    "all_brief_hashes_match": true,
+    "exact_key_collisions": 0,
+    "note": "All six proposed keys are absent from the 418-key snapshot. All 92 refutation keys occur there with REFUTED status and identical statement text; three registry scope notes are longer than their refutation-ledger counterparts. Semantic distinctions below are scoped judgments, not an absence-of-all-future-alias proof."
+  },
+  "shared_definitions": {
+    "tree": "finite ordinary connected acyclic simple graph",
+    "rank": "natural p with x(T)+2<=p and strict 3p<2alpha(T)+1; k=p-1",
+    "selector": "F={every original degree-one leaf v: Delta_p(T-v)<0}; each leaf is a distinct tag, including shared supports",
+    "marked_counts": "H_v=T-{v,s_v}; W_v=N_T(s_v) minus {v}; q_v(j)=number of independent j-sets in H_v meeting W_v; Q=sum_F q_v(k); U=sum_F q_v(k+1); E=sum over selected marked k-sets of actual addable vertices; C=sum over selected tags of the number of multiply marked upper sets, once per upper set per tag",
+    "exact_relation": "E=kU+C and S=U-Q, hence S<=0 iff E-C<=kQ"
+  },
+  "reviews": [
+    {
+      "proposed_key": "E993-LOWER-REGION-EARLY-MARKED-OCCUPANCY-TRANSFER",
+      "exact_scope": "Every eligible ordinary (T,p) under the shared strict selector, with i_x(T)>0: i_x(T) E <= (x+1)i_(x+1)(T) Q, equivalently E<=mu_x Q where mu_x=(x+1)i_(x+1)/i_x.",
+      "exact_collision": false,
+      "relations": ["This universal premise implies the flat budget and therefore the primary S<=0 because mu_x<x+1<=k.", "C3-U5-EARLY-DESCENT-MARKED-OCCUPANCY-BRIDGE proves only the implication from this premise to S<=0; the premise itself is unproved.", "For Q>0 it is equivalent to Cov_p(w_F,e)/E_p[w_F] <= mu_x-mu_p, with Q=0 handled separately."],
+      "not_same_claim": "The registered lower-region aggregate states only E-C<=kQ. The refuted E993-C3-G1-POINTWISE-ADDABILITY-BOUND is per independent residual set in a different G1 scope; this is one selected tagged total. The eligible order-14 positive covariance refutes the shortcut E/Q<=mu_p, not this quantitative comparison.",
+      "registration": "appropriate_as_distinct_OPEN_premise",
+      "priority": "high",
+      "limitations": "No universal tilt bound; 2230 diagnostic rows all had the full leaf selector, so proper-selector coverage is missing."
+    },
+    {
+      "proposed_key": "E993-LOWER-REGION-FLAT-ADDABILITY-BUDGET",
+      "exact_scope": "Every eligible ordinary (T,p) under the shared strict selector: E<=(x+1)Q.",
+      "exact_collision": false,
+      "relations": ["CT_x implies this because first strict descent gives mu_x<x+1.", "This implies the current-rank budget because x+1<=k.", "It implies S<=0 through E=kU+C and C>=0."],
+      "not_same_claim": "It drops the exact coefficient ratio from CT_x and does not follow from the registered conditional CT_x implication. It is stronger than the primary scalar target whenever C can compensate; failure alone does not refute S. It is a total selected-tag budget, not the terminal per-set G1 bound.",
+      "registration": "appropriate_as_distinct_OPEN_fallback",
+      "priority": "medium",
+      "limitations": "The numerical threshold equals the current-rank threshold at p=x+2; no universal proof or separating eligible witness was supplied."
+    },
+    {
+      "proposed_key": "E993-LOWER-REGION-CURRENT-RANK-ADDABILITY-BUDGET",
+      "exact_scope": "Every eligible ordinary (T,p) under the shared strict selector: E<=kQ, k=p-1.",
+      "exact_collision": false,
+      "relations": ["Flat implies this because x+1<=k.", "This implies S<=0 because E-C<=E; conversely S<=0 only gives E-C<=kQ.", "At p=x+2 its threshold coincides with the flat threshold."],
+      "not_same_claim": "The registered primary assertion allows a positive multiply marked correction C; this proposal discards it. The marked incidence identity and bipartite shadow bound give E=kU+C and a different upper bound depending on alpha; neither is this universal selected-tree budget. The refuted pointwise addability claim has different quantifiers and guard.",
+      "registration": "appropriate_as_distinct_OPEN_fallback_if_C4_tests_it",
+      "priority": "medium",
+      "limitations": "A failure is a mechanism failure unless E-C>kQ is also shown."
+    },
+    {
+      "proposed_key": "E993-SECOND-ORDER-SHELL-POINTWISE-EARLY-DESCENT",
+      "exact_scope": "Every ordinary tree T and natural p>=3 with |V(T)|=2p+3 and x(T)+2<=p; every original leaf v has Delta_(p-1)(T-{v,s_v})-Delta_(p-1)(T-N_T[s_v])<=0, without alpha or favorable-selector hypotheses.",
+      "exact_collision": false,
+      "relations": ["Implies the selected aggregate on precisely this order shell whenever the lower-region guard also holds.", "Extends the order n<=2p+1 pointwise band and the n=2p+2 first-shell pointwise result to a different exact order; neither registered theorem itself covers n=2p+3."],
+      "not_same_claim": "The pointwise universal assertion at exact parent order 2p+3 is stronger than the restricted aggregate there and is disjoint in order from the registered first-shell key. The 92 refutations include broad pointwise and bare matching failures, but no witness at this exact early-descent tree scope; edge-addition monotonicity must not be imported.",
+      "registration": "appropriate_as_distinct_OPEN_pending_controller_proof_review",
+      "priority": "medium",
+      "limitations": "The preparation report gives an informal proof with finite injection evidence and a registered forest linear-bound dependency for p=3..5; raw injection rows and Lean receipt were not listed for this intake. No proof award proposed."
+    },
+    {
+      "proposed_key": "E993-THIRD-ORDER-SHELL-POINTWISE-HIGH-RANK",
+      "exact_scope": "Every ordinary tree T and natural p>=14 with |V(T)|=2p+4 and x(T)+2<=p; every original leaf v has Delta_(p-1)(T-{v,s_v})-Delta_(p-1)(T-N_T[s_v])<=0, without alpha or favorable-selector hypotheses.",
+      "exact_collision": false,
+      "relations": ["Implies the lower-region selected aggregate only on this exact shell and p>=14.", "The p10..13 cells and larger order excess are outside its scope."],
+      "not_same_claim": "Its order and rank differ from the first and second-shell keys. The eligible n24,p10 six-cover tree refutes only the attempted tau>=7 proof step, with all pointwise terms negative; it does not refute this p>=14 assertion or establish its low-rank extension. Bare matching refutations at smaller matchings do not cover the five/four-edge residual hypotheses here.",
+      "registration": "appropriate_as_distinct_OPEN_pending_controller_proof_review",
+      "priority": "medium",
+      "limitations": "Informal proof relies on a pinned first-wide theorem and finite matching certificates not listed in this intake; the universal SCD lift and graph reductions were read in the report, not formally checked here."
+    },
+    {
+      "proposed_key": "E993-ORDINARY-TM-LOWER-REGION-AGGREGATE",
+      "exact_scope": "For every integer m>=1, T_m is path 0-1-2 with m center-at-0 three-private-leaf claws; for every p satisfying x(T_m)+2<=p and strict 3p<2alpha(T_m)+1, the complete original strict-selector S(T_m,p)<=0, with arm and claw leaf orbits tested separately.",
+      "exact_collision": false,
+      "relations": ["It is a family restriction of the registered all-ordinary-tree lower-region aggregate.", "The r19 four-ratio package is a proposed sufficient analytic package on its own exact coefficient ranges; the draft does not assert those four inequalities, and no ordinary/governed semantic bridge is supplied by its registry text.", "The C3 finite m<=50 rows and T67 row are bounded evidence only; the C3 all-leaf Q polynomial applies only if both orbits are selected."],
+      "not_same_claim": "All eligible m and ranks with the actual two-orbit selector is neither the four-ratio r19 package nor a finite family census. The exact conditional polynomial identity in C3 is algebra, not a sign theorem.",
+      "registration": "appropriate_as_distinct_OPEN_family_target",
+      "priority": "medium_high",
+      "limitations": "No all-m selector classification or uniform coefficient sign proof; the four r19 ratios and their ordinary-tree interpretation were not included as formulas in this brief."
+    }
+  ],
+  "terminal_status_rule": "No VERIFIED or REFUTED registered key is reopened; registration and dispatch are controller decisions."
+}

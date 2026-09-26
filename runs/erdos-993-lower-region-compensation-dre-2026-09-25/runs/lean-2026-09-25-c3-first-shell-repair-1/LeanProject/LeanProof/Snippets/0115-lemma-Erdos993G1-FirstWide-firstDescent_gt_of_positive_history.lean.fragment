@@ -1,0 +1,13 @@
+namespace Erdos993G1.FirstWide
+
+lemma firstDescent_gt_of_positive_history {Y : Type u} [Finite Y]
+    (G : SimpleGraph Y) (r : ℕ)
+    (hpos : ∀ k : ℕ, k ≤ r → 0 < delta G (k : ℤ)) :
+    r < firstDescent G := by
+  by_contra h
+  have hle : firstDescent G ≤ r := by omega
+  have hp := hpos (firstDescent G) hle
+  have hn := delta_firstDescent_neg G
+  omega
+
+end Erdos993G1.FirstWide

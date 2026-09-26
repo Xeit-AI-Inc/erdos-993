@@ -1,0 +1,52 @@
+{
+  "worker_id": "C4-CT-F5",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C4-F5-TM-EXACT-BOUNDED-CHECKS",
+      "statement": "Disposition: retained. The stated exact computations have nonpositive complete sums at every eligible row in the listed finite T_m, equal-arm, and lopsided parameter ranges, with the original selector applied per leaf tag.",
+      "scope": "T_m for m=1..100; equal-arm variants with 1..6 leaves per branch and m=1..15; lopsided variants with one branch size s in {1,2,4,5}, other branch sizes 3, and m=2..20. Separate graph-DP cross-check: T_m m=1..20 and lopsided m=2..8. Independent literal-subset audit: T_m m=1..3.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CT-F5/REPORT.md",
+        "cycles/cycle-4/C4-CT-F5/COMPUTE.py",
+        "cycles/cycle-4/C4-CT-F5/EVIDENCE.json",
+        "cycles/cycle-4/C4-CT-F5/GRAPH-CROSSCHECK.py",
+        "cycles/cycle-4/C4-CT-F5/GRAPH-CROSSCHECK.json",
+        "cycles/cycle-4/C4-CT-F5/ordinary_tree_checked.py",
+        "cycles/cycle-4/C4-CT-F5/INDEPENDENT-ENUM.py",
+        "cycles/cycle-4/C4-CT-F5/INDEPENDENT-ENUM.json",
+        "cycles/cycle-4/C4-CT-F5/SOURCE-HASH-CHECK.json"
+      ],
+      "reason": "The exact computation and graph-DP replays reproduce the sealed evidence byte for byte, and direct subset enumeration independently checks all eligible rows for m<=3 including all original leaves, supports, strict selector tests, and the full sum. No positive row occurs in any assigned finite range. These results are bounded and make no universal claim."
+    },
+    {
+      "claim_id": "E993-ORDINARY-TM-LOWER-REGION-AGGREGATE",
+      "statement": "Disposition: retained as an open family claim. For the ordinary path-plus-m-three-leaf-branches tree T_m, the complete original favorable-leaf aggregate is asserted nonpositive for each eligible p; the assigned route establishes no all-m proof or counterexample.",
+      "scope": "All integers m>=1 and natural p satisfying x(T_m)+2<=p and 3p<2 alpha(T_m)+1. The fixed selector is the set of original leaves v with Delta_p(T_m-v)<0, and each original leaf remains a separate summand, including the 3m branch tips sharing supports.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CT-F5/REPORT.md",
+        "cycles/cycle-4/C4-CT-F5/COMPUTE.py",
+        "cycles/cycle-4/C4-CT-F5/EVIDENCE.json",
+        "cycles/cycle-4/C4-CT-F5/INDEPENDENT-ENUM.py",
+        "cycles/cycle-4/C4-CT-F5/INDEPENDENT-ENUM.json"
+      ],
+      "reason": "The orbit polynomials, per-orbit selector rule, and tagged summand formulas check for the displayed family. The both-orbits derivative identity is only a reduction; no uniform adjacent-coefficient sign or all-m selector proof is supplied. The bounded evidence neither proves nor refutes the all-m assertion, and the family scope does not resolve the ordinary-tree target."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CT-F5/REPORT.md",
+  "limitations": [
+    "The all-parameter T_m aggregate remains unproved and unrefuted; finite checks through m=100 do not decide it.",
+    "The coefficient identity gives no uniform sign control over adjacent coefficients throughout the eligible rank interval.",
+    "The audited family and variants do not cover arbitrary ordinary trees or arbitrary branch profiles.",
+    "No literature theorem, formal verification, or authoritative status is claimed."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-F5-TM-EXACT-BOUNDED-CHECKS",
+    "E993-ORDINARY-TM-LOWER-REGION-AGGREGATE"
+  ]
+}

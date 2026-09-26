@@ -1,0 +1,29 @@
+{
+  "worker_id": "C5-CT-F5",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C5-F5.T22-tagwise-obstruction",
+      "statement": "Conditional on the hash-pinned T22 order-91 control row being a correct ordinary-tree and selector record, its 67 recorded summands total -498754180547001418536 while the distinguished tag has g=212336130412243110 (k*g=7007092303604022630 at k=33); this rules out a pointwise nonpositive-per-tag budget on that row, but not a cross-tag budget.",
+      "scope": "Exact arithmetic replay of the single recorded row in inputs/standing-controls/t22-order91.json. The allowed record contains no graph encoding or independence-count vectors, so ordinary-tree realizability and selector provenance were not independently established. No conclusion about a global unsigned map or the primary aggregate follows.",
+      "status": "proposed_bounded",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CT-F5/REPLAY-EVIDENCE.json",
+        "cycles/cycle-5/C5-CT-F5/T22-control-copy.json"
+      ],
+      "reason": "retained_narrowed: exact sums, tag values, and row guard arithmetic replay from the copied hash-pinned record, establishing only the conditional pointwise/tagwise obstruction. The source does not permit an independent graph, alpha, first-descent, or selector reconstruction, and no actual unsigned network is specified for a Hall-cut/kernel test."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CT-F5/REPORT.md",
+  "limitations": [
+    "The control row lacks a graph encoding and independence-count vectors; ordinary-tree realizability, alpha, first strict descent, and selector derivation cannot be independently checked from the allowed evidence.",
+    "The assignment does not specify the unsigned cross-tag relation by bases, incidence, capacities, weights, and mixed-boundary transitions, so no global Hall cut or kernel can be tested.",
+    "The exact replay is a one-row bounded mechanism obstruction only; it does not refute the primary aggregate."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-F5.T22-tagwise-obstruction"
+  ]
+}

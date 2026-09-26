@@ -1,0 +1,25 @@
+{
+  "worker_id": "C5-T4",
+  "cycle": 5,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C5-T4-SELECTOR-PENDANT-PATH-RECURRENCE",
+      "statement": "For a rooted finite forest (G,r), attaching a pendant path P_m at r gives I(G_m)=I(G-r)P_m+zI(G-N[r])P_(m-1); consequently this two-polynomial boundary state computes the exact strict Delta_p selector test at every rank for each surviving original leaf after the operation, while tracking the new endpoint separately.",
+      "scope": "Fixed-rank strict favorable-leaf selector under pendant-path attachment at a specified root in finite ordinary trees; includes all old original leaf tags other than the root when it was a leaf, plus the new endpoint. No eligibility or primary aggregate conclusion.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-T4/EVIDENCE.json"
+      ],
+      "reason": "Independent-set partition by root occupancy proves the polynomial identity and coefficient selector formula. The exact K1,7 calculation demonstrates that selector membership need not be preserved; all primary eligibility guards and the global sum remain outside the lemma."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-T4/REPORT.md",
+  "limitations": [
+    "The recurrence does not show preservation of the alpha/x/p eligibility guards or the strict lower-region inequality.",
+    "The sign-change example is outside primary eligibility and does not refute the primary aggregate.",
+    "No bound is established for changes in the complete selected sum S."
+  ],
+  "status_authority": "proposed_worker_only"
+}

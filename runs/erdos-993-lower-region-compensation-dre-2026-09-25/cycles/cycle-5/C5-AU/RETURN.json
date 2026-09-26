@@ -1,0 +1,142 @@
+{
+  "worker_id": "C5-AU",
+  "cycle": 5,
+  "stage": "adjudication",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "C5-U1.coefficient-window",
+      "statement": "For finite zero-extended coefficient sequences, f=Gg+e and G=sum_r c_r z^r imply Delta_p f=sum_r c_r Delta_(p-r)g+Delta_p e; a negative weighted sum M remains negative if |Delta_p e|<-M.",
+      "scope": "Exact algebraic identity and conditional finite-window test; no central-LC-to-window, no-recovery, crossing-minor, infinite-T_m, or general-tree theorem.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-AU/REPORT.md"
+      ],
+      "reason": "retained_narrowed: coefficient notation is made unambiguous; the stated conditional test is proved by convolution, while the shifted-window sign is an unproved application."
+    },
+    {
+      "claim_id": "C5-U1.Tm-bounded",
+      "statement": "For T_m consisting of path 0-1-2 and m three-tip claws attached to 0, all 427 eligible (m,p) rows with 1<=m<=40 have corrected strict original-leaf selectors and S(T_m,p)<0.",
+      "scope": "Only the specified T_m family for m=1..40, with exact first descent, both guards, all original leaves, original supports, and tip multiplicity 3m; no m>40 or general-tree conclusion.",
+      "status": "proposed_bounded_computational",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-AU/REPORT.md",
+        "cycles/cycle-5/C5-AU/EVIDENCE.json",
+        "cycles/cycle-5/C5-AU/replay_u1.py"
+      ],
+      "reason": "retained_narrowed: the source tip-deletion polynomial omitted an isolated vertex. Independent exact replay with z(1+z)^3B^(m-1) changes 417 of 854 selector values but no strict selector signs; all 427 full sums remain negative."
+    },
+    {
+      "claim_id": "C5-U2.STAR-PRODUCT-COEFFICIENT-BOUND",
+      "statement": "For Q=product_i((1+z)^r_i+z), m>=1, r_i in {2,3,4}, N=sum r_i, and h>=0 with 4h<=N, Q>=coeff binom(m,h)z^h(1+z)^(N-4h). If N>=12 and 1<=j<=floor(2N/3), Q_j>=m binom(N-4,j-1)>0 and [z^j](z(1+z)^(N+1))/Q_j<=24^5/m.",
+      "scope": "The exact heterogeneous star-factor product and stated coefficient window; no curvature, selector, glued-tree, or primary conclusion.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-AU/REPORT.md"
+      ],
+      "reason": "retained: subset expansion and five-factor binomial ratio prove all displayed inequalities on their exact domains."
+    },
+    {
+      "claim_id": "C5-U3-ALT-CUT",
+      "statement": "For each selected original leaf, the marked-set inclusion graph satisfies E_v=kU_v+C_v. Alternating reachability from unmatched left vertices S in a maximum matching gives N(X)=Y and |X|-|N(X)|=|S|.",
+      "scope": "Finite marked incidence graphs and arbitrary finite bipartite graphs, with left-start Hall orientation; no weighted primary budget follows.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-AU/REPORT.md"
+      ],
+      "reason": "retained: both endpoint degree counts and the matching bijection are exact. The left-start cut diagnoses failure to saturate lower sets; upper-demand transport needs a separate orientation and weights."
+    },
+    {
+      "claim_id": "C5-U3-PRIMARY-GAP",
+      "statement": "This U3 route supplies no bound D+C>=(2a+1-3p)Q or selector/first-descent-to-weighted-cut map; it does not resolve the full ordinary-tree target.",
+      "scope": "A proof audit of this route only, not a claim that no future weighted Hall argument exists or that T22 data are unavailable.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-AU/REPORT.md"
+      ],
+      "reason": "retained_narrowed: kS=(2a+1-3p)Q-D-C is exact and the coefficient is positive, but the route has only an unweighted Hall identity. Permitted common sources do include T22 data; no T22 certificate was attempted."
+    },
+    {
+      "claim_id": "C5-U4-LEMMA-1",
+      "statement": "For every original leaf v of an ordinary tree, Delta_j(T)=Delta_j(T-v)+Delta_(j-1)(T-{v,s_v}) under zero extension; at x(T), at least one right-hand term is negative.",
+      "scope": "Every integer rank and each original leaf separately; rank-local alternative only. K_(1,3) disproves an unguarded later-rank implication but is outside the strict lower region.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-AU/REPORT.md"
+      ],
+      "reason": "retained: partitioning independent sets by v proves the identity; a negative sum forces the alternative, with no cross-rank transfer."
+    },
+    {
+      "claim_id": "C5-U5.support-star-sector",
+      "statement": "For every eligible (K_(1,d),p) with d>=12, the exact fixed original-leaf selector is all d leaves and S=d[binom(d-1,p)-binom(d-1,p-1)]<0.",
+      "scope": "Ordinary stars d>=12 under both registered rank guards; no forest sector with edges or mixed marks.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-AU/REPORT.md"
+      ],
+      "reason": "retained: the source has an extra k in one displayed handoff sentence and an insufficient intermediate rank inequality; the corrected binomial proof in REPORT.md establishes its exact conclusion."
+    },
+    {
+      "claim_id": "C5-U6-MARKED-SHELL-REDUCTION",
+      "statement": "The source asserts negative signs in both first-mark shell-difference formulas. Those asserted formulas are false; the correct shell sums have positive signs.",
+      "scope": "Rejection of the stated formulas for each original leaf; the unique-first-mark bijection and the separately stated corrected formulas remain valid.",
+      "status": "proposed_rejected",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-AU/REPORT.md"
+      ],
+      "reason": "rejected: q_j=sum_w i_(j-1)(G_w) implies q_j-q_(j-1)=+sum_w Delta_(j-2)(G_w), and the selector has +sum_w Delta_(p-1)(G_w). H=K1, W=V(H), j=2 is a direct sign check."
+    },
+    {
+      "claim_id": "C5-U6-STAR-LOWER-REGION",
+      "statement": "For eligible stars K_(1,m), the exact parameter window is ceil(3p/2)<=m<=2p-4, nonempty exactly for p>=8, and S=m[binom(m-1,p)-binom(m-1,p-1)]<0.",
+      "scope": "Ordinary stars m>=4, both registered guards, strict original-leaf selector, all m distinct tags; no general-tree result.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-AU/REPORT.md"
+      ],
+      "reason": "retained: exact star independence vector gives x=ceil(m/2), all original leaves selected, and each binomial summand strictly negative. The proof is independent of the rejected shell signs."
+    },
+    {
+      "claim_id": "C5-U6-PRIMARY-STATUS",
+      "statement": "The U6 route does not settle the universal ordinary-tree lower-region favorable-leaf aggregate.",
+      "scope": "A route-level open conclusion only; the controller retains authority over the registered primary.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-AU/REPORT.md"
+      ],
+      "reason": "retained: the valid star subfamily and corrected shell decomposition give neither an arbitrary-tree proof nor an eligible positive complete-sum counterexample."
+    },
+    {
+      "claim_id": "C5-AU.CORRECTED-MARKED-SHELL",
+      "statement": "For any fixed original leaf and order of W, G_w=H-(W_<w union N_H[w]) gives q_j=sum_w i_(j-1)(G_w), q_j-q_(j-1)=sum_w Delta_(j-2)(G_w), and Delta_p(T-v)=sum_w Delta_(p-1)(G_w)+i_(p+1)(R)-i_(p-1)(R).",
+      "scope": "Exact algebraic decomposition under integer zero extension; the target samples rank p-2 while the selector samples rank p-1 and a two-rank residual. No sign theorem.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-AU/REPORT.md"
+      ],
+      "reason": "derived correction: the earliest-mark bijection and adjacent-coefficient subtraction give positive shell signs. It replaces no covered source disposition."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-AU/REPORT.md",
+  "limitations": [
+    "The all-m T_m analytic candidate and all ordinary trees are outside the bounded m<=40 replay; no infinite-family implication is drawn.",
+    "The U2 coefficient bound has no curvature or selector bridge and stops before the last possible degree-based lower-region ranks.",
+    "The U3 left-start Hall cut is unweighted and has no established first-descent or strict-selector charge to the required D+C budget.",
+    "The U4 rank-x alternative does not transfer to p>=x+2 under the eligible guards.",
+    "The corrected U6 first-mark identities have no general sign theorem; the star proofs cover only stars, with no eligible star at p=6 or p=7.",
+    "No universal proof or eligible complete positive-sum counterexample is supplied; all dispositions and statuses are proposed worker conclusions."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-U1.Tm-bounded",
+    "C5-U1.coefficient-window",
+    "C5-U2.STAR-PRODUCT-COEFFICIENT-BOUND",
+    "C5-U3-ALT-CUT",
+    "C5-U3-PRIMARY-GAP",
+    "C5-U4-LEMMA-1",
+    "C5-U5.support-star-sector",
+    "C5-U6-MARKED-SHELL-REDUCTION",
+    "C5-U6-PRIMARY-STATUS",
+    "C5-U6-STAR-LOWER-REGION"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "worker_id": "C3-CU-T4",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C3-T4-ODD-SHELL-REDUCTION",
+      "statement": "For any fixed ordering of W, the first-mark classes partition independent sets meeting W and contribute i_k(J_i)-i_(k-1)(J_i) to q_(k+1)-q_k. Residuals with order at most 2k-1 have nonpositive difference by the independent-set incidence count. For a residual consisting of k disjoint edges and one isolate, the exact difference is 2^(k-2)(4-binomial(k,2)). No exhaustive classification of the largest residual orders is claimed without a separate case for isolated marked vertices.",
+      "scope": "Narrowed to the first-mark identity, the residual shadow bound for |V(J_i)|<=2k-1, and the stated matching-plus-isolate coefficient formula. The route's boundary classification is excluded: an eligible 23-vertex ordinary-tree instance has a selected leaf with marked degrees 1 and 0 in H, yielding an omitted order-2k+1 residual (or order 2k+2 when the isolate is first). No complete-sum conclusion.",
+      "status": "proposed_partial",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CU-T4/critique-evidence.json",
+        "cycles/cycle-3/C3-CU-T4/replay.py",
+        "cycles/cycle-3/C3-CU-T4/ordinary_tree_checked.py"
+      ],
+      "reason": "retained_narrowed: the first-mark decomposition, shadow inequality and matching coefficient algebra check out, but the claimed large-residual classification omits isolated marked vertices. The exact eligible replay verifies the omission under the fixed strict selector; the full aggregate in that instance is negative, so this is a route-claim correction, not a target refutation."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CU-T4/REPORT.md",
+  "limitations": [
+    "The critique does not prove or refute the complete selected lower-region aggregate.",
+    "The matching-plus-isolate calculation is not a universal sign theorem or a complete classification of realizable first-mark residuals.",
+    "The exact counterexample refutes the route's stated residual classification only; it has a negative full aggregate."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C3-T4-ODD-SHELL-REDUCTION"
+  ]
+}

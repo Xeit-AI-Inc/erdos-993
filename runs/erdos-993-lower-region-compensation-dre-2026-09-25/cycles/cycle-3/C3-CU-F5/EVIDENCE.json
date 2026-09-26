@@ -1,0 +1,132 @@
+{
+  "family": "hub with 2..5 unordered branches, each P_l (l=1..4 path vertices off hub) or C_t (one center with t=2..4 terminal leaves); total order <=18",
+  "generation": "one canonical sorted multiset per branch type multiset; all eligible p with x+2<=p and 3p<2alpha+1",
+  "move_rule": "all one-vertex deletions plus B -> (B - (N(s) intersect B)) union {s} for absent s with exactly two neighbors in B",
+  "representative_exact_row": {
+    "F": [
+      2,
+      4,
+      5,
+      6,
+      8,
+      9,
+      10,
+      11
+    ],
+    "aggregate_S": -275,
+    "alpha": 9,
+    "branches": [
+      "P2",
+      "C3",
+      "C4"
+    ],
+    "cut_neighborhood_count": 0,
+    "cut_neighborhood_masks": [],
+    "cut_upper_count": 0,
+    "cut_upper_masks": [],
+    "direct_summand_sum": -275,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        3,
+        4
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        3,
+        6
+      ],
+      [
+        7,
+        8
+      ],
+      [
+        7,
+        9
+      ],
+      [
+        7,
+        10
+      ],
+      [
+        7,
+        11
+      ]
+    ],
+    "flow": 259,
+    "hall_deficit": 0,
+    "leaf_delta_p_minus": {
+      "2": -35,
+      "4": -27,
+      "5": -27,
+      "6": -27,
+      "8": -25,
+      "9": -25,
+      "10": -25,
+      "11": -25
+    },
+    "lower_independent_sets": 107,
+    "order": 12,
+    "p": 6,
+    "polynomial": [
+      1,
+      12,
+      55,
+      130,
+      184,
+      172,
+      107,
+      43,
+      10,
+      1
+    ],
+    "summand_terms": {
+      "10": -39,
+      "11": -39,
+      "2": -14,
+      "4": -35,
+      "5": -35,
+      "6": -35,
+      "8": -39,
+      "9": -39
+    },
+    "total_weight_lower": 534,
+    "total_weight_upper": 259,
+    "upper_independent_sets": 43,
+    "x": 4
+  },
+  "scope": "finite search only; not a universal result",
+  "summary": {
+    "S_max": -224,
+    "S_min": -9828,
+    "all_sources_saturated": true,
+    "best_deficit": 0,
+    "deficient_cut_rows": 0,
+    "eligible_rows_total": 138,
+    "eligible_rows_with_nonempty_F": 138,
+    "empty_selector_rows": 0,
+    "examined_trees": 633,
+    "heterogeneous_rows": 133,
+    "positive_full_S_rows": 0,
+    "rows": 138
+  },
+  "weight_rule": "w_F(B)=count of v in F intersect B for which (B-{v}) intersects W_v, W_v=N(s_v)\\{v}; capacities and supplies exact integer weights"
+}

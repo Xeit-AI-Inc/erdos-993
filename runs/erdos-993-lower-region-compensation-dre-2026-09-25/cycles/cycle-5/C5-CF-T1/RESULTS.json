@@ -1,0 +1,71 @@
+{
+  "method": "independent B^m recurrence from B*(B^m)'=m*B'*B^m; L powers by binomial coefficients; direct integer formulas",
+  "finite_base": {
+    "m": [
+      3,
+      999
+    ],
+    "j": "m through 2m+2 inclusive",
+    "polynomials": [
+      "A0",
+      "Astar",
+      "R"
+    ],
+    "lc_checks": 1507464,
+    "mixed_minor_checks": 1507464,
+    "failure_counts": {
+      "lc": 0,
+      "mixed_minor": 0
+    },
+    "minimum_margins": {
+      "lc": [
+        "1210",
+        3,
+        "Astar",
+        8
+      ],
+      "mixed_minor": [
+        "1243",
+        3,
+        "Astar",
+        8
+      ]
+    }
+  },
+  "eligible_family_replay": {
+    "m": [
+      1,
+      999
+    ],
+    "rank_rule": "x+2 <= p <= 2m+1",
+    "rows": 276938,
+    "selector_and_full_sum_failures": 0
+  },
+  "large_m_exact_cutoff_ratios": {
+    "LC": [
+      "114463976515372641562517941338228411041200160980224609375",
+      "4209007100772390509058978925077086614394939884704237891896"
+    ],
+    "A0_mixed": [
+      "1793268965407504717812781080965578439645469188690185546875",
+      "33672056806179124072471831400616692915159519077633903135168"
+    ],
+    "Astar_mixed": [
+      "16444657959375202837815077572258815052919089794158935546875",
+      "33672056806179124072471831400616692915159519077633903135168"
+    ],
+    "R_mixed": [
+      "5837662802284004719688415008249648963101208209991455078125",
+      "7365762426351683390853213118884901575191144798232416310818"
+    ]
+  },
+  "first_descents": {
+    "1": 2,
+    "2": 4,
+    "3": 5
+  },
+  "limitations": [
+    "This is finite exact arithmetic, not a proof kernel certificate.",
+    "It checks the stated polynomial formulas; the graph decomposition and large-m inequalities are proved separately in REPORT.md."
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "worker_id": "C2-LA1-PRODUCER",
+  "model": "gpt-6-sol",
+  "reasoning_effort": "high",
+  "task": "# C2-LA1-PRODUCER draft (not dispatched before synthesis selection)\n\nProduce the exact two-conjunct theorem in the frozen e993-c2-order-band-pair-v2 contract, under the existing assigned producer identity C2-LA1-PRODUCER. Model GPT-6 Sol, reasoning high. The mathematical route is the independently audited relative-U marked-incidence proof in SOURCE/FORMAL-PLAN.md and SOURCE/INTENDED-PROOF.md. The imported old first-interior theorem is not this target, and its bipartite high-tail lemma does not discharge the arbitrary-graph order band. Preserve all quantifiers and guards, original leaf/support/H/R semantics, and integer differences. Do not silently strengthen a premise or prove only one conjunct.\n\nLocal writable directory: the final docket will give the absolute scratchpad/C2-LA1-PRODUCER path. All proposed Lean and reports stay there. The controller has copied the prior FirstInteriorMain.lean byte-identically into the pinned remote project and compiled that dependency. Import LeanProof.FirstInteriorMain. Use namespace E993OrderBand and explicit universe u. New IsolateCoveredOn, IsolateCovered and markedCount must have exactly the frozen definition meanings. Private old helpers may guide new named proofs; do not invoke private declarations as if exported or claim modified copies are byte-identical dependencies.\n\nCompiler access is through the pinned lean_bridge_client.py, run with cwd equal to your scratch. Each request has a fresh alphanumeric/underscore/hyphen id. Operations: `ID read_mathlib Mathlib/path.lean`; `ID search_mathlib Mathlib/path_or_directory literal_text`; `ID compile relative_candidate.lean`. This is a controller compiler service, not direct SSH. It writes your candidate only to the one authorized remote draft and preserves every compiled revision and response. It accepts imports Mathlib/Mathlib.* and LeanProof.FirstInteriorMain only. Do not execute direct remote commands, alter the service, configure the app/models/sandbox, or read unrelated local files. No arbitrary IO, runtime evaluation, incomplete proofs, custom axioms, or native_decide are permitted. Service errors are evidence, never success.\n\nWork incrementally: compile finished definitions and helper lemmas as they become ready, then the unchanged terminal. The service's token filter applies to comments too: avoid forbidden incomplete-proof/runtime keywords in candidate comments. A compile pass of a prefix does not prove the terminal. You may use modest exact local calculations in scratch as diagnostics; computation is not proof. Ask the compiler for actual Lean/API feedback rather than inventing an accepted build.\n\nWhen complete, give a final successful compile of the entire candidate and provide proposed registrar fragments in dependency order: definitions before lemmas, one terminal theorem last. Use ordinary namespace blocks and unqualified declaration leaf names after def/lemma/theorem, so the controller's registrar recognizes the globally qualified names. `noncomputable` may be on its own line above `def`. No reserved `VERITYOS ENTRY` marker. First fragment may carry the import and universe declaration before its definition. Provide REGISTRATION-PLAN.json with each name, kind and relative fragment path; preserve raw terminal header and namespace context for independent fidelity. Never insert a fake declaration or comment to satisfy a matcher.\n\nWrite REPORT.md and RESULTS.json recording exact completed/unfinished lemmas, final candidate path, compile request ids and honest limitations. Include the complete terminal only if actually proved and compiled. The controller owns registration, kernel and axiom checks, source/statement fingerprints, and fresh independent fidelity. No worker self-award, no registry mutation, no extra workers. Finish all foreground processes, write your final records, and create BRIDGE-STOP in your scratch only once no request is pending. A genuine unresolved proof or transport obstacle must be reported with its exact state; no fabricated success.\n\nSelection is now active. Use the compiler client with cwd your scratch. Read the listed service client; controller owns the already running service. Absolute scratch: /Users/ashtonsperry/Documents/Codex/2026-09-13/in-x20/work/erdos-993-lower-region-compensation-dre-2026-09-25/scratchpad/C2-LA1-PRODUCER. Compiler client: /Users/ashtonsperry/Documents/Codex/2026-09-13/in-x20/work/erdos-993-lower-region-compensation-dre-2026-09-25/control-proposals/formal-transport/lean_bridge_client.py. Continue until the exact theorem is complete or a concrete unresolved mathematical/transport obstacle is documented. You may read controller replies in your own scratch and exact Mathlib files returned by the service as allowed source evidence. No time-based self-stop or scope weakening.",
+  "allowed_source_files": [
+    {
+      "path": "runs/lean-2026-09-25-c2-order-bands/SOURCE/FORMAL-PLAN.md",
+      "sha256": "b28c38d08896889259c6b9aa912c81f61c027f205f7fc4e135e0874ee1037b1b"
+    },
+    {
+      "path": "runs/lean-2026-09-25-c2-order-bands/SOURCE/FirstInteriorMain.lean",
+      "sha256": "8d864da290947d75ac0cb52644b8b5336a19076878fcb11eeed552e6a118d7a9"
+    },
+    {
+      "path": "runs/lean-2026-09-25-c2-order-bands/SOURCE/DEFINITIONS.lean.fragment",
+      "sha256": "24b3bcaad6226f18ef562622b80736d4bd61ededd43147211fd9d377af726edc"
+    },
+    {
+      "path": "runs/lean-2026-09-25-c2-order-bands/SOURCE/INTENDED-PROOF.md",
+      "sha256": "6a27d09bd8b78dc3aa5392047e31d630e95696a1995e39c4280c4909f92f6d89"
+    },
+    {
+      "path": "runs/lean-2026-09-25-c2-order-bands/SOURCE/BASE-PIN.json",
+      "sha256": "a5801a2626be4368180598151f62889c6eb064baab3eb1fb2c17a3f2f207c86d"
+    },
+    {
+      "path": "runs/lean-2026-09-25-c2-order-bands/SOURCE/PRIOR-AUDIT.md",
+      "sha256": "e21da4f7d1485453a068e4510b2edc6ff4c694878dd438acad2865f3568be23c"
+    },
+    {
+      "path": "runs/lean-2026-09-25-c2-order-bands/THEOREM-CONTRACT.yaml",
+      "sha256": "007997997fb2c2aebf976cac6fcf5f1a25960a3f5776c798d517f79e045b4bc7"
+    },
+    {
+      "path": "runs/lean-2026-09-25-c2-order-bands/EVIDENCE/INFORMAL-AUDIT.md",
+      "sha256": "d366e6700a56ed826130cb31880a590f81405736adff86ff1de19628aba5c282"
+    },
+    {
+      "path": "cycles/cycle-2/LEAN-GATE.md",
+      "sha256": "35127c85780702c07e231925c75bdb948ed1aa90e7b0477b27fea9627f96d28b"
+    },
+    {
+      "path": "control-proposals/formal-transport/lean_bridge_client.py",
+      "sha256": "0749588f2b0d95b8d114a0e91a9189b30a778888f54e04d110b5fd6f8ea98b77"
+    },
+    {
+      "path": "control-proposals/formal-transport/PRODUCER-BRIEF-DRAFT.md",
+      "sha256": "2bcb31a63c16a0c0ac0070604bd1d42efedfe9239c434cf74de6f906a863fc28"
+    },
+    {
+      "path": "control-proposals/formal-transport/CONTROLLER-SERVICE.md",
+      "sha256": "15b1c8c298bb22c5e9bcc6a1b6ec7a6a06c4af2c26485a020cab69886c6d94c4"
+    }
+  ]
+}

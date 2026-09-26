@@ -1,0 +1,15 @@
+{
+  "claim_id": "C5-U5.support-star-sector",
+  "disposition": "retained",
+  "independent_checks": {
+    "tree": "T=K_{1,d}, d>=12; alpha(T)=d; each original leaf has support the center",
+    "first_descent": "i0=1, i1=d+1, ij=binomial(d,j) for 2<=j<=d; Delta1>0; for j>=2 Delta_j=binomial(d,j)*(d-2j-1)/(j+1), including zero extension at j=d; x=floor((d+1)/2)",
+    "selector": "T-v=K_{1,d-1}, x(T-v)=floor(d/2); eligibility gives p>x(T-v), and 3p<2d+1 gives p<=floor(2d/3)<d-1; thus Delta_p(T-v)<0 for each original leaf and F is all d leaves",
+    "sector": "H_v is edgeless on h=d-1 vertices, W_v=V(H_v), R_v empty; for k=p-1>=1, q_v(k)=binomial(h,k) and q_v(k+1)=binomial(h,k+1)",
+    "sign": "k>=x+1 implies 2k>=d-2 for even and odd d; therefore binomial(h,k+1)/binomial(h,k)=(h-k)/(k+1)<=1 when defined; zero-extended boundary ranks are nonpositive directly",
+    "full_sum": "Each of d selected leaves contributes q_v(k+1)-q_v(k)<=0, hence S<=0",
+    "boundary_counts": "E=(h-k)Q; C=U=binomial(h,k+1); E=kU+C by Pascal's identity"
+  },
+  "presentation_correction": "The source's stated weaker inequality 2k+2>=d-1 alone does not imply its ratio bound. The stronger 2k>=d-2 follows directly from k>=floor((d+1)/2)+1, so the conclusion is repaired without narrowing the claim.",
+  "pin_verification": "All 3 case pins and 237 common pins matched their packet SHA-256 values."
+}

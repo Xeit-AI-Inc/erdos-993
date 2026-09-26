@@ -1,0 +1,13 @@
+lemma Erdos993G1.firstWide_nonpos_of_two_edges {Y : Type u} [Finite Y]
+    (G : SimpleGraph Y) (r : ℕ) (hr : 1 ≤ r) (hn : Nat.card Y = 2 * r + 2)
+    (he : 2 ≤ Nat.card G.edgeSet) : Erdos993G1.delta G (r : ℤ) ≤ 0 := by
+  classical
+  by_cases hm : ∃ a b c d : Y, G.Adj a b ∧ G.Adj c d ∧
+      Disjoint ({a, b} : Set Y) {c, d}
+  · obtain ⟨a, b, c, d, hab, hcd, hdis⟩ := hm
+    exact Erdos993G1.FirstWide.delta_nonpos_of_disjoint_edges G r hr hn a b c d hab hcd hdis
+  · rcases Erdos993G1.FirstWide.intersecting_edges_count_shapes G r hr hn he hm with hc | hc
+    · obtain ⟨q, hq, hc⟩ := hc
+      exact Erdos993G1.FirstWide.delta_nonpos_of_center_counts G r q hr hq hc
+    · exact (Erdos993G1.FirstWide.delta_neg_of_triangle_counts G r hr hc).le
+

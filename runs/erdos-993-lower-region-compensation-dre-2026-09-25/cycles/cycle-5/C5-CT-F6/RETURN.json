@@ -1,0 +1,42 @@
+{
+  "worker_id": "C5-CT-F6",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "F6.low_cover_tau_ge_7",
+      "statement": "The proposed sufficient condition tau(T) >= 7 for every eligible third-shell tree is false: the n=24, p=10 six-arm tree with arm leaf counts (2,3,3,3,3,3) has tau(T)=6.",
+      "scope": "One exact eligible ordinary tree at n=2p+4, p=10. This refutes the cover-threshold shortcut only; its selected pointwise terms and full aggregate are negative.",
+      "status": "proposed_refuted",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CT-F6/EVIDENCE.json",
+        "cycles/cycle-5/C5-CT-F6/INDEPENDENT-CHECK.json"
+      ],
+      "reason": "retained: the labeled witness is an eligible ordinary tree with tau=6, certified by a six-center vertex cover and six disjoint edges; independent exact arithmetic verifies all original leaves are selected and S=-122805. It refutes the stated tau>=7 shortcut, not the pointwise or primary aggregate claim."
+    },
+    {
+      "claim_id": "F6.six_arm_bounded_census",
+      "statement": "In the enumerated six-arm rooted family at n=2p+4 for p=10..13, the exact sorted-multiset census has one eligible row at p=10 and none at p=11,12,13; the eligible p=10 row has no positive selected pointwise term.",
+      "scope": "Only root-plus-six-centers trees with pendant-leaf counts d_i >= 0 and sum d_i=2p-3; finite census of 163, 235, 331, and 454 sorted multisets respectively.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CT-F6/EVIDENCE.json",
+        "cycles/cycle-5/C5-CT-F6/CENSUS-CHECK.json"
+      ],
+      "reason": "retained: source replay and independent combinations-with-replacement enumeration give the stated finite profile counts and eligibility results; the only eligible profile has 17 selected leaves, all local terms negative, and S=-122805. The conclusion is bounded to this family and range."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CT-F6/REPORT.md",
+  "limitations": [
+    "The six-arm profile census covers only the specified root-plus-six-centers family for p=10 through 13.",
+    "The exact tau=6 witness refutes the tau>=7 shortcut only; it has negative pointwise terms and negative full selected sum.",
+    "No general third-shell pointwise theorem, low-cover replacement inequality, or proof or refutation of the primary selected aggregate is obtained.",
+    "The producer replay is supplemented by an independent generic induced-subgraph recurrence and a separate profile enumeration; no imported theorem or formal proof is supplied."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "F6.low_cover_tau_ge_7",
+    "F6.six_arm_bounded_census"
+  ]
+}

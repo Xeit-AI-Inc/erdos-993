@@ -1,0 +1,222 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "verityos://schemas/formalization-fidelity-audit-input.v1",
+  "title": "Formalization Fidelity Audit Input v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "run_id",
+    "artifact_producer_id",
+    "theorem_contract",
+    "lean_binding",
+    "kernel_evidence",
+    "audit_policy"
+  ],
+  "properties": {
+    "schema_version": {"const": "formalization-fidelity-audit-input.v1"},
+    "run_id": {"type": "string", "minLength": 1},
+    "artifact_producer_id": {"type": "string", "minLength": 1},
+    "theorem_contract": {"$ref": "#/$defs/theoremContract"},
+    "lean_binding": {"$ref": "#/$defs/leanBinding"},
+    "kernel_evidence": {"$ref": "#/$defs/kernelEvidence"},
+    "audit_policy": {"$ref": "#/$defs/auditPolicy"},
+    "independent_review": {
+      "oneOf": [
+        {"type": "null"},
+        {"$ref": "#/$defs/independentReview"}
+      ]
+    }
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "definition": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "canonical"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "canonical": {"type": "string", "minLength": 1}
+      }
+    },
+    "domain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["variable", "lean_type", "forbidden_narrowings"],
+      "properties": {
+        "variable": {"type": "string", "minLength": 1},
+        "lean_type": {"type": "string", "minLength": 1},
+        "forbidden_narrowings": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        }
+      }
+    },
+    "bindingDomain": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["variable", "lean_type"],
+      "properties": {
+        "variable": {"type": "string", "minLength": 1},
+        "lean_type": {"type": "string", "minLength": 1}
+      }
+    },
+    "quantifier": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["variable", "kind", "domain"],
+      "properties": {
+        "variable": {"type": "string", "minLength": 1},
+        "kind": {"enum": ["forall", "exists", "implicit"]},
+        "domain": {"type": "string", "minLength": 1}
+      }
+    },
+    "hypothesis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "canonical"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "canonical": {"type": "string", "minLength": 1}
+      }
+    },
+    "conclusion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["canonical", "clauses"],
+      "properties": {
+        "canonical": {"type": "string", "minLength": 1},
+        "clauses": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
+    },
+    "dependency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "version", "content_hash"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1},
+        "version": {"type": "string", "minLength": 1},
+        "content_hash": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "theoremContract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "contract_id", "contract_sha256", "theorem_name", "definitions",
+        "domains", "quantifiers", "hypotheses", "conclusion",
+        "lean_statement", "dependencies", "permitted_axioms",
+        "constructivity_requirement"
+      ],
+      "properties": {
+        "contract_id": {"type": "string", "minLength": 1},
+        "contract_sha256": {"$ref": "#/$defs/sha256"},
+        "theorem_name": {"type": "string", "minLength": 1},
+        "definitions": {"type": "array", "items": {"$ref": "#/$defs/definition"}},
+        "domains": {"type": "array", "items": {"$ref": "#/$defs/domain"}},
+        "quantifiers": {"type": "array", "items": {"$ref": "#/$defs/quantifier"}},
+        "hypotheses": {"type": "array", "items": {"$ref": "#/$defs/hypothesis"}},
+        "conclusion": {"$ref": "#/$defs/conclusion"},
+        "lean_statement": {"type": "string", "minLength": 1},
+        "dependencies": {"type": "array", "items": {"$ref": "#/$defs/dependency"}},
+        "permitted_axioms": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "constructivity_requirement": {
+          "enum": ["constructive", "classical_allowed", "unspecified"]
+        }
+      }
+    },
+    "leanBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "declaration_name", "declaration_source_path",
+        "declaration_source_sha256", "definitions", "domains", "quantifiers",
+        "hypotheses", "conclusion", "lean_statement", "dependencies",
+        "declared_axioms"
+      ],
+      "properties": {
+        "declaration_name": {"type": "string", "minLength": 1},
+        "declaration_source_path": {
+          "type": "string",
+          "minLength": 1,
+          "pattern": "^(?!/)(?!.*(?:^|/)\\.\\.(?:/|$)).+$"
+        },
+        "declaration_source_sha256": {"$ref": "#/$defs/sha256"},
+        "definitions": {"type": "array", "items": {"$ref": "#/$defs/definition"}},
+        "domains": {"type": "array", "items": {"$ref": "#/$defs/bindingDomain"}},
+        "quantifiers": {"type": "array", "items": {"$ref": "#/$defs/quantifier"}},
+        "hypotheses": {"type": "array", "items": {"$ref": "#/$defs/hypothesis"}},
+        "conclusion": {"$ref": "#/$defs/conclusion"},
+        "lean_statement": {"type": "string", "minLength": 1},
+        "dependencies": {"type": "array", "items": {"$ref": "#/$defs/dependency"}},
+        "declared_axioms": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        }
+      }
+    },
+    "kernelEvidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["receipt_sha256", "verdict", "reported_axioms", "dependencies"],
+      "properties": {
+        "receipt_sha256": {"$ref": "#/$defs/sha256"},
+        "verdict": {"type": "string", "minLength": 1},
+        "reported_axioms": {
+          "type": "array",
+          "items": {"type": "string", "minLength": 1},
+          "uniqueItems": true
+        },
+        "dependencies": {"type": "array", "items": {"$ref": "#/$defs/dependency"}}
+      }
+    },
+    "auditPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["require_independent_review"],
+      "properties": {
+        "require_independent_review": {"type": "boolean"}
+      }
+    },
+    "reviewFinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["category", "severity", "message"],
+      "properties": {
+        "category": {"type": "string", "minLength": 1},
+        "severity": {"enum": ["error", "warning", "note"]},
+        "message": {"type": "string", "minLength": 1}
+      }
+    },
+    "independentReview": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reviewer_id", "reviewer_kind", "attestation_id", "completed_at",
+        "contract_projection_sha256", "binding_projection_sha256", "verdict",
+        "findings"
+      ],
+      "properties": {
+        "reviewer_id": {"type": "string", "minLength": 1},
+        "reviewer_kind": {"type": "string", "minLength": 1},
+        "attestation_id": {"type": "string", "minLength": 1},
+        "completed_at": {"type": "string", "minLength": 1},
+        "contract_projection_sha256": {"$ref": "#/$defs/sha256"},
+        "binding_projection_sha256": {"$ref": "#/$defs/sha256"},
+        "verdict": {"enum": ["match", "mismatch", "uncertain"]},
+        "findings": {"type": "array", "items": {"$ref": "#/$defs/reviewFinding"}}
+      }
+    }
+  }
+}

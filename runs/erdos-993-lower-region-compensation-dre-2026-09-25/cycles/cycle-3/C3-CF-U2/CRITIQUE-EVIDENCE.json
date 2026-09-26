@@ -1,0 +1,99 @@
+{
+  "schema": "e993.c3-critic-evidence.v1",
+  "source_worker_id": "C3-U2",
+  "audit_claim_id": "E993-LOWER-REGION-AGGREGATE-RANK-LE-SEVEN",
+  "packet_integrity": {
+    "case_listed_files_verified": 3,
+    "common_listed_files_verified": 115,
+    "mismatches": 0
+  },
+  "independent_checks": {
+    "eligible_ranks": "x exists by terminal zero extension; Delta_0>=0; x>=1; x+2<=p implies p>=3; p<=7 implies x<=5.",
+    "alpha_domain": "3p<2alpha+1 with integer parameters implies 2alpha>=3p, hence alpha>=p for p>=1.",
+    "order_ceiling": "Use n<=M(x) for a tree as a forest and the finite maxima M(1..5)=(4,8,11,15,18); no general monotonicity premise is used.",
+    "order_band": "For H=T-{v,s}, every isolate lies in W=N_T(s)-{v}; the marked-isolate count difference is exactly the leaf summand. If n<=2p+1, |H|<=2(p-1)+1, so each original-leaf summand is nonpositive.",
+    "exhaustive_split": {
+      "p3": {
+        "ceiling": 4,
+        "band_limit": 7
+      },
+      "p4": {
+        "ceiling": 8,
+        "band_limit": 9
+      },
+      "p5": {
+        "ceiling": 11,
+        "band_limit": 11
+      },
+      "p6": {
+        "ceiling": 15,
+        "band_limit": 13,
+        "residual_orders": [
+          14,
+          15
+        ]
+      },
+      "p7": {
+        "ceiling": 18,
+        "band_limit": 15,
+        "residual_orders": [
+          16,
+          17,
+          18
+        ]
+      }
+    },
+    "residual_arithmetic": {
+      "p6": {
+        "tree_classes": [
+          3159,
+          7741
+        ],
+        "eligible": [
+          240,
+          1
+        ],
+        "subset_replayed": [
+          240,
+          1
+        ],
+        "nonnegative_aggregates": 0,
+        "maxima": [
+          -222,
+          -192
+        ]
+      },
+      "p7_order16": {
+        "tree_classes": 19320,
+        "eligible": 1696,
+        "subset_replayed": 1696,
+        "nonnegative_aggregates": 0,
+        "maximum": -906
+      },
+      "p7_orders17_18": {
+        "tree_classes": [
+          48629,
+          123867
+        ],
+        "eligible": [
+          2955,
+          340
+        ],
+        "subset_replayed": [
+          2955,
+          340
+        ],
+        "nonnegative_aggregates": 0,
+        "maxima": [
+          -966,
+          -864
+        ]
+      }
+    },
+    "scope_correction": "The p7 17-18 raw result has a stale 14-15 scope label; the pinned correction receipt changes only that field and the corrected result/protocol give orders 17 and 18."
+  },
+  "limitations": [
+    "Full residual tree generators and the M(1..5) forest census were not rerun in this seat.",
+    "The conclusion depends on correctness/completeness of the cited bounded census outputs and remains proposed/open."
+  ]
+}

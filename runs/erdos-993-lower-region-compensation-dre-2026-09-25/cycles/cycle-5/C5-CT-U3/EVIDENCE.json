@@ -1,0 +1,31 @@
+{
+  "source_hash_audit": {
+    "case_files_verified": 3,
+    "common_files_verified": 237,
+    "mismatches": 0
+  },
+  "coverage": [
+    "C5-U3-ALT-CUT",
+    "C5-U3-PRIMARY-GAP"
+  ],
+  "incidence_degree_check": {
+    "singly_marked_upper_set_degree": "k",
+    "multiply_marked_upper_set_degree": "k+1",
+    "edge_count": "E=kU+C",
+    "tagging": "separate incidence graph and count for each original selected leaf, including equal-support leaves"
+  },
+  "matching_cut_check": {
+    "premise": "finite bipartite graph and maximum matching; S is a set of unmatched left vertices",
+    "alternating_reachability": "nonmatching edges L-to-R, matching edges R-to-L",
+    "conclusion": "N(X)=Y; matching pairs Y bijectively with X\\S; |X|-|N(X)|=|S|"
+  },
+  "primary_algebra_check": {
+    "q_j": "i_j(H)-i_j(H-W)",
+    "k": "p-1",
+    "summand": "q_(k+1)-q_k",
+    "aggregate": "S=U-Q",
+    "identity": "kS=E-C-kQ=(2a+1-3p)Q-D-C",
+    "D": "2(h-k)Q-E, nonnegative because the addable vertices in each bipartition class can be adjoined together to the fixed independent k-set",
+    "unproved_obligation": "sum_F(D_v+C_v)>=(2a+1-3p)Q in the strict lower region"
+  }
+}

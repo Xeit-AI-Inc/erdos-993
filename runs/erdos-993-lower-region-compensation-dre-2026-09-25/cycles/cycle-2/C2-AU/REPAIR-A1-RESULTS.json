@@ -1,0 +1,79 @@
+{
+  "worker_id": "C2-AU-REPAIR-A1",
+  "stage": "adjudication_repair",
+  "cycle": 2,
+  "orientation": "N",
+  "status_authority": "proposed_worker_only",
+  "purpose": "append-only correction of the C2-AU U-origin ordered-shell-bound disposition",
+  "source_integrity": {
+    "listed_source_count": 83,
+    "all_sha256_matches": true,
+    "brief_sha256": "0e640b56d336ed0b81fef4ee54ad5d5f1d1a73b8423974d903e6f4b7c49a814a"
+  },
+  "corrected_claim": {
+    "claim_id": "C2-U3-ORDERED-SHELL-BOUND",
+    "proposed_disposition": "retained",
+    "scope": "per original leaf tag of eligible ordinary first-shell tree, with nonedgeless H and nonisolated first mark, isolated second mark if present",
+    "partition": "q_(k+1)-q_k=sum_i(i_k(J_i)-i_(k-1)(J_i)), J_i=H-(N_H[w_i] union earlier marks)",
+    "order_2k_indices": [
+      "first mark when degree_H(w1)=1",
+      "second mark when w2 is isolated"
+    ],
+    "positive_part_bound": "sum_i [i_k(J_i)-i_(k-1)(J_i)]_+ <= (L_root+L_iso)/k",
+    "overturned_critic_disposition": "C2-CT-U3 retained_narrowed removal of second-isolate boundary",
+    "original_adjudicator_correction_overturned": "C2-AU first-root-only boundary classification and its derived positive-part proof"
+  },
+  "dependent_shell": {
+    "claim_id": "E993-LOWER-REGION-FIRST-ORDER-SHELL",
+    "proposed_disposition": "retained as proposed_open",
+    "sufficient_unproved_condition": "k sum_(v in F) sum_(i outside B_v) (i_(k-1)(J_vi)-i_k(J_vi)) >= sum_(v in F)(L_root(v)+L_iso(v))",
+    "fixed_selector": true,
+    "complete_sum_proved": false,
+    "positive_complete_sum_witness": false
+  },
+  "unaffected_claim_ids": [
+    "E993-MARKED-ISOLATE-ORDER-BAND",
+    "E993-ORDINARY-LEAF-ORDER-BAND",
+    "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+    "U5-pendant-extension-tagged-sum-change",
+    "C2-U6.shell-state-framework",
+    "C2-U6.shell-vertex-cover-bound",
+    "C2-U6.primary-shell-open"
+  ],
+  "order_band_lean_nomination_affected": false,
+  "fixture_result": {
+    "order": 18,
+    "p": 8,
+    "alpha": 12,
+    "x": 6,
+    "tag": 6,
+    "support": 0,
+    "J2_deleted": [
+      1,
+      7
+    ],
+    "J2_order": 14,
+    "claimed_later_ceiling": 13,
+    "J2_difference": -229,
+    "full_S": -4256,
+    "refutes_only_later_residual_order_classification": true
+  },
+  "limitations": [
+    "The fixture does not refute the first-root-only numerical estimate, Comp-root, or the aggregate.",
+    "The two-boundary global compensation premise is sufficient but not derived from eligibility or the selector.",
+    "No universal first-shell or primary aggregate proof, counterexample, formalization, or census is supplied."
+  ],
+  "report_path": "REPORT.md",
+  "evidence_path": "EVIDENCE.json",
+  "replay_paths": [
+    "replay_fixture.py",
+    "fixture_replay.json"
+  ],
+  "suggested_addendum_filenames": {
+    "REPORT.md": "REPAIR-A1-REPORT.md",
+    "RESULTS.json": "REPAIR-A1-RESULTS.json",
+    "EVIDENCE.json": "REPAIR-A1-EVIDENCE.json",
+    "replay_fixture.py": "REPAIR-A1-replay_fixture.py",
+    "fixture_replay.json": "REPAIR-A1-fixture_replay.json"
+  }
+}

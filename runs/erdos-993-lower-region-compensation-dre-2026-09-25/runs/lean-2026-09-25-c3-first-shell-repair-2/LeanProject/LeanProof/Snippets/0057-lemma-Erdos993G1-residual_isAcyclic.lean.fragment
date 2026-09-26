@@ -1,0 +1,4 @@
+lemma residual_isAcyclic (h : F.IsAcyclic) (v g : V) :
+    (residual F v g).IsAcyclic :=
+  h.induce _
+

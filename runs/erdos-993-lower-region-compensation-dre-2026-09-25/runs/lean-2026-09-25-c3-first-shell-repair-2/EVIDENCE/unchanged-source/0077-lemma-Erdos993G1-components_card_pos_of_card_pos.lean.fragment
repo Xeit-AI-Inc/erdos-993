@@ -1,0 +1,6 @@
+lemma components_card_pos_of_card_pos {V : Type u} [Finite V]
+    (F : SimpleGraph V) (hV : 0 < Nat.card V) :
+    0 < Nat.card F.ConnectedComponent := by
+  haveI : Nonempty V := (Finite.card_pos_iff).mp hV
+  exact Nat.card_pos
+

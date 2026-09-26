@@ -1,0 +1,38 @@
+{
+  "worker_id": "C5-F6",
+  "cycle": 5,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "F6.low_cover_tau_ge_7",
+      "statement": "The proposed sufficient condition tau(T) >= 7 for every eligible third-shell tree is false: the n=24, p=10 six-arm tree with arm leaf counts (2,3,3,3,3,3) has tau(T)=6.",
+      "scope": "One exact eligible ordinary tree at n=2p+4, p=10. This refutes the cover-threshold shortcut only; its selected pointwise terms and full aggregate are negative.",
+      "status": "proposed_refuted",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-F6/EVIDENCE.json",
+        "cycles/cycle-5/C5-F6/COMPUTE.py"
+      ],
+      "reason": "Exact independence-polynomial coefficients establish alpha=18 and x=8, both rank guards hold, all 17 original leaves are favorable, the centers give a cover of size 6, and six disjoint pendant edges certify tau>=6. Thus tau=6. The full selected sum is -122805, so this is not a pointwise-sign or primary-aggregate refutation."
+    },
+    {
+      "claim_id": "F6.six_arm_bounded_census",
+      "statement": "In the enumerated six-arm rooted family at n=2p+4 for p=10..13, the exact sorted-multiset census has one eligible row at p=10 and none at p=11,12,13; the eligible p=10 row has no positive selected pointwise term.",
+      "scope": "Only root-plus-six-centers trees with pendant-leaf counts d_i >= 0 and sum d_i=2p-3; finite census of 163, 235, 331, and 454 sorted multisets respectively.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-F6/EVIDENCE.json",
+        "cycles/cycle-5/C5-F6/COMPUTE.py"
+      ],
+      "reason": "The replay enumerates every sorted six-part nonnegative multiset in the stated finite family, computes independence polynomials and original-leaf selector values with integer arithmetic, and records all eligible rows and their local terms. No claim is made outside the stated family."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-F6/REPORT.md",
+  "limitations": [
+    "The six-arm family census is not exhaustive over all ordinary trees at these orders or over all trees with vertex-cover number at most six.",
+    "The cover-number-six example refutes only the proposed cover>=7 sufficient shortcut; its pointwise shell terms and complete selected sum are negative.",
+    "No proof or refutation of the general third-shell pointwise sign or the primary selected aggregate is obtained.",
+    "The cover-threshold example is present in the pinned common control evidence; this work independently replays its arithmetic and does not claim novelty."
+  ],
+  "status_authority": "proposed_worker_only"
+}

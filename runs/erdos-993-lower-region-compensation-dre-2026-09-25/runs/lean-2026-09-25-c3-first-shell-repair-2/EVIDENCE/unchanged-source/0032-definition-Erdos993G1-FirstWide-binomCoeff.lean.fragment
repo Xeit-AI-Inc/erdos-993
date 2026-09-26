@@ -1,0 +1,6 @@
+namespace FirstWide
+
+def binomCoeff (n : ℕ) (k : ℤ) : ℤ :=
+  if 0 ≤ k then (n.choose k.toNat : ℤ) else 0
+
+end FirstWide

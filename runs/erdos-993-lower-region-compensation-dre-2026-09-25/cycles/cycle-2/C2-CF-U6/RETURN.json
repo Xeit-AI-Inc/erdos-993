@@ -1,0 +1,50 @@
+{
+  "worker_id": "C2-CF-U6",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C2-U6.shell-state-framework",
+      "statement": "For each fixed p in the first-order shell |T|=2p+2, the augmented exact state consisting of full rooted independent-set messages, original leaf-tag deletion polynomials P_v, H_v, R_v, support tags, and derived selector and sum suffices to evaluate alpha(T), terminal-checked x(T), every strict selector bit, and the complete S(T,p) without loss.",
+      "scope": "Finite ordinary trees T with |T|=2p+2; exact fixed-p state/evaluation framework only. It is not a uniform finite kernel and implies no sign for S.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CF-U6/REPORT.md"
+      ],
+      "reason": "retained \u2014 The rooted include/exclude recurrence and forest factorization are exact. The full vector supplies the terminal zero-extended descent scan; P_v supplies each strict selector bit; H_v and R_v supply its summand; a leaf-indexed list preserves repeated support tags. This establishes exact evaluation for each fixed input tree, with no uniform compression or census claim."
+    },
+    {
+      "claim_id": "C2-U6.shell-vertex-cover-bound",
+      "statement": "Every first-order shell tree satisfying 3p<2alpha(T)+1 has tau(T)=|T|-alpha(T)<=floor(p/2)+2.",
+      "scope": "Finite ordinary trees with |T|=2p+2 and the strict lower-region guard; a necessary bound only.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CF-U6/REPORT.md"
+      ],
+      "reason": "retained \u2014 Since p and alpha are integers, 3p<2a+1 is equivalent to 3p<=2a. Subtracting ceil(3p/2) from 2p+2 gives m+2 for both p=2m and p=2m+1, equal to floor(p/2)+2. No sign conclusion follows."
+    },
+    {
+      "claim_id": "C2-U6.primary-shell-open",
+      "statement": "The complete selected-sum inequality S(T,p)<=0 for every eligible first-order shell tree remains unresolved by this route.",
+      "scope": "Ordinary T with |T|=2p+2, x(T)+2<=p, and 3p<2alpha(T)+1; selector and supports are those of the original tree.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CF-U6/REPORT.md"
+      ],
+      "reason": "retained \u2014 The case supplies an evaluation state and necessary vertex-cover bound, but no proof of the full selected sum, finite census, or realizable eligible positive full-sum witness. This disposition records the route's limitation and does not award a verdict on the primary assertion."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CF-U6/REPORT.md",
+  "limitations": [
+    "The exact state is only a fixed-input evaluation framework; no uniform compression or effective shell census is established.",
+    "No universal first-order shell proof or realizable eligible positive complete-sum witness is established.",
+    "No source replay was performed because the route makes no executable computation or finite census claim."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-U6.primary-shell-open",
+    "C2-U6.shell-state-framework",
+    "C2-U6.shell-vertex-cover-bound"
+  ]
+}

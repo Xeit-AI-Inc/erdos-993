@@ -1,0 +1,25 @@
+{
+  "worker_id": "C4-T3",
+  "cycle": 4,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C4-T3-MATCHING-SECTOR-DELETION-BOUND",
+      "statement": "In the rank-491 matching sector with 736 two-vertex color classes, every source subfamily A has ordinary deletion boundary D(A) satisfying 491|A| <= 492|D(A)|; equality holds for the full level, leaving an exact deletion-only shortfall equal to one 492nd of its source level.",
+      "scope": "Only ordinary deletions in the specified CB(8,92) hub-and-arm matching sector; no insertion arcs or external competing demands.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-T3/EVIDENCE.json"
+      ],
+      "reason": "Exact double counting of deletion edges proves the arbitrary-subfamily inequality; the full-level product counts attain equality. This is a sector bound, not a mixed-boundary or aggregate proof."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-T3/REPORT.md",
+  "limitations": [
+    "The bound does not analyze support-insertion targets or whether their capacity survives competing demands from other source families.",
+    "No compression preserving both deletion and insertion boundaries was established.",
+    "No complete selected-tag Hall inequality, refutation, or all-parameter result is proved."
+  ],
+  "status_authority": "proposed_worker_only"
+}

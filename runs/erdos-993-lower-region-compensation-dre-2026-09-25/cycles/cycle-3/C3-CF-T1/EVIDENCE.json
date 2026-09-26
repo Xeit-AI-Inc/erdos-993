@@ -1,0 +1,11 @@
+{
+  "schema": "e993.worker-evidence.v1",
+  "items": [
+    {
+      "id": "cover-budget-counterexample-and-first-mark-audit",
+      "kind": "independent-exact-check",
+      "statement": "The cover-budget lower bound in C3-T1 is false at the positive endpoint s=-1, while the first-mark residual-size criterion proves the stated structural-subclass implication.",
+      "replay": "For the star K1,3 with C=V(T), c=4, N=0 and r=1, compute i0=1,i1=4,i2=3, so Delta1=-1; the proposed bound is d1(0)+4*m0(0)+6*m0(-1)=0-4+6=2, a contradiction. For the retained part, partition independent j-sets meeting W by their first mark; after w_i the remaining set lies in J_i. Double-count independent (k-1)-set extensions to obtain k*i_k(J_i)<=(|V(J_i)|-k+1)*i_(k-1)(J_i)<=k*i_(k-1)(J_i) when |V(J_i)|<=2k-1. If the stated deletion-union condition holds, |V(J_i)|<=2k-1; sum q_(k+1)-q_k over every selected original leaf, preserving repeated support tags."
+    }
+  ]
+}

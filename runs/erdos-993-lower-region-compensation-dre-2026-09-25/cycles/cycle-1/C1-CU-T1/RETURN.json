@@ -1,0 +1,29 @@
+{
+  "worker_id": "C1-CU-T1",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C1-T1-1",
+      "statement": "For every star T=K_{1,m} with m>=4 and every p satisfying x(T)+2<=p and 3p<2 alpha(T)+1, all m original leaves are favorable and S(T,p)=m*(binom(m-1,p)-binom(m-1,p-1))<0.",
+      "scope": "Exact star-subfamily result for the registered lower-region ordinary favorable-leaf aggregate; no conclusion for trees outside this family.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CU-T1/REPORT.md",
+        "cycles/cycle-1/C1-CU-T1/evidence/pin-verification.txt"
+      ],
+      "reason": "retained: direct polynomial and binomial checks verify x(T), both eligibility consequences, every strict favorable-leaf selector value, each original-leaf summand, all m tags, and the zero-extended endpoints. The claim has nonempty scope (m=12,p=8 gives S=-1980). This proves only the star subfamily and supplies no general-tree compensation argument."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CU-T1/REPORT.md",
+  "limitations": [
+    "The result is restricted to stars and does not prove or refute the aggregate for arbitrary finite ordinary trees.",
+    "No proof of the optional bipartite tagged-incidence identity or its global deficit budget is supplied.",
+    "No imported theorem or computation was needed for the retained symbolic subfamily proof."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-T1-1"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "worker_id": "C1-CF-T2",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C1-T2-1",
+      "statement": "The original-leaf support-deletion polynomial identities are correct, and K_(1,12) at p=8 is an exact example where deleting one leaf-support pair leaves the strict lower-region guard, so direct induction requiring that guard is not closed under this pruning.",
+      "scope": "The universal coefficient identities for finite trees at an original leaf, plus the exact single K_(1,12) pruning example. No conclusion on the primary selected aggregate.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CF-T2/REPORT.md",
+        "cycles/cycle-1/C1-CF-T2/replay_star.py",
+        "cycles/cycle-1/C1-CF-T2/star-replay.json"
+      ],
+      "reason": "retained: partitioning independent sets by whether the support is selected proves both polynomial decompositions and their zero-extended Delta identities. Exact replay gives a=12, x=6, p=8, all 12 original leaves selected with Delta_8(T-v)=-110, and S=-1980. After deleting one leaf and its support, 11 isolated vertices have a'=11, x'=6, so x'+2<=8 but 3p=24 is not less than 2a'+1=23. This verifies only a failure of pruning closure; the primary aggregate remains unresolved."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CF-T2/REPORT.md",
+  "limitations": [
+    "The exact recurrence and one finite closure obstruction do not prove or refute the full selected-leaf aggregate.",
+    "The larger T22 and T60 rows are supplied standing controls and were not independently replayed here.",
+    "No induction compensation, fixed-selector transport, exhaustive enumeration, or imported theorem was established."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-T2-1"
+  ]
+}

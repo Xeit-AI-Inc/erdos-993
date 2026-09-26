@@ -1,0 +1,30 @@
+{
+  "worker_id": "C6-CU-F2",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C6-F2-HETEROGENEOUS-CUTOFF2000-SCALAR-AUDIT",
+      "statement": "The exact h=29 scalar cutoff argument and its conditional selector-rank placement survive independent checking, but this claim is retained only at that scalar and rank-arithmetic scope; it does not establish the heterogeneous-family theorem.",
+      "scope": "For the proposed path-plus-stars family with arities 2..4 and m>=2000: exact scalar estimate 80328*m*epsilon(m)<1 and conditional rank placement in [N/4,2N/3+3]. No independent certification here of the graph formulas, coefficient/curvature estimates, mixed minors, full selector propagation, or complete family theorem.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CU-F2/REPORT.md",
+        "cycles/cycle-6/C6-CU-F2/f2_scalar_audit_replay.py",
+        "cycles/cycle-6/C6-CU-F2/scalar_replay.json"
+      ],
+      "reason": "retained_narrowed: the exact rational replay gives the claimed value below one; the consecutive quotient cross-product is affine and positive from j>=N/4, endpoint factor bounds imply A(m),B(m), and the scalar decreases for every m>=2000. The fixed-selector rank placement also follows conditionally from the strict guard, eligibility, and the pinned forest descent bound. The route itself leaves the family theorem dependent on substantial unverified graph, curvature, mixed-minor, and selector steps, so no broader proof claim survives."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CU-F2/REPORT.md",
+  "limitations": [
+    "The review verified the scalar argument and conditional rank arithmetic, not the full heterogeneous-family proof.",
+    "No literal graph enumeration or independent derivation of all graph formulas, coefficient envelopes, curvature margins, mixed minors, or full selector propagation was performed.",
+    "No conclusion is made for m<2000, arities outside 2..4, or the arbitrary-tree primary aggregate."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-F2-HETEROGENEOUS-CUTOFF2000-SCALAR-AUDIT"
+  ]
+}

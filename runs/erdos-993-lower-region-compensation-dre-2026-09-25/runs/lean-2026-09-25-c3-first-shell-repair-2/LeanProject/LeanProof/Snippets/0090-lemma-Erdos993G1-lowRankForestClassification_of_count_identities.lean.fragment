@@ -1,0 +1,94 @@
+namespace Erdos993G1
+lemma lowRankForestClassification_of_count_identities
+    {V : Type u} [Fintype V] [DecidableEq V] (F : SimpleGraph V) [DecidableRel F.Adj]
+    (p : ℕ) (hF : F.IsAcyclic) (hp : p ≤ 5)
+    (hm : 2 * p - 3 < Nat.card V) (hx : Erdos993G1.firstDescent F < p - 2)
+    (hpair : Erdos993G1.indepCount F 2 + (Nat.card F.edgeSet : ℤ) =
+      ((Nat.card V).choose 2 : ℤ))
+    (htriple : Erdos993G1.indepCount F 3 +
+      (Nat.card F.edgeSet : ℤ) * ((Fintype.card V - 2 : ℕ) : ℤ) =
+      ((Fintype.card V).choose 3 : ℤ) + ∑ a : V, ((F.degree a).choose 2 : ℤ)) :
+    p = 5 ∧ Nonempty (F ≃g SimpleGraph.pathGraph 8) ∧ Erdos993G1.delta F 3 = -15 := by
+  let m : ℕ := Nat.card V
+  let c : ℤ := Nat.card F.ConnectedComponent
+  let S : ℤ := ∑ a : V, ((F.degree a).choose 2 : ℤ)
+  have hncard : Fintype.card V = m := by
+    exact Nat.card_eq_fintype_card.symm
+  have hp3 : 3 ≤ p := by omega
+  have hm4 : 4 ≤ m := by dsimp [m]; omega
+  have hc : 1 ≤ c := by
+    have h := Erdos993G1.components_card_pos_of_card_pos F (show 0 < Nat.card V by omega)
+    dsimp [c]
+    exact_mod_cast h
+  have he : (Nat.card F.edgeSet : ℤ) = (m : ℤ) - c := by
+    have h : (Nat.card F.edgeSet : ℤ) + (Nat.card F.ConnectedComponent : ℤ) =
+        (Nat.card V : ℤ) := by
+      exact_mod_cast Erdos993G1.forest_card_edges_add_components F hF
+    exact eq_sub_iff_add_eq.mpr h
+  have hS : 0 ≤ S := Finset.sum_nonneg (fun _ _ => Nat.cast_nonneg _)
+  have hdegreeSum : (∑ v, (F.degree v : ℤ)) = 2 * (Nat.card F.edgeSet : ℤ) := by
+    rw [Nat.card_eq_fintype_card, ← SimpleGraph.edgeFinset_card]
+    exact_mod_cast F.sum_degrees_eq_twice_card_edges
+  have hSdeg : (m : ℤ) - 2 * c ≤ S := by
+    have h := Erdos993G1.degreeChoose_sum_lower (fun v : V => F.degree v)
+    rw [hdegreeSum, hncard] at h
+    change 2 * (Nat.card F.edgeSet : ℤ) - (m : ℤ) ≤ S at h
+    omega
+  have hd0 : Erdos993G1.delta F 0 = (m : ℤ) - 1 := Erdos993G1.delta_zero F
+  have hi1 : Erdos993G1.indepCount F 1 = (m : ℤ) := Erdos993G1.indepCount_one F
+  have hd1raw : Erdos993G1.delta F 1 =
+      Erdos993G1.indepCount F 2 - Erdos993G1.indepCount F 1 := by
+    simpa using Erdos993G1.delta_nat F 1
+  have hd2raw : Erdos993G1.delta F 2 =
+      Erdos993G1.indepCount F 3 - Erdos993G1.indepCount F 2 := by
+    simpa using Erdos993G1.delta_nat F 2
+  change Erdos993G1.indepCount F 2 + (Nat.card F.edgeSet : ℤ) = (m.choose 2 : ℤ) at hpair
+  rw [hncard] at htriple
+  have hsub : ((m - 2 : ℕ) : ℤ) = (m : ℤ) - 2 := Nat.cast_sub (by omega)
+  rw [hsub] at htriple
+  change Erdos993G1.indepCount F 3 + (Nat.card F.edgeSet : ℤ) * ((m : ℤ) - 2) =
+    (m.choose 3 : ℤ) + S at htriple
+  have hd1 : 2 * Erdos993G1.delta F 1 = (m : ℤ) * ((m : ℤ) - 5) + 2 * c := by
+    nlinarith [Erdos993G1.scaledChooseTwo m]
+  have hd2 : 6 * Erdos993G1.delta F 2 =
+      (m : ℤ) * ((m : ℤ) - 1) * ((m : ℤ) - 5) -
+      6 * ((m : ℤ) - c) * ((m : ℤ) - 3) + 6 * S := by
+    nlinarith [Erdos993G1.scaledChooseTwo m, Erdos993G1.scaledChooseThree m]
+  have hneg : (if Erdos993G1.firstDescent F = 0 then Erdos993G1.delta F 0
+      else if Erdos993G1.firstDescent F = 1 then Erdos993G1.delta F 1
+      else Erdos993G1.delta F 2) < 0 := by
+    have h := Erdos993G1.delta_firstDescent_neg F
+    by_cases h0 : Erdos993G1.firstDescent F = 0
+    · simpa [h0] using h
+    by_cases h1 : Erdos993G1.firstDescent F = 1
+    · simpa [h1] using h
+    have h2 : Erdos993G1.firstDescent F = 2 := by omega
+    simpa [h2] using h
+  obtain ⟨hp5, hm8, hc1, hS6, _⟩ := Erdos993G1.lowRankArithmetic m p
+    (Erdos993G1.firstDescent F) c S (Erdos993G1.delta F 0)
+    (Erdos993G1.delta F 1) (Erdos993G1.delta F 2)
+    hp hm hx hc hS hSdeg hd0 hd1 hd2 hneg
+  have hc1nat : Nat.card F.ConnectedComponent = 1 := by
+    dsimp [c] at hc1
+    exact_mod_cast hc1
+  have htree : F.IsTree := ⟨Erdos993G1.connected_of_components_card_eq_one F hc1nat, hF⟩
+  have hsumEq : (∑ a : V, ((F.degree a).choose 2 : ℤ)) =
+      (∑ a : V, (F.degree a : ℤ)) - Fintype.card V := by
+    rw [hdegreeSum, hncard]
+    change S = 2 * (Nat.card F.edgeSet : ℤ) - (m : ℤ)
+    omega
+  have hdeg := Erdos993G1.degreeChoose_sum_equality (fun v : V => F.degree v) hsumEq
+  have hdegCard : ∀ v, Nat.card (F.neighborSet v) ≤ 2 := by
+    intro v
+    rw [Nat.card_eq_fintype_card, SimpleGraph.card_neighborSet_eq_degree]
+    rcases hdeg v with h | h <;> omega
+  obtain ⟨e⟩ := Erdos993G1.PathClassification.tree_order_eight_maxDegreeTwo_iso_pathGraph
+    htree hm8 hdegCard
+  refine ⟨hp5, ⟨e⟩, ?_⟩
+  rw [Erdos993G1.delta_iso e, Erdos993G1.pathEight_delta_three]
+end Erdos993G1
+
+namespace Erdos993G1.Deletion
+
+open SimpleGraph
+

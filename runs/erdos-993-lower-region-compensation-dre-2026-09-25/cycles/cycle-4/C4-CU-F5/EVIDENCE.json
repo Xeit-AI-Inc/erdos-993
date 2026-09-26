@@ -1,0 +1,41 @@
+{
+  "audit": "Independent U-orientation critique evidence for C4-F5; source replays were run from local scratch copies only.",
+  "hash_verification": {
+    "case_and_common_listed_sources_checked": 185,
+    "missing": 0,
+    "mismatched": 0
+  },
+  "replay": {
+    "commands": [
+      "python3 COMPUTE.py",
+      "python3 GRAPH-CROSSCHECK.py"
+    ],
+    "local_changes": "The GRAPH-CROSSCHECK.py scratch copy was pointed to scratch copy ordinary_tree_checked-replay.py; no sealed source was edited.",
+    "coefficient_vs_submitted_evidence": "Exact JSON equality for the full regenerated coefficient evidence object.",
+    "graph_dp_vs_submitted_evidence": "Exact JSON equality for the full regenerated graph cross-check object.",
+    "evaluator_sha256": "a012bb78915ccdfa2f729c0cdb520cd8f29572277123c92e80ba6091498f533d",
+    "graph_dp_summary": {
+      "T_m_m1_20_eligible_rows": 100,
+      "positive": 0,
+      "lopsided_cases": 28,
+      "lopsided_eligible_rows": 52
+    }
+  },
+  "bounded_counts": {
+    "T_m_m1_100_eligible_rows": 2743,
+    "T_m_positive": 0,
+    "equal_arm_eligible_rows": 347,
+    "equal_arm_positive": 0,
+    "lopsided_eligible_rows": 400,
+    "lopsided_positive": 0
+  },
+  "guards_checked": "Every T_m row has p>=x+2, 3p<2alpha+1, and strict negative endpoint and claw-tip deletion deltas. The coefficient computation weights one endpoint tag and 3m claw-tip tags; graph replay reconstructs individual original leaves and tags from edges.",
+  "spot_checks": [
+    "m=3: alpha=11, x=5, p=7, selector deltas -141/-110, full S=-1167",
+    "m=4: alpha=14, x=7, p=9, selector deltas -850/-652, full S=-10089",
+    "m=100 has 55 eligible rows, p=147..201, all computed sums nonpositive",
+    "all 2743 T_m, 347 equal-arm, and 400 lopsided coefficient rows have S<=0",
+    "edge-DP replay agrees for 100 T_m rows through m=20 and 52 lopsided rows through m=8"
+  ],
+  "mathematical_limit": "Finite computations do not establish the all-m claim or cover arbitrary branch profiles."
+}

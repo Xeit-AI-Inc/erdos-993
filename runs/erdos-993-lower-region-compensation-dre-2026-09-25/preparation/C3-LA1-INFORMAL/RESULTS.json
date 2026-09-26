@@ -1,0 +1,34 @@
+{
+  "schema_version": "c3-la1-informal-results/v1",
+  "worker_id": "C3-LA1-INFORMAL",
+  "producer_id": "C3-LA1-PRODUCER",
+  "status_authority": "proposed_worker_only",
+  "informal_audit_verdict": "passed_proposal",
+  "contract_id": "e993-c3-first-shell-pair-v1",
+  "claim_sha256": "6edd0595c52ead3821e2858f56beb1e24616c9d305bce26d728d16ce2384db74",
+  "terminal_header_sha256": "4546fe679579b0f8cafc43d01be9c42a35cafd162ebf4a84ab55773aa7a10286",
+  "source_hashes_verified": 16,
+  "source_hash_mismatches": 0,
+  "ledger_verified_claims": 12,
+  "ledger_unresolved_material_gaps": 0,
+  "finite_boundary_check": {
+    "vertices": 6,
+    "k": 2,
+    "eligible_graphs": 27626,
+    "marked_sets_checked": 1738095,
+    "violations": 0,
+    "role": "falsification_only"
+  },
+  "artifacts": [
+    "REPORT.md",
+    "INFORMAL-AUDIT.md",
+    "LEDGER.csv",
+    "RESULTS.json"
+  ],
+  "limitations": [
+    "No new Lean assembly or build was inspected.",
+    "No kernel, axiom, registration, or independent fidelity result is claimed.",
+    "Pinned old Lean lemmas serve as dependency evidence, not a transferred award."
+  ],
+  "controller_action": "inspect unchanged audit proposal before deciding any registration"
+}

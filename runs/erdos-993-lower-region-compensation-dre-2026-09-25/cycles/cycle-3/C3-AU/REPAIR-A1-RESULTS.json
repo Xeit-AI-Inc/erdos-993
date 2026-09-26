@@ -1,0 +1,116 @@
+{
+  "worker_id": "C3-AU-REPAIR-A1",
+  "status_authority": "proposed_worker_only",
+  "task": "append-only correction to C3-AU U portfolio",
+  "source_integrity": {
+    "brief": "control/C3-AU-REPAIR-A1.json",
+    "listed_source_count": 186,
+    "hash_mismatches": 0
+  },
+  "existing_claim_id": "C3-U6.marked-down-operator",
+  "corrected_disposition": {
+    "review_disposition": "retained_narrowed",
+    "conditional_criterion": "proposed_verified_as_conditional_implication",
+    "universal_per_selected_leaf_injectivity": "proposed_refuted_as_mechanism",
+    "reason": "At eligible T22,p=34, selected leaf 2 has dim M_34=q34>q33=dim M_33, so d34 cannot be injective; the conditional implication remains valid.",
+    "prior_review_disposition": "retained",
+    "prior_proposed_status": "proposed_open"
+  },
+  "star_subcase": "unchanged at its eligible-star scope",
+  "other_eleven_au_dispositions": [
+    {
+      "claim_id": "C3-U3-FIRST-SHELL-POINTWISE",
+      "review_disposition": "retained",
+      "proposed_status": "proposed_informal",
+      "change": "none"
+    },
+    {
+      "claim_id": "C3-U3-MARKED-COVER-SHELL",
+      "review_disposition": "retained",
+      "proposed_status": "proposed_informal",
+      "change": "none"
+    },
+    {
+      "claim_id": "C3-U4.COLORED-SHADOW-SCOPE",
+      "review_disposition": "retained_narrowed",
+      "proposed_status": "proposed_verified",
+      "change": "none"
+    },
+    {
+      "claim_id": "C3-U4.CUT-DUAL",
+      "review_disposition": "retained",
+      "proposed_status": "proposed_verified",
+      "change": "none"
+    },
+    {
+      "claim_id": "C3-U4.ORBIT-COMPRESSION",
+      "review_disposition": "retained",
+      "proposed_status": "proposed_verified",
+      "change": "none"
+    },
+    {
+      "claim_id": "C3-U5-EARLY-DESCENT-MARKED-OCCUPANCY-BRIDGE",
+      "review_disposition": "retained",
+      "proposed_status": "proposed_verified",
+      "change": "none"
+    },
+    {
+      "claim_id": "C3-U6.star-subcase",
+      "review_disposition": "retained",
+      "proposed_status": "proposed_verified",
+      "change": "none"
+    },
+    {
+      "claim_id": "E993-LOWER-REGION-AGGREGATE-RANK-LE-SEVEN",
+      "review_disposition": "retained_narrowed",
+      "proposed_status": "proposed_open",
+      "change": "none"
+    },
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "review_disposition": "retained_narrowed",
+      "proposed_status": "proposed_open",
+      "change": "none"
+    },
+    {
+      "claim_id": "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL",
+      "review_disposition": "retained",
+      "proposed_status": "proposed_open",
+      "change": "none"
+    },
+    {
+      "claim_id": "E993-U1-CLONE-PROJECTION",
+      "review_disposition": "retained_narrowed",
+      "proposed_status": "proposed_verified",
+      "change": "none"
+    }
+  ],
+  "u3_clerical_correction": "No U3 claim IDs were allocated by the search packet. A search worker may propose new auxiliary IDs; its two proposed IDs and omission of covered_claim_ids are consistent with WORKER-PROTOCOL.md. No source misconduct follows.",
+  "finite_witness": {
+    "tree": "T22",
+    "order": 91,
+    "alpha": 68,
+    "first_strict_descent": 32,
+    "p": 34,
+    "guards": {
+      "x_plus_2_le_p": true,
+      "three_p_lt_two_alpha_plus_1": true
+    },
+    "selected_count": 67,
+    "selected_leaf": 2,
+    "q33": 7007092303604022630,
+    "q34": 7219428434016265740,
+    "local_difference": 212336130412243110,
+    "full_aggregate": -498754180547001418536
+  },
+  "primary_aggregate_disposition": "no refutation; this finite complete sum is negative and the registered universal target remains open",
+  "evidence_paths": [
+    "EVIDENCE.json",
+    "REPLAY.py",
+    "REPORT.md"
+  ],
+  "limitations": [
+    "This refutes universal per-selected-leaf injectivity, not the valid conditional theorem.",
+    "No cross-tag operator, all-tree aggregate proof, or positive complete-sum counterexample is provided."
+  ]
+}

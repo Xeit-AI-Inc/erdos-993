@@ -1,0 +1,27 @@
+{
+  "worker_id": "C4-U1",
+  "cycle": 4,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C4-U1-COVARIANCE-DECOMPOSITION",
+      "statement": "For each eligible finite ordinary tree T with its fixed original favorable selector F, define the marked rank-p weight w(B), Q, E, and addability e(B) as in the report. Then E/Q = mu_p + Cov_p(w,e)/E_p[w] for Q>0, and the vertex-neighborhood covariance expansion in the report is exact. The tag lift (v,A)->(v,A union {v}) preserves addability because meeting W_v blocks the original support.",
+      "scope": "Exact algebraic identities for the ordinary-tree target's original selector and eligible p; no universal bound on the covariance, no proof of CT_x, and no verdict on the primary aggregate.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-U1/EVIDENCE.json",
+        "cycles/cycle-4/C4-U1/REPORT.md"
+      ],
+      "reason": "The tag bijection and support-blocking argument identify the registered marked counts with w-weighted rank-p counts. Uniform-layer expectation and extension double counting yield the covariance decomposition; summing addability indicators I_u gives the stated exact neighborhood expansion."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-U1/REPORT.md",
+  "limitations": [
+    "The covariance budget required for universal CT_x remains unproved.",
+    "First strict descent yields mu_x<x+1 but does not establish mu_p<=mu_x or control the selector-addability covariance.",
+    "No counterexample to CT_x or the primary aggregate and no new finite census are supplied.",
+    "Common occupancy examples are not independently replayed here and are treated only as bounded diagnostics."
+  ],
+  "status_authority": "proposed_worker_only"
+}

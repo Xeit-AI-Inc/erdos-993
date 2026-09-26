@@ -1,0 +1,3 @@
+lemma delta_neg_one [Finite V] : delta F (-1) = 1 := by
+  simp [delta, coeff, indepCount_zero]
+

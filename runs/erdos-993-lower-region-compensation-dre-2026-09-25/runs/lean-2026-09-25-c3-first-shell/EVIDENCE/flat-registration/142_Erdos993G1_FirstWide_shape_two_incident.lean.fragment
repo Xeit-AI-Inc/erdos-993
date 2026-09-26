@@ -1,0 +1,26 @@
+namespace Erdos993G1.FirstWide
+
+lemma shape_two_incident {V : Type u} [Finite V] (G : SimpleGraph V)
+    (hedge : 2 ≤ Nat.card G.edgeSet)
+    (hnone : ¬ ∃ a b c d : V, G.Adj a b ∧ G.Adj c d ∧
+      Disjoint ({a,b} : Set V) {c,d}) :
+    ∃ a b c : V, G.Adj a b ∧ G.Adj a c ∧ b ≠ c := by
+  classical
+  letI : Nontrivial G.edgeSet := Finite.one_lt_card_iff_nontrivial.mp (by omega)
+  obtain ⟨e,f,hef⟩ := exists_pair_ne G.edgeSet
+  obtain ⟨e,he⟩ := e
+  obtain ⟨f,hf⟩ := f
+  have hne : e ≠ f := by simpa using hef
+  induction e using Sym2.inductionOn with | _ a b =>
+  induction f using Sym2.inductionOn with | _ c d =>
+  have hab : G.Adj a b := he
+  have hcd : G.Adj c d := hf
+  have ho := shape_edges_overlap G hnone hab hcd
+  have hne' := (mt Sym2.eq_iff.mpr hne)
+  rcases ho with h | h | h | h
+  · subst c; exact ⟨a,b,d,hab,hcd,by aesop⟩
+  · subst d; exact ⟨a,b,c,hab,hcd.symm,by aesop⟩
+  · subst c; exact ⟨b,a,d,hab.symm,hcd,by aesop⟩
+  · subst d; exact ⟨b,a,c,hab.symm,hcd.symm,by aesop⟩
+
+end Erdos993G1.FirstWide

@@ -1,0 +1,57 @@
+{
+  "allowed_source_files": [
+    {
+      "path": "SOLUTION-CONTRACT.md",
+      "sha256": "f3667bd6424d4f0d95714772ecf76af82ed8430bdd3ec9eda0c721f1a853390c"
+    },
+    {
+      "path": "governance/lean-proof-workflow-SKILL.md",
+      "sha256": "405c11ffb24a19ff608a717340f11b650c4ea17218b17a0e79020036822e1c6c"
+    },
+    {
+      "path": "governance/theorem-contract-SKILL.md",
+      "sha256": "583fab70f817541503a9671f9aadf20038df9dd70e4128027912ffb88fe1c2f4"
+    },
+    {
+      "path": "governance/lean-formalization-SKILL.md",
+      "sha256": "c2bb1d81f0a5026673dcd58480f9634eb8e78bf9e6d37e1704c5b9c6a5b78cbd"
+    },
+    {
+      "path": "governance/lean-kernel-verification-SKILL.md",
+      "sha256": "5357221eb6c404bc745a061a6df33244b430258713b34388de1b25974a354bd2"
+    },
+    {
+      "path": "governance/formalization-fidelity-audit-SKILL.md",
+      "sha256": "dbb8672c804a520678f0325b93c6db0ba5e3616ddc57f0353e621c36c2e20b21"
+    },
+    {
+      "path": "inputs/C4-first-shell-frozen-intake/BASE.lean",
+      "sha256": "bfcd5bfbc921b17f2c2f33a881d97daa593baeb00c7eb1f3b7c5804ecc1c9fe9"
+    },
+    {
+      "path": "inputs/C4-r27-linear-bound-intake/THEOREM-CONTRACT.yaml",
+      "sha256": "a5d964540c9cc3aa05deb276256eacd28ab893612ce99abe9e50ea12ad2fbee8"
+    },
+    {
+      "path": "preparation/C5-PREP-TM-UNIFORM-CANDIDATE-AUDIT/REPORT.md",
+      "sha256": "91d316294b147c3af09cde641dc2916f2681d36ba6ca224fade92458b370757f"
+    },
+    {
+      "path": "preparation/C5-PREP-TM-UNIFORM-CANDIDATE-AUDIT/REPLAY.py",
+      "sha256": "01395c7507ece93eff4288c9ce7c59d542558ff81777a034bc4d7e999c7faaa1"
+    },
+    {
+      "path": "preparation/C5-PREP-TM-UNIFORM-CANDIDATE-AUDIT/RESULTS.json",
+      "sha256": "ce854f8056cb9e08c18fa2b2bf239162a7c4332d27050085d8d7c0bd2b8a04b6"
+    },
+    {
+      "path": "control/C3-FIRST-SHELL-FORMAL-AWARD.md",
+      "sha256": "4be8a3e7d5238bdaaf3ffe2b93f9518029f4a4d00aef563b257ad636eae3d7ca"
+    }
+  ],
+  "model": "gpt-6-sol",
+  "reasoning_effort": "high",
+  "status_authority": "readiness_proposal_only",
+  "task": "Read-only Lean readiness audit for the independently reviewed all-m T_m proof candidate. Do NOT launch a Lean run, create a contract, compile, install, or claim formal verification. Determine exact reusable ordinary-tree/count definitions, structural graph encoding, ULC convolution library availability, Cauchy-Binet/LC sequence needs, rational-bound needs and finite-base kernel computation feasibility. Inspect pinned skills for workflow stages. You may SSH mini-away read-only (socket /Users/ashtonsperry/Documents/Codex/2026-09-13/in-x20/work/g1.sock) to search only the installed Mathlib library at /Users/ashtonsperry/.local/share/verityos/lean/mathlib-v4.32.2-project/Mathlib and Lean project metadata. Do not read other experiments, workers, private histories or settings. Record hashes of live library files used and explicit search limits. Distinguish actual existing declarations from hoped-for APIs. Propose minimal honest theorem split and work estimate in proof obligations (not timing); a conditional theorem assuming ULC or finite base is not the T_m award. Write REPORT.md, RESULTS.json, and a formalization checklist only own scratch. No extra agents, background processes, external writes or registry changes. Stop after the bounded readiness assessment.",
+  "worker_id": "C5-PREP-TM-LEAN-READINESS"
+}

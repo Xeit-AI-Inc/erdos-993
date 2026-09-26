@@ -1,0 +1,26 @@
+{
+  "replay_method": "Copied both sealed replay scripts and the pinned ordinary_tree_checked.py helper into this worker scratch, adjusted only the local root in script copies, and ran both with /Library/Frameworks/Python.framework/Versions/3.11/bin/python3.",
+  "replay_results_match_sealed_outputs": true,
+  "t_family": {
+    "branches": "1..8",
+    "eligible_rows": 13,
+    "negative_S_rows": 13,
+    "minimum_S": -58083912,
+    "maximum_S": -1167,
+    "bounded_only": true
+  },
+  "labeled_tree_census": {
+    "orders": "1..8",
+    "labeled_trees": 280393,
+    "eligible_tree_rank_rows": 0,
+    "nonempty_selector_rows": 0,
+    "subset_enumeration_crosschecks": 1444,
+    "bounded_only": true
+  },
+  "mathematical_checks": [
+    "Each fixed-selector summand equals q_v(p)-q_v(p-1).",
+    "For each component C_i rooted at its unique attachment w_i, I(C_i)-I(C_i-w_i)=z I(C_i-N[w_i]); telescoping the product difference gives the stated positive-polynomial expansion.",
+    "The selector expression from I(T-v)=I(H_v)+zI(R_v) gives q_v(p)-q_v(p-1)=H_{v,p+1}-H_{v,p-1}-Delta_p(T-v)."
+  ],
+  "result": "The exact reduction and bounded data are supported; neither establishes the aggregate sign for arbitrary eligible ordinary trees."
+}

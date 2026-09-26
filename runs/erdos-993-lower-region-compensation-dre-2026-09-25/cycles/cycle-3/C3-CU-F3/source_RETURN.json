@@ -1,0 +1,28 @@
+{
+  "worker_id": "C3-F3",
+  "cycle": 3,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL",
+      "statement": "For every finite ordinary tree T and natural p with x(T)+2<=p and 3p<2alpha(T)+1, the fixed-selector weighted bipartite graph from independent (p+1)-sets to independent p-sets, with supplies and capacities w_F and all deletion and exact two-for-one switch arcs, admits an integral flow saturating every upper supply.",
+      "scope": "Universal ordinary-tree claim under the exact lower-region guards and fixed original selector stated in the common contract.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-F3/evidence.json",
+        "cycles/cycle-3/C3-F3/search.py",
+        "cycles/cycle-3/C3-F3/flow-results.json",
+        "cycles/cycle-3/C3-F3/audit_evidence.py"
+      ],
+      "reason": "Literal exact computations on five asymmetric trees of orders 16, 17, 18, 22, and 23 at p=x+2 all saturated the upper supply. This bounded sample found no deficient cut and supplies no universal proof; selector losses were not tested."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-F3/REPORT.md",
+  "limitations": [
+    "The five hand-selected trees do not form an exhaustive census or a generation-complete family.",
+    "All tested leaves were favorable, and the tested ranks were only p=x+2; selector-loss cases and other eligible ranks remain unexamined.",
+    "The saturated finite flows neither prove the universal weighted Hall mechanism nor decide the primary aggregate."
+  ],
+  "status_authority": "proposed_worker_only"
+}

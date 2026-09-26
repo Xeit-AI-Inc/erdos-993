@@ -1,0 +1,28 @@
+{
+  "worker_id": "C2-CF-T3",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C2-T3-shell-root-shadow",
+      "statement": "At the first shell n=2p+2, the complete fixed-selector sum is nonpositive for eligible trees in which every selected leaf-deletion forest has no isolates and has a marked root of degree at least two (the empty selector is vacuous); eligibility also forces tau(H_v)=p+1-(alpha(T)-p) <= floor(p/2)+1. The remaining ordered-root contributions are confined to explicitly described order-2k boundary parts, whose excess is not compensated here.",
+      "scope": "Ordinary finite trees T with n=2p+2, x(T)+2<=p, 3p<2alpha(T)+1; F(T,p) is the original strict favorable-leaf selector and repeated same-support leaves remain distinct. For every v in F, H_v has no isolates and a W_v root of H_v-degree at least two; the empty selector is allowed.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CF-T3/REPORT.md"
+      ],
+      "reason": "retained: independent checks confirm the original-deletion identities, exact first-mark partition, zero-extension and rank domains, star exclusion, cover-number arithmetic, and the shadow proof for every part of order at most 2k-1. The result proves the complete fixed-selector sum only on the stated subclass. The unresolved order-2k parts and lack of compensation leave the wider shell and primary assertions open; the registered exact-order graph classification does not compare Delta_k(H_v) with Delta_k(R_v)."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CF-T3/REPORT.md",
+  "limitations": [
+    "The retained result is restricted to n=2p+2 and the stated per-selected-tag forest condition; it proves neither the unrestricted shell nor the primary target.",
+    "The order-2k boundary excess has no selector-conditioned global compensation bound in the route or this critique.",
+    "No nonempty eligible selector satisfying the subclass condition was exhibited, and no finite census or source-code replay was performed."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-T3-shell-root-shadow"
+  ]
+}

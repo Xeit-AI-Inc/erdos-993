@@ -1,0 +1,31 @@
+namespace Erdos993G1.ThirdWide
+open Finset Classical
+
+lemma catalan_gap_three_pos (r : ℕ) :
+    0 < ((2*r+3).choose (r+1) : ℤ) - (2*r+3).choose r -
+      3 * (if 1 ≤ r then (catalan (r-1) : ℤ) else 0) -
+      3 * (if 2 ≤ r then (catalan (r-2) : ℤ) else 0) -
+      (if 3 ≤ r then (catalan (r-3) : ℤ) else 0) := by
+  by_cases hr0 : r = 0
+  · subst r
+    norm_num [Nat.choose]
+  by_cases hr1 : r = 1
+  · subst r
+    norm_num [Nat.choose, catalan_zero]
+  have hr : 2 ≤ r := by omega
+  have h1 : 1 ≤ r := by omega
+  have hE := binom_gap_two_catalan r
+  have hm1 := catalan_mono (a := r-2) (b := r-1) (by omega)
+  have hd1 := catalan_succ_ge_double (r-1) (by omega)
+  have hd2 := catalan_succ_ge_double r (by omega)
+  have heq : r-1+1 = r := by omega
+  rw [heq] at hd1
+  have hcat := catalan_pos_int (r-1)
+  by_cases h3 : 3 ≤ r
+  · have hm2 := catalan_mono (a := r-3) (b := r-1) (by omega)
+    simp only [if_pos h1, if_pos hr, if_pos h3]
+    linarith
+  · simp only [if_pos h1, if_pos hr, if_neg h3]
+    linarith
+
+end Erdos993G1.ThirdWide

@@ -1,0 +1,48 @@
+{
+  "worker_id": "C6-CF-T1",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C6-T1-TM-CUTOFF400",
+      "statement": "For the ordinary-tree family T_m formed by one root-adjacent P3 arm and m root-adjacent K1,3 arms, every eligible p with x(T_m)+2<=p and 3p<2alpha(T_m)+1 has complete original favorable-leaf aggregate S(T_m,p)<0.",
+      "scope": "Exactly this T_m family, its original leaves, supports, fixed strict selector and distinct leaf tags. The finite coefficient base is exact computation and the tail uses an informal ULC convolution limit argument. No arbitrary-tree conclusion.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CF-T1/EVIDENCE.json",
+        "cycles/cycle-6/C6-CF-T1/CUTOFF400-REPLAY.json",
+        "cycles/cycle-6/C6-CF-T1/cutoff400_audit.py",
+        "cycles/cycle-6/C6-CF-T1/SMALL-GRAPH-EVIDENCE.json",
+        "cycles/cycle-6/C6-CF-T1/small_graph_replay.py",
+        "cycles/cycle-6/C6-CF-T1/ordinary_tree_checked.py"
+      ],
+      "reason": "retained_narrowed: the exact T_m family proof is supported after correcting two write-up lines. The contract summand is q_v(p)-q_v(p-1), not q_v(p-1)-q_v(p-2); summing the correct expression with sum_v q_v=zR gives the route's final R_(p-1)-R_(p-2). For G=1+2z the displayed right-hand derivative vector should be (2/3,0), not (2/3,2/3); the corrected factor inequality yields the stated direct descent. The exact finite replay reproduces all 485,928 margins, and the strict analytic cutoff, selector transfer and complete tagged sum have the stated family scope. These are presentation defects, not counterexamples."
+    },
+    {
+      "claim_id": "C6-T1-TM-DIRECT-FIRST-DESCENT",
+      "statement": "For the defined T_m family, x(T_m)>=m+1 for every m>=2 without using the R27 forest-order theorem; m=1 is handled separately as an ineligible case.",
+      "scope": "Only first-descent location for the stated T_m independence polynomial.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CF-T1/EVIDENCE.json",
+        "cycles/cycle-6/C6-CF-T1/CUTOFF400-REPLAY.json",
+        "cycles/cycle-6/C6-CF-T1/SMALL-GRAPH-EVIDENCE.json",
+        "cycles/cycle-6/C6-CF-T1/small_graph_replay.py"
+      ],
+      "reason": "retained_narrowed: after correcting the G derivative vector, coefficientwise differentiation gives (j+1)M_(j+1)> (j+1)M_j for 0<=j<=m and m>=2; the root-included binomial term is also increasing there. Therefore Delta_j(P)>0 through rank m. The m=1 exact row is separate and has no eligible p."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CF-T1/REPORT.md",
+  "limitations": [
+    "The conclusions are limited to the specified T_m family and do not resolve the arbitrary ordinary-tree aggregate.",
+    "The finite base is exact, bounded computation without a Lean or kernel certificate.",
+    "The ULC finite-order convolution and limiting bridge is informal and not kernel checked.",
+    "The source report has a one-rank summand notation error and an incorrect displayed G-factor coefficient vector; the corrected derivations are recorded in REPORT.md and EVIDENCE.json."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-T1-TM-CUTOFF400",
+    "C6-T1-TM-DIRECT-FIRST-DESCENT"
+  ]
+}

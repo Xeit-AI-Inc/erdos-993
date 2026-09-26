@@ -1,0 +1,26 @@
+{
+  "worker_id": "C6-F4",
+  "cycle": 6,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C6-F4.MATCHING-SUPPORT-INJECTION",
+      "statement": "The rule assigning every active selected leaf tag in each independent (p+1)-set B to a distinct support vertex in N(B) via the B--N(B) incidence graph fails on the exact eligible tree T_22 at p=34: one witnessed B has 33 active tags on 11 distinct supports.",
+      "scope": "The stated injective support-vertex charging rule, for the single ordinary T_22 instance and independent set recorded in EVIDENCE.json; this is not a claim about all matching/slack mechanisms or the primary aggregate.",
+      "status": "proposed_refuted",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-F4/EVIDENCE.json",
+        "cycles/cycle-6/C6-F4/REPLAY.py"
+      ],
+      "reason": "The replay checks x=32, a=68, p=34, both strict eligibility guards, the exact fixed favorable set of all 67 original leaves, and a rank-35 independent B with 33 active tags but only 11 support vertices. The complete full sum is negative, so the finding rejects only this injectivity mechanism and does not refute the target inequality."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-F4/REPORT.md",
+  "limitations": [
+    "The witness tests only a one-tag-per-distinct-support injection; mechanisms with multi-tag support weights or additional slack are not ruled out.",
+    "The full aggregate in the witness is negative, and no primary counterexample or proof is established.",
+    "The computation covers one explicitly specified tree and makes no universal or census claim."
+  ],
+  "status_authority": "proposed_worker_only"
+}

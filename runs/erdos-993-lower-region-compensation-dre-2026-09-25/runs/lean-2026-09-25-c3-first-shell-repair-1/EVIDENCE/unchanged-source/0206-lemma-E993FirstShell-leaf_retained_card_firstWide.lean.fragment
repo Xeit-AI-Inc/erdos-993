@@ -1,0 +1,11 @@
+namespace E993FirstShell
+
+lemma leaf_retained_card_firstWide {V : Type u} [Fintype V] [DecidableEq V]
+    (T : SimpleGraph V) (v : V) (p : ℕ)
+    (hv : C4LA1.IsGraphLeaf T v) (hp : 1 ≤ p)
+    (horder : Fintype.card V = 2*p+2) :
+    (Finset.univ \ C5LA1.H T v).card = 2*(p-1)+2 := by
+  have hcard := E993OrderBand.retained_card T v hv
+  omega
+
+end E993FirstShell

@@ -1,0 +1,37 @@
+{
+  "schema": "e993.worker-ops.evidence.v1",
+  "worker_id": "C4-CT-U6",
+  "items": [
+    {
+      "id": "definition-bridge-audit",
+      "finding": "For an original leaf v, support_spec recovers its unique original neighbor s; H={v,s}, R=N[s], H is a subset of R, and the frozen avoided-set counts enumerate independent subsets of the original vertex type avoiding each deletion set. The strict favorable test is the integer forward difference for deletion of v, and aggregate filters original leaves, so distinct leaves sharing s remain distinct summands. The tagged partition counts independent k-sets avoiding H that meet R\\H; therefore i_k(T-H)-i_k(T-R)=q_k. Taking k=p and k=p-1 gives the summand identity q_p-q_(p-1) in integers.",
+      "sources": [
+        {"path": "inputs/C4-first-shell-frozen-intake/BASE.lean", "lines": "11-104"},
+        {"path": "inputs/C4-first-shell-frozen-intake/BASE.lean", "lines": "175-240"},
+        {"path": "inputs/C4-first-shell-frozen-intake/BASE.lean", "lines": "250-279"},
+        {"path": "inputs/C4-first-shell-frozen-intake/BASE.lean", "lines": "2826-3000"}
+      ],
+      "grade": "independent definition and finite-partition audit; no new Lean verification"
+    },
+    {
+      "id": "scope-and-scale-up",
+      "finding": "The frozen first-shell theorem requires |V|=2p+2. Since H has exactly two vertices for a leaf, its retained graph has order 2p, exactly the equality-order input to the cited first-wide lemma at r=p-1. The primary target imposes no such order equation; its strict independence-number guard does not imply it. Thus the available first-shell argument does not establish the arbitrary-order primary aggregate.",
+      "sources": [
+        {"path": "runs/lean-2026-09-25-c3-first-shell/THEOREM-CONTRACT.yaml", "lines": "1-40,332-347"},
+        {"path": "inputs/C4-first-shell-frozen-intake/BASE.lean", "lines": "2512-2528,2826-3000"},
+        {"path": "preparation/C3-LA1-INFORMAL/REPORT.md", "lines": "25-66,89-100"}
+      ],
+      "grade": "exact scope comparison and order arithmetic; informal proof scope only"
+    },
+    {
+      "id": "formal-boundary",
+      "finding": "The frozen preflight is a compilation receipt with warnings, while the contract separately requires kernel verification and statement-fidelity audit. It is not evidence that the terminal declaration was kernel-checked or that it proves the general primary claim.",
+      "sources": [
+        {"path": "receipts/C3-LA1-BASE-PREFLIGHT.json", "lines": "1"},
+        {"path": "runs/lean-2026-09-25-c3-first-shell/THEOREM-CONTRACT.yaml", "lines": "332-347"},
+        {"path": "preparation/C3-LA1-INFORMAL/REPORT.md", "lines": "89-100"}
+      ],
+      "grade": "receipt and contract boundary audit"
+    }
+  ]
+}

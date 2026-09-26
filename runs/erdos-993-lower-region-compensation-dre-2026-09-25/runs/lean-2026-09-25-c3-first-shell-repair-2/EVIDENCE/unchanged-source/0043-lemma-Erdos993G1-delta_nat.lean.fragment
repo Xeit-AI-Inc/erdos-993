@@ -1,0 +1,5 @@
+lemma delta_nat (k : ℕ) :
+    delta F (k : ℤ) = indepCount F (k + 1) - indepCount F k := by
+  simpa only [delta, Nat.cast_add, Nat.cast_one] using
+    congrArg₂ (· - ·) (coeff_nat F (k + 1)) (coeff_nat F k)
+

@@ -1,0 +1,5 @@
+# Required adjudication distinction; no award
+
+Both opposing critics reproduced the producer network, but neither identified that its capacities omit the active-tag witness condition. The original finite flow statements can be retained ONLY as statements about that explicitly different weighting, with no application to the registered weighted Hall target. Their negative complete aggregate computations are independent and correct. The original upper-minus-lower totals -1406 and -6717 differ from literal S=-1218 and -5434.
+
+Three appended root-origin files supply an exact corrected replay on the same two instances, now satisfying upper supply minus lower capacity equals S. Independently validate these corrected capacities, all positive arcs and saturation before retaining them as target-specific bounded evidence. Do not award by two critic votes; do not conflate weight functions or credit the correction to the original producer. Execute any replay from scratch-local copies only; the script writes evidence beside itself. All original artifacts stay immutable. This is not an all-tree Hall theorem.

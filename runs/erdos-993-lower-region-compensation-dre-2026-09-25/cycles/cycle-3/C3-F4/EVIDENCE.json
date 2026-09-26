@@ -1,0 +1,210 @@
+{
+  "hash_check": {
+    "common_packet_listed_source_count": 115,
+    "mismatches": 0
+  },
+  "analytic_small_orders": {
+    "claim": "At n=2p+3, early descent x+2<=p is impossible for p=3,4.",
+    "p3": "Every tree has i1=9 and i2=C(9,2)-8=28, so Delta1=19>0; x>=2, but x<=p-2=1 would be required.",
+    "p4": "Every tree has i2=C(11,2)-10=45. For a tree, i3=C(n,3)-(n-1)(n-2)+sum_v C(d(v),2); hence Delta2=30+sum_v C(d(v),2)>0 at n=11. Delta0,Delta1 are also positive. Thus x>=3, but x<=p-2=2 is required."
+  },
+  "marked_shadow_without_cover_guard": {
+    "graph": "K1,7 (8 vertices)",
+    "k": 3,
+    "marked_set": [
+      1
+    ],
+    "minimum_vertex_cover": 1,
+    "q_k": 15,
+    "q_k_plus_1": 20,
+    "difference": 5,
+    "meaning": "The tau(G)>=3 premise in the candidate marked-shadow lemma cannot simply be dropped."
+  },
+  "next_order_ineligible_tree": {
+    "p": 4,
+    "order": 11,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        0,
+        6
+      ],
+      [
+        0,
+        7
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        1,
+        9
+      ],
+      [
+        9,
+        10
+      ]
+    ],
+    "independence_polynomial": [
+      1,
+      11,
+      45,
+      105,
+      161,
+      161,
+      105,
+      43,
+      10,
+      1
+    ],
+    "alpha": 9,
+    "x": 5,
+    "early_guard_required_x_at_most": 2,
+    "favorable_leaves": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10
+    ],
+    "selected_terms": [
+      {
+        "leaf": 2,
+        "support": 0,
+        "Delta_p(T-v)": -19,
+        "H_order": 9,
+        "R_order": 2,
+        "q_p": 90,
+        "q_p_minus_1": 71,
+        "term": 19
+      },
+      {
+        "leaf": 3,
+        "support": 0,
+        "Delta_p(T-v)": -19,
+        "H_order": 9,
+        "R_order": 2,
+        "q_p": 90,
+        "q_p_minus_1": 71,
+        "term": 19
+      },
+      {
+        "leaf": 4,
+        "support": 0,
+        "Delta_p(T-v)": -19,
+        "H_order": 9,
+        "R_order": 2,
+        "q_p": 90,
+        "q_p_minus_1": 71,
+        "term": 19
+      },
+      {
+        "leaf": 5,
+        "support": 0,
+        "Delta_p(T-v)": -19,
+        "H_order": 9,
+        "R_order": 2,
+        "q_p": 90,
+        "q_p_minus_1": 71,
+        "term": 19
+      },
+      {
+        "leaf": 6,
+        "support": 0,
+        "Delta_p(T-v)": -19,
+        "H_order": 9,
+        "R_order": 2,
+        "q_p": 90,
+        "q_p_minus_1": 71,
+        "term": 19
+      },
+      {
+        "leaf": 7,
+        "support": 0,
+        "Delta_p(T-v)": -19,
+        "H_order": 9,
+        "R_order": 2,
+        "q_p": 90,
+        "q_p_minus_1": 71,
+        "term": 19
+      },
+      {
+        "leaf": 8,
+        "support": 0,
+        "Delta_p(T-v)": -19,
+        "H_order": 9,
+        "R_order": 2,
+        "q_p": 90,
+        "q_p_minus_1": 71,
+        "term": 19
+      },
+      {
+        "leaf": 10,
+        "support": 9,
+        "Delta_p(T-v)": -14,
+        "H_order": 9,
+        "R_order": 8,
+        "q_p": 35,
+        "q_p_minus_1": 21,
+        "term": 14
+      }
+    ],
+    "S": 147,
+    "limitation": "The tree violates x+2<=p, so this is guard sharpness only and not a counterexample to the registered primary target."
+  },
+  "bounded_random_search": {
+    "recipe": "For each p=6,7,8,9,10, draw 12000 independent uniform Pr\u00fcfer sequences from [0,n)^(n-2), n=2p+3, with Python Random seed 20260925. Decode with the packet-pinned ordinary_tree_checked.prufer_tree. For rows satisfying x+2<=p, compute the fixed selector and exact leaf terms with aggregate_row.",
+    "results": {
+      "6": {
+        "draws": 12000,
+        "early_descent_rows": 355,
+        "positive_favorable_term_found": false
+      },
+      "7": {
+        "draws": 12000,
+        "early_descent_rows": 10727,
+        "positive_favorable_term_found": false
+      },
+      "8": {
+        "draws": 12000,
+        "early_descent_rows": 11951,
+        "positive_favorable_term_found": false
+      },
+      "9": {
+        "draws": 12000,
+        "early_descent_rows": 11998,
+        "positive_favorable_term_found": false
+      },
+      "10": {
+        "draws": 12000,
+        "early_descent_rows": 12000,
+        "positive_favorable_term_found": false
+      }
+    },
+    "scope": "Seeded labeled-tree sample only; not exhaustive and gives no universal conclusion."
+  },
+  "conclusion": "No eligible positive local term or proof of the next-order extension was obtained. The small exact calculations expose the cover-threshold and early-descent boundaries; the sampled search is bounded evidence only."
+}

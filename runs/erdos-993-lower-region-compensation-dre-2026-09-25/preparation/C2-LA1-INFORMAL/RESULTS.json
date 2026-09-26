@@ -1,0 +1,34 @@
+{
+  "worker_id": "C2-LA1-INFORMAL",
+  "producer_id": "C2-LA1-PRODUCER",
+  "authority": "proposed_worker_only",
+  "contract_id": "e993-c2-order-band-pair-v2",
+  "contract_sha256": "007997997fb2c2aebf976cac6fcf5f1a25960a3f5776c798d517f79e045b4bc7",
+  "claim_sha256": "9aaeb99788cde87e98e8532cb12d9f24579a1f81bddcbb3985e426f2dde9fa4c",
+  "expected_statement_sha256": "2f76927cdaeade070834c224eae8d5a846ee9a05cb4d04aade9524be58ad0437",
+  "source_hashes_verified": 19,
+  "source_hash_mismatches": [],
+  "structural_receipt_verdict": "valid_for_formalization",
+  "structural_receipt_proof_claim": false,
+  "informal_mathematical_verdict": "passed",
+  "generic_conjunct": "passed",
+  "ordinary_leaf_conjunct": "passed",
+  "ledger_rows_verified": 9,
+  "open_mathematical_escalations": 0,
+  "lean_build_performed": false,
+  "kernel_verification_claim": false,
+  "fidelity_verification_claim": false,
+  "first_shell_claim": false,
+  "artifacts": [
+    "REPORT.md",
+    "RESULTS.json",
+    "LEDGER.csv",
+    "ESCALATIONS.md",
+    "INFORMAL-AUDIT.md"
+  ],
+  "limitations": [
+    "Informal mathematical audit only",
+    "Definition fragment has no Lean proof body",
+    "No Lean build or fidelity audit authorized"
+  ]
+}

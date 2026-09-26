@@ -1,0 +1,26 @@
+{
+  "worker_id": "C5-F1",
+  "cycle": 5,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C5-F1-TM-CENTRAL-SURVIVAL",
+      "statement": "The uniform T_m central log-concavity and mixed-minor package survives independent audit: the large-m inequalities close with the stated exact bounds, and the finite base 3<=m<=999 passes exact integer replay; combined with the registered forest descent bound, this proves the selected lower-region aggregate is strictly negative for every eligible T_m.",
+      "scope": "The ordinary trees T_m consisting of path a-b-r with m three-leaf arms at r, all integer m>=1 and all ranks satisfying x(T_m)+2<=p and 3p<2alpha(T_m)+1. Evidence grade is algebraic large-m proof plus exact Python finite base; not kernel checked.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-F1/EVIDENCE.json",
+        "cycles/cycle-5/C5-F1/CHECK.py"
+      ],
+      "reason": "I independently checked the finite central LC and mixed minors for all 3<=m<=999, reproducing both exact digests and minima, and independently checked all 276,938 eligible rows through m=999. The factor ULC hypotheses, derivative coefficient bounds, h=8 perturbation estimate, Cauchy-Binet signs, exact large-m cutoff inequalities, and selector propagation were audited algebraically. This is a family-level computer-assisted result only; it neither awards the general primary nor changes any controller status."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-F1/REPORT.md",
+  "limitations": [
+    "The finite coefficient base and eligible-row replay use exact Python integers and are not Lean-kernel checked.",
+    "The all-m family argument relies on the registered forest descent bound and the cited finite-order ULC convolution theorem.",
+    "No conclusion is proved for arbitrary ordinary trees or the general lower-region favorable-leaf aggregate."
+  ],
+  "status_authority": "proposed_worker_only"
+}

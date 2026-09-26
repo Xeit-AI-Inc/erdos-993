@@ -1,0 +1,25 @@
+{
+  "worker_id": "C2-F4",
+  "cycle": 2,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "For T_v consisting of adjacent hubs with one pendant leaf at one hub and v pendant leaves at the other, v>=8, the complete strict favorable-leaf sum is nonpositive for every p satisfying x(T_v)+2<=p and 3p<2alpha(T_v)+1.",
+      "scope": "The stated uneven two-hub family only; alpha(T_v)=v+1, original leaf tags retain multiplicity, and the selector is exactly Delta_p(T_v-leaf)<0.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-F4/REPORT.md",
+        "cycles/cycle-2/C2-F4/EVIDENCE.md"
+      ],
+      "reason": "Exact binomial formulas prove x(T_v)>=ceil(v/2)-1, strict favorability of every original leaf under the eligible lower bound, and nonpositive support differences at rank p-1; summing all distinct tags gives S= v(q_p-q_(p-1))<=0. An exact eligible v=11 row is also supplied."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-F4/REPORT.md",
+  "limitations": [
+    "This proof covers only the uneven two-hub family with leaf multiplicities 1 and v; arbitrary trees and general multi-hub families remain unresolved.",
+    "No universal verdict for the primary registered aggregate follows from this subfamily result."
+  ],
+  "status_authority": "proposed_worker_only"
+}

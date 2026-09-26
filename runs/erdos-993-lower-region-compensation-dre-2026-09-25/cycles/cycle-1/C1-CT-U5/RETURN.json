@@ -1,0 +1,28 @@
+{
+  "worker_id": "C1-CT-U5",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C1-U5-1",
+      "statement": "Retain the exact support-core polynomial and rooted branch recurrences for ordinary trees of order at least three, with every original leaf tag counted, and retain the strict-negative aggregate theorem for every eligible ordinary star.",
+      "scope": "The star theorem applies to all finite ordinary stars and eligible p satisfying x+2<=p and 3p<2m+1. The exact decorated-core formulas apply to finite ordinary trees of order at least three. Neither establishes the primary aggregate's sign on general branching cores.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CT-U5/evidence/critique-audit.md"
+      ],
+      "reason": "retained: direct coefficient and binomial-ratio checks establish the star theorem; splitting independent sets by selected core roots establishes each polynomial identity and shows the support multiplicity m_s is preserved. The source correctly identifies the missing selector-to-local-sum sign comparison, so this disposition does not extend to the registered primary target."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CT-U5/REPORT.md",
+  "limitations": [
+    "This review retains only the star subfamily theorem and exact evaluation formulas; it does not resolve the primary aggregate on general trees.",
+    "The T_22 and T_60 control values were accepted from the common handoff and were not independently recomputed in this review.",
+    "No exhaustive search, source-script replay, or external literature search was performed."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-U5-1"
+  ]
+}

@@ -1,0 +1,171 @@
+{
+  "schema": "e993.c3-u1.evidence.v1",
+  "source_hash_check": {
+    "listed_common_sources": 115,
+    "mismatches": 0,
+    "case_listed_sources": 0
+  },
+  "strict_fiber_example": {
+    "upper_clone_tag": 8,
+    "upper_set": [
+      1,
+      3,
+      5,
+      8,
+      9,
+      10,
+      11
+    ],
+    "lower_clone_tag": 9,
+    "lower_set": [
+      3,
+      5,
+      8,
+      9,
+      10,
+      11
+    ],
+    "new_relation": "lower set is upper minus 1",
+    "old_delete_retaining_tag_8": "not this lower clone",
+    "old_retag_to_9": "lands on upper minus 8, namely {1,3,5,9,10,11}"
+  },
+  "strict_switch_example": {
+    "order": 14,
+    "alpha": 9,
+    "x": 4,
+    "p": 6,
+    "favorable_leaves": [
+      6,
+      8,
+      9,
+      10,
+      12,
+      13
+    ],
+    "upper_set": [
+      1,
+      3,
+      5,
+      8,
+      9,
+      10,
+      11
+    ],
+    "upper_weight": 3,
+    "inserted_vertex": 0,
+    "removed_vertices": [
+      1,
+      11
+    ],
+    "lower_set": [
+      0,
+      3,
+      5,
+      8,
+      9,
+      10
+    ],
+    "lower_weight": 3,
+    "exactly_two_neighbors_removed": true,
+    "lower_region_guards": true
+  },
+  "inherited_refutation_audit": [
+    {
+      "claim_id": "E993-R23-LITERAL-ACTUAL-TREE-FIXED-GAMMA-HALL",
+      "scope": "old literal fixed Delete/Retag; T22 order 91 p=34",
+      "old_cut_deficit": "14226520737620288370",
+      "same_row_aggregate": "-498754180547001418536",
+      "new_graph_refuted": false
+    },
+    {
+      "claim_id": "E993-R23-LITERAL-DELETE-ONLY-HALL",
+      "scope": "old tagged deletion-only mechanism; same witness",
+      "new_graph_refuted": false
+    },
+    {
+      "claim_id": "E993-R23-TAG-CLOSED-CUT-HALL",
+      "scope": "old tagged relation and tag-closed cuts; CB(8,92)",
+      "new_graph_refuted": false
+    },
+    {
+      "claim_id": "E993-R23-HOT-TAG-SINGLETON-HALL",
+      "scope": "old singleton-tag cut",
+      "new_graph_refuted": false
+    },
+    {
+      "claim_id": "E993-R23-ZERO-RETAG-EXPORT-IMPLIES-NONPOSITIVE-TAG",
+      "scope": "old local zero-export shortcut",
+      "new_graph_refuted": false
+    },
+    {
+      "claim_id": "E993-C3-COMPLETE-TAG-DEFICIENCY-EQUALS-CONTRIBUTION",
+      "scope": "old single-tag deficiency equality shortcut",
+      "new_graph_refuted": false
+    },
+    {
+      "claim_id": "E993-R19-FIXED-GAMMA-HALL",
+      "scope": "governed RTree relation; ordinary-to-governed transfer unresolved",
+      "new_graph_refuted": false
+    }
+  ],
+  "bounded_t_m_flow": {
+    "scope": "three specified T_m trees and ranks only",
+    "rows": [
+      {
+        "m": 22,
+        "p": 34,
+        "deletion_only_deficit": "14226520737620288370",
+        "upper_supply": "6533318342644086823410",
+        "lower_capacity": "7032072523191088241946",
+        "two_for_one_flow": "6533318342644086823410",
+        "saturates": true,
+        "transport_orbit_arcs": 8907,
+        "prior_deletion_orbit_arcs": 7135,
+        "expanded_cut_deficit": 0,
+        "full_flow_from_old_cut_to_outside_its_old_deletion_neighborhood": "61297708604376458907",
+        "positive_orbit_pairs_to_that_switch_only_region": 67
+      },
+      {
+        "m": 60,
+        "p": 90,
+        "deletion_only_deficit": "2484429454702439631214528481545445496575478415088191800",
+        "upper_supply": "18218546853926351167830731257168063662695945613618170468520",
+        "lower_capacity": "19276689216074003765533385845436458339871978815941487428900",
+        "two_for_one_flow": "18218546853926351167830731257168063662695945613618170468520",
+        "saturates": true,
+        "transport_orbit_arcs": 152406,
+        "prior_deletion_orbit_arcs": 124057,
+        "expanded_cut_deficit": 0,
+        "full_flow_from_old_cut_to_outside_its_old_deletion_neighborhood": "8054454585769672795041594646481808495075786664767781920",
+        "positive_orbit_pairs_to_that_switch_only_region": 227
+      },
+      {
+        "m": 66,
+        "p": 98,
+        "deletion_only_deficit": "9792891083754740157383733153470112445673000768114042172774060",
+        "upper_supply": "10621175131261862108643497325635134690753959446180514839346249972",
+        "lower_capacity": "11019681101975788488398165437175461028091620945562562333982657340",
+        "two_for_one_flow": "10621175131261862108643497325635134690753959446180514839346249972",
+        "saturates": true,
+        "transport_orbit_arcs": 202870,
+        "prior_deletion_orbit_arcs": 165317,
+        "expanded_cut_deficit": 0,
+        "full_flow_from_old_cut_to_outside_its_old_deletion_neighborhood": "37019788735569186669835028448098972947432650554624411196384084",
+        "positive_orbit_pairs_to_that_switch_only_region": 287
+      }
+    ],
+    "p6_audit": {
+      "eligible_cases": 241,
+      "reported_saturated_cases": 241,
+      "recomputed_in_this_seat": false
+    },
+    "lift": "Orbit-pair edge blocks are biregular by automorphism invariance and within-orbit transitivity; uniform spreading yields feasible fractional clone flow, then network-flow integrality yields integral flow."
+  },
+  "unresolved": {
+    "universal_weighted_hall": "open",
+    "minimal_edge_repair_size": "not established",
+    "CB_8_92_expanded_relation": "supplied capacity envelope inconclusive; exact flow/cut absent",
+    "aggregate_to_hall_converse": "not established",
+    "census_to_universal": "invalid"
+  }
+}

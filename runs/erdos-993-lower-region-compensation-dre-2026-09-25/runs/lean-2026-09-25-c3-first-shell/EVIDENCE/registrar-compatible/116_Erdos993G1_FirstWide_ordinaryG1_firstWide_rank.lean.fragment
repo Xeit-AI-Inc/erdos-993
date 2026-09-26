@@ -1,0 +1,19 @@
+namespace Erdos993G1.FirstWide
+
+lemma ordinaryG1_firstWide_rank {Y : Type u} [Finite Y]
+    (T : SimpleGraph Y) (v s g : Y) (p : ℕ)
+    (hG : ordinaryG1Guards T v s g p)
+    (hn : residualOrder T v g = 2 * p - 2) :
+    1 ≤ p - 2 ∧
+      Nat.card {a : Y // a ∉ closedNeighborhood T v ∪ closedNeighborhood T g} =
+        2 * (p - 2) + 2 ∧
+      ((p - 2 : ℕ) : ℤ) = (p : ℤ) - 2 ∧
+      firstDescent (residual T v g) < p - 2 := by
+  rcases hG with ⟨hT, hleaf, hvs, hsupport, hsg, hgv, hp, hgamma, hsize, hcross⟩
+  have hp3 : 3 ≤ p := by omega
+  change Nat.card {a : Y // a ∉ closedNeighborhood T v ∪ closedNeighborhood T g} =
+    2 * p - 2 at hn
+  refine ⟨by omega, ?_, by omega, hcross⟩
+  omega
+
+end Erdos993G1.FirstWide

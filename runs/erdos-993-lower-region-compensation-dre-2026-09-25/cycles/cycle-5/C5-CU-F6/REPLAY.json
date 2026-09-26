@@ -1,0 +1,315 @@
+{
+  "method": "integer-exact polynomial dynamic products and exhaustive sorted six-part nonnegative leaf-count partitions for each n=2p+4, p=10..13; no graph-isomorphism claim outside this family",
+  "independence_polynomial_recipe": "P_T(z)=product_i((1+z)^d_i+z)+z*product_i(1+z)^d_i for root joined to six centers, center i joined to d_i pendant leaves",
+  "pointwise_term_recipe": "For pendant leaf v at center i, H=T-{v,center_i} has polynomial (1+z)^(d_i-1) P_root,others; R=T-N[center_i] is the disjoint union of the five other center-stars. Selector uses Delta_p(T-v)<0. For d_i=0, center_i is the original leaf supported at root.",
+  "summary": [
+    {
+      "p": 10,
+      "n": 24,
+      "six_arm_multisets_enumerated": 163,
+      "eligible_multisets": 1,
+      "positive_selected_arm_types": 0,
+      "min_selected_pointwise_term": -7537,
+      "max_selected_pointwise_term": -4875
+    },
+    {
+      "p": 11,
+      "n": 26,
+      "six_arm_multisets_enumerated": 235,
+      "eligible_multisets": 0,
+      "positive_selected_arm_types": 0,
+      "min_selected_pointwise_term": null,
+      "max_selected_pointwise_term": null
+    },
+    {
+      "p": 12,
+      "n": 28,
+      "six_arm_multisets_enumerated": 331,
+      "eligible_multisets": 0,
+      "positive_selected_arm_types": 0,
+      "min_selected_pointwise_term": null,
+      "max_selected_pointwise_term": null
+    },
+    {
+      "p": 13,
+      "n": 30,
+      "six_arm_multisets_enumerated": 454,
+      "eligible_multisets": 0,
+      "positive_selected_arm_types": 0,
+      "min_selected_pointwise_term": null,
+      "max_selected_pointwise_term": null
+    }
+  ],
+  "eligible_witness": {
+    "family_parameters_sorted": [
+      2,
+      3,
+      3,
+      3,
+      3,
+      3
+    ],
+    "graph_labels": {
+      "root": 0,
+      "centers": [
+        1,
+        4,
+        8,
+        12,
+        16,
+        20
+      ],
+      "pendant_leaves_by_center": [
+        [
+          2,
+          3
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          9,
+          10,
+          11
+        ],
+        [
+          13,
+          14,
+          15
+        ],
+        [
+          17,
+          18,
+          19
+        ],
+        [
+          21,
+          22,
+          23
+        ]
+      ]
+    },
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        8,
+        10
+      ],
+      [
+        8,
+        11
+      ],
+      [
+        0,
+        12
+      ],
+      [
+        12,
+        13
+      ],
+      [
+        12,
+        14
+      ],
+      [
+        12,
+        15
+      ],
+      [
+        0,
+        16
+      ],
+      [
+        16,
+        17
+      ],
+      [
+        16,
+        18
+      ],
+      [
+        16,
+        19
+      ],
+      [
+        0,
+        20
+      ],
+      [
+        20,
+        21
+      ],
+      [
+        20,
+        22
+      ],
+      [
+        20,
+        23
+      ]
+    ],
+    "tau": 6,
+    "cover_centers": [
+      1,
+      4,
+      8,
+      12,
+      16,
+      20
+    ],
+    "matching_edges": [
+      [
+        1,
+        2
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        12,
+        13
+      ],
+      [
+        16,
+        17
+      ],
+      [
+        20,
+        21
+      ]
+    ],
+    "eligibility": {
+      "x_plus_2_le_p": true,
+      "3p_lt_2alpha_plus_1": true
+    },
+    "independence_counts": [
+      1,
+      24,
+      253,
+      1566,
+      6400,
+      18419,
+      38970,
+      62650,
+      78593,
+      78515,
+      63348,
+      41582,
+      22199,
+      9548,
+      3240,
+      836,
+      154,
+      18,
+      1
+    ],
+    "alpha": 18,
+    "x": 8,
+    "arms": [
+      {
+        "arm": 1,
+        "pendant_leaf_count": 2,
+        "Delta_p_after_one_pendant_leaf_deletion": -13234,
+        "Delta_p_after_center_leaf_deletion": null,
+        "favorable_original_leaf_count": 2,
+        "Delta_p_minus_1_of_T_minus_v_and_support": -8532,
+        "Delta_p_minus_1_of_T_minus_closed_neighborhood": -3657,
+        "pointwise_term": -4875
+      },
+      {
+        "arm": 2,
+        "pendant_leaf_count": 3,
+        "Delta_p_after_one_pendant_leaf_deletion": -12357,
+        "Delta_p_after_center_leaf_deletion": null,
+        "favorable_original_leaf_count": 3,
+        "Delta_p_minus_1_of_T_minus_v_and_support": -9409,
+        "Delta_p_minus_1_of_T_minus_closed_neighborhood": -1872,
+        "pointwise_term": -7537
+      },
+      {
+        "arm": 3,
+        "pendant_leaf_count": 3,
+        "Delta_p_after_one_pendant_leaf_deletion": -12357,
+        "Delta_p_after_center_leaf_deletion": null,
+        "favorable_original_leaf_count": 3,
+        "Delta_p_minus_1_of_T_minus_v_and_support": -9409,
+        "Delta_p_minus_1_of_T_minus_closed_neighborhood": -1872,
+        "pointwise_term": -7537
+      },
+      {
+        "arm": 4,
+        "pendant_leaf_count": 3,
+        "Delta_p_after_one_pendant_leaf_deletion": -12357,
+        "Delta_p_after_center_leaf_deletion": null,
+        "favorable_original_leaf_count": 3,
+        "Delta_p_minus_1_of_T_minus_v_and_support": -9409,
+        "Delta_p_minus_1_of_T_minus_closed_neighborhood": -1872,
+        "pointwise_term": -7537
+      },
+      {
+        "arm": 5,
+        "pendant_leaf_count": 3,
+        "Delta_p_after_one_pendant_leaf_deletion": -12357,
+        "Delta_p_after_center_leaf_deletion": null,
+        "favorable_original_leaf_count": 3,
+        "Delta_p_minus_1_of_T_minus_v_and_support": -9409,
+        "Delta_p_minus_1_of_T_minus_closed_neighborhood": -1872,
+        "pointwise_term": -7537
+      },
+      {
+        "arm": 6,
+        "pendant_leaf_count": 3,
+        "Delta_p_after_one_pendant_leaf_deletion": -12357,
+        "Delta_p_after_center_leaf_deletion": null,
+        "favorable_original_leaf_count": 3,
+        "Delta_p_minus_1_of_T_minus_v_and_support": -9409,
+        "Delta_p_minus_1_of_T_minus_closed_neighborhood": -1872,
+        "pointwise_term": -7537
+      }
+    ],
+    "favorable_leaf_count": 17,
+    "S": -122805
+  }
+}

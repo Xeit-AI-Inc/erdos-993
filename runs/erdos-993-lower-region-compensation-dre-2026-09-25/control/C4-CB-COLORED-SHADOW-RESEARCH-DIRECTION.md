@@ -1,0 +1,15 @@
+# Prospective CB mixed-boundary direction
+
+Controller research for post-C3 assignment; not an imported award or proof.
+
+In CB(d,m), restrict upper sources to those containing the central root and arm leaf. After stripping those two vertices, the remaining set is an independent (p-1)-set in dm disjoint support-leaf edges. It therefore chooses at most one vertex per pair: an exact dm-colored family with color classes of size2. The arm tag is the sole active tag in this sector. Deletions that keep the two fixed vertices land in the (p-2) colored shadow. Two-for-one hub insertions furnish additional targets outside this sector.
+
+Primary sources: Frankl, Furedi and Kalai, Shadows of colored complexes, Mathematica Scandinavica63(1988),169-178, Theorem1.2 gives sharp lower shadow bounds for colored set families; publisher record https://www.mscand.dk/article/view/12231 . Its PDF endpoints returned404 through the browser here, so do not claim a fresh complete original-proof audit.
+
+A retrievable primary treatment is Kai Fong Ernest Chong, Hilbert functions of colored quotient rings and a generalization of the Clements-Lindstrom theorem, arXiv:1403.3158v2, https://arxiv.org/html/1403.3158v2 . Theorem1.2 includes type(1,...,1) with arbitrary finite color composition. Theorem2.1 links this property to minimal lower shadows of revlex monomial spaces. For the sector above use the quotient by (x_i,y_i)^2 for each pair; its squarefree color choices are exactly the matching independent sets. Audit its precise order conventions and theorem dependencies before importing anything. This gives an ambient unweighted shadow bound, not a claim that compression preserves our weighted switch graph.
+
+West, Harper and Daykin, Some Remarks on Normalized Matching, JCTA35(1983),301-308, https://dwest.web.illinois.edu/pubs/normatch.pdf , p303 recalls the product theorem for normal posets with log-concave rank sizes; p304 describes normalized transportation between ranks. Product normality applies to the matching-sector face poset, whose individual factors have ranks1,2. It cannot be assumed for the full tagged tree complex.
+
+Concrete new task: prove a MIXED-boundary inequality combining the ordinary colored lower shadow with the extra hub-insertion targets, counted at actual selected-tag capacities. For CB(8,92), the arm upper/lower sector count ratio at p492 is 2*(736-490)/491=492/491, so the total sector shortfall is small but positive. A global normalized deletion flow alone leaves excess; the known one-support branch route with at least4 occupied leaves handles only a subfamily. The missing inequality must cover arbitrary source subsets, account for competing demand at hub-present targets, and preserve branch blocks and the fixed selector. Show that a proposed compression controls BOTH boundaries, or find a concrete obstruction to it. General colored-shadow theorems alone do not provide this bridge.
+
+This is a focused algebraic-combinatorial route to the sufficient weighted-Hall mechanism on an explicit hard family, not a solution of the all-tree aggregate. Any use of literature must retain its exact hypotheses and attribution.

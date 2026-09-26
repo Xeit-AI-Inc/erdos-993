@@ -1,0 +1,27 @@
+{
+  "worker_id": "C4-U2",
+  "cycle": 4,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C4-U2-MARKED-SHELL-REDUCTION",
+      "statement": "For a leaf-deletion forest H with marked set W meeting every component, the first-mark partition plus the cover-loss bound reduces q_(k+1)<=q_k to the displayed residual shadow or matching thresholds. In a shell n(T)=2p+s with s>=2, tau(T)>=ceil(3s/2)+1 supplies the residual matching-size thresholds; the pointwise conclusion additionally requires p-2>=K(d) on every residual block with d>=3. The Catalan cover-exclusion estimate fails to force the analogous parent threshold at s=5, terminal rank p-2.",
+      "scope": "Conditional marked-shell reduction and method cutoff only; it does not establish the cover hypothesis for every eligible tree, settle the s=4 p=10..13 low-cover cases, or prove/refute the registered global aggregate.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-U2/EVIDENCE.json"
+      ],
+      "reason": "The marked partition and cover-loss steps are proved here, but the application remains conditional on a parent cover bound and inherited exact matching theorems. At s=5 the stated cover-Catalan bound is nonpositive at its terminal rank, leaving a genuine open shell obligation."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-U2/REPORT.md",
+  "limitations": [
+    "The report proves a conditional pointwise shell implication, not the parent cover threshold for all eligible trees.",
+    "The large-rank matching result is inherited and used only under its stated matching-size and rank hypotheses; no broader theorem is claimed.",
+    "The s=4 low-cover p=10..13 window remains unclassified by this reduction; no bounded census was run.",
+    "For s=5 the Catalan cover estimate has zero empty-fiber margin and a negative first nonempty-fiber floor at the terminal rank; this does not refute the shell target.",
+    "The registered lower-region favorable-leaf aggregate remains unresolved by this route."
+  ],
+  "status_authority": "proposed_worker_only"
+}

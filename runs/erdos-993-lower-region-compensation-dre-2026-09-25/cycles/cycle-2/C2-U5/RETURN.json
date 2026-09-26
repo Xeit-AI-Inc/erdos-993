@@ -1,0 +1,25 @@
+{
+  "worker_id": "C2-U5",
+  "cycle": 2,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "U5-pendant-extension-tagged-sum-change",
+      "statement": "Extending an original leaf by one pendant edge can change the fixed-rank favorable tagged family and its complete aggregate even when the same rank remains eligible before and after the operation.",
+      "scope": "One exact eligible pair at p=8, together with exact polynomial, selector, support, and summand recurrences for pendant extension at a leaf; this is not a refutation of the primary aggregate inequality.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-U5/EVIDENCE.md"
+      ],
+      "reason": "In the encoded 18- and 19-vertex trees, both rows have x=6 and alpha=12 and satisfy both primary guards. The extension removes old leaf tag 10, adds favorable leaf tag 18, changes support multiplicities, and changes the complete sums from -4256 to -6267. The recurrences give exact conditional checks but no universal sign theorem or valid minimal-counterexample reduction."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-U5/REPORT.md",
+  "limitations": [
+    "The exact calculation is one pair of trees and is not exhaustive.",
+    "No positive complete-sum counterexample or universal proof was obtained.",
+    "A useful extension-based reduction still needs explicit hypotheses controlling the new first descent, all surviving and new selector signs, both guards, and the full transformed aggregate."
+  ],
+  "status_authority": "proposed_worker_only"
+}

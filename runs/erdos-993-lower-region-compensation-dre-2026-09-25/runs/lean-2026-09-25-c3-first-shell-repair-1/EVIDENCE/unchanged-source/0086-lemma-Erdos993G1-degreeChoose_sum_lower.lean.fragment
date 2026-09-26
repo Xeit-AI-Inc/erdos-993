@@ -1,0 +1,10 @@
+namespace Erdos993G1
+lemma degreeChoose_sum_lower {V : Type*} [Fintype V] (d : V → ℕ) :
+    (∑ v, (d v : ℤ)) - Fintype.card V ≤ ∑ v, ((d v).choose 2 : ℤ) := by
+  have h : 0 ≤ ∑ v, (((d v).choose 2 : ℤ) - (d v : ℤ) + 1) :=
+    Finset.sum_nonneg (fun v _ => Erdos993G1.degreeDefect_nonneg (d v))
+  simp only [Finset.sum_add_distrib, Finset.sum_sub_distrib, Finset.sum_const,
+    Finset.card_univ, nsmul_eq_mul, mul_one] at h
+  omega
+end Erdos993G1
+

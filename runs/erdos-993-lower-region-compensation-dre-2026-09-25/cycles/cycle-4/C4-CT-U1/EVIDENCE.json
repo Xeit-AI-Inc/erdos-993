@@ -1,0 +1,23 @@
+{
+  "kind": "independent_algebra_check",
+  "claim_id": "C4-U1-COVARIANCE-DECOMPOSITION",
+  "checks": [
+    {
+      "name": "tag_bijection_and_addability",
+      "derivation": "For fixed original selected leaf v, H_v=T-{v,s_v} and W_v=N_T(s_v)-{v}. A counted independent (p-1)-set A in H_v maps to B=A union {v}; the inverse is A=B-{v}. Since A meets W_v, s_v has a neighbor in B, while v itself belongs to B. Thus neither deleted vertex is addable to A in T, and every other addable vertex is in H_v, so e_Hv(A)=e_T(B). The map preserves the tag v, including distinct leaves with a shared support. Summing by tags gives Q=sum_B w(B) and E=sum_B w(B)e(B)."
+    },
+    {
+      "name": "layer_expectation_and_covariance",
+      "derivation": "Let N=i_p(T)>0 and choose B uniformly among independent p-sets. Each B contributes e(B) extension pairs. Each independent (p+1)-set is counted exactly p+1 times, once per deleted vertex, so E_p[e]=(p+1)i_(p+1)(T)/i_p(T)=mu_p. Also E_p[w]=Q/N and E_p[we]=E/N. For Q>0, E/Q=E_p[we]/E_p[w]=mu_p+Cov_p(w,e)/E_p[w]."
+    },
+    {
+      "name": "vertex_neighborhood_expansion",
+      "derivation": "For each u, I_u(B)=1 exactly when B avoids N_T[u], so e(B)=sum_u I_u(B) and E_p[I_u]=i_p(T-N_T[u])/N. Expanding Cov_p(w,e) by linearity gives sum_u(E_p[w I_u]-E_p[w]E_p[I_u]), which is the displayed expansion. When u=s_v, the v-tag contributes zero to w I_u because every B counted by that tag contains v adjacent to s_v; its covariance contribution is nonpositive, but the other terms have no established global sign."
+    },
+    {
+      "name": "scope_guards",
+      "derivation": "The displayed normalized expressions require i_p(T)>0 and Q>0, respectively. Under the target guards p>=x+2>=2 and 3p<2a+1 imply a>=3 and p<a, hence i_p(T)>0. Q=0 makes the undivided inequality i_x E<=(x+1)i_(x+1)Q read 0<=0 because E=0. Delta_x<0 gives mu_x<x+1 when i_x>0; it gives no comparison of mu_p and mu_x and no bound on Cov_p(w,e)."
+    }
+  ],
+  "conclusion": "The route claim is an exact identity in its stated scope. It supplies no universal covariance budget, CT_x proof, or verdict on the primary aggregate."
+}

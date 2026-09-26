@@ -1,0 +1,9 @@
+namespace Erdos993G1
+noncomputable section
+def delta {V : Type u}
+    (F : SimpleGraph V) (k : ℤ) : ℤ :=
+  Erdos993G1.coeff F (k + 1) - Erdos993G1.coeff F k
+
+end
+end Erdos993G1
+

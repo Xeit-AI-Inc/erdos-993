@@ -1,0 +1,32 @@
+{
+  "worker_id": "C6-CU-T2",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "E993-ORDINARY-PATH-STAR-ARITY-2-4-M2000-LOWER-REGION-AGGREGATE",
+      "statement": "For the ordinary tree consisting of path 0-1-2 with m distinct centers attached to 0 and r_i private leaves at center i, for every m >= 2000, every r_i in {2,3,4}, and every p with x(T)+2 <= p and 3p < 2 alpha(T)+1, the complete sum over the original strict favorable-leaf selector satisfies S(T,p) < 0.",
+      "scope": "Exactly the path-with-private-stars family, m >= 2000, arbitrary heterogeneous branch profile with each r_i in {2,3,4}, distinct original-leaf tags, the strict original selector, and the strict lower-region guard. No conclusion for m < 2000, other arities, or arbitrary ordinary trees.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CU-T2/REPORT.md",
+        "cycles/cycle-6/C6-CU-T2/EVIDENCE.json",
+        "cycles/cycle-6/C6-CU-T2/cutoff2000_replay.py",
+        "cycles/cycle-6/C6-CU-T2/cutoff2000_replay_stdout.json"
+      ],
+      "reason": "retained; the graph, support-deletion, distinct-tag sum, selector, cutoff quotient, and strict propagation are consistent at the source claim's exact scope. The copied exact-rational replay confirms the m=2000 cutoff scalar. The proof remains informal and imports Gurvits Theorem 1.1 for finite-order ULC convolution; it does not resolve the arbitrary-tree claim."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CU-T2/REPORT.md",
+  "limitations": [
+    "The cutoff replay verifies arithmetic only; the infinite family conclusion depends on the analytic curvature, mixed-minor, graph, and selector arguments described in the report.",
+    "I did not retrieve Gurvits's primary paper directly; the pinned common preparation report provides the checked theorem statement and hypothesis bridge.",
+    "No literal graph enumeration for arbitrary m, independent regeneration of all mixed-minor envelopes, or Lean verification was performed.",
+    "This disposition concerns only the path-with-private-stars family with m >= 2000 and arities 2 through 4; it does not decide the primary arbitrary-tree claim or the uncovered prefix."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-ORDINARY-PATH-STAR-ARITY-2-4-M2000-LOWER-REGION-AGGREGATE"
+  ]
+}

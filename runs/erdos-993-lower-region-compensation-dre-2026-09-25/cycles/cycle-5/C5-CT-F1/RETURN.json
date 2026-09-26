@@ -1,0 +1,31 @@
+{
+  "worker_id": "C5-CT-F1",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C5-F1-TM-CENTRAL-SURVIVAL",
+      "statement": "For the family T_m consisting of path a-b-r with m three-leaf arms at r, the favorable-leaf aggregate is strictly negative at every eligible rank for 1<=m<=999.",
+      "scope": "Exact finite family conclusion only: ordinary trees T_m, 1<=m<=999, x(T_m)+2<=p, and 3p<2alpha(T_m)+1. The unbounded m claim and all-tree primary are not carried.",
+      "status": "proposed_computer_assisted",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CT-F1/REPLAY.py",
+        "cycles/cycle-5/C5-CT-F1/REPLAY-OUTPUT.txt",
+        "cycles/cycle-5/C5-CT-F1/REVIEW-EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: independent exact replay reproduces all finite central checks and all eligible selector/full-sum rows through m=999, and the graph split identities give the stated complete tagged-sum formula. The case does not establish, to this critic's independent audit, every all-m analytic tail estimate or the exact descent-bound bridge required beyond that finite range; see REPORT.md. This is a bounded family result, not a refutation or proof of the general primary."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CT-F1/REPORT.md",
+  "limitations": [
+    "The exact arithmetic replay is Python-based and not kernel checked.",
+    "The m>=1000 analytic tail inequalities and uniform cutoff derivation were not independently certified.",
+    "The forest descent bound application used to locate the first descent in the central rank window was not independently proved or matched to a precise cited theorem in the case files.",
+    "No conclusion is given for arbitrary ordinary trees or the general lower-region favorable-leaf aggregate."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-F1-TM-CENTRAL-SURVIVAL"
+  ]
+}

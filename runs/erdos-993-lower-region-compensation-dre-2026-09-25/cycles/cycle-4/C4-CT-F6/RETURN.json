@@ -1,0 +1,36 @@
+{
+  "worker_id": "C4-CT-F6",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C4-F6-LOW-COVER-SHELL-FAMILY-CHECK",
+      "statement": "Retained: for the sorted positive-arm family with 1<=c<=6, sum_i m_i=2p+3-c, and p=10..13, exactly one tree is eligible; it is p=10 with profile (2,3,3,3,3,3), and its 17 favorable original leaves contribute a full sum S=-122805 with every summand negative.",
+      "scope": "Exact bounded census of the stated root-and-pendant-arms family only. This is not a census of all trees with vertex-cover number at most six and does not settle a universal shell or aggregate statement.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CT-F6/REPORT.md",
+        "cycles/cycle-4/C4-CT-F6/independent_audit.py",
+        "cycles/cycle-4/C4-CT-F6/independent_audit_evidence.json",
+        "cycles/cycle-4/C4-CT-F6/hash_verification.json",
+        "cycles/cycle-4/C4-CT-F6/family_replay.json",
+        "cycles/cycle-4/C4-CT-F6/ordered_six_center_replay.json",
+        "cycles/cycle-4/C4-CT-F6/low_cover_family_replay.py",
+        "cycles/cycle-4/C4-CT-F6/REPLAY_replay.py",
+        "cycles/cycle-4/C4-CT-F6/ordinary_tree_checked_replay.py"
+      ],
+      "reason": "retained: an independent closed branch-product computation reproduces every family candidate count, both eligibility guards, the sole eligible tree, all 17 distinct tagged leaf terms, and the exact negative total. The c=1 root is correctly counted as an original leaf in this audit; those rows are ineligible and do not change the retained claim. The evidence remains finite and family-restricted."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CT-F6/REPORT.md",
+  "limitations": [
+    "The verified census is limited to the root with one to six centers, each carrying at least one pendant leaf, for p=10..13 and the stated order boundary.",
+    "The result neither covers all trees with cover number at most six nor establishes a general low-cover classification or singleton degree-budget reduction.",
+    "The computation gives no universal pointwise-sign or primary aggregate resolution; no primary-literature theorem was imported."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-F6-LOW-COVER-SHELL-FAMILY-CHECK"
+  ]
+}

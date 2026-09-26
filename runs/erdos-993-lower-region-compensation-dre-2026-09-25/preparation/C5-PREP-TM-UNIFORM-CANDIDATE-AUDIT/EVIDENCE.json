@@ -1,0 +1,131 @@
+{
+  "worker_id": "C5-PREP-TM-UNIFORM-CANDIDATE-AUDIT",
+  "verdict": "reviewer_verified_computer_assisted_proof_of_exact_Tm_family",
+  "authority": "independent_preparation_review_only; no controller award or registry mutation",
+  "proof_scope": "E993-ORDINARY-TM-LOWER-REGION-AGGREGATE, all integer m>=1 and all eligible p",
+  "not_proved": [
+    "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE for arbitrary trees",
+    "Erdos tree/forest unimodality"
+  ],
+  "source_pins": [
+    {
+      "path": "SOLUTION-CONTRACT.md",
+      "sha256": "f3667bd6424d4f0d95714772ecf76af82ed8430bdd3ec9eda0c721f1a853390c",
+      "matched": true
+    },
+    {
+      "path": "control/C3-FIRST-SHELL-AWARDED-CLAIM-IDENTITY.json",
+      "sha256": "197e7e10365430cb53d165056fb41b2341abb9e400ce3f73db3957ba77ddb170",
+      "matched": true
+    },
+    {
+      "path": "control-proposals/C5-TM-CENTRAL-LC-CANDIDATE.md",
+      "sha256": "ed9961c253b5ae4b823ff3608f6c4a30018263de078f2dc07163a718ccf78fd5",
+      "matched": true
+    },
+    {
+      "path": "control-proposals/C5-TM-CENTRAL-LR-CANDIDATE.md",
+      "sha256": "52be25ab2210325910ec9ffe722e5947879ca82c7e0b50ddf23dac605a546565",
+      "matched": true
+    },
+    {
+      "path": "control-proposals/tm_central_lc_base.py",
+      "sha256": "907d1e1336913d1e632bd7d966a5088fd6010f454d14af34e190c6c44ede6aae",
+      "matched": true
+    },
+    {
+      "path": "control-proposals/tm_central_lr_base.py",
+      "sha256": "c623f57897751fdff9e794d283d69ef8b0d69a7baa99bea801c1f35081750427",
+      "matched": true
+    },
+    {
+      "path": "control-proposals/C5-TM-CENTRAL-LC-BASE.json",
+      "sha256": "0cbd0e28061cd74f864e5b1dab2a282dbe720cbf0cf17c05520280d14dab291a",
+      "matched": true
+    },
+    {
+      "path": "control-proposals/C5-TM-CENTRAL-LR-BASE.json",
+      "sha256": "8689bffc136f96975a2fe25c331e0ce6a01ba8c06a17299fc7a9de24476616b6",
+      "matched": true
+    },
+    {
+      "path": "preparation/C5-PREP-DIRECTION-AUDIT/REPORT.md",
+      "sha256": "497b8b5c9859c490c81f162874407914669a2a57d354236fda30a954186aae25",
+      "matched": true
+    },
+    {
+      "path": "cycles/cycle-4/C4-AT/REPORT.md",
+      "sha256": "c89600692e8d87f9a23ca6f670480fbbb102c6057747ece562d9bfbfe8932fd9",
+      "matched": true
+    }
+  ],
+  "primary_literature": {
+    "url": "https://arxiv.org/pdf/0804.1181",
+    "theorem": "Gurvits Theorem 1.1, finite-order ULC convolution (proof of Liggett theorem)",
+    "applied_factors": {
+      "B": "ULC(4)",
+      "L": "ULC(1)",
+      "1+2z": "ULC(1)",
+      "1+3z+z^2": "ULC(2)",
+      "2+5z+2z^2": "ULC(2)"
+    }
+  },
+  "imported_registered_dependency": "E993-R27-FOREST-DESCENT-LINEAR-BOUND, finite forest strict descent implies order<=4x; pinned claim snapshot status VERIFIED formally_verified",
+  "large_m_cutoff": 1000,
+  "large_m_exact_cutoff_ratios": {
+    "LC": [
+      "114463976515372641562517941338228411041200160980224609375",
+      "4209007100772390509058978925077086614394939884704237891896"
+    ],
+    "A0": [
+      "1793268965407504717812781080965578439645469188690185546875",
+      "33672056806179124072471831400616692915159519077633903135168"
+    ],
+    "Astar": [
+      "16444657959375202837815077572258815052919089794158935546875",
+      "33672056806179124072471831400616692915159519077633903135168"
+    ],
+    "R": [
+      "5837662802284004719688415008249648963101208209991455078125",
+      "7365762426351683390853213118884901575191144798232416310818"
+    ]
+  },
+  "finite_base": {
+    "range": [
+      3,
+      999
+    ],
+    "method": "B^m coefficient recurrence from logarithmic derivative; literal graph enumeration m=1..3",
+    "lc_checks": 1507464,
+    "mixed_checks": 1507464,
+    "lc_min": [
+      "1210",
+      3,
+      "Astar",
+      8
+    ],
+    "mixed_min": [
+      "1243",
+      3,
+      "Astar",
+      8
+    ],
+    "lc_stream_sha256": "3fc21b23eab91c474e378400308dd61f7d4b6b45f835fdad74058ef189396e30",
+    "mixed_stream_sha256": "90d72df905aa43a087ca9826c8aebc9377f8cfbddf00b83cc4b6e854937f6353",
+    "matched_both_pinned_producer_digests": true,
+    "eligible_rows_m1_to_999": 276938,
+    "eligible_failure_count": 0,
+    "literal_induced_graphs": [
+      1,
+      2,
+      3
+    ]
+  },
+  "evidence_grade": "algebraic all-m large-case proof plus independently reproduced exact finite Python base; not Lean-kernel checked",
+  "output_sha256": {
+    "REPLAY.py": "01395c7507ece93eff4288c9ce7c59d542558ff81777a034bc4d7e999c7faaa1",
+    "REPORT.md": "91d316294b147c3af09cde641dc2916f2681d36ba6ca224fade92458b370757f",
+    "RESULTS.json": "ce854f8056cb9e08c18fa2b2bf239162a7c4332d27050085d8d7c0bd2b8a04b6"
+  },
+  "background_processes_remaining": false
+}

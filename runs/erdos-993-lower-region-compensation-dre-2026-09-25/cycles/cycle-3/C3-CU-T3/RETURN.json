@@ -1,0 +1,55 @@
+{
+  "worker_id": "C3-CU-T3",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL",
+      "statement": "C3-T3 proves the registered weighted-Hall saturation statement for stars in the stated range 2<=p<=m-1 and p>(m-1)/2, for any fixed set of leaf tags, using deletion edges. It supplies no proof or refutation of saturation for general ordinary trees under the fixed favorable selector and lower-region guards.",
+      "scope": "Star trees in the route's displayed rank range are supported; the universal ordinary-tree mechanism at the registered fixed-selector lower-region scope remains open.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CU-T3/REPORT.md",
+        "cycles/cycle-3/C3-CU-T3/T67-replay.json"
+      ],
+      "reason": "retained_narrowed: the tag-preserving symmetric-chain injection proves the star restriction. The T67 scalar aggregate supplies no set-level flow, matching, or Hall certificate, so the general statement remains unresolved."
+    },
+    {
+      "claim_id": "C3-T3-STAR-SYMMETRIC-CHAIN-SUBCASE",
+      "statement": "For a star K_{1,m}, any fixed subset F of original leaf tags, and 2<=p<=m-1 with p>(m-1)/2, each weighted upper tagged object injects into a weighted lower tagged object by a tag-preserving deletion; consequently the corresponding weighted clone graph saturates its upper supply.",
+      "scope": "Stars only, arbitrary fixed leaf-tag subset, and the route's displayed Boolean-layer ranks; no favorable-selector or general-tree conclusion.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CU-T3/REPORT.md"
+      ],
+      "reason": "retained: in the Boolean lattice on m-1 untagged leaves, the symmetric chain through rank p also contains rank p-1 because p>(m-1)/2. Consecutive members differ by one leaf, witness membership holds at both ranks, and retaining the tag preserves injectivity across tags."
+    },
+    {
+      "claim_id": "C3-T3-T67-EXACT-BOUNDED-ROW",
+      "statement": "The specified T_67 ordinary tree at p=99 is eligible with all 202 original leaves favorable and has the exact complete selected sum recorded in the source evidence.",
+      "scope": "One tree, recipe, and rank only; bounded exact computation with replay through a scratch copy of the hash-pinned common evaluator.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CU-T3/T67-replay.json",
+        "cycles/cycle-3/C3-CU-T3/ordinary_tree_checked.py",
+        "cycles/cycle-3/C3-CU-T3/T3-EVIDENCE-source.json",
+        "cycles/cycle-3/C3-CU-T3/REPORT.md"
+      ],
+      "reason": "retained: scratch-copy replay agrees with the complete independence and delta vectors, alpha=203, x=97, both selector-orbit deltas, all 202 favorable leaves, the strict guard 297<407, the two summand classes, and the exact full sum. This verifies one bounded row and gives no flow certificate."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CU-T3/REPORT.md",
+  "limitations": [
+    "The T67 replay uses the same listed evaluator implementation as the route and is not an independent dynamic-program implementation.",
+    "No set-level T67 flow, matching, or Hall cut was computed; the scalar sum does not certify weighted-Hall saturation.",
+    "The symmetric-chain argument proves only the star subcase; the general ordinary-tree mechanism and the full lower-region aggregate remain unresolved by this route.",
+    "The T67 computation is one bounded instance, not a census or universal result."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C3-T3-STAR-SYMMETRIC-CHAIN-SUBCASE",
+    "C3-T3-T67-EXACT-BOUNDED-ROW",
+    "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL"
+  ]
+}

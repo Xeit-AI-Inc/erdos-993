@@ -1,0 +1,25 @@
+{
+  "worker_id": "C2-T2",
+  "cycle": 2,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "For every finite ordinary tree T and natural p with x(T)+2<=p and 3p<2alpha(T)+1, the complete sum S(T,p) over the fixed original-leaf selector F(T,p) is nonpositive.",
+      "scope": "Exact primary lower-region contract; original supports and closed neighborhoods, zero-extended independence counts, and distinct tags for every original leaf are retained.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-T2/REPORT.md"
+      ],
+      "reason": "The selected aggregate is exactly a difference of adjacent ranks of a fixed-selector weighted independent-set count, and an explicit cross-tag deletion transport would suffice. Its required tree-specific capacity inequality is not proved, and no eligible positive full-sum tree is exhibited."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-T2/REPORT.md",
+  "limitations": [
+    "The proposed cross-tag Hall or fractional-flow capacity inequality has not been proved under the favorable-selector and lower-region hypotheses.",
+    "The rank-weight reformulation is not a sign argument; no full-sum counterexample or universal proof is supplied.",
+    "No finite census or external theorem is used as evidence for a universal conclusion."
+  ],
+  "status_authority": "proposed_worker_only"
+}

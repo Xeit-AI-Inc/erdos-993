@@ -1,0 +1,25 @@
+{
+  "case_hash_audit": "All 3 case-listed source files matched C3-CT-U6.json; all 115 common-source entries matched C3-COMMON.json.",
+  "star_audit": {
+    "scope": "T=K_{1,m}, m>=4, with x(T)+2<=p and 3p<2m+1",
+    "counts": "i_0=1; i_1=m+1; i_j=C(m,j) for 2<=j<=m; i_j=0 for j>m",
+    "first_descent": "Delta_0=m; Delta_1=C(m,2)-(m+1)>=0; for 2<=j<m, Delta_j=C(m,j)*(m-2j-1)/(j+1); Delta_m=-1; hence x=floor((m-1)/2)+1",
+    "selector_and_sum": "Each leaf deletion is K_{1,m-1}; under the guards p is beyond its first negative-difference index and within the nonzero binomial range. All m original leaves are selected. Each summand is C(m-1,p)-C(m-1,p-1)<0, since p-1>(m-1)/2. Thus S=m*(C(m-1,p)-C(m-1,p-1))<0.",
+    "examples": [
+      {"m":20,"p":12,"S":-503880},
+      {"m":20,"p":13,"S":-465120}
+    ],
+    "same_support": "All leaf tags are counted separately despite sharing the center as support."
+  },
+  "operator_audit": {
+    "dimensions": "dim M_j(H,W)=q_v(j)=i_j(H)-i_j(H-W)",
+    "map_well_defined": "Each retained deletion remains independent and meets W, hence is a basis element of M_j.",
+    "implication": "Injectivity of d_{k+1}:M_{k+1}->M_k gives q_v(k+1)<=q_v(k). The target summand equals Delta_k(H)-Delta_k(H-W)=q_v(k+1)-q_v(k). Pointwise nonpositivity across the fixed selector implies S<=0.",
+    "out_of_range_obstruction": "For 19 isolated marked vertices, d_6 has dimensions C(19,6)=27132 and C(19,5)=11628, so it is noninjective; this rank is not selector-eligible in the cited star setting."
+  },
+  "limitations": [
+    "No injectivity premise is proved for arbitrary eligible tree residuals.",
+    "The star family result does not settle the arbitrary-tree aggregate.",
+    "No full-sum counterexample or independent computation was produced."
+  ]
+}

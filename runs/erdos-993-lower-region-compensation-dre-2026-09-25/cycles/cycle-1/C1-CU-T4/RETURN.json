@@ -1,0 +1,28 @@
+{
+  "worker_id": "C1-CU-T4",
+  "cycle": 1,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C1-T4-1",
+      "statement": "For each favorable leaf v, Delta_p(T-v)<0 is equivalent to the mean addability of a uniform independent p-set of T-v being less than p+1; the desired v-summand is an adjacent-rank difference in the marked slice of H_v. This exact translation supplies no comparison between those measures and does not resolve the global lower-region aggregate.",
+      "scope": "The stated probability identity for finite ordinary trees and eligible (T,p), with the selector fixed as Delta_p(T-v)<0 and original leaf data; partial reformulation only.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-CU-T4/EVIDENCE.md"
+      ],
+      "reason": "retained: the addability double count, favorable-case denominator, marked incidence count, and summand identity check out. The source correctly identifies the absent bridge to the aggregate deficit budget; the partial reformulation proves neither that budget nor a counterexample."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-CU-T4/REPORT.md",
+  "limitations": [
+    "No proof of the global deficit budget or complete lower-region aggregate is obtained.",
+    "No eligible ordinary-tree counterexample or independent finite census is produced.",
+    "The expectation formula is defined when i_p(T-v)>0; this condition is automatic for a favorable leaf because zero i_p forces zero i_(p+1)."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-T4-1"
+  ]
+}

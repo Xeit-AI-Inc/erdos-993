@@ -1,0 +1,43 @@
+{
+  "audit_type": "independent cross-orientation critique; source replay from scratch copies",
+  "packet_hash_verification": {
+    "case_files": 4,
+    "case_mismatches": 0,
+    "listed_common_files": 115,
+    "common_mismatches": 0
+  },
+  "replay_copy_hashes": {
+    "cb_switch_cut_copy.py": {
+      "sha256": "94ced04667b1234844f13a681ec6a8a5cbd1ced813526fe856d4f9692b8a9d53",
+      "matches_listed_source_copy": true
+    },
+    "ordinary_tree_checked_copy.py": {
+      "sha256": "a012bb78915ccdfa2f729c0cdb520cd8f29572277123c92e80ba6091498f533d",
+      "matches_listed_source_copy": true
+    },
+    "REPLAY_SOURCE_COPY.py": {
+      "sha256": "4503483bfc06b89dc07d5f24274e3a885817492b3134ae09d7f0fc6dc8f89a57",
+      "matches_listed_source_copy": true
+    }
+  },
+  "source_replay": {
+    "command": "python3 REPLAY_LOCAL.py",
+    "generated_EVIDENCE_json_exactly_matches_sealed_EVIDENCE_json": true,
+    "cases": []
+  },
+  "mathematical_checks": [
+    "The stated graph recipe is a tree of order 3+17m; the two reported alpha values equal 9m+1.",
+    "For each row x+2=p and the strict lower-region guard holds: 1476<1659 for (a,p)=(829,492), and 1494<1677 for (838,498).",
+    "The two leaf orbits are the single arm leaf and the 8m branch leaves; their displayed deleted-tree Delta_p values are both negative, so all original leaves belong to the fixed selector in these two cases.",
+    "The replayed orbit multiplicities sum to 737 and 745, and the multiplicity-weighted summands equal each full reported S, both negative.",
+    "On upper sets containing h,v, the absent arm support s has exactly two occupied neighbors; a choke c_i has exactly two iff branch i has one occupied support. All other absent vertex types have at most one occupied neighbor.",
+    "For the routed subfamily, the inserted choke is absent in the source and has exactly neighbors h and the unique occupied support; deleting those two and inserting the choke preserves independence and lowers rank by one.",
+    "In a routed output with ell>=4 leaves at the selected branch, at most 8-ell preimages restore the removed support, while the output has at least ell active leaf tags. Canonical branch choice can only reduce that preimage bound.",
+    "The coefficient formula counts all qualifying upper sources by subtracting branch-state strings with no qualifying branch; the reported remaining upper supply is not claimed routed."
+  ],
+  "scope_limits": [
+    "Only CB(8,92), p=492 and CB(8,93), p=498 were replayed.",
+    "The route does not cover all weighted upper supply and is not a full-flow certificate.",
+    "The negative complete sums are bounded examples, not a proof or refutation of the universal primary claim."
+  ]
+}

@@ -1,0 +1,27 @@
+namespace Erdos993G1.FirstWide
+
+lemma stratum_partition {X : Type u} [Fintype X] [DecidableEq X]
+    (G : SimpleGraph X) (M : Finset X)
+    (hM : ∀ S : Finset X, G.IsIndepSet S → (S ∩ M).card ≤ 2) (k : ℕ) :
+    indepCount G k = ((stratum G M k 0).card : ℤ) +
+      ((stratum G M k 1).card : ℤ) + ((stratum G M k 2).card : ℤ) := by
+  classical
+  have hp := Finset.card_eq_sum_card_fiberwise
+    (s := G.indepSetFinset k) (t := ({0,1,2} : Finset ℕ))
+    (f := fun S : Finset X => (S ∩ M).card) (by
+      intro S hS
+      have hle := hM S (SimpleGraph.mem_indepSetFinset_iff.mp hS).isIndepSet
+      simp only [Finset.mem_coe, Finset.mem_insert, Finset.mem_singleton]
+      omega)
+  have hf (j : ℕ) : (G.indepSetFinset k).filter (fun S => (S ∩ M).card = j) =
+      stratum G M k j := by
+    ext S
+    simp only [Finset.mem_filter, SimpleGraph.mem_indepSetFinset_iff, stratum_mem]
+  simp only [hf] at hp
+  rw [indepCount_eq_card_indepSetFinset]
+  have hp' : (G.indepSetFinset k).card = (stratum G M k 0).card +
+      (stratum G M k 1).card + (stratum G M k 2).card := by
+    simpa [add_assoc] using hp
+  exact_mod_cast hp'
+
+end Erdos993G1.FirstWide

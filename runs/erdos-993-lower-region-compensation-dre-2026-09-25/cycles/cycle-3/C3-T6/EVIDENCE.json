@@ -1,0 +1,1260 @@
+{
+  "method": "exact integer independent-set polynomial recursion f(M)=f(M-v)+z*f(M-N[v]) on vertex masks",
+  "rank_convention": "integer zero extension outside 0..alpha; x checked through alpha",
+  "composition": "attach one new pendant leaf at vertex 0 of T4",
+  "cases": [
+    {
+      "tree": "T4",
+      "m": 4,
+      "graft_leaf_at_vertex_0": false,
+      "order": 19,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          11,
+          13
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          0,
+          15
+        ],
+        [
+          15,
+          16
+        ],
+        [
+          15,
+          17
+        ],
+        [
+          15,
+          18
+        ]
+      ],
+      "whole_independence_coefficients": [
+        1,
+        19,
+        153,
+        698,
+        2028,
+        4011,
+        5665,
+        5924,
+        4689,
+        2833,
+        1297,
+        438,
+        103,
+        15,
+        1
+      ],
+      "alpha": 14,
+      "deltas_0_through_alpha": [
+        18,
+        134,
+        545,
+        1330,
+        1983,
+        1654,
+        259,
+        -1235,
+        -1856,
+        -1536,
+        -859,
+        -335,
+        -88,
+        -14,
+        -1
+      ],
+      "x": 7,
+      "p": 9,
+      "eligibility_checks": {
+        "x_plus_2_le_p": true,
+        "three_p_lt_two_alpha_plus_1": true
+      },
+      "favorable_leaf_rows": [
+        {
+          "leaf": 4,
+          "original_support": 3,
+          "delta_p_after_leaf_deletion": -652,
+          "H_coefficients": [
+            1,
+            17,
+            122,
+            495,
+            1280,
+            2258,
+            2843,
+            2631,
+            1815,
+            931,
+            347,
+            89,
+            14,
+            1
+          ],
+          "R_coefficients": [
+            1,
+            14,
+            81,
+            253,
+            473,
+            564,
+            450,
+            243,
+            87,
+            19,
+            2
+          ],
+          "selected_summand": -816,
+          "q_at_p_minus_1": 1728,
+          "q_at_p": 912,
+          "q_p_minus_q_p_minus_1": -816
+        },
+        {
+          "leaf": 5,
+          "original_support": 3,
+          "delta_p_after_leaf_deletion": -652,
+          "H_coefficients": [
+            1,
+            17,
+            122,
+            495,
+            1280,
+            2258,
+            2843,
+            2631,
+            1815,
+            931,
+            347,
+            89,
+            14,
+            1
+          ],
+          "R_coefficients": [
+            1,
+            14,
+            81,
+            253,
+            473,
+            564,
+            450,
+            243,
+            87,
+            19,
+            2
+          ],
+          "selected_summand": -816,
+          "q_at_p_minus_1": 1728,
+          "q_at_p": 912,
+          "q_p_minus_q_p_minus_1": -816
+        },
+        {
+          "leaf": 6,
+          "original_support": 3,
+          "delta_p_after_leaf_deletion": -652,
+          "H_coefficients": [
+            1,
+            17,
+            122,
+            495,
+            1280,
+            2258,
+            2843,
+            2631,
+            1815,
+            931,
+            347,
+            89,
+            14,
+            1
+          ],
+          "R_coefficients": [
+            1,
+            14,
+            81,
+            253,
+            473,
+            564,
+            450,
+            243,
+            87,
+            19,
+            2
+          ],
+          "selected_summand": -816,
+          "q_at_p_minus_1": 1728,
+          "q_at_p": 912,
+          "q_p_minus_q_p_minus_1": -816
+        },
+        {
+          "leaf": 8,
+          "original_support": 7,
+          "delta_p_after_leaf_deletion": -652,
+          "H_coefficients": [
+            1,
+            17,
+            122,
+            495,
+            1280,
+            2258,
+            2843,
+            2631,
+            1815,
+            931,
+            347,
+            89,
+            14,
+            1
+          ],
+          "R_coefficients": [
+            1,
+            14,
+            81,
+            253,
+            473,
+            564,
+            450,
+            243,
+            87,
+            19,
+            2
+          ],
+          "selected_summand": -816,
+          "q_at_p_minus_1": 1728,
+          "q_at_p": 912,
+          "q_p_minus_q_p_minus_1": -816
+        },
+        {
+          "leaf": 9,
+          "original_support": 7,
+          "delta_p_after_leaf_deletion": -652,
+          "H_coefficients": [
+            1,
+            17,
+            122,
+            495,
+            1280,
+            2258,
+            2843,
+            2631,
+            1815,
+            931,
+            347,
+            89,
+            14,
+            1
+          ],
+          "R_coefficients": [
+            1,
+            14,
+            81,
+            253,
+            473,
+            564,
+            450,
+            243,
+            87,
+            19,
+            2
+          ],
+          "selected_summand": -816,
+          "q_at_p_minus_1": 1728,
+          "q_at_p": 912,
+          "q_p_minus_q_p_minus_1": -816
+        },
+        {
+          "leaf": 10,
+          "original_support": 7,
+          "delta_p_after_leaf_deletion": -652,
+          "H_coefficients": [
+            1,
+            17,
+            122,
+            495,
+            1280,
+            2258,
+            2843,
+            2631,
+            1815,
+            931,
+            347,
+            89,
+            14,
+            1
+          ],
+          "R_coefficients": [
+            1,
+            14,
+            81,
+            253,
+            473,
+            564,
+            450,
+            243,
+            87,
+            19,
+            2
+          ],
+          "selected_summand": -816,
+          "q_at_p_minus_1": 1728,
+          "q_at_p": 912,
+          "q_p_minus_q_p_minus_1": -816
+        },
+        {
+          "leaf": 12,
+          "original_support": 11,
+          "delta_p_after_leaf_deletion": -652,
+          "H_coefficients": [
+            1,
+            17,
+            122,
+            495,
+            1280,
+            2258,
+            2843,
+            2631,
+            1815,
+            931,
+            347,
+            89,
+            14,
+            1
+          ],
+          "R_coefficients": [
+            1,
+            14,
+            81,
+            253,
+            473,
+            564,
+            450,
+            243,
+            87,
+            19,
+            2
+          ],
+          "selected_summand": -816,
+          "q_at_p_minus_1": 1728,
+          "q_at_p": 912,
+          "q_p_minus_q_p_minus_1": -816
+        },
+        {
+          "leaf": 13,
+          "original_support": 11,
+          "delta_p_after_leaf_deletion": -652,
+          "H_coefficients": [
+            1,
+            17,
+            122,
+            495,
+            1280,
+            2258,
+            2843,
+            2631,
+            1815,
+            931,
+            347,
+            89,
+            14,
+            1
+          ],
+          "R_coefficients": [
+            1,
+            14,
+            81,
+            253,
+            473,
+            564,
+            450,
+            243,
+            87,
+            19,
+            2
+          ],
+          "selected_summand": -816,
+          "q_at_p_minus_1": 1728,
+          "q_at_p": 912,
+          "q_p_minus_q_p_minus_1": -816
+        },
+        {
+          "leaf": 14,
+          "original_support": 11,
+          "delta_p_after_leaf_deletion": -652,
+          "H_coefficients": [
+            1,
+            17,
+            122,
+            495,
+            1280,
+            2258,
+            2843,
+            2631,
+            1815,
+            931,
+            347,
+            89,
+            14,
+            1
+          ],
+          "R_coefficients": [
+            1,
+            14,
+            81,
+            253,
+            473,
+            564,
+            450,
+            243,
+            87,
+            19,
+            2
+          ],
+          "selected_summand": -816,
+          "q_at_p_minus_1": 1728,
+          "q_at_p": 912,
+          "q_p_minus_q_p_minus_1": -816
+        },
+        {
+          "leaf": 16,
+          "original_support": 15,
+          "delta_p_after_leaf_deletion": -652,
+          "H_coefficients": [
+            1,
+            17,
+            122,
+            495,
+            1280,
+            2258,
+            2843,
+            2631,
+            1815,
+            931,
+            347,
+            89,
+            14,
+            1
+          ],
+          "R_coefficients": [
+            1,
+            14,
+            81,
+            253,
+            473,
+            564,
+            450,
+            243,
+            87,
+            19,
+            2
+          ],
+          "selected_summand": -816,
+          "q_at_p_minus_1": 1728,
+          "q_at_p": 912,
+          "q_p_minus_q_p_minus_1": -816
+        },
+        {
+          "leaf": 17,
+          "original_support": 15,
+          "delta_p_after_leaf_deletion": -652,
+          "H_coefficients": [
+            1,
+            17,
+            122,
+            495,
+            1280,
+            2258,
+            2843,
+            2631,
+            1815,
+            931,
+            347,
+            89,
+            14,
+            1
+          ],
+          "R_coefficients": [
+            1,
+            14,
+            81,
+            253,
+            473,
+            564,
+            450,
+            243,
+            87,
+            19,
+            2
+          ],
+          "selected_summand": -816,
+          "q_at_p_minus_1": 1728,
+          "q_at_p": 912,
+          "q_p_minus_q_p_minus_1": -816
+        },
+        {
+          "leaf": 18,
+          "original_support": 15,
+          "delta_p_after_leaf_deletion": -652,
+          "H_coefficients": [
+            1,
+            17,
+            122,
+            495,
+            1280,
+            2258,
+            2843,
+            2631,
+            1815,
+            931,
+            347,
+            89,
+            14,
+            1
+          ],
+          "R_coefficients": [
+            1,
+            14,
+            81,
+            253,
+            473,
+            564,
+            450,
+            243,
+            87,
+            19,
+            2
+          ],
+          "selected_summand": -816,
+          "q_at_p_minus_1": 1728,
+          "q_at_p": 912,
+          "q_p_minus_q_p_minus_1": -816
+        }
+      ],
+      "favorable_leaves_in_order": [
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        12,
+        13,
+        14,
+        16,
+        17,
+        18
+      ],
+      "sum_selected_negative_budget": 7824,
+      "sum_q_at_p_minus_1": 20736,
+      "sum_q_at_p": 10944,
+      "complete_S": -9792
+    },
+    {
+      "tree": "T4_plus_root_pendant_leaf",
+      "m": 4,
+      "graft_leaf_at_vertex_0": true,
+      "order": 20,
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          0,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          0,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          0,
+          11
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          11,
+          13
+        ],
+        [
+          11,
+          14
+        ],
+        [
+          0,
+          15
+        ],
+        [
+          15,
+          16
+        ],
+        [
+          15,
+          17
+        ],
+        [
+          15,
+          18
+        ],
+        [
+          0,
+          19
+        ]
+      ],
+      "whole_independence_coefficients": [
+        1,
+        20,
+        171,
+        838,
+        2648,
+        5753,
+        8961,
+        10302,
+        8897,
+        5806,
+        2843,
+        1020,
+        255,
+        40,
+        3
+      ],
+      "alpha": 14,
+      "deltas_0_through_alpha": [
+        19,
+        151,
+        667,
+        1810,
+        3105,
+        3208,
+        1341,
+        -1405,
+        -3091,
+        -2963,
+        -1823,
+        -765,
+        -215,
+        -37,
+        -3
+      ],
+      "x": 7,
+      "p": 9,
+      "eligibility_checks": {
+        "x_plus_2_le_p": true,
+        "three_p_lt_two_alpha_plus_1": true
+      },
+      "favorable_leaf_rows": [
+        {
+          "leaf": 4,
+          "original_support": 3,
+          "delta_p_after_leaf_deletion": -1395,
+          "H_coefficients": [
+            1,
+            18,
+            138,
+            605,
+            1709,
+            3318,
+            4606,
+            4682,
+            3522,
+            1954,
+            783,
+            216,
+            37,
+            3
+          ],
+          "R_coefficients": [
+            1,
+            15,
+            95,
+            334,
+            726,
+            1037,
+            1014,
+            693,
+            330,
+            106,
+            21,
+            2
+          ],
+          "selected_summand": -1344,
+          "q_at_p_minus_1": 3192,
+          "q_at_p": 1848,
+          "q_p_minus_q_p_minus_1": -1344
+        },
+        {
+          "leaf": 5,
+          "original_support": 3,
+          "delta_p_after_leaf_deletion": -1395,
+          "H_coefficients": [
+            1,
+            18,
+            138,
+            605,
+            1709,
+            3318,
+            4606,
+            4682,
+            3522,
+            1954,
+            783,
+            216,
+            37,
+            3
+          ],
+          "R_coefficients": [
+            1,
+            15,
+            95,
+            334,
+            726,
+            1037,
+            1014,
+            693,
+            330,
+            106,
+            21,
+            2
+          ],
+          "selected_summand": -1344,
+          "q_at_p_minus_1": 3192,
+          "q_at_p": 1848,
+          "q_p_minus_q_p_minus_1": -1344
+        },
+        {
+          "leaf": 6,
+          "original_support": 3,
+          "delta_p_after_leaf_deletion": -1395,
+          "H_coefficients": [
+            1,
+            18,
+            138,
+            605,
+            1709,
+            3318,
+            4606,
+            4682,
+            3522,
+            1954,
+            783,
+            216,
+            37,
+            3
+          ],
+          "R_coefficients": [
+            1,
+            15,
+            95,
+            334,
+            726,
+            1037,
+            1014,
+            693,
+            330,
+            106,
+            21,
+            2
+          ],
+          "selected_summand": -1344,
+          "q_at_p_minus_1": 3192,
+          "q_at_p": 1848,
+          "q_p_minus_q_p_minus_1": -1344
+        },
+        {
+          "leaf": 8,
+          "original_support": 7,
+          "delta_p_after_leaf_deletion": -1395,
+          "H_coefficients": [
+            1,
+            18,
+            138,
+            605,
+            1709,
+            3318,
+            4606,
+            4682,
+            3522,
+            1954,
+            783,
+            216,
+            37,
+            3
+          ],
+          "R_coefficients": [
+            1,
+            15,
+            95,
+            334,
+            726,
+            1037,
+            1014,
+            693,
+            330,
+            106,
+            21,
+            2
+          ],
+          "selected_summand": -1344,
+          "q_at_p_minus_1": 3192,
+          "q_at_p": 1848,
+          "q_p_minus_q_p_minus_1": -1344
+        },
+        {
+          "leaf": 9,
+          "original_support": 7,
+          "delta_p_after_leaf_deletion": -1395,
+          "H_coefficients": [
+            1,
+            18,
+            138,
+            605,
+            1709,
+            3318,
+            4606,
+            4682,
+            3522,
+            1954,
+            783,
+            216,
+            37,
+            3
+          ],
+          "R_coefficients": [
+            1,
+            15,
+            95,
+            334,
+            726,
+            1037,
+            1014,
+            693,
+            330,
+            106,
+            21,
+            2
+          ],
+          "selected_summand": -1344,
+          "q_at_p_minus_1": 3192,
+          "q_at_p": 1848,
+          "q_p_minus_q_p_minus_1": -1344
+        },
+        {
+          "leaf": 10,
+          "original_support": 7,
+          "delta_p_after_leaf_deletion": -1395,
+          "H_coefficients": [
+            1,
+            18,
+            138,
+            605,
+            1709,
+            3318,
+            4606,
+            4682,
+            3522,
+            1954,
+            783,
+            216,
+            37,
+            3
+          ],
+          "R_coefficients": [
+            1,
+            15,
+            95,
+            334,
+            726,
+            1037,
+            1014,
+            693,
+            330,
+            106,
+            21,
+            2
+          ],
+          "selected_summand": -1344,
+          "q_at_p_minus_1": 3192,
+          "q_at_p": 1848,
+          "q_p_minus_q_p_minus_1": -1344
+        },
+        {
+          "leaf": 12,
+          "original_support": 11,
+          "delta_p_after_leaf_deletion": -1395,
+          "H_coefficients": [
+            1,
+            18,
+            138,
+            605,
+            1709,
+            3318,
+            4606,
+            4682,
+            3522,
+            1954,
+            783,
+            216,
+            37,
+            3
+          ],
+          "R_coefficients": [
+            1,
+            15,
+            95,
+            334,
+            726,
+            1037,
+            1014,
+            693,
+            330,
+            106,
+            21,
+            2
+          ],
+          "selected_summand": -1344,
+          "q_at_p_minus_1": 3192,
+          "q_at_p": 1848,
+          "q_p_minus_q_p_minus_1": -1344
+        },
+        {
+          "leaf": 13,
+          "original_support": 11,
+          "delta_p_after_leaf_deletion": -1395,
+          "H_coefficients": [
+            1,
+            18,
+            138,
+            605,
+            1709,
+            3318,
+            4606,
+            4682,
+            3522,
+            1954,
+            783,
+            216,
+            37,
+            3
+          ],
+          "R_coefficients": [
+            1,
+            15,
+            95,
+            334,
+            726,
+            1037,
+            1014,
+            693,
+            330,
+            106,
+            21,
+            2
+          ],
+          "selected_summand": -1344,
+          "q_at_p_minus_1": 3192,
+          "q_at_p": 1848,
+          "q_p_minus_q_p_minus_1": -1344
+        },
+        {
+          "leaf": 14,
+          "original_support": 11,
+          "delta_p_after_leaf_deletion": -1395,
+          "H_coefficients": [
+            1,
+            18,
+            138,
+            605,
+            1709,
+            3318,
+            4606,
+            4682,
+            3522,
+            1954,
+            783,
+            216,
+            37,
+            3
+          ],
+          "R_coefficients": [
+            1,
+            15,
+            95,
+            334,
+            726,
+            1037,
+            1014,
+            693,
+            330,
+            106,
+            21,
+            2
+          ],
+          "selected_summand": -1344,
+          "q_at_p_minus_1": 3192,
+          "q_at_p": 1848,
+          "q_p_minus_q_p_minus_1": -1344
+        },
+        {
+          "leaf": 16,
+          "original_support": 15,
+          "delta_p_after_leaf_deletion": -1395,
+          "H_coefficients": [
+            1,
+            18,
+            138,
+            605,
+            1709,
+            3318,
+            4606,
+            4682,
+            3522,
+            1954,
+            783,
+            216,
+            37,
+            3
+          ],
+          "R_coefficients": [
+            1,
+            15,
+            95,
+            334,
+            726,
+            1037,
+            1014,
+            693,
+            330,
+            106,
+            21,
+            2
+          ],
+          "selected_summand": -1344,
+          "q_at_p_minus_1": 3192,
+          "q_at_p": 1848,
+          "q_p_minus_q_p_minus_1": -1344
+        },
+        {
+          "leaf": 17,
+          "original_support": 15,
+          "delta_p_after_leaf_deletion": -1395,
+          "H_coefficients": [
+            1,
+            18,
+            138,
+            605,
+            1709,
+            3318,
+            4606,
+            4682,
+            3522,
+            1954,
+            783,
+            216,
+            37,
+            3
+          ],
+          "R_coefficients": [
+            1,
+            15,
+            95,
+            334,
+            726,
+            1037,
+            1014,
+            693,
+            330,
+            106,
+            21,
+            2
+          ],
+          "selected_summand": -1344,
+          "q_at_p_minus_1": 3192,
+          "q_at_p": 1848,
+          "q_p_minus_q_p_minus_1": -1344
+        },
+        {
+          "leaf": 18,
+          "original_support": 15,
+          "delta_p_after_leaf_deletion": -1395,
+          "H_coefficients": [
+            1,
+            18,
+            138,
+            605,
+            1709,
+            3318,
+            4606,
+            4682,
+            3522,
+            1954,
+            783,
+            216,
+            37,
+            3
+          ],
+          "R_coefficients": [
+            1,
+            15,
+            95,
+            334,
+            726,
+            1037,
+            1014,
+            693,
+            330,
+            106,
+            21,
+            2
+          ],
+          "selected_summand": -1344,
+          "q_at_p_minus_1": 3192,
+          "q_at_p": 1848,
+          "q_p_minus_q_p_minus_1": -1344
+        },
+        {
+          "leaf": 19,
+          "original_support": 0,
+          "delta_p_after_leaf_deletion": -1536,
+          "H_coefficients": [
+            1,
+            18,
+            140,
+            620,
+            1742,
+            3296,
+            4378,
+            4208,
+            2973,
+            1546,
+            582,
+            152,
+            25,
+            2
+          ],
+          "R_coefficients": [
+            1,
+            13,
+            78,
+            286,
+            715,
+            1287,
+            1716,
+            1716,
+            1287,
+            715,
+            286,
+            78,
+            13,
+            1
+          ],
+          "selected_summand": -855,
+          "q_at_p_minus_1": 1686,
+          "q_at_p": 831,
+          "q_p_minus_q_p_minus_1": -855
+        }
+      ],
+      "favorable_leaves_in_order": [
+        4,
+        5,
+        6,
+        8,
+        9,
+        10,
+        12,
+        13,
+        14,
+        16,
+        17,
+        18,
+        19
+      ],
+      "sum_selected_negative_budget": 18276,
+      "sum_q_at_p_minus_1": 39990,
+      "sum_q_at_p": 23007,
+      "complete_S": -16983
+    }
+  ],
+  "scope": "two exact trees at p=9; no universal claim"
+}

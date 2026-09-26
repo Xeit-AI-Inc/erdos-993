@@ -1,0 +1,190 @@
+{
+  "fixture": {
+    "all_original_leaves": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      8,
+      9,
+      16
+    ],
+    "all_root_polynomials_match": true,
+    "alpha": 11,
+    "edges": [
+      [
+        0,
+        10
+      ],
+      [
+        1,
+        7
+      ],
+      [
+        2,
+        7
+      ],
+      [
+        3,
+        12
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        4,
+        13
+      ],
+      [
+        4,
+        16
+      ],
+      [
+        5,
+        15
+      ],
+      [
+        6,
+        8
+      ],
+      [
+        6,
+        11
+      ],
+      [
+        6,
+        14
+      ],
+      [
+        7,
+        12
+      ],
+      [
+        9,
+        12
+      ],
+      [
+        10,
+        13
+      ],
+      [
+        10,
+        14
+      ],
+      [
+        11,
+        15
+      ]
+    ],
+    "favorable_selector": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      8,
+      9,
+      16
+    ],
+    "full_S": -1443,
+    "guard_strict_lower_region": true,
+    "guard_x_plus_2": true,
+    "n": 17,
+    "p": 7,
+    "polynomial": [
+      1,
+      17,
+      120,
+      462,
+      1075,
+      1586,
+      1516,
+      945,
+      383,
+      99,
+      15,
+      1
+    ],
+    "same_support_tags": [
+      1,
+      2
+    ],
+    "summands": [
+      {
+        "H_delta": -287,
+        "R_delta": -82,
+        "deletion_delta_p": -275,
+        "leaf": 0,
+        "support": 10,
+        "term": -205
+      },
+      {
+        "H_delta": -298,
+        "R_delta": -79,
+        "deletion_delta_p": -264,
+        "leaf": 1,
+        "support": 7,
+        "term": -219
+      },
+      {
+        "H_delta": -298,
+        "R_delta": -79,
+        "deletion_delta_p": -264,
+        "leaf": 2,
+        "support": 7,
+        "term": -219
+      },
+      {
+        "H_delta": -278,
+        "R_delta": -106,
+        "deletion_delta_p": -284,
+        "leaf": 3,
+        "support": 12,
+        "term": -172
+      },
+      {
+        "H_delta": -254,
+        "R_delta": -143,
+        "deletion_delta_p": -308,
+        "leaf": 5,
+        "support": 15,
+        "term": -111
+      },
+      {
+        "H_delta": -285,
+        "R_delta": -85,
+        "deletion_delta_p": -277,
+        "leaf": 8,
+        "support": 6,
+        "term": -200
+      },
+      {
+        "H_delta": -278,
+        "R_delta": -106,
+        "deletion_delta_p": -284,
+        "leaf": 9,
+        "support": 12,
+        "term": -172
+      },
+      {
+        "H_delta": -268,
+        "R_delta": -123,
+        "deletion_delta_p": -294,
+        "leaf": 16,
+        "support": 4,
+        "term": -145
+      }
+    ],
+    "x": 5
+  },
+  "method": "independent literal enumeration of every vertex subset for the order-17 fixture, plus a separately coded rooted include/exclude recurrence at every root",
+  "replayed_inventory_aggregate_check": {
+    "all_S_nonpositive": true,
+    "eligible_rows": 2535,
+    "positive_S_rows": 0,
+    "proper_selector_rows": 0
+  },
+  "scope_note": "The inventory aggregate count is inspected from deterministic replay output, not independently re-enumerated across all 1,800 sampled trees."
+}

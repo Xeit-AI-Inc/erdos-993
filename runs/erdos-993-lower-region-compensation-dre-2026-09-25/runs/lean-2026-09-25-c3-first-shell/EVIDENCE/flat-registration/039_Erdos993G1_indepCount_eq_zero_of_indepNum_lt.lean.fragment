@@ -1,0 +1,9 @@
+lemma indepCount_eq_zero_of_indepNum_lt [Finite V] {k : ℕ}
+    (hk : F.indepNum < k) : indepCount F k = 0 := by
+  haveI : IsEmpty {S : Finset V // F.IsNIndepSet k S} :=
+    ⟨fun S => by
+      have h := S.property.isIndepSet.card_le_indepNum
+      rw [S.property.card_eq] at h
+      exact (not_le_of_gt hk) h⟩
+  simp [indepCount]
+

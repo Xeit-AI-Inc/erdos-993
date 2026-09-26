@@ -1,0 +1,29 @@
+{
+  "worker_id": "C4-CU-T2",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C4-T2-NEIGHBORHOOD-REDUCTION",
+      "statement": "The exact identity kS=(|V(T)|-2p)Q-M-C and the consequence S<=0 for eligible instances with |V(T)|<=2p are valid under the contract definitions.",
+      "scope": "Critique of the C4-T2 route claim only. The identity uses one fixed selector F(T,p), separately tagged original leaves including same-support leaves, k=p-1, the stated marked-set counts, and actual addable vertices. It establishes no compensation in the |V(T)|>2p cases and no universal primary result.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CU-T2/REPORT.md",
+        "cycles/cycle-4/C4-CU-T2/EVIDENCE.json"
+      ],
+      "reason": "retained: direct independent double counting gives E=kU+C and E=(n-2-k)Q-M; together with S=U-Q and k=p-1 these yield the identity. Nonnegative Q,M,C and k>=1 give the claimed n<=2p consequence."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CU-T2/REPORT.md",
+  "limitations": [
+    "The route's compensation inequality for |V(T)|>2p remains unproved.",
+    "The audit neither proves nor refutes the flat/current-rank budgets or the complete lower-region aggregate.",
+    "No computational replay, exhaustive census, external literature result, or formal verification was used."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-T2-NEIGHBORHOOD-REDUCTION"
+  ]
+}

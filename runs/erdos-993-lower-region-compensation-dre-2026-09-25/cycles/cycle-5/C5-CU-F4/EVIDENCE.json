@@ -1,0 +1,229 @@
+{
+  "audit_kind": "independent bounded replay and scope audit",
+  "checks": [
+    "The eligible ranks use x+2<=p and the exact integer equivalent p<=floor(2 alpha/3) of 3p<2 alpha+1.",
+    "The first descent scan includes rank alpha, where zero extension gives Delta_alpha=-i_alpha<0 when alpha is the last nonzero coefficient.",
+    "For every generated eligible tree-rank pair, replay evaluates Delta_p(T-v) on every original degree-one vertex and sums exactly the selected leaf_data summands.",
+    "The exhibited 22-vertex tree is an ordinary tree from the stated centered path-spider recipe; all three original leaves are favorable and each summand is -915, giving full S=-2745."
+  ],
+  "replay": {
+    "eligible_example_all_favorable": {
+      "all_original_leaf_deltas": {
+        "14": -2483,
+        "21": -2483,
+        "7": -2483
+      },
+      "alpha": 12,
+      "arm_lengths": [
+        7,
+        7,
+        7
+      ],
+      "edges": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          0,
+          15
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          10,
+          11
+        ],
+        [
+          11,
+          12
+        ],
+        [
+          12,
+          13
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          15,
+          16
+        ],
+        [
+          16,
+          17
+        ],
+        [
+          17,
+          18
+        ],
+        [
+          18,
+          19
+        ],
+        [
+          19,
+          20
+        ],
+        [
+          20,
+          21
+        ]
+      ],
+      "family": "central_path_spider",
+      "favorable_leaves": [
+        7,
+        14,
+        21
+      ],
+      "full_S": -2745,
+      "independence_polynomial": [
+        1,
+        22,
+        210,
+        1141,
+        3891,
+        8661,
+        12684,
+        12028,
+        7086,
+        2401,
+        409,
+        30,
+        1
+      ],
+      "lower_region_check": true,
+      "order": 22,
+      "p": 8,
+      "summands_and_full_S": [
+        {
+          "c_previous": 1815,
+          "c_rank": 900,
+          "g": -915,
+          "h_order": 20,
+          "leaf": 7,
+          "pointwise_delta": -2483,
+          "r_order": 19,
+          "support": 6,
+          "witness_vertices": [
+            5
+          ]
+        },
+        {
+          "c_previous": 1815,
+          "c_rank": 900,
+          "g": -915,
+          "h_order": 20,
+          "leaf": 14,
+          "pointwise_delta": -2483,
+          "r_order": 19,
+          "support": 13,
+          "witness_vertices": [
+            12
+          ]
+        },
+        {
+          "c_previous": 1815,
+          "c_rank": 900,
+          "g": -915,
+          "h_order": 20,
+          "leaf": 21,
+          "pointwise_delta": -2483,
+          "r_order": 19,
+          "support": 20,
+          "witness_vertices": [
+            19
+          ]
+        }
+      ],
+      "x": 6
+    },
+    "families": {
+      "KL_T_triple": {
+        "eligible_tree_rank_pairs": 0,
+        "proper_selector_rows": 0,
+        "recipe": "kl_spider((k1,k2,k3)) from the pinned evaluator; 1<=k1<=k2<=k3<=20",
+        "trees": 1540
+      },
+      "KL_fixture_path_graft": {
+        "base_arm_triples": [
+          [
+            3,
+            4,
+            4
+          ],
+          [
+            3,
+            4,
+            5
+          ],
+          [
+            3,
+            5,
+            5
+          ],
+          [
+            3,
+            5,
+            6
+          ],
+          [
+            3,
+            6,
+            6
+          ]
+        ],
+        "eligible_tree_rank_pairs": 142,
+        "proper_selector_rows": 0,
+        "recipe": "for each listed base KL tree, attach a path of length 1..5 at every nonleaf vertex",
+        "trees": 425
+      },
+      "central_path_spider": {
+        "eligible_tree_rank_pairs": 166,
+        "proper_selector_rows": 0,
+        "recipe": "one center joined to disjoint paths; canonical sorted arm lengths, 3..5 arms, each length 1..8",
+        "trees": 1242
+      }
+    },
+    "method": "Exact forest independence-polynomial dynamic programming; finite recipes replayed without random generation.",
+    "performed_from_scratch_copies": true,
+    "producer_evidence_exactly_reproduced": true,
+    "result": "no witness in these finite families"
+  },
+  "scope_limit": "This verifies only the finite graph recipes and parameter boxes in the route. It proves no all-tree selector property and does not prove or refute the primary aggregate."
+}

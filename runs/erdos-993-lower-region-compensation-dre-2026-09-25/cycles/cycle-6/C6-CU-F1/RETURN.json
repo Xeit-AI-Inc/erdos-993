@@ -1,0 +1,31 @@
+{
+  "worker_id": "C6-CU-F1",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C6-F1.Tm-cutoff400-audit",
+      "statement": "For the C6 cutoff-400 T_m candidate, F1's exact coefficient replay on 3<=m<=399, four endpoint rational inequalities at m=400, and tiny-tree polynomial/deletion checks for m=1,2,3 reproduce on local copies; these bounded checks disclose no defect in those computations, but do not verify the complete analytic all-m family proof or its selector-to-aggregate transfer.",
+      "scope": "Only the exact finite computation, endpoint arithmetic, and tiny T_m graph checks described in EVIDENCE.json and REPORT.md. No proof of the all-m T_m aggregate or the arbitrary ordinary-tree lower-region aggregate is claimed.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CU-F1/EVIDENCE.json",
+        "cycles/cycle-6/C6-CU-F1/REPLAY.py",
+        "cycles/cycle-6/C6-CU-F1/ordinary_tree_checked.py"
+      ],
+      "reason": "retained_narrowed. The local replay reproduced 242,964 strict LC checks and 242,964 strict mixed-minor checks over 3<=m<=399, with matching stream digests and minima, all four exact m=400 ratios below one, and the m=1,2,3 evaluator polynomial/deletion identities. The cutoff estimate's index and monotonicity directions also check. The full uniform analytic bounds and selector-to-aggregate steps were not established by this replay; the direct first-descent note itself leaves those later steps open. The primary-source convolution statement was not independently retrieved in this critique. These are scope limitations, not counterexamples."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CU-F1/REPORT.md",
+  "limitations": [
+    "The replay verifies the finite coefficient interval, exact cutoff endpoint fractions, and tree-DP identities only for T_m with m=1,2,3.",
+    "The uniform analytic mixed-minor estimates for m>=400 and the full selector-to-aggregate transfer were not independently established here.",
+    "The cited ULC primary papers were not independently retrieved during this critique; the common pinned bridge was considered only as a scoped summary.",
+    "No conclusion is made about arbitrary ordinary trees or the registered lower-region primary target."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-F1.Tm-cutoff400-audit"
+  ]
+}

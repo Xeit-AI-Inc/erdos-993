@@ -1,0 +1,28 @@
+{
+  "worker_id": "C2-CT-U5",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "U5-pendant-extension-tagged-sum-change",
+      "statement": "Extending an original leaf by one pendant edge can change the fixed-rank favorable tagged family and its complete aggregate even when the same rank remains eligible before and after the operation.",
+      "scope": "Retained for the exact encoded 18-vertex tree and its 19-vertex extension at p=8, and for the stated conditional pendant-extension recurrences; it is not a universal assertion about every extension and is not a refutation or proof of the primary aggregate inequality.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CT-U5/EVIDENCE.md"
+      ],
+      "reason": "retained: Independent exact replay confirms both trees have alpha=12 and x=6 and satisfy x+2<=p and 3p<2alpha+1 at p=8. Every current leaf passes the strict Delta_p(T-v)<0 selector, with original supports and leaf multiplicities retained. The complete sums are -4256 and -6267, and the favorable tags change when old leaf 10 ceases to be a leaf and new leaf 18 is added. The pendant and deletion-polynomial recurrences check on the pair. This verifies extension instability only; both sums remain negative and no universal sign result follows."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CT-U5/REPORT.md",
+  "limitations": [
+    "The replay covers only the specified tree pair and is not an exhaustive generation or census.",
+    "Both full selected sums are negative, so this evidence does not refute the primary inequality or establish a sign reversal.",
+    "The recurrences do not prove the eligibility guards or selector signs universally after extension and do not bound the recomputed complete sum."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "U5-pendant-extension-tagged-sum-change"
+  ]
+}

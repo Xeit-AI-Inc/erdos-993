@@ -1,0 +1,25 @@
+{
+  "worker_id": "C1-T4",
+  "cycle": 1,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C1-T4-1",
+      "statement": "For each favorable leaf v with i_p(T-v)>0, the selector Delta_p(T-v)<0 is equivalent to the mean addability of a uniform independent p-set of T-v being less than p+1. The desired v-summand is an adjacent-rank difference in the distinct marked slice of H_v; this translation does not establish a coupling or inequality between those measures, so it yields no resolution of the global lower-region aggregate.",
+      "scope": "Exact probability reformulation for finite ordinary trees and eligible (T,p), using the fixed favorable selector and the original leaf data; partial only.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-T4/EVIDENCE.md"
+      ],
+      "reason": "Double-counting addable vertices gives the selector's expectation identity exactly. The marked extension count exposes the different conditioned rank measure and its multiple-mark correction, but no justified bridge transfers the selector bound to the complete selected sum."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-T4/REPORT.md",
+  "limitations": [
+    "No proof of the global deficit budget or complete aggregate inequality is obtained.",
+    "No eligible ordinary-tree counterexample is produced.",
+    "The expectation comparison is valid only when the corresponding rank set count is nonzero; the algebraic selector identity itself remains valid with zero extension."
+  ],
+  "status_authority": "proposed_worker_only"
+}

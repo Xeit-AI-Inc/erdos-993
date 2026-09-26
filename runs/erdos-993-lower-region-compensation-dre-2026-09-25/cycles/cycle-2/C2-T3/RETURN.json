@@ -1,0 +1,25 @@
+{
+  "worker_id": "C2-T3",
+  "cycle": 2,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C2-T3-shell-root-shadow",
+      "statement": "At the first shell n=2p+2, the complete fixed-selector sum is nonpositive for eligible trees in which every selected leaf-deletion forest has no isolates and has a marked root of degree at least two (the empty selector is vacuous); eligibility also forces tau(H_v)=p+1-(alpha(T)-p) <= floor(p/2)+1. The remaining ordered-root contributions are confined to explicitly described order-2k boundary parts, whose excess is not compensated here.",
+      "scope": "Ordinary finite trees T with n=2p+2, x(T)+2<=p, 3p<2alpha(T)+1; F(T,p) is the original strict favorable-leaf selector and repeated same-support leaves remain distinct. For every v in F, H_v has no isolates and a W_v root of H_v-degree at least two; the empty selector is allowed.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-T3/EVIDENCE.md"
+      ],
+      "reason": "The ordered first-mark partition and finite-graph deletion shadow prove each selected summand is nonpositive on the stated subclass. The vertex-cover identity records the low-cover shell regime but gives no bound on order-2k excesses. Trees with isolated marked roots or only degree-one marked roots retain boundary terms, and no selector-conditioned compensation across them has been proved."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-T3/REPORT.md",
+  "limitations": [
+    "No conclusion for eligible shell trees outside the stated per-selected-tag subclass; the explicit order-2k boundary excesses remain uncompensated.",
+    "No universal matching-resource inequality follows from the vertex-cover slack, and no counterexample to the complete selected sum is supplied.",
+    "The result uses exact combinatorial counting only; no computation, imported theorem, or formal verification was performed."
+  ],
+  "status_authority": "proposed_worker_only"
+}

@@ -1,0 +1,29 @@
+{
+  "worker_id": "C5-CU-T6",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C5-T6-THIRDSHELL-COVER6-P10",
+      "statement": "The root joined to six centers with pendant-leaf counts (3,3,3,3,3,2) is an ordinary 24-vertex tree with a vertex cover of size 6; at p=10 it lies in n=2p+4 and satisfies x=8, alpha=18, x+2<=p, and 3p<2alpha+1. All 17 original leaves are strictly favorable and its complete aggregate is S=-122805. Consequently tau(T)>=7 is not a universal property of eligible trees in this slice.",
+      "scope": "This exact tree only. It disproves a universal claim that every eligible n=2p+4 tree has tau(T)>=7. It does not disprove a conditional theorem restricted to trees with tau(T)>=7, refute the primary aggregate, or decide other ranks or trees.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CU-T6/EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: the graph, cover, eligibility, strict selector, every summand, and full negative sum replay exactly. The original implication is narrowed because a low-cover witness refutes universality of the premise tau>=7 but cannot by itself refute a conditional implication that assumes tau>=7."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CU-T6/REPORT.md",
+  "limitations": [
+    "Selector and per-leaf summand replay used the pinned ordinary_tree_checked.py evaluator; no second implementation was run for every leaf-deleted polynomial.",
+    "The witness has negative S and does not refute the primary lower-region aggregate.",
+    "The witness rules out only a universal tau(T)>=7 assertion for this slice; no conditional theorem on the tau(T)>=7 subclass was tested.",
+    "No exhaustive low-cover classification or general pointwise sign result was established."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-T6-THIRDSHELL-COVER6-P10"
+  ]
+}

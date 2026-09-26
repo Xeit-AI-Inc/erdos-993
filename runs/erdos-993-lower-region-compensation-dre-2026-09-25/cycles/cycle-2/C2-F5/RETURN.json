@@ -1,0 +1,24 @@
+{
+  "worker_id": "C2-F5",
+  "cycle": 2,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C2-F5-P6-SHELL-LP",
+      "statement": "For every ordinary tree T of order 14 with p=6 satisfying x(T)+2<=6 and 18<2alpha(T)+1, the full fixed-selector aggregate S(T,6) is at most -222; equality occurs.",
+      "scope": "Bounded exact computation on all unlabeled ordinary trees of order 14, the p=6 instance of |T|=2p+2. It is not a universal statement over the first-order shell.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-F5/EVIDENCE.json"
+      ],
+      "reason": "The pinned complete free-tree enumeration reports 240 eligible order-14 classes; all 240 complete sums were independently replayed by subset enumeration. The finite convex-hull LP over these realizable columns has exact optimum -222. The generation boundary, eligible columns and source pins are recorded in EVIDENCE.json."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-F5/REPORT.md",
+  "limitations": [
+    "The fixed p=6 order-14 census does not prove the first-order shell for arbitrary p or settle the primary aggregate.",
+    "The LP uses an enumerated finite class list rather than a compact rooted-component formulation; no universal dual certificate or positive realizable witness was obtained."
+  ],
+  "status_authority": "proposed_worker_only"
+}

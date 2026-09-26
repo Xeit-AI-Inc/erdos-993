@@ -1,0 +1,37 @@
+{
+  "worker_id": "C3-CT-U1",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL",
+      "statement": "For every eligible finite ordinary tree T and rank p with x(T)+2<=p and 3p<2alpha(T)+1, the fixed-selector clone graph with all-clone deletion edges and exactly-two-neighbor support-insertion edges has a matching saturating every upper clone.",
+      "scope": "Universal ordinary finite trees; F is the fixed set of original leaves v with Delta_p(T-v)<0; clone multiplicity counts active selected-leaf tags; moves are one-vertex deletions and exactly-two-neighbor support insertions. This is a sufficient mechanism stronger than S(T,p)<=0.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-3/C3-CT-U1/EVIDENCE.json"],
+      "reason": "retained: the exact universal matching assertion is coherent and the source itself leaves it open. The clone-count difference gives S(T,p), so matching saturation would suffice; the converse is not shown. Three reported T_m flows are bounded and match the common summary but were not replayed here, the p6 census was not rerun, and the CB(8,92) envelope is inconclusive. No finite flow establishes the universal claim or primary aggregate."
+    },
+    {
+      "claim_id": "E993-U1-CLONE-PROJECTION",
+      "statement": "For each fixed selected original leaf v, tagged active independent sets in H_v at ranks p and p-1 biject respectively to upper and lower clones tagged v, and the resulting clone-count difference over F equals S(T,p). Under the source report's stated old Delete/Retag operations, each old edge projects to a one-vertex deletion admitted by the new complete deletion fibers.",
+      "scope": "Ordinary-tree definitions with F fixed at the original T,p. Leaves sharing a support remain distinct tags. The abstract strictness examples are not accepted as verified ordinary-tree witnesses because their tree encoding is absent.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-3/C3-CT-U1/EVIDENCE.json"],
+      "reason": "retained_narrowed: the bijection and count identity follow directly from independence and the definitions of H_v, W_v, and R_v; the stated old operations project to deletions. Narrowed because the displayed clone pair and order-14 switch omit the underlying tree, supports, and adjacency list, so their realization and strictness on an ordinary tree cannot be independently checked from the sealed case files."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CT-U1/REPORT.md",
+  "limitations": [
+    "The universal matching assertion remains open and is stronger than the target scalar aggregate.",
+    "The three T_m flow summaries match the copied common summary but were not independently replayed; per-case primal and cut artifacts were absent from the case-listed files.",
+    "The reported 241-row p6 flow census was not rerun.",
+    "The strictness examples lack an exact ordinary-tree edge encoding and are not independently realizable from the supplied case evidence.",
+    "The expanded CB(8,92) graph has no exact flow or cut in the reviewed evidence."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL",
+    "E993-U1-CLONE-PROJECTION"
+  ]
+}

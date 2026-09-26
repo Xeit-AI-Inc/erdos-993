@@ -1,0 +1,40 @@
+{
+  "worker_id": "C4-CF-U3",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C4-U3.LOW-COVER-SKELETON",
+      "statement": "Every ordinary tree of order 24, 26, 28, or 30 admitting a vertex cover of size at most six has the stated complete six-cover core representation with at most five outside connectors, and the exhaustive skeleton and leaf-multiplicity recipe covers all such trees.",
+      "scope": "Structural parametrization and finite census domain for the low-cover portion of n=2p+4, p=10..13. The weak-composition count is corrected to binom(n-t-1,5); no census result is included.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CF-U3/EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: the structural proof, converse and all-compositions recipe are valid. Stars and bars shows the displayed count binom(n-t-2,5) is off by one; the correct count is binom(n-t-1,5), consistent with the stated 118755 maximum. This typo does not undermine the explicitly exhaustive recipe."
+    },
+    {
+      "claim_id": "C4-U3.LOW-COVER-SIGN",
+      "statement": "The selector-weighted third-shell sign for all low-cover trees in orders 24, 26, 28, and 30 remains unresolved by this route's evidence.",
+      "scope": "Low-cover subcase only; an evidence-status conclusion, not a mathematical counterexample or authoritative status award.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CF-U3/EVIDENCE.json"
+      ],
+      "reason": "retained: the route reports no census or proved sign inequality, and the reviewed evidence supplies no complete selected sums or counterexample."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CF-U3/REPORT.md",
+  "limitations": [
+    "No finite census or source replay was executed.",
+    "No tree instance was independently evaluated through the full alpha, x, selector, and aggregate guards.",
+    "High-cover trees and the complete lower-region aggregate remain unsettled by this review.",
+    "All statuses are proposed and nonauthoritative."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-U3.LOW-COVER-SIGN",
+    "C4-U3.LOW-COVER-SKELETON"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schema": "e993.worker-evidence.critique.v1",
+  "worker_id": "C3-CT-U4",
+  "orientation": "T",
+  "source_review": {
+    "case_claim_ids": [
+      "C3-U4.COLORED-SHADOW-SCOPE",
+      "C3-U4.CUT-DUAL",
+      "C3-U4.ORBIT-COMPRESSION"
+    ],
+    "hash_check": "All 3 case source hashes and all 115 common source hashes matched their packet entries.",
+    "source_replay": "No computation was replayed; no sealed source copy was used."
+  },
+  "checks": [
+    {
+      "claim_id": "C3-U4.CUT-DUAL",
+      "disposition": "retained",
+      "check": "Source-sink cuts give u(X)<=c(N(X)); weighted neighborhood coverage is submodular, and subtracting modular supply preserves submodularity. Minimum cuts form a union/intersection lattice."
+    },
+    {
+      "claim_id": "C3-U4.ORBIT-COMPRESSION",
+      "disposition": "retained",
+      "check": "An invariant relation between two transitive vertex orbits is biregular. Uniformly spreading each quotient flow across relation edges respects each literal vertex bound."
+    },
+    {
+      "claim_id": "C3-U4.COLORED-SHADOW-SCOPE",
+      "disposition": "retained_narrowed",
+      "check": "The report-described subset-shadow cardinality statement has no direct accounting for absent-vertex switch insertions or selector-weighted capacities; bibliographic hypotheses were not independently verified."
+    }
+  ],
+  "limitations": [
+    "The transport reductions do not prove the universal tree-derived Hall inequalities.",
+    "No primary full-sum result or graph census was replayed."
+  ]
+}

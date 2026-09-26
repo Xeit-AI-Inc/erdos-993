@@ -1,0 +1,31 @@
+{
+  "worker_id": "C4-CT-U4",
+  "stage": "critique",
+  "orientation": "T",
+  "source_hash_verification": {
+    "case_files": "All three allowed C4-U4 source files matched the SHA-256 hashes in packets/C4-CT-U4.json.",
+    "common_files": "Every allowed_source_files entry in packets/C4-COMMON.json matched its listed SHA-256 hash.",
+    "hash_method": "SHA-256 over file bytes."
+  },
+  "independent_checks": {
+    "colored_ring_mapping": "For each matching edge pair {x_i,y_i}, quotienting by (x_i,y_i)^2 leaves monomials using zero or one endpoint per pair. Degree-k monomials therefore correspond bijectively to rank-k independent sets of the matching, and multiplication/deletion gives the ordinary face-poset shadow.",
+    "shadow_theorem_scope": "Chong arXiv:1403.3158v2 Theorem 1.2(i) gives the Macaulay-Lex result for colored quotient rings of type (1,...,1); Theorem 2.1(iii) and its stated shadow consequence apply to the revlex lower shadow in that setting. This supports the unweighted matching-sector shadow assertion, not a distinguished-tag or extra insertion statistic.",
+    "normalized_matching_scope": "West-Harper-Daykin, JCTA 35 (1983), pp. 302-303, gives the product theorem for LYM/normalized matching posets under log-concavity of rank sizes. The matching sector is the product of n factors with ranks of sizes (1,2); its ordinary adjacent-rank cover flow is unweighted and has no hub-insertion or selected-tag edge constraints.",
+    "toy_graph_reconstruction": {
+      "vertices": ["a", "b", "h"],
+      "edges": [["a", "b"], ["a", "h"]],
+      "matching_pair": ["a", "b"],
+      "rank": 1,
+      "before_family": [["b"]],
+      "compressed_family": [["a"]],
+      "ordinary_lower_shadow_before": [[]],
+      "ordinary_lower_shadow_after": [[]],
+      "addable_before": ["h"],
+      "addable_after": [],
+      "calculation": "For {b}, a is blocked by ab and h is not adjacent to b, so h is the sole addable vertex. For {a}, both b and h are blocked. In both cases deleting the sole rank-one set gives the same lower shadow {empty set}.",
+      "scope": "Exact auxiliary-graph counterexample to preservation of this extra addability statistic under the specified compression; not a tree counterexample, CB instance, or mixed-boundary inequality refutation."
+    },
+    "target_and_standing_controls": "The source route explicitly disclaims a complete CB edge encoding, full selector audit, and primary aggregate result. The example makes no claim about x(T), eligibility, original leaves/supports, selector F, or a complete sum S(T,p); consequently it does not challenge the ordinary-tree target or any registered counterexample fence."
+  },
+  "assessment": "The core claim is valid after narrowing its negative implication to the exact fact that the cited ordinary-shadow and unweighted-flow results furnish no established control of the extra boundary, and that the supplied toy compression changes one endpoint-sensitive addability count. No stated evidence transports the toy to CB or proves/refutes the primary aggregate."
+}

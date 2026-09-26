@@ -1,0 +1,25 @@
+{
+  "worker_id": "C1-U2",
+  "cycle": 1,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C1-U2-1",
+      "statement": "For every eligible ordinary tree T and p, if the selected sum S(T,p) is positive, then some original favorable leaf tag v and some independent (p-1)-set A of H_v meeting W_v have at least p vertices addable in H_v. Consequently, if every such marked set for every selected tag has at most p-1 addable vertices, then S(T,p)<=0.",
+      "scope": "Conditional necessary criterion for positive witnesses and sufficient obstruction to positivity under the stated addability bound; it preserves the exact original selector and tag multiplicities. It does not resolve the primary target.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-U2/EVIDENCE.md"
+      ],
+      "reason": "An exact marked-incidence count on each bipartite forest H_v gives (p-1)S=(2a+1-3p)Q-E. Nonnegative per-set deficits then show that positivity forces one deficit below 2a+1-3p, which is equivalent to at least p addable vertices. The report proves alpha(H_v)=a-1 and checks the selector and rank domains."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-U2/REPORT.md",
+  "limitations": [
+    "This structural condition does not imply that a positive complete aggregate exists; deficits over other marked sets and selected leaf tags can compensate.",
+    "No reduction by pruning, grafting, support merging, or path compression is proved to preserve alpha, the first strict descent x, p eligibility, and the fixed favorable selector.",
+    "No counterexample or proof of the primary aggregate inequality is supplied."
+  ],
+  "status_authority": "proposed_worker_only"
+}

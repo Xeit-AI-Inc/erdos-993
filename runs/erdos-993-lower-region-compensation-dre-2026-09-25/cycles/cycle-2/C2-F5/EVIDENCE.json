@@ -1,0 +1,4188 @@
+{
+  "scope": "All unlabeled ordinary trees of order 14 at fixed p=6 (first-order shell n=2p+2), subject to x+2<=p and 3p<2alpha+1.",
+  "source": {
+    "path": "instruments/p6-order14-15/RESULTS.json",
+    "sha256": "eba40e10d2045112753bcad82a7f3e3ef753db3ee38e06c0870bd3891243974b",
+    "generation_protocol": "instruments/p6-order14-15/PROTOCOL.md",
+    "protocol_sha256": "f2f579fd098f07aa51f940f22ef6f0e15c9da15f8fa91c7ecc2f33324ebf5b0e"
+  },
+  "generation_boundary": {
+    "orders": [
+      14
+    ],
+    "tree_classes": 3159,
+    "eligible_classes": 240,
+    "eligible_rows_subset_replayed": 240
+  },
+  "constraints_verified_by_source_instrument": [
+    "ordinary tree",
+    "order n=2p+2",
+    "x+2<=p using terminal zero-extended differences",
+    "3p<2alpha+1",
+    "strict selector Delta_p(T-v)<0",
+    "original supports and neighborhoods",
+    "all distinct favorable leaf tags included in complete S"
+  ],
+  "finite_lp": {
+    "variables": "lambda_t for each eligible tree class t in the records array",
+    "feasibility": "lambda_t >= 0 and sum_t lambda_t = 1",
+    "objective": "maximize sum_t lambda_t * S_t",
+    "exact_optimum": -222,
+    "dual": "y=-222 for the single equality sum_t lambda_t=1; constraints y>=S_t hold for every listed column. A column attaining -222 proves optimality.",
+    "interpretation": "Convex mixtures of realizable eligible order-14 trees only; not a relaxation over all p or all shell orders."
+  },
+  "aggregate_range": {
+    "maximum": -222,
+    "minimum": -404,
+    "nonnegative_count": 0
+  },
+  "records": [
+    {
+      "tree_code": "B:((((((()))))))|(((()()()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 5,
+      "S": -327,
+      "favorable_leaves": [
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((((()))))))|(((()()))()())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 5,
+      "S": -303,
+      "favorable_leaves": [
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((((()))))))|((()()())()())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -371,
+      "favorable_leaves": [
+        6,
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((((()())))))|((((()()()))))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 5,
+      "S": -352,
+      "favorable_leaves": [
+        5,
+        6,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((((()())))))|((((()()))()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 5,
+      "S": -287,
+      "favorable_leaves": [
+        5,
+        6,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((((()())))))|((((()))()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 5,
+      "S": -299,
+      "favorable_leaves": [
+        5,
+        6,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((((()())))))|(((()()())()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -377,
+      "favorable_leaves": [
+        5,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((((()())))))|(((()())()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -344,
+      "favorable_leaves": [
+        5,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((((()())))))|((()()())(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -374,
+      "favorable_leaves": [
+        5,
+        6,
+        9,
+        10,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((((()())))))|((()())(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -338,
+      "favorable_leaves": [
+        5,
+        6,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((((())()))))|(((()()))()())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -336,
+      "favorable_leaves": [
+        5,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((((()))())))|((((()()()))))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 5,
+      "S": -323,
+      "favorable_leaves": [
+        5,
+        6,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((((()))())))|((((()()))()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 5,
+      "S": -256,
+      "favorable_leaves": [
+        5,
+        6,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((((()))())))|((((()))()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 5,
+      "S": -267,
+      "favorable_leaves": [
+        5,
+        6,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((((()))())))|(((()()())()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -345,
+      "favorable_leaves": [
+        5,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((((()))())))|(((()())()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -309,
+      "favorable_leaves": [
+        5,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((((()))())))|((()()())(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -346,
+      "favorable_leaves": [
+        5,
+        6,
+        9,
+        10,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((((()))())))|((()())(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -308,
+      "favorable_leaves": [
+        5,
+        6,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((((()))))())|((((()()()))))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 5,
+      "S": -322,
+      "favorable_leaves": [
+        5,
+        6,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((((()))))())|((((()()))()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 5,
+      "S": -255,
+      "favorable_leaves": [
+        5,
+        6,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((((()))))())|((((()))()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 5,
+      "S": -270,
+      "favorable_leaves": [
+        5,
+        6,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((((()))))())|(((()()())()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -343,
+      "favorable_leaves": [
+        5,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((((()))))())|(((()()()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -364,
+      "favorable_leaves": [
+        5,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((((()))))())|(((()())()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -309,
+      "favorable_leaves": [
+        5,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((((()))))())|(((()()))()())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -330,
+      "favorable_leaves": [
+        5,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((((()))))())|((()()())(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -348,
+      "favorable_leaves": [
+        5,
+        6,
+        9,
+        10,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((((()))))())|((()())(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -309,
+      "favorable_leaves": [
+        5,
+        6,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()()()))))|((((()))())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -361,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()()()))))|(((()())(())))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -372,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        10,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()()()))))|(((())(()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -342,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()()()))))|(((()))((())))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 5,
+      "S": -305,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        10,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()()()))))|(((()))(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -376,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()())())))|((((()()))()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -315,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()())())))|((((()))()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -328,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()())())))|((()())(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -369,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()()))()))|((((()()))()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -330,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()()))()))|((((()())))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -327,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()()))()))|((((())()())))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -323,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()()))()))|((((())()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -288,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()()))()))|((((()))()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -342,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()()))()))|((((()))())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -292,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()()))()))|(((()())(())))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -307,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        10,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()()))()))|(((()())())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -351,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()()))()))|(((()()))(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -304,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        10,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()()))()))|(((())(()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -275,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()()))()))|(((()))((())))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 5,
+      "S": -237,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        10,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()()))()))|(((()))(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -308,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()()))()))|(((()))(())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -284,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()()))()))|((()())(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -378,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()())))())|((()())(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -379,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((())(()))))|(((()()()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -347,
+      "favorable_leaves": [
+        4,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((())(()))))|(((()()))()())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -322,
+      "favorable_leaves": [
+        4,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((())()))())|((((()))()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -303,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((())()))())|((()())(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -341,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()))(())))|(((()()))()())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -320,
+      "favorable_leaves": [
+        4,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()))()()))|((((()))())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -307,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()))()()))|(((()())(())))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -319,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        10,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()))()()))|(((()()))(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -315,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        10,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()))()()))|(((())(()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -290,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()))()()))|(((()))((())))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 5,
+      "S": -248,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        10,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()))()()))|(((()))(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -319,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()))())())|(((()())()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -350,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()))())())|((()()())(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -385,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        9,
+        10,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((()))())())|((()())(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -346,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((())))(()))|(((()()()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -351,
+      "favorable_leaves": [
+        4,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:((((())))(()))|(((()()))()())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -326,
+      "favorable_leaves": [
+        4,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((()()())()))|(((())(()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -364,
+      "favorable_leaves": [
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((()()())()))|(((()))((())))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -326,
+      "favorable_leaves": [
+        3,
+        4,
+        5,
+        6,
+        10,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((()()()))())|(((()))((())))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -355,
+      "favorable_leaves": [
+        3,
+        4,
+        5,
+        6,
+        10,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((()())(())))|(((()())()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -364,
+      "favorable_leaves": [
+        3,
+        4,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((()())(())))|((()()())(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -394,
+      "favorable_leaves": [
+        3,
+        4,
+        6,
+        9,
+        10,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((()())(())))|((()())(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -357,
+      "favorable_leaves": [
+        3,
+        4,
+        6,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((()())()()))|(((())(()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -329,
+      "favorable_leaves": [
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((()())()()))|(((()))((())))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -288,
+      "favorable_leaves": [
+        3,
+        4,
+        5,
+        6,
+        10,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((()())()()))|(((()))(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -366,
+      "favorable_leaves": [
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((()())())())|((()())(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 8,
+      "S": -404,
+      "favorable_leaves": [
+        3,
+        4,
+        5,
+        6,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((()()))(()))|((()())(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -359,
+      "favorable_leaves": [
+        3,
+        4,
+        6,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((()()))()())|(((())(()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -347,
+      "favorable_leaves": [
+        3,
+        4,
+        5,
+        6,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((()()))()())|(((())())(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -360,
+      "favorable_leaves": [
+        3,
+        4,
+        5,
+        6,
+        10,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((()()))()())|(((()))((())))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -328,
+      "favorable_leaves": [
+        3,
+        4,
+        5,
+        6,
+        10,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((()()))()())|((())(())(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -337,
+      "favorable_leaves": [
+        3,
+        4,
+        5,
+        6,
+        9,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((())(()))())|((()()())(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -368,
+      "favorable_leaves": [
+        3,
+        5,
+        6,
+        9,
+        10,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((())(()))())|((()())(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -328,
+      "favorable_leaves": [
+        3,
+        5,
+        6,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((()))((())))|((()()())(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -331,
+      "favorable_leaves": [
+        3,
+        6,
+        9,
+        10,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((()))((())))|((()())(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -292,
+      "favorable_leaves": [
+        3,
+        6,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((()))(()()))|((()()())(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -400,
+      "favorable_leaves": [
+        3,
+        5,
+        6,
+        9,
+        10,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((()))(()()))|((()())(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -364,
+      "favorable_leaves": [
+        3,
+        5,
+        6,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "B:(((()))(())())|((()())(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -341,
+      "favorable_leaves": [
+        3,
+        5,
+        6,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((((())))))(()()())(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -378,
+      "favorable_leaves": [
+        6,
+        8,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()()))))((((()()))))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 5,
+      "S": -283,
+      "favorable_leaves": [
+        5,
+        6,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()()))))((((()))()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 5,
+      "S": -252,
+      "favorable_leaves": [
+        5,
+        6,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()()))))((((()))))()())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 5,
+      "S": -294,
+      "favorable_leaves": [
+        5,
+        6,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()()))))(((()())()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -312,
+      "favorable_leaves": [
+        5,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()()))))(((()()))())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -323,
+      "favorable_leaves": [
+        5,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()()))))(((())()()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -322,
+      "favorable_leaves": [
+        5,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()()))))(((())()))()())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -330,
+      "favorable_leaves": [
+        5,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()()))))(((()))()())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -327,
+      "favorable_leaves": [
+        5,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()()))))(((()))())()())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -324,
+      "favorable_leaves": [
+        5,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()()))))((()())(()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -305,
+      "favorable_leaves": [
+        5,
+        6,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()()))))((()())()())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -377,
+      "favorable_leaves": [
+        5,
+        6,
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()()))))((()()))((())))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 5,
+      "S": -266,
+      "favorable_leaves": [
+        5,
+        6,
+        9,
+        10,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()()))))((()()))(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -338,
+      "favorable_leaves": [
+        5,
+        6,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()()))))((()()))(())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -315,
+      "favorable_leaves": [
+        5,
+        6,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()()))))((())(()))()())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -316,
+      "favorable_leaves": [
+        5,
+        6,
+        9,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()()))))((()))((()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 5,
+      "S": -254,
+      "favorable_leaves": [
+        5,
+        6,
+        9,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()()))))((()))(()()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -375,
+      "favorable_leaves": [
+        5,
+        6,
+        9,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()()))))((()))(()())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -309,
+      "favorable_leaves": [
+        5,
+        6,
+        9,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()()))))(()())(()())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -373,
+      "favorable_leaves": [
+        5,
+        6,
+        8,
+        9,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()))()))((((()))()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 5,
+      "S": -222,
+      "favorable_leaves": [
+        5,
+        6,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()))()))((((()))))()())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 5,
+      "S": -266,
+      "favorable_leaves": [
+        5,
+        6,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()))()))(((()())()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -279,
+      "favorable_leaves": [
+        5,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()))()))(((()()))())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -292,
+      "favorable_leaves": [
+        5,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()))()))(((())()()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -290,
+      "favorable_leaves": [
+        5,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()))()))(((())()))()())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -302,
+      "favorable_leaves": [
+        5,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()))()))(((()))()())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -294,
+      "favorable_leaves": [
+        5,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()))()))(((()))())()())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -293,
+      "favorable_leaves": [
+        5,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()))()))((()())(()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -275,
+      "favorable_leaves": [
+        5,
+        6,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()))()))((()())()())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -344,
+      "favorable_leaves": [
+        5,
+        6,
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()))()))((()()))((())))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 5,
+      "S": -233,
+      "favorable_leaves": [
+        5,
+        6,
+        9,
+        10,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()))()))((()()))(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -305,
+      "favorable_leaves": [
+        5,
+        6,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()))()))((()()))(())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -283,
+      "favorable_leaves": [
+        5,
+        6,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()))()))((())(()))()())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -289,
+      "favorable_leaves": [
+        5,
+        6,
+        9,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()))()))((()))((()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 5,
+      "S": -224,
+      "favorable_leaves": [
+        5,
+        6,
+        9,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()))()))((()))(()()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -343,
+      "favorable_leaves": [
+        5,
+        6,
+        9,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()))()))((()))(()())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -274,
+      "favorable_leaves": [
+        5,
+        6,
+        9,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()))()))(()())(()())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -339,
+      "favorable_leaves": [
+        5,
+        6,
+        8,
+        9,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()))))(((()())()))()())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -325,
+      "favorable_leaves": [
+        5,
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()))))(((()()))())()())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -325,
+      "favorable_leaves": [
+        5,
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()))))(((()))()())()())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -323,
+      "favorable_leaves": [
+        5,
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()))))((()()()))((())))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 5,
+      "S": -304,
+      "favorable_leaves": [
+        5,
+        8,
+        9,
+        10,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()))))((()())(()))()())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -320,
+      "favorable_leaves": [
+        5,
+        8,
+        9,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()))))((()()))((()())))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 5,
+      "S": -265,
+      "favorable_leaves": [
+        5,
+        8,
+        9,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()))))((()()))((()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 5,
+      "S": -257,
+      "favorable_leaves": [
+        5,
+        8,
+        9,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()))))((()()))(()()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -373,
+      "favorable_leaves": [
+        5,
+        8,
+        9,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()))))((()()))(()())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -309,
+      "favorable_leaves": [
+        5,
+        8,
+        9,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()))))((()))((()))()())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 5,
+      "S": -280,
+      "favorable_leaves": [
+        5,
+        8,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()))))((()))(()()())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -341,
+      "favorable_leaves": [
+        5,
+        8,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((((()))))((()))(()())()())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -318,
+      "favorable_leaves": [
+        5,
+        8,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()()())))(((()))())(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -347,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        10,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()()())))(((())))(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -377,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()())()))(((()())()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -342,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()())()))(((()()))())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -353,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()())()))(((()))()())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -358,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()())()))(((()))())()())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -356,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()())()))((()())(()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -334,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()())()))((()()))((())))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -293,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        9,
+        10,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()())()))((()()))(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -368,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()())()))((())(()))()())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -347,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        9,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()())()))((()))((()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -281,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        9,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()())()))((()))(()())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -338,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        9,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()()))())(((()()))())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -359,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()()))())(((()())))(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -310,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        10,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()()))())(((()))())(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -279,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        10,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()()))())(((()))())()())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -358,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()()))())(((())))(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -310,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()()))())((()())(()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -344,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()()))())((()())())(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -338,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        9,
+        10,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()()))())((()()))((())))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -314,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        9,
+        10,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()()))())((()()))(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -380,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()()))())((())(()))()())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -346,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        9,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()()))())((())()())(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -347,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        9,
+        10,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()()))())((())())(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -344,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()()))())((()))((()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -292,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        9,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()()))())((()))(()())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -352,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        9,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()()))())(()())(())(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -322,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        8,
+        9,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()())))(((()())))(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -340,
+      "favorable_leaves": [
+        4,
+        5,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()())))(((()))()())(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -322,
+      "favorable_leaves": [
+        4,
+        5,
+        9,
+        10,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()())))(((()))())(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -308,
+      "favorable_leaves": [
+        4,
+        5,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()())))(((())))(()()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -376,
+      "favorable_leaves": [
+        4,
+        5,
+        9,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()())))((()())()())(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -367,
+      "favorable_leaves": [
+        4,
+        5,
+        8,
+        9,
+        10,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()())))((()())())(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -369,
+      "favorable_leaves": [
+        4,
+        5,
+        8,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()())))((()()))((()())))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -338,
+      "favorable_leaves": [
+        4,
+        5,
+        8,
+        9,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()())))((()()))((()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -329,
+      "favorable_leaves": [
+        4,
+        5,
+        8,
+        9,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()())))(()())(()())(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -353,
+      "favorable_leaves": [
+        4,
+        5,
+        7,
+        8,
+        10,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((())()()))((()())(()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -342,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((())()()))((()()))((())))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -300,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        9,
+        10,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((())()))((()())(()))()())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -354,
+      "favorable_leaves": [
+        4,
+        5,
+        8,
+        9,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((())()))((()()))((()())))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -297,
+      "favorable_leaves": [
+        4,
+        5,
+        8,
+        9,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((())()))((()()))((()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -289,
+      "favorable_leaves": [
+        4,
+        5,
+        8,
+        9,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()))()())(((()))())(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -293,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        10,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()))()())(((()))())()())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -358,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()))()())(((())))(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -324,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()))()())((()())(()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -346,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()))()())((()())())(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -352,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        9,
+        10,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()))()())((()()))((())))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -323,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        9,
+        10,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()))()())((())(()))()())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -342,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        9,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()))()())((())())(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -359,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()))()())((()))((()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -292,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        9,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()))()())((()))(()())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -358,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        9,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()))()())(()())(())(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -336,
+      "favorable_leaves": [
+        4,
+        5,
+        6,
+        8,
+        9,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()))())(((()))())(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -278,
+      "favorable_leaves": [
+        4,
+        5,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()))())(((())))(()()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -348,
+      "favorable_leaves": [
+        4,
+        5,
+        9,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()))())((()()())())(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -367,
+      "favorable_leaves": [
+        4,
+        5,
+        8,
+        9,
+        10,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()))())((()()()))((())))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -349,
+      "favorable_leaves": [
+        4,
+        5,
+        8,
+        9,
+        10,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()))())((()())(()))()())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -348,
+      "favorable_leaves": [
+        4,
+        5,
+        8,
+        9,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()))())((()())()())(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -333,
+      "favorable_leaves": [
+        4,
+        5,
+        8,
+        9,
+        10,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()))())((()())())(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -337,
+      "favorable_leaves": [
+        4,
+        5,
+        8,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()))())((()()))((()())))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -311,
+      "favorable_leaves": [
+        4,
+        5,
+        8,
+        9,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()))())((()()))((()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -291,
+      "favorable_leaves": [
+        4,
+        5,
+        8,
+        9,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()))())((()()))(()())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -350,
+      "favorable_leaves": [
+        4,
+        5,
+        8,
+        9,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()))())((())()())(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -347,
+      "favorable_leaves": [
+        4,
+        5,
+        8,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()))())((()))((()))()())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -306,
+      "favorable_leaves": [
+        4,
+        5,
+        8,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()))())(()()())(())(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -364,
+      "favorable_leaves": [
+        4,
+        5,
+        7,
+        8,
+        9,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((()))())(()())(()())(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -323,
+      "favorable_leaves": [
+        4,
+        5,
+        7,
+        8,
+        10,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((())))((()())()())(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -367,
+      "favorable_leaves": [
+        4,
+        7,
+        8,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((())))((()()))((()()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -325,
+      "favorable_leaves": [
+        4,
+        7,
+        8,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((())))(()()())(()())(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -394,
+      "favorable_leaves": [
+        4,
+        6,
+        7,
+        8,
+        10,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((((())))(()())(()())(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -356,
+      "favorable_leaves": [
+        4,
+        6,
+        7,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((()()()))((())(()))((())))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -328,
+      "favorable_leaves": [
+        3,
+        4,
+        5,
+        8,
+        10,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((()())(()))((()())(()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -327,
+      "favorable_leaves": [
+        3,
+        4,
+        6,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((()())(()))((()()))((())))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -289,
+      "favorable_leaves": [
+        3,
+        4,
+        6,
+        9,
+        10,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((()())(()))((()()))(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -361,
+      "favorable_leaves": [
+        3,
+        4,
+        6,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((()())(()))((()()))(())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -339,
+      "favorable_leaves": [
+        3,
+        4,
+        6,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((()())(()))((())(()))()())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -342,
+      "favorable_leaves": [
+        3,
+        4,
+        6,
+        9,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((()())(()))((()))((()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -280,
+      "favorable_leaves": [
+        3,
+        4,
+        6,
+        9,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((()())(()))((()))(()()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -397,
+      "favorable_leaves": [
+        3,
+        4,
+        6,
+        9,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((()())(()))((()))(()())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -333,
+      "favorable_leaves": [
+        3,
+        4,
+        6,
+        9,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((()())(()))(()())(()())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 8,
+      "S": -398,
+      "favorable_leaves": [
+        3,
+        4,
+        6,
+        8,
+        9,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((()())()())((()()))((())))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -371,
+      "favorable_leaves": [
+        3,
+        4,
+        5,
+        6,
+        9,
+        10,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((()())()())((()))((()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -343,
+      "favorable_leaves": [
+        3,
+        4,
+        5,
+        6,
+        9,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((()())()())(()())(())(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 8,
+      "S": -378,
+      "favorable_leaves": [
+        3,
+        4,
+        5,
+        6,
+        8,
+        9,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((()())())((()())())(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 8,
+      "S": -400,
+      "favorable_leaves": [
+        3,
+        4,
+        5,
+        8,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((()())())((()()))((()())))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -368,
+      "favorable_leaves": [
+        3,
+        4,
+        5,
+        8,
+        9,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((()())())((()()))((()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -351,
+      "favorable_leaves": [
+        3,
+        4,
+        5,
+        8,
+        9,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((()())())(()())(()())(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 8,
+      "S": -383,
+      "favorable_leaves": [
+        3,
+        4,
+        5,
+        7,
+        8,
+        10,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((()()))((()()))((())(())))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -288,
+      "favorable_leaves": [
+        3,
+        4,
+        7,
+        8,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((()()))((()()))((()))(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -284,
+      "favorable_leaves": [
+        3,
+        4,
+        7,
+        8,
+        11,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((()()))((())(()))((()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -280,
+      "favorable_leaves": [
+        3,
+        4,
+        7,
+        9,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((()()))((())(()))(()())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -332,
+      "favorable_leaves": [
+        3,
+        4,
+        7,
+        9,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((()()))((()))((()))((())))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 5,
+      "S": -223,
+      "favorable_leaves": [
+        3,
+        4,
+        7,
+        10,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((()()))((()))((()))(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -286,
+      "favorable_leaves": [
+        3,
+        4,
+        7,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((()()))((()))(()())(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -359,
+      "favorable_leaves": [
+        3,
+        4,
+        7,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((())(()))((()))((()))()())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -306,
+      "favorable_leaves": [
+        3,
+        5,
+        8,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((())(()))((()))(()()())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -363,
+      "favorable_leaves": [
+        3,
+        5,
+        8,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((())())(()())(()())(()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 8,
+      "S": -391,
+      "favorable_leaves": [
+        3,
+        4,
+        6,
+        7,
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((()))((()))((()))((()))())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 5,
+      "S": -230,
+      "favorable_leaves": [
+        3,
+        6,
+        9,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((()))((()))((()))(()()()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -324,
+      "favorable_leaves": [
+        3,
+        6,
+        9,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((()))((()))((()))(()())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 6,
+      "S": -274,
+      "favorable_leaves": [
+        3,
+        6,
+        9,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:(((()))((()))(()())(()())())",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 7,
+      "S": -334,
+      "favorable_leaves": [
+        3,
+        6,
+        8,
+        9,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tree_code": "U:((()())(()())(()())(())(()))",
+      "order": 14,
+      "rank": 6,
+      "alpha": 9,
+      "x": 4,
+      "favorable_count": 8,
+      "S": -358,
+      "favorable_leaves": [
+        2,
+        3,
+        5,
+        6,
+        8,
+        9,
+        11,
+        13
+      ]
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "worker_id": "C3-CF-T4",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C3-T4-ODD-SHELL-REDUCTION",
+      "statement": "A first-mark structural reduction and exact matching-plus-isolate coefficient calculation survive with a necessary first-mark ordering condition and an explicit all-isolated-mark case.",
+      "scope": "At parent order n=2p+3 for one original leaf, the residual classification applies when W contains a nonisolated mark ordered first; the all-isolated tree case is excluded by the strict favorable selector. The coefficient formula is exact for a matching of k edges plus an isolate. No complete-sum conclusion.",
+      "status": "proposed_partial",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-T4/EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: the residual order classification, small-residual shadow count, target-summand bridge and coefficient arithmetic check out after ordering a nonisolated mark first. As stated in the source, the universal residual-size bound fails when the first mark is isolated; the tree all-isolated case must be separated. Boundary residual signs, guarded realizability, global compensation and the complete selected sum remain unproved."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CF-T4/REPORT.md",
+  "limitations": [
+    "The source's unqualified residual-size statement needs the ordering/nonisolated-mark repair described in the report.",
+    "No universal sign bound or global compensation theorem is proved for the order-2k+1 and order-2k residuals.",
+    "The matching calculation is not shown realizable under the ordinary-tree rank and selector guards.",
+    "No full-sum proof or counterexample, census, imported theorem, or formal result is established."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C3-T4-ODD-SHELL-REDUCTION"
+  ]
+}

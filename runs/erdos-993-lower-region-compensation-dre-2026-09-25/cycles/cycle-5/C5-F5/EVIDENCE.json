@@ -1,0 +1,32 @@
+{
+  "schema": "e993.C5-F5.evidence.v1",
+  "scope": "Exact arithmetic audit of the pinned T22 order-91 control, used only to test a tagwise budget obstruction.",
+  "hash_audit": {
+    "common_packet_listed_files": 237,
+    "mismatches_or_read_errors": 0,
+    "control_path": "inputs/standing-controls/t22-order91.json",
+    "control_sha256": "2198f01fa5de1c192da190ac242f5af8a914b0b03bd5e6df979590d20c6a18ed"
+  },
+  "control_values": {
+    "order": 91,
+    "alpha": 68,
+    "first_strict_descent_x": 32,
+    "rank_p": 34,
+    "eligible_x_plus_2_le_p": true,
+    "strict_lower_region_3p_lt_2a_plus_1": true,
+    "favorable_leaf_count": 67,
+    "star_leaf_count": 66,
+    "marked_leaf": 2,
+    "marked_tag_g": 212336130412243110,
+    "star_tag_g_each": -7560098737536570631,
+    "complete_selected_aggregate": -498754180547001418536
+  },
+  "replay_arithmetic": {
+    "k": 33,
+    "marked_k_times_g": 7007092303604022630,
+    "star_k_times_g_each": -249483258338706830823,
+    "sum_check": "212336130412243110 + 66*(-7560098737536570631) = -498754180547001418536",
+    "k_sum_check": "7007092303604022630 + 66*(-249483258338706830823) = -16458887958051046811688"
+  },
+  "interpretation": "The marked tag has positive local g, while the complete selector sum is negative. Thus a pointwise tag-by-tag nonpositive budget fails on this control; a global unsigned cross-tag relation could still transfer capacity between tags. This arithmetic does not define or refute such a relation."
+}

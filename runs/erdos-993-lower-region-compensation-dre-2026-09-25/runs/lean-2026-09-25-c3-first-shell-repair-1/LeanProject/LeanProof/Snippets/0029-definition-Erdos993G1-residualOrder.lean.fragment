@@ -1,0 +1,10 @@
+namespace Erdos993G1
+noncomputable section
+def residualOrder {V : Type u}
+    (T : SimpleGraph V) (v g : V) : ℕ :=
+  Nat.card {w : V //
+    w ∉ Erdos993G1.closedNeighborhood T v ∪ Erdos993G1.closedNeighborhood T g}
+
+end
+end Erdos993G1
+

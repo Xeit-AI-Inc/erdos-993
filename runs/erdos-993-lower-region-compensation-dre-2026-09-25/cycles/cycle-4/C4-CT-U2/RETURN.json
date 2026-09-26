@@ -1,0 +1,30 @@
+{
+  "worker_id": "C4-CT-U2",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C4-U2-MARKED-SHELL-REDUCTION",
+      "statement": "The first-mark identity and cover-loss inequality give a sound conditional reduction of the pointwise leaf sign to residual shadow or matching-sign hypotheses. Under the stated parent cover bound, the matching-size threshold follows from cover loss, but each d>=3 residual also requires the separate rank condition p-2>=K(d). The s=5 Catalan estimate has zero empty-fiber margin and a negative first nonempty-fiber floor at q=p-2, so it does not force the parent cover bound.",
+      "scope": "Conditional marked-forest and leaf-deletion shell reduction only, retaining inherited residual matching-sign applications at their exact hypotheses. It does not prove the cover or rank premises for all eligible trees and does not resolve the registered favorable-leaf aggregate.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CT-U2/EVIDENCE.json"
+      ],
+      "reason": "retained_narrowed: The partition, cover-loss arithmetic, ordinary-shadow boundary, and s=5 cutoff check out. The unconditional shell and aggregate conclusions remain unsupported because the parent cover threshold and residual rank gates are not established generally; the matching theorems remain inherited applications."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CT-U2/REPORT.md",
+  "limitations": [
+    "The cover and rank hypotheses are conditional and are not proved for every eligible tree.",
+    "Residual matching-sign results are inherited and are used only under their stated matching-size and rank conditions.",
+    "No exhaustive tree census or source replay was performed; no counterexample is claimed.",
+    "The s=5 computation shows failure of this cover-Catalan bound, not failure of the shell assertion.",
+    "The favorable-leaf aggregate remains unresolved by this claim."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-U2-MARKED-SHELL-REDUCTION"
+  ]
+}

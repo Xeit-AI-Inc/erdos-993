@@ -1,0 +1,28 @@
+{
+  "worker_id": "C2-F3",
+  "cycle": 2,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "E993-LOWER-REGION-FIRST-ORDER-SHELL",
+      "statement": "Within the finite asymmetric rooted branch-forest family defined in REPORT.md, for 3<=p<=7 and |T|=2p+2, the complete favorable-leaf sum is nonpositive in every eligible generated tree; no eligible tree has a positive selected summand.",
+      "scope": "Only the stated rooted family: support-rooted trees with a distinguished support-leaf, total branch order 2p, at least two branch components of at least two distinct rooted isomorphism types, and the exact primary eligibility guards.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-F3/REPORT.md",
+        "cycles/cycle-2/C2-F3/search_f3.py",
+        "cycles/cycle-2/C2-F3/search_f3_results.json"
+      ],
+      "reason": "An exact deterministic finite enumeration found only negative complete sums in its eligible rows. The enumeration omits other shell trees and gives no proof beyond its explicit family and orders."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-F3/REPORT.md",
+  "limitations": [
+    "This is a bounded computation, not a proof or refutation of the registered first-shell assertion.",
+    "The family excludes symmetric rooted branch products, products with fewer than two branch components, and all p outside 3 through 7.",
+    "Counts are rooted family counts and may include repeated unrooted isomorphism types.",
+    "No positive selected local term was found, so the search does not test compensation for such a term in this family."
+  ],
+  "status_authority": "proposed_worker_only"
+}

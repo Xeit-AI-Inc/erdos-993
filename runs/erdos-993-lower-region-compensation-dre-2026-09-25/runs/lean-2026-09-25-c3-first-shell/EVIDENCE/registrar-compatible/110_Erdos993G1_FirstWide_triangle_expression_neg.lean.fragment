@@ -1,0 +1,17 @@
+namespace Erdos993G1.FirstWide
+
+lemma triangle_expression_neg {r : ℕ} (hr : 1 ≤ r) :
+    (binomCoeff (2 * r - 1) ((r : ℤ) + 1) +
+      3 * binomCoeff (2 * r - 1) (r : ℤ)) -
+      (binomCoeff (2 * r - 1) (r : ℤ) +
+        3 * binomCoeff (2 * r - 1) ((r : ℤ) - 1)) < 0 := by
+  rw [binomCoeff_nat_add_one, binomCoeff_nat, binomCoeff_nat_sub_one _ _ hr]
+  have he : (2 * r - 1).choose r = (2 * r - 1).choose (r - 1) :=
+    Nat.choose_symm_of_eq_add (by omega)
+  have h := choose_step_strict_down (n := 2 * r - 1) (k := r) (by omega) (by omega)
+  have h' : ((2 * r - 1).choose (r + 1) : ℤ) < ((2 * r - 1).choose r : ℤ) := by
+    exact_mod_cast h
+  rw [he] at h' ⊢
+  linarith
+
+end Erdos993G1.FirstWide

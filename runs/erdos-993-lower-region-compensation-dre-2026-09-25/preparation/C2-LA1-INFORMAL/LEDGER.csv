@@ -1,0 +1,10 @@
+id,location,statement,type,depends_on,method,severity,verdict,evidence,critic,notes
+C2-01,contract/generic,Proposed definitions express relative isolate coverage and marked independent-set counts,definition,,source comparison,high,VERIFIED,REPORT.md,independent meaning check,TaggedFamily meets W and zero extends by powersetCard
+C2-02,incidence,Each lower marked independent k-set has m-k-b(A) extensions,lemma,C2-01,finite set partition,high,VERIFIED,REPORT.md,checked relative U and empty family,Open neighborhood is disjoint from A
+C2-03,incidence,Upper deletion multiplicities give equation (1),identity,C2-02,double counting,high,VERIFIED,REPORT.md,checked one and multiple marks,C counts each multiply marked upper set once
+C2-04,order band,The case m at most 2k follows from equation (1),lemma,C2-03,integer signs,medium,VERIFIED,REPORT.md,checked out of range ranks,No isolate premise needed in this case
+C2-05,odd boundary,At m equal 2k+1 good contributions and bad injection cover q_k,lemma,C2-03,explicit injection,high,VERIFIED,REPORT.md,checked y marked and no bad sets,Requires k at least 2 and a nonisolate
+C2-06,odd edgeless,Edgeless U has equal middle layers,lemma,C2-01,complement bijection,medium,VERIFIED,REPORT.md,checked mark coverage,Requires m equal 2k+1
+C2-07,tree isolates,Every U-relative isolate lies in R minus H,lemma,C2-01,tree path and leaf uniqueness,high,VERIFIED,REPORT.md,checked two vertex tree and original support,Uses original neighborhoods
+C2-08,tree split,Deletion independent sets split into marked and R-avoiding families,identity,C2-07,disjoint partition,high,VERIFIED,REPORT.md,checked rank zero and out of range,Requires H subset R
+C2-09,tree inequality,Rank and order substitutions convert q_p at most q_(p-1) to integer difference,conclusion,C2-05 C2-06 C2-07 C2-08,algebra and guard check,high,VERIFIED,REPORT.md,checked p at least 3 and n minus 2,Exact second conjunct

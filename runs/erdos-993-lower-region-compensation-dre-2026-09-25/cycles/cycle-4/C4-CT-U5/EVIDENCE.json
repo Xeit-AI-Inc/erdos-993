@@ -1,0 +1,33 @@
+{
+  "schema": "C4-CT-U5.critique-evidence.v1",
+  "kind": "independent_symbolic_audit",
+  "audited_claim_id": "C4-U5-SUPPORT-POLYNOMIAL-REDUCTION",
+  "disposition": "retained",
+  "checks": [
+    {
+      "name": "leaf_deleted_polynomial",
+      "derivation": "Fix an original leaf v with support u. In T-v, partition independent sets by whether u is absent or present. If absent, each component C_w on a remaining neighbor-side branch contributes J_w=I(C_w); if present, each branch root w is forbidden and contributes A_w=I(C_w-w), with a factor z for u. Thus I(T-v)=product J_w+z product A_w=P_{u,v}.",
+      "coefficients": "[z^(p+1)]P-[z^p]P=Delta_p(T-v), with zero-extension handled by missing polynomial coefficients being zero."
+    },
+    {
+      "name": "support_deletion_difference",
+      "derivation": "Deleting u and v leaves every other branch C_w intact, yielding product J_w. Deleting N_T[u] removes each remaining branch root w, yielding product A_w. Their polynomial difference is I(T-{u,v})-I(T-N_T[u])=Q_{u,v}.",
+      "coefficients": "[z^p]Q-[z^(p-1)]Q is the required Delta_(p-1) difference."
+    },
+    {
+      "name": "shared_support_multiplicity",
+      "derivation": "For each support u, every original leaf v in L(u) has a singleton v-side branch. Removing that branch from the products leaves the same P and Q for every such v. Therefore all m_u tagged leaves have the same selector and summand, and summing once per support requires the factor m_u. In K2, each degree-one vertex is the other's support and the two support records count the two original leaves separately; a one-vertex tree has no degree-one leaves and contributes the empty sum.",
+      "conclusion": "The support-indexed formula counts every original leaf exactly once, including distinct leaves with a common support."
+    },
+    {
+      "name": "fixed_rank_recurrence_and_guards",
+      "derivation": "At a rooted vertex, root-excluded independent sets combine arbitrary child states, E_r=product(E_c+O_c); root-included sets require every child root excluded, O_r=z product E_c. Directed-edge messages provide the same two polynomials for each oriented branch. Retaining degrees 0 through p+1 gives coefficients for Delta_p(T-v) and for both ranks p and p-1 of Q. The guard x(T)+2<=p is equivalent to some Delta_j(T)<0 for 0<=j<=p-2, which uses coefficients only through p-1; alpha(T) is supplied by the max-plus recurrence, so 3p<2alpha(T)+1 is directly checkable.",
+      "conclusion": "For fixed p, the stated polynomial messages and alpha coordinate suffice for these exact coefficient and eligibility computations. This is not a constant-size state uniform in p or tree order."
+    }
+  ],
+  "limitations": [
+    "No inequality S(T,p)<=0 follows from these identities.",
+    "No context-closed compressed induction state or compensation bound was established.",
+    "No finite census, source replay, or outside theorem was used."
+  ]
+}

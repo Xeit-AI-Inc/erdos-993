@@ -1,0 +1,29 @@
+{
+  "worker_id": "C2-CT-U1",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "E993-ORDINARY-LEAF-ORDER-BAND",
+      "statement": "For every finite ordinary tree T, every original leaf v with original support s, and every integer p>=3 with |V(T)|<=2p+1, Delta_(p-1)(T-{v,s})-Delta_(p-1)(T-N_T[s])<=0, using integer zero-extended independence counts and original-tree neighborhoods.",
+      "scope": "Exactly the registered ordinary-leaf order band: finite simple connected acyclic T; original degree-one leaf and support; p>=3; |V(T)|<=2p+1. No favorability, alpha, first-descent, lower-region, or residual premise. Informal proof retained after independent audit; no formal award and no extension to p=2.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-CT-U1/REPORT.md"
+      ],
+      "reason": "retained: the original deletion identity makes the leaf expression q_(k+1)-q_k for k=p-1. Tree component roots give a nonisolated mark if H has an edge; the ordered-first-mark partition leaves residual graphs of order at most 2k-1, where the independent-set shadow incidence bound gives i_k<=i_(k-1). The edgeless case reduces to adjacent binomial layers and the empty case is zero. The rank boundary, original neighborhoods, first-mark multiplicity, and exact p>=3, |T|<=2p+1 scope all check. The cited standing positive controls have orders beyond this band. Informal status only."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CT-U1/REPORT.md",
+  "limitations": [
+    "Informal proof review only; no Lean build, kernel check, or formal award.",
+    "The registered p>=3 and |T|<=2p+1 guards are retained; no broader scope is asserted.",
+    "No source replay was needed because the source claim is a proof rather than a computational result.",
+    "The first shell and the primary full selected-sum assertion remain undecided by this critique."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-ORDINARY-LEAF-ORDER-BAND"
+  ]
+}

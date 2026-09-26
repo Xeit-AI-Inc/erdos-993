@@ -1,0 +1,7 @@
+# Controller integrity issue: an adjudicator's correction changes the defined deletion set
+
+C2-AU section3 adopted C2-CT-U3's purported removal of the second-isolate boundary. Both define J_i=H-(N_H[w_i] union earlier marks), but then argue that N_H[w_1] is already removed from J_i for i>=2. It is not: only earlier MARKS are removed. If w_2 is isolated, J_2=H-{w_1,w_2}, exactly as the original route wrote. No neighbor of w_1 is removed solely because it was a neighbor of an earlier mark.
+
+The explicit eligible shell fixture has n18,p8,x6,alpha12; original leaf6, support0; H has16 vertices and marks ordered(1,7), with1 nonisolated and7 isolated. J_2 has14=2k vertices, exceeding the claimed13=2k-1. Vertices2,8,9 are neighbors of earlier mark1 and remain in J_2. The ordinary tree polynomial was checked by both forest DP and literal subsets. This refutes the new boundary CLASSIFICATION, not the aggregate. It does not assert that J_2 has positive difference, or that the stronger first-root-only inequality itself is false.
+
+The original later-isolate allowance must not be removed by this argument. Re-audit the correct order classification and compensation statement independently, preserving all original outputs and source disagreements. No new first-shell proof may be imported from controller preparation. Correct only what follows from the case-listed source mathematics and this directly checkable set-identity issue.

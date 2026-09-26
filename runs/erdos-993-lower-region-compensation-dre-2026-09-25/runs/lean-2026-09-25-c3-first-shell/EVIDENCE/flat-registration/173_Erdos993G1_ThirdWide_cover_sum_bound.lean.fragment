@@ -1,0 +1,29 @@
+lemma cover_sum_bound (F : SimpleGraph X) [DecidableRel F.Adj] (C : Finset X)
+    (hcover : ∀ x y, F.Adj x y → x ∈ C ∨ y ∈ C) (k : ℕ)
+    (f : Finset X → ℤ)
+    (hmiss : ∀ S ⊆ C, ¬F.IsIndepSet S → f S ≤ 0)
+    (hterm : ∀ S ⊆ C, F.IsIndepSet S → f S ≤
+      FirstWide.binomCoeff
+        ((univ : Finset X).filter (fun x => x ∉ C ∧ ∀ y ∈ S, ¬F.Adj y x)).card
+        ((k : ℤ) - S.card + 1) -
+      FirstWide.binomCoeff
+        ((univ : Finset X).filter (fun x => x ∉ C ∧ ∀ y ∈ S, ¬F.Adj y x)).card
+        ((k : ℤ) - S.card)) :
+    ∑ S ∈ C.powerset, f S ≤ delta F (k : ℤ) := by
+  rw [cover_delta_partition F C hcover]
+  calc
+    ∑ S ∈ C.powerset, f S ≤
+        ∑ S ∈ C.powerset.filter (fun S : Finset X => F.IsIndepSet S), f S := by
+      rw [sum_filter]
+      apply sum_le_sum
+      intro S hSC
+      by_cases hS : F.IsIndepSet S
+      · simp [hS]
+      · simpa [hS] using hmiss S (mem_powerset.mp hSC) hS
+    _ ≤ _ := by
+      apply sum_le_sum
+      intro S hS
+      obtain ⟨hSC,hS⟩ := mem_filter.mp hS
+      exact hterm S (mem_powerset.mp hSC) hS
+
+-- ENTRY 172

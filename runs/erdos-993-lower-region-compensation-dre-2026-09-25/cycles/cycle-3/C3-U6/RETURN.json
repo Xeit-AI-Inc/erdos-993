@@ -1,0 +1,37 @@
+{
+  "worker_id": "C3-U6",
+  "cycle": 3,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C3-U6.star-subcase",
+      "statement": "For every eligible lower-region pair (T,p) with T=K_{1,m}, m>=4, every original leaf is selected and S(T,p)=m*(binom(m-1,p)-binom(m-1,p-1))<0.",
+      "scope": "The ordinary star family only, under x(T)+2<=p and 3p<2alpha(T)+1.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-U6/REPORT.md",
+        "cycles/cycle-3/C3-U6/EVIDENCE.json"
+      ],
+      "reason": "The zero-extended independence counts give x=floor((m-1)/2)+1; the selector is all leaves, and the residual marked counts are adjacent binomial coefficients in their decreasing range."
+    },
+    {
+      "claim_id": "C3-U6.marked-down-operator",
+      "statement": "Injectivity of the mark-preserving incidence down map on every selected residual's rank-(p) marked-face space would imply the full primary sum S(T,p)<=0; the general-tree injectivity premise remains open.",
+      "scope": "For H_v=T-{v,s_v}, W_v=N_T(s_v)\\{v}, and k=p-1, with the contract's fixed selector.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-U6/REPORT.md",
+        "cycles/cycle-3/C3-U6/EVIDENCE.json"
+      ],
+      "reason": "The dimensions of the marked-face spaces equal q_v(j), so local injectivity yields the needed rank inequality. A Boolean-lattice dimension obstruction shows that injectivity is not available at arbitrary ranks, but not at an eligible rank for the target."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-U6/REPORT.md",
+  "limitations": [
+    "No injectivity or alternative aggregate rank inequality is proved for arbitrary eligible tree residuals.",
+    "The exact dimension obstruction is outside the selector-eligible ranks and is not a counterexample to the primary aggregate.",
+    "The star family is only a proved subcase; no universal lower-region conclusion follows."
+  ],
+  "status_authority": "proposed_worker_only"
+}

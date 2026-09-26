@@ -1,0 +1,31 @@
+{
+  "worker_id": "C2-T1",
+  "cycle": 2,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C2-T1-SHELL-ORDERED-ROOT-SUBCLASS",
+      "statement": "In an eligible ordinary tree with |T|=2p+2, if every selected original leaf v has component marks in H_v=T-{v,s_v} orderable so that the first mark has H_v-degree at least 2 and the second, when present, has H_v-degree at least 1, then the complete selected sum S(T,p) is nonpositive.",
+      "scope": "First-order shell |T|=2p+2 under the primary eligibility and fixed strict favorable selector; sufficient per-selected-tag component-root degree condition as stated.",
+      "status": "proposed_verified",
+      "evidence_paths": ["cycles/cycle-2/C2-T1/REPORT.md"],
+      "reason": "The ordered first-mark partition is exact. Under the stated condition every residual graph J_i has at most 2k-1 vertices for k=p-1, and the independent-set shadow incidence gives i_k(J_i)<=i_{k-1}(J_i). Summing over all roots and all selected original leaf tags proves the claimed full-sum subclass."
+    },
+    {
+      "claim_id": "E993-LOWER-REGION-FIRST-ORDER-SHELL",
+      "statement": "The complete favorable-leaf sum is nonpositive for every eligible ordinary tree with |T|=2p+2.",
+      "scope": "Registered first-order shell: ordinary finite tree T, p with x(T)+2<=p and 3p<2alpha(T)+1, fixed F(T,p) defined by Delta_p(T-v)<0, and original supports and neighborhoods.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-2/C2-T1/REPORT.md"],
+      "reason": "The ordered-root decomposition proves a sufficient subclass and localizes all terms not controlled by the ordinary shadow bound to first-root degree-one cases and second-root isolate cases at order 2k. The report derives their exact excess but establishes no selector-conditioned cross-root or cross-support compensation, so the registered full shell claim is unresolved."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-T1/REPORT.md",
+  "limitations": [
+    "The selector has not been shown to force the stated root-degree subclass.",
+    "No global compensation inequality for the order-2k boundary excesses is proved.",
+    "No counterexample, exhaustive computation, external theorem application, or formal verification is supplied; the full shell claim remains open."
+  ],
+  "status_authority": "proposed_worker_only"
+}

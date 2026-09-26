@@ -1,0 +1,456 @@
+{
+  "schema_version": "formalization-fidelity-audit-input.v1",
+  "run_id": "lean-2026-09-25-c2-order-bands-repair-1",
+  "artifact_producer_id": "C2-LA1-PRODUCER",
+  "theorem_contract": {
+    "contract_id": "e993-c2-order-band-pair-v3",
+    "contract_sha256": "2ce40be51ec0024f796cbd8bcc190fc0e577b2137cadced4512ed6d65620656b",
+    "theorem_name": "E993OrderBand.markedIsolateAndOrdinaryLeafOrderBand",
+    "definitions": [
+      {
+        "name": "def-marked",
+        "canonical": "Independent sets of size k meeting W, counted once each; zero beyond vertex order."
+      },
+      {
+        "name": "def-isolates",
+        "canonical": "Every isolated vertex of G belongs to W; relative-U version is internal only."
+      },
+      {
+        "name": "def-leaf",
+        "canonical": "An original graph vertex with exactly one adjacent vertex."
+      },
+      {
+        "name": "def-support",
+        "canonical": "The unique original neighbor of a degree-one leaf."
+      },
+      {
+        "name": "def-h",
+        "canonical": "Deletion set {v,s} in the original graph."
+      },
+      {
+        "name": "def-r",
+        "canonical": "Original closed neighborhood N_T[s] as deletion set."
+      },
+      {
+        "name": "def-delta",
+        "canonical": "Integer difference of deletion independent counts i_(j+1)-i_j, with natural counts zero beyond support."
+      }
+    ],
+    "domains": [
+      {
+        "variable": "G",
+        "lean_type": "SimpleGraph V",
+        "forbidden_narrowings": []
+      },
+      {
+        "variable": "T",
+        "lean_type": "SimpleGraph V",
+        "forbidden_narrowings": []
+      },
+      {
+        "variable": "W",
+        "lean_type": "Finset V",
+        "forbidden_narrowings": []
+      },
+      {
+        "variable": "k",
+        "lean_type": "Nat",
+        "forbidden_narrowings": []
+      },
+      {
+        "variable": "p",
+        "lean_type": "Nat",
+        "forbidden_narrowings": []
+      },
+      {
+        "variable": "v",
+        "lean_type": "V",
+        "forbidden_narrowings": []
+      }
+    ],
+    "quantifiers": [
+      {
+        "variable": "G",
+        "kind": "forall",
+        "domain": "SimpleGraph V"
+      },
+      {
+        "variable": "T",
+        "kind": "forall",
+        "domain": "SimpleGraph V"
+      },
+      {
+        "variable": "W",
+        "kind": "forall",
+        "domain": "Finset V"
+      },
+      {
+        "variable": "k",
+        "kind": "forall",
+        "domain": "Nat"
+      },
+      {
+        "variable": "p",
+        "kind": "forall",
+        "domain": "Nat"
+      },
+      {
+        "variable": "v",
+        "kind": "forall",
+        "domain": "V"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "hyp-generic",
+        "canonical": "Generic conjunct: W contains all graph isolates, 2<=k and Fintype.card V<=2*k+1. No bipartite, tree, alpha, selector or first-descent hypothesis."
+      },
+      {
+        "id": "hyp-leaf",
+        "canonical": "Ordinary conjunct: T is a tree, v is an original degree-one leaf, 3<=p and Fintype.card V<=2*p+1. No favorability, alpha or first-descent hypothesis."
+      }
+    ],
+    "conclusion": {
+      "canonical": "The conjunction of markedCount G W (k+1)<=markedCount G W k under the generic hypotheses and forwardDifferenceDel T (H T v) (p-1)-forwardDifferenceDel T (R T v) (p-1)<=0 under the ordinary-leaf hypotheses.",
+      "clauses": [
+        "The conjunction of markedCount G W (k+1)<=markedCount G W k under the generic hypotheses and forwardDifferenceDel T (H T v) (p-1)-forwardDifferenceDel T (R T v) (p-1)<=0 under the ordinary-leaf hypotheses."
+      ]
+    },
+    "lean_statement": "theorem markedIsolateAndOrdinaryLeafOrderBand :\n    (\u2200 (V : Type u) [Fintype V] [DecidableEq V]\n      (G : SimpleGraph V) [DecidableRel G.Adj]\n      (W : Finset V) (k : \u2115),\n      E993OrderBand.IsolateCovered G W \u2192\n      2 \u2264 k \u2192\n      Fintype.card V \u2264 2 * k + 1 \u2192\n      E993OrderBand.markedCount G W (k + 1) \u2264\n        E993OrderBand.markedCount G W k) \u2227\n    (\u2200 (V : Type u) [Fintype V] [DecidableEq V]\n      (T : SimpleGraph V) [DecidableRel T.Adj]\n      (v : V) (p : \u2115),\n      T.IsTree \u2192\n      C4LA1.IsGraphLeaf T v \u2192\n      3 \u2264 p \u2192\n      Fintype.card V \u2264 2 * p + 1 \u2192\n      C5LA1.forwardDifferenceDel T (C5LA1.H T v) (p - 1) -\n        C5LA1.forwardDifferenceDel T (C5LA1.R T v) (p - 1) \u2264 0)",
+    "dependencies": [
+      {
+        "name": "Cli",
+        "version": "88679d088c9720c27ebdf2ba4dafe17341747f94",
+        "content_hash": "b07df8f9afd11d6c39537f6c886d1d0188a629f125f84b04f20679c442c217d2"
+      },
+      {
+        "name": "LeanSearchClient",
+        "version": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843",
+        "content_hash": "2e76840dffccb2d5c7aa8c5dda454f5e808357b32e5105ad47cb00ccf2261d66"
+      },
+      {
+        "name": "Qq",
+        "version": "38d591e778f100aec9762bb582f9c7f55f50e9dc",
+        "content_hash": "bee90132cc35fca0e737fb4a10f2ea9db0fe30898f238545218e24bfd4bc1a5a"
+      },
+      {
+        "name": "aesop",
+        "version": "a7dbf0c63b694e47f425f3dcddbc0e178bb432d3",
+        "content_hash": "655d582663231cb6485a913e8feaee9a698915f48f0be7621ddca716dc0854d8"
+      },
+      {
+        "name": "batteries",
+        "version": "023ce7d62a0531e22a5331e20b587817a80d49ff",
+        "content_hash": "e87475196d0adca922c73201f387682b28be1c651589fbdc6a5b01c32fe8ce7e"
+      },
+      {
+        "name": "importGraph",
+        "version": "7e9612bf0b9ee66db3cb5b9988a35afc706f5a12",
+        "content_hash": "b7508b309f800acc92912f3de3d5c180f15049a8a0b097c795d54a9bf4311b8c"
+      },
+      {
+        "name": "lean-toolchain",
+        "version": "leanprover/lean4:v4.32.2",
+        "content_hash": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273"
+      },
+      {
+        "name": "mathlib",
+        "version": "905b95818eb32af7874a58b427f50c1711a5e96c",
+        "content_hash": "cc2016257ad23c4dd693c873740d99bc191a6e5e971506a962b1833da4db69ef"
+      },
+      {
+        "name": "plausible",
+        "version": "e12c1910fe855cbfc38803cd4e55543906d5fa62",
+        "content_hash": "eaeb7f08924b82e082039285e106a63e44507b988612116b29df91bda6fbb9ce"
+      },
+      {
+        "name": "proofwidgets",
+        "version": "6e311e2a844da9b2cc3971187df2fe0066947b93",
+        "content_hash": "e1c4a41a41964577df80142c4b036ec0460fb3256d0e16c618b4eedf7925f11f"
+      }
+    ],
+    "permitted_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "constructivity_requirement": "classical_allowed"
+  },
+  "lean_binding": {
+    "declaration_name": "E993OrderBand.markedIsolateAndOrdinaryLeafOrderBand",
+    "declaration_source_path": "LeanProject/LeanProof/Main.lean",
+    "declaration_source_sha256": "a45f8e2e218d27d528e2513e5cb8413d38780d9e6c01f8c34b171366f0bf3bde",
+    "definitions": [
+      {
+        "name": "def-marked",
+        "canonical": "Independent sets of size k meeting W, counted once each; zero beyond vertex order."
+      },
+      {
+        "name": "def-isolates",
+        "canonical": "Every isolated vertex of G belongs to W; relative-U version is internal only."
+      },
+      {
+        "name": "def-leaf",
+        "canonical": "An original graph vertex with exactly one adjacent vertex."
+      },
+      {
+        "name": "def-support",
+        "canonical": "The unique original neighbor of a degree-one leaf."
+      },
+      {
+        "name": "def-h",
+        "canonical": "Deletion set {v,s} in the original graph."
+      },
+      {
+        "name": "def-r",
+        "canonical": "Original closed neighborhood N_T[s] as deletion set."
+      },
+      {
+        "name": "def-delta",
+        "canonical": "Integer difference of deletion independent counts i_(j+1)-i_j, with natural counts zero beyond support."
+      }
+    ],
+    "domains": [
+      {
+        "variable": "G",
+        "lean_type": "SimpleGraph V"
+      },
+      {
+        "variable": "T",
+        "lean_type": "SimpleGraph V"
+      },
+      {
+        "variable": "W",
+        "lean_type": "Finset V"
+      },
+      {
+        "variable": "k",
+        "lean_type": "Nat"
+      },
+      {
+        "variable": "p",
+        "lean_type": "Nat"
+      },
+      {
+        "variable": "v",
+        "lean_type": "V"
+      }
+    ],
+    "quantifiers": [
+      {
+        "variable": "G",
+        "kind": "forall",
+        "domain": "SimpleGraph V"
+      },
+      {
+        "variable": "T",
+        "kind": "forall",
+        "domain": "SimpleGraph V"
+      },
+      {
+        "variable": "W",
+        "kind": "forall",
+        "domain": "Finset V"
+      },
+      {
+        "variable": "k",
+        "kind": "forall",
+        "domain": "Nat"
+      },
+      {
+        "variable": "p",
+        "kind": "forall",
+        "domain": "Nat"
+      },
+      {
+        "variable": "v",
+        "kind": "forall",
+        "domain": "V"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "hyp-generic",
+        "canonical": "Generic conjunct: W contains all graph isolates, 2<=k and Fintype.card V<=2*k+1. No bipartite, tree, alpha, selector or first-descent hypothesis."
+      },
+      {
+        "id": "hyp-leaf",
+        "canonical": "Ordinary conjunct: T is a tree, v is an original degree-one leaf, 3<=p and Fintype.card V<=2*p+1. No favorability, alpha or first-descent hypothesis."
+      }
+    ],
+    "conclusion": {
+      "canonical": "The conjunction of markedCount G W (k+1)<=markedCount G W k under the generic hypotheses and forwardDifferenceDel T (H T v) (p-1)-forwardDifferenceDel T (R T v) (p-1)<=0 under the ordinary-leaf hypotheses.",
+      "clauses": [
+        "The conjunction of markedCount G W (k+1)<=markedCount G W k under the generic hypotheses and forwardDifferenceDel T (H T v) (p-1)-forwardDifferenceDel T (R T v) (p-1)<=0 under the ordinary-leaf hypotheses."
+      ]
+    },
+    "lean_statement": "theorem markedIsolateAndOrdinaryLeafOrderBand :\n    (\u2200 (V : Type u) [Fintype V] [DecidableEq V]\n      (G : SimpleGraph V) [DecidableRel G.Adj]\n      (W : Finset V) (k : \u2115),\n      E993OrderBand.IsolateCovered G W \u2192\n      2 \u2264 k \u2192\n      Fintype.card V \u2264 2 * k + 1 \u2192\n      E993OrderBand.markedCount G W (k + 1) \u2264\n        E993OrderBand.markedCount G W k) \u2227\n    (\u2200 (V : Type u) [Fintype V] [DecidableEq V]\n      (T : SimpleGraph V) [DecidableRel T.Adj]\n      (v : V) (p : \u2115),\n      T.IsTree \u2192\n      C4LA1.IsGraphLeaf T v \u2192\n      3 \u2264 p \u2192\n      Fintype.card V \u2264 2 * p + 1 \u2192\n      C5LA1.forwardDifferenceDel T (C5LA1.H T v) (p - 1) -\n        C5LA1.forwardDifferenceDel T (C5LA1.R T v) (p - 1) \u2264 0)",
+    "dependencies": [
+      {
+        "name": "Cli",
+        "version": "88679d088c9720c27ebdf2ba4dafe17341747f94",
+        "content_hash": "b07df8f9afd11d6c39537f6c886d1d0188a629f125f84b04f20679c442c217d2"
+      },
+      {
+        "name": "LeanSearchClient",
+        "version": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843",
+        "content_hash": "2e76840dffccb2d5c7aa8c5dda454f5e808357b32e5105ad47cb00ccf2261d66"
+      },
+      {
+        "name": "Qq",
+        "version": "38d591e778f100aec9762bb582f9c7f55f50e9dc",
+        "content_hash": "bee90132cc35fca0e737fb4a10f2ea9db0fe30898f238545218e24bfd4bc1a5a"
+      },
+      {
+        "name": "aesop",
+        "version": "a7dbf0c63b694e47f425f3dcddbc0e178bb432d3",
+        "content_hash": "655d582663231cb6485a913e8feaee9a698915f48f0be7621ddca716dc0854d8"
+      },
+      {
+        "name": "batteries",
+        "version": "023ce7d62a0531e22a5331e20b587817a80d49ff",
+        "content_hash": "e87475196d0adca922c73201f387682b28be1c651589fbdc6a5b01c32fe8ce7e"
+      },
+      {
+        "name": "importGraph",
+        "version": "7e9612bf0b9ee66db3cb5b9988a35afc706f5a12",
+        "content_hash": "b7508b309f800acc92912f3de3d5c180f15049a8a0b097c795d54a9bf4311b8c"
+      },
+      {
+        "name": "lean-toolchain",
+        "version": "leanprover/lean4:v4.32.2",
+        "content_hash": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273"
+      },
+      {
+        "name": "mathlib",
+        "version": "905b95818eb32af7874a58b427f50c1711a5e96c",
+        "content_hash": "cc2016257ad23c4dd693c873740d99bc191a6e5e971506a962b1833da4db69ef"
+      },
+      {
+        "name": "plausible",
+        "version": "e12c1910fe855cbfc38803cd4e55543906d5fa62",
+        "content_hash": "eaeb7f08924b82e082039285e106a63e44507b988612116b29df91bda6fbb9ce"
+      },
+      {
+        "name": "proofwidgets",
+        "version": "6e311e2a844da9b2cc3971187df2fe0066947b93",
+        "content_hash": "e1c4a41a41964577df80142c4b036ec0460fb3256d0e16c618b4eedf7925f11f"
+      }
+    ],
+    "declared_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "kernel_evidence": {
+    "receipt_sha256": "2323b5f2c76c322d0f61c1b7c8dd4f9dbfe7d26bbe44d6862bfe44e0f46fae9f",
+    "verdict": "verified",
+    "reported_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "dependencies": [
+      {
+        "name": "Cli",
+        "version": "88679d088c9720c27ebdf2ba4dafe17341747f94",
+        "content_hash": "b07df8f9afd11d6c39537f6c886d1d0188a629f125f84b04f20679c442c217d2"
+      },
+      {
+        "name": "LeanSearchClient",
+        "version": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843",
+        "content_hash": "2e76840dffccb2d5c7aa8c5dda454f5e808357b32e5105ad47cb00ccf2261d66"
+      },
+      {
+        "name": "Qq",
+        "version": "38d591e778f100aec9762bb582f9c7f55f50e9dc",
+        "content_hash": "bee90132cc35fca0e737fb4a10f2ea9db0fe30898f238545218e24bfd4bc1a5a"
+      },
+      {
+        "name": "aesop",
+        "version": "a7dbf0c63b694e47f425f3dcddbc0e178bb432d3",
+        "content_hash": "655d582663231cb6485a913e8feaee9a698915f48f0be7621ddca716dc0854d8"
+      },
+      {
+        "name": "batteries",
+        "version": "023ce7d62a0531e22a5331e20b587817a80d49ff",
+        "content_hash": "e87475196d0adca922c73201f387682b28be1c651589fbdc6a5b01c32fe8ce7e"
+      },
+      {
+        "name": "importGraph",
+        "version": "7e9612bf0b9ee66db3cb5b9988a35afc706f5a12",
+        "content_hash": "b7508b309f800acc92912f3de3d5c180f15049a8a0b097c795d54a9bf4311b8c"
+      },
+      {
+        "name": "lean-toolchain",
+        "version": "leanprover/lean4:v4.32.2",
+        "content_hash": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273"
+      },
+      {
+        "name": "mathlib",
+        "version": "905b95818eb32af7874a58b427f50c1711a5e96c",
+        "content_hash": "cc2016257ad23c4dd693c873740d99bc191a6e5e971506a962b1833da4db69ef"
+      },
+      {
+        "name": "plausible",
+        "version": "e12c1910fe855cbfc38803cd4e55543906d5fa62",
+        "content_hash": "eaeb7f08924b82e082039285e106a63e44507b988612116b29df91bda6fbb9ce"
+      },
+      {
+        "name": "proofwidgets",
+        "version": "6e311e2a844da9b2cc3971187df2fe0066947b93",
+        "content_hash": "e1c4a41a41964577df80142c4b036ec0460fb3256d0e16c618b4eedf7925f11f"
+      }
+    ]
+  },
+  "audit_policy": {
+    "require_independent_review": true
+  },
+  "independent_review": {
+    "reviewer_id": "C2-LA1-FIDELITY",
+    "reviewer_kind": "independent-mathematical-formalization-fidelity-reviewer",
+    "attestation_id": "c2-la1-order-band-fidelity-v3-r2",
+    "completed_at": "2026-09-25T09:47:29Z",
+    "contract_projection_sha256": "532b436e602a23cddd070ad1e78d963a10585510df244b6efd6386d07ecc212f",
+    "binding_projection_sha256": "d18f0a71642336ef1cc4e23b989a52da025b621d96094cdb4190364430028a2b",
+    "verdict": "match",
+    "findings": [
+      {
+        "category": "source_integrity",
+        "severity": "note",
+        "message": "All 184 brief-listed files matched their SHA-256 pins. The actual Main.lean header, its namespace, all 43 registered entry bodies, and eight inherited definitions were compared with the pinned fragments."
+      },
+      {
+        "category": "contract_binding",
+        "severity": "note",
+        "message": "The v3 contract, fidelity input, theorem-contract receipt, and actual E993OrderBand.markedIsolateAndOrdinaryLeafOrderBand header agree. The v2-to-v3 rebinding changes header spelling while preserving the post-colon theorem type and the informal claim."
+      },
+      {
+        "category": "generic_semantics",
+        "severity": "note",
+        "message": "IsolateCovered marks every original graph isolate; markedCount counts each independent set meeting W once. The relative incidence proof and bad/good correction yield q_(k+1) <= q_k for every finite graph under exactly k >= 2 and |V| <= 2k+1."
+      },
+      {
+        "category": "leaf_semantics",
+        "severity": "note",
+        "message": "IsGraphLeaf and support use original adjacency; H deletes the leaf and support, R deletes the original closed neighborhood of the support. Tree connectivity covers isolates of T-H, and the exact all-rank count split turns the marked inequality at k=p-1 into the stated integer forward-difference inequality."
+      },
+      {
+        "category": "kernel_contract_pins",
+        "severity": "note",
+        "message": "The source and contract hashes, verified kernel receipt hash, reported allowed axioms, toolchain and log hashes, 10 dependency rows, and nine manifest revisions agree with the listed pinned evidence."
+      },
+      {
+        "category": "fingerprint_canonicalization",
+        "severity": "note",
+        "message": "Both projection hashes were freshly recomputed. The earlier raw-section discrepancy is canonicalization: the audit script hashes sorted compact UTF-8 JSON with a terminal newline, and the binding projection wraps lean_binding together with kernel_evidence."
+      },
+      {
+        "category": "review_scope",
+        "severity": "warning",
+        "message": "This is a proposal for the exact two-conjunct theorem and pinned evidence. Lean and the authoritative fidelity audit were not rerun; external shared-package files were outside the listed sources, and the contract still marks broader formulation status open."
+      }
+    ]
+  }
+}

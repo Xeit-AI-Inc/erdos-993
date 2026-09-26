@@ -1,0 +1,13 @@
+namespace Erdos993G1.FirstWide
+
+lemma delta_pos_of_one_edge_counts {Y : Type u} [Finite Y]
+    (G : SimpleGraph Y) (r : ℕ) (hr : 1 ≤ r) (hn : Nat.card Y = 2 * r + 2)
+    (hc : ∀ j : ℕ, indepCount G j = binomCoeff (Nat.card Y - 2) (j : ℤ) +
+      2 * binomCoeff (Nat.card Y - 2) ((j : ℤ) - 1))
+    {k : ℕ} (hk : k ≤ r) : 0 < delta G (k : ℤ) := by
+  have hn' : Nat.card Y - 2 = 2 * r := by omega
+  rw [delta_nat, hc, hc, hn']
+  simpa only [Nat.cast_add, Nat.cast_one, add_sub_cancel_right] using
+    one_edge_expression_pos hr hk
+
+end Erdos993G1.FirstWide

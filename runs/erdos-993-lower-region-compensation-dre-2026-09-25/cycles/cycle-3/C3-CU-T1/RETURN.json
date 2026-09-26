@@ -1,0 +1,29 @@
+{
+  "worker_id": "C3-CU-T1",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C3-T1.COVER-BUDGET-AND-FIRST-MARK-SUBCLASS",
+      "statement": "The first-mark residual-size condition proves the primary sum on the stated structural subclass; the accompanying cover-number coefficient lower bound is false as written and must be corrected before use.",
+      "scope": "For a fixed tree and p with |V(T)|=2p+2+d, d>=1, the first-mark condition in REPORT.md on every selected original leaf implies S(T,p)<=0. No conclusion is established for instances outside this subclass. The cover-bound formula in the source claim is rejected as stated.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CU-T1/REPORT.md"
+      ],
+      "reason": "retained_narrowed: the first-mark partition and incidence bound are valid under the explicit residual-size condition, but the cover-bound term for a=r+1 is positive and was multiplied by an upper bound on its count. For K2 with C=V and r=1, the proposed bound is -1 while Delta_1(K2)=-2, directly contradicting the claimed lower bound."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CU-T1/REPORT.md",
+  "limitations": [
+    "The cover-number coefficient lower bound in the source report fails for K2 with its full vertex cover and is not retained.",
+    "No implication from the primary eligibility, strict alpha guard, or favorable selector to the first-mark deletion-size condition is proved.",
+    "The retained sufficient subclass does not resolve arbitrary eligible trees or residual orders 2k and above.",
+    "No literature result, computation, census, or primary-claim counterexample is used."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C3-T1.COVER-BUDGET-AND-FIRST-MARK-SUBCLASS"
+  ]
+}

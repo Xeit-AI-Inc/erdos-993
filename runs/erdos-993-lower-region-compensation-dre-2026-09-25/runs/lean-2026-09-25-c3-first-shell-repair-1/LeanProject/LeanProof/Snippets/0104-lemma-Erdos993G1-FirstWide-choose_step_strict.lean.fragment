@@ -1,0 +1,12 @@
+namespace Erdos993G1.FirstWide
+
+lemma choose_step_strict {n k : ℕ} (h : 2 * k + 1 < n) :
+    n.choose k < n.choose (k + 1) := by
+  have hp : 0 < n.choose k := Nat.choose_pos (by omega)
+  have he := Nat.choose_succ_right_eq n k
+  have hd : k + 1 < n - k := by omega
+  have hm := Nat.mul_lt_mul_of_pos_left hd hp
+  rw [← he] at hm
+  exact Nat.lt_of_mul_lt_mul_right hm
+
+end Erdos993G1.FirstWide

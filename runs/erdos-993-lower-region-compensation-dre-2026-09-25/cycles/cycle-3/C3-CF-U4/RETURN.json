@@ -1,0 +1,45 @@
+{
+  "worker_id": "C3-CF-U4",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C3-U4.COLORED-SHADOW-SCOPE",
+      "statement": "retained: the cited colored one-step subset-shadow theorem does not by itself establish the fixed-selector weighted deletion-plus-two-for-one cut inequalities.",
+      "scope": "Only the direct application of the cited theorem to the route's weighted switch network; no conclusion about refinements, the primary aggregate, or other proofs.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-3/C3-CF-U4/EVIDENCE.json"],
+      "reason": "The claim is explicitly limited to non-implication by itself. A subset-shadow output is contained in its source set, while a legal switch inserts an absent vertex; the target network is also selector-weighted. No direct bridge for these differences is supplied."
+    },
+    {
+      "claim_id": "C3-U4.CUT-DUAL",
+      "statement": "retained: for finite bipartite transport with uncapacitated relation arcs, full supply saturation is equivalent to every upper subset X satisfying u(X)<=c(N(X)); g(X)=c(N(X))-u(X) is submodular and its minimizers form a union/intersection-closed family.",
+      "scope": "General finite weighted transport instances as stated by the route. This criterion does not establish that all cuts pass in a tree instance or that the primary aggregate is nonpositive.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-3/C3-CF-U4/EVIDENCE.json"],
+      "reason": "Max-flow/min-cut gives the exact capacitated Hall criterion. Weighted neighborhood coverage is submodular and u is modular; finite submodularity then gives union/intersection closure of minimizers. The route correctly does not infer cut feasibility from the scalar total-weight inequality."
+    },
+    {
+      "claim_id": "C3-U4.ORBIT-COMPRESSION",
+      "statement": "retained: for a fixed tree transport instance invariant under a finite automorphism group preserving the fixed selector, weights, and legal moves, quotienting by the induced vertex orbits preserves saturating-flow feasibility exactly.",
+      "scope": "A fixed finite tree and rank with its original selector, or more generally a finite group-invariant bipartite relation with invariant supplies and capacities; no uniform tree bound follows.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-3/C3-CF-U4/EVIDENCE.json"],
+      "reason": "Each nonempty relation between two transitive orbits is biregular. Uniformly distributing quotient flow over its edges realizes equal per-vertex loads, and aggregation proves the converse. Tree automorphisms preserve original leaves, supports, selector signs, weights, and legal moves."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CF-U4/REPORT.md",
+  "limitations": [
+    "No eligible-tree transport cut was replayed or classified; the review verifies general reductions only.",
+    "No complete eligible full-sum proof or counterexample is established, so the primary target remains unresolved by this review.",
+    "The cited primary paper was not independently retrieved; only the narrow direct-application mismatch is assessed.",
+    "The quotient proposition is exact for each invariant instance but may provide little compression and does not prove uniform cut inequalities."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C3-U4.COLORED-SHADOW-SCOPE",
+    "C3-U4.CUT-DUAL",
+    "C3-U4.ORBIT-COMPRESSION"
+  ]
+}

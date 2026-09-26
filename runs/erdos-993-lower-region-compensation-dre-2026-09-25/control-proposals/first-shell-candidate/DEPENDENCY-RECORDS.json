@@ -1,0 +1,707 @@
+[
+  {
+    "admission_note": "Prospective universal claims remain OPEN. REFUTED entries are exact pre-dispatch finite fences at their stated grade; no unrestricted target or formal award.",
+    "alias_patterns": [],
+    "aliases": [],
+    "certificate": "control/C2-REGISTRATION-v1/RECORDS.json#C2-P01",
+    "claim_key": "E993-GRAPH-FIRST-WIDE-SHARP-CLASSIFICATION",
+    "evidence_grade": "formally_verified",
+    "formal_award": true,
+    "novelty_claimed": false,
+    "scope": "All finite simple graphs; exact first-wide cardinality, not all larger cardinalities.",
+    "source_occurrence_links": [
+      {
+        "identity_review": {
+          "claim_key": "E993-GRAPH-FIRST-WIDE-SHARP-CLASSIFICATION",
+          "identity_reason": "The registered iff is only the main clause. The source also proves strict pre-r positivity for zero/one-edge exceptions, which remains a separately labeled proof auxiliary, not an automatically enlarged formal award.",
+          "install_alias": false,
+          "occurrence_id": "C2S-AT-021",
+          "relation": "subclaim_of",
+          "relation_direction": "target_is_an_explicit_component_or_domain_restriction_of_source",
+          "retained_components": [
+            {
+              "evidence_grade": "adjudicated_informal_auxiliary_no_formal_award",
+              "id": "C2S-AT-021::exceptional_pre_r",
+              "note": "Preserved source strictness; not included automatically in the registered iff's exact formal award.",
+              "statement": "For every finite simple graph G of order2r+2 with natural r>=1 and at most one edge, Delta_k(G)>0 for every natural0<=k<=r.",
+              "status": "VERIFIED"
+            }
+          ],
+          "reviewed_by": "root_controller",
+          "secondary_relations": [],
+          "source_assertion_evidence_grade": "proved_informal_adjudicated_no_formal_award",
+          "source_assertion_status": "VERIFIED",
+          "source_component": null
+        },
+        "relation": "subclaim_of",
+        "source_row": {
+          "canonical_claim_key_as_supplied": "E993-GRAPH-FIRST-WIDE-SHARP-CLASSIFICATION",
+          "claim_id": "C2S-AT-021",
+          "deduplication": "No source record deleted or silently aliased; occurrence id is local bookkeeping, not a new canonical identity.",
+          "dependencies": [
+            "integer deletion-incidence lemma for two disjoint edges",
+            "elementary classification of pairwise-intersecting edge families as stars or a triangle",
+            "independent-set partitions for stars, triangles, empty graphs and one-edge graphs",
+            "elementary binomial symmetry and adjacent comparisons"
+          ],
+          "effective_adjudication_reason": "The actual endpoint-set incidence counts, pairwise-intersecting edge classification and explicit binomial cases prove both directions and all exceptional pre-r signs.",
+          "evidence_grade": "adjudicated_informal_mathematical_proof",
+          "evidence_paths": [
+            "scratchpad/C2-SYNTHESIS/SYNTHESIS.md",
+            "scratchpad/C2-SYNTHESIS/SOURCE-CLAIMS.json",
+            "scratchpad/C2-SYNTHESIS/sources/cycles/cycle-2/stage5/C2-AT/RETURN.json"
+          ],
+          "exact_adjudication_lineage": {
+            "adjudicator": "C2-AT",
+            "canonical_key_as_supplied": "E993-GRAPH-FIRST-WIDE-SHARP-CLASSIFICATION",
+            "effective_reason_addendum": null,
+            "json_pointer": "/claims/20",
+            "origin_claim_ids_verbatim": [
+              "E993-GRAPH-FIRST-WIDE-SHARP-CLASSIFICATION"
+            ],
+            "source_claim_id": "E993-GRAPH-FIRST-WIDE-SHARP-CLASSIFICATION",
+            "source_occurrences_verbatim": [
+              {
+                "claim_id": "E993-GRAPH-FIRST-WIDE-SHARP-CLASSIFICATION",
+                "kind": "origin",
+                "source": "cycles/cycle-2/stage3/C2-T1/RETURN.json",
+                "source_scope": "All finite ordinary simple graphs at exactly n=2r+2; all r>=1; coefficient zero extension used.",
+                "source_statement": "For every finite simple graph G and integer r>=1 with |V(G)|=2r+2, Delta_r(G)>0 if and only if G has at most one edge; in the zero-edge and one-edge cases Delta_k(G)>0 for every 0<=k<=r.",
+                "source_status": "proved_informal"
+              },
+              {
+                "claim_id": "E993-GRAPH-FIRST-WIDE-SHARP-CLASSIFICATION",
+                "kind": "critic",
+                "source": "cycles/cycle-2/stage4/C2-CF-T1/RETURN.json",
+                "source_scope": "All finite ordinary simple graphs at exactly n=2r+2; all r>=1; coefficient zero extension used.",
+                "source_statement": "For every finite simple graph G and integer r>=1 with |V(G)|=2r+2, Delta_r(G)>0 if and only if G has at most one edge; in the zero-edge and one-edge cases Delta_k(G)>0 for every 0<=k<=r.",
+                "source_status": "proved_informal"
+              },
+              {
+                "claim_id": "E993-GRAPH-FIRST-WIDE-SHARP-CLASSIFICATION",
+                "kind": "critic",
+                "source": "cycles/cycle-2/stage4/C2-CU-T1/RETURN.json",
+                "source_scope": "All finite ordinary simple graphs at exactly n=2r+2; all r>=1; coefficient zero extension used.",
+                "source_statement": "For every finite simple graph G and integer r>=1 with |V(G)|=2r+2, Delta_r(G)>0 if and only if G has at most one edge; in the zero-edge and one-edge cases Delta_k(G)>0 for every 0<=k<=r.",
+                "source_status": "proved_informal"
+              }
+            ],
+            "source_path": "cycles/cycle-2/stage5/C2-AT/RETURN.json",
+            "source_record_pointer": "/adjudication_claim_occurrences/20/original_record",
+            "source_record_snapshot": "scratchpad/C2-SYNTHESIS/SOURCE-CLAIMS.json",
+            "source_sha256": "bee06818cd3a1cd1ad8a91de22ca6f84ee15f92caa7a8f336a94fa1b1a811689"
+          },
+          "formal_award": false,
+          "novelty_claimed": false,
+          "reconciliation": "Primary iff shared across AT/AU. AT strict positive-history auxiliary strengthens AU's weak history. Graph crossing theorem and ordinary tuple corollary retain separate scopes; no extrapolation from a portfolio limitation to total C2.",
+          "reconciliation_group": "first-wide",
+          "scope": "All finite ordinary simple graphs at exactly n=2r+2; all r>=1; coefficient zero extension used.",
+          "source_claim_id": "E993-GRAPH-FIRST-WIDE-SHARP-CLASSIFICATION",
+          "source_disposition": "retained",
+          "statement": "For every finite simple graph G and integer r>=1 with |V(G)|=2r+2, Delta_r(G)>0 if and only if G has at most one edge; in the zero-edge and one-edge cases Delta_k(G)>0 for every 0<=k<=r.",
+          "status": "proved_informal",
+          "target_relevance": "Gives the exact sharp sign classification on the smallest wide residual size. It preserves BF-2 as the edgeless positive case and uses actual edge structure."
+        },
+        "synthesis_occurrence_id": "C2S-AT-021"
+      },
+      {
+        "identity_review": {
+          "claim_key": "E993-GRAPH-FIRST-WIDE-SHARP-CLASSIFICATION",
+          "identity_reason": "The registered iff is one component of a compound source statement; AU states only weak exceptional pre-r growth, while AT independently retains strict growth. Do not manufacture two graph classifications or broaden an eventual formal award.",
+          "install_alias": false,
+          "occurrence_id": "C2S-AU-001",
+          "relation": "subclaim_of",
+          "relation_direction": "target_is_an_explicit_component_or_domain_restriction_of_source",
+          "retained_components": [
+            {
+              "evidence_grade": "adjudicated_informal_auxiliary_no_formal_award",
+              "id": "C2S-AU-001::exceptional_pre_r",
+              "note": "Preserved source strictness; not included automatically in the registered iff's exact formal award.",
+              "statement": "For every finite simple graph G of order2r+2 with natural r>=1 and at most one edge, Delta_k(G)>=0 for every natural0<=k<=r.",
+              "status": "VERIFIED"
+            }
+          ],
+          "reviewed_by": "root_controller",
+          "secondary_relations": [],
+          "source_assertion_evidence_grade": "proved_informal_adjudicated_no_formal_award",
+          "source_assertion_status": "VERIFIED",
+          "source_component": null
+        },
+        "relation": "subclaim_of",
+        "source_row": {
+          "canonical_claim_key_as_supplied": "E993-GRAPH-FIRST-WIDE-SHARP-CLASSIFICATION",
+          "claim_id": "C2S-AU-001",
+          "deduplication": "No source record deleted or silently aliased; occurrence id is local bookkeeping, not a new canonical identity.",
+          "dependencies": [
+            "integer deletion incidence for two disjoint edges",
+            "pairwise-intersecting-edge classification into star or triangle plus isolates",
+            "zero/one-edge and star/triangle binomial formulas"
+          ],
+          "effective_adjudication_reason": "The fixed-graph deletion-incidence proof is valid, including r=1 empty strata; intersecting-edge classification and zero-extended binomial calculations complete all graph cases. Independent AU enumeration of n=4,6 and all sealed attacks agree. No edge-addition monotonicity is used.",
+          "evidence_grade": "independently_audited_informal_proof_no_formal_award",
+          "evidence_paths": [
+            "scratchpad/C2-SYNTHESIS/SYNTHESIS.md",
+            "scratchpad/C2-SYNTHESIS/SOURCE-CLAIMS.json",
+            "scratchpad/C2-SYNTHESIS/sources/cycles/cycle-2/stage5/C2-AU/RETURN.json"
+          ],
+          "exact_adjudication_lineage": {
+            "adjudicator": "C2-AU",
+            "canonical_key_as_supplied": "E993-GRAPH-FIRST-WIDE-SHARP-CLASSIFICATION",
+            "effective_reason_addendum": null,
+            "json_pointer": "/claims/0",
+            "origin_claim_ids_verbatim": [
+              "NEW-CLAIM:C2-U1-SHARP-FIRST-WIDE-BAND"
+            ],
+            "source_claim_id": "NEW-CLAIM:C2-U1-SHARP-FIRST-WIDE-BAND",
+            "source_occurrences_verbatim": [
+              {
+                "claim_id": "NEW-CLAIM:C2-U1-SHARP-FIRST-WIDE-BAND",
+                "path": "cycles/cycle-2/stage3/C2-U1/RETURN.json",
+                "reported_disposition": null,
+                "reported_status": "proved_informal",
+                "worker_id": "C2-U1"
+              },
+              {
+                "claim_id": "NEW-CLAIM:C2-U1-SHARP-FIRST-WIDE-BAND",
+                "path": "cycles/cycle-2/stage4/C2-CT-U1/RETURN.json",
+                "reported_disposition": "retained",
+                "reported_status": "proved_informal",
+                "worker_id": "C2-CT-U1"
+              },
+              {
+                "claim_id": "NEW-CLAIM:C2-U1-SHARP-FIRST-WIDE-BAND",
+                "path": "cycles/cycle-2/stage4/C2-CF-U1/RETURN.json",
+                "reported_disposition": "retained",
+                "reported_status": "proved_informal",
+                "worker_id": "C2-CF-U1"
+              }
+            ],
+            "source_path": "cycles/cycle-2/stage5/C2-AU/RETURN.json",
+            "source_record_pointer": "/adjudication_claim_occurrences/65/original_record",
+            "source_record_snapshot": "scratchpad/C2-SYNTHESIS/SOURCE-CLAIMS.json",
+            "source_sha256": "788138a1b193530bb9d11aa3fe628fd6f3fe5dcf0dbb3051db0404b2a9156e1d"
+          },
+          "formal_award": false,
+          "novelty_claimed": false,
+          "reconciliation": "Primary iff shared across AT/AU. AT strict positive-history auxiliary strengthens AU's weak history. Graph crossing theorem and ordinary tuple corollary retain separate scopes; no extrapolation from a portfolio limitation to total C2.",
+          "reconciliation_group": "first-wide",
+          "scope": "All finite ordinary simple graphs, including disconnected graphs and isolates; exact cardinality n=2r+2; r>=1; i0=1 and integer zero extension. No RTree transport.",
+          "source_claim_id": "NEW-CLAIM:C2-U1-SHARP-FIRST-WIDE-BAND",
+          "source_disposition": "retained",
+          "statement": "For every finite simple graph G on n=2r+2 vertices with integer r>=1, Delta_r(G)>0 if and only if G has at most one edge. If G has at most one edge, Delta_k(G)>=0 for every 0<=k<=r.",
+          "status": "proved_informal",
+          "target_relevance": "Sharp classification of the first cardinality permitted by the strict G1 wide-size guard."
+        },
+        "synthesis_occurrence_id": "C2S-AU-001"
+      },
+      {
+        "identity_review": {
+          "claim_key": "E993-GRAPH-FIRST-WIDE-SHARP-CLASSIFICATION",
+          "identity_reason": "Scope compatibility commentary, not a new theorem/identity. The first-wide proof uses extra graph and first-descent structure; no identification of historical BF-2 witness edges.",
+          "install_alias": false,
+          "occurrence_id": "C2S-AU-007",
+          "relation": "auxiliary_to",
+          "relation_direction": "scope_compatibility_only",
+          "retained_components": [],
+          "reviewed_by": "root_controller",
+          "secondary_relations": [
+            {
+              "claim_key": "E993-BF-1",
+              "identity_reason": null,
+              "install_alias": false,
+              "relation": "auxiliary_to",
+              "relation_direction": "compatible_scope_not_identity",
+              "source_component": null
+            },
+            {
+              "claim_key": "E993-BF-2",
+              "identity_reason": null,
+              "install_alias": false,
+              "relation": "auxiliary_to",
+              "relation_direction": "compatible_scope_not_identity",
+              "source_component": null
+            },
+            {
+              "claim_key": "E993-BF2-EVERY-E",
+              "identity_reason": null,
+              "install_alias": false,
+              "relation": "auxiliary_to",
+              "relation_direction": "compatible_scope_not_identity",
+              "source_component": null
+            },
+            {
+              "claim_key": "E993-INDEPENDENCE-POSITIVE-DELTA-SIZE",
+              "identity_reason": null,
+              "install_alias": false,
+              "relation": "auxiliary_to",
+              "relation_direction": "compatible_scope_not_identity",
+              "source_component": null
+            }
+          ],
+          "source_assertion_evidence_grade": "proved_informal_adjudicated_no_formal_award",
+          "source_assertion_status": "VERIFIED",
+          "source_component": null
+        },
+        "relation": "auxiliary_to",
+        "source_row": {
+          "canonical_claim_key_as_supplied": "NEW-CLAIM:C2-U1-BF-SIZE-COMPATIBILITY",
+          "claim_id": "C2S-AU-007",
+          "deduplication": "No source record deleted or silently aliased; occurrence id is local bookkeeping, not a new canonical identity.",
+          "dependencies": [
+            "E993-BF-1",
+            "E993-BF-2",
+            "E993-BF2-EVERY-E",
+            "E993-INDEPENDENCE-POSITIVE-DELTA-SIZE",
+            "NEW-CLAIM:C2-U1-SHARP-FIRST-WIDE-BAND"
+          ],
+          "effective_adjudication_reason": "The registration's logical distinction is valid: scalar shadow allowances do not encode this incidence structure and early-descent history. This is scope reconciliation only, with no reconstruction of historical BF-2 edges and no new theorem award.",
+          "evidence_grade": "logical_scope_reconciliation_only",
+          "evidence_paths": [
+            "scratchpad/C2-SYNTHESIS/SYNTHESIS.md",
+            "scratchpad/C2-SYNTHESIS/SOURCE-CLAIMS.json",
+            "scratchpad/C2-SYNTHESIS/sources/cycles/cycle-2/stage5/C2-AU/RETURN.json"
+          ],
+          "exact_adjudication_lineage": {
+            "adjudicator": "C2-AU",
+            "canonical_key_as_supplied": "NEW-CLAIM:C2-U1-BF-SIZE-COMPATIBILITY",
+            "effective_reason_addendum": null,
+            "json_pointer": "/claims/6",
+            "origin_claim_ids_verbatim": [
+              "NEW-CLAIM:C2-U1-BF-SIZE-COMPATIBILITY"
+            ],
+            "source_claim_id": "NEW-CLAIM:C2-U1-BF-SIZE-COMPATIBILITY",
+            "source_occurrences_verbatim": [
+              {
+                "claim_id": "NEW-CLAIM:C2-U1-BF-SIZE-COMPATIBILITY",
+                "path": "cycles/cycle-2/stage3/C2-U1/RETURN.json",
+                "reported_disposition": null,
+                "reported_status": "proved_informal",
+                "worker_id": "C2-U1"
+              },
+              {
+                "claim_id": "NEW-CLAIM:C2-U1-BF-SIZE-COMPATIBILITY",
+                "path": "cycles/cycle-2/stage4/C2-CT-U1/RETURN.json",
+                "reported_disposition": "retained",
+                "reported_status": "proved_informal",
+                "worker_id": "C2-CT-U1"
+              },
+              {
+                "claim_id": "NEW-CLAIM:C2-U1-BF-SIZE-COMPATIBILITY",
+                "path": "cycles/cycle-2/stage4/C2-CF-U1/RETURN.json",
+                "reported_disposition": "retained",
+                "reported_status": "proved_informal",
+                "worker_id": "C2-CF-U1"
+              }
+            ],
+            "source_path": "cycles/cycle-2/stage5/C2-AU/RETURN.json",
+            "source_record_pointer": "/adjudication_claim_occurrences/71/original_record",
+            "source_record_snapshot": "scratchpad/C2-SYNTHESIS/SOURCE-CLAIMS.json",
+            "source_sha256": "788138a1b193530bb9d11aa3fe628fd6f3fe5dcf0dbb3051db0404b2a9156e1d"
+          },
+          "formal_award": false,
+          "novelty_claimed": false,
+          "reconciliation": "Logical scope compatibility only: no reopening C1 award, BF witness reconstruction, RTree transfer, or external claim promotion.",
+          "reconciliation_group": "scope",
+          "scope": "Logical comparison of the exact registered scopes. No inspection-based identification of the historical BF-2 witness edge sets.",
+          "source_claim_id": "NEW-CLAIM:C2-U1-BF-SIZE-COMPATIBILITY",
+          "source_disposition": "retained",
+          "statement": "The sharp n=2r+2 classification is compatible with E993-BF-1, E993-BF-2, E993-BF2-EVERY-E and E993-INDEPENDENCE-POSITIVE-DELTA-SIZE: it uses graph structure and first-descent history absent from the scalar shadow vocabulary, while refining the first integer order n=2r+2 allowed by the positive-difference size theorem.",
+          "status": "proved_informal",
+          "target_relevance": "Prevents the new structural slice from being misreported as a repair of a known scalar-vocabulary obstruction."
+        },
+        "synthesis_occurrence_id": "C2S-AU-007"
+      }
+    ],
+    "statement": "For every finite simple graph G and natural r>=1 with |V(G)|=2r+2, Delta_r(G)>0 iff G has at most one edge.",
+    "status": "VERIFIED",
+    "surviving_premises": [],
+    "terminal_evidence": [
+      {
+        "path": "cycles/cycle-2/stage6/C2-SYNTHESIS/CLAIMS.json",
+        "sha256": "781fbbf9c14f59a2eaf4d30ed7717a51a8ca1d663fc722d25c19b27d34028a12"
+      },
+      {
+        "path": "cycles/cycle-2/stage6/C2-SYNTHESIS/PROOFS.md",
+        "sha256": "3fd80e3e8079682bbc76c07012999b9e4c8a8064459f605eec79abcbdafc3ecc"
+      },
+      {
+        "path": "control/C2-TERMINAL-MAPPING-v1/OCCURRENCE-MAPPINGS.json",
+        "sha256": "ca31f4f8fdceede529af5bd0ed91f83b793e32ff848ca52e9d34fab6bcfddf3d"
+      },
+      {
+        "path": "control/C2-TERMINAL-SEMANTIC-REVIEW-v1.json",
+        "sha256": "be34293e15cb6a39d3e8606c0dd20dc6aef820d7547db86c93493783de61a2a4"
+      },
+      {
+        "path": "runs/lean-2026-09-20/THEOREM-CONTRACT.yaml",
+        "sha256": "cefa43a16f47adb113e623795665555250830fd3465be6d8b7b1377b76e87327"
+      },
+      {
+        "path": "runs/lean-2026-09-20/LeanProject/LeanProof/Main.lean",
+        "sha256": "beabf73950968ea22e71fb7b02a946eb849b7cdce3a0541fa80a59f7bc485d89"
+      },
+      {
+        "path": "runs/lean-2026-09-20/RECEIPTS/formalization.json",
+        "sha256": "371232b24ddde2762b2282aa723f1a6a0884d5d6950abdec5176ca91c2bd2b20"
+      },
+      {
+        "path": "runs/lean-2026-09-20/RECEIPTS/kernel-verification.json",
+        "sha256": "8417c0a5d551d4729a61440405f40df3b9acfff3a44550af34e7b143dba48cc2"
+      },
+      {
+        "path": "runs/lean-2026-09-20/RECEIPTS/fidelity-audit.json",
+        "sha256": "39d5d4f25ef25da78a1e99cf32f344a5632e9245cb82a360b7140f5870e1fa8b"
+      },
+      {
+        "path": "runs/lean-2026-09-20/RECEIPTS/informal-audit.json",
+        "sha256": "99f7e1203a2ba1b8135f59ef0b452731473d9d324b9a9635b62c6da7c673b74b"
+      },
+      {
+        "path": "runs/lean-2026-09-20/VERIFICATION-REPORT.json",
+        "sha256": "9a84e1ba6ebda06f42ab78c90c53c4f5e644f5c9726879f7ce0ddd699cec7b16"
+      },
+      {
+        "path": "runs/lean-2026-09-20/EVIDENCE/C2-LEAN-FIDELITY/REPORT.md",
+        "sha256": "03a3e5513d87cf6cec00f1e7516661e68a58d7a3abf30d1f215e13c639ba761e"
+      },
+      {
+        "path": "runs/lean-2026-09-20/EVIDENCE/C2-LEAN-FIDELITY/ATTESTATION.json",
+        "sha256": "5e88fecfb2b559be0370f9b144ed1c660be5092d02a74a78ab68846f6167672d"
+      }
+    ],
+    "terminal_history": [
+      {
+        "cycle": 2,
+        "decision": {
+          "assertion_kind": "positive_universal",
+          "claim_key": "E993-GRAPH-FIRST-WIDE-SHARP-CLASSIFICATION",
+          "evidence_grade": "formally_verified",
+          "evidence_refs": [
+            {
+              "path": "cycles/cycle-2/stage6/C2-SYNTHESIS/CLAIMS.json",
+              "sha256": "781fbbf9c14f59a2eaf4d30ed7717a51a8ca1d663fc722d25c19b27d34028a12"
+            },
+            {
+              "path": "cycles/cycle-2/stage6/C2-SYNTHESIS/PROOFS.md",
+              "sha256": "3fd80e3e8079682bbc76c07012999b9e4c8a8064459f605eec79abcbdafc3ecc"
+            },
+            {
+              "path": "control/C2-TERMINAL-MAPPING-v1/OCCURRENCE-MAPPINGS.json",
+              "sha256": "ca31f4f8fdceede529af5bd0ed91f83b793e32ff848ca52e9d34fab6bcfddf3d"
+            },
+            {
+              "path": "control/C2-TERMINAL-SEMANTIC-REVIEW-v1.json",
+              "sha256": "be34293e15cb6a39d3e8606c0dd20dc6aef820d7547db86c93493783de61a2a4"
+            },
+            {
+              "path": "runs/lean-2026-09-20/THEOREM-CONTRACT.yaml",
+              "sha256": "cefa43a16f47adb113e623795665555250830fd3465be6d8b7b1377b76e87327"
+            },
+            {
+              "path": "runs/lean-2026-09-20/LeanProject/LeanProof/Main.lean",
+              "sha256": "beabf73950968ea22e71fb7b02a946eb849b7cdce3a0541fa80a59f7bc485d89"
+            },
+            {
+              "path": "runs/lean-2026-09-20/RECEIPTS/formalization.json",
+              "sha256": "371232b24ddde2762b2282aa723f1a6a0884d5d6950abdec5176ca91c2bd2b20"
+            },
+            {
+              "path": "runs/lean-2026-09-20/RECEIPTS/kernel-verification.json",
+              "sha256": "8417c0a5d551d4729a61440405f40df3b9acfff3a44550af34e7b143dba48cc2"
+            },
+            {
+              "path": "runs/lean-2026-09-20/RECEIPTS/fidelity-audit.json",
+              "sha256": "39d5d4f25ef25da78a1e99cf32f344a5632e9245cb82a360b7140f5870e1fa8b"
+            },
+            {
+              "path": "runs/lean-2026-09-20/RECEIPTS/informal-audit.json",
+              "sha256": "99f7e1203a2ba1b8135f59ef0b452731473d9d324b9a9635b62c6da7c673b74b"
+            },
+            {
+              "path": "runs/lean-2026-09-20/VERIFICATION-REPORT.json",
+              "sha256": "9a84e1ba6ebda06f42ab78c90c53c4f5e644f5c9726879f7ce0ddd699cec7b16"
+            },
+            {
+              "path": "runs/lean-2026-09-20/EVIDENCE/C2-LEAN-FIDELITY/REPORT.md",
+              "sha256": "03a3e5513d87cf6cec00f1e7516661e68a58d7a3abf30d1f215e13c639ba761e"
+            },
+            {
+              "path": "runs/lean-2026-09-20/EVIDENCE/C2-LEAN-FIDELITY/ATTESTATION.json",
+              "sha256": "5e88fecfb2b559be0370f9b144ed1c660be5092d02a74a78ab68846f6167672d"
+            }
+          ],
+          "expected_base_record_sha256": "4b80c30709e101305a60eb2ebef7d852c2c7085d19bfc8e3e74424bb8a5e1b0b",
+          "formal_award": true,
+          "identity_reviewed_by": "root_controller",
+          "new_key_approved": false,
+          "scope": "All finite simple graphs; exact first-wide cardinality, not all larger cardinalities.",
+          "source_occurrences": [
+            "C2S-AT-021",
+            "C2S-AU-001",
+            "C2S-AU-007"
+          ],
+          "statement": "For every finite simple graph G and natural r>=1 with |V(G)|=2r+2, Delta_r(G)>0 iff G has at most one edge.",
+          "status": "VERIFIED",
+          "surviving_premises": []
+        },
+        "lean_pin": {
+          "path": "control/C2-TERMINAL-LEAN-DECISIONS-v1.json",
+          "sha256": "ae0c30cc60e66e50877eb0c89f73316a1dcd1c23e6d424d7f9577ae015d1673b"
+        },
+        "prior_record": {
+          "admission_note": "Prospective universal claims remain OPEN. REFUTED entries are exact pre-dispatch finite fences at their stated grade; no unrestricted target or formal award.",
+          "alias_patterns": [],
+          "aliases": [],
+          "certificate": "control/C2-REGISTRATION-v1/RECORDS.json#C2-P01",
+          "claim_key": "E993-GRAPH-FIRST-WIDE-SHARP-CLASSIFICATION",
+          "evidence_grade": "prospective_unadjudicated_no_formal_award",
+          "formal_award": false,
+          "novelty_claimed": false,
+          "scope": "All finite simple graphs; exact first-wide cardinality, not all larger cardinalities.",
+          "statement": "For every finite simple graph G and natural r>=1 with |V(G)|=2r+2, Delta_r(G)>0 iff G has at most one edge.",
+          "status": "OPEN"
+        },
+        "synthesis_pin": {
+          "path": "cycles/cycle-2/stage6/C2-SYNTHESIS/CLAIMS.json",
+          "sha256": "781fbbf9c14f59a2eaf4d30ed7717a51a8ca1d663fc722d25c19b27d34028a12"
+        }
+      }
+    ]
+  },
+  {
+    "alias_patterns": [],
+    "aliases": [],
+    "certificate": null,
+    "claim_key": "E993-BINOMIAL-DIFFERENCE-CATALAN-FLOOR",
+    "evidence_grade": "independently_adjudicated_informal_proof_no_formal_award",
+    "formal_award": false,
+    "intake_note": "Positive proof and finite-witness proposals remain OPEN for the independent C3 cycle. REFUTED entries record exact stated-scope counterevidence. No unrestricted G1 or RTree conclusion. Historical proposal comments about C2 OPEN statuses are superseded only by the closed v21 registry; no reopening.",
+    "intake_proposal": {
+      "path": "control/C3-REGISTRATION-v1/PROPOSAL-HISTORICAL.json",
+      "sha256": "7515683a1a8982767062221bf0ca6fb7135bfb02c46ce5c09293d73443d7dda8"
+    },
+    "novelty_claimed": false,
+    "scope": "Arithmetic auxiliary; independent of any graph or G1 hypothesis.",
+    "source_occurrence_links": [
+      {
+        "identity_review": {
+          "claim_key": "E993-BINOMIAL-DIFFERENCE-CATALAN-FLOOR",
+          "identity_reason": "Same binomial-difference Catalan lower bound for natural m,j>=0, and exact j=-1 and j<=-2 zero-extension endpoints. Source qualification: The Catalan floor and corrected Pascal-increment description retain the initial-zero interval and all negative-rank endpoints. The arithmetic auxiliary does not stand in for the actual cover partition.",
+          "install_alias": false,
+          "occurrence_id": "C3S-085",
+          "relation": "exact_identity",
+          "reviewed_by": "root_controller"
+        },
+        "relation": "exact_identity",
+        "source_row": {
+          "claim_id": "C3S-085",
+          "dependencies": [
+            "AT-BINOM"
+          ],
+          "evidence_grade": "{\"per_occurrence_grades\":[{\"grade\":\"independently_adjudicated_informal_proof_no_formal_award\",\"json_pointer\":\"/claims/1\",\"source_claim_id\":\"E993-BINOMIAL-DIFFERENCE-CATALAN-FLOOR\",\"source_return_pin\":{\"path\":\"cycles/cycle-3/stage5/C3-AT/RETURN.json\",\"sha256\":\"e0f5b0e122c25b4f2fd30a0c6cd4b07bd0c23f8d538be5afe45f83bcfa02842a\"}}],\"synthesis_basis\":\"Exact admitted adjudicator statement and scope retained; proof/finite/inherited grades remain source-qualified. No new formal award or finite-to-universal inference.\"}",
+          "evidence_paths": [
+            "scratchpad/C3-SYNTHESIS/RECONCILIATION.md",
+            "scratchpad/C3-SYNTHESIS/PUBLIC-EVIDENCE.json"
+          ],
+          "lineage": [
+            {
+              "json_pointer": "/claims/1",
+              "source_claim_id": "E993-BINOMIAL-DIFFERENCE-CATALAN-FLOOR",
+              "source_return_pin": {
+                "path": "cycles/cycle-3/stage5/C3-AT/RETURN.json",
+                "sha256": "e0f5b0e122c25b4f2fd30a0c6cd4b07bd0c23f8d538be5afe45f83bcfa02842a"
+              }
+            }
+          ],
+          "scope": "Exact arithmetic auxiliary; all natural m and the stated integer ranks.",
+          "source_mathematical_keys": [
+            "E993-BINOMIAL-DIFFERENCE-CATALAN-FLOOR"
+          ],
+          "statement": "For every natural m and j>=0, C(m,j+1)-C(m,j)>=-Cat_j; at j=-1 the difference is 1 and at j<=-2 it is 0 under integer zero extension.",
+          "status": "proved_informal",
+          "target_relevance": "Uniform lower bound for every cover-subset summand."
+        },
+        "synthesis_occurrence_id": "C3S-085"
+      },
+      {
+        "identity_review": {
+          "claim_key": "E993-BINOMIAL-DIFFERENCE-CATALAN-FLOOR",
+          "identity_reason": "Same binomial-difference Catalan lower bound for natural m,j>=0, and exact j=-1 and j<=-2 zero-extension endpoints. Source qualification: The Catalan floor and corrected Pascal-increment description retain the initial-zero interval and all negative-rank endpoints. The arithmetic auxiliary does not stand in for the actual cover partition.",
+          "install_alias": false,
+          "occurrence_id": "C3S-185",
+          "relation": "exact_identity",
+          "reviewed_by": "root_controller"
+        },
+        "relation": "exact_identity",
+        "source_row": {
+          "claim_id": "C3S-185",
+          "dependencies": [],
+          "evidence_grade": "{\"per_occurrence_grades\":[{\"grade\":\"independently_adjudicated_informal_proof\",\"json_pointer\":\"/claims/1\",\"source_claim_id\":\"C3-AU-C3-U1-001\",\"source_return_pin\":{\"path\":\"cycles/cycle-3/stage5/C3-AU/RETURN.json\",\"sha256\":\"a6da8c182aaca8ec88b65585640d83f522b70ae7d728de16685b96df06b47bd6\"}},{\"grade\":\"independently_adjudicated_informal_proof\",\"json_pointer\":\"/claims/54\",\"source_claim_id\":\"C3-AU-C3-CT-U1-001\",\"source_return_pin\":{\"path\":\"cycles/cycle-3/stage5/C3-AU/RETURN.json\",\"sha256\":\"a6da8c182aaca8ec88b65585640d83f522b70ae7d728de16685b96df06b47bd6\"}},{\"grade\":\"independently_adjudicated_informal_proof\",\"json_pointer\":\"/claims/78\",\"source_claim_id\":\"C3-AU-C3-CF-U1-001\",\"source_return_pin\":{\"path\":\"cycles/cycle-3/stage5/C3-AU/RETURN.json\",\"sha256\":\"a6da8c182aaca8ec88b65585640d83f522b70ae7d728de16685b96df06b47bd6\"}}],\"synthesis_basis\":\"Exact admitted adjudicator statement and scope retained; proof/finite/inherited grades remain source-qualified. No new formal award or finite-to-universal inference.\"}",
+          "evidence_paths": [
+            "scratchpad/C3-SYNTHESIS/RECONCILIATION.md",
+            "scratchpad/C3-SYNTHESIS/PUBLIC-EVIDENCE.json"
+          ],
+          "lineage": [
+            {
+              "json_pointer": "/claims/1",
+              "source_claim_id": "C3-AU-C3-U1-001",
+              "source_return_pin": {
+                "path": "cycles/cycle-3/stage5/C3-AU/RETURN.json",
+                "sha256": "a6da8c182aaca8ec88b65585640d83f522b70ae7d728de16685b96df06b47bd6"
+              }
+            },
+            {
+              "json_pointer": "/claims/54",
+              "source_claim_id": "C3-AU-C3-CT-U1-001",
+              "source_return_pin": {
+                "path": "cycles/cycle-3/stage5/C3-AU/RETURN.json",
+                "sha256": "a6da8c182aaca8ec88b65585640d83f522b70ae7d728de16685b96df06b47bd6"
+              }
+            },
+            {
+              "json_pointer": "/claims/78",
+              "source_claim_id": "C3-AU-C3-CF-U1-001",
+              "source_return_pin": {
+                "path": "cycles/cycle-3/stage5/C3-AU/RETURN.json",
+                "sha256": "a6da8c182aaca8ec88b65585640d83f522b70ae7d728de16685b96df06b47bd6"
+              }
+            }
+          ],
+          "scope": "Exact integer zero extension; arithmetic auxiliary.",
+          "source_mathematical_keys": [
+            "E993-BINOMIAL-DIFFERENCE-CATALAN-FLOOR"
+          ],
+          "statement": "For natural m and j>=0, C(m,j+1)-C(m,j)>=-Cat_j; D_-1=1 and D_j=0 for j<=-2.",
+          "status": "proved_informal",
+          "target_relevance": "Controls every cover-partition summand without assuming neighborhood independence."
+        },
+        "synthesis_occurrence_id": "C3S-185"
+      }
+    ],
+    "source_pins": [
+      {
+        "path": "inputs/c3-controller-candidates-v1/THIRD-BAND-CANDIDATE.md",
+        "sha256": "4f2ef38ee847250e708928ac716e1d9cb822157e4042e7ce4bc8385481640a29"
+      },
+      {
+        "path": "cycles/cycle-2/stage5/C2-AT/RETURN.json",
+        "sha256": "bee06818cd3a1cd1ad8a91de22ca6f84ee15f92caa7a8f336a94fa1b1a811689"
+      }
+    ],
+    "statement": "For every natural m and j>=0, C(m,j+1)-C(m,j)>=-Cat_j, where Cat_j=C(2j,j)/(j+1). At integer j=-1 the difference is 1; at j<=-2 it is 0 under integer zero extension.",
+    "status": "VERIFIED",
+    "terminal_evidence": [
+      {
+        "path": "cycles/cycle-3/stage6/C3-SYNTHESIS/CLAIMS.json",
+        "sha256": "00ff9ed1decfe8b1793c92ca9dd34e727e7f8bcdd0171471a124b2319218b387"
+      },
+      {
+        "path": "cycles/cycle-3/stage6/C3-SYNTHESIS/PROOFS.md",
+        "sha256": "4dd97736cd5a7d9118011b0d242bc18c013457910d1f734a7ac0c566e9cdf17d"
+      },
+      {
+        "path": "cycles/cycle-3/stage6/C3-SYNTHESIS/RECONCILIATION.json",
+        "sha256": "5d712542b170ff03306a7523bcf5705c851af3f09a011b19ba11ea1d87c1c95f"
+      }
+    ],
+    "terminal_history": [
+      {
+        "cycle": 3,
+        "decision": {
+          "assertion_kind": "positive_universal",
+          "claim_key": "E993-BINOMIAL-DIFFERENCE-CATALAN-FLOOR",
+          "evidence_grade": "independently_adjudicated_informal_proof_no_formal_award",
+          "evidence_refs": [
+            {
+              "path": "cycles/cycle-3/stage6/C3-SYNTHESIS/CLAIMS.json",
+              "sha256": "00ff9ed1decfe8b1793c92ca9dd34e727e7f8bcdd0171471a124b2319218b387"
+            },
+            {
+              "path": "cycles/cycle-3/stage6/C3-SYNTHESIS/PROOFS.md",
+              "sha256": "4dd97736cd5a7d9118011b0d242bc18c013457910d1f734a7ac0c566e9cdf17d"
+            },
+            {
+              "path": "cycles/cycle-3/stage6/C3-SYNTHESIS/RECONCILIATION.json",
+              "sha256": "5d712542b170ff03306a7523bcf5705c851af3f09a011b19ba11ea1d87c1c95f"
+            }
+          ],
+          "expected_base_record_sha256": "513a7aacec93f172096284806d27d18caea05aadb91716dfbff3008ad29ed2e2",
+          "formal_award": false,
+          "identity_reviewed_by": "root_controller",
+          "scope": "Arithmetic auxiliary; independent of any graph or G1 hypothesis.",
+          "statement": "For every natural m and j>=0, C(m,j+1)-C(m,j)>=-Cat_j, where Cat_j=C(2j,j)/(j+1). At integer j=-1 the difference is 1; at j<=-2 it is 0 under integer zero extension.",
+          "status": "VERIFIED"
+        },
+        "lean_pin": {
+          "path": "control/C3-TERMINAL-LEAN-DECISIONS-v1.json",
+          "sha256": "a7caaa47aecae92fb083da67d2879cdfc70d3b05a662248a73445c9dd7b955b9"
+        },
+        "prior_record": {
+          "alias_patterns": [],
+          "aliases": [],
+          "certificate": null,
+          "claim_key": "E993-BINOMIAL-DIFFERENCE-CATALAN-FLOOR",
+          "evidence_grade": "controller_proof_proposal_pending_independent_C3_review",
+          "formal_award": false,
+          "intake_note": "Positive proof and finite-witness proposals remain OPEN for the independent C3 cycle. REFUTED entries record exact stated-scope counterevidence. No unrestricted G1 or RTree conclusion. Historical proposal comments about C2 OPEN statuses are superseded only by the closed v21 registry; no reopening.",
+          "intake_proposal": {
+            "path": "control/C3-REGISTRATION-v1/PROPOSAL-HISTORICAL.json",
+            "sha256": "7515683a1a8982767062221bf0ca6fb7135bfb02c46ce5c09293d73443d7dda8"
+          },
+          "novelty_claimed": false,
+          "scope": "Arithmetic auxiliary; independent of any graph or G1 hypothesis.",
+          "source_pins": [
+            {
+              "path": "inputs/c3-controller-candidates-v1/THIRD-BAND-CANDIDATE.md",
+              "sha256": "4f2ef38ee847250e708928ac716e1d9cb822157e4042e7ce4bc8385481640a29"
+            },
+            {
+              "path": "cycles/cycle-2/stage5/C2-AT/RETURN.json",
+              "sha256": "bee06818cd3a1cd1ad8a91de22ca6f84ee15f92caa7a8f336a94fa1b1a811689"
+            }
+          ],
+          "statement": "For every natural m and j>=0, C(m,j+1)-C(m,j)>=-Cat_j, where Cat_j=C(2j,j)/(j+1). At integer j=-1 the difference is 1; at j<=-2 it is 0 under integer zero extension.",
+          "status": "OPEN"
+        },
+        "synthesis_pin": {
+          "path": "cycles/cycle-3/stage6/C3-SYNTHESIS/CLAIMS.json",
+          "sha256": "00ff9ed1decfe8b1793c92ca9dd34e727e7f8bcdd0171471a124b2319218b387"
+        }
+      }
+    ]
+  },
+  {
+    "claim_key": "E993-R25-BINOMIAL-DIFFERENCE-CATALAN-FLOOR-UNIQUENESS",
+    "statement": "With E(b,j) := C(b,j+1) - C(b,j) under integer zero extension (C(b,m) = 0 for m < 0 or m > b) and Cat_j := C(2j,j)/(j+1): for every natural j and every natural b, E(b,j) >= -Cat_j, with equality IF AND ONLY IF b is in {2j-1, 2j} intersected with N. For j >= 1 the attaining set is exactly the two consecutive naturals {2j-1, 2j}; for j = 0 it is the singleton {0} (E(b,0) = b-1, Cat_0 = 1).",
+    "scope": "Arithmetic auxiliary; independent of any graph or G1 hypothesis; the UNIQUENESS refinement of E993-BINOMIAL-DIFFERENCE-CATALAN-FLOOR (whose floor half it re-derives); the equality VALUE at b = 2j overlaps E993-PAIR-STAR-CLOSURE's Catalan-slack identity for j >= 3 only and is re-derived here for every j >= 0; NOT a corollary of FLOOR + E993-R25-BINOMIAL-DIFFERENCE-CATALAN-CEILING (which leave 2j values of b unexcluded at each j >= 1 and say nothing about b = 2j-1). Proof: with h(b) = C(b,j) - C(b,j+1), Pascal gives h(b+1) - h(b) = C(b,j-1) - C(b,j), which is 0 for b <= j-2 (h identically 0 < Cat_j there — the LOW-PLATEAU step), > 0 for j-1 <= b <= 2j-2, exactly 0 at b = 2j-1 (C(2j-1,j-1) = C(2j-1,j)), < 0 for b >= 2j; h(2j) = Cat_j. ERRATUM against the r25 record (A1-E-a): the sign clause 'C(b,j-1) - C(b,j) > 0 for b <= 2j-2' printed in the r25 Cycle 6 F adjudication (Ruling 34) and by critic C-F4-T is FALSE on 0 <= b <= j-2; C-F4-U's range is the correct one. The struck '29 explicit forests' support is not evidence for this statement. Critic-attributed to r25 Cycle 6 C-F4-T and C-F4-U; adjudicator re-derived; isolated second read SR-H (addendum lane C) confirmed_with_repairs.",
+    "status": "VERIFIED",
+    "smallest_witness_order": null,
+    "certificate": "proved_informal; no horizon (exact check to j <= 200, b <= 2j+50 as a sanity sweep); second-reads/SR-H/SECOND-READ.md (b74a96d5cf9914d9...); lane C of the r25 addendum, 2026-09-22",
+    "aliases": [
+      "Lemma H uniqueness half",
+      "uniqueness of the Catalan-floor attaining set"
+    ],
+    "alias_patterns": [],
+    "run_local": true,
+    "registered_by": "erdos-993-math-dre-20260922-r25-addendum",
+    "registered": "2026-09-22 (addendum close)",
+    "provenance": "imported additively from the run-local registry of erdos-993-uniform-residual-no-recovery-addendum-dre-2026-09-22 at the addendum close (2026-09-23); terminal manifest 94b9845701b9963c3052478bd387f97d1422a03377e7332510a3baa8dac44271"
+  },
+  {
+    "claim_key": "E993-R25-GAMMA-RESIDUE-SLACK-THRESHOLD",
+    "statement": "Conventions: C(n,j) zero-extended; Cat_m := C(2m,m)/(m+1) with Cat_m := 0 for m < 0; E(n,k) = C(n,k+1) - C(n,k); Gamma_n(tau,k,n) = E(n,k) - sum_{a=1}^{tau} C(tau,a) Cat_{k-a}; with n = 2r+d-tau at the minimal admissible rank r = k+1 and slack s = d - tau, so n = 2k+2+s, the residue R(tau,s) := {k >= 1 : Gamma_n(tau,k,2k+2+s) <= 0} (NON-STRICT: Gamma_n = 0 is inconclusive and is in the residue; k >= 0 gives the same sets since Gamma_n(tau,0,2+s) = s+1 > 0; the graph order of a cell is 2r+d = n+tau). For tau = 1..7: R(1,s) empty for every s; R(2,0) = {1}; R(3,0) = {1,2}; R(4,0) = {1,2,3}; R(5,0) = {1,...,5} (orders 9, 11, 13, 15, 17), R(5,1) = {1,2} (orders 10, 12); R(6,0) = {1,...,11}, R(6,1) = {1,2,3}; R(7,0) = {1,...,69}, R(7,1) = {1,2,3,4}, R(7,2) = {2} (n = 8, order 15, Gamma_n = 0 exactly); empty at every larger slack. Equivalently R(tau,0) = {1,...,K(tau)-1} with K(1..7) = 0,2,3,4,6,12,70 (so K(1..7) are the LEAST positivity thresholds), R is nested decreasing in s, and R(tau,s) is non-empty iff s < s*(tau) with s*(1..7) = 0,1,1,1,2,2,3.",
+    "scope": "Arithmetic statement about Gamma_n; tau = 1..7 ONLY (tau >= 8 has no registered K(tau) and is excluded; K(8) exceeds 6,000 by scan); NO closed form for s* may be quoted — the candidate ceil((tau-1)/3) fits tau = 1..6 and gives 2 at tau = 7 where the true value is 3, and the 'no closed form' fence rests entirely on the single cell (7,2,2) where Gamma_n = 0 exactly (the three zero cells are (tau,s,k) = (2,0,1), (5,1,1), (7,2,2); under a strict convention s* would read 0,0,1,1,2,2,2); each value ESTABLISHED, not scanned: above K(tau) by the formally verified E993-R25-CATALAN-GAP-MONOTONE-RATIO (slack 0, E(2k+2,k) = Cat_{k+1}) transferred to slack s >= 1 by E(.,k) strictly increasing on n >= 2k+2 (a derivation from the VERIFIED E993-R25-BINOMIAL-DIFFERENCE-CATALAN-CEILING, named here, not carried silently — the composite is proved_informal, NOT formally verified), below K(tau) by a finite exact check of at most 69 integers; the residue says where the Gamma bound is INCONCLUSIVE for Delta_k > 0, never where any statement is false; the transfer to forests is only the registered cover-fiber bound Delta_k >= Gamma_n under tau(F) <= tau; not c(d), not a tier statement, no new evidence for any cell's sign. Critic-attributed to r25 Cycle 6 C-F4-U (the threshold) and C-F4-T/C-F4-U (the tau = 5 table), confirmed by the F adjudicator (Rulings 30, 30a, 30b) and by the isolated second read SR-RES (addendum lane C), confirmed_with_repairs, 49 (tau,s) cells reproduced with zero discrepancies by an instrument importing no prior code.",
+    "status": "VERIFIED",
+    "smallest_witness_order": null,
+    "certificate": "proved_informal; second-reads/SR-RES/SECOND-READ.md (6d55ab0d3ffd4ac8...); lane C of the r25 addendum, 2026-09-22",
+    "aliases": [
+      "slack threshold s*(tau)",
+      "Gamma-residue count by slack"
+    ],
+    "alias_patterns": [],
+    "run_local": true,
+    "registered_by": "erdos-993-math-dre-20260922-r25-addendum",
+    "registered": "2026-09-22 (addendum close)",
+    "provenance": "imported additively from the run-local registry of erdos-993-uniform-residual-no-recovery-addendum-dre-2026-09-22 at the addendum close (2026-09-23); terminal manifest 94b9845701b9963c3052478bd387f97d1422a03377e7332510a3baa8dac44271"
+  }
+]

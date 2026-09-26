@@ -1,0 +1,56 @@
+{
+  "worker_id": "C3-CU-F2",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C3-F2-CB-ELIGIBLE-REPLAY",
+      "statement": "For CB(8,92) at p=492 and CB(8,93) at p=498, exact tree-polynomial replay gives eligible lower-region rows with every original leaf favorable and complete aggregate S<0.",
+      "scope": "Retained for only the two specified trees and ranks; this is bounded exact computation with no universal inference.",
+      "status": "proposed_bounded_computation",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CU-F2/EVIDENCE.json",
+        "cycles/cycle-3/C3-CU-F2/REPLAY.py",
+        "cycles/cycle-3/C3-CU-F2/cb_switch_cut.py",
+        "cycles/cycle-3/C3-CU-F2/ordinary_tree_checked.py"
+      ],
+      "reason": "retained: rerun from local pinned-source copies reproduces both eligibility guards, all-leaf selector multiplicities, orbit deltas and summands, and complete negative sums. This is evidence only for the two stated rows."
+    },
+    {
+      "claim_id": "C3-F2-HUB-ARM-ARC-CLASSIFICATION",
+      "statement": "For every independent upper set containing h and v in either specified CB graph, the complete set of legal two-for-one targets consists of the arm support s and the choke c_i for exactly those branches with one occupied support; the exact aggregate arc counts are recorded.",
+      "scope": "Retained for upper independent sets containing h and v in the two specified CB graphs; it is an arc classification, not a full-flow result.",
+      "status": "proposed_bounded_exact",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CU-F2/EVIDENCE.json",
+        "cycles/cycle-3/C3-CU-F2/REPORT.md"
+      ],
+      "reason": "retained: direct neighborhood analysis exhausts absent vertices. The arm support has neighbors h,v; a choke has h and its occupied supports; absent supports and leaves cannot have two occupied neighbors in this source family."
+    },
+    {
+      "claim_id": "C3-F2-QUALIFYING-CHOKE-ROUTING",
+      "statement": "In each of the two specified CB rows, the h,v-containing upper sources having a branch with one occupied support and at least four leaves admit a capacity-respecting unit routing through the legal choke insertion that deletes h and that support; the exact routed supply and uncovered upper demand are recorded.",
+      "scope": "Retained only for the stated source subfamily in CB(8,92), p=492 and CB(8,93), p=498; no full weighted-graph saturation is claimed.",
+      "status": "proposed_bounded_routing",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CU-F2/EVIDENCE.json",
+        "cycles/cycle-3/C3-CU-F2/REPLAY.py",
+        "cycles/cycle-3/C3-CU-F2/REPORT.md"
+      ],
+      "reason": "retained: the move is legal, its fixed-order assignment gives at most 8-ell predecessors per output, and at least ell selected leaf tags provide capacity for ell>=4. The claim is restricted to the stated subfamily; positive uncovered supply remains."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CU-F2/REPORT.md",
+  "limitations": [
+    "The computations cover only the two specified CB rows and do not enumerate other eligible trees.",
+    "The routing covers only a selected h,v subfamily and does not establish full-flow saturation or the primary inequality.",
+    "No universal proof or counterexample to the lower-region aggregate is established; statuses are proposed worker dispositions only."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C3-F2-CB-ELIGIBLE-REPLAY",
+    "C3-F2-HUB-ARM-ARC-CLASSIFICATION",
+    "C3-F2-QUALIFYING-CHOKE-ROUTING"
+  ]
+}

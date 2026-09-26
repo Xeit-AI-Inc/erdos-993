@@ -1,0 +1,64 @@
+{
+  "worker_id": "C3-PREP-C4-FENCE-IDENTITY",
+  "authority": "proposed_worker_only",
+  "brief": "control/C3-PREP-C4-FENCE-IDENTITY.json",
+  "source_hashes_verified": true,
+  "source_files_verified": 11,
+  "existing_registry_keys_checked": 418,
+  "transitive_refuted_keys_checked": 92,
+  "all_three_proposed_keys_absent_as_exact_keys": true,
+  "dispositions_file": "IDENTITY-REVIEW.json",
+  "independent_evidence_file": "INDEPENDENT-EVIDENCE.json",
+  "replay_file": "REPLAY.py",
+  "findings": [
+    {
+      "claim_key": "E993-LOWER-REGION-PER-LEAF-DOWN-MAP-INJECTIVITY",
+      "proposed_status": "REFUTED",
+      "witness_order": 91,
+      "rank": 34,
+      "first_strict_descent": 32,
+      "alpha": 68,
+      "marked_leaf": 2,
+      "source_dimension": "7219428434016265740",
+      "target_dimension": "7007092303604022630",
+      "dimension_excess": "212336130412243110",
+      "complete_aggregate": "-498754180547001418536",
+      "canonical_fence": "new distinct mechanism key proposed"
+    },
+    {
+      "claim_key": "E993-LOWER-REGION-SAME-RANK-WEIGHTED-OCCUPANCY-DOMINATION",
+      "proposed_status": "REFUTED",
+      "witness_order": 14,
+      "rank": 6,
+      "first_strict_descent": 4,
+      "alpha": 9,
+      "Q": 715,
+      "E": 1905,
+      "same_rank_gap": 19895,
+      "actual_early_CT_x_gap": -587630,
+      "complete_aggregate": -378,
+      "canonical_fence": "new distinct comparison key proposed"
+    },
+    {
+      "claim_key": "E993-THIRD-SHELL-ALL-RANKS-COVER-SEVEN-THRESHOLD",
+      "proposed_status": "REFUTED",
+      "witness_order": 24,
+      "rank": 10,
+      "first_strict_descent": 8,
+      "alpha": 18,
+      "vertex_cover_number": 6,
+      "delta_at_p_minus_2": -78,
+      "complete_aggregate": -122805,
+      "canonical_fence": "existing E993-R25-COVER-DIAGONAL-D6-SIGN with precise tree-scope alias proposed"
+    }
+  ],
+  "witness_order_minimality_claimed": false,
+  "formal_awards": [],
+  "remaining_blocked": [
+    "universal lower-region aggregate",
+    "universal CT_x transfer",
+    "p>=14 third-shell pointwise candidate",
+    "all-rank third-shell sign conclusion",
+    "governed-RTree semantic transfer"
+  ]
+}

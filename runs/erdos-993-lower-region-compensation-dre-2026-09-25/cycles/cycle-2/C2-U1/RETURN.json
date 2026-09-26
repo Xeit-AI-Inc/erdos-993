@@ -1,0 +1,26 @@
+{
+  "worker_id": "C2-U1",
+  "cycle": 2,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "E993-ORDINARY-LEAF-ORDER-BAND",
+      "statement": "For every finite ordinary tree T, every original leaf v with original support s, and every integer p>=3 with |V(T)|<=2p+1, Delta_(p-1)(T-{v,s})-Delta_(p-1)(T-N_T[s])<=0, using integer zero-extended independence counts and original-tree neighborhoods.",
+      "scope": "Exactly the registered ordinary-leaf order band: finite simple connected acyclic T; original degree-one leaf and support; p>=3; |V(T)|<=2p+1. No favorability, alpha, first-descent, lower-region, or residual premise. The result is an informal proof audit, not a formal award.",
+      "status": "proposed_proved_informal",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-U1/REPORT.md"
+      ],
+      "reason": "The ordered-first-mark partition and adjacent-rank shadow bound prove q_(p)<=q_(p-1) when H has an edge, because component-root coverage supplies a nonisolated marked root and every residual graph has order at most 2(p-1)-1. The edgeless case has W=V(H) and follows from adjacent binomial coefficients; empty H is zero. The report audits the rank shifts, original deletion identities, natural-number domain split, and exact scope."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-U1/REPORT.md",
+  "limitations": [
+    "Informal proof audit only; no Lean file, build, kernel check, or formal award.",
+    "The registered p>=3 and |V(T)|<=2p+1 guards are retained; no broader scope is claimed.",
+    "The result does not decide the |V(T)|=2p+2 shell or the unrestricted lower-region favorable-leaf aggregate.",
+    "No new computation or public-literature retrieval was used."
+  ],
+  "status_authority": "proposed_worker_only"
+}

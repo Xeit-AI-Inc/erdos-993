@@ -1,0 +1,25 @@
+{
+  "worker_id": "C1-U5",
+  "cycle": 1,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C1-U5-1",
+      "statement": "For every eligible ordinary star K_{1,m}, the selected aggregate is strictly negative. More generally, stripping pendant leaves to a decorated core C with support multiplicities m_u gives an exact independence-polynomial formula for the selector and a two-state rooted branch recursion for each local summand, retaining all leaf-tag multiplicities.",
+      "scope": "The star theorem covers all finite ordinary stars and all p satisfying x(K_{1,m})+2<=p and 3p<2m+1. The decorated-core formulas apply to every finite ordinary tree of order at least three but do not establish the target sign outside the star subfamily.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-U5/evidence/support-core-reduction.md"
+      ],
+      "reason": "The core polynomial and rooted recursions follow by partitioning independent sets on whether each core vertex is chosen. For eligible stars, the first-descent formula forces p>m/2, making every leaf favorable and every summand equal to the negative binomial difference C(m-1,p)-C(m-1,p-1). The derivation does not compare selector coefficients with local branch differences for general cores, so the primary remains open on that scope."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-U5/REPORT.md",
+  "limitations": [
+    "No sign theorem is proved for decorated cores with branching or more than one core vertex.",
+    "The exact recursion is an evaluation reduction, not a finite bound on core size or a proof of the global compensation inequality.",
+    "No eligible counterexample was found, and no exhaustive search was performed."
+  ],
+  "status_authority": "proposed_worker_only"
+}

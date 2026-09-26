@@ -1,0 +1,10 @@
+lemma Erdos993G1.firstWide_exceptional_history {Y : Type u} [Finite Y]
+    (G : SimpleGraph Y) (r : ℕ) (hr : 1 ≤ r) (hn : Nat.card Y = 2 * r + 2)
+    (he : Nat.card G.edgeSet ≤ 1) (k : ℕ) (hk : k ≤ r) :
+    0 < Erdos993G1.delta G (k : ℤ) := by
+  by_cases he0 : Nat.card G.edgeSet = 0
+  · exact Erdos993G1.FirstWide.delta_pos_of_edgeless_counts G r hn
+      (Erdos993G1.FirstWide.indepCount_edgeless G he0) hk
+  · have he1 : Nat.card G.edgeSet = 1 := by omega
+    exact Erdos993G1.FirstWide.delta_pos_of_one_edge_counts G r hr hn
+      (Erdos993G1.FirstWide.indepCount_one_edge G he1) hk

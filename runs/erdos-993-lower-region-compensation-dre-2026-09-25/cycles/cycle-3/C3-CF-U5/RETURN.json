@@ -1,0 +1,41 @@
+{
+  "worker_id": "C3-CF-U5",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C3-U5-EARLY-DESCENT-MARKED-OCCUPANCY-BRIDGE",
+      "statement": "For an eligible T,p, if the total actual addability over the selector-tagged independent (p-1)-sets in the H_v graphs is at most their total count times the mean actual addability of independent x(T)-sets in T, then the complete selected aggregate is nonpositive.",
+      "scope": "Conditional theorem for the exact fixed F(T,p), H_v and W_v; every original leaf is separately tagged. The premise is not established universally.",
+      "status": "proposed_verified",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-U5/REPORT.md",
+        "cycles/cycle-3/C3-CF-U5/EVIDENCE.md"
+      ],
+      "reason": "retained: earlier-layer pair counting gives E_x<x+1<=p-1, and the marked bipartite extension identity proves the complete-sum implication, including Q=0. The strict selector and same-support leaf tags are preserved."
+    },
+    {
+      "claim_id": "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE",
+      "statement": "For every finite ordinary tree T and natural p with x(T)+2<=p and 3p<2alpha(T)+1, the complete sum over original leaves v with Delta_p(T-v)<0 of Delta_(p-1)(T-{v,s_v})-Delta_(p-1)(T-N_T[s_v]) is nonpositive.",
+      "scope": "The exact registered lower-region ordinary-tree aggregate, retained as the target statement; this route's evidence leaves its truth open.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-U5/REPORT.md",
+        "cycles/cycle-3/C3-CF-U5/EVIDENCE.md"
+      ],
+      "reason": "retained_narrowed: the route correctly states the target but supplies only a conditional proof whose universal transfer premise is unproved; it neither proves nor refutes the registered assertion."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CF-U5/REPORT.md",
+  "limitations": [
+    "The universal marked-occupancy transfer inequality E<=E_x Q remains unproved.",
+    "No exhaustive census, imported theorem, or positive full-sum target counterexample is claimed.",
+    "The exact 20-leaf-star calculation is one eligible instance and does not establish a universal result."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C3-U5-EARLY-DESCENT-MARKED-OCCUPANCY-BRIDGE",
+    "E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE"
+  ]
+}
