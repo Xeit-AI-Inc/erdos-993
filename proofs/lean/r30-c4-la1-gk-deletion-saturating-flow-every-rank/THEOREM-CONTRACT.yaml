@@ -1,0 +1,604 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "erdos-993-math-dre-20260926-r30-weighted-transport-c4-la1-v1",
+  "theorem": {
+    "title": "C4-LA1: G_k deletion-arc saturating flow at every rank p >= k + 3 for every leaf tag set",
+    "informal_statement": "Canonical run id erdos-993-math-dre-20260926-r30-weighted-transport; award group C4-LA1 (Cycle 4 Stage 7, bounded attempt); key on closure E993-R30-GK-TREE-DELETION-ARC-SATURATING-FLOW-AT-EVERY-RANK-AT-LEAST-K-PLUS-3-FOR-EVERY-LEAF-TAG-SET, formally_verified at the terminal theorem's EXACT scope. Statement: let G_k be the graph on Fin (3k+5) with root 0, leaf 1 on 0, support 2 on 0 with leaves 3 and 4, and for i < k the arm 0 - (5+3i) - (6+3i) - (7+3i). For all natural k and p with k + 3 <= p and every set F of leaves of G_k (F a subset of C5LA1.leafSet (gkGraph k)), the transport network at rank p with tag set F (sources the independent (p+1)-sets, targets the independent p-sets, supplies and capacities the active-tag weight activeWeight) has a saturating integral (natural-number) flow f (IsSaturatingFlow: positive only on (p+1)-set/p-set pairs related by transportRel; every source row sums EXACTLY to its active weight; every target column sums to AT MOST its active weight) whose support consists of single deletions only: f B A > 0 implies A = B.erase q for some q in B. No IsTree, no eligibility, no crossing index, no quotient hypothesis. Proof of record: Theorem CT-1 (critic C-F2-T) with the rank extension R2' (F adjudicator), steps (0)-(4), INFORMAL-PROOF.md. Companions on the face (Lean lemmas gk_weightedHall_of_rank_ge and gk_aggregate_nonpos_of_rank_ge, and every helper of the DAG) are kernel-checked declarations of this source that carry no certificate of their own (R29-N-12); this contract asserts no grade for any companion. Grades are the contract's own list only: the terminal theorem, formally_verified only when the governed award closes (kernel receipt + independent informal audit + independent fidelity review). Fences: one explicit tree family; not (HALL) at any other scope (the (HALL) scope clause EST-3 stays an informal composition with the registered eligibility key at proved_informal); no IsTree, eligibility, crossingIndex or indepNum is asserted; 'every eligible rank of G_k' is NOT claimed (needs x(G_k) >= k+1, open); nothing on the primary aggregate beyond G_k; no RTree statement; nothing about switch arcs elsewhere; not E993-LOWER-REGION-PER-LEAF-DOWN-MAP-INJECTIVITY (a matching is not linear injectivity), not E993-R23-LITERAL-DELETE-ONLY-HALL, not C6-F4, not R19; GK-SIGN is not formally verified by this award. Repairs on the face: C-F2-T's x = k+1 (valid for k >= 2 only) is NOT used; the F draft's instance comment is an authored instance (gkGraph_decAdj, registered as @[reducible, instance] def). Attribution: the network, the active-tag weight and (HALL): Codex GPT-6 (the lower-region run and its corrections); the definition entries 1-13: the first-interior run (Codex) with the r26/r24/r25 definition layers; the transport definitions and (WID): r30 C1-LA1; FLOW=>SIGN: r30 C1-LA2; the G_k family and its eligibility key: r30 Cycles 2-3; CT-1: critic C-F2-T (r30 Cycle 4; Claude Opus 5.5); R2' (the rank extension): the r30 Cycle 4 F adjudicator (Claude Opus 5.5); the bounded G_k Hall record: F2 (Claude Sonnet 5), C-F2-U, the controller replay CF6-1, and the synthesis instrument; r29's high-tail certificates are not used. Lean text of every new declaration: the C4-LA1 formalizer (producer c4-la1-formalizer-opus-20260927, chartered Claude Opus 5.5)."
+  },
+  "formulation_status": {
+    "status": "established",
+    "evidence": [
+      "Theorem CT-1 (critic C-F2-T) and R2' (F adjudicator), admitted at STATED by the Cycle 4 synthesis (R-2, R-3; EST-1, EST-2), pending the isolated second read SR-C4-1; statement-level proof INFORMAL-PROOF.md; bounded records EST-13 (k = 1..8 literal, k up to 60 quotient) are bounded_computation only, never proof."
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-gk-edge",
+      "description": "NEW (node N0; text frozen by the Cycle 4 synthesis). def gkEdge (k : ℕ) (u v : Fin (3*k+5)) : Prop := (u.val = 0 ∧ v.val = 1) ∨ (u.val = 0 ∧ v.val = 2) ∨ (u.val = 2 ∧ v.val = 3) ∨ (u.val = 2 ∧ v.val = 4) ∨ ∃ i < k, (u.val = 0 ∧ v.val = 5+3*i) ∨ (u.val = 5+3*i ∧ v.val = 6+3*i) ∨ (u.val = 6+3*i ∧ v.val = 7+3*i)",
+      "lean_name": "E993Transport.gkEdge",
+      "dependencies": []
+    },
+    {
+      "id": "def-gk-graph",
+      "description": "NEW (node N0; text frozen by the synthesis). def gkGraph (k : ℕ) : SimpleGraph (Fin (3*k+5)) := SimpleGraph.fromRel (gkEdge k) -- the symmetrised, irreflexive closure of gkEdge.",
+      "lean_name": "E993Transport.gkGraph",
+      "dependencies": [
+        "def-gk-edge"
+      ]
+    },
+    {
+      "id": "def-gk-graph-dec-adj",
+      "description": "NEW (node N0; authored in-run; instance plumbing only). @[reducible, instance] def gkGraph_decAdj (k : ℕ) : DecidableRel (gkGraph k).Adj := fun u v => (decidability of gkEdge by core instances) decidable_of_iff (u ≠ v ∧ (gkEdge k u v ∨ gkEdge k v u)) (SimpleGraph.fromRel_adj (gkEdge k) u v).symm. Genuinely decidable; #print axioms reports [propext, Quot.sound] (no Classical.choice).",
+      "lean_name": "E993Transport.gkGraph_decAdj",
+      "dependencies": [
+        "def-gk-graph"
+      ]
+    },
+    {
+      "id": "def-is-graph-leaf",
+      "description": "CARRIED byte-identically (C1-LA1 entry 4, 65acd314...). def IsGraphLeaf (G : SimpleGraph V) (v : V) : Prop := ∃! u, G.Adj v u",
+      "lean_name": "C4LA1.IsGraphLeaf",
+      "dependencies": []
+    },
+    {
+      "id": "def-support",
+      "description": "CARRIED byte-identically (C1-LA1 entry 5, 8e1e1a68...). noncomputable def support (G : SimpleGraph V) (v : V) : V := Classical.choose (p := fun u => C4LA1.IsGraphLeaf G v → G.Adj v u ∧ ∀ w, G.Adj v w → w = u) (...) -- the unique neighbour of a leaf.",
+      "lean_name": "C5LA1.support",
+      "dependencies": [
+        "def-is-graph-leaf"
+      ]
+    },
+    {
+      "id": "def-leaf-set",
+      "description": "CARRIED byte-identically (C1-LA1 entry 6, 78ec6551...). open Classical in noncomputable def leafSet (G : SimpleGraph V) : Finset V := Finset.univ.filter (C4LA1.IsGraphLeaf G)",
+      "lean_name": "C5LA1.leafSet",
+      "dependencies": [
+        "def-is-graph-leaf"
+      ]
+    },
+    {
+      "id": "def-indep-family",
+      "description": "CARRIED byte-identically (C1-LA1 entry 14, 73df20a8...). def indepFamily (G : SimpleGraph V) [DecidableRel G.Adj] (j : ℕ) : Finset (Finset V) := (Finset.univ.powersetCard j).filter fun s => G.IsIndepSet (s : Set V)",
+      "lean_name": "E993Transport.indepFamily",
+      "dependencies": []
+    },
+    {
+      "id": "def-tag-witnesses",
+      "description": "CARRIED byte-identically (C1-LA1 entry 15, 113d9521...). noncomputable def tagWitnesses (G : SimpleGraph V) [DecidableRel G.Adj] (v : V) : Finset V := (G.neighborFinset (C5LA1.support G v)).erase v",
+      "lean_name": "E993Transport.tagWitnesses",
+      "dependencies": [
+        "def-support"
+      ]
+    },
+    {
+      "id": "def-active-weight",
+      "description": "CARRIED byte-identically (C1-LA1 entry 16, 074ed034...). noncomputable def activeWeight (G : SimpleGraph V) [DecidableRel G.Adj] (F B : Finset V) : ℕ := ((F ∩ B).filter fun v => ¬ Disjoint (B.erase v) (tagWitnesses G v)).card -- counts ACTIVE tags, not |F ∩ B|.",
+      "lean_name": "E993Transport.activeWeight",
+      "dependencies": [
+        "def-tag-witnesses"
+      ]
+    },
+    {
+      "id": "def-transport-rel",
+      "description": "CARRIED byte-identically (C1-LA1 entry 19, b1b9ac6c...). def transportRel (G : SimpleGraph V) [DecidableRel G.Adj] (B A : Finset V) : Prop := (∃ q ∈ B, A = B.erase q) ∨ (∃ u, u ∉ B ∧ (G.neighborFinset u ∩ B).card = 2 ∧ A = insert u (B \\ G.neighborFinset u)) -- exactly (D) ∪ (S).",
+      "lean_name": "E993Transport.transportRel",
+      "dependencies": []
+    },
+    {
+      "id": "def-is-saturating-flow",
+      "description": "CARRIED byte-identically (C1-LA1 entry 20, a9d81c26...). def IsSaturatingFlow (G : SimpleGraph V) [DecidableRel G.Adj] (F : Finset V) (p : ℕ) (f : Finset V → Finset V → ℕ) : Prop := (∀ B A, 0 < f B A → B ∈ indepFamily G (p + 1) ∧ A ∈ indepFamily G p ∧ transportRel G B A) ∧ (∀ B ∈ indepFamily G (p + 1), ∑ A ∈ indepFamily G p, f B A = activeWeight G F B) ∧ (∀ A ∈ indepFamily G p, ∑ B ∈ indepFamily G (p + 1), f B A ≤ activeWeight G F A)",
+      "lean_name": "E993Transport.IsSaturatingFlow",
+      "dependencies": [
+        "def-indep-family",
+        "def-active-weight",
+        "def-transport-rel"
+      ]
+    }
+  ],
+  "domains": [
+    {
+      "id": "dom-k",
+      "description": "k : ℕ (the number of arms)",
+      "lean_type": "ℕ",
+      "dependencies": []
+    },
+    {
+      "id": "dom-p",
+      "description": "p : ℕ (the rank; targets are p-sets, sources (p+1)-sets)",
+      "lean_type": "ℕ",
+      "dependencies": []
+    },
+    {
+      "id": "dom-f",
+      "description": "F : Finset (Fin (3*k+5)), the tag set",
+      "lean_type": "Finset (Fin (3*k+5))",
+      "dependencies": [
+        "dom-k"
+      ]
+    },
+    {
+      "id": "dom-flow",
+      "description": "f : Finset (Fin (3*k+5)) → Finset (Fin (3*k+5)) → ℕ, a natural-number flow on pairs (source, target)",
+      "lean_type": "Finset (Fin (3*k+5)) → Finset (Fin (3*k+5)) → ℕ",
+      "dependencies": [
+        "dom-k"
+      ]
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "k",
+      "kind": "forall",
+      "domain_id": "dom-k"
+    },
+    {
+      "binder": "p",
+      "kind": "forall",
+      "domain_id": "dom-p"
+    },
+    {
+      "binder": "F",
+      "kind": "forall",
+      "domain_id": "dom-f"
+    },
+    {
+      "binder": "f",
+      "kind": "exists",
+      "domain_id": "dom-flow"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-rank",
+      "statement": "hp : k + 3 ≤ p (natural numbers; no subtraction)",
+      "dependencies": [
+        "dom-k",
+        "dom-p"
+      ]
+    },
+    {
+      "id": "hyp-leaves",
+      "statement": "hF : F ⊆ C5LA1.leafSet (gkGraph k) (every tag is an original leaf of G_k; any such F, not only favorableLeaves)",
+      "dependencies": [
+        "dom-f",
+        "def-leaf-set",
+        "def-gk-graph"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "∃ f : Finset (Fin (3*k+5)) → Finset (Fin (3*k+5)) → ℕ, IsSaturatingFlow (gkGraph k) F p f ∧ ∀ B A, 0 < f B A → ∃ q ∈ B, A = B.erase q  (the instance on (gkGraph k).Adj is gkGraph_decAdj; support conjunct is exactly single deletion)",
+    "dependencies": [
+      "hyp-rank",
+      "hyp-leaves",
+      "dom-flow",
+      "def-is-saturating-flow",
+      "def-gk-graph-dec-adj"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "def-gk-edge",
+        "kind": "definition"
+      },
+      {
+        "id": "def-gk-graph",
+        "kind": "definition"
+      },
+      {
+        "id": "def-gk-graph-dec-adj",
+        "kind": "definition"
+      },
+      {
+        "id": "def-is-graph-leaf",
+        "kind": "definition"
+      },
+      {
+        "id": "def-support",
+        "kind": "definition"
+      },
+      {
+        "id": "def-leaf-set",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indep-family",
+        "kind": "definition"
+      },
+      {
+        "id": "def-tag-witnesses",
+        "kind": "definition"
+      },
+      {
+        "id": "def-active-weight",
+        "kind": "definition"
+      },
+      {
+        "id": "def-transport-rel",
+        "kind": "definition"
+      },
+      {
+        "id": "def-is-saturating-flow",
+        "kind": "definition"
+      },
+      {
+        "id": "dom-k",
+        "kind": "domain"
+      },
+      {
+        "id": "dom-p",
+        "kind": "domain"
+      },
+      {
+        "id": "dom-f",
+        "kind": "domain"
+      },
+      {
+        "id": "dom-flow",
+        "kind": "domain"
+      },
+      {
+        "id": "hyp-rank",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-leaves",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "def-gk-edge",
+        "to": "def-gk-graph"
+      },
+      {
+        "from": "def-gk-graph",
+        "to": "def-gk-graph-dec-adj"
+      },
+      {
+        "from": "def-is-graph-leaf",
+        "to": "def-support"
+      },
+      {
+        "from": "def-is-graph-leaf",
+        "to": "def-leaf-set"
+      },
+      {
+        "from": "def-support",
+        "to": "def-tag-witnesses"
+      },
+      {
+        "from": "def-tag-witnesses",
+        "to": "def-active-weight"
+      },
+      {
+        "from": "def-indep-family",
+        "to": "def-is-saturating-flow"
+      },
+      {
+        "from": "def-active-weight",
+        "to": "def-is-saturating-flow"
+      },
+      {
+        "from": "def-transport-rel",
+        "to": "def-is-saturating-flow"
+      },
+      {
+        "from": "dom-k",
+        "to": "dom-f"
+      },
+      {
+        "from": "dom-k",
+        "to": "dom-flow"
+      },
+      {
+        "from": "dom-k",
+        "to": "hyp-rank"
+      },
+      {
+        "from": "dom-p",
+        "to": "hyp-rank"
+      },
+      {
+        "from": "dom-f",
+        "to": "hyp-leaves"
+      },
+      {
+        "from": "def-leaf-set",
+        "to": "hyp-leaves"
+      },
+      {
+        "from": "def-gk-graph",
+        "to": "hyp-leaves"
+      },
+      {
+        "from": "hyp-rank",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-leaves",
+        "to": "conclusion"
+      },
+      {
+        "from": "dom-flow",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-is-saturating-flow",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-gk-graph-dec-adj",
+        "to": "conclusion"
+      }
+    ]
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "explicit_axiom_allowlist",
+    "rationale": "Only propext, Classical.choice and Quot.sound are permitted (brief R4). Classical choice enters through the carried definitions of record (C5LA1.support is Classical.choose; leafSet/favorableLeaves/WeightedHall/aggregate filter under open Classical in) and Mathlib lemmas; gkGraph_decAdj itself is classical-free. No sorry, admit, native_decide or axiom; no decide over an enumeration for any universal step."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "E993Transport.gk_deletionSaturatingFlow_of_rank_ge",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem gk_deletionSaturatingFlow_of_rank_ge (k p : ℕ) (hp : k + 3 ≤ p)\n    (F : Finset (Fin (3*k+5))) (hF : F ⊆ C5LA1.leafSet (gkGraph k)) :\n    ∃ f : Finset (Fin (3*k+5)) → Finset (Fin (3*k+5)) → ℕ,\n      IsSaturatingFlow (gkGraph k) F p f ∧ ∀ B A, 0 < f B A → ∃ q ∈ B, A = B.erase q",
+    "expected_statement_sha256": "9f6fc96e436ebabd03ea51a20746b06783bd0c7223a231aa03503b138ecb404e"
+  },
+  "source_materials": [
+    {
+      "id": "src-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "sha256": "5dea6a4cb89404ff5a98fb1c816131b9f2a129679fd34c1b7c8e488864d8bb86",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "sha256": "264db6bb7a35bf8bfb1b83c8c3331e065871c52f33f0b2b72a97fd87a94f2ea4",
+      "role": "reference"
+    },
+    {
+      "id": "src-synthesis",
+      "path": "SOURCE/C4-SYNTHESIS.md",
+      "sha256": "9a259241ef7a73cb6607bd3c6d92c8424c284b0109432acd53a1b3bc8880d93c",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-brief",
+      "path": "SOURCE/C4-STAGE7-FORMALIZER-BRIEF-LA1.md",
+      "sha256": "1b9fe18ef050f743977cd1f7dbc31326234da4502fc40bc9f20c71bc7bf0d289",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-ct1-critique",
+      "path": "SOURCE/C-F2-T-CRITIQUE.md",
+      "sha256": "d8e87e4ddabad778a16199c835640ad018be3dba7f2da45900d9f93442f64bc2",
+      "role": "reference"
+    },
+    {
+      "id": "src-f-adjudication",
+      "path": "SOURCE/F-ADJUDICATION.md",
+      "sha256": "b56d9d62acbe4136d3c0b6a244421e1af47dcd8c2d9347fafb6338c1d6f16dfa",
+      "role": "reference"
+    },
+    {
+      "id": "src-semantic-contract",
+      "path": "SOURCE/SEMANTIC-CONTRACT.md",
+      "sha256": "ee7ca2e2c3647555111c4bfb11bf917b4ba56215f59d5390d09f47541ff49000",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-solution-contract",
+      "path": "SOURCE/SOLUTION-CONTRACT.md",
+      "sha256": "3168e7a15baf7a7b3b30649b036eea53da77956cfa535954ca4ca303667f5980",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-001",
+      "path": "LeanProject/LeanProof/Snippets/0001-definition-C4LA1-vertexDeletionIndepSetCount.lean.fragment",
+      "sha256": "7e0a588e243735a611c919ea1080816911a3e27e4523478af0c0f560ce1b3b48",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-002",
+      "path": "LeanProject/LeanProof/Snippets/0002-definition-C4LA1-vertexDeletionForwardDifference.lean.fragment",
+      "sha256": "c2da50eb16ee788c439b146577efeedd7dd42811c6943fb437585edcf63b5880",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-003",
+      "path": "LeanProject/LeanProof/Snippets/0003-definition-C4LA1-IsFavorableAt.lean.fragment",
+      "sha256": "25d8f7d274f9080468bf6d46acc6db3d4a469c2e399e7faee6cdcee24290a0db",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-004",
+      "path": "LeanProject/LeanProof/Snippets/0004-definition-C4LA1-IsGraphLeaf.lean.fragment",
+      "sha256": "65acd314d3bfd74aca476e00dd8866434c67682b627bce5e105d372a556f7ae5",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-005",
+      "path": "LeanProject/LeanProof/Snippets/0005-definition-C5LA1-support.lean.fragment",
+      "sha256": "8e1e1a689393f555eb5c216207b1368c7415a8543c569884b2fc86954b7bc2b4",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-006",
+      "path": "LeanProject/LeanProof/Snippets/0006-definition-C5LA1-leafSet.lean.fragment",
+      "sha256": "78ec65517bde90cc2fc5e542fc7c60d6a5147b243b74b9ac3de33d4efd1df697",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-007",
+      "path": "LeanProject/LeanProof/Snippets/0007-definition-C5LA1-H.lean.fragment",
+      "sha256": "55f37d9161901d6006e571cf548c4e56675c9d786a1aba83e7889ad9d443224d",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-008",
+      "path": "LeanProject/LeanProof/Snippets/0008-definition-C5LA1-R.lean.fragment",
+      "sha256": "a0407d82ab112a65a0f9d85970e9d6217b66201680cc079a4ba13751e53dc6b8",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-009",
+      "path": "LeanProject/LeanProof/Snippets/0009-definition-C5LA1-indepSetsAvoiding.lean.fragment",
+      "sha256": "ac0e331eec99650eca7a18e9fe98829bb5495850685b8f31936169f0a6d8e368",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-010",
+      "path": "LeanProject/LeanProof/Snippets/0010-definition-C5LA1-indepSetCount.lean.fragment",
+      "sha256": "e22635d8697e49b38dd521080f34c3eefe56a93964120c70f53ad9899b4a7f71",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-011",
+      "path": "LeanProject/LeanProof/Snippets/0011-definition-C5LA1-forwardDifferenceDel.lean.fragment",
+      "sha256": "60bd8efcc88e8e511a7caacac5867f7845243ccab08f1660e8c3962af544dd8f",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-012",
+      "path": "LeanProject/LeanProof/Snippets/0012-definition-C5LA1-aggregate.lean.fragment",
+      "sha256": "d66e776c5cf49b2a78a2d9713e4a41de2cbaf5de0af7b6d580075064d1daea8b",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-013",
+      "path": "LeanProject/LeanProof/Snippets/0013-definition-E993Interior-taggedFamily.lean.fragment",
+      "sha256": "cb43feebd48bdf3a82d95db4c0475a34a83acdd8c55f13ac44433ea26141fa1e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-014",
+      "path": "LeanProject/LeanProof/Snippets/0014-definition-E993Transport-indepFamily.lean.fragment",
+      "sha256": "73df20a8511ea67885d45631688cf693e58cebe9cfd5413ee67e782c1030ef9e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-015",
+      "path": "LeanProject/LeanProof/Snippets/0015-definition-E993Transport-tagWitnesses.lean.fragment",
+      "sha256": "113d952167528dfc045eb79961e8fbff0326da8f04277799436d6c8962022025",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-016",
+      "path": "LeanProject/LeanProof/Snippets/0016-definition-E993Transport-activeWeight.lean.fragment",
+      "sha256": "074ed034729850d34722d0b1ceeb96d8362beaebf3b7a409cb3fab28a9850b93",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-017",
+      "path": "LeanProject/LeanProof/Snippets/0017-definition-E993Transport-layerWeight.lean.fragment",
+      "sha256": "5ca5792309be23276583ac42cef294618e2471c97d3f58e67f0ab7980a3a83c3",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-018",
+      "path": "LeanProject/LeanProof/Snippets/0018-definition-E993Transport-favorableLeaves.lean.fragment",
+      "sha256": "16b0c7672ed66c4cb53ba24d853764df160d6694f63b231346a2eb71c390ec77",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-019",
+      "path": "LeanProject/LeanProof/Snippets/0019-definition-E993Transport-transportRel.lean.fragment",
+      "sha256": "b1b9ac6c8de56fa740a37e5bac0fa628f1d817c2e33625ca34dcab33a1100d95",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-020",
+      "path": "LeanProject/LeanProof/Snippets/0020-definition-E993Transport-IsSaturatingFlow.lean.fragment",
+      "sha256": "a9d81c260914024d38f46ff5b564749d34f640674f9e9116685b4e7c631a48ac",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-021",
+      "path": "LeanProject/LeanProof/Snippets/0021-definition-E993Transport-WeightedHall.lean.fragment",
+      "sha256": "63534ffbfcc4bb1297228e598da165dcf98732939cd51a5d7fda3e62bc518478",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-045",
+      "path": "LeanProject/LeanProof/Snippets/0045-lemma-E993Interior-highTailAggregateFromShadow.lean.fragment",
+      "sha256": "972d0d900218889995bebd2e0682c1886576df4d7b2b22356924b0d7295baa9d",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-046",
+      "path": "LeanProject/LeanProof/Snippets/0046-lemma-E993Transport-indepFamily_eq_indepSetsAvoiding.lean.fragment",
+      "sha256": "45d1a93e12e0f50a58b9efb7fe25fab2fcd0c2e31eff6b3ac74795bf6a27cfe8",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-047",
+      "path": "LeanProject/LeanProof/Snippets/0047-lemma-E993Transport-isGraphLeaf_of_mem_favorableLeaves.lean.fragment",
+      "sha256": "8977fb83111a46cace690984e23e2ffd54e2ea5233712bfeeca579f1debf75c8",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-048",
+      "path": "LeanProject/LeanProof/Snippets/0048-lemma-E993Transport-tagWitnesses_subset_R.lean.fragment",
+      "sha256": "7a8528a04b10243adfa0e8488d21206bd9cfed44e18910e7ed810b7b8517baad",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-049",
+      "path": "LeanProject/LeanProof/Snippets/0049-lemma-E993Transport-card_active_eq_tagged.lean.fragment",
+      "sha256": "8823a71dad443ec51fdf34fc541c2c66aab7792d9520f8ef76665729ece12616",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-050",
+      "path": "LeanProject/LeanProof/Snippets/0050-lemma-E993Transport-layerWeight_eq_sum_card.lean.fragment",
+      "sha256": "6adece46210475286f5574371270d1f0cba414876eec5e7dd058ab2fa1993c8f",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-051",
+      "path": "LeanProject/LeanProof/Snippets/0051-lemma-E993Transport-layerWeight_sub_eq_sum.lean.fragment",
+      "sha256": "56e71a87c92f3d8435c1f8fb3b3e906cb037d78027b5bdfdf26b824a1fa8cc33",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-052",
+      "path": "LeanProject/LeanProof/Snippets/0052-lemma-E993Transport-activeWeightAggregateIdentity.lean.fragment",
+      "sha256": "9daf96e3501eccf92cd7025a400785520be2dc5ed078923730e0729f2af7d899",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-053",
+      "path": "LeanProject/LeanProof/Snippets/0053-lemma-E993Transport-aggregate_nonpos_of_saturatingFlow.lean.fragment",
+      "sha256": "ce01183cc56349c832b3626edb125bdffae41d91412371271d18104ee3795f30",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-054",
+      "path": "LeanProject/LeanProof/Snippets/0054-lemma-E993Transport-weightedHall_of_saturatingFlow.lean.fragment",
+      "sha256": "89a7ffb8bc79b1d61290459a843fb8fa2ca73c6fc9e3b6affd8448933bf2d54c",
+      "role": "reference"
+    }
+  ]
+}

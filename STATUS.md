@@ -4,7 +4,7 @@
 
 The six-cycle heterogeneous-closure experiment is complete. The full selected aggregate on every arity-2,3,4 ordinary path-star now has a computer-assisted proof, combining an exact finite prefix through 265 branches with a uniform analytic tail from 266. Two coefficient theorems have governed Lean awards: the zero-extended binomial-block signs and the arbitrary-profile main-mark relative margin. The census-free replacement, selected MASS and both universal spread mechanisms remain unresolved. The arbitrary-tree aggregate, governed beta, TREE, FOREST, TRANSFER and Erdős 993 remain OPEN. Registry: **457 identities: 275 VERIFIED, 98 REFUTED, 26 CONDITIONAL, 58 OPEN**, at mixed evidence grades, not a theorem count. See the [experiment](docs/experiments/heterogeneous-closure-dre-2026-09-26.md), [assessment](docs/assessment-2026-09-25.md), and [research notepad](docs/research-notepad-2026-09-25.md). Dated sections below are historical snapshots.
 
-Last updated: 2026-09-27 (heterogeneous closure terminal reconciliation)
+Last updated: 2026-09-27 (r30: the weighted transport mechanism (HALL) is formally verified on two infinite tree families and certified at every known switch-necessary instance up to `CB(8,107)`; its full scope stays open with a named smallest uniform object)
 
 ## Headline Problems
 
@@ -20,6 +20,10 @@ The consolidated orientation document — the conjecture, the full proof path
 with per-step status, the claim/fence/obligation tables, strategy verdicts,
 and next-phase priorities — is the
 [master proof ledger (2026-09-04)](docs/master-proof-ledger-2026-09-04.md).
+
+## r30, 2026-09-27
+
+The [r30 run](experiments/r30-weighted-transport.md) (six cycles, the ceiling) closed with seven governed Lean awards: the active-tag weight identity, weighted Hall ⇒ nonpositive aggregate, the `Aut`-invariant deficient family, the orbit-quotient reduction, the `G_k` deletion flow at every rank `p ≥ k+3`, (HALL) at every eligible rank of every `G_k`, and (HALL) at rank `k+3` of the spider `S(1,2,3^k)`. The mechanism key `E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL` stays OPEN at full scope — neither proved uniformly nor refuted (no deficient cut exists at any eligible row on record: every free tree of order ≤ 23 saturates deletion-only; all 223 known switch-necessary CB rows have full-sector Hall; 15 of them are certified whole-row with switch arcs load-bearing). The smallest uniform object is a closed-form choke-local sector certificate at the top sector-deficient rank of `CB(8,m)`, `m ≡ 2 (mod 3)`, with a `1/m²` margin law. A successor run is recommended; the primary aggregate is untouched. Registry 457 → 491 identities, all additive.
 
 ## Lower-region compensation, 2026-09-26
 

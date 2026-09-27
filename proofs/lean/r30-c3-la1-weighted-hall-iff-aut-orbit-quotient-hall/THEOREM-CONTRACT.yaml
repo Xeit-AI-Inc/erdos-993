@@ -1,0 +1,1035 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "erdos-993-r30-c3-la1-weighted-hall-iff-aut-orbit-quotient-hall-v1",
+  "theorem": {
+    "title": "C3-LA1: weighted Hall for the fixed selector iff Hall on the full-Aut(G) orbit quotient (E993Transport.weightedHall_iff_autOrbitQuotientHall)",
+    "informal_statement": "C3-LA1 terminal theorem of record, E993Transport.weightedHall_iff_autOrbitQuotientHall (C-U1-T's crit_weightedHall_iff_orbitQuotientHall, frozen sources/c3-stage7-sources/C-U1-T-CritAdv.lean 8de15f02130b44f5fe5d9d906221f24f485d38e91f99a1bb51270cb5f73bb59b, with the name changed and nothing else). SCOPE: for every finite vertex type V ([Fintype V], [DecidableEq V]), every simple graph G on V with [DecidableRel G.Adj], and every p : ℕ, with Γ = all of G ≃g G and the tag set favorableLeaves G p, weighted Hall for the fixed selector (WeightedHall G (favorableLeaves G p) p: every X ⊆ I_{p+1} supplies at most the active-tag weight of its (D) ∪ (S) targets in I_p) holds iff Hall holds on the Aut(G)-orbit quotient with orbit-total supplies and capacities, an orbit arc O → O' existing iff some member pair B ∈ O, A ∈ O' satisfies transportRel G B A. No IsTree, no eligibility, no p ≥ 1. KEY: E993-R30-WEIGHTED-HALL-IFF-AUT-ORBIT-QUOTIENT-HALL (registered proved_informal) upgrades to formally_verified at this statement's scope only if the isolated second read SR-C3-1 finds the registered text no wider; otherwise the award registers as E993-R30-WEIGHTED-HALL-IFF-FULL-AUT-ORBIT-QUOTIENT-HALL-AT-FIXED-SELECTOR with a scope note on (INV). The controller decides; this contract asserts no grade. EXCLUDED CONCLUSIONS: no quotient feasibility; not (HALL) at any scope; not (LIFT) and not its feasibility; nothing for a proper subgroup of Aut(G), another tag set or another weight; no flow is constructed or implied; no tree, eligibility or aggregate-sign content; nothing about the size or enumerability of orbit spaces; C2-LA1's terminal content is not re-certified. Companions on the face are lemmas registering proved_informal only (R29-N-12). ATTRIBUTION: definitions of record — C1-LA1 (entries 1–13: the r24/r25/r26 definition layers C4LA1/C5LA1 and E993Interior.taggedFamily, carried from the first-interior award (Codex); entries 14–21: the E993Transport layer authored in r30 Cycle 1) and C2-LA1 (the supermodularity / canonMin apparatus; the invariant-family statement critic-derived by C-U1-T in Cycle 2); r30 Cycle 3: U1 (Claude Sonnet 5) for the orbit block; C-U1-T (Claude Opus 5.5) for the partition, the class-union identity and the terminal theorem; C-U1-F (Claude Opus 5.5) for the independent equivalent formalization; the U adjudicator for the kernel equivalence check adj_two_quotient_forms_agree; Codex (GPT-6) for the transport mechanism, the lower-region run and (LIFT)'s orbit-quotient conventions; r29 for the high tail that closes the complementary region (not used by this proof). REPAIRS ON THE FACE: U1's 'remaining gap' wording struck; the axiom count is ten / seven; the carry description as corrected (C2-LA1 carries C1-LA1 entries 1–21 plus 24 only). Canonical run id erdos-993-math-dre-20260926-r30-weighted-transport; workflow run lean-2026-09-27-c3-la1-weighted-hall-iff-aut-orbit-quotient-hall; producer c3-la1-formalizer-opus-20260927."
+  },
+  "formulation_status": {
+    "status": "established",
+    "evidence": [
+      "Registered proved_informal as E993-R30-WEIGHTED-HALL-IFF-AUT-ORBIT-QUOTIENT-HALL (quotient clause not kernel-checked entering Cycle 3; synthesis C3-LA1).",
+      "Compiled sorry-free in scratch by C-U1-T (crit_weightedHall_iff_orbitQuotientHall) and independently by C-U1-F (weightedHall_iff_quotientHall); rebuilt by the U adjudicator, who proved the two statements the same proposition (adj_two_quotient_forms_agree), axioms [propext, Classical.choice, Quot.sound].",
+      "Statement-level proof: INFORMAL-PROOF.md in this run root. The independent informal proof-integrity audit is assigned by the controller."
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-indep-family",
+      "description": "Layer I_j(G): the independent j-subsets of V. C1-LA1 entry 14 (carried byte-identically; this run index 14). Fragment SHA-256 73df20a8511ea67885d45631688cf693e58cebe9cfd5413ee67e782c1030ef9e. Lean text: /-- the independent `j`-subsets of `V`: the layer `I_j(G)` (SEMANTIC-CONTRACT §1.2). -/\ndef indepFamily (G : SimpleGraph V) [DecidableRel G.Adj] (j : ℕ) : Finset (Finset V) :=\n  (Finset.univ.powersetCard j).filter fun s => G.IsIndepSet (s : Set V)",
+      "lean_name": "E993Transport.indepFamily",
+      "dependencies": []
+    },
+    {
+      "id": "def-is-graph-leaf",
+      "description": "A graph leaf: exactly one adjacent vertex. C1-LA1 entry 4. This run index 4. Fragment SHA-256 65acd314d3bfd74aca476e00dd8866434c67682b627bce5e105d372a556f7ae5. Lean text: /-- A graph leaf has exactly one adjacent vertex. -/\ndef IsGraphLeaf (G : SimpleGraph V) (v : V) : Prop :=\n  ∃! u, G.Adj v u",
+      "lean_name": "C4LA1.IsGraphLeaf",
+      "dependencies": []
+    },
+    {
+      "id": "def-support",
+      "description": "The support s_v of a leaf v (its unique neighbour); unconstrained off the leaf set. C1-LA1 entry 5. This run index 5. Fragment SHA-256 8e1e1a689393f555eb5c216207b1368c7415a8543c569884b2fc86954b7bc2b4. Lean text: /-- The unique support (neighbour) of an original leaf `v`; unconstrained\n(any value satisfying nothing further) off the leaf set. -/\nnoncomputable\ndef support (G : SimpleGraph V) (v : V) : V :=\n  Classical.choose (p := fun u => C4LA1.IsGraphLeaf G v → G.Adj v u ∧ ∀ w, G.Adj v w → w = u)\n    (by\n      by_cases h : C4LA1.IsGraphLeaf G v\n      · obtain ⟨u, hu, huniq⟩ := h\n        exact ⟨u, fun _ => ⟨hu, huniq⟩⟩\n      · exact ⟨v, fun hc => absurd hc h⟩)",
+      "lean_name": "C5LA1.support",
+      "dependencies": [
+        "def-is-graph-leaf"
+      ]
+    },
+    {
+      "id": "def-leaf-set",
+      "description": "The set of original leaves of G. C1-LA1 entry 6. This run index 6. Fragment SHA-256 78ec65517bde90cc2fc5e542fc7c60d6a5147b243b74b9ac3de33d4efd1df697. Lean text: /-- The set of original leaves of `G`. -/\nnoncomputable\ndef leafSet (G : SimpleGraph V) : Finset V :=\n  Finset.univ.filter (C4LA1.IsGraphLeaf G)",
+      "lean_name": "C5LA1.leafSet",
+      "dependencies": [
+        "def-is-graph-leaf"
+      ]
+    },
+    {
+      "id": "def-vertex-deletion-count",
+      "description": "i_k(G - v): independent k-subsets of V avoiding v. C1-LA1 entry 1. This run index 1. Fragment SHA-256 7e0a588e243735a611c919ea1080816911a3e27e4523478af0c0f560ce1b3b48. Lean text: /-- The coefficient `i_k(G-v)`, represented without changing vertex types:\nindependent `k`-subsets of the original finite vertex type that avoid `v`. -/\ndef vertexDeletionIndepSetCount (G : SimpleGraph V) [DecidableRel G.Adj]\n    (v : V) (k : Nat) : Nat :=\n  (((Finset.univ.erase v).powersetCard k).filter fun s : Finset V =>\n    G.IsIndepSet (s : Set V)).card",
+      "lean_name": "C4LA1.vertexDeletionIndepSetCount",
+      "dependencies": []
+    },
+    {
+      "id": "def-vertex-deletion-difference",
+      "description": "i_{p+1}(G - v) - i_p(G - v) in Int. C1-LA1 entry 2. This run index 2. Fragment SHA-256 c2da50eb16ee788c439b146577efeedd7dd42811c6943fb437585edcf63b5880. Lean text: /-- The forward coefficient difference `i_(p+1)(G-v) - i_p(G-v)`, with\nnatural counts embedded in the integers. -/\ndef vertexDeletionForwardDifference (G : SimpleGraph V) [DecidableRel G.Adj]\n    (v : V) (p : Nat) : Int :=\n  (vertexDeletionIndepSetCount G v (p + 1) : Int) -\n    vertexDeletionIndepSetCount G v p",
+      "lean_name": "C4LA1.vertexDeletionForwardDifference",
+      "dependencies": [
+        "def-vertex-deletion-count"
+      ]
+    },
+    {
+      "id": "def-is-favorable-at",
+      "description": "Literal strict favorability of a leaf at rank p: the forward difference is negative. C1-LA1 entry 3. This run index 3. Fragment SHA-256 25d8f7d274f9080468bf6d46acc6db3d4a469c2e399e7faee6cdcee24290a0db. Lean text: /-- Literal strict favorability of an original leaf at rank `p`. -/\ndef IsFavorableAt (G : SimpleGraph V) [DecidableRel G.Adj] (v : V) (p : Nat) : Prop :=\n  vertexDeletionForwardDifference G v p < 0",
+      "lean_name": "C4LA1.IsFavorableAt",
+      "dependencies": [
+        "def-vertex-deletion-difference"
+      ]
+    },
+    {
+      "id": "def-favorable-leaves",
+      "description": "The fixed original strict selector F_p(G): leaves of G favorable at rank p. C1-LA1 entry 18. Aut-invariant unconditionally (C2-LA1 entry 41, favorableLeaves_map_aut). This run index 18. Fragment SHA-256 16b0c7672ed66c4cb53ba24d853764df160d6694f63b231346a2eb71c390ec77. Lean text: /-- the fixed original strict selector `F_p(G)`. -/\nnoncomputable\ndef favorableLeaves (G : SimpleGraph V) [DecidableRel G.Adj] (p : ℕ) : Finset V :=\n  (C5LA1.leafSet G).filter fun v => C4LA1.IsFavorableAt G v p",
+      "lean_name": "E993Transport.favorableLeaves",
+      "dependencies": [
+        "def-leaf-set",
+        "def-is-favorable-at"
+      ]
+    },
+    {
+      "id": "def-tag-witnesses",
+      "description": "W_v = N_G(s_v) minus {v}. C1-LA1 entry 15. This run index 15. Fragment SHA-256 113d952167528dfc045eb79961e8fbff0326da8f04277799436d6c8962022025. Lean text: /-- `W_v = N_G(s_v) \\ {v}` (SEMANTIC-CONTRACT §1.2). -/\nnoncomputable\ndef tagWitnesses (G : SimpleGraph V) [DecidableRel G.Adj] (v : V) : Finset V :=\n  (G.neighborFinset (C5LA1.support G v)).erase v",
+      "lean_name": "E993Transport.tagWitnesses",
+      "dependencies": [
+        "def-support"
+      ]
+    },
+    {
+      "id": "def-active-weight",
+      "description": "Active-tag weight w_F(B): the number of v in F ∩ B that are ACTIVE in B, i.e. (B minus {v}) meets W_v; inactive tags are not counted. C1-LA1 entry 16. This run index 16. Fragment SHA-256 074ed034729850d34722d0b1ceeb96d8362beaebf3b7a409cb3fab28a9850b93. Lean text: /-- the active-tag weight of `B` w.r.t. the tag set `F`: `v ∈ F ∩ B` is counted\niff `B` contains another neighbour of `v`'s original support. -/\nnoncomputable\ndef activeWeight (G : SimpleGraph V) [DecidableRel G.Adj] (F B : Finset V) : ℕ :=\n  ((F ∩ B).filter fun v => ¬ Disjoint (B.erase v) (tagWitnesses G v)).card",
+      "lean_name": "E993Transport.activeWeight",
+      "dependencies": [
+        "def-tag-witnesses"
+      ]
+    },
+    {
+      "id": "def-transport-rel",
+      "description": "Exactly (D) ∪ (S): (D) A = B minus {q} for some q in B (deletion); (S) some u not in B has |N_G(u) ∩ B| = 2 and A = (B minus N_G(u)) ∪ {u} (two-for-one switch). C1-LA1 entry 19. This run index 19. Fragment SHA-256 b1b9ac6c8de56fa740a37e5bac0fa628f1d817c2e33625ca34dcab33a1100d95. Lean text: /-- the deletion / two-for-one relation from `(p+1)`-sets to `p`-sets. -/\ndef transportRel (G : SimpleGraph V) [DecidableRel G.Adj] (B A : Finset V) : Prop :=\n  (∃ q ∈ B, A = B.erase q) ∨\n  (∃ u, u ∉ B ∧ (G.neighborFinset u ∩ B).card = 2 ∧ A = insert u (B \\ G.neighborFinset u))",
+      "lean_name": "E993Transport.transportRel",
+      "dependencies": []
+    },
+    {
+      "id": "def-weighted-hall",
+      "description": "Weighted Hall for every source subfamily X ⊆ I_{p+1}: supply of X at most the weight of the targets in I_p joined to X. C1-LA1 entry 21. This run index 21. Fragment SHA-256 63534ffbfcc4bb1297228e598da165dcf98732939cd51a5d7fda3e62bc518478. Lean text: /-- weighted Hall for every source subfamily. -/\ndef WeightedHall (G : SimpleGraph V) [DecidableRel G.Adj] (F : Finset V) (p : ℕ) : Prop :=\n  ∀ X ⊆ indepFamily G (p + 1),\n    ∑ B ∈ X, activeWeight G F B ≤\n      ∑ A ∈ (indepFamily G p).filter (fun A => ∃ B ∈ X, transportRel G B A), activeWeight G F A",
+      "lean_name": "E993Transport.WeightedHall",
+      "dependencies": [
+        "def-indep-family",
+        "def-active-weight",
+        "def-transport-rel"
+      ]
+    },
+    {
+      "id": "def-supply",
+      "description": "Total active weight of a family of sets (orbit total when the family is an orbit). C2-LA1 entry 25. Section variables (G) [DecidableRel G.Adj] (F) (p); p is unused in the body and not a parameter, so supply G F X. This run index 25. Fragment SHA-256 e981d867eed11f032fe42f04adfab048d213b00a6d921368dca040478b7cf2d7. Lean text: /-- The total supply of `X`. -/\nnoncomputable\ndef supply (X : Finset (Finset V)) : ℕ :=\n  ∑ B ∈ X, activeWeight G F B",
+      "lean_name": "E993Transport.supply",
+      "dependencies": [
+        "def-active-weight"
+      ]
+    },
+    {
+      "id": "def-orbit-of",
+      "description": "NEW (U1, r30 Cycle 3; U1-Main.lean lines 2717-2721): the Aut(G)-orbit of B inside the layer I_j(G), realised as the filter of the finite layer by \"equals the image of B under some automorphism\"; no Fintype (G ≃g G) is needed. Registered after the carried definitions (registrar ordering). This run index 31. Fragment SHA-256 1df6865fc16475343a841e7fdffb4168a1a983615aa6f1afe455d8f27b77f354. Lean text: /-- The `Aut(G)`-orbit of `B` inside the layer `I_j(G)`: the members of the layer that are the\nimage of `B` under some automorphism of `G`. -/\nnoncomputable\ndef orbitOf (G : SimpleGraph V) [DecidableRel G.Adj] (j : ℕ) (B : Finset V) : Finset (Finset V) :=\n  (indepFamily G j).filter (fun B' => ∃ γ : G ≃g G, B' = B.map γ.toEquiv.toEmbedding)",
+      "lean_name": "E993Transport.orbitOf",
+      "dependencies": [
+        "def-indep-family"
+      ]
+    }
+  ],
+  "domains": [
+    {
+      "id": "dom-vertex-type",
+      "description": "Any vertex type V with [Fintype V] [DecidableEq V] (section variable {V : Type*} [Fintype V] [DecidableEq V]).",
+      "lean_type": "{V : Type*} [Fintype V] [DecidableEq V]",
+      "dependencies": []
+    },
+    {
+      "id": "dom-graph",
+      "description": "Any simple graph on V with decidable adjacency; no IsTree, no connectivity, no eligibility.",
+      "lean_type": "(G : SimpleGraph V) [DecidableRel G.Adj]",
+      "dependencies": [
+        "dom-vertex-type"
+      ]
+    },
+    {
+      "id": "dom-rank",
+      "description": "Any rank p : ℕ, including p = 0; no p ≥ 1.",
+      "lean_type": "(p : ℕ)",
+      "dependencies": []
+    },
+    {
+      "id": "dom-source-orbit-families",
+      "description": "Finite sets 𝒮 of source orbits: 𝒮 ⊆ (indepFamily G (p + 1)).image (orbitOf G (p + 1)).",
+      "lean_type": "Finset (Finset (Finset V))",
+      "dependencies": [
+        "dom-graph",
+        "dom-rank",
+        "def-indep-family",
+        "def-orbit-of"
+      ]
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "V",
+      "kind": "forall",
+      "domain_id": "dom-vertex-type"
+    },
+    {
+      "binder": "G",
+      "kind": "forall",
+      "domain_id": "dom-graph"
+    },
+    {
+      "binder": "p",
+      "kind": "forall",
+      "domain_id": "dom-rank"
+    },
+    {
+      "binder": "𝒮",
+      "kind": "forall",
+      "domain_id": "dom-source-orbit-families"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-typeclass-binders",
+      "statement": "Verbatim binders: variable {V : Type*} [Fintype V] [DecidableEq V]; (G : SimpleGraph V) [DecidableRel G.Adj] (p : ℕ). These are the only hypotheses: no IsTree, no eligibility, no p ≥ 1.",
+      "dependencies": [
+        "dom-vertex-type",
+        "dom-graph",
+        "dom-rank"
+      ]
+    },
+    {
+      "id": "hyp-full-automorphism-group",
+      "statement": "Γ = all of G ≃g G. This is not a hypothesis of the declaration; it is built into orbitOf, which quantifies over every automorphism. No proper subgroup is treated.",
+      "dependencies": [
+        "def-orbit-of"
+      ]
+    },
+    {
+      "id": "hyp-tag-set-fixed-selector",
+      "statement": "The tag set is exactly favorableLeaves G p (the fixed original strict selector) and the weight is exactly activeWeight; no other tag set or weight is treated.",
+      "dependencies": [
+        "def-favorable-leaves",
+        "def-active-weight"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "WeightedHall G (favorableLeaves G p) p holds iff, for every set 𝒮 of source Aut(G)-orbits of I_{p+1}, the sum of the orbit totals supply G (favorableLeaves G p) O over O ∈ 𝒮 is at most the sum of the orbit totals over the target orbits O' of I_p that are joined to 𝒮, where O' is joined to 𝒮 iff some B in some O ∈ 𝒮 and some A ∈ O' satisfy transportRel G B A. Exact Lean statement: theorem weightedHall_iff_autOrbitQuotientHall (G : SimpleGraph V) [DecidableRel G.Adj] (p : ℕ) :\n    WeightedHall G (favorableLeaves G p) p ↔\n      ∀ 𝒮 ⊆ (indepFamily G (p + 1)).image (orbitOf G (p + 1)),\n        ∑ O ∈ 𝒮, supply G (favorableLeaves G p) O ≤\n          ∑ O' ∈ ((indepFamily G p).image (orbitOf G p)).filter\n              (fun O' => ∃ O ∈ 𝒮, ∃ B ∈ O, ∃ A ∈ O', transportRel G B A),\n            supply G (favorableLeaves G p) O'",
+    "dependencies": [
+      "hyp-typeclass-binders",
+      "hyp-full-automorphism-group",
+      "hyp-tag-set-fixed-selector",
+      "def-weighted-hall",
+      "def-supply",
+      "def-transport-rel",
+      "dom-source-orbit-families"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "def-indep-family",
+        "kind": "definition"
+      },
+      {
+        "id": "def-is-graph-leaf",
+        "kind": "definition"
+      },
+      {
+        "id": "def-support",
+        "kind": "definition"
+      },
+      {
+        "id": "def-leaf-set",
+        "kind": "definition"
+      },
+      {
+        "id": "def-vertex-deletion-count",
+        "kind": "definition"
+      },
+      {
+        "id": "def-vertex-deletion-difference",
+        "kind": "definition"
+      },
+      {
+        "id": "def-is-favorable-at",
+        "kind": "definition"
+      },
+      {
+        "id": "def-favorable-leaves",
+        "kind": "definition"
+      },
+      {
+        "id": "def-tag-witnesses",
+        "kind": "definition"
+      },
+      {
+        "id": "def-active-weight",
+        "kind": "definition"
+      },
+      {
+        "id": "def-transport-rel",
+        "kind": "definition"
+      },
+      {
+        "id": "def-weighted-hall",
+        "kind": "definition"
+      },
+      {
+        "id": "def-supply",
+        "kind": "definition"
+      },
+      {
+        "id": "def-orbit-of",
+        "kind": "definition"
+      },
+      {
+        "id": "dom-vertex-type",
+        "kind": "domain"
+      },
+      {
+        "id": "dom-graph",
+        "kind": "domain"
+      },
+      {
+        "id": "dom-rank",
+        "kind": "domain"
+      },
+      {
+        "id": "dom-source-orbit-families",
+        "kind": "domain"
+      },
+      {
+        "id": "hyp-typeclass-binders",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-full-automorphism-group",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-tag-set-fixed-selector",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "def-is-graph-leaf",
+        "to": "def-support"
+      },
+      {
+        "from": "def-is-graph-leaf",
+        "to": "def-leaf-set"
+      },
+      {
+        "from": "def-vertex-deletion-count",
+        "to": "def-vertex-deletion-difference"
+      },
+      {
+        "from": "def-vertex-deletion-difference",
+        "to": "def-is-favorable-at"
+      },
+      {
+        "from": "def-leaf-set",
+        "to": "def-favorable-leaves"
+      },
+      {
+        "from": "def-is-favorable-at",
+        "to": "def-favorable-leaves"
+      },
+      {
+        "from": "def-support",
+        "to": "def-tag-witnesses"
+      },
+      {
+        "from": "def-tag-witnesses",
+        "to": "def-active-weight"
+      },
+      {
+        "from": "def-indep-family",
+        "to": "def-weighted-hall"
+      },
+      {
+        "from": "def-active-weight",
+        "to": "def-weighted-hall"
+      },
+      {
+        "from": "def-transport-rel",
+        "to": "def-weighted-hall"
+      },
+      {
+        "from": "def-active-weight",
+        "to": "def-supply"
+      },
+      {
+        "from": "def-indep-family",
+        "to": "def-orbit-of"
+      },
+      {
+        "from": "dom-vertex-type",
+        "to": "dom-graph"
+      },
+      {
+        "from": "dom-graph",
+        "to": "dom-source-orbit-families"
+      },
+      {
+        "from": "dom-rank",
+        "to": "dom-source-orbit-families"
+      },
+      {
+        "from": "def-indep-family",
+        "to": "dom-source-orbit-families"
+      },
+      {
+        "from": "def-orbit-of",
+        "to": "dom-source-orbit-families"
+      },
+      {
+        "from": "dom-vertex-type",
+        "to": "hyp-typeclass-binders"
+      },
+      {
+        "from": "dom-graph",
+        "to": "hyp-typeclass-binders"
+      },
+      {
+        "from": "dom-rank",
+        "to": "hyp-typeclass-binders"
+      },
+      {
+        "from": "def-orbit-of",
+        "to": "hyp-full-automorphism-group"
+      },
+      {
+        "from": "def-favorable-leaves",
+        "to": "hyp-tag-set-fixed-selector"
+      },
+      {
+        "from": "def-active-weight",
+        "to": "hyp-tag-set-fixed-selector"
+      },
+      {
+        "from": "hyp-typeclass-binders",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-full-automorphism-group",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-tag-set-fixed-selector",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-weighted-hall",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-supply",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-transport-rel",
+        "to": "conclusion"
+      },
+      {
+        "from": "dom-source-orbit-families",
+        "to": "conclusion"
+      }
+    ]
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "explicit_axiom_allowlist",
+    "rationale": "The carried definitions of record and the orbit filter use classical choice and classical decidability (open scoped Classical; C5LA1.support is Classical.choose). Exactly the three standard Lean/Mathlib axioms are permitted; no sorry, admit, native_decide, axiom, or decide over an enumeration."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "E993Transport.weightedHall_iff_autOrbitQuotientHall",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem weightedHall_iff_autOrbitQuotientHall (G : SimpleGraph V) [DecidableRel G.Adj] (p : ℕ) :\n    WeightedHall G (favorableLeaves G p) p ↔\n      ∀ 𝒮 ⊆ (indepFamily G (p + 1)).image (orbitOf G (p + 1)),\n        ∑ O ∈ 𝒮, supply G (favorableLeaves G p) O ≤\n          ∑ O' ∈ ((indepFamily G p).image (orbitOf G p)).filter\n              (fun O' => ∃ O ∈ 𝒮, ∃ B ∈ O, ∃ A ∈ O', transportRel G B A),\n            supply G (favorableLeaves G p) O'",
+    "expected_statement_sha256": "3c5b2226c71307eb66bd7833efe6f68ad2bbc4192b253cf9d8683238568e3052"
+  },
+  "source_materials": [
+    {
+      "id": "informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "sha256": "264d5d45b7ad7478b1d73497f8d74e8f1868ceda799937d5a95ad10cf4230d45",
+      "role": "reference"
+    },
+    {
+      "id": "capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "sha256": "e33d02d643c58b58d8e6cae2e4df3986bd0b3fe394df37eeb898bc8af2412e4f",
+      "role": "reference"
+    },
+    {
+      "id": "c3-synthesis-frozen-statement",
+      "path": "SOURCE/C3-SYNTHESIS.md",
+      "sha256": "f3855716b110ab07e9a3dc4672a3e9e6f7fa56ca46025196857b82558cf45b3d",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "semantic-contract",
+      "path": "SOURCE/SEMANTIC-CONTRACT.md",
+      "sha256": "ee7ca2e2c3647555111c4bfb11bf917b4ba56215f59d5390d09f47541ff49000",
+      "role": "definition_authority"
+    },
+    {
+      "id": "carry-u1-main",
+      "path": "SOURCE/U1-Main.lean",
+      "sha256": "f3b21020433375b01e1bcdd89d8996dd2198ad2ac438557bda8774b73a57b180",
+      "role": "definition_authority"
+    },
+    {
+      "id": "carry-c-u1-t-critadv",
+      "path": "SOURCE/C-U1-T-CritAdv.lean",
+      "sha256": "8de15f02130b44f5fe5d9d906221f24f485d38e91f99a1bb51270cb5f73bb59b",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "fragment-c1-la1-01",
+      "path": "LeanProject/LeanProof/Snippets/0001-definition-C4LA1-vertexDeletionIndepSetCount.lean.fragment",
+      "sha256": "7e0a588e243735a611c919ea1080816911a3e27e4523478af0c0f560ce1b3b48",
+      "role": "definition_authority"
+    },
+    {
+      "id": "fragment-c1-la1-02",
+      "path": "LeanProject/LeanProof/Snippets/0002-definition-C4LA1-vertexDeletionForwardDifference.lean.fragment",
+      "sha256": "c2da50eb16ee788c439b146577efeedd7dd42811c6943fb437585edcf63b5880",
+      "role": "definition_authority"
+    },
+    {
+      "id": "fragment-c1-la1-03",
+      "path": "LeanProject/LeanProof/Snippets/0003-definition-C4LA1-IsFavorableAt.lean.fragment",
+      "sha256": "25d8f7d274f9080468bf6d46acc6db3d4a469c2e399e7faee6cdcee24290a0db",
+      "role": "definition_authority"
+    },
+    {
+      "id": "fragment-c1-la1-04",
+      "path": "LeanProject/LeanProof/Snippets/0004-definition-C4LA1-IsGraphLeaf.lean.fragment",
+      "sha256": "65acd314d3bfd74aca476e00dd8866434c67682b627bce5e105d372a556f7ae5",
+      "role": "definition_authority"
+    },
+    {
+      "id": "fragment-c1-la1-05",
+      "path": "LeanProject/LeanProof/Snippets/0005-definition-C5LA1-support.lean.fragment",
+      "sha256": "8e1e1a689393f555eb5c216207b1368c7415a8543c569884b2fc86954b7bc2b4",
+      "role": "definition_authority"
+    },
+    {
+      "id": "fragment-c1-la1-06",
+      "path": "LeanProject/LeanProof/Snippets/0006-definition-C5LA1-leafSet.lean.fragment",
+      "sha256": "78ec65517bde90cc2fc5e542fc7c60d6a5147b243b74b9ac3de33d4efd1df697",
+      "role": "definition_authority"
+    },
+    {
+      "id": "fragment-c1-la1-07",
+      "path": "LeanProject/LeanProof/Snippets/0007-definition-C5LA1-H.lean.fragment",
+      "sha256": "55f37d9161901d6006e571cf548c4e56675c9d786a1aba83e7889ad9d443224d",
+      "role": "definition_authority"
+    },
+    {
+      "id": "fragment-c1-la1-08",
+      "path": "LeanProject/LeanProof/Snippets/0008-definition-C5LA1-R.lean.fragment",
+      "sha256": "a0407d82ab112a65a0f9d85970e9d6217b66201680cc079a4ba13751e53dc6b8",
+      "role": "definition_authority"
+    },
+    {
+      "id": "fragment-c1-la1-09",
+      "path": "LeanProject/LeanProof/Snippets/0009-definition-C5LA1-indepSetsAvoiding.lean.fragment",
+      "sha256": "ac0e331eec99650eca7a18e9fe98829bb5495850685b8f31936169f0a6d8e368",
+      "role": "definition_authority"
+    },
+    {
+      "id": "fragment-c1-la1-10",
+      "path": "LeanProject/LeanProof/Snippets/0010-definition-C5LA1-indepSetCount.lean.fragment",
+      "sha256": "e22635d8697e49b38dd521080f34c3eefe56a93964120c70f53ad9899b4a7f71",
+      "role": "definition_authority"
+    },
+    {
+      "id": "fragment-c1-la1-11",
+      "path": "LeanProject/LeanProof/Snippets/0011-definition-C5LA1-forwardDifferenceDel.lean.fragment",
+      "sha256": "60bd8efcc88e8e511a7caacac5867f7845243ccab08f1660e8c3962af544dd8f",
+      "role": "definition_authority"
+    },
+    {
+      "id": "fragment-c1-la1-12",
+      "path": "LeanProject/LeanProof/Snippets/0012-definition-C5LA1-aggregate.lean.fragment",
+      "sha256": "d66e776c5cf49b2a78a2d9713e4a41de2cbaf5de0af7b6d580075064d1daea8b",
+      "role": "definition_authority"
+    },
+    {
+      "id": "fragment-c1-la1-13",
+      "path": "LeanProject/LeanProof/Snippets/0013-definition-E993Interior-taggedFamily.lean.fragment",
+      "sha256": "cb43feebd48bdf3a82d95db4c0475a34a83acdd8c55f13ac44433ea26141fa1e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "fragment-c1-la1-14",
+      "path": "LeanProject/LeanProof/Snippets/0014-definition-E993Transport-indepFamily.lean.fragment",
+      "sha256": "73df20a8511ea67885d45631688cf693e58cebe9cfd5413ee67e782c1030ef9e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "fragment-c1-la1-15",
+      "path": "LeanProject/LeanProof/Snippets/0015-definition-E993Transport-tagWitnesses.lean.fragment",
+      "sha256": "113d952167528dfc045eb79961e8fbff0326da8f04277799436d6c8962022025",
+      "role": "definition_authority"
+    },
+    {
+      "id": "fragment-c1-la1-16",
+      "path": "LeanProject/LeanProof/Snippets/0016-definition-E993Transport-activeWeight.lean.fragment",
+      "sha256": "074ed034729850d34722d0b1ceeb96d8362beaebf3b7a409cb3fab28a9850b93",
+      "role": "definition_authority"
+    },
+    {
+      "id": "fragment-c1-la1-17",
+      "path": "LeanProject/LeanProof/Snippets/0017-definition-E993Transport-layerWeight.lean.fragment",
+      "sha256": "5ca5792309be23276583ac42cef294618e2471c97d3f58e67f0ab7980a3a83c3",
+      "role": "definition_authority"
+    },
+    {
+      "id": "fragment-c1-la1-18",
+      "path": "LeanProject/LeanProof/Snippets/0018-definition-E993Transport-favorableLeaves.lean.fragment",
+      "sha256": "16b0c7672ed66c4cb53ba24d853764df160d6694f63b231346a2eb71c390ec77",
+      "role": "definition_authority"
+    },
+    {
+      "id": "fragment-c1-la1-19",
+      "path": "LeanProject/LeanProof/Snippets/0019-definition-E993Transport-transportRel.lean.fragment",
+      "sha256": "b1b9ac6c8de56fa740a37e5bac0fa628f1d817c2e33625ca34dcab33a1100d95",
+      "role": "definition_authority"
+    },
+    {
+      "id": "fragment-c1-la1-20",
+      "path": "LeanProject/LeanProof/Snippets/0020-definition-E993Transport-IsSaturatingFlow.lean.fragment",
+      "sha256": "a9d81c260914024d38f46ff5b564749d34f640674f9e9116685b4e7c631a48ac",
+      "role": "definition_authority"
+    },
+    {
+      "id": "fragment-c1-la1-21",
+      "path": "LeanProject/LeanProof/Snippets/0021-definition-E993Transport-WeightedHall.lean.fragment",
+      "sha256": "63534ffbfcc4bb1297228e598da165dcf98732939cd51a5d7fda3e62bc518478",
+      "role": "definition_authority"
+    },
+    {
+      "id": "fragment-c2-la1-22",
+      "path": "LeanProject/LeanProof/Snippets/0022-definition-E993Transport-famMap.lean.fragment",
+      "sha256": "0072baac5b2a65b21aede9c79e8891f86bdef34d2980e9a53208382cf7977d91",
+      "role": "definition_authority"
+    },
+    {
+      "id": "fragment-c2-la1-23",
+      "path": "LeanProject/LeanProof/Snippets/0023-definition-E993Transport-covered.lean.fragment",
+      "sha256": "5a7272b7318c108850de92e0d1b9c9e41d4497c119ede7ea146cea41ba520cf0",
+      "role": "definition_authority"
+    },
+    {
+      "id": "fragment-c2-la1-24",
+      "path": "LeanProject/LeanProof/Snippets/0024-definition-E993Transport-cov.lean.fragment",
+      "sha256": "79c740a956373838c59f7b828443f589661e3cae84230b416b8a268947eebb9c",
+      "role": "definition_authority"
+    },
+    {
+      "id": "fragment-c2-la1-25",
+      "path": "LeanProject/LeanProof/Snippets/0025-definition-E993Transport-supply.lean.fragment",
+      "sha256": "e981d867eed11f032fe42f04adfab048d213b00a6d921368dca040478b7cf2d7",
+      "role": "definition_authority"
+    },
+    {
+      "id": "fragment-c2-la1-26",
+      "path": "LeanProject/LeanProof/Snippets/0026-definition-E993Transport-phi.lean.fragment",
+      "sha256": "402536db4c2a08c851c51a5300b19cb539a8d2ffb7061db2ee7310fcf6298d3c",
+      "role": "definition_authority"
+    },
+    {
+      "id": "fragment-c2-la1-27",
+      "path": "LeanProject/LeanProof/Snippets/0027-definition-E993Transport-domain.lean.fragment",
+      "sha256": "7dfc3846302a694014b66cb07308bf1a7121d367355fa91b355276402f736e0b",
+      "role": "definition_authority"
+    },
+    {
+      "id": "fragment-c2-la1-28",
+      "path": "LeanProject/LeanProof/Snippets/0028-definition-E993Transport-maxPhi.lean.fragment",
+      "sha256": "4fa71b0c0c71027117b594d26838d3e3bcf17a7a548afc2bd1c1be10bce21e70",
+      "role": "definition_authority"
+    },
+    {
+      "id": "fragment-c2-la1-29",
+      "path": "LeanProject/LeanProof/Snippets/0029-definition-E993Transport-maximizers.lean.fragment",
+      "sha256": "0f1ec8e0a4b322f6872b4509b6445569b35ca73c606fc8b2e6ffe7bf73dacc32",
+      "role": "definition_authority"
+    },
+    {
+      "id": "fragment-c2-la1-30",
+      "path": "LeanProject/LeanProof/Snippets/0030-definition-E993Transport-canonMin.lean.fragment",
+      "sha256": "a891a9957dd56410a6c26c6e0a696f953b6479017a3f79657f19f21a21ca4e9c",
+      "role": "definition_authority"
+    },
+    {
+      "id": "fragment-c1-la1-24",
+      "path": "LeanProject/LeanProof/Snippets/0032-lemma-E993Transport-isGraphLeaf_of_mem_favorableLeaves.lean.fragment",
+      "sha256": "8977fb83111a46cace690984e23e2ffd54e2ea5233712bfeeca579f1debf75c8",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-32",
+      "path": "LeanProject/LeanProof/Snippets/0033-lemma-E993Transport-isIndepSet_map_aut.lean.fragment",
+      "sha256": "0218c4510d98bfd14545876f948ed1c4fc21dfad121c5968862d6a30f2185208",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-33",
+      "path": "LeanProject/LeanProof/Snippets/0034-lemma-E993Transport-neighborFinset_map_aut.lean.fragment",
+      "sha256": "55722f0f2fde567d98d11288759dfbf9bcd06edef609d223faf006833b15daae",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-34",
+      "path": "LeanProject/LeanProof/Snippets/0035-lemma-E993Transport-isGraphLeaf_map_aut.lean.fragment",
+      "sha256": "27fb04f91f99e571864377bc2c9dda81bdaa5982304b077d1fa5934da2f8a9b5",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-35",
+      "path": "LeanProject/LeanProof/Snippets/0036-lemma-E993Transport-support_spec.lean.fragment",
+      "sha256": "5b8bd4a85c06e95592b5642cffb47b09a65b5d12a5283da9df27ba9968303787",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-36",
+      "path": "LeanProject/LeanProof/Snippets/0037-lemma-E993Transport-support_map_aut.lean.fragment",
+      "sha256": "671013bdf19cf09c6551b7d227e4d40a8586bddbf37f1b1b3a9eba330caaeda0",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-37",
+      "path": "LeanProject/LeanProof/Snippets/0038-lemma-E993Transport-tagWitnesses_map_aut.lean.fragment",
+      "sha256": "1671788dfd616725f1dd885f3a60d9b82f9cbac4b03f228f9b1be81b5c9ee5c5",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-38",
+      "path": "LeanProject/LeanProof/Snippets/0039-lemma-E993Transport-mem_leafSet_iff.lean.fragment",
+      "sha256": "f134eff74e3c1ac28ac53feee79e696c47cd347804ab557f888504b837efb575",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-39",
+      "path": "LeanProject/LeanProof/Snippets/0040-lemma-E993Transport-vertexDeletionIndepSetCount_map_aut.lean.fragment",
+      "sha256": "788c9f7b87b9cf67befd6279a725c5dba440f3f08103eef13c4fefd91c9c17c4",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-40",
+      "path": "LeanProject/LeanProof/Snippets/0041-lemma-E993Transport-isFavorableAt_map_aut.lean.fragment",
+      "sha256": "2ac69fe3c20e10e7d1b68ea6b2984d104da1077ecc714c6a9bd334e6c2845129",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-41",
+      "path": "LeanProject/LeanProof/Snippets/0042-lemma-E993Transport-favorableLeaves_map_aut.lean.fragment",
+      "sha256": "cdaeccdce48aca901d5f318337a2879bd01faee84f0d9f8892d7cf99b9c054fe",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-42",
+      "path": "LeanProject/LeanProof/Snippets/0043-lemma-E993Transport-activeWeight_map_aut.lean.fragment",
+      "sha256": "ce09d63639fb8cf4c23e5b36e4a10a1b20efd88c596537a5ceffa7b03a0af5d2",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-43",
+      "path": "LeanProject/LeanProof/Snippets/0044-lemma-E993Transport-map_map_symm_self.lean.fragment",
+      "sha256": "a8bb1a8f2cd10e6228d492555ec52bff4f19f78f44a6344c77adfb733100e392",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-44",
+      "path": "LeanProject/LeanProof/Snippets/0045-lemma-E993Transport-transportRel_map_aut_mp.lean.fragment",
+      "sha256": "114a3006970f8ece479216d0b7251ba48795e06921a8c1f435b2f19147092105",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-45",
+      "path": "LeanProject/LeanProof/Snippets/0046-lemma-E993Transport-transportRel_map_aut.lean.fragment",
+      "sha256": "fa934f4b3f3f7c61b6f5348b16858476ce8a55f29de8a6dd4663c844cea3e347",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-46",
+      "path": "LeanProject/LeanProof/Snippets/0047-lemma-E993Transport-covered_union.lean.fragment",
+      "sha256": "2a287f11cbaebacfa11eb73a38fdebf5fc8e201d749159d1e21a2fc223157a29",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-47",
+      "path": "LeanProject/LeanProof/Snippets/0048-lemma-E993Transport-covered_inter_subset.lean.fragment",
+      "sha256": "1cdc64296db75dee6bc1b2e6b11cd5dbb851f1e078792c1b1a99c6c2cc0d0108",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-48",
+      "path": "LeanProject/LeanProof/Snippets/0049-lemma-E993Transport-cov_submodular.lean.fragment",
+      "sha256": "0832bf5e84a0a71d62c9b14760a9e01a4119aebb9eb4a667c35436c31109024e",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-49",
+      "path": "LeanProject/LeanProof/Snippets/0050-lemma-E993Transport-supply_modular.lean.fragment",
+      "sha256": "316fc29399d51476d63d1ae89ea772caa5d95f2fb1eb5b505286e75bf09fbc6b",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-50",
+      "path": "LeanProject/LeanProof/Snippets/0051-lemma-E993Transport-phi_supermodular.lean.fragment",
+      "sha256": "4bbae797abbbcd45af619f6767f9553257de2598b46de6b470cb8e8c01f7b76c",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-51",
+      "path": "LeanProject/LeanProof/Snippets/0052-lemma-E993Transport-isMaximizer_union_inter.lean.fragment",
+      "sha256": "e63eddece8867130af7f1708e9e2988c895141b947eb69ddd51d915147c71fe0",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-52",
+      "path": "LeanProject/LeanProof/Snippets/0053-lemma-E993Transport-domain_nonempty.lean.fragment",
+      "sha256": "a9dd9ed5792d5ae3b932be2cc8186180b88f0b95e750995c2565ef020079d701",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-53",
+      "path": "LeanProject/LeanProof/Snippets/0054-lemma-E993Transport-maximizers_nonempty.lean.fragment",
+      "sha256": "f44ad9de98f03483d513c00d326b3e2717c00bdca148d37b14d0e21da76cb318",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-54",
+      "path": "LeanProject/LeanProof/Snippets/0055-lemma-E993Transport-le_maxPhi_of_mem_domain.lean.fragment",
+      "sha256": "8f60f64d2df148ca649e6f9500964449bf6ae51375614cb79b92f48eb326d125",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-55",
+      "path": "LeanProject/LeanProof/Snippets/0056-lemma-E993Transport-mem_domain_union.lean.fragment",
+      "sha256": "6b4743c54c4f1229c7e5d5231c5076cf4dc619086e5c53526d39fba00d3f8ebe",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-56",
+      "path": "LeanProject/LeanProof/Snippets/0057-lemma-E993Transport-mem_domain_inter.lean.fragment",
+      "sha256": "1cdae55fce2180c150692ea2152b5b59658cd2a5feb58772f3fb6c9ec9343e87",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-57",
+      "path": "LeanProject/LeanProof/Snippets/0058-lemma-E993Transport-isMaximizer_inter.lean.fragment",
+      "sha256": "93df92aa25edf0fb4c6148efd9505453c0ef124391964496b1f80360492b9b2e",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-58",
+      "path": "LeanProject/LeanProof/Snippets/0059-lemma-E993Transport-canonMin_isMaximizer.lean.fragment",
+      "sha256": "efd3b98b1384ce8d2b27acdc767aabacfdbc736cb84778fa11d2c83e0dc4658e",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-59",
+      "path": "LeanProject/LeanProof/Snippets/0060-lemma-E993Transport-mem_famMap.lean.fragment",
+      "sha256": "f9edabce19091026268c683d20f0b95a5374edf701f4bebdddffd67610b1004e",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-60",
+      "path": "LeanProject/LeanProof/Snippets/0061-lemma-E993Transport-map_symm_map_self.lean.fragment",
+      "sha256": "d01f5b58b1b23ffb974e68cdbc871463e1276f0f12fd30fa694162d4e3a815a2",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-61",
+      "path": "LeanProject/LeanProof/Snippets/0062-lemma-E993Transport-mem_indepFamily_map.lean.fragment",
+      "sha256": "467dec36b330ddd9329e656c2be6301d32027aac2d30731f1a067d815b391fb4",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-62",
+      "path": "LeanProject/LeanProof/Snippets/0063-lemma-E993Transport-covered_famMap.lean.fragment",
+      "sha256": "189219f33af782ab5e0c9ce56ed6387a624ad323970ea7be8e49b4a40168254d",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-63",
+      "path": "LeanProject/LeanProof/Snippets/0064-lemma-E993Transport-activeWeight_map_of_invariant.lean.fragment",
+      "sha256": "a4fdf241666c9df0acb82b097af5ce586d46fc09c0222a44b2170442bc2a145b",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-64",
+      "path": "LeanProject/LeanProof/Snippets/0065-lemma-E993Transport-supply_famMap.lean.fragment",
+      "sha256": "1bd48c950fb804787bf4ff1b82d4e96a9bb7c30f80600ea7871d32ef45ccdeac",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-65",
+      "path": "LeanProject/LeanProof/Snippets/0066-lemma-E993Transport-cov_famMap.lean.fragment",
+      "sha256": "cb28176c0cdb978ad49b451de6c83b190c57410fcbc2665f9dae0f295050c050",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-66",
+      "path": "LeanProject/LeanProof/Snippets/0067-lemma-E993Transport-phi_famMap.lean.fragment",
+      "sha256": "c5b2c970d9d369075598d3afc159a5b2454eed8af1a5c7e498611af9ddb50ad0",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-67",
+      "path": "LeanProject/LeanProof/Snippets/0068-lemma-E993Transport-famMap_mem_domain.lean.fragment",
+      "sha256": "31e42b7a9fd7531d477f1c305555a17e955aee02cae60282fc253392398e6814",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-68",
+      "path": "LeanProject/LeanProof/Snippets/0069-lemma-E993Transport-famMap_mem_maximizers.lean.fragment",
+      "sha256": "eb961c1fe4915a605eff6aebbf850a1785a299badd5e4943814c2f8b1bcf6713",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-69",
+      "path": "LeanProject/LeanProof/Snippets/0070-lemma-E993Transport-card_famMap.lean.fragment",
+      "sha256": "93cc12d32d0f4744a8d94b51571dc49390757d9904622a4752b5e49413834924",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-70",
+      "path": "LeanProject/LeanProof/Snippets/0071-lemma-E993Transport-canonMin_famMap.lean.fragment",
+      "sha256": "2c437cddc3939ce82b57c8ff27ffde4ac5c6fc4085e3277bb3356f241c3b9a7c",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-71",
+      "path": "LeanProject/LeanProof/Snippets/0072-lemma-E993Transport-covered_mono.lean.fragment",
+      "sha256": "6cba1002be4bf6d8cbd88235913b07327073e892fc08810c854d2ced9e34466c",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-72",
+      "path": "LeanProject/LeanProof/Snippets/0073-lemma-E993Transport-canonMin_pos.lean.fragment",
+      "sha256": "41f34ed6b32394c459ada7d40f8c50fb55551cfa95981ef1ba85caa47cfd4b85",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-73",
+      "path": "LeanProject/LeanProof/Snippets/0074-lemma-E993Transport-filter_eq_covered.lean.fragment",
+      "sha256": "9a29a3b33379ccee186cfd3084c87ea0147cb391455551483c51609f16a0559d",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-74",
+      "path": "LeanProject/LeanProof/Snippets/0075-lemma-E993Transport-weightedHall_iff_phi_nonpos.lean.fragment",
+      "sha256": "18f181b429595f281f5e0b731b9de33eeafc9e0230a4b98803813022197a46b8",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-75",
+      "path": "LeanProject/LeanProof/Snippets/0076-lemma-E993Transport-favorableLeaves_leaf.lean.fragment",
+      "sha256": "10999e3f271bc7f7b8ca9d2314e97aa35d38d817ed8471db243c65b50b3414f0",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-c2-la1-76",
+      "path": "LeanProject/LeanProof/Snippets/0077-lemma-E993Transport-weightedHall_iff_invariant.lean.fragment",
+      "sha256": "147e76e0f226408a91e6921fb267a77fc01971b8044fed784600db33e4dc226a",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-new-31",
+      "path": "LeanProject/LeanProof/Snippets/0031-definition-E993Transport-orbitOf.lean.fragment",
+      "sha256": "1df6865fc16475343a841e7fdffb4168a1a983615aa6f1afe455d8f27b77f354",
+      "role": "definition_authority"
+    },
+    {
+      "id": "fragment-new-78",
+      "path": "LeanProject/LeanProof/Snippets/0078-lemma-E993Transport-mem_orbitOf_self.lean.fragment",
+      "sha256": "768ea69c7d6b4bc694b84ca1efcd37ae699be4364ba3780f05e4e6c8fca1635b",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-new-79",
+      "path": "LeanProject/LeanProof/Snippets/0079-lemma-E993Transport-orbitOf_subset_of_mem_invariant.lean.fragment",
+      "sha256": "ff2869d61812e8dd8abf0a19467db39ab77e4e164717aa586c40961257ce349a",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-new-80",
+      "path": "LeanProject/LeanProof/Snippets/0080-lemma-E993Transport-invariant_iff_orbitOf_subset.lean.fragment",
+      "sha256": "1c42b7ff7c1e8e74842d5973c09531bd950ac49bf8714e5a44e0a24f061a265a",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-new-81",
+      "path": "LeanProject/LeanProof/Snippets/0081-lemma-E993Transport-covered_orbitUnion.lean.fragment",
+      "sha256": "7caab3d45ff60e86e050e26e6a549b927208ea59759a5fa0831c4595c4b83616",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-new-82",
+      "path": "LeanProject/LeanProof/Snippets/0082-lemma-E993Transport-crit_map_map_aut.lean.fragment",
+      "sha256": "bc4fe8fddd56c02e57fe18005155a80c8dcf5f7b0fa3ffb3de743f5e25e03589",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-new-83",
+      "path": "LeanProject/LeanProof/Snippets/0083-lemma-E993Transport-crit_orbitOf_eq_of_mem.lean.fragment",
+      "sha256": "dc3d2edf61675c0245947585189fb20b29bc9fc92bd10fde25ee2b3c2b59c299",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-new-84",
+      "path": "LeanProject/LeanProof/Snippets/0084-lemma-E993Transport-crit_orbitOf_subset.lean.fragment",
+      "sha256": "b5655327367b165d1d34bb8a2880895546369732051356fb2e2a5526a84ab766",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-new-85",
+      "path": "LeanProject/LeanProof/Snippets/0085-lemma-E993Transport-crit_orbits_pairwiseDisjoint.lean.fragment",
+      "sha256": "7f47d79fd504e2cc0d7b1b212dd647161ee831bf48b24e7dbb2c93ed2b57c2c6",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-new-86",
+      "path": "LeanProject/LeanProof/Snippets/0086-lemma-E993Transport-crit_biUnion_orbits.lean.fragment",
+      "sha256": "974050cbd99a9b431bbc28a3b4eed208da650ba6a626a1c99f5f895ee0e2d09b",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-new-87",
+      "path": "LeanProject/LeanProof/Snippets/0087-lemma-E993Transport-crit_supply_eq_sum_orbits.lean.fragment",
+      "sha256": "da819ae487ab635ab7a3077eb2f53a2c8154ff3c06223540bb244f80875a2a93",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-new-88",
+      "path": "LeanProject/LeanProof/Snippets/0088-lemma-E993Transport-crit_sum_biUnion_orbits.lean.fragment",
+      "sha256": "391fc5f1f98957b7321e61a5133837c2401e680572628ea0d3edc53e7bc8a347",
+      "role": "reference"
+    },
+    {
+      "id": "fragment-new-89",
+      "path": "LeanProject/LeanProof/Snippets/0089-theorem-E993Transport-weightedHall_iff_autOrbitQuotientHall.lean.fragment",
+      "sha256": "87e103bcd5d01368d151e406203622470e9062e5dc94bc943ed03a8863d9a59b",
+      "role": "reference"
+    }
+  ]
+}

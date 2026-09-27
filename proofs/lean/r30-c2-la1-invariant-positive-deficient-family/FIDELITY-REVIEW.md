@@ -1,0 +1,52 @@
+# Formalization Fidelity Review
+
+- Run: `lean-2026-09-26-c2-la1-aut-invariant-positive-deficient-family`
+- Verdict: `passed`
+- Fail closed: `false`
+- Deterministic precheck: `passed`
+- Independent semantic review: `passed`
+
+## Bound Evidence
+
+- Input SHA-256: `5fb9c6e879f72e8cd014a95d56e417ee4e982bc6dbc36fe398164ad3ccf91bad`
+- Contract projection SHA-256: `4e278754cefd5a6f1bb309cd424a2053eeaf53ff7933702fb8a1ee7228f0fb50`
+- Lean binding projection SHA-256: `6df6a72cc006b74681b91513fba22cf0d2e9e7175fc78b60c88eb7d787e4a9ac`
+- Contract source SHA-256: `f0f50c2a7b920bfe9f566e8ce0bb9177f048d104a9e213daa133c47565aa3e0d`
+- Lean source SHA-256: `a9cf3b815832b6fa25e43e07e628db4ce01a7a496b084cac0cd3768e877c7fc4`
+- Kernel receipt SHA-256: `2313f9590917a0c2cd292722b6b76fec6a064198d397671f61331fa451bca71c`
+
+## Check Counts
+
+- Passed checks: 35
+- Failed findings: 0
+- Warnings: 0
+
+## Findings
+
+- `note` `attribution` `independent_review` (independent_reviewer, `9a78ac17152730ea`): The contract carries no explicit attribution block; attribution appears in INFORMAL-PROOF.md §7 (digested in the contract's source_materials) and in the Main.lean entry comments, crediting U1 (Claude Sonnet 5) for parts (a)/(b), C-U1-T (Claude Opus 5.5) for entries 59–77, C-U1-F independently, C1-LA1 for the eight E993Transport definitions and Codex GPT-6 for the mechanism. INFORMAL-PROOF §7 cites the first-interior run for entries 1–13 in C1-LA1 numbering where the synthesis says 'definition entries 1–18' (a numbering-scheme difference, not a statement issue). Expected `"semantic fidelity"`; observed `"match"`.
+- `note` `carried_definitions` `independent_review` (independent_reviewer, `edfc5896a1144bd1`): Entries 1–21 of Main.lean (the 13 first-interior/r24–r26 definitions and the 8 E993Transport definitions of record) and entry 31 (C1-LA1 entry 24 isGraphLeaf_of_mem_favorableLeaves) are byte-identical to C1-LA1's Snippets 0001–0021 and 0024; each digest equals C1-LA1's FORMALIZATION-STATE digest and its Main.lean entry header; C1-LA1 Main.lean is 86b59c6c… and its kernel receipt (sha 9e733491…) binds 86b59c6c… before and after with verdict verified. activeWeight counts ACTIVE tags (¬ Disjoint (B.erase v) (tagWitnesses G v)), never |F ∩ B|; transportRel is exactly (D) ∪ (S); both match SEMANTIC-CONTRACT §1.2. Every Main.lean entry body equals its registered snippet and nothing lies outside the entry blocks except the import/header. Expected `"semantic fidelity"`; observed `"match"`.
+- `note` `fences_and_companions` `independent_review` (independent_reviewer, `204e75b6968f55dd`): No fenced object occurs in Main.lean or the contract: no quotient statement, no X_max positivity, no Hall/flow/cut conclusion, no tree/eligibility strengthening, no claim on the full (INV) key. The contract's scope text lists weightedHall_iff_invariant among companions 'with no certificate of their own' and does not claim it certified (§0c honoured). Controller note: the synthesis `## Headline verdicts` (INV) scope-note sentence ('Hall ⇔ Hall on invariant families … is formally_verified') would overstate the companion's grade if used verbatim at close. Expected `"semantic fidelity"`; observed `"match"`.
+- `note` `minor_text` `independent_review` (independent_reviewer, `d5656ce9da6b929a`): favorableLeaves_leaf's docstring (carried byte-identically from C-U1-T) mentions Aut-invariance, but the lemma proves only that members of favorableLeaves G p are leaves; invariance is favorableLeaves_map_aut. No effect on any statement. Expected `"semantic fidelity"`; observed `"match"`.
+- `note` `new_declarations_carry` `independent_review` (independent_reviewer, `ca0da521005ab993`): Mechanical diff of every new declaration against the frozen carry files (U1-INV.lean 174d84c3…, C-U1-T-CritINV.lean e6cbd7e6…, digests match SOURCE-DIGESTS.json): 36 declarations byte-identical to the cited origin lines (entries 27, 32–40, 43–44, 46–49, 52–57, 59–69, 71, 73, 75); the nine disclosed theorem→lemma changes (entries 41, 42, 45, 50, 51, 58, 70, 72, 74) and five noncomputable/def line breaks (entries 23, 24, 25, 26, 29) are keyword/whitespace only, not body changes; maxPhi and canonMin (entries 28, 30) inline the origin's nonemptiness lemmas as proof terms (value unchanged); weightedHall_iff_invariant's statement is verbatim (keyword only) with a re-derived (⇐) proof; the terminal proof body is byte-identical to CritINV lines 210–226 and its statement tail to lines 203–209, binders made explicit. Expected `"semantic fidelity"`; observed `"match"`.
+- `note` `non_vacuity` `independent_review` (independent_reviewer, `3d4d6a15226be7c3`): Hypothesis is satisfiable, checked independently from the literal definitions: G = P_3 ⊔ K_{6,3,3,3} (path 0–1–2), p = 4. Leaves 0 and 2 are favorable (i_5(G−v) = 36 < i_4(G−v) = 61), so F = {0,2}; X = {{0,2} ∪ S : S a 3-subset of the 6-part} ⊆ I_5 has 20 members of active weight 2, supply 40, and its (D) ∪ (S) targets carry 30 (15 targets of weight 2), so WeightedHall fails and the theorem is non-vacuous. Expected `"semantic fidelity"`; observed `"match"`.
+- `note` `repair_2_binder_diff` `independent_review` (independent_reviewer, `10cca66a9af9bc18`): Diff against the Cycle 1 U adjudication award-group-2 draft (read first-hand): the draft differs only by keyword lemma→theorem, the section binders {V : Type*} [Fintype V] [DecidableEq V] made explicit (same order as the origin's section variables), one line break, and the invariance clause X.image (fun B => B.map γ.toEmbedding) = X versus famMap G γ X = X. These are the same set: Finset.map_eq_image gives X.map ⟨g,_⟩ = X.image g, and Mathlib RelIso.coe_toEmbedding ((f.toEmbedding : α → β) = f, rfl) with RelIso.coe_fn_toEquiv (rfl) makes B.map γ.toEmbedding and B.map γ.toEquiv.toEmbedding the same Finset. Substance also matches the SEMANTIC-CONTRACT (INV) template (a deficient cut exists ⇒ an Aut-invariant one does), with positivity added. Expected `"semantic fidelity"`; observed `"match"`.
+- `note` `repair_3_xmin_positivity` `independent_review` (independent_reviewer, `fa27bf249d879e67`): Positivity is proved for X_min: canonMin G F p = (maximizers G F p).inf' _ id, the meet (intersection) of all maximizers of phi = supply − cov over domain = powerset of I_(p+1); canonMin_pos is stated and proved for canonMin, and the terminal's witness is canonMin G F p. No canonMax, no sup' over maximizers and no X_max statement occurs in Main.lean (the only sup' is maxPhi, the maximum value). The inlined nonemptiness proofs in maxPhi and canonMin are Prop arguments; values unchanged. Expected `"semantic fidelity"`; observed `"match"`.
+- `note` `repair_4_classical_bridge` `independent_review` (independent_reviewer, `5034f6aa9695626f`): WeightedHall (carried, open Classical in) and the new entries/terminal (open scoped Classical) may elaborate the filter's DecidablePred differently; filter_eq_covered quantifies over an arbitrary inst : DecidablePred and is proved by Finset.mem_filter extensionality, so every rewrite is instance-agnostic. Finset.filter's value is instance-independent in any case; local instance binders take precedence over the scoped classical instance for DecidableEq/DecidableRel/Fintype in the statement. Expected `"semantic fidelity"`; observed `"match"`.
+- `note` `repair_5_famMap` `independent_review` (independent_reviewer, `f3036989ae047ca5`): famMap G γ X := X.map ⟨fun s => s.map γ.toEquiv.toEmbedding, Finset.map_injective _⟩ is exactly {γ(B) : B ∈ X}, member-wise image under the vertex map γ, nothing wider (no closure, orbit union, filter or extra binder). It is C-U1-T's famMap with setEmb folded in (same term). Its unused auto-included instance arguments ([Fintype V], [DecidableEq V], [DecidableRel G.Adj]) do not affect its value. Expected `"semantic fidelity"`; observed `"match"`.
+- `note` `reviewer_identity_label` `independent_review` (independent_reviewer, `a39876ef8861fcb8`): The assigned reviewer id c2-la1-fable-fidelity-20260926 (reviewer-assignment.json) embeds 'fable', but this seat is chartered Claude Opus 5.5 / high and the runtime reports claude-opus-5-5[1m]. The id is used verbatim as assigned; it is a label, not a model disclosure. The reviewer is distinct from producer c2-la1-formalizer-opus-20260926. Expected `"semantic fidelity"`; observed `"match"`.
+- `note` `statement_exact` `independent_review` (independent_reviewer, `60abe24e9cbc45e1`): Terminal declaration E993Transport.exists_aut_invariant_deficient_of_not_weightedHall read in Main.lean a9cf3b81: binder and conclusion text byte-identical to the synthesis `## Lean awards` C2-LA1 block (indent removed) and to the formalizer brief §2 block (mechanical comparison). Hypotheses are exactly [Fintype V] [DecidableEq V] [DecidableRel G.Adj] and h : ¬ WeightedHall G (favorableLeaves G p) p; no IsTree, eligibility or p ≥ 1; p ranges over all of ℕ; F is fixed as favorableLeaves G p. Conclusion is ∃ X, X ⊆ indepFamily G (p+1) ∧ (∀ γ : G ≃g G, famMap G γ X = X) ∧ (∀ B ∈ X, 0 < w_F B) ∧ Σ_{N(X)} w_F < Σ_X w_F, with N(X) the same filter as in WeightedHall: no dropped conjunct, no weakening, no extra hypothesis. The existential is witnessed by canonMin G F p in the proof. Expected `"semantic fidelity"`; observed `"match"`.
+- `note` `witness_scope` `independent_review` (independent_reviewer, `00e58fd7e63eb6c8`): The certified statement is existential. The identification of the witness as X_min (contract informal statement: 'The witness is X_min') is established by the proof and by the kernel-checked companions canonMin_famMap / canonMin_pos in the same file, which carry no certificate of their own; closing text should present 'some Aut-invariant, positive, deficient X ⊆ I_(p+1)' as the certified content and X_min as the proof's witness. Expected `"semantic fidelity"`; observed `"match"`.
+
+## Independent Review
+
+- Reviewer: `c2-la1-fable-fidelity-20260926` (independent-mathematical-formalization-fidelity-reviewer)
+- Attestation: `c2-la1-fable-fidelity-attestation-20260926-6759dbb3-9bfe-472a-9b71-b90e0c9868bb`
+- Completed: `2026-09-27T01:24:57Z`
+- Verdict: `match`
+
+## Interpretation
+
+Only `passed` means the verified Lean declaration faithfully matches the bound
+theorem contract. A kernel pass without a current independent semantic
+attestation is not a fidelity pass. This Markdown file is rendered from the
+canonical JSON receipt and is not an independent source of truth.

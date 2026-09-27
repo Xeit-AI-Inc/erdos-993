@@ -21,6 +21,10 @@ of size `k`. The problem asks whether
 is weakly unimodal whenever `G` is a finite tree, and likewise whenever `G` is
 a finite forest.
 
+## 2026-09-27: r30 — the weighted transport mechanism: identity and reductions in Lean, (HALL) on two infinite families and at every known switch-necessary instance; full scope open
+
+The [r30 run](experiments/r30-weighted-transport.md) (chartered from a Codex prompt) closed after six cycles (the charter's ceiling) with seven governed Lean awards — the active-tag weight identity `supply − capacity = S(G,p)`, weighted Hall ⇒ `S ≤ 0`, the `Aut`-invariant deficient family, the orbit-quotient reduction, a deletion-only saturating flow on `G_k` at every rank `p ≥ k+3`, (HALL) at every eligible rank of every `G_k`, and (HALL) at rank `k+3` of the spider `S(1,2,3^k)` — plus `computer_assisted` whole-row (HALL) at fifteen switch-necessary CB rows and the 1427-vertex `G(8^82,7^2)`. The mechanism key stays open at full scope: no uniform proof and no deficient cut anywhere on record (every free tree of order ≤ 23 saturates with deletion arcs alone). The smallest uniform object left is a closed-form choke-local sector certificate at the top sector-deficient rank of `CB(8,m)` with a `1/m²` margin law; a successor run is recommended. See the [verification record](evidence/verification-2026-09-27-r30.md).
+
 ## 2026-09-26: lower-region compensation six-cycle close
 
 The [lower-region experiment](docs/experiments/lower-region-compensation-dre-2026-09-25.md) completed six cycles at 18 search routes, 36 critiques, three origin adjudications and one neutral synthesis per cycle. Its two governed Lean packages carry four exact keys: a marked-isolate counting theorem, the ordinary-leaf bound through `n≤2p+1`, and pointwise plus aggregate first-shell results at `n=2p+2`. An adjudicated computer-assisted all-parameter proof covers the `T_m` family; the cutoff-400 variant shortens the finite base without widening scope. The arity-2–4 census has 191,016 eligible rows through 40 branches; restricted heterogeneous analytic tails start at 2,000 branches (arities 2–4) and 100,000,000 branches (arities 2–12). The intervening finite prefixes and arbitrary-tree compensation remain open. The corrected F5 and U5 active-tag weights are described on the experiment page. [Final analysis](runs/erdos-993-lower-region-compensation-dre-2026-09-25/FINAL-ANALYSIS.md) and [research notepad](runs/erdos-993-lower-region-compensation-dre-2026-09-25/RESEARCH-NOTEPAD.md) explain the next mathematical boundary. Final identity total: `434 identities: 262 VERIFIED, 96 REFUTED, 26 CONDITIONAL, 50 OPEN`.
@@ -215,6 +219,14 @@ The expected transitive axioms are `propext`, `Classical.choice`, and
 - [r24 top-rank selector collapse Lean package](proofs/lean/r24-c4-top-rank-selector-collapse/README.md)
 - [r24 top-rank residual identity Lean package](proofs/lean/r24-c5-top-rank-residual-identity/README.md)
 - [r25 uniform residual no-recovery DRE (six cycles, terminal)](experiments/r25-uniform-residual-no-recovery.md)
+- [2026-09-27 r30 verification record](evidence/verification-2026-09-27-r30.md)
+- [r30-c1-la1-active-tag-weight-identity Lean package](proofs/lean/r30-c1-la1-active-tag-weight-identity/README.md)
+- [r30-c1-la2-weighted-hall-implies-nonpositive-aggregate Lean package](proofs/lean/r30-c1-la2-weighted-hall-implies-nonpositive-aggregate/README.md)
+- [r30-c2-la1-invariant-positive-deficient-family Lean package](proofs/lean/r30-c2-la1-invariant-positive-deficient-family/README.md)
+- [r30-c3-la1-weighted-hall-iff-aut-orbit-quotient-hall Lean package](proofs/lean/r30-c3-la1-weighted-hall-iff-aut-orbit-quotient-hall/README.md)
+- [r30-c4-la1-gk-deletion-saturating-flow-every-rank Lean package](proofs/lean/r30-c4-la1-gk-deletion-saturating-flow-every-rank/README.md)
+- [r30-c5-la1-gk-weighted-hall-every-eligible-rank Lean package](proofs/lean/r30-c5-la1-gk-weighted-hall-every-eligible-rank/README.md)
+- [r30-c6-la2-spider-tree-weighted-hall-rank-k-plus-3 Lean package](proofs/lean/r30-c6-la2-spider-tree-weighted-hall-rank-k-plus-3/README.md)
 - [2026-09-25 r29 verification record](evidence/verification-2026-09-25-r29.md)
 - [r29-c1-la1-tagged-shadow-bound Lean package](proofs/lean/r29-c1-la1-tagged-shadow-bound/README.md)
 - [r29-c1-la2-leaf-high-tail-pointwise Lean package](proofs/lean/r29-c1-la2-leaf-high-tail-pointwise/README.md)

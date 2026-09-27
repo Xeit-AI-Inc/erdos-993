@@ -1,0 +1,868 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "e993-r30-c1-la1-active-tag-weight-aggregate-identity-v1",
+  "theorem": {
+    "title": "C1-LA1 (WID): active-tag weight / aggregate identity, E993Transport.activeWeightAggregateIdentity (key E993-R30-ACTIVE-TAG-WEIGHT-AGGREGATE-IDENTITY)",
+    "informal_statement": "Run erdos-993-math-dre-20260926-r30-weighted-transport (r30), Cycle 1 Stage 7, award group C1-LA1; Lean run root runs/lean-2026-09-26-c1-la1-active-tag-weight-identity; producer c1-la1-formalizer-opus-20260926. For every finite vertex type V with decidable equality, every simple graph G on V with decidable adjacency, and every natural p with 1 <= p: let F = F_p(G) be the original leaves of G that are strictly favorable at rank p (fixed at p). For an independent set B let w_F(B) be the number of ACTIVE tags of B, i.e. of v in F n B such that B contains another neighbour of the original support s_v of v ((B \\ {v}) n W_v nonempty, W_v = N(s_v) \\ {v}); never |F n B|. Then, in the integers, sum_{B in I_(p+1)(G)} w_F(B) - sum_{A in I_p(G)} w_F(A) = S(G, p) = C5LA1.aggregate G p. Graph-generic (no IsTree, no eligibility). hp is kept as in SOLUTION-CONTRACT §2 and is not needed for this form (F_0 = ∅); it is load-bearing for the general-F companion lemma layerWeight_sub_eq_sum (K_{1,3}, p = 0: 0 vs 6). Grades (this contract's list only): on this award's governed close, E993-R30-ACTIVE-TAG-WEIGHT-AGGREGATE-IDENTITY OPEN -> VERIFIED formally_verified at exactly this statement; companion lemmas (indepFamily_eq_indepSetsAvoiding, isGraphLeaf_of_mem_favorableLeaves, tagWitnesses_subset_R, card_active_eq_tagged, layerWeight_eq_sum_card, layerWeight_sub_eq_sum, and the seven C-U2-T draft-text equivalences) carry no certificate of their own (R29-N-12); the carried first-interior lemma E993Interior.highTailAggregateFromShadow is carried only for its private helpers and is neither used nor re-graded. Equivalent-phrasing authority: C1-STAGE1-GATE.md Gate ruling 9 (\"equivalent Lean phrasings with the equivalence proved\"); the SOLUTION-CONTRACT §2 draft text is related to the compiled phrasing by the companions *_draftText and layerWeight_sub_eq_sum_draftBinders (C-U2-T's CriticContract.lean equivalences, re-derived). Signature deviations from the §2 draft, attributed correctly: noncomputable on tagWitnesses/activeWeight/layerWeight/favorableLeaves and classical decidability (required: the §2 text does not compile verbatim, C-U2-F ContractVerbatim.lean); layerWeight_sub_eq_sum takes an explicit G (the §2 draft has {G}), recorded as the frozen phrasing (synthesis repair 5). The terminal theorem's binders equal §2's. Excluded conclusions: (HALL) or (HALL-COND) on trees or any graph; the sign of S; E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE; any tree-only statement; RTree wording; census values; TREE/FOREST/TRANSFER; Erdős #993. transportRel, IsSaturatingFlow and WeightedHall are frozen in this file only so that they freeze once for C1-LA2; transportRel is (D) union (S) literally (exactly two neighbours, u not in B). Attribution: the active-tag weight, the mechanism and its corrections: Codex (GPT-6 Astra/Sol/Luna), lower-region run; definitions of record entries 1-18 and 42: the first-interior run (Codex) on the r24/r25/r26 definition layers (C4LA1, C5LA1); the informal proof: r30 F2 (Claude Sonnet 5); the Lean proofs: r30 U2 (Claude Sonnet 5); companions and fidelity findings: C-U2-T, C-U2-F, C-F2-T, C-F2-U (Claude Opus 5.5); reconciliation: the T/F/U adjudicators and the Cycle 1 synthesis (Claude Opus 5.5); Stage 7 formalization (carry, freeze repairs, contract): c1-la1-formalizer-opus-20260926 (Claude Opus 5.5)."
+  },
+  "formulation_status": {
+    "status": "established",
+    "evidence": [
+      "Cycle 1 synthesis, Exact established results P1: (WID) proved_informal (r30 F2; T/F/U adjudicators); kernel-checked in scratch (U2; U adjudicator rebuild). Status OPEN until C1-LA1 closes.",
+      "Informal proof at statement level: INFORMAL-PROOF.md (this run root).",
+      "This contract makes no truth or grade claim beyond structural validity; the award requires the independent informal audit, the kernel receipt and the fidelity receipt."
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-c4-vertex-deletion-indep-set-count",
+      "lean_name": "C4LA1.vertexDeletionIndepSetCount",
+      "dependencies": [],
+      "description": "Carried BYTE-IDENTICALLY through the registrar from the first-interior award source (Codex, first-interior run; r24/r25/r26 definition layers), first-interior entry 1. i_k(G - v) on the original carrier. Lean text of record (this run's registrar entry 1, fragment SHA-256 7e0a588e243735a611c919ea1080816911a3e27e4523478af0c0f560ce1b3b48):\nnamespace C4LA1\n\nopen SimpleGraph\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- The coefficient `i_k(G-v)`, represented without changing vertex types:\nindependent `k`-subsets of the original finite vertex type that avoid `v`. -/\ndef vertexDeletionIndepSetCount (G : SimpleGraph V) [DecidableRel G.Adj]\n    (v : V) (k : Nat) : Nat :=\n  (((Finset.univ.erase v).powersetCard k).filter fun s : Finset V =>\n    G.IsIndepSet (s : Set V)).card\n\nend C4LA1"
+    },
+    {
+      "id": "def-c4-vertex-deletion-forward-difference",
+      "lean_name": "C4LA1.vertexDeletionForwardDifference",
+      "dependencies": [
+        "def-c4-vertex-deletion-indep-set-count"
+      ],
+      "description": "Carried BYTE-IDENTICALLY through the registrar from the first-interior award source (Codex, first-interior run; r24/r25/r26 definition layers), first-interior entry 2. Delta_p(G - v) in Z. Lean text of record (this run's registrar entry 2, fragment SHA-256 c2da50eb16ee788c439b146577efeedd7dd42811c6943fb437585edcf63b5880):\nnamespace C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- The forward coefficient difference `i_(p+1)(G-v) - i_p(G-v)`, with\nnatural counts embedded in the integers. -/\ndef vertexDeletionForwardDifference (G : SimpleGraph V) [DecidableRel G.Adj]\n    (v : V) (p : Nat) : Int :=\n  (vertexDeletionIndepSetCount G v (p + 1) : Int) -\n    vertexDeletionIndepSetCount G v p\n\nend C4LA1"
+    },
+    {
+      "id": "def-c4-is-favorable-at",
+      "lean_name": "C4LA1.IsFavorableAt",
+      "dependencies": [
+        "def-c4-vertex-deletion-forward-difference"
+      ],
+      "description": "Carried BYTE-IDENTICALLY through the registrar from the first-interior award source (Codex, first-interior run; r24/r25/r26 definition layers), first-interior entry 3. Strict favorability Delta_p(G - v) < 0 at the ORIGINAL rank p. Lean text of record (this run's registrar entry 3, fragment SHA-256 25d8f7d274f9080468bf6d46acc6db3d4a469c2e399e7faee6cdcee24290a0db):\nnamespace C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- Literal strict favorability of an original leaf at rank `p`. -/\ndef IsFavorableAt (G : SimpleGraph V) [DecidableRel G.Adj] (v : V) (p : Nat) : Prop :=\n  vertexDeletionForwardDifference G v p < 0\n\nend C4LA1"
+    },
+    {
+      "id": "def-c4-is-graph-leaf",
+      "lean_name": "C4LA1.IsGraphLeaf",
+      "dependencies": [],
+      "description": "Carried BYTE-IDENTICALLY through the registrar from the first-interior award source (Codex, first-interior run; r24/r25/r26 definition layers), first-interior entry 4. An original degree-one vertex. Lean text of record (this run's registrar entry 4, fragment SHA-256 65acd314d3bfd74aca476e00dd8866434c67682b627bce5e105d372a556f7ae5):\nnamespace C4LA1\n\nvariable {V : Type*}\n\n/-- A graph leaf has exactly one adjacent vertex. -/\ndef IsGraphLeaf (G : SimpleGraph V) (v : V) : Prop :=\n  ∃! u, G.Adj v u\n\nend C4LA1"
+    },
+    {
+      "id": "def-c5-support",
+      "lean_name": "C5LA1.support",
+      "dependencies": [
+        "def-c4-is-graph-leaf"
+      ],
+      "description": "Carried BYTE-IDENTICALLY through the registrar from the first-interior award source (Codex, first-interior run; r24/r25/r26 definition layers), first-interior entry 5. s_v, the unique support of a leaf v (Classical.choose; unconstrained off leaves). Lean text of record (this run's registrar entry 5, fragment SHA-256 8e1e1a689393f555eb5c216207b1368c7415a8543c569884b2fc86954b7bc2b4):\nnamespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- The unique support (neighbour) of an original leaf `v`; unconstrained\n(any value satisfying nothing further) off the leaf set. -/\nnoncomputable\ndef support (G : SimpleGraph V) (v : V) : V :=\n  Classical.choose (p := fun u => C4LA1.IsGraphLeaf G v → G.Adj v u ∧ ∀ w, G.Adj v w → w = u)\n    (by\n      by_cases h : C4LA1.IsGraphLeaf G v\n      · obtain ⟨u, hu, huniq⟩ := h\n        exact ⟨u, fun _ => ⟨hu, huniq⟩⟩\n      · exact ⟨v, fun hc => absurd hc h⟩)\n\nend C5LA1"
+    },
+    {
+      "id": "def-c5-leaf-set",
+      "lean_name": "C5LA1.leafSet",
+      "dependencies": [
+        "def-c4-is-graph-leaf"
+      ],
+      "description": "Carried BYTE-IDENTICALLY through the registrar from the first-interior award source (Codex, first-interior run; r24/r25/r26 definition layers), first-interior entry 6. The original leaves. Lean text of record (this run's registrar entry 6, fragment SHA-256 78ec65517bde90cc2fc5e542fc7c60d6a5147b243b74b9ac3de33d4efd1df697):\nnamespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\nopen Classical in\n/-- The set of original leaves of `G`. -/\nnoncomputable\ndef leafSet (G : SimpleGraph V) : Finset V :=\n  Finset.univ.filter (C4LA1.IsGraphLeaf G)\n\nend C5LA1"
+    },
+    {
+      "id": "def-c5-h",
+      "lean_name": "C5LA1.H",
+      "dependencies": [
+        "def-c5-support"
+      ],
+      "description": "Carried BYTE-IDENTICALLY through the registrar from the first-interior award source (Codex, first-interior run; r24/r25/r26 definition layers), first-interior entry 8. Deletion set {v, s_v} of H_v = G - {v, s_v}. Lean text of record (this run's registrar entry 7, fragment SHA-256 55f37d9161901d6006e571cf548c4e56675c9d786a1aba83e7889ad9d443224d):\nnamespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- `H_v = G - {v, s_v}`, realised as the deletion set for a leaf `v`. -/\nnoncomputable\ndef H (G : SimpleGraph V) (v : V) : Finset V :=\n  {v, support G v}\n\nend C5LA1"
+    },
+    {
+      "id": "def-c5-r",
+      "lean_name": "C5LA1.R",
+      "dependencies": [
+        "def-c5-support"
+      ],
+      "description": "Carried BYTE-IDENTICALLY through the registrar from the first-interior award source (Codex, first-interior run; r24/r25/r26 definition layers), first-interior entry 9. Deletion set insert s_v N(s_v) of R_v = G - N[s_v]. Lean text of record (this run's registrar entry 8, fragment SHA-256 a0407d82ab112a65a0f9d85970e9d6217b66201680cc079a4ba13751e53dc6b8):\nnamespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- `R_v = G - N[s_v]`, realised as the deletion set for a leaf `v`. -/\nnoncomputable\ndef R (G : SimpleGraph V) [DecidableRel G.Adj] (v : V) : Finset V :=\n  insert (support G v) (G.neighborFinset (support G v))\n\nend C5LA1"
+    },
+    {
+      "id": "def-c5-indep-sets-avoiding",
+      "lean_name": "C5LA1.indepSetsAvoiding",
+      "dependencies": [],
+      "description": "Carried BYTE-IDENTICALLY through the registrar from the first-interior award source (Codex, first-interior run; r24/r25/r26 definition layers), first-interior entry 10. I_k(G - D) on the original carrier. Lean text of record (this run's registrar entry 9, fragment SHA-256 ac0e331eec99650eca7a18e9fe98829bb5495850685b8f31936169f0a6d8e368):\nnamespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- `I_k(G - D)`: independent `k`-subsets of the original vertex type\navoiding the finite deletion set `D`. -/\ndef indepSetsAvoiding (G : SimpleGraph V) [DecidableRel G.Adj]\n    (D : Finset V) (k : Nat) : Finset (Finset V) :=\n  ((Finset.univ \\ D).powersetCard k).filter fun s : Finset V => G.IsIndepSet (s : Set V)\n\nend C5LA1"
+    },
+    {
+      "id": "def-c5-indep-set-count",
+      "lean_name": "C5LA1.indepSetCount",
+      "dependencies": [
+        "def-c5-indep-sets-avoiding"
+      ],
+      "description": "Carried BYTE-IDENTICALLY through the registrar from the first-interior award source (Codex, first-interior run; r24/r25/r26 definition layers), first-interior entry 11. i_k(G - D). Lean text of record (this run's registrar entry 10, fragment SHA-256 e22635d8697e49b38dd521080f34c3eefe56a93964120c70f53ad9899b4a7f71):\nnamespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- `i_k(G - D)`. -/\ndef indepSetCount (G : SimpleGraph V) [DecidableRel G.Adj]\n    (D : Finset V) (k : Nat) : Nat :=\n  (indepSetsAvoiding G D k).card\n\nend C5LA1"
+    },
+    {
+      "id": "def-c5-forward-difference-del",
+      "lean_name": "C5LA1.forwardDifferenceDel",
+      "dependencies": [
+        "def-c5-indep-set-count"
+      ],
+      "description": "Carried BYTE-IDENTICALLY through the registrar from the first-interior award source (Codex, first-interior run; r24/r25/r26 definition layers), first-interior entry 12. Delta_k(G - D) = (i_(k+1) : Z) - i_k; both counts cast to Z before subtracting. Lean text of record (this run's registrar entry 11, fragment SHA-256 60bd8efcc88e8e511a7caacac5867f7845243ccab08f1660e8c3962af544dd8f):\nnamespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- `Delta_k(G - D) = i_(k+1)(G-D) - i_k(G-D)`. -/\ndef forwardDifferenceDel (G : SimpleGraph V) [DecidableRel G.Adj]\n    (D : Finset V) (k : Nat) : Int :=\n  (indepSetCount G D (k + 1) : Int) - indepSetCount G D k\n\nend C5LA1"
+    },
+    {
+      "id": "def-c5-aggregate",
+      "lean_name": "C5LA1.aggregate",
+      "dependencies": [
+        "def-c5-leaf-set",
+        "def-c4-is-favorable-at",
+        "def-c5-forward-difference-del",
+        "def-c5-h",
+        "def-c5-r"
+      ],
+      "description": "Carried BYTE-IDENTICALLY through the registrar from the first-interior award source (Codex, first-interior run; r24/r25/r26 definition layers), first-interior entry 13. S(G, p) = sum over the leaves favorable at p of (Delta_(p-1)(G - H_v) - Delta_(p-1)(G - R_v)); p - 1 is the natural-number subtraction (equal to the integer p - 1 under hp). Lean text of record (this run's registrar entry 12, fragment SHA-256 d66e776c5cf49b2a78a2d9713e4a41de2cbaf5de0af7b6d580075064d1daea8b):\nnamespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\nopen Classical in\n/-- `S(G,p) = sum_{v in F} (b_v - B_v)`, the literal top-rank residual\naggregate, summed over the favorable filter of the leaf set. -/\nnoncomputable\ndef aggregate (G : SimpleGraph V) [DecidableRel G.Adj] (p : Nat) : Int :=\n  ∑ v ∈ (leafSet G).filter fun v => C4LA1.IsFavorableAt G v p,\n    (forwardDifferenceDel G (H G v) (p - 1) - forwardDifferenceDel G (R G v) (p - 1))\n\nend C5LA1"
+    },
+    {
+      "id": "def-e993interior-tagged-family",
+      "lean_name": "E993Interior.taggedFamily",
+      "dependencies": [],
+      "description": "Carried BYTE-IDENTICALLY through the registrar from the first-interior award source (Codex, first-interior run; r24/r25/r26 definition layers), first-interior entry 18. Used in the PROOF only (q_v(k) = |taggedFamily G (univ \\ H_v) R_v k|); not in the terminal statement. Lean text of record (this run's registrar entry 13, fragment SHA-256 cb43feebd48bdf3a82d95db4c0475a34a83acdd8c55f13ac44433ea26141fa1e):\nnamespace E993Interior\n\nnoncomputable section\n\ndef taggedFamily {V : Type*} [Fintype V] [DecidableEq V]\n    (G : SimpleGraph V) [DecidableRel G.Adj] (U W : Finset V) (k : ℕ) :\n    Finset (Finset V) := by\n  classical\n  exact (U.powersetCard k).filter fun A =>\n    G.IsIndepSet (A : Set V) ∧ ¬ Disjoint A W\n\nend\n\nend E993Interior"
+    },
+    {
+      "id": "def-t-indep-family",
+      "lean_name": "E993Transport.indepFamily",
+      "dependencies": [],
+      "description": "NEW in r30, namespace E993Transport; U2's compiled text (r30 U2, Claude Sonnet 5), carried byte-identically at the declaration level from U2-Main.lean (110c2751...2743). The layer I_j(G); = C5LA1.indepSetsAvoiding G {} j (companion indepFamily_eq_indepSetsAvoiding). Lean text of record (this run's registrar entry 14, fragment SHA-256 73df20a8511ea67885d45631688cf693e58cebe9cfd5413ee67e782c1030ef9e):\n/-- the independent `j`-subsets of `V`: the layer `I_j(G)` (SEMANTIC-CONTRACT §1.2). -/\ndef indepFamily (G : SimpleGraph V) [DecidableRel G.Adj] (j : ℕ) : Finset (Finset V) :=\n  (Finset.univ.powersetCard j).filter fun s => G.IsIndepSet (s : Set V)"
+    },
+    {
+      "id": "def-t-tag-witnesses",
+      "lean_name": "E993Transport.tagWitnesses",
+      "dependencies": [
+        "def-c5-support"
+      ],
+      "description": "NEW in r30, namespace E993Transport; U2's compiled text (r30 U2, Claude Sonnet 5), carried byte-identically at the declaration level from U2-Main.lean (110c2751...2743). W_v = N_G(s_v) \\ {v}. Lean text of record (this run's registrar entry 15, fragment SHA-256 113d952167528dfc045eb79961e8fbff0326da8f04277799436d6c8962022025):\n/-- `W_v = N_G(s_v) \\ {v}` (SEMANTIC-CONTRACT §1.2). -/\nnoncomputable\ndef tagWitnesses (G : SimpleGraph V) [DecidableRel G.Adj] (v : V) : Finset V :=\n  (G.neighborFinset (C5LA1.support G v)).erase v"
+    },
+    {
+      "id": "def-t-active-weight",
+      "lean_name": "E993Transport.activeWeight",
+      "dependencies": [
+        "def-t-tag-witnesses"
+      ],
+      "description": "NEW in r30, namespace E993Transport; U2's compiled text (r30 U2, Claude Sonnet 5), carried byte-identically at the declaration level from U2-Main.lean (110c2751...2743). The active-tag weight w_F(B): counts v in F n B with (B \\ {v}) n W_v nonempty, i.e. B contains ANOTHER neighbour of v's original support (erratum R30-E-b wording); NEVER |F n B|. Lean text of record (this run's registrar entry 16, fragment SHA-256 074ed034729850d34722d0b1ceeb96d8362beaebf3b7a409cb3fab28a9850b93):\n/-- the active-tag weight of `B` w.r.t. the tag set `F`: `v ∈ F ∩ B` is counted\niff `B` contains another neighbour of `v`'s original support. -/\nnoncomputable\ndef activeWeight (G : SimpleGraph V) [DecidableRel G.Adj] (F B : Finset V) : ℕ :=\n  ((F ∩ B).filter fun v => ¬ Disjoint (B.erase v) (tagWitnesses G v)).card"
+    },
+    {
+      "id": "def-t-layer-weight",
+      "lean_name": "E993Transport.layerWeight",
+      "dependencies": [
+        "def-t-indep-family",
+        "def-t-active-weight"
+      ],
+      "description": "NEW in r30, namespace E993Transport; U2's compiled text (r30 U2, Claude Sonnet 5), carried byte-identically at the declaration level from U2-Main.lean (110c2751...2743). Total active weight of the layer I_j(G). Lean text of record (this run's registrar entry 17, fragment SHA-256 5ca5792309be23276583ac42cef294618e2471c97d3f58e67f0ab7980a3a83c3):\n/-- total active weight of the layer `I_j(G)`. -/\nnoncomputable\ndef layerWeight (G : SimpleGraph V) [DecidableRel G.Adj] (F : Finset V) (j : ℕ) : ℕ :=\n  ∑ B ∈ indepFamily G j, activeWeight G F B"
+    },
+    {
+      "id": "def-t-favorable-leaves",
+      "lean_name": "E993Transport.favorableLeaves",
+      "dependencies": [
+        "def-c5-leaf-set",
+        "def-c4-is-favorable-at"
+      ],
+      "description": "NEW in r30, namespace E993Transport; U2's compiled text (r30 U2, Claude Sonnet 5), carried byte-identically at the declaration level from U2-Main.lean (110c2751...2743). F_p(G), the fixed original strict selector at rank p; `open Classical in` (synthesis repair 3, mirroring entry 13); elaborates to the identical term U2 compiled (pp.all comparison). Lean text of record (this run's registrar entry 18, fragment SHA-256 16b0c7672ed66c4cb53ba24d853764df160d6694f63b231346a2eb71c390ec77):\nopen Classical in\n/-- the fixed original strict selector `F_p(G)`. -/\nnoncomputable\ndef favorableLeaves (G : SimpleGraph V) [DecidableRel G.Adj] (p : ℕ) : Finset V :=\n  (C5LA1.leafSet G).filter fun v => C4LA1.IsFavorableAt G v p"
+    },
+    {
+      "id": "def-t-transport-rel",
+      "lean_name": "E993Transport.transportRel",
+      "dependencies": [],
+      "description": "NEW in r30, namespace E993Transport; U2's compiled text (r30 U2, Claude Sonnet 5), carried byte-identically at the declaration level from U2-Main.lean (110c2751...2743). (D) union (S) literally: (D) A = B.erase q for some q in B; (S) some u not in B with exactly two neighbours in B and A = insert u (B \\ N(u)). FROZEN HERE ONLY (so that it freezes once; C1-LA2 consumes it); it occurs in no statement of this award. Lean text of record (this run's registrar entry 19, fragment SHA-256 b1b9ac6c8de56fa740a37e5bac0fa628f1d817c2e33625ca34dcab33a1100d95):\n/-- the deletion / two-for-one relation from `(p+1)`-sets to `p`-sets. -/\ndef transportRel (G : SimpleGraph V) [DecidableRel G.Adj] (B A : Finset V) : Prop :=\n  (∃ q ∈ B, A = B.erase q) ∨\n  (∃ u, u ∉ B ∧ (G.neighborFinset u ∩ B).card = 2 ∧ A = insert u (B \\ G.neighborFinset u))"
+    },
+    {
+      "id": "def-t-is-saturating-flow",
+      "lean_name": "E993Transport.IsSaturatingFlow",
+      "dependencies": [
+        "def-t-indep-family",
+        "def-t-transport-rel",
+        "def-t-active-weight"
+      ],
+      "description": "NEW in r30, namespace E993Transport; U2's compiled text (r30 U2, Claude Sonnet 5), carried byte-identically at the declaration level from U2-Main.lean (110c2751...2743). FROZEN HERE ONLY for C1-LA2; occurs in no statement of this award. Lean text of record (this run's registrar entry 20, fragment SHA-256 a9d81c260914024d38f46ff5b564749d34f640674f9e9116685b4e7c631a48ac):\n/-- a saturating integral flow of the network at rank `p` with tag set `F`. -/\ndef IsSaturatingFlow (G : SimpleGraph V) [DecidableRel G.Adj] (F : Finset V) (p : ℕ)\n    (f : Finset V → Finset V → ℕ) : Prop :=\n  (∀ B A, 0 < f B A → B ∈ indepFamily G (p + 1) ∧ A ∈ indepFamily G p ∧ transportRel G B A) ∧\n  (∀ B ∈ indepFamily G (p + 1), ∑ A ∈ indepFamily G p, f B A = activeWeight G F B) ∧\n  (∀ A ∈ indepFamily G p, ∑ B ∈ indepFamily G (p + 1), f B A ≤ activeWeight G F A)"
+    },
+    {
+      "id": "def-t-weighted-hall",
+      "lean_name": "E993Transport.WeightedHall",
+      "dependencies": [
+        "def-t-indep-family",
+        "def-t-active-weight",
+        "def-t-transport-rel"
+      ],
+      "description": "NEW in r30, namespace E993Transport; U2's compiled text (r30 U2, Claude Sonnet 5), carried byte-identically at the declaration level from U2-Main.lean (110c2751...2743). (HALL-COND) for every source subfamily; `open Classical in` (synthesis repair 3). FROZEN HERE ONLY for C1-LA2; occurs in no statement of this award; nothing here asserts it. Lean text of record (this run's registrar entry 21, fragment SHA-256 63534ffbfcc4bb1297228e598da165dcf98732939cd51a5d7fda3e62bc518478):\nopen Classical in\n/-- weighted Hall for every source subfamily. -/\ndef WeightedHall (G : SimpleGraph V) [DecidableRel G.Adj] (F : Finset V) (p : ℕ) : Prop :=\n  ∀ X ⊆ indepFamily G (p + 1),\n    ∑ B ∈ X, activeWeight G F B ≤\n      ∑ A ∈ (indepFamily G p).filter (fun A => ∃ B ∈ X, transportRel G B A), activeWeight G F A"
+    }
+  ],
+  "domains": [
+    {
+      "id": "dom-vertex-type",
+      "lean_type": "V : Type* with [Fintype V] [DecidableEq V] (section variable of namespace E993Transport)",
+      "description": "Any finite vertex type with decidable equality. No nonemptiness, connectivity or acyclicity requirement.",
+      "dependencies": []
+    },
+    {
+      "id": "dom-graph",
+      "lean_type": "G : SimpleGraph V with [DecidableRel G.Adj]",
+      "description": "EVERY finite simple graph on V (graph-generic: no IsTree, no eligibility, no crossing index).",
+      "dependencies": [
+        "dom-vertex-type"
+      ]
+    },
+    {
+      "id": "dom-rank",
+      "lean_type": "p : ℕ",
+      "description": "The rank p (natural number); the tag set is fixed at this rank.",
+      "dependencies": []
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "V",
+      "kind": "forall",
+      "domain_id": "dom-vertex-type"
+    },
+    {
+      "binder": "G",
+      "kind": "forall",
+      "domain_id": "dom-graph"
+    },
+    {
+      "binder": "p",
+      "kind": "forall",
+      "domain_id": "dom-rank"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-finite-vertex-type",
+      "statement": "[Fintype V] [DecidableEq V] (verbatim section variables). Enters every Finset family (univ, powersetCard, filters) and the finite sums.",
+      "dependencies": [
+        "dom-vertex-type"
+      ]
+    },
+    {
+      "id": "hyp-decidable-adjacency",
+      "statement": "[DecidableRel G.Adj] (verbatim binder). Enters neighborFinset (W_v, R_v) and the independence filters.",
+      "dependencies": [
+        "dom-graph"
+      ]
+    },
+    {
+      "id": "hyp-rank-at-least-one",
+      "statement": "(hp : 1 ≤ p) (verbatim binder), kept as in SOLUTION-CONTRACT §2. N/Z equivalence: under hp the natural-number subtraction p - 1 inside C5LA1.aggregate (and in the companion layerWeight_sub_eq_sum) equals the integer p - 1, and (p - 1) + 1 = p. hp is NOT needed for this specialized form, since F_0 = ∅ (for a leaf v, Delta_0(G - v) = (n - 1) - 1 >= 0, so no leaf is favorable at rank 0 and both sides vanish at p = 0). hp IS load-bearing for the general-F companion lemma layerWeight_sub_eq_sum: K_{1,3} with F its three leaves at p = 0 gives 0 against 6.",
+      "dependencies": [
+        "dom-rank"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "(layerWeight G (favorableLeaves G p) (p + 1) : ℤ) - layerWeight G (favorableLeaves G p) p = C5LA1.aggregate G p. In words: with F = F_p(G) fixed at rank p, the total active-tag weight of the independent (p+1)-sets (supply) minus that of the independent p-sets (capacity), in Z, equals the literal aggregate S(G, p). No sign content: nothing about (HALL), (HALL-COND), S <= 0, or any tree statement.",
+    "dependencies": [
+      "hyp-finite-vertex-type",
+      "hyp-decidable-adjacency",
+      "hyp-rank-at-least-one",
+      "def-t-layer-weight",
+      "def-t-favorable-leaves",
+      "def-c5-aggregate"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "def-c4-vertex-deletion-indep-set-count",
+        "kind": "definition"
+      },
+      {
+        "id": "def-c4-vertex-deletion-forward-difference",
+        "kind": "definition"
+      },
+      {
+        "id": "def-c4-is-favorable-at",
+        "kind": "definition"
+      },
+      {
+        "id": "def-c4-is-graph-leaf",
+        "kind": "definition"
+      },
+      {
+        "id": "def-c5-support",
+        "kind": "definition"
+      },
+      {
+        "id": "def-c5-leaf-set",
+        "kind": "definition"
+      },
+      {
+        "id": "def-c5-h",
+        "kind": "definition"
+      },
+      {
+        "id": "def-c5-r",
+        "kind": "definition"
+      },
+      {
+        "id": "def-c5-indep-sets-avoiding",
+        "kind": "definition"
+      },
+      {
+        "id": "def-c5-indep-set-count",
+        "kind": "definition"
+      },
+      {
+        "id": "def-c5-forward-difference-del",
+        "kind": "definition"
+      },
+      {
+        "id": "def-c5-aggregate",
+        "kind": "definition"
+      },
+      {
+        "id": "def-e993interior-tagged-family",
+        "kind": "definition"
+      },
+      {
+        "id": "def-t-indep-family",
+        "kind": "definition"
+      },
+      {
+        "id": "def-t-tag-witnesses",
+        "kind": "definition"
+      },
+      {
+        "id": "def-t-active-weight",
+        "kind": "definition"
+      },
+      {
+        "id": "def-t-layer-weight",
+        "kind": "definition"
+      },
+      {
+        "id": "def-t-favorable-leaves",
+        "kind": "definition"
+      },
+      {
+        "id": "def-t-transport-rel",
+        "kind": "definition"
+      },
+      {
+        "id": "def-t-is-saturating-flow",
+        "kind": "definition"
+      },
+      {
+        "id": "def-t-weighted-hall",
+        "kind": "definition"
+      },
+      {
+        "id": "dom-vertex-type",
+        "kind": "domain"
+      },
+      {
+        "id": "dom-graph",
+        "kind": "domain"
+      },
+      {
+        "id": "dom-rank",
+        "kind": "domain"
+      },
+      {
+        "id": "hyp-finite-vertex-type",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-decidable-adjacency",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-rank-at-least-one",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "def-c4-vertex-deletion-indep-set-count",
+        "to": "def-c4-vertex-deletion-forward-difference"
+      },
+      {
+        "from": "def-c4-vertex-deletion-forward-difference",
+        "to": "def-c4-is-favorable-at"
+      },
+      {
+        "from": "def-c4-is-graph-leaf",
+        "to": "def-c5-support"
+      },
+      {
+        "from": "def-c4-is-graph-leaf",
+        "to": "def-c5-leaf-set"
+      },
+      {
+        "from": "def-c5-support",
+        "to": "def-c5-h"
+      },
+      {
+        "from": "def-c5-support",
+        "to": "def-c5-r"
+      },
+      {
+        "from": "def-c5-indep-sets-avoiding",
+        "to": "def-c5-indep-set-count"
+      },
+      {
+        "from": "def-c5-indep-set-count",
+        "to": "def-c5-forward-difference-del"
+      },
+      {
+        "from": "def-c5-leaf-set",
+        "to": "def-c5-aggregate"
+      },
+      {
+        "from": "def-c4-is-favorable-at",
+        "to": "def-c5-aggregate"
+      },
+      {
+        "from": "def-c5-forward-difference-del",
+        "to": "def-c5-aggregate"
+      },
+      {
+        "from": "def-c5-h",
+        "to": "def-c5-aggregate"
+      },
+      {
+        "from": "def-c5-r",
+        "to": "def-c5-aggregate"
+      },
+      {
+        "from": "def-c5-support",
+        "to": "def-t-tag-witnesses"
+      },
+      {
+        "from": "def-t-tag-witnesses",
+        "to": "def-t-active-weight"
+      },
+      {
+        "from": "def-t-indep-family",
+        "to": "def-t-layer-weight"
+      },
+      {
+        "from": "def-t-active-weight",
+        "to": "def-t-layer-weight"
+      },
+      {
+        "from": "def-c5-leaf-set",
+        "to": "def-t-favorable-leaves"
+      },
+      {
+        "from": "def-c4-is-favorable-at",
+        "to": "def-t-favorable-leaves"
+      },
+      {
+        "from": "def-t-indep-family",
+        "to": "def-t-is-saturating-flow"
+      },
+      {
+        "from": "def-t-transport-rel",
+        "to": "def-t-is-saturating-flow"
+      },
+      {
+        "from": "def-t-active-weight",
+        "to": "def-t-is-saturating-flow"
+      },
+      {
+        "from": "def-t-indep-family",
+        "to": "def-t-weighted-hall"
+      },
+      {
+        "from": "def-t-active-weight",
+        "to": "def-t-weighted-hall"
+      },
+      {
+        "from": "def-t-transport-rel",
+        "to": "def-t-weighted-hall"
+      },
+      {
+        "from": "dom-vertex-type",
+        "to": "dom-graph"
+      },
+      {
+        "from": "dom-vertex-type",
+        "to": "hyp-finite-vertex-type"
+      },
+      {
+        "from": "dom-graph",
+        "to": "hyp-decidable-adjacency"
+      },
+      {
+        "from": "dom-rank",
+        "to": "hyp-rank-at-least-one"
+      },
+      {
+        "from": "hyp-finite-vertex-type",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-decidable-adjacency",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-rank-at-least-one",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-t-layer-weight",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-t-favorable-leaves",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-c5-aggregate",
+        "to": "conclusion"
+      }
+    ]
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "explicit_axiom_allowlist",
+    "rationale": "The definitions of record use Classical.choose (C5LA1.support) and classical decidability (open Classical in, entries 6 and 13); exactly propext, Classical.choice and Quot.sound are permitted. No sorry, admit, native_decide, axiom, or decide over an enumeration for a universal step."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "E993Transport.activeWeightAggregateIdentity",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem activeWeightAggregateIdentity (G : SimpleGraph V) [DecidableRel G.Adj] (p : ℕ)\n    (hp : 1 ≤ p) :\n    (layerWeight G (favorableLeaves G p) (p + 1) : ℤ) - layerWeight G (favorableLeaves G p) p =\n      C5LA1.aggregate G p",
+    "expected_statement_sha256": "661470f6c5b1e6daed31e57287f7d7f7f64ef17b8b9d0369d197e89f51212323"
+  },
+  "source_materials": [
+    {
+      "id": "src-solution-contract",
+      "path": "SOURCE/SOLUTION-CONTRACT.md",
+      "sha256": "3168e7a15baf7a7b3b30649b036eea53da77956cfa535954ca4ca303667f5980",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-semantic-contract",
+      "path": "SOURCE/SEMANTIC-CONTRACT.md",
+      "sha256": "ee7ca2e2c3647555111c4bfb11bf917b4ba56215f59d5390d09f47541ff49000",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-c1-synthesis",
+      "path": "SOURCE/C1-STAGE6-SYNTHESIS.md",
+      "sha256": "339a208e2ae90884ead9fc6c980d0eb9ae715550aeb4588d643ae0f666967a0f",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-c1-u-adjudication",
+      "path": "SOURCE/C1-STAGE5-U-ADJUDICATION.md",
+      "sha256": "e461798e37c6fc2f68e8f04959fda9d59251082370d8b42d54920f44b879a2ff",
+      "role": "reference"
+    },
+    {
+      "id": "src-formalizer-brief",
+      "path": "SOURCE/C1-STAGE7-FORMALIZER-BRIEF-LA1.md",
+      "sha256": "f72c7afaeb6decc6bb1233bc756cee12840778af15b325228ec50bfe40945311",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-capsule-manifest",
+      "path": "SOURCE/C1-LA1-PACKET-MANIFEST.json",
+      "sha256": "4c7be522201bdc24e830ba66d307a488622e3edc2b924e70f8fc148bd64aea61",
+      "role": "reference"
+    },
+    {
+      "id": "src-first-interior-main",
+      "path": "SOURCE/first-interior-Main.lean",
+      "sha256": "8d864da290947d75ac0cb52644b8b5336a19076878fcb11eeed552e6a118d7a9",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-first-interior-state",
+      "path": "SOURCE/first-interior-FORMALIZATION-STATE.json",
+      "sha256": "5411a8c2451549b650be1af2e551c40d8b4440f65ce50c691023ef1be2dc94a0",
+      "role": "reference"
+    },
+    {
+      "id": "src-u2-main",
+      "path": "SOURCE/U2-Main.lean",
+      "sha256": "110c2751d073ad036e0ec63f6d73c8ea900e7f59efd850ca8e6b194a23d72743",
+      "role": "reference"
+    },
+    {
+      "id": "src-u2-part1",
+      "path": "SOURCE/U2-e993transport_part1.lean",
+      "sha256": "e32e4cbc7cfd8b920ecec80b5e281ca0ebef7722ab186eee25f224e9a6cfa496",
+      "role": "reference"
+    },
+    {
+      "id": "src-u2-part2",
+      "path": "SOURCE/U2-e993transport_part2.lean",
+      "sha256": "74827559d034fb5548f06ad631364991321fde3b4623c87cba62ef3c0bca7a09",
+      "role": "reference"
+    },
+    {
+      "id": "src-u2-part3",
+      "path": "SOURCE/U2-e993transport_part3.lean",
+      "sha256": "ad6e083e307ea2548a02d1834c3d0ea38f593c329f4ca81c135be95e1273f068",
+      "role": "reference"
+    },
+    {
+      "id": "src-c-u2-t-critic-contract",
+      "path": "SOURCE/C-U2-T-CriticContract.lean",
+      "sha256": "a6b20f8dc0b545677e439401cf36559dd2d46c4253f74c594c6c77af6599ce82",
+      "role": "reference"
+    },
+    {
+      "id": "src-c-u2-f-contract-verbatim",
+      "path": "SOURCE/C-U2-F-ContractVerbatim.lean",
+      "sha256": "2dc9faaef500863446aff3894930d25b089f00e8af53a0e853742b21eae104b9",
+      "role": "reference"
+    },
+    {
+      "id": "src-u2-draft-contract",
+      "path": "SOURCE/U2-THEOREM-CONTRACT-draft-WID.json",
+      "sha256": "3d47a0e6059236c8c2d99d63bdb60bebab1ba0981142f8a277aebcdc7b778f44",
+      "role": "reference"
+    },
+    {
+      "id": "src-carry-digests",
+      "path": "SOURCE/c1-stage7-sources-SOURCE-DIGESTS.json",
+      "sha256": "ede714f0991a5c31b370087d296bf3531378a39eedf1aaa62a3fd95ff2f6b9a8",
+      "role": "reference"
+    },
+    {
+      "id": "src-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "sha256": "60453a019dee1f59f6e130e009d25c3837975577c40d07b689a136cd9b830386",
+      "role": "reference"
+    },
+    {
+      "id": "src-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "sha256": "cb99af64cbcf100a9fa1fc4bf5f4b9ce1aec15ae0d6e2ff8da26ae6115f8c23c",
+      "role": "reference"
+    },
+    {
+      "id": "src-frag-01",
+      "path": "LeanProject/LeanProof/Snippets/0001-definition-C4LA1-vertexDeletionIndepSetCount.lean.fragment",
+      "sha256": "7e0a588e243735a611c919ea1080816911a3e27e4523478af0c0f560ce1b3b48",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-frag-02",
+      "path": "LeanProject/LeanProof/Snippets/0002-definition-C4LA1-vertexDeletionForwardDifference.lean.fragment",
+      "sha256": "c2da50eb16ee788c439b146577efeedd7dd42811c6943fb437585edcf63b5880",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-frag-03",
+      "path": "LeanProject/LeanProof/Snippets/0003-definition-C4LA1-IsFavorableAt.lean.fragment",
+      "sha256": "25d8f7d274f9080468bf6d46acc6db3d4a469c2e399e7faee6cdcee24290a0db",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-frag-04",
+      "path": "LeanProject/LeanProof/Snippets/0004-definition-C4LA1-IsGraphLeaf.lean.fragment",
+      "sha256": "65acd314d3bfd74aca476e00dd8866434c67682b627bce5e105d372a556f7ae5",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-frag-05",
+      "path": "LeanProject/LeanProof/Snippets/0005-definition-C5LA1-support.lean.fragment",
+      "sha256": "8e1e1a689393f555eb5c216207b1368c7415a8543c569884b2fc86954b7bc2b4",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-frag-06",
+      "path": "LeanProject/LeanProof/Snippets/0006-definition-C5LA1-leafSet.lean.fragment",
+      "sha256": "78ec65517bde90cc2fc5e542fc7c60d6a5147b243b74b9ac3de33d4efd1df697",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-frag-07",
+      "path": "LeanProject/LeanProof/Snippets/0007-definition-C5LA1-H.lean.fragment",
+      "sha256": "55f37d9161901d6006e571cf548c4e56675c9d786a1aba83e7889ad9d443224d",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-frag-08",
+      "path": "LeanProject/LeanProof/Snippets/0008-definition-C5LA1-R.lean.fragment",
+      "sha256": "a0407d82ab112a65a0f9d85970e9d6217b66201680cc079a4ba13751e53dc6b8",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-frag-09",
+      "path": "LeanProject/LeanProof/Snippets/0009-definition-C5LA1-indepSetsAvoiding.lean.fragment",
+      "sha256": "ac0e331eec99650eca7a18e9fe98829bb5495850685b8f31936169f0a6d8e368",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-frag-10",
+      "path": "LeanProject/LeanProof/Snippets/0010-definition-C5LA1-indepSetCount.lean.fragment",
+      "sha256": "e22635d8697e49b38dd521080f34c3eefe56a93964120c70f53ad9899b4a7f71",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-frag-11",
+      "path": "LeanProject/LeanProof/Snippets/0011-definition-C5LA1-forwardDifferenceDel.lean.fragment",
+      "sha256": "60bd8efcc88e8e511a7caacac5867f7845243ccab08f1660e8c3962af544dd8f",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-frag-12",
+      "path": "LeanProject/LeanProof/Snippets/0012-definition-C5LA1-aggregate.lean.fragment",
+      "sha256": "d66e776c5cf49b2a78a2d9713e4a41de2cbaf5de0af7b6d580075064d1daea8b",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-frag-13",
+      "path": "LeanProject/LeanProof/Snippets/0013-definition-E993Interior-taggedFamily.lean.fragment",
+      "sha256": "cb43feebd48bdf3a82d95db4c0475a34a83acdd8c55f13ac44433ea26141fa1e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-frag-14",
+      "path": "LeanProject/LeanProof/Snippets/0014-definition-E993Transport-indepFamily.lean.fragment",
+      "sha256": "73df20a8511ea67885d45631688cf693e58cebe9cfd5413ee67e782c1030ef9e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-frag-15",
+      "path": "LeanProject/LeanProof/Snippets/0015-definition-E993Transport-tagWitnesses.lean.fragment",
+      "sha256": "113d952167528dfc045eb79961e8fbff0326da8f04277799436d6c8962022025",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-frag-16",
+      "path": "LeanProject/LeanProof/Snippets/0016-definition-E993Transport-activeWeight.lean.fragment",
+      "sha256": "074ed034729850d34722d0b1ceeb96d8362beaebf3b7a409cb3fab28a9850b93",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-frag-17",
+      "path": "LeanProject/LeanProof/Snippets/0017-definition-E993Transport-layerWeight.lean.fragment",
+      "sha256": "5ca5792309be23276583ac42cef294618e2471c97d3f58e67f0ab7980a3a83c3",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-frag-18",
+      "path": "LeanProject/LeanProof/Snippets/0018-definition-E993Transport-favorableLeaves.lean.fragment",
+      "sha256": "16b0c7672ed66c4cb53ba24d853764df160d6694f63b231346a2eb71c390ec77",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-frag-19",
+      "path": "LeanProject/LeanProof/Snippets/0019-definition-E993Transport-transportRel.lean.fragment",
+      "sha256": "b1b9ac6c8de56fa740a37e5bac0fa628f1d817c2e33625ca34dcab33a1100d95",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-frag-20",
+      "path": "LeanProject/LeanProof/Snippets/0020-definition-E993Transport-IsSaturatingFlow.lean.fragment",
+      "sha256": "a9d81c260914024d38f46ff5b564749d34f640674f9e9116685b4e7c631a48ac",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-frag-21",
+      "path": "LeanProject/LeanProof/Snippets/0021-definition-E993Transport-WeightedHall.lean.fragment",
+      "sha256": "63534ffbfcc4bb1297228e598da165dcf98732939cd51a5d7fda3e62bc518478",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-frag-22",
+      "path": "LeanProject/LeanProof/Snippets/0022-lemma-E993Interior-highTailAggregateFromShadow.lean.fragment",
+      "sha256": "972d0d900218889995bebd2e0682c1886576df4d7b2b22356924b0d7295baa9d",
+      "role": "reference"
+    },
+    {
+      "id": "src-frag-23",
+      "path": "LeanProject/LeanProof/Snippets/0023-lemma-E993Transport-indepFamily_eq_indepSetsAvoiding.lean.fragment",
+      "sha256": "45d1a93e12e0f50a58b9efb7fe25fab2fcd0c2e31eff6b3ac74795bf6a27cfe8",
+      "role": "reference"
+    },
+    {
+      "id": "src-frag-24",
+      "path": "LeanProject/LeanProof/Snippets/0024-lemma-E993Transport-isGraphLeaf_of_mem_favorableLeaves.lean.fragment",
+      "sha256": "8977fb83111a46cace690984e23e2ffd54e2ea5233712bfeeca579f1debf75c8",
+      "role": "reference"
+    },
+    {
+      "id": "src-frag-25",
+      "path": "LeanProject/LeanProof/Snippets/0025-lemma-E993Transport-tagWitnesses_subset_R.lean.fragment",
+      "sha256": "7a8528a04b10243adfa0e8488d21206bd9cfed44e18910e7ed810b7b8517baad",
+      "role": "reference"
+    },
+    {
+      "id": "src-frag-26",
+      "path": "LeanProject/LeanProof/Snippets/0026-lemma-E993Transport-card_active_eq_tagged.lean.fragment",
+      "sha256": "8823a71dad443ec51fdf34fc541c2c66aab7792d9520f8ef76665729ece12616",
+      "role": "reference"
+    },
+    {
+      "id": "src-frag-27",
+      "path": "LeanProject/LeanProof/Snippets/0027-lemma-E993Transport-layerWeight_eq_sum_card.lean.fragment",
+      "sha256": "6adece46210475286f5574371270d1f0cba414876eec5e7dd058ab2fa1993c8f",
+      "role": "reference"
+    },
+    {
+      "id": "src-frag-28",
+      "path": "LeanProject/LeanProof/Snippets/0028-lemma-E993Transport-layerWeight_sub_eq_sum.lean.fragment",
+      "sha256": "56e71a87c92f3d8435c1f8fb3b3e906cb037d78027b5bdfdf26b824a1fa8cc33",
+      "role": "reference"
+    },
+    {
+      "id": "src-frag-29",
+      "path": "LeanProject/LeanProof/Snippets/0029-lemma-E993Transport-indepFamily_eq_draftText.lean.fragment",
+      "sha256": "859fd215281757ab00eab0256dc5848db081bacc88c352f33b0f12aa0447b5d2",
+      "role": "reference"
+    },
+    {
+      "id": "src-frag-30",
+      "path": "LeanProject/LeanProof/Snippets/0030-lemma-E993Transport-tagWitnesses_eq_draftText.lean.fragment",
+      "sha256": "27e7de2bcde3d487dc59a91bef86c04dff61d379bf2d91d7d4153015d9b145cc",
+      "role": "reference"
+    },
+    {
+      "id": "src-frag-31",
+      "path": "LeanProject/LeanProof/Snippets/0031-lemma-E993Transport-activeWeight_eq_draftText.lean.fragment",
+      "sha256": "638604a63e8db6171c23dd971ab56adbba9cdfeea2349d299271f4688358c5f9",
+      "role": "reference"
+    },
+    {
+      "id": "src-frag-32",
+      "path": "LeanProject/LeanProof/Snippets/0032-lemma-E993Transport-layerWeight_eq_draftText.lean.fragment",
+      "sha256": "4234555560234fa34d51ad4025e76d925f45845a836badbf43b3898e797af720",
+      "role": "reference"
+    },
+    {
+      "id": "src-frag-33",
+      "path": "LeanProject/LeanProof/Snippets/0033-lemma-E993Transport-favorableLeaves_eq_draftText.lean.fragment",
+      "sha256": "dc0b9bda7a584aca9e69c4494bb275ee820f1f05550726aef41836e0e169aab9",
+      "role": "reference"
+    },
+    {
+      "id": "src-frag-34",
+      "path": "LeanProject/LeanProof/Snippets/0034-lemma-E993Transport-transportRel_iff_draftText.lean.fragment",
+      "sha256": "206411b8c4fcea9b5ce9700f41d5ed30d7d09258e2f6c10c70f9a35808bcb986",
+      "role": "reference"
+    },
+    {
+      "id": "src-frag-35",
+      "path": "LeanProject/LeanProof/Snippets/0035-lemma-E993Transport-layerWeight_sub_eq_sum_draftBinders.lean.fragment",
+      "sha256": "3fb02d6f1afd985d1166f4d5e7a649695b5f8fb705513675af2f4fa355edd7d5",
+      "role": "reference"
+    },
+    {
+      "id": "src-frag-36",
+      "path": "LeanProject/LeanProof/Snippets/0036-theorem-E993Transport-activeWeightAggregateIdentity.lean.fragment",
+      "sha256": "939231f2cd9efcc41d345c3391fc8a6730ff5e8071fba0f7a5ee89d91dc743e0",
+      "role": "reference"
+    }
+  ]
+}

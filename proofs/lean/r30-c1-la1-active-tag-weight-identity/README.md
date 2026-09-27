@@ -1,0 +1,26 @@
+# r30-c1-la1-active-tag-weight-identity
+
+Declaration `E993Transport.activeWeightAggregateIdentity`, exported byte-for-byte from the sealed internal run `erdos-993-weighted-transport-dre-2026-09-26` (`runs/lean-2026-09-26-c1-la1-active-tag-weight-identity`; r30 — see
+[`experiments/r30-weighted-transport.md`](../../../experiments/r30-weighted-transport.md)). Award `C1-LA1`; registry effect `E993-R30-ACTIVE-TAG-WEIGHT-AGGREGATE-IDENTITY (new; VERIFIED formally_verified)`.
+
+Statement (the contract's `expected_statement`, namespace-relative):
+
+```lean
+theorem activeWeightAggregateIdentity (G : SimpleGraph V) [DecidableRel G.Adj] (p : ℕ)
+    (hp : 1 ≤ p) :
+    (layerWeight G (favorableLeaves G p) (p + 1) : ℤ) - layerWeight G (favorableLeaves G p) p =
+      C5LA1.aggregate G p
+```
+
+Informal statement of record (the contract's `informal_statement`, verbatim; the scope fences and attribution are part of it):
+
+> Run erdos-993-math-dre-20260926-r30-weighted-transport (r30), Cycle 1 Stage 7, award group C1-LA1; Lean run root runs/lean-2026-09-26-c1-la1-active-tag-weight-identity; producer c1-la1-formalizer-opus-20260926. For every finite vertex type V with decidable equality, every simple graph G on V with decidable adjacency, and every natural p with 1 <= p: let F = F_p(G) be the original leaves of G that are strictly favorable at rank p (fixed at p). For an independent set B let w_F(B) be the number of ACTIVE tags of B, i.e. of v in F n B such that B contains another neighbour of the original support s_v of v ((B \ {v}) n W_v nonempty, W_v = N(s_v) \ {v}); never |F n B|. Then, in the integers, sum_{B in I_(p+1)(G)} w_F(B) - sum_{A in I_p(G)} w_F(A) = S(G, p) = C5LA1.aggregate G p. Graph-generic (no IsTree, no eligibility). hp is kept as in SOLUTION-CONTRACT §2 and is not needed for this form (F_0 = ∅); it is load-bearing for the general-F companion lemma layerWeight_sub_eq_sum (K_{1,3}, p = 0: 0 vs 6). Grades (this contract's list only): on this award's governed close, E993-R30-ACTIVE-TAG-WEIGHT-AGGREGATE-IDENTITY OPEN -> VERIFIED formally_verified at exactly this statement; companion lemmas (indepFamily_eq_indepSetsAvoiding, isGraphLeaf_of_mem_favorableLeaves, tagWitnesses_subset_R, card_active_eq_tagged, layerWeight_eq_sum_card, layerWeight_sub_eq_sum, and the seven C-U2-T draft-text equivalences) carry no certificate of their own (R29-N-12); the carried first-interior lemma E993Interior.highTailAggregateFromShadow is carried only for its private helpers and is neither used nor re-graded. Equivalent-phrasing authority: C1-STAGE1-GATE.md Gate ruling 9 ("equivalent Lean phrasings with the equivalence proved"); the SOLUTION-CONTRACT §2 draft text is related to the compiled phrasing by the companions *_draftText and layerWeight_sub_eq_sum_draftBinders (C-U2-T's CriticContract.lean equivalences, re-derived). Signature deviations from the §2 draft, attributed correctly: noncomputable on tagWitnesses/activeWeight/layerWeight/favorableLeaves and classical decidability (required: the §2 text does not compile verbatim, C-U2-F ContractVerbatim.lean); layerWeight_sub_eq_sum takes an explicit G (the §2 draft has {G}), recorded as the frozen phrasing (synthesis repair 5). The terminal theorem's binders equal §2's. Excluded conclusions: (HALL) or (HALL-COND) on trees or any graph; the sign of S; E993-LOWER-REGION-ORDINARY-FAVORABLE-LEAF-AGGREGATE; any tree-only statement; RTree wording; census values; TREE/FOREST/TRANSFER; Erdős #993. transportRel, IsSaturatingFlow and WeightedHall are frozen in this file only so that they freeze once for C1-LA2; transportRel is (D) union (S) literally (exactly two neighbours, u not in B). Attribution: the active-tag weight, the mechanism and its corrections: Codex (GPT-6 Astra/Sol/Luna), lower-region run; definitions of record entries 1-18 and 42: the first-interior run (Codex) on the r24/r25/r26 definition layers (C4LA1, C5LA1); the informal proof: r30 F2 (Claude Sonnet 5); the Lean proofs: r30 U2 (Claude Sonnet 5); companions and fidelity findings: C-U2-T, C-U2-F, C-F2-T, C-F2-U (Claude Opus 5.5); reconciliation: the T/F/U adjudicators and the Cycle 1 synthesis (Claude Opus 5.5); Stage 7 formalization (carry, freeze repairs, contract): c1-la1-formalizer-opus-20260926 (Claude Opus 5.5).
+
+Toolchain: Lean `leanprover/lean4:v4.32.2`, Mathlib `905b95818eb32af7874a58b427f50c1711a5e96c` (pinned in `source/`; the package cache is not shipped —
+bind a local Mathlib checkout at that revision, never `lake update`). Axioms exactly `[propext, Classical.choice, Quot.sound]`; no
+`sorry`/`admit`/`native_decide`. Governed workflow: frozen theorem contract, independent informal proof-integrity audit, kernel/axiom receipt,
+independent statement-fidelity attestation (verdict `passed`), canonical close (`formally_verified`). Digests in
+`receipts/RECEIPT-SUMMARY.json`; full receipts stay in the sealed internal run. Internal grade `formally_verified`; published as `verified`.
+Claim boundary: Lean kernel validity plus independent statement fidelity for exactly the stated declaration — a statement about the
+active-tag transport network on finite simple graphs or on the named tree family; nothing about (HALL) at full scope, the lower-region
+aggregate beyond the named family, `E993-BETA-AGG`, no-recovery, NR1, FOREST, TREE, TRANSFER, or Erdős #993.

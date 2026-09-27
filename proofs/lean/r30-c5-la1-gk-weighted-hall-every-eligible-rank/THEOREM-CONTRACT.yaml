@@ -1,0 +1,1287 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "erdos-993-r30-c5-la1-gk-weighted-hall-every-eligible-rank-v1",
+  "theorem": {
+    "title": "C5-LA1 (r30 Cycle 5, erdos-993-math-dre-20260926-r30-weighted-transport): the tree face and (HALL) at every eligible rank of G_k",
+    "informal_statement": "For every k : Nat, the graph G_k = gkGraph k on Fin (3k+5) (root 0; leaf 1; cherry 2 with leaves 3, 4; k arms 0 - a_i - b_i - c_i) is a tree, and for every rank p with crossingIndex(G_k) + 2 <= p and 3p < 2 indepNum(G_k) + 1 the transport network of SOLUTION-CONTRACT section 2 at rank p with tag set F_p(G_k) = favorableLeaves (gkGraph k) p admits a saturating integral flow. hLow is carried and unused. Proof DAG: N0 carried (C4-LA1 entries 1-112, first-interior entry 14); N1 gkGraph_isTree (U1); N4a count bridge i_(j+1) = u_(j+1) + u_j, i_0 = u_0 (gkHalfCount); N4b u_j <= u_(j+2) for j + 2 <= k + 1; N4 = GK-MONO in Lean (0 <= Delta_j for j <= k); N2 k + 1 <= crossingIndex iff no descent at j <= k (C-U1-F); N3 reduction to C4-LA1 lemma entry 110 (C-U1-F); terminal = <N1, N3 o N2 o N4>. Fences: G_k only; deletion-supported flows (C4-LA1's); not (HALL) at full scope; not 'every tree'; nothing about the primary aggregate beyond G_k; not an RTree statement; not the strict GK-SIGN; G_k is not a second family for gate ruling 39; the k = 3 row (n = 14, p = 6) lies in the formally closed band n <= 2p+2 and is covered without re-proving that band; no statement about switch arcs or cuts; no status change of (HALL), the primary aggregate or any refuted key; (HALL) is asserted at no scope other than this theorem's own family. Companions: GK-MONO (key E993-R30-GK-TREE-INDEPENDENCE-COUNTS-NONDECREASING-THROUGH-RANK-K-PLUS-ONE) is stated on the face as a companion; its Lean form is the lemma gk_forwardDifference_nonneg (N4); this contract asserts no grade for any companion (the controller rules). Eligible set nonempty iff k >= 3 (informal companion fact, SR-C4-8; indepNum = 2k+3 not authored). Canonical run id erdos-993-math-dre-20260926-r30-weighted-transport; award C5-LA1; key on closure E993-R30-GK-TREE-WEIGHTED-HALL-AT-EVERY-ELIGIBLE-RANK (separate from C4-LA1's key). Attribution: mechanism and the lower-region run: Codex GPT-6; definition layers: first-interior (Codex) entries 1-18 incl. C5LA1.crossingIndex (entry 14), the r26/r24/r25 carried layers; C1-LA1/C1-LA2 (r30); the G_k flow: C4-LA1 (r30 Cycle 4; CT-1 by critic C-F2-T, R2' by the Cycle 4 F adjudicator); gkGraph_isTree: U1 (Claude Sonnet 5); GK-MONO: C-U1-T and C-U1-F (Claude Opus 5.5); the Lean reduction: C-U1-F; the composition and DAG: the Cycle 5 U adjudicator (Claude Opus 5.5); count bridge fibre count, N4b re-pairing and integer closing step, and Lean assembly: the C5-LA1 formalizer (Claude Opus 5.5); r29 high tail: not used."
+  },
+  "formulation_status": {
+    "status": "established",
+    "evidence": [
+      "Informal proof complete: C4-LA1 (formally_verified, receipt dd9c21f7...) composed with GK-MONO (two critic proofs, C-U1-T and C-U1-F; checked step by step by the Cycle 5 U adjudicator; isolated second read SR-C5-3 confirmed GK-MONO and the composition at proved_informal, controller message 2026-09-27).",
+      "INFORMAL-PROOF.md (this run) at statement-level granularity.",
+      "Exact-integer check (not proof): DRAFTS/check_halfcount.py ALL_OK for k <= 60."
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-gk-edge",
+      "description": "Carried C4-LA1 entry 22 (fa84b00e...). The edge relation of G_k on Fin (3k+5): root 0; leaf 1; support 2 with leaves 3, 4; arms 0 - (5+3i) - (6+3i) - (7+3i), i < k. Lean text of record: namespace E993Transport\n\n/-- `G_k` on `Fin (3*k+5)`: root `0`; leaf `1`; support `2` with leaves `3, 4`;\n    arms `0 – (5+3i) – (6+3i) – (7+3i)` for `i < k`. -/\ndef gkEdge (k : ℕ) (u v : Fin (3*k+5)) : Prop :=\n  (u.val = 0 ∧ v.val = 1) ∨ (u.val = 0 ∧ v.val = 2) ∨ (u.val = 2 ∧ v.val = 3) ∨\n  (u.val = 2 ∧ v.val = 4) ∨\n  ∃ i < k, (u.val = 0 ∧ v.val = 5+3*i) ∨ (u.val = 5+3*i ∧ v.val = 6+3*i) ∨\n           (u.val = 6+3*i ∧ v.val = 7+3*i)\n\nend E993Transport",
+      "lean_name": "E993Transport.gkEdge",
+      "dependencies": []
+    },
+    {
+      "id": "def-gk-graph",
+      "description": "Carried C4-LA1 entry 23 (2cc3de97...). G_k = SimpleGraph.fromRel (gkEdge k). Lean text of record: namespace E993Transport\n\ndef gkGraph (k : ℕ) : SimpleGraph (Fin (3*k+5)) := SimpleGraph.fromRel (gkEdge k)\n\nend E993Transport",
+      "lean_name": "E993Transport.gkGraph",
+      "dependencies": [
+        "def-gk-edge"
+      ]
+    },
+    {
+      "id": "def-gk-dec-adj",
+      "description": "Carried C4-LA1 entry 24 (025e213b...). The DecidableRel instance of G_k used by every count (no classical choice). Lean text of record: namespace E993Transport\n\n/-- The decidable adjacency of `G_k` (authored in-run): `gkEdge` is a finite disjunction of\nequalities of naturals and a bounded `∃ i < k`, each decidable by the core instances, so no\nclassical choice is used. Registered as `@[reducible, instance] def` (what `instance` elaborates\nto), because the registrar admits definition entries by `def`. -/\n@[reducible, instance]\ndef gkGraph_decAdj (k : ℕ) : DecidableRel (gkGraph k).Adj := fun u v =>\n  haveI : ∀ a b : Fin (3*k+5), Decidable (gkEdge k a b) := fun a b => by\n    unfold gkEdge\n    infer_instance\n  decidable_of_iff (u ≠ v ∧ (gkEdge k u v ∨ gkEdge k v u))\n    (SimpleGraph.fromRel_adj (gkEdge k) u v).symm\n\nend E993Transport",
+      "lean_name": "E993Transport.gkGraph_decAdj",
+      "dependencies": [
+        "def-gk-graph"
+      ]
+    },
+    {
+      "id": "def-indep-sets-avoiding",
+      "description": "Carried (C4-LA1 entry 9 = first-interior entry 10). I_k(G - D). Lean text of record: namespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- `I_k(G - D)`: independent `k`-subsets of the original vertex type\navoiding the finite deletion set `D`. -/\ndef indepSetsAvoiding (G : SimpleGraph V) [DecidableRel G.Adj]\n    (D : Finset V) (k : Nat) : Finset (Finset V) :=\n  ((Finset.univ \\ D).powersetCard k).filter fun s : Finset V => G.IsIndepSet (s : Set V)\n\nend C5LA1",
+      "lean_name": "C5LA1.indepSetsAvoiding",
+      "dependencies": []
+    },
+    {
+      "id": "def-indep-set-count",
+      "description": "Carried (C4-LA1 entry 10 = first-interior entry 11). i_k(G - D) as a natural number. Lean text of record: namespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- `i_k(G - D)`. -/\ndef indepSetCount (G : SimpleGraph V) [DecidableRel G.Adj]\n    (D : Finset V) (k : Nat) : Nat :=\n  (indepSetsAvoiding G D k).card\n\nend C5LA1",
+      "lean_name": "C5LA1.indepSetCount",
+      "dependencies": [
+        "def-indep-sets-avoiding"
+      ]
+    },
+    {
+      "id": "def-forward-difference-del",
+      "description": "Carried (C4-LA1 entry 11 = first-interior entry 12). Delta_k(G - D) = i_(k+1) - i_k, integer-valued. Lean text of record: namespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- `Delta_k(G - D) = i_(k+1)(G-D) - i_k(G-D)`. -/\ndef forwardDifferenceDel (G : SimpleGraph V) [DecidableRel G.Adj]\n    (D : Finset V) (k : Nat) : Int :=\n  (indepSetCount G D (k + 1) : Int) - indepSetCount G D k\n\nend C5LA1",
+      "lean_name": "C5LA1.forwardDifferenceDel",
+      "dependencies": [
+        "def-indep-set-count"
+      ]
+    },
+    {
+      "id": "def-crossing-index",
+      "description": "Carried first-interior entry 14 (378868ab...; source Main.lean 8d864da2...), registered byte-identically as entry 45. x(G) = Nat.find of Delta_k(G) < 0. Lean text of record: namespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\nopen Classical in\n/-- `x(G)`: the least `k` with `Delta_k(G) < 0`; exists because\n`Delta_(alpha)(G) = -i_alpha(G) < 0`. -/\nnoncomputable\ndef crossingIndex (G : SimpleGraph V) [DecidableRel G.Adj] : Nat :=\n  Nat.find (p := fun k => forwardDifferenceDel G ∅ k < 0)\n    (by\n      classical\n      obtain ⟨s, hs⟩ := G.exists_isNIndepSet_indepNum\n      refine ⟨G.indepNum, ?_⟩\n      have hzero : indepSetCount G ∅ (G.indepNum + 1) = 0 := by\n        have hempty : indepSetsAvoiding G ∅ (G.indepNum + 1) = ∅ := by\n          rw [Finset.eq_empty_iff_forall_notMem]\n          intro t ht\n          simp only [indepSetsAvoiding, Finset.mem_filter, Finset.mem_powersetCard] at ht\n          have hle : t.card ≤ G.indepNum := ht.2.card_le_indepNum\n          omega\n        rw [indepSetCount, hempty, Finset.card_empty]\n      have hpos : 0 < indepSetCount G ∅ G.indepNum := by\n        rw [indepSetCount, Finset.card_pos]\n        refine ⟨s, ?_⟩\n        simp only [indepSetsAvoiding, Finset.mem_filter, Finset.mem_powersetCard]\n        refine ⟨⟨?_, hs.card_eq⟩, hs.isIndepSet⟩\n        intro x _\n        simp\n      simp only [forwardDifferenceDel, hzero]\n      omega)\n\nend C5LA1",
+      "lean_name": "C5LA1.crossingIndex",
+      "dependencies": [
+        "def-forward-difference-del",
+        "def-indep-set-count",
+        "def-indep-sets-avoiding",
+        "def-indep-num"
+      ]
+    },
+    {
+      "id": "def-vertex-deletion-indep-set-count",
+      "description": "Carried C4-LA1 entry 1 (= first-interior entry 1). Lean text of record: namespace C4LA1\n\nopen SimpleGraph\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- The coefficient `i_k(G-v)`, represented without changing vertex types:\nindependent `k`-subsets of the original finite vertex type that avoid `v`. -/\ndef vertexDeletionIndepSetCount (G : SimpleGraph V) [DecidableRel G.Adj]\n    (v : V) (k : Nat) : Nat :=\n  (((Finset.univ.erase v).powersetCard k).filter fun s : Finset V =>\n    G.IsIndepSet (s : Set V)).card\n\nend C4LA1",
+      "lean_name": "C4LA1.vertexDeletionIndepSetCount",
+      "dependencies": []
+    },
+    {
+      "id": "def-vertex-deletion-forward-difference",
+      "description": "Carried C4-LA1 entry 2 (= first-interior entry 2). Lean text of record: namespace C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- The forward coefficient difference `i_(p+1)(G-v) - i_p(G-v)`, with\nnatural counts embedded in the integers. -/\ndef vertexDeletionForwardDifference (G : SimpleGraph V) [DecidableRel G.Adj]\n    (v : V) (p : Nat) : Int :=\n  (vertexDeletionIndepSetCount G v (p + 1) : Int) -\n    vertexDeletionIndepSetCount G v p\n\nend C4LA1",
+      "lean_name": "C4LA1.vertexDeletionForwardDifference",
+      "dependencies": [
+        "def-vertex-deletion-indep-set-count"
+      ]
+    },
+    {
+      "id": "def-is-favorable-at",
+      "description": "Carried C4-LA1 entry 3 (= first-interior entry 3). Literal strict favorability of a leaf at rank p. Lean text of record: namespace C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- Literal strict favorability of an original leaf at rank `p`. -/\ndef IsFavorableAt (G : SimpleGraph V) [DecidableRel G.Adj] (v : V) (p : Nat) : Prop :=\n  vertexDeletionForwardDifference G v p < 0\n\nend C4LA1",
+      "lean_name": "C4LA1.IsFavorableAt",
+      "dependencies": [
+        "def-vertex-deletion-forward-difference"
+      ]
+    },
+    {
+      "id": "def-is-graph-leaf",
+      "description": "Carried C4-LA1 entry 4 (= first-interior entry 4). Lean text of record: namespace C4LA1\n\nvariable {V : Type*}\n\n/-- A graph leaf has exactly one adjacent vertex. -/\ndef IsGraphLeaf (G : SimpleGraph V) (v : V) : Prop :=\n  ∃! u, G.Adj v u\n\nend C4LA1",
+      "lean_name": "C4LA1.IsGraphLeaf",
+      "dependencies": []
+    },
+    {
+      "id": "def-leaf-set",
+      "description": "Carried C4-LA1 entry 6 (= first-interior entry 6). Lean text of record: namespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\nopen Classical in\n/-- The set of original leaves of `G`. -/\nnoncomputable\ndef leafSet (G : SimpleGraph V) : Finset V :=\n  Finset.univ.filter (C4LA1.IsGraphLeaf G)\n\nend C5LA1",
+      "lean_name": "C5LA1.leafSet",
+      "dependencies": [
+        "def-is-graph-leaf"
+      ]
+    },
+    {
+      "id": "def-support",
+      "description": "Carried C4-LA1 entry 5 (= first-interior entry 5). Lean text of record: namespace C5LA1\n\nopen SimpleGraph C4LA1\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- The unique support (neighbour) of an original leaf `v`; unconstrained\n(any value satisfying nothing further) off the leaf set. -/\nnoncomputable\ndef support (G : SimpleGraph V) (v : V) : V :=\n  Classical.choose (p := fun u => C4LA1.IsGraphLeaf G v → G.Adj v u ∧ ∀ w, G.Adj v w → w = u)\n    (by\n      by_cases h : C4LA1.IsGraphLeaf G v\n      · obtain ⟨u, hu, huniq⟩ := h\n        exact ⟨u, fun _ => ⟨hu, huniq⟩⟩\n      · exact ⟨v, fun hc => absurd hc h⟩)\n\nend C5LA1",
+      "lean_name": "C5LA1.support",
+      "dependencies": [
+        "def-is-graph-leaf"
+      ]
+    },
+    {
+      "id": "def-favorable-leaves",
+      "description": "Carried C4-LA1 entry 18 (= C1-LA1 entry 18). F_p(G). Lean text of record: namespace E993Transport\n\nopen SimpleGraph\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\nopen Classical in\n/-- the fixed original strict selector `F_p(G)`. -/\nnoncomputable\ndef favorableLeaves (G : SimpleGraph V) [DecidableRel G.Adj] (p : ℕ) : Finset V :=\n  (C5LA1.leafSet G).filter fun v => C4LA1.IsFavorableAt G v p\n\nend E993Transport",
+      "lean_name": "E993Transport.favorableLeaves",
+      "dependencies": [
+        "def-leaf-set",
+        "def-is-favorable-at"
+      ]
+    },
+    {
+      "id": "def-indep-family",
+      "description": "Carried C4-LA1 entry 14 (= C1-LA1 entry 14). The layer I_j(G). Lean text of record: namespace E993Transport\n\nopen SimpleGraph\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- the independent `j`-subsets of `V`: the layer `I_j(G)` (SEMANTIC-CONTRACT §1.2). -/\ndef indepFamily (G : SimpleGraph V) [DecidableRel G.Adj] (j : ℕ) : Finset (Finset V) :=\n  (Finset.univ.powersetCard j).filter fun s => G.IsIndepSet (s : Set V)\n\nend E993Transport",
+      "lean_name": "E993Transport.indepFamily",
+      "dependencies": []
+    },
+    {
+      "id": "def-tag-witnesses",
+      "description": "Carried C4-LA1 entry 15 (= C1-LA1 entry 15). Lean text of record: namespace E993Transport\n\nopen SimpleGraph\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- `W_v = N_G(s_v) \\ {v}` (SEMANTIC-CONTRACT §1.2). -/\nnoncomputable\ndef tagWitnesses (G : SimpleGraph V) [DecidableRel G.Adj] (v : V) : Finset V :=\n  (G.neighborFinset (C5LA1.support G v)).erase v\n\nend E993Transport",
+      "lean_name": "E993Transport.tagWitnesses",
+      "dependencies": [
+        "def-support"
+      ]
+    },
+    {
+      "id": "def-active-weight",
+      "description": "Carried C4-LA1 entry 16 (= C1-LA1 entry 16). Counts active tags v in F n B (witness in B.erase v), not |F n B|. Lean text of record: namespace E993Transport\n\nopen SimpleGraph\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- the active-tag weight of `B` w.r.t. the tag set `F`: `v ∈ F ∩ B` is counted\niff `B` contains another neighbour of `v`'s original support. -/\nnoncomputable\ndef activeWeight (G : SimpleGraph V) [DecidableRel G.Adj] (F B : Finset V) : ℕ :=\n  ((F ∩ B).filter fun v => ¬ Disjoint (B.erase v) (tagWitnesses G v)).card\n\nend E993Transport",
+      "lean_name": "E993Transport.activeWeight",
+      "dependencies": [
+        "def-tag-witnesses"
+      ]
+    },
+    {
+      "id": "def-transport-rel",
+      "description": "Carried C4-LA1 entry 19 (= C1-LA1 entry 19). Exactly (D) u (S). Lean text of record: namespace E993Transport\n\nopen SimpleGraph\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- the deletion / two-for-one relation from `(p+1)`-sets to `p`-sets. -/\ndef transportRel (G : SimpleGraph V) [DecidableRel G.Adj] (B A : Finset V) : Prop :=\n  (∃ q ∈ B, A = B.erase q) ∨\n  (∃ u, u ∉ B ∧ (G.neighborFinset u ∩ B).card = 2 ∧ A = insert u (B \\ G.neighborFinset u))\n\nend E993Transport",
+      "lean_name": "E993Transport.transportRel",
+      "dependencies": []
+    },
+    {
+      "id": "def-is-saturating-flow",
+      "description": "Carried C4-LA1 entry 20 (= C1-LA1 entry 20). Lean text of record: namespace E993Transport\n\nopen SimpleGraph\n\nvariable {V : Type*} [Fintype V] [DecidableEq V]\n\n/-- a saturating integral flow of the network at rank `p` with tag set `F`. -/\ndef IsSaturatingFlow (G : SimpleGraph V) [DecidableRel G.Adj] (F : Finset V) (p : ℕ)\n    (f : Finset V → Finset V → ℕ) : Prop :=\n  (∀ B A, 0 < f B A → B ∈ indepFamily G (p + 1) ∧ A ∈ indepFamily G p ∧ transportRel G B A) ∧\n  (∀ B ∈ indepFamily G (p + 1), ∑ A ∈ indepFamily G p, f B A = activeWeight G F B) ∧\n  (∀ A ∈ indepFamily G p, ∑ B ∈ indepFamily G (p + 1), f B A ≤ activeWeight G F A)\n\nend E993Transport",
+      "lean_name": "E993Transport.IsSaturatingFlow",
+      "dependencies": [
+        "def-indep-family",
+        "def-transport-rel",
+        "def-active-weight"
+      ]
+    },
+    {
+      "id": "def-is-tree",
+      "description": "Mathlib's structure (pinned 905b9581...): fields connected and isAcyclic.",
+      "lean_name": "SimpleGraph.IsTree",
+      "dependencies": []
+    },
+    {
+      "id": "def-indep-num",
+      "description": "Mathlib's independence number (pinned 905b9581...): the largest n with an n-independent set.",
+      "lean_name": "SimpleGraph.indepNum",
+      "dependencies": []
+    }
+  ],
+  "domains": [
+    {
+      "id": "dom-k",
+      "description": "k : Nat, the number of arms of G_k (every k, no restriction).",
+      "lean_type": "ℕ",
+      "dependencies": []
+    },
+    {
+      "id": "dom-p",
+      "description": "p : Nat, the rank (universally quantified inside the second conjunct).",
+      "lean_type": "ℕ",
+      "dependencies": []
+    },
+    {
+      "id": "dom-f",
+      "description": "f : the integral flow on (independent (p+1)-set, independent p-set) pairs of G_k.",
+      "lean_type": "Finset (Fin (3*k+5)) → Finset (Fin (3*k+5)) → ℕ",
+      "dependencies": [
+        "dom-k"
+      ]
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "k",
+      "kind": "forall",
+      "domain_id": "dom-k"
+    },
+    {
+      "binder": "p",
+      "kind": "forall",
+      "domain_id": "dom-p"
+    },
+    {
+      "binder": "f",
+      "kind": "exists",
+      "domain_id": "dom-f"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-elig",
+      "statement": "C5LA1.crossingIndex (gkGraph k) + 2 ≤ p (hElig; a Nat inequality, no subtraction guard; the ONLY hypothesis consumed: it gives p >= k + 3 through k + 1 <= crossingIndex (gkGraph k)).",
+      "dependencies": [
+        "def-crossing-index",
+        "def-gk-graph",
+        "def-gk-dec-adj",
+        "dom-k",
+        "dom-p"
+      ]
+    },
+    {
+      "id": "hyp-low",
+      "statement": "3 * p < 2 * (gkGraph k).indepNum + 1 (hLow; carried to match SOLUTION-CONTRACT section 2 (HALL) signature; UNUSED by the proof).",
+      "dependencies": [
+        "def-indep-num",
+        "def-gk-graph",
+        "dom-k",
+        "dom-p"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "(gkGraph k).IsTree ∧ ∀ p : ℕ, C5LA1.crossingIndex (gkGraph k) + 2 ≤ p → 3 * p < 2 * (gkGraph k).indepNum + 1 → ∃ f, IsSaturatingFlow (gkGraph k) (favorableLeaves (gkGraph k) p) p f. For every k: G_k is a tree, and at every eligible rank p the network with tag set F_p(G_k) has a saturating integral flow ((HALL) in flow form). The deletion-support conjunct of C4-LA1 is omitted from the conclusion (choice recorded). Fences: G_k only; deletion-supported flows (C4-LA1's); not (HALL) at full scope; not 'every tree'; nothing about the primary aggregate beyond G_k; not an RTree statement; not the strict GK-SIGN; G_k is not a second family for gate ruling 39; the k = 3 row (n = 14, p = 6) lies in the formally closed band n <= 2p+2 and is covered without re-proving that band; no statement about switch arcs or cuts; no status change of (HALL), the primary aggregate or any refuted key; (HALL) is asserted at no scope other than this theorem's own family. Companions: GK-MONO (key E993-R30-GK-TREE-INDEPENDENCE-COUNTS-NONDECREASING-THROUGH-RANK-K-PLUS-ONE) is stated on the face as a companion; its Lean form is the lemma gk_forwardDifference_nonneg (N4); this contract asserts no grade for any companion (the controller rules). Eligible set nonempty iff k >= 3 (informal companion fact, SR-C4-8; indepNum = 2k+3 not authored). Canonical run id erdos-993-math-dre-20260926-r30-weighted-transport; award C5-LA1; key on closure E993-R30-GK-TREE-WEIGHTED-HALL-AT-EVERY-ELIGIBLE-RANK (separate from C4-LA1's key).",
+    "dependencies": [
+      "hyp-elig",
+      "hyp-low",
+      "def-is-tree",
+      "def-is-saturating-flow",
+      "def-favorable-leaves",
+      "def-gk-graph",
+      "dom-f"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "def-gk-edge",
+        "kind": "definition"
+      },
+      {
+        "id": "def-gk-graph",
+        "kind": "definition"
+      },
+      {
+        "id": "def-gk-dec-adj",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indep-sets-avoiding",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indep-set-count",
+        "kind": "definition"
+      },
+      {
+        "id": "def-forward-difference-del",
+        "kind": "definition"
+      },
+      {
+        "id": "def-crossing-index",
+        "kind": "definition"
+      },
+      {
+        "id": "def-vertex-deletion-indep-set-count",
+        "kind": "definition"
+      },
+      {
+        "id": "def-vertex-deletion-forward-difference",
+        "kind": "definition"
+      },
+      {
+        "id": "def-is-favorable-at",
+        "kind": "definition"
+      },
+      {
+        "id": "def-is-graph-leaf",
+        "kind": "definition"
+      },
+      {
+        "id": "def-leaf-set",
+        "kind": "definition"
+      },
+      {
+        "id": "def-support",
+        "kind": "definition"
+      },
+      {
+        "id": "def-favorable-leaves",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indep-family",
+        "kind": "definition"
+      },
+      {
+        "id": "def-tag-witnesses",
+        "kind": "definition"
+      },
+      {
+        "id": "def-active-weight",
+        "kind": "definition"
+      },
+      {
+        "id": "def-transport-rel",
+        "kind": "definition"
+      },
+      {
+        "id": "def-is-saturating-flow",
+        "kind": "definition"
+      },
+      {
+        "id": "def-is-tree",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indep-num",
+        "kind": "definition"
+      },
+      {
+        "id": "dom-k",
+        "kind": "domain"
+      },
+      {
+        "id": "dom-p",
+        "kind": "domain"
+      },
+      {
+        "id": "dom-f",
+        "kind": "domain"
+      },
+      {
+        "id": "hyp-elig",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-low",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "def-gk-edge",
+        "to": "def-gk-graph"
+      },
+      {
+        "from": "def-gk-graph",
+        "to": "def-gk-dec-adj"
+      },
+      {
+        "from": "def-indep-sets-avoiding",
+        "to": "def-indep-set-count"
+      },
+      {
+        "from": "def-indep-set-count",
+        "to": "def-forward-difference-del"
+      },
+      {
+        "from": "def-forward-difference-del",
+        "to": "def-crossing-index"
+      },
+      {
+        "from": "def-indep-set-count",
+        "to": "def-crossing-index"
+      },
+      {
+        "from": "def-indep-sets-avoiding",
+        "to": "def-crossing-index"
+      },
+      {
+        "from": "def-indep-num",
+        "to": "def-crossing-index"
+      },
+      {
+        "from": "def-vertex-deletion-indep-set-count",
+        "to": "def-vertex-deletion-forward-difference"
+      },
+      {
+        "from": "def-vertex-deletion-forward-difference",
+        "to": "def-is-favorable-at"
+      },
+      {
+        "from": "def-is-graph-leaf",
+        "to": "def-leaf-set"
+      },
+      {
+        "from": "def-is-graph-leaf",
+        "to": "def-support"
+      },
+      {
+        "from": "def-leaf-set",
+        "to": "def-favorable-leaves"
+      },
+      {
+        "from": "def-is-favorable-at",
+        "to": "def-favorable-leaves"
+      },
+      {
+        "from": "def-support",
+        "to": "def-tag-witnesses"
+      },
+      {
+        "from": "def-tag-witnesses",
+        "to": "def-active-weight"
+      },
+      {
+        "from": "def-indep-family",
+        "to": "def-is-saturating-flow"
+      },
+      {
+        "from": "def-transport-rel",
+        "to": "def-is-saturating-flow"
+      },
+      {
+        "from": "def-active-weight",
+        "to": "def-is-saturating-flow"
+      },
+      {
+        "from": "dom-k",
+        "to": "dom-f"
+      },
+      {
+        "from": "def-crossing-index",
+        "to": "hyp-elig"
+      },
+      {
+        "from": "def-gk-graph",
+        "to": "hyp-elig"
+      },
+      {
+        "from": "def-gk-dec-adj",
+        "to": "hyp-elig"
+      },
+      {
+        "from": "dom-k",
+        "to": "hyp-elig"
+      },
+      {
+        "from": "dom-p",
+        "to": "hyp-elig"
+      },
+      {
+        "from": "def-indep-num",
+        "to": "hyp-low"
+      },
+      {
+        "from": "def-gk-graph",
+        "to": "hyp-low"
+      },
+      {
+        "from": "dom-k",
+        "to": "hyp-low"
+      },
+      {
+        "from": "dom-p",
+        "to": "hyp-low"
+      },
+      {
+        "from": "hyp-elig",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-low",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-is-tree",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-is-saturating-flow",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-favorable-leaves",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-gk-graph",
+        "to": "conclusion"
+      },
+      {
+        "from": "dom-f",
+        "to": "conclusion"
+      }
+    ]
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "explicit_axiom_allowlist",
+    "rationale": "The definitions of record (crossingIndex, favorableLeaves, support, tagWitnesses, activeWeight) are classical (open Classical / Classical.choose); exactly the three standard axioms are permitted; no sorry, admit, native_decide, axiom, or decide over an enumeration."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "E993Transport.gk_lowerRegionWeightedHall_everyEligibleRank",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem gk_lowerRegionWeightedHall_everyEligibleRank (k : ℕ) :\n    (gkGraph k).IsTree ∧\n    ∀ p : ℕ, C5LA1.crossingIndex (gkGraph k) + 2 ≤ p → 3 * p < 2 * (gkGraph k).indepNum + 1 →\n      ∃ f, IsSaturatingFlow (gkGraph k) (favorableLeaves (gkGraph k) p) p f",
+    "expected_statement_sha256": "2effae848dda25fd9ee30432264ded33f7049dea69f4418781443702bc931156"
+  },
+  "source_materials": [
+    {
+      "id": "src-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "sha256": "ad566fbc715bc2241a5229e47f7c601b703d34008d96591cac7221475bb58e0b",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "sha256": "b7eb2b601f76df83e8a4bded12090a5a129b64a58cfcfb7a3f3198e739eca1fe",
+      "role": "reference"
+    },
+    {
+      "id": "src-brief",
+      "path": "SOURCE/governing/C5-STAGE7-FORMALIZER-BRIEF-LA1.md",
+      "sha256": "2510b890216cd80088fd44f37bbe78b875156e5e514cabec5e15bcd756ff4717",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-synthesis",
+      "path": "SOURCE/governing/SYNTHESIS.md",
+      "sha256": "83b9f816ef111e385d2ca748d63872e2c9b7d7bc08e17fc6431a27f80e9d0e76",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-protocol",
+      "path": "SOURCE/governing/C5-STAGE7-PROTOCOL.md",
+      "sha256": "f4b09294496df9857df686e2ba1ddbe4e22ba90e482340d36989d52cd7f47677",
+      "role": "reference"
+    },
+    {
+      "id": "src-solution-contract",
+      "path": "SOURCE/governing/SOLUTION-CONTRACT.md",
+      "sha256": "3168e7a15baf7a7b3b30649b036eea53da77956cfa535954ca4ca303667f5980",
+      "role": "hypothesis_authority"
+    },
+    {
+      "id": "src-semantic-contract",
+      "path": "SOURCE/governing/SEMANTIC-CONTRACT.md",
+      "sha256": "ee7ca2e2c3647555111c4bfb11bf917b4ba56215f59d5390d09f47541ff49000",
+      "role": "reference"
+    },
+    {
+      "id": "src-adjudication-u",
+      "path": "SOURCE/governing/ADJUDICATION-U.md",
+      "sha256": "b641724ed649dbbb2f1fd31205ff057c337fe297e07f8d4b962988c4bcf40b12",
+      "role": "reference"
+    },
+    {
+      "id": "src-critique-c-u1-f",
+      "path": "SOURCE/governing/CRITIQUE-C-U1-F.md",
+      "sha256": "52b9b2b2033e1fb914e0a665a110e13704e507fd73e94ca53232dd9f269be6b8",
+      "role": "reference"
+    },
+    {
+      "id": "src-critique-c-u1-t",
+      "path": "SOURCE/governing/CRITIQUE-C-U1-T.md",
+      "sha256": "791abfb82159362360f314ae73f7aec99a88540182baeea5783d69a78684c392",
+      "role": "reference"
+    },
+    {
+      "id": "src-frozen-u1-main",
+      "path": "SOURCE/frozen/U1-Main.lean",
+      "sha256": "05c24dda55cea6f877bc2e3caed0a156e559e6ef6254d303d81e377aaf64165e",
+      "role": "reference"
+    },
+    {
+      "id": "src-frozen-c-u1-f-corollary",
+      "path": "SOURCE/frozen/C-U1-F-Corollary.lean",
+      "sha256": "32ac25a1ea2d99e9d65836593a53b1298b0512f01cf42edfc882cf0e0050e0ec",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-001",
+      "path": "LeanProject/LeanProof/Snippets/0001-definition-C4LA1-vertexDeletionIndepSetCount.lean.fragment",
+      "sha256": "7e0a588e243735a611c919ea1080816911a3e27e4523478af0c0f560ce1b3b48",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-002",
+      "path": "LeanProject/LeanProof/Snippets/0002-definition-C4LA1-vertexDeletionForwardDifference.lean.fragment",
+      "sha256": "c2da50eb16ee788c439b146577efeedd7dd42811c6943fb437585edcf63b5880",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-003",
+      "path": "LeanProject/LeanProof/Snippets/0003-definition-C4LA1-IsFavorableAt.lean.fragment",
+      "sha256": "25d8f7d274f9080468bf6d46acc6db3d4a469c2e399e7faee6cdcee24290a0db",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-004",
+      "path": "LeanProject/LeanProof/Snippets/0004-definition-C4LA1-IsGraphLeaf.lean.fragment",
+      "sha256": "65acd314d3bfd74aca476e00dd8866434c67682b627bce5e105d372a556f7ae5",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-005",
+      "path": "LeanProject/LeanProof/Snippets/0005-definition-C5LA1-support.lean.fragment",
+      "sha256": "8e1e1a689393f555eb5c216207b1368c7415a8543c569884b2fc86954b7bc2b4",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-006",
+      "path": "LeanProject/LeanProof/Snippets/0006-definition-C5LA1-leafSet.lean.fragment",
+      "sha256": "78ec65517bde90cc2fc5e542fc7c60d6a5147b243b74b9ac3de33d4efd1df697",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-007",
+      "path": "LeanProject/LeanProof/Snippets/0007-definition-C5LA1-H.lean.fragment",
+      "sha256": "55f37d9161901d6006e571cf548c4e56675c9d786a1aba83e7889ad9d443224d",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-008",
+      "path": "LeanProject/LeanProof/Snippets/0008-definition-C5LA1-R.lean.fragment",
+      "sha256": "a0407d82ab112a65a0f9d85970e9d6217b66201680cc079a4ba13751e53dc6b8",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-009",
+      "path": "LeanProject/LeanProof/Snippets/0009-definition-C5LA1-indepSetsAvoiding.lean.fragment",
+      "sha256": "ac0e331eec99650eca7a18e9fe98829bb5495850685b8f31936169f0a6d8e368",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-010",
+      "path": "LeanProject/LeanProof/Snippets/0010-definition-C5LA1-indepSetCount.lean.fragment",
+      "sha256": "e22635d8697e49b38dd521080f34c3eefe56a93964120c70f53ad9899b4a7f71",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-011",
+      "path": "LeanProject/LeanProof/Snippets/0011-definition-C5LA1-forwardDifferenceDel.lean.fragment",
+      "sha256": "60bd8efcc88e8e511a7caacac5867f7845243ccab08f1660e8c3962af544dd8f",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-012",
+      "path": "LeanProject/LeanProof/Snippets/0012-definition-C5LA1-aggregate.lean.fragment",
+      "sha256": "d66e776c5cf49b2a78a2d9713e4a41de2cbaf5de0af7b6d580075064d1daea8b",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-013",
+      "path": "LeanProject/LeanProof/Snippets/0013-definition-E993Interior-taggedFamily.lean.fragment",
+      "sha256": "cb43feebd48bdf3a82d95db4c0475a34a83acdd8c55f13ac44433ea26141fa1e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-014",
+      "path": "LeanProject/LeanProof/Snippets/0014-definition-E993Transport-indepFamily.lean.fragment",
+      "sha256": "73df20a8511ea67885d45631688cf693e58cebe9cfd5413ee67e782c1030ef9e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-015",
+      "path": "LeanProject/LeanProof/Snippets/0015-definition-E993Transport-tagWitnesses.lean.fragment",
+      "sha256": "113d952167528dfc045eb79961e8fbff0326da8f04277799436d6c8962022025",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-016",
+      "path": "LeanProject/LeanProof/Snippets/0016-definition-E993Transport-activeWeight.lean.fragment",
+      "sha256": "074ed034729850d34722d0b1ceeb96d8362beaebf3b7a409cb3fab28a9850b93",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-017",
+      "path": "LeanProject/LeanProof/Snippets/0017-definition-E993Transport-layerWeight.lean.fragment",
+      "sha256": "5ca5792309be23276583ac42cef294618e2471c97d3f58e67f0ab7980a3a83c3",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-018",
+      "path": "LeanProject/LeanProof/Snippets/0018-definition-E993Transport-favorableLeaves.lean.fragment",
+      "sha256": "16b0c7672ed66c4cb53ba24d853764df160d6694f63b231346a2eb71c390ec77",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-019",
+      "path": "LeanProject/LeanProof/Snippets/0019-definition-E993Transport-transportRel.lean.fragment",
+      "sha256": "b1b9ac6c8de56fa740a37e5bac0fa628f1d817c2e33625ca34dcab33a1100d95",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-020",
+      "path": "LeanProject/LeanProof/Snippets/0020-definition-E993Transport-IsSaturatingFlow.lean.fragment",
+      "sha256": "a9d81c260914024d38f46ff5b564749d34f640674f9e9116685b4e7c631a48ac",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-021",
+      "path": "LeanProject/LeanProof/Snippets/0021-definition-E993Transport-WeightedHall.lean.fragment",
+      "sha256": "63534ffbfcc4bb1297228e598da165dcf98732939cd51a5d7fda3e62bc518478",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-022",
+      "path": "LeanProject/LeanProof/Snippets/0022-definition-E993Transport-gkEdge.lean.fragment",
+      "sha256": "fa84b00eac4a90634c8f7f2d76aa5ef2986c2d458327090f4c7bcc8e0beab06a",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-023",
+      "path": "LeanProject/LeanProof/Snippets/0023-definition-E993Transport-gkGraph.lean.fragment",
+      "sha256": "2cc3de97951b9581ed9e6d8d2056989c7714142745a67cea62ee75a60ad2fc7f",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-024",
+      "path": "LeanProject/LeanProof/Snippets/0024-definition-E993Transport-gkGraph_decAdj.lean.fragment",
+      "sha256": "025e213bc0ac986f4f4aff6f721b597c1c504b464e9d75f8ba5ac82c841f99e6",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-025",
+      "path": "LeanProject/LeanProof/Snippets/0025-definition-E993Transport-ChainFactor.lean.fragment",
+      "sha256": "32ea0d8f6cd1afd29aae0ef78466725c9f2042e10499ee0018b5b368dd152608",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-026",
+      "path": "LeanProject/LeanProof/Snippets/0026-definition-E993Transport-ChainFactor-verts.lean.fragment",
+      "sha256": "d32cf84a8f9199e032cc55ef77cd1c89514dab2dad4fe89962d8ee1746211df3",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-027",
+      "path": "LeanProject/LeanProof/Snippets/0027-definition-E993Transport-ChainFactor-code.lean.fragment",
+      "sha256": "2211061474e938c423e7b6443fa5551d0d2488d114b89021f19299f5ebde9e28",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-028",
+      "path": "LeanProject/LeanProof/Snippets/0028-definition-E993Transport-ChainFactor-drop.lean.fragment",
+      "sha256": "ece00f9f193d5fb0388d247cf9ee74f011cc831b7497a6ce84473cc96b66aa03",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-029",
+      "path": "LeanProject/LeanProof/Snippets/0029-definition-E993Transport-ChainFactor-rk.lean.fragment",
+      "sha256": "b83a7614b24110043177f7750524ff6966c3e082675c98ee1f09bd96de405aa5",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-030",
+      "path": "LeanProject/LeanProof/Snippets/0030-definition-E993Transport-ChainFactor-Valid.lean.fragment",
+      "sha256": "a3234600eca858e9e46b1096308ad7173dcb1c08890de8fa20fff06ca5f90e86",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-031",
+      "path": "LeanProject/LeanProof/Snippets/0031-definition-E993Transport-chainDownUp.lean.fragment",
+      "sha256": "00e0441d4505a37043d16701c57df44371bfe0b363db468853bf8c328eeb1d2e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-032",
+      "path": "LeanProject/LeanProof/Snippets/0032-definition-E993Transport-chainDownVertex.lean.fragment",
+      "sha256": "a9f7993f09ffc293fb28aad03fb6c6dadff488e05d1d9bfb905373ed3fe026a2",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-033",
+      "path": "LeanProject/LeanProof/Snippets/0033-definition-E993Transport-chainVerts.lean.fragment",
+      "sha256": "f16d063a48e4c1fafc6b9b3650f4fcbb1b7818e772759936852e38b5c20aae7d",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-034",
+      "path": "LeanProject/LeanProof/Snippets/0034-definition-E993Transport-chainSize.lean.fragment",
+      "sha256": "67ba19c5f90b6e293d96f0d920a4064a85c8bc6f34515d1330d7f3c527a3493e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-035",
+      "path": "LeanProject/LeanProof/Snippets/0035-definition-E993Transport-chainRank.lean.fragment",
+      "sha256": "57cab594ae10b9f31b5249872902203ba9f79c64d31a2ff238d53ad37e9b74af",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-036",
+      "path": "LeanProject/LeanProof/Snippets/0036-definition-E993Transport-ChainValid.lean.fragment",
+      "sha256": "0ce0540bbc55ef26cf609600eb55466524c1f1c29abc4e72fc23332e7773afdf",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-037",
+      "path": "LeanProject/LeanProof/Snippets/0037-definition-E993Transport-ChainDisjoint.lean.fragment",
+      "sha256": "27b6c75f4bd0b071963bf27e843b0fee087c8c90dbc13c567bab42607355c7c1",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-038",
+      "path": "LeanProject/LeanProof/Snippets/0038-definition-E993Transport-gkVertex.lean.fragment",
+      "sha256": "5dbe52451e63adfe8a442644a91f0af343b157ae2eca94ef655e53817f7df53d",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-039",
+      "path": "LeanProject/LeanProof/Snippets/0039-definition-E993Transport-gkLeafBlock.lean.fragment",
+      "sha256": "d55941db45bef0e1555e56ede0ce719b2995e39b935d6c12419182fa7cd28e86",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-040",
+      "path": "LeanProject/LeanProof/Snippets/0040-definition-E993Transport-gkCherryBlock.lean.fragment",
+      "sha256": "f932706497c820ddefbc353ba066e19feb223d1265c905ef35da2b270b0383fa",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-041",
+      "path": "LeanProject/LeanProof/Snippets/0041-definition-E993Transport-gkArmBlock.lean.fragment",
+      "sha256": "6492528421098725201bf3ccce76b345d276a2e140b0419f473108a3f2173cc6",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-042",
+      "path": "LeanProject/LeanProof/Snippets/0042-definition-E993Transport-gkArmIndex.lean.fragment",
+      "sha256": "b56fb2f9631a08c417f13f1276e0737629cbfa5a701ac7ebaa43740ca3e2517e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-043",
+      "path": "LeanProject/LeanProof/Snippets/0043-definition-E993Transport-gkTagFactors.lean.fragment",
+      "sha256": "01d3808a0609b77733f30baef3b34da631c76bbe693af1332efcc1ba447fa92a",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-044",
+      "path": "LeanProject/LeanProof/Snippets/0044-definition-E993Transport-gkTagDown.lean.fragment",
+      "sha256": "13db5e3404505e2b70fea723f1454a6d297d20cc77eb54f7e98f99ab5c36db28",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-fi-014",
+      "path": "LeanProject/LeanProof/Snippets/0045-definition-C5LA1-crossingIndex.lean.fragment",
+      "sha256": "378868ab2e660af8a36ea0b1045c55bc60f8383dca3d31dd85c4b52fa8a898fb",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-c4la1-045",
+      "path": "LeanProject/LeanProof/Snippets/0053-lemma-E993Interior-highTailAggregateFromShadow.lean.fragment",
+      "sha256": "972d0d900218889995bebd2e0682c1886576df4d7b2b22356924b0d7295baa9d",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-046",
+      "path": "LeanProject/LeanProof/Snippets/0054-lemma-E993Transport-indepFamily_eq_indepSetsAvoiding.lean.fragment",
+      "sha256": "45d1a93e12e0f50a58b9efb7fe25fab2fcd0c2e31eff6b3ac74795bf6a27cfe8",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-047",
+      "path": "LeanProject/LeanProof/Snippets/0055-lemma-E993Transport-isGraphLeaf_of_mem_favorableLeaves.lean.fragment",
+      "sha256": "8977fb83111a46cace690984e23e2ffd54e2ea5233712bfeeca579f1debf75c8",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-048",
+      "path": "LeanProject/LeanProof/Snippets/0056-lemma-E993Transport-tagWitnesses_subset_R.lean.fragment",
+      "sha256": "7a8528a04b10243adfa0e8488d21206bd9cfed44e18910e7ed810b7b8517baad",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-049",
+      "path": "LeanProject/LeanProof/Snippets/0057-lemma-E993Transport-card_active_eq_tagged.lean.fragment",
+      "sha256": "8823a71dad443ec51fdf34fc541c2c66aab7792d9520f8ef76665729ece12616",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-050",
+      "path": "LeanProject/LeanProof/Snippets/0058-lemma-E993Transport-layerWeight_eq_sum_card.lean.fragment",
+      "sha256": "6adece46210475286f5574371270d1f0cba414876eec5e7dd058ab2fa1993c8f",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-051",
+      "path": "LeanProject/LeanProof/Snippets/0059-lemma-E993Transport-layerWeight_sub_eq_sum.lean.fragment",
+      "sha256": "56e71a87c92f3d8435c1f8fb3b3e906cb037d78027b5bdfdf26b824a1fa8cc33",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-052",
+      "path": "LeanProject/LeanProof/Snippets/0060-lemma-E993Transport-activeWeightAggregateIdentity.lean.fragment",
+      "sha256": "9daf96e3501eccf92cd7025a400785520be2dc5ed078923730e0729f2af7d899",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-053",
+      "path": "LeanProject/LeanProof/Snippets/0061-lemma-E993Transport-aggregate_nonpos_of_saturatingFlow.lean.fragment",
+      "sha256": "ce01183cc56349c832b3626edb125bdffae41d91412371271d18104ee3795f30",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-054",
+      "path": "LeanProject/LeanProof/Snippets/0062-lemma-E993Transport-weightedHall_of_saturatingFlow.lean.fragment",
+      "sha256": "89a7ffb8bc79b1d61290459a843fb8fa2ca73c6fc9e3b6affd8448933bf2d54c",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-055",
+      "path": "LeanProject/LeanProof/Snippets/0063-lemma-E993Transport-ChainFactor-card_inter_path_eq.lean.fragment",
+      "sha256": "fb9273d46ecbb6344f21f47a0c2732841ee2a4f2b07e752d410714c1a83e9b9f",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-056",
+      "path": "LeanProject/LeanProof/Snippets/0064-lemma-E993Transport-ChainFactor-two_mul_card_add_len_eq.lean.fragment",
+      "sha256": "b4b34a0cf1dfc68177104fb386cb85c926399eb09058db3a6075dce9992dd789",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-057",
+      "path": "LeanProject/LeanProof/Snippets/0065-lemma-E993Transport-ChainFactor-code_fst_le_snd.lean.fragment",
+      "sha256": "4687c620aae2e16910394ac2b3dbfe8d7ec8073e4860e68c8386bdadf2ed726f",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-058",
+      "path": "LeanProject/LeanProof/Snippets/0066-lemma-E993Transport-ChainFactor-exists_drop_of_code_pos.lean.fragment",
+      "sha256": "4d7c96673fdbc78ce2cad5bf2d0920cdb5ab54ac92009057f9ba780ccad8726a",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-059",
+      "path": "LeanProject/LeanProof/Snippets/0067-lemma-E993Transport-ChainFactor-code_erase_of_notMem.lean.fragment",
+      "sha256": "d90065196eafb6af9bc223e3ccd6bcc75af09805706e98ee5cbe27443fca1cb9",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-060",
+      "path": "LeanProject/LeanProof/Snippets/0068-lemma-E993Transport-ChainFactor-drop_mem_or_mem_of_ne.lean.fragment",
+      "sha256": "9088c80b91e37fe76657818f8ffd646e51010bc42e645849b3bc56e9788a336c",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-061",
+      "path": "LeanProject/LeanProof/Snippets/0069-lemma-E993Transport-mem_chainVerts_iff.lean.fragment",
+      "sha256": "cde031a8ef9764eb71e766dea3d2e10b9cf2fcb22beb86999aa6d89928db9a0d",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-062",
+      "path": "LeanProject/LeanProof/Snippets/0070-lemma-E993Transport-chainDownUp_erase_of_notMem.lean.fragment",
+      "sha256": "f76732f072f2fdad9f343e94dbf3d5636518fbad4990ff5e747c1da53616dcac",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-063",
+      "path": "LeanProject/LeanProof/Snippets/0071-lemma-E993Transport-two_mul_chainSize_add_up_eq.lean.fragment",
+      "sha256": "7793757076279a9c59439aa2be8734e8c2a27085ece8bbf51e24e87d670868ea",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-064",
+      "path": "LeanProject/LeanProof/Snippets/0072-lemma-E993Transport-mem_and_exists_drop_of_chainDownVertex.lean.fragment",
+      "sha256": "4a73e439b8a01bae4d1230bb79f86c880fb395752904af56caeea92117c347d5",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-065",
+      "path": "LeanProject/LeanProof/Snippets/0073-lemma-E993Transport-exists_chainDownVertex_of_down_pos.lean.fragment",
+      "sha256": "ae9b9fa0e2265983da2e05ce4211a971ef7da084996ec6eb137d0eaa38afd511",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-066",
+      "path": "LeanProject/LeanProof/Snippets/0074-lemma-E993Transport-chainDownUp_erase_chainDownVertex.lean.fragment",
+      "sha256": "f240147f3dfcd92cdfeae410ad951156a42c6e1ec49ae9f2e531f0ea4ef38ef7",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-067",
+      "path": "LeanProject/LeanProof/Snippets/0075-lemma-E993Transport-notMem_verts_of_chainDownVertex.lean.fragment",
+      "sha256": "f52cd04f62a0623e8e96121a1eebf932f0b79dcc88068a9fed09ad4f37c75df4",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-068",
+      "path": "LeanProject/LeanProof/Snippets/0076-lemma-E993Transport-eq_of_chainDownVertex_erase_eq.lean.fragment",
+      "sha256": "abe1b5e82ab32a2af7093e3ffa66492e5c8423f6928f518be160b7b2119231df",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-069",
+      "path": "LeanProject/LeanProof/Snippets/0077-lemma-E993Transport-chainDownUp_snd_eq_zero_of_top.lean.fragment",
+      "sha256": "9b81f16c82a17c3b6f0d9335491d0f8d72913f08847a29165f0a765689b2c13c",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-070",
+      "path": "LeanProject/LeanProof/Snippets/0078-lemma-E993Transport-chainSize_eq_card_inter.lean.fragment",
+      "sha256": "5c45300ef1a4198e3838a01ad3649dd0f6d5669ed8fc6ef3aa25b0f606c97402",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-071",
+      "path": "LeanProject/LeanProof/Snippets/0079-lemma-E993Transport-chainSize_le_length.lean.fragment",
+      "sha256": "5feb79ed3065b9d6e7c42c63b8142bad998feb627f1d6dcc00d06d5ca1538292",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-072",
+      "path": "LeanProject/LeanProof/Snippets/0080-lemma-E993Transport-top_of_length_le_chainSize.lean.fragment",
+      "sha256": "ac4b9d8227aeb56206cac0be221a3764507340765e07250f8ccd995e0a9dc8b9",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-073",
+      "path": "LeanProject/LeanProof/Snippets/0081-lemma-E993Transport-mem_indepFamily_iff.lean.fragment",
+      "sha256": "d30c9ae0035311c89520623588b7418ed42be1a95848546b7b181e1a257411e5",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-074",
+      "path": "LeanProject/LeanProof/Snippets/0082-lemma-E993Transport-erase_mem_indepFamily.lean.fragment",
+      "sha256": "2832798965770e894f108bf878bbc98df5a0a0b7738130529c712b613d44442b",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-075",
+      "path": "LeanProject/LeanProof/Snippets/0083-lemma-E993Transport-saturatingFlow_of_perTag_deletionInjections.lean.fragment",
+      "sha256": "72ae49fe71d5923ebf506d4d48f40139072320a394af5c8f6b7611fa898fb048",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-076",
+      "path": "LeanProject/LeanProof/Snippets/0084-lemma-E993Transport-gkVertex_val.lean.fragment",
+      "sha256": "e2b82f69fd71f10d62504c04bb415da57ee121bf8224ad32a703ef4dc735b59c",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-077",
+      "path": "LeanProject/LeanProof/Snippets/0085-lemma-E993Transport-eq_gkVertex_iff.lean.fragment",
+      "sha256": "821056fedfff00187c86c908f974b165362d07e4120d24821f13d1f5cb2cf8b3",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-078",
+      "path": "LeanProject/LeanProof/Snippets/0086-lemma-E993Transport-gkGraph_adj_iff.lean.fragment",
+      "sha256": "8d360de32ed56b43a09bb8c72ae489e609c91bf337ff6701a077c8b17d0a67c8",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-079",
+      "path": "LeanProject/LeanProof/Snippets/0087-lemma-E993Transport-gkGraph_adj_iff_val.lean.fragment",
+      "sha256": "1e42ac9f507e04c9ba0473e6e3535a98b4e22aa5672ba0b9f56340ede4feccd2",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-080",
+      "path": "LeanProject/LeanProof/Snippets/0088-lemma-E993Transport-gkGraph_adj_of_val.lean.fragment",
+      "sha256": "845a87211ec204ad718aabe587c4e9ebefe7cc32c794fe9038e4ce1387098e7b",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-081",
+      "path": "LeanProject/LeanProof/Snippets/0089-lemma-E993Transport-gkLeafBlock_verts.lean.fragment",
+      "sha256": "c85615531df022c4537f554267efc95c8bf4878f44e6946ecda5970535a17994",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-082",
+      "path": "LeanProject/LeanProof/Snippets/0090-lemma-E993Transport-gkCherryBlock_verts.lean.fragment",
+      "sha256": "d72b98200f7d4fb98d7f3a474b21e7daf14370a103efe38a785cbfa481b0237d",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-083",
+      "path": "LeanProject/LeanProof/Snippets/0091-lemma-E993Transport-gkArmBlock_verts.lean.fragment",
+      "sha256": "6272a87d2fac20664b537bf5c314c84cf177f702c32792938da95a6edd7c4cb5",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-084",
+      "path": "LeanProject/LeanProof/Snippets/0092-lemma-E993Transport-mem_gkLeafBlock_verts_iff.lean.fragment",
+      "sha256": "38831b1b303118c60790acdde3678f2d263e9ac0ac667477cbe90a3f54dc5f8a",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-085",
+      "path": "LeanProject/LeanProof/Snippets/0093-lemma-E993Transport-mem_gkCherryBlock_verts_iff.lean.fragment",
+      "sha256": "096cf068463c225a7b4cedbb8390283d9c21147f823dafab2495f5691175e6fc",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-086",
+      "path": "LeanProject/LeanProof/Snippets/0094-lemma-E993Transport-mem_gkArmBlock_verts_iff.lean.fragment",
+      "sha256": "e61057255218fca4e5088d12ead685a6c50bcac5d14c89544ec7c86496710a9c",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-087",
+      "path": "LeanProject/LeanProof/Snippets/0095-lemma-E993Transport-mem_chainVerts_gkTagFactors_iff.lean.fragment",
+      "sha256": "596c5850dad28fd3f0b30e74a11d3e8d0df9ae46814a907032f58ddc63918502",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-088",
+      "path": "LeanProject/LeanProof/Snippets/0096-lemma-E993Transport-chainDisjoint_gkTagFactors.lean.fragment",
+      "sha256": "c082c60ac22c60c344947b0f7ad605c6b155b1a276ccb14bc8e8826429394ccc",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-089",
+      "path": "LeanProject/LeanProof/Snippets/0097-lemma-E993Transport-chainSize_gkTagFactors.lean.fragment",
+      "sha256": "af1a6b759a619553a4d950b1eeb311300f305b78a84381a59b3eb948aceef6bd",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-090",
+      "path": "LeanProject/LeanProof/Snippets/0098-lemma-E993Transport-chainRank_map_gkArmBlock_le.lean.fragment",
+      "sha256": "1fc0e1ec47998e4a24eaf106df3912584013f751440d6c3bd4406c40e4cf3b73",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-091",
+      "path": "LeanProject/LeanProof/Snippets/0099-lemma-E993Transport-chainRank_gkTagFactors_le.lean.fragment",
+      "sha256": "58c5e3ea3b1db6acde8f36ca17255ff57e379583287214b5fbc053c89dd700fe",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-092",
+      "path": "LeanProject/LeanProof/Snippets/0100-lemma-E993Transport-gkVertex_ne.lean.fragment",
+      "sha256": "ff36793eb22ae877779e33a9fa56ec6e2bb75f4112bb8d4d4b803f2ba05dda42",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-093",
+      "path": "LeanProject/LeanProof/Snippets/0101-lemma-E993Transport-gkGraph_adj_of_val_root.lean.fragment",
+      "sha256": "69e46ac55fac45ae38904bfb8f89c20f7b997e5b38138b72d55c5fefb26ec565",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-094",
+      "path": "LeanProject/LeanProof/Snippets/0102-lemma-E993Transport-gkGraph_adj_of_val_arm.lean.fragment",
+      "sha256": "6237dafe940e34591ba4ac181f8683b7105fc13173619bf0d6eec0afe5790585",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-095",
+      "path": "LeanProject/LeanProof/Snippets/0103-lemma-E993Transport-gk_not_adj_of_indep.lean.fragment",
+      "sha256": "37724bddd1a4509225c66f6308beca9b0ca5f93c803f87612c26989ef5651b1c",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-096",
+      "path": "LeanProject/LeanProof/Snippets/0104-lemma-E993Transport-gk_leaf_cases.lean.fragment",
+      "sha256": "72da9cbb2291ef5b0584e927f6388ad0066954a590722bd0f79970a89553373a",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-097",
+      "path": "LeanProject/LeanProof/Snippets/0105-lemma-E993Transport-not_disjoint_erase_tagWitnesses_iff.lean.fragment",
+      "sha256": "b9615873cbc7f2cb26925b23e05e2edf8a4b6bd689c87fcce107ebbcc2fd3b8f",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-098",
+      "path": "LeanProject/LeanProof/Snippets/0106-lemma-E993Transport-gk_active_arm_iff.lean.fragment",
+      "sha256": "e2eff73c6bd3e322ba69fd3c0f1da5828533bae1dcf55369cac8f0f9fe4b7338",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-099",
+      "path": "LeanProject/LeanProof/Snippets/0107-lemma-E993Transport-gk_active_cherry_iff.lean.fragment",
+      "sha256": "2320778f83f746d088e3adbd4e2bfe5b04e793dfa52b29a7e200f477646d88cd",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-100",
+      "path": "LeanProject/LeanProof/Snippets/0108-lemma-E993Transport-gk_active_one_iff.lean.fragment",
+      "sha256": "7cf8993c8bf8d0b368667395cec075e6cc2cf44cb4c63bfcd76fa5a619c6d8dc",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-101",
+      "path": "LeanProject/LeanProof/Snippets/0109-lemma-E993Transport-gk_root_notMem.lean.fragment",
+      "sha256": "215054b7010313ab3a98f662faa41c2dfc85fa0f92aa185274bb9ee7adfe9b5a",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-102",
+      "path": "LeanProject/LeanProof/Snippets/0110-lemma-E993Transport-inter_triple_eq_pair.lean.fragment",
+      "sha256": "0a4dcca46a1fee4fffd3cbce9cbfa9514c046855926aca463f83d42ad779a424",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-103",
+      "path": "LeanProject/LeanProof/Snippets/0111-lemma-E993Transport-gk_path_valid.lean.fragment",
+      "sha256": "ceb65cc46d975d11fb18758dc91bd06a4fd1b11fdd8dfdeef6ab40c85ec44c64",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-104",
+      "path": "LeanProject/LeanProof/Snippets/0112-lemma-E993Transport-chainValid_gkTagFactors.lean.fragment",
+      "sha256": "7383beaa0a8a0154cce87a937b0f2a627b1f53940707b34cc2d7ffa859d3b885",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-105",
+      "path": "LeanProject/LeanProof/Snippets/0113-lemma-E993Transport-exists_chainDownVertex_gkTagFactors.lean.fragment",
+      "sha256": "9c2167d698a2dddc8bf43bb85dc5cc117e9c2051618db92838887743fea3af58",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-106",
+      "path": "LeanProject/LeanProof/Snippets/0114-lemma-E993Transport-gk_one_blocks_top_of_avoid.lean.fragment",
+      "sha256": "aa88fc49334c361e172d528af671701a984845b2ed426514b416dc8e31a1be05",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-107",
+      "path": "LeanProject/LeanProof/Snippets/0115-lemma-E993Transport-gk_one_active_after_down.lean.fragment",
+      "sha256": "5101d8b3e510e6f2242c99a5aa84e706317bd85b8ca00ded52a2fa6c51b09b74",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-108",
+      "path": "LeanProject/LeanProof/Snippets/0116-lemma-E993Transport-gkTagDown_erase_keeps_tag_active.lean.fragment",
+      "sha256": "79a323839ae88a5e5d6b48ab729d1bd427ca5f9947442ea5796223caaa0c3d5c",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-109",
+      "path": "LeanProject/LeanProof/Snippets/0117-lemma-E993Transport-gkTagDown_injOn.lean.fragment",
+      "sha256": "535b4369f55304f3662b656155d95b0138f77ae98fdbf9d367219a225cdf2b7e",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-110",
+      "path": "LeanProject/LeanProof/Snippets/0118-lemma-E993Transport-gk_exists_deletionSupported_saturatingFlow.lean.fragment",
+      "sha256": "d0892d585740a1142e2c34a994fc98661fccaafdabb0a7607517062d338bc64d",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-111",
+      "path": "LeanProject/LeanProof/Snippets/0119-lemma-E993Transport-gk_weightedHall_of_rank_ge.lean.fragment",
+      "sha256": "574664f235d9c06590d498a1830c67f1f7a0a5ceb4674d2c957bd1d93d7c5aac",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-c4la1-112",
+      "path": "LeanProject/LeanProof/Snippets/0120-lemma-E993Transport-gk_aggregate_nonpos_of_rank_ge.lean.fragment",
+      "sha256": "fa70a0529f780106676614bb993437fbec329a2a46f1669fd072448ed590704e",
+      "role": "reference"
+    }
+  ]
+}
