@@ -1,10 +1,10 @@
 # Research Status
 
-## Current orientation, 2026-09-26
+## Current orientation, 2026-09-27
 
-The six-cycle [lower-region compensation experiment](docs/experiments/lower-region-compensation-dre-2026-09-25.md) is closed. Four keys in two governed Lean packages prove exact marked-isolate, ordinary-leaf and first-shell order bands. An all-parameter `T_m` selected aggregate proof is adjudicated at computer-assisted grade. Restricted heterogeneous families and finite controls add evidence at their own scopes. The arbitrary-tree primary, governed beta aggregate and all headline targets remain open. Final master registry: `434 identities: 262 VERIFIED, 96 REFUTED, 26 CONDITIONAL, 50 OPEN` (mixed evidence grades). [Current notepad](docs/research-notepad-2026-09-25.md); [assessment](docs/assessment-2026-09-25.md). Dated sections preserve the state at each earlier close.
+The six-cycle heterogeneous-closure experiment is complete. The full selected aggregate on every arity-2,3,4 ordinary path-star now has a computer-assisted proof, combining an exact finite prefix through 265 branches with a uniform analytic tail from 266. Two coefficient theorems have governed Lean awards: the zero-extended binomial-block signs and the arbitrary-profile main-mark relative margin. The census-free replacement, selected MASS and both universal spread mechanisms remain unresolved. The arbitrary-tree aggregate, governed beta, TREE, FOREST, TRANSFER and Erdős 993 remain OPEN. Registry: **457 identities: 275 VERIFIED, 98 REFUTED, 26 CONDITIONAL, 58 OPEN**, at mixed evidence grades, not a theorem count. See the [experiment](docs/experiments/heterogeneous-closure-dre-2026-09-26.md), [assessment](docs/assessment-2026-09-25.md), and [research notepad](docs/research-notepad-2026-09-25.md). Dated sections below are historical snapshots.
 
-Last updated: 2026-09-26 (lower-region six-cycle close; public predecessor `6ceb47d` already contained r29's high-tail and non-residual top-rank results)
+Last updated: 2026-09-27 (heterogeneous closure terminal reconciliation)
 
 ## Headline Problems
 

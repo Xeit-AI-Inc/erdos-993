@@ -1,0 +1,7 @@
+# Heterogeneous-closure verification record
+
+Two governed coefficient awards are published: `e993_binomial_block_signs` and `e993_main_mark_relative_margin`. Both have accepted informal proof-integrity, kernel, independent fidelity and final workflow-close receipts. Lean 4.32.2 and Mathlib 905b95818eb32af7874a58b427f50c1711a5e96c are pinned. The terminal declarations depend only on propext, Classical.choice and Quot.sound. Their packages contain byte-identical accepted Lean source; publication-safe receipt summaries retain the original source, contract, statement, kernel, fidelity and workflow hashes. The summaries are projections, not the raw internal receipts.
+
+At publication, source identity and closed receipts are checked; this is not reported as a fresh Lean rebuild. The whole selected family aggregate is accepted at computer-assisted, nonformal grade. Its exact finite programs and full outputs are reproduced alongside the uniform analytic proof. Agreement of all 224 independent finite layer summaries is separately recorded. No formal source-to-binary certificate, arbitrary-tree theorem, or Erdős 993 award is claimed.
+
+All 240 DRE seats, the exact formal attempt histories, failed first finite replay, metadata-only close repairs and immutable source seals remain in the internal terminal evidence. The final mathematical reconciliation explicitly corrects displayed formulas and overly broad gap descriptions without rewriting historical returns.

@@ -1,25 +1,21 @@
-# Open Research Roadmap
+# Open research roadmap
 
-Updated 26 September 2026 after the [six-cycle lower-region compensation experiment](experiments/lower-region-compensation-dre-2026-09-25.md). The ordinary lower-region selected aggregate, governed beta aggregate, unrestricted G1, TREE, FOREST, TRANSFER and Erdős #993 remain open. The final registry total is `434 identities: 262 VERIFIED, 96 REFUTED, 26 CONDITIONAL, 50 OPEN`; the identity count mixes evidence grades. The [assessment](assessment-2026-09-25.md) and [twelve-area notepad](research-notepad-2026-09-25.md) carry the current priority map.
+Updated 27 September 2026 after six-cycle heterogeneous closure. The original conjecture remains open. The completed family proof no longer needs a larger census to cover its parameters.
 
-## 1. Uniform selected compensation
+## 1. Uniform selected compensation and mixed Hall
 
-The r29 high-tail awards cover `3p≥2α+1` pointwise at their exact guards. The lower-region run formally covers `n≤2p+2`, but the arbitrary selected sum at `x+2≤p≤⌊2α/3⌋` remains open. Its exact marked-incidence identity gives `kS=(2α+1-3p)Q-D-C`, so a uniform proof must supply the positive global `D+C` budget or a different inequality yielding the same complete selected sign. Preserve strict original-rank favorability, original supports and distinct leaves sharing a support.
+The arbitrary-tree lower-region aggregate still needs the complete selected D+C budget or a valid alternative. Code's closed r30 Cycle 4 gives a separate infinite G_k Hall scope and full Hall at every eligible rank of five switch-necessary CB trees. Its current named boundary is the reduced-capacity sector flow at G(8^82,7^2)/448, followed by a parameter-uniform allocation theorem. Preserve active-tag weights, competing target capacities and original supports. Code's ongoing run-local claims remain under its controller for terminal master integration.
 
-The expanded weighted deletion/two-for-one Hall relation is a sufficient candidate, not the scalar target itself. A correct cut argument must use active-tag capacity, and it must hold for arbitrary source subsets. The corrected `CB(8,92)` root-plus-arm sector has one active tag and deletion-only upper/lower ratio `492/491`; a mixed switch can exit that sector and activate private tags. The original F5 and U5 weights are documented as errors, with separate corrections. Four additional local or algebraic shortcuts have exact refutations at their own scopes.
+## 2. A structural family mechanism and extension
 
-## 2. Structural closure beyond solved families
+The arity-2–4 all-m selected aggregate is now computer-assisted VERIFIED. Its exact main-mark relative margin is formally verified, but the absolute selected MASS bound and weaker discounted payment remain unproved. A useful successor proves a quantitative estimate from actual parent descent and strict flags, or a sufficiently strong averaged covariance bound. Empty-plus-singleton truncation is insufficient at the eligible m = 150 control; the lower bound itself survives. The optional spread route still requires universal first-descent and common-rank selected-S comparisons plus an independent balanced-family base. Then test whether the successful degree-down mechanism survives additional rooted branching.
 
-The all-parameter `T_m` selected aggregate is adjudicated at computer-assisted grade, with a cutoff-400 finite base and an analytic tail. A 12,340-profile heterogeneous arity-2–4 census covers `m≤40`, with 191,016 eligible rows and no positive complete sums. Restricted exact-factor tails start at `m≥2000` for arities 2–4 and `m≥100000000` for arities 2–12. They do not close their finite prefixes or an arbitrary-tree case. Seek a rooted-triple or finite-type invariant that bridges the prefix structurally and survives added branching depth and known non-log-concave trees. An ever larger census is not a uniform theorem.
+## 3. Exact implication chains
 
-In parallel, the residual matching/cover route still needs a parameter-uniform Region II and cover-fiber invariant. r25's fixed bands, r27's forest degree/extension inequality and the order-24 census are genuine inputs, but none controls unbounded excess.
+Keep ordinary aggregate, governed beta, no recovery, TREE and FOREST separate. A family result supplies none of their missing universal bridges. The residual matching/cover route still needs unbounded-excess control. Use realizability-aware convolution closure or a direct forest proof, not generic unimodality convolution.
 
-## 3. Complete implication chains
+## Finite frontier and evidence
 
-State separately what an ordinary all-rank aggregate sign, an ordinary no-recovery theorem and governed `E993-BETA-AGG` would imply. Supply an ordinary-to-governed bridge only for a downstream governed claim. A tree theorem does not by generic convolution imply a forest theorem; use a realizability-aware convolution-closed class or a direct forest argument. Preserve strict endpoints and occurrence identity when using historical G1 and same-leaf obligations.
+The completed order-24 forest census gives M(6)=22 and K1-addition closure x<=6 at census-dependent grades. Formal order bands through n<=2p+2 and the forest ceiling leave 2p+3<=n<=4p-8. After mixed-grade low-rank exclusions the next finite frontier is p = 8, orders 19..22. These instruments do not reduce the unbounded theorem to a finite task.
 
-## Finite frontier and evidence discipline
-
-The formal forest ceiling and lower-region order bands leave `2p+3≤n≤4p-8`, hence `p≥6`. Existing exact low-rank instruments and census maxima cover the remaining `p=6,7` cases at a computational composition grade; a registered certificate obligation remains open. At `p=8`, the next unhandled orders are `19..22`, using `M(6)=22`. The second-shell and high-rank third-shell preparation is unawarded. An order-eight labeled census with zero eligible rows supplies no sign test of the guarded target.
-
-A useful successor would establish a uniform inequality, a proved reduction, or a fully eligible positive **complete** sum. No seventh cycle belongs to this closed run. See its [terminal report](../runs/erdos-993-lower-region-compensation-dre-2026-09-25/REPORT.md) and [final analysis](../runs/erdos-993-lower-region-compensation-dre-2026-09-25/FINAL-ANALYSIS.md). Earlier dated results remain in [current results](results.md) and the [master proof ledger](master-proof-ledger-2026-09-04.md).
+See the [twelve-area notepad](research-notepad-2026-09-25.md), [assessment](assessment-2026-09-25.md), and [terminal experiment](experiments/heterogeneous-closure-dre-2026-09-26.md). No seventh cycle belongs to this completed run.

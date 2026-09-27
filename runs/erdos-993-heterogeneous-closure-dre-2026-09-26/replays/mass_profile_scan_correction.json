@@ -1,0 +1,12 @@
+{
+  "source_script_sha256": "b3f85908388fae80f6360526e286d01326be33267ba5904241e5bda8fc0e1ae5",
+  "curated_script_sha256": "2ddfb702a8100ace8adb6672030a5c7e0f8c8b8326e61bea8cc9ec09ae2cb28f",
+  "changes": [
+    "Reset per-order lower-half row count only at the start of each m layer, not at each eligible profile.",
+    "Rename profiles_seen to eligible_profiles and add explicit profiles_total.",
+    "Add replay instructions."
+  ],
+  "mathematical_recurrence_changed": false,
+  "verification": "Corrected fresh full replay completed; all original mathematical result fields match, eligible_profiles matches original profiles_seen, per-m profile counts match, corrected per-m row counts sum to133194.",
+  "output_sha256": "3dad2e85d81845d7a8e9da9d6702aaeaa9feb9ed1b47180b5d9cc8a68163a915"
+}

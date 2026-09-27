@@ -1,8 +1,8 @@
 # Erdős Problem #993
 
-## Current orientation, 2026-09-26
+## Current orientation, 2026-09-27
 
-The six-cycle [lower-region compensation experiment](docs/experiments/lower-region-compensation-dre-2026-09-25.md) is closed. Two governed Lean packages establish four order-band keys, while an adjudicated computer-assisted argument settles the complete selected aggregate on the all-parameter `T_m` family. Restricted heterogeneous tails, finite censuses and exact-factor arguments retain their narrower grades. The arbitrary-tree lower-region aggregate, governed beta aggregate, TREE, FOREST, TRANSFER and Erdős #993 remain open. The final registry reconciliation is `434 identities: 262 VERIFIED, 96 REFUTED, 26 CONDITIONAL, 50 OPEN`; identity counts mix evidence grades and are not theorem counts. See the [current notepad](docs/research-notepad-2026-09-25.md), [assessment](docs/assessment-2026-09-25.md), and [terminal report](runs/erdos-993-lower-region-compensation-dre-2026-09-25/REPORT.md). Historical dated sections below retain their scopes and counts.
+The six-cycle heterogeneous-closure experiment is complete. The full selected aggregate on every arity-2,3,4 ordinary path-star now has a computer-assisted proof, combining an exact finite prefix through 265 branches with a uniform analytic tail from 266. Two coefficient theorems have governed Lean awards: the zero-extended binomial-block signs and the arbitrary-profile main-mark relative margin. The census-free replacement, selected MASS and both universal spread mechanisms remain unresolved. The arbitrary-tree aggregate, governed beta, TREE, FOREST, TRANSFER and Erdős 993 remain OPEN. Registry: **457 identities: 275 VERIFIED, 98 REFUTED, 26 CONDITIONAL, 58 OPEN**, at mixed evidence grades, not a theorem count. See the [experiment](docs/experiments/heterogeneous-closure-dre-2026-09-26.md), [assessment](docs/assessment-2026-09-25.md), and [research notepad](docs/research-notepad-2026-09-25.md). Dated sections below are historical snapshots.
 
 Formal and computational research by [Xeit AI, Inc.](https://xeit.ai) on the
 unimodality of independent-set sequences of finite trees and forests.

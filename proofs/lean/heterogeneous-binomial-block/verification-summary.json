@@ -1,0 +1,23 @@
+{
+  "schema": "e993.public-formal-receipt-summary.v1",
+  "run": "lean-2026-09-27-c3-binomial-block-repair-1",
+  "status": "formally_verified",
+  "source": "LeanProof/Main.lean",
+  "main_sha256": "29caaee0c4695e8b06e0a1960be45068bccde46f7895c6d63b313308de34f3c2",
+  "contract_sha256": "33dce03d87b9048ce291ab2b1fed82ba344f90e1d2383f083b549bd0bb26323a",
+  "statement_sha256": "5e6b0cdb4df0ab8291779cce51ff8d458d4c374acf4e4f06cb8df984e6bf9f85",
+  "kernel_receipt_sha256": "b8ad47282e3cb635002e3f8c19e97773e9fe3a3a32e3b86ba9f5ad20db4c851e",
+  "fidelity_receipt_sha256": "6c28f68427cc7ae05eb7de6ce6f927ff66f6f78ee620c4e1b4be2fe9cd86e7a8",
+  "workflow_report_sha256": "7c65ce6b27392d59bc35c8490365bb28a9855d3ea11f03c9176dbc112363fb5d",
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "toolchain": "leanprover/lean4:v4.32.2",
+  "mathlib_revision": "905b95818eb32af7874a58b427f50c1711a5e96c",
+  "workflow_failures": [],
+  "scope_boundary": "Exact zero-extended coefficient conjunction only; no graph, selected-aggregate or general-conjecture award.",
+  "projection_note": "Sanitized receipt summary; original hashes retained, private paths omitted.",
+  "theorem": "e993_binomial_block_signs"
+}

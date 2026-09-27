@@ -1,0 +1,47 @@
+{
+  "selector_fixture": {
+    "counts": [
+      0,
+      12,
+      10
+    ],
+    "N": 76,
+    "alpha": 78,
+    "n": 101,
+    "x": 37,
+    "p": 39,
+    "guard_rhs": 157,
+    "guard_lhs": 117,
+    "private_tip_tags": 76,
+    "branch_flags": 22,
+    "cofactor_rows": [
+      {
+        "arity": 3,
+        "endpoint_slope": -11319302108154726892710,
+        "tip_slope": -10424062636794201349994,
+        "cofactor_slope": -895239471360525542716,
+        "selected": true
+      },
+      {
+        "arity": 4,
+        "endpoint_slope": -11319302108154726892710,
+        "tip_slope": -10078464575583477845814,
+        "cofactor_slope": -1240837532571249046896,
+        "selected": true
+      }
+    ],
+    "conclusion": "all branches selected despite all represented cofactor slopes negative; existential nonnegative cofactor condition is false here, not equivalent to endpoint exclusion"
+  },
+  "spread_display": {
+    "profile": [
+      3,
+      3
+    ],
+    "k": 0,
+    "old_first_descent": 4,
+    "actual_new_slope": 10,
+    "printed_stencil": 8,
+    "corrected_stencil": 10,
+    "conclusion": "displayed binomial sign reversed; replay in source did not test this stencil"
+  }
+}
