@@ -1,8 +1,14 @@
 # Current Results
 
-## Current orientation, 2026-09-27
+## Current orientation — joint close, 2026-09-27
 
-The six-cycle heterogeneous-closure experiment is complete. The full selected aggregate on every arity-2,3,4 ordinary path-star now has a computer-assisted proof, combining an exact finite prefix through 265 branches with a uniform analytic tail from 266. Two coefficient theorems have governed Lean awards: the zero-extended binomial-block signs and the arbitrary-profile main-mark relative margin. The census-free replacement, selected MASS and both universal spread mechanisms remain unresolved. The arbitrary-tree aggregate, governed beta, TREE, FOREST, TRANSFER and Erdős 993 remain OPEN. Registry: **457 identities: 275 VERIFIED, 98 REFUTED, 26 CONDITIONAL, 58 OPEN**, at mixed evidence grades, not a theorem count. See the [new experiment](experiments/heterogeneous-closure-dre-2026-09-26.md). The following dated result sections preserve their original close scopes; the former arity-2–4 finite gap is now closed at computer-assisted grade.
+Both six-cycle experiments are complete. Code's r30 supplies seven governed Lean awards: the exact active-tag weight identity, Hall-to-sign implication, invariant deficient-family reduction, orbit-quotient equivalence, the G_k deletion flow, Hall at every eligible rank of G_k, and Hall at rank k+3 of S(1,2,3^k) for k>=5. The spider's broader all-eligible-rank statement remains informal. Our heterogeneous-closure run supplies two governed coefficient awards and an all-parameter, computer-assisted proof of the selected aggregate for arity-2,3,4 ordinary path-stars.
+
+Code's finite certificates close all eligible ranks of five CB trees and all 56 eligible ranks of G(8^82,7^2), including the formerly open rank 448. Ten further CB trees are certified at one rank each. In the recorded 223 switch-necessary CB rows, 15 are certified and 208 remain uncertified. No eligible deficient cut has been confirmed. Full-sector surplus alone does not establish whole-network Hall.
+
+The master registry contains **491 identities: 309 VERIFIED, 98 REFUTED, 26 CONDITIONAL, 58 OPEN**, at mixed evidence grades. These totals are not a theorem count or a measure of percentage solved. The arbitrary-tree lower-region aggregate, full weighted Hall, governed beta, TREE, FOREST, TRANSFER and Erdős 993 remain OPEN.
+
+See the [current research notepad](research-notepad-2026-09-25.md) and [Code successor prompt](prompts/code-cb-uniform-switch-2026-09-27.md). Earlier dated sections retain their historical scopes.
 
 
 ## Historical 2026-09-26 lower-region close: exact order bands and bounded families

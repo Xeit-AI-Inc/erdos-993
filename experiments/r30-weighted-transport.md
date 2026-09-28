@@ -30,7 +30,7 @@ three), a deletion-only saturating flow exists at every rank `p ≥ k+3` for eve
 of `G_k` are nondecreasing through rank `k+1` — at EVERY eligible rank (Lean). On the spider `S(1,2,3^k)` the same holds for every
 `p ≥ k+2`, hence at every eligible rank for `k ≥ 5` (`proved_informal`; the chain-partition construction is written out, not cited).
 
-**(HALL) holds at every known switch-necessary instance.** The switch arcs are genuinely needed: on the choke-broom trees `CB(d,m)`
+**(HALL) is certified on fifteen recorded switch-necessary CB rows and the heterogeneous example.** The switch arcs are genuinely needed: on the choke-broom trees `CB(d,m)`
 (a path `r–s–v`, `m` chokes on `r`, `d` supports per choke, one private leaf per support) the root-plus-arm sector is short of deletion
 capacity at its first eligible rank for 223 trees with `d ≤ 13` — and only there. Exact choke-local sector certificates composed with a
 registered non-sector deletion flow close the five smallest CB trees at every eligible rank, the heterogeneous `G(8^82,7^2)` (1427
@@ -42,9 +42,9 @@ threshold reduction and a compression lemma over sector families are false. The 
 
 **What stays open.** (HALL) at full scope, and with it the aggregate on the lower region. No deficient cut is known at any eligible
 row: every free tree of order at most 23 saturates with deletion arcs alone, and the switch-necessary CB rows have sector surplus at
-least 4401 times their deficit. The frontier is exact: a closed-form sector certificate at the top sector-deficient rank of `CB(8,m)`,
-where the registered E1 criterion holds for `m ≢ 1 (mod 3)`; the certificate margins of record fit `θ*_8(m) = 288/(200m² + 82m + 5)` (a
-conjecture, one out-of-sample confirmation), so any uniform certificate must carry a `1/m²` margin. (HALL) stays OPEN at full scope: the smallest uniform object is `(L-S)_top`, a closed-form choke-local sector certificate at the top sector-deficient rank of `CB(8,m)`, `m ≡ 2 (mod 3)`, whose margin decays like `1/m²`; no deficient cut exists at any eligible row on record.
+least 4401 times their deficit. The proposed successor concerns the top sector-deficient rank of CB(8,m), m>=107 with m congruent to 2 modulo 3. It needs both a uniform choke-local sector flow respecting residual E1 capacities and actual parent-descent eligibility. The recorded template optima on this residue class fit theta*(m)=288/(200m^2+82m+5). That formula is conjectural; it is not a necessary margin law for every possible certificate. Large full-sector surplus does not prove whole-network Hall.
+
+Editorial reconciliation, 27 September 2026: the earlier heading "every known switch-necessary instance" exceeded the scope of the same paragraph's certificates. The coverage is 15 of 223 recorded CB rows, with 208 uncertified, plus G(8^82,7^2). Terminal run records are preserved as issued. The spider's governed award is specifically at rank k+3 for k>=5; its all-eligible-rank extension is informal.
 
 ## Records
 

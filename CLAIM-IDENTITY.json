@@ -42,10 +42,10 @@
         "every forest has a real-rooted independence polynomial",
         "forest independence polynomials have only real roots"
       ],
-      "certificate": "implied by E993-UNIV-TREE-TRS2 (real-rootedness implies log-concavity); master ledger fence F2",
+      "certificate": "implied by E993-UNIV-TREE-TRS2 (real-rootedness implies log-concavity); master ledger fence F2; direct minimal witness K1,3: I(z)=1+4z+3z^2+z^3, I'(z)=3(z+1)^2+1>0; all tree polynomials through order 3 are real-rooted. See joint reconciliation 2026-09-27 and r30 SR-C6-4.",
       "claim_key": "E993-TREE-REAL-ROOTED",
       "scope": "all finite trees; universal [r30 C6; SR-C6-4] Minimal witness and forest form. K_{1,3} (order 4) has I = 1 + 4y + 3y² + y³, whose derivative 3y² + 6y + 4 has discriminant −12, so I has exactly one real root; every tree of order ≤ 3 is real-rooted, so order 4 is minimal (exhaustive through order 7, exact Sturm counts: 0, 0, 0, 1, 1, 3, 7 non-real-rooted independence polynomials at orders 1..7, one per tree since the 1, 1, 1, 2, 3, 6, 11 trees there have pairwise distinct polynomials, bounded_computation). The recorded smallest witness order 26 is the order at which the log-concavity refutation (E993-UNIV-TREE-TRS2) implies non-real-rootedness, not the minimum. The forest form (\"the independence polynomial of any finite forest has only real roots\") implies this statement and is refuted with it; it was cited in r30 Cycle 6 by route T1 and struck (C-T1-F F1; the r30 Cycle 6 T adjudicator), and the registered alias patterns did not match that wording. Proposed aliases for the registrar: forest independence polynomials are real-rooted; every forest independence polynomial has only real roots. Attribution: C-T1-F (r30 Cycle 6, Claude Opus 5.5; K_{1,3} on the face of F1), replayed by C-T1-U and the T adjudicator; isolated second read SR-C6-4 (Claude Opus 5.5; minimality and the alias gap). This note changes neither this key's statement, status nor fences.",
-      "smallest_witness_order": 26,
+      "smallest_witness_order": 4,
       "statement": "Every finite tree has a real-rooted independence polynomial",
       "status": "REFUTED",
       "terminal_history": [
@@ -60,6 +60,10 @@
           "cycle": 6,
           "date": "2026-09-28",
           "event": "alias fields repaired at the Cycle 5 close: SR-C6-4 finding: T1's struck Cycle 6 lemma revived this REFUTED master key under the wording 'every forest's independence polynomial is real-rooted', which the two registered patterns (tree/real-rooted within 60 chars) did not catch; forest and only-real-roots wordings added. Aliases and patterns only; status, statement and the recorded smallest_witness_order field are not edited by r30 (the K_{1,3} order-4 witness is recorded in the [r30 C6; SR-C6-4] scope note)."
+        },
+        {
+          "date": "2026-09-27",
+          "event": "Joint registrar reconciliation authorized by Ashton: smallest_witness_order corrected 26 -> 4; direct certificate added; statement, scope and REFUTED status preserved. The earlier scope note remains historical."
         }
       ]
     },
@@ -41517,20 +41521,20 @@
       "forest_census": "COMPLETED: M6=22 and K1 closure x<=6; 146271594 classes; census-dependent grades, no formal award.",
       "r27_review": "COMPLETED: four package faces/receipts consistent; marked transfer not supplied; equality endpoints corrected; no Lean rebuild."
     },
-    "canonical_current_research_notepad": "experiments/erdos-993-heterogeneous-closure-dre-2026-09-26/RESEARCH-NOTEPAD.md",
-    "claim_objects_changed": 0,
+    "canonical_current_research_notepad": "experiments/erdos-993-master-ledger-2026-09-04/RESEARCH-NOTEPAD.md",
+    "claim_objects_changed": 1,
     "historical_source_snapshots_preserved": true,
     "latest_closed_code_cycle": {
-      "cycle": 4,
-      "intake": "Closed controller record only; Cycle5 active at final read. Five cumulative formal awards; infinite restricted G_k Hall scope and full Hall on five CB trees at every eligible rank.",
-      "remaining_named_boundary": "Reduced-capacity sector flow at G(8^82,7^2)/448",
+      "cycle": 6,
       "run": "erdos-993-weighted-transport-dre-2026-09-26",
-      "run_local_claims_not_merged": true
+      "intake": "Terminal close: seven formal awards; 34 new identities already master-merged; G(8^82,7^2) certified at all 56 eligible ranks; 15 of 223 recorded CB rows certified, 208 uncertified.",
+      "remaining_named_boundary": "Uniform (L-S)_top plus actual eligibility on CB(8,m), m>=107, m congruent to 2 mod 3, p=(16m+4)/3.",
+      "run_local_claims_not_merged": false
     },
-    "latest_code_release": "723998c065d020453c7b9cf89150900a08527299",
-    "latest_completed_code_run": "erdos-993-high-tail-certification-dre-2026-09-25",
+    "latest_code_release": "e3ffa3e43635ca7d28dc80bfb7e69d5608688056",
+    "latest_completed_code_run": "erdos-993-weighted-transport-dre-2026-09-26",
     "latest_completed_controller_run": "erdos-993-heterogeneous-closure-dre-2026-09-26",
-    "latest_public_orientation_commit": "6ceb47dc69613e9a7d82f2fc0e660846fb3fe6b8",
+    "latest_public_orientation_commit": "e3ffa3e43635ca7d28dc80bfb7e69d5608688056",
     "lower_region_close": {
       "completed_cycles": 6,
       "formal_keys_awarded_during_run": 4,
@@ -41548,10 +41552,15 @@
       "date": "2026-09-25",
       "new_claim_identities": 2
     },
-    "research_notepad": "docs/research-notepad-2026-09-25.md"
+    "research_notepad": "docs/research-notepad-2026-09-25.md",
+    "public_orientation_commit_note": "Base revision for this joint reconciliation; its publishing commit is recorded by Git and the external publication receipt, avoiding a self-referential hash.",
+    "active_runs_from_this_reconciliation": [],
+    "next_code_prompt": "docs/prompts/code-cb-uniform-switch-2026-09-27.md",
+    "next_controller_target": "Census-free exact-ratio selected payment on arity-2,3,4 path-stars; proposed only.",
+    "formal_vs_computational_frontier": "Order-band Lean theorems retain scope; r30 reports deletion Hall at all eligible rows through order23, including p8 orders19..22."
   },
   "schema_version": "verityos.math.claim-identity.v1",
-  "update_note": "r30 terminal close (2026-09-27): 3 E993-R29- claims added; the three auxiliary keys E993-BIPARTITE-TAGGED-SHADOW-BOUND, E993-BIPARTITE-LEAF-HIGH-TAIL-POINTWISE, E993-INTERIOR-ELIGIBILITY-ALPHA-GE-SEVEN upgraded by their own awards where closed (4 formal award(s): C1-LA1, C1-LA2, C1-LA3, C1-LA4); (HTA) proved_informal; (TRN) formally_verified; the boundary record registered. Scope notes on E993-INTERIOR-ALPHA-MINUS-TWO-AGGREGATE, E993-R26-TOP-RANK-RESIDUAL-SIGN, E993-R23-ORDINARY-FAVORABLE-LEAF-AGGREGATE and the three refuted pointwise keys (statuses unchanged). Errata R29-E-a…d recorded. All prior statuses preserved.; Cycle3 lower-region intake appends3 exact OPEN identities, no award; preserves all r29 claims and92 refutations.; two exact Cycle2 order-band claims formally verified during Cycle3; all other416 claim objects preserved.; Cycle4 intake adds6 OPEN and2 exact finite REFUTED identities; scoped D6 occurrence clarified, no formal award.; exact first-shell pointwise and aggregate pair formally verified; other424 claim objects unchanged; C4 frozen intake remains historical.; Cycle4 closed18/36/3/1; two independently replayed exact mechanism refutations, no new formal award; T_m candidate held OPEN for Cycle5.; Cycle5 complete18/36/3/1; exact controller decisions reconciled; three heterogeneous candidate scopes registered OPEN before Cycle6; no new formal award.; Six-cycle lower-region close: two restricted cutoff promotions, three distinct informal keys, smaller T_m certificate; four earlier formal keys retained; primary OPEN. No new final formal awards.",
+  "update_note": "Joint terminal reconciliation 2026-09-27: r30 has six completed cycles, seven formal awards and 34 already-merged new keys; heterogeneous closure has six completed cycles and two coefficient awards. Total 491 identities (309 VERIFIED,98 REFUTED,26 CONDITIONAL,58 OPEN). Refresh current coordination and notes; correct E993-TREE-REAL-ROOTED smallest_witness_order from26 to4 with direct certificate. No new claims, status changes or grade promotions. Prior metadata preserved in the reconciliation backup.",
   "r30_publication": {
     "run": "erdos-993-weighted-transport-dre-2026-09-26",
     "run_id": "erdos-993-math-dre-20260926-r30-weighted-transport",
@@ -41613,5 +41622,15 @@
       "E993-FINITE-GROUP-WEIGHTED-ORBIT-FLOW-LIFT"
     ],
     "closed": "2026-09-27"
+  },
+  "joint_terminal_reconciliation": {
+    "date": "2026-09-27",
+    "evidence_record": "evidence/joint-reconciliation-2026-09-27.md",
+    "claim_changes": [
+      "E993-TREE-REAL-ROOTED: witness-order/certificate/history only"
+    ],
+    "status_changes": 0,
+    "new_claims": 0,
+    "sealed_roots_modified": false
   }
 }

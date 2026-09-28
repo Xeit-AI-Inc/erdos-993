@@ -1,14 +1,28 @@
 # Erdős #993 — Master Proof Ledger
 
+## Current orientation — joint terminal reconciliation, 2026-09-27
+
+Both six-cycle experiments are complete. Code's r30 supplies seven governed Lean awards: the exact active-tag weight identity, Hall-to-sign implication, invariant deficient-family reduction, orbit-quotient equivalence, the G_k deletion flow, Hall at every eligible rank of G_k, and Hall at rank k+3 of S(1,2,3^k) for k>=5. The spider's broader all-eligible-rank statement remains informal. Our heterogeneous-closure run supplies two governed coefficient awards and an all-parameter, computer-assisted proof of the selected aggregate for arity-2,3,4 ordinary path-stars.
+
+Code's finite certificates close all eligible ranks of five CB trees and all 56 eligible ranks of G(8^82,7^2), including the formerly open rank 448. Ten further CB trees are certified at one rank each. In the recorded 223 switch-necessary CB rows, 15 are certified and 208 remain uncertified. No eligible deficient cut has been confirmed. Full-sector surplus alone does not establish whole-network Hall.
+
+The master registry contains **491 identities: 309 VERIFIED, 98 REFUTED, 26 CONDITIONAL, 58 OPEN**, at mixed evidence grades. These totals are not a theorem count or a measure of percentage solved. The arbitrary-tree lower-region aggregate, full weighted Hall, governed beta, TREE, FOREST, TRANSFER and Erdős 993 remain OPEN.
+
+Current working notes: `experiments/erdos-993-master-ledger-2026-09-04/RESEARCH-NOTEPAD.md` (canonical) and `docs/research-notepad-2026-09-25.md` (public). Sealed run-local notepads remain historical snapshots. Code's terminal release is e3ffa3e43635ca7d28dc80bfb7e69d5608688056; the preceding heterogeneous release is 9e412c1213b1dc7ef68d6909bf2900ef2465d421.
+
+The next proposed division is a uniform CB(8,m) residue-2 switch certificate for Code and an exact-ratio absolute payment on path-stars for Astra/Codex. Both are proposals; no new run is launched. The old G(8^82,7^2)/448 gap is closed. Code's order-23 computational coverage includes the previously proposed p=8 orders 19..22 discovery census; a formal shell extension is a separate obligation.
+
+Registry hygiene: `E993-TREE-REAL-ROOTED` stays REFUTED. Its smallest-witness field is corrected from 26 to 4 using K1,3 and the explicit small-order polynomial check in the joint reconciliation record. No claim identity, statement, status or proof grade is added or promoted. The r30 import already supplied its 34 new identities. Historical orientations below describe their own checkpoints and are superseded for current activity and counts.
+
 **Updated 2026-09-27 — r30 (the correctly weighted mixed-boundary transport network for the remaining ordinary-tree favorable-leaf aggregate, `erdos-993-weighted-transport-dre-2026-09-26`; chartered from a Codex prompt) closed after six cycles (the ceiling):** (HALL) `E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL` stays OPEN at full scope — neither proved uniformly nor refuted; seven governed Lean awards `formally_verified` (the weight identity, Hall ⇒ sign, the invariant deficient family, the orbit-quotient reduction, the `G_k` flow, (HALL) at every eligible rank of `G_k`, and (HALL) at rank `k+3` of the spider `S(1,2,3^k)`); (HALL) `computer_assisted` at fifteen switch-necessary CB rows and the heterogeneous `G(8^82,7^2)`; 34 new `E993-R30-*` identities, additive; a successor run recommended on the top-deficient-rank family. See the r30 section at the end of this ledger.
 
-## Current orientation — 2026-09-27, heterogeneous closure terminal
+## Historical orientation — 2026-09-27, heterogeneous closure terminal
 
 The six-cycle heterogeneous closure experiment is complete. The full selected aggregate for every arity-2,3,4 ordinary path-star is VERIFIED at computer-assisted, nonformal grade. The family proof covers its whole parameter range by an exact finite prefix and a uniform analytic tail; no finite gap remains for this family. The zero-extended binomial-block signs and arbitrary-profile main-mark relative margin have separate governed Lean awards. The census-free replacement, selected MASS and universal spread mechanisms remain unresolved. The arbitrary-tree aggregate, governed beta, TREE, FOREST, TRANSFER and Erdős 993 remain OPEN.
 
 The master registry contains 457 identities: 275 VERIFIED, 98 REFUTED, 26 CONDITIONAL and 58 OPEN. These mix evidence grades and are not a theorem count. Cycle 6 preserves every claim object; only terminal and coordination metadata change. The current notepad is experiments/erdos-993-heterogeneous-closure-dre-2026-09-26/RESEARCH-NOTEPAD.md. Code's r30 Cycle 4 is the latest closed intake, while Cycle 5 remains active; its run-local 453 claims have not been master-merged by this controller. Earlier dated orientations below are historical snapshots.
 
-## Current orientation - 2026-09-27, heterogeneous closure Cycle 5
+## Historical orientation - 2026-09-27, heterogeneous closure Cycle 5
 
 The master registry has 457 identities: 275 VERIFIED, 98 REFUTED, 26 CONDITIONAL and 58 OPEN, at mixed evidence grades. The arity-2..4 ordinary path-star aggregate is VERIFIED by a computer-assisted all-m proof. Its exact main-mark relative-binomial margin is now formally_verified; the zero-extended binomial-block theorem was formally verified in Cycle 3. Absolute selected MASS and the two universal spread mechanisms remain OPEN, and a census-free aggregate proof remains unresolved. Arbitrary-tree aggregate, governed beta, TREE, FOREST, TRANSFER and Erdos 993 remain OPEN. Cycle 6 is the final authorized cycle. Later dated sections record the individual closes; earlier current-orientation paragraphs are historical snapshots.
 

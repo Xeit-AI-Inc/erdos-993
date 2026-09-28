@@ -1,8 +1,14 @@
 # Erdős Problem #993
 
-## Current orientation, 2026-09-27
+## Current orientation — joint close, 2026-09-27
 
-The six-cycle heterogeneous-closure experiment is complete. The full selected aggregate on every arity-2,3,4 ordinary path-star now has a computer-assisted proof, combining an exact finite prefix through 265 branches with a uniform analytic tail from 266. Two coefficient theorems have governed Lean awards: the zero-extended binomial-block signs and the arbitrary-profile main-mark relative margin. The census-free replacement, selected MASS and both universal spread mechanisms remain unresolved. The arbitrary-tree aggregate, governed beta, TREE, FOREST, TRANSFER and Erdős 993 remain OPEN. Registry: **457 identities: 275 VERIFIED, 98 REFUTED, 26 CONDITIONAL, 58 OPEN**, at mixed evidence grades, not a theorem count. See the [experiment](docs/experiments/heterogeneous-closure-dre-2026-09-26.md), [assessment](docs/assessment-2026-09-25.md), and [research notepad](docs/research-notepad-2026-09-25.md). Dated sections below are historical snapshots.
+Both six-cycle experiments are complete. Code's r30 supplies seven governed Lean awards: the exact active-tag weight identity, Hall-to-sign implication, invariant deficient-family reduction, orbit-quotient equivalence, the G_k deletion flow, Hall at every eligible rank of G_k, and Hall at rank k+3 of S(1,2,3^k) for k>=5. The spider's broader all-eligible-rank statement remains informal. Our heterogeneous-closure run supplies two governed coefficient awards and an all-parameter, computer-assisted proof of the selected aggregate for arity-2,3,4 ordinary path-stars.
+
+Code's finite certificates close all eligible ranks of five CB trees and all 56 eligible ranks of G(8^82,7^2), including the formerly open rank 448. Ten further CB trees are certified at one rank each. In the recorded 223 switch-necessary CB rows, 15 are certified and 208 remain uncertified. No eligible deficient cut has been confirmed. Full-sector surplus alone does not establish whole-network Hall.
+
+The master registry contains **491 identities: 309 VERIFIED, 98 REFUTED, 26 CONDITIONAL, 58 OPEN**, at mixed evidence grades. These totals are not a theorem count or a measure of percentage solved. The arbitrary-tree lower-region aggregate, full weighted Hall, governed beta, TREE, FOREST, TRANSFER and Erdős 993 remain OPEN.
+
+See the [current research notepad](docs/research-notepad-2026-09-25.md) and [Code successor prompt](docs/prompts/code-cb-uniform-switch-2026-09-27.md). Earlier dated sections retain their historical scopes.
 
 Formal and computational research by [Xeit AI, Inc.](https://xeit.ai) on the
 unimodality of independent-set sequences of finite trees and forests.
@@ -21,9 +27,9 @@ of size `k`. The problem asks whether
 is weakly unimodal whenever `G` is a finite tree, and likewise whenever `G` is
 a finite forest.
 
-## 2026-09-27: r30 — the weighted transport mechanism: identity and reductions in Lean, (HALL) on two infinite families and at every known switch-necessary instance; full scope open
+## 2026-09-27: r30 — the weighted transport mechanism: identity and reductions in Lean, (HALL) on two infinite families and at fifteen recorded switch-necessary CB rows; full scope open
 
-The [r30 run](experiments/r30-weighted-transport.md) (chartered from a Codex prompt) closed after six cycles (the charter's ceiling) with seven governed Lean awards — the active-tag weight identity `supply − capacity = S(G,p)`, weighted Hall ⇒ `S ≤ 0`, the `Aut`-invariant deficient family, the orbit-quotient reduction, a deletion-only saturating flow on `G_k` at every rank `p ≥ k+3`, (HALL) at every eligible rank of every `G_k`, and (HALL) at rank `k+3` of the spider `S(1,2,3^k)` — plus `computer_assisted` whole-row (HALL) at fifteen switch-necessary CB rows and the 1427-vertex `G(8^82,7^2)`. The mechanism key stays open at full scope: no uniform proof and no deficient cut anywhere on record (every free tree of order ≤ 23 saturates with deletion arcs alone). The smallest uniform object left is a closed-form choke-local sector certificate at the top sector-deficient rank of `CB(8,m)` with a `1/m²` margin law; a successor run is recommended. See the [verification record](evidence/verification-2026-09-27-r30.md).
+The [r30 run](experiments/r30-weighted-transport.md) (chartered from a Codex prompt) closed after six cycles (the charter's ceiling) with seven governed Lean awards — the active-tag weight identity `supply − capacity = S(G,p)`, weighted Hall ⇒ `S ≤ 0`, the `Aut`-invariant deficient family, the orbit-quotient reduction, a deletion-only saturating flow on `G_k` at every rank `p ≥ k+3`, (HALL) at every eligible rank of every `G_k`, and (HALL) at rank `k+3` of the spider `S(1,2,3^k)` — plus `computer_assisted` whole-row (HALL) at fifteen switch-necessary CB rows and the 1427-vertex `G(8^82,7^2)`. The mechanism key stays open at full scope: no uniform proof and no deficient cut anywhere on record (every free tree of order ≤ 23 saturates with deletion arcs alone). The smallest uniform object left is a closed-form choke-local sector certificate at the top sector-deficient rank of `CB(8,m)` with a conjectured `1/m²` margin for the recorded residue-2 local template, together with a uniform parent-descent proof; a successor run is recommended. See the [verification record](evidence/verification-2026-09-27-r30.md).
 
 ## 2026-09-26: lower-region compensation six-cycle close
 
