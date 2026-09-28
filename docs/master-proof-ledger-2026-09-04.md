@@ -1,6 +1,26 @@
 # Erdős #993 — Master Proof Ledger
 
-## Active experiment — Cycle2 closed, 2026-09-28
+## Active experiment — Cycle3 closed, 2026-09-28
+
+Cycle3 is closed. Its center-subset coefficient expansion is now formally_verified at its exact arbitrary-finite-index Polynomial Nat scope, including empty families, zero sizes and all natural coefficient ranks with an explicit cardinality guard. Three unchanged source fragments passed independent informal audit, project/single-file/kernel axiom checks, fresh independent semantic fidelity review and governed close. This is the second exact coefficient-only formal award in the run, after the Cycle2 rank bound. Neither award certifies the full occupancy/Jensen, graph, selector, MASS or payment chain.
+
+The restricted path-star all-m branchwise three-halves, selected MASS and exact-ratio payment remain VERIFIED at computer-assisted/nonformal grade. The registry still contains510 claims (323 VERIFIED,102 REFUTED,26 CONDITIONAL,59 OPEN). Only the center-expansion evidence grade changed; all509 other claim objects and every mathematical statement/status were preserved. The global conjecture and arbitrary-tree targets remain OPEN. Astra completed the C3 midpoint analysis; Cycles4–6 now prioritize structural guarded selection, reusable finite coefficient bridges and actual-descent/conditional-occupancy coupling. The formal primary stopping condition remains unmet.
+
+Evidence: `experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c3-center/VERIFICATION-REPORT.json`.
+
+## Cycle3 mathematical reconciliation, 2026-09-28
+
+All 31 standard Cycle 3 seats, Astra's midpoint analysis, and a fresh Sol-high identity/proof review are complete. The actual-eligible branchwise three-halves bound, selected MASS, and exact-ratio payment for ordinary arity-2,3,4 path-stars are now VERIFIED at a source-dependent computer-assisted/nonformal grade. The proof covers the complete 1–69 branch prefix (59,639 profiles and 68,129 eligible rows), the exact 70–119 scalar certificate (799,895 states), and an analytic tail from 120. The independent selector-only source composition is a premise; the known aggregate sign is not. The primary has no governed Lean award, so the six-cycle experiment continues.
+
+Exponent balancing and the profile-sensitive strict-descent bound have universal informal proofs. The reversed inequality in F1 and both critics was explicitly rejected and independently repaired; the reported order-203 depth-2 failure was an instrument error and is not a registered mathematical refutation. The positive-block occupancy result retains size-one and empty families with signed zero extension at k=0.
+
+Five new identities bring the registry to 510 claims: 323 VERIFIED, 102 REFUTED, 26 CONDITIONAL, and 59 OPEN, at mixed grades. The exact center-subset coefficient expansion and general coefficient-dominating block Jensen bound are informally verified; the former is the next governed Lean candidate. Individual and weighted-tip-deck lower-half shifted comparisons are OPEN structural mechanisms. The unguarded shifted comparison is REFUTED by the exact order-122 witness, outside the guarded rank range; no minimum-order claim is made. The existing same-rank parent/deletion LR claim remains OPEN under its existing identity.
+
+The next three cycles prioritize structural selection, the reusable coefficient bridge, and actual-descent/conditional-occupancy coupling. Coefficient domination does not transfer rank, deletion, support or selector identities to arbitrary trees. The global conjecture and arbitrary-tree targets remain OPEN. Frozen Code mathematical intake remains r30; concurrent sibling records are preserved. No C3 primary formal award or decisive stopping condition is asserted.
+
+Evidence: `experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C3-MIDPOINT-IDENTITY/REPORT.md`, the sealed C3 synthesis, and `control/C3-ASTRA-MIDPOINT-ANALYSIS.md`.
+
+## Historical Cycle2 close, 2026-09-28
 
 Cycle2 is closed with all9/18/3/1 standard seats and the governed Lean gate complete. The exact rational-polynomial theorem e993_rank_any_strict_descent is formally_verified: every finite arity2/3/4 list, including empty and repeated entries, and every strict coefficient descent k of its parent polynomial satisfy2N<=5k. Independent informal, kernel/axiom, fidelity and controller close gates passed. This is a coefficient-only auxiliary award; it does not formalize the graph bridge, the composite ratio theorem, selectors, MASS, payment or Erdős993.
 

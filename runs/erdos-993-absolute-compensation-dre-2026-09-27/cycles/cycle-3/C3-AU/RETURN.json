@@ -1,0 +1,147 @@
+{
+  "worker_id": "C3-AU",
+  "cycle": 3,
+  "stage": "adjudication",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-PROFILE-SENSITIVE-STRICT-DESCENT-RANK",
+      "statement": "Every strict descent k of the actual zero-extended parent P has 54k>=24N-4a2-3a3-5, equivalently 9k+1-4N+(2/3)a2+(1/2)a3>0; the registered count-relaxed corollary follows.",
+      "scope": "All m>=1 ordinary arity-2/3/4 profiles, every strict descent including terminal and actual first descent x. Parent rank only; eligible p still requires all three guards and actual current-p flags and original multiplicities; no MASS/payment consequence.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AU/REPORT.md",
+        "cycles/cycle-3/C3-AU/C3-AU-focused-audit.py",
+        "cycles/cycle-3/C3-AU/C3-AU-focused-audit.json",
+        "cycles/cycle-3/C3-AU/C3-AU-rank-replay.log"
+      ],
+      "reason": "Universal informal differential-operator proof in REPORT; checked local identities and bounded replay. No Lean verification."
+    },
+    {
+      "claim_id": "C3-U1-DIFFERENTIAL-IDENTITY",
+      "statement": "For E=LP'- (N+2)P, E=L^(N+1)-2zQ+G sum_i(1-(r_i-1)z)H_i and [z^k]E=(k+1)P[k+1]-(N+2-k)P[k].",
+      "scope": "Exact integer polynomial identity for all finite ordinary profiles, with zero extension. The stronger nonnegative-E cone at forbidden ranks is excluded.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AU/REPORT.md",
+        "cycles/cycle-3/C3-AU/C3-AU-rank-replay.log"
+      ],
+      "reason": "Product differentiation proves the identity. The separate cone fails at (a2,a3,a4)=(0,0,2), k=3, where Delta P=120 and [z^3]E=-54."
+    },
+    {
+      "claim_id": "C3-U1-BOUNDED-RANK-SCAN",
+      "statement": "The rank inequality holds at all 938431 strict-descent rows in all 17295 count profiles with 1<=m<=45; minimum slack 44.",
+      "scope": "Exact bounded integer convolution and zero-extended difference scan through 45 branches only, including terminal descent.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AU/REPORT.md",
+        "cycles/cycle-3/C3-AU/C3-AU-rank-replay.py",
+        "cycles/cycle-3/C3-AU/C3-AU-rank-replay.log"
+      ],
+      "reason": "Copied independent critic evaluator reproduced the counts and minimum; universal rank claim rests separately on proof."
+    },
+    {
+      "claim_id": "C3-CF-U1-COUNT-RELAXED-RANK",
+      "statement": "Every actual strict descent k satisfies 9k+1-4N+hmax(m,N)>0, with hmax=2m-N/2 for N>=3m and hmax=m-N/6 for N<=3m.",
+      "scope": "All ordinary arity-2/3/4 profiles and strict parent descents, including x and terminal; numerical rank relaxation only, no selector or compensation.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AU/REPORT.md"
+      ],
+      "reason": "Depends on the retained profile-sensitive theorem and h=(4m-N)/2-a2/3 with a2>=max(0,3m-N)."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-OCCUPANCY-JENSEN-COFACTOR",
+      "statement": "The fixed-size singleton-occupancy average identity and AM-GM/log/Taylor chain give H[k]>=binom(M,k)E_d(y_k) for every d>=0; zero-extended nonnegative GF_r convolution bounds T_i[j].",
+      "scope": "All finite disjoint positive-size blocks, 0<=k<=M, including empty family; path-star convolution for natural j with GF2=(1,2), GF3=(2,5,2), GF4=(3,9,7,2). No actual descent, selector, MASS or payment conclusion.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AU/REPORT.md",
+        "cycles/cycle-3/C3-AU/C3-AU-focused-audit.json"
+      ],
+      "reason": "Universal informal finite-set count and analytic inequality in REPORT; k=M size-one commentary corrected without changing theorem."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-COFACTOR-JENSEN-EXPONENT-ADJACENT-ARITY-BALANCING",
+      "statement": "For M>=10 and 0<=k<=M with 3k>=M, g2-2g3+g4>=0; repeated (2,4)->(3,3) replacement yields the registered adjacent-arity lower bounds for E=sum a_r g_r.",
+      "scope": "All nonnegative arity-2/3/4 cofactor counts with mprime>=1 and M>=10, in-band k only. Jensen exponent alone; no ordering of actual coefficients, parent descent, selectors or payment.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AU/REPORT.md",
+        "cycles/cycle-3/C3-AU/C3-AU-focused-audit.py",
+        "cycles/cycle-3/C3-AU/C3-AU-focused-audit.json"
+      ],
+      "reason": "Universal informal exact factorial identity and positive-polynomial argument; 7614 exact finite checks corroborate."
+    },
+    {
+      "claim_id": "C3-U2-BALANCED-FINITE-COFACTOR-CERTIFICATE",
+      "statement": "The exact relaxed scalar comparison passes all 799895 states for 70<=m<=119, 2m<=N<=4m, r=2,3,4, feasible M=N-r, 5j>2N-1 and 2j<=N-2, with no exclusions and stated exact minimum ratio at (70,278,2,112).",
+      "scope": "Bounded relaxed cofactor table conditional on occupancy/Taylor and balancing. Every GF shift obeys M>=10 and 3(j-s)>=M. No actual x, current-p flags, selected A,b, MASS or exact-ratio payment.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AU/REPORT.md",
+        "cycles/cycle-3/C3-AU/C3-AU-scalar-replay.py",
+        "cycles/cycle-3/C3-AU/C3-AU-scalar-replay.json",
+        "cycles/cycle-3/C3-AU/C3-AU-scalar-replay.log"
+      ],
+      "reason": "Copied independent direct-binomial evaluator and inspected producer domain/floor/comparison; all 50 per-m records match. Finite certificate only."
+    },
+    {
+      "claim_id": "C3-U3-CENTER-LAYER-EXPANSION",
+      "statement": "Exact subset/epsilon/s binomial expansion of T_i[j] from H_i factors B_r=L^r+z; restriction to |J|<=d yields U_i^(d)[j]<=T_i[j].",
+      "scope": "Every fixed ordinary profile, represented branch i and natural j, with zero-extended coefficients and original arities. No uniform depth, local three-halves, selector or compensation conclusion.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AU/REPORT.md",
+        "cycles/cycle-3/C3-AU/C3-AU-focused-audit.json"
+      ],
+      "reason": "Direct nonnegative factor expansion proves the formula. Producer coefficient-vector error affects its numerical implementation, not this algebraic identity."
+    },
+    {
+      "claim_id": "C3-U3-HOMOGENEOUS-LAYER-BOUND-EVIDENCE",
+      "statement": "The asserted m=40,p=80 depth-2 failure is false: with contract GF4=(3,9,7,2), 2U^(2)-3deltaD=722724455446538076746556482596023354496120951540>0.",
+      "scope": "Original two homogeneous arity-4 profiles at actual eligible lower-half ranks; the returned bounded-evidence statement is rejected as a whole because one asserted outcome is false. Actual x, all three guards, strict current-p flags and original multiplicity four are preserved.",
+      "status": "proposed_rejected",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AU/REPORT.md",
+        "cycles/cycle-3/C3-AU/C3-AU-focused-audit.py",
+        "cycles/cycle-3/C3-AU/C3-AU-focused-audit.json",
+        "cycles/cycle-3/C3-AU/C3-AU-layer-replay.json"
+      ],
+      "reason": "Producer implemented F4 as coefficient row (1,1,1) instead of (3,3,1). Corrected m=40 depth 1 and 2 pass both eligible rows; corrected m=150 depth-1 failure remains."
+    },
+    {
+      "claim_id": "C3-CF-U3-CORRECTED-LAYER-EVIDENCE",
+      "statement": "With correct GF4, m=40 depth 2 passes p=80,81; m=150 depth 1 fails p=294 and depth 2 passes p=294..301; full T_i passes checked rows.",
+      "scope": "Exact bounded evidence for homogeneous arity-4 profiles m=40 and 150 at their actual least strict parent descents and every eligible p, with all three guards, current-p strict endpoint/branch flags and original four tip tags per branch; no universal local/MASS/payment conclusion.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AU/REPORT.md",
+        "cycles/cycle-3/C3-AU/C3-AU-layer-replay.py",
+        "cycles/cycle-3/C3-AU/C3-AU-layer-replay.json",
+        "cycles/cycle-3/C3-AU/C3-AU-focused-audit.json"
+      ],
+      "reason": "Own-scratch replay of corrected critic evaluator and independent direct binomial audit agree; note that depth 1 also passes both m=40 rows, correcting a CT-U3 prose error."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-AU/REPORT.md",
+  "limitations": [
+    "Universal coefficient/rank arguments are informal, not governed Lean verification.",
+    "The scalar table is finite and conditional on analytic bounds; it does not evaluate actual selectors or selected payment.",
+    "The corrected center-layer data concern two homogeneous profiles only; the original U3 probe used incorrect F4 coefficients.",
+    "Primary exact-ratio payment and all-m branchwise local MASS receive no status change here."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C3-CF-U1-COUNT-RELAXED-RANK",
+    "C3-CF-U3-CORRECTED-LAYER-EVIDENCE",
+    "C3-U1-BOUNDED-RANK-SCAN",
+    "C3-U1-DIFFERENTIAL-IDENTITY",
+    "C3-U2-BALANCED-FINITE-COFACTOR-CERTIFICATE",
+    "C3-U3-CENTER-LAYER-EXPANSION",
+    "C3-U3-HOMOGENEOUS-LAYER-BOUND-EVIDENCE",
+    "E993-PATH-STAR-ARITY-2-4-OCCUPANCY-JENSEN-COFACTOR",
+    "E993-PATH-STAR-ARITY-2-4-PROFILE-SENSITIVE-STRICT-DESCENT-RANK",
+    "E993-PATH-STAR-COFACTOR-JENSEN-EXPONENT-ADJACENT-ARITY-BALANCING"
+  ]
+}

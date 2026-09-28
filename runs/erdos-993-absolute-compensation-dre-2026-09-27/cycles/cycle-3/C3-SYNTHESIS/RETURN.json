@@ -1,0 +1,356 @@
+{
+  "worker_id": "C3-SYNTHESIS",
+  "cycle": 3,
+  "stage": "synthesis",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "C3-CF-T2-NEGATIVE-SLOPE-SELECTED-ROW",
+      "statement": "At profile (a2,a3,a4)=(0,12,10), actual eligible p=39, both represented cofactor slopes are negative although endpoint and all tip tags are strictly selected.",
+      "scope": "Ordinary path-star, m>=1 distinct r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2, C=G product B_(r_i), T_i=G F_(r_i) product_(h!=i)B_(r_h), P=C+z(1+z)^q. x is the least natural strict forward descent of P with integer zero extension including terminal difference. At actual natural p, all x+2<=p, 3p<2alpha+1, 2p<=alpha hold; j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j)>0. Strict current-p flags e0=1[Delta_p(LQ+zL^N)<0], ei=1[Delta_p(GB_(r_i-1)H_i+zL^N)<0]; b=e0+sum_i r_i ei and A=sum_i r_i ei T_i[j]. Original endpoint tag has multiplicity one and branch i has r_i distinct original tip tags; empty selection is included. Specialized to m=22,n=101,N=76,alpha=78,x=37,p=39,j=37; all original tags and exact signed margins are in REPORT.md and C3-AT-selector-audit.json.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/REPORT.md",
+        "cycles/cycle-3/C3-SYNTHESIS/audit.py",
+        "cycles/cycle-3/C3-SYNTHESIS/audit.json"
+      ],
+      "reason": "Exact selected eligible (0,12,10), p=39 row has both cofactor slopes negative but above the more negative endpoint slope; refutes only nonnegative-slope shortcut."
+    },
+    {
+      "claim_id": "C3-CF-T3-M70-119-MASS-PAYMENT",
+      "statement": "At every actual eligible lower-half row with 70<=m<=119, selected MASS A>=b delta D_j and exact-ratio payment hold.",
+      "scope": "Ordinary path-star, m>=1 distinct r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2, C=G product B_(r_i), T_i=G F_(r_i) product_(h!=i)B_(r_h), P=C+z(1+z)^q. x is the least natural strict forward descent of P with integer zero extension including terminal difference. At actual natural p, all x+2<=p, 3p<2alpha+1, 2p<=alpha hold; j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j)>0. Strict current-p flags e0=1[Delta_p(LQ+zL^N)<0], ei=1[Delta_p(GB_(r_i-1)H_i+zL^N)<0]; b=e0+sum_i r_i ei and A=sum_i r_i ei T_i[j]. Original endpoint tag has multiplicity one and branch i has r_i distinct original tip tags; empty selection is included. Restrict 70<=m<=119.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/REPORT.md",
+        "cycles/cycle-3/C3-SYNTHESIS/scalar_independent_replay.py",
+        "cycles/cycle-3/C3-SYNTHESIS/scalar_independent_replay.json",
+        "cycles/cycle-3/C3-SYNTHESIS/audit.py",
+        "cycles/cycle-3/C3-SYNTHESIS/audit.json"
+      ],
+      "reason": "The complete exact relaxed scalar certificate, occupancy/balancing bridge, registered selector composition and ratio algebra prove this interval at computer-assisted/informal grade."
+    },
+    {
+      "claim_id": "C3-CF-U1-COUNT-RELAXED-RANK",
+      "statement": "Every actual strict descent k satisfies 9k+1-4N+hmax(m,N)>0, with hmax=2m-N/2 for N>=3m and hmax=m-N/6 for N<=3m.",
+      "scope": "All ordinary arity-2/3/4 profiles and strict parent descents, including x and terminal; numerical rank relaxation only, no selector or compensation.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "From universal differential rank proof and h=(4m-N)/2-a2/3 with a2>=max(0,3m-N); no selector consequence."
+    },
+    {
+      "claim_id": "C3-CF-U3-CORRECTED-LAYER-EVIDENCE",
+      "statement": "With correct GF4, m=40 depth 2 passes p=80,81; m=150 depth 1 fails p=294 and depth 2 passes p=294..301; full T_i passes checked rows.",
+      "scope": "Exact bounded evidence for homogeneous arity-4 profiles m=40 and 150 at their actual least strict parent descents and every eligible p, with all three guards, current-p strict endpoint/branch flags and original four tip tags per branch; no universal local/MASS/payment conclusion.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/REPORT.md",
+        "cycles/cycle-3/C3-SYNTHESIS/audit.py",
+        "cycles/cycle-3/C3-SYNTHESIS/audit.json"
+      ],
+      "reason": "Correct GF4 coefficients repair the m40 result; sealed m150 exact replay and own m40/m172 controls limit this to bounded layer evidence."
+    },
+    {
+      "claim_id": "C3-CT-F1-SCALAR-CERTIFICATE-M70-119",
+      "statement": "The degree-12 floored adjacent-Jensen GF convolution exceeds 3 delta D_j/(2 binom(N,j)) at all 799895 relaxed states for m=70..119, with zero excluded states.",
+      "scope": "Every 2m<=N<=4m, feasible represented r in {2,3,4}, integer 5j>2N-1 and 2j<=N-2, and every nonzero GF_r shift; an exact bounded coefficient certificate, not a selector or all-m payment census.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/REPORT.md",
+        "cycles/cycle-3/C3-SYNTHESIS/scalar_independent_replay.py",
+        "cycles/cycle-3/C3-SYNTHESIS/scalar_independent_replay.json",
+        "cycles/cycle-3/C3-SYNTHESIS/audit.py",
+        "cycles/cycle-3/C3-SYNTHESIS/audit.json"
+      ],
+      "reason": "Copied independent direct-binomial evaluator passes every exact state and matches all 50 sealed layer minima; finite scalar grade only."
+    },
+    {
+      "claim_id": "C3-CT-F2-PREFIX-FULL-SELECTION-BOUNDED",
+      "statement": "All 68129 actual eligible rows from 1<=m<=69 have e0=1 and every represented branch's strict current-p deletion flag equal to one.",
+      "scope": "Only the complete finite prefix under actual least strict descent, all three guards, zero extension and original private-tip multiplicities.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/REPORT.md",
+        "cycles/cycle-3/C3-SYNTHESIS/full_prefix_replay.py",
+        "cycles/cycle-3/C3-SYNTHESIS/C3-AT-independent-prefix.json",
+        "cycles/cycle-3/C3-SYNTHESIS/prefix_independent_replay.py",
+        "cycles/cycle-3/C3-SYNTHESIS/AF_prefix_local_evidence.json"
+      ],
+      "reason": "Independent complete prefix evaluator reports zero nonfull rows in 68129 actual eligible rows; bounded census only."
+    },
+    {
+      "claim_id": "C3-CU-F1-SCALAR-CERTIFICATE-M70-119",
+      "statement": "The exact rational adjacent-Jensen/Taylor GF convolution passes all 799895 prescribed relaxed states for m=70..119 and excludes none.",
+      "scope": "Same complete finite relaxed (m,N,r,j,GF shift) domain as the C3 scalar protocol; no actual descent or selector enumeration.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/REPORT.md",
+        "cycles/cycle-3/C3-SYNTHESIS/scalar_independent_replay.py",
+        "cycles/cycle-3/C3-SYNTHESIS/scalar_independent_replay.json",
+        "cycles/cycle-3/C3-SYNTHESIS/audit.py",
+        "cycles/cycle-3/C3-SYNTHESIS/audit.json"
+      ],
+      "reason": "Same exact finite certificate independently replayed: 799895 states, zero exclusions, all minima agree; no selector claim."
+    },
+    {
+      "claim_id": "C3-CU-F3-PARTIAL-SELECTION-IMPLICATION",
+      "statement": "Given 2T_i[j]>=3 delta D_j for every represented branch, any actual eligible row with at least one selected branch satisfies selected MASS; empty selection also satisfies it.",
+      "scope": "Universal conditional implication with original tip multiplicities r_i>=2 and endpoint flag e0 in {0,1}; endpoint-only selection is outside this implication.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "For selected tip weight w>=2, 3w/2>=w+e0; empty selection is equality. Endpoint-only needs a separate selector theorem."
+    },
+    {
+      "claim_id": "C3-F2-SMALL-PREFIX-PRIMARY-AND-MASS-BOUNDED",
+      "statement": "Every actual eligible row of all ordinary arity-count profiles with 1<=m<=69 has strictly positive selected MASS and exact integer primary payment margin.",
+      "scope": "59639 complete profiles and 68129 actual eligible rows with least strict parent descent including terminal, all three rank guards, strict current-p flags, zero extension and original tag multiplicities; finite only.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/REPORT.md",
+        "cycles/cycle-3/C3-SYNTHESIS/full_prefix_replay.py",
+        "cycles/cycle-3/C3-SYNTHESIS/C3-AT-independent-prefix.json",
+        "cycles/cycle-3/C3-SYNTHESIS/prefix_independent_replay.py",
+        "cycles/cycle-3/C3-SYNTHESIS/AF_prefix_local_evidence.json"
+      ],
+      "reason": "Complete independent evaluator gives zero MASS/payment failures among 68129 actual eligible rows of 59639 profiles; no extrapolation."
+    },
+    {
+      "claim_id": "C3-F3-COMPOSITION",
+      "statement": "Complete prefix MASS, branchwise 2T_i[j]>=3 delta D_j above the prefix, and the accepted all-m strict-selector clauses imply all-m selected MASS; MASS then implies exact-ratio payment.",
+      "scope": "Conditional universal implication for every actual eligible lower-half ordinary path-star, keeping strict current-p flags and weights 1,r_i; the coefficient intervals are 1..69, 70..119, and 120 onward.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Its interval partition and original-tag multiplicity algebra are valid; quantitative premises are closed at computer-assisted/informal grade, with full selection independent of aggregate sign."
+    },
+    {
+      "claim_id": "C3-T1-M120-SELECTED-MASS-CONDITIONAL",
+      "statement": "For m>=120, selected MASS holds at every actual eligible row when at least one branch is selected or no tag is selected; with accepted full selection it holds unconditionally in this range.",
+      "scope": "Ordinary path-star, m>=1 distinct r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2, C=G product B_(r_i), T_i=G F_(r_i) product_(h!=i)B_(r_h), P=C+z(1+z)^q. x is the least natural strict forward descent of P with integer zero extension including terminal difference. At actual natural p, all x+2<=p, 3p<2alpha+1, 2p<=alpha hold; j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j)>0. Strict current-p flags e0=1[Delta_p(LQ+zL^N)<0], ei=1[Delta_p(GB_(r_i-1)H_i+zL^N)<0]; b=e0+sum_i r_i ei and A=sum_i r_i ei T_i[j]. Original endpoint tag has multiplicity one and branch i has r_i distinct original tip tags; empty selection is included. Restrict m>=120; the conditional route excludes endpoint-only selection until the separate accepted selector premise is supplied.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/REPORT.md",
+        "cycles/cycle-3/C3-SYNTHESIS/audit.py",
+        "cycles/cycle-3/C3-SYNTHESIS/audit.json"
+      ],
+      "reason": "The singleton probability and rational Taylor continuation prove strict local 3/2 bound for m>=120; a selected branch or empty selection pays MASS."
+    },
+    {
+      "claim_id": "C3-T2-S1",
+      "statement": "For every represented branch i, A0-Ai=z^3F_(r_i)H_i and Delta_p A0-Delta_p Ai=Delta_(p-3)(F_(r_i)H_i); hence ei=1 iff that cofactor slope exceeds Delta_p A0.",
+      "scope": "For all ordinary arity-2,3,4 profiles and integer ranks p under zero extension; in particular at the actual least-descent eligible rows and exact strict current-p selectors of the contract. Original tags retain their multiplicities in aggregate uses.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Exact LB_r-GB_(r-1)=z^3F_r polynomial identity and strict threshold; own selected negative-slope row checks sign orientation."
+    },
+    {
+      "claim_id": "C3-T2-S2",
+      "statement": "Endpoint-only selection at an eligible row is equivalent to Delta_p A0<0 and every represented cofactor slope Delta_(p-3)(F_(r_i)H_i)<=Delta_p A0; a universal strict crossing would exclude it.",
+      "scope": "At actual least strict zero-extended parent descent and all three lower-half guards, using exact current-p strict flags and original tip multiplicities; a conditional reduction, not an independently proved census-free universal crossing theorem.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Retain only the exact conditional endpoint-only threshold equivalence. A census-free universal crossing proof was not supplied; literal full selection is separately registered at nonformal grade."
+    },
+    {
+      "claim_id": "C3-T3-FINITE-BALANCED-SCALAR-REPLAY",
+      "statement": "Every specified relaxed scalar state for 70<=m<=119 passes the strict degree-12 Taylor lower-bound comparison: 799895 states, zero exclusions, all 50 layer minima reproduced.",
+      "scope": "Relaxed exact arithmetic domain: 70<=m<=119, 2m<=N<=4m, r in {2,3,4}, 2(m-1)<=M=N-r<=4(m-1), 5j>2N-1, 2j<=N-2, all GF_r shifts k=j-s with 3k>=M and M>=10. This is not by itself a profile/selector/payment theorem.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/REPORT.md",
+        "cycles/cycle-3/C3-SYNTHESIS/scalar_independent_replay.py",
+        "cycles/cycle-3/C3-SYNTHESIS/scalar_independent_replay.json",
+        "cycles/cycle-3/C3-SYNTHESIS/audit.py",
+        "cycles/cycle-3/C3-SYNTHESIS/audit.json"
+      ],
+      "reason": "Exact bounded scalar replay matches all 799895 states and 50 minima; exponent balancing is separately repaired by universal algebra."
+    },
+    {
+      "claim_id": "C3-U1-BOUNDED-RANK-SCAN",
+      "statement": "The rank inequality holds at all 938431 strict-descent rows in all 17295 count profiles with 1<=m<=45; minimum slack 44.",
+      "scope": "Exact bounded integer convolution and zero-extended difference scan through 45 branches only, including terminal descent.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Sealed independent scan covers 17295 profiles and 938431 strict descents through m45; universal theorem rests on differential proof, not finite scan."
+    },
+    {
+      "claim_id": "C3-U1-DIFFERENTIAL-IDENTITY",
+      "statement": "For E=LP'- (N+2)P, E=L^(N+1)-2zQ+G sum_i(1-(r_i-1)z)H_i and [z^k]E=(k+1)P[k+1]-(N+2-k)P[k].",
+      "scope": "Exact integer polynomial identity for all finite ordinary profiles, with zero extension. The stronger nonnegative-E cone at forbidden ranks is excluded.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Exact product differentiation proves the displayed identity; the extra nonnegative-E cone is false on a rising two-arity-4 row."
+    },
+    {
+      "claim_id": "C3-U2-BALANCED-FINITE-COFACTOR-CERTIFICATE",
+      "statement": "The exact relaxed scalar comparison passes all 799895 states for 70<=m<=119, 2m<=N<=4m, r=2,3,4, feasible M=N-r, 5j>2N-1 and 2j<=N-2, with no exclusions and stated exact minimum ratio at (70,278,2,112).",
+      "scope": "Bounded relaxed cofactor table conditional on occupancy/Taylor and balancing. Every GF shift obeys M>=10 and 3(j-s)>=M. No actual x, current-p flags, selected A,b, MASS or exact-ratio payment.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/REPORT.md",
+        "cycles/cycle-3/C3-SYNTHESIS/scalar_independent_replay.py",
+        "cycles/cycle-3/C3-SYNTHESIS/scalar_independent_replay.json",
+        "cycles/cycle-3/C3-SYNTHESIS/audit.py",
+        "cycles/cycle-3/C3-SYNTHESIS/audit.json"
+      ],
+      "reason": "Own domain enumeration gives 799895 feasible states and no excluded shifts; copied independent exact evaluator matches every layer minimum."
+    },
+    {
+      "claim_id": "C3-U3-CENTER-LAYER-EXPANSION",
+      "statement": "Exact subset/epsilon/s binomial expansion of T_i[j] from H_i factors B_r=L^r+z; restriction to |J|<=d yields U_i^(d)[j]<=T_i[j].",
+      "scope": "Every fixed ordinary profile, represented branch i and natural j, with zero-extended coefficients and original arities. No uniform depth, local three-halves, selector or compensation conclusion.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/REPORT.md",
+        "cycles/cycle-3/C3-SYNTHESIS/audit.py",
+        "cycles/cycle-3/C3-SYNTHESIS/audit.json"
+      ],
+      "reason": "Nonnegative expansion over chosen center z factors proves each finite-depth coefficient floor; no fixed depth is universally sufficient."
+    },
+    {
+      "claim_id": "C3-U3-HOMOGENEOUS-LAYER-BOUND-EVIDENCE",
+      "statement": "Original bounded layer claim included a depth-2 three-halves failure at all-arity-4 m=40,p=80; that asserted failure is false.",
+      "scope": "Original two homogeneous arity-4 profiles at actual eligible lower-half ranks; the returned bounded-evidence statement is rejected as a whole because one asserted outcome is false. Actual x, all three guards, strict current-p flags and original multiplicity four are preserved.",
+      "status": "proposed_rejected",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/REPORT.md",
+        "cycles/cycle-3/C3-SYNTHESIS/audit.py",
+        "cycles/cycle-3/C3-SYNTHESIS/audit.json"
+      ],
+      "reason": "Reject original m40 p80 depth-2 failure: correct GF4=(3,9,7,2) gives exact positive local margin 722724455446538076746556482596023354496120951540."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ALL-M-ACTUAL-ELIGIBLE-BRANCHWISE-THREE-HALVES-MASS",
+      "statement": "For every represented branch i at every actual eligible lower-half row, 2T_i[j]>=3delta D_j; the composed evidence yields strict inequality when such a row exists.",
+      "scope": "Ordinary path-star, m>=1 distinct r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2, C=G product B_(r_i), T_i=G F_(r_i) product_(h!=i)B_(r_h), P=C+z(1+z)^q. x is the least natural strict forward descent of P with integer zero extension including terminal difference. At actual natural p, all x+2<=p, 3p<2alpha+1, 2p<=alpha hold; j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j)>0. No deletion-selector or full-selection premise is used for this branchwise coefficient claim.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/REPORT.md",
+        "cycles/cycle-3/C3-SYNTHESIS/full_prefix_replay.py",
+        "cycles/cycle-3/C3-SYNTHESIS/C3-AT-independent-prefix.json",
+        "cycles/cycle-3/C3-SYNTHESIS/prefix_independent_replay.py",
+        "cycles/cycle-3/C3-SYNTHESIS/AF_prefix_local_evidence.json",
+        "cycles/cycle-3/C3-SYNTHESIS/scalar_independent_replay.py",
+        "cycles/cycle-3/C3-SYNTHESIS/scalar_independent_replay.json",
+        "cycles/cycle-3/C3-SYNTHESIS/audit.py",
+        "cycles/cycle-3/C3-SYNTHESIS/audit.json"
+      ],
+      "reason": "Proposed all-parameter computer-assisted/informal proof: complete exact m1..69 prefix, occupancy/balancing plus exact m70..119 scalar certificate, analytic m120+ tail."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-OCCUPANCY-JENSEN-COFACTOR",
+      "statement": "The fixed-size singleton-occupancy average identity and AM-GM/log/Taylor chain give H[k]>=binom(M,k)E_d(y_k) for every d>=0; zero-extended nonnegative GF_r convolution bounds T_i[j].",
+      "scope": "All finite disjoint positive-size blocks, 0<=k<=M, including empty family; path-star convolution for natural j with GF2=(1,2), GF3=(2,5,2), GF4=(3,9,7,2). No actual descent, selector, MASS or payment conclusion.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Universal finite-subset counting, Jensen/log and Taylor argument with full nonnegative GF convolution; size-one k=M commentary corrected."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-PROFILE-SENSITIVE-STRICT-DESCENT-RANK",
+      "statement": "Every strict descent k of the actual zero-extended parent P has 54k>=24N-4a2-3a3-5, equivalently 9k+1-4N+(2/3)a2+(1/2)a3>0; the registered count-relaxed corollary follows.",
+      "scope": "All m>=1 ordinary arity-2/3/4 profiles, every strict descent including terminal and actual first descent x. Parent rank only; eligible p still requires all three guards and actual current-p flags and original multiplicities; no MASS/payment consequence.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Universal informal proof from coefficientwise D_q(P)+hP>=0 and strict descent; integer conversion yields exactly 54k>=24N-4a2-3a3-5."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+      "statement": "(delta*C[j]-(delta-1)*C[j+1])*A >= b*delta*D_j*C[j] at every actual eligible lower-half row.",
+      "scope": "Ordinary path-star, m>=1 distinct r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2, C=G product B_(r_i), T_i=G F_(r_i) product_(h!=i)B_(r_h), P=C+z(1+z)^q. x is the least natural strict forward descent of P with integer zero extension including terminal difference. At actual natural p, all x+2<=p, 3p<2alpha+1, 2p<=alpha hold; j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j)>0. Strict current-p flags e0=1[Delta_p(LQ+zL^N)<0], ei=1[Delta_p(GB_(r_i-1)H_i+zL^N)<0]; b=e0+sum_i r_i ei and A=sum_i r_i ei T_i[j]. Original endpoint tag has multiplicity one and branch i has r_i distinct original tip tags; empty selection is included. C[j]>0, 0<C[j+1]/C[j]<1, delta>0.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/REPORT.md",
+        "cycles/cycle-3/C3-SYNTHESIS/full_prefix_replay.py",
+        "cycles/cycle-3/C3-SYNTHESIS/C3-AT-independent-prefix.json",
+        "cycles/cycle-3/C3-SYNTHESIS/prefix_independent_replay.py",
+        "cycles/cycle-3/C3-SYNTHESIS/AF_prefix_local_evidence.json",
+        "cycles/cycle-3/C3-SYNTHESIS/scalar_independent_replay.py",
+        "cycles/cycle-3/C3-SYNTHESIS/scalar_independent_replay.json",
+        "cycles/cycle-3/C3-SYNTHESIS/audit.py",
+        "cycles/cycle-3/C3-SYNTHESIS/audit.json"
+      ],
+      "reason": "Proposed source-dependent computer-assisted/informal verification: branchwise bound plus independently registered full selection gives MASS; 0<t<1 makes delta-(delta-1)t>1. No Lean award."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION",
+      "statement": "A>=b*delta*D_j at every actual eligible lower-half row.",
+      "scope": "Ordinary path-star, m>=1 distinct r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2, C=G product B_(r_i), T_i=G F_(r_i) product_(h!=i)B_(r_h), P=C+z(1+z)^q. x is the least natural strict forward descent of P with integer zero extension including terminal difference. At actual natural p, all x+2<=p, 3p<2alpha+1, 2p<=alpha hold; j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j)>0. Strict current-p flags e0=1[Delta_p(LQ+zL^N)<0], ei=1[Delta_p(GB_(r_i-1)H_i+zL^N)<0]; b=e0+sum_i r_i ei and A=sum_i r_i ei T_i[j]. Original endpoint tag has multiplicity one and branch i has r_i distinct original tip tags; empty selection is included.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/REPORT.md",
+        "cycles/cycle-3/C3-SYNTHESIS/full_prefix_replay.py",
+        "cycles/cycle-3/C3-SYNTHESIS/C3-AT-independent-prefix.json",
+        "cycles/cycle-3/C3-SYNTHESIS/prefix_independent_replay.py",
+        "cycles/cycle-3/C3-SYNTHESIS/AF_prefix_local_evidence.json",
+        "cycles/cycle-3/C3-SYNTHESIS/scalar_independent_replay.py",
+        "cycles/cycle-3/C3-SYNTHESIS/scalar_independent_replay.json",
+        "cycles/cycle-3/C3-SYNTHESIS/audit.py",
+        "cycles/cycle-3/C3-SYNTHESIS/audit.json"
+      ],
+      "reason": "Proposed source-dependent computer-assisted/informal verification: full selection yields b=N+1 and A>3N delta D/2>=b delta D; stronger than primary."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-COFACTOR-JENSEN-EXPONENT-ADJACENT-ARITY-BALANCING",
+      "statement": "For M>=10, 0<=k<=M and 3k>=M, g2-2g3+g4>=0; at fixed feasible block count m_prime and total M, the adjacent-arity endpoint count profile minimizes E=sum_r a_r g_r.",
+      "scope": "Abstract cofactor exponent only: nonnegative integer a2,a3,a4 with m_prime=sum a_r>=1 and M=sum r*a_r>=10, g_r=(2r/(2r+1))*binom(M-r,k-1)/binom(M,k), zero binomials out of range. It does not order true coefficients, parent first descents, current-p strict selectors, selected MASS, or payment.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-SYNTHESIS/REPORT.md",
+        "cycles/cycle-3/C3-SYNTHESIS/audit.py",
+        "cycles/cycle-3/C3-SYNTHESIS/audit.json"
+      ],
+      "reason": "Universal exact polynomial repair proves discrete convexity and adjacent-arity minimum of Jensen exponent only; prior uv proof had reversed inequality direction."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-SYNTHESIS/REPORT.md",
+  "limitations": [
+    "Primary and all-m MASS are proposed at source-dependent computer-assisted/informal grade; the governed Lean decisive-stop gate is unmet.",
+    "Finite profile/scalar certificates require formal verification for a formal award; independent census-free selector proof remains a method obligation.",
+    "No broad census expansion, Lean build, controller operation, or authoritative registry change was performed."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C3-CF-T2-NEGATIVE-SLOPE-SELECTED-ROW",
+    "C3-CF-T3-M70-119-MASS-PAYMENT",
+    "C3-CF-U1-COUNT-RELAXED-RANK",
+    "C3-CF-U3-CORRECTED-LAYER-EVIDENCE",
+    "C3-CT-F1-SCALAR-CERTIFICATE-M70-119",
+    "C3-CT-F2-PREFIX-FULL-SELECTION-BOUNDED",
+    "C3-CU-F1-SCALAR-CERTIFICATE-M70-119",
+    "C3-CU-F3-PARTIAL-SELECTION-IMPLICATION",
+    "C3-F2-SMALL-PREFIX-PRIMARY-AND-MASS-BOUNDED",
+    "C3-F3-COMPOSITION",
+    "C3-T1-M120-SELECTED-MASS-CONDITIONAL",
+    "C3-T2-S1",
+    "C3-T2-S2",
+    "C3-T3-FINITE-BALANCED-SCALAR-REPLAY",
+    "C3-U1-BOUNDED-RANK-SCAN",
+    "C3-U1-DIFFERENTIAL-IDENTITY",
+    "C3-U2-BALANCED-FINITE-COFACTOR-CERTIFICATE",
+    "C3-U3-CENTER-LAYER-EXPANSION",
+    "C3-U3-HOMOGENEOUS-LAYER-BOUND-EVIDENCE",
+    "E993-PATH-STAR-ARITY-2-4-ALL-M-ACTUAL-ELIGIBLE-BRANCHWISE-THREE-HALVES-MASS",
+    "E993-PATH-STAR-ARITY-2-4-OCCUPANCY-JENSEN-COFACTOR",
+    "E993-PATH-STAR-ARITY-2-4-PROFILE-SENSITIVE-STRICT-DESCENT-RANK",
+    "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+    "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION",
+    "E993-PATH-STAR-COFACTOR-JENSEN-EXPONENT-ADJACENT-ARITY-BALANCING"
+  ]
+}

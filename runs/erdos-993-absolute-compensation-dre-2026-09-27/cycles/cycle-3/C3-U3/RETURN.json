@@ -1,0 +1,39 @@
+{
+  "worker_id": "C3-U3",
+  "cycle": 3,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C3-U3-CENTER-LAYER-EXPANSION",
+      "statement": "For every common-family path-star profile, branch i, and natural j, expanding each H_i factor B_(r_h)=L^(r_h)+z yields T_i[j]=sum over subsets J of branches h!=i, epsilon in {0,1}, and s=0..r_i-2 of g_epsilon*binom(N-r_i-sum_(h in J)r_h+s,j-|J|-epsilon), with g_0=1 and g_1=2; out-of-range binomials are zero. Therefore retaining only subsets |J|<=d gives a coefficientwise lower bound U_i^(d)[j]<=T_i[j] for every d>=0.",
+      "scope": "Exact algebraic identity and nonnegative truncation bound for branch coefficients on the ordinary path-star family, with original arities and multiplicities. It proves no local three-halves inequality, selector fact, selected MASS, or exact-ratio payment.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-U3/REPORT.md",
+        "cycles/cycle-3/C3-U3/layer_probe.py"
+      ],
+      "reason": "Expand each B_(r_h) by choosing either L^(r_h) or z; all resulting coefficient terms are nonnegative. The displayed formula records the resulting degree and branch-local factor GF_(r_i)."
+    },
+    {
+      "claim_id": "C3-U3-HOMOGENEOUS-LAYER-BOUND-EVIDENCE",
+      "statement": "Exact integer evaluation on homogeneous arity-4 profiles (m=40 and m=150) computes the actual least strict parent descent including zero extension and all eligible lower-half ranks. At m=40, depth 2 fails the branch-local 2U>=3deltaD test at p=80 while depth 3 passes both eligible ranks. At m=150, depth 1 fails at p=294 while depth 2 passes all eight eligible ranks. These are truncation-bound outcomes; full T_i passes the tested rows.",
+      "scope": "Bounded exact evidence for only the stated two profiles and their actual eligible ranks. Not a universal coefficient theorem, counterexample to full local mass, selected MASS result, or payment result. At the stated rows actual current-p endpoint and representative branch selectors are strict; original private-tip tags retain multiplicity 4 per branch.",
+      "status": "proposed_bounded_evidence",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-U3/REPORT.md",
+        "cycles/cycle-3/C3-U3/layer_probe.py",
+        "cycles/cycle-3/C3-U3/layer_probe.json"
+      ],
+      "reason": "An independently written exact-integer polynomial evaluator records x, the eligible rows, strict selectors, full coefficients, truncation coefficients, targets, and signed margins for both profiles. The singleton obstruction is reproduced and the depth-2 repair is limited to the m=150 profile."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-U3/REPORT.md",
+  "limitations": [
+    "No proof of the all-m branchwise local three-halves coefficient inequality or exact-ratio payment.",
+    "No census-free selector or endpoint-only exclusion proof; no universal conclusion is derived from the finite checks.",
+    "The depth-d truncation threshold is profile-sensitive in the checked cases; no general cutoff or bound on d is proved.",
+    "No formal verification or Lean award."
+  ],
+  "status_authority": "proposed_worker_only"
+}

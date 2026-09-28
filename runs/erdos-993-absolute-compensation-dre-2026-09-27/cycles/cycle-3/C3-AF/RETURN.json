@@ -1,0 +1,106 @@
+{
+  "worker_id": "C3-AF",
+  "cycle": 3,
+  "stage": "adjudication",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-COFACTOR-JENSEN-EXPONENT-ADJACENT-ARITY-BALANCING",
+      "statement": "For M>=10, 0<=k<=M, 3k>=M, the registered rational cofactor exponent satisfies g2-2g3+g4>=0; at fixed cofactor branch count and M its minimum is the adjacent-arity mixture.",
+      "scope": "Only the rational Jensen exponent at fixed (m',M,k), with zero-extended binomials; no ordering of actual coefficients, descent, selectors or payment. Equality is allowed at k=M.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-3/C3-AF/REPORT.md", "cycles/cycle-3/C3-AF/AF_exponent_audit.py", "cycles/cycle-3/C3-AF/AF_exponent_evidence.json"],
+      "reason": "Informal universal polynomial proof in the report repairs the reversed inequality in F1 and both critics. The direct rational check is bounded corroboration, not the universal proof."
+    },
+    {
+      "claim_id": "C3-CT-F1-SCALAR-CERTIFICATE-M70-119",
+      "statement": "The degree-12 floored adjacent-Jensen GF convolution exceeds 3 delta D_j/(2 binom(N,j)) at all 799895 relaxed states for m=70..119, with zero excluded states.",
+      "scope": "Every 2m<=N<=4m, feasible represented r in {2,3,4}, integer 5j>2N-1 and 2j<=N-2, and every nonzero GF_r shift; an exact bounded coefficient certificate, not a selector or all-m payment census.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-3/C3-AF/REPORT.md", "cycles/cycle-3/C3-AF/AF_scalar_producer.py", "cycles/cycle-3/C3-AF/AF_scalar_producer.json"],
+      "reason": "Independent CT-F1 exact Fraction evaluator covers the grid; own producer-byte replay and algorithm audit agree. Transfer uses the repaired exponent proof, occupancy/Jensen and exact rank-to-shift guard. Evidence grade: exhaustive bounded computation plus informal bridge."
+    },
+    {
+      "claim_id": "C3-CU-F1-SCALAR-CERTIFICATE-M70-119",
+      "statement": "The exact rational adjacent-Jensen/Taylor GF convolution passes all 799895 prescribed relaxed states for m=70..119 and excludes none.",
+      "scope": "Same complete finite relaxed (m,N,r,j,GF shift) domain as the C3 scalar protocol; no actual descent or selector enumeration.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-3/C3-AF/REPORT.md", "cycles/cycle-3/C3-AF/AF_scalar_producer.json", "cycles/cycle-3/C3-AF/AF_transport_audit.json"],
+      "reason": "CU-F1's independently written direct-binomial evaluator agrees per m with the sealed producer and own copied replay. The proof dependency on exponent balancing is supplied by the repaired algebra. Evidence grade: exhaustive bounded computation plus informal bridge."
+    },
+    {
+      "claim_id": "C3-F2-SMALL-PREFIX-PRIMARY-AND-MASS-BOUNDED",
+      "statement": "Every actual eligible row of all ordinary arity-count profiles with 1<=m<=69 has strictly positive selected MASS and exact integer primary payment margin.",
+      "scope": "59639 complete profiles and 68129 actual eligible rows with least strict parent descent including terminal, all three rank guards, strict current-p flags, zero extension and original tag multiplicities; finite only.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-3/C3-AF/REPORT.md", "cycles/cycle-3/C3-AF/AF_prefix_producer.py", "cycles/cycle-3/C3-AF/AF_prefix_producer.json", "cycles/cycle-3/C3-AF/AF_prefix_local_evidence.json"],
+      "reason": "CT-F2 and CU-F2 independently reproduced the complete selected scan; own copied neutral replay is byte-identical to sealed output. Evidence grade: exact bounded computation."
+    },
+    {
+      "claim_id": "C3-CT-F2-PREFIX-FULL-SELECTION-BOUNDED",
+      "statement": "All 68129 actual eligible rows from 1<=m<=69 have e0=1 and every represented branch's strict current-p deletion flag equal to one.",
+      "scope": "Only the complete finite prefix under actual least strict descent, all three guards, zero extension and original private-tip multiplicities.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-3/C3-AF/REPORT.md", "cycles/cycle-3/C3-AF/AF_prefix_producer.json"],
+      "reason": "CT-F2 independent scan and neutral replay both find zero partial or endpoint-only rows. Evidence grade: exact bounded computation, not a census-free selector proof."
+    },
+    {
+      "claim_id": "C3-F3-COMPOSITION",
+      "statement": "Complete prefix MASS, branchwise 2T_i[j]>=3 delta D_j above the prefix, and the accepted all-m strict-selector clauses imply all-m selected MASS; MASS then implies exact-ratio payment.",
+      "scope": "Conditional universal implication for every actual eligible lower-half ordinary path-star, keeping strict current-p flags and weights 1,r_i; the coefficient intervals are 1..69, 70..119, and 120 onward.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-3/C3-AF/REPORT.md", "cycles/cycle-3/C3-AF/AF_prefix_local_evidence.json", "cycles/cycle-3/C3-AF/AF_scalar_producer.json", "cycles/cycle-3/C3-AF/AF_local_producer.json"],
+      "reason": "F3 and both critics have correct interval and multiplicity algebra. This review independently audits the finite coefficients and proves the analytic tail, discharging the quantitative conditions at nonformal computer-assisted grade."
+    },
+    {
+      "claim_id": "C3-CU-F3-PARTIAL-SELECTION-IMPLICATION",
+      "statement": "Given 2T_i[j]>=3 delta D_j for every represented branch, any actual eligible row with at least one selected branch satisfies selected MASS; empty selection also satisfies it.",
+      "scope": "Universal conditional implication with original tip multiplicities r_i>=2 and endpoint flag e0 in {0,1}; endpoint-only selection is outside this implication.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-3/C3-AF/REPORT.md"],
+      "reason": "If w=sum r_i e_i>=2 then A>=3w delta D_j/2>=(w+e0)delta D_j; if b=0 both sides vanish. Evidence grade: informal exact algebra."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ALL-M-ACTUAL-ELIGIBLE-BRANCHWISE-THREE-HALVES-MASS",
+      "statement": "For every represented branch i at every actual eligible lower-half row of every ordinary arity-2,3,4 path-star, 2T_i[j]>=3 delta D_j; the reviewed evidence gives strict inequality.",
+      "scope": "All m>=1 with actual least strict parent descent including terminal, x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=N+1-j and D_j=binom(N,j+1)-binom(N,j); no selector premise.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-3/C3-AF/REPORT.md", "cycles/cycle-3/C3-AF/AF_prefix_local.py", "cycles/cycle-3/C3-AF/AF_prefix_local_evidence.json", "cycles/cycle-3/C3-AF/AF_scalar_producer.json", "cycles/cycle-3/C3-AF/AF_exponent_evidence.json", "cycles/cycle-3/C3-AF/AF_boundary_evidence.json"],
+      "reason": "Independent prefix local scan covers 196623 branch tests; independently critiqued scalar certificate covers m70..119; report gives an informal analytic proof for m>=120. Evidence grade: all-parameter source-dependent computer-assisted/nonformal, no Lean award."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION",
+      "statement": "At every actual eligible lower-half row, A=sum_i r_i e_i T_i[j]>=b delta D_j, with b=e0+sum_i r_i e_i; reviewed evidence yields strict inequality.",
+      "scope": "All m>=1 ordinary arity-2,3,4 path-stars; actual least strict parent descent, all three rank guards, strict deletion flags at current p, original endpoint multiplicity one and each branch's r_i distinct original private-tip tags; empty selection included.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-3/C3-AF/REPORT.md", "cycles/cycle-3/C3-AF/AF_prefix_local_evidence.json", "cycles/cycle-3/C3-AF/AF_scalar_producer.json", "cycles/cycle-3/C3-AF/AF_local_producer.json"],
+      "reason": "The proposed all-m branchwise result plus the registered nonformal all-m full-selection composition gives b=N+1 and A>3N delta D_j/2>=b delta D_j. No aggregate-sign premise. F3/critics' earlier OPEN grade reflected unaudited inputs. Evidence grade: source-dependent computer-assisted/nonformal; no authoritative status change."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+      "statement": "At every actual eligible lower-half row, (delta C[j]-(delta-1)C[j+1])A>=b delta D_j C[j].",
+      "scope": "All m>=1 ordinary arity-2,3,4 path-stars; actual least strict parent descent including terminal, all three rank guards, strict current-p endpoint and branch flags, and original tag multiplicities 1,r_i; empty selection included.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-3/C3-AF/REPORT.md", "cycles/cycle-3/C3-AF/AF_prefix_local_evidence.json", "cycles/cycle-3/C3-AF/AF_scalar_producer.json", "cycles/cycle-3/C3-AF/AF_boundary_evidence.json"],
+      "reason": "Proposed all-m MASS implies payment because C[j]>0, delta>1, 0<t=C[j+1]/C[j]<1 and 1-t+t/delta>1/delta. This is a nonformal computer-assisted proof chain, not a governed Lean award or decisive stop."
+    }
+  ],
+  "covered_claim_ids": [
+    "C3-CT-F1-SCALAR-CERTIFICATE-M70-119",
+    "C3-CT-F2-PREFIX-FULL-SELECTION-BOUNDED",
+    "C3-CU-F1-SCALAR-CERTIFICATE-M70-119",
+    "C3-CU-F3-PARTIAL-SELECTION-IMPLICATION",
+    "C3-F2-SMALL-PREFIX-PRIMARY-AND-MASS-BOUNDED",
+    "C3-F3-COMPOSITION",
+    "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+    "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION",
+    "E993-PATH-STAR-COFACTOR-JENSEN-EXPONENT-ADJACENT-ARITY-BALANCING"
+  ],
+  "report_path": "cycles/cycle-3/C3-AF/REPORT.md",
+  "limitations": [
+    "The all-parameter proof combines exact finite certificates, informal analytic arguments, and the previously accepted source-dependent nonformal full-selection composition.",
+    "No Lean build, governed formal award, authoritative registry change, or decisive experiment stop is claimed.",
+    "The adjacent-arity proof in F1 and both critics has a reversed inequality; this adjudication supplies a separate polynomial repair."
+  ],
+  "status_authority": "proposed_worker_only"
+}

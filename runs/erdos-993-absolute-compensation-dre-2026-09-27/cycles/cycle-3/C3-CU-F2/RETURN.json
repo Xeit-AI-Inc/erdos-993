@@ -1,0 +1,34 @@
+{
+  "worker_id": "C3-CU-F2",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C3-F2-SMALL-PREFIX-PRIMARY-AND-MASS-BOUNDED",
+      "statement": "For every ordinary path-star arity-count profile with 1<=m<=69 and every actual eligible lower-half p, the contract's exact selected integer primary payment margin is nonnegative; in fact it is positive on every scanned row. The stronger selected MASS margin A-b*delta*D_j is also positive on every scanned row.",
+      "scope": "Bounded exact computation only: every count profile (c2,c3,c4) with m=c2+c3+c4 in 1..69, r_i in {2,3,4}, N=sum_i r_i, q=N+1, alpha=N+2. Uses L=1+z, G=1+2z, B_r=L^r+z, F_r=sum_{h=0}^{r-2}L^h, Q=prod_i B_{r_i}, H_i=prod_{h!=i}B_{r_h}, C=GQ, T_i=GF_{r_i}H_i, P=C+zL^q; all coefficients and Delta_k f=f[k+1]-f[k] are integer zero-extended. x is the least natural k with Delta_k P<0, including the terminal degree. Scans every natural p satisfying all guards x+2<=p, 3p<2alpha+1, and 2p<=alpha; j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j). Current-p strict selectors are e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], with A0=LQ+zL^N and Ai=G B_{r_i-1}H_i+zL^N; b=e0+sum_i r_i*ei and A=sum_i r_i*ei*T_i[j], counting each original branch-tip tag with its arity multiplicity (c_r branches of arity r). Checks the exact integer payment margin (delta*C[j]-(delta-1)*C[j+1])*A-b*delta*D_j*C[j] and stronger MASS margin A-b*delta*D_j. No all-m claim.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CU-F2/REPORT.md",
+        "cycles/cycle-3/C3-CU-F2/evidence/review_prefix.py",
+        "cycles/cycle-3/C3-CU-F2/evidence/review_prefix_result.json",
+        "cycles/cycle-3/C3-CU-F2/evidence/producer_prefix_replay.py",
+        "cycles/cycle-3/C3-CU-F2/evidence/producer_prefix_replay.json",
+        "cycles/cycle-3/C3-CU-F2/evidence/verify_transport.py",
+        "cycles/cycle-3/C3-CU-F2/evidence/transport_verification.json"
+      ],
+      "reason": "Independent exact evaluator agrees with producer replay on 59,639 profiles, 68,129 eligible rows, and both exact minima; zero margins and negative margins are absent. Retained at bounded evidence grade only."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CU-F2/REPORT.md",
+  "limitations": [
+    "Finite exact evidence is restricted to m<=69; it does not establish either universal selected MASS or primary payment.",
+    "The review does not prove a selector theorem or extend tail arguments.",
+    "No Lean build or formal award was performed."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C3-F2-SMALL-PREFIX-PRIMARY-AND-MASS-BOUNDED"
+  ]
+}

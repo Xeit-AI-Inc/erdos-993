@@ -1,0 +1,47 @@
+{
+  "worker_id": "C3-F3",
+  "cycle": 3,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C3-F3-COMPOSITION",
+      "statement": "Conditional composition: for every ordinary arity-2,3,4 path-star and every actual eligible lower-half rank, validated direct MASS/payment for m<=69, validated branchwise 2T_i[j]>=3 delta D_j for m>=70, and the independently established all-m strict-selector clauses imply selected MASS for every m; the exact-ratio payment follows from MASS.",
+      "scope": "Ordinary path-star with path 0-1-2; m>=1 distinct branches r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2, C=GQ, T_i=GF_(r_i)H_i, P=C+zL^q. x is the least natural strict forward descent with integer zero extension including the terminal difference. For every natural p with x+2<=p, 3p<2alpha+1, 2p<=alpha: j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j)>0; e0 and ei are the strict current-p deletion selectors; b=e0+sum r_i ei and A=sum r_i ei T_i[j]. Endpoint multiplicity is one and each original branch tip retains multiplicity r_i. Conditional dependencies are the exact m<=69 prefix MASS/payment evidence, the branchwise bound for m>=70, and the registered full-selection source composition; no aggregate-sign premise.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-F3/REPORT.md",
+        "cycles/cycle-3/C3-F3/composition_check.py"
+      ],
+      "reason": "The selector and coefficient ranges cover the stated domain, and the exact implication from full selection plus the local bound to MASS, then MASS to payment, is algebraically valid. The producer prefix/scalar/local components were not independently validated here, so the all-m conclusion remains conditional."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION",
+      "statement": "For every m>=1 ordinary arity-2,3,4 path-star and every actual eligible lower-half rank, the strict-selected original-tip mass satisfies A>=b delta D_j.",
+      "scope": "Exact registered all-m selected MASS scope with actual least strict parent descent, all three rank guards, current-p strict selectors, and original endpoint/tip multiplicities.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-F3/REPORT.md"
+      ],
+      "reason": "The proposed composition has unresolved producer dependencies: the m<=69 prefix and m=70..119 scalar certificate/local-bound route were not independently replayed or validated in this seat. The existing registered m>=238 restriction does not settle this all-m claim."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+      "statement": "For every m>=1 ordinary arity-2,3,4 path-star and every actual eligible lower-half rank, (delta C[j]-(delta-1)C[j+1])A>=b delta D_j C[j].",
+      "scope": "Exact registered weaker sufficient-payment scope with actual least strict parent descent, all three rank guards, current-p strict selectors, and original endpoint/tip multiplicities.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-F3/REPORT.md",
+        "cycles/cycle-3/C3-F3/composition_check.py"
+      ],
+      "reason": "MASS implies this payment under the registered first-descent ratio bounds, but the all-m MASS premise is not yet independently established by this review. No primary counterexample or universal payment proof is claimed."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-F3/REPORT.md",
+  "limitations": [
+    "Did not independently replay the producer m<=69 prefix scan or m=70..119 scalar certificate.",
+    "Did not reprove the analytic m>=120 local coefficient/Jensen estimates or the accepted inherited selector proofs.",
+    "The arithmetic checks verify composition logic and boundary algebra, not the unresolved universal ingredients; no Lean build or governed formal award was performed."
+  ],
+  "status_authority": "proposed_worker_only"
+}

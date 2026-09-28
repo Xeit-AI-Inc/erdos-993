@@ -1,0 +1,63 @@
+{
+  "worker_id": "C3-CF-U1",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "F",
+  "covered_claim_ids": [
+    "C3-U1-BOUNDED-RANK-SCAN",
+    "C3-U1-DIFFERENTIAL-IDENTITY",
+    "E993-PATH-STAR-ARITY-2-4-PROFILE-SENSITIVE-STRICT-DESCENT-RANK"
+  ],
+  "claims": [
+    {
+      "claim_id": "C3-U1-BOUNDED-RANK-SCAN",
+      "statement": "The profile-sensitive rank inequality holds at every strict descent for all arity-2/3/4 profiles with 1<=m<=45.",
+      "scope": "Finite exact integer convolution over all 17,295 count triples and all 938,431 strict descent positions, including zero-extended positions.",
+      "status": "proposed_bounded_evidence",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-U1/independent_audit.py",
+        "cycles/cycle-3/C3-CF-U1/independent_evidence.json"
+      ],
+      "reason": "Independent replay found no violation; minimum slack is 44. This finite computation alone has no universal force."
+    },
+    {
+      "claim_id": "C3-U1-DIFFERENTIAL-IDENTITY",
+      "statement": "For E=(1+z)P'-(N+2)P, E=L^(N+1)-2zQ+G*sum_i(1-(r_i-1)z)H_i and [z^k]E=(k+1)P[k+1]-(N+2-k)P[k].",
+      "scope": "All ordinary arity-2/3/4 profiles; polynomial identity over integers, with zero-extended coefficients. The stronger nonnegative-coefficient cone test at all rank-forbidden positions is not part of this valid identity and is refuted at (a2,a3,a4)=(0,0,2), k=3.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-U1/REPORT.md",
+        "cycles/cycle-3/C3-CF-U1/independent_audit.py",
+        "cycles/cycle-3/C3-CF-U1/independent_evidence.json"
+      ],
+      "reason": "Product differentiation proves the identity. The exact obstruction has Delta_3 P=120>0, so it refutes only the stronger cone route, not the identity or rank predicate."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-PROFILE-SENSITIVE-STRICT-DESCENT-RANK",
+      "statement": "For every ordinary arity-2/3/4 path-star profile, every strict descent k of the actual zero-extended parent P=G product_i B_(r_i)+zL^(N+1) satisfies 54k>=24N-4a2-3a3-5, equivalently 9k+1-4N+h>0 for h=(2/3)a2+(1/2)a3.",
+      "scope": "All m>=1, all branch count profiles and every natural strict descent of the actual parent polynomial, including its actual least strict descent x and terminal zero-extended descent. This is a parent rank bound only; it does not establish selectors, MASS, or payment. Any eligible p still has x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, and the original strict current-p selector flags and tag multiplicities.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-U1/REPORT.md"
+      ],
+      "reason": "An all-profile coefficientwise differential-operator proof is given in the report. It is informal and independently checked; no formal award is claimed."
+    },
+    {
+      "claim_id": "C3-CF-U1-COUNT-RELAXED-RANK",
+      "statement": "At fixed m and N, every strict descent k of the actual parent satisfies 9k+1-4N+hmax(m,N)>0, where hmax=2m-N/2 if N>=3m and hmax=m-N/6 if N<=3m.",
+      "scope": "All ordinary profiles with m>=1 and every strict descent k; follows from the profile-sensitive rank proof and maximizing h=(2/3)a2+(1/2)a3 subject to fixed m,N. It is a rank relaxation only and does not imply selection or compensation.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-U1/REPORT.md"
+      ],
+      "reason": "Writing d=4m-N=2a2+a3 gives h=d/2-a2/3 and a2>=max(0,3m-N); substitution gives the stated two cases."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CF-U1/REPORT.md",
+  "limitations": [
+    "The universal rank proof is informal, not Lean-verified.",
+    "The rank claim gives no selector, MASS, or payment result; all eligible-rank guards and current-p flags remain separate.",
+    "The bounded scan is corroboration only and is limited to m<=45."
+  ],
+  "status_authority": "proposed_worker_only"
+}

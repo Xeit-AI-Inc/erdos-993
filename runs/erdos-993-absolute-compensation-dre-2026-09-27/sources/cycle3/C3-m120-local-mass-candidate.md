@@ -1,0 +1,16 @@
+# Unreviewed controller candidate: local MASS from120 branches
+
+Candidate for independent next-cycle review, not an input to isolated C2 workers and not a registry/formal award. This argument uses the proposed occupancy/Jensen coefficient theorem. Every stated constant/guard requires independent audit.
+
+Conjectured conclusion: for every arity2..4 pathstar with m>=120 and every actual eligible lower-half rank, EVERY represented branch has T_i[j] >= (3/2) delta D_j. This alone does not rule out endpoint-only selection. If at least one branch is selected, its selected tip weight w>=2, so A>=(3/2)w delta D >=(w+e0)delta D, proving MASS. If w=e0=0, MASS is trivial. Endpoint-only exclusion must be proved independently for a structural primary resolution; do not use the old computer-assisted aggregate as the missing proof.
+
+Proposed argument:
+1. The universal derivative comparison from the predecessor gives5x>2N-1; j>=x and2j<=N-2. Fixi,r=r_i,M=N-r. Every shift k=j-s of GF_r,0<=s<=r-1, satisfies k>=M/3 forN>=28, since (2N-1)/5-3 >=(N-4)/3 whenN>=28. Also k<=M/2+1. M>=2m-4>=236.
+2. Let p_a(M,k)=a*choose(M-a,k-1)/choose(M,k), a=2,3,4. ForM>=44 and M/3<=k<=M/2+1, aim to show 2p_a/(2a+1)>=1/20. Fora2, crude factor bounds give p2>= (M-2)/(3(M-1)), sufficient. Fora3, p3>= (M-4)/(4(M-1)), also sufficient. Fora4, p4(k) decreases on this band: its consecutive ratio is (k+1)(M-k-3)/(k(M-k)), with denominator-minus-numerator4k-M+3>=0. The same real polynomial is decreasing on this band (log derivative 1/k-sum_{h=0}^2 1/(M-k-h)<=1/k-3/(M-k)<=0). At the upper endpoint, p4(M/2+1)=(M+2)(M-4)(M-6)/(4M(M-1)(M-3)). This is >=9/40 iff M^3-44M^2+13M+480>=0; writingd=M-44 gives d^3+88d^2+1949d+1052>=0. Thus (2/9)p4>=1/20.
+3. Each H_i coefficient in the GF_r convolution has Jensen exponent at least(m-1)/20 using log(1+1/a)>=2/(2a+1). Consequently T_i[j]>=exp((m-1)/20)*[z^j]GF_r L^(N-r). Since F_r includesL^(r-2), the latter coefficient is >=[z^j]G L^(N-2). Its ratio toB=choose(N,j) is 1-j(j-1)/(N(N-1))>=3/4 under2j<=N-2.
+4. The exact binomial ratio is delta D_j/B=(N+1-j)(N-2j-1)/(j+1). From5j>2N-1 it is strictly <3(N-3)/10<3N/10<=6m/5. Hence (3/2)deltaD_j/B<9m/5.
+5. It suffices exp((m-1)/20)>=12m/5. Atm120, E8(119/20)=sum_{h=0}^8(119/20)^h/h!>288, checked rationally. For integer m>=120 the exponential/m ratio increases: exp(1/20)>21/20>=(m+1)/m. Thus allm>=120 follow. Alternatively use a finite polynomial bound and prove its quotient increases directly, avoiding an infinite series in formal use.
+
+Remaining dependencies: independent exact scope/proof of5x>2N-1; full occupancy coefficient bridge; local real/rational inequalities and boundary ranks; endpoint-only exclusion. This is a new local sufficient bound, not the existingallm primary, oldtailMASS, or a selector theorem. No novelty claimed.
+
+A finite rational alternative to Step5 may simplify formalization. For a=119/20 and t=(m-120)/20>=0, binomial expansion with nonnegative a,t gives E8(a+t)>=E8(a)+tE7(a). The exact base E8(a)>288 is already checked, and E7(a)>=E3(a)>48. Thus E8((m-1)/20)>288+48(m-120)/20=12m/5. This uses only a fixed polynomial inequality after the general Jensen/log/Taylor coefficient bound; no induction on exponential ratios is necessary. Check E3(a)>48 exactly during independent review.

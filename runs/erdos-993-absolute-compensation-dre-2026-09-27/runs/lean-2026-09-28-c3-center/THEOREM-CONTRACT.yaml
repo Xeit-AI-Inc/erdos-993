@@ -1,0 +1,231 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "e993-center-subset-coefficient-expansion-v1",
+  "theorem": {
+    "title": "Exact finite center-subset coefficient expansion",
+    "informal_statement": "For every index type with decidable equality, every finite set s of indices, every function r from the index type to the natural numbers, and every natural k, define H(X) as the product over i in s of ((1+X)^(r(i))+X) in polynomials with natural coefficients. Then the coefficient of X^k in H is the sum over all subsets t of s of the following natural number: if the cardinality of t is at most k, take binomial(sum of r(i) over i in s minus t, k minus the cardinality of t); otherwise take zero. Binomial coefficients vanish when the lower argument exceeds the upper argument. The empty index set, zero exponents, repeated exponent values at distinct indices, and all natural k are included. No degree bound by the sum of the exponents is assumed."
+  },
+  "formulation_status": {
+    "status": "open",
+    "evidence": []
+  },
+  "definitions": [
+    {
+      "id": "def-product",
+      "description": "e993CenterProduct s r is the finite product over i in s of ((1+X)^(r i)+X), in Polynomial Nat.",
+      "lean_name": "e993CenterProduct",
+      "dependencies": [
+        "domain-finset",
+        "domain-exponents",
+        "domain-polynomial"
+      ]
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-index",
+      "description": "An arbitrary index type, with a standard decidable equality instance used for finite-set operations. Classical equality is permitted.",
+      "lean_type": "Type u",
+      "dependencies": []
+    },
+    {
+      "id": "domain-natural",
+      "description": "All natural numbers including zero.",
+      "lean_type": "Nat",
+      "dependencies": []
+    },
+    {
+      "id": "domain-finset",
+      "description": "Every finite set of indices, including empty.",
+      "lean_type": "Finset ι",
+      "dependencies": [
+        "domain-index"
+      ]
+    },
+    {
+      "id": "domain-exponents",
+      "description": "Arbitrary natural exponent function; zero and repeated values are allowed.",
+      "lean_type": "ι → Nat",
+      "dependencies": [
+        "domain-index",
+        "domain-natural"
+      ]
+    },
+    {
+      "id": "domain-polynomial",
+      "description": "Polynomials with natural coefficients and standard zero-extended coefficient extraction.",
+      "lean_type": "Polynomial Nat",
+      "dependencies": []
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "ι",
+      "kind": "forall",
+      "domain_id": "domain-index"
+    },
+    {
+      "binder": "s",
+      "kind": "forall",
+      "domain_id": "domain-finset"
+    },
+    {
+      "binder": "r",
+      "kind": "forall",
+      "domain_id": "domain-exponents"
+    },
+    {
+      "binder": "k",
+      "kind": "forall",
+      "domain_id": "domain-natural"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-equality",
+      "statement": "A DecidableEq instance on the arbitrary index type permits finite-set difference; no numerical, positivity, nonempty-set, or degree hypothesis is assumed.",
+      "dependencies": [
+        "domain-index"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "The k coefficient of e993CenterProduct s r equals the sum over t in s.powerset of if t.card<=k then Nat.choose (sum_(i in s minus t) r(i)) (k-t.card) else 0. The cardinality guard is explicit; arbitrary natural k and exponents are included.",
+    "dependencies": [
+      "def-product",
+      "domain-natural",
+      "hyp-equality"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "domain-index",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-natural",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-finset",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-exponents",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-polynomial",
+        "kind": "domain"
+      },
+      {
+        "id": "def-product",
+        "kind": "definition"
+      },
+      {
+        "id": "hyp-equality",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "domain-index",
+        "to": "domain-finset"
+      },
+      {
+        "from": "domain-index",
+        "to": "domain-exponents"
+      },
+      {
+        "from": "domain-natural",
+        "to": "domain-exponents"
+      },
+      {
+        "from": "domain-finset",
+        "to": "def-product"
+      },
+      {
+        "from": "domain-exponents",
+        "to": "def-product"
+      },
+      {
+        "from": "domain-polynomial",
+        "to": "def-product"
+      },
+      {
+        "from": "domain-index",
+        "to": "hyp-equality"
+      },
+      {
+        "from": "def-product",
+        "to": "conclusion"
+      },
+      {
+        "from": "domain-natural",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-equality",
+        "to": "conclusion"
+      }
+    ]
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "classical_allowed",
+    "rationale": "Only standard Mathlib foundations; no target or auxiliary mathematical axiom."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "e993_center_subset_coeff",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem e993_center_subset_coeff {ι : Type*} [DecidableEq ι]\n    (s : Finset ι) (r : ι → ℕ) (k : ℕ) :\n    (e993CenterProduct s r).coeff k =\n      ∑ t ∈ s.powerset,\n        if t.card ≤ k then (∑ i ∈ s \\ t, r i).choose (k - t.card) else 0",
+    "expected_statement_sha256": "ea8fdc2956d3e883f671c69777d903114a69003ab1a370a33c02a08a199882e6"
+  },
+  "source_materials": [
+    {
+      "id": "source-c3-center-expansion-boundary-check-json",
+      "path": "SOURCE/C3-CENTER-EXPANSION-BOUNDARY-CHECK.json",
+      "sha256": "c7e6cbd04b6ec7aa77f84f5479c92e003c3ea65fdac8af88e56d7bec55cca3db",
+      "role": "reference"
+    },
+    {
+      "id": "source-c3-center-expansion-boundary-check-py",
+      "path": "SOURCE/C3-CENTER-EXPANSION-BOUNDARY-CHECK.py",
+      "sha256": "9b495e3a63a777ef493af037aec8cb73ab13d587fb42f88528397ee6cf641d03",
+      "role": "reference"
+    },
+    {
+      "id": "source-center-proof-lead-md",
+      "path": "SOURCE/CENTER-PROOF-LEAD.md",
+      "sha256": "8068290d523739e6a59c5a9fa6972bde426e1443f5b4c5222a55691d215c92a9",
+      "role": "reference"
+    },
+    {
+      "id": "source-intended-statement-txt",
+      "path": "SOURCE/INTENDED-STATEMENT.txt",
+      "sha256": "aade4d13946ec0a3846c9f49471f63e19e6c6cc16fa195b6f52d559016babcf2",
+      "role": "theorem_intent"
+    }
+  ]
+}

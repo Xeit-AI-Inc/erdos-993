@@ -1,0 +1,52 @@
+{
+  "worker_id": "C3-CU-F3",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "U",
+  "covered_claim_ids": [
+    "C3-F3-COMPOSITION",
+    "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+    "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION"
+  ],
+  "claims": [
+    {
+      "claim_id": "C3-F3-COMPOSITION",
+      "statement": "Conditional composition: if actual eligible rows for m<=69 satisfy selected MASS, if each represented branch for m>=70 satisfies 2T_i[j]>=3 delta D_j, and if the established full strict-selection clauses hold, then selected MASS holds for all m; selected MASS implies the exact-ratio payment.",
+      "scope": "Ordinary path-star with path 0-1-2; m>=1 and r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2, C=GQ, T_i=GF_(r_i)H_i, P=C+zL^q. x is the least natural strict forward descent with integer zero extension including the terminal difference. For every natural p satisfying x+2<=p, 3p<2alpha+1, and 2p<=alpha, set j=p-2 and delta=q-j. Use strict current-p deletion selectors, b=e0+sum_i r_i ei, and A=sum_i r_i ei T_i[j]; retain endpoint multiplicity one and each original tip multiplicity r_i. The composition's prefix and coefficient premises are conditional evidence obligations, not established here.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": ["cycles/cycle-3/C3-CU-F3/REPORT.md", "cycles/cycle-3/C3-CU-F3/producer_composition_check.py"],
+      "reason": "The interval partition and implications are algebraically valid under their stated premises. Selector source composition is independently accepted at nonformal computer-assisted grade. Prefix, scalar, and local coefficient ingredients remain unvalidated in this critique, so the result is not an all-m proof."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION",
+      "statement": "For every m>=1 ordinary arity-2,3,4 path-star and every actual eligible lower-half rank, the strict-selected original-tip mass satisfies A>=b delta D_j.",
+      "scope": "Exact registered all-m selected MASS scope: actual least strict parent descent including terminal zero extension; all three guards x+2<=p, 3p<2alpha+1, 2p<=alpha; selectors evaluated strictly at current p; original endpoint multiplicity one and original tip multiplicities r_i retained.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-3/C3-CU-F3/REPORT.md"],
+      "reason": "The prefix MASS scan and m=70..119 scalar/m>=120 local coefficient premises have not been independently validated here. The accepted selected MASS result from m>=238 does not settle the all-m claim."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+      "statement": "For every m>=1 ordinary arity-2,3,4 path-star and every actual eligible lower-half rank, (delta C[j]-(delta-1)C[j+1])*A >= b*delta*D_j*C[j].",
+      "scope": "Exact registered weaker sufficient-payment scope: actual least strict parent descent including terminal zero extension; all three guards x+2<=p, 3p<2alpha+1, 2p<=alpha; selectors evaluated strictly at current p; original endpoint multiplicity one and original tip multiplicities r_i retained.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-3/C3-CU-F3/REPORT.md"],
+      "reason": "The exact-ratio payment follows from MASS under the contract's first-descent ratio bounds, but this critique does not establish all-m MASS. No payment counterexample is claimed."
+    },
+    {
+      "claim_id": "C3-CU-F3-PARTIAL-SELECTION-IMPLICATION",
+      "statement": "Assume 2T_i[j]>=3 delta D_j for each represented branch at an eligible row. If at least one branch is selected, then A>=b delta D_j regardless of the endpoint selector; if no branch and no endpoint are selected, the selected debt is zero.",
+      "scope": "Same ordinary path-star and actual eligible lower-half rank scope as the contract. With w=sum_i r_i ei, a selected branch gives w>=2, A>=(3/2)w delta D_j, and b=w+e0<=w+1<=(3/2)w. The empty selection has A=b=0. This conditional implication leaves endpoint-only selection as the only selector obstruction and does not establish the branchwise premise.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": ["cycles/cycle-3/C3-CU-F3/REPORT.md"],
+      "reason": "Direct algebra using original multiplicities r_i>=2 and e0 in {0,1}; no numerical evidence or universal coefficient premise is supplied."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CU-F3/REPORT.md",
+  "limitations": [
+    "Did not independently replay the m<=69 prefix certificate, m=70..119 scalar certificate, or m>=120 local coefficient proof.",
+    "Relied on the admitted neutral selector and first-descent source compositions for their source-dependent nonformal scope; this critique did not rebuild those instruments.",
+    "Producer composition script checks selected finite algebraic cases only; no Lean build or formal award was performed."
+  ],
+  "status_authority": "proposed_worker_only"
+}

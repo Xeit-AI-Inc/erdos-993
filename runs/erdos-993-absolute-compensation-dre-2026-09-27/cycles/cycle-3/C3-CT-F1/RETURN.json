@@ -1,0 +1,40 @@
+{
+  "worker_id": "C3-CT-F1",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "T",
+  "covered_claim_ids": [
+    "E993-PATH-STAR-COFACTOR-JENSEN-EXPONENT-ADJACENT-ARITY-BALANCING"
+  ],
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-COFACTOR-JENSEN-EXPONENT-ADJACENT-ARITY-BALANCING",
+      "statement": "For m'=a2+a3+a4>=1, M=2a2+3a3+4a4>=10 and integer 0<=k<=M with 3k>=M, define g_r=(2r/(2r+1))*binom(M-r,k-1)/binom(M,k), zero-extended, for r=2,3,4, and E=sum_r a_r g_r. Then g2-2g3+g4>=0 and E is minimized at fixed m',M by the adjacent-arity mixture bracketing M/m', with the registered formulas on 2m'<=M<=3m' and 3m'<=M<=4m'.",
+      "scope": "Retained only as a rational Jensen-exponent inequality at each fixed (M,k), including k=M where all g_r vanish. It does not order actual cofactor coefficients or establish a first-descent bound, strict selector clause, selected MASS, or exact-ratio payment. The finite scalar audit separately covers only its stated relaxed m=70..119 domain.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CT-F1/REPORT.md"
+      ],
+      "reason": "The direct K,u,v reduction proves strict discrete convexity for k<M, and the pair-replacement argument yields the adjacent-arity minimum; k=M is equality."
+    },
+    {
+      "claim_id": "C3-CT-F1-SCALAR-CERTIFICATE-M70-119",
+      "statement": "On the exact relaxed domain m=70..119, 2m<=N<=4m, r=2,3,4, feasible M=N-r, strict 5j>2N-1, 2j<=N-2, and every nonzero GF_r shift k=j-s, the adjacent-arity exponent floor and degree-12 positive Taylor lower bound make the prescribed scalar left side strictly exceed 3(N+1-j)(N-2j-1)/(2(j+1)); all 799895 states and shifts are covered with zero exclusions.",
+      "scope": "Exact finite rational evidence for the scalar coefficient bridge on this bounded domain. It uses no parent census, actual descent computation, strict current-p selectors, endpoint-only exclusion, original-tag selection, or selected weighted payment. It is not an all-m theorem or a primary counterexample/proof.",
+      "status": "proposed_bounded_evidence",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CT-F1/REPORT.md",
+        "cycles/cycle-3/C3-CT-F1/independent_scalar_audit.py",
+        "cycles/cycle-3/C3-CT-F1/independent_scalar_evidence.json"
+      ],
+      "reason": "An independent math.comb/Fraction evaluator traversed the full specified state space, checked all nonzero shifts and strict margins, and asserted the total count and zero exclusions."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CT-F1/REPORT.md",
+  "limitations": [
+    "No Lean build or formal award; the adjacent-arity proof is informal algebra.",
+    "The finite exact certificate covers only m=70..119 and only the relaxed scalar coefficient domain.",
+    "No parent first-descent census or current-p strict selector audit was run; the scalar check does not establish endpoint-only exclusion, selected MASS, or exact-ratio payment."
+  ],
+  "status_authority": "proposed_worker_only"
+}

@@ -1,0 +1,51 @@
+{
+  "worker_id": "C3-T1",
+  "cycle": 3,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ALL-M-ACTUAL-ELIGIBLE-BRANCHWISE-THREE-HALVES-MASS",
+      "statement": "For every actual eligible lower-half rank of every ordinary path-star with m>=1 and r_i in {2,3,4}, each represented branch satisfies 2*T_i[j]>=3*delta*D_j.",
+      "scope": "Original universal scope uses the actual least strict zero-extended parent descent x, x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j), and original ordinary path-star factors. This review proves only the m>=120 restriction, in fact strictly, with no selector premise. The m<120 portion remains open here.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-T1/REPORT.md",
+        "cycles/cycle-3/C3-T1/audit_m120.py",
+        "cycles/cycle-3/C3-T1/audit_m120.json"
+      ],
+      "reason": "An independent analytic proof establishes the full stated rank band for m>=120. The exact small range is outside this proof and no census certificate for it was independently reviewed."
+    },
+    {
+      "claim_id": "C3-T1-M120-SELECTED-MASS-CONDITIONAL",
+      "statement": "For every ordinary path-star with m>=120 and every actual eligible lower-half p, using the exact current-p strict selectors e0=1[Delta_p A0<0] and ei=1[Delta_p Ai<0], original endpoint multiplicity one and branch-tip multiplicity r_i, selected MASS A>=b*delta*D_j holds whenever at least one branch is selected or no tag is selected.",
+      "scope": "Actual first strict zero-extended parent descent including terminal difference; all three rank guards; j=p-2; branch flags and endpoint flag evaluated at current p; b=e0+sum_i r_i ei and A=sum_i r_i ei T_i[j]. It excludes endpoint-only selection and makes no claim for m<120.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-T1/REPORT.md",
+        "cycles/cycle-3/C3-T1/audit_m120.py",
+        "cycles/cycle-3/C3-T1/audit_m120.json"
+      ],
+      "reason": "The branchwise strict 3/2 bound gives A>(3/2)w*delta*D_j for selected tip weight w>=2, which pays (w+e0)*delta*D_j for e0 in {0,1}. The empty selection is trivial. No endpoint-only selector exclusion is supplied."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+      "statement": "For every ordinary path-star in the contract, at every actual eligible lower-half p, the exact selected ratio inequality (delta*C[j]-(delta-1)*C[j+1])*A >= b*delta*D_j*C[j] holds.",
+      "scope": "All m>=1, actual least strict zero-extended first descent including terminal difference, all three rank guards, current-p strict selectors, original endpoint multiplicity one and branch-tip multiplicities r_i. This review proves payment only on the m>=120 non-endpoint-only selector subcase; the registered all-profile predicate is not resolved.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-T1/REPORT.md"
+      ],
+      "reason": "The m>=120 conditional MASS implication is insufficient when only the endpoint is selected and does not cover m<120. No full primary proof or counterexample is provided."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-T1/REPORT.md",
+  "limitations": [
+    "No proof of the local branch bound for m<120 was produced.",
+    "No census-free endpoint-only exclusion was proved, so the all-profile primary exact-ratio predicate remains open.",
+    "Exact finite checks in audit_m120.json are supporting spot checks, not universal proof evidence.",
+    "The branchwise proof depends on the separately accepted/formally verified coefficient-only rank bound 2N<=5k at every strict descent; it does not formalize the graph-to-polynomial bridge.",
+    "No Lean award or authoritative registry status is claimed."
+  ],
+  "status_authority": "proposed_worker_only"
+}

@@ -1,0 +1,67 @@
+{
+  "worker_id": "C3-CU-T3",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-COFACTOR-JENSEN-EXPONENT-ADJACENT-ARITY-BALANCING",
+      "statement": "For M>=10 and M/3<=k<=M, g2-2g3+g4>=0, so at fixed block count and total tip count the registered endpoint arity-count profiles minimize E=sum a_r g_r.",
+      "scope": "Universal rational exponent statement for arities 2,3,4 and the registered in-range coefficient domain, including k=M equality. It orders only Jensen exponents; it does not order true cofactor coefficients, actual first descents, strict selectors, MASS, exact-ratio payment, or spread quotients.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CU-T3/REPORT.md",
+        "cycles/cycle-3/C3-CU-T3/independent_critique_check.py",
+        "cycles/cycle-3/C3-CU-T3/independent_critique_check.json"
+      ],
+      "reason": "The factorization and positive polynomial identity prove discrete convexity for k<M; at k=M all g_r vanish. The fixed-count 2+4 to 3+3 exchange proves the endpoint minimum."
+    },
+    {
+      "claim_id": "C3-T3-FINITE-BALANCED-SCALAR-REPLAY",
+      "statement": "Every specified relaxed scalar state for m=70..119 passes the exact degree-12 Taylor lower-bound comparison; independent replay confirms 799895 states, zero exclusions, all per-m minima, and the global minimizer.",
+      "scope": "Bounded relaxed scalar domain from C3-balanced-finite-protocol.md with its rank and GF-shift guards. This is not a tree/profile census or universal occupancy-to-coefficient, selector, MASS, or payment proof.",
+      "status": "proposed_bounded_evidence",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CU-T3/independent_critique_check.py",
+        "cycles/cycle-3/C3-CU-T3/independent_critique_check.json",
+        "cycles/cycle-3/C3-CU-T3/producer_balanced_finite_check_copy.py",
+        "cycles/cycle-3/C3-CU-T3/producer_balanced_finite_check_copy.json",
+        "cycles/cycle-3/C3-CU-T3/producer_replay.log"
+      ],
+      "reason": "A separately written direct Fraction/binomial evaluator and the copied producer replay agree with the source certificate and C3-T3 output on all states; integer assertions retain the strict rank selectors in the relaxed domain, all GF shifts, positive denominators, and zero exclusions."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+      "statement": "The registered exact-ratio selected lower-half payment predicate remains unresolved at its all-m actual path-star scope on the evidence reviewed here.",
+      "scope": "Ordinary path-stars with actual least strict zero-extended first descent, all three eligible-rank guards, strict current-p deletion selectors, original endpoint and per-branch tip tag multiplicities, and the exact-ratio predicate stated in SOLUTION-CONTRACT.md. No selector or universal payment theorem is inferred from the scalar scan.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CU-T3/REPORT.md"
+      ],
+      "reason": "The audited Jensen exponent lemma and bounded scalar certificate do not establish actual coefficient composition or selected payment; this critique supplies no exact counterexample or all-m proof."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION",
+      "statement": "The registered selected MASS predicate remains unresolved at its all-m actual path-star scope on the evidence reviewed here.",
+      "scope": "Ordinary path-stars with actual least strict zero-extended first descent, every eligible-rank guard, strict current-p deletion selectors, and original endpoint and per-branch tip tag multiplicities. The scalar certificate does not establish an all-m selected MASS bound or counterexample.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CU-T3/REPORT.md"
+      ],
+      "reason": "No universal MASS argument or realizable counterexample was found. Preserve the registered distinction: MASS is stronger than the exact-ratio payment predicate, and neither follows from this bounded relaxed scan."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CU-T3/REPORT.md",
+  "limitations": [
+    "The scalar verification covers only the specified relaxed states m=70..119 and does not validate a universal occupancy/Jensen-to-actual-coefficient composition.",
+    "No all-m selector theorem, selected MASS/payment proof, or primary counterexample was produced.",
+    "No Lean build or formal award was performed."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C3-T3-FINITE-BALANCED-SCALAR-REPLAY",
+    "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+    "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION",
+    "E993-PATH-STAR-COFACTOR-JENSEN-EXPONENT-ADJACENT-ARITY-BALANCING"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "bounded_scan": {
+    "scope": "all count triples 1<=m<= 45, all zero-extended strict descents",
+    "profiles": 17295,
+    "strict_descent_rows": 938431,
+    "violations": [],
+    "minimum_slack": 44,
+    "minimum_row": [
+      0,
+      1,
+      0,
+      3,
+      2,
+      -2
+    ]
+  },
+  "operator_comparison": {
+    "two_arity4_profile": {
+      "N": 8,
+      "k": 3,
+      "P_k": 178,
+      "P_k1": 298,
+      "delta": 120,
+      "E_k": -54,
+      "rank_slack": -25,
+      "meaning": "candidate inequality fails at k=3, but k=3 is not a strict descent"
+    },
+    "local_D4_coefficients": {
+      "2": [
+        7,
+        -2
+      ],
+      "3": [
+        8,
+        -2,
+        3
+      ],
+      "4": [
+        9,
+        0,
+        12,
+        4
+      ]
+    },
+    "adjusted_r2_r3_nonnegative": {
+      "2": [
+        "23/3",
+        "0/3",
+        "2/3"
+      ],
+      "3": [
+        "17/2",
+        "0/2",
+        "9/2",
+        "1/2"
+      ]
+    },
+    "strict_conversion": "9k+1-4N+h>0; h=2a2/3+a3/2; multiply by 6 and use integer values to obtain 54k>=24N-4a2-3a3-5"
+  }
+}

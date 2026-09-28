@@ -1,0 +1,56 @@
+{
+  "worker_id": "C3-CF-U3",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "F",
+  "covered_claim_ids": [
+    "C3-U3-CENTER-LAYER-EXPANSION",
+    "C3-U3-HOMOGENEOUS-LAYER-BOUND-EVIDENCE"
+  ],
+  "claims": [
+    {
+      "claim_id": "C3-U3-CENTER-LAYER-EXPANSION",
+      "statement": "For each fixed profile, branch i, and natural j, expanding every other B_(r_h)=L^(r_h)+z factor gives the stated subset formula for T_i[j], and retaining only subsets of size at most d gives U_i^(d)[j]<=T_i[j] for every d>=0.",
+      "scope": "Exact informal coefficient identity and nonnegative truncation bound on the path-star family. It establishes no local 3/2 inequality, selected MASS, or exact-ratio payment. The producer's evaluation script has an F_r coefficient-vector error; see the independent derivation and replay evidence.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-U3/REPORT.md",
+        "cycles/cycle-3/C3-CF-U3/independent_layer_check.py"
+      ],
+      "reason": "Direct expansion by the chosen z-factor subset proves the formula; all omitted terms are nonnegative. The stated algebra is correct, although the producer's script did not encode F_4 correctly."
+    },
+    {
+      "claim_id": "C3-U3-HOMOGENEOUS-LAYER-BOUND-EVIDENCE",
+      "statement": "The producer's stated two-profile bounded outcomes are not reproduced: with the contract factor GF_4=(3,9,7,2), the m=40 depth-2 margins are positive at both eligible ranks, contrary to the reported failure at p=80. At m=150, depth 1 fails at p=294 and depth 2 passes all eight eligible ranks. The actual x values, eligible rows and strict flags are independently reproduced.",
+      "scope": "Exact bounded evidence only for homogeneous arity-4 profiles m=40 and m=150. It is not a universal local coefficient theorem, a counterexample to the full local inequality, selected MASS result, or payment result. Actual first strict descent uses zero extension; all three rank guards, current-p strict flags, and original branch multiplicity 4 are preserved.",
+      "status": "proposed_rejected",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-U3/REPORT.md",
+        "cycles/cycle-3/C3-CF-U3/independent_layer_check.py",
+        "cycles/cycle-3/C3-CF-U3/independent_layer_evidence.json",
+        "cycles/cycle-3/C3-CF-U3/producer_layer_probe.py",
+        "cycles/cycle-3/C3-CF-U3/producer_replay_summary.json"
+      ],
+      "reason": "The probe uses F=[1,...,1] as polynomial coefficients, not coefficients of sum_(h=0)^(r-2)(1+z)^h. This changes the claimed m=40 depth-2 result and full coefficient values. Corrected exact arithmetic confirms the m=150 depth-1 obstruction and depth-2 success."
+    },
+    {
+      "claim_id": "C3-CF-U3-CORRECTED-LAYER-EVIDENCE",
+      "statement": "Using GF_4=(3,9,7,2), exact binomial expansion gives m=40 depth-2 positive margins at p=80,81; m=150 depth-1 negative margin at p=294 and depth-2 positive margins at all eight eligible ranks. All checked full T_i[j] values exceed 3 delta D_j/2.",
+      "scope": "Bounded exact evidence at only the two stated homogeneous arity-4 profiles. Not a universal branchwise inequality, selector theorem, selected MASS result, or exact-ratio payment. The rank, descent, selector, and multiplicity conventions are as in the solution contract.",
+      "status": "proposed_bounded_evidence",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-U3/REPORT.md",
+        "cycles/cycle-3/C3-CF-U3/independent_layer_check.py",
+        "cycles/cycle-3/C3-CF-U3/independent_layer_evidence.json"
+      ],
+      "reason": "An independent integer evaluator uses contract polynomial coefficients, computes the actual least strict descent and all eligible ranks, and records current strict flags, full coefficients, truncations, targets and signed margins."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CF-U3/REPORT.md",
+  "limitations": [
+    "No all-m proof or counterexample for the local three-halves coefficient inequality.",
+    "Finite profile checks do not establish selected MASS or exact-ratio payment.",
+    "No formal verification or Lean award."
+  ],
+  "status_authority": "proposed_worker_only"
+}

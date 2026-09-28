@@ -1,0 +1,45 @@
+{
+  "worker_id": "C3-CT-U2",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "T",
+  "covered_claim_ids": [
+    "C3-U2-BALANCED-FINITE-COFACTOR-CERTIFICATE",
+    "E993-PATH-STAR-ARITY-2-4-OCCUPANCY-JENSEN-COFACTOR"
+  ],
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-OCCUPANCY-JENSEN-COFACTOR",
+      "statement": "For finite disjoint positive-size blocks of total size M and every 0<=k<=M, the fixed-size singleton-occupancy identity, finite AM-GM, log(1+1/s)>=2/(2s+1), and the nonnegative exponential Taylor remainder imply H[k]>=binom(M,k)E_d(y_k) for every d>=0. Zero extension and nonnegative convolution with GF_2=(1,2), GF_3=(2,5,2), GF_4=(3,9,7,2) yield the stated path-star cofactor coefficient lower bound.",
+      "scope": "Universal finite-block coefficient claim at 0<=k<=M, including the empty block family, and its zero-extended path-star cofactor convolution. This supports no actual least strict descent, any of the three eligible-rank guards, current-p strict selector flags, original endpoint/private-tip multiplicities in a payment, selected MASS, or exact-ratio payment conclusion. Informal proof only.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CT-U2/REPORT.md",
+        "cycles/cycle-3/C3-CT-U2/occupancy_identity_replay.py",
+        "cycles/cycle-3/C3-CT-U2/occupancy_identity_replay.json"
+      ],
+      "reason": "The finite sum expansion over marked blocks and exact joint-singleton count prove the identity directly. Finite AM-GM gives the integer-power inequality; the derivative identity proves the logarithm bound; nonnegative Taylor remainder and nonnegative GF convolution complete the informal proof. The independent finite subset replay is bounded corroboration, not the universal proof or a formal award."
+    },
+    {
+      "claim_id": "C3-U2-BALANCED-FINITE-COFACTOR-CERTIFICATE",
+      "statement": "Exact bounded evaluators verify the relaxed scalar cofactor comparison over 70<=m<=119, 2m<=N<=4m, r in {2,3,4}, 2(m-1)<=N-r<=4(m-1), and integers j with 5j>2N-1 and 2j<=N-2, checking every GF_r shift with M=N-r>=10 and 3(j-s)>=M. The table has 799895 states and zero exclusions; all exact comparisons pass.",
+      "scope": "Finite relaxed scalar domain only, conditional on the general occupancy/Taylor and adjacent-arity balancing lemmas. The rank inequalities are scalar table guards; no tuple is asserted to be an actual profile at its actual least strict descent x or to satisfy actual selector flags. This does not prove the selected payment, MASS, primary exact-ratio predicate, or a universal result.",
+      "status": "proposed_bounded_evidence",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CT-U2/REPORT.md",
+        "cycles/cycle-3/C3-CT-U2/balanced_finite_replay.py",
+        "cycles/cycle-3/C3-CT-U2/balanced_finite_replay.json",
+        "cycles/cycle-3/C3-CT-U2/independent_scalar_check.py",
+        "cycles/cycle-3/C3-CT-U2/independent_scalar_check.json"
+      ],
+      "reason": "The copied producer evaluator was replayed, and a separate evaluator using direct binomial coefficients, cached exact Fraction exponent floors, integer Taylor numerators, and exact cross multiplication independently checks the stated tuple domain. Exact table coverage and passing margins are bounded computation only and rely on separately proved analytic lemmas."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CT-U2/REPORT.md",
+  "limitations": [
+    "The finite-block occupancy, Jensen, logarithm, and Taylor chain is an informal universal proof; no Lean build or formal award was produced.",
+    "The finite scalar certificate covers only 70<=m<=119 and its relaxed rank domain, conditional on its analytic dependencies; it does not cover m<=69, m>=120, actual profile descent, or actual selectors.",
+    "Neither covered claim resolves or weakens the exact primary payment, the separate MASS claim, or the need to preserve actual first descent, all three rank guards, strict current-p flags, and original multiplicities in any payment argument."
+  ],
+  "status_authority": "proposed_worker_only"
+}

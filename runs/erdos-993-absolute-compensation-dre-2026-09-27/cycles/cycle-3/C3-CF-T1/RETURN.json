@@ -1,0 +1,63 @@
+{
+  "worker_id": "C3-CF-T1",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "F",
+  "covered_claim_ids": [
+    "C3-T1-M120-SELECTED-MASS-CONDITIONAL",
+    "E993-PATH-STAR-ARITY-2-4-ALL-M-ACTUAL-ELIGIBLE-BRANCHWISE-THREE-HALVES-MASS",
+    "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT"
+  ],
+  "claims": [
+    {
+      "claim_id": "C3-T1-M120-SELECTED-MASS-CONDITIONAL",
+      "statement": "For ordinary path-stars with m>=120, at every actual eligible lower-half p, exact current-p strict selectors and original tag multiplicities give selected MASS A>=b*delta*D_j whenever at least one branch is selected or no tag is selected.",
+      "scope": "Uses the actual least strict zero-extended parent descent including the terminal difference, all three rank guards, j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j), endpoint multiplicity one and branch-tip multiplicity r_i. Endpoint-only selection is excluded from this conditional statement; no claim for m<120.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-T1/REPORT.md",
+        "cycles/cycle-3/C3-CF-T1/audit_m120.py",
+        "cycles/cycle-3/C3-CF-T1/audit_m120.json",
+        "cycles/cycle-3/C3-CF-T1/independent_checks.py",
+        "cycles/cycle-3/C3-CF-T1/independent_checks.json"
+      ],
+      "reason": "The strict branchwise 3/2 bound pays (w+e0)*delta*D_j for every selected tip weight w>=2; empty selection is trivial. This is an informal proof with the checked rank and occupancy dependencies, not formal verification."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ALL-M-ACTUAL-ELIGIBLE-BRANCHWISE-THREE-HALVES-MASS",
+      "statement": "For every ordinary path-star in the registered all-m scope, every actual eligible lower-half rank and every represented branch satisfy 2*T_i[j]>=3*delta*D_j.",
+      "scope": "The reviewed proof establishes the strict inequality only for m>=120, retaining the actual first strict zero-extended descent including its terminal difference, all three rank guards, and the original path-star factors. The m<120 range is not resolved by this review.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-T1/REPORT.md",
+        "cycles/cycle-3/C3-CF-T1/audit_m120.py",
+        "cycles/cycle-3/C3-CF-T1/audit_m120.json",
+        "cycles/cycle-3/C3-CF-T1/independent_checks.py",
+        "cycles/cycle-3/C3-CF-T1/independent_checks.json"
+      ],
+      "reason": "An informal universal proof on m>=120 passes the per-arity shift, singleton-probability, full cofactor-convolution and Taylor-continuation checks. This does not resolve the registered all-m predicate."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+      "statement": "For every ordinary path-star in the registered scope and every actual eligible lower-half p, the exact current-p strict selected original-leaf ratio inequality holds.",
+      "scope": "The reviewed MASS argument plus the accepted lower-half full-selection composition establishes this predicate only for m>=120, at the source-dependent nonformal selector grade. It preserves actual first descent and all three rank guards, endpoint multiplicity one, each branch-tip multiplicity r_i and current-p strict flags. The all-m predicate remains unresolved here.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-T1/REPORT.md",
+        "cycles/cycle-3/C3-CF-T1/audit_m120.py",
+        "cycles/cycle-3/C3-CF-T1/audit_m120.json",
+        "cycles/cycle-3/C3-CF-T1/independent_checks.py",
+        "cycles/cycle-3/C3-CF-T1/independent_checks.json"
+      ],
+      "reason": "For m>=120, the accepted full-selection claim excludes endpoint-only selection; selected MASS follows and implies the exact-ratio payment using 0<t<1 and delta>=1. No aggregate-sign premise or census-free selector proof is used."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CF-T1/REPORT.md",
+  "limitations": [
+    "The m>=120 argument is an informal proof depending on the accepted coefficient-only strict-descent rank lemma and fixed-size occupancy/Jensen identity; no Lean verification was attempted.",
+    "The all-m branchwise claim and all-m exact-ratio payment remain unresolved by this review for m<120.",
+    "The restricted payment conclusion uses the accepted source-dependent full lower-half selector composition; this review does not supply a census-free selector proof.",
+    "Exact finite script outputs are bounded checks, not universal proof evidence."
+  ],
+  "status_authority": "proposed_worker_only"
+}

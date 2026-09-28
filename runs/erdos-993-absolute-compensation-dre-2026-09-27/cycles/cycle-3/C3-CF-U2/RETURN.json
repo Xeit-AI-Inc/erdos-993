@@ -1,0 +1,55 @@
+{
+  "worker_id": "C3-CF-U2",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-OCCUPANCY-JENSEN-COFACTOR",
+      "statement": "For finite disjoint positive-size blocks, the fixed-size occupancy identity and finite AM-GM/log/Taylor chain give H[k] >= binom(M,k) E_d(y_k) for every 0<=k<=M and natural d; zero extension and nonnegative convolution with the stated GF_r coefficients give a path-star cofactor coefficient lower bound.",
+      "scope": "Universal finite-block identity and coefficient inequality for in-range 0<=k<=M, including empty block family; zero-extended path-star convolution at every natural j. Size-one blocks are allowed. Does not imply selectors, descent, MASS, exact-ratio payment, or aggregate sign. Path-star deletion claims are not made: the actual x is the least natural k with Delta_k P<0 under zero extension, including the terminal difference; eligible p must obey x+2<=p, 3p<2alpha+1, and 2p<=alpha; current-p flags are e0=1[Delta_p A0<0] and ei=1[Delta_p Ai<0], with b=e0+sum_i r_i ei and A=sum_i r_i ei T_i[j] preserving every original tip multiplicity.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-U2/REPORT.md"
+      ],
+      "reason": "The fixed-cardinality expansion counts each marked block's unique chosen tip with a factor that cancels its 1/s_i weight. Finite AM-GM, the proved log inequality, and the positive Taylor remainder establish the universal coefficient bound. I isolated a correction to the source's k=M commentary for size-one blocks; the theorem itself remains valid."
+    },
+    {
+      "claim_id": "C3-U2-BALANCED-FINITE-COFACTOR-CERTIFICATE",
+      "statement": "The balanced Jensen/Taylor scalar comparison passes every relaxed state with 70<=m<=119, 2m<=N<=4m, r in {2,3,4}, feasible cofactor tip count 2(m-1)<=N-r<=4(m-1), and integer j satisfying 5j>2N-1 and 2j<=N-2. All GF_r shifts satisfy M>=10 and 3(j-s)>=M; 799895 states pass with zero exclusions and the exact minimum ratio reported in the worker report.",
+      "scope": "Exact bounded scalar certificate conditional on the universal occupancy/Jensen bound and adjacent-arity exponent lemma. This is not a graph census and does not establish actual first descent, any current-p selector, selected MASS, or exact-ratio payment. Path-star deletion claims are not made: the actual x is the least natural k with Delta_k P<0 under zero extension, including the terminal difference; eligible p must obey x+2<=p, 3p<2alpha+1, and 2p<=alpha; current-p flags are e0=1[Delta_p A0<0] and ei=1[Delta_p Ai<0], with b=e0+sum_i r_i ei and A=sum_i r_i ei T_i[j] preserving every original tip multiplicity.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-U2/REPORT.md",
+        "cycles/cycle-3/C3-CF-U2/independent_scalar_check.py",
+        "cycles/cycle-3/C3-CF-U2/independent_scalar_check.json",
+        "cycles/cycle-3/C3-CF-U2/balanced_finite_check.py",
+        "cycles/cycle-3/C3-CF-U2/balanced_finite_check.json"
+      ],
+      "reason": "An independent exact-rational evaluator using direct binomial coefficients matches all state counts, exclusions, and the exact least ratio. The integer rank and GF shift guards were separately derived; the finite computation remains bounded evidence."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-COFACTOR-JENSEN-EXPONENT-ADJACENT-ARITY-BALANCING",
+      "statement": "For nonnegative counts a2,a3,a4 with m'=a2+a3+a4>=1 and M=2a2+3a3+4a4>=10, g2-2g3+g4>=0 when 0<=k<=M and 3k>=M, and replacing a size-2 and size-4 pair by two size-3 blocks never increases E=sum a_r g_r; consequently the stated adjacent-arity formulas lower-bound E.",
+      "scope": "Universal scalar exponent statement for M>=10 and 3k>=M with k<=M, plus its adjacent-arity consequence. It concerns only the Jensen exponent, not H coefficients, payment, descents, flags, or aggregate sign. Path-star deletion claims are not made: the actual x is the least natural k with Delta_k P<0 under zero extension, including the terminal difference; eligible p must obey x+2<=p, 3p<2alpha+1, and 2p<=alpha; current-p flags are e0=1[Delta_p A0<0] and ei=1[Delta_p Ai<0], with b=e0+sum_i r_i ei and A=sum_i r_i ei T_i[j] preserving every original tip multiplicity.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-U2/REPORT.md",
+        "cycles/cycle-3/C3-CF-U2/independent_scalar_check.py",
+        "cycles/cycle-3/C3-CF-U2/independent_scalar_check.json"
+      ],
+      "reason": "The exact factorial identity reduces the second difference to a positive prefactor times an explicitly positive polynomial on M>=10 and 3k>=M; at k=M all terms vanish. Repeated pair replacement gives the two formulas."
+    }
+  ],
+  "covered_claim_ids": [
+    "C3-U2-BALANCED-FINITE-COFACTOR-CERTIFICATE",
+    "E993-PATH-STAR-ARITY-2-4-OCCUPANCY-JENSEN-COFACTOR"
+  ],
+  "report_path": "cycles/cycle-3/C3-CF-U2/REPORT.md",
+  "limitations": [
+    "The universal occupancy/Jensen and balancing arguments are informal and received no Lean award in this critique.",
+    "The 70<=m<=119 scalar verification is finite bounded evidence conditional on analytic coefficient lower bounds; it does not cover m<=69 or m>=120.",
+    "This critique does not prove any actual eligible-row selector predicate, selected MASS, or primary exact-ratio payment."
+  ],
+  "status_authority": "proposed_worker_only"
+}

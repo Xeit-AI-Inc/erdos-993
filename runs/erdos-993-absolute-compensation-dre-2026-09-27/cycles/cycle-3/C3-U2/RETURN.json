@@ -1,0 +1,40 @@
+{
+  "worker_id": "C3-U2",
+  "cycle": 3,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-OCCUPANCY-JENSEN-COFACTOR",
+      "statement": "For finite disjoint positive-size blocks of total size M, H=product_i((1+z)^{s_i}+z) satisfies H[k]/binom(M,k)=average over k-subsets S of product_i(1+X_i(S)/s_i), where X_i marks singleton occupancy. Finite AM-GM, log(1+1/s)>=2/(2s+1), and the nonnegative Taylor remainder imply H[k]>=binom(M,k) E_d(y_k) for 0<=k<=M and every d>=0, with y_k=sum_i (2s_i/(2s_i+1))*binom(M-s_i,k-1)/binom(M,k). Zero extension followed by nonnegative convolution with GF_r gives a coefficient lower bound for path-star T_i, using GF_2=(1,2), GF_3=(2,5,2), GF_4=(3,9,7,2).",
+      "scope": "Universal finite-block coefficient statement for 0<=k<=M; zero-extended coefficient bound and path-star cofactor convolution at natural j. Empty block family is permitted. It implies no selector, descent, MASS, exact-ratio payment, or aggregate statement. Informal proof only in this worker report.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-U2/REPORT.md",
+        "cycles/cycle-3/C3-U2/occupancy_identity_check.py",
+        "cycles/cycle-3/C3-U2/occupancy_identity_check.json"
+      ],
+      "reason": "The finite-set expansion and singleton-event count prove the identity directly without independence. Applying finite AM-GM to the positive rational subset weights gives the exact integer-power inequality; the derivative proof of the logarithm bound and the nonnegative Taylor remainder close the coefficient chain. Exact small-profile replay is supporting bounded evidence only."
+    },
+    {
+      "claim_id": "C3-U2-BALANCED-FINITE-COFACTOR-CERTIFICATE",
+      "statement": "The exact balanced Jensen/Taylor evaluator verifies the proposed relaxed cofactor comparison at every enumerated state with 70<=m<=119, 2m<=N<=4m, r in {2,3,4}, feasible cofactor tip count 2(m-1)<=N-r<=4(m-1), and 5j>2N-1, 2j<=N-2. It checks 799895 states with zero excluded states; the minimum comparison ratio is 112684538106937462073347997540188623037695726373663717/81619490325542400000000000000000000000000000000000000 at (m,N,r,j)=(70,278,2,112), which is greater than one.",
+      "scope": "Exact bounded computation for the stated relaxed scalar table only, conditional on the general occupancy/Jensen/Taylor and adjacent-arity balancing arguments. No claim about m<=69, m>=120, actual descents, selectors, or payment.",
+      "status": "proposed_bounded_evidence",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-U2/REPORT.md",
+        "cycles/cycle-3/C3-U2/balanced_finite_check.py",
+        "cycles/cycle-3/C3-U2/balanced_finite_check.json"
+      ],
+      "reason": "The copied deterministic evaluator was replayed with exact integer arithmetic. Its domain loops encode all stated relaxed states and shifts, and the output reports zero exclusions and a positive exact minimum margin. This is not an all-parameter proof."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-U2/REPORT.md",
+  "limitations": [
+    "No Lean build or formal award was produced.",
+    "The general occupancy/Jensen/Taylor inequality is an informal proof, not a governed formal result from this seat.",
+    "The 70<=m<=119 table is bounded evidence conditional on the general lemmas and does not close the m<=69 or m>=120 ranges.",
+    "This work does not prove the all-m selected MASS or exact-ratio payment and supplies no selector or actual-first-descent conclusion."
+  ],
+  "status_authority": "proposed_worker_only"
+}

@@ -1,0 +1,42 @@
+{
+  "worker_id": "C3-CT-F2",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C3-F2-SMALL-PREFIX-PRIMARY-AND-MASS-BOUNDED",
+      "statement": "For every ordinary path-star arity-count profile with 1<=m<=69 and every actual eligible lower-half p, the contract's exact selected integer primary payment margin is nonnegative; in fact it is positive on every scanned row. The stronger selected MASS margin A-b*delta*D_j is also positive on every scanned row.",
+      "scope": "Bounded exact computation over every (c2,c3,c4) with 1<=m=c2+c3+c4<=69, r_i in {2,3,4}, N=sum_i r_i, q=N+1, alpha=N+2. Use L=1+z, G=1+2z, B_r=L^r+z, F_r=sum_(h=0)^(r-2)L^h, Q=prod_i B_(r_i), H_i=prod_(h!=i)B_(r_h), C=GQ, T_i=GF_(r_i)H_i, P=C+zL^q; coefficients and Delta_k f=f[k+1]-f[k] are integer zero-extended. x is the least natural k with Delta_k P<0, including the terminal degree. Scan every natural p satisfying x+2<=p, 3p<2alpha+1, and 2p<=alpha; j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j). Use current-p strict selectors e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], where A0=LQ+zL^N and Ai=G B_(r_i-1)H_i+zL^N. Let b=e0+sum_i r_i ei and A=sum_i r_i ei T_i[j], retaining every original tip tag multiplicity. Check the exact integer primary target margin (delta*C[j]-(delta-1)*C[j+1])*A-b*delta*D_j*C[j] and MASS margin A-b*delta*D_j. The result is bounded evidence only.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CT-F2/REPORT.md",
+        "cycles/cycle-3/C3-CT-F2/independent/critic_scan.py",
+        "cycles/cycle-3/C3-CT-F2/independent/critic_scan_result.json"
+      ],
+      "reason": "A separate exact-integer convolution scan agrees with the assigned evaluator and the shared controller instrument: 59,639 profiles, 68,129 eligible rows, no negative primary or MASS margins, with the reported positive extrema. This retains only the finite claim; the all-m predicates remain OPEN."
+    },
+    {
+      "claim_id": "C3-CT-F2-PREFIX-FULL-SELECTION-BOUNDED",
+      "statement": "For every ordinary path-star count profile with 1<=m<=69 and every actual eligible lower-half p, the current-p strict selectors satisfy e0=1 and ei=1 for every represented arity class.",
+      "scope": "Bounded exact computation on the same complete 59,639-profile, 68,129-eligible-row prefix scan as the retained source claim, preserving the contract's least strict zero-extended parent descent including terminal degree; guards x+2<=p, 3p<2alpha+1, 2p<=alpha; current-p selectors e0=1[Delta_p(LQ+zL^N)<0] and ei=1[Delta_p(G B_(r_i-1)H_i+zL^N)<0]; all arity classes with positive count are represented. No all-m selector theorem is asserted.",
+      "status": "proposed_bounded_evidence",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CT-F2/REPORT.md",
+        "cycles/cycle-3/C3-CT-F2/independent/critic_scan.py",
+        "cycles/cycle-3/C3-CT-F2/independent/critic_scan_result.json"
+      ],
+      "reason": "The independent scan records zero endpoint-only and zero partial-selection rows across all actual eligible rows in the finite prefix."
+    }
+  ],
+  "covered_claim_ids": [
+    "C3-F2-SMALL-PREFIX-PRIMARY-AND-MASS-BOUNDED"
+  ],
+  "report_path": "cycles/cycle-3/C3-CT-F2/REPORT.md",
+  "limitations": [
+    "The computations cover only m<=69 and do not prove the all-m exact-ratio payment or selected MASS predicate.",
+    "The evidence is exact bounded computation, not a universal proof or a Lean award.",
+    "No broad census extension was performed or needed for this critique."
+  ],
+  "status_authority": "proposed_worker_only"
+}

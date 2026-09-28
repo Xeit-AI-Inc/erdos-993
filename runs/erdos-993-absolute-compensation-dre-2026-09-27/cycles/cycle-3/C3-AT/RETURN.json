@@ -1,0 +1,156 @@
+{
+  "worker_id": "C3-AT",
+  "cycle": 3,
+  "stage": "adjudication",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "C3-CF-T2-NEGATIVE-SLOPE-SELECTED-ROW",
+      "statement": "At profile (a2,a3,a4)=(0,12,10), actual eligible p=39, both represented cofactor slopes are negative although endpoint and all tip tags are strictly selected.",
+      "scope": "Ordinary path-star, m>=1 distinct r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2, C=G product B_(r_i), T_i=G F_(r_i) product_(h!=i)B_(r_h), P=C+z(1+z)^q. x is the least natural strict forward descent of P with integer zero extension including terminal difference. At actual natural p, all x+2<=p, 3p<2alpha+1, 2p<=alpha hold; j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j)>0. Strict current-p flags e0=1[Delta_p(LQ+zL^N)<0], ei=1[Delta_p(GB_(r_i-1)H_i+zL^N)<0]; b=e0+sum_i r_i ei and A=sum_i r_i ei T_i[j]. Original endpoint tag has multiplicity one and branch i has r_i distinct original tip tags; empty selection is included. Specialized to m=22,n=101,N=76,alpha=78,x=37,p=39,j=37; all original tags and exact signed margins are in REPORT.md and C3-AT-selector-audit.json.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AT/REPORT.md",
+        "cycles/cycle-3/C3-AT/C3-AT-selector-audit.json",
+        "cycles/cycle-3/C3-AT/C3-AT-selector-audit.py"
+      ],
+      "reason": "Exact bounded counterexample to the nonnegative-slope shortcut only; independent reconstruction matches the source and both critics. It is no MASS/payment counterexample."
+    },
+    {
+      "claim_id": "C3-CF-T3-M70-119-MASS-PAYMENT",
+      "statement": "At every actual eligible lower-half row with 70<=m<=119, selected MASS A>=b delta D_j and exact-ratio payment hold.",
+      "scope": "Ordinary path-star, m>=1 distinct r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2, C=G product B_(r_i), T_i=G F_(r_i) product_(h!=i)B_(r_h), P=C+z(1+z)^q. x is the least natural strict forward descent of P with integer zero extension including terminal difference. At actual natural p, all x+2<=p, 3p<2alpha+1, 2p<=alpha hold; j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j)>0. Strict current-p flags e0=1[Delta_p(LQ+zL^N)<0], ei=1[Delta_p(GB_(r_i-1)H_i+zL^N)<0]; b=e0+sum_i r_i ei and A=sum_i r_i ei T_i[j]. Original endpoint tag has multiplicity one and branch i has r_i distinct original tip tags; empty selection is included. Restrict 70<=m<=119.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AT/REPORT.md",
+        "cycles/cycle-3/C3-AT/C3-AT-scalar-independent-copy.json",
+        "cycles/cycle-3/C3-AT/C3-AT-scalar-independent-copy.py",
+        "cycles/cycle-3/C3-AT/C3-AT-evidence-audit.json"
+      ],
+      "reason": "Computer-assisted/informal composition: accepted rank lemma, fixed-size occupancy/Jensen, exponent balancing, complete exact relaxed scalar certificate, and accepted full-selection source composition. No aggregate-sign premise or formal award."
+    },
+    {
+      "claim_id": "C3-T1-M120-SELECTED-MASS-CONDITIONAL",
+      "statement": "For m>=120, selected MASS holds at every actual eligible row when at least one branch is selected or no tag is selected; with accepted full selection it holds unconditionally in this range.",
+      "scope": "Ordinary path-star, m>=1 distinct r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2, C=G product B_(r_i), T_i=G F_(r_i) product_(h!=i)B_(r_h), P=C+z(1+z)^q. x is the least natural strict forward descent of P with integer zero extension including terminal difference. At actual natural p, all x+2<=p, 3p<2alpha+1, 2p<=alpha hold; j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j)>0. Strict current-p flags e0=1[Delta_p(LQ+zL^N)<0], ei=1[Delta_p(GB_(r_i-1)H_i+zL^N)<0]; b=e0+sum_i r_i ei and A=sum_i r_i ei T_i[j]. Original endpoint tag has multiplicity one and branch i has r_i distinct original tip tags; empty selection is included. Restrict m>=120; the conditional route excludes endpoint-only selection until the separate accepted selector premise is supplied.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AT/REPORT.md",
+        "cycles/cycle-3/C3-AT/C3-AT-evidence-audit.json"
+      ],
+      "reason": "Informal analytic proof of 2T_i[j]>3delta D_j plus original multiplicity: selected branch weight w>=2 gives (3/2)w>=w+e0; empty selection gives equality. Full selection is a separate nonformal dependency."
+    },
+    {
+      "claim_id": "C3-T2-S1",
+      "statement": "For every represented branch i, A0-Ai=z^3F_(r_i)H_i and Delta_p A0-Delta_p Ai=Delta_(p-3)(F_(r_i)H_i); hence ei=1 iff that cofactor slope exceeds Delta_p A0.",
+      "scope": "For all ordinary arity-2,3,4 profiles and integer ranks p under zero extension; in particular at the actual least-descent eligible rows and exact strict current-p selectors of the contract. Original tags retain their multiplicities in aggregate uses.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AT/REPORT.md",
+        "cycles/cycle-3/C3-AT/C3-AT-selector-audit.json",
+        "cycles/cycle-3/C3-AT/C3-AT-selector-audit.py"
+      ],
+      "reason": "Informal exact polynomial identity; equality at the threshold leaves the strict branch flag off. Independently reconstructed obstruction row confirms the signs."
+    },
+    {
+      "claim_id": "C3-T2-S2",
+      "statement": "Endpoint-only selection at an eligible row is equivalent to Delta_p A0<0 and every represented cofactor slope Delta_(p-3)(F_(r_i)H_i)<=Delta_p A0; a universal strict crossing would exclude it.",
+      "scope": "At actual least strict zero-extended parent descent and all three lower-half guards, using exact current-p strict flags and original tip multiplicities; a conditional reduction, not an independently proved census-free universal crossing theorem.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AT/REPORT.md",
+        "cycles/cycle-3/C3-AT/C3-AT-selector-audit.json"
+      ],
+      "reason": "Exact consequence of C3-T2-S1. The literal endpoint-only predicate is already excluded by separately accepted full selection at nonformal grade; the proposed structural crossing proof remains open."
+    },
+    {
+      "claim_id": "C3-T3-FINITE-BALANCED-SCALAR-REPLAY",
+      "statement": "Every specified relaxed scalar state for 70<=m<=119 passes the strict degree-12 Taylor lower-bound comparison: 799895 states, zero exclusions, all 50 layer minima reproduced.",
+      "scope": "Relaxed exact arithmetic domain: 70<=m<=119, 2m<=N<=4m, r in {2,3,4}, 2(m-1)<=M=N-r<=4(m-1), 5j>2N-1, 2j<=N-2, all GF_r shifts k=j-s with 3k>=M and M>=10. This is not by itself a profile/selector/payment theorem.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AT/REPORT.md",
+        "cycles/cycle-3/C3-AT/C3-AT-scalar-independent-copy.json",
+        "cycles/cycle-3/C3-AT/C3-AT-scalar-independent-copy.py",
+        "cycles/cycle-3/C3-AT/C3-AT-evidence-audit.json"
+      ],
+      "reason": "Exact bounded evidence. Copied producer and separately implemented critic evaluator agree on every state and minimum; code and domain independently inspected."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ALL-M-ACTUAL-ELIGIBLE-BRANCHWISE-THREE-HALVES-MASS",
+      "statement": "For every represented branch i at every actual eligible lower-half row, 2T_i[j]>=3delta D_j; the composed evidence yields strict inequality when such a row exists.",
+      "scope": "Ordinary path-star, m>=1 distinct r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2, C=G product B_(r_i), T_i=G F_(r_i) product_(h!=i)B_(r_h), P=C+z(1+z)^q. x is the least natural strict forward descent of P with integer zero extension including terminal difference. At actual natural p, all x+2<=p, 3p<2alpha+1, 2p<=alpha hold; j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j)>0. No deletion-selector or full-selection premise is used for this branchwise coefficient claim.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AT/REPORT.md",
+        "cycles/cycle-3/C3-AT/C3-AT-independent-prefix.json",
+        "cycles/cycle-3/C3-AT/C3-AT-independent-audit.py",
+        "cycles/cycle-3/C3-AT/C3-AT-scalar-independent-copy.json",
+        "cycles/cycle-3/C3-AT/C3-AT-scalar-independent-copy.py",
+        "cycles/cycle-3/C3-AT/C3-AT-evidence-audit.json"
+      ],
+      "reason": "Proposed source-dependent computer-assisted/informal full-domain proof: complete independently checked prefix m<=69, occupancy/Jensen plus balanced exact scalar band m70..119, and audited analytic tail m>=120. No Lean award."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+      "statement": "(delta*C[j]-(delta-1)*C[j+1])*A >= b*delta*D_j*C[j] at every actual eligible lower-half row.",
+      "scope": "Ordinary path-star, m>=1 distinct r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2, C=G product B_(r_i), T_i=G F_(r_i) product_(h!=i)B_(r_h), P=C+z(1+z)^q. x is the least natural strict forward descent of P with integer zero extension including terminal difference. At actual natural p, all x+2<=p, 3p<2alpha+1, 2p<=alpha hold; j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j)>0. Strict current-p flags e0=1[Delta_p(LQ+zL^N)<0], ei=1[Delta_p(GB_(r_i-1)H_i+zL^N)<0]; b=e0+sum_i r_i ei and A=sum_i r_i ei T_i[j]. Original endpoint tag has multiplicity one and branch i has r_i distinct original tip tags; empty selection is included. C[j]>0, 0<C[j+1]/C[j]<1, delta>0.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AT/REPORT.md",
+        "cycles/cycle-3/C3-AT/C3-AT-independent-prefix.json",
+        "cycles/cycle-3/C3-AT/C3-AT-independent-audit.py",
+        "cycles/cycle-3/C3-AT/C3-AT-scalar-independent-copy.json",
+        "cycles/cycle-3/C3-AT/C3-AT-scalar-independent-copy.py",
+        "cycles/cycle-3/C3-AT/C3-AT-evidence-audit.json"
+      ],
+      "reason": "Proposed source-dependent computer-assisted/informal verification by all-m branchwise bound, independently accepted full-selection composition, selected MASS, and exact factor delta-(delta-1)t>=1. No aggregate-sign premise; no governed formal award or decisive stop."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION",
+      "statement": "A>=b*delta*D_j at every actual eligible lower-half row.",
+      "scope": "Ordinary path-star, m>=1 distinct r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2, C=G product B_(r_i), T_i=G F_(r_i) product_(h!=i)B_(r_h), P=C+z(1+z)^q. x is the least natural strict forward descent of P with integer zero extension including terminal difference. At actual natural p, all x+2<=p, 3p<2alpha+1, 2p<=alpha hold; j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j)>0. Strict current-p flags e0=1[Delta_p(LQ+zL^N)<0], ei=1[Delta_p(GB_(r_i-1)H_i+zL^N)<0]; b=e0+sum_i r_i ei and A=sum_i r_i ei T_i[j]. Original endpoint tag has multiplicity one and branch i has r_i distinct original tip tags; empty selection is included.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AT/REPORT.md",
+        "cycles/cycle-3/C3-AT/C3-AT-independent-prefix.json",
+        "cycles/cycle-3/C3-AT/C3-AT-independent-audit.py",
+        "cycles/cycle-3/C3-AT/C3-AT-scalar-independent-copy.json",
+        "cycles/cycle-3/C3-AT/C3-AT-scalar-independent-copy.py",
+        "cycles/cycle-3/C3-AT/C3-AT-evidence-audit.json"
+      ],
+      "reason": "Proposed source-dependent computer-assisted/informal verification: full selection gives b=N+1 and local 2T_i[j]>3delta D_j gives A>(3/2)Ndelta D_j>=bdelta D_j. Distinct stronger predicate than exact-ratio payment; no Lean award."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-COFACTOR-JENSEN-EXPONENT-ADJACENT-ARITY-BALANCING",
+      "statement": "For M>=10, 0<=k<=M and 3k>=M, g2-2g3+g4>=0; at fixed feasible block count m_prime and total M, the adjacent-arity endpoint count profile minimizes E=sum_r a_r g_r.",
+      "scope": "Abstract cofactor exponent only: nonnegative integer a2,a3,a4 with m_prime=sum a_r>=1 and M=sum r*a_r>=10, g_r=(2r/(2r+1))*binom(M-r,k-1)/binom(M,k), zero binomials out of range. It does not order true coefficients, parent first descents, current-p strict selectors, selected MASS, or payment.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-AT/REPORT.md",
+        "cycles/cycle-3/C3-AT/C3-AT-scalar-independent-copy.json",
+        "cycles/cycle-3/C3-AT/C3-AT-evidence-audit.json"
+      ],
+      "reason": "Informal exact algebraic proof using the positive polynomial identity for g2-2g3+g4 and repeated (2,4)->(3,3) exchange; endpoint k=M is equality."
+    }
+  ],
+  "covered_claim_ids": [
+    "C3-CF-T2-NEGATIVE-SLOPE-SELECTED-ROW",
+    "C3-CF-T3-M70-119-MASS-PAYMENT",
+    "C3-T1-M120-SELECTED-MASS-CONDITIONAL",
+    "C3-T2-S1",
+    "C3-T2-S2",
+    "C3-T3-FINITE-BALANCED-SCALAR-REPLAY",
+    "E993-PATH-STAR-ARITY-2-4-ALL-M-ACTUAL-ELIGIBLE-BRANCHWISE-THREE-HALVES-MASS",
+    "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+    "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION",
+    "E993-PATH-STAR-COFACTOR-JENSEN-EXPONENT-ADJACENT-ARITY-BALANCING"
+  ],
+  "report_path": "cycles/cycle-3/C3-AT/REPORT.md",
+  "limitations": [
+    "All-m branchwise, selected MASS, and primary payment are proposed at source-dependent computer-assisted/informal grade; none has a governed Lean award or is an authoritative registry verdict.",
+    "The m<=69 proof component is complete exact finite computation, and the 70..119 scalar component is complete exact relaxed-domain computation; these are not standalone universal proofs.",
+    "The all-m selected composition depends on the already accepted source-dependent full-selection theorem; no independent census-free selector proof was produced."
+  ],
+  "status_authority": "proposed_worker_only"
+}

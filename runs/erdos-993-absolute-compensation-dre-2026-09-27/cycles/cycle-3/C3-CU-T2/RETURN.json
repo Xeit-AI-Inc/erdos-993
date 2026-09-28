@@ -1,0 +1,43 @@
+{
+  "worker_id": "C3-CU-T2",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C3-T2-S1",
+      "statement": "For every ordinary arity-2,3,4 path-star profile and represented branch i, A0-Ai=z^3 F_(r_i) H_i, so Delta_p A0-Delta_p Ai=Delta_(p-3)(F_(r_i)H_i). Therefore branch i is strictly selected exactly when this cofactor difference exceeds Delta_p A0.",
+      "scope": "All m>=1 ordinary path-stars with distinct branches of arity in {2,3,4}, integer zero-extended coefficients, and every natural current rank p; original branch multiplicities do not affect the branchwise polynomial identity. This is a selector identity only, not a universal selection or payment theorem.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CU-T2/REPORT.md",
+        "cycles/cycle-3/C3-CU-T2/independent_selector_check.py",
+        "cycles/cycle-3/C3-CU-T2/independent_selector_evidence.json"
+      ],
+      "reason": "Direct expansion proves LB_r-GB_(r-1)=z^3F_r; multiplying by H_i and applying the forward-difference shift gives the stated identity at every zero-extended rank. Strictness is preserved: equality with Delta_p A0 does not select the branch. An independent exact coefficient check verifies r=2,3,4."
+    },
+    {
+      "claim_id": "C3-T2-S2",
+      "statement": "A census-free proof that an endpoint-selected eligible row always has at least one represented branch i with Delta_(p-3)(F_(r_i)H_i)>Delta_p A0 would exclude endpoint-only selection on this family.",
+      "scope": "Actual eligible lower-half ranks only: x is the least natural k with Delta_k P<0 under integer zero extension including the terminal difference; x+2<=p, 3p<2alpha+1, 2p<=alpha; j=p-2; current-p strict selectors and original tip multiplicities are retained. No proof of the stated universal crossing was obtained.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CU-T2/REPORT.md",
+        "cycles/cycle-3/C3-CU-T2/independent_selector_check.py",
+        "cycles/cycle-3/C3-CU-T2/independent_selector_evidence.json"
+      ],
+      "reason": "The conditional implication is exact by the strict selector identity: failure of every crossing is precisely endpoint-only selection when the endpoint is selected. The universal crossing is unproved. Literal endpoint-only exclusion is already available from the accepted computer-assisted aggregate; this remains a census-free proof-method obligation, not new evidence for payment."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CU-T2/REPORT.md",
+  "limitations": [
+    "No census-free universal threshold-crossing proof was established.",
+    "The exact row is bounded evidence against the stronger nonnegative-cofactor-slope shortcut only; it is not a primary counterexample.",
+    "No broad census expansion, Lean build, or source edit was performed."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C3-T2-S1",
+    "C3-T2-S2"
+  ]
+}

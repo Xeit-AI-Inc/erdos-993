@@ -1,0 +1,81 @@
+{
+  "worker_id": "C3-CF-T3",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C3-T3-FINITE-BALANCED-SCALAR-REPLAY",
+      "statement": "Every specified relaxed scalar state for m=70..119 passes the exact degree-12 Taylor lower-bound inequality; an independent evaluator matches the copied producer evaluator and shared certificate on all 50 per-m rows, totaling 799895 tested states with zero exclusions.",
+      "scope": "Bounded relaxed scalar domain from C3-balanced-finite-protocol.md: every feasible m,N,r,j state satisfying 5j>2N-1 and 2j<=N-2, with all GF_r shifts satisfying M>=10 and 3(j-s)>=M. This is not a tree/profile census or universal payment theorem.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-T3/REPORT.md",
+        "cycles/cycle-3/C3-CF-T3/independent_audit.py",
+        "cycles/cycle-3/C3-CF-T3/independent_audit.json",
+        "cycles/cycle-3/C3-CF-T3/producer_copy.py",
+        "cycles/cycle-3/C3-CF-T3/producer_copy.json",
+        "cycles/cycle-3/C3-CF-T3/producer_replay.log",
+        "cycles/cycle-3/C3-CF-T3/comparison_audit.json"
+      ],
+      "reason": "Exact Fraction/binomial reimplementation checks every intended state and strict target; all state counts, minimum ratios, and minimizers match both comparison sources rowwise."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-COFACTOR-JENSEN-EXPONENT-ADJACENT-ARITY-BALANCING",
+      "statement": "For M>=10 and M/3<=k<=M, the exact rational g2-2g3+g4 inequality holds and the adjacent-arity endpoint count profile minimizes the Jensen exponent at fixed block count and tip total.",
+      "scope": "Only the rational exponent for feasible abstract cofactor block counts at an in-range shift. No conclusion about true coefficients, actual descents, selectors, MASS, payment, or spread quotients.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-T3/REPORT.md"
+      ],
+      "reason": "The exact positive second-difference factorization and integer block-replacement argument prove the registered exponent-only claim, at informal proof grade."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION",
+      "statement": "The selected lower-half MASS predicate remains unresolved at its registered all-m scope in this review.",
+      "scope": "Actual ordinary path-star family, actual first strict zero-extended descent, all three eligible-rank guards, strict current-p selectors, and original endpoint/tip multiplicities. The scalar replay applies only to a relaxed m=70..119 coefficient domain; the m=1..69 and m>=120 neighboring candidate arguments remain unverified here.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-T3/REPORT.md"
+      ],
+      "reason": "This audit establishes no full-MASS theorem or counterexample; the finite scalar band does not certify either adjoining interval or its composition."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+      "statement": "The exact-ratio selected lower-half payment predicate remains unresolved at its registered all-m scope in this review.",
+      "scope": "Actual ordinary path-star family, actual first strict zero-extended descent, all three eligible-rank guards, strict current-p selectors, and original endpoint/tip multiplicities, with the exact-ratio predicate from SOLUTION-CONTRACT.md. The separate m>=238 result is only a restricted tail.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-T3/REPORT.md"
+      ],
+      "reason": "A bounded relaxed coefficient certificate is not an all-m selected-MASS proof or payment proof. All-MASS would imply payment through the positive exact-ratio factor, but the required all-m MASS composition remains unestablished here."
+    },
+    {
+      "claim_id": "C3-CF-T3-M70-119-MASS-PAYMENT",
+      "statement": "For every actual eligible lower-half row with 70<=m<=119, the exact-ratio selected payment and selected MASS hold, conditional on the independently reviewed occupancy/Jensen coefficient bridge and accepted all-m lower-half full-selection composition.",
+      "scope": "Ordinary arity-2,3,4 path-stars with the actual least strict zero-extended first descent, all three rank guards, strict current-p selectors, and original endpoint/tip multiplicities. Source-dependent computer-assisted/informal composition on m=70..119 only; no Lean award.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-T3/REPORT.md",
+        "cycles/cycle-3/C3-CF-T3/independent_audit.py",
+        "cycles/cycle-3/C3-CF-T3/independent_audit.json",
+        "cycles/cycle-3/C3-CF-T3/comparison_audit.json"
+      ],
+      "reason": "The exact scalar scan gives every branch T_i[j]>(3/2)delta D_j after occupancy/Jensen. Full selection gives b=N+1 and A>(3/2)N delta D_j>=b delta D_j; the exact-ratio factor is at least 1/delta."
+    }
+  ],
+  "covered_claim_ids": [
+    "C3-T3-FINITE-BALANCED-SCALAR-REPLAY",
+    "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+    "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION",
+    "E993-PATH-STAR-COFACTOR-JENSEN-EXPONENT-ADJACENT-ARITY-BALANCING"
+  ],
+  "report_path": "cycles/cycle-3/C3-CF-T3/REPORT.md",
+  "limitations": [
+    "No Lean build or formal verification was performed.",
+    "The finite scalar replay is exact but bounded to the relaxed m=70..119 domain and is not a profile census.",
+    "The independent m=1..69 MASS/payment profile instrument and m>=120 local-MASS candidate were not independently certified in this case; no all-m composition follows.",
+    "No counterexample to the required primary or MASS predicates was found or claimed."
+  ],
+  "status_authority": "proposed_worker_only"
+}

@@ -1,0 +1,47 @@
+{
+  "worker_id": "C3-T3",
+  "cycle": 3,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-COFACTOR-JENSEN-EXPONENT-ADJACENT-ARITY-BALANCING",
+      "statement": "For M>=10 and M/3<=k<=M, the registered g2-2g3+g4 inequality holds, so at fixed block count and total tip count the sum of these Jensen exponents is minimized by an adjacent-arity endpoint count profile.",
+      "scope": "Exact rational exponent only, for arities 2,3,4 and in-range coefficient shifts. Does not order true cofactor coefficients, actual descents or selectors, MASS, payment, or spread quotients.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": ["cycles/cycle-3/C3-T3/REPORT.md"],
+      "reason": "Factorial cancellation yields the positive second-difference formula and endpoint balancing proof stated in REPORT.md."
+    },
+    {
+      "claim_id": "C3-T3-FINITE-BALANCED-SCALAR-REPLAY",
+      "statement": "Every specified relaxed scalar state for m=70..119 passes the exact degree-12 Taylor lower-bound inequality; the independent evaluator matches all 50 source rows, totaling 799895 states with zero exclusions.",
+      "scope": "Bounded relaxed scalar domain from C3-balanced-finite-protocol.md, using exact rank/shift guards and the balanced Jensen exponent. Not a profile census or a universal payment theorem.",
+      "status": "proposed_bounded_evidence",
+      "evidence_paths": ["cycles/cycle-3/C3-T3/independent_balanced_check.py", "cycles/cycle-3/C3-T3/independent_balanced_check.json", "cycles/cycle-3/C3-T3/producer_balanced_finite_check_copy.py", "cycles/cycle-3/C3-T3/producer_balanced_finite_check_copy.json", "cycles/cycle-3/C3-T3/producer_replay.log"],
+      "reason": "Independent exact Fraction/binomial implementation and copied-producer replay agree rowwise on counts, exact ratios, and minimizers."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+      "statement": "The exact-ratio selected lower-half payment predicate remains unresolved at its registered all-m scope.",
+      "scope": "Actual ordinary path-star family; actual least strict descent, all three rank guards, strict current-p deletion selectors, original endpoint/tip tag multiplicities, and exact-ratio predicate as in the solution contract.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-3/C3-T3/REPORT.md"],
+      "reason": "This work verifies only an exponent-balancing lemma and a bounded scalar certificate, with no universal selector or selected-payment proof."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION",
+      "statement": "The selected MASS predicate remains unresolved at its registered all-m scope.",
+      "scope": "Actual ordinary path-star family with actual first strict descent, all rank guards, current-p strict deletion selectors, and original tip multiplicities.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-3/C3-T3/REPORT.md"],
+      "reason": "A coefficient lower-bound route is not a selector/payment proof; no all-m MASS argument or counterexample was produced."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-T3/REPORT.md",
+  "limitations": [
+    "The finite scalar replay is bounded evidence on 799895 relaxed states and does not establish the occupancy-to-actual-coefficient composition universally.",
+    "No analytic argument eliminating the m=70..119 scalar check was found.",
+    "No selector theorem, universal selected MASS/payment proof, counterexample, or Lean verification is supplied."
+  ],
+  "status_authority": "proposed_worker_only"
+}

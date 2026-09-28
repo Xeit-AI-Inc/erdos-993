@@ -1,0 +1,40 @@
+{
+  "worker_id": "C3-T2",
+  "cycle": 3,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C3-T2-S1",
+      "statement": "For every ordinary arity-2,3,4 path-star profile and represented branch i, A0-Ai=z^3 F_(r_i) H_i, so Delta_p A0-Delta_p Ai=Delta_(p-3)(F_(r_i)H_i). Therefore branch i is strictly selected exactly when this cofactor difference exceeds Delta_p A0.",
+      "scope": "All m>=1 ordinary path-stars with distinct branches of arity in {2,3,4}, integer zero-extended coefficients, and every natural current rank p; original branch multiplicities do not affect the branchwise polynomial identity. This is a selector identity only, not a universal selection or payment theorem.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-T2/REPORT.md",
+        "cycles/cycle-3/C3-T2/selector_row.py",
+        "cycles/cycle-3/C3-T2/selector_row.json"
+      ],
+      "reason": "Direct polynomial expansion proves the identity; the report derives the strict threshold and records its exact selector interpretation."
+    },
+    {
+      "claim_id": "C3-T2-S2",
+      "statement": "A census-free proof that an endpoint-selected eligible row always has at least one represented branch i with Delta_(p-3)(F_(r_i)H_i)>Delta_p A0 would exclude endpoint-only selection on this family.",
+      "scope": "Actual eligible lower-half ranks only: x is the least natural k with Delta_k P<0 under integer zero extension including the terminal difference; x+2<=p, 3p<2alpha+1, 2p<=alpha; j=p-2; current-p strict selectors and original tip multiplicities are retained. No proof of the stated universal crossing was obtained.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-T2/REPORT.md",
+        "cycles/cycle-3/C3-T2/selector_row.py",
+        "cycles/cycle-3/C3-T2/selector_row.json"
+      ],
+      "reason": "The exact reduction is valid, but the fresh eligible check only defeats the stronger shortcut d_i>=0; it does not prove the required threshold crossing in every profile."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-T2/REPORT.md",
+  "limitations": [
+    "No census-free endpoint-only exclusion proof was established.",
+    "No independent rerun of the complete finite prefix or broader profile census was attempted; no such expansion was needed for this criticism.",
+    "The exact eligible profile is bounded evidence against a slope-sign shortcut only, not a counterexample to the primary predicate.",
+    "No Lean build, source edit, or controller action was performed."
+  ],
+  "status_authority": "proposed_worker_only"
+}

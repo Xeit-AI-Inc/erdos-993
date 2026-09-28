@@ -1,0 +1,52 @@
+{
+  "worker_id": "C3-CT-U1",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "T",
+  "covered_claim_ids": [
+    "C3-U1-BOUNDED-RANK-SCAN",
+    "C3-U1-DIFFERENTIAL-IDENTITY",
+    "E993-PATH-STAR-ARITY-2-4-PROFILE-SENSITIVE-STRICT-DESCENT-RANK"
+  ],
+  "claims": [
+    {
+      "claim_id": "C3-U1-BOUNDED-RANK-SCAN",
+      "statement": "The registered profile-sensitive rank inequality holds at every strict descent for all profiles with 1<=m<=45.",
+      "scope": "Finite exact computation over all 17,295 count triples with 1<=m<=45, scanning all strict forward differences of the actual parent with integer zero extension, including the terminal descent.",
+      "status": "proposed_bounded_evidence",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CT-U1/independent_review.py",
+        "cycles/cycle-3/C3-CT-U1/REPORT.md"
+      ],
+      "reason": "An independently written exact convolution scan reproduced 938,431 strict-descent rows and minimum slack 44; finite scope only."
+    },
+    {
+      "claim_id": "C3-U1-DIFFERENTIAL-IDENTITY",
+      "statement": "For C=GQ, P=C+zL^(N+1), and E=(1+z)P'-(N+2)P, E=L^(N+1)-2zQ+G*sum_i(1-(r_i-1)z)H_i and [z^k]E=(k+1)P[k+1]-(N+2-k)P[k].",
+      "scope": "All finite ordinary profiles with r_i in {2,3,4}; polynomial identity over integers with zero-extended coefficients. The claim is only the identity; coefficientwise nonnegativity of E at forbidden ranks is false.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CT-U1/REPORT.md",
+        "cycles/cycle-3/C3-CT-U1/independent_review.py"
+      ],
+      "reason": "Product differentiation and coefficient extraction establish the identity. At two arity-4 branches and k=3, Delta_3 P=120 while [z^3]E=-54, refuting the stronger sign-cone test only."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-PROFILE-SENSITIVE-STRICT-DESCENT-RANK",
+      "statement": "For every ordinary path-star with counts a2,a3,a4 of arity-2,3,4 branches, m=a2+a3+a4>=1, N=2a2+3a3+4a4, q=N+1, P=G product_r B_r^(a_r)+z(1+z)^q, and integer-zero-extended forward differences, every natural strict descent k with Delta_k P<0 satisfies 54k>=24N-4a2-3a3-5. Equivalently, with h=(2/3)a2+(1/2)a3, it satisfies 9k+1-4N+h>0. As a count-relaxed corollary, 9k+1-4N+hmax(m,N)>0 where hmax=2m-N/2 for N>=3m and hmax=m-N/6 for N<=3m.",
+      "scope": "All m>=1 and all counts a2,a3,a4; every strict descent, including the terminal zero-extended descent and in particular the actual least strict descent x. Parent-rank restriction only; no selector, MASS, or payment conclusion.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CT-U1/REPORT.md"
+      ],
+      "reason": "The coefficientwise D_q^(4)(P)+hP>=0 argument in the shared profile-sensitive candidate proves the exact universal inequality and its hmax corollary informally. It is not Lean-verified."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CT-U1/REPORT.md",
+  "limitations": [
+    "The all-profile rank proof is informal and has no Lean award.",
+    "The weaker E=(1+z)P'-(N+2)P coefficient-cone route is invalid; its failure is not a counterexample to the rank theorem.",
+    "No deletion-selection, selected-mass, payment, or primary-claim conclusion follows from this review."
+  ],
+  "status_authority": "proposed_worker_only"
+}

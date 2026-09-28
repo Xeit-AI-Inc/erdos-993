@@ -1,0 +1,47 @@
+{
+  "worker_id": "C3-U1",
+  "cycle": 3,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-PROFILE-SENSITIVE-STRICT-DESCENT-RANK",
+      "statement": "For every ordinary arity-2/3/4 path-star profile, every strict descent k of the actual zero-extended parent polynomial satisfies 54k >= 24N - 4a2 - 3a3 - 5.",
+      "scope": "All m>=1 and all count profiles; every strict descent including terminal zero extension, in particular the actual least strict descent x. This is a parent rank restriction only; it asserts no deletion selector, payment, or mass bound.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-U1/REPORT.md",
+        "cycles/cycle-3/C3-U1/profile_rank_audit.py"
+      ],
+      "reason": "Independent exact convolution scan supports the claim through 45 branches, but no all-parameter proof or counterexample was found."
+    },
+    {
+      "claim_id": "C3-U1-DIFFERENTIAL-IDENTITY",
+      "statement": "For C=GQ, P=C+zL^(N+1), and E=(1+z)P'-(N+2)P, E=L^(N+1)-2zQ+G*sum_i(1-(r_i-1)z)H_i and [z^k]E=(k+1)P[k+1]-(N+2-k)P[k].",
+      "scope": "All finite ordinary profiles with r_i in {2,3,4}; polynomial identity over integers with zero-extended coefficients.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-U1/REPORT.md"
+      ],
+      "reason": "Follows by product differentiation and coefficient extraction; the stronger demand that these coefficients be nonnegative at every rank forbidden by the candidate fails at two arity-4 branches and rank 3."
+    },
+    {
+      "claim_id": "C3-U1-BOUNDED-RANK-SCAN",
+      "statement": "The registered profile-sensitive rank inequality holds at every strict descent for all profiles with 1<=m<=45.",
+      "scope": "Finite exact computation over all 17,295 count triples with 1<=m<=45, scanning all zero-extended forward differences of the actual parent polynomial.",
+      "status": "proposed_bounded_evidence",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-U1/profile_rank_audit.py",
+        "cycles/cycle-3/C3-U1/REPORT.md"
+      ],
+      "reason": "Integer-convolution replay found 938,431 strict-descent rows and minimum target slack 44; the horizon is finite and proves no universal claim."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-U1/REPORT.md",
+  "limitations": [
+    "No universal proof or realizable counterexample for the registered rank candidate was obtained.",
+    "The packet allowed no source files and required no covered claim IDs; only shared neutral sources and the targeted registered identity were used.",
+    "The bounded computation does not certify profiles with more than 45 branches."
+  ],
+  "status_authority": "proposed_worker_only"
+}

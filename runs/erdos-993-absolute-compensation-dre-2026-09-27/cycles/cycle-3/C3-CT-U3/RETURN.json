@@ -1,0 +1,42 @@
+{
+  "worker_id": "C3-CT-U3",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "T",
+  "covered_claim_ids": [
+    "C3-U3-CENTER-LAYER-EXPANSION",
+    "C3-U3-HOMOGENEOUS-LAYER-BOUND-EVIDENCE"
+  ],
+  "claims": [
+    {
+      "claim_id": "C3-U3-CENTER-LAYER-EXPANSION",
+      "statement": "For each fixed path-star profile, branch i, and coefficient j, expanding B_(r_h)=L^r_h+z in H_i yields the reported subset/epsilon/s binomial identity for T_i[j]. Retaining subsets of size at most d gives U_i^(d)[j]<=T_i[j] because all omitted coefficient terms are nonnegative.",
+      "scope": "Exact algebraic identity and coefficient lower bound for fixed ordinary path-star profiles with original branch arities and multiplicities. No uniform local three-halves bound, selector theorem, selected MASS, or exact-ratio payment is implied.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CT-U3/REPORT.md",
+        "cycles/cycle-3/C3-CT-U3/independent_layer_check.py"
+      ],
+      "reason": "Direct expansion of each B factor proves the identity; coefficient nonnegativity proves the truncation inequality."
+    },
+    {
+      "claim_id": "C3-U3-HOMOGENEOUS-LAYER-BOUND-EVIDENCE",
+      "statement": "Corrected exact integer evaluation with F4=1+L+L^2=(3,3,1) verifies the actual least strict descents and all eligible rows for homogeneous arity-4 m=40 and m=150. At m=40 depth 2 passes both rows (depth 1 fails at p=80 only), correcting the producer's depth-2-failure claim. At m=150 depth 1 fails at p=294 and depth 2 passes all eight eligible rows. Both selectors are strict on every listed row, and full T_i passes the tested rows.",
+      "scope": "Bounded exact evidence for only the two stated profiles and their actual eligible ranks. Not a universal local coefficient theorem, full local-mass counterexample, selected MASS result, or payment result. Original private-tip multiplicities remain four per branch.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CT-U3/REPORT.md",
+        "cycles/cycle-3/C3-CT-U3/independent_layer_check.py",
+        "cycles/cycle-3/C3-CT-U3/independent_layer_check.json"
+      ],
+      "reason": "The producer implementation sets F=[1,1,1] at r=4, whereas the contract gives F4=(3,3,1). Independent exact convolution corrects the m=40 layer margins; the stated m=150 truncation outcomes remain valid."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CT-U3/REPORT.md",
+  "limitations": [
+    "The producer's homogeneous arity-4 numerical evidence contains an F4 coefficient implementation error; corrected bounded replay narrows that claim.",
+    "No proof of a uniform all-m branchwise local three-halves inequality, selected MASS, exact-ratio payment, or census-free selector theorem.",
+    "No Lean build or formal verification; no authoritative status change."
+  ],
+  "status_authority": "proposed_worker_only"
+}

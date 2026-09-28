@@ -1,0 +1,52 @@
+{
+  "worker_id": "C3-CT-F3",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C3-F3-COMPOSITION",
+      "statement": "Conditional composition: direct selected MASS/payment for m<=69, the branchwise bound 2T_i[j]>=3 delta D_j for m>=70, and the independently established all-m strict-selector clauses imply all-m selected MASS; MASS then implies exact-ratio payment.",
+      "scope": "Ordinary path-star with path 0-1-2; m>=1 distinct branches r_i in {2,3,4}; N=sum_i r_i, q=N+1, alpha=N+2, C=GQ, T_i=GF_(r_i)H_i, P=C+zL^q. x is the least strict forward descent with integer zero extension including terminal difference. For every natural p with x+2<=p, 3p<2alpha+1, and 2p<=alpha: j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j); e0,ei are strict current-p selectors; b=e0+sum_i r_i ei and A=sum_i r_i ei T_i[j]. The endpoint has multiplicity one and each original branch tip retains multiplicity r_i. Conditional dependencies remain the direct prefix evidence, branchwise coefficient bounds, and accepted full-selection source composition; no aggregate-sign premise is used.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CT-F3/REPORT.md",
+        "cycles/cycle-3/C3-CT-F3/source_composition_check.py"
+      ],
+      "reason": "The exact implication is valid with the stated guards, first-descent ratio fact, strict selectors and original multiplicities. This critique narrows the result to a conditional composition because the prefix, scalar certificate and local coefficient components were not independently validated here."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION",
+      "statement": "For every m>=1 ordinary arity-2,3,4 path-star and every actual eligible lower-half rank, the strict-selected original-tip mass satisfies A>=b delta D_j.",
+      "scope": "Exact registered all-m selected MASS scope with actual least strict parent descent including terminal zero-extended difference, all three eligibility guards, strict current-p selectors, endpoint multiplicity one, and original tip multiplicities r_i.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CT-F3/REPORT.md"
+      ],
+      "reason": "The conditional route is plausible and has no identified interval or circularity defect, but its m<=69 prefix, m=70..119 scalar certificate, and m>=120 local coefficient inputs were not independently validated by this review. The registered m>=238 result does not settle all m."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+      "statement": "For every m>=1 ordinary arity-2,3,4 path-star and every actual eligible lower-half rank, (delta C[j]-(delta-1)C[j+1])A>=b delta D_j C[j].",
+      "scope": "Exact registered all-m lower-half payment scope with actual least strict parent descent including terminal zero-extended difference, all three eligibility guards, strict current-p selectors, endpoint multiplicity one, and original tip multiplicities r_i.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CT-F3/REPORT.md",
+        "cycles/cycle-3/C3-CT-F3/source_composition_check.py"
+      ],
+      "reason": "The exact algebra showing MASS implies payment is valid, using C[j]>0, delta>1 and 0<t=C[j+1]/C[j]<1. The all-m MASS premise is not established by this review, and no exact payment counterexample or universal payment proof is claimed."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-CT-F3/REPORT.md",
+  "limitations": [
+    "Did not independently replay the m<=69 prefix scan, the m=70..119 scalar certificate, or the m>=120 analytic local coefficient proof.",
+    "Relied on the registered nonformal source status for the all-m lower-half full-selection clause; no census-free selector proof or Lean build was performed.",
+    "The copied composition script checks finite sample identities and boundary algebra; those computations are not universal evidence."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C3-F3-COMPOSITION",
+    "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+    "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION"
+  ]
+}

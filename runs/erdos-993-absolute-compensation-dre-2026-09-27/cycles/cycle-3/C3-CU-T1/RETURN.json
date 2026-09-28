@@ -1,0 +1,56 @@
+{
+  "worker_id": "C3-CU-T1",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C3-T1-M120-SELECTED-MASS-CONDITIONAL",
+      "statement": "For every ordinary path-star with m>=120 and every actual eligible lower-half p, using the exact current-p strict selectors e0=1[Delta_p A0<0] and ei=1[Delta_p Ai<0], original endpoint multiplicity one and branch-tip multiplicity r_i, selected MASS A>=b*delta*D_j holds whenever at least one branch is selected or no tag is selected.",
+      "scope": "Actual least strict zero-extended parent descent including terminal difference; all three rank guards; j=p-2; current-p strict flags; b=e0+sum_i r_i ei and A=sum_i r_i ei T_i[j]. Endpoint-only selection is excluded, and there is no claim for m<120.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CU-T1/REPORT.md",
+        "cycles/cycle-3/C3-CU-T1/independent_m120_checks.py",
+        "cycles/cycle-3/C3-CU-T1/independent_m120_checks.json"
+      ],
+      "reason": "The audited universal m>=120 local bound gives A>(3/2)w*delta*D_j for selected tip weight w>=2, which pays (w+e0)*delta*D_j for e0 in {0,1}; empty selection is trivial."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ALL-M-ACTUAL-ELIGIBLE-BRANCHWISE-THREE-HALVES-MASS",
+      "statement": "For every ordinary path-star in SOLUTION-CONTRACT.md with m>=1 distinct branches of arities r_i in {2,3,4}, let N=sum_i r_i, q=N+1, alpha=N+2, C=G product_i B_(r_i), T_i=G F_(r_i) product_(h!=i) B_(r_h), P=C+z(1+z)^q, and x the least natural strict forward descent of P using integer zero extension, including its terminal difference. For every natural p with x+2<=p, 3p<2alpha+1, and 2p<=alpha, put j=p-2, delta=q-j, and D_j=binom(N,j+1)-binom(N,j). For every represented branch i, 2 T_i[j]>=3 delta D_j.",
+      "scope": "Proved here only for m>=120, with the stronger strict inequality 2*T_i[j]>3*delta*D_j for every represented branch and every actual eligible p. The original all-m claim has no selector premise; m<120 remains unreviewed by this proof. Actual least strict descent, terminal zero extension, all three rank guards, and original profile multiplicities are preserved.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CU-T1/REPORT.md",
+        "cycles/cycle-3/C3-CU-T1/independent_m120_checks.py",
+        "cycles/cycle-3/C3-CU-T1/independent_m120_checks.json"
+      ],
+      "reason": "The Jensen occupancy lower bound, exact arity-specific singleton bounds, coefficient comparison and finite Taylor continuation prove the m>=120 restriction; no conclusion is reached for m<120."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+      "statement": "For every ordinary path-star in the contract, at every actual eligible lower-half p, the exact selected ratio inequality (delta*C[j]-(delta-1)*C[j+1])*A >= b*delta*D_j*C[j] holds.",
+      "scope": "All m>=1, actual least strict zero-extended first descent including terminal difference, all three rank guards, current-p strict selectors, endpoint multiplicity one and branch-tip multiplicities r_i. Review establishes payment only for m>=120 when a branch is selected or no tag is selected. It does not resolve endpoint-only selection or m<120.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CU-T1/REPORT.md"
+      ],
+      "reason": "The conditional m>=120 MASS consequence implies payment because the contract's divided coefficient delta-(delta-1)*C[j+1]/C[j] is at least one. Endpoint-only selection has A=0,b=1 and requires a separate exclusion; no all-m proof or realizable counterexample is supplied."
+    }
+  ],
+  "covered_claim_ids": [
+    "C3-T1-M120-SELECTED-MASS-CONDITIONAL",
+    "E993-PATH-STAR-ARITY-2-4-ALL-M-ACTUAL-ELIGIBLE-BRANCHWISE-THREE-HALVES-MASS",
+    "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT"
+  ],
+  "report_path": "cycles/cycle-3/C3-CU-T1/REPORT.md",
+  "limitations": [
+    "The proof depends on the accepted coefficient-only rank theorem 2N<=5k at any strict descent; it supplies neither a graph-to-polynomial formal bridge nor a new Lean result.",
+    "The m<120 branchwise range is not established here.",
+    "Endpoint-only strict selection is not excluded; in that case the branch-tip sum is zero while the endpoint contributes one to b.",
+    "Finite exact checks are bounded evidence and do not replace the universal inequalities in the report.",
+    "No primary counterexample is supplied; the universal exact-ratio payment remains unresolved by this critique."
+  ],
+  "status_authority": "proposed_worker_only"
+}

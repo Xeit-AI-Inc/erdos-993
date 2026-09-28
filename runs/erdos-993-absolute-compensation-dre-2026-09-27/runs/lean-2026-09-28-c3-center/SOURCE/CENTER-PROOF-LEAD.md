@@ -1,0 +1,7 @@
+# Exact center-subset coefficient identity
+
+Use natural coefficients. Write L=1+X. Expand the finite product by choosing X on a subset t and L^(r(i)) on its complement s minus t. The term for t equals X^(card t) L^(sum_(i in s minus t) r(i)). Coefficient extraction commutes with the finite sum. If card t>k, this term contributes zero. Otherwise it contributes choose(sum_(i in s minus t) r(i), k-card t). This proves the exact intended statement for all natural exponents, including zero, and the empty set.
+
+The guard must be explicit before using natural subtraction. Above the binomial's upper support Nat.choose is already zero. No degree=sum(r) assumption is valid when zero exponents occur: r=(0,0) gives H=(1+X)^2 and coefficient at k=2 equal to one despite sum(r)=0. The separate positive-block occupancy model cannot be extended to size-zero blocks merely from this identity. This theorem is only a polynomial coefficient expansion, not an expectation identity, Jensen inequality, graph interpretation, selector or payment theorem.
+
+Pinned API leads verified by source inspection: Finset.prod_add in Algebra/BigOperators/Ring/Finset.lean; Finset.prod_const and Finset.prod_pow_eq_pow_sum in Algebra/BigOperators/Group/Finset/Basic.lean; Polynomial.coeff_X_pow_mul' and Polynomial.coeff_one_add_X_pow in Algebra/Polynomial/Coeff.lean. Check actual signatures before use. No Lean proof is asserted by these references.

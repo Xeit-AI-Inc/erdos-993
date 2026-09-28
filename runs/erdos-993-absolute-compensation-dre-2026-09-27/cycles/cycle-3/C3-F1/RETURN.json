@@ -1,0 +1,23 @@
+{
+  "worker_id": "C3-F1",
+  "cycle": 3,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-COFACTOR-JENSEN-EXPONENT-ADJACENT-ARITY-BALANCING",
+      "statement": "For M>=10, 0<=k<=M and 3k>=M, the rational weights g_r=(2r/(2r+1))*binom(M-r,k-1)/binom(M,k), r=2,3,4 (zero-extended), satisfy g2-2g3+g4>=0. Hence at fixed branch count m' and total arity M the adjacent-arity mixture bracketing M/m' minimizes sum_r a_r g_r. This controls only the Jensen exponent.",
+      "scope": "Proved for the rational exponent at each stated (M,k); no implication to actual cofactor coefficients, actual first descent, any eligible rank, selectors, MASS, or payment. The assigned finite m=70..119 scalar certificate and its 799895-state coverage were not audited because the sealed packet allows no source files.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": ["cycles/cycle-3/C3-F1/REPORT.md"],
+      "reason": "A direct rational proof establishes the registered adjacent-arity convexity lemma. Manifest integrity was checked, but the packet's empty allowed_source_files conflicts with the scalar-certificate audit assignment, so no finite-certificate conclusion is proposed."
+    }
+  ],
+  "report_path": "cycles/cycle-3/C3-F1/REPORT.md",
+  "limitations": [
+    "C3-F1 packet has allowed_source_files=[]; the allocated scalar certificate inputs and producer script were not read or executed.",
+    "The 799895-state finite certificate and its domain coverage remain independently unaudited by this seat.",
+    "No Lean build or formal award; the proof is informal algebraic reasoning."
+  ],
+  "status_authority": "proposed_worker_only"
+}

@@ -1,0 +1,55 @@
+{
+  "worker_id": "C3-CF-T2",
+  "cycle": 3,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C3-T2-S1",
+      "statement": "For every ordinary arity-2,3,4 path-star profile and represented branch i, A0-Ai=z^3 F_(r_i) H_i, so Delta_p A0-Delta_p Ai=Delta_(p-3)(F_(r_i)H_i). Therefore branch i is strictly selected exactly when this cofactor difference exceeds Delta_p A0.",
+      "scope": "All m>=1 ordinary path-stars with distinct branches of arity in {2,3,4}, integer zero-extended coefficients, and every natural current rank p. The identity is branchwise and does not erase original tip-tag multiplicities in any aggregate.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-T2/REPORT.md",
+        "cycles/cycle-3/C3-CF-T2/selector_row_replay/independent_selector_check.py",
+        "cycles/cycle-3/C3-CF-T2/selector_row_replay/independent_evidence.json"
+      ],
+      "reason": "Direct expansion proves the polynomial identity; zero-extended coefficient shifting gives the stated difference identity and strict selector equivalence."
+    },
+    {
+      "claim_id": "C3-T2-S2",
+      "statement": "A census-free proof that an endpoint-selected eligible row always has at least one represented branch i with Delta_(p-3)(F_(r_i)H_i)>Delta_p A0 would exclude endpoint-only selection on this family.",
+      "scope": "Reduction at actual eligible lower-half ranks only, retaining x as the least strict zero-extended parent descent including the terminal difference, x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, current-p strict flags, and original private-tip multiplicities. No universal crossing assertion is proved here.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-T2/REPORT.md",
+        "cycles/cycle-3/C3-CF-T2/selector_row_replay/independent_selector_check.py",
+        "cycles/cycle-3/C3-CF-T2/selector_row_replay/independent_evidence.json"
+      ],
+      "reason": "The conditional implication follows exactly from the strict threshold identity. The existence of a crossing in every eligible endpoint-selected row remains unproved; the bounded row only refutes a nonnegative-slope shortcut."
+    },
+    {
+      "claim_id": "C3-CF-T2-NEGATIVE-SLOPE-SELECTED-ROW",
+      "statement": "For profile (a2,a3,a4)=(0,12,10) at the actual eligible row p=39, every tip is selected although each represented arity cofactor slope Delta_(p-3)(F_r H_i) is negative.",
+      "scope": "Exact bounded evidence: m=22, N=76, q=77, alpha=78, first strict zero-extended descent x=37, j=37, with all three eligible-rank guards satisfied; endpoint and all 76 distinct original tip tags are strictly selected. The exact coefficients and slopes are in the report and replay output. This refutes only the shortcut requiring a nonnegative slope.",
+      "status": "proposed_bounded_evidence",
+      "evidence_paths": [
+        "cycles/cycle-3/C3-CF-T2/REPORT.md",
+        "cycles/cycle-3/C3-CF-T2/selector_row_replay/independent_selector_check.py",
+        "cycles/cycle-3/C3-CF-T2/selector_row_replay/independent_evidence.json"
+      ],
+      "reason": "An independent exact-integer polynomial evaluator reproduces the profile, first descent, guards, strict selectors, multiplicities, and both negative cofactor slopes."
+    }
+  ],
+  "covered_claim_ids": [
+    "C3-T2-S1",
+    "C3-T2-S2"
+  ],
+  "report_path": "cycles/cycle-3/C3-CF-T2/REPORT.md",
+  "limitations": [
+    "No census-free universal endpoint-only exclusion proof was established.",
+    "The exact row is bounded evidence against the nonnegative-slope shortcut only, not an endpoint-only witness or primary payment counterexample.",
+    "No Lean build or formal award was attempted."
+  ],
+  "status_authority": "proposed_worker_only"
+}

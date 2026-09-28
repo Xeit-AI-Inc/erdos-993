@@ -1,0 +1,113 @@
+{
+  "entries": [
+    {
+      "index": 1,
+      "kind": "definition",
+      "name": "e993CenterProduct",
+      "path": "LeanProject/LeanProof/Snippets/0001-definition-e993CenterProduct.lean.fragment",
+      "source_bytes": 182,
+      "source_sha256": "9ab62b58e6ca970dcec0ea606eb29a41f898d64f00adf133909123aa696c8385"
+    },
+    {
+      "index": 2,
+      "kind": "lemma",
+      "name": "e993_center_product_expansion",
+      "path": "LeanProject/LeanProof/Snippets/0002-lemma-e993_center_product_expansion.lean.fragment",
+      "source_bytes": 730,
+      "source_sha256": "1a8c59a4a505f32948ebcbf27f9e76d92a03b70a83ba5180d9c127229b5a5787"
+    },
+    {
+      "index": 3,
+      "kind": "theorem",
+      "name": "e993_center_subset_coeff",
+      "path": "LeanProject/LeanProof/Snippets/0003-theorem-e993_center_subset_coeff.lean.fragment",
+      "source_bytes": 419,
+      "source_sha256": "b2b6d822e06cede1a69ab54fd73571546f1f1be2dbf0cdd3b8440a1ba9e1d452"
+    }
+  ],
+  "files": [
+    {
+      "bytes": 749,
+      "path": "DEPENDENCIES.yaml",
+      "sha256": "f2d29a42fe90c3a2507f3036ce6bb2e6cdf88f979f4c3d6c0becadc179944f32"
+    },
+    {
+      "bytes": 2206,
+      "path": "FORMALIZATION-STATE.json",
+      "sha256": "0fa335cef48fb644f680f58347855f5c1eabc958e7a3ddc0452dfd1a27310d09"
+    },
+    {
+      "bytes": 22,
+      "path": "LeanProject/LeanProof.lean",
+      "sha256": "f4dfdef8320a735eab53d24f4b47d3b60bcb474ffd2c84c77f24ae2fc75fcf31"
+    },
+    {
+      "bytes": 1943,
+      "path": "LeanProject/LeanProof/Main.lean",
+      "sha256": "87eb9956b3385b9d26d66c25b9a2707de43d1d789e04eeb0beb9102717825dcb"
+    },
+    {
+      "bytes": 182,
+      "path": "LeanProject/LeanProof/Snippets/0001-definition-e993CenterProduct.lean.fragment",
+      "sha256": "9ab62b58e6ca970dcec0ea606eb29a41f898d64f00adf133909123aa696c8385"
+    },
+    {
+      "bytes": 730,
+      "path": "LeanProject/LeanProof/Snippets/0002-lemma-e993_center_product_expansion.lean.fragment",
+      "sha256": "1a8c59a4a505f32948ebcbf27f9e76d92a03b70a83ba5180d9c127229b5a5787"
+    },
+    {
+      "bytes": 419,
+      "path": "LeanProject/LeanProof/Snippets/0003-theorem-e993_center_subset_coeff.lean.fragment",
+      "sha256": "b2b6d822e06cede1a69ab54fd73571546f1f1be2dbf0cdd3b8440a1ba9e1d452"
+    },
+    {
+      "bytes": 237,
+      "path": "LeanProject/lakefile.toml",
+      "sha256": "45d0ca58145784d5f29322ff21a1335e350c38e72afe8d5396d9c9910b94ff49"
+    },
+    {
+      "bytes": 25,
+      "path": "LeanProject/lean-toolchain",
+      "sha256": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273"
+    }
+  ],
+  "limitations": [
+    "This receipt records prepared source and pins, not Lean kernel verification.",
+    "The formalization may be false, incomplete, or fail to compile until independently verified.",
+    "A git_manifest_only Mathlib dependency is pinned but is not fetched by this skill."
+  ],
+  "mathlib": {
+    "identity_sha256": "74b8cf1d7d3bc21648cd94e0fbf596420d3efcd43131a21378beacbdeb7078e3",
+    "mode": "git_manifest_only",
+    "revision": "905b95818eb32af7874a58b427f50c1711a5e96c",
+    "source": null,
+    "url": "https://github.com/leanprover-community/mathlib4"
+  },
+  "network": {
+    "allowed": false,
+    "used": false
+  },
+  "operation": "entry_registered",
+  "project_root": "/Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c3-center/LeanProject",
+  "project_sha256": "e6db1efa8cd0d93edc656bd869585f29f65f970057f823391f38b6e67c469633",
+  "receipt_id": "lean-formalization:e6db1efa8cd0d93edc656bd869585f29f65f970057f823391f38b6e67c469633",
+  "receipt_sha256": "a6a5b61e44e75a92259c2b23ddff5b686b48391f16ecd3d3d15d8eed6693218c",
+  "run_id": "e993-c3-center-expansion",
+  "run_root": "/Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c3-center",
+  "schema_version": "verityos.lean-formalization-receipt.v1",
+  "state_revision": 3,
+  "state_sha256": "0fa335cef48fb644f680f58347855f5c1eabc958e7a3ddc0452dfd1a27310d09",
+  "status": "prepared_not_verified",
+  "toolchain": {
+    "bin_dir": "/Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin",
+    "lake_path": "/Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lake",
+    "lake_sha256": "58261a1a2fa1a362376c71e02ca854a093e71cc5e6ea64b287a931cb2565273d",
+    "lake_version": "Lake version 5.0.0-src+f3b06c7 (Lean version 4.32.2)",
+    "lean_path": "/Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "lean_sha256": "1b370cfcbf44e80d1b004ab1b1ab9a4c73951f9f7c242140bcff9bc577576554",
+    "lean_version": "Lean (version 4.32.2, arm64-apple-darwin24.6.0, commit f3b06c705e6c85f5314019d5d3baab0fec5b580c, Release)",
+    "pin": "leanprover/lean4:v4.32.2"
+  },
+  "verdict": "FORMALIZATION_PREPARED_NOT_KERNEL_VERIFIED"
+}

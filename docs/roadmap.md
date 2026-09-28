@@ -1,5 +1,9 @@
 # Open research roadmap
 
+## Current priorities after Cycle3
+
+All-m MASS and payment are established at a computer-assisted/nonformal grade in the restricted family. Cycles4–6 now target structural lower-half shifted deletion or weighted-tip-deck comparisons, a reusable finite coefficient-counting bridge, and actual-descent/conditional-occupancy coupling. The guarded comparisons are OPEN; their unguarded version is REFUTED at a retained order122 witness outside the lower-half band. One selected branch suffices with local compensation. General coefficient domination does not transfer rank, deletion or selector structure to arbitrary trees.
+
 Current Cycle2 checkpoint: full lower-half selection is already established at a computer-assisted/informal grade; pursue a census-free proof as a method obligation, not an OPEN literal predicate. MASS is established from238. Cycle3 will audit a proposed m<=69 direct prefix, m70..119 balanced scalar certificate, and m>=120 local analytic bound. These remain unaccepted candidates. The exact all-m MASS and payment targets remain OPEN.
 
 Current 28 September 2026: absolute compensation is active, with Cycle 1 closed and Cycle 2 under review. The m>=266 MASS restriction is now informally established. Focus on a uniform coefficient bound, independent selector geometry, and the remaining finite-prefix payment if necessary. The occupancy/Jensen and lower-cutoff proposals are unaccepted candidates. Code's separate CB switch target remains as specified below.

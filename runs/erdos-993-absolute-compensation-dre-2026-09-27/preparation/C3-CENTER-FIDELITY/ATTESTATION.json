@@ -1,0 +1,46 @@
+{
+  "reviewer_id": "C3-CENTER-FIDELITY",
+  "reviewer_kind": "independent-mathematical-formalization-fidelity-reviewer",
+  "attestation_id": "c3-center-fidelity-42229d10-3855-4092-b67c-90ba0b4c0fc0",
+  "completed_at": "2026-09-28T08:59:15Z",
+  "contract_projection_sha256": "343ce2634e6f424027a5d7d6dac86ae08ddfc3fb2ed95edf0bcc4e61751c4bd3",
+  "binding_projection_sha256": "8dcbd57b3ba0d64bf1bab2df6b6705c52a52d6ef7233124b744fa92d60a4008d",
+  "verdict": "match",
+  "findings": [
+    {
+      "category": "sealed_inputs",
+      "severity": "note",
+      "message": "All 25 input-manifest members and both dispatch-manifest members match their sealed SHA-256 hashes."
+    },
+    {
+      "category": "mathematical_statement",
+      "severity": "note",
+      "message": "The actual product definition and terminal theorem match the contract and registered finite center-subset coefficient identity, with no narrowing or hidden hypothesis."
+    },
+    {
+      "category": "proof_text",
+      "severity": "note",
+      "message": "All proof text was inspected; the finite product expansion and coefficient extraction preserve the explicit cardinality guard, and all three proposals match the registered declarations byte for byte."
+    },
+    {
+      "category": "kernel_and_dependencies",
+      "severity": "note",
+      "message": "The sealed source, verification receipt, build and axiom logs, toolchain pin, and nine dependency revisions are consistent; the recorded axioms are exactly the three permitted axioms."
+    },
+    {
+      "category": "projection_fingerprints",
+      "severity": "note",
+      "message": "Both independently recomputed canonical projection SHA-256 values equal the immutable before-review fingerprints."
+    },
+    {
+      "category": "scope",
+      "severity": "note",
+      "message": "This theorem certifies only the finite polynomial coefficient identity; it does not establish occupancy/Jensen, graph bridges, rank, selectors, MASS, payment, or global Erdős 993."
+    },
+    {
+      "category": "review_limit",
+      "severity": "note",
+      "message": "No new Lean build was run; kernel status is assessed from the sealed verification evidence. No authoritative award or registry change is made."
+    }
+  ]
+}

@@ -39822,26 +39822,55 @@
       "alias_patterns": [],
       "aliases": [],
       "certificate": {
-        "candidate_definition": "experiments/erdos-993-heterogeneous-closure-dre-2026-09-26/preparation/C4-C5-PREP-SUCCESSOR-IDENTITY/CANDIDATES.json",
-        "controller_decision": "experiments/erdos-993-heterogeneous-closure-dre-2026-09-26/control/C4-CONTROLLER-CLOSE.md",
-        "identity_review": "experiments/erdos-993-heterogeneous-closure-dre-2026-09-26/preparation/C4-C5-PREP-SUCCESSOR-IDENTITY/REPORT.md",
-        "independent_controls": "experiments/erdos-993-heterogeneous-closure-dre-2026-09-26/preparation/C4-C5-PREP-SUCCESSOR-IDENTITY/evidence.json"
+        "review": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C3-MIDPOINT-IDENTITY/REPORT.md",
+        "scopes": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C3-MIDPOINT-IDENTITY/CANDIDATES.json",
+        "controller_analysis": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/control/C3-ASTRA-MIDPOINT-ANALYSIS.md",
+        "sources": [
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-3/C3-AF/REPORT.md",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-3/C3-AT/REPORT.md",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-3/C3-SYNTHESIS/REPORT.md",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/control/C3-REGISTERED-CLAIM-IDENTITY.json",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-2/C2-SYNTHESIS/REPORT.md"
+        ],
+        "formal_award": false
       },
       "claim_key": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION",
-      "evidence_grade": "registered_exploratory_successor_bounded_support_only",
+      "evidence_grade": "source_dependent_computer_assisted_plus_informal_universal_composition_nonformal",
       "formal_award": false,
       "novelty_claimed": false,
       "registration_reason": "Independent semantic review against455 canonical identities and98 refutations; new exact successor for C5 before dispatch.",
       "scope": "T is the ordinary tree with path 0-1-2 and m distinct private-star centers joined to 0, center i with r_i distinct private tips. L=1+z, G=1+2z, B_r=L^r+z, F_r=sum_{h=0}^{r-2} L^h, Q=prod_i B_{r_i}, H_i=prod_{h!=i} B_{r_h}. For a polynomial a, Delta_j a=a[j+1]-a[j] with integer zero extension, including terminal difference. Original leaves comprise endpoint 2 and every private tip, each with its original support. new stronger sufficient coefficient-mass scope, distinct from selected aggregate and adjacent-difference claims. With the exact registered relative-binomial margin and C ordinary log-concavity, MASS implies selected S<=0 at the stated lower-half ranks; the already verified pointwise half-alpha result covers 2p>alpha. No all-selection premise.",
       "statement": "For every m>=1 and ordinary path-star profile r_i in {2,3,4}, let N=sum_i r_i, alpha=N+2, q=N+1, P=GQ+z(1+z)^q, C=GQ, T_i=GF_{r_i}H_i, and x be the first strict integer-zero-extended forward descent of P. At every natural p with x+2<=p, 3p<2alpha+1, and 2p<=alpha, put j=p-2, e0=1{Delta_p A0<0}, ei=1{Delta_p Ai<0}, A0=(1+z)Q+z(1+z)^N, Ai=G B_{r_i-1}H_i+z(1+z)^N. Then sum_i r_i ei T_i[j] >= (e0+sum_i r_i ei)(q-j)(binom(N,j+1)-binom(N,j)). Every original tip retains its individual tag; flags are evaluated on the actual parent profile at current p.",
-      "status": "OPEN",
+      "status": "VERIFIED",
       "terminal_history": [
         {
           "cycle": 4,
           "date": "2026-09-27",
           "event": "Registered OPEN at exact stronger coefficient-mass or fixed-profile-spread descent scope; no truth or formal award.",
           "run": "erdos-993-heterogeneous-closure-dre-2026-09-26"
+        },
+        {
+          "cycle": 3,
+          "date": "2026-09-28",
+          "run": "erdos-993-absolute-compensation-dre-2026-09-27",
+          "event": "Independent C3 synthesis, Astra midpoint and fresh identity/proof review; exact statement and scope preserved.",
+          "previous_evidence": {
+            "status": "OPEN",
+            "evidence_grade": "registered_exploratory_successor_bounded_support_only",
+            "certificate": {
+              "candidate_definition": "experiments/erdos-993-heterogeneous-closure-dre-2026-09-26/preparation/C4-C5-PREP-SUCCESSOR-IDENTITY/CANDIDATES.json",
+              "controller_decision": "experiments/erdos-993-heterogeneous-closure-dre-2026-09-26/control/C4-CONTROLLER-CLOSE.md",
+              "identity_review": "experiments/erdos-993-heterogeneous-closure-dre-2026-09-26/preparation/C4-C5-PREP-SUCCESSOR-IDENTITY/REPORT.md",
+              "independent_controls": "experiments/erdos-993-heterogeneous-closure-dre-2026-09-26/preparation/C4-C5-PREP-SUCCESSOR-IDENTITY/evidence.json"
+            }
+          }
         }
+      ],
+      "dependencies": [
+        "E993-PATH-STAR-ARITY-2-4-ALL-M-ACTUAL-ELIGIBLE-BRANCHWISE-THREE-HALVES-MASS",
+        "E993-PATH-STAR-ARITY-2-4-ALL-M-LOWER-HALF-FULL-SELECTION",
+        "original-tip multiplicities r_i and endpoint multiplicity one",
+        "N>=2"
       ]
     },
     {
@@ -41337,18 +41366,52 @@
       ],
       "alias_patterns": [],
       "claim_key": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
-      "status": "OPEN",
-      "certificate": "New exact sufficient predicate registered before dispatch. No proof or counterexample yet. Controller identity review and Sol preparation distinguish it from the stronger MASS and the weaker accepted aggregate.",
-      "evidence_grade": "unproved",
+      "status": "VERIFIED",
+      "certificate": {
+        "review": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C3-MIDPOINT-IDENTITY/REPORT.md",
+        "scopes": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C3-MIDPOINT-IDENTITY/CANDIDATES.json",
+        "controller_analysis": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/control/C3-ASTRA-MIDPOINT-ANALYSIS.md",
+        "sources": [
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/SOLUTION-CONTRACT.md",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-3/C3-AF/REPORT.md",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-3/C3-AT/REPORT.md",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-3/C3-SYNTHESIS/REPORT.md",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/control/STATUS-GRADE-CLARIFICATION.md"
+        ],
+        "formal_award": false
+      },
+      "evidence_grade": "source_dependent_computer_assisted_plus_informal_universal_composition_nonformal_not_Lean",
       "origin_run": "erdos-993-absolute-compensation-dre-2026-09-27",
       "relation_to_existing": {
-        "stronger_open_mass": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION",
         "verified_formal_margin": "E993-PATH-STAR-ARITY-2-4-MAIN-MARK-RELATIVE-BINOMIAL-MARGIN-QNPLUS1",
         "verified_exact_sum_identity": "E993-PATH-STAR-SELECTED-BRACKET-IDENTITY",
         "verified_nonformal_aggregate": "E993-ORDINARY-PATH-STAR-ARITY-2-4-ALL-M-LOWER-REGION-AGGREGATE",
-        "logic": "MASS implies this predicate; this predicate plus the formal main-mark margin implies selected S<=0. The accepted S<=0 does not imply this sufficient predicate. The predecessor occupation payment (1-t)A>=bD_j also implies it."
+        "logic": "MASS implies this predicate; this predicate plus the formal main-mark margin implies selected S<=0. The accepted S<=0 does not imply this sufficient predicate. The predecessor occupation payment (1-t)A>=bD_j also implies it.",
+        "stronger_mass": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION"
       },
-      "novelty_claimed": false
+      "novelty_claimed": false,
+      "terminal_history": [
+        {
+          "cycle": 3,
+          "date": "2026-09-28",
+          "run": "erdos-993-absolute-compensation-dre-2026-09-27",
+          "event": "Independent C3 synthesis, Astra midpoint and fresh identity/proof review; exact statement and scope preserved.",
+          "previous_evidence": {
+            "status": "OPEN",
+            "evidence_grade": "unproved",
+            "certificate": "New exact sufficient predicate registered before dispatch. No proof or counterexample yet. Controller identity review and Sol preparation distinguish it from the stronger MASS and the weaker accepted aggregate."
+          }
+        }
+      ],
+      "dependencies": [
+        "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION",
+        "E993-PATH-STAR-ARITY-2-4-FIRST-DESCENT-RATIO-BAND",
+        "C[j]>0",
+        "0<C[j+1]/C[j]<1",
+        "delta>1",
+        "exact kappa=1-t+t/delta"
+      ],
+      "formal_award": false
     },
     {
       "claim_key": "E993-PATH-STAR-ARITY-2-4-M266-SELECTED-LOWER-MASS",
@@ -41421,18 +41484,42 @@
         "fixed-size occupancy Jensen cofactor bound"
       ],
       "alias_patterns": [],
-      "certificate": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C2-C3-IDENTITY/REPORT.md; exact proposed statement and source links in CANDIDATES.json; independently sealed C2 synthesis and scoped predecessor clauses. Controller accepts at the displayed evidence grade, not as a Lean award.",
-      "evidence_grade": "universal_informal_proof_nonformal",
+      "certificate": {
+        "review": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C3-MIDPOINT-IDENTITY/REPORT.md",
+        "scopes": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C3-MIDPOINT-IDENTITY/CANDIDATES.json",
+        "controller_analysis": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/control/C3-ASTRA-MIDPOINT-ANALYSIS.md",
+        "sources": [
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-3/C3-U2/REPORT.md",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-3/C3-CF-U2/REPORT.md",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-3/C3-AU/REPORT.md",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/sources/cycle2/occupancy_identity_check.py"
+        ],
+        "formal_award": false
+      },
+      "evidence_grade": "universal_informal_subset_counting_and_jensen_nonformal",
       "origin_run": "erdos-993-absolute-compensation-dre-2026-09-27",
       "dependencies": [
-        "fixed-size joint subset counting",
-        "finite Jensen",
+        "joint singleton-event counting",
+        "finite AM-GM/Jensen",
         "log(1+1/s)>=2/(2s+1)",
-        "exp(y)>=E_d(y) for y>=0",
-        "nonnegative GF_r convolution"
+        "nonnegative Taylor and GF_r convolution"
       ],
       "novelty_claimed": false,
-      "formal_award": false
+      "formal_award": false,
+      "terminal_history": [
+        {
+          "cycle": 3,
+          "date": "2026-09-28",
+          "run": "erdos-993-absolute-compensation-dre-2026-09-27",
+          "event": "Independent C3 synthesis, Astra midpoint and fresh identity/proof review; exact statement and scope preserved.",
+          "previous_evidence": {
+            "status": "VERIFIED",
+            "evidence_grade": "universal_informal_proof_nonformal",
+            "certificate": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C2-C3-IDENTITY/REPORT.md; exact proposed statement and source links in CANDIDATES.json; independently sealed C2 synthesis and scoped predecessor clauses. Controller accepts at the displayed evidence grade, not as a Lean award."
+          }
+        }
+      ],
+      "boundary_clarification": "Positive blocks include size one; singleton probabilities at k=M vanish only for sizes >=2. At k=0 use integer binomial zero extension. Empty family remains included. U2 boundary sentence is rejected; original theorem is unchanged."
     },
     {
       "claim_key": "E993-PATH-STAR-ARITY-2-4-FIRST-DESCENT-RATIO-BAND",
@@ -41609,7 +41696,7 @@
     },
     {
       "claim_key": "E993-PATH-STAR-ARITY-2-4-ALL-M-ACTUAL-ELIGIBLE-BRANCHWISE-THREE-HALVES-MASS",
-      "status": "OPEN",
+      "status": "VERIFIED",
       "statement": "For every ordinary path-star in SOLUTION-CONTRACT.md with m>=1 distinct branches of arities r_i in {2,3,4}, let N=sum_i r_i, q=N+1, alpha=N+2, C=G product_i B_(r_i), T_i=G F_(r_i) product_(h!=i) B_(r_h), P=C+z(1+z)^q, and x the least natural strict forward descent of P using integer zero extension, including its terminal difference. For every natural p with x+2<=p, 3p<2alpha+1, and 2p<=alpha, put j=p-2, delta=q-j, and D_j=binom(N,j+1)-binom(N,j). For every represented branch i, 2 T_i[j]>=3 delta D_j.",
       "scope": "All actual eligible lower-half ranks and all represented branches, with no deletion-selector or all-selection premise. A branch-local coefficient inequality; neither selected MASS nor exact-ratio payment follows when the endpoint is the sole selected tag. The m>=120 analytic candidate, m=70..119 scalar check, and m<=69 direct-factor local check are proposed subcases or instruments, not separate universal keys. Definitions and actual-family domain where applicable: Ordinary tree with path 0-1-2, m>=1 distinct centers adjacent to 0, center i having r_i in {2,3,4} distinct private tips. N=sum_i r_i, q=N+1, alpha=N+2, L=1+z, G=1+2z, B_r=L^r+z, F_r=sum_{h=0}^{r-2}L^h, Q=product_i B_{r_i}, H_i=product_{h!=i}B_{r_h}, C=GQ, T_i=GF_{r_i}H_i, P=C+zL^q. Coefficients and Delta_k f=f[k+1]-f[k] are integer zero-extended. x=min{k natural: Delta_k P<0}, including terminal difference. An actual eligible lower-half p is natural with x+2<=p, 3p<2alpha+1, 2p<=alpha; j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j)>0. A0=LQ+zL^N, Ai=G B_{r_i-1}H_i+zL^N, e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], b=e0+sum_i r_i ei, A=sum_i r_i ei T_i[j]. Original endpoint and every private tip retain their separate original tags; empty selection is included.",
       "aliases": [
@@ -41617,8 +41704,23 @@
         "path-star branch-local three-halves bound at every eligible rank"
       ],
       "alias_patterns": [],
-      "certificate": "Registered OPEN before Cycle3 search following experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C3-PREPARATION/REPORT.md; private controller candidates and finite instruments are not yet accepted proof.",
-      "evidence_grade": "unproved_candidate",
+      "certificate": {
+        "review": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C3-MIDPOINT-IDENTITY/REPORT.md",
+        "scopes": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C3-MIDPOINT-IDENTITY/CANDIDATES.json",
+        "controller_analysis": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/control/C3-ASTRA-MIDPOINT-ANALYSIS.md",
+        "sources": [
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-3/C3-AT/C3-AT-independent-audit.py",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-3/C3-AT/C3-AT-independent-prefix.json",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-3/C3-AF/AF_prefix_local.py",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-3/C3-AF/AF_prefix_local_evidence.json",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-3/C3-CF-T3/independent_audit.py",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-3/C3-CF-T3/independent_audit.json",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-3/C3-T1/REPORT.md",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-3/C3-SYNTHESIS/REPORT.md"
+        ],
+        "formal_award": false
+      },
+      "evidence_grade": "complete_exact_prefix_and_scalar_certificates_plus_universal_informal_tail_nonformal",
       "origin_run": "erdos-993-absolute-compensation-dre-2026-09-27",
       "distinguish_from": [
         "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION",
@@ -41626,11 +41728,32 @@
         "E993-PATH-STAR-ARITY-2-4-M266-SELECTED-LOWER-MASS"
       ],
       "novelty_claimed": false,
-      "formal_award": false
+      "formal_award": false,
+      "terminal_history": [
+        {
+          "cycle": 3,
+          "date": "2026-09-28",
+          "run": "erdos-993-absolute-compensation-dre-2026-09-27",
+          "event": "Independent C3 synthesis, Astra midpoint and fresh identity/proof review; exact statement and scope preserved.",
+          "previous_evidence": {
+            "status": "OPEN",
+            "evidence_grade": "unproved_candidate",
+            "certificate": "Registered OPEN before Cycle3 search following experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C3-PREPARATION/REPORT.md; private controller candidates and finite instruments are not yet accepted proof."
+          }
+        }
+      ],
+      "dependencies": [
+        "actual rank bridge from governed 2N<=5x theorem",
+        "complete 1..69 profile/local computation",
+        "occupancy/Jensen coefficient bridge",
+        "repaired exponent balancing",
+        "complete 70..119 relaxed scalar table",
+        "analytic 120+ probability, convolution, Taylor and debt bounds"
+      ]
     },
     {
       "claim_key": "E993-PATH-STAR-COFACTOR-JENSEN-EXPONENT-ADJACENT-ARITY-BALANCING",
-      "status": "OPEN",
+      "status": "VERIFIED",
       "statement": "Let a2,a3,a4 be nonnegative integers, m'=a2+a3+a4>=1, M=2a2+3a3+4a4>=10, and k an integer with 0<=k<=M and 3k>=M. Define g_r(M,k)=[2r/(2r+1)] binom(M-r,k-1)/binom(M,k) for r=2,3,4, with out-of-range binomial coefficients zero, and E=sum_r a_r g_r(M,k). Then g_2-2g_3+g_4>=0. Consequently E>=(3m'-M)g_2+(M-2m')g_3 if 2m'<=M<=3m', and E>=(4m'-M)g_3+(M-3m')g_4 if 3m'<=M<=4m'.",
       "scope": "Only the rational Jensen exponent for an abstract cofactor block profile at a fixed in-range coefficient. The formulas give a minimum over arity counts at fixed (m',M,k); they do not order true cofactor coefficients, actual parent descents, strict selectors, MASS, payment, or the REFUTED spread quotient. For k=M the g_r vanish and equality is allowed. Out-of-band shifts and M<10 require separate treatment. Definitions and actual-family domain where applicable: Ordinary tree with path 0-1-2, m>=1 distinct centers adjacent to 0, center i having r_i in {2,3,4} distinct private tips. N=sum_i r_i, q=N+1, alpha=N+2, L=1+z, G=1+2z, B_r=L^r+z, F_r=sum_{h=0}^{r-2}L^h, Q=product_i B_{r_i}, H_i=product_{h!=i}B_{r_h}, C=GQ, T_i=GF_{r_i}H_i, P=C+zL^q. Coefficients and Delta_k f=f[k+1]-f[k] are integer zero-extended. x=min{k natural: Delta_k P<0}, including terminal difference. An actual eligible lower-half p is natural with x+2<=p, 3p<2alpha+1, 2p<=alpha; j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j)>0. A0=LQ+zL^N, Ai=G B_{r_i-1}H_i+zL^N, e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], b=e0+sum_i r_i ei, A=sum_i r_i ei T_i[j]. Original endpoint and every private tip retain their separate original tags; empty selection is included.",
       "aliases": [
@@ -41638,19 +41761,49 @@
         "adjacent-arity Jensen exponent minimum"
       ],
       "alias_patterns": [],
-      "certificate": "Registered OPEN before Cycle3 search following experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C3-PREPARATION/REPORT.md; private controller candidates and finite instruments are not yet accepted proof.",
-      "evidence_grade": "unproved_candidate",
+      "certificate": {
+        "review": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C3-MIDPOINT-IDENTITY/REPORT.md",
+        "scopes": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C3-MIDPOINT-IDENTITY/CANDIDATES.json",
+        "controller_analysis": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/control/C3-ASTRA-MIDPOINT-ANALYSIS.md",
+        "sources": [
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-3/C3-T3/REPORT.md",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-3/C3-AF/REPORT.md",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-3/C3-AF/AF_exponent_evidence.json",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/sources/cycle3/C3-jensen-exponent-balancing-candidate.md"
+        ],
+        "formal_award": false
+      },
+      "evidence_grade": "universal_informal_exact_algebra_repaired_nonformal",
       "origin_run": "erdos-993-absolute-compensation-dre-2026-09-27",
       "distinguish_from": [
         "E993-PATH-STAR-ARITY-2-4-SPREAD-NORMALIZED-EXACT-RATIO-NONDECREASING",
         "E993-PATH-STAR-ARITY-2-4-SPREAD-SHARED-RANK-S-MONOTONE"
       ],
       "novelty_claimed": false,
-      "formal_award": false
+      "formal_award": false,
+      "terminal_history": [
+        {
+          "cycle": 3,
+          "date": "2026-09-28",
+          "run": "erdos-993-absolute-compensation-dre-2026-09-27",
+          "event": "Independent C3 synthesis, Astra midpoint and fresh identity/proof review; exact statement and scope preserved.",
+          "previous_evidence": {
+            "status": "OPEN",
+            "evidence_grade": "unproved_candidate",
+            "certificate": "Registered OPEN before Cycle3 search following experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C3-PREPARATION/REPORT.md; private controller candidates and finite instruments are not yet accepted proof."
+          }
+        }
+      ],
+      "dependencies": [
+        "direct factorial cancellation",
+        "positivity of the displayed polynomial for M>=10 and 3k>=M",
+        "finite adjacent-pair replacement"
+      ],
+      "source_error_and_repair": "C3-F1, C3-CT-F1 and C3-CU-F1 reversed a positive-term inequality. Their displayed proofs remain invalid; C3-AF/T3 supply an independent repair."
     },
     {
       "claim_key": "E993-PATH-STAR-ARITY-2-4-PROFILE-SENSITIVE-STRICT-DESCENT-RANK",
-      "status": "OPEN",
+      "status": "VERIFIED",
       "statement": "For every ordinary path-star with counts a2,a3,a4 of arity-2,3,4 branches, m=a2+a3+a4>=1, N=2a2+3a3+4a4, q=N+1, P=G product_r B_r^(a_r)+z(1+z)^q, and integer-zero-extended forward differences, every natural strict descent k with Delta_k P<0 satisfies 54k>=24N-4a2-3a3-5. Equivalently, with h=(2/3)a2+(1/2)a3, it satisfies 9k+1-4N+h>0. As a count-relaxed corollary, 9k+1-4N+hmax(m,N)>0 where hmax=2m-N/2 for N>=3m and hmax=m-N/6 for N<=3m.",
       "scope": "Every strict descent of the actual parent polynomial, including the terminal zero-extended descent; in particular its first strict descent x. This is a profile-sensitive rank restriction only. It neither proves deletion selection nor supplies a coefficient or payment bound. The coefficientwise differential-operator inequality is the proposed proof route, not a separate key. Definitions and actual-family domain where applicable: Ordinary tree with path 0-1-2, m>=1 distinct centers adjacent to 0, center i having r_i in {2,3,4} distinct private tips. N=sum_i r_i, q=N+1, alpha=N+2, L=1+z, G=1+2z, B_r=L^r+z, F_r=sum_{h=0}^{r-2}L^h, Q=product_i B_{r_i}, H_i=product_{h!=i}B_{r_h}, C=GQ, T_i=GF_{r_i}H_i, P=C+zL^q. Coefficients and Delta_k f=f[k+1]-f[k] are integer zero-extended. x=min{k natural: Delta_k P<0}, including terminal difference. An actual eligible lower-half p is natural with x+2<=p, 3p<2alpha+1, 2p<=alpha; j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j)>0. A0=LQ+zL^N, Ai=G B_{r_i-1}H_i+zL^N, e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], b=e0+sum_i r_i ei, A=sum_i r_i ei T_i[j]. Original endpoint and every private tip retain their separate original tags; empty selection is included.",
       "aliases": [
@@ -41658,15 +41811,44 @@
         "54k >= 24N - 4a2 - 3a3 - 5"
       ],
       "alias_patterns": [],
-      "certificate": "Registered OPEN before Cycle3 search following experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C3-PREPARATION/REPORT.md; private controller candidates and finite instruments are not yet accepted proof.",
-      "evidence_grade": "unproved_candidate",
+      "certificate": {
+        "review": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C3-MIDPOINT-IDENTITY/REPORT.md",
+        "scopes": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C3-MIDPOINT-IDENTITY/CANDIDATES.json",
+        "controller_analysis": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/control/C3-ASTRA-MIDPOINT-ANALYSIS.md",
+        "sources": [
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-3/C3-AU/REPORT.md",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-3/C3-CF-U1/REPORT.md",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-3/C3-AU/C3-AU-focused-audit.json",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/sources/cycle3/C3-profile-sensitive-rank-candidate.md"
+        ],
+        "formal_award": false
+      },
+      "evidence_grade": "universal_informal_coefficientwise_differential_proof_nonformal",
       "origin_run": "erdos-993-absolute-compensation-dre-2026-09-27",
       "distinguish_from": [
         "E993-PATH-STAR-RGE2-FIRST-DESCENT-MPLUS1",
         "E993-PATH-STAR-ARITY-2-4-SPREAD-FIRST-DESCENT-NONDECREASING"
       ],
       "novelty_claimed": false,
-      "formal_award": false
+      "formal_award": false,
+      "terminal_history": [
+        {
+          "cycle": 3,
+          "date": "2026-09-28",
+          "run": "erdos-993-absolute-compensation-dre-2026-09-27",
+          "event": "Independent C3 synthesis, Astra midpoint and fresh identity/proof review; exact statement and scope preserved.",
+          "previous_evidence": {
+            "status": "OPEN",
+            "evidence_grade": "unproved_candidate",
+            "certificate": "Registered OPEN before Cycle3 search following experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C3-PREPARATION/REPORT.md; private controller candidates and finite instruments are not yet accepted proof."
+          }
+        }
+      ],
+      "dependencies": [
+        "weighted Leibniz rule for D_d=(5+4z)d/dz-4d",
+        "coefficientwise nonnegative adjusted B2,B3,B4 and shifted-binomial rows",
+        "strict descent and integrality"
+      ]
     },
     {
       "claim_key": "E993-PATH-STAR-ARITY-2-4-ANY-STRICT-DESCENT-RANK-2N5",
@@ -41693,6 +41875,241 @@
         "claim_key": "E993-PATH-STAR-ARITY-2-4-FIRST-DESCENT-RATIO-BAND",
         "description": "The exact coefficient theorem implies only the composite key's first-descent rank clause on its m>=1 polynomial profiles: 2N<=5x is equivalent over integers to 5x>2N-1. It supplies none of that key's eligible-rank or ratio assertions. Do not mark the entire composite key formally verified from this lemma."
       }
+    },
+    {
+      "claim_key": "E993-FINITE-BLOCK-CENTER-SUBSET-COEFFICIENT-EXPANSION",
+      "statement": "For every finite index set I, any function r:I->Nat (zero sizes allowed), and every natural k, let H(X)=product_{i in I}((1+X)^(r_i)+X) in Polynomial Nat. Then coeff(H,k)=sum_{S subseteq I} if |S|<=k then Nat.choose(sum_{i in I\\S}r_i,k-|S|) else 0. The subtraction occurs only in the guarded branch; Nat.choose is zero above its upper argument.",
+      "scope": "Pure finite polynomial coefficient equality. Includes I empty, where both sides are one at k=0 and zero otherwise, and r_i=0. No probability, Jensen bound, selector, graph or payment assertion.",
+      "status": "VERIFIED",
+      "aliases": [
+        "finite center-subset coefficient expansion"
+      ],
+      "alias_patterns": [],
+      "certificate": {
+        "run": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c3-center",
+        "declaration": "e993_center_subset_coeff",
+        "verification_report_sha256": "462d2cdd95cbb6a77944e4de79585402857ad8185a67dbc6ab28a15443ce705e",
+        "lean_source_sha256": "87eb9956b3385b9d26d66c25b9a2707de43d1d789e04eeb0beb9102717825dcb",
+        "kernel_receipt_sha256": "0a6993d53a8fb5ac78b52ed3528076d532628ff097c856e93d7ca2ab0e1626ee",
+        "fidelity_receipt_sha256": "00fb11609e2c61705567b9dfcf6ef6cc55a5b37ae330052c5ceadadd447cf883"
+      },
+      "evidence_grade": "formally_verified_exact_coefficient_theorem",
+      "origin_run": "erdos-993-absolute-compensation-dre-2026-09-27",
+      "dependencies": [
+        "finite product-of-sums expansion",
+        "product of X powers",
+        "coefficient of X^a(1+X)^b with explicit a<=k guard"
+      ],
+      "distinguish_from": [
+        "E993-PATH-STAR-ARITY-2-4-OCCUPANCY-JENSEN-COFACTOR",
+        "E993-PATH-STAR-SELECTED-BRACKET-IDENTITY",
+        "E993-ZERO-EXTENDED-BINOMIAL-BLOCK-RISE-FALL-STRICT-RISE"
+      ],
+      "identity_review": [
+        "No exact equivalent center-subset expansion among the 505 normalized registered statements/aliases.",
+        "The registered E993-PATH-STAR-ARITY-2-4-OCCUPANCY-JENSEN-COFACTOR contains a stronger weighted-subset identity for positive blocks, but not this explicit coefficient formula as a separately formalized assertion.",
+        "E993-PATH-STAR-SELECTED-BRACKET-IDENTITY is a graph-selected bracket equality, not this arbitrary finite-block expansion."
+      ],
+      "novelty_claimed": false,
+      "formal_award": true,
+      "terminal_history": [
+        {
+          "cycle": 3,
+          "date": "2026-09-28",
+          "event": "Independent exact-contract audit, Lean kernel and fresh semantic fidelity passed; evidence grade only updated.",
+          "previous_evidence": {
+            "evidence_grade": "universal_informal_exact_polynomial_expansion_nonformal_candidate_for_Lean",
+            "certificate": {
+              "review": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C3-MIDPOINT-IDENTITY/REPORT.md",
+              "scopes": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C3-MIDPOINT-IDENTITY/CANDIDATES.json",
+              "controller_analysis": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/control/C3-ASTRA-MIDPOINT-ANALYSIS.md",
+              "sources": [
+                "experiments/erdos-993-absolute-compensation-dre-2026-09-27/control-proposals/C3-next-formal-candidate-leads.md",
+                "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-3/C3-AU/REPORT.md",
+                "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-2/C2-SYNTHESIS/REPORT.md"
+              ],
+              "formal_award": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "claim_key": "E993-FINITE-BLOCK-COEFFICIENT-JENSEN-DOMINATION",
+      "statement": "Let I be a finite family of positive disjoint block sizes r_i>=1, M=sum_i r_i, and F_i(X)=sum_{t=0}^{r_i} f_i(t)X^t with real coefficients f_i(t)>=binom(r_i,t). Put H=product_i F_i, choose a uniform k-subset of the M labeled elements for 0<=k<=M, and let K_i be its block counts. With w_i(t)=f_i(t)/binom(r_i,t)>=1, H[k]/binom(M,k)=E product_i w_i(K_i). Moreover H[k]>=binom(M,k) exp(y_k)>=binom(M,k) E_d(y_k) for each natural d, where y_k=sum_i sum_{t=0}^{r_i} [binom(r_i,t)binom(M-r_i,k-t)/binom(M,k)]*2(f_i(t)-binom(r_i,t))/(f_i(t)+binom(r_i,t)), using integer-zero-extended binomials.",
+      "scope": "General finite-block coefficient identity and Jensen/Taylor lower bound. Includes empty family M=k=0,H=1,y=0. No claim about actual graph descent, marked deletion identities, selectors, MASS or payment. E_d(y)=sum_(a=0)^d y^a/a!.",
+      "status": "VERIFIED",
+      "aliases": [
+        "general finite-block coefficient domination Jensen bound"
+      ],
+      "alias_patterns": [],
+      "certificate": {
+        "review": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C3-MIDPOINT-IDENTITY/REPORT.md",
+        "scopes": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C3-MIDPOINT-IDENTITY/CANDIDATES.json",
+        "controller_analysis": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/control/C3-ASTRA-MIDPOINT-ANALYSIS.md",
+        "sources": [
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/control-proposals/FUTURE-general-block-cofactor-bound.md",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-3/C3-CF-U2/REPORT.md",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-3/C3-AU/REPORT.md"
+        ],
+        "formal_award": false
+      },
+      "evidence_grade": "universal_informal_convolution_and_finite_jensen_nonformal",
+      "origin_run": "erdos-993-absolute-compensation-dre-2026-09-27",
+      "dependencies": [
+        "multivariate hypergeometric count-vector convolution",
+        "finite Jensen or AM-GM",
+        "log(w)>=2(w-1)/(w+1) for w>=1",
+        "nonnegative exp Taylor remainder"
+      ],
+      "distinguish_from": [
+        "E993-PATH-STAR-ARITY-2-4-OCCUPANCY-JENSEN-COFACTOR",
+        "E993-LOWER-REGION-EARLY-MARKED-OCCUPANCY-TRANSFER"
+      ],
+      "identity_review": [
+        "Genuinely extends the registered positive-block B_r=L^r+X occupancy/Jensen key to arbitrary coefficient-dominating F_i; it reduces to that key when F_i=B_{r_i}.",
+        "The graph specialization I(G_i)>=L^(alpha(G_i))+X is only coefficient domination and is not a graph payment theorem."
+      ],
+      "novelty_claimed": false,
+      "formal_award": false
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, every original leaf deletion polynomial A_v (A0 for the endpoint or Ai for a tip of branch i), and every natural k with 1<=k and 2k<=N+2, integer-zero-extended coefficients satisfy A_v[k+1] C[k-1]<=A_v[k] C[k], where C=GQ.",
+      "scope": "Guarded lower-half shifted C-to-each-deletion comparison on all such k; no actual eligibility premise. It would imply full strict selection at actual eligible p via C log-concavity and the accepted C[x+1]/C[x]<1, but that universal comparison is unproved. Profile and polynomial definitions: Ordinary tree formed from path 0-1-2 and m>=1 distinct centers at 0, each with r_i in {2,3,4} private tips. N=sum_i r_i, L=1+z, G=1+2z, B_r=L^r+z, Q=product_i B_(r_i), H_i=product_(h!=i)B_(r_h), C=GQ, A0=LQ+zL^N, Ai=G B_(r_i-1)H_i+zL^N. Coefficients are integer zero-extended. These LR claims impose only their stated k guards, not actual first-descent eligibility.",
+      "status": "OPEN",
+      "aliases": [
+        "lower-half shifted C to individual deletion likelihood ratio"
+      ],
+      "alias_patterns": [],
+      "certificate": {
+        "review": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C3-MIDPOINT-IDENTITY/REPORT.md",
+        "scopes": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C3-MIDPOINT-IDENTITY/CANDIDATES.json",
+        "controller_analysis": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/control/C3-ASTRA-MIDPOINT-ANALYSIS.md",
+        "sources": [
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/control-proposals/FUTURE-selector-LR-research.md",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/control-proposals/FUTURE-selector-LR-controls-shifted.json",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/control-proposals/FUTURE-selector-LR-probe.json",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/control-proposals/FUTURE-selector-shifted-first-obstruction.json"
+        ],
+        "formal_award": false
+      },
+      "evidence_grade": "bounded_exact_diagnostics_and_structural_candidate_only",
+      "origin_run": "erdos-993-absolute-compensation-dre-2026-09-27",
+      "dependencies": [
+        "prove the guarded coefficient comparison for all profiles and lower-half k",
+        "then use positive C and C log-concavity",
+        "accepted actual first-descent ratio lemma for selector application"
+      ],
+      "distinguish_from": [
+        "E993-PATH-STAR-ORIGINAL-DELETIONS-P-LR",
+        "E993-PATH-STAR-ARITY-2-4-ALL-M-LOWER-HALF-FULL-SELECTION",
+        "E993-PATH-STAR-ARITY-2-4-ALL-RANK-SHIFTED-C-DELETION-LR"
+      ],
+      "identity_review": [
+        "No exact guarded shifted C/deletion comparison in the 505-record snapshot.",
+        "Registered E993-PATH-STAR-ORIGINAL-DELETIONS-P-LR compares each deletion with P at one adjacent rank, across all ranks; it is different.",
+        "The already VERIFIED literal full-selection claim is a consequence one hopes to reprove structurally, not a duplicate OPEN predicate."
+      ],
+      "novelty_claimed": false,
+      "formal_award": false
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, put W(X)=sum_i r_i A_i(X), counting each original private-tip deletion with its original multiplicity. For every natural k with 1<=k and 2k<=N+2, integer-zero-extended coefficients satisfy W[k+1] C[k-1]<=W[k] C[k].",
+      "scope": "Guarded lower-half shifted C-to-weighted-tip-deck comparison. A strict descent of W at actual eligible p gives at least one selected branch and, with the reviewed branchwise 3/2 bound, pays MASS. It does not assert that every tip or the endpoint is selected. Profile and polynomial definitions: Ordinary tree formed from path 0-1-2 and m>=1 distinct centers at 0, each with r_i in {2,3,4} private tips. N=sum_i r_i, L=1+z, G=1+2z, B_r=L^r+z, Q=product_i B_(r_i), H_i=product_(h!=i)B_(r_h), C=GQ, A0=LQ+zL^N, Ai=G B_(r_i-1)H_i+zL^N. Coefficients are integer zero-extended. These LR claims impose only their stated k guards, not actual first-descent eligibility.",
+      "status": "OPEN",
+      "aliases": [
+        "lower-half shifted C to original tip deck likelihood ratio"
+      ],
+      "alias_patterns": [],
+      "certificate": {
+        "review": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C3-MIDPOINT-IDENTITY/REPORT.md",
+        "scopes": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C3-MIDPOINT-IDENTITY/CANDIDATES.json",
+        "controller_analysis": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/control/C3-ASTRA-MIDPOINT-ANALYSIS.md",
+        "sources": [
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/control-proposals/FUTURE-selector-LR-research.md",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/control-proposals/FUTURE-selector-LR-controls-shifted.json",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-3/C3-SYNTHESIS/REPORT.md"
+        ],
+        "formal_award": false
+      },
+      "evidence_grade": "exact_algebraic_reduction_and_bounded_diagnostics_only",
+      "origin_run": "erdos-993-absolute-compensation-dre-2026-09-27",
+      "dependencies": [
+        "prove the guarded weighted-deck coefficient comparison",
+        "W=C'-2Q+G sum_i(r_i X-1)H_i+N X L^N",
+        "positive C and C log-concavity",
+        "first-descent ratio lemma",
+        "branchwise 3/2 bound for payment application"
+      ],
+      "distinguish_from": [
+        "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+        "E993-PATH-STAR-ORIGINAL-DELETIONS-P-LR",
+        "E993-PATH-STAR-ARITY-2-4-ALL-M-LOWER-HALF-FULL-SELECTION"
+      ],
+      "identity_review": [
+        "Distinct from the stronger individual guarded comparison: this controls only the multiplicity-weighted sum.",
+        "Distinct from the registered P-to-individual-deletion LR and from the already VERIFIED literal full-selection predicate."
+      ],
+      "novelty_claimed": false,
+      "formal_award": false
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-ALL-RANK-SHIFTED-C-DELETION-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, every original leaf deletion polynomial A_v, and every natural k>=1, A_v[k+1]C[k-1]<=A_v[k]C[k] with integer-zero-extended coefficients.",
+      "scope": "Unguarded all-rank shifted C/deletion comparison. Refutation concerns this auxiliary comparison only, not the lower-half guarded candidate, selectors at eligible rows, selected MASS, primary payment, aggregate or Erdős 993. Profile and polynomial definitions: Ordinary tree formed from path 0-1-2 and m>=1 distinct centers at 0, each with r_i in {2,3,4} private tips. N=sum_i r_i, L=1+z, G=1+2z, B_r=L^r+z, Q=product_i B_(r_i), H_i=product_(h!=i)B_(r_h), C=GQ, A0=LQ+zL^N, Ai=G B_(r_i-1)H_i+zL^N. Coefficients are integer zero-extended. These LR claims impose only their stated k guards, not actual first-descent eligibility.",
+      "status": "REFUTED",
+      "aliases": [
+        "unguarded all-rank shifted C to deletion likelihood ratio"
+      ],
+      "alias_patterns": [],
+      "certificate": {
+        "review": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C3-MIDPOINT-IDENTITY/REPORT.md",
+        "scopes": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C3-MIDPOINT-IDENTITY/CANDIDATES.json",
+        "controller_analysis": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/control/C3-ASTRA-MIDPOINT-ANALYSIS.md",
+        "sources": [
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/control-proposals/FUTURE-shifted-ratio-literal-witness.json",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/control-proposals/FUTURE-shifted-ratio-literal-witness.py",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/control-proposals/FUTURE-selector-shifted-first-obstruction.json"
+        ],
+        "formal_award": false
+      },
+      "evidence_grade": "exact_literal_ordinary_tree_and_polynomial_witness_nonformal",
+      "origin_run": "erdos-993-absolute-compensation-dre-2026-09-27",
+      "dependencies": [
+        "exact path-star graph and original tip deletion realization",
+        "direct coefficient arithmetic"
+      ],
+      "distinguish_from": [
+        "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+        "E993-PATH-STAR-ORIGINAL-DELETIONS-P-LR"
+      ],
+      "identity_review": [
+        "No exact all-rank shifted C/deletion key is in the 505-record snapshot.",
+        "Do not merge with the OPEN guarded lower-half version or the registered P/deletion LR, whose denominators and rank relation differ."
+      ],
+      "novelty_claimed": false,
+      "formal_award": false,
+      "smallest_witness_order": 122,
+      "witness": {
+        "qualification": "first_found_by_early_stopping_search_only_not_proven_minimal",
+        "n": 122,
+        "m": 39,
+        "counts": [
+          38,
+          0,
+          1
+        ],
+        "N": 80,
+        "x": 41,
+        "branch_arity": 4,
+        "k": 77,
+        "signed_margin": "-49239834336",
+        "outside_lower_half": true,
+        "guard_check": "2k=154>N+2=82"
+      },
+      "witness_minimality": "Smallest retained known witness; first found by an early-stopping search, not a proof of minimum order."
     }
   ],
   "created": "2026-09-05",
@@ -41928,16 +42345,18 @@
     "active_absolute_compensation_run": "erdos-993-absolute-compensation-dre-2026-09-27",
     "absolute_compensation_primary": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
     "absolute_compensation_authorization": "Ashton approved fresh experiment with standard 9/18/3/1 high staffing, maximum six cycles and Astra reviews after C3/C6.",
-    "absolute_compensation_cycle": 2,
-    "absolute_compensation_stage": "C2 closed; C3 preparation",
-    "absolute_compensation_primary_status": "OPEN",
-    "absolute_compensation_all_m_mass_status": "OPEN",
-    "absolute_compensation_next_cycle": "C3 independently audits proposed m<=69 prefix, m70..119 balanced scalar certificate, m>=120 local bound and all-m composition; Astra midpoint analysis follows C3.",
-    "absolute_compensation_selector_boundary": "All-m lower-half full selection VERIFIED by complete finite plus analytic-tail composition, nonformal. Independent census-free proof remains a method obligation.",
-    "absolute_compensation_rank_formal_run": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c2-rank"
+    "absolute_compensation_cycle": 3,
+    "absolute_compensation_stage": "Cycle3 closed after Astra midpoint and governed center-subset Lean award; preparing Cycle4",
+    "absolute_compensation_primary_status": "VERIFIED at computer-assisted/nonformal grade; no primary Lean award",
+    "absolute_compensation_all_m_mass_status": "VERIFIED at computer-assisted/nonformal grade",
+    "absolute_compensation_next_cycle": "C4 structural lower-half shifted deletion/deck comparison and reusable coefficient bridge, after C3 Lean gate and close",
+    "absolute_compensation_selector_boundary": "Full selection remains VERIFIED computer-assisted. Independent census-free proof and formalization are method obligations; two distinct shifted-comparison mechanisms are OPEN.",
+    "absolute_compensation_rank_formal_run": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c2-rank",
+    "absolute_compensation_decisive_stop": false,
+    "absolute_compensation_center_expansion": "formally_verified exact coefficient-only theorem"
   },
   "schema_version": "verityos.math.claim-identity.v1",
-  "update_note": "Absolute compensation Cycle2 closed with one exact coefficient-only governed rank award, after five nonformal verified products and two auxiliary refutations. Three Cycle3 candidates remain OPEN. One older spread-witness order metadata field is supplied; prior mathematical statements/statuses/grades are unchanged.",
+  "update_note": "Cycle3 closed: center-subset expansion receives exact coefficient-only governed Lean award; all-m MASS/payment remain VERIFIED computer-assisted/nonformal. No global or primary formal resolution.",
   "r30_publication": {
     "run": "erdos-993-weighted-transport-dre-2026-09-26",
     "run_id": "erdos-993-math-dre-20260926-r30-weighted-transport",
