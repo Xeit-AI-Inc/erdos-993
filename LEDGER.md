@@ -1,6 +1,12 @@
 # Erdős #993 — Master Proof Ledger
 
-## Current orientation — joint terminal reconciliation, 2026-09-27
+## Active experiment — absolute compensation, Cycle1 complete, 2026-09-28
+
+The six-cycle absolute-compensation run has completed Cycle1 with all9/18/3/1 seats. The all-m exact-ratio payment and stronger selected MASS remain OPEN. A new m>=266 restriction of MASS is VERIFIED at source-dependent informal analytic grade, with no formal award; the deduction uses intermediate estimates, not the predecessor aggregate conclusion. Normalized exact-ratio quotient nondecrease under (3,3)->(2,4) is REFUTED by a literal108-vertex pair, while both primary payment margins stay positive. The master now contains494 identities:310 VERIFIED,99 REFUTED,26 CONDITIONAL,59 OPEN. Previous492 claim objects are unchanged. These mixed-grade counts are not a percentage solved.
+
+Run: `experiments/erdos-993-absolute-compensation-dre-2026-09-27`; exact close: `control/C1-CONTROLLER-CLOSE.md`. Cycle2 will review an unproved occupancy/Jensen coefficient route and a new exact fixed-truncation obstruction. The complete independently retained small prefix covers m<=40; the explicit informal tail begins at266. The missing interval is41..265 unless a new structural bound replaces it. No Lean candidate with closed central dependencies was nominated in C1. Astra reviews remain scheduled after C3/C6. Code's completed source remains r30; no live sibling experiment was inspected. The public Cycle 1 checkpoint contains the reviewed results; later-cycle candidates remain under review.
+
+## Historical orientation — joint terminal reconciliation, 2026-09-27
 
 Both six-cycle experiments are complete. Code's r30 supplies seven governed Lean awards: the exact active-tag weight identity, Hall-to-sign implication, invariant deficient-family reduction, orbit-quotient equivalence, the G_k deletion flow, Hall at every eligible rank of G_k, and Hall at rank k+3 of S(1,2,3^k) for k>=5. The spider's broader all-eligible-rank statement remains informal. Our heterogeneous-closure run supplies two governed coefficient awards and an all-parameter, computer-assisted proof of the selected aggregate for arity-2,3,4 ordinary path-stars.
 

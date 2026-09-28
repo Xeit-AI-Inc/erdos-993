@@ -1,0 +1,56 @@
+{
+  "review_role": "independent_preparation_claim_identity",
+  "registry_records_compared": 492,
+  "candidates": [
+    {
+      "proposed_claim_key": "E993-PATH-STAR-ARITY-2-4-M266-SELECTED-LOWER-MASS",
+      "proposed_status": "VERIFIED_INFORMAL_SOURCE_DEPENDENT",
+      "proposed_grade": "informal analytic proof dependent on predecessor intermediate rank, selector, perturbed-minor and deletion-log-concavity estimates; exact-integer 86-layer base scalar",
+      "statement": "For every ordinary path-star with m>=266 distinct branches of arity r_i in {2,3,4}, and every natural p satisfying x+2<=p, 3p<2(N+2)+1, and 2p<=N+2, where x is the first strict zero-extended parent descent, j=p-2, delta=N+1-j, D_j=binom(N,j+1)-binom(N,j), e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], b=e0+sum_i r_i ei, and A=sum_i r_i ei T_i[j] with the contract's polynomials and original-tip multiplicities, A>=b delta D_j.",
+      "identity_relation": "Proper m>=266 restriction of registered OPEN selected MASS key; stronger than registered VERIFIED m>=266 selected-aggregate key. Implies registered exact-ratio payment only on this cutoff.",
+      "registered_keys_compared": [
+        "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION",
+        "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+        "E993-PATH-STAR-ARITY-2-4-M266-ANALYTIC-ELIGIBLE-TAIL"
+      ],
+      "evidence": [
+        "cycles/cycle-1/C1-AF/REPORT.md",
+        "sources/predecessor/hybrid-family-proof.md",
+        "sources/predecessor/structural-reductions.md"
+      ],
+      "limits": "No universal all-m or formal award; finite prefix unproved by this tail."
+    },
+    {
+      "proposed_claim_key": "E993-PATH-STAR-ARITY-2-4-SPREAD-NORMALIZED-EXACT-RATIO-NONDECREASING",
+      "proposed_status": "REFUTED_AUXILIARY",
+      "proposed_grade": "exact eligible realizable literal-tree counterexample",
+      "statement": "For every fixed-(m,N) spread replacing two distinct arity-3 branches by arities 2 and 4, and every common natural p satisfying x+2<=p, 3p<2(N+2)+1, and 2p<=N+2 on each actual profile, provided both b values are positive, the normalized exact-ratio quotient Q=(delta C[j]-(delta-1)C[j+1])A/(b delta D_j C[j]), calculated with each profile's own current-p strict original-leaf flags, satisfies Q_new>=Q_old.",
+      "counterexample": {
+        "old_counts_a2_a3_a4": [0, 10, 13],
+        "new_counts_a2_a3_a4": [1, 8, 14],
+        "m": 23,
+        "N": 82,
+        "p": 42,
+        "x_old": 40,
+        "x_new": 40,
+        "b_old": 83,
+        "b_new": 83,
+        "old_payment_margin": "3463555694405780523228670120945814749048313397994374",
+        "new_payment_margin": "3517160039345853058148436236636758533834269835505818",
+        "Q_new_minus_Q_old_sign": "negative"
+      },
+      "identity_relation": "Distinct from registered OPEN shared-rank selected-S spread monotonicity, spread first-descent nondecrease, and per-profile exact-ratio payment. Refutes quotient nondecrease only.",
+      "registered_keys_compared": [
+        "E993-PATH-STAR-ARITY-2-4-SPREAD-SHARED-RANK-S-MONOTONE",
+        "E993-PATH-STAR-ARITY-2-4-SPREAD-FIRST-DESCENT-NONDECREASING",
+        "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT"
+      ],
+      "evidence": ["cycles/cycle-1/C1-AU/REPORT.md"],
+      "limits": "Both payment margins are positive; no primary counterexample or universal opposite monotonicity."
+    }
+  ],
+  "universal_status_unchanged": [
+    {"claim_key": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT", "proposed_status": "OPEN"},
+    {"claim_key": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION", "proposed_status": "OPEN"}
+  ]
+}

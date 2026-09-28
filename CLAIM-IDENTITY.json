@@ -41326,6 +41326,89 @@
           "event": "registered VERIFIED formally_verified (award C6-LA2)"
         }
       ]
+    },
+    {
+      "statement": "For every ordinary path-star from path 0-1-2 with m>=1 distinct centers joined to 0 and each center i having r_i in {2,3,4} distinct private tips, let N=sum_i r_i, q=N+1, alpha=N+2, L=1+z, G=1+2z, B_r=L^r+z, F_r=sum_{h=0}^{r-2}L^h, Q=product_i B_{r_i}, H_i=product_{h!=i}B_{r_h}, C=GQ, T_i=GF_{r_i}H_i, P=C+zL^q, A0=LQ+zL^N and Ai=G B_{r_i-1}H_i+zL^N. Let x be the first strict zero-extended forward descent of P. At every natural p with x+2<=p, 3p<2alpha+1 and 2p<=alpha, let j=p-2, delta=q-j, D_j=Delta_j L^N, e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], b=e0+sum_i r_i ei and A=sum_i r_i ei T_i[j], with Delta_k f=f[k+1]-f[k] and integer zero extension. Then (delta C[j]-(delta-1)C[j+1]) A >= b delta D_j C[j].",
+      "scope": "Exact weaker sufficient payment for the complete current-p strict selected original-leaf aggregate on actual eligible lower-half arity-2,3,4 ordinary path-stars. Endpoint tag has multiplicity one and branch i has r_i distinct original tip tags. No all-selection assumption. Not an arbitrary-tree or forest statement, not the known selected aggregate, and not a Lean award.",
+      "aliases": [
+        "selected lower-half exact-ratio payment",
+        "weaker absolute selected compensation",
+        "path-star exact-ratio mark payment"
+      ],
+      "alias_patterns": [],
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+      "status": "OPEN",
+      "certificate": "New exact sufficient predicate registered before dispatch. No proof or counterexample yet. Controller identity review and Sol preparation distinguish it from the stronger MASS and the weaker accepted aggregate.",
+      "evidence_grade": "unproved",
+      "origin_run": "erdos-993-absolute-compensation-dre-2026-09-27",
+      "relation_to_existing": {
+        "stronger_open_mass": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION",
+        "verified_formal_margin": "E993-PATH-STAR-ARITY-2-4-MAIN-MARK-RELATIVE-BINOMIAL-MARGIN-QNPLUS1",
+        "verified_exact_sum_identity": "E993-PATH-STAR-SELECTED-BRACKET-IDENTITY",
+        "verified_nonformal_aggregate": "E993-ORDINARY-PATH-STAR-ARITY-2-4-ALL-M-LOWER-REGION-AGGREGATE",
+        "logic": "MASS implies this predicate; this predicate plus the formal main-mark margin implies selected S<=0. The accepted S<=0 does not imply this sufficient predicate. The predecessor occupation payment (1-t)A>=bD_j also implies it."
+      },
+      "novelty_claimed": false
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-M266-SELECTED-LOWER-MASS",
+      "statement": "For every ordinary path-star with m>=266 distinct branches of arity r_i in {2,3,4}, and every natural p satisfying x+2<=p, 3p<2(N+2)+1, and 2p<=N+2, where x is the first strict zero-extended parent descent, j=p-2, delta=N+1-j, D_j=binom(N,j+1)-binom(N,j), e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], b=e0+sum_i r_i ei, and A=sum_i r_i ei T_i[j] with the contract's polynomials and original-tip multiplicities, A>=b delta D_j.",
+      "scope": "Proper m>=266 restriction of registered OPEN selected MASS key; stronger than registered VERIFIED m>=266 selected-aggregate key. Implies registered exact-ratio payment only on this cutoff. No universal all-m or formal award; finite prefix unproved by this tail.",
+      "status": "VERIFIED",
+      "aliases": [],
+      "alias_patterns": [],
+      "evidence_grade": "informal_analytic_source_dependent_adjudicated",
+      "formal_award": false,
+      "novelty_claimed": false,
+      "certificate": {
+        "run": "erdos-993-absolute-compensation-dre-2026-09-27",
+        "identity_review": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C1-C2-IDENTITY/REPORT.md",
+        "controller_decision": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/control/C1-CONTROLLER-CLOSE.md",
+        "synthesis": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-1/C1-SYNTHESIS/REPORT.md",
+        "adjudication": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-1/C1-AF/REPORT.md"
+      },
+      "registration_reason": "Independent comparison with492 prior canonical identities; Cycle1 full9/18/3/1 review. Exact restricted or auxiliary scope only."
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-SPREAD-NORMALIZED-EXACT-RATIO-NONDECREASING",
+      "statement": "For every fixed-(m,N) spread replacing two distinct arity-3 branches by arities 2 and 4, and every common natural p satisfying x+2<=p, 3p<2(N+2)+1, and 2p<=N+2 on each actual profile, provided both b values are positive, the normalized exact-ratio quotient Q=(delta C[j]-(delta-1)C[j+1])A/(b delta D_j C[j]), calculated with each profile's own current-p strict original-leaf flags, satisfies Q_new>=Q_old.",
+      "scope": "Distinct from registered OPEN shared-rank selected-S spread monotonicity, spread first-descent nondecrease, and per-profile exact-ratio payment. Refutes quotient nondecrease only. Both payment margins are positive; no primary counterexample or universal opposite monotonicity.",
+      "status": "REFUTED",
+      "aliases": [],
+      "alias_patterns": [],
+      "evidence_grade": "exact_literal_tree_counterexample_independently_replayed",
+      "formal_award": false,
+      "novelty_claimed": false,
+      "certificate": {
+        "run": "erdos-993-absolute-compensation-dre-2026-09-27",
+        "identity_review": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C1-C2-IDENTITY/REPORT.md",
+        "controller_decision": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/control/C1-CONTROLLER-CLOSE.md",
+        "synthesis": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-1/C1-SYNTHESIS/REPORT.md",
+        "adjudication": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-1/C1-AU/REPORT.md"
+      },
+      "registration_reason": "Independent comparison with492 prior canonical identities; Cycle1 full9/18/3/1 review. Exact restricted or auxiliary scope only.",
+      "counterexample": {
+        "old_counts_a2_a3_a4": [
+          0,
+          10,
+          13
+        ],
+        "new_counts_a2_a3_a4": [
+          1,
+          8,
+          14
+        ],
+        "m": 23,
+        "N": 82,
+        "p": 42,
+        "x_old": 40,
+        "x_new": 40,
+        "b_old": 83,
+        "b_new": 83,
+        "old_payment_margin": "3463555694405780523228670120945814749048313397994374",
+        "new_payment_margin": "3517160039345853058148436236636758533834269835505818",
+        "Q_new_minus_Q_old_sign": "negative"
+      }
     }
   ],
   "created": "2026-09-05",
@@ -41442,7 +41525,7 @@
     "structural_objective": "unresolved",
     "terminal_ledger": "TERMINAL-LEDGER.csv"
   },
-  "last_updated": "2026-09-27",
+  "last_updated": "2026-09-28",
   "lower_region_compensation_publication": {
     "closed": "2026-09-26",
     "completed_cycles": 6,
@@ -41557,10 +41640,13 @@
     "active_runs_from_this_reconciliation": [],
     "next_code_prompt": "docs/prompts/code-cb-uniform-switch-2026-09-27.md",
     "next_controller_target": "Census-free exact-ratio selected payment on arity-2,3,4 path-stars; proposed only.",
-    "formal_vs_computational_frontier": "Order-band Lean theorems retain scope; r30 reports deletion Hall at all eligible rows through order23, including p8 orders19..22."
+    "formal_vs_computational_frontier": "Order-band Lean theorems retain scope; r30 reports deletion Hall at all eligible rows through order23, including p8 orders19..22.",
+    "active_absolute_compensation_run": "erdos-993-absolute-compensation-dre-2026-09-27",
+    "absolute_compensation_primary": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+    "absolute_compensation_authorization": "Ashton approved fresh experiment with standard 9/18/3/1 high staffing, maximum six cycles and Astra reviews after C3/C6."
   },
   "schema_version": "verityos.math.claim-identity.v1",
-  "update_note": "Joint terminal reconciliation 2026-09-27: r30 has six completed cycles, seven formal awards and 34 already-merged new keys; heterogeneous closure has six completed cycles and two coefficient awards. Total 491 identities (309 VERIFIED,98 REFUTED,26 CONDITIONAL,58 OPEN). Refresh current coordination and notes; correct E993-TREE-REAL-ROOTED smallest_witness_order from26 to4 with direct certificate. No new claims, status changes or grade promotions. Prior metadata preserved in the reconciliation backup.",
+  "update_note": "Absolute-compensation sibling opened: one new OPEN exact-ratio predicate, all prior claim objects preserved. Previous joint terminal reconciliation remains recorded.",
   "r30_publication": {
     "run": "erdos-993-weighted-transport-dre-2026-09-26",
     "run_id": "erdos-993-math-dre-20260926-r30-weighted-transport",
@@ -41632,5 +41718,16 @@
     "status_changes": 0,
     "new_claims": 0,
     "sealed_roots_modified": false
+  },
+  "absolute_compensation_cycle1": {
+    "run": "erdos-993-absolute-compensation-dre-2026-09-27",
+    "cycle": 1,
+    "status": "continuing",
+    "primary": "OPEN",
+    "formal_awards": 0,
+    "new_claims": [
+      "E993-PATH-STAR-ARITY-2-4-M266-SELECTED-LOWER-MASS",
+      "E993-PATH-STAR-ARITY-2-4-SPREAD-NORMALIZED-EXACT-RATIO-NONDECREASING"
+    ]
   }
 }

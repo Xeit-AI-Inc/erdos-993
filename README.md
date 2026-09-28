@@ -1,6 +1,10 @@
 # Erdős Problem #993
 
-## Current orientation — joint close, 2026-09-27
+## Current checkpoint — 28 September 2026
+
+The active absolute-compensation experiment has completed Cycle 1 and entered Cycle 2. The primary exact-ratio selected payment and stronger all-m selected MASS remain OPEN. A new m>=266 MASS restriction is VERIFIED at source-dependent informal analytic grade; no Lean award was made. Normalized payment quotient nondecrease under (3,3)->(2,4) is REFUTED by a literal 108-vertex pair whose two payment margins remain positive. The canonical registry has **494 identities: 310 VERIFIED, 99 REFUTED, 26 CONDITIONAL, 59 OPEN**, at mixed grades. These counts do not measure percentage solved. Code's latest completed imported run remains r30; no newer sibling result is claimed. Erdős 993, the arbitrary-tree aggregate, full weighted Hall, governed beta, TREE, FOREST and TRANSFER remain OPEN. See the [experiment checkpoint](docs/experiments/absolute-compensation-dre-2026-09-27.md).
+
+## Historical orientation — joint close, 2026-09-27
 
 Both six-cycle experiments are complete. Code's r30 supplies seven governed Lean awards: the exact active-tag weight identity, Hall-to-sign implication, invariant deficient-family reduction, orbit-quotient equivalence, the G_k deletion flow, Hall at every eligible rank of G_k, and Hall at rank k+3 of S(1,2,3^k) for k>=5. The spider's broader all-eligible-rank statement remains informal. Our heterogeneous-closure run supplies two governed coefficient awards and an all-parameter, computer-assisted proof of the selected aggregate for arity-2,3,4 ordinary path-stars.
 

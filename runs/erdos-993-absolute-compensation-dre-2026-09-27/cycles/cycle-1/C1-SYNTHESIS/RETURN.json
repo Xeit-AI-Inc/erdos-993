@@ -1,0 +1,282 @@
+{
+  "worker_id": "C1-SYNTHESIS",
+  "cycle": 1,
+  "stage": "synthesis",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "C1-CT-F2-TAIL-DISCHARGES-ASYMPTOTIC-PREMISES",
+      "statement": "For m>=266, predecessor intermediate estimates yield 1/3<j/N<1/2 and every current branch selector on.",
+      "scope": "Ordinary m>=1 distinct-center arity-2/3/4 path-stars; N=sum r_i, q=N+1, alpha=N+2, x=least natural k with zero-extended Delta_k P<0 (including terminal), p natural with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, current-p strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], one endpoint tag and r_i original tip tags per branch; A=sum r_i ei T_i[j], b=e0+sum r_i ei. Restricted to m>=266 and dependent on informal predecessor intermediate estimates.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "m>=266 only; depends on the predecessor's informal rank and strict deletion-selection estimates, not its aggregate conclusion."
+    },
+    {
+      "claim_id": "C1-CT-F2-TAIL-EXPLICIT-MASS-CUTOFF",
+      "statement": "For m>=266, A>b delta D_j, hence the exact-ratio payment holds.",
+      "scope": "Ordinary m>=1 distinct-center arity-2/3/4 path-stars; N=sum r_i, q=N+1, alpha=N+2, x=least natural k with zero-extended Delta_k P<0 (including terminal), p natural with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, current-p strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], one endpoint tag and r_i original tip tags per branch; A=sum r_i ei T_i[j], b=e0+sum r_i ei. Restricted to m>=266 and dependent on informal predecessor intermediate estimates and the exact 86-layer scalar inequality.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Source-dependent informal proof only: predecessor local-minor, curvature and selector-propagation estimates plus the exact 86-layer scalar inequality. No all-m or formal award."
+    },
+    {
+      "claim_id": "C1-CT-U1-SLACK-COVERAGE-EQUIVALENCE",
+      "statement": "With R=sum r_i ei epsilon_i>=0, S<=0 iff R>=(bD_j-kappa A)_+.",
+      "scope": "Ordinary m>=1 distinct-center arity-2/3/4 path-stars; N=sum r_i, q=N+1, alpha=N+2, x=least natural k with zero-extended Delta_k P<0 (including terminal), p natural with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, current-p strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], one endpoint tag and r_i original tip tags per branch; A=sum r_i ei T_i[j], b=e0+sum r_i ei.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Exact algebra conditional on the formal relative margin; equivalent to the aggregate sign and does not imply payment."
+    },
+    {
+      "claim_id": "C1-CT-U3-CONDITIONAL-LOCAL-PAYMENT",
+      "statement": "If e0=0 and all selected W_r>=0, payment follows; if e0=1, payment iff selected weighted W_r cover delta D_j C[j].",
+      "scope": "Ordinary m>=1 distinct-center arity-2/3/4 path-stars; N=sum r_i, q=N+1, alpha=N+2, x=least natural k with zero-extended Delta_k P<0 (including terminal), p natural with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, current-p strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], one endpoint tag and r_i original tip tags per branch; A=sum r_i ei T_i[j], b=e0+sum r_i ei.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Exact conditional algebra; neither local sign nor endpoint coverage is established universally."
+    },
+    {
+      "claim_id": "C1-CU-F2-EVENTUAL-EXACT-RATIO-PAYMENT-TAIL",
+      "statement": "An eventual source-dependent exact-ratio payment tail follows from interior asymptotics and predecessor selection estimates.",
+      "scope": "Ordinary m>=1 distinct-center arity-2/3/4 path-stars; N=sum r_i, q=N+1, alpha=N+2, x=least natural k with zero-extended Delta_k P<0 (including terminal), p natural with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, current-p strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], one endpoint tag and r_i original tip tags per branch; A=sum r_i ei T_i[j], b=e0+sum r_i ei. Only a source-dependent existential sufficiently large-m tail, with no explicit original F2 cutoff.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Informal existential tail only; explicit m>=266 MASS consequence is stronger and equally source-dependent."
+    },
+    {
+      "claim_id": "C1-CU-F3-UNIVERSAL-COFACTOR-SIGN-SHORTCUT",
+      "statement": "Every selected branch has Delta_(p-3)(F_(r_i)H_i)>=0.",
+      "scope": "Ordinary m>=1 distinct-center arity-2/3/4 path-stars; N=sum r_i, q=N+1, alpha=N+2, x=least natural k with zero-extended Delta_k P<0 (including terminal), p natural with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, current-p strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], one endpoint tag and r_i original tip tags per branch; A=sum r_i ei T_i[j], b=e0+sum r_i ei.",
+      "status": "proposed_rejected",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "The eligible (0,12,10), x=37,p=39 row has both represented cofactor slopes negative while all flags are on."
+    },
+    {
+      "claim_id": "C1-CU-T2-CORRECTED-RELATIVE-TO-ABSOLUTE-BRIDGE",
+      "statement": "The formal relative mark margin gives S<=bD_j-(1-t+t/delta)A; exact-ratio payment suffices for S<=0.",
+      "scope": "Ordinary m>=1 distinct-center arity-2/3/4 path-stars; N=sum r_i, q=N+1, alpha=N+2, x=least natural k with zero-extended Delta_k P<0 (including terminal), p natural with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, current-p strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], one endpoint tag and r_i original tip tags per branch; A=sum r_i ei T_i[j], b=e0+sum r_i ei.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Exact algebra with t=C[j+1]/C[j] in (0,1); the 1-t+1/delta display is wrong and cannot replace the integer target."
+    },
+    {
+      "claim_id": "C1-F2-ALL-SELECTED-INTERIOR-ASYMPTOTIC-PAYMENT",
+      "statement": "Conditional all-selected interior asymptotics yield a payment ratio growing at least c_epsilon exp(c'_epsilon m)/N.",
+      "scope": "Ordinary m>=1 distinct-center arity-2/3/4 path-stars; N=sum r_i, q=N+1, alpha=N+2, x=least natural k with zero-extended Delta_k P<0 (including terminal), p natural with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, current-p strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], one endpoint tag and r_i original tip tags per branch; A=sum r_i ei T_i[j], b=e0+sum r_i ei. Conditional on fixed epsilon>0, j/N in [epsilon,1/2] and ei=1 for every branch; informal asymptotic scope.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Assumes j/N in [epsilon,1/2] and all current branch flags on; informal asymptotic argument alone provides no explicit cutoff."
+    },
+    {
+      "claim_id": "C1-F2-EXACT-NEAR-DESCENT-MIXTURE-PROBES",
+      "statement": "Six specified exact profiles have no negative payment margin on their eligible rows.",
+      "scope": "Ordinary m>=1 distinct-center arity-2/3/4 path-stars; N=sum r_i, q=N+1, alpha=N+2, x=least natural k with zero-extended Delta_k P<0 (including terminal), p natural with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, current-p strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], one endpoint tag and r_i original tip tags per branch; A=sum r_i ei T_i[j], b=e0+sum r_i ei. Restricted to the six adjudicated named profiles and their actual eligible rows.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Bounded computation only; homogeneous arity-2 m=150 has no eligible row, while five other profiles have 8,8,8,5,7 rows."
+    },
+    {
+      "claim_id": "C1-F3-COFACTOR-NONNEGATIVITY-SHORTCUT",
+      "statement": "The positive universal cofactor-nonnegativity shortcut has an eligible counterexample.",
+      "scope": "Ordinary m>=1 distinct-center arity-2/3/4 path-stars; N=sum r_i, q=N+1, alpha=N+2, x=least natural k with zero-extended Delta_k P<0 (including terminal), p natural with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, current-p strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], one endpoint tag and r_i original tip tags per branch; A=sum r_i ei T_i[j], b=e0+sum r_i ei. Existential negative shortcut witness (0,12,10), x=37,p=39 only.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Negative-polarity source claim: (0,12,10), x=37,p=39, all 77 original tags selected, d3<0 and d4<0, while M>0."
+    },
+    {
+      "claim_id": "C1-T1-CENTER-CHOICE-LAYER-EXPANSION",
+      "statement": "T_i[j] has an exact nonnegative expansion by other centers choosing z, G choice and F_(r_i) layer; truncation is coefficientwise lower.",
+      "scope": "Ordinary m>=1 distinct-center arity-2/3/4 path-stars; N=sum r_i, q=N+1, alpha=N+2, x=least natural k with zero-extended Delta_k P<0 (including terminal), p natural with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, current-p strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], one endpoint tag and r_i original tip tags per branch; A=sum r_i ei T_i[j], b=e0+sum r_i ei.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Direct product expansion for every natural j and depth 0..m-1; no uniform sufficient truncation depth follows."
+    },
+    {
+      "claim_id": "C1-T1-EXACT-RATIO-LAYER-BOUNDED-CHECKS",
+      "statement": "The specified five m=200 profiles and m=150 arity-4 control pass the stated exact-ratio layer checks.",
+      "scope": "Ordinary m>=1 distinct-center arity-2/3/4 path-stars; N=sum r_i, q=N+1, alpha=N+2, x=least natural k with zero-extended Delta_k P<0 (including terminal), p natural with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, current-p strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], one endpoint tag and r_i original tip tags per branch; A=sum r_i ei T_i[j], b=e0+sum r_i ei. Restricted to five named m=200 profiles at their least normalized-margin rows and the m=150 arity-4 control.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Bounded exact evidence only; five profile row counts 6,8,11,5,3; fixed two layers fail stronger MASS at m=150. Mixed control order corrected to 101."
+    },
+    {
+      "claim_id": "C1-T2-FIRST-DESCENT-ADJACENT-SLOPE-BRACKET",
+      "statement": "Delta_(x-1)C>=-beta_(x-1), Delta_x C<-beta_x, and 0<C[j+1]/C[j]<1, beta_k=binom(q,k)-binom(q,k-1).",
+      "scope": "Ordinary m>=1 distinct-center arity-2/3/4 path-stars; N=sum r_i, q=N+1, alpha=N+2, x=least natural k with zero-extended Delta_k P<0 (including terminal), p natural with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, current-p strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], one endpoint tag and r_i original tip tags per branch; A=sum r_i ei T_i[j], b=e0+sum r_i ei.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Exact informal proof from first descent, rising parent binomial and positive-interval log-concavity of C; gives no absolute A bound."
+    },
+    {
+      "claim_id": "C1-T2-M150-ARITY-GRID-BOUNDED-PAYMENT",
+      "statement": "All 694 eligible rows of a 136-profile m=150 arity grid have nonnegative integer payment margins.",
+      "scope": "Ordinary m>=1 distinct-center arity-2/3/4 path-stars; N=sum r_i, q=N+1, alpha=N+2, x=least natural k with zero-extended Delta_k P<0 (including terminal), p natural with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, current-p strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], one endpoint tag and r_i original tip tags per branch; A=sum r_i ei T_i[j], b=e0+sum r_i ei. Restricted to the 136-profile m=150 count grid and its 694 eligible rows.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Bounded exact replay; zero partial branch selections on this grid is not universal."
+    },
+    {
+      "claim_id": "C1-T3-BOUNDED-EXACT-REPLAY",
+      "statement": "The box 0<=a2,a3,a4<=20 excluding zero has 9,260 profiles, 3,206 eligible rows and no negative payment margin.",
+      "scope": "Ordinary m>=1 distinct-center arity-2/3/4 path-stars; N=sum r_i, q=N+1, alpha=N+2, x=least natural k with zero-extended Delta_k P<0 (including terminal), p natural with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, current-p strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], one endpoint tag and r_i original tip tags per branch; A=sum r_i ei T_i[j], b=e0+sum r_i ei. Restricted to 0<=a2,a3,a4<=20 excluding the all-zero triple and the 3,206 eligible rows.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Bounded exact replay; zero endpoint-off/branch-on rows makes the conditional selector test vacuous."
+    },
+    {
+      "claim_id": "C1-T3-ENDPOINT-ON-NEGATIVE-SLOPE-BOUNDARY",
+      "statement": "An eligible endpoint-on row has selected branches with negative shifted cofactor slopes.",
+      "scope": "Ordinary m>=1 distinct-center arity-2/3/4 path-stars; N=sum r_i, q=N+1, alpha=N+2, x=least natural k with zero-extended Delta_k P<0 (including terminal), p natural with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, current-p strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], one endpoint tag and r_i original tip tags per branch; A=sum r_i ei T_i[j], b=e0+sum r_i ei. Existential eligible witness (0,12,11), x=39,p=41 only.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Exact (0,12,11), m=23,N=80,n=106,alpha=82,x=39,p=41,j=39,delta=42 row; all 81 tags on and M>0."
+    },
+    {
+      "claim_id": "C1-T3-STRICT-SELECTOR-TO-MASS-ENDPOINT-OFF",
+      "statement": "If e0=0 and ei=1, T_i[j]>=3V_i+1 where V_i=[z^(j-1)]F_(r_i)L^(N-r_i).",
+      "scope": "Ordinary m>=1 distinct-center arity-2/3/4 path-stars; N=sum r_i, q=N+1, alpha=N+2, x=least natural k with zero-extended Delta_k P<0 (including terminal), p natural with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, current-p strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], one endpoint tag and r_i original tip tags per branch; A=sum r_i ei T_i[j], b=e0+sum r_i ei.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Exact conditional selector algebra and H_i>=L^(N-r_i); it does not cover exact-ratio debt and had no nonvacuous selected-branch test in the T3 box."
+    },
+    {
+      "claim_id": "C1-U1-EXACT-RATIO-BOUNDED-SCANS",
+      "statement": "Pure arities through m=180 and mixed counts through m=60 show no negative payment margin in stated scans.",
+      "scope": "Ordinary m>=1 distinct-center arity-2/3/4 path-stars; N=sum r_i, q=N+1, alpha=N+2, x=least natural k with zero-extended Delta_k P<0 (including terminal), p natural with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, current-p strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], one endpoint tag and r_i original tip tags per branch; A=sum r_i ei T_i[j], b=e0+sum r_i ei. Restricted to pure arities m<=180 and mixed count triples m<=60 in the stated scan.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Bounded exact evidence; the mixed scan has 35,477 eligible rows and pure arity-2 m<=180 yielded no selected eligible row."
+    },
+    {
+      "claim_id": "C1-U1-RELATIVE-MARGIN-SLACK-IDENTITY",
+      "statement": "S=bD_j-kappa A-R with kappa=1-t+t/delta and R=sum_i r_i ei epsilon_i>=0.",
+      "scope": "Ordinary m>=1 distinct-center arity-2/3/4 path-stars; N=sum r_i, q=N+1, alpha=N+2, x=least natural k with zero-extended Delta_k P<0 (including terminal), p natural with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, current-p strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], one endpoint tag and r_i original tip tags per branch; A=sum r_i ei T_i[j], b=e0+sum r_i ei.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Exact algebra from the formal relative margin; R can cover an aggregate deficit without proving payment."
+    },
+    {
+      "claim_id": "C1-U2-SPREAD-DESCENT-SELECTOR-BOUNDED",
+      "statement": "The stated m<=40 directed spread scan found no earlier descent or loss of shared flags.",
+      "scope": "Ordinary m>=1 distinct-center arity-2/3/4 path-stars; N=sum r_i, q=N+1, alpha=N+2, x=least natural k with zero-extended Delta_k P<0 (including terminal), p natural with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, current-p strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], one endpoint tag and r_i original tip tags per branch; A=sum r_i ei T_i[j], b=e0+sum r_i ei. Restricted to directed count spreads m<=40 and four named m=120 stress pairs, with common eligible ranks for flag comparisons.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "10,660 candidate pairs and only 3,756 common eligible rows, plus four m=120 probes; no universal transfer."
+    },
+    {
+      "claim_id": "C1-U2-SPREAD-NORMALIZED-PAYMENT-MONOTONE",
+      "statement": "The normalized quotient K_j A/(b delta D_j C[j]) never decreases under an eligible fixed-(m,N) (3,3)->(2,4) spread.",
+      "scope": "Ordinary m>=1 distinct-center arity-2/3/4 path-stars; N=sum r_i, q=N+1, alpha=N+2, x=least natural k with zero-extended Delta_k P<0 (including terminal), p natural with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, current-p strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], one endpoint tag and r_i original tip tags per branch; A=sum r_i ei T_i[j], b=e0+sum r_i ei. The proposed universal nondecrease is over fixed-(m,N) eligible spreads with b>0; refuted by one eligible literal-tree pair.",
+      "status": "proposed_rejected",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Literal-tree eligible spread (0,10,13)->(1,8,14), m=23,N=82,x=40,p=42 has negative exact quotient cross difference; both primary margins stay positive."
+    },
+    {
+      "claim_id": "C1-U3-BRANCH-DEBT-DECOMPOSITION",
+      "statement": "M=sum_(r=2)^4 a_r e_r r W_r-e0 delta D_j C[j], W_r=K_j T_r[j]-delta D_j C[j].",
+      "scope": "Ordinary m>=1 distinct-center arity-2/3/4 path-stars; N=sum r_i, q=N+1, alpha=N+2, x=least natural k with zero-extended Delta_k P<0 (including terminal), p natural with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, current-p strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], one endpoint tag and r_i original tip tags per branch; A=sum r_i ei T_i[j], b=e0+sum r_i ei.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Exact grouping by equal arity with original tip multiplicity; supplies no local-surplus sign."
+    },
+    {
+      "claim_id": "C1-U3-FINITE-LOCAL-SURPLUS-CHECKS",
+      "statement": "Selected local-surplus and primary margins are nonnegative in the stated controls, neighborhood and small/large stress.",
+      "scope": "Ordinary m>=1 distinct-center arity-2/3/4 path-stars; N=sum r_i, q=N+1, alpha=N+2, x=least natural k with zero-extended Delta_k P<0 (including terminal), p natural with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, current-p strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], one endpoint tag and r_i original tip tags per branch; A=sum r_i ei T_i[j], b=e0+sum r_i ei. Restricted to the adjudicated finite controls, six-profile selector neighborhood, small scan, and large stress scan.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Bounded exact evidence; small loop has 2,599 candidates but only 65 fresh eligible profiles, large stress 646 eligible profiles/2,738 rows."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+      "statement": "For every eligible row, (delta*C[j]-(delta-1)*C[j+1])*A >= b*delta*D_j*C[j].",
+      "scope": "Ordinary m>=1 distinct-center arity-2/3/4 path-stars; N=sum r_i, q=N+1, alpha=N+2, x=least natural k with zero-extended Delta_k P<0 (including terminal), p natural with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, current-p strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], one endpoint tag and r_i original tip tags per branch; A=sum r_i ei T_i[j], b=e0+sum r_i ei.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-1/C1-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "No all-parameter proof or eligible negative M witness; m>=266 conditional informal MASS tail leaves the m=41..265 payment interval after the bounded F1 prefix."
+    }
+  ],
+  "report_path": "cycles/cycle-1/C1-SYNTHESIS/REPORT.md",
+  "limitations": [
+    "Universal exact-ratio payment and all-m selected MASS remain OPEN; no primary negative witness was found.",
+    "The m>=266 MASS proof depends on informal predecessor intermediate estimates and has no governed formal award.",
+    "Payment evidence for m<=40 is bounded computation; all 41<=m<=265 profiles and eligible ranks remain unproved by this cycle.",
+    "Synthesis did not independently execute adjudicator scripts or run Lean."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C1-CT-F2-TAIL-DISCHARGES-ASYMPTOTIC-PREMISES",
+    "C1-CT-F2-TAIL-EXPLICIT-MASS-CUTOFF",
+    "C1-CT-U1-SLACK-COVERAGE-EQUIVALENCE",
+    "C1-CT-U3-CONDITIONAL-LOCAL-PAYMENT",
+    "C1-CU-F2-EVENTUAL-EXACT-RATIO-PAYMENT-TAIL",
+    "C1-CU-F3-UNIVERSAL-COFACTOR-SIGN-SHORTCUT",
+    "C1-CU-T2-CORRECTED-RELATIVE-TO-ABSOLUTE-BRIDGE",
+    "C1-F2-ALL-SELECTED-INTERIOR-ASYMPTOTIC-PAYMENT",
+    "C1-F2-EXACT-NEAR-DESCENT-MIXTURE-PROBES",
+    "C1-F3-COFACTOR-NONNEGATIVITY-SHORTCUT",
+    "C1-T1-CENTER-CHOICE-LAYER-EXPANSION",
+    "C1-T1-EXACT-RATIO-LAYER-BOUNDED-CHECKS",
+    "C1-T2-FIRST-DESCENT-ADJACENT-SLOPE-BRACKET",
+    "C1-T2-M150-ARITY-GRID-BOUNDED-PAYMENT",
+    "C1-T3-BOUNDED-EXACT-REPLAY",
+    "C1-T3-ENDPOINT-ON-NEGATIVE-SLOPE-BOUNDARY",
+    "C1-T3-STRICT-SELECTOR-TO-MASS-ENDPOINT-OFF",
+    "C1-U1-EXACT-RATIO-BOUNDED-SCANS",
+    "C1-U1-RELATIVE-MARGIN-SLACK-IDENTITY",
+    "C1-U2-SPREAD-DESCENT-SELECTOR-BOUNDED",
+    "C1-U2-SPREAD-NORMALIZED-PAYMENT-MONOTONE",
+    "C1-U3-BRANCH-DEBT-DECOMPOSITION",
+    "C1-U3-FINITE-LOCAL-SURPLUS-CHECKS",
+    "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT"
+  ]
+}

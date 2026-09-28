@@ -1,5 +1,7 @@
 # Open research roadmap
 
+Current 28 September 2026: absolute compensation is active, with Cycle 1 closed and Cycle 2 under review. The m>=266 MASS restriction is now informally established. Focus on a uniform coefficient bound, independent selector geometry, and the remaining finite-prefix payment if necessary. The occupancy/Jensen and lower-cutoff proposals are unaccepted candidates. Code's separate CB switch target remains as specified below.
+
 Updated 27 September 2026 after both six-cycle closes. Erdős 993 remains open.
 
 1. **Code: a parameter-uniform switch certificate.** Target CB(8,m), m>=107 with m congruent to 2 modulo 3, at p*=(16m+4)/3. Prove a choke-local sector allocation compatible with the remaining capacity after the E1 non-sector flow, and the actual parent-descent eligibility bound. This would certify one rank per tree in an infinite switch-using family; it would not certify every eligible rank or arbitrary trees.
