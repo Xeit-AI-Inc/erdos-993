@@ -1,0 +1,55 @@
+{
+  "worker_id": "C4-CU-T2",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, with W[k]=\u03a3_i r_i A_i[k] retaining original private-tip multiplicities and C=G\u220f_i B_{r_i}, integer-zero-extended coefficients satisfy W[k+1]C[k\u22121]\u2264W[k]C[k] for every natural k with 1\u2264k and 2k\u2264N+2.",
+      "scope": "Exact registered guarded weighted-tip-deck comparison on all nonempty ordinary path-stars with m\u22651 and r_i\u2208{2,3,4}; no selector, first-descent or payment conclusion is part of this inequality itself. No guarded counterexample or universal proof was found. The all-rank witness at (a2,a3,a4)=(38,0,1), k=77 lies outside the guard.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CU-T2/REPORT.md",
+        "cycles/cycle-4/C4-CU-T2/producer_weighted_deck_check.py",
+        "cycles/cycle-4/C4-CU-T2/producer_replay.json",
+        "cycles/cycle-4/C4-CU-T2/independent_selector_audit.py",
+        "cycles/cycle-4/C4-CU-T2/independent_selector_audit.json"
+      ],
+      "reason": "178 authorized input bytes matched their manifests/packet hashes. Exact producer replay and independent exact guarded boundary/interior checks found no failure, but they are finite and do not prove the universal claim."
+    },
+    {
+      "claim_id": "C4-T2-WEIGHTED-SHIFT-IMPLIES-ACTUAL-TIP-SELECTION",
+      "statement": "Conditionally, if the registered weighted shifted comparison holds at guarded k=p, then at every actual eligible lower-half p at least one original branch i has strict current-p selector \u0394_p A_i<0.",
+      "scope": "For the same nonempty ordinary path-star family, use the actual least strict parent descent x (including terminal differences, with flats not descents), all guards x+2\u2264p, 3p<2(N+2)+1 and 2p\u2264N+2, and selectors evaluated at current p. Coefficients are integer-zero-extended. Each original private tip retains multiplicity r_i. This is conditional on the weighted inequality, not an unconditional selector theorem; no endpoint selection is implied.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CU-T2/REPORT.md",
+        "cycles/cycle-4/C4-CU-T2/independent_selector_audit.py",
+        "cycles/cycle-4/C4-CU-T2/independent_selector_audit.json"
+      ],
+      "reason": "The exact algebra is valid: the registered first-descent ratio-band plus log-concavity gives 0<C[p]/C[p\u22121]<1; dividing the nonnegative weighted margin by the positive W[p]C[p\u22121] preserves order and forces \u0394_pW<0. Positive r_i then force at least one \u0394_pA_i<0."
+    },
+    {
+      "claim_id": "C4-CU-T2-WEIGHTED-SHIFT-IMPLIES-SELECTED-MASS",
+      "statement": "Conditionally on the weighted shifted comparison at every guarded rank, the actual eligible selected tip set is nonempty and the registered all-m branchwise three-halves bound implies A=\u03a3_i r_i e_i T_i[j]\u2265b\u03b4D_j, including a possibly selected endpoint tag.",
+      "scope": "Ordinary path-stars with m\u22651, r_i\u2208{2,3,4}; actual first strict parent descent x, current-p strict selectors and all three lower-half guards retained. Let S=\u03a3_i r_i e_i. Weighted selector implication gives S\u22652; the registered bound 2T_i[j]\u22653\u03b4D_j for every branch gives A\u2265(3/2)S\u03b4D_j\u2265(S+e\u2080)\u03b4D_j=b\u03b4D_j since e\u2080\u2208{0,1}. Original tag multiplicities are retained. This is conditional and does not itself prove the weighted comparison or assert a formal award.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CU-T2/REPORT.md"
+      ],
+      "reason": "The composition is an exact arithmetic consequence of the weighted selector lemma and the registered all-m branchwise three-halves theorem: S\u22652 and e\u2080\u22641 imply 3S/2\u2265S+e\u2080."
+    }
+  ],
+  "covered_claim_ids": [
+    "C4-T2-WEIGHTED-SHIFT-IMPLIES-ACTUAL-TIP-SELECTION",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR"
+  ],
+  "report_path": "cycles/cycle-4/C4-CU-T2/REPORT.md",
+  "limitations": [
+    "No universal proof or guarded counterexample was found for the weighted shifted deck comparison; finite exact checks are bounded evidence only.",
+    "The tip-selection and selected-MASS consequences are conditional on the weighted comparison; the MASS composition additionally uses the registered all-m branchwise three-halves result.",
+    "No Lean build or formal award was attempted."
+  ],
+  "status_authority": "proposed_worker_only"
+}

@@ -1,0 +1,71 @@
+{
+  "worker_id": "C4-CU-T1",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "U",
+  "covered_claim_ids": [
+    "C4-T1-BINOMIAL-SUMMAND-OBSTRUCTION",
+    "C4-T1-STRICT-SELECTOR-BRIDGE",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR"
+  ],
+  "claims": [
+    {
+      "claim_id": "C4-T1-BINOMIAL-SUMMAND-OBSTRUCTION",
+      "statement": "For profile (a2,a3,a4)=(0,22,0), the common component E=zL^N in A_v=M_v+E violates E[k+1]C[k-1]<=E[k]C[k] at guarded k=27; its signed margin E[27]C[27]-E[28]C[26] is -518620474811633289768751398606375936.",
+      "scope": "Exact obstruction only to proving the full shifted comparison by proving it separately for M_v and E. Here N=66, alpha=N+2=68, actual least strict descent x=32, k=27 satisfies 1<=k and 2k=54<=N+2. At actual eligible p=34, x+2<=p, 3p=102<2alpha+1=137, and 2p=alpha; the exact strict current-p selectors select the endpoint and all 66 original tip copies. This is not a full-comparison or eligible-selector counterexample.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CU-T1/REPORT.md",
+        "cycles/cycle-4/C4-CU-T1/shifted_lr_replay_independent.py",
+        "cycles/cycle-4/C4-CU-T1/shifted_lr_independent_audit.py",
+        "cycles/cycle-4/C4-CU-T1/shifted_lr_independent_audit.json"
+      ],
+      "reason": "Independent exact expansion reproduces the negative component margin. The full deletion comparison has positive margins at k=27 and boundary k=34, so the obstruction is limited to the proposed summand-wise route."
+    },
+    {
+      "claim_id": "C4-T1-STRICT-SELECTOR-BRIDGE",
+      "statement": "Assume C is positive and log-concave on its support, x is the actual least strict descent of P with Delta_x C<0, and the relevant original deletion A_v satisfies A_v[p+1]C[p-1]<=A_v[p]C[p]. Then at every actual eligible p with x+2<=p, 3p<2alpha+1, and 2p<=alpha, if A_v[p]>0, the strict current-p selector has Delta_p A_v<0.",
+      "scope": "Conditional informal proof for the endpoint or any original private-tip deletion, with integer zero extension, actual first strict descent, all eligibility guards, and strict selectors evaluated at current p. Here alpha=N+2 and the comparison is used at k=p in 1<=k and 2k<=N+2. For the weighted deck W=sum_i r_i Ai, the same argument implies Delta_p W<0 and hence at least one selected branch when W[p]>0; it does not imply endpoint or all-tip selection. Original multiplicities r_i remain fixed.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CU-T1/REPORT.md",
+        "cycles/cycle-4/C4-CU-T1/shifted_lr_independent_audit.py",
+        "cycles/cycle-4/C4-CU-T1/shifted_lr_independent_audit.json"
+      ],
+      "reason": "Positive log-concave C gives nonincreasing positive ratios rho_k=C[k]/C[k-1]. Since Delta_x C<0 and p>=x+2, rho_p<=rho_(x+1)<1. Dividing by positive C[p-1] preserves order and yields A_v[p+1]<=A_v[p]rho_p<A_v[p]. This is conditional on the shifted inequality and does not prove it universally."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, every original leaf deletion polynomial A_v (A0 for the endpoint or Ai for a tip of branch i), and every natural k with 1<=k and 2k<=N+2, integer-zero-extended coefficients satisfy A_v[k+1]C[k-1]<=A_v[k]C[k], with C=GQ.",
+      "scope": "All-profile guarded lower-half comparison with no actual-eligibility assumption: branches are distinct, r_i in {2,3,4}, N=sum_i r_i, L=1+z, G=1+2z, B_r=L^r+z, Q=product_i B_(r_i), H_i=product_(h!=i)B_(r_h), C=GQ, A0=LQ+zL^N, and Ai=G B_(r_i-1)H_i+zL^N. Coefficients are zero-extended. Any application to selectors must retain actual least strict descent x, x+2<=p, 3p<2alpha+1, 2p<=alpha, and strict current-p flags e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0]; original tip multiplicities r_i are not recomputed.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CU-T1/REPORT.md",
+        "cycles/cycle-4/C4-CU-T1/shifted_lr_replay_independent.py",
+        "cycles/cycle-4/C4-CU-T1/shifted_lr_independent_audit.py",
+        "cycles/cycle-4/C4-CU-T1/shifted_lr_independent_audit.json"
+      ],
+      "reason": "Retain as an OPEN all-profile predicate. Independent exact bounded checks found no guarded failure in the six targeted profiles, including boundary ranks, but neither those checks nor the valid conditional selector bridge proves the universal comparison. The known all-rank witness is outside its guard."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, put W(X)=sum_i r_i Ai(X), counting each original private-tip deletion with its original multiplicity. For every natural k with 1<=k and 2k<=N+2, integer-zero-extended coefficients satisfy W[k+1]C[k-1]<=W[k]C[k].",
+      "scope": "All-profile guarded weighted-tip-deck comparison; branches are distinct, r_i in {2,3,4}, N=sum_i r_i, L=1+z, G=1+2z, B_r=L^r+z, Q=product_i B_(r_i), H_i=product_(h!=i)B_(r_h), C=GQ, Ai=G B_(r_i-1)H_i+zL^N, and W=sum_i r_i Ai with zero-extended coefficients. It is not an individual-deletion claim. A selector application retains actual x, all three guards x+2<=p, 3p<2alpha+1, 2p<=alpha, and strict current-p selectors; a negative weighted difference ensures at least one selected branch but not the endpoint or all branches.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CU-T1/REPORT.md",
+        "cycles/cycle-4/C4-CU-T1/shifted_lr_independent_audit.py",
+        "cycles/cycle-4/C4-CU-T1/shifted_lr_independent_audit.json"
+      ],
+      "reason": "Retain as a distinct OPEN, weaker all-profile obligation. Independent exact weighted margins pass only on the six targeted profiles; no universal proof or guarded counterexample is supplied. Original tip multiplicities are explicitly preserved."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CU-T1/REPORT.md",
+  "limitations": [
+    "The individual and weighted shifted comparisons remain OPEN; bounded exact checks are not universal proof.",
+    "No new actual eligible counterexample was found, and the known all-rank shifted witness is outside the lower-half guard.",
+    "The selector bridge is conditional on the shifted comparison and positive log-concave C with Delta_x C<0; no Lean verification was run."
+  ],
+  "status_authority": "proposed_worker_only"
+}

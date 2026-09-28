@@ -1,0 +1,56 @@
+{
+  "worker_id": "C4-CT-U3",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "T",
+  "covered_claim_ids": [
+    "C4-U3-WEIGHTED-SHIFTED-LR-IMPLIES-STRICT-TIP-SELECTION",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR"
+  ],
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, every original deletion polynomial Av (A0 for deletion of vertex 2 or Ai for deletion of a private tip in branch i), and every natural k with 1<=k and 2k<=N+2, integer-zero-extended coefficients satisfy Av[k+1] C[k-1] <= Av[k] C[k], where C=G product_i B_(r_i).",
+      "scope": "Guarded lower-half shifted-C comparison for all profiles and original deletion types, with no actual eligibility premise. Retains the exact rank guards and definitions L=1+z, G=1+2z, B_r=L^r+z, N=sum_i r_i. No payment or aggregate follows from the bounded checks.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CT-U3/REPORT.md",
+        "cycles/cycle-4/C4-CT-U3/independent_critique.py",
+        "cycles/cycle-4/C4-CT-U3/independent_critique.json"
+      ],
+      "reason": "Independent exact replay found no failure through 18 branches and literal tree-DP matched the coefficient formulas for profile (2,3,4), but neither supplies a universal proof or guarded counterexample. The known rank-77 negative margin lies outside 2k<=N+2."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, let W=sum_i r_i Ai, retaining each branch's original private-tip multiplicity. For every natural k with 1<=k and 2k<=N+2, integer-zero-extended coefficients satisfy W[k+1] C[k-1] <= W[k] C[k].",
+      "scope": "Guarded lower-half shifted-C comparison for the original-multiplicity-weighted tip-deletion deck over every profile; no actual eligibility premise. This is an auxiliary comparison and not MASS or the exact-ratio payment.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CT-U3/REPORT.md",
+        "cycles/cycle-4/C4-CT-U3/independent_critique.py",
+        "cycles/cycle-4/C4-CT-U3/independent_critique.json"
+      ],
+      "reason": "Independent exact replay found no failure through 18 branches (27,954 weighted comparisons), but gives no universal proof. The known unguarded counterexample is outside the retained rank guard."
+    },
+    {
+      "claim_id": "C4-U3-WEIGHTED-SHIFTED-LR-IMPLIES-STRICT-TIP-SELECTION",
+      "statement": "For an ordinary arity-2,3,4 path-star, at an actual eligible p with x+2<=p, 3p<2alpha+1, and 2p<=alpha, let x be the actual least strict descent of P. If C has positive interval support and is log-concave, Delta_x C<0, and W[p+1]C[p-1]<=W[p]C[p] for W=sum_i r_i Ai with original tip multiplicities, then some branch i has Delta_p Ai<0.",
+      "scope": "Conditional implication at the actual current p only. Requires positive W[p], C[p-1], C[p] to divide by; retains strict selectors, actual first descent, every eligibility guard, integer zero extension, and all original branch tip multiplicities. Does not prove the weighted LR premise or a payment statement.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CT-U3/REPORT.md",
+        "cycles/cycle-4/C4-CT-U3/independent_critique.py",
+        "cycles/cycle-4/C4-CT-U3/independent_critique.json"
+      ],
+      "reason": "The positive-denominator division and adjacent-ratio argument are valid at the stated scope: Delta_x C<0 gives C[x+1]/C[x]<1, log-concavity and p>=x+2 give C[p]/C[p-1]<=C[x+1]/C[x], hence Delta_p W<0. Since Delta_p W=sum_i r_i Delta_p Ai with each r_i>0, at least one branch slope is strictly negative."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CT-U3/REPORT.md",
+  "limitations": [
+    "Both universal guarded LR candidates remain open; finite coefficient scans do not establish universal truth.",
+    "The all-rank rank-77 witness is outside the lower-half guard and is not an eligible counterexample.",
+    "The conditional selector implication does not prove its weighted premise, selected MASS, exact-ratio payment, aggregate, or a formal theorem."
+  ],
+  "status_authority": "proposed_worker_only"
+}

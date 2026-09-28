@@ -1,0 +1,29 @@
+{
+  "worker_id": "C4-CU-T3",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "U",
+  "covered_claim_ids": [
+    "C4-T3-COUNT-VECTOR-COFACTOR-BRIDGE"
+  ],
+  "claims": [
+    {
+      "claim_id": "C4-T3-COUNT-VECTOR-COFACTOR-BRIDGE",
+      "statement": "For a finite family of positive block sizes s_i, with M=sum_i s_i and coefficient sequences f_i(t)>=binom(s_i,t), the product coefficient divided by binom(M,k) equals the expectation of product_i(f_i(K_i)/binom(s_i,K_i)) under the count-vector law of a uniform k-subset for every 0<=k<=M. Finite Jensen and log(w)>=2(w-1)/(w+1) for w>=1 yield the stated exponent lower bound. For f_i(t)=binom(s_i,t)+1[t=1], this specializes to the singleton-occupancy exponent; the empty family is handled separately at M=k=0.",
+      "scope": "Universal informal finite-block count-vector coefficient identity and Jensen exponent consequence, with positive block sizes, zero-extended binomial coefficients, all in-range k, and the empty family boundary handled separately. No formal award or graph/payment transfer.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CU-T3/REPORT.md",
+        "cycles/cycle-4/C4-CU-T3/bridge_audit.py"
+      ],
+      "reason": "The finite count-vector expansion and hypergeometric normalization are exact. The log inequality has nonnegative derivative difference on w>=1, exp is increasing and convex, and y_k is nonnegative, so the Jensen and Taylor directions are valid. Independent rational boundary/interior replay passes. The separate formal center-subset identity does not itself prove this claim."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CU-T3/REPORT.md",
+  "limitations": [
+    "The finite-block/Jensen theorem remains informal and has no Lean award.",
+    "The exact finite replay is corroboration, not universal proof.",
+    "No parent-rank, marked-deletion, original-tag multiplicity, strict-selector, selected MASS, exact-ratio payment, or global Erd\u0151s993 conclusion follows from this claim."
+  ],
+  "status_authority": "proposed_worker_only"
+}

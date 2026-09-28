@@ -1,0 +1,139 @@
+{
+  "worker_id": "C4-AU",
+  "cycle": 4,
+  "stage": "adjudication",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "C4-U1-DESCENT-BINOMIAL-OCCUPANCY-DRIFT",
+      "statement": "For every ordinary arity-2,3,4 path-star at an actual eligible p, with x the least strict descent of P=C+zL^q including terminal zero extension, j=p-2, q=N+1, beta_x=binom(q,x)-binom(q,x-1)>0, the conditioned product-state drift D satisfies E_j D=(j+1)C[j+1]/C[j]-(q-j)<2j-N-(j+1)beta_x/C[x]. Selectors e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0] and original multiplicities 1,ri remain at the same p but are not used in this bound.",
+      "scope": "Universal informal coefficient proof for m>=1, ri in {2,3,4}, x+2<=p, 3p<2(N+2)+1, 2p<=N+2; integer-zero-extended coefficients. No MASS or payment conclusion.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AU/REPORT.md",
+        "cycles/cycle-4/C4-AU/C4-AU-independent-audit.py",
+        "cycles/cycle-4/C4-AU/C4-AU-independent-evidence.json"
+      ],
+      "reason": "The differential identity is exact; beta_x>0 follows from guards; division by C[x]>0 and decreasing ratios of the log-concave product C give the displayed strict bound. Boundary and interior substitutions pass. CT-U1 and CF-U1 are sound at this informal grade."
+    },
+    {
+      "claim_id": "C4-U1-CONDITIONED-DRIFT-BOUNDED-HORIZON",
+      "statement": "For all ordinary arity-2,3,4 count profiles with 1<=m<=40 that have at least one actual eligible p, exact enumeration found E_x D<=1/3+sum_i(2-ri)/(2^ri+1) at the least strict descent x of P; 4308 profiles were checked.",
+      "scope": "Bounded exact coefficient evidence at x only, with zero extension and all actual-p guards; strict current-p selectors and original leaf multiplicities are not replaced by this comparison.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AU/REPORT.md",
+        "cycles/cycle-4/C4-AU/C4-AU-U1-producer-replay.txt",
+        "cycles/cycle-4/C4-AU/C4-AU-independent-audit.py",
+        "cycles/cycle-4/C4-AU/C4-AU-independent-evidence.json",
+        "cycles/cycle-4/C4-AU/C4-AU-U1-producer-copy.py"
+      ],
+      "reason": "Copied producer replay returns 4308 profiles and no upward discrepancy. Independent exact boundary/interior checks support sign handling. The finding is finite and does not justify a universal unconditioned substitution."
+    },
+    {
+      "claim_id": "C4-U2-R4-M173-DEPTH1-OBSTRUCTION",
+      "statement": "On the homogeneous ordinary r4 path-star with m=173, N=692, n=868, alpha=694, actual x=336, p=338, j=336, delta=357 and all 693 original leaf tags strictly selected at p, the a<=1 center-choice floor has a negative exact-ratio payment margin while full T_i[j] has positive margin.",
+      "scope": "One exact eligible row: x+2=p, 3p<2alpha+1, 2p<=alpha; signed zero extension and original tag multiplicities. Refutes only the depth-one surrogate.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AU/REPORT.md",
+        "cycles/cycle-4/C4-AU/C4-AU-independent-audit.py",
+        "cycles/cycle-4/C4-AU/C4-AU-independent-evidence.json"
+      ],
+      "reason": "Independent monomial expansion GF4=(3,9,7,2), direct coefficient multiplication and layer summation match; exact signed margins and relevant coefficients are in own JSON. CT-U2 and CF-U2 correctly avoid claiming failure of full payment."
+    },
+    {
+      "claim_id": "C4-U2-R4-M173-DEPTH2-LOCAL-REPAIR",
+      "statement": "At the same actual eligible m=173 homogeneous r4 row with all original tags strictly selected, summing exact center-choice layers a=0,1,2 makes the surrogate exact-ratio payment margin positive, whereas a=0,1 is negative.",
+      "scope": "One-row exact repair only, with current-p strict flags, rank guards, zero extension and multiplicity b=693; no parameter-uniform depth or tail bound.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AU/REPORT.md",
+        "cycles/cycle-4/C4-AU/C4-AU-independent-audit.py",
+        "cycles/cycle-4/C4-AU/C4-AU-independent-evidence.json"
+      ],
+      "reason": "Independent layer sum agrees with full product coefficient; K=delta C[j]-(delta-1)C[j+1]>0 makes nonnegative layers increase the margin. Exact depth margins are recorded. CT-U2 and CF-U2 preserve the bounded grade."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star, every original deletion polynomial Av in {A0,Ai}, and every natural k with 1<=k and 2k<=N+2, Av[k+1]C[k-1]<=Av[k]C[k] with integer-zero-extended coefficients.",
+      "scope": "Registered universal guarded lower-half shifted-C individual comparison, no actual-eligibility premise; remains OPEN. Application at actual p retains least strict parent descent, current-p strict selectors, all rank guards and original tip multiplicities.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AU/REPORT.md",
+        "cycles/cycle-4/C4-AU/C4-AU-independent-audit.py",
+        "cycles/cycle-4/C4-AU/C4-AU-independent-evidence.json",
+        "cycles/cycle-4/C4-AU/C4-AU-U3-producer-replay.json",
+        "cycles/cycle-4/C4-AU/C4-AU-U3-producer-copy.py"
+      ],
+      "reason": "No universal proof or guarded counterexample. U3/CT-U3 finite 406977 checks omit A0; independent 27954-case endpoint scan repairs bounded coverage only. Unguarded rank-77 negative margin lies outside 2k<=N+2."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star, W=sum_i ri Ai with original private-tip multiplicities satisfies W[k+1]C[k-1]<=W[k]C[k] for every natural k with 1<=k and 2k<=N+2, using integer-zero-extended coefficients.",
+      "scope": "Registered universal guarded weighted-tip-deck comparison, no actual-eligibility premise; remains OPEN. Current-p strict selectors and least strict parent descent enter only a conditional application.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AU/REPORT.md",
+        "cycles/cycle-4/C4-AU/C4-AU-U3-producer-replay.json",
+        "cycles/cycle-4/C4-AU/C4-AU-independent-audit.py",
+        "cycles/cycle-4/C4-AU/C4-AU-independent-evidence.json",
+        "cycles/cycle-4/C4-AU/C4-AU-U3-producer-copy.py"
+      ],
+      "reason": "The 27954 through-m18 weighted comparisons and an actual eligible row pass, but they are finite. The conditional selector bridge assumes this unproved inequality; it cannot establish it."
+    },
+    {
+      "claim_id": "C4-U3-WEIGHTED-SHIFTED-LR-IMPLIES-STRICT-TIP-SELECTION",
+      "statement": "In an ordinary arity-2,3,4 path-star at actual eligible p, if W[p+1]C[p-1]<=W[p]C[p], C has positive interval log-concave coefficients and Delta_x C<0 at the actual least strict descent x of P, then some branch has Delta_p Ai<0, with W=sum_i ri Ai retaining original tip multiplicities.",
+      "scope": "Conditional universal informal implication at x+2<=p, 3p<2(N+2)+1, 2p<=N+2, with zero extension and strict selector at this same p. It does not prove the weighted LR premise or payment.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AU/REPORT.md",
+        "cycles/cycle-4/C4-AU/C4-AU-independent-audit.py",
+        "cycles/cycle-4/C4-AU/C4-AU-independent-evidence.json"
+      ],
+      "reason": "Positive-factor division gives W[p+1]/W[p]<=C[p]/C[p-1]<=C[x+1]/C[x]<1. A negative weighted sum of slopes with every ri>0 forces a strict branch. CT-U3 and CF-U3 correctly verify the direction."
+    },
+    {
+      "claim_id": "C4-AU-ENDPOINT-GUARDED-SCAN-M18",
+      "statement": "For every ordinary arity-2,3,4 count profile with 1<=m<=18 and each natural guarded rank 1<=k, 2k<=N+2, the endpoint polynomial A0=LQ+zL^N has nonnegative signed shifted-C margin A0[k]C[k]-A0[k+1]C[k-1]; 27954 cases were checked and the minimum is 19 at counts (1,0,0), N=2, k=1.",
+      "scope": "Independent bounded exact coefficient evidence only, including zero extension and endpoint original tag; not a universal guarded LR proof or actual selector theorem.",
+      "status": "proposed_bounded_evidence",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AU/REPORT.md",
+        "cycles/cycle-4/C4-AU/C4-AU-independent-audit.py",
+        "cycles/cycle-4/C4-AU/C4-AU-independent-evidence.json"
+      ],
+      "reason": "Repairs an omission in the U3/CT-U3 m<=18 individual scans, whose loops covered Ai only. Exact independent monomial coefficient arithmetic and full case count are recorded."
+    },
+    {
+      "claim_id": "C4-AU-GUARDED-LR-SELECTOR-COROLLARIES",
+      "statement": "For every ordinary arity-2,3,4 path-star and actual eligible p, the weighted shifted-C LR inequality at p alone implies at least one current-p strict private-tip selector; the individual shifted-C LR inequalities for A0 and every Ai at p imply all original leaf deletions are strict and imply the weighted LR inequality at p.",
+      "scope": "Universal informal conditional implication on the exact ordinary family, with actual least strict parent descent, x+2<=p, 3p<2(N+2)+1, 2p<=N+2, signed zero extension, current-p flags, and original multiplicities ri. Neither guarded LR premise is proved.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-AU/REPORT.md",
+        "cycles/cycle-4/C4-AU/C4-AU-independent-audit.py",
+        "cycles/cycle-4/C4-AU/C4-AU-independent-evidence.json"
+      ],
+      "reason": "The U1 descent calculation makes Delta_x C<0 automatic; C positivity/log-concavity is automatic from factor vectors. Divide only by positive C and deletion coefficients, then sum tip inequalities with positive original ri. The individual premise is stronger than weighted."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-AU/REPORT.md",
+  "limitations": [
+    "Both registered guarded shifted-C LR predicates remain OPEN; all m<=18 checks are bounded evidence.",
+    "The universal drift correction does not bound selector-weighted mass or replace the accepted computer-assisted payment by a census-free proof.",
+    "Depth-two repair is one-row evidence and gives no uniform layer-depth or tail estimate.",
+    "No governed Lean verification was attempted; no authoritative claim status is asserted."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-U1-CONDITIONED-DRIFT-BOUNDED-HORIZON",
+    "C4-U1-DESCENT-BINOMIAL-OCCUPANCY-DRIFT",
+    "C4-U2-R4-M173-DEPTH1-OBSTRUCTION",
+    "C4-U2-R4-M173-DEPTH2-LOCAL-REPAIR",
+    "C4-U3-WEIGHTED-SHIFTED-LR-IMPLIES-STRICT-TIP-SELECTION",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR"
+  ]
+}

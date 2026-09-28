@@ -1,0 +1,51 @@
+{
+  "method": "independent monomial-basis convolution from L=1+z, G=1+2z, B_r=L^r+z; exact integers",
+  "profiles": "all arity-count profiles with 1<=m<=8",
+  "guard": "1<=k<=floor((N+2)/2)",
+  "guarded_rank_rows": 1614,
+  "minimum_rhs_minus_lhs": {
+    "endpoint": {
+      "margin": 19,
+      "profile": [
+        2
+      ],
+      "N": 2,
+      "k": 1
+    },
+    "tip": {
+      "margin": 9,
+      "profile": [
+        2
+      ],
+      "N": 2,
+      "k": 2
+    },
+    "weighted_deck": {
+      "margin": 18,
+      "profile": [
+        2
+      ],
+      "N": 2,
+      "k": 2
+    }
+  },
+  "exact_boundary_and_interior_checkpoints_rhs_minus_lhs": {
+    "endpoint:[2]:k1": 19,
+    "tip:[2]:k1": 13,
+    "weighted_deck:[2]:k1": 26,
+    "endpoint:[2]:k2": 32,
+    "tip:[2]:k2": 9,
+    "weighted_deck:[2]:k2": 18,
+    "endpoint:[2, 3]:k1": 53,
+    "tip:[2, 3]:k1": 84,
+    "weighted_deck:[2, 3]:k1": 346,
+    "endpoint:[2, 3]:k2": 480,
+    "tip:[2, 3]:k2": 531,
+    "weighted_deck:[2, 3]:k2": 2247,
+    "endpoint:[2, 3]:k3": 940,
+    "tip:[2, 3]:k3": 606,
+    "weighted_deck:[2, 3]:k3": 2662
+  },
+  "first_guarded_counterexample": null,
+  "interpretation": "bounded evidence only; no universal conclusion"
+}

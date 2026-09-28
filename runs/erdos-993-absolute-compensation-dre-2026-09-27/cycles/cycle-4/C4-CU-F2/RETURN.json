@@ -1,0 +1,55 @@
+{
+  "worker_id": "C4-CU-F2",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile and every original leaf deletion polynomial Av (A0 for the endpoint or Ai for a private tip of branch i), Av[k+1] C[k-1] <= Av[k] C[k] for every natural k with 1<=k and 2k<=N+2, with integer-zero-extended coefficients.",
+      "scope": "Universal guarded lower-half shifted comparison only. Retain m>=1, the actual profile polynomial definitions, every original tag multiplicity in the graph interpretation, and exactly 1<=k and 2k<=N+2; actual descent and selectors are not premises.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-4/C4-CU-F2/REPORT.md", "cycles/cycle-4/C4-CU-F2/independent_replay.py", "cycles/cycle-4/C4-CU-F2/independent_replay.json"],
+      "reason": "No universal proof or guarded counterexample was found. Exact checks at boundary and interior guarded ranks support bounded diagnostics only. The n=122, k=77 negative margin is outside the guard."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, with W=sum_i r_i Ai retaining each branch's original private-tip multiplicity, W[k+1] C[k-1] <= W[k] C[k] for every natural k with 1<=k and 2k<=N+2, with integer-zero-extended coefficients.",
+      "scope": "Universal guarded lower-half shifted tip-deck comparison only. Keep W tip-only, preserve all original r_i weights, and impose exactly 1<=k and 2k<=N+2; actual descent and selectors are not premises.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-4/C4-CU-F2/REPORT.md", "cycles/cycle-4/C4-CU-F2/independent_replay.py", "cycles/cycle-4/C4-CU-F2/independent_replay.json", "cycles/cycle-4/C4-CU-F2/weighted_guarded_audit.json"],
+      "reason": "No universal proof or guarded counterexample was found. The rerun finite audit covers 74 selected profiles and 178 actual-eligible rows, while the independent literal replay checks targeted examples only. The known negative literal margin fails the rank guard."
+    },
+    {
+      "claim_id": "C4-F2-WEIGHTED-SHIFT-IMPLIES-SELECTED-MASS",
+      "statement": "Conditionally, if the registered weighted shifted comparison holds at k=p for an actual eligible lower-half rank p on an ordinary arity-2,3,4 path-star, then at least one strict current-p tip selector is nonempty and the selected payment sum satisfies A>=b*delta*D_j; consequently the exact-ratio payment follows from 0<t<1.",
+      "scope": "Conditional local composition only. Preserve the actual least strict first descent x including the terminal difference; guards x+2<=p, 3p<2alpha+1, 2p<=alpha, 1<=p, and 2p<=N+2; strict flags e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0]; j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j); original branch weights r_i and endpoint weight 1. This does not prove the weighted comparison or formalize dependencies.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": ["cycles/cycle-4/C4-CU-F2/REPORT.md", "cycles/cycle-4/C4-CU-F2/independent_replay.py", "cycles/cycle-4/C4-CU-F2/independent_replay.json"],
+      "reason": "The inequality directions follow by dividing only by positive C[p-1], using C[p]<C[p-1], strict weighted decrease, R>=2, the branchwise 3/2 bound, D_j>0, and the positive payment multiplier. The antecedent and formal dependency chain remain open."
+    },
+    {
+      "claim_id": "C4-F2-GUARDED-SHIFT-BOUNDED-EXACT-DIAGNOSTICS",
+      "statement": "The individual and weighted shifted comparisons pass in the retained audit on 74 selected profiles and 178 actual-eligible lower-half rows, and pass in the independent replay at the stated exact boundary/interior ranks for the profiles (0,0,40) and (1,1,30).",
+      "scope": "Finite exact-integer diagnostics only. The 74-profile audit is a rerun of the packet producer script; the independent tree recursion covers the listed rows and guarded shift ranks only. No census, universal inference, or status change.",
+      "status": "proposed_bounded_evidence",
+      "evidence_paths": ["cycles/cycle-4/C4-CU-F2/weighted_guarded_audit.py", "cycles/cycle-4/C4-CU-F2/weighted_guarded_audit.json", "cycles/cycle-4/C4-CU-F2/independent_replay.py", "cycles/cycle-4/C4-CU-F2/independent_replay.json"],
+      "reason": "Exact replay produced no failure in the stated finite set. Literal graph recursion cross-checks the parent and selected deletion polynomials; all numerical success remains bounded evidence."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CU-F2/REPORT.md",
+  "limitations": [
+    "Neither registered guarded universal coefficient comparison has a proof or an eligible counterexample here.",
+    "The known n=122 all-rank shifted-ratio obstruction violates the lower-half guard and does not refute either registered claim.",
+    "The weighted-to-selector-to-MASS argument is conditional and informal; it gives no governed formal award.",
+    "The finite producer audit was rerun but not independently reimplemented in full; independent literal recursion covers only the recorded profiles and ranks.",
+    "The case report's statement that the packet allowed_source_files list was empty conflicts with the actual dispatched packet, which lists 12 files."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-F2-GUARDED-SHIFT-BOUNDED-EXACT-DIAGNOSTICS",
+    "C4-F2-WEIGHTED-SHIFT-IMPLIES-SELECTED-MASS",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR"
+  ]
+}

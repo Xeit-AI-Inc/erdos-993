@@ -1,0 +1,31 @@
+{
+  "bounded_guarded_scan": {
+    "max_branches": 18,
+    "profile_count": 1329,
+    "individual_comparisons": 406977,
+    "weighted_comparisons": 27954,
+    "first_individual_failure": null,
+    "first_weighted_failure": null
+  },
+  "targeted_actual_eligibility_example": {
+    "counts": [
+      0,
+      22,
+      0
+    ],
+    "N": 66,
+    "alpha": 68,
+    "first_strict_descent_x": 32,
+    "eligible_rows": [
+      {
+        "p": 34,
+        "delta_P": -34715071200280547854,
+        "delta_W": -1487457400844219699268,
+        "selected_branch_count": 22,
+        "minimum_individual_margin": 3519646978509896300712980023674737675664,
+        "weighted_margin": 232296700581653155847056681562532686593824
+      }
+    ]
+  },
+  "method": "direct integer polynomial multiplication and zero-extended coefficient access"
+}

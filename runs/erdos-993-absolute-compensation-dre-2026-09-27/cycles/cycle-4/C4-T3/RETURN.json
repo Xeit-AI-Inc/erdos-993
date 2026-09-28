@@ -1,0 +1,23 @@
+{
+  "worker_id": "C4-T3",
+  "cycle": 4,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C4-T3-COUNT-VECTOR-COFACTOR-BRIDGE",
+      "statement": "For a finite family of positive block sizes s_i with M=sum_i s_i and coefficient sequences f_i(t)>=binom(s_i,t), the product coefficient [z^k] product_i(sum_t f_i(t)z^t), divided by binom(M,k), equals the expectation of product_i(f_i(K_i)/binom(s_i,K_i)) under the multivariate hypergeometric count-vector law of a uniform k-subset, for 0<=k<=M. Finite Jensen and log(w)>=2(w-1)/(w+1) for w>=1 yield the registered exponent lower bound; for f_i(t)=binom(s_i,t)+1[t=1], this specializes to the singleton-occupancy exponent.",
+      "scope": "Finite-block coefficient identity and informal Jensen/Taylor consequence only; empty family is handled at M=k=0. No parent rank, marked-deletion identity, selector, selected MASS, payment, aggregate or arbitrary-tree conclusion.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": ["cycles/cycle-4/C4-T3/REPORT.md"],
+      "reason": "The exact count-vector identity follows by finite coefficient convolution and Vandermonde normalization. The Jensen, logarithm and Taylor steps are stated with their domains and remain an informal proof route; the sealed center-subset Lean theorem proves only its exact polynomial expansion."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-T3/REPORT.md",
+  "limitations": [
+    "No formal verification of the count-vector/Jensen bridge was performed.",
+    "Coefficient domination does not transfer parent rank, marked-deletion identities, original tag multiplicities or strict current-p selectors to a larger graph class.",
+    "No conclusion is proposed for selected MASS, exact-ratio payment, the primary predicate, or the global Erdős993 target."
+  ],
+  "status_authority": "proposed_worker_only"
+}

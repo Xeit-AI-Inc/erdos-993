@@ -1,0 +1,56 @@
+{
+  "worker_id": "C4-CU-F1",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ALL-RANK-SHIFTED-C-DELETION-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, every original leaf deletion polynomial A_v, and every natural k>=1, A_v[k+1]C[k-1]<=A_v[k]C[k] with integer-zero-extended coefficients.",
+      "scope": "Unguarded all-rank shifted C/deletion comparison only. The witness profile is (a2,a3,a4)=(38,0,1), n=122, N=80, x=41, arity-4 tip deletion, k=77; it does not address the lower-half guarded comparisons or actual eligible compensation.",
+      "status": "proposed_rejected",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CU-F1/REPORT.md",
+        "cycles/cycle-4/C4-CU-F1/shifted_critique.py",
+        "cycles/cycle-4/C4-CU-F1/shifted_critique.json"
+      ],
+      "reason": "Independent exact polynomial and literal-tree replay gives A4[78]C[76]-A4[77]C[77]=+49,239,834,336, violating the unguarded inequality. The rank lies outside the lower-half guard, 154>82, and p=x+2 fails 2p<=N+2; this is not a guarded or eligible counterexample."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, every original leaf deletion polynomial A_v (A0 for the endpoint or Ai for a tip of branch i), and every natural k with 1<=k and 2k<=N+2, integer-zero-extended coefficients satisfy A_v[k+1] C[k-1]<=A_v[k] C[k].",
+      "scope": "All ordinary arity-2,3,4 path-star profiles and all guarded ranks 1<=k, 2k<=N+2, with endpoint and each tip-deletion type included. The comparison has no actual-eligibility premise. Original tip multiplicities are retained where branch tags are aggregated.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CU-F1/REPORT.md",
+        "cycles/cycle-4/C4-CU-F1/shifted_critique.py",
+        "cycles/cycle-4/C4-CU-F1/shifted_critique.json"
+      ],
+      "reason": "The independent exact replay found no positive margin in targeted profiles, including guard endpoints, and confirmed the unguarded witness is outside this scope. No universal proof or guarded counterexample was obtained. The actual-selector implication is valid conditionally on the shifted inequality, positivity, C log-concavity, and the actual first-descent/eligibility facts."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, put W(X)=sum_i r_i A_i(X), counting each original private-tip deletion with its original multiplicity. For every natural k with 1<=k and 2k<=N+2, integer-zero-extended coefficients satisfy W[k+1] C[k-1]<=W[k] C[k].",
+      "scope": "All ordinary arity-2,3,4 path-star profiles and all guarded ranks 1<=k, 2k<=N+2. W sums each branch deletion with its original r_i tip multiplicity. This is weaker than the individual comparison and has no actual-eligibility premise.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CU-F1/REPORT.md",
+        "cycles/cycle-4/C4-CU-F1/shifted_critique.py",
+        "cycles/cycle-4/C4-CU-F1/shifted_critique.json"
+      ],
+      "reason": "The independent exact replay found no positive weighted margin in targeted profiles, including guard endpoints. If the comparison holds at an eligible p, the positive C ratio bound implies Delta_p W<0 and therefore at least one selected branch because all original r_i weights are positive. No universal proof or guarded counterexample was obtained."
+    }
+  ],
+  "covered_claim_ids": [
+    "E993-PATH-STAR-ARITY-2-4-ALL-RANK-SHIFTED-C-DELETION-LR",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR"
+  ],
+  "report_path": "cycles/cycle-4/C4-CU-F1/REPORT.md",
+  "limitations": [
+    "Finite profile/rank scans are bounded exact evidence, not a proof of either guarded universal comparison.",
+    "The n=122 all-rank failure is outside the lower-half rank guard and outside this profile's actual eligible p range.",
+    "No Lean build, broad census, universal selector theorem, MASS proof, or primary payment proof is claimed."
+  ],
+  "status_authority": "proposed_worker_only"
+}

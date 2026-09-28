@@ -1,0 +1,278 @@
+{
+  "worker_id": "C4-SYNTHESIS",
+  "cycle": 4,
+  "stage": "synthesis",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "C4-AU-ENDPOINT-GUARDED-SCAN-M18",
+      "statement": "Endpoint shifted comparisons have no negative margin in the stated m<=18 scan.",
+      "scope": "Finite exact endpoint comparisons at 1<=k, 2k<=N+2; 27,954 rows, zero extension; no universal theorem.",
+      "status": "proposed_bounded_evidence",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_audit.py",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_evidence.json"
+      ],
+      "reason": "The sealed bounded scan has a stated finite horizon and our independent exact endpoint spot checks agree."
+    },
+    {
+      "claim_id": "C4-AU-GUARDED-LR-SELECTOR-COROLLARIES",
+      "statement": "Guarded individual LR implies every represented strict deletion selector; guarded weighted LR implies at least one strict tip selector at actual eligible p.",
+      "scope": "Ordinary arity-2,3,4 family; actual least strict parent descent, x+2<=p, 3p<2(N+2)+1, 2p<=N+2, current-p strict flags, original tip multiplicities. Both LR antecedents are explicit.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_audit.py",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_evidence.json"
+      ],
+      "reason": "Positive C ratios below one give the implications; neither antecedent is proved."
+    },
+    {
+      "claim_id": "C4-CU-T2-WEIGHTED-SHIFT-IMPLIES-SELECTED-MASS",
+      "statement": "Weighted shifted LR and the registered branchwise three-halves bound imply selected MASS.",
+      "scope": "All m>=1 ordinary profiles at actual eligible p; least strict x, all three rank guards, j=p-2, delta=N+1-j, D_j>0, e0 and ei strict at p, R=sum ri ei, b=R+e0, A=sum ri ei Ti[j].",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_audit.py",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_evidence.json"
+      ],
+      "reason": "Conditional proof: weighted LR gives R>=2; branchwise mass yields A>=3R delta D_j/2>=b delta D_j. Weighted LR remains OPEN."
+    },
+    {
+      "claim_id": "C4-F2-GUARDED-SHIFT-BOUNDED-EXACT-DIAGNOSTICS",
+      "statement": "The stated bounded shifted diagnostics support only the polynomials they actually tested.",
+      "scope": "Finite 74-profile/178-eligible-row script excludes endpoint A0; separate endpoint checks and our exact eligible cases are finite. Actual first descent, guards, current-p selectors and original tags are retained where applicable.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_audit.py",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_evidence.json"
+      ],
+      "reason": "The claimed complete endpoint coverage from that script is invalid; no universal LR follows."
+    },
+    {
+      "claim_id": "C4-F2-WEIGHTED-SHIFT-IMPLIES-SELECTED-MASS",
+      "statement": "At actual eligible p, guarded weighted LR plus branchwise three-halves mass implies selected MASS and thus exact-ratio payment.",
+      "scope": "Ordinary arity-2,3,4 profiles; actual least strict x, all three guards, strict same-p flags, original ri multiplicities, positive C[j], delta and D_j. Weighted LR and branchwise theorem are explicit dependencies.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_audit.py",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_evidence.json"
+      ],
+      "reason": "Independent positive-factor calculation proves the conditional chain, not its open weighted antecedent or a formal award."
+    },
+    {
+      "claim_id": "C4-F3-GENERAL-FINITE-BLOCK-JENSEN",
+      "statement": "Truncated finite block polynomials satisfy the exact count-vector identity and Jensen/Taylor coefficient floor.",
+      "scope": "Positive finite block sizes si; Fi=sum_{t=0}^{si} fi(t)z^t with fi(t)>=binom(si,t); 0<=k<=M, signed zero extension and separate empty family. Extra nonnegative higher-degree terms preserve the inequality but not equality.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_audit.py",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_evidence.json"
+      ],
+      "reason": "Joint-law expansion and Jensen prove the floor informally; two size-one blocks with F1=1+z+z^2 show the exact identity needs support truncation."
+    },
+    {
+      "claim_id": "C4-F3-GRAPH-COMPONENT-COEFFICIENT-BRIDGE",
+      "statement": "A graph factor with a maximum independent set of size s and an outside vertex dominates (1+z)^s+z coefficientwise.",
+      "scope": "Coefficient floor for actual graph factor and its proved disjoint products only; no transfer of marked deletion, actual first descent, rank guards, current-p selector, original tags or payment.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_audit.py",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_evidence.json"
+      ],
+      "reason": "Counting subsets of the fixed independent set and one outside singleton proves the floor, with no other graph identities."
+    },
+    {
+      "claim_id": "C4-T1-BINOMIAL-SUMMAND-OBSTRUCTION",
+      "statement": "The isolated E=z(1+z)^N term fails a guarded shifted-C comparison even when the full deletion comparison succeeds.",
+      "scope": "One exact (a2,a3,a4)=(0,22,0), N=66 row at k=27; actual x=32, eligible p=34. Refutes only a termwise proof.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_audit.py",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_evidence.json"
+      ],
+      "reason": "Independent E margin is negative and full A0 margin positive; signs and guards are recorded."
+    },
+    {
+      "claim_id": "C4-T1-STRICT-SELECTOR-BRIDGE",
+      "statement": "Individual guarded shifted LR at eligible p forces all represented original deletion polynomials to descend strictly at that same p.",
+      "scope": "Ordinary arity-2,3,4 family; actual least strict x, x+2<=p, 3p<2(N+2)+1, 2p<=N+2, zero extension, positive log-concave C; LR is an explicit open premise.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_audit.py",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_evidence.json"
+      ],
+      "reason": "Positive division and the first-descent ratio C[p]/C[p-1]<1 establish the conditional implication."
+    },
+    {
+      "claim_id": "C4-T2-WEIGHTED-SHIFT-IMPLIES-ACTUAL-TIP-SELECTION",
+      "statement": "Weighted shifted LR at eligible p forces at least one strict current-p tip branch.",
+      "scope": "Ordinary arity-2,3,4 family; actual least strict x, all three same-p guards; W=sum ri Ai with original multiplicities; no endpoint/full-tip conclusion.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_audit.py",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_evidence.json"
+      ],
+      "reason": "Delta_p W<0 follows by positive division, then a positive weighted sum of branch differences must have a negative summand."
+    },
+    {
+      "claim_id": "C4-T3-COUNT-VECTOR-COFACTOR-BRIDGE",
+      "statement": "Truncated block arrays have an exact dependent count-vector coefficient identity and informal Jensen cofactor floor.",
+      "scope": "Positive block sizes si and degree<=si arrays; all 0<=k<=M, k=0,M, size-one blocks, signed zero extension, separate empty family. Extra nonnegative higher-degree terms preserve only the floor.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_audit.py",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_evidence.json"
+      ],
+      "reason": "Explicit count-vector expansion proves equality with degree support; the two-size-one counterexample invalidates equality without it."
+    },
+    {
+      "claim_id": "C4-U1-CONDITIONED-DRIFT-BOUNDED-HORIZON",
+      "statement": "The conditioned drift comparison at x has no upward discrepancy in the stated finite m<=40 eligible-profile scan.",
+      "scope": "4,308 eligible profiles in the sealed replay; only at actual x with least strict descent and all eligibility guards, not a universal conditional-mean theorem.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_audit.py",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_evidence.json"
+      ],
+      "reason": "Source replay is bounded exact evidence; independent boundary and interior calculations audit its definitions and signs."
+    },
+    {
+      "claim_id": "C4-U1-DESCENT-BINOMIAL-OCCUPANCY-DRIFT",
+      "statement": "The conditional occupancy drift has the exact derivative identity and a strict upper bound from actual first descent.",
+      "scope": "All m>=1 ordinary arity-2,3,4 profiles at actual eligible p; j=p-2>=x, 2j<=N-2, zero-extended beta_x>0, positive log-concave C. No selector-weighted MASS conclusion.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_audit.py",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_evidence.json"
+      ],
+      "reason": "Direct differentiation and decreasing positive C ratios prove E_jD<2j-N-(j+1)beta_x/C[x]."
+    },
+    {
+      "claim_id": "C4-U2-R4-M173-DEPTH1-OBSTRUCTION",
+      "statement": "The depth-one center-choice surrogate fails the exact-ratio payment inequality on one actual eligible homogeneous arity-4 row.",
+      "scope": "m=173, N=692, x=336, p=338, all guards true, current-p e0=e4=1, original tip weight 692, b=693; surrogate only.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_audit.py",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_evidence.json"
+      ],
+      "reason": "Independent monomial layer expansion has exact negative signed M1 while full M172 is positive."
+    },
+    {
+      "claim_id": "C4-U2-R4-M173-DEPTH2-LOCAL-REPAIR",
+      "statement": "Adding the depth-two center-choice layer repairs the surrogate at that same row.",
+      "scope": "Same m=173 actual eligible row and strict flags; one-row exact arithmetic, no uniform depth or tail claim.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_audit.py",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_evidence.json"
+      ],
+      "reason": "Independent layer sum equals the product coefficient and has M1<0<M2<M172 with positive multiplier."
+    },
+    {
+      "claim_id": "C4-U3-WEIGHTED-SHIFTED-LR-IMPLIES-STRICT-TIP-SELECTION",
+      "statement": "Weighted guarded LR implies one strict current-p tip selector at actual eligible p.",
+      "scope": "Ordinary arity-2,3,4 family; actual least strict x, all three guards, signed zero extension, original ri tip weights and strict current-p flags; weighted LR explicit and OPEN.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_audit.py",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_evidence.json"
+      ],
+      "reason": "Positive ratio C[p]/C[p-1]<1 and positive W[p] force Delta_p W<0, hence one branch difference is negative."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ALL-RANK-SHIFTED-C-DELETION-LR",
+      "statement": "The unguarded universal shifted-C deletion comparison is false.",
+      "scope": "All-rank candidate only; ordinary literal profile (38,0,1), n=122, N=80, x=41, p=k=77, j=75, e0=e2=e4=1, original tip weight 80. Rank is outside 2k<=N+2 and actual eligibility.",
+      "status": "proposed_rejected",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_audit.py",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_evidence.json"
+      ],
+      "reason": "Literal graph and polynomial replay match; arity-4 tip left-minus-right is +49239834336."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+      "statement": "The full guarded individual shifted-C deletion comparison remains OPEN.",
+      "scope": "Every ordinary arity-2,3,4 profile, all original endpoint/tip deletions, every 1<=k with 2k<=N+2; signed zero extension. Application at p separately requires actual least strict x and all guards.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_audit.py",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_evidence.json"
+      ],
+      "reason": "Finite positive checks and the out-of-guard all-rank failure neither prove nor refute the universal guarded statement."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "The full guarded weighted-tip-deck shifted-C comparison remains OPEN.",
+      "scope": "Every ordinary arity-2,3,4 profile and every 1<=k, 2k<=N+2; W=sum_i ri Ai with original tip multiplicities and signed zero extension. Actual eligible application retains all guards and strict flags.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_audit.py",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_evidence.json"
+      ],
+      "reason": "Finite diagnostics do not establish the all-profile premise; positive weighted summation proves individual tip LR would imply it, not conversely."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-OCCUPANCY-JENSEN-COFACTOR",
+      "statement": "The registered fixed-rank B_r cofactor Jensen coefficient floor has an informal universal proof.",
+      "scope": "Finite positive blocks with size-one and empty-family boundaries, 0<=k<=M for probability division, signed zero extension outside; nonnegative monomial GF2/GF3/GF4 convolution. No first descent, selector, MASS, payment or arbitrary-tree transfer.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_audit.py",
+        "cycles/cycle-4/C4-SYNTHESIS/independent_evidence.json"
+      ],
+      "reason": "Joint count-vector counting, scalar log bound, Jensen and Taylor remainder prove the coefficient statement informally; no governed formal award."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-SYNTHESIS/REPORT.md",
+  "limitations": [
+    "The two guarded shifted-C comparisons have no all-profile proof or guarded counterexample in admitted evidence.",
+    "Finite diagnostics, including corrected endpoint coverage, are bounded evidence only.",
+    "The selected MASS and exact-ratio payment retain computer-assisted/nonformal status; no governed Lean award was attempted.",
+    "The finite-block expectation identity needs factors truncated to their block sizes; coefficient floors extend to extra nonnegative terms."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-AU-ENDPOINT-GUARDED-SCAN-M18",
+    "C4-AU-GUARDED-LR-SELECTOR-COROLLARIES",
+    "C4-CU-T2-WEIGHTED-SHIFT-IMPLIES-SELECTED-MASS",
+    "C4-F2-GUARDED-SHIFT-BOUNDED-EXACT-DIAGNOSTICS",
+    "C4-F2-WEIGHTED-SHIFT-IMPLIES-SELECTED-MASS",
+    "C4-F3-GENERAL-FINITE-BLOCK-JENSEN",
+    "C4-F3-GRAPH-COMPONENT-COEFFICIENT-BRIDGE",
+    "C4-T1-BINOMIAL-SUMMAND-OBSTRUCTION",
+    "C4-T1-STRICT-SELECTOR-BRIDGE",
+    "C4-T2-WEIGHTED-SHIFT-IMPLIES-ACTUAL-TIP-SELECTION",
+    "C4-T3-COUNT-VECTOR-COFACTOR-BRIDGE",
+    "C4-U1-CONDITIONED-DRIFT-BOUNDED-HORIZON",
+    "C4-U1-DESCENT-BINOMIAL-OCCUPANCY-DRIFT",
+    "C4-U2-R4-M173-DEPTH1-OBSTRUCTION",
+    "C4-U2-R4-M173-DEPTH2-LOCAL-REPAIR",
+    "C4-U3-WEIGHTED-SHIFTED-LR-IMPLIES-STRICT-TIP-SELECTION",
+    "E993-PATH-STAR-ARITY-2-4-ALL-RANK-SHIFTED-C-DELETION-LR",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+    "E993-PATH-STAR-ARITY-2-4-OCCUPANCY-JENSEN-COFACTOR"
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "worker_id": "C4-CF-U2",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "F",
+  "covered_claim_ids": [
+    "C4-U2-R4-M173-DEPTH1-OBSTRUCTION",
+    "C4-U2-R4-M173-DEPTH2-LOCAL-REPAIR"
+  ],
+  "claims": [
+    {
+      "claim_id": "C4-U2-R4-M173-DEPTH1-OBSTRUCTION",
+      "statement": "For the homogeneous ordinary arity-4 path-star with m=173, N=692, q=693, alpha=694, actual first strict descent x=336, p=338, j=336, delta=357, and all 693 original leaf tags strictly selected by their current-p predicates, the empty-plus-singleton center-choice floor for each T_i gives a strictly negative exact-ratio payment margin, while the full T_i payment margin is positive.",
+      "scope": "One literal ordinary path-star and one actual eligible lower-half row, retaining terminal-inclusive first strict descent, both rank guards, strict current-p selectors, original multiplicities, and integer zero-extended coefficients. Refutes only this fixed depth-one surrogate on this row, not full selected MASS or full exact-ratio payment.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CF-U2/REPORT.md",
+        "cycles/cycle-4/C4-CF-U2/critic_replay.py",
+        "cycles/cycle-4/C4-CF-U2/critic_replay.json"
+      ],
+      "reason": "Independent exact product-coefficient replay verifies actual descent, selectors, positive cleared-factor conditions, and the negative depth-one versus positive full-payment integer margins."
+    },
+    {
+      "claim_id": "C4-U2-R4-M173-DEPTH2-LOCAL-REPAIR",
+      "statement": "At the same m=173 profile and actual eligible row, retaining the a=0,1,2 center-subset layers in T_i[j]=sum_a binom(m-1,a) sum_{s=0}^3 g_s binom(4(m-1-a),j-a-s), g=(3,9,7,2), gives a strictly positive exact-ratio surrogate payment margin; depth one has a negative margin.",
+      "scope": "Exact bounded arithmetic for the single homogeneous arity-4 witness only, with its actual first descent, rank guards, full strict selector row, and original leaf multiplicities. Not a parameter-uniform layer-depth theorem.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CF-U2/REPORT.md",
+        "cycles/cycle-4/C4-CF-U2/critic_replay.py",
+        "cycles/cycle-4/C4-CF-U2/critic_replay.json"
+      ],
+      "reason": "The exact layer sum matches the cofactor coefficient; the cleared integer margin is negative through depth one and positive at depth two on this row."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CF-U2/REPORT.md",
+  "limitations": [
+    "The depth-two result is a single-profile repair and provides no universal depth schedule or tail estimate.",
+    "No universal selector, MASS, or exact-ratio payment result is newly proved or formally verified.",
+    "The all-m exact-ratio payment remains at its registered computer-assisted/nonformal evidence grade; no primary formal stop is claimed."
+  ],
+  "status_authority": "proposed_worker_only"
+}

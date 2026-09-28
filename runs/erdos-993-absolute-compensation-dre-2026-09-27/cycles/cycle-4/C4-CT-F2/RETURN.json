@@ -1,0 +1,80 @@
+{
+  "worker_id": "C4-CT-F2",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "T",
+  "covered_claim_ids": [
+    "C4-F2-GUARDED-SHIFT-BOUNDED-EXACT-DIAGNOSTICS",
+    "C4-F2-WEIGHTED-SHIFT-IMPLIES-SELECTED-MASS",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR"
+  ],
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, every original leaf deletion polynomial Av (A0 for the endpoint or Ai for a tip of branch i), and every natural k with 1<=k and 2k<=N+2, integer-zero-extended coefficients satisfy Av[k+1] C[k-1]<=Av[k] C[k], where C=GQ.",
+      "scope": "Guarded lower-half shifted C-to-each-original-leaf-deletion comparison only; actual first descent and selector flags are not premises. Retain m>=1, the original path-star and tag conventions, and exactly 1<=k, 2k<=N+2. The claim remains open; no guarded counterexample or universal proof was found.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CT-F2/REPORT.md",
+        "cycles/cycle-4/C4-CT-F2/independent_audit.py",
+        "cycles/cycle-4/C4-CT-F2/independent_audit.json",
+        "cycles/cycle-4/C4-CT-F2/producer_probe.py",
+        "cycles/cycle-4/C4-CT-F2/producer_probe.json",
+        "cycles/cycle-4/C4-CT-F2/producer_witness.json"
+      ],
+      "reason": "The n=122 all-rank witness violates 2k<=N+2 and is irrelevant to this guarded claim. Bounded probes found no guarded failure; they do not prove the all-profile inequality. The 74-profile run omits A0."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star, let W=sum_i r_i Ai, preserving each branch's original r_i private-tip multiplicity. Then W[k+1] C[k-1]<=W[k] C[k] for every natural k with 1<=k and 2k<=N+2, with integer-zero-extended coefficients.",
+      "scope": "Guarded lower-half shifted C-to-weighted-original-tip-deck comparison only; actual first descent and selectors are not premises. Retain every original r_i multiplicity and exactly 1<=k, 2k<=N+2. The claim remains open; no guarded counterexample or universal proof was found.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CT-F2/REPORT.md",
+        "cycles/cycle-4/C4-CT-F2/independent_audit.py",
+        "cycles/cycle-4/C4-CT-F2/independent_audit.json",
+        "cycles/cycle-4/C4-CT-F2/producer_guarded.py",
+        "cycles/cycle-4/C4-CT-F2/producer_guarded.json"
+      ],
+      "reason": "The exact diagnostic has bounded scope (74 profiles and 178 actual-eligible rows). The comparison's universal guarded predicate remains unproved."
+    },
+    {
+      "claim_id": "C4-F2-WEIGHTED-SHIFT-IMPLIES-SELECTED-MASS",
+      "statement": "Conditionally, for an ordinary arity-2,3,4 path-star at actual eligible lower-half p, if the registered weighted shifted comparison holds at k=p, then the strict current-p tip selector is nonempty and A>=b*delta*D_j; hence the exact-ratio payment also holds using the source first-descent ratio, branchwise 3/2 bound, and marked-margin statements at their stated grades.",
+      "scope": "Conditional local composition only. Use the actual least strict first descent x, including zero-extended terminal differences, and every guard x+2<=p, 3p<2alpha+1, 2p<=alpha, 1<=p, 2p<=N+2. Preserve strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j), all original r_i tip multiplicities, and endpoint weight 1. Does not prove the weighted comparison or formally upgrade any dependency.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CT-F2/REPORT.md",
+        "cycles/cycle-4/C4-CT-F2/independent_audit.py",
+        "cycles/cycle-4/C4-CT-F2/independent_audit.json"
+      ],
+      "reason": "The weighted comparison and positive C coefficients give strict decrease of W at p; its positive weighted sum then forces a strict tip selector. For selected original tip weight R>=2, the reviewed branchwise bound gives A>=3R*delta*D_j/2>=(R+1)*delta*D_j>=b*delta*D_j. Since 0<t=C[j+1]/C[j]<1 and delta>=1, delta*(1-t+t/delta)=1+(delta-1)*(1-t)>=1, so selected MASS implies exact-ratio payment. This is conditional and informal at the source dependency grades."
+    },
+    {
+      "claim_id": "C4-F2-GUARDED-SHIFT-BOUNDED-EXACT-DIAGNOSTICS",
+      "statement": "The copied diagnostic has no failure of the guarded weighted comparison or the tip-deletion Ai comparisons on 74 selected profiles and 178 actual-eligible lower-half rows; separate bounded endpoint evidence includes the through-m<=20 all-rank probe and three independent actual rows.",
+      "scope": "Finite exact-integer evidence only. The 74-profile loop covers W and each distinct Ai but omits endpoint A0; a separate 297450-comparison all-rank probe includes endpoint and tip types only through m=20. The independent boundary/interior check includes A0, selected tips, and W at (a2,a3,a4)=(0,0,40), p=80,81 and (1,1,30), p=63. No universal or census claim.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CT-F2/REPORT.md",
+        "cycles/cycle-4/C4-CT-F2/independent_audit.py",
+        "cycles/cycle-4/C4-CT-F2/independent_audit.json",
+        "cycles/cycle-4/C4-CT-F2/producer_guarded.py",
+        "cycles/cycle-4/C4-CT-F2/producer_guarded.json",
+        "cycles/cycle-4/C4-CT-F2/producer_probe.py",
+        "cycles/cycle-4/C4-CT-F2/producer_probe.json"
+      ],
+      "reason": "Exact reruns reproduce the bounded counts and the independent literal-tree boundary checks. The 74-profile diagnostic does not cover endpoint A0, so its original scope is narrowed; all finite evidence remains bounded."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CT-F2/REPORT.md",
+  "limitations": [
+    "No universal proof or actual eligible guarded counterexample for either shifted comparison was found.",
+    "The retained all-rank n=122 obstruction is outside the lower-half guard.",
+    "The 74-profile diagnostic omits endpoint A0; endpoint evidence is supplied only by distinct bounded probes and independent rows.",
+    "The weighted-to-selected-MASS implication is conditional and informal, and it does not supply a formal award for its dependencies.",
+    "No status authority is asserted for the registered claims or global target."
+  ],
+  "status_authority": "proposed_worker_only"
+}

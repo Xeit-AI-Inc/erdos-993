@@ -1,0 +1,70 @@
+{
+  "worker_id": "C4-F3",
+  "cycle": 4,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-OCCUPANCY-JENSEN-COFACTOR",
+      "statement": "For finite disjoint positive-size blocks with B_i=(1+z)^{r_i}+z, the exact weighted-subset identity and singleton-event Jensen lower bound hold for 0<=k<=M; the zero-extended coefficient floor may be convolved with the nonnegative path-star marked factor GF_{r_i}.",
+      "scope": "The registered special-factor occupancy/Jensen claim only: positive block sizes, empty block family allowed, in-range probability formulas, zero-extended coefficient floor, and nonnegative path-star convolution. It does not assert parent-rank transfer, strict selectors, marked-deletion identities in other graphs, MASS, payment, or arbitrary-tree compensation.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-F3/REPORT.md",
+        "cycles/cycle-4/C4-F3/audit_finite_blocks.py",
+        "cycles/cycle-4/C4-F3/audit_finite_blocks.json"
+      ],
+      "reason": "The special B_r statement follows from the exact finite-block proof recorded here; the boundary checks agree. No independence assumption is used for the dependent block-count vector."
+    },
+    {
+      "claim_id": "C4-F3-GENERAL-FINITE-BLOCK-JENSEN",
+      "statement": "For a finite family of positive block sizes r_i with M=sum_i r_i, and real polynomials F_i=sum_{t=0}^{r_i} f_i(t)z^t with f_i(t)>=choose(r_i,t), define H=product_i F_i and y_k=sum_i sum_{t=0}^{r_i} choose(r_i,t)choose(M-r_i,k-t)/choose(M,k) * 2(f_i(t)-choose(r_i,t))/(f_i(t)+choose(r_i,t)). For every 0<=k<=M and natural d, H[k]>=choose(M,k) E_d(y_k), where E_d(y)=sum_{a=0}^d y^a/a!. Include empty family M=k=0, with H[0]=1 and y_0=0.",
+      "scope": "Universal abstract finite-block coefficient/Jensen theorem, with positive integer block sizes and nonnegative coefficient surplus, plus empty family. Probability normalization is only used in 0<=k<=M; all binomial coefficients outside range are zero-extended. No graph rank, marked deletion, strict selector, MASS, payment, or arbitrary-tree conclusion.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-F3/REPORT.md",
+        "cycles/cycle-4/C4-F3/audit_finite_blocks.py",
+        "cycles/cycle-4/C4-F3/audit_finite_blocks.json"
+      ],
+      "reason": "Count-vector enumeration gives the normalized coefficient as E product_i w_i(K_i); Jensen and log(w)>=2(w-1)/(w+1) give exp(y_k). Since y_k>=0, the finite Taylor sum E_d(y_k) is a lower bound. Exact rational checks cover 17 boundary/interior cases; no Lean award is claimed."
+    },
+    {
+      "claim_id": "C4-F3-GRAPH-COMPONENT-COEFFICIENT-BRIDGE",
+      "statement": "For each finite graph factor H_i of independence number r_i, I(H_i)[t]>=choose(r_i,t); if H_i has a vertex outside a fixed maximum independent set, then I(H_i)[t]>=(1+z)^{r_i}+z coefficientwise. Applying the finite-block bound to a product of such factors is valid when the required disjoint-component factorization is separately established.",
+      "scope": "Coefficient domination and fixed-rank product lower bounds only. It does not transfer an actual parent first strict zero-extended descent x, any rank guard, any strict current-p selector, or a marked-deletion identity. Any payment application additionally needs exact parent/deletion factorization and the original-tag multiplicities at every same eligible p.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-F3/REPORT.md"
+      ],
+      "reason": "Subsets of a maximum independent set establish the binomial coefficients, and an outside singleton supplies the degree-one surplus. Those coefficient facts alone carry none of the parent-rank or marked-deletion structure."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, each original leaf deletion polynomial A_v satisfies A_v[k+1]C[k-1]<=A_v[k]C[k] at every natural k with 1<=k and 2k<=N+2, using integer zero-extended coefficients.",
+      "scope": "Guarded lower-half coefficient comparison only, with no actual eligibility premise. The actual-selector application must separately preserve the least strict parent descent (including terminal differences and flats), x+2<=p, 3p<2(N+2)+1, 2p<=N+2, positivity/log-concavity prerequisites, and strict Delta_p A_v<0. Original tags remain distinct.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-F3/REPORT.md"
+      ],
+      "reason": "No valid guarded counterexample or universal proof was produced here. The known n=122 witness has k=77 and fails 2k<=N+2, so it refutes only the unguarded comparison."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, W=sum_i r_i A_i satisfies W[k+1]C[k-1]<=W[k]C[k] at every natural k with 1<=k and 2k<=N+2, using integer zero-extended coefficients and the original tip multiplicities r_i.",
+      "scope": "Guarded weighted-deck coefficient comparison only, with no actual eligibility premise. A valid application requires the actual least strict parent descent, all three lower-half guards at the same p, positive/log-concave C ratio premises, and strict current-p selectors. A strict W descent implies at least one selected branch, not full tip or endpoint selection; preserve original r_i multiplicities.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-F3/REPORT.md"
+      ],
+      "reason": "The subset/Jensen lemma provides no shifted-deck inequality. No guarded counterexample or universal proof was established."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-F3/REPORT.md",
+  "limitations": [
+    "The finite exact replay covers 17 boundary/interior cases and is bounded evidence only; the generic finite-block proof is analytic and informal, not Lean-verified here.",
+    "No new actual eligible shifted-LR witness or universal shifted-LR proof was obtained.",
+    "Coefficient domination alone does not establish graph-specific rank, marked-deletion, strict-selector, MASS, payment, or arbitrary-tree claims.",
+    "The primary exact-ratio payment retains its existing computer-assisted/nonformal status; no governed formal stop is claimed."
+  ],
+  "status_authority": "proposed_worker_only"
+}

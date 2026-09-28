@@ -1,6 +1,10 @@
 # Research Status
 
-## Current checkpoint — Cycle3 closed,28 September2026
+## Current checkpoint — Cycle4 mathematics,28 September2026
+
+Cycle4 search, criticism, adjudication, synthesis and independent mathematical review are complete; its full finite-block Jensen formalization is in progress. Three exact auxiliary records bring the registry to513 identities:324 VERIFIED,103 REFUTED,26 CONDITIONAL,60 OPEN at mixed grades. The additions are an informal actual-descent drift lemma, a guarded counterexample to the isolated binomial-component comparison, and an OPEN exact-ratio ULC surplus condition. The full guarded deletion comparisons remain OPEN. Previously accepted all-m family MASS and payment retain computer-assisted/nonformal grade; Erdős993 remains OPEN. No new formal award is claimed at this checkpoint. See the [experiment checkpoint](docs/experiments/absolute-compensation-dre-2026-09-27.md).
+
+## Historical Cycle3 checkpoint,28 September2026
 
 Cycle3 of the absolute-compensation experiment is closed; Cycle4 is active. For ordinary arity-2,3,4 path-stars, all-m actual-eligible branchwise three-halves compensation, selected MASS and exact-ratio payment are now VERIFIED at computer-assisted/nonformal grade. The argument combines complete finite profiles1..69, exact scalar states70..119 and an analytic tail from120, using independent selector premises and no aggregate-sign premise. This explains a previously known family aggregate; it does not solve Erdős993. The exact center-subset coefficient expansion now has a governed Lean award, alongside the Cycle2 coefficient rank bound. Neither formal fragment certifies the full graph/selector/payment chain. The registry contains510 identities:323 VERIFIED,102 REFUTED,26 CONDITIONAL,59 OPEN at mixed grades. The global conjecture and arbitrary-tree targets remain OPEN. See the [experiment checkpoint](docs/experiments/absolute-compensation-dre-2026-09-27.md).
 

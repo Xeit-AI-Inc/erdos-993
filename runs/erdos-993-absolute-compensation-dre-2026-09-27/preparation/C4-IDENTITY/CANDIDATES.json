@@ -1,0 +1,207 @@
+{
+  "schema": "C4-IDENTITY-preparation-proposals-v1",
+  "authority": "independent preparation only; no canonical status change, formal award, or novelty claim",
+  "input_manifest": {
+    "path": "manifests/C4-IDENTITY-INPUTS.json",
+    "schema": "e993.worker-ops.seal.v1",
+    "members": 391,
+    "sha256_mismatches": 0
+  },
+  "registry_audit": {
+    "path": "control/C4-REGISTERED-CLAIM-IDENTITY.json",
+    "claims_reviewed": 510,
+    "unique_claim_keys": 510,
+    "explicit_aliases_reviewed": 718,
+    "exact_alias_collisions": 0,
+    "status_counts": {
+      "VERIFIED": 323,
+      "REFUTED": 102,
+      "OPEN": 59,
+      "CONDITIONAL": 26
+    }
+  },
+  "proposals": [
+    {
+      "proposal_type": "reuse_existing_identity_for_central_formal_attempt; no present status update",
+      "claim_key": "E993-FINITE-BLOCK-COEFFICIENT-JENSEN-DOMINATION",
+      "statement": "For any finite index I (including empty), positive integer block sizes r_i, M=sum r_i, and truncated real F_i(z)=sum_{t=0}^{r_i} f_i(t)z^t with f_i(t)>=choose(r_i,t), take an ACTUAL uniform k-subset S of the labeled disjoint union V=Sigma_i Fin(r_i), 0<=k<=M, and its counts K_i. With H=product F_i, w_i(t)=f_i(t)/choose(r_i,t), c=choose(M,k)>0, and y_k=sum_i sum_{t=0}^{r_i} choose(r_i,t)choose(M-r_i,k-t)/c * 2(f_i(t)-choose(r_i,t))/(f_i(t)+choose(r_i,t)), one has H[k]/c=E_S product_i w_i(K_i), H[k]>=c exp(y_k)>=c sum_{a=0}^d y_k^a/a! for every natural d. Negative k-t is zero-extended before natural subtraction.",
+      "scope": "Exactly the existing composite's actual-subset expectation, Jensen and all Taylor floors; empty family M=k=0, size-one blocks, k=0 and k=M included. Real block coefficients are truncated at r_i. No graph, rank, deletion, selector, MASS, or payment conclusion.",
+      "status_recommendation": "retain VERIFIED at its current informal/nonformal grade; recommend a complete governed formal attempt, with no award now",
+      "evidence_grade": "universal_informal_subset_counting_and_finite_jensen_nonformal; no new Lean build",
+      "dependencies": [
+        "actual labeled-subset fiber bijection and count-vector pushforward law",
+        "Vandermonde count and positive choose(M,k)",
+        "bounded polynomial product coefficient expansion",
+        "one-block hypergeometric marginal with guarded signed zero extension",
+        "local choose(r_i,t)>0 and f_i(t)+choose(r_i,t)>0",
+        "finite joint-law Jensen for exp and log(w)>=2(w-1)/(w+1)",
+        "nonnegative finite exponential Taylor floor"
+      ],
+      "evidence_paths": [
+        "control/C4-REGISTERED-CLAIM-IDENTITY.json",
+        "cycles/cycle-4/C4-T3/REPORT.md",
+        "cycles/cycle-4/C4-F3/REPORT.md",
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md",
+        "control-proposals/C4-FORMAL-SCOPE-OPTIONS-DRAFT.md",
+        "control-proposals/NEXT-count-vector-formalization-leads.md",
+        "sources/cycle3/C3-mathlib-reference-leads.md"
+      ],
+      "alias_comparisons": [
+        "Exact existing registered composite and alias 'general finite-block coefficient domination Jensen bound'; reuse its claim_key.",
+        "E993-FINITE-BLOCK-CENTER-SUBSET-COEFFICIENT-EXPANSION is a formally verified different coefficient identity, not the actual uniform-subset/Jensen/Taylor composite.",
+        "E993-PATH-STAR-ARITY-2-4-OCCUPANCY-JENSEN-COFACTOR is the B_r specialization followed by nonnegative GF_r convolution, with its own scope.",
+        "C4-COUNT-VECTOR-CANDIDATE-DRAFT is a proper algebraic fragment; its formal award cannot upgrade this composite."
+      ],
+      "distinguish_from": [
+        "E993-FINITE-BLOCK-CENTER-SUBSET-COEFFICIENT-EXPANSION",
+        "E993-PATH-STAR-ARITY-2-4-OCCUPANCY-JENSEN-COFACTOR",
+        "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT"
+      ],
+      "witness_minimality": "not applicable; universal positive theorem, no finite witness claim"
+    },
+    {
+      "proposal_type": "new precise rejected-mechanism identity",
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-COMMON-BINOMIAL-SHIFTED-C-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, with N=sum_i r_i, C=(1+2z)product_i((1+z)^{r_i}+z), and E=z(1+z)^N, every natural 1<=k with 2k<=N+2 satisfies E[k+1]C[k-1]<=E[k]C[k], using integer-zero-extended coefficients.",
+      "scope": "Only the isolated common E summand of original endpoint/tip deletion polynomials on the registered lower-half rank band. It asserts neither the full A_v shifted comparison nor any actual-eligible selector or payment conclusion.",
+      "status_recommendation": "propose REFUTED auxiliary mechanism, subject to controller identity review; retain both full guarded LR claims OPEN",
+      "evidence_grade": "exact independently replayed integer-polynomial witness, nonformal",
+      "dependencies": [
+        "ordinary path-star polynomial definitions",
+        "direct binomial coefficient evaluation and signed margin"
+      ],
+      "evidence_paths": [
+        "cycles/cycle-4/C4-T1/REPORT.md",
+        "cycles/cycle-4/C4-AT/REPORT.md",
+        "cycles/cycle-4/C4-SYNTHESIS/REPORT.md"
+      ],
+      "alias_comparisons": [
+        "No exact E-only shifted claim or alias in the 510-record registry.",
+        "Distinct from E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR because the latter uses full A_0 or A_i and remains OPEN.",
+        "Distinct from the REFUTED unguarded full-deletion claim because this witness is inside the guard and concerns only E."
+      ],
+      "distinguish_from": [
+        "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+        "E993-PATH-STAR-ARITY-2-4-ALL-RANK-SHIFTED-C-DELETION-LR"
+      ],
+      "witness": {
+        "counts_a2_a3_a4": [0, 22, 0],
+        "m": 22,
+        "N": 66,
+        "n": 91,
+        "alpha": 68,
+        "actual_first_strict_descent_x": 32,
+        "eligible_p": 34,
+        "guarded_interior_k": 27,
+        "two_k": 54,
+        "E_margin_EkCk_minus_Ek1Ckm1": "-518620474811633289768751398606375936",
+        "full_endpoint_margin": "745097444696166793706461153834912453824",
+        "full_arity3_tip_margin": "777419068009671422357461955841645743808"
+      },
+      "witness_minimality": "one exact guarded witness; no smallest-order or first-possible claim"
+    },
+    {
+      "proposal_type": "new auxiliary sufficient-condition research scope, not a duplicated ULC theorem",
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, set N=sum_i r_i, a_r=#arity-r branches, h=1+2a_2+4a_3+7a_4, C=(1+2z)product_i B_{r_i}, E=z(1+z)^N, U_i=(1+2z)B_{r_i-1}product_{h!=i}B_{r_h}, and M_k(E)=E[k]C[k]-E[k+1]C[k-1]. For every represented original tip branch i and every natural 1<=k with 2k<=N+2, (h+1)U_i[k]C[k]+(k+1)(h-k+1)M_k(E)>=0. Coefficients are integer-zero-extended.",
+      "scope": "Exact-ratio quantitative surplus for each represented tip on the whole registered guarded band, no actual eligibility premise. With already known enlarged-order ULC curvature and main-product LR it suffices for each full tip comparison A_i=U_i+E. It does not cover endpoint A_0 or prove weighted/individual registered claims by itself while OPEN. No new ULC-order or Gurvits identity is claimed.",
+      "status_recommendation": "propose OPEN auxiliary if controller accepts its distinct quantitative all-guard search value; otherwise retain as C5 note; no formal award",
+      "evidence_grade": "known source-dependent informal ULC curvature plus elementary main-product LR reduction; exact bounded surplus diagnostics only",
+      "dependencies": [
+        "predecessor hybrid-family-proof.md already establishes enlarged ULC orders 2/4/7 and Gurvits/Cauchy-Binet tail use",
+        "main-product U_i/C adjacent-ratio monotonicity including zero boundaries",
+        "C positive and ULC of order h on guarded support",
+        "unproved universal exact-ratio E-deficit compensation"
+      ],
+      "evidence_paths": [
+        "sources/predecessor/hybrid-family-proof.md",
+        "control-proposals/NEXT-inflated-ULC-surplus.md",
+        "control-proposals/NEXT-inflated-ULC-surplus.json",
+        "control-proposals/NEXT-inflated-ULC-surplus-controls.json",
+        "control-proposals/NEXT-main-product-LR-proof.md",
+        "control-proposals/NEXT-Gurvits-0804.1181.txt"
+      ],
+      "alias_comparisons": [
+        "No exact quantitative exact-ratio E-deficit condition in the 510 registered statements/aliases.",
+        "The local ULC orders and convolution/Cauchy-Binet curvature are already in sources/predecessor/hybrid-family-proof.md and must not be re-registered.",
+        "The predecessor's 217(j+1)epsilon<1 tail criterion proves a broader large-m conclusion; no implication from it to this exact-ratio all-guard condition has been established.",
+        "E993-PATH-STAR-FULL-BRACKET-DEGREE-ULC is REFUTED for a different polynomial R normalized by actual degree.",
+        "Positive r_i summation derives a weighted surplus from all individual surpluses with the same C; do not register that consequence separately."
+      ],
+      "distinguish_from": [
+        "E993-PATH-STAR-FULL-BRACKET-DEGREE-ULC",
+        "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+        "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR"
+      ],
+      "bounded_evidence": {
+        "complete_profile_horizon_m_le": 20,
+        "profiles": 1770,
+        "tip_rank_tests": 109175,
+        "specified_larger_profiles": 49,
+        "specified_larger_tip_rank_tests": 15024,
+        "observed_exact_ratio_failures": 0,
+        "crude_substitution_counterexample": {
+          "counts_a2_a3_a4": [0, 0, 4],
+          "N": 16,
+          "h": 29,
+          "k": 8,
+          "crude_signed_margin": "-87840",
+          "exact_ratio_signed_margin": "45380234160",
+          "full_tip_shifted_margin": "403556560"
+        }
+      },
+      "witness_minimality": "no counterexample to the proposed exact-ratio condition is known in supplied bounded diagnostics; crude-substitution counterexample has no minimality claim"
+    }
+  ],
+  "lean_recommendation": {
+    "central_claim_key": "E993-FINITE-BLOCK-COEFFICIENT-JENSEN-DOMINATION",
+    "decision": "attempt the complete existing registered composite, including the actual uniform labeled-subset expectation and every Taylor degree; retain current nonformal grade until governed verification",
+    "exact_intended_statement": "For any finite I, r_i>0, real f_i(t)>=choose(r_i,t) for 0<=t<=r_i, truncated F_i=sum_{t=0}^{r_i}f_i(t)X^t, H=product F_i, M=sum r_i, all k<=M and d:Nat, with V=Sigma_i Fin(r_i), S uniform over actual Finset V of card k, K_i=card of S's i-fiber, c=choose(M,k)>0 and y_k as in the first proposal, prove H.coeff k / c = E_S product_i(f_i(K_i)/choose(r_i,K_i)) and H.coeff k>=c*exp(y_k)>=c*sum_{a=0}^d y_k^a/a!. Empty I and size-one blocks are included; signed k-t is guarded before Nat subtraction.",
+    "closed_proof_DAG": [
+      "actual k-subsets of Sigma_i Fin(r_i) ↔ tuples of fiber subsets with total card k",
+      "fiber count product and Vandermonde normalization; actual count-vector pushforward law",
+      "truncated finite product-of-sums coefficient expansion",
+      "joint-law coefficient expectation equality",
+      "one-coordinate hypergeometric marginal from splitting one block/complement",
+      "positive local and global binomial denominators; log weights defined",
+      "finite Jensen for exp on the joint law and scalar log lower bound",
+      "identify y_k, prove y_k>=0, apply finite exponential Taylor floor"
+    ],
+    "helper_declarations_not_new_central_results": [
+      "e993_subset_fiber_equiv",
+      "e993_actual_count_vector_mass",
+      "e993_bounded_coeff_prod",
+      "e993_single_block_marginal",
+      "e993_log_weight_lower",
+      "e993_finite_jensen_exp",
+      "e993_exp_taylor_lower"
+    ],
+    "source_level_mathlib_leads": [
+      "Polynomial.as_sum_range'",
+      "Fintype.prod_sum",
+      "ConvexOn.map_sum_le and Real.convexOn_exp",
+      "Real.le_log_one_add_of_nonneg",
+      "Real.exp_sum",
+      "Real.sum_le_exp_of_nonneg"
+    ],
+    "limits": "No code compiled here; source-level API leads require exact signature inspection in the governed run. Formal count-vector weights alone do not certify the registered actual-subset-law clause. The result contains no graph parent/deletion identity, actual first descent, guard, selector, MASS or payment conclusion."
+  },
+  "next_cycle_recommendations": [
+    "Use a three-state (C,U,E) branch-addition invariant and prove guard boundary strips when N increases; keep the -NzE recombination term.",
+    "Seek a marked-tip paired-layer or two-color switching certificate that explicitly compensates the negative common E minor; do not assume all activity coefficients are nonnegative.",
+    "Investigate the proposed exact-ratio quantitative U_i surplus across the whole guard and compare any proof directly with the predecessor's 217(j+1)epsilon<1 tail certificate; the enlarged ULC machinery itself is old.",
+    "Seek a finite conditional root-mixture or TP2 bridge with exact support and rank hypotheses; root mixture monotonicity at all ranks is false.",
+    "If pursuing center layers, prove a scalable omitted-tail bound beyond the known depth-one failure. Keep full finite-block formalization a separate exact central attempt."
+  ],
+  "unresolved_errors": [
+    "No universal guarded individual or weighted shifted-C comparison proof/counterexample; both remain OPEN.",
+    "C4-T2 and C4-CU-T2 falsely deny that same-C individual tip comparisons sum with positive r_i to weighted comparison; their conditional selector lemma remains valid.",
+    "C4-CF-T2's independent checker omits +z in B_(r-1); quoted wrong-polynomial margins/cross products are not evidence for actual W.",
+    "C4-AF's packet provenance objection to F2 is false: F2 has zero additional files; 174 common plus CT-F1's four additional gives 178 combined.",
+    "C4-F2's 74-profile diagnostic and copied U3 scans omitted A_0; separate finite endpoint checks do not establish universal scope.",
+    "U1's n=78 boundary label is alpha=78; graph order is n=101. Its universal drift inequality survives, but its conditional-versus-fugacity-one probe and beta_x/C[x]>0 give no uniform correction.",
+    "Synthesis's truncation reminder does not narrow the existing canonical F_i; its size-one k=M sentence confuses singleton probability 1 with exponent contribution 2/3.",
+    "The old n=203 depth-two failure arose from F_4 monomial-basis error; corrected depth-one and depth-two margins are positive.",
+    "The exact-ratio ULC surplus is still unproved all-profile, and no implication from the old 217(j+1)epsilon<1 criterion has been proved. The crude C2-ratio simplification is false as a universal certificate."
+  ]
+}

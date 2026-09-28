@@ -1,0 +1,39 @@
+{
+  "worker_id": "C4-U2",
+  "cycle": 4,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C4-U2-R4-M173-DEPTH1-OBSTRUCTION",
+      "statement": "For the homogeneous ordinary arity-4 path-star with m=173, N=692, q=693, alpha=694, actual first strict descent x=336, p=338, j=336, delta=357, and all 693 original leaf tags strictly selected by their current-p predicates, the empty-plus-singleton center-choice floor for each T_i gives a strictly negative exact-ratio payment margin, while the full T_i payment margin is positive.",
+      "scope": "One literal ordinary path-star and one actual eligible lower-half row, with x+2<=p, 3p<2alpha+1, 2p<=alpha, original multiplicities, strict selectors, and integer zero-extended coefficients. Refutes only this fixed depth-one surrogate on this row; it is not a counterexample to full selected MASS or full exact-ratio payment.",
+      "status": "proposed_bounded_evidence",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-U2/REPORT.md",
+        "cycles/cycle-4/C4-U2/truncation_literal_check_independent.py",
+        "cycles/cycle-4/C4-U2/truncation_literal_check_independent.json"
+      ],
+      "reason": "Independent replay copied into worker scratch reproduces the literal-tree eligibility and exact signed margins; the depth-one surrogate ratio is 0.9492540489806088."
+    },
+    {
+      "claim_id": "C4-U2-R4-M173-DEPTH2-LOCAL-REPAIR",
+      "statement": "At the same m=173 profile and actual eligible row, retaining the a=0,1,2 center-subset layers in T_i[j]=sum_a binom(m-1,a) sum_{s=0}^3 g_s binom(4(m-1-a),j-a-s), g=(3,9,7,2), gives a strictly positive exact-ratio surrogate payment margin; depth one has a negative margin.",
+      "scope": "Exact bounded arithmetic for the single homogeneous arity-4 witness only, with the full current-p strict selector row and original leaf multiplicities fixed as above. This is not a parameter-uniform layer-depth theorem.",
+      "status": "proposed_bounded_evidence",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-U2/REPORT.md",
+        "cycles/cycle-4/C4-U2/depth_remainder_audit.py",
+        "cycles/cycle-4/C4-U2/depth_remainder_audit.json"
+      ],
+      "reason": "Exact layer accumulation agrees with the full cofactor coefficient and computes a positive signed margin first at maximum selected-center depth 2."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-U2/REPORT.md",
+  "limitations": [
+    "The exact center-subset expansion itself is already formally verified as a coefficient identity; this search does not extend its formal scope.",
+    "No universal parameter-scaled remainder estimate or new all-parameter selector, MASS, or payment proof was obtained.",
+    "The existing all-m MASS and exact-ratio payment remain at their registered computer-assisted/nonformal evidence grade; no Lean award or decisive formal stop is claimed."
+  ],
+  "status_authority": "proposed_worker_only"
+}

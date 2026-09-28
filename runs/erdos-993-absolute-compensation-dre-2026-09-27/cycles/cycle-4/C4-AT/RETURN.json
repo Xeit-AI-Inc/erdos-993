@@ -1,0 +1,80 @@
+{
+  "worker_id": "C4-AT",
+  "cycle": 4,
+  "stage": "adjudication",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star and every original endpoint or tip deletion A_v, A_v[k+1]C[k-1]<=A_v[k]C[k] at every natural k with 1<=k and 2k<=N+2 is retained as an OPEN candidate.",
+      "scope": "All profiles and guarded ranks, not merely actual eligible p; integer zero extension; original deletion polynomials and tags. No all-parameter proof or in-guard failure is established.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-4/C4-AT/REPORT.md", "cycles/cycle-4/C4-AT/C4-AT-independent-audit.py", "cycles/cycle-4/C4-AT/C4-AT-independent-evidence.json"],
+      "reason": "Exact boundary/interior checks are bounded. The known negative arity-4 margin at k=77 violates 2k<=N+2, and the negative common-binomial-summand margin does not refute a full deletion comparison."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star, W=sum_i r_i A_i obeys W[k+1]C[k-1]<=W[k]C[k] at every natural k with 1<=k and 2k<=N+2; retained as an OPEN candidate.",
+      "scope": "All profiles and guarded ranks; original private-tip multiplicities r_i and integer zero extension. No universal proof or guarded counterexample is established.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-4/C4-AT/REPORT.md", "cycles/cycle-4/C4-AT/C4-AT-independent-audit.py", "cycles/cycle-4/C4-AT/C4-AT-independent-evidence.json"],
+      "reason": "Corrected exact finite checks remain positive but bounded. One critic instrument omitted the +z in B_(r-1); its displayed numerical margins are not evidence for actual W. Pairwise individual comparisons, if established, would imply weighted comparison by positive summation."
+    },
+    {
+      "claim_id": "C4-T1-STRICT-SELECTOR-BRIDGE",
+      "statement": "Conditionally, a shifted-C comparison for each original deletion at k=p makes that deletion's strict current-p selector equal 1 at every actual eligible p.",
+      "scope": "Ordinary arity-2,3,4 path-stars; actual least strict descent x including terminal differences, x+2<=p, 3p<2(N+2)+1, 2p<=N+2, original deletion coefficients and positive/log-concave C. Conditional on the open guarded individual comparison.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-4/C4-AT/REPORT.md", "cycles/cycle-4/C4-AT/C4-AT-independent-evidence.json"],
+      "reason": "At x the parent binomial term rises, hence Delta_x C<0; decreasing positive C ratios give C[p]/C[p-1]<1. Positive division of the shifted inequality yields A_v[p+1]<A_v[p]. This is an informal conditional proof, not proof of the shifted premise."
+    },
+    {
+      "claim_id": "C4-T1-BINOMIAL-SUMMAND-OBSTRUCTION",
+      "statement": "For profile (a2,a3,a4)=(0,22,0), N=66 and guarded k=27, E=zL^N has E[k]C[k]-E[k+1]C[k-1]=-518620474811633289768751398606375936<0.",
+      "scope": "Exact finite counterexample only to a separately nonnegative E-summand shifted margin; actual x=32 and eligible p=34. The complete endpoint and tip deletion margins at k=27 are positive.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-4/C4-AT/REPORT.md", "cycles/cycle-4/C4-AT/C4-AT-independent-audit.py", "cycles/cycle-4/C4-AT/C4-AT-independent-evidence.json"],
+      "reason": "Independent integer coefficient replay matches the signed value and checks full-polynomial cancellation at the interior rank and guarded boundary."
+    },
+    {
+      "claim_id": "C4-T2-WEIGHTED-SHIFT-IMPLIES-ACTUAL-TIP-SELECTION",
+      "statement": "Conditionally on the weighted shifted comparison at an actual eligible p, at least one original private-tip branch has Delta_p A_i<0; no endpoint or full-tip selection follows.",
+      "scope": "Ordinary arity-2,3,4 path-stars with actual least strict parent descent and all three eligible-rank guards; strict selectors evaluated at current p; original r_i multiplicities. Conditional on the OPEN weighted comparison and the registered first-descent ratio result.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-4/C4-AT/REPORT.md", "cycles/cycle-4/C4-AT/C4-AT-independent-audit.py", "cycles/cycle-4/C4-AT/C4-AT-independent-evidence.json"],
+      "reason": "Dividing by positive W[p]C[p-1] gives W[p+1]/W[p]<=C[p]/C[p-1]<1. A negative sum_i r_i Delta_p A_i with all r_i>0 forces at least one strict negative tip difference. The CF-T2 numerical instrument is repaired separately in the report."
+    },
+    {
+      "claim_id": "C4-CU-T2-WEIGHTED-SHIFT-IMPLIES-SELECTED-MASS",
+      "statement": "Conditionally on the weighted shifted comparison and the registered actual-eligible branchwise bound 2T_i[j]>=3delta D_j, the selected mass A is at least b delta D_j.",
+      "scope": "All ordinary arity-2,3,4 path-stars at actual eligible p, with actual least strict descent, every rank guard, current-p endpoint and tip selectors, j=p-2, delta=N+1-j, original tip multiplicities, and possible empty endpoint selection. No unconditional shifted-LR theorem or formal payment award.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-4/C4-AT/REPORT.md"],
+      "reason": "A selected branch makes R=sum_i r_i e_i>=2; positive branchwise bounds yield A>=(3/2)R delta D_j>=(R+e0)delta D_j=b delta D_j. This uses a registered computer-assisted/nonformal branchwise theorem, not an aggregate-to-branchwise inference."
+    },
+    {
+      "claim_id": "C4-T3-COUNT-VECTOR-COFACTOR-BRIDGE",
+      "statement": "For finite positive blocks with f_i(t)>=binom(s_i,t), the normalized product coefficient equals the uniform-subset count-vector expectation of product_i f_i(K_i)/binom(s_i,K_i); finite Jensen, the scalar log bound, and a nonnegative Taylor remainder give the registered cofactor floor.",
+      "scope": "Every 0<=k<=M, zero-extended marginals, deterministic k=0 and k=M boundaries, and separately the empty family M=k=0. The singleton B_s specialization and nonnegative GF_r convolution are coefficient claims only; no graph rank, deletion, selector, MASS or payment implication.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-4/C4-AT/REPORT.md", "cycles/cycle-4/C4-AT/C4-AT-independent-audit.py", "cycles/cycle-4/C4-AT/C4-AT-independent-evidence.json"],
+      "reason": "Finite count-vector cancellation and Vandermonde prove the identity without independent block counts. For w>=1, derivative of log(w)-2(w-1)/(w+1) is nonnegative; Jensen and Taylor preserve the displayed direction. This is informal universal proof, distinct from the governed formal center-subset coefficient identity."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-AT/REPORT.md",
+  "limitations": [
+    "Neither guarded shifted-C comparison has a universal proof or in-scope counterexample here; the exact replays are bounded evidence.",
+    "Conditional selector and selected-MASS arguments depend on the open weighted or individual comparison and registered first-descent and branchwise results; no governed Lean award is claimed.",
+    "The finite-block count-vector/Jensen bridge is an informal coefficient theorem and does not supply graph parent, marked-deletion, actual-rank or selector identities."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-CU-T2-WEIGHTED-SHIFT-IMPLIES-SELECTED-MASS",
+    "C4-T1-BINOMIAL-SUMMAND-OBSTRUCTION",
+    "C4-T1-STRICT-SELECTOR-BRIDGE",
+    "C4-T2-WEIGHTED-SHIFT-IMPLIES-ACTUAL-TIP-SELECTION",
+    "C4-T3-COUNT-VECTOR-COFACTOR-BRIDGE",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR"
+  ]
+}

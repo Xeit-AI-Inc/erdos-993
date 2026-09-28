@@ -1,6 +1,18 @@
 # Erdős #993 — Master Proof Ledger
 
-## Active experiment — Cycle3 closed, 2026-09-28
+## Active experiment — Cycle4 mathematical reconciliation,2026-09-28
+
+All31 standard Cycle4 seats and a fresh Sol-high identity/proof review are complete. The primary selected compensation, all-m MASS and branchwise three-halves result remain VERIFIED at computer-assisted/nonformal grade. Individual and weighted lower-half shifted comparisons remain OPEN; finite support and their valid conditional selector consequences do not prove the antecedents.
+
+Three precise entries bring the registry to513claims:324 VERIFIED,103 REFUTED,26 CONDITIONAL,60 OPEN at mixed grades. The new actual-descent binomial-corrected conditioned-drift inequality is universally verified informally; it supplies no selector-weighted mass bound. The isolated E=z(1+z)^N shifted-comparison mechanism is REFUTED by a guarded order91 witness while full deletion margins there are positive. A distinct exact-ratio curvature-surplus condition is OPEN as a C5 target; enlarged-order ULC and Gurvits/Cauchy-Binet machinery were already in the predecessor tail proof and are not new results. Its crude coefficient-ratio substitution has exact failures; the sharper condition has only bounded support.
+
+Corrections are explicit: CF-T2 checked a deletion polynomial missing+z; the corrected finite margins remain positive. Individual same-C comparisons do imply their original-weight sum. Two scans overstated endpoint coverage; AU supplies a separate bounded endpoint repair. U1's n78 label is alpha78, actual order101. AF's objection to F2's empty additional-source packet is itself mistaken. Synthesis's size1full-rank singleton probability1 must be distinguished from exponent contribution2/3. The canonical general finite-block theorem already imposes truncated factors, so its statement is unchanged.
+
+The complete existing finite-block coefficient/Jensen composite, including the actual uniform labeled-subset expectation and every Taylor floor, is selected for a governed formal attempt. No partial counting identity can award the whole composite, and no formal award is asserted at this checkpoint. C5/C6 will pursue explicit E-deficit compensation, branch-addition guard strips, paired coefficient minors and conditional root-mixture structure. Frozen Code mathematical intake remains r30; all510preexisting claim objects are preserved. The unrestricted conjecture remains OPEN and the primary formal stop is unmet.
+
+Evidence: `experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C4-IDENTITY/REPORT.md`, sealed C4 synthesis, and `experiments/erdos-993-absolute-compensation-dre-2026-09-27/control/C4-MATHEMATICAL-RECONCILIATION.md`.
+
+## Historical Cycle3 closed, 2026-09-28
 
 Cycle3 is closed. Its center-subset coefficient expansion is now formally_verified at its exact arbitrary-finite-index Polynomial Nat scope, including empty families, zero sizes and all natural coefficient ranks with an explicit cardinality guard. Three unchanged source fragments passed independent informal audit, project/single-file/kernel axiom checks, fresh independent semantic fidelity review and governed close. This is the second exact coefficient-only formal award in the run, after the Cycle2 rank bound. Neither award certifies the full occupancy/Jensen, graph, selector, MASS or payment chain.
 

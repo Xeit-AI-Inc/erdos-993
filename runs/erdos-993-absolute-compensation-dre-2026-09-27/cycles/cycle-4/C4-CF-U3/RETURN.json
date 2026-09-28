@@ -1,0 +1,57 @@
+{
+  "worker_id": "C4-CF-U3",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "F",
+  "covered_claim_ids": [
+    "C4-U3-WEIGHTED-SHIFTED-LR-IMPLIES-STRICT-TIP-SELECTION",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR"
+  ],
+  "claims": [
+    {
+      "claim_id": "C4-U3-WEIGHTED-SHIFTED-LR-IMPLIES-STRICT-TIP-SELECTION",
+      "statement": "At an actual eligible p with x the actual first strict descent of P, if W=sum_i r_i A_i uses original private-tip multiplicities, C is positive log-concave with Delta_x C<0, and W[p+1]C[p-1]<=W[p]C[p], then some branch has Delta_p A_i<0.",
+      "scope": "Conditional implication at x+2<=p, 3p<2alpha+1, 2p<=alpha, with strict selectors evaluated at this p and integer zero extension. No payment or aggregate conclusion.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CF-U3/REPORT.md",
+        "cycles/cycle-4/C4-CF-U3/independent_check.py",
+        "cycles/cycle-4/C4-CF-U3/independent_evidence.json"
+      ],
+      "reason": "Divide by positive W[p]C[p-1], use nonincreasing adjacent C ratios and p>=x+2 to get W[p+1]/W[p]<1, then use Delta_p W=sum_i r_i Delta_p A_i to force a strict branch selector."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star, every original leaf deletion polynomial A_v, and every integer k with 1<=k and 2k<=N+2, zero-extended coefficients satisfy A_v[k+1]C[k-1]<=A_v[k]C[k], where C=G product_i B_(r_i).",
+      "scope": "Universal guarded lower-half shifted-C comparison for endpoint and each private-tip deletion, without an actual eligibility premise. Retains all original profile and rank conventions; distinct from full-selection and payment claims.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CF-U3/REPORT.md",
+        "cycles/cycle-4/C4-CF-U3/independent_check.py",
+        "cycles/cycle-4/C4-CF-U3/independent_evidence.json"
+      ],
+      "reason": "Bounded exact checks found no guarded failure, but no all-profile proof or guarded counterexample was established; the known negative witness violates 2k<=N+2."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star, W=sum_i r_i A_i with original private-tip multiplicities satisfies W[k+1]C[k-1]<=W[k]C[k] for every integer k with 1<=k and 2k<=N+2, using zero-extended coefficients.",
+      "scope": "Universal guarded lower-half shifted-C comparison of the original multiplicity-weighted private-tip deletion deck, without an actual eligibility premise. This is not selected MASS or exact-ratio payment.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CF-U3/REPORT.md",
+        "cycles/cycle-4/C4-CF-U3/independent_check.py",
+        "cycles/cycle-4/C4-CF-U3/independent_evidence.json"
+      ],
+      "reason": "Bounded exact checks found no guarded failure, but no all-profile proof or guarded counterexample was established. The conditional selector implication does not prove its weighted-LR premise."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CF-U3/REPORT.md",
+  "limitations": [
+    "Finite profile checks are bounded evidence, not universal proof.",
+    "The known unguarded shifted-C counterexample is outside the guarded band.",
+    "The conditional bridge does not prove either LR premise, selected MASS, exact-ratio payment, or the primary aggregate.",
+    "No Lean verification or authoritative status change is asserted."
+  ],
+  "status_authority": "proposed_worker_only"
+}

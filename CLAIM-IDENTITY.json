@@ -42110,6 +42110,174 @@
         "guard_check": "2k=154>N+2=82"
       },
       "witness_minimality": "Smallest retained known witness; first found by an early-stopping search, not a proof of minimum order."
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-COMMON-BINOMIAL-SHIFTED-C-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, with N=sum_i r_i, C=(1+2z)product_i((1+z)^{r_i}+z), and E=z(1+z)^N, every natural 1<=k with 2k<=N+2 satisfies E[k+1]C[k-1]<=E[k]C[k], using integer-zero-extended coefficients.",
+      "scope": "Only the isolated common E summand of original endpoint/tip deletion polynomials on the registered lower-half rank band. It asserts neither the full A_v shifted comparison nor any actual-eligible selector or payment conclusion.",
+      "status": "REFUTED",
+      "aliases": [
+        "guarded isolated binomial-summand shifted comparison"
+      ],
+      "alias_patterns": [],
+      "certificate": {
+        "review": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C4-IDENTITY/REPORT.md",
+        "scopes": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C4-IDENTITY/CANDIDATES.json",
+        "sources": [
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-4/C4-T1/REPORT.md",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-4/C4-AT/REPORT.md",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-4/C4-SYNTHESIS/REPORT.md"
+        ],
+        "formal_award": false
+      },
+      "evidence_grade": "exact independently replayed integer-polynomial witness, nonformal",
+      "dependencies": [
+        "ordinary path-star polynomial definitions",
+        "direct binomial coefficient evaluation and signed margin"
+      ],
+      "identity_review": [
+        "No exact E-only shifted claim or alias in the 510-record registry.",
+        "Distinct from E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR because the latter uses full A_0 or A_i and remains OPEN.",
+        "Distinct from the REFUTED unguarded full-deletion claim because this witness is inside the guard and concerns only E."
+      ],
+      "distinguish_from": [
+        "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+        "E993-PATH-STAR-ARITY-2-4-ALL-RANK-SHIFTED-C-DELETION-LR"
+      ],
+      "origin_run": "erdos-993-absolute-compensation-dre-2026-09-27",
+      "novelty_claimed": false,
+      "formal_award": false,
+      "witness": {
+        "counts_a2_a3_a4": [
+          0,
+          22,
+          0
+        ],
+        "m": 22,
+        "N": 66,
+        "n": 91,
+        "alpha": 68,
+        "actual_first_strict_descent_x": 32,
+        "eligible_p": 34,
+        "guarded_interior_k": 27,
+        "two_k": 54,
+        "E_margin_EkCk_minus_Ek1Ckm1": "-518620474811633289768751398606375936",
+        "full_endpoint_margin": "745097444696166793706461153834912453824",
+        "full_arity3_tip_margin": "777419068009671422357461955841645743808"
+      },
+      "smallest_witness_order": 91,
+      "witness_minimality": "One retained exact witness at order91; no proof of smallest possible order."
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, set N=sum_i r_i, a_r=#arity-r branches, h=1+2a_2+4a_3+7a_4, C=(1+2z)product_i B_{r_i}, E=z(1+z)^N, U_i=(1+2z)B_{r_i-1}product_{ell!=i}B_{r_h}, and M_k(E)=E[k]C[k]-E[k+1]C[k-1]. For every represented original tip branch i and every natural 1<=k with 2k<=N+2, (h+1)U_i[k]C[k]+(k+1)(h-k+1)M_k(E)>=0. Coefficients are integer-zero-extended.",
+      "scope": "Exact-ratio quantitative surplus for each represented tip on the whole registered guarded band, no actual eligibility premise. With already known enlarged-order ULC curvature and main-product LR it suffices for each full tip comparison A_i=U_i+E. It does not cover endpoint A_0 or prove weighted/individual registered claims by itself while OPEN. No new ULC-order or Gurvits identity is claimed.",
+      "status": "OPEN",
+      "aliases": [
+        "enlarged-order curvature exact-ratio tip surplus"
+      ],
+      "alias_patterns": [],
+      "certificate": {
+        "review": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C4-IDENTITY/REPORT.md",
+        "scopes": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C4-IDENTITY/CANDIDATES.json",
+        "sources": [
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/sources/predecessor/hybrid-family-proof.md",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/control-proposals/NEXT-inflated-ULC-surplus.md",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/control-proposals/NEXT-inflated-ULC-surplus.json",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/control-proposals/NEXT-inflated-ULC-surplus-controls.json",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/control-proposals/NEXT-main-product-LR-proof.md"
+        ],
+        "formal_award": false
+      },
+      "evidence_grade": "known source-dependent informal ULC curvature plus elementary main-product LR reduction; exact bounded surplus diagnostics only",
+      "dependencies": [
+        "predecessor hybrid-family-proof.md already establishes enlarged ULC orders 2/4/7 and Gurvits/Cauchy-Binet tail use",
+        "main-product U_i/C adjacent-ratio monotonicity including zero boundaries",
+        "C positive and ULC of order h on guarded support",
+        "unproved universal exact-ratio E-deficit compensation"
+      ],
+      "identity_review": [
+        "No exact quantitative exact-ratio E-deficit condition in the 510 registered statements/aliases.",
+        "The local ULC orders and convolution/Cauchy-Binet curvature are already in sources/predecessor/hybrid-family-proof.md and must not be re-registered.",
+        "The predecessor's 217(j+1)epsilon<1 tail criterion proves a broader large-m conclusion; no implication from it to this exact-ratio all-guard condition has been established.",
+        "E993-PATH-STAR-FULL-BRACKET-DEGREE-ULC is REFUTED for a different polynomial R normalized by actual degree.",
+        "Positive r_i summation derives a weighted surplus from all individual surpluses with the same C; do not register that consequence separately."
+      ],
+      "distinguish_from": [
+        "E993-PATH-STAR-FULL-BRACKET-DEGREE-ULC",
+        "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+        "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR"
+      ],
+      "origin_run": "erdos-993-absolute-compensation-dre-2026-09-27",
+      "novelty_claimed": false,
+      "formal_award": false,
+      "bounded_evidence": {
+        "complete_profile_horizon_m_le": 20,
+        "profiles": 1770,
+        "tip_rank_tests": 109175,
+        "specified_larger_profiles": 49,
+        "specified_larger_tip_rank_tests": 15024,
+        "observed_exact_ratio_failures": 0,
+        "crude_substitution_counterexample": {
+          "counts_a2_a3_a4": [
+            0,
+            0,
+            4
+          ],
+          "N": 16,
+          "h": 29,
+          "k": 8,
+          "crude_signed_margin": "-87840",
+          "exact_ratio_signed_margin": "45380234160",
+          "full_tip_shifted_margin": "403556560"
+        }
+      },
+      "external_sources": [
+        "https://arxiv.org/abs/0804.1181"
+      ],
+      "registration_reason": "Fresh review finds a distinct all-guard quantitative sufficient condition; known ULC orders and convolution machinery are not new claims."
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-DESCENT-BINOMIAL-OCCUPANCY-DRIFT",
+      "statement": "For every nonempty ordinary path-star with path0-1-2, distinct branch centers at0 and r_i in{2,3,4} private tips, put N=sum r_i,q=N+1,alpha=N+2,L=1+z,G=1+2z,B_r=L^r+z,C=G product_i B_(r_i),P=C+zL^q. Let x be the least natural strict forward coefficient descent of P, with integer zero extension including the terminal difference. At every natural p with x+2<=p,3p<2alpha+1,2p<=alpha, put j=p-2 and beta_x=binom(q,x)-binom(q,x-1)>0 with signed zero extension. In the product coefficient model with root weights(1,2), branch-i weights[z^t]B_(r_i), conditioned on total degree j, define D=1[X0=0]+sum_i(1[Xi=0]-(r_i-1)/(r_i+1)*1[Xi=1]). Then E_jD=(j+1)C[j+1]/C[j]-(q-j)<2j-N-(j+1)beta_x/C[x].",
+      "scope": "Universal exact ordinary arity2/3/4 path-star conditional-drift identity and strict bound at actual eligible lower-half p. Positive C[j],C[x] follow from support. All inequalities use the actual least strict parent descent and the stated rank guards. No unconditional/fugacity-one replacement, profile-uniform positive correction, selector-weighted mass, payment or arbitrary-tree conclusion.",
+      "status": "VERIFIED",
+      "aliases": [
+        "actual-descent binomial-corrected conditioned occupancy drift"
+      ],
+      "alias_patterns": [],
+      "certificate": {
+        "review": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C4-IDENTITY/REPORT.md",
+        "sources": [
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-4/C4-AU/REPORT.md",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-4/C4-SYNTHESIS/REPORT.md",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-4/C4-AU/C4-AU-independent-audit.py",
+          "experiments/erdos-993-absolute-compensation-dre-2026-09-27/cycles/cycle-4/C4-AU/C4-AU-independent-evidence.json"
+        ],
+        "formal_award": false
+      },
+      "evidence_grade": "universal_informal_derivative_identity_and_positive_logconcavity_nonformal",
+      "dependencies": [
+        "exact derivative/product-rule weighted numerator identity",
+        "positive interval log-concavity of G and B2/B3/B4 and convolution closure",
+        "actual strict parent descent and strictly rising binomial summand at x",
+        "monotonicity of positive adjacent coefficient ratios"
+      ],
+      "identity_review": [
+        "The fresh C4-IDENTITY review section Drift and guarded obstruction proves exactly this statement after traversing510identities. Controller gives its normalized key; no new mathematical scope is added to that independently reviewed theorem.",
+        "R25 cover-cell drift identities concern a different forest cover-fiber model. The general early marked-occupancy transfer concerns selector-weighted quantities and is not this unweighted conditioned product-state bound."
+      ],
+      "distinguish_from": [
+        "E993-R25-COVER-CELL-DRIFT-CRITERION",
+        "E993-LOWER-REGION-EARLY-MARKED-OCCUPANCY-TRANSFER",
+        "E993-PATH-STAR-ARITY-2-4-OCCUPANCY-JENSEN-COFACTOR"
+      ],
+      "origin_run": "erdos-993-absolute-compensation-dre-2026-09-27",
+      "novelty_claimed": false,
+      "formal_award": false,
+      "source_corrections": [
+        "Illustrative profile(0,12,10) has graph order101;78 is alpha. Its coefficient proof is unchanged."
+      ]
     }
   ],
   "created": "2026-09-05",
@@ -42345,18 +42513,18 @@
     "active_absolute_compensation_run": "erdos-993-absolute-compensation-dre-2026-09-27",
     "absolute_compensation_primary": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
     "absolute_compensation_authorization": "Ashton approved fresh experiment with standard 9/18/3/1 high staffing, maximum six cycles and Astra reviews after C3/C6.",
-    "absolute_compensation_cycle": 3,
-    "absolute_compensation_stage": "Cycle3 closed after Astra midpoint and governed center-subset Lean award; preparing Cycle4",
-    "absolute_compensation_primary_status": "VERIFIED at computer-assisted/nonformal grade; no primary Lean award",
+    "absolute_compensation_cycle": 4,
+    "absolute_compensation_stage": "Standard31seats and independent scope review complete; full finite-block Jensen governed attempt pending",
+    "absolute_compensation_primary_status": "VERIFIED computer-assisted/nonformal; no primary Lean award",
     "absolute_compensation_all_m_mass_status": "VERIFIED at computer-assisted/nonformal grade",
-    "absolute_compensation_next_cycle": "C4 structural lower-half shifted deletion/deck comparison and reusable coefficient bridge, after C3 Lean gate and close",
+    "absolute_compensation_next_cycle": "C5 structural compensation recurrences, paired minors and quantitative surplus after C4 formal gate/close",
     "absolute_compensation_selector_boundary": "Full selection remains VERIFIED computer-assisted. Independent census-free proof and formalization are method obligations; two distinct shifted-comparison mechanisms are OPEN.",
     "absolute_compensation_rank_formal_run": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c2-rank",
     "absolute_compensation_decisive_stop": false,
     "absolute_compensation_center_expansion": "formally_verified exact coefficient-only theorem"
   },
   "schema_version": "verityos.math.claim-identity.v1",
-  "update_note": "Cycle3 closed: center-subset expansion receives exact coefficient-only governed Lean award; all-m MASS/payment remain VERIFIED computer-assisted/nonformal. No global or primary formal resolution.",
+  "update_note": "C4 standard stages and independent identity review complete: new informal descent-drift lemma, exact refuted E-only mechanism, and distinct OPEN quantitative surplus. Full existing finite-block Jensen composite chosen for governed attempt; no new formal award yet.",
   "r30_publication": {
     "run": "erdos-993-weighted-transport-dre-2026-09-26",
     "run_id": "erdos-993-math-dre-20260926-r30-weighted-transport",

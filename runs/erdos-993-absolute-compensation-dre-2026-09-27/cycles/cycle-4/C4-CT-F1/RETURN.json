@@ -1,0 +1,60 @@
+{
+  "worker_id": "C4-CT-F1",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "T",
+  "covered_claim_ids": [
+    "E993-PATH-STAR-ARITY-2-4-ALL-RANK-SHIFTED-C-DELETION-LR",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR"
+  ],
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ALL-RANK-SHIFTED-C-DELETION-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile and every original leaf deletion polynomial Av, Av[k+1] C[k-1] <= Av[k] C[k] for every natural k>=1, with integer-zero-extended coefficients.",
+      "scope": "Universal unguarded all-rank shifted C-to-deletion comparison. The exact realizable witness (a2,a3,a4)=(38,0,1), N=80, n=122, x=41, arity-4 tip, k=77 has left-minus-right margin +49239834336; 2k=154>N+2=82, so it refutes only this unguarded claim.",
+      "status": "proposed_rejected",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CT-F1/REPORT.md",
+        "cycles/cycle-4/C4-CT-F1/shifted_review.py",
+        "cycles/cycle-4/C4-CT-F1/shifted_review.json"
+      ],
+      "reason": "Exact coefficient replay reproduces a strict failure of the registered inequality. The source witness JSON stores the opposite signed orientation; the report disambiguates both signs. The actual first descent and terminal difference are retained."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, every original leaf deletion polynomial Av (A0 for the endpoint or Ai for a private tip), and every natural k with 1<=k and 2k<=N+2, Av[k+1] C[k-1] <= Av[k] C[k], with integer-zero-extended coefficients.",
+      "scope": "All profiles and all ranks in the guarded lower half only; no actual eligibility premise is part of this coefficient claim. At actual eligible current p retain p>=x+2 for the actual least strict descent x and 3p<2alpha+1, 2p<=alpha. The strict selectors e0=1[Delta_p A0<0] and ei=1[Delta_p Ai<0] are evaluated at that actual profile and p; a valid selector consequence still depends on proving this universal guarded inequality. Original leaf tags are not recomputed after deletion.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CT-F1/REPORT.md",
+        "cycles/cycle-4/C4-CT-F1/shifted_review.py",
+        "cycles/cycle-4/C4-CT-F1/shifted_review.json",
+        "cycles/cycle-4/C4-CT-F1/producer_shifted_audit_copy.py",
+        "cycles/cycle-4/C4-CT-F1/producer_shifted_audit_copy.json"
+      ],
+      "reason": "No guarded failure was found in the exact targeted checks, including guard-edge values, but bounded success is not a proof for all profiles and ranks. The all-rank witness lies outside the guard."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, W=sum_i r_i Ai counting each original private-tip deletion with its original multiplicity satisfies W[k+1] C[k-1] <= W[k] C[k] for every natural k with 1<=k and 2k<=N+2, with integer-zero-extended coefficients.",
+      "scope": "All profiles and all guarded lower-half ranks; this is weaker in conclusion than the individual comparison and only concerns W=sum_i r_i Ai with each original tip multiplicity r_i and original leaf tag preserved. At actual eligible current p, retain actual least strict descent x and guards p>=x+2, 3p<2alpha+1, 2p<=alpha. The strict selectors ei=1[Delta_p Ai<0] are evaluated at that p; strict Delta_p W<0 would force at least one ei=1 because every original r_i is positive, but does not select every branch or endpoint.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CT-F1/REPORT.md",
+        "cycles/cycle-4/C4-CT-F1/shifted_review.py",
+        "cycles/cycle-4/C4-CT-F1/shifted_review.json",
+        "cycles/cycle-4/C4-CT-F1/producer_shifted_audit_copy.py",
+        "cycles/cycle-4/C4-CT-F1/producer_shifted_audit_copy.json"
+      ],
+      "reason": "No guarded failure was found in the exact targeted checks. Positive denominators preserve the conditional ratio inequality and the positive multiplicities make a negative weighted difference imply a selected tip type, but neither implication proves the universal weighted comparison."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CT-F1/REPORT.md",
+  "limitations": [
+    "Finite exact checks cover targeted profiles and ranks only; the guarded individual and weighted universal comparisons remain unproved and have no counterexample here.",
+    "No selected MASS, exact-ratio payment, aggregate, or formal award is established by this critique.",
+    "The literal-tree comparison at the retained unguarded witness is inherited from the authorized exact source audit; this review independently rechecks the polynomial coefficients and signed margin."
+  ],
+  "status_authority": "proposed_worker_only"
+}

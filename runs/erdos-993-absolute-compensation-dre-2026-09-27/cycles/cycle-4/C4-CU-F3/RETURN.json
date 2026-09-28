@@ -1,0 +1,81 @@
+{
+  "worker_id": "C4-CU-F3",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "U",
+  "covered_claim_ids": [
+    "C4-F3-GENERAL-FINITE-BLOCK-JENSEN",
+    "C4-F3-GRAPH-COMPONENT-COEFFICIENT-BRIDGE",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+    "E993-PATH-STAR-ARITY-2-4-OCCUPANCY-JENSEN-COFACTOR"
+  ],
+  "claims": [
+    {
+      "claim_id": "C4-F3-GENERAL-FINITE-BLOCK-JENSEN",
+      "statement": "For finite positive-size blocks of total size M and coefficient arrays f_i(t)>=binom(r_i,t), the normalized product coefficient equals the expectation of the product of block weights under the uniform k-subset count-vector law; Jensen and log(w)>=2(w-1)/(w+1) yield the stated finite-block coefficient lower bound for 0<=k<=M and every Taylor degree d, with the empty family handled at M=k=0.",
+      "scope": "Universal abstract finite-block coefficient/Jensen theorem only. Binomial normalization is used only on 0<=k<=M; outside-range terms are zero-extended. No graph rank, marked deletion, actual first descent, strict selector, MASS, payment, or arbitrary-tree conclusion.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CU-F3/REPORT.md",
+        "cycles/cycle-4/C4-CU-F3/producer_audit_finite_blocks.py",
+        "cycles/cycle-4/C4-CU-F3/producer_audit_replay.json"
+      ],
+      "reason": "Independent analytic check confirms the count-vector identity, the direction of the scalar logarithm bound, and the nonnegative Taylor remainder; exact copied-script replay checks 17 boundary/interior instances. No formal award is claimed."
+    },
+    {
+      "claim_id": "C4-F3-GRAPH-COMPONENT-COEFFICIENT-BRIDGE",
+      "statement": "A graph factor with independence number r has independence coefficients at least binom(r,t); if a vertex lies outside a fixed maximum independent set, its independence polynomial is coefficientwise at least (1+z)^r+z. The finite-block coefficient bound applies to a product only after disjoint-component factorization is separately proved.",
+      "scope": "Coefficient domination and fixed-rank product lower bounds only. It does not transfer the actual least strict zero-extended parent descent x, including terminal differences and flats; the guards x+2<=p, 3p<2(N+2)+1, 2p<=N+2; strict current-p selectors; marked-deletion identities; or original private-tip multiplicities r_i.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CU-F3/REPORT.md"
+      ],
+      "reason": "Maximum-set subsets give the binomial coefficient floor and an outside singleton gives degree-one surplus. Exact parent/deletion factorization, degree correspondence, actual descent, guards, selectors, and original tags remain separate obligations."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, every original leaf deletion polynomial A_v satisfies A_v[k+1]C[k-1]<=A_v[k]C[k] at each natural k with 1<=k and 2k<=N+2, using integer zero-extended coefficients.",
+      "scope": "Guarded lower-half coefficient comparison only, with no actual eligibility premise. Any selector application must preserve the actual least strict zero-extended parent descent x (including terminal differences and flats), x+2<=p, 3p<2(N+2)+1, 2p<=N+2, C positivity/log-concavity, and strict Delta_p A_v<0. Original tags remain distinct.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CU-F3/REPORT.md",
+        "cycles/cycle-4/C4-CU-F3/shifted_lr_independent_audit.py",
+        "cycles/cycle-4/C4-CU-F3/shifted_lr_independent_audit.json"
+      ],
+      "reason": "Exact independent monomial-basis arithmetic found no guarded counterexample in 1,614 rows for profiles with at most eight branches, but this is bounded evidence and not a universal proof. The known k=77 witness is outside the guard."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, W=sum_i r_i A_i, with original private-tip multiplicities r_i, satisfies W[k+1]C[k-1]<=W[k]C[k] at each natural k with 1<=k and 2k<=N+2, using integer zero-extended coefficients.",
+      "scope": "Guarded weighted-tip-deck coefficient comparison only, with no actual eligibility premise. Any application must preserve the actual least strict parent descent x (including terminal differences and flats), x+2<=p, 3p<2(N+2)+1, 2p<=N+2, positive/log-concave C, strict current-p selectors, and original multiplicities. A strict weighted descent implies at least one selected branch, not every tip or the endpoint.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CU-F3/REPORT.md",
+        "cycles/cycle-4/C4-CU-F3/shifted_lr_independent_audit.py",
+        "cycles/cycle-4/C4-CU-F3/shifted_lr_independent_audit.json"
+      ],
+      "reason": "Exact independent arithmetic found no guarded counterexample in 1,614 rows for profiles with at most eight branches, but no universal weighted-deck comparison was proved. The Jensen coefficient bound does not imply this shifted inequality."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-OCCUPANCY-JENSEN-COFACTOR",
+      "statement": "For finite disjoint positive-size blocks B_i=(1+z)^{r_i}+z, the weighted-subset identity and singleton-event Jensen lower bound hold for 0<=k<=M; its zero-extended coefficient floor may be convolved with the nonnegative path-star factor GF_{r_i}.",
+      "scope": "Registered special-factor occupancy/Jensen claim only: positive block sizes, empty family allowed, in-range probability formulas, zero-extended coefficient floor, and nonnegative path-star convolution. No transfer to actual parent descent, strict selectors, marked-deletion identities in other graphs, MASS, payment, or arbitrary-tree compensation.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CU-F3/REPORT.md",
+        "cycles/cycle-4/C4-CU-F3/producer_audit_finite_blocks.py",
+        "cycles/cycle-4/C4-CU-F3/producer_audit_replay.json"
+      ],
+      "reason": "For B_r, the block weight is 1+1/r exactly at singleton count and one otherwise, so the general argument specializes to the stated occupancy bound. The monomial coefficients of GF_2, GF_3, GF_4 were explicitly cross-checked."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CU-F3/REPORT.md",
+  "limitations": [
+    "The copied exact-rational Jensen replay has 17 cases and is bounded support; the abstract finite-block proof is informal and not Lean-verified here.",
+    "The shifted-LR arithmetic covers profiles with at most eight branches only; it establishes neither universal truth nor a guarded counterexample.",
+    "Coefficient domination does not transfer actual parent descent, rank guards, strict current-p selectors, marked-deletion identities, MASS, or payment.",
+    "No new selector, MASS, exact-ratio payment, or arbitrary-tree theorem is claimed; the existing selected-payment evidence grade and formal stop remain unchanged."
+  ],
+  "status_authority": "proposed_worker_only"
+}

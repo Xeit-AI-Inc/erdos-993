@@ -1,0 +1,48 @@
+{
+  "worker_id": "C4-F2",
+  "cycle": 4,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star and every original leaf deletion polynomial Av (A0 for the endpoint or Ai for a tip in branch i), Av[k+1] C[k-1] <= Av[k] C[k] for every natural k with 1<=k and 2k<=N+2, with integer-zero-extended coefficients.",
+      "scope": "Guarded lower-half shifted C-to-each-original-leaf-deletion comparison only; actual first descent and selector flags are not premises. Retain m>=1, original tip multiplicities in branch interpretation, all zero-extension conventions, and exactly 1<=k, 2k<=N+2.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-4/C4-F2/REPORT.md", "cycles/cycle-4/C4-F2/FUTURE-selector-LR-probe-shifted.py", "cycles/cycle-4/C4-F2/literal_weighted_boundary_audit.json"],
+      "reason": "No universal proof or guarded counterexample found. Targeted exact checks passed, but are bounded. The retained n=122 all-rank obstruction is outside the stated lower-half guard."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star, let W=sum_i r_i Ai, preserving each branch's original r_i private-tip multiplicity. Then W[k+1] C[k-1] <= W[k] C[k] for every natural k with 1<=k and 2k<=N+2, with integer-zero-extended coefficients.",
+      "scope": "Guarded lower-half shifted C-to-weighted-original-tip-deck comparison only; actual first descent and selector flags are not premises. Keep W tip-only, all r_i multiplicities, and exactly 1<=k, 2k<=N+2.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-4/C4-F2/REPORT.md", "cycles/cycle-4/C4-F2/weighted_guarded_audit.py", "cycles/cycle-4/C4-F2/weighted_guarded_audit.json", "cycles/cycle-4/C4-F2/literal_weighted_boundary_audit.json"],
+      "reason": "No universal proof or guarded counterexample found. Exact diagnostics pass on 74 targeted profiles and 178 actual eligible lower-half rows, but this bounded sample does not establish the all-profile guarded coefficient inequality."
+    },
+    {
+      "claim_id": "C4-F2-WEIGHTED-SHIFT-IMPLIES-SELECTED-MASS",
+      "statement": "Conditionally, for an ordinary arity-2,3,4 path-star at an actual eligible lower-half p, if the registered weighted shifted comparison holds at k=p, then the strict current-p tip selector is nonempty and A>=b*delta*D_j; hence the exact-ratio payment also holds, using the accepted first-descent ratio, branchwise 3/2 MASS, and marked-margin statements at their stated grades.",
+      "scope": "Conditional local composition only. Use the actual least strict first descent x (including terminal difference); all guards x+2<=p, 3p<2alpha+1, 2p<=alpha and 1<=p, 2p<=N+2; strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0]; j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j); original tip weights r_i and endpoint weight 1. This does not prove the weighted comparison or formalize dependencies.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": ["cycles/cycle-4/C4-F2/REPORT.md"],
+      "reason": "The implication follows algebraically: W's strict decrease forces some strict tip selector; the branchwise 3/2 bound gives 1.5*R*delta*D with R>=2, enough for R+e0 original tags, and MASS implies exact-ratio payment since 0<t<1. The antecedent remains open."
+    },
+    {
+      "claim_id": "C4-F2-GUARDED-SHIFT-BOUNDED-EXACT-DIAGNOSTICS",
+      "statement": "Both guarded shifted comparisons pass on 74 selected path-star profiles and 178 actual eligible lower-half rows in the retained diagnostic set, with no failure found.",
+      "scope": "Finite exact-integer diagnostics only; selected profiles include homogeneous and mixed targeted shapes, with literal-tree polynomial cross-checks on two profiles and explicit boundary ranks. No all-profile conclusion, census claim, or status change.",
+      "status": "proposed_bounded_evidence",
+      "evidence_paths": ["cycles/cycle-4/C4-F2/weighted_guarded_audit.py", "cycles/cycle-4/C4-F2/weighted_guarded_audit.json", "cycles/cycle-4/C4-F2/literal_weighted_boundary_audit.py", "cycles/cycle-4/C4-F2/literal_weighted_boundary_audit.json"],
+      "reason": "Reproducible exact arithmetic with actual first descent and eligibility guards; bounded data supports testing only."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-F2/REPORT.md",
+  "limitations": [
+    "No universal proof or actual eligible counterexample for either guarded shifted comparison was obtained.",
+    "The all-rank n=122 obstruction is outside the lower-half guard and does not refute either guarded claim.",
+    "The weighted-to-selector-to-MASS implication is conditional and does not supply formal awards for its dependencies.",
+    "The existing selected MASS, exact-ratio payment, and aggregate remain at their shared computer-assisted/nonformal grade; this search does not alter their status."
+  ],
+  "status_authority": "proposed_worker_only"
+}

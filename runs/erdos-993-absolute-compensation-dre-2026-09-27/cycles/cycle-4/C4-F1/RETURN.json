@@ -1,0 +1,51 @@
+{
+  "worker_id": "C4-F1",
+  "cycle": 4,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile and every original leaf deletion polynomial A_v, A_v[k+1] C[k-1] <= A_v[k] C[k] for every natural k with 1<=k and 2k<=N+2, using integer zero-extended coefficients.",
+      "scope": "Exact registered guarded comparison; no actual-eligibility premise. Ordinary path-star definitions and branch multiplicities as in the solution contract.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-F1/REPORT.md",
+        "cycles/cycle-4/C4-F1/shifted_audit.py",
+        "cycles/cycle-4/C4-F1/shifted_audit.json"
+      ],
+      "reason": "Independent exact scans found no guarded violation in 14,422 targeted individual-deletion rank/profile comparisons, including the endpoint deletion, with a literal graph cross-check on the retained n=122 control. This is bounded evidence only; no all-profile proof or guarded counterexample was found."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, let W=sum_i r_i A_i with each original private-tip deletion counted at its original multiplicity. Then W[k+1] C[k-1] <= W[k] C[k] for every natural k with 1<=k and 2k<=N+2, using integer zero-extended coefficients.",
+      "scope": "Exact registered guarded weighted-tip-deck comparison; no actual-eligibility premise. Original branch-tip multiplicities are retained in W.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-F1/REPORT.md",
+        "cycles/cycle-4/C4-F1/shifted_audit.py",
+        "cycles/cycle-4/C4-F1/shifted_audit.json"
+      ],
+      "reason": "Independent exact scans found no guarded violation in 5,559 targeted profile/rank checks, including rare-arity and high-count profiles. This does not prove the universal weighted comparison."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ALL-RANK-SHIFTED-C-DELETION-LR",
+      "statement": "The unguarded all-rank shifted comparison A_v[k+1] C[k-1] <= A_v[k] C[k] for every natural k>=1 is refuted by the retained ordinary path-star profile (a2,a3,a4)=(38,0,1), n=122, arity-4 tip deletion, k=77.",
+      "scope": "Unguarded auxiliary mechanism only. The literal tree and coefficient formulas agree; the target-side signed gap is +49,239,834,336, outside the lower-half guard because 2k=154>N+2=82.",
+      "status": "proposed_bounded_evidence",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-F1/REPORT.md",
+        "cycles/cycle-4/C4-F1/shifted_audit.py",
+        "cycles/cycle-4/C4-F1/shifted_audit.json"
+      ],
+      "reason": "Independent exact polynomial and literal-tree replay confirms the retained unguarded failure. It is not a counterexample to either guarded claim or the eligible compensation mechanism."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-F1/REPORT.md",
+  "limitations": [
+    "Finite exact profile/rank scans are bounded evidence and do not establish either universal guarded comparison.",
+    "No actual eligible counterexample, census-free proof, governed Lean award, or status change is claimed.",
+    "The n=122 shifted-ratio failure is outside the lower-half guard and outside the actual eligible p range for that profile."
+  ],
+  "status_authority": "proposed_worker_only"
+}

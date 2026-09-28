@@ -1,0 +1,82 @@
+{
+  "bounded_replay": {
+    "max_branches": 18,
+    "profiles": 1329,
+    "individual_comparisons": 406977,
+    "weighted_comparisons": 27954,
+    "all_margins_nonnegative": true
+  },
+  "literal_tree_crosscheck": {
+    "profile": [
+      1,
+      1,
+      1
+    ],
+    "parent_formula_equals_literal": true,
+    "endpoint_A0_equals_literal_delete_v2": true,
+    "each_tip_Ai_equals_literal_delete": true,
+    "parent_degree": 11,
+    "literal_tree_vertices": 15
+  },
+  "bridge_exact_checks": {
+    "profile": [
+      0,
+      22,
+      0
+    ],
+    "N": 66,
+    "alpha": 68,
+    "actual_first_strict_descent_x": 32,
+    "p": 34,
+    "guards": {
+      "x_plus_2_le_p": true,
+      "3p_lt_2alpha_plus1": true,
+      "2p_le_alpha": true
+    },
+    "Delta_x_C": -2430733093207932707,
+    "weighted_shifted_margin_at_p": 232296700581653155847056681562532686593824,
+    "Delta_p_W": -1487457400844219699268,
+    "ratio_cross_multiply_lhs_le_rhs": true,
+    "weighted_tip_strict_count": 22,
+    "boundary_and_interior_margins": [
+      {
+        "k": 1,
+        "individual_min_margin": 4184,
+        "weighted_margin": 276144
+      },
+      {
+        "k": 17,
+        "individual_min_margin": 533526956487772820390719995323142,
+        "weighted_margin": 35212779128193006145787519691327372
+      },
+      {
+        "k": 34,
+        "individual_min_margin": 3519646978509896300712980023674737675664,
+        "weighted_margin": 232296700581653155847056681562532686593824
+      }
+    ],
+    "nontrivial_factors_positive": {
+      "W[p]": 10111470174783486567828,
+      "C[p-1]": 295365112846734182630,
+      "C[p]": 274888731183684563008
+    }
+  },
+  "known_unguarded_control": {
+    "profile": [
+      38,
+      0,
+      1
+    ],
+    "N": 80,
+    "tree_order": 122,
+    "actual_first_strict_descent_x": 41,
+    "comparison_k": 77,
+    "2k_le_Nplus2": false,
+    "A_k": 2091375,
+    "A_kplus1": 95699,
+    "C_k": 14606561,
+    "C_kminus1": 319721589,
+    "signed_shifted_margin": -49239834336
+  },
+  "method": "integer coefficient multiplication, zero extension, and rooted-forest independent-set dynamic programming"
+}

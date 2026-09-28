@@ -1,0 +1,54 @@
+{
+  "worker_id": "C4-CF-T1",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, every original leaf deletion polynomial A_v (A0 for the endpoint or Ai for a tip of branch i), and every natural k with 1<=k and 2k<=N+2, integer-zero-extended coefficients satisfy A_v[k+1] C[k-1]<=A_v[k] C[k], where C=GQ.",
+      "scope": "Universal guarded lower-half comparison at every 1<=k with 2k<=N+2, without an actual-eligibility premise. Keep the actual first strict descent x and every eligibility guard for selector applications; formulas retain each distinct branch and original tip multiplicity. Six profiles were checked exactly with no failure, bounded evidence only.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-4/C4-CF-T1/REPORT.md", "cycles/cycle-4/C4-CF-T1/critique_replay.py", "cycles/cycle-4/C4-CF-T1/critique_replay.json"],
+      "reason": "No guarded counterexample was found, but finite profiles do not prove the all-profile comparison. The known negative all-rank row is outside 2k<=N+2."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, W=sum_i r_i A_i with each original tip deletion counted at its original multiplicity, and every natural k with 1<=k and 2k<=N+2, integer-zero-extended coefficients satisfy W[k+1] C[k-1]<=W[k] C[k].",
+      "scope": "Universal guarded weighted-deck comparison at every 1<=k with 2k<=N+2; no actual-eligibility premise. Applications to selectors use actual x, x+2<=p, 3p<2alpha+1 and 2p<=alpha, with flags evaluated at current p. Six exact profiles had no failure; bounded evidence only.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-4/C4-CF-T1/REPORT.md", "cycles/cycle-4/C4-CF-T1/critique_replay.py", "cycles/cycle-4/C4-CF-T1/critique_replay.json"],
+      "reason": "No guarded counterexample was found, but exact finite checks do not prove the universal statement. A direct weighted result is weaker than the individual comparisons and only forces at least one selected tip branch."
+    },
+    {
+      "claim_id": "C4-T1-BINOMIAL-SUMMAND-OBSTRUCTION",
+      "statement": "For profile (a2,a3,a4)=(0,22,0), N=66, E=zL^N, and guarded k=27, E[k]C[k]-E[k+1]C[k-1]=-518620474811633289768751398606375936<0.",
+      "scope": "Exact componentwise obstruction only: the shared binomial perturbation E does not satisfy the nonnegative shifted-C margin by itself at this guarded interior rank. This is not a counterexample for A0, Ai, either universal guarded comparison, actual selectors, selected MASS/payment, the aggregate, or Erdős993.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-4/C4-CF-T1/REPORT.md", "cycles/cycle-4/C4-CF-T1/critique_replay.py", "cycles/cycle-4/C4-CF-T1/critique_replay.json"],
+      "reason": "Independent exact convolution and the direct binomial coefficient formula reproduce the four coefficients and negative signed margin."
+    },
+    {
+      "claim_id": "C4-T1-STRICT-SELECTOR-BRIDGE",
+      "statement": "Assume positive interval support for C and A_v on the relevant degrees, log-concavity of C, the actual least strict descent x of P=C+zL^(N+1), and an eligible p with p>=x+2. If A_v[p+1]C[p-1]<=A_v[p]C[p], then Delta_p A_v<0. For W=sum_i r_i A_i with all r_i>0, its analogous shifted inequality implies Delta_p A_i<0 for at least one branch i.",
+      "scope": "Conditional selector implication at actual eligible p with strict flags evaluated at p. The individual case selects each endpoint/tip deletion separately. The weighted case selects at least one distinct tip branch only; all original multiplicities r_i remain positive weights. This does not prove either shifted comparison or any payment theorem.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-4/C4-CF-T1/REPORT.md", "cycles/cycle-4/C4-CF-T1/critique_replay.py", "cycles/cycle-4/C4-CF-T1/critique_replay.json"],
+      "reason": "At x, the parent-binomial summand is rising, so Delta_x C<0 and rho_(x+1)<1. Log-concavity gives rho_p=C[p]/C[p-1]<=rho_(x+1)<1. Division by positive C[p-1] yields A_v[p+1]<=A_v[p]rho_p<A_v[p], since A_v[p]>0. Positive weights in W imply some strict branch descent."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CF-T1/REPORT.md",
+  "limitations": [
+    "Finite exact checks cover six profiles only and provide bounded evidence, not universal proofs.",
+    "The retained high-rank failure is outside the lower-half guard and is not a guarded counterexample.",
+    "The selector bridge depends on accepted log-concavity and first-descent facts and does not prove the guarded comparisons or selected payment.",
+    "No Lean build or broad census expansion was performed."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C4-T1-BINOMIAL-SUMMAND-OBSTRUCTION",
+    "C4-T1-STRICT-SELECTOR-BRIDGE",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR"
+  ]
+}

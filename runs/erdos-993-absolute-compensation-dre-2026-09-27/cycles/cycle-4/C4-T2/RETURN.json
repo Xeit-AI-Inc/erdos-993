@@ -1,0 +1,37 @@
+{
+  "worker_id": "C4-T2",
+  "cycle": 4,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "For every ordinary arity-2,3,4 path-star with m>=1 distinct branches, r_i in {2,3,4}, N=sum_i r_i, L=1+z, G=1+2z, B_r=L^r+z, H_i=product_{h!=i}B_{r_h}, C=G product_i B_{r_i}, A_i=G B_{r_i-1}H_i+zL^N, and W=sum_i r_i A_i (retaining original private-tip multiplicities), integer-zero-extended coefficients satisfy W[k+1]C[k-1]<=W[k]C[k] for every natural k with 1<=k and 2k<=N+2.",
+      "scope": "All ordinary arity-2,3,4 path-star profiles on the stated guarded lower-half rank band; no actual eligibility premise. Distinct from the individual A_i comparison and the unguarded all-rank claim.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-T2/REPORT.md",
+        "cycles/cycle-4/C4-T2/weighted_deck_check.py",
+        "cycles/cycle-4/C4-T2/weighted_deck_evidence.json"
+      ],
+      "reason": "No universal proof or guarded counterexample found. Exact checks found no negative margin on all guarded ranks of eight fixed profiles, including a literal-tree/deletion cross-check at counts (38,0,1); these remain bounded evidence. The known individual failure at k=77 lies outside the guard and does not refute the weighted claim."
+    },
+    {
+      "claim_id": "C4-T2-WEIGHTED-SHIFT-IMPLIES-ACTUAL-TIP-SELECTION",
+      "statement": "Assume the guarded weighted comparison W[k+1]C[k-1]<=W[k]C[k] for the ordinary arity-2,3,4 path-star at every 1<=k with 2k<=N+2. For P=C+zL^(N+1), let x be the least natural index with Delta_x P<0, with zero differences not counted as descent. At every actual eligible p satisfying x+2<=p, 3p<2(N+2)+1, and 2p<=N+2, define the current-p strict flags e_0=1[Delta_p A_0<0] and e_i=1[Delta_p A_i<0]. Then sum_i e_i>=1; no conclusion about e_0 is asserted. Indeed Delta_x C<0, C has positive interval support and is log-concave, and the weighted comparison at k=p yields Delta_p W<0; since Delta_p W=sum_i r_i Delta_p A_i with each original multiplicity r_i>0, some branch has strict negative difference. Combined with the established branchwise 3/2 bound, this selected branch suffices for local MASS.",
+      "scope": "Conditional all-profile selector implication on ordinary arity-2,3,4 path-stars. Retains actual least strict first descent including terminal indices, every eligible-rank guard, both endpoint and private-tip strict selectors at current p, and the original tip multiplicities. The implication forces at least one private-tip selector but neither requires nor concludes endpoint selection.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-T2/REPORT.md"
+      ],
+      "reason": "Direct ratio argument from the assumed weighted inequality, positivity and log-concavity of C, Delta_x C<0, and p>=x+2. It is conditional and does not establish the open weighted comparison."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-T2/REPORT.md",
+  "limitations": [
+    "The weighted-deck comparison remains unproved and without a guarded counterexample.",
+    "Exact checks cover eight fixed profiles only; no broad census or Lean build was performed.",
+    "The selector implication depends on the unproved weighted comparison and the established C log-concavity and branchwise payment facts."
+  ],
+  "status_authority": "proposed_worker_only"
+}

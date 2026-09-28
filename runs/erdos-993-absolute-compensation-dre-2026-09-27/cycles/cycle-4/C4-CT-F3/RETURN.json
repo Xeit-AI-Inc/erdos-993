@@ -1,0 +1,63 @@
+{
+  "worker_id": "C4-CT-F3",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "T",
+  "covered_claim_ids": [
+    "C4-F3-GENERAL-FINITE-BLOCK-JENSEN",
+    "C4-F3-GRAPH-COMPONENT-COEFFICIENT-BRIDGE",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+    "E993-PATH-STAR-ARITY-2-4-OCCUPANCY-JENSEN-COFACTOR"
+  ],
+  "claims": [
+    {
+      "claim_id": "C4-F3-GENERAL-FINITE-BLOCK-JENSEN",
+      "statement": "For a finite family of positive block sizes r_i with M=sum_i r_i, coefficient polynomials f_i(t)>=binom(r_i,t), the joint hypergeometric count-vector identity, Jensen bound, logarithmic lower bound, and finite Taylor lower bound give H[k]>=binom(M,k)E_d(y_k) for 0<=k<=M; include the empty family at M=k=0.",
+      "scope": "Universal abstract finite-block coefficient inequality on 0<=k<=M, with positive block sizes and nonnegative coefficient surplus; empty family is included separately. No probability formula is used outside its in-range domain. No graph rank, selector, payment or arbitrary-tree conclusion.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": ["cycles/cycle-4/C4-CT-F3/REPORT.md", "cycles/cycle-4/C4-CT-F3/independent_checks.py", "cycles/cycle-4/C4-CT-F3/independent_checks.json", "cycles/cycle-4/C4-CT-F3/producer_replay.json"],
+      "reason": "Count-vector expansion proves the exact expectation; Jensen applies to the dependent joint law. The derivative of log(w)-2(w-1)/(w+1) is nonnegative for w>=1 with positive denominator, and y>=0 makes every omitted Taylor term nonnegative. Producer boundaries and separate exact coefficient checks replayed, but this informal argument has no Lean award."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-OCCUPANCY-JENSEN-COFACTOR",
+      "statement": "For finite disjoint positive-size blocks B_r=(1+z)^r+z, the exact singleton-occupancy expectation and Jensen lower bound hold for 0<=k<=M; the zero-extended coefficient floor can be convolved with the nonnegative path-star marked factor G F_r to lower-bound T_i[j].",
+      "scope": "The special occupancy/Jensen cofactor claim only, including size-one blocks, empty family, in-range normalized formulas, zero-extended coefficient floor, and nonnegative path-star convolution. It asserts no first-descent, rank transfer, strict selector, mass, payment or arbitrary-tree result.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-4/C4-CT-F3/REPORT.md", "cycles/cycle-4/C4-CT-F3/producer_audit_finite_blocks.py", "cycles/cycle-4/C4-CT-F3/producer_replay.json"],
+      "reason": "The singleton factor has coefficient ratio 1+1/r only at count one. The joint occupancy expectation and Jensen argument are valid without independence. At k=0 probabilities vanish; at k=M size-one and larger blocks have the stated distinct boundary behavior."
+    },
+    {
+      "claim_id": "C4-F3-GRAPH-COMPONENT-COEFFICIENT-BRIDGE",
+      "statement": "A graph independence polynomial with independence number r coefficientwise dominates (1+z)^r; if it has a vertex outside a fixed maximum independent set, it dominates (1+z)^r+z. A finite-block bound applies to a product of such factors when its disjoint-component factorization is proved.",
+      "scope": "Coefficient domination and product coefficient bounds only. Parent/deletion factorization, changed marked-component rank, exact parent sequence, actual least strict zero-extended descent, all eligibility guards at the same p, strict current-p selectors, and original tip multiplicities must be established separately before any payment use.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": ["cycles/cycle-4/C4-CT-F3/REPORT.md"],
+      "reason": "Maximum-independent-set subsets give the binomial floor and an outside vertex supplies one additional singleton. These facts provide no automatic parent-rank, marked-deletion or selector transfer."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star, each original leaf deletion A_v satisfies A_v[k+1]C[k-1]<=A_v[k]C[k] for natural k with 1<=k and 2k<=N+2, using integer zero-extended coefficients.",
+      "scope": "Guarded coefficient comparison only, no eligibility premise. Any selector application must separately preserve actual least strict parent descent x (including terminal differences; flats are not descent), x+2<=p, 3p<2(N+2)+1, 2p<=N+2, strict Delta_p A_v<0, and original distinct tags/multiplicities.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-4/C4-CT-F3/REPORT.md", "cycles/cycle-4/C4-CT-F3/independent_checks.py", "cycles/cycle-4/C4-CT-F3/independent_checks.json"],
+      "reason": "No guarded counterexample or proof was found. Small exact monomial-basis checks pass but are bounded evidence. The known k=77 obstruction has 2k=154>N+2=82 and is outside the guard."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star, W=sum_i r_i A_i with original private-tip multiplicities satisfies W[k+1]C[k-1]<=W[k]C[k] for natural k with 1<=k and 2k<=N+2, using integer zero-extended coefficients.",
+      "scope": "Guarded weighted-deck coefficient comparison only, no eligibility premise. Any payment application must retain actual least strict descent, all guards x+2<=p, 3p<2(N+2)+1 and 2p<=N+2, strict current-p selectors, and original r_i multiplicities. A strict W descent only implies at least one selected branch.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-4/C4-CT-F3/REPORT.md", "cycles/cycle-4/C4-CT-F3/independent_checks.py", "cycles/cycle-4/C4-CT-F3/independent_checks.json"],
+      "reason": "No guarded counterexample or universal proof was obtained. Exact small-profile checks pass only as bounded diagnostics; the unguarded k=77 witness violates the target guard."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CT-F3/REPORT.md",
+  "limitations": [
+    "The general finite-block Jensen proof is informal and nonformal; its exact checks do not prove universal shifted comparisons.",
+    "Guarded shifted comparisons were sampled only on six small profiles and selected ranks; no broad census or universal argument was produced.",
+    "Graph coefficient domination does not transfer actual parent rank, marked-deletion identity, strict selectors or payment.",
+    "No Lean build, source edit, controller operation, agent delegation or external messaging was performed."
+  ],
+  "status_authority": "proposed_worker_only"
+}

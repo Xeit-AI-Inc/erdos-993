@@ -1,6 +1,10 @@
 # Open research roadmap
 
-## Current priorities after Cycle3
+## Current priorities during Cycle4 formalization
+
+Pursue an explicit quantitative surplus that compensates the binomial component, a branch-addition invariant that covers changing rank guards, and paired coefficient-minor or conditional root-mixture arguments. The enlarged-order ULC machinery was already in the predecessor tail proof; the new target is its sharper exact-ratio surplus inequality. A crude ratio substitution fails and cannot certify it. Formalize the complete actual-subset coefficient/Jensen/Taylor composite with all clauses retained. Cycles5–6 remain authorized, with Astra final review after6.
+
+## Historical priorities after Cycle3
 
 All-m MASS and payment are established at a computer-assisted/nonformal grade in the restricted family. Cycles4–6 now target structural lower-half shifted deletion or weighted-tip-deck comparisons, a reusable finite coefficient-counting bridge, and actual-descent/conditional-occupancy coupling. The guarded comparisons are OPEN; their unguarded version is REFUTED at a retained order122 witness outside the lower-half band. One selected branch suffices with local compensation. General coefficient domination does not transfer rank, deletion or selector structure to arbitrary trees.
 

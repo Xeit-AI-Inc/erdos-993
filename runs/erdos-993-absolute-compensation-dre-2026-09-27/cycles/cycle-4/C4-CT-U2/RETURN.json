@@ -1,0 +1,47 @@
+{
+  "worker_id": "C4-CT-U2",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "T",
+  "covered_claim_ids": [
+    "C4-U2-R4-M173-DEPTH1-OBSTRUCTION",
+    "C4-U2-R4-M173-DEPTH2-LOCAL-REPAIR"
+  ],
+  "claims": [
+    {
+      "claim_id": "C4-U2-R4-M173-DEPTH1-OBSTRUCTION",
+      "statement": "At the homogeneous ordinary arity-4 path-star with m=173, N=692, n=868, alpha=694, actual first strict descent x=336, p=338, j=336, delta=357, and all original leaf tags strictly selected at current p, the a=0,1 center-subset floor has a negative exact-ratio payment margin while the full T_i payment margin is positive.",
+      "scope": "One literal ordinary path-star and one actual eligible lower-half row; x+2<=p, 3p<2alpha+1, 2p<=alpha, zero-extended integer coefficients, strict selectors, and original endpoint/private-tip multiplicities. Refutes only this depth-one surrogate at this row; not full selected MASS or full exact-ratio payment.",
+      "status": "proposed_bounded_evidence",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CT-U2/REPORT.md",
+        "cycles/cycle-4/C4-CT-U2/truncation_literal_check_independent.py",
+        "cycles/cycle-4/C4-CT-U2/truncation_literal_check_independent.json",
+        "cycles/cycle-4/C4-CT-U2/independent_factor_check.py",
+        "cycles/cycle-4/C4-CT-U2/independent_factor_check.json"
+      ],
+      "reason": "Independent literal-tree and direct-factor exact replays reproduce the eligible row, all strict flags, and negative depth-one versus positive full signed margins."
+    },
+    {
+      "claim_id": "C4-U2-R4-M173-DEPTH2-LOCAL-REPAIR",
+      "statement": "At that same m=173 eligible row, the exact layer sum through a=2 gives a positive surrogate payment margin, whereas the sum through a=1 is negative.",
+      "scope": "Exact bounded arithmetic for one homogeneous arity-4 profile with actual first descent, all guards, current-p strict selectors and original leaf multiplicities. It asserts no parameter-uniform depth, tail bound, MASS theorem or payment theorem.",
+      "status": "proposed_bounded_evidence",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CT-U2/REPORT.md",
+        "cycles/cycle-4/C4-CT-U2/depth_remainder_audit.py",
+        "cycles/cycle-4/C4-CT-U2/depth_remainder_audit.json",
+        "cycles/cycle-4/C4-CT-U2/independent_factor_check.py",
+        "cycles/cycle-4/C4-CT-U2/independent_factor_check.json"
+      ],
+      "reason": "Independent factor expansion verifies the monomial basis and exact a=0,1,2 layer accumulation; signed margins change from negative through depth one to positive through depth two."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CT-U2/REPORT.md",
+  "limitations": [
+    "Both dispositions are bounded exact evidence at a single homogeneous profile; no universal layer-depth or tail estimate is established.",
+    "No Lean award, all-parameter proof, or decisive primary resolution is claimed.",
+    "The all-m selected MASS/payment registry grades and coefficient-only formal center-subset identity remain at their separate scopes."
+  ],
+  "status_authority": "proposed_worker_only"
+}

@@ -1,0 +1,61 @@
+{
+  "worker_id": "C4-T1",
+  "cycle": 4,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, every original leaf deletion polynomial A_v (A0 for the endpoint or Ai for a tip of branch i), and every natural k with 1<=k and 2k<=N+2, integer-zero-extended coefficients satisfy A_v[k+1] C[k-1]<=A_v[k] C[k], where C=GQ.",
+      "scope": "Guarded lower-half shifted C-to-each-deletion comparison on all such k; no actual eligibility premise. It would imply full strict selection at actual eligible p via C log-concavity and the accepted C[x+1]/C[x]<1, but that universal comparison is unproved. Profile and polynomial definitions: Ordinary tree formed from path 0-1-2 and m>=1 distinct centers at 0, each with r_i in {2,3,4} private tips. N=sum_i r_i, L=1+z, G=1+2z, B_r=L^r+z, H_i=product_(h!=i)B_(r_h), Q=product_i B_(r_i), C=GQ, A0=LQ+zL^N, Ai=G B_(r_i-1)H_i+zL^N. Coefficients are integer zero-extended. The comparison imposes only its stated k guard; it does not presume actual first-descent eligibility.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-T1/REPORT.md",
+        "cycles/cycle-4/C4-T1/shifted_lr_replay.py",
+        "cycles/cycle-4/C4-T1/shifted_lr_evidence.json"
+      ],
+      "reason": "No guarded counterexample appeared in six targeted exact profiles, and the comparison has a rigorous conditional implication to all current-p strict selectors at actual eligible ranks. The universal guarded comparison remains unproved; the finite checks are bounded evidence only."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, put W(X)=sum_i r_i A_i(X), counting each original private-tip deletion with its original multiplicity. For every natural k with 1<=k and 2k<=N+2, integer-zero-extended coefficients satisfy W[k+1] C[k-1]<=W[k] C[k].",
+      "scope": "Guarded lower-half shifted C-to-weighted-tip-deck comparison. A strict descent of W at actual eligible p gives at least one selected branch and, with the reviewed branchwise 3/2 bound, pays MASS. It does not assert that every tip or the endpoint is selected. Profile and polynomial definitions: Ordinary tree formed from path 0-1-2 and m>=1 distinct centers at 0, each with r_i in {2,3,4} private tips. N=sum_i r_i, L=1+z, G=1+2z, B_r=L^r+z, H_i=product_(h!=i)B_(r_h), Q=product_i B_(r_i), C=GQ, A0=LQ+zL^N, Ai=G B_(r_i-1)H_i+zL^N. Coefficients are integer zero-extended. The comparison imposes only its stated k guard; it does not presume actual first-descent eligibility.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-T1/REPORT.md",
+        "cycles/cycle-4/C4-T1/shifted_lr_replay.py",
+        "cycles/cycle-4/C4-T1/shifted_lr_evidence.json"
+      ],
+      "reason": "This is a distinct weaker structural obligation than the individual comparisons. It remains open; finite individual-profile checks do not prove the universal weighted inequality, and the exact original multiplicities must be retained."
+    },
+    {
+      "claim_id": "C4-T1-STRICT-SELECTOR-BRIDGE",
+      "statement": "For an ordinary arity-2,3,4 path-star, assume C is positive and log-concave on its support, Delta_x C<0 at the actual least strict descent x of P, and A_v[k+1]C[k-1]<=A_v[k]C[k] on 1<=k with 2k<=N+2. At every actual eligible p satisfying x+2<=p, 3p<2alpha+1, and 2p<=alpha, if A_v[p]>0 then Delta_p A_v<0; hence the strict selector is evaluated as selected at that current p.",
+      "scope": "Conditional informal proof for each original endpoint or private-tip deletion polynomial A_v, with actual first strict descent x, all three eligibility guards, zero-extended coefficients, and strict current-p selector. Uses the lower-half shifted comparison at k=p, not a no-recovery assumption for P.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-T1/REPORT.md"
+      ],
+      "reason": "Log-concavity makes C[p]/C[p-1]<=C[x+1]/C[x]<1 since p>=x+2. Dividing the shifted comparison by positive C[p-1] gives A_v[p+1]<=A_v[p]C[p]/C[p-1]<A_v[p]. The deletion coefficients are positive throughout this lower-half domain."
+    },
+    {
+      "claim_id": "C4-T1-BINOMIAL-SUMMAND-OBSTRUCTION",
+      "statement": "For profile (a2,a3,a4)=(0,22,0), the common binomial perturbation E=zL^N in the decomposition A_v=M_v+E fails the guarded shifted-C comparison at k=27: E[27]C[27]-E[28]C[26]=-518620474811633289768751398606375936.",
+      "scope": "Exact finite obstruction only to proving the full shifted comparison by proving it separately for each nonnegative summand M_v and E. Here m=22, N=66, n=91, alpha=68, actual first strict descent x=32, comparison rank k=27 with 1<=k and 2k=54<=N+2. Coefficients: E[27]=1654284096099796392, E[28]=2450791253481179840, C[27]=116461439672085416832, C[26]=78823085262292775712. Actual eligible p=34; at p, the endpoint and all 66 original tip copies are selected. This does not refute the full deletion comparison or actual selection.",
+      "status": "proposed_bounded_evidence",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-T1/REPORT.md",
+        "cycles/cycle-4/C4-T1/shifted_lr_replay.py",
+        "cycles/cycle-4/C4-T1/shifted_lr_evidence.json"
+      ],
+      "reason": "Exact integer replay shows the perturbation component fails at a guarded rank even though the complete deletion polynomial passes all guarded ranks in this profile. The negative component margin is not an eligible-rank or full-comparison counterexample."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-T1/REPORT.md",
+  "limitations": [
+    "The universal individual and weighted shifted comparisons remain unproved; no guarded counterexample was found.",
+    "Exact tests cover six targeted profiles and are bounded evidence, not an all-profile result.",
+    "No Lean build was run, and this search does not alter the registered statuses or primary formal stopping criterion."
+  ],
+  "status_authority": "proposed_worker_only"
+}

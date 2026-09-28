@@ -1,0 +1,44 @@
+{
+  "worker_id": "C4-CF-T2",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "F",
+  "covered_claim_ids": [
+    "C4-T2-WEIGHTED-SHIFT-IMPLIES-ACTUAL-TIP-SELECTION",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR"
+  ],
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, with W=sum_i r_i A_i retaining original private-tip multiplicities, integer-zero-extended coefficients satisfy W[k+1] C[k-1] <= W[k] C[k] for every natural k with 1<=k and 2k<=N+2.",
+      "scope": "The registered guarded lower-half weighted comparison, with no actual-eligibility premise; distinct from each individual-deletion comparison and the unguarded all-rank claim.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CF-T2/REPORT.md",
+        "cycles/cycle-4/C4-CF-T2/weighted_deck_check_copy.py",
+        "cycles/cycle-4/C4-CF-T2/independent_selector_check.py",
+        "cycles/cycle-4/C4-CF-T2/independent_selector_evidence.json"
+      ],
+      "reason": "No universal proof or guarded counterexample was found. Exact diagnostics reproduce the worker's evidence and independently check boundary and interior ranks on one 24-branch profile; these are bounded evidence only. The known k=77 individual failure is outside the N=80 guard k<=41."
+    },
+    {
+      "claim_id": "C4-T2-WEIGHTED-SHIFT-IMPLIES-ACTUAL-TIP-SELECTION",
+      "statement": "Conditioned on the guarded weighted comparison at every required k, every actual eligible p for an ordinary arity-2,3,4 path-star has at least one current-p strict private-tip selector e_i=1[Delta_p A_i<0]. The conclusion does not require or assert endpoint selection.",
+      "scope": "Conditional implication retaining the actual least strict first descent x, all eligibility guards x+2<=p, 3p<2(N+2)+1, 2p<=N+2, current-p strict selectors, and original r_i multiplicities. It relies on the accepted first-descent ratio result, positivity/log-concavity of C, and the registered branchwise bound only for the local MASS consequence.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CF-T2/REPORT.md",
+        "cycles/cycle-4/C4-CF-T2/independent_selector_check.py",
+        "cycles/cycle-4/C4-CF-T2/independent_selector_evidence.json"
+      ],
+      "reason": "The conditional proof divides only by positive coefficients, uses decreasing adjacent ratios of log-concave C and the strict inequality C[x+1]/C[x]<1, then uses positive original multiplicities to infer a negative branch difference from Delta_p W<0. Exact eligible-profile values check the directions. The weighted premise remains unproved."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CF-T2/REPORT.md",
+  "limitations": [
+    "The guarded weighted-tip-deck comparison remains open; finite profile checks do not establish it universally.",
+    "The selector implication is conditional on the weighted comparison and the accepted first-descent ratio theorem.",
+    "No formal verification or result beyond the assigned weighted comparison and conditional selector implication is claimed."
+  ],
+  "status_authority": "proposed_worker_only"
+}

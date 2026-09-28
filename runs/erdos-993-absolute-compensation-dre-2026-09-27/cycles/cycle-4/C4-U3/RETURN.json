@@ -1,0 +1,49 @@
+{
+  "worker_id": "C4-U3",
+  "cycle": 4,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, with C=G product_i B_(r_i), A0=LQ+zL^N, and Ai=G B_(r_i-1)H_i+zL^N, the integer-zero-extended coefficients satisfy Av[k+1] C[k-1] <= Av[k] C[k] for every original deletion polynomial Av and every natural k with 1<=k and 2k<=N+2.",
+      "scope": "Guarded lower-half shifted-C comparison for every endpoint and private-tip deletion on all ordinary arity-2,3,4 path-stars; no actual eligibility premise. The bounds are retained exactly as 1<=k and 2k<=N+2. This auxiliary claim is not the selected payment predicate.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-U3/REPORT.md",
+        "cycles/cycle-4/C4-U3/shifted_audit.py",
+        "cycles/cycle-4/C4-U3/shifted_audit.json"
+      ],
+      "reason": "Exact bounded scan has no counterexample through 18 branches; no all-profile proof or guarded counterexample was found."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, let W=sum_i r_i Ai, retaining each branch's original private-tip multiplicity. The integer-zero-extended coefficients satisfy W[k+1] C[k-1] <= W[k] C[k] for every natural k with 1<=k and 2k<=N+2.",
+      "scope": "Guarded lower-half shifted-C comparison for the original multiplicity-weighted private-tip deletion deck, on every ordinary arity-2,3,4 path-star; no actual eligibility premise. The bounds are retained exactly as 1<=k and 2k<=N+2. This auxiliary claim is not selected MASS or payment.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-U3/REPORT.md",
+        "cycles/cycle-4/C4-U3/shifted_audit.py",
+        "cycles/cycle-4/C4-U3/shifted_audit.json"
+      ],
+      "reason": "Exact bounded scan has no counterexample through 18 branches; no all-profile proof or guarded counterexample was found."
+    },
+    {
+      "claim_id": "C4-U3-WEIGHTED-SHIFTED-LR-IMPLIES-STRICT-TIP-SELECTION",
+      "statement": "In an ordinary arity-2,3,4 path-star, suppose C is positive and log-concave on its support, Delta_x C<0 at the actual first strict descent x of P, and at an actual eligible lower-half p the weighted comparison W[p+1]C[p-1]<=W[p]C[p] holds, where W=sum_i r_i Ai uses the original tip multiplicities. Then some branch i satisfies Delta_p Ai<0.",
+      "scope": "Conditional implication only, at an actual p satisfying x+2<=p, 3p<2alpha+1, and 2p<=alpha, with strict selectors evaluated at this current p. The proof preserves integer zero extension and every original branch tip multiplicity. It assumes the weighted shifted comparison and makes no payment or aggregate assertion.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-U3/REPORT.md"
+      ],
+      "reason": "Divide the weighted comparison by positive W[p] and C[p-1], use log-concavity to bound C[p]/C[p-1] by C[x+1]/C[x]<1, then use Delta_p W=sum_i r_i Delta_p Ai<0 to force a strict branch selector."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-U3/REPORT.md",
+  "limitations": [
+    "The exact scans cover only profiles with at most 18 branches, plus the stated targeted 22-branch eligible row; they do not prove either universal LR claim.",
+    "The conditional selector bridge does not prove its weighted-LR premise, selected MASS, exact-ratio payment, or the primary aggregate.",
+    "No Lean verification was attempted and no authoritative claim status is asserted."
+  ],
+  "status_authority": "proposed_worker_only"
+}

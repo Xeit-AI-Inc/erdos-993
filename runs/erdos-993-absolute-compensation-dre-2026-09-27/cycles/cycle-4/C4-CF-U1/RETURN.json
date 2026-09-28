@@ -1,0 +1,42 @@
+{
+  "worker_id": "C4-CF-U1",
+  "cycle": 4,
+  "stage": "critique",
+  "orientation": "F",
+  "covered_claim_ids": [
+    "C4-U1-CONDITIONED-DRIFT-BOUNDED-HORIZON",
+    "C4-U1-DESCENT-BINOMIAL-OCCUPANCY-DRIFT"
+  ],
+  "claims": [
+    {
+      "claim_id": "C4-U1-DESCENT-BINOMIAL-OCCUPANCY-DRIFT",
+      "statement": "For every ordinary path-star with m>=1 branches of arities r_i in {2,3,4}, at each actual eligible p (x+2<=p, 3p<2alpha+1, 2p<=alpha) using the least strict zero-extended descent x of P=C+zL^q, the stated conditioned product model satisfies E_j D < 2j-N-(j+1)beta_x/C[x], where j=p-2 and beta_x=binom(q,x)-binom(q,x-1)>0. The result retains the current-p selectors and original tag multiplicities as context but asserts no selector-weighted payment.",
+      "scope": "Universal informal coefficient lemma on the exact ordinary path-star family with actual first strict descent, all three guards, terminal zero extension, and strict current-p selectors/original multiplicities. It does not imply selected MASS or primary payment and has no Lean award.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CF-U1/REPORT.md",
+        "cycles/cycle-4/C4-CF-U1/independent_drift_check.py"
+      ],
+      "reason": "The derivative-weight identity is exact. Actual descent gives C[x+1]/C[x] < 1-beta_x/C[x]; positive-interval log-concavity makes adjacent ratios nonincreasing, and j>=x propagates the inequality. All substitutions divide only by positive coefficients."
+    },
+    {
+      "claim_id": "C4-U1-CONDITIONED-DRIFT-BOUNDED-HORIZON",
+      "statement": "For the exact ordinary path-star family and actual eligible ranks defined by x, p and the three guards, exact enumeration through m<=40 checks all 4,308 profiles with an eligible p and finds E_xD no greater than the fugacity-one value 1/3+sum_i(2-r_i)/(2^r_i+1). This is bounded evidence only.",
+      "scope": "Finite coefficient-model evidence through m=40 with the actual least strict zero-extended parent descent and literal eligibility guards. It neither establishes a universal conditional-to-unconditioned comparison nor a selector-weighted/payment bound.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-4/C4-CF-U1/REPORT.md",
+        "cycles/cycle-4/C4-CF-U1/independent_drift_check.py",
+        "cycles/cycle-4/C4-CF-U1/occupancy_drift_probe_producer_copy.py"
+      ],
+      "reason": "The copied producer probe and a separate direct-convolution exact-integer implementation both return 4,308 eligible profiles and no upward discrepancy. Each comparison uses exact rational values; the finite horizon remains bounded evidence."
+    }
+  ],
+  "report_path": "cycles/cycle-4/C4-CF-U1/REPORT.md",
+  "limitations": [
+    "The drift bound does not control selector-weighted branch mass or imply selected MASS, endpoint-only exclusion, exact-ratio payment, or the primary result.",
+    "The correction beta_x/C[x] has no uniform lower estimate established here.",
+    "The m<=40 comparison is finite evidence only; no universal conditional-versus-unconditioned comparison is claimed."
+  ],
+  "status_authority": "proposed_worker_only"
+}
