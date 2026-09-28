@@ -1,0 +1,28 @@
+{
+  "reviewer_id": "C2-RANK-FIDELITY",
+  "registry_write": false,
+  "proposals": [
+    {
+      "action": "add_separate_claim_key_after_controller_gates",
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-ANY-STRICT-DESCENT-RANK-2N5",
+      "statement": "For every finite list rs of natural numbers with every entry in {2,3,4}, including the empty list and repetitions, put N=rs.sum and P(X)=(1+2X)*product_{r in rs}((1+X)^r+X)+X*(1+X)^(N+1) in Polynomial Rat. For every natural k, if the zero-extended coefficient P[k+1] is strictly less than P[k], then 2N<=5k.",
+      "scope": "Exact coefficient-only theorem for any strict descent, including the terminal difference; rational polynomial coefficients and natural-number conclusion. The weight N+1 is not the actual degree of P. No graph interpretation, m>=1, first-descent minimality, eligibility guards, ratio bound, selected MASS, payment, or primary theorem.",
+      "lean_declaration": "e993_rank_any_strict_descent",
+      "contract_id": "e993-any-strict-descent-rank-v1",
+      "relationship_to_existing": {
+        "claim_key": "E993-PATH-STAR-ARITY-2-4-FIRST-DESCENT-RATIO-BAND",
+        "description": "The exact coefficient theorem implies only the composite key's first-descent rank clause on its m>=1 polynomial profiles: 2N<=5x is equivalent over integers to 5x>2N-1. It supplies none of that key's eligible-rank or ratio assertions. Do not mark the entire composite key formally verified from this lemma."
+      },
+      "proposed_evidence_grade": "formally_verified_exact_coefficient_lemma_only_subject_to_controller_close",
+      "formal_award_issued_here": false
+    },
+    {
+      "action": "add_witness_order_metadata_only_after_controller_review",
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-SPREAD-NORMALIZED-EXACT-RATIO-NONDECREASING",
+      "field": "smallest_witness_order",
+      "proposed_value": 108,
+      "calculation": "old (a2,a3,a4)=(0,10,13) and new=(1,8,14): m=23, N=82, ordinary path-star order n=N+m+3=108",
+      "qualification": "Order of the recorded exact witness; no global minimality assertion. Preserve REFUTED status, existing mathematical statement, and evidence grade."
+    }
+  ]
+}

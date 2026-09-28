@@ -1,0 +1,193 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "e993-any-strict-descent-rank-v1",
+  "theorem": {
+    "title": "Arity 2-4 parent polynomial rank bound at every strict descent",
+    "informal_statement": "For every finite list rs of natural numbers whose entries are each 2, 3 or 4, let N be the sum of rs and define P(X)=(1+2X)*product_{r in rs}((1+X)^r+X)+X*(1+X)^(N+1) in rational polynomials. For every natural k, if the coefficient of X^(k+1) in P is strictly less than the coefficient of X^k in P, then 2*N<=5*k. Coefficients have their standard zero extension and the empty list is permitted."
+  },
+  "formulation_status": {
+    "status": "open",
+    "evidence": []
+  },
+  "definitions": [
+    {
+      "id": "def-parent",
+      "description": "e993RankParent rs=(1+2*X)*(rs.map (fun r => (1+X)^r+X)).prod+X*(1+X)^(rs.sum+1), in Polynomial Rat. The exponent weight N+1 is not asserted to be the degree of P.",
+      "lean_name": "e993RankParent",
+      "dependencies": [
+        "domain-list",
+        "domain-polynomial"
+      ]
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-natural",
+      "description": "All natural numbers including zero.",
+      "lean_type": "Nat",
+      "dependencies": []
+    },
+    {
+      "id": "domain-list",
+      "description": "Every finite list of natural arities, including the empty list; repeated entries are distinct branch factors.",
+      "lean_type": "List Nat",
+      "dependencies": [
+        "domain-natural"
+      ]
+    },
+    {
+      "id": "domain-polynomial",
+      "description": "Rational polynomials with standard zero-extended coefficients.",
+      "lean_type": "Polynomial Rat",
+      "dependencies": []
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "rs",
+      "kind": "forall",
+      "domain_id": "domain-list"
+    },
+    {
+      "binder": "k",
+      "kind": "forall",
+      "domain_id": "domain-natural"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-arity",
+      "statement": "Every r in rs is equal to 2, 3 or 4.",
+      "dependencies": [
+        "domain-list"
+      ]
+    },
+    {
+      "id": "hyp-drop",
+      "statement": "(e993RankParent rs).coeff (k+1) < (e993RankParent rs).coeff k for the given natural k. No first-descent minimality is assumed.",
+      "dependencies": [
+        "def-parent",
+        "domain-natural"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "2 * rs.sum <= 5 * k as an inequality of natural numbers. No log-concavity, extra positivity, cutoff, or graph interpretation is assumed.",
+    "dependencies": [
+      "hyp-arity",
+      "hyp-drop",
+      "domain-natural"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "domain-natural",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-list",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-polynomial",
+        "kind": "domain"
+      },
+      {
+        "id": "def-parent",
+        "kind": "definition"
+      },
+      {
+        "id": "hyp-arity",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-drop",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "domain-natural",
+        "to": "domain-list"
+      },
+      {
+        "from": "domain-list",
+        "to": "def-parent"
+      },
+      {
+        "from": "domain-polynomial",
+        "to": "def-parent"
+      },
+      {
+        "from": "domain-list",
+        "to": "hyp-arity"
+      },
+      {
+        "from": "def-parent",
+        "to": "hyp-drop"
+      },
+      {
+        "from": "domain-natural",
+        "to": "hyp-drop"
+      },
+      {
+        "from": "hyp-arity",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-drop",
+        "to": "conclusion"
+      },
+      {
+        "from": "domain-natural",
+        "to": "conclusion"
+      }
+    ]
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "classical_allowed",
+    "rationale": "Standard Mathlib foundations only; no assumed target inequality or custom axiom."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "e993_rank_any_strict_descent",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem e993_rank_any_strict_descent (rs : List ℕ)\n    (hr : ∀ r ∈ rs, r = 2 ∨ r = 3 ∨ r = 4) (k : ℕ)\n    (hdrop : (e993RankParent rs).coeff (k + 1) < (e993RankParent rs).coeff k) :\n    2 * rs.sum ≤ 5 * k",
+    "expected_statement_sha256": "d04776272178640e26f7a28a630330b1a17eb3dd95b86cd0faf670fbb5def75f"
+  },
+  "source_materials": [
+    {
+      "id": "source-intended-statement",
+      "path": "SOURCE/INTENDED-STATEMENT.txt",
+      "sha256": "9b6cea422642d69cce006d2f71553bff96e32d69186a336f6b2d1967a3a2daf9",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "source-rank-proof-lead",
+      "path": "SOURCE/RANK-PROOF-LEAD.md",
+      "sha256": "d5aae5b6ed0d687fe762517f74911f9513f6c95839d0bccbf2b1b65b90c0dd11",
+      "role": "reference"
+    }
+  ]
+}

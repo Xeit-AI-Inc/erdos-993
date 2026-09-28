@@ -1,0 +1,4 @@
+lemma e993NN_pow {p : Polynomial ℚ} (hp : e993NN p) (m : ℕ) : e993NN (p^m) := by
+  induction m with
+  | zero => simpa using e993NN_one
+  | succ m ih => simpa [pow_succ] using e993NN_mul ih hp

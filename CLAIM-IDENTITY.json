@@ -41408,6 +41408,290 @@
         "old_payment_margin": "3463555694405780523228670120945814749048313397994374",
         "new_payment_margin": "3517160039345853058148436236636758533834269835505818",
         "Q_new_minus_Q_old_sign": "negative"
+      },
+      "smallest_witness_order": 108,
+      "witness_order_qualification": "Order108 of the retained independently replayed pair; smallest known in supplied evidence, not a claim of global minimality. Metadata reviewed in C2-RANK-FIDELITY/IDENTITY.json."
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-OCCUPANCY-JENSEN-COFACTOR",
+      "statement": "For any finite disjoint positive-size blocks V_l of sizes s_l and total M, H=product_l((1+z)^{s_l}+z), any integer 0<=k<=M, and uniform k-subset S of their union, with X_l=1[|S intersect V_l|=1], H[k]/binom(M,k)=E product_l(1+X_l/s_l). Consequently H[k]/binom(M,k)>=product_l(1+1/s_l)^{Pr(X_l=1)}>=exp(y_k), where y_k=sum_l [2s_l/(2s_l+1)] binom(M-s_l,k-1)/binom(M,k); hence for every natural d, H[k]>=binom(M,k) E_d(y_k), E_d(y)=sum_{a=0}^d y^a/a!. The additive and scaled degree-four floors follow. For a path-star cofactor H_i, zero-extend the lower bound outside 0..N-r_i and convolve with GF_{r_i} having coefficients (1,2), (2,5,2), (3,9,7,2) for r_i=2,3,4 respectively to obtain a coefficientwise lower bound on T_i[j].",
+      "scope": "General finite disjoint positive blocks for the identity and Jensen inequality, in-range 0<=k<=M for division/powers; zero-extended coefficient floor and nonnegative path-star convolution at every natural j. Empty block family is allowed with H=1. No selector, descent, payment, or aggregate conclusion. Definitions and actual-family domain: Ordinary tree with path 0-1-2, m>=1 distinct centers adjacent to 0, center i having r_i in {2,3,4} distinct private tips. N=sum_i r_i, q=N+1, alpha=N+2, L=1+z, G=1+2z, B_r=L^r+z, F_r=sum_{h=0}^{r-2}L^h, Q=product_i B_{r_i}, H_i=product_{h!=i}B_{r_h}, C=GQ, T_i=GF_{r_i}H_i, P=C+zL^q. Coefficients and Delta_k f=f[k+1]-f[k] are integer zero-extended. x=min{k natural: Delta_k P<0}, including terminal difference. An actual eligible lower-half p is natural with x+2<=p, 3p<2alpha+1, 2p<=alpha; j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j)>0. A0=LQ+zL^N, Ai=G B_{r_i-1}H_i+zL^N, e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], b=e0+sum_i r_i ei, A=sum_i r_i ei T_i[j]. Original endpoint and every private tip retain their separate original tags; empty selection is included.",
+      "status": "VERIFIED",
+      "aliases": [
+        "fixed-size occupancy Jensen cofactor bound"
+      ],
+      "alias_patterns": [],
+      "certificate": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C2-C3-IDENTITY/REPORT.md; exact proposed statement and source links in CANDIDATES.json; independently sealed C2 synthesis and scoped predecessor clauses. Controller accepts at the displayed evidence grade, not as a Lean award.",
+      "evidence_grade": "universal_informal_proof_nonformal",
+      "origin_run": "erdos-993-absolute-compensation-dre-2026-09-27",
+      "dependencies": [
+        "fixed-size joint subset counting",
+        "finite Jensen",
+        "log(1+1/s)>=2/(2s+1)",
+        "exp(y)>=E_d(y) for y>=0",
+        "nonnegative GF_r convolution"
+      ],
+      "novelty_claimed": false,
+      "formal_award": false
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-FIRST-DESCENT-RATIO-BAND",
+      "statement": "For every common-family profile, its actual first strict parent descent x satisfies 5x>2N-1. At every actual eligible lower-half p, j>=x and 2j<=N-2. With beta_x=binom(q,x)-binom(q,x-1)>0, v=beta_x/C[x], t=C[j+1]/C[j] and kappa=1-t+t/delta, one has 0<t<=C[x+1]/C[x]<1-v and kappa>v+(1-v)/delta. The endpoint and branch flags are the actual current-p strict selectors; this is a coefficient/rank theorem, not a selected payment theorem.",
+      "scope": "First-descent inequality for every m>=1 arity-2,3,4 profile; ratio assertion only on actual eligible lower-half rows, with positive C[x], C[j], C[j+1] and integer zero extension. No parent log-concavity or no-recovery hypothesis. Definitions and actual-family domain: Ordinary tree with path 0-1-2, m>=1 distinct centers adjacent to 0, center i having r_i in {2,3,4} distinct private tips. N=sum_i r_i, q=N+1, alpha=N+2, L=1+z, G=1+2z, B_r=L^r+z, F_r=sum_{h=0}^{r-2}L^h, Q=product_i B_{r_i}, H_i=product_{h!=i}B_{r_h}, C=GQ, T_i=GF_{r_i}H_i, P=C+zL^q. Coefficients and Delta_k f=f[k+1]-f[k] are integer zero-extended. x=min{k natural: Delta_k P<0}, including terminal difference. An actual eligible lower-half p is natural with x+2<=p, 3p<2alpha+1, 2p<=alpha; j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j)>0. A0=LQ+zL^N, Ai=G B_{r_i-1}H_i+zL^N, e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], b=e0+sum_i r_i ei, A=sum_i r_i ei T_i[j]. Original endpoint and every private tip retain their separate original tags; empty selection is included.",
+      "status": "VERIFIED",
+      "aliases": [
+        "first-descent lower rank and corrected exact-ratio bound"
+      ],
+      "alias_patterns": [],
+      "certificate": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C2-C3-IDENTITY/REPORT.md; exact proposed statement and source links in CANDIDATES.json; independently sealed C2 synthesis and scoped predecessor clauses. Controller accepts at the displayed evidence grade, not as a Lean award.",
+      "evidence_grade": "universal_informal_proof_nonformal",
+      "origin_run": "erdos-993-absolute-compensation-dre-2026-09-27",
+      "dependencies": [
+        "local derivative ratios of G and B_2,B_3,B_4",
+        "product derivative identity",
+        "binomial summand rising through 5j<=2N-1",
+        "ordinary log-concavity of C",
+        "strict parent descent at x"
+      ],
+      "novelty_claimed": false,
+      "formal_award": false
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-LOCAL-MASS-CUTOFF-238",
+      "statement": "For every common-family profile with m>=238, every represented branch i, and every natural j satisfying 5j>2N-1 and 2j<=N-2, put delta=N+1-j and D_j=binom(N,j+1)-binom(N,j). Then T_i[j]>3 delta D_j/2. This is branchwise and independent of current-p selector flags. The exact singleton probability used in the proof for another block of size s, M=N-r_i, is s(j/M) product_{a=0}^{s-2}(M-j-a)/(M-1-a).",
+      "scope": "All m>=238 and arity-2,3,4 profiles on the displayed rank band, including ranks without any eligible p. No full-selection or selected-aggregate hypothesis; no formal award. Integer inequality may equivalently be written 2T_i[j]>3 delta D_j. Definitions and actual-family domain: Ordinary tree with path 0-1-2, m>=1 distinct centers adjacent to 0, center i having r_i in {2,3,4} distinct private tips. N=sum_i r_i, q=N+1, alpha=N+2, L=1+z, G=1+2z, B_r=L^r+z, F_r=sum_{h=0}^{r-2}L^h, Q=product_i B_{r_i}, H_i=product_{h!=i}B_{r_h}, C=GQ, T_i=GF_{r_i}H_i, P=C+zL^q. Coefficients and Delta_k f=f[k+1]-f[k] are integer zero-extended. x=min{k natural: Delta_k P<0}, including terminal difference. An actual eligible lower-half p is natural with x+2<=p, 3p<2alpha+1, 2p<=alpha; j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j)>0. A0=LQ+zL^N, Ai=G B_{r_i-1}H_i+zL^N, e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], b=e0+sum_i r_i ei, A=sum_i r_i ei T_i[j]. Original endpoint and every private tip retain their separate original tags; empty selection is included.",
+      "status": "VERIFIED",
+      "aliases": [
+        "branchwise local three-halves coefficient bound from238"
+      ],
+      "alias_patterns": [],
+      "certificate": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C2-C3-IDENTITY/REPORT.md; exact proposed statement and source links in CANDIDATES.json; independently sealed C2 synthesis and scoped predecessor clauses. Controller accepts at the displayed evidence grade, not as a Lean award.",
+      "evidence_grade": "universal_informal_coefficient_proof_with_exact_rational_constant_nonformal",
+      "origin_run": "erdos-993-absolute-compensation-dre-2026-09-27",
+      "dependencies": [
+        "E993-PATH-STAR-ARITY-2-4-OCCUPANCY-JENSEN-COFACTOR (proposed)",
+        "corrected singleton probability",
+        "j/M>39/100 and product factors>48/100",
+        "binom(N-r_i,j)/binom(N,j)>(49/100)^4>1/18",
+        "degree-20 exact Taylor comparison at m=238",
+        "delta D_j/binom(N,j)<3(N-3)/10"
+      ],
+      "novelty_claimed": false,
+      "formal_award": false
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-ALL-M-LOWER-HALF-FULL-SELECTION",
+      "statement": "For every common-family ordinary path-star with m>=1 and every actual eligible lower-half natural p, Delta_p A0<0 and Delta_p Ai<0 for every distinct branch i. Thus every one of the N+1 original leaves is strictly selected at current p, e0=ei=1, b=N+1, and endpoint-only selection is impossible at that scope.",
+      "scope": "All arity-2,3,4 profiles, every actual p satisfying x+2<=p, 3p<2(N+2)+1, 2p<=N+2, zero extension and original distinct leaf tags. Does not assert selection at eligible upper-half ranks or supply a census-free proof. Definitions and actual-family domain: Ordinary tree with path 0-1-2, m>=1 distinct centers adjacent to 0, center i having r_i in {2,3,4} distinct private tips. N=sum_i r_i, q=N+1, alpha=N+2, L=1+z, G=1+2z, B_r=L^r+z, F_r=sum_{h=0}^{r-2}L^h, Q=product_i B_{r_i}, H_i=product_{h!=i}B_{r_h}, C=GQ, T_i=GF_{r_i}H_i, P=C+zL^q. Coefficients and Delta_k f=f[k+1]-f[k] are integer zero-extended. x=min{k natural: Delta_k P<0}, including terminal difference. An actual eligible lower-half p is natural with x+2<=p, 3p<2alpha+1, 2p<=alpha; j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j)>0. A0=LQ+zL^N, Ai=G B_{r_i-1}H_i+zL^N, e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], b=e0+sum_i r_i ei, A=sum_i r_i ei T_i[j]. Original endpoint and every private tip retain their separate original tags; empty selection is included.",
+      "status": "VERIFIED",
+      "aliases": [
+        "all-m path-star lower-half full strict selection"
+      ],
+      "alias_patterns": [],
+      "certificate": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C2-C3-IDENTITY/REPORT.md; exact proposed statement and source links in CANDIDATES.json; independently sealed C2 synthesis and scoped predecessor clauses. Controller accepts at the displayed evidence grade, not as a Lean award.",
+      "evidence_grade": "source_dependent_complete_finite_census_plus_informal_analytic_tail_nonformal",
+      "origin_run": "erdos-993-absolute-compensation-dre-2026-09-27",
+      "dependencies": [
+        "C2-T2-ENDPOINT-ONLY-FINITE-EXCLUSION-SCAN (complete full-selection data through m=80, independently replayed by C2-CF-T2)",
+        "E993-PATH-STAR-ARITY-2-4-M42-265-LOWER-HALF-EXACT-BASE (registered selector clause)",
+        "E993-PATH-STAR-ARITY-2-4-M266-ANALYTIC-ELIGIBLE-TAIL (registered selector clause)"
+      ],
+      "novelty_claimed": false,
+      "formal_award": false
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-M238-SELECTED-LOWER-MASS",
+      "statement": "For every common-family ordinary path-star with m>=238 and every actual eligible lower-half p, the exact original-tag current-p selected mass satisfies A=sum_i r_i ei T_i[j]>=b delta D_j, where b=e0+sum_i r_i ei and all quantities use the actual first strict parent descent and all three guards. The displayed proof in fact gives strict inequality at every such row because full selection makes b=N+1 and every T_i[j]>3 delta D_j/2.",
+      "scope": "Proper m>=238 restriction of the registered all-m OPEN selected MASS identity, including all arity-count profiles and every actual eligible lower-half rank; no arbitrary-tree extension, no high-half statement, no Lean award. Implies exact-ratio payment only at this restricted cutoff. Definitions and actual-family domain: Ordinary tree with path 0-1-2, m>=1 distinct centers adjacent to 0, center i having r_i in {2,3,4} distinct private tips. N=sum_i r_i, q=N+1, alpha=N+2, L=1+z, G=1+2z, B_r=L^r+z, F_r=sum_{h=0}^{r-2}L^h, Q=product_i B_{r_i}, H_i=product_{h!=i}B_{r_h}, C=GQ, T_i=GF_{r_i}H_i, P=C+zL^q. Coefficients and Delta_k f=f[k+1]-f[k] are integer zero-extended. x=min{k natural: Delta_k P<0}, including terminal difference. An actual eligible lower-half p is natural with x+2<=p, 3p<2alpha+1, 2p<=alpha; j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j)>0. A0=LQ+zL^N, Ai=G B_{r_i-1}H_i+zL^N, e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], b=e0+sum_i r_i ei, A=sum_i r_i ei T_i[j]. Original endpoint and every private tip retain their separate original tags; empty selection is included.",
+      "status": "VERIFIED",
+      "aliases": [
+        "selected lower-half MASS from238"
+      ],
+      "alias_patterns": [],
+      "certificate": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C2-C3-IDENTITY/REPORT.md; exact proposed statement and source links in CANDIDATES.json; independently sealed C2 synthesis and scoped predecessor clauses. Controller accepts at the displayed evidence grade, not as a Lean award.",
+      "evidence_grade": "source_dependent_computer_assisted_informal_nonformal",
+      "origin_run": "erdos-993-absolute-compensation-dre-2026-09-27",
+      "dependencies": [
+        "E993-PATH-STAR-ARITY-2-4-LOCAL-MASS-CUTOFF-238 (proposed)",
+        "E993-PATH-STAR-ARITY-2-4-ALL-M-LOWER-HALF-FULL-SELECTION (proposed)",
+        "E993-PATH-STAR-ARITY-2-4-FIRST-DESCENT-RATIO-BAND (proposed rank-band implication)"
+      ],
+      "novelty_claimed": false,
+      "formal_award": false
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-OVERSTRONG-RATIO-BOUND",
+      "statement": "For every actual eligible lower-half row of the family specified in scope, kappa=1-t+t/delta>v+1/delta, where t=C[j+1]/C[j] and v=(binom(q,x)-binom(q,x-1))/C[x].",
+      "scope": "Refutes only the C2-T3/C2-CU-T3 overstated normalization, not exact-ratio payment, selected MASS, relative margin, or the corrected bound. Definitions and actual-family domain: Ordinary tree with path 0-1-2, m>=1 distinct centers adjacent to 0, center i having r_i in {2,3,4} distinct private tips. N=sum_i r_i, q=N+1, alpha=N+2, L=1+z, G=1+2z, B_r=L^r+z, F_r=sum_{h=0}^{r-2}L^h, Q=product_i B_{r_i}, H_i=product_{h!=i}B_{r_h}, C=GQ, T_i=GF_{r_i}H_i, P=C+zL^q. Coefficients and Delta_k f=f[k+1]-f[k] are integer zero-extended. x=min{k natural: Delta_k P<0}, including terminal difference. An actual eligible lower-half p is natural with x+2<=p, 3p<2alpha+1, 2p<=alpha; j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j)>0. A0=LQ+zL^N, Ai=G B_{r_i-1}H_i+zL^N, e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], b=e0+sum_i r_i ei, A=sum_i r_i ei T_i[j]. Original endpoint and every private tip retain their separate original tags; empty selection is included.",
+      "status": "REFUTED",
+      "aliases": [
+        "overstrong kappa greater than v plus inverse delta"
+      ],
+      "alias_patterns": [],
+      "certificate": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C2-C3-IDENTITY/REPORT.md; exact proposed statement and source links in CANDIDATES.json; independently sealed C2 synthesis and scoped predecessor clauses. Controller accepts at the displayed evidence grade, not as a Lean award.",
+      "evidence_grade": "exact_literal_tree_counterexample_independently_replayed_nonformal",
+      "origin_run": "erdos-993-absolute-compensation-dre-2026-09-27",
+      "dependencies": [
+        "literal path-star independence-polynomial tree DP",
+        "actual first descent and strict selectors"
+      ],
+      "novelty_claimed": false,
+      "formal_award": false,
+      "smallest_witness_order": 155,
+      "witness": {
+        "minimality_claim": "smallest_known_in_supplied_verified_evidence_only; no global minimality claim",
+        "counts_a2_a3_a4": [
+          0,
+          38,
+          0
+        ],
+        "m": 38,
+        "n": 155,
+        "N": 114,
+        "alpha": 116,
+        "x": 55,
+        "p": 57,
+        "j": 55,
+        "delta": 60,
+        "b": 115,
+        "all_original_leaf_flags_selected": true,
+        "kappa": "10046229104518113012063545094727/580516383375585058660432089220920",
+        "false_bound_v_plus_inverse_delta": "5025084124803012972339453667081/290258191687792529330216044610460",
+        "correct_bound_v_plus_one_minus_v_over_delta": "5021959998191794014281078340577/290258191687792529330216044610460",
+        "full_primary_margin_sign": "positive",
+        "exact_data": "./normalization-literal-replay.json"
+      },
+      "witness_minimality": "smallest known in supplied verified evidence; no global minimality claim"
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-EMPTY-SINGLETON-PAYMENT",
+      "statement": "Let U_i[j]=[z^j](G F_{r_i} L^{N-r_i})+sum_{k!=i}[z^{j-1}](G F_{r_i} L^{N-r_i-r_k}), the center-choice lower bound retaining only empty and singleton selections of other centers. Replacing A by A_U=sum_i r_i ei U_i[j] in the exact-ratio payment gives (delta C[j]-(delta-1)C[j+1])A_U>=b delta D_j C[j] on every actual eligible lower-half common-family row.",
+      "scope": "Refutes only universal payment by this coefficient floor. U_i[j]<=T_i[j] remains valid; true full-T_i exact-ratio payment and MASS are positive at the retained witness. No universal negative primary or all-m MASS claim. Definitions and actual-family domain: Ordinary tree with path 0-1-2, m>=1 distinct centers adjacent to 0, center i having r_i in {2,3,4} distinct private tips. N=sum_i r_i, q=N+1, alpha=N+2, L=1+z, G=1+2z, B_r=L^r+z, F_r=sum_{h=0}^{r-2}L^h, Q=product_i B_{r_i}, H_i=product_{h!=i}B_{r_h}, C=GQ, T_i=GF_{r_i}H_i, P=C+zL^q. Coefficients and Delta_k f=f[k+1]-f[k] are integer zero-extended. x=min{k natural: Delta_k P<0}, including terminal difference. An actual eligible lower-half p is natural with x+2<=p, 3p<2alpha+1, 2p<=alpha; j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j)>0. A0=LQ+zL^N, Ai=G B_{r_i-1}H_i+zL^N, e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], b=e0+sum_i r_i ei, A=sum_i r_i ei T_i[j]. Original endpoint and every private tip retain their separate original tags; empty selection is included.",
+      "status": "REFUTED",
+      "aliases": [
+        "empty-plus-singleton center floor pays exact-ratio debt"
+      ],
+      "alias_patterns": [],
+      "certificate": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C2-C3-IDENTITY/REPORT.md; exact proposed statement and source links in CANDIDATES.json; independently sealed C2 synthesis and scoped predecessor clauses. Controller accepts at the displayed evidence grade, not as a Lean award.",
+      "evidence_grade": "exact_literal_tree_counterexample_independently_replayed_nonformal",
+      "origin_run": "erdos-993-absolute-compensation-dre-2026-09-27",
+      "dependencies": [
+        "center-choice expansion",
+        "literal path-star independence-polynomial tree DP",
+        "actual first descent and strict selectors"
+      ],
+      "novelty_claimed": false,
+      "formal_award": false,
+      "smallest_witness_order": 863,
+      "witness": {
+        "minimality_claim": "smallest_known_in_supplied_verified_evidence_only; no global minimality claim",
+        "counts_a2_a3_a4": [
+          0,
+          0,
+          172
+        ],
+        "m": 172,
+        "n": 863,
+        "N": 688,
+        "alpha": 690,
+        "x": 334,
+        "p": 336,
+        "j": 334,
+        "delta": 355,
+        "b": 689,
+        "all_original_leaf_flags_selected": true,
+        "truncated_exact_ratio_margin_sign": "negative",
+        "full_exact_ratio_margin_sign": "positive",
+        "full_mass_margin_sign": "positive",
+        "exact_integer_margins_and_graph": "./truncation-literal-replay.json"
+      },
+      "witness_minimality": "smallest known in supplied verified evidence; no global minimality claim"
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-ALL-M-ACTUAL-ELIGIBLE-BRANCHWISE-THREE-HALVES-MASS",
+      "status": "OPEN",
+      "statement": "For every ordinary path-star in SOLUTION-CONTRACT.md with m>=1 distinct branches of arities r_i in {2,3,4}, let N=sum_i r_i, q=N+1, alpha=N+2, C=G product_i B_(r_i), T_i=G F_(r_i) product_(h!=i) B_(r_h), P=C+z(1+z)^q, and x the least natural strict forward descent of P using integer zero extension, including its terminal difference. For every natural p with x+2<=p, 3p<2alpha+1, and 2p<=alpha, put j=p-2, delta=q-j, and D_j=binom(N,j+1)-binom(N,j). For every represented branch i, 2 T_i[j]>=3 delta D_j.",
+      "scope": "All actual eligible lower-half ranks and all represented branches, with no deletion-selector or all-selection premise. A branch-local coefficient inequality; neither selected MASS nor exact-ratio payment follows when the endpoint is the sole selected tag. The m>=120 analytic candidate, m=70..119 scalar check, and m<=69 direct-factor local check are proposed subcases or instruments, not separate universal keys. Definitions and actual-family domain where applicable: Ordinary tree with path 0-1-2, m>=1 distinct centers adjacent to 0, center i having r_i in {2,3,4} distinct private tips. N=sum_i r_i, q=N+1, alpha=N+2, L=1+z, G=1+2z, B_r=L^r+z, F_r=sum_{h=0}^{r-2}L^h, Q=product_i B_{r_i}, H_i=product_{h!=i}B_{r_h}, C=GQ, T_i=GF_{r_i}H_i, P=C+zL^q. Coefficients and Delta_k f=f[k+1]-f[k] are integer zero-extended. x=min{k natural: Delta_k P<0}, including terminal difference. An actual eligible lower-half p is natural with x+2<=p, 3p<2alpha+1, 2p<=alpha; j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j)>0. A0=LQ+zL^N, Ai=G B_{r_i-1}H_i+zL^N, e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], b=e0+sum_i r_i ei, A=sum_i r_i ei T_i[j]. Original endpoint and every private tip retain their separate original tags; empty selection is included.",
+      "aliases": [
+        "all-m actual-eligible branchwise 3/2 local mass",
+        "path-star branch-local three-halves bound at every eligible rank"
+      ],
+      "alias_patterns": [],
+      "certificate": "Registered OPEN before Cycle3 search following experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C3-PREPARATION/REPORT.md; private controller candidates and finite instruments are not yet accepted proof.",
+      "evidence_grade": "unproved_candidate",
+      "origin_run": "erdos-993-absolute-compensation-dre-2026-09-27",
+      "distinguish_from": [
+        "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION",
+        "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+        "E993-PATH-STAR-ARITY-2-4-M266-SELECTED-LOWER-MASS"
+      ],
+      "novelty_claimed": false,
+      "formal_award": false
+    },
+    {
+      "claim_key": "E993-PATH-STAR-COFACTOR-JENSEN-EXPONENT-ADJACENT-ARITY-BALANCING",
+      "status": "OPEN",
+      "statement": "Let a2,a3,a4 be nonnegative integers, m'=a2+a3+a4>=1, M=2a2+3a3+4a4>=10, and k an integer with 0<=k<=M and 3k>=M. Define g_r(M,k)=[2r/(2r+1)] binom(M-r,k-1)/binom(M,k) for r=2,3,4, with out-of-range binomial coefficients zero, and E=sum_r a_r g_r(M,k). Then g_2-2g_3+g_4>=0. Consequently E>=(3m'-M)g_2+(M-2m')g_3 if 2m'<=M<=3m', and E>=(4m'-M)g_3+(M-3m')g_4 if 3m'<=M<=4m'.",
+      "scope": "Only the rational Jensen exponent for an abstract cofactor block profile at a fixed in-range coefficient. The formulas give a minimum over arity counts at fixed (m',M,k); they do not order true cofactor coefficients, actual parent descents, strict selectors, MASS, payment, or the REFUTED spread quotient. For k=M the g_r vanish and equality is allowed. Out-of-band shifts and M<10 require separate treatment. Definitions and actual-family domain where applicable: Ordinary tree with path 0-1-2, m>=1 distinct centers adjacent to 0, center i having r_i in {2,3,4} distinct private tips. N=sum_i r_i, q=N+1, alpha=N+2, L=1+z, G=1+2z, B_r=L^r+z, F_r=sum_{h=0}^{r-2}L^h, Q=product_i B_{r_i}, H_i=product_{h!=i}B_{r_h}, C=GQ, T_i=GF_{r_i}H_i, P=C+zL^q. Coefficients and Delta_k f=f[k+1]-f[k] are integer zero-extended. x=min{k natural: Delta_k P<0}, including terminal difference. An actual eligible lower-half p is natural with x+2<=p, 3p<2alpha+1, 2p<=alpha; j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j)>0. A0=LQ+zL^N, Ai=G B_{r_i-1}H_i+zL^N, e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], b=e0+sum_i r_i ei, A=sum_i r_i ei T_i[j]. Original endpoint and every private tip retain their separate original tags; empty selection is included.",
+      "aliases": [
+        "balanced Jensen cofactor exponent",
+        "adjacent-arity Jensen exponent minimum"
+      ],
+      "alias_patterns": [],
+      "certificate": "Registered OPEN before Cycle3 search following experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C3-PREPARATION/REPORT.md; private controller candidates and finite instruments are not yet accepted proof.",
+      "evidence_grade": "unproved_candidate",
+      "origin_run": "erdos-993-absolute-compensation-dre-2026-09-27",
+      "distinguish_from": [
+        "E993-PATH-STAR-ARITY-2-4-SPREAD-NORMALIZED-EXACT-RATIO-NONDECREASING",
+        "E993-PATH-STAR-ARITY-2-4-SPREAD-SHARED-RANK-S-MONOTONE"
+      ],
+      "novelty_claimed": false,
+      "formal_award": false
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-PROFILE-SENSITIVE-STRICT-DESCENT-RANK",
+      "status": "OPEN",
+      "statement": "For every ordinary path-star with counts a2,a3,a4 of arity-2,3,4 branches, m=a2+a3+a4>=1, N=2a2+3a3+4a4, q=N+1, P=G product_r B_r^(a_r)+z(1+z)^q, and integer-zero-extended forward differences, every natural strict descent k with Delta_k P<0 satisfies 54k>=24N-4a2-3a3-5. Equivalently, with h=(2/3)a2+(1/2)a3, it satisfies 9k+1-4N+h>0. As a count-relaxed corollary, 9k+1-4N+hmax(m,N)>0 where hmax=2m-N/2 for N>=3m and hmax=m-N/6 for N<=3m.",
+      "scope": "Every strict descent of the actual parent polynomial, including the terminal zero-extended descent; in particular its first strict descent x. This is a profile-sensitive rank restriction only. It neither proves deletion selection nor supplies a coefficient or payment bound. The coefficientwise differential-operator inequality is the proposed proof route, not a separate key. Definitions and actual-family domain where applicable: Ordinary tree with path 0-1-2, m>=1 distinct centers adjacent to 0, center i having r_i in {2,3,4} distinct private tips. N=sum_i r_i, q=N+1, alpha=N+2, L=1+z, G=1+2z, B_r=L^r+z, F_r=sum_{h=0}^{r-2}L^h, Q=product_i B_{r_i}, H_i=product_{h!=i}B_{r_h}, C=GQ, T_i=GF_{r_i}H_i, P=C+zL^q. Coefficients and Delta_k f=f[k+1]-f[k] are integer zero-extended. x=min{k natural: Delta_k P<0}, including terminal difference. An actual eligible lower-half p is natural with x+2<=p, 3p<2alpha+1, 2p<=alpha; j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j)>0. A0=LQ+zL^N, Ai=G B_{r_i-1}H_i+zL^N, e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], b=e0+sum_i r_i ei, A=sum_i r_i ei T_i[j]. Original endpoint and every private tip retain their separate original tags; empty selection is included.",
+      "aliases": [
+        "profile-sensitive path-star descent rank",
+        "54k >= 24N - 4a2 - 3a3 - 5"
+      ],
+      "alias_patterns": [],
+      "certificate": "Registered OPEN before Cycle3 search following experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C3-PREPARATION/REPORT.md; private controller candidates and finite instruments are not yet accepted proof.",
+      "evidence_grade": "unproved_candidate",
+      "origin_run": "erdos-993-absolute-compensation-dre-2026-09-27",
+      "distinguish_from": [
+        "E993-PATH-STAR-RGE2-FIRST-DESCENT-MPLUS1",
+        "E993-PATH-STAR-ARITY-2-4-SPREAD-FIRST-DESCENT-NONDECREASING"
+      ],
+      "novelty_claimed": false,
+      "formal_award": false
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-ANY-STRICT-DESCENT-RANK-2N5",
+      "statement": "For every finite list rs of natural numbers with every entry in {2,3,4}, including the empty list and repetitions, put N=rs.sum and P(X)=(1+2X)*product_{r in rs}((1+X)^r+X)+X*(1+X)^(N+1) in Polynomial Rat. For every natural k, if the zero-extended coefficient P[k+1] is strictly less than P[k], then 2N<=5k.",
+      "scope": "Exact coefficient-only theorem for any strict descent, including the terminal difference; rational polynomial coefficients and natural-number conclusion. The weight N+1 is not the actual degree of P. No graph interpretation, m>=1, first-descent minimality, eligibility guards, ratio bound, selected MASS, payment, or primary theorem.",
+      "status": "VERIFIED",
+      "aliases": [
+        "arity2-4 parent any-strict-descent rank 2N<=5k"
+      ],
+      "alias_patterns": [],
+      "evidence_grade": "formally_verified_exact_coefficient_theorem",
+      "formal_award": true,
+      "novelty_claimed": false,
+      "origin_run": "erdos-993-absolute-compensation-dre-2026-09-27",
+      "certificate": {
+        "run": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c2-rank",
+        "declaration": "e993_rank_any_strict_descent",
+        "verification_report_sha256": "38b9453313a4627ada0e68a239c602536e1f356c6e98771cb0ca6029b3fb3806",
+        "lean_source_sha256": "2ca135236c2178f88235e54163a1ed09fee051e20075a8d901ac10cde76888d2",
+        "kernel_receipt_sha256": "6e7ccbf50db3c363654d612a9372da354a818d040d554c1085cc5287c16b536b",
+        "fidelity_receipt_sha256": "9a0dbda1569cc8efd742d008ea0466cf44ff7dc9891dac58cf201a49afee1a07"
+      },
+      "relation_to_existing": {
+        "claim_key": "E993-PATH-STAR-ARITY-2-4-FIRST-DESCENT-RATIO-BAND",
+        "description": "The exact coefficient theorem implies only the composite key's first-descent rank clause on its m>=1 polynomial profiles: 2N<=5x is equivalent over integers to 5x>2N-1. It supplies none of that key's eligible-rank or ratio assertions. Do not mark the entire composite key formally verified from this lemma."
       }
     }
   ],
@@ -41643,10 +41927,17 @@
     "formal_vs_computational_frontier": "Order-band Lean theorems retain scope; r30 reports deletion Hall at all eligible rows through order23, including p8 orders19..22.",
     "active_absolute_compensation_run": "erdos-993-absolute-compensation-dre-2026-09-27",
     "absolute_compensation_primary": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
-    "absolute_compensation_authorization": "Ashton approved fresh experiment with standard 9/18/3/1 high staffing, maximum six cycles and Astra reviews after C3/C6."
+    "absolute_compensation_authorization": "Ashton approved fresh experiment with standard 9/18/3/1 high staffing, maximum six cycles and Astra reviews after C3/C6.",
+    "absolute_compensation_cycle": 2,
+    "absolute_compensation_stage": "C2 closed; C3 preparation",
+    "absolute_compensation_primary_status": "OPEN",
+    "absolute_compensation_all_m_mass_status": "OPEN",
+    "absolute_compensation_next_cycle": "C3 independently audits proposed m<=69 prefix, m70..119 balanced scalar certificate, m>=120 local bound and all-m composition; Astra midpoint analysis follows C3.",
+    "absolute_compensation_selector_boundary": "All-m lower-half full selection VERIFIED by complete finite plus analytic-tail composition, nonformal. Independent census-free proof remains a method obligation.",
+    "absolute_compensation_rank_formal_run": "experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c2-rank"
   },
   "schema_version": "verityos.math.claim-identity.v1",
-  "update_note": "Absolute-compensation sibling opened: one new OPEN exact-ratio predicate, all prior claim objects preserved. Previous joint terminal reconciliation remains recorded.",
+  "update_note": "Absolute compensation Cycle2 closed with one exact coefficient-only governed rank award, after five nonformal verified products and two auxiliary refutations. Three Cycle3 candidates remain OPEN. One older spread-witness order metadata field is supplied; prior mathematical statements/statuses/grades are unchanged.",
   "r30_publication": {
     "run": "erdos-993-weighted-transport-dre-2026-09-26",
     "run_id": "erdos-993-math-dre-20260926-r30-weighted-transport",

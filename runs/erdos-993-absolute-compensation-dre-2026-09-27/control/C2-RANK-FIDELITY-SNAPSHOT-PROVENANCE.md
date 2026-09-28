@@ -1,0 +1,7 @@
+# Fidelity input version preservation
+
+The fresh C2-RANK-FIDELITY reviewer inspected the registered source and exact pre-review governed-run state, found semantic match, and disclosed57 directly verified members within its permitted reading scope. The controller separately verified all110 input member hashes before dispatch and again after the review completed. The reviewer did not read the other53 operational/proposal members listed by the broad manifest.
+
+Before any governed closeout mutation, every input byte and its original path was copied to fidelity-snapshots/c2-rank-dispatch/inputs, with SOURCE-PATH-MAP.json and ORIGINAL-DISPATCH.json. The immutable snapshot has its own active manifest. The original location-based dispatch seal is preserved under manifests/retired, because adding the review to the governed fidelity input and closing LOOP-STATE legitimately changes those runtime files. This retirement changes no reviewed source or report; the snapshot preserves every pre-review version. The unchanged Lean source/contract/kernel bindings remain current.
+
+The reviewer compared exact semantic facets and source/receipt hashes, but did not independently reproduce the component's projection serialization algorithm; this limitation is explicit. The deterministic fidelity component independently recomputes those projections and checks the attested hashes before any award. No semantic mismatch, uncertain verdict, or error-severity finding is waived. The final close still requires all component gates.

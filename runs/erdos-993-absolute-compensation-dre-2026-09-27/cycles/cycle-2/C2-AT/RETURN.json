@@ -1,0 +1,174 @@
+{
+  "worker_id": "C2-AT",
+  "cycle": 2,
+  "stage": "adjudication",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "C2-T1-FIXED-SIZE-OCCUPANCY-JENSEN",
+      "statement": "For disjoint arity-2/3/4 blocks, Q[u]/binom(M,u)=E prod_i(1+X_i/r_i); finite Jensen gives the stated rational-power lower inequality.",
+      "scope": "All finite disjoint blocks with 0<=u<=M; fixed-size sampling, no independence premise.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AT/REPORT.md"
+      ],
+      "reason": "Informal universal proof by exact subset count and finite Jensen; dependency: binomial counting."
+    },
+    {
+      "claim_id": "C2-T1-RATIONAL-COFACTOR-CONVOLUTION-BOUND",
+      "statement": "H_i[u]>=binom(M_i,u)E_4(X_i(u)) in range, with zero out of range, and convolution with nonnegative GF_ri gives the corresponding rational lower bound for T_i[j].",
+      "scope": "All ordinary arity-2/3/4 profiles, branches i, natural coefficient ranks; M_i=N-r_i; integer zero extension.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AT/REPORT.md"
+      ],
+      "reason": "Informal universal proof; depends on C2-T1-FIXED-SIZE-OCCUPANCY-JENSEN and elementary log/exponential bounds."
+    },
+    {
+      "claim_id": "C2-T1-ADVERSARIAL-CONTROLS",
+      "statement": "The named negative-cofactor, spread-quotient, and m173 truncation shortcuts fail in exact eligible controls while full payment margins there are positive.",
+      "scope": "Ordinary path-star with m>=1 distinct branches r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2; x is the least strict zero-extended descent of P=C+zL^q, including terminal difference. At natural p with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, use actual current-p strict selectors e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], original endpoint multiplicity 1 and branch-tip multiplicity r_i, b=e0+sum r_i ei, A=sum r_i ei T_i[j], D_j=binom(N,j+1)-binom(N,j); empty selection included. Exact listed profiles only.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AT/REPORT.md",
+        "cycles/cycle-2/C2-AT/independent_audit.py",
+        "cycles/cycle-2/C2-AT/independent_audit.json"
+      ],
+      "reason": "Bounded exact evidence from independent_audit.json; disproves only the named auxiliary shortcuts."
+    },
+    {
+      "claim_id": "C2-T2-SELECTOR-THRESHOLD-IDENTITY",
+      "statement": "With u=Delta_p A0 and d_i=Delta_(p-3)(F_ri H_i), e0=1 iff u<0 and ei=1 iff d_i>u.",
+      "scope": "Ordinary path-star with m>=1 distinct branches r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2; x is the least strict zero-extended descent of P=C+zL^q, including terminal difference. At natural p with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, use actual current-p strict selectors e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], original endpoint multiplicity 1 and branch-tip multiplicity r_i, b=e0+sum r_i ei, A=sum r_i ei T_i[j], D_j=binom(N,j+1)-binom(N,j); empty selection included.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AT/REPORT.md"
+      ],
+      "reason": "Informal universal polynomial proof from A0-Ai=z^3F_ri H_i; equality makes strict ei off."
+    },
+    {
+      "claim_id": "C2-T2-ENDPOINT-ONLY-FINITE-EXCLUSION-SCAN",
+      "statement": "The exact source grid through m=80 reports 91,880 profiles and 133,194 eligible rows, all fully selected and none endpoint-only; five named controls agree.",
+      "scope": "Ordinary path-star with m>=1 distinct branches r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2; x is the least strict zero-extended descent of P=C+zL^q, including terminal difference. At natural p with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, use actual current-p strict selectors e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], original endpoint multiplicity 1 and branch-tip multiplicity r_i, b=e0+sum r_i ei, A=sum r_i ei T_i[j], D_j=binom(N,j+1)-binom(N,j); empty selection included. Bounded to arity-count profiles 1<=m<=80 and five exact controls.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AT/REPORT.md",
+        "cycles/cycle-2/C2-AT/independent_audit.py",
+        "cycles/cycle-2/C2-AT/independent_audit.json"
+      ],
+      "reason": "Bounded exact source scan and matching C2-CF-T2 packet-hashed replay; independent local control checks. Not a universal theorem."
+    },
+    {
+      "claim_id": "C2-T2-NEGATIVE-COFACTOR-SLOPE-SELECTED-CONTROL",
+      "statement": "At counts (0,12,10), x=37,p=39, both represented d_i are negative while endpoint and all tip classes are strictly selected.",
+      "scope": "Ordinary path-star with m>=1 distinct branches r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2; x is the least strict zero-extended descent of P=C+zL^q, including terminal difference. At natural p with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, use actual current-p strict selectors e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], original endpoint multiplicity 1 and branch-tip multiplicity r_i, b=e0+sum r_i ei, A=sum r_i ei T_i[j], D_j=binom(N,j+1)-binom(N,j); empty selection included. Single profile and rank (0,12,10),p=39.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AT/REPORT.md",
+        "cycles/cycle-2/C2-AT/independent_audit.py",
+        "cycles/cycle-2/C2-AT/independent_audit.json"
+      ],
+      "reason": "Bounded exact independent coefficients; dependencies: C2-T2-SELECTOR-THRESHOLD-IDENTITY."
+    },
+    {
+      "claim_id": "C2-CF-T2-ENDPOINT-PAYMENT-OBSTRUCTION",
+      "statement": "An eligible endpoint-only row has A=0,b=1 and exact primary margin -delta D_j C[j]<0; therefore universal payment would imply endpoint-only exclusion.",
+      "scope": "Ordinary path-star with m>=1 distinct branches r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2; x is the least strict zero-extended descent of P=C+zL^q, including terminal difference. At natural p with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, use actual current-p strict selectors e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], original endpoint multiplicity 1 and branch-tip multiplicity r_i, b=e0+sum r_i ei, A=sum r_i ei T_i[j], D_j=binom(N,j+1)-binom(N,j); empty selection included. Conditional on endpoint-only selection.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AT/REPORT.md"
+      ],
+      "reason": "Informal universal conditional proof; depends on contract positivity of delta,D_j,C[j]."
+    },
+    {
+      "claim_id": "C2-T3-UNIVERSAL-FIRST-DESCENT-AND-RATIO-SHARPENING",
+      "statement": "Every profile has 5x>2N-1; at eligible rows t<=C[x+1]/C[x]<1-v with v=beta_x/C[x], giving corrected kappa=1-t+t/delta>v+(1-v)/delta. The source bound kappa>v+1/delta is false.",
+      "scope": "Ordinary path-star with m>=1 distinct branches r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2; x is the least strict zero-extended descent of P=C+zL^q, including terminal difference. At natural p with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, use actual current-p strict selectors e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], original endpoint multiplicity 1 and branch-tip multiplicity r_i, b=e0+sum r_i ei, A=sum r_i ei T_i[j], D_j=binom(N,j+1)-binom(N,j); empty selection included.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AT/REPORT.md",
+        "cycles/cycle-2/C2-AT/independent_audit.py",
+        "cycles/cycle-2/C2-AT/independent_audit.json"
+      ],
+      "reason": "Informal universal proof of retained parts by factor-ratio averaging, first descent and C log-concavity; independent eligible counterexample to overstated normalization."
+    },
+    {
+      "claim_id": "C2-T3-OCCUPANCY-RATIONAL-SELECTED-COEFFICIENT-BOUND",
+      "statement": "Finite occupancy Jensen and any nonnegative Taylor partial sum give zero-extended rational h_i[k]<=H_i[k], hence ell_i[j]<=T_i[j] after convolution with GF_ri.",
+      "scope": "Ordinary path-star with m>=1 distinct branches r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2; x is the least strict zero-extended descent of P=C+zL^q, including terminal difference. At natural p with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, use actual current-p strict selectors e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], original endpoint multiplicity 1 and branch-tip multiplicity r_i, b=e0+sum r_i ei, A=sum r_i ei T_i[j], D_j=binom(N,j+1)-binom(N,j); empty selection included. Coefficient bound valid for every branch and natural rank, including M=0.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AT/REPORT.md"
+      ],
+      "reason": "Informal universal proof; depends on fixed-size occupancy count, Jensen, log/exponential lower inequalities."
+    },
+    {
+      "claim_id": "C2-T3-DESCENT-OCCUPANCY-SCALAR-SUFFICIENT-TEST",
+      "statement": "The corrected conditional test b=0 or (v+(1-v)/delta)sum_{i:ei=1}r_i ell_i[j]>=bD_j implies exact-ratio payment; the source version with v+1/delta lacks this proof.",
+      "scope": "Ordinary path-star with m>=1 distinct branches r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2; x is the least strict zero-extended descent of P=C+zL^q, including terminal difference. At natural p with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, use actual current-p strict selectors e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], original endpoint multiplicity 1 and branch-tip multiplicity r_i, b=e0+sum r_i ei, A=sum r_i ei T_i[j], D_j=binom(N,j+1)-binom(N,j); empty selection included. Conditional on corrected scalar premise with v=beta_x/C[x]; no universal assertion that premise holds.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AT/REPORT.md"
+      ],
+      "reason": "Informal universal conditional proof using corrected C2-T3 ratio bound and ell_i<=T_i; original coefficient is not a valid lower bound."
+    },
+    {
+      "claim_id": "C2-CF-T3-NORMALIZATION-COUNTEREXAMPLE",
+      "statement": "For 38 arity-3 branches at x=55,p=57,j=55,delta=60, exact kappa is less than beta_x/C[x]+1/delta, while the primary signed margin is positive.",
+      "scope": "Ordinary path-star with m>=1 distinct branches r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2; x is the least strict zero-extended descent of P=C+zL^q, including terminal difference. At natural p with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, use actual current-p strict selectors e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], original endpoint multiplicity 1 and branch-tip multiplicity r_i, b=e0+sum r_i ei, A=sum r_i ei T_i[j], D_j=binom(N,j+1)-binom(N,j); empty selection included. Single all-arity-3 m=38 eligible row.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AT/REPORT.md",
+        "cycles/cycle-2/C2-AT/independent_audit.py",
+        "cycles/cycle-2/C2-AT/independent_audit.json"
+      ],
+      "reason": "Bounded exact independent polynomial and rational replay; rejects source normalization only."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+      "statement": "(delta C[j]-(delta-1)C[j+1])A >= b delta D_j C[j] for every eligible row.",
+      "scope": "Ordinary path-star with m>=1 distinct branches r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2; x is the least strict zero-extended descent of P=C+zL^q, including terminal difference. At natural p with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, use actual current-p strict selectors e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], original endpoint multiplicity 1 and branch-tip multiplicity r_i, b=e0+sum r_i ei, A=sum r_i ei T_i[j], D_j=binom(N,j+1)-binom(N,j); empty selection included.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AT/REPORT.md",
+        "cycles/cycle-2/C2-AT/independent_audit.py",
+        "cycles/cycle-2/C2-AT/independent_audit.json"
+      ],
+      "reason": "Registered OPEN identity retained. No all-parameter proof or realizable eligible negative margin; accepted aggregate and relative formal margin do not establish this stronger sufficient inequality."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION",
+      "statement": "A>=b delta D_j for every eligible row.",
+      "scope": "Ordinary path-star with m>=1 distinct branches r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2; x is the least strict zero-extended descent of P=C+zL^q, including terminal difference. At natural p with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, use actual current-p strict selectors e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], original endpoint multiplicity 1 and branch-tip multiplicity r_i, b=e0+sum r_i ei, A=sum r_i ei T_i[j], D_j=binom(N,j+1)-binom(N,j); empty selection included.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AT/REPORT.md",
+        "cycles/cycle-2/C2-AT/independent_audit.py",
+        "cycles/cycle-2/C2-AT/independent_audit.json"
+      ],
+      "reason": "Separate stronger registered OPEN identity retained. Finite successes and restricted m>=266 source-dependent result do not cover all profiles."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-AT/REPORT.md",
+  "limitations": [
+    "No universal proof or eligible negative witness for exact-ratio payment or stronger MASS.",
+    "The m<=80 selector grid was source-and-critic audited, not independently rerun in this seat; my independent exact tests cover named controls.",
+    "No Lean build or governed formal verification was performed."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-CF-T2-ENDPOINT-PAYMENT-OBSTRUCTION",
+    "C2-CF-T3-NORMALIZATION-COUNTEREXAMPLE",
+    "C2-T1-ADVERSARIAL-CONTROLS",
+    "C2-T1-FIXED-SIZE-OCCUPANCY-JENSEN",
+    "C2-T1-RATIONAL-COFACTOR-CONVOLUTION-BOUND",
+    "C2-T2-ENDPOINT-ONLY-FINITE-EXCLUSION-SCAN",
+    "C2-T2-NEGATIVE-COFACTOR-SLOPE-SELECTED-CONTROL",
+    "C2-T2-SELECTOR-THRESHOLD-IDENTITY",
+    "C2-T3-DESCENT-OCCUPANCY-SCALAR-SUFFICIENT-TEST",
+    "C2-T3-OCCUPANCY-RATIONAL-SELECTED-COEFFICIENT-BOUND",
+    "C2-T3-UNIVERSAL-FIRST-DESCENT-AND-RATIO-SHARPENING",
+    "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+    "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION"
+  ]
+}

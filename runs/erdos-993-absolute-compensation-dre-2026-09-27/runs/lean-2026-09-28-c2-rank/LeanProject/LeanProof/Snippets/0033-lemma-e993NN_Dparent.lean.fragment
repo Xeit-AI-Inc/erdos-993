@@ -1,0 +1,23 @@
+lemma e993NN_Dparent (rs : List ℕ)
+    (hr : ∀ r ∈ rs, r = 2 ∨ r = 3 ∨ r = 4) :
+    e993NN (e993D (rs.sum + 1) (e993RankParent rs)) := by
+  have hC := e993NN_add
+    (e993NN_mul e993NN_DG (e993NN_prod rs))
+    (e993NN_mul e993NN_G (e993NN_Dprod rs hr))
+  have hH := e993NN_add
+    (e993NN_mul (by simpa [e993D_X] using e993NN_add (e993NN_nat 3) e993NN_twoX)
+      (e993NN_pow e993NN_L (rs.sum + 1)))
+    (e993NN_mul e993NN_X (e993NN_Dpow (rs.sum + 1)))
+  unfold e993RankParent
+  rw [e993D_add]
+  apply e993NN_add
+  · have heq := e993D_mul 1 rs.sum (1 + 2 * X : Polynomial ℚ)
+        ((rs.map (fun r => (1 + X : Polynomial ℚ)^r + X)).prod)
+    rw [add_comm 1 rs.sum] at heq
+    rw [heq]
+    exact hC
+  · have heq := e993D_mul 0 (rs.sum + 1) (X : Polynomial ℚ)
+        ((1 + X : Polynomial ℚ)^(rs.sum + 1))
+    simp only [zero_add, e993D_X] at heq
+    rw [heq]
+    exact hH

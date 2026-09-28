@@ -1,0 +1,5 @@
+lemma e993NN_add {p q : Polynomial ℚ} (hp : e993NN p) (hq : e993NN q) :
+    e993NN (p + q) := by
+  intro n
+  rw [coeff_add]
+  exact add_nonneg (hp n) (hq n)

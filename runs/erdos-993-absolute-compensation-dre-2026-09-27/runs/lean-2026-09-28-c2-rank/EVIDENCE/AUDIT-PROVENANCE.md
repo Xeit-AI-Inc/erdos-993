@@ -1,0 +1,1 @@
+The informal audit is registered byte-for-byte from preparation/C2-RANK-INFORMAL-BIND/INFORMAL-AUDIT.md under the enclosing experiment. Relative report links retain that original location as their base. Its original proof review and finite replay are in preparation/C2-RANK-INFORMAL. No semantic or textual correction was made to the registered audit.

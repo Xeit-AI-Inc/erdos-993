@@ -1,0 +1,394 @@
+{
+  "worker_id": "C2-SYNTHESIS",
+  "cycle": 2,
+  "stage": "synthesis",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "C2-CF-T2-ENDPOINT-PAYMENT-OBSTRUCTION",
+      "statement": "An eligible endpoint-only row has A=0,b=1 and exact primary margin -delta D_j C[j]<0; therefore universal payment would imply endpoint-only exclusion.",
+      "scope": "Ordinary path-star with m>=1 distinct branches r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2; x is the least strict zero-extended descent of P=C+zL^q, including terminal difference. At natural p with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, use actual current-p strict selectors e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], original endpoint multiplicity 1 and branch-tip multiplicity r_i, b=e0+sum r_i ei, A=sum r_i ei T_i[j], D_j=binom(N,j+1)-binom(N,j); empty selection included. Conditional on endpoint-only selection.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Eligible endpoint-only implies `M=-delta D_j C[j]<0`; conditional only. Grade: P. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    },
+    {
+      "claim_id": "C2-CF-T3-NORMALIZATION-COUNTEREXAMPLE",
+      "statement": "For 38 arity-3 branches at x=55,p=57,j=55,delta=60, exact kappa is less than beta_x/C[x]+1/delta, while the primary signed margin is positive.",
+      "scope": "Ordinary path-star with m>=1 distinct branches r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2; x is the least strict zero-extended descent of P=C+zL^q, including terminal difference. At natural p with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, use actual current-p strict selectors e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], original endpoint multiplicity 1 and branch-tip multiplicity r_i, b=e0+sum r_i ei, A=sum r_i ei T_i[j], D_j=binom(N,j+1)-binom(N,j); empty selection included. Single all-arity-3 m=38 eligible row.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md",
+        "cycles/cycle-2/C2-SYNTHESIS/independent_check.py",
+        "cycles/cycle-2/C2-SYNTHESIS/independent_evidence.json"
+      ],
+      "reason": "Independent all-r3 `m=38` replay refutes `kappa>v+1/delta`, not payment. Grade: B. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    },
+    {
+      "claim_id": "C2-CT-U2-ALL-INTERACTION-OCCUPANCY-EXPANSION",
+      "statement": "Q[u]=sum_(J subset block indices) binom(M-sum_(i in J)r_i,u-|J|).",
+      "scope": "Every finite disjoint positive block family and natural u, with zero-extended binomials; no payment conclusion.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Exact factor expansion for all natural indices, with zero extension. Grade: P. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    },
+    {
+      "claim_id": "C2-CU-F1-OCCUPANCY-COEFFICIENT-BOUND",
+      "statement": "For finite positive block sizes s_l and 0<=k<=M=sum s_l, the exact fixed-size occupancy identity gives H[k]>=binom(M,k)*(sum_(a=0)^4 (y_k/256)^a/a!)^256, where y_k=sum_l (2s_l/(2s_l+1))*binom(M-s_l,k-1)/binom(M,k).",
+      "scope": "Universal informal coefficient bound for H=product_l((1+z)^s_l+z), with zero-extended binomials. For path-stars s_l in {2,3,4}; it says nothing alone about selected payment or all-rank local thresholds.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Scaled degree-four floor follows from occupancy, Jensen and `E_4(y/256)^256<=exp(y)`. Grade: P. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    },
+    {
+      "claim_id": "C2-CU-F3-PERIODIC-MIXED-EXACT-PILOT",
+      "statement": "The specified 360 homogeneous and periodic mixed profiles for m=1..60 have 227 actual eligible rows, no negative full exact-ratio margin or endpoint-only selector state, and 10,606 successful comparisons of true T_i[j] with 3 delta D_j/2.",
+      "scope": "Only six specified profiles for each m=1..60, at every natural p with x+2<=p, 3p<2(N+2)+1, 2p<=N+2; x is the first strict zero-extended parent descent. Current-p strict selectors and original tip multiplicities are used. The script does not compute Jensen lower estimates, so the pilot does not certify them.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "360 specified profiles, 227 eligible rows, 10,606 true-`T_i` threshold tests; no Jensen-floor test was made. Grade: B. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    },
+    {
+      "claim_id": "C2-F1-JENSEN-FIRST-RANK-BOUNDED",
+      "statement": "The rational occupancy/Jensen cofactor lower estimates clear 3 delta D_j/2 in all 615 branch-type checks at the first eligible rank of 521 selected profiles.",
+      "scope": "Only sampled homogeneous m=41..265 and listed mixed phase-neighborhood profiles with eligible p=x+2. First strict zero-extended descent, guards x+2<=p, 3p<2(N+2)+1 and 2p<=N+2, actual current-p strict selectors and original multiplicities are retained; later ranks and omitted mixed profiles are excluded.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "521 specified profiles, 615 rational branch-type tests at only `p=x+2`; no universal threshold. Grade: B. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    },
+    {
+      "claim_id": "C2-F1-LOCAL-BOUND-GAP-BOUNDED",
+      "statement": "The true T_i[j]>=3 delta D_j/2 branchwise threshold has no failure in the targeted m=41..265 interval run.",
+      "scope": "747 specified profiles and all 3,931 actual eligible rows; x is the first strict zero-extended descent, p obeys x+2<=p, 3p<2(N+2)+1, 2p<=N+2, with current-p strict selectors and original branch tag weights. This is not a heterogeneous count-triple census or a universal theorem.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "747 specified interval profiles, 3,931 eligible rows, no true local-threshold failure. Grade: B. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    },
+    {
+      "claim_id": "C2-F1-PRIMARY-TARGETED-REPLAY",
+      "statement": "No negative full exact-ratio payment or selected-MASS margin occurs in the 750-profile targeted replay.",
+      "scope": "The 747 specified m=41..265 profiles plus three named controls, over 3,934 actual eligible rows. The first strict zero-extended parent descent, all three guards, strict current-p endpoint/branch selectors, and original r_i tip-tag multiplicities are retained. No universal inference is made.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "750 profiles and 3,934 eligible rows including three controls; no negative full payment or MASS. Grade: B. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    },
+    {
+      "claim_id": "C2-F2-HOMOGENEOUS-EMPTY-SINGLETON-TRUNCATION-OBSTRUCTION",
+      "statement": "At all-r4 m=173, n=868,N=692,alpha=694,x=336,p=338,j=336,delta=357,e0=ei=1,b=693, the depth-one lower estimate has negative exact-ratio payment margin; depth two, full payment and full MASS have positive margins.",
+      "scope": "One actual eligible homogeneous row: x is the first strict zero-extended parent descent; p meets x+2<=p, 3p<2alpha+1, 2p<=alpha, both selectors are current-p strict and all 692 original tip tags are counted. It refutes only depth-one truncation as a certificate here, not primary or MASS.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md",
+        "cycles/cycle-2/C2-SYNTHESIS/independent_check.py",
+        "cycles/cycle-2/C2-SYNTHESIS/independent_evidence.json"
+      ],
+      "reason": "Independently reproduced `m=173` floor failure with full payment and MASS positive. Grade: B. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    },
+    {
+      "claim_id": "C2-F3-FIXED-SIZE-OCCUPANCY-JENSEN-LOWER",
+      "statement": "For finite disjoint blocks r_i>=2 and 0<=k<=M, Q[k]/binom(M,k)=E product_i(1+X_i/r_i); hence Q[k]>=binom(M,k) sum_(s=0)^d Lambda^s/s! for every d>=0 with Lambda=sum_i (2r_i/(2r_i+1))*binom(M-r_i,k-1)/binom(M,k).",
+      "scope": "Universal informal coefficient identity and rational lower bound with zero-extended binomials and joint fixed-size occupancy; no independence assumption, selector assertion, payment result or Lean award. Its application to T_i uses the corrected F_r coefficients in REPORT.md.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Core inequality valid; use corrected `GF_r` convolution weights. Grade: P. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    },
+    {
+      "claim_id": "C2-F3-HOMOGENEOUS-R4-FIRST-ELIGIBLE-PILOT",
+      "statement": "At the least eligible rank of each of 51 all-r4 profiles m=41..80 or 168..178, both current strict flags are on and neither full payment nor the degree-eight rational Jensen local estimate fails.",
+      "scope": "Only these 51 homogeneous profiles and one least eligible natural p each, with first strict zero-extended x, all three guards, and one endpoint plus 4m original tip tags. Other ranks and mixed profiles are outside scope.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "51 specified homogeneous profiles, least eligible rank only. Grade: B. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    },
+    {
+      "claim_id": "C2-F3-LOCAL-JENSEN-PAYMENT-CONDITIONAL",
+      "statement": "At an actual eligible row, if w=sum_i r_i e_i>=2 and every selected branch has T_i[j]>=3 delta D_j/2, then the exact-ratio payment margin is nonnegative; endpoint-only selection is outside this implication.",
+      "scope": "Universal informal conditional for ordinary arity-2/3/4 path-stars using first strict zero-extended x, p natural with x+2<=p, 3p<2(N+2)+1 and 2p<=N+2, j=p-2, delta=N+1-j, current-p strict selectors, original r_i multiplicities, D_j>0, C[j]>0 and 0<C[j+1]/C[j]<1. Any cofactor estimate must use the corrected convolution in REPORT.md.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Requires a selected branch and its true local threshold; repaired convolution for estimated threshold. Grade: P. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    },
+    {
+      "claim_id": "C2-T1-ADVERSARIAL-CONTROLS",
+      "statement": "The named negative-cofactor, spread-quotient, and m173 truncation shortcuts fail in exact eligible controls while full payment margins there are positive.",
+      "scope": "Ordinary path-star with m>=1 distinct branches r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2; x is the least strict zero-extended descent of P=C+zL^q, including terminal difference. At natural p with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, use actual current-p strict selectors e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], original endpoint multiplicity 1 and branch-tip multiplicity r_i, b=e0+sum r_i ei, A=sum r_i ei T_i[j], D_j=binom(N,j+1)-binom(N,j); empty selection included. Exact listed profiles only.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md",
+        "cycles/cycle-2/C2-SYNTHESIS/independent_check.py",
+        "cycles/cycle-2/C2-SYNTHESIS/independent_evidence.json"
+      ],
+      "reason": "Named slope, spread and truncation controls only; independent exact spot checks. Grade: B. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    },
+    {
+      "claim_id": "C2-T1-FIXED-SIZE-OCCUPANCY-JENSEN",
+      "statement": "For disjoint arity-2/3/4 blocks, Q[u]/binom(M,u)=E prod_i(1+X_i/r_i); finite Jensen gives the stated rational-power lower inequality.",
+      "scope": "All finite disjoint blocks with 0<=u<=M; fixed-size sampling, no independence premise.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Joint fixed-size count and finite Jensen, no independence. Grade: P. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    },
+    {
+      "claim_id": "C2-T1-RATIONAL-COFACTOR-CONVOLUTION-BOUND",
+      "statement": "H_i[u]>=binom(M_i,u)E_4(X_i(u)) in range, with zero out of range, and convolution with nonnegative GF_ri gives the corresponding rational lower bound for T_i[j].",
+      "scope": "All ordinary arity-2/3/4 profiles, branches i, natural coefficient ranks; M_i=N-r_i; integer zero extension.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Occupancy plus log/Taylor bound and nonnegative `GF_r` convolution. Grade: P. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    },
+    {
+      "claim_id": "C2-T2-ENDPOINT-ONLY-FINITE-EXCLUSION-SCAN",
+      "statement": "The exact source grid through m=80 reports 91,880 profiles and 133,194 eligible rows, all fully selected and none endpoint-only; five named controls agree.",
+      "scope": "Ordinary path-star with m>=1 distinct branches r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2; x is the least strict zero-extended descent of P=C+zL^q, including terminal difference. At natural p with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, use actual current-p strict selectors e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], original endpoint multiplicity 1 and branch-tip multiplicity r_i, b=e0+sum r_i ei, A=sum r_i ei T_i[j], D_j=binom(N,j+1)-binom(N,j); empty selection included. Bounded to arity-count profiles 1<=m<=80 and five exact controls.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Sealed grid through `m=80`: 91,880 profiles, 133,194 eligible rows; no universal selector lemma. Grade: B. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    },
+    {
+      "claim_id": "C2-T2-NEGATIVE-COFACTOR-SLOPE-SELECTED-CONTROL",
+      "statement": "At counts (0,12,10), x=37,p=39, both represented d_i are negative while endpoint and all tip classes are strictly selected.",
+      "scope": "Ordinary path-star with m>=1 distinct branches r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2; x is the least strict zero-extended descent of P=C+zL^q, including terminal difference. At natural p with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, use actual current-p strict selectors e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], original endpoint multiplicity 1 and branch-tip multiplicity r_i, b=e0+sum r_i ei, A=sum r_i ei T_i[j], D_j=binom(N,j+1)-binom(N,j); empty selection included. Single profile and rank (0,12,10),p=39.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md",
+        "cycles/cycle-2/C2-SYNTHESIS/independent_check.py",
+        "cycles/cycle-2/C2-SYNTHESIS/independent_evidence.json"
+      ],
+      "reason": "Independent `(0,12,10),p=39` exact replay. Grade: B. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    },
+    {
+      "claim_id": "C2-T2-SELECTOR-THRESHOLD-IDENTITY",
+      "statement": "With u=Delta_p A0 and d_i=Delta_(p-3)(F_ri H_i), e0=1 iff u<0 and ei=1 iff d_i>u.",
+      "scope": "Ordinary path-star with m>=1 distinct branches r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2; x is the least strict zero-extended descent of P=C+zL^q, including terminal difference. At natural p with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, use actual current-p strict selectors e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], original endpoint multiplicity 1 and branch-tip multiplicity r_i, b=e0+sum r_i ei, A=sum r_i ei T_i[j], D_j=binom(N,j+1)-binom(N,j); empty selection included.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "`ei=1 iff d_i>u`, strict equality handled. Grade: P. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    },
+    {
+      "claim_id": "C2-T3-DESCENT-OCCUPANCY-SCALAR-SUFFICIENT-TEST",
+      "statement": "The corrected conditional test b=0 or (v+(1-v)/delta)sum_{i:ei=1}r_i ell_i[j]>=bD_j implies exact-ratio payment; the source version with v+1/delta lacks this proof.",
+      "scope": "Ordinary path-star with m>=1 distinct branches r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2; x is the least strict zero-extended descent of P=C+zL^q, including terminal difference. At natural p with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, use actual current-p strict selectors e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], original endpoint multiplicity 1 and branch-tip multiplicity r_i, b=e0+sum r_i ei, A=sum r_i ei T_i[j], D_j=binom(N,j+1)-binom(N,j); empty selection included. Conditional on corrected scalar premise with v=beta_x/C[x]; no universal assertion that premise holds.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Replace false `v+1/delta` factor by `v+(1-v)/delta`; premise open. Grade: P. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    },
+    {
+      "claim_id": "C2-T3-OCCUPANCY-RATIONAL-SELECTED-COEFFICIENT-BOUND",
+      "statement": "Finite occupancy Jensen and any nonnegative Taylor partial sum give zero-extended rational h_i[k]<=H_i[k], hence ell_i[j]<=T_i[j] after convolution with GF_ri.",
+      "scope": "Ordinary path-star with m>=1 distinct branches r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2; x is the least strict zero-extended descent of P=C+zL^q, including terminal difference. At natural p with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, use actual current-p strict selectors e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], original endpoint multiplicity 1 and branch-tip multiplicity r_i, b=e0+sum r_i ei, A=sum r_i ei T_i[j], D_j=binom(N,j+1)-binom(N,j); empty selection included. Coefficient bound valid for every branch and natural rank, including M=0.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Same valid occupancy/cofactor convolution bound, any finite Taylor degree. Grade: P. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    },
+    {
+      "claim_id": "C2-T3-UNIVERSAL-FIRST-DESCENT-AND-RATIO-SHARPENING",
+      "statement": "Every profile has 5x>2N-1; at eligible rows t<=C[x+1]/C[x]<1-v with v=beta_x/C[x], giving corrected kappa=1-t+t/delta>v+(1-v)/delta. The source bound kappa>v+1/delta is false.",
+      "scope": "Ordinary path-star with m>=1 distinct branches r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2; x is the least strict zero-extended descent of P=C+zL^q, including terminal difference. At natural p with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, use actual current-p strict selectors e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], original endpoint multiplicity 1 and branch-tip multiplicity r_i, b=e0+sum r_i ei, A=sum r_i ei T_i[j], D_j=binom(N,j+1)-binom(N,j); empty selection included.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md",
+        "cycles/cycle-2/C2-SYNTHESIS/independent_check.py",
+        "cycles/cycle-2/C2-SYNTHESIS/independent_evidence.json"
+      ],
+      "reason": "`5x>2N-1` and corrected ratio survive; `m=38` refutes overstated factor. Grade: P+B. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    },
+    {
+      "claim_id": "C2-U1-EXACT-TARGETED-OBSTRUCTION-CONTROLS",
+      "statement": "Named tested rows have positive true payment and MASS; negative cofactor slopes, decreasing spread quotient and m=173 truncation failure obstruct only their auxiliary shortcuts.",
+      "scope": "Bounded eight producer profiles and listed eligible rows, including (0,12,10), all-r4 m173, and (0,10,13)->(1,8,14) at p=42; actual first descent, guards and current-p flags; no universal extension.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md",
+        "cycles/cycle-2/C2-SYNTHESIS/independent_check.py",
+        "cycles/cycle-2/C2-SYNTHESIS/independent_evidence.json"
+      ],
+      "reason": "Eight sealed producer profiles only; our independent replay covers the named controls. Grade: B. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    },
+    {
+      "claim_id": "C2-U1-FIXED-SUBSET-COFACTOR-BOUND",
+      "statement": "For H=product_l((1+z)^s_l+z), M=sum s_l, 0<=k<=M, p_l=s_l*binom(M-s_l,k-1)/binom(M,k), u=sum_l 2p_l/(2s_l+1), H[k]>=binom(M,k)*sum_(a=0)^4 u^a/a!.",
+      "scope": "Every finite disjoint block family with s_l in {2,3,4}, including empty family; zero-extended binomials. Applied to path-star H_i and T_i[k]>=H_i[k].",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Degree-four occupancy/Jensen floor for every cofactor, including empty. Grade: P. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    },
+    {
+      "claim_id": "C2-U1-LOCAL-SELECTED-MASS-SUFFICIENCY",
+      "statement": "If w=sum_i r_i ei>0 and every selected T_i[j]>=3 delta D/2, then A>=b delta D and exact-ratio payment follows.",
+      "scope": "Ordinary path-stars: m>=1 distinct branches r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2, P=C+zL^q; x least natural strict zero-extended Delta_k P<0 including terminal; natural p with x+2<=p, 3p<2alpha+1, 2p<=alpha; j=p-2, delta=q-j, D=binom(N,j+1)-binom(N,j); actual current-p strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], original endpoint multiplicity one and branch multiplicity r_i; b=e0+sum r_i ei, A=sum r_i ei T_i[j]. Conditional on w>0 and the local coefficient threshold; endpoint-only excluded.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "`w>0` plus every selected `T_i[j]>=3delta D_j/2` implies MASS. Grade: P. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    },
+    {
+      "claim_id": "C2-U2-DISJOINT-BLOCK-OCCUPANCY-IDENTITY",
+      "statement": "For disjoint blocks V_i of positive sizes r_i and 0<=u<=M=sum r_i, Q[u]=sum over u-subsets S of product_i(1+1[|S intersect V_i|=1]/r_i), Q=product_i((1+z)^r_i+z).",
+      "scope": "All finite disjoint positive block families, including empty, and 0<=u<=M; no independence assumption.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Exact subset-weight count, even for positive sizes outside `{2,3,4}`. Grade: P. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    },
+    {
+      "claim_id": "C2-U2-ELEMENTARY-FLOOR-PAYS-SELECTED-PAYMENT",
+      "statement": "The elementary cofactor floor substituted for selected T_i coefficients certifies exact-ratio payment at all-r4 m=173, p=338.",
+      "scope": "Specific actual eligible row: m=173, N=692, n=868, alpha=694, first descent x=336, p=338, j=336, delta=357; all guards; strict e0=ei=1, b=693; A_lower=692 U_4[j].",
+      "status": "proposed_rejected",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md",
+        "cycles/cycle-2/C2-SYNTHESIS/independent_check.py",
+        "cycles/cycle-2/C2-SYNTHESIS/independent_evidence.json"
+      ],
+      "reason": "At eligible all-r4 `m=173,p=338`, floor payment margin is negative. Grade: B. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    },
+    {
+      "claim_id": "C2-U2-OCCUPANCY-TO-TI-COEFFICIENT-BRIDGE",
+      "statement": "For each branch i, convolving H_i[v]>=binom(N-r_i,v)+sum_(h!=i)binom(N-r_i-r_h,v-1) with nonnegative G F_(r_i) gives U_i[j]<=T_i[j].",
+      "scope": "Every ordinary arity-2/3/4 path-star, every integer coefficient j with zero extension; unconditional coefficient bound, no eligibility claim.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Additive cofactor floor convolved with nonnegative `GF_r`. Grade: P. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    },
+    {
+      "claim_id": "C2-U2-RATIONAL-POWER-AMGM-AND-ELEMENTARY-FLOOR",
+      "statement": "For B=binom(M,u)>0, Q[u]^B>=B^B product_i(1+1/r_i)^(r_i binom(M-r_i,u-1)); also Q[u]>=binom(M,u)+sum_i binom(M-r_i,u-1).",
+      "scope": "Disjoint positive block families; power bound for 0<=u<=M; additive bound for all natural u under zero extension; no selectors.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Power bound in range; additive floor zero-extends. Grade: P. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    },
+    {
+      "claim_id": "C2-U3-BRANCH-SELECTION-CONDITIONAL-MASS",
+      "statement": "For m>=238 actual eligible rows, w>0 implies strict selected MASS; e0=w=0 gives equality; endpoint-only remains uncovered.",
+      "scope": "Same actual first descent, all guards, current-p strict selectors and original multiplicities as exact target, restricted to m>=238 and either w>0 or e0=w=0.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Repaired local cutoff plus `w>0`, or empty selection; endpoint-only excluded from premise. Grade: P. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    },
+    {
+      "claim_id": "C2-U3-ENDPOINT-ONLY-EXCLUSION-OPEN",
+      "statement": "An independent selector-only proof that e0=1 implies w>0 has not been supplied.",
+      "scope": "All ordinary arity-2/3/4 path-stars at actual eligible rows with the exact target first descent, guards, zero extension, current-p strict selectors and original multiplicities.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "No independent selector-only proof at all actual eligible rows. Grade: O. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    },
+    {
+      "claim_id": "C2-U3-LOCAL-MASS-CUTOFF-238",
+      "statement": "For m>=238 and 5j>2N-1, 2j<=N-2, every represented T_i[j]>3 delta D/2; hence the estimate applies to every actual eligible lower-half j.",
+      "scope": "Ordinary arity-2/3/4 path-stars, m>=238, delta=N+1-j, D=binom(N,j+1)-binom(N,j); actual eligible transfer uses the least strict zero-extended first descent and all guards in the exact target scope; independent of current-p flags and aggregate.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Correct singleton probability; informal `m>=238` local theorem on derived rank band. Grade: P. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+      "statement": "(delta*C[j]-(delta-1)*C[j+1])*A >= b*delta*D*C[j].",
+      "scope": "Ordinary path-stars: m>=1 distinct branches r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2, P=C+zL^q; x least natural strict zero-extended Delta_k P<0 including terminal; natural p with x+2<=p, 3p<2alpha+1, 2p<=alpha; j=p-2, delta=q-j, D=binom(N,j+1)-binom(N,j); actual current-p strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], original endpoint multiplicity one and branch multiplicity r_i; b=e0+sum r_i ei, A=sum r_i ei T_i[j].",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Full registered `M>=0` lacks universal proof or eligible negative full-margin witness. Grade: O. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION",
+      "statement": "A>=b*delta*D.",
+      "scope": "Ordinary path-stars: m>=1 distinct branches r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2, P=C+zL^q; x least natural strict zero-extended Delta_k P<0 including terminal; natural p with x+2<=p, 3p<2alpha+1, 2p<=alpha; j=p-2, delta=q-j, D=binom(N,j+1)-binom(N,j); actual current-p strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], original endpoint multiplicity one and branch multiplicity r_i; b=e0+sum r_i ei, A=sum r_i ei T_i[j]. Stronger than exact-ratio payment.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Stronger all-`m` `A>=b delta D_j` remains distinct and unproved. Grade: O. Synthesis evidence and limits are in REPORT.md; any broad finite result is inherited only from sealed adjudication."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-SYNTHESIS/REPORT.md",
+  "limitations": [
+    "Primary exact-ratio payment and stronger all-m MASS remain OPEN; no universal proof or eligible negative full-payment witness.",
+    "The m>=238 local coefficient theorem is informal and leaves endpoint-only selection; finite-prefix payment for m<=237 remains uncertified.",
+    "Broad finite pilots were reviewed through sealed adjudications, not rerun here; no Lean build or governed formal award was attempted."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-CF-T2-ENDPOINT-PAYMENT-OBSTRUCTION",
+    "C2-CF-T3-NORMALIZATION-COUNTEREXAMPLE",
+    "C2-CT-U2-ALL-INTERACTION-OCCUPANCY-EXPANSION",
+    "C2-CU-F1-OCCUPANCY-COEFFICIENT-BOUND",
+    "C2-CU-F3-PERIODIC-MIXED-EXACT-PILOT",
+    "C2-F1-JENSEN-FIRST-RANK-BOUNDED",
+    "C2-F1-LOCAL-BOUND-GAP-BOUNDED",
+    "C2-F1-PRIMARY-TARGETED-REPLAY",
+    "C2-F2-HOMOGENEOUS-EMPTY-SINGLETON-TRUNCATION-OBSTRUCTION",
+    "C2-F3-FIXED-SIZE-OCCUPANCY-JENSEN-LOWER",
+    "C2-F3-HOMOGENEOUS-R4-FIRST-ELIGIBLE-PILOT",
+    "C2-F3-LOCAL-JENSEN-PAYMENT-CONDITIONAL",
+    "C2-T1-ADVERSARIAL-CONTROLS",
+    "C2-T1-FIXED-SIZE-OCCUPANCY-JENSEN",
+    "C2-T1-RATIONAL-COFACTOR-CONVOLUTION-BOUND",
+    "C2-T2-ENDPOINT-ONLY-FINITE-EXCLUSION-SCAN",
+    "C2-T2-NEGATIVE-COFACTOR-SLOPE-SELECTED-CONTROL",
+    "C2-T2-SELECTOR-THRESHOLD-IDENTITY",
+    "C2-T3-DESCENT-OCCUPANCY-SCALAR-SUFFICIENT-TEST",
+    "C2-T3-OCCUPANCY-RATIONAL-SELECTED-COEFFICIENT-BOUND",
+    "C2-T3-UNIVERSAL-FIRST-DESCENT-AND-RATIO-SHARPENING",
+    "C2-U1-EXACT-TARGETED-OBSTRUCTION-CONTROLS",
+    "C2-U1-FIXED-SUBSET-COFACTOR-BOUND",
+    "C2-U1-LOCAL-SELECTED-MASS-SUFFICIENCY",
+    "C2-U2-DISJOINT-BLOCK-OCCUPANCY-IDENTITY",
+    "C2-U2-ELEMENTARY-FLOOR-PAYS-SELECTED-PAYMENT",
+    "C2-U2-OCCUPANCY-TO-TI-COEFFICIENT-BRIDGE",
+    "C2-U2-RATIONAL-POWER-AMGM-AND-ELEMENTARY-FLOOR",
+    "C2-U3-BRANCH-SELECTION-CONDITIONAL-MASS",
+    "C2-U3-ENDPOINT-ONLY-EXCLUSION-OPEN",
+    "C2-U3-LOCAL-MASS-CUTOFF-238",
+    "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+    "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION"
+  ]
+}

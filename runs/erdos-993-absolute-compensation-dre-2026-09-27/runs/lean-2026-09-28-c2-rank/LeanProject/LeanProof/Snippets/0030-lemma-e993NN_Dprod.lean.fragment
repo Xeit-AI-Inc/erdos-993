@@ -1,0 +1,14 @@
+lemma e993NN_Dprod (rs : List ℕ)
+    (hr : ∀ r ∈ rs, r = 2 ∨ r = 3 ∨ r = 4) :
+    e993NN (e993D rs.sum (rs.map (fun r => (1 + X : Polynomial ℚ)^r + X)).prod) := by
+  induction rs with
+  | nil => simpa [e993D_one] using e993NN_zero
+  | cons r rs ih =>
+      have hright : ∀ s ∈ rs, s = 2 ∨ s = 3 ∨ s = 4 := by
+        intro s hs
+        exact hr s (List.mem_cons_of_mem r hs)
+      have hlocal := e993NN_DB r (hr r (List.mem_cons_self))
+      have hmul := e993NN_add
+        (e993NN_mul hlocal (e993NN_prod rs))
+        (e993NN_mul (e993NN_B r) (ih hright))
+      simpa only [List.sum_cons, List.map_cons, List.prod_cons, e993D_mul] using hmul

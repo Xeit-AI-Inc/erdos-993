@@ -1,0 +1,327 @@
+{
+  "schema_version": "formalization-fidelity-audit-input.v1",
+  "run_id": "lean-2026-09-28-c2-rank",
+  "artifact_producer_id": "C2-RANK-FORMALIZER",
+  "theorem_contract": {
+    "contract_id": "e993-any-strict-descent-rank-v1",
+    "contract_sha256": "3d75ed4dd1d160b2652f1a221d779a2b84ddd9c81aad62b122c2df4a65a209e3",
+    "theorem_name": "e993_rank_any_strict_descent",
+    "definitions": [
+      {
+        "name": "def-parent",
+        "canonical": "e993RankParent rs=(1+2*X)*(rs.map (fun r => (1+X)^r+X)).prod+X*(1+X)^(rs.sum+1), in Polynomial Rat. The exponent weight N+1 is not asserted to be the degree of P."
+      }
+    ],
+    "domains": [
+      {
+        "variable": "rs",
+        "lean_type": "List Nat",
+        "forbidden_narrowings": []
+      },
+      {
+        "variable": "k",
+        "lean_type": "Nat",
+        "forbidden_narrowings": []
+      }
+    ],
+    "quantifiers": [
+      {
+        "variable": "rs",
+        "kind": "forall",
+        "domain": "List Nat"
+      },
+      {
+        "variable": "k",
+        "kind": "forall",
+        "domain": "Nat"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "hyp-arity",
+        "canonical": "Every r in rs is equal to 2, 3 or 4."
+      },
+      {
+        "id": "hyp-drop",
+        "canonical": "(e993RankParent rs).coeff (k+1) < (e993RankParent rs).coeff k for the given natural k. No first-descent minimality is assumed."
+      }
+    ],
+    "conclusion": {
+      "canonical": "2 * rs.sum <= 5 * k as an inequality of natural numbers. No log-concavity, extra positivity, cutoff, or graph interpretation is assumed.",
+      "clauses": [
+        "2 * rs.sum <= 5 * k as an inequality of natural numbers. No log-concavity, extra positivity, cutoff, or graph interpretation is assumed."
+      ]
+    },
+    "lean_statement": "theorem e993_rank_any_strict_descent (rs : List ℕ)\n    (hr : ∀ r ∈ rs, r = 2 ∨ r = 3 ∨ r = 4) (k : ℕ)\n    (hdrop : (e993RankParent rs).coeff (k + 1) < (e993RankParent rs).coeff k) :\n    2 * rs.sum ≤ 5 * k",
+    "permitted_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "constructivity_requirement": "classical_allowed",
+    "dependencies": [
+      {
+        "name": "lean4",
+        "version": "4.32.2",
+        "content_hash": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273"
+      },
+      {
+        "name": "Cli",
+        "version": "88679d088c9720c27ebdf2ba4dafe17341747f94",
+        "content_hash": "00eb810febd1653d824ef47f5704005b0ce0d2a28a0f17fdf40cdf3266af53a8"
+      },
+      {
+        "name": "LeanSearchClient",
+        "version": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843",
+        "content_hash": "8edf3e660ad79b0a7125fda1998ba3730723b4c3ea26bd25f9150667f25f7f14"
+      },
+      {
+        "name": "Qq",
+        "version": "38d591e778f100aec9762bb582f9c7f55f50e9dc",
+        "content_hash": "cff45e094b089ede2175cbe67a33996084bbc149f670ee404006b984a8ee63aa"
+      },
+      {
+        "name": "aesop",
+        "version": "a7dbf0c63b694e47f425f3dcddbc0e178bb432d3",
+        "content_hash": "b8641d27331fd6079574dcd80a08db94ef654b0c474a01d79fd85f9e9a452a9d"
+      },
+      {
+        "name": "batteries",
+        "version": "023ce7d62a0531e22a5331e20b587817a80d49ff",
+        "content_hash": "63358d156317e3a0cccf6f4b8c65e4c78f08349c945d58ebb364813b39f49520"
+      },
+      {
+        "name": "importGraph",
+        "version": "7e9612bf0b9ee66db3cb5b9988a35afc706f5a12",
+        "content_hash": "c7947d0a045357f3d282f044a21c08622b3aca9b7945d24a3ece93a415106adc"
+      },
+      {
+        "name": "mathlib",
+        "version": "905b95818eb32af7874a58b427f50c1711a5e96c",
+        "content_hash": "fa8d16692d86501e39e3e11c017ad30e69d82d5d26401b669239319a409cb4b2"
+      },
+      {
+        "name": "plausible",
+        "version": "e12c1910fe855cbfc38803cd4e55543906d5fa62",
+        "content_hash": "20b5da1cc804153631065aaeb28f8a6d9ee0701ad8466cb283d7b56e6f66b9c2"
+      },
+      {
+        "name": "proofwidgets",
+        "version": "6e311e2a844da9b2cc3971187df2fe0066947b93",
+        "content_hash": "f8afaf13091634f482d98c25234875554a3a880e1a6a75fcba535ab39e96d7d0"
+      }
+    ]
+  },
+  "lean_binding": {
+    "definitions": [
+      {
+        "name": "def-parent",
+        "canonical": "e993RankParent rs=(1+2*X)*(rs.map (fun r => (1+X)^r+X)).prod+X*(1+X)^(rs.sum+1), in Polynomial Rat. The exponent weight N+1 is not asserted to be the degree of P."
+      }
+    ],
+    "quantifiers": [
+      {
+        "variable": "rs",
+        "kind": "forall",
+        "domain": "List Nat"
+      },
+      {
+        "variable": "k",
+        "kind": "forall",
+        "domain": "Nat"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "hyp-arity",
+        "canonical": "Every r in rs is equal to 2, 3 or 4."
+      },
+      {
+        "id": "hyp-drop",
+        "canonical": "(e993RankParent rs).coeff (k+1) < (e993RankParent rs).coeff k for the given natural k. No first-descent minimality is assumed."
+      }
+    ],
+    "conclusion": {
+      "canonical": "2 * rs.sum <= 5 * k as an inequality of natural numbers. No log-concavity, extra positivity, cutoff, or graph interpretation is assumed.",
+      "clauses": [
+        "2 * rs.sum <= 5 * k as an inequality of natural numbers. No log-concavity, extra positivity, cutoff, or graph interpretation is assumed."
+      ]
+    },
+    "dependencies": [
+      {
+        "name": "lean4",
+        "version": "4.32.2",
+        "content_hash": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273"
+      },
+      {
+        "name": "Cli",
+        "version": "88679d088c9720c27ebdf2ba4dafe17341747f94",
+        "content_hash": "00eb810febd1653d824ef47f5704005b0ce0d2a28a0f17fdf40cdf3266af53a8"
+      },
+      {
+        "name": "LeanSearchClient",
+        "version": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843",
+        "content_hash": "8edf3e660ad79b0a7125fda1998ba3730723b4c3ea26bd25f9150667f25f7f14"
+      },
+      {
+        "name": "Qq",
+        "version": "38d591e778f100aec9762bb582f9c7f55f50e9dc",
+        "content_hash": "cff45e094b089ede2175cbe67a33996084bbc149f670ee404006b984a8ee63aa"
+      },
+      {
+        "name": "aesop",
+        "version": "a7dbf0c63b694e47f425f3dcddbc0e178bb432d3",
+        "content_hash": "b8641d27331fd6079574dcd80a08db94ef654b0c474a01d79fd85f9e9a452a9d"
+      },
+      {
+        "name": "batteries",
+        "version": "023ce7d62a0531e22a5331e20b587817a80d49ff",
+        "content_hash": "63358d156317e3a0cccf6f4b8c65e4c78f08349c945d58ebb364813b39f49520"
+      },
+      {
+        "name": "importGraph",
+        "version": "7e9612bf0b9ee66db3cb5b9988a35afc706f5a12",
+        "content_hash": "c7947d0a045357f3d282f044a21c08622b3aca9b7945d24a3ece93a415106adc"
+      },
+      {
+        "name": "mathlib",
+        "version": "905b95818eb32af7874a58b427f50c1711a5e96c",
+        "content_hash": "fa8d16692d86501e39e3e11c017ad30e69d82d5d26401b669239319a409cb4b2"
+      },
+      {
+        "name": "plausible",
+        "version": "e12c1910fe855cbfc38803cd4e55543906d5fa62",
+        "content_hash": "20b5da1cc804153631065aaeb28f8a6d9ee0701ad8466cb283d7b56e6f66b9c2"
+      },
+      {
+        "name": "proofwidgets",
+        "version": "6e311e2a844da9b2cc3971187df2fe0066947b93",
+        "content_hash": "f8afaf13091634f482d98c25234875554a3a880e1a6a75fcba535ab39e96d7d0"
+      }
+    ],
+    "declaration_name": "e993_rank_any_strict_descent",
+    "declaration_source_path": "LeanProject/LeanProof/Main.lean",
+    "declaration_source_sha256": "2ca135236c2178f88235e54163a1ed09fee051e20075a8d901ac10cde76888d2",
+    "domains": [
+      {
+        "variable": "rs",
+        "lean_type": "List Nat"
+      },
+      {
+        "variable": "k",
+        "lean_type": "Nat"
+      }
+    ],
+    "lean_statement": "theorem e993_rank_any_strict_descent (rs : List ℕ)\n    (hr : ∀ r ∈ rs, r = 2 ∨ r = 3 ∨ r = 4) (k : ℕ)\n    (hdrop : (e993RankParent rs).coeff (k + 1) < (e993RankParent rs).coeff k) :\n    2 * rs.sum ≤ 5 * k",
+    "declared_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "kernel_evidence": {
+    "receipt_sha256": "6e7ccbf50db3c363654d612a9372da354a818d040d554c1085cc5287c16b536b",
+    "verdict": "verified",
+    "reported_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "dependencies": [
+      {
+        "name": "lean4",
+        "version": "4.32.2",
+        "content_hash": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273"
+      },
+      {
+        "name": "Cli",
+        "version": "88679d088c9720c27ebdf2ba4dafe17341747f94",
+        "content_hash": "00eb810febd1653d824ef47f5704005b0ce0d2a28a0f17fdf40cdf3266af53a8"
+      },
+      {
+        "name": "LeanSearchClient",
+        "version": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843",
+        "content_hash": "8edf3e660ad79b0a7125fda1998ba3730723b4c3ea26bd25f9150667f25f7f14"
+      },
+      {
+        "name": "Qq",
+        "version": "38d591e778f100aec9762bb582f9c7f55f50e9dc",
+        "content_hash": "cff45e094b089ede2175cbe67a33996084bbc149f670ee404006b984a8ee63aa"
+      },
+      {
+        "name": "aesop",
+        "version": "a7dbf0c63b694e47f425f3dcddbc0e178bb432d3",
+        "content_hash": "b8641d27331fd6079574dcd80a08db94ef654b0c474a01d79fd85f9e9a452a9d"
+      },
+      {
+        "name": "batteries",
+        "version": "023ce7d62a0531e22a5331e20b587817a80d49ff",
+        "content_hash": "63358d156317e3a0cccf6f4b8c65e4c78f08349c945d58ebb364813b39f49520"
+      },
+      {
+        "name": "importGraph",
+        "version": "7e9612bf0b9ee66db3cb5b9988a35afc706f5a12",
+        "content_hash": "c7947d0a045357f3d282f044a21c08622b3aca9b7945d24a3ece93a415106adc"
+      },
+      {
+        "name": "mathlib",
+        "version": "905b95818eb32af7874a58b427f50c1711a5e96c",
+        "content_hash": "fa8d16692d86501e39e3e11c017ad30e69d82d5d26401b669239319a409cb4b2"
+      },
+      {
+        "name": "plausible",
+        "version": "e12c1910fe855cbfc38803cd4e55543906d5fa62",
+        "content_hash": "20b5da1cc804153631065aaeb28f8a6d9ee0701ad8466cb283d7b56e6f66b9c2"
+      },
+      {
+        "name": "proofwidgets",
+        "version": "6e311e2a844da9b2cc3971187df2fe0066947b93",
+        "content_hash": "f8afaf13091634f482d98c25234875554a3a880e1a6a75fcba535ab39e96d7d0"
+      }
+    ]
+  },
+  "audit_policy": {
+    "require_independent_review": true
+  },
+  "independent_review": {
+    "reviewer_id": "C2-RANK-FIDELITY",
+    "reviewer_kind": "independent-mathematical-formalization-fidelity-reviewer",
+    "attestation_id": "C2-RANK-FIDELITY-20260928T063131Z-5b8e1f7c",
+    "completed_at": "2026-09-28T06:32:33Z",
+    "contract_projection_sha256": "4d70c464fbca6879e64347aae5ab27a283ce093e0078dc1db27e600237bf1ca8",
+    "binding_projection_sha256": "5f6a4b87f952959f1ec7a09405835d0dafac3191044673e1aaff94a1dbfb8deb",
+    "verdict": "match",
+    "findings": [
+      {
+        "category": "exact_statement_and_semantics",
+        "severity": "note",
+        "message": "The current Lean theorem and e993RankParent definition match the exact contract: all finite arity-2/3/4 lists including empty and repeated entries, every natural strict coefficient descent with zero extension, rational polynomial coefficients, and natural conclusion 2*rs.sum <= 5*k. The proof adds no premise or encoding trick."
+      },
+      {
+        "category": "byte_binding_and_kernel_evidence",
+        "severity": "note",
+        "message": "All 57 dispatched files within the permitted reading scope match their SHA-256 values. Current contract, source, Main, snippet, audit-input, and kernel-receipt cross-hashes agree. The kernel evidence reports successful checks of this Main hash with exactly propext, Classical.choice, and Quot.sound; Lean was not rerun."
+      },
+      {
+        "category": "registration_whitespace",
+        "severity": "note",
+        "message": "Each of the two adapted definitions differs from its original proposal only by a newline between noncomputable and def; the registered tokens and theorem statement are unchanged."
+      },
+      {
+        "category": "projection_digest_method",
+        "severity": "warning",
+        "message": "The permitted materials supply the two fingerprint digest values but not their projection-preimage algorithm. I independently compared the current contract and binding facets and exact source/receipt hashes before copying the digests, but cannot claim independent recomputation of the projection SHA-256 values."
+      },
+      {
+        "category": "claim_identity_scope",
+        "severity": "note",
+        "message": "This exact coefficient lemma warrants a separate identity proposal. It proves only the first-descent rank clause of the existing composite first-descent/ratio key and neither its ratio clauses nor a graph, MASS, payment, or primary result."
+      },
+      {
+        "category": "spread_witness_metadata",
+        "severity": "note",
+        "message": "The recorded normalized spread witness has m=23 and N=82, giving ordinary path-star order N+m+3=108. This supports proposed witness-order metadata without a global minimality claim or a status change."
+      }
+    ]
+  }
+}

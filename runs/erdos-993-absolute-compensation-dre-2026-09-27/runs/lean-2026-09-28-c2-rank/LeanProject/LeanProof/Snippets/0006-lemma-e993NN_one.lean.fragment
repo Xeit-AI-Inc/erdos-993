@@ -1,0 +1,4 @@
+lemma e993NN_one : e993NN (1 : Polynomial ℚ) := by
+  intro n
+  rw [coeff_one]
+  split_ifs <;> norm_num

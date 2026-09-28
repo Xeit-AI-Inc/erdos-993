@@ -1,0 +1,56 @@
+{
+  "schema": "e993.c3.stage1.identity-candidates.v1",
+  "review_role": "pre-dispatch identity review; proposals only, no registry or truth award",
+  "source_registry": "control/C2-REGISTERED-CLAIM-IDENTITY.json",
+  "new_open_entries": [
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-ALL-M-ACTUAL-ELIGIBLE-BRANCHWISE-THREE-HALVES-MASS",
+      "status": "OPEN",
+      "statement": "For every ordinary path-star in SOLUTION-CONTRACT.md with m>=1 distinct branches of arities r_i in {2,3,4}, let N=sum_i r_i, q=N+1, alpha=N+2, C=G product_i B_(r_i), T_i=G F_(r_i) product_(h!=i) B_(r_h), P=C+z(1+z)^q, and x the least natural strict forward descent of P using integer zero extension, including its terminal difference. For every natural p with x+2<=p, 3p<2alpha+1, and 2p<=alpha, put j=p-2, delta=q-j, and D_j=binom(N,j+1)-binom(N,j). For every represented branch i, 2 T_i[j]>=3 delta D_j.",
+      "scope": "All actual eligible lower-half ranks and all represented branches, with no deletion-selector or all-selection premise. A branch-local coefficient inequality; neither selected MASS nor exact-ratio payment follows when the endpoint is the sole selected tag. The m>=120 analytic candidate, m=70..119 scalar check, and m<=69 direct-factor local check are proposed subcases or instruments, not separate universal keys.",
+      "aliases": [
+        "all-m actual-eligible branchwise 3/2 local mass",
+        "path-star branch-local three-halves bound at every eligible rank"
+      ],
+      "distinguish_from": [
+        "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION",
+        "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+        "E993-PATH-STAR-ARITY-2-4-M266-SELECTED-LOWER-MASS"
+      ]
+    },
+    {
+      "claim_key": "E993-PATH-STAR-COFACTOR-JENSEN-EXPONENT-ADJACENT-ARITY-BALANCING",
+      "status": "OPEN",
+      "statement": "Let a2,a3,a4 be nonnegative integers, m'=a2+a3+a4>=1, M=2a2+3a3+4a4>=10, and k an integer with 0<=k<=M and 3k>=M. Define g_r(M,k)=[2r/(2r+1)] binom(M-r,k-1)/binom(M,k) for r=2,3,4, with out-of-range binomial coefficients zero, and E=sum_r a_r g_r(M,k). Then g_2-2g_3+g_4>=0. Consequently E>=(3m'-M)g_2+(M-2m')g_3 if 2m'<=M<=3m', and E>=(4m'-M)g_3+(M-3m')g_4 if 3m'<=M<=4m'.",
+      "scope": "Only the rational Jensen exponent for an abstract cofactor block profile at a fixed in-range coefficient. The formulas give a minimum over arity counts at fixed (m',M,k); they do not order true cofactor coefficients, actual parent descents, strict selectors, MASS, payment, or the REFUTED spread quotient. For k=M the g_r vanish and equality is allowed. Out-of-band shifts and M<10 require separate treatment.",
+      "aliases": [
+        "balanced Jensen cofactor exponent",
+        "adjacent-arity Jensen exponent minimum"
+      ],
+      "distinguish_from": [
+        "E993-PATH-STAR-ARITY-2-4-SPREAD-NORMALIZED-EXACT-RATIO-NONDECREASING",
+        "E993-PATH-STAR-ARITY-2-4-SPREAD-SHARED-RANK-S-MONOTONE"
+      ]
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-PROFILE-SENSITIVE-STRICT-DESCENT-RANK",
+      "status": "OPEN",
+      "statement": "For every ordinary path-star with counts a2,a3,a4 of arity-2,3,4 branches, m=a2+a3+a4>=1, N=2a2+3a3+4a4, q=N+1, P=G product_r B_r^(a_r)+z(1+z)^q, and integer-zero-extended forward differences, every natural strict descent k with Delta_k P<0 satisfies 54k>=24N-4a2-3a3-5. Equivalently, with h=(2/3)a2+(1/2)a3, it satisfies 9k+1-4N+h>0. As a count-relaxed corollary, 9k+1-4N+hmax(m,N)>0 where hmax=2m-N/2 for N>=3m and hmax=m-N/6 for N<=3m.",
+      "scope": "Every strict descent of the actual parent polynomial, including the terminal zero-extended descent; in particular its first strict descent x. This is a profile-sensitive rank restriction only. It neither proves deletion selection nor supplies a coefficient or payment bound. The coefficientwise differential-operator inequality is the proposed proof route, not a separate key.",
+      "aliases": [
+        "profile-sensitive path-star descent rank",
+        "54k >= 24N - 4a2 - 3a3 - 5"
+      ],
+      "distinguish_from": [
+        "E993-PATH-STAR-RGE2-FIRST-DESCENT-MPLUS1",
+        "E993-PATH-STAR-ARITY-2-4-SPREAD-FIRST-DESCENT-NONDECREASING"
+      ]
+    }
+  ],
+  "existing_targets_not_new_entries": [
+    "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION",
+    "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+    "E993-ORDINARY-PATH-STAR-ARITY-2-4-ALL-M-LOWER-REGION-AGGREGATE"
+  ],
+  "disposition": "Register these exact proposed identities as OPEN before any C3 universal claim dispatch; no private candidate receives a proof or status award from this review."
+}

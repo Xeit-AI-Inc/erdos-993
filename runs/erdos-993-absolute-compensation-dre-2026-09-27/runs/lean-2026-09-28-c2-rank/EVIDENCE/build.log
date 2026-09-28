@@ -1,0 +1,36 @@
+$ /Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean --version
+cwd: /Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c2-rank/LeanProject
+returncode: 0
+stdout:
+Lean (version 4.32.2, arm64-apple-darwin24.6.0, commit f3b06c705e6c85f5314019d5d3baab0fec5b580c, Release)
+stderr:
+
+$ /Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lake --version
+cwd: /Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c2-rank/LeanProject
+returncode: 0
+stdout:
+Lake version 5.0.0-src+f3b06c7 (Lean version 4.32.2)
+stderr:
+
+$ /Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lake build
+cwd: /Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c2-rank/LeanProject
+returncode: 0
+stdout:
+✔ [8655/8657] Built LeanProof.Main (8.9s)
+✔ [8656/8657] Built LeanProof (3.4s)
+Build completed successfully (8657 jobs).
+stderr:
+
+$ /Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lake env /Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean /Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c2-rank/LeanProject/LeanProof/Main.lean
+cwd: /Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c2-rank/LeanProject
+returncode: 0
+stdout:
+
+stderr:
+
+$ /Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lake env /Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean /Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c2-rank/EVIDENCE/axioms-probe-lx69v5a8.lean
+cwd: /Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c2-rank/LeanProject
+returncode: 0
+stdout:
+'e993_rank_any_strict_descent' depends on axioms: [propext, Classical.choice, Quot.sound]
+stderr:

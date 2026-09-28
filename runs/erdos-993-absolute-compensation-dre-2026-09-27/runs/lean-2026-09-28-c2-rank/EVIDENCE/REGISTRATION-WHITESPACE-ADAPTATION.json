@@ -1,0 +1,22 @@
+{
+  "reason": "Registrar declaration detector anchors def at the start of a line; it does not recognize a same-line noncomputable modifier. Preserve original proposals, adapt only whitespace, independently review final registered bytes.",
+  "semantic_changes": false,
+  "changes": [
+    {
+      "declaration": "e993D",
+      "original_path": "PROPOSALS/02-e993D.lean.fragment",
+      "registered_path": "REGISTRATION-SOURCES/02-e993D.lean.fragment",
+      "original_sha256": "65f3cb627cfc21d1841b26cff20275da8f812638c1fb27a3c3bb1d3e007df964",
+      "registered_sha256": "b6cef82b84a4cb18a5a1c0d9919d229c9653d2cedae2b7202422e1b8146bb43d",
+      "change": "whitespace only: line break between noncomputable and def; declaration tokens unchanged"
+    },
+    {
+      "declaration": "e993RankParent",
+      "original_path": "PROPOSALS/03-e993RankParent.lean.fragment",
+      "registered_path": "REGISTRATION-SOURCES/03-e993RankParent.lean.fragment",
+      "original_sha256": "423a0f44d99b5e6b8c72fe8fd5439c3a16fd1b2548aded19c5b805dc524f4776",
+      "registered_sha256": "384876a2c7f2293e4b8d6fced5b316823b42ee4ab28cd6123cbee8c7d02679cb",
+      "change": "whitespace only: line break between noncomputable and def; declaration tokens unchanged"
+    }
+  ]
+}

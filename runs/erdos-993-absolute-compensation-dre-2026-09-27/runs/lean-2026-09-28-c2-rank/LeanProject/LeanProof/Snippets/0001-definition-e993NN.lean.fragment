@@ -1,0 +1,3 @@
+open Polynomial
+
+def e993NN (p : Polynomial ℚ) : Prop := ∀ n, 0 ≤ p.coeff n

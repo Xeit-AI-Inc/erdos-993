@@ -1,0 +1,5 @@
+lemma e993NN_parent (rs : List ℕ) : e993NN (e993RankParent rs) := by
+  unfold e993RankParent
+  exact e993NN_add
+    (e993NN_mul e993NN_G (e993NN_prod rs))
+    (e993NN_mul e993NN_X (e993NN_pow e993NN_L (rs.sum + 1)))

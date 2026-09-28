@@ -1,5 +1,7 @@
 # Open research roadmap
 
+Current Cycle2 checkpoint: full lower-half selection is already established at a computer-assisted/informal grade; pursue a census-free proof as a method obligation, not an OPEN literal predicate. MASS is established from238. Cycle3 will audit a proposed m<=69 direct prefix, m70..119 balanced scalar certificate, and m>=120 local analytic bound. These remain unaccepted candidates. The exact all-m MASS and payment targets remain OPEN.
+
 Current 28 September 2026: absolute compensation is active, with Cycle 1 closed and Cycle 2 under review. The m>=266 MASS restriction is now informally established. Focus on a uniform coefficient bound, independent selector geometry, and the remaining finite-prefix payment if necessary. The occupancy/Jensen and lower-cutoff proposals are unaccepted candidates. Code's separate CB switch target remains as specified below.
 
 Updated 27 September 2026 after both six-cycle closes. Erdős 993 remains open.

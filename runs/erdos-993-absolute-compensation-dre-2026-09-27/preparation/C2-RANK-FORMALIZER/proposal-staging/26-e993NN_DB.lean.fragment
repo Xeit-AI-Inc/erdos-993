@@ -1,0 +1,18 @@
+lemma e993NN_DB (r : ℕ) (hr : r = 2 ∨ r = 3 ∨ r = 4) :
+    e993NN (e993D r ((1 + X : Polynomial ℚ)^r + X)) := by
+  rcases hr with h | h | h
+  · subst r
+    rw [e993D_B2]
+    exact e993NN_nat 5
+  · subst r
+    rw [e993D_B3]
+    exact e993NN_add
+      (e993NN_add (e993NN_nat 6) (e993NN_mul (e993NN_nat 2) e993NN_X))
+      (e993NN_mul (e993NN_nat 3) (e993NN_pow e993NN_X 2))
+  · subst r
+    rw [e993D_B4]
+    exact e993NN_add
+      (e993NN_add
+        (e993NN_add (e993NN_nat 7) (e993NN_mul (e993NN_nat 6) e993NN_X))
+        (e993NN_mul (e993NN_nat 12) (e993NN_pow e993NN_X 2)))
+      (e993NN_mul (e993NN_nat 4) (e993NN_pow e993NN_X 3))

@@ -1,0 +1,13 @@
+lemma e993D_coeff (d k : ℕ) (p : Polynomial ℚ) :
+    (e993D d p).coeff k =
+      3 * ((k : ℚ) + 1) * p.coeff (k + 1) +
+      2 * (k : ℚ) * p.coeff k -
+      2 * (d : ℚ) * p.coeff k := by
+  have hpoly : (3 + 2 * X : Polynomial ℚ) * p.derivative =
+      3 * p.derivative + 2 * (X * p.derivative) := by ring
+  unfold e993D
+  rw [hpoly, coeff_sub, coeff_add]
+  rw [mul_assoc (2 : Polynomial ℚ) (d : Polynomial ℚ) p]
+  simp only [coeff_ofNat_mul, coeff_natCast_mul, coeff_derivative,
+    e993_coeff_X_derivative]
+  ring

@@ -1,0 +1,59 @@
+{
+  "worker_id": "C2-T2",
+  "cycle": 2,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C2-T2-SELECTOR-THRESHOLD-IDENTITY",
+      "statement": "At every eligible lower-half rank, with u=Delta_p A0 and d_i=Delta_(p-3)(F_(r_i)H_i), e0=1 iff u<0 and ei=1 iff d_i>u; endpoint-only selection is equivalent to u<0 and d_i<=u for every present arity class.",
+      "scope": "Ordinary m>=1 distinct-center arity-2/3/4 path-stars; N=sum r_i, q=N+1, alpha=N+2, x=least natural k with zero-extended Delta_k P<0 including the terminal difference, p natural with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j; current-p strict selectors e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0]; one endpoint tag and r_i original private-tip tags per branch, A=sum_i r_i ei T_i[j], b=e0+sum_i r_i ei. No sign restriction on d_i.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-T2/REPORT.md"
+      ],
+      "reason": "Follows exactly from A0-Ai=z^3 F_(r_i)H_i, forward-difference shift, and strict selector definitions; equality d_i=u correctly leaves ei off."
+    },
+    {
+      "claim_id": "C2-T2-ENDPOINT-ONLY-FINITE-EXCLUSION-SCAN",
+      "statement": "Every eligible lower-half row in all arity-count profiles 1<=m<=80 and in five named exact controls has endpoint and all present branch-arity selectors on; the scan found no endpoint-only row.",
+      "scope": "Bounded exact computation: all 91,880 count profiles and 133,194 actual rows satisfying x+2<=p, 3p<2alpha+1, 2p<=alpha for 1<=m<=80; plus direct-multiplication controls (0,12,10), (0,12,11), (0,10,13), (1,8,14), and (0,0,173). All selector flags are strict and evaluated at the current p; original tip multiplicities remain r_i.",
+      "status": "proposed_bounded_evidence",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-T2/REPORT.md",
+        "cycles/cycle-2/C2-T2/selector_audit.py",
+        "cycles/cycle-2/C2-T2/selector-audit.json"
+      ],
+      "reason": "Exact integer scan with complete profile enumeration through m=80 and exact controls; finite evidence does not establish universal exclusion or selection."
+    },
+    {
+      "claim_id": "C2-T2-NEGATIVE-COFACTOR-SLOPE-SELECTED-CONTROL",
+      "statement": "At the actual eligible (a2,a3,a4)=(0,12,10) row x=37,p=39, both arity cofactor slopes d_3 and d_4 are negative, yet all endpoint and branch selectors are on.",
+      "scope": "One ordinary path-star profile with m=22, N=76, alpha=78, q=77, x=37, p=39, j=37, delta=40; guards x+2<=p, 3p<2alpha+1, and 2p<=alpha; current-p strict selectors with one endpoint tag and three or four original tip tags per branch class.",
+      "status": "proposed_bounded_evidence",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-T2/REPORT.md",
+        "cycles/cycle-2/C2-T2/selector_audit.py",
+        "cycles/cycle-2/C2-T2/selector-audit.json"
+      ],
+      "reason": "Exact direct-product replay gives d3=-895239471360525542716 and d4=-1240837532571249046896; both exceed u=Delta_p A0=-11319302108154726892710, so strict ei=1."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+      "statement": "For every eligible row, (delta*C[j]-(delta-1)*C[j+1])*A >= b*delta*D_j*C[j].",
+      "scope": "Ordinary m>=1 distinct-center arity-2/3/4 path-stars; N=sum r_i, q=N+1, alpha=N+2, x=least natural k with zero-extended Delta_k P<0 including terminal, p natural with x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, current-p strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], one endpoint tag and r_i original private-tip tags per branch; A=sum_i r_i ei T_i[j], b=e0+sum_i r_i ei.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-T2/REPORT.md"
+      ],
+      "reason": "The endpoint-only case would violate payment since then A=0,b=1 and the margin equals -delta*D_j*C[j]<0, but no independent all-parameter endpoint-exclusion proof or primary counterexample was found."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-T2/REPORT.md",
+  "limitations": [
+    "Endpoint-only exclusion and full selection were tested exhaustively only for 1<=m<=80, plus five named exact controls; no universal proof follows.",
+    "The preliminary direct-convolution scan was stopped for excessive runtime and contributed no evidence; the optimized recurrence scan and separate direct-product controls completed.",
+    "No accepted aggregate conclusion was used to prove endpoint-only exclusion; no Lean work or external theorem was used."
+  ],
+  "status_authority": "proposed_worker_only"
+}

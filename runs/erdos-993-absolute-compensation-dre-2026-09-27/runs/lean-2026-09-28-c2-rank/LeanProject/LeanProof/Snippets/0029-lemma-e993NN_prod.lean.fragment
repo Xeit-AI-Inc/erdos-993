@@ -1,0 +1,5 @@
+lemma e993NN_prod (rs : List ℕ) :
+    e993NN (rs.map (fun r => (1 + X : Polynomial ℚ)^r + X)).prod := by
+  induction rs with
+  | nil => simpa using e993NN_one
+  | cons r rs ih => simpa using e993NN_mul (e993NN_B r) ih

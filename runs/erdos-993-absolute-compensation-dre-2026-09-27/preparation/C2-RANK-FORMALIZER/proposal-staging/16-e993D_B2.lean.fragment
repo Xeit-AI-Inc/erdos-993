@@ -1,0 +1,2 @@
+lemma e993D_B2 : e993D 2 ((1 + X : Polynomial ℚ)^2 + X) = 5 := by
+  norm_num [e993D, derivative_pow, e993C2, e993C3, e993C4]; ring

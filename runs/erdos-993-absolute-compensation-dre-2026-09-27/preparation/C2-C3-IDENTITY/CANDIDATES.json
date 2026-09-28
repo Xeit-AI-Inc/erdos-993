@@ -1,0 +1,294 @@
+{
+  "authority": "Proposed independent C2 identity review only; no canonical registry writing, controller decision, or formal award",
+  "registry_snapshot": "../../control/C2-REGISTERED-CLAIM-IDENTITY.json",
+  "registry_comparison": {
+    "normalized_statements_examined": 494,
+    "literal_aliases_examined": 699,
+    "alias_patterns_examined": 206,
+    "direct_normalized_key_statement_alias_collisions_for_proposed_keys": 0,
+    "semantic_comparisons": "See each candidate and REPORT.md; restricted predecessor selector and m266 MASS keys are preserved, while all-m MASS and exact-ratio payment remain OPEN."
+  },
+  "common_family_scope": "Ordinary tree with path 0-1-2, m>=1 distinct centers adjacent to 0, center i having r_i in {2,3,4} distinct private tips. N=sum_i r_i, q=N+1, alpha=N+2, L=1+z, G=1+2z, B_r=L^r+z, F_r=sum_{h=0}^{r-2}L^h, Q=product_i B_{r_i}, H_i=product_{h!=i}B_{r_h}, C=GQ, T_i=GF_{r_i}H_i, P=C+zL^q. Coefficients and Delta_k f=f[k+1]-f[k] are integer zero-extended. x=min{k natural: Delta_k P<0}, including terminal difference. An actual eligible lower-half p is natural with x+2<=p, 3p<2alpha+1, 2p<=alpha; j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j)>0. A0=LQ+zL^N, Ai=G B_{r_i-1}H_i+zL^N, e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], b=e0+sum_i r_i ei, A=sum_i r_i ei T_i[j]. Original endpoint and every private tip retain their separate original tags; empty selection is included.",
+  "candidates": [
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-OCCUPANCY-JENSEN-COFACTOR",
+      "registry_action": "propose_new",
+      "status": "PROPOSED_VERIFIED",
+      "evidence_grade": "universal_informal_proof_nonformal",
+      "statement": "For any finite disjoint positive-size blocks V_l of sizes s_l and total M, H=product_l((1+z)^{s_l}+z), any integer 0<=k<=M, and uniform k-subset S of their union, with X_l=1[|S intersect V_l|=1], H[k]/binom(M,k)=E product_l(1+X_l/s_l). Consequently H[k]/binom(M,k)>=product_l(1+1/s_l)^{Pr(X_l=1)}>=exp(y_k), where y_k=sum_l [2s_l/(2s_l+1)] binom(M-s_l,k-1)/binom(M,k); hence for every natural d, H[k]>=binom(M,k) E_d(y_k), E_d(y)=sum_{a=0}^d y^a/a!. The additive and scaled degree-four floors follow. For a path-star cofactor H_i, zero-extend the lower bound outside 0..N-r_i and convolve with GF_{r_i} having coefficients (1,2), (2,5,2), (3,9,7,2) for r_i=2,3,4 respectively to obtain a coefficientwise lower bound on T_i[j].",
+      "scope": "General finite disjoint positive blocks for the identity and Jensen inequality, in-range 0<=k<=M for division/powers; zero-extended coefficient floor and nonnegative path-star convolution at every natural j. Empty block family is allowed with H=1. No selector, descent, payment, or aggregate conclusion.",
+      "dependencies": [
+        "fixed-size joint subset counting",
+        "finite Jensen",
+        "log(1+1/s)>=2/(2s+1)",
+        "exp(y)>=E_d(y) for y>=0",
+        "nonnegative GF_r convolution"
+      ],
+      "evidence": [
+        "../../cycles/cycle-2/C2-SYNTHESIS/REPORT.md",
+        "../../cycles/cycle-2/C2-AT/REPORT.md",
+        "../../cycles/cycle-2/C2-AU/REPORT.md",
+        "../../cycles/cycle-2/C2-SYNTHESIS/independent_evidence.json"
+      ],
+      "source_claim_ids": [
+        "C2-T1-FIXED-SIZE-OCCUPANCY-JENSEN",
+        "C2-T1-RATIONAL-COFACTOR-CONVOLUTION-BOUND",
+        "C2-U2-DISJOINT-BLOCK-OCCUPANCY-IDENTITY",
+        "C2-U2-RATIONAL-POWER-AMGM-AND-ELEMENTARY-FLOOR",
+        "C2-F3-FIXED-SIZE-OCCUPANCY-JENSEN-LOWER"
+      ],
+      "alias_comparison": [
+        "No equivalent registered cofactor/Jensen statement or alias among 494 claims.",
+        "E993-PATH-STAR-SELECTED-BRACKET-IDENTITY gives graph polynomial algebra, not this probabilistic coefficient inequality.",
+        "C2 source variants and arbitrary Taylor degrees belong in this one canonical key; the F3 convolution weights require correction."
+      ],
+      "minimum_known_witnesses": []
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-FIRST-DESCENT-RATIO-BAND",
+      "registry_action": "propose_new",
+      "status": "PROPOSED_VERIFIED",
+      "evidence_grade": "universal_informal_proof_nonformal",
+      "statement": "For every common-family profile, its actual first strict parent descent x satisfies 5x>2N-1. At every actual eligible lower-half p, j>=x and 2j<=N-2. With beta_x=binom(q,x)-binom(q,x-1)>0, v=beta_x/C[x], t=C[j+1]/C[j] and kappa=1-t+t/delta, one has 0<t<=C[x+1]/C[x]<1-v and kappa>v+(1-v)/delta. The endpoint and branch flags are the actual current-p strict selectors; this is a coefficient/rank theorem, not a selected payment theorem.",
+      "scope": "First-descent inequality for every m>=1 arity-2,3,4 profile; ratio assertion only on actual eligible lower-half rows, with positive C[x], C[j], C[j+1] and integer zero extension. No parent log-concavity or no-recovery hypothesis.",
+      "dependencies": [
+        "local derivative ratios of G and B_2,B_3,B_4",
+        "product derivative identity",
+        "binomial summand rising through 5j<=2N-1",
+        "ordinary log-concavity of C",
+        "strict parent descent at x"
+      ],
+      "evidence": [
+        "../../cycles/cycle-2/C2-SYNTHESIS/REPORT.md",
+        "../../cycles/cycle-2/C2-AT/REPORT.md",
+        "../../cycles/cycle-2/C2-AU/REPORT.md"
+      ],
+      "source_claim_ids": [
+        "C2-T3-UNIVERSAL-FIRST-DESCENT-AND-RATIO-SHARPENING"
+      ],
+      "alias_comparison": [
+        "E993-PATH-STAR-RGE2-FIRST-DESCENT-MPLUS1 has a different bound and applies to all r_i>=2; neither normalized statement duplicates the other.",
+        "E993-PATH-STAR-ARITY-2-4-MAIN-MARK-RELATIVE-BINOMIAL-MARGIN-QNPLUS1 is a formally verified T_i/C cross inequality, not this first-descent/parent-ratio bound.",
+        "The C2 source's stronger v+1/delta expression is refuted by the separate candidate below."
+      ],
+      "minimum_known_witnesses": []
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-LOCAL-MASS-CUTOFF-238",
+      "registry_action": "propose_new",
+      "status": "PROPOSED_VERIFIED",
+      "evidence_grade": "universal_informal_coefficient_proof_with_exact_rational_constant_nonformal",
+      "statement": "For every common-family profile with m>=238, every represented branch i, and every natural j satisfying 5j>2N-1 and 2j<=N-2, put delta=N+1-j and D_j=binom(N,j+1)-binom(N,j). Then T_i[j]>3 delta D_j/2. This is branchwise and independent of current-p selector flags. The exact singleton probability used in the proof for another block of size s, M=N-r_i, is s(j/M) product_{a=0}^{s-2}(M-j-a)/(M-1-a).",
+      "scope": "All m>=238 and arity-2,3,4 profiles on the displayed rank band, including ranks without any eligible p. No full-selection or selected-aggregate hypothesis; no formal award. Integer inequality may equivalently be written 2T_i[j]>3 delta D_j.",
+      "dependencies": [
+        "E993-PATH-STAR-ARITY-2-4-OCCUPANCY-JENSEN-COFACTOR (proposed)",
+        "corrected singleton probability",
+        "j/M>39/100 and product factors>48/100",
+        "binom(N-r_i,j)/binom(N,j)>(49/100)^4>1/18",
+        "degree-20 exact Taylor comparison at m=238",
+        "delta D_j/binom(N,j)<3(N-3)/10"
+      ],
+      "evidence": [
+        "../../cycles/cycle-2/C2-AU/REPORT.md",
+        "../../cycles/cycle-2/C2-SYNTHESIS/REPORT.md",
+        "../../cycles/cycle-2/C2-SYNTHESIS/independent_evidence.json"
+      ],
+      "source_claim_ids": [
+        "C2-U3-LOCAL-MASS-CUTOFF-238"
+      ],
+      "alias_comparison": [
+        "The registered m266 selected MASS key concerns A and actual selectors, while this claim is branchwise T_i with no selector or eligibility premise.",
+        "The all-m selected MASS and primary keys are different stronger-scope predicates.",
+        "No separate canonical conditional-MASS key is needed; it is an immediate application of this inequality."
+      ],
+      "minimum_known_witnesses": []
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-ALL-M-LOWER-HALF-FULL-SELECTION",
+      "registry_action": "propose_new",
+      "status": "PROPOSED_VERIFIED",
+      "evidence_grade": "source_dependent_complete_finite_census_plus_informal_analytic_tail_nonformal",
+      "statement": "For every common-family ordinary path-star with m>=1 and every actual eligible lower-half natural p, Delta_p A0<0 and Delta_p Ai<0 for every distinct branch i. Thus every one of the N+1 original leaves is strictly selected at current p, e0=ei=1, b=N+1, and endpoint-only selection is impossible at that scope.",
+      "scope": "All arity-2,3,4 profiles, every actual p satisfying x+2<=p, 3p<2(N+2)+1, 2p<=N+2, zero extension and original distinct leaf tags. Does not assert selection at eligible upper-half ranks or supply a census-free proof.",
+      "dependencies": [
+        "C2-T2-ENDPOINT-ONLY-FINITE-EXCLUSION-SCAN (complete full-selection data through m=80, independently replayed by C2-CF-T2)",
+        "E993-PATH-STAR-ARITY-2-4-M42-265-LOWER-HALF-EXACT-BASE (registered selector clause)",
+        "E993-PATH-STAR-ARITY-2-4-M266-ANALYTIC-ELIGIBLE-TAIL (registered selector clause)"
+      ],
+      "evidence": [
+        "../../cycles/cycle-2/C2-T2/selector-audit.json",
+        "../../cycles/cycle-2/C2-CF-T2/selector-audit-replay.json",
+        "../../cycles/cycle-2/C2-T2/selector_audit.py",
+        "../../sources/predecessor/hybrid-family-proof.md",
+        "../../control/C2-REGISTERED-CLAIM-IDENTITY.json"
+      ],
+      "source_claim_ids": [
+        "C2-T2-ENDPOINT-ONLY-FINITE-EXCLUSION-SCAN"
+      ],
+      "alias_comparison": [
+        "E993-PATH-STAR-ARITY-2-4-M41-EXACT-SLICE and E993-PATH-STAR-ARITY-2-4-M42-265-LOWER-HALF-EXACT-BASE state restricted full selection.",
+        "E993-PATH-STAR-ARITY-2-4-M266-ANALYTIC-ELIGIBLE-TAIL states a restricted lower-half selector clause.",
+        "E993-ORDINARY-PATH-STAR-ARITY-2-4-ALL-M-LOWER-REGION-AGGREGATE states S<=0, not all-m full selection.",
+        "E993-PATH-STAR-SELECTED-BRACKET-IDENTITY merely defines strict flags.",
+        "The literal endpoint-only-exclusion statement is a consequence; a census-free proof remains an obligation, not an OPEN canonical predicate."
+      ],
+      "minimum_known_witnesses": []
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-M238-SELECTED-LOWER-MASS",
+      "registry_action": "propose_new_preserve_existing_m266_key",
+      "status": "PROPOSED_VERIFIED",
+      "evidence_grade": "source_dependent_computer_assisted_informal_nonformal",
+      "statement": "For every common-family ordinary path-star with m>=238 and every actual eligible lower-half p, the exact original-tag current-p selected mass satisfies A=sum_i r_i ei T_i[j]>=b delta D_j, where b=e0+sum_i r_i ei and all quantities use the actual first strict parent descent and all three guards. The displayed proof in fact gives strict inequality at every such row because full selection makes b=N+1 and every T_i[j]>3 delta D_j/2.",
+      "scope": "Proper m>=238 restriction of the registered all-m OPEN selected MASS identity, including all arity-count profiles and every actual eligible lower-half rank; no arbitrary-tree extension, no high-half statement, no Lean award. Implies exact-ratio payment only at this restricted cutoff.",
+      "dependencies": [
+        "E993-PATH-STAR-ARITY-2-4-LOCAL-MASS-CUTOFF-238 (proposed)",
+        "E993-PATH-STAR-ARITY-2-4-ALL-M-LOWER-HALF-FULL-SELECTION (proposed)",
+        "E993-PATH-STAR-ARITY-2-4-FIRST-DESCENT-RATIO-BAND (proposed rank-band implication)"
+      ],
+      "evidence": [
+        "../../cycles/cycle-2/C2-SYNTHESIS/REPORT.md",
+        "../../cycles/cycle-2/C2-AU/REPORT.md",
+        "../../cycles/cycle-2/C2-T2/selector-audit.json",
+        "../../sources/predecessor/hybrid-family-proof.md",
+        "../../control-proposals/C2-tail-composition-candidate.md"
+      ],
+      "source_claim_ids": [
+        "C2-U3-LOCAL-MASS-CUTOFF-238",
+        "C2-U3-BRANCH-SELECTION-CONDITIONAL-MASS"
+      ],
+      "alias_comparison": [
+        "E993-PATH-STAR-ARITY-2-4-M266-SELECTED-LOWER-MASS is the historical proper m>=266 restriction and remains valid separately.",
+        "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION is all-m OPEN, so this cutoff must not update its status.",
+        "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT is the weaker all-m OPEN primary, which this theorem settles only for m>=238.",
+        "The registered all-m aggregate S<=0 is weaker and is not a proof dependency."
+      ],
+      "minimum_known_witnesses": []
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-OVERSTRONG-RATIO-BOUND",
+      "registry_action": "propose_new_refutation",
+      "status": "PROPOSED_REFUTED",
+      "evidence_grade": "exact_literal_tree_counterexample_independently_replayed_nonformal",
+      "statement": "The universal assertion that kappa=1-t+t/delta>v+1/delta at every actual eligible lower-half common-family row, where t=C[j+1]/C[j] and v=(binom(q,x)-binom(q,x-1))/C[x], is false. The correct proven lower bound is kappa>v+(1-v)/delta.",
+      "scope": "Refutes only the C2-T3/C2-CU-T3 overstated normalization, not exact-ratio payment, selected MASS, relative margin, or the corrected bound.",
+      "dependencies": [
+        "literal path-star independence-polynomial tree DP",
+        "actual first descent and strict selectors"
+      ],
+      "evidence": [
+        "./normalization-literal-replay.py",
+        "./normalization-literal-replay.json",
+        "../../control-proposals/C2-normalization-literal-check.json",
+        "../../cycles/cycle-2/C2-AT/REPORT.md"
+      ],
+      "source_claim_ids": [
+        "C2-CF-T3-NORMALIZATION-COUNTEREXAMPLE",
+        "C2-T3-UNIVERSAL-FIRST-DESCENT-AND-RATIO-SHARPENING"
+      ],
+      "alias_comparison": [
+        "No registered normalization-bound key or alias is equivalent.",
+        "E993-PATH-STAR-ARITY-2-4-SPREAD-NORMALIZED-EXACT-RATIO-NONDECREASING concerns a spread quotient, not this within-profile factor.",
+        "The corrected positive theorem has its own first-descent/rank candidate."
+      ],
+      "minimum_known_witnesses": [
+        {
+          "minimality_claim": "smallest_known_in_supplied_verified_evidence_only; no global minimality claim",
+          "counts_a2_a3_a4": [
+            0,
+            38,
+            0
+          ],
+          "m": 38,
+          "n": 155,
+          "N": 114,
+          "alpha": 116,
+          "x": 55,
+          "p": 57,
+          "j": 55,
+          "delta": 60,
+          "b": 115,
+          "all_original_leaf_flags_selected": true,
+          "kappa": "10046229104518113012063545094727/580516383375585058660432089220920",
+          "false_bound_v_plus_inverse_delta": "5025084124803012972339453667081/290258191687792529330216044610460",
+          "correct_bound_v_plus_one_minus_v_over_delta": "5021959998191794014281078340577/290258191687792529330216044610460",
+          "full_primary_margin_sign": "positive",
+          "exact_data": "./normalization-literal-replay.json"
+        }
+      ]
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-EMPTY-SINGLETON-PAYMENT",
+      "registry_action": "propose_new_refutation",
+      "status": "PROPOSED_REFUTED",
+      "evidence_grade": "exact_literal_tree_counterexample_independently_replayed_nonformal",
+      "statement": "Let U_i[j]=[z^j](G F_{r_i} L^{N-r_i})+sum_{k!=i}[z^{j-1}](G F_{r_i} L^{N-r_i-r_k}), the center-choice lower bound retaining only empty and singleton selections of other centers. The universal assertion that replacing A by A_U=sum_i r_i ei U_i[j] in the exact-ratio payment gives (delta C[j]-(delta-1)C[j+1])A_U>=b delta D_j C[j] on every actual eligible lower-half common-family row is false.",
+      "scope": "Refutes only universal payment by this coefficient floor. U_i[j]<=T_i[j] remains valid; true full-T_i exact-ratio payment and MASS are positive at the retained witness. No universal negative primary or all-m MASS claim.",
+      "dependencies": [
+        "center-choice expansion",
+        "literal path-star independence-polynomial tree DP",
+        "actual first descent and strict selectors"
+      ],
+      "evidence": [
+        "./truncation-literal-replay.py",
+        "./truncation-literal-replay.json",
+        "../../control-proposals/C2-truncation-min-witness-literal-check.json",
+        "../../cycles/cycle-2/C2-AU/REPORT.md"
+      ],
+      "source_claim_ids": [
+        "C2-U2-ELEMENTARY-FLOOR-PAYS-SELECTED-PAYMENT",
+        "C2-F2-HOMOGENEOUS-EMPTY-SINGLETON-TRUNCATION-OBSTRUCTION"
+      ],
+      "alias_comparison": [
+        "The predecessor structural reductions record a different m=150 failure of the stronger MASS payment by U_i; the present predicate is the exact-ratio payment by U_i.",
+        "No registered exact-ratio truncation-refutation key or alias is equivalent.",
+        "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT retains full T_i and remains OPEN."
+      ],
+      "minimum_known_witnesses": [
+        {
+          "minimality_claim": "smallest_known_in_supplied_verified_evidence_only; no global minimality claim",
+          "counts_a2_a3_a4": [
+            0,
+            0,
+            172
+          ],
+          "m": 172,
+          "n": 863,
+          "N": 688,
+          "alpha": 690,
+          "x": 334,
+          "p": 336,
+          "j": 334,
+          "delta": 355,
+          "b": 689,
+          "all_original_leaf_flags_selected": true,
+          "truncated_exact_ratio_margin_sign": "negative",
+          "full_exact_ratio_margin_sign": "positive",
+          "full_mass_margin_sign": "positive",
+          "exact_integer_margins_and_graph": "./truncation-literal-replay.json"
+        }
+      ]
+    }
+  ],
+  "retain_existing_statuses": [
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+      "status": "OPEN",
+      "reason": "The composed m>=238 tail leaves m<=237 unproved."
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION",
+      "status": "OPEN",
+      "reason": "The composed m>=238 tail is a proper restriction only."
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-M266-SELECTED-LOWER-MASS",
+      "status": "VERIFIED",
+      "reason": "Preserve its historical restricted identity and existing evidence."
+    }
+  ],
+  "research_obligations_not_canonical_open_predicates": [
+    "Independent census-free proof of lower-half endpoint-only exclusion or full selection",
+    "Proof or counterexample for full selected MASS and exact-ratio payment at all actual eligible rows with m<=237"
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "worker_id": "C2-CF-T2",
+  "cycle": 2,
+  "stage": "critique",
+  "orientation": "F",
+  "covered_claim_ids": [
+    "C2-T2-ENDPOINT-ONLY-FINITE-EXCLUSION-SCAN",
+    "C2-T2-NEGATIVE-COFACTOR-SLOPE-SELECTED-CONTROL",
+    "C2-T2-SELECTOR-THRESHOLD-IDENTITY",
+    "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT"
+  ],
+  "claims": [
+    {
+      "claim_id": "C2-T2-SELECTOR-THRESHOLD-IDENTITY",
+      "statement": "For each arity class r present at a current eligible rank p, with u=Delta_p A0 and d_r=Delta_(p-3)(F_r H_r), the strict selectors satisfy e0=1 iff u<0 and e_r=1 iff d_r>u; endpoint-only selection is equivalent to u<0 and d_r<=u for every present class.",
+      "scope": "Ordinary m>=1 distinct-center arity-2/3/4 path-stars. N=sum_i r_i, q=N+1, alpha=N+2, x the least natural k with zero-extended Delta_k P<0 including the terminal degree, and p natural with x+2<=p, 3p<2alpha+1, 2p<=alpha. Selectors are strict and evaluated at this p; branch i retains its r_i original private-tip tags. No sign restriction on d_r.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-2/C2-CF-T2/REPORT.md"],
+      "reason": "The polynomial identity A0-Ai=z^3 F_r H_i and the forward-difference shift prove the selector equivalence, including the equality boundary."
+    },
+    {
+      "claim_id": "C2-T2-ENDPOINT-ONLY-FINITE-EXCLUSION-SCAN",
+      "statement": "No endpoint-only row occurs in the exact scan through m=80 or in the five named controls; every reported eligible row has endpoint selection and all present branch-class selectors on.",
+      "scope": "Bounded computation over all 91,880 nonnegative count triples with 1<=m<=80 and all 133,194 actual rows satisfying x+2<=p, 3p<2alpha+1, 2p<=alpha, plus direct-factor controls (0,12,10), (0,12,11), (0,10,13), (1,8,14), (0,0,173). The first descent is strict with zero extension; flags are strict and evaluated at each current p; original tip multiplicities are r_i.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-2/C2-CF-T2/REPORT.md", "cycles/cycle-2/C2-CF-T2/selector_audit_replay.py", "cycles/cycle-2/C2-CF-T2/selector-audit-replay.json"],
+      "reason": "The copied producer replay matches its assigned JSON exactly; the finite horizon supports only this bounded statement."
+    },
+    {
+      "claim_id": "C2-T2-NEGATIVE-COFACTOR-SLOPE-SELECTED-CONTROL",
+      "statement": "For counts (a2,a3,a4)=(0,12,10) at x=37,p=39, both cofactor slopes d3,d4 are negative and both corresponding branch classes are selected, with the endpoint selected.",
+      "scope": "One ordinary path-star profile with m=22, N=76, alpha=78, q=77, x=37, p=39, j=37, delta=40 and guards x+2<=p, 3p<2alpha+1, 2p<=alpha. The current-p strict flags retain one endpoint tag and r_i original tip tags per branch.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-2/C2-CF-T2/REPORT.md", "cycles/cycle-2/C2-CF-T2/independent_checks.py", "cycles/cycle-2/C2-CF-T2/independent-checks.json"],
+      "reason": "Direct multiplication gives u=-11319302108154726892710, d3=-895239471360525542716 and d4=-1240837532571249046896; both d_r exceed u, making the strict branch flags on."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+      "statement": "For every actual eligible lower-half rank of every ordinary arity-2/3/4 path-star, (delta*C[j]-(delta-1)*C[j+1])*A >= b*delta*D_j*C[j].",
+      "scope": "Exact current-p strict selected payment with x the actual least strict zero-extended descent of P, x+2<=p, 3p<2alpha+1, 2p<=alpha, j=p-2, delta=q-j, D_j=binom(N,j+1)-binom(N,j), one endpoint tag and original branch multiplicities r_i. This row proposes no broader graph or aggregate claim.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-2/C2-CF-T2/REPORT.md"],
+      "reason": "The endpoint-only obstruction is conditional on the payment, and bounded controls do not establish a universal lower bound or provide a counterexample."
+    },
+    {
+      "claim_id": "C2-CF-T2-ENDPOINT-PAYMENT-OBSTRUCTION",
+      "statement": "At any actual eligible lower-half row with e0=1 and all branch selectors off, the exact-ratio payment margin equals -delta*D_j*C[j]<0; thus the payment, if true, forces endpoint-only exclusion.",
+      "scope": "Ordinary m>=1 distinct-center arity-2/3/4 path-stars; actual first strict zero-extended descent x including the terminal degree; p satisfies x+2<=p, 3p<2alpha+1, 2p<=alpha; current-p strict selectors; j=p-2 and delta=q-j; original r_i tag multiplicities. This is an implication of the primary payment, not an independent proof of exclusion.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": ["cycles/cycle-2/C2-CF-T2/REPORT.md"],
+      "reason": "The guards give j<N/2 and hence D_j>0; q>j gives delta>0; C[j]>0. With A=0,b=1 the margin is exactly the stated negative integer."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-CF-T2/REPORT.md",
+  "limitations": [
+    "Universal endpoint-only exclusion and universal full selection remain unproved; the exhaustive scan is limited to 1<=m<=80 plus five specified controls.",
+    "The assigned source computation was replayed from a scratch copy; the distinct-factor evaluator independently recalculates the named controls, not the full 91,880-profile grid.",
+    "No primary counterexample or all-parameter proof was found; no aggregate result was used to infer the primary payment."
+  ],
+  "status_authority": "proposed_worker_only"
+}

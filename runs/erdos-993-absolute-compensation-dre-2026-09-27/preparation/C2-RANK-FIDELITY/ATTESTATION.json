@@ -1,0 +1,41 @@
+{
+  "reviewer_id": "C2-RANK-FIDELITY",
+  "reviewer_kind": "independent-mathematical-formalization-fidelity-reviewer",
+  "attestation_id": "C2-RANK-FIDELITY-20260928T063131Z-5b8e1f7c",
+  "completed_at": "2026-09-28T06:32:33Z",
+  "contract_projection_sha256": "4d70c464fbca6879e64347aae5ab27a283ce093e0078dc1db27e600237bf1ca8",
+  "binding_projection_sha256": "5f6a4b87f952959f1ec7a09405835d0dafac3191044673e1aaff94a1dbfb8deb",
+  "verdict": "match",
+  "findings": [
+    {
+      "category": "exact_statement_and_semantics",
+      "severity": "note",
+      "message": "The current Lean theorem and e993RankParent definition match the exact contract: all finite arity-2/3/4 lists including empty and repeated entries, every natural strict coefficient descent with zero extension, rational polynomial coefficients, and natural conclusion 2*rs.sum <= 5*k. The proof adds no premise or encoding trick."
+    },
+    {
+      "category": "byte_binding_and_kernel_evidence",
+      "severity": "note",
+      "message": "All 57 dispatched files within the permitted reading scope match their SHA-256 values. Current contract, source, Main, snippet, audit-input, and kernel-receipt cross-hashes agree. The kernel evidence reports successful checks of this Main hash with exactly propext, Classical.choice, and Quot.sound; Lean was not rerun."
+    },
+    {
+      "category": "registration_whitespace",
+      "severity": "note",
+      "message": "Each of the two adapted definitions differs from its original proposal only by a newline between noncomputable and def; the registered tokens and theorem statement are unchanged."
+    },
+    {
+      "category": "projection_digest_method",
+      "severity": "warning",
+      "message": "The permitted materials supply the two fingerprint digest values but not their projection-preimage algorithm. I independently compared the current contract and binding facets and exact source/receipt hashes before copying the digests, but cannot claim independent recomputation of the projection SHA-256 values."
+    },
+    {
+      "category": "claim_identity_scope",
+      "severity": "note",
+      "message": "This exact coefficient lemma warrants a separate identity proposal. It proves only the first-descent rank clause of the existing composite first-descent/ratio key and neither its ratio clauses nor a graph, MASS, payment, or primary result."
+    },
+    {
+      "category": "spread_witness_metadata",
+      "severity": "note",
+      "message": "The recorded normalized spread witness has m=23 and N=82, giving ordinary path-star order N+m+3=108. This supports proposed witness-order metadata without a global minimality claim or a status change."
+    }
+  ]
+}

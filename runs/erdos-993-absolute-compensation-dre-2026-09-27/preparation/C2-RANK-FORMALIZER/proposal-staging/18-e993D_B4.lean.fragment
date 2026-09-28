@@ -1,0 +1,2 @@
+lemma e993D_B4 : e993D 4 ((1 + X : Polynomial ℚ)^4 + X) = 7 + 6*X + 12*X^2 + 4*X^3 := by
+  norm_num [e993D, derivative_pow, e993C2, e993C3, e993C4]; ring

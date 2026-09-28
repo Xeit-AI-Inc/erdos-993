@@ -1,0 +1,8 @@
+lemma e993NN_Dpow (n : ℕ) : e993NN (e993D n ((1 + X : Polynomial ℚ)^n)) := by
+  induction n with
+  | zero => simpa [e993D_one] using e993NN_zero
+  | succ n ih =>
+      have h := e993NN_add
+        (e993NN_mul ih e993NN_L)
+        (e993NN_mul (e993NN_pow e993NN_L n) (by simpa [e993D_L] using e993NN_one))
+      simpa only [pow_succ, e993D_mul, Nat.succ_eq_add_one, e993D_L] using h

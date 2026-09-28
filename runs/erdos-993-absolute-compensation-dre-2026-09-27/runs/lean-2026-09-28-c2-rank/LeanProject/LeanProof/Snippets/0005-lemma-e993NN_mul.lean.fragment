@@ -1,0 +1,7 @@
+lemma e993NN_mul {p q : Polynomial ℚ} (hp : e993NN p) (hq : e993NN q) :
+    e993NN (p * q) := by
+  intro n
+  rw [coeff_mul]
+  apply Finset.sum_nonneg
+  intro x hx
+  exact mul_nonneg (hp x.1) (hq x.2)

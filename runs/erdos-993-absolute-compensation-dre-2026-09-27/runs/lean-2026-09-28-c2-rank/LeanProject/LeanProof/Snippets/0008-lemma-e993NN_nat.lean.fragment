@@ -1,0 +1,4 @@
+lemma e993NN_nat (m : ℕ) : e993NN (m : Polynomial ℚ) := by
+  intro n
+  rw [← C_eq_natCast, coeff_C]
+  split_ifs <;> positivity

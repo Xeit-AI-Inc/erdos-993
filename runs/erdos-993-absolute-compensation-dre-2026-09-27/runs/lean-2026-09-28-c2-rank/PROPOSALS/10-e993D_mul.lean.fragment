@@ -1,0 +1,4 @@
+lemma e993D_mul (a b : ℕ) (p q : Polynomial ℚ) :
+    e993D (a+b) (p*q) = e993D a p * q + p * e993D b q := by
+  simp only [e993D, derivative_mul, Nat.cast_add]
+  ring

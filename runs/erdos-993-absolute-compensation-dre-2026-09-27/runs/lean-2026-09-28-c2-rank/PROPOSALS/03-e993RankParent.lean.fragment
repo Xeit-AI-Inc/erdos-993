@@ -1,0 +1,3 @@
+noncomputable def e993RankParent (rs : List ℕ) : Polynomial ℚ :=
+  (1 + 2 * X) * (rs.map (fun r => (1 + X)^r + X)).prod +
+    X * (1 + X)^(rs.sum + 1)

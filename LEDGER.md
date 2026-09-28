@@ -1,6 +1,20 @@
 # Erdős #993 — Master Proof Ledger
 
-## Active experiment — absolute compensation, Cycle1 complete, 2026-09-28
+## Active experiment — Cycle2 closed, 2026-09-28
+
+Cycle2 is closed with all9/18/3/1 standard seats and the governed Lean gate complete. The exact rational-polynomial theorem e993_rank_any_strict_descent is formally_verified: every finite arity2/3/4 list, including empty and repeated entries, and every strict coefficient descent k of its parent polynomial satisfy2N<=5k. Independent informal, kernel/axiom, fidelity and controller close gates passed. This is a coefficient-only auxiliary award; it does not formalize the graph bridge, the composite ratio theorem, selectors, MASS, payment or Erdős993.
+
+The new C2 nonformal results remain as recorded below: occupancy/Jensen, corrected rank/ratio bounds, local238, all-m lower-half full selection by complete finite plus analytic-tail composition, and selected MASS from238. All-m MASS and exact-ratio payment remain OPEN. The three new C3 coefficient/rank identities remain OPEN pending the full cycle. The registry has505 identities:316 VERIFIED,101 REFUTED,26 CONDITIONAL,62 OPEN, at mixed grades. One additional exact coefficient identity was registered; the older spread refutation now records its retained witness order108 without a global minimality claim. All previous mathematical statements, statuses and grades are preserved.
+
+Run experiments/erdos-993-absolute-compensation-dre-2026-09-27 continues into C3; the rank award is not a decisive primary stop. Astra's independent midpoint review follows C3 and its final review follows C6. Frozen Code intake remains r30. The arbitrary-tree aggregate, weighted Hall, governed beta and Erdős993 remain OPEN.
+
+## Historical Cycle2 mathematical checkpoint, 2026-09-28
+
+Cycle2 has completed all9 search routes,18 cross critics,3 origin adjudicators and neutral synthesis. Independent post-synthesis review establishes all-m lower-half full original-leaf selection by complete finite plus analytic-tail composition, and unconditional selected MASS for m>=238 using the new branchwise coefficient bound. These are nonformal, source-dependent results; the selection proof uses inherited selector clauses, not the aggregate-sign conclusion. Occupancy/Jensen and the corrected first-descent/ratio inequalities have universal informal proofs. The overstated kappa>v+1/delta bound is REFUTED at n155; empty/singleton exact-ratio payment is REFUTED at the smallest retained known n863 witness. Full payment and MASS stay positive at both controls. The all-m selected MASS and exact-ratio primary remain OPEN after C2 mathematical review.
+
+The registry now has504 identities:315 VERIFIED,101 REFUTED,26 CONDITIONAL,62 OPEN, at mixed grades. All494 prior claim objects are preserved. Three new OPEN Cycle3 obligations are the actual-eligible branchwise3/2 bound, adjacent-arity Jensen-exponent balancing, and profile-sensitive strict-descent rank. The proposed m1..69 prefix, m70..119 scalar certificate and m>=120 analytic bound await independent C3 review. No private candidate receives an award. A separate coefficient-only any-strict-descent rank theorem is in the governed Lean gate; no new formal award is claimed yet. The exact C2 audit is experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C2-C3-IDENTITY/REPORT.md. Astra reviews remain scheduled after C3/C6. Code source remains frozen r30; global Erdős993 and arbitrary-tree obligations remain OPEN.
+
+## Historical checkpoint — absolute compensation, Cycle1 complete, 2026-09-28
 
 The six-cycle absolute-compensation run has completed Cycle1 with all9/18/3/1 seats. The all-m exact-ratio payment and stronger selected MASS remain OPEN. A new m>=266 restriction of MASS is VERIFIED at source-dependent informal analytic grade, with no formal award; the deduction uses intermediate estimates, not the predecessor aggregate conclusion. Normalized exact-ratio quotient nondecrease under (3,3)->(2,4) is REFUTED by a literal108-vertex pair, while both primary payment margins stay positive. The master now contains494 identities:310 VERIFIED,99 REFUTED,26 CONDITIONAL,59 OPEN. Previous492 claim objects are unchanged. These mixed-grade counts are not a percentage solved.
 

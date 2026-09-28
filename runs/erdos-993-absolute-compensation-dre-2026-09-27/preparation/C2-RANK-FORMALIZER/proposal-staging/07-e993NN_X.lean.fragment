@@ -1,0 +1,4 @@
+lemma e993NN_X : e993NN (X : Polynomial ℚ) := by
+  intro n
+  rw [coeff_X]
+  split_ifs <;> norm_num

@@ -1,0 +1,166 @@
+{
+  "worker_id": "C2-AU",
+  "cycle": 2,
+  "stage": "adjudication",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "C2-U1-FIXED-SUBSET-COFACTOR-BOUND",
+      "statement": "For H=product_l((1+z)^s_l+z), M=sum s_l, 0<=k<=M, p_l=s_l*binom(M-s_l,k-1)/binom(M,k), u=sum_l 2p_l/(2s_l+1), H[k]>=binom(M,k)*sum_(a=0)^4 u^a/a!.",
+      "scope": "Every finite disjoint block family with s_l in {2,3,4}, including empty family; zero-extended binomials. Applied to path-star H_i and T_i[k]>=H_i[k].",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AU/REPORT.md"
+      ],
+      "reason": "Informal proof: fixed-size subset identity, finite Jensen, rational log lower bound, positive Taylor floor. Does not certify selected debt."
+    },
+    {
+      "claim_id": "C2-U1-LOCAL-SELECTED-MASS-SUFFICIENCY",
+      "statement": "If w=sum_i r_i ei>0 and every selected T_i[j]>=3 delta D/2, then A>=b delta D and exact-ratio payment follows.",
+      "scope": "Ordinary path-stars: m>=1 distinct branches r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2, P=C+zL^q; x least natural strict zero-extended Delta_k P<0 including terminal; natural p with x+2<=p, 3p<2alpha+1, 2p<=alpha; j=p-2, delta=q-j, D=binom(N,j+1)-binom(N,j); actual current-p strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], original endpoint multiplicity one and branch multiplicity r_i; b=e0+sum r_i ei, A=sum r_i ei T_i[j]. Conditional on w>0 and the local coefficient threshold; endpoint-only excluded.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AU/REPORT.md"
+      ],
+      "reason": "Informal proof: w>=2, so 3w/2>=w+e0; MASS implies payment via 1-t+t/delta>=1/delta for 0<t<1."
+    },
+    {
+      "claim_id": "C2-U1-EXACT-TARGETED-OBSTRUCTION-CONTROLS",
+      "statement": "Named tested rows have positive true payment and MASS; negative cofactor slopes, decreasing spread quotient and m=173 truncation failure obstruct only their auxiliary shortcuts.",
+      "scope": "Bounded eight producer profiles and listed eligible rows, including (0,12,10), all-r4 m173, and (0,10,13)->(1,8,14) at p=42; actual first descent, guards and current-p flags; no universal extension.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AU/REPORT.md",
+        "cycles/cycle-2/C2-AU/independent_check.py",
+        "cycles/cycle-2/C2-AU/independent_check.json"
+      ],
+      "reason": "Bounded exact evidence from source and two independent critics; our m173 replay confirms the distinct floor and true margins."
+    },
+    {
+      "claim_id": "C2-U2-DISJOINT-BLOCK-OCCUPANCY-IDENTITY",
+      "statement": "For disjoint blocks V_i of positive sizes r_i and 0<=u<=M=sum r_i, Q[u]=sum over u-subsets S of product_i(1+1[|S intersect V_i|=1]/r_i), Q=product_i((1+z)^r_i+z).",
+      "scope": "All finite disjoint positive block families, including empty, and 0<=u<=M; no independence assumption.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AU/REPORT.md"
+      ],
+      "reason": "Informal proof by partitioning fixed-size subsets by block occupancy vector."
+    },
+    {
+      "claim_id": "C2-U2-RATIONAL-POWER-AMGM-AND-ELEMENTARY-FLOOR",
+      "statement": "For B=binom(M,u)>0, Q[u]^B>=B^B product_i(1+1/r_i)^(r_i binom(M-r_i,u-1)); also Q[u]>=binom(M,u)+sum_i binom(M-r_i,u-1).",
+      "scope": "Disjoint positive block families; power bound for 0<=u<=M; additive bound for all natural u under zero extension; no selectors.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AU/REPORT.md"
+      ],
+      "reason": "Informal proof by finite AM-GM and the pointwise product floor, depending on the occupancy identity."
+    },
+    {
+      "claim_id": "C2-U2-OCCUPANCY-TO-TI-COEFFICIENT-BRIDGE",
+      "statement": "For each branch i, convolving H_i[v]>=binom(N-r_i,v)+sum_(h!=i)binom(N-r_i-r_h,v-1) with nonnegative G F_(r_i) gives U_i[j]<=T_i[j].",
+      "scope": "Every ordinary arity-2/3/4 path-star, every integer coefficient j with zero extension; unconditional coefficient bound, no eligibility claim.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AU/REPORT.md"
+      ],
+      "reason": "Informal proof by exact convolution with G=1+2z and F_r=sum_(a=0)^(r-2)L^a."
+    },
+    {
+      "claim_id": "C2-U2-ELEMENTARY-FLOOR-PAYS-SELECTED-PAYMENT",
+      "statement": "The elementary cofactor floor substituted for selected T_i coefficients certifies exact-ratio payment at all-r4 m=173, p=338.",
+      "scope": "Specific actual eligible row: m=173, N=692, n=868, alpha=694, first descent x=336, p=338, j=336, delta=357; all guards; strict e0=ei=1, b=693; A_lower=692 U_4[j].",
+      "status": "proposed_rejected",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AU/REPORT.md",
+        "cycles/cycle-2/C2-AU/independent_check.py",
+        "cycles/cycle-2/C2-AU/independent_check.json"
+      ],
+      "reason": "Independent exact integer replay gives a negative floor-payment margin while the true payment and MASS margins are positive. Refutes only this certificate, not primary or MASS."
+    },
+    {
+      "claim_id": "C2-CT-U2-ALL-INTERACTION-OCCUPANCY-EXPANSION",
+      "statement": "Q[u]=sum_(J subset block indices) binom(M-sum_(i in J)r_i,u-|J|).",
+      "scope": "Every finite disjoint positive block family and natural u, with zero-extended binomials; no payment conclusion.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AU/REPORT.md"
+      ],
+      "reason": "Informal proof by selecting the z term in factors indexed by J; complete center-choice expansion, already implicit in neutral source."
+    },
+    {
+      "claim_id": "C2-U3-LOCAL-MASS-CUTOFF-238",
+      "statement": "For m>=238 and 5j>2N-1, 2j<=N-2, every represented T_i[j]>3 delta D/2; hence the estimate applies to every actual eligible lower-half j.",
+      "scope": "Ordinary arity-2/3/4 path-stars, m>=238, delta=N+1-j, D=binom(N,j+1)-binom(N,j); actual eligible transfer uses the least strict zero-extended first descent and all guards in the exact target scope; independent of current-p flags and aggregate.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AU/REPORT.md",
+        "cycles/cycle-2/C2-AU/independent_check.py",
+        "cycles/cycle-2/C2-AU/independent_check.json"
+      ],
+      "reason": "Informal proof after repairing singleton probability numerator to M-j-a; source smaller-factor bounds remain valid. Our product-ratio derivation gives 5x>2N-1. Rational cutoff independently checked; no formal award."
+    },
+    {
+      "claim_id": "C2-U3-BRANCH-SELECTION-CONDITIONAL-MASS",
+      "statement": "For m>=238 actual eligible rows, w>0 implies strict selected MASS; e0=w=0 gives equality; endpoint-only remains uncovered.",
+      "scope": "Same actual first descent, all guards, current-p strict selectors and original multiplicities as exact target, restricted to m>=238 and either w>0 or e0=w=0.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AU/REPORT.md"
+      ],
+      "reason": "Informal implication from repaired local coefficient theorem: w>=2 and 3w/2>=w+e0. No all-selection premise."
+    },
+    {
+      "claim_id": "C2-U3-ENDPOINT-ONLY-EXCLUSION-OPEN",
+      "statement": "An independent selector-only proof that e0=1 implies w>0 has not been supplied.",
+      "scope": "All ordinary arity-2/3/4 path-stars at actual eligible rows with the exact target first descent, guards, zero extension, current-p strict selectors and original multiplicities.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AU/REPORT.md"
+      ],
+      "reason": "Disposition retained as OPEN. Conditional coefficient estimates do not constrain endpoint-only selection; importing accepted aggregate is not a proof of stronger payment."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+      "statement": "(delta*C[j]-(delta-1)*C[j+1])*A >= b*delta*D*C[j].",
+      "scope": "Ordinary path-stars: m>=1 distinct branches r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2, P=C+zL^q; x least natural strict zero-extended Delta_k P<0 including terminal; natural p with x+2<=p, 3p<2alpha+1, 2p<=alpha; j=p-2, delta=q-j, D=binom(N,j+1)-binom(N,j); actual current-p strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], original endpoint multiplicity one and branch multiplicity r_i; b=e0+sum r_i ei, A=sum r_i ei T_i[j].",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AU/REPORT.md"
+      ],
+      "reason": "Disposition retained as OPEN. No universal proof or realizable negative full-payment witness; finite controls, relative margin and computer-assisted aggregate are insufficient."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION",
+      "statement": "A>=b*delta*D.",
+      "scope": "Ordinary path-stars: m>=1 distinct branches r_i in {2,3,4}; N=sum r_i, q=N+1, alpha=N+2, P=C+zL^q; x least natural strict zero-extended Delta_k P<0 including terminal; natural p with x+2<=p, 3p<2alpha+1, 2p<=alpha; j=p-2, delta=q-j, D=binom(N,j+1)-binom(N,j); actual current-p strict e0=1[Delta_p A0<0], ei=1[Delta_p Ai<0], original endpoint multiplicity one and branch multiplicity r_i; b=e0+sum r_i ei, A=sum r_i ei T_i[j]. Stronger than exact-ratio payment.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-2/C2-AU/REPORT.md"
+      ],
+      "reason": "Disposition retained as OPEN. m>=238 branch-selected conditional MASS and m>=266 separately registered source-dependent tail do not establish all m or independently handle endpoint-only selection."
+    }
+  ],
+  "report_path": "cycles/cycle-2/C2-AU/REPORT.md",
+  "limitations": [
+    "No governed Lean verification or new formal award.",
+    "Primary payment and all-m MASS remain OPEN; endpoint-only exclusion is not independently proved.",
+    "m=173 replay is bounded evidence and rejects only the elementary-floor certificate."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C2-CT-U2-ALL-INTERACTION-OCCUPANCY-EXPANSION",
+    "C2-U1-EXACT-TARGETED-OBSTRUCTION-CONTROLS",
+    "C2-U1-FIXED-SUBSET-COFACTOR-BOUND",
+    "C2-U1-LOCAL-SELECTED-MASS-SUFFICIENCY",
+    "C2-U2-DISJOINT-BLOCK-OCCUPANCY-IDENTITY",
+    "C2-U2-ELEMENTARY-FLOOR-PAYS-SELECTED-PAYMENT",
+    "C2-U2-OCCUPANCY-TO-TI-COEFFICIENT-BRIDGE",
+    "C2-U2-RATIONAL-POWER-AMGM-AND-ELEMENTARY-FLOOR",
+    "C2-U3-BRANCH-SELECTION-CONDITIONAL-MASS",
+    "C2-U3-ENDPOINT-ONLY-EXCLUSION-OPEN",
+    "C2-U3-LOCAL-MASS-CUTOFF-238",
+    "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+    "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION"
+  ]
+}
