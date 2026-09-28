@@ -1,5 +1,5 @@
 {
-  "scope": "Cycle4 mathematical checkpoint; full Jensen formalization pending; earlier exact coefficient-only formal awards unchanged; no primary formal award",
+  "scope": "Cycle4 closed with full finite-block coefficient/Jensen/Taylor formal award; prior formal results unchanged; no primary formal award",
   "members": [
     {
       "path": "SOLUTION-CONTRACT.md",
@@ -228,6 +228,22 @@
     {
       "path": "control/C3-MATHEMATICAL-RECONCILIATION.md",
       "sha256": "dd2de45b678dc34ed9a438a3285eaf2547d91292d94e1350507c3364f765478e"
+    },
+    {
+      "path": "control/C4-CONTROLLER-CLOSE.md",
+      "sha256": "9adaa34b96e9ec461581ac5d5d1410a0e90901a8928c63f9a73f6d8662e66153"
+    },
+    {
+      "path": "control/C4-FORMAL-CLOSE-ADDENDUM.md",
+      "sha256": "bceffd28bbd8661d76bd89ee1646ac53561a4356ff59eae10f521ce0d202d6e5"
+    },
+    {
+      "path": "control/C4-JENSEN-DEPENDENCY-PREFLIGHT.md",
+      "sha256": "192b75afebae4518682cdc94cd67cc4d10333849b2b04d428b94b79e6a1abfff"
+    },
+    {
+      "path": "control/C4-LEAN-CANDIDATE-GATE.json",
+      "sha256": "49aeb955ad6a27837f78cc686fd0c8fbed91edabf0e3acece1e33088a90511c6"
     },
     {
       "path": "control/C4-MATHEMATICAL-RECONCILIATION.md",
@@ -2034,6 +2050,506 @@
       "sha256": "f3420b237f67370c6182079b727815be317f66adf5a693585004381739ab66a7"
     },
     {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/.sandbox-tmp/xcrun_db",
+      "sha256": "4d62589acad172d2e1d4c689d2fb2a0c7381614fdf5df35a8bb7cc8fd51b1f64"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/DEPENDENCIES.yaml",
+      "sha256": "f2d29a42fe90c3a2507f3036ce6bb2e6cdf88f979f4c3d6c0becadc179944f32"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/EVIDENCE/INFORMAL-AUDIT.md",
+      "sha256": "7f7635324493514a165016bbc5a17f9965f9cf944c13d3dc46d62779f71399cc"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/EVIDENCE/axioms.txt",
+      "sha256": "854813aa73d8c6993923b26f1393218e8369ac5e5e10d615bddf3dbbe58222cc"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/EVIDENCE/build.log",
+      "sha256": "17581c8b35570f75ce8f9ae912d19c0c32abab30c07c35a18918bf2b99e8c343"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/EVIDENCE/contract-schema-initial-rejection.json",
+      "sha256": "39a156dbc53279ca37ad584b7d26cd3c674453c8d6774db770f9990dc2d5be8e"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/EVIDENCE/fidelity-audit-input-before-review.json",
+      "sha256": "5a617a139ce704251a2ff3e09ea795b37349bca379df45283f1846354d372e63"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/EVIDENCE/lean-verifier.sb",
+      "sha256": "003426cffe27b8d147d7732deb40824269097979c30464f289f1d497bc7a49fe"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/FIDELITY-REVIEW.md",
+      "sha256": "69da53039fff5d393cbe2df633d364a91a4b1cc7bcb1553e7301eb392bbf1b90"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/FORMALIZATION-STATE.json",
+      "sha256": "96c5cb9f99a521eca12e469d84f0a0de887ec532e239fd828a19c414bd59223d"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LOOP-STATE.json",
+      "sha256": "511cad444a4669e08b741309addbf1f40f355498a39243abc0f7a682227027fe"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LOOP-STATE.md",
+      "sha256": "6d7b8a3254246d0d5b79ab8a6980ac46b1886e881ec1929019e2aca85bbc52a5"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof.lean",
+      "sha256": "f4dfdef8320a735eab53d24f4b47d3b60bcb474ffd2c84c77f24ae2fc75fcf31"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Main.lean",
+      "sha256": "a0f07019b366cb194ddd031df0f9f963f2a051f548354349e016aceab6d23e3f"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0001-definition-e993BlockProduct.lean.fragment",
+      "sha256": "39a4eb242309917b4cea453273a0d7af6df82205f9ee93706af053180f28a3be"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0002-definition-e993BlockMass.lean.fragment",
+      "sha256": "03b5ac26ac84d45d313e280e700eab748de756da49239900c04dab557dfa650d"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0003-definition-e993BlockCount.lean.fragment",
+      "sha256": "a36ecd60e8394e595db5164ecd8ad3041886a3f761a97cc4dc1f446c50dc1607"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0004-definition-e993SubsetAverage.lean.fragment",
+      "sha256": "f5e3c55955d99a975188d41dc798a971837e255fa7b201ed9423ee0265ff7fb0"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0005-definition-e993BlockExponent.lean.fragment",
+      "sha256": "faceb6209677defc332399b3a244e4ba6b903d27036e54a98615517d013b57e1"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0006-definition-e993ExpTaylor.lean.fragment",
+      "sha256": "df1cf11775b48b32dca39f92d846d6e57e9f4718648cfcfd0131812c72134a37"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0007-definition-e993Fiber.lean.fragment",
+      "sha256": "043c84b335b136423b2f5e69c81953526e7697700ef093d77f2613070222016c"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0008-definition-e993FiberEquiv.lean.fragment",
+      "sha256": "96653fd262a49d271dab14e59126379c801b60fc3228b3f8f0011cffa63fb28e"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0009-definition-e993CountVec.lean.fragment",
+      "sha256": "52b46c179b2f1c98015c0c9d8bdb5f47cec3790e2223a2174aae7fdbfca8a30d"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0010-definition-e993CountFiberEquiv.lean.fragment",
+      "sha256": "a1a167c0fb8854cf85f11a2575f5a4668b7cf92191410931d8ffaeee38251f53"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0011-definition-e993BlockSet.lean.fragment",
+      "sha256": "fef18d07b024a6726479c9d9140f966e5744d95564b9319435e2f809a15b207f"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0012-lemma-e993_card_ambient.lean.fragment",
+      "sha256": "d708ee04400e30935a78f0cba408a971a68080af5f69dd6c271afb19580f6d25"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0013-lemma-e993_card_subsets.lean.fragment",
+      "sha256": "f0539cc57b797b0638d5c9442163444386837d709526c0395f4dc0bad4c4205f"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0014-lemma-e993_mass_pos.lean.fragment",
+      "sha256": "6b3d90955167199ee7653df0e967d4c2f244ffbfad6e42b986811a9868693faf"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0015-lemma-e993_taylor_le.lean.fragment",
+      "sha256": "d33282ff8ec332f896e150a9458f5a8abefa017c790483e30eedf9f2d1ceee83"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0016-lemma-e993_scalar_log.lean.fragment",
+      "sha256": "07e90e165093497955abe6dd85665533e82faeeffe3a041f1356166373e4ea31"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0017-lemma-e993_exponent_nonneg.lean.fragment",
+      "sha256": "382d32f707d14ffa71fe66ca089b62da9c51207efe16c2078e7ba5a49870101e"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0018-lemma-e993_rebuild_fibers.lean.fragment",
+      "sha256": "012104ad43177c02ae5b475ee9eefed1f7f606360d01fc4b3f07705038ae11e8"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0019-lemma-e993_fiber_rebuild.lean.fragment",
+      "sha256": "e522e8a0a0822903a7ae43188b245996a768b54228fd8bb7af9427422df251f8"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0020-lemma-e993_count_eq_fiber_card.lean.fragment",
+      "sha256": "368c51d64851f7f20af77a85f32c11298d612e19a7a7da205e5fb62b6b46c138"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0021-lemma-e993_sum_counts.lean.fragment",
+      "sha256": "d47d582bcc25c153d6e521c62db76b246a951657af47e779123f005b3d2b4eee"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0022-lemma-e993_count_le.lean.fragment",
+      "sha256": "bf48bbb98d098f6fa5e55f516a19f1b04add684626e075f1978a7c782ffe0167"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0023-lemma-e993_prod_monomial.lean.fragment",
+      "sha256": "f547d3d2fd7e41c659166de8b5277caea8771076b9b4eec75eaacfad9ae463ec"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0024-lemma-e993_coeff_expansion.lean.fragment",
+      "sha256": "648534608ba8d2116cbe179ea8a1cb0498d4b48c92e54f16063790751a3f9344"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0025-lemma-e993_countvec_sum.lean.fragment",
+      "sha256": "06511a070f852a2b379a420f8938e4934eca71053ca23fee220a7a0a279e5894"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0026-lemma-e993_finite_jensen.lean.fragment",
+      "sha256": "b562c54e9a86c695cd41f328d309292734653159348828c21c2874b3032e8890"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0027-lemma-e993_weight_ge_one.lean.fragment",
+      "sha256": "b01eb53d9f2cf1883591c30b522458ad76f29f2eb2b84dccf909901e7185bf3c"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0028-lemma-e993_exp_log_product.lean.fragment",
+      "sha256": "f8b9d524dde3bdd09a685cff4c627f3ea57ee9c6a89f37438a670b8965ed90f4"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0029-lemma-e993_pointwise_log.lean.fragment",
+      "sha256": "b01bf4323bcaa9052a4a3c28666def908a62e093cda166cf074f8eb47d35974e"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0030-lemma-e993_card_block_fiber.lean.fragment",
+      "sha256": "80284d71229e0eb059417393db7232026b6ab4ae2d9380dda394ee6f72ec2b65"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0031-lemma-e993_card_joint_fiber.lean.fragment",
+      "sha256": "c0aa6fad5f749760360e5ee1f04c5dd39445462b72694550e60717ba10f43596"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0032-lemma-e993_card_rank_fiber.lean.fragment",
+      "sha256": "2d7d968a3b4831a5bdc2f941ba714399023bba006db0b4762eab8dadd1601daf"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0033-lemma-e993_countvec_eq_iff.lean.fragment",
+      "sha256": "065da4e601598c021782237e5faab1cc504d624669711af55934fd4f361a36db"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0034-lemma-e993_prod_choose_mul_weight.lean.fragment",
+      "sha256": "ac90a34f0372dcab2c8c31ffa631a4661761c1cb8648df1ceb0fd82b9205220b"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0035-lemma-e993_actual_sum_eq_count_sum.lean.fragment",
+      "sha256": "32feeb2d40a84cfd4c4e5390671f9e4eb43d016d1fcd6da30dbd35fca1b4997d"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0036-lemma-e993_coeff_actual.lean.fragment",
+      "sha256": "e74f5f25efce57e6d0171f41d50bfb5fe9a9419f456334b3f26951179c390564"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0037-lemma-e993_coefficient_average.lean.fragment",
+      "sha256": "739048576c7fbba3e0815e300979a8e5f548d3a66e95bcd91898561d1d867fab"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0038-lemma-e993_card_inter_fiber.lean.fragment",
+      "sha256": "d3db140f9a8364abd484ae61a4cd20e3aa5a1d2f4d9af7133e46f9b7be6488ce"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0039-lemma-e993_blockset_card.lean.fragment",
+      "sha256": "54df21fb0ba5ae093cdd6e92ec84508fc2570b0d1e8b00044c24ab0be6e9cb07"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0040-lemma-e993_fiber_image.lean.fragment",
+      "sha256": "5709293a20455b2d4dd2e50648de0f6db8f195eb62f3d7d0dea8b77cec5003a2"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0041-lemma-e993_count_inter.lean.fragment",
+      "sha256": "337a7acc920ad414b4640d57d11f83cdc510c6bac56acc6ca0a412820f2c491f"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0042-lemma-e993_marginal_count.lean.fragment",
+      "sha256": "1fa1cba6fe4b84d64110fc78273976dcb6e94fd10db3796cefcdef0e10cbc2b6"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0043-lemma-e993_marginal_sum.lean.fragment",
+      "sha256": "c55f6b37ff74402d53b60598353887ca1b5d69b7c9d60c3b6265eb982c97dd2a"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0044-lemma-e993_exponent_eq_average.lean.fragment",
+      "sha256": "50f5809fc788b1c09e393425f963d4b8b39d1897ea759798aa13684712a545f8"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/LeanProof/Snippets/0045-theorem-e993_finite_block_coefficient_jensen.lean.fragment",
+      "sha256": "b7f83f38971232fc6995bee48ad0db950559143e8ee5857282774c1ebab9a5eb"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/lake-manifest.json",
+      "sha256": "52a4d73cb6d885abcc2669f7eb652c81ce369a8a93ce211894a6e6b9f7d46c7c"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/lakefile.toml",
+      "sha256": "45d0ca58145784d5f29322ff21a1335e350c38e72afe8d5396d9c9910b94ff49"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/LeanProject/lean-toolchain",
+      "sha256": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0001-def-e993BlockProduct.lean",
+      "sha256": "39a4eb242309917b4cea453273a0d7af6df82205f9ee93706af053180f28a3be"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0002-def-e993BlockMass.lean",
+      "sha256": "03b5ac26ac84d45d313e280e700eab748de756da49239900c04dab557dfa650d"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0003-def-e993BlockCount.lean",
+      "sha256": "a36ecd60e8394e595db5164ecd8ad3041886a3f761a97cc4dc1f446c50dc1607"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0004-def-e993SubsetAverage.lean",
+      "sha256": "f5e3c55955d99a975188d41dc798a971837e255fa7b201ed9423ee0265ff7fb0"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0005-def-e993BlockExponent.lean",
+      "sha256": "faceb6209677defc332399b3a244e4ba6b903d27036e54a98615517d013b57e1"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0006-def-e993ExpTaylor.lean",
+      "sha256": "df1cf11775b48b32dca39f92d846d6e57e9f4718648cfcfd0131812c72134a37"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0007-def-e993Fiber.lean",
+      "sha256": "043c84b335b136423b2f5e69c81953526e7697700ef093d77f2613070222016c"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0008-def-e993FiberEquiv.lean",
+      "sha256": "96653fd262a49d271dab14e59126379c801b60fc3228b3f8f0011cffa63fb28e"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0009-def-e993CountVec.lean",
+      "sha256": "52b46c179b2f1c98015c0c9d8bdb5f47cec3790e2223a2174aae7fdbfca8a30d"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0010-def-e993CountFiberEquiv.lean",
+      "sha256": "a1a167c0fb8854cf85f11a2575f5a4668b7cf92191410931d8ffaeee38251f53"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0011-def-e993BlockSet.lean",
+      "sha256": "fef18d07b024a6726479c9d9140f966e5744d95564b9319435e2f809a15b207f"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0012-lemma-e993_card_ambient.lean",
+      "sha256": "d708ee04400e30935a78f0cba408a971a68080af5f69dd6c271afb19580f6d25"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0013-lemma-e993_card_subsets.lean",
+      "sha256": "f0539cc57b797b0638d5c9442163444386837d709526c0395f4dc0bad4c4205f"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0014-lemma-e993_mass_pos.lean",
+      "sha256": "6b3d90955167199ee7653df0e967d4c2f244ffbfad6e42b986811a9868693faf"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0015-lemma-e993_taylor_le.lean",
+      "sha256": "d33282ff8ec332f896e150a9458f5a8abefa017c790483e30eedf9f2d1ceee83"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0016-lemma-e993_scalar_log.lean",
+      "sha256": "07e90e165093497955abe6dd85665533e82faeeffe3a041f1356166373e4ea31"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0017-lemma-e993_exponent_nonneg.lean",
+      "sha256": "382d32f707d14ffa71fe66ca089b62da9c51207efe16c2078e7ba5a49870101e"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0018-lemma-e993_rebuild_fibers.lean",
+      "sha256": "012104ad43177c02ae5b475ee9eefed1f7f606360d01fc4b3f07705038ae11e8"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0019-lemma-e993_fiber_rebuild.lean",
+      "sha256": "e522e8a0a0822903a7ae43188b245996a768b54228fd8bb7af9427422df251f8"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0020-lemma-e993_count_eq_fiber_card.lean",
+      "sha256": "368c51d64851f7f20af77a85f32c11298d612e19a7a7da205e5fb62b6b46c138"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0021-lemma-e993_sum_counts.lean",
+      "sha256": "d47d582bcc25c153d6e521c62db76b246a951657af47e779123f005b3d2b4eee"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0022-lemma-e993_count_le.lean",
+      "sha256": "bf48bbb98d098f6fa5e55f516a19f1b04add684626e075f1978a7c782ffe0167"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0023-lemma-e993_prod_monomial.lean",
+      "sha256": "f547d3d2fd7e41c659166de8b5277caea8771076b9b4eec75eaacfad9ae463ec"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0024-lemma-e993_coeff_expansion.lean",
+      "sha256": "648534608ba8d2116cbe179ea8a1cb0498d4b48c92e54f16063790751a3f9344"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0025-lemma-e993_countvec_sum.lean",
+      "sha256": "06511a070f852a2b379a420f8938e4934eca71053ca23fee220a7a0a279e5894"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0026-lemma-e993_finite_jensen.lean",
+      "sha256": "b562c54e9a86c695cd41f328d309292734653159348828c21c2874b3032e8890"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0027-lemma-e993_weight_ge_one.lean",
+      "sha256": "b01eb53d9f2cf1883591c30b522458ad76f29f2eb2b84dccf909901e7185bf3c"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0028-lemma-e993_exp_log_product.lean",
+      "sha256": "f8b9d524dde3bdd09a685cff4c627f3ea57ee9c6a89f37438a670b8965ed90f4"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0029-lemma-e993_pointwise_log.lean",
+      "sha256": "b01bf4323bcaa9052a4a3c28666def908a62e093cda166cf074f8eb47d35974e"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0030-lemma-e993_card_block_fiber.lean",
+      "sha256": "80284d71229e0eb059417393db7232026b6ab4ae2d9380dda394ee6f72ec2b65"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0031-lemma-e993_card_joint_fiber.lean",
+      "sha256": "c0aa6fad5f749760360e5ee1f04c5dd39445462b72694550e60717ba10f43596"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0032-lemma-e993_card_rank_fiber.lean",
+      "sha256": "2d7d968a3b4831a5bdc2f941ba714399023bba006db0b4762eab8dadd1601daf"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0033-lemma-e993_countvec_eq_iff.lean",
+      "sha256": "065da4e601598c021782237e5faab1cc504d624669711af55934fd4f361a36db"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0034-lemma-e993_prod_choose_mul_weight.lean",
+      "sha256": "ac90a34f0372dcab2c8c31ffa631a4661761c1cb8648df1ceb0fd82b9205220b"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0035-lemma-e993_actual_sum_eq_count_sum.lean",
+      "sha256": "32feeb2d40a84cfd4c4e5390671f9e4eb43d016d1fcd6da30dbd35fca1b4997d"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0036-lemma-e993_coeff_actual.lean",
+      "sha256": "e74f5f25efce57e6d0171f41d50bfb5fe9a9419f456334b3f26951179c390564"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0037-lemma-e993_coefficient_average.lean",
+      "sha256": "739048576c7fbba3e0815e300979a8e5f548d3a66e95bcd91898561d1d867fab"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0038-lemma-e993_card_inter_fiber.lean",
+      "sha256": "d3db140f9a8364abd484ae61a4cd20e3aa5a1d2f4d9af7133e46f9b7be6488ce"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0039-lemma-e993_blockset_card.lean",
+      "sha256": "54df21fb0ba5ae093cdd6e92ec84508fc2570b0d1e8b00044c24ab0be6e9cb07"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0040-lemma-e993_fiber_image.lean",
+      "sha256": "5709293a20455b2d4dd2e50648de0f6db8f195eb62f3d7d0dea8b77cec5003a2"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0041-lemma-e993_count_inter.lean",
+      "sha256": "337a7acc920ad414b4640d57d11f83cdc510c6bac56acc6ca0a412820f2c491f"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0042-lemma-e993_marginal_count.lean",
+      "sha256": "1fa1cba6fe4b84d64110fc78273976dcb6e94fd10db3796cefcdef0e10cbc2b6"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0043-lemma-e993_marginal_sum.lean",
+      "sha256": "c55f6b37ff74402d53b60598353887ca1b5d69b7c9d60c3b6265eb982c97dd2a"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0044-lemma-e993_exponent_eq_average.lean",
+      "sha256": "50f5809fc788b1c09e393425f963d4b8b39d1897ea759798aa13684712a545f8"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/0045-theorem-e993_finite_block_coefficient_jensen.lean",
+      "sha256": "b7f83f38971232fc6995bee48ad0db950559143e8ee5857282774c1ebab9a5eb"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/PROPOSALS/ORDER.json",
+      "sha256": "4bca44c101018e18cf299ecba3323b1eb7e2a3f47115f14ef066cc8eb2cc1b83"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/RECEIPTS/dependency-authority.json",
+      "sha256": "004c968fa1932c85ffdbdbb170a0122a05d7b0ce65f5c0b47da595fa930a4d67"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/RECEIPTS/formalization.json",
+      "sha256": "d7849bfe96e68a3e16069bacd8fb08ecdf5f7a090f205228e3b02d77d318961d"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/RECEIPTS/informal-audit.json",
+      "sha256": "f4e25854f5a3d6eb18604b110d9299691701645ab962644432fdf8ce973b8a58"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/RECEIPTS/kernel-verification.json",
+      "sha256": "63dd892ef289d48dbadc8e5c7c7c9284132387f05874b9e2507f2b59b0a54c29"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/RECEIPTS/reviewer-assignment.json",
+      "sha256": "10042931a2030acf79148193b3387dedc098c3296ddd403ef6dfc7a71be974bf"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/RECEIPTS/theorem-contract.json",
+      "sha256": "d83b43199ba835678a407ec76e39d865f9a38a1113a127b970bdfc9e5999a64e"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/REGISTERED-CLAIM-IDENTITY.json",
+      "sha256": "58852eeed61debbd4ea11c217af5ba9504326cd055b696dae27cfac44d18519a"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/SOURCE/BOUNDARY-CHECK.json",
+      "sha256": "d2a52d5c255df1f46cde3f99166d8f45c55caa152670ed3c799d701cd8d9d1ee"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/SOURCE/BOUNDARY-CHECK.py",
+      "sha256": "53fa5eb5322da463d90f0c6214d1b5abc81ad3c47652979586efeda44076e30e"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/SOURCE/ENCODING-SPEC.lean",
+      "sha256": "9f1b8df57ed1857117c6d9ef0f070f4c35fa0e27a96932c67e9f83fd51e5937f"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/SOURCE/EXPECTED-STATEMENT.txt",
+      "sha256": "10d2489aa22673122b8ad4935d99b51b8b48135910f30402aaa8404c7829be7f"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/SOURCE/INDEPENDENT-PROOF-REVIEW.md",
+      "sha256": "f865747dfea36020505438f989cf23c06d4b124776b9a158ef7ca79eb9bf1c82"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/SOURCE/INTENDED-STATEMENT.txt",
+      "sha256": "ef898c5cddc39cec7fac61e08fc54d6a9f34cd12deb8d663694c95dc1db6639c"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/SOURCE/PROOF-LEAD.md",
+      "sha256": "1ec3e28cee541bb05d7e35da174f11adb3ce8bdafe7cb80b6ee62d1b41053a15"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/THEOREM-CONTRACT.md",
+      "sha256": "3edeffb1e42e5dcbe6a5b7fc05cf3146d534b46592ee89fb68628081cd827b74"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/THEOREM-CONTRACT.yaml",
+      "sha256": "8a2b91971f0ca4348b7155b6b5d99a5d6a2147e5cbd18f39ec60250169aa0ff9"
+    },
+    {
+      "path": "fidelity-snapshots/c4-jensen-dispatch/VERIFICATION-REPORT.md",
+      "sha256": "e955e1959aec3342d22257acda1a278e6c9ec92279f304f96cb748b811d73c43"
+    },
+    {
       "path": "preparation/C1-C2-IDENTITY/CANDIDATES.json",
       "sha256": "86739efb006fa31b3b3129434260972b8e9effdc913d6588cbc83a09ba03628b"
     },
@@ -2298,6 +2814,222 @@
       "sha256": "f865747dfea36020505438f989cf23c06d4b124776b9a158ef7ca79eb9bf1c82"
     },
     {
+      "path": "preparation/C4-JENSEN-FIDELITY/ATTESTATION.json",
+      "sha256": "147140e318d39ddc5b12aa93fb388c7a69bcbe767009fd7bcd9cdd0f8b8cf7e2"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FIDELITY/REPORT.md",
+      "sha256": "841306c653fc28265fb25f9942189a4adabab5a9b7518183e65aec95c6c500b7"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/AxiomCheck.lean",
+      "sha256": "183b76933b633fbdb1a2e3b1ae98ce7462c43808cd6c05230457c8c0cc1ca81d"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/Candidate.lean",
+      "sha256": "b269e32a01e686e76dac7570dc94174e5f898210e80e039a49b5436625c30826"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/CandidateCompiled.lean",
+      "sha256": "b269e32a01e686e76dac7570dc94174e5f898210e80e039a49b5436625c30826"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/CandidateFromFragments.lean",
+      "sha256": "05a37d302900663407e7d764c7f8fbe4bfbaa80fd4083815dd31868c3f5b05f0"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/CandidateOrdered.lean",
+      "sha256": "98050ca7b29eeff418fd264f3e07861a6c723b83f036301a5fec35014d240a9f"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0001-def-e993BlockProduct.lean",
+      "sha256": "39a4eb242309917b4cea453273a0d7af6df82205f9ee93706af053180f28a3be"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0002-def-e993BlockMass.lean",
+      "sha256": "03b5ac26ac84d45d313e280e700eab748de756da49239900c04dab557dfa650d"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0003-def-e993BlockCount.lean",
+      "sha256": "a36ecd60e8394e595db5164ecd8ad3041886a3f761a97cc4dc1f446c50dc1607"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0004-def-e993SubsetAverage.lean",
+      "sha256": "f5e3c55955d99a975188d41dc798a971837e255fa7b201ed9423ee0265ff7fb0"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0005-def-e993BlockExponent.lean",
+      "sha256": "faceb6209677defc332399b3a244e4ba6b903d27036e54a98615517d013b57e1"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0006-def-e993ExpTaylor.lean",
+      "sha256": "df1cf11775b48b32dca39f92d846d6e57e9f4718648cfcfd0131812c72134a37"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0007-def-e993Fiber.lean",
+      "sha256": "043c84b335b136423b2f5e69c81953526e7697700ef093d77f2613070222016c"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0008-def-e993FiberEquiv.lean",
+      "sha256": "96653fd262a49d271dab14e59126379c801b60fc3228b3f8f0011cffa63fb28e"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0009-def-e993CountVec.lean",
+      "sha256": "52b46c179b2f1c98015c0c9d8bdb5f47cec3790e2223a2174aae7fdbfca8a30d"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0010-def-e993CountFiberEquiv.lean",
+      "sha256": "a1a167c0fb8854cf85f11a2575f5a4668b7cf92191410931d8ffaeee38251f53"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0011-def-e993BlockSet.lean",
+      "sha256": "fef18d07b024a6726479c9d9140f966e5744d95564b9319435e2f809a15b207f"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0012-lemma-e993_card_ambient.lean",
+      "sha256": "d708ee04400e30935a78f0cba408a971a68080af5f69dd6c271afb19580f6d25"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0013-lemma-e993_card_subsets.lean",
+      "sha256": "f0539cc57b797b0638d5c9442163444386837d709526c0395f4dc0bad4c4205f"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0014-lemma-e993_mass_pos.lean",
+      "sha256": "6b3d90955167199ee7653df0e967d4c2f244ffbfad6e42b986811a9868693faf"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0015-lemma-e993_taylor_le.lean",
+      "sha256": "d33282ff8ec332f896e150a9458f5a8abefa017c790483e30eedf9f2d1ceee83"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0016-lemma-e993_scalar_log.lean",
+      "sha256": "07e90e165093497955abe6dd85665533e82faeeffe3a041f1356166373e4ea31"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0017-lemma-e993_exponent_nonneg.lean",
+      "sha256": "382d32f707d14ffa71fe66ca089b62da9c51207efe16c2078e7ba5a49870101e"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0018-lemma-e993_rebuild_fibers.lean",
+      "sha256": "012104ad43177c02ae5b475ee9eefed1f7f606360d01fc4b3f07705038ae11e8"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0019-lemma-e993_fiber_rebuild.lean",
+      "sha256": "e522e8a0a0822903a7ae43188b245996a768b54228fd8bb7af9427422df251f8"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0020-lemma-e993_count_eq_fiber_card.lean",
+      "sha256": "368c51d64851f7f20af77a85f32c11298d612e19a7a7da205e5fb62b6b46c138"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0021-lemma-e993_sum_counts.lean",
+      "sha256": "d47d582bcc25c153d6e521c62db76b246a951657af47e779123f005b3d2b4eee"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0022-lemma-e993_count_le.lean",
+      "sha256": "bf48bbb98d098f6fa5e55f516a19f1b04add684626e075f1978a7c782ffe0167"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0023-lemma-e993_prod_monomial.lean",
+      "sha256": "f547d3d2fd7e41c659166de8b5277caea8771076b9b4eec75eaacfad9ae463ec"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0024-lemma-e993_coeff_expansion.lean",
+      "sha256": "648534608ba8d2116cbe179ea8a1cb0498d4b48c92e54f16063790751a3f9344"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0025-lemma-e993_countvec_sum.lean",
+      "sha256": "06511a070f852a2b379a420f8938e4934eca71053ca23fee220a7a0a279e5894"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0026-lemma-e993_finite_jensen.lean",
+      "sha256": "b562c54e9a86c695cd41f328d309292734653159348828c21c2874b3032e8890"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0027-lemma-e993_weight_ge_one.lean",
+      "sha256": "b01eb53d9f2cf1883591c30b522458ad76f29f2eb2b84dccf909901e7185bf3c"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0028-lemma-e993_exp_log_product.lean",
+      "sha256": "f8b9d524dde3bdd09a685cff4c627f3ea57ee9c6a89f37438a670b8965ed90f4"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0029-lemma-e993_pointwise_log.lean",
+      "sha256": "b01bf4323bcaa9052a4a3c28666def908a62e093cda166cf074f8eb47d35974e"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0030-lemma-e993_card_block_fiber.lean",
+      "sha256": "80284d71229e0eb059417393db7232026b6ab4ae2d9380dda394ee6f72ec2b65"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0031-lemma-e993_card_joint_fiber.lean",
+      "sha256": "c0aa6fad5f749760360e5ee1f04c5dd39445462b72694550e60717ba10f43596"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0032-lemma-e993_card_rank_fiber.lean",
+      "sha256": "2d7d968a3b4831a5bdc2f941ba714399023bba006db0b4762eab8dadd1601daf"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0033-lemma-e993_countvec_eq_iff.lean",
+      "sha256": "065da4e601598c021782237e5faab1cc504d624669711af55934fd4f361a36db"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0034-lemma-e993_prod_choose_mul_weight.lean",
+      "sha256": "ac90a34f0372dcab2c8c31ffa631a4661761c1cb8648df1ceb0fd82b9205220b"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0035-lemma-e993_actual_sum_eq_count_sum.lean",
+      "sha256": "32feeb2d40a84cfd4c4e5390671f9e4eb43d016d1fcd6da30dbd35fca1b4997d"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0036-lemma-e993_coeff_actual.lean",
+      "sha256": "e74f5f25efce57e6d0171f41d50bfb5fe9a9419f456334b3f26951179c390564"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0037-lemma-e993_coefficient_average.lean",
+      "sha256": "739048576c7fbba3e0815e300979a8e5f548d3a66e95bcd91898561d1d867fab"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0038-lemma-e993_card_inter_fiber.lean",
+      "sha256": "d3db140f9a8364abd484ae61a4cd20e3aa5a1d2f4d9af7133e46f9b7be6488ce"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0039-lemma-e993_blockset_card.lean",
+      "sha256": "54df21fb0ba5ae093cdd6e92ec84508fc2570b0d1e8b00044c24ab0be6e9cb07"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0040-lemma-e993_fiber_image.lean",
+      "sha256": "5709293a20455b2d4dd2e50648de0f6db8f195eb62f3d7d0dea8b77cec5003a2"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0041-lemma-e993_count_inter.lean",
+      "sha256": "337a7acc920ad414b4640d57d11f83cdc510c6bac56acc6ca0a412820f2c491f"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0042-lemma-e993_marginal_count.lean",
+      "sha256": "1fa1cba6fe4b84d64110fc78273976dcb6e94fd10db3796cefcdef0e10cbc2b6"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0043-lemma-e993_marginal_sum.lean",
+      "sha256": "c55f6b37ff74402d53b60598353887ca1b5d69b7c9d60c3b6265eb982c97dd2a"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0044-lemma-e993_exponent_eq_average.lean",
+      "sha256": "50f5809fc788b1c09e393425f963d4b8b39d1897ea759798aa13684712a545f8"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/0045-theorem-e993_finite_block_coefficient_jensen.lean",
+      "sha256": "b7f83f38971232fc6995bee48ad0db950559143e8ee5857282774c1ebab9a5eb"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/PROPOSALS/ORDER.json",
+      "sha256": "4bca44c101018e18cf299ecba3323b1eb7e2a3f47115f14ef066cc8eb2cc1b83"
+    },
+    {
+      "path": "preparation/C4-JENSEN-FORMALIZER/REPORT.md",
+      "sha256": "d453f1cdeb23f86136effdc575b796c12b52c5c8485e65161f8c8ec770474314"
+    },
+    {
       "path": "preparation/C4-JENSEN-INFORMAL/INFORMAL-AUDIT.md",
       "sha256": "7f7635324493514a165016bbc5a17f9965f9cf944c13d3dc46d62779f71399cc"
     },
@@ -2340,6 +3072,14 @@
     {
       "path": "receipts/C3-MATH-RECONCILIATION-lint.json",
       "sha256": "dc5ebd7cf7ad6f2b18bd0bf483e70c75c69223d4e735455f1d05c3f2c2aa8d10"
+    },
+    {
+      "path": "receipts/C4-FINAL-MASTER-RECONCILIATION.json",
+      "sha256": "f149254cc6e564c110cdd6076f3d585f1152e32d7f8ed3dfad90042df83ddc46"
+    },
+    {
+      "path": "receipts/C4-FINAL-RECONCILIATION-lint.json",
+      "sha256": "47d169e2f5f151867eb65d882e18570ba6bebcf1f8945dce972136abae7ec5ec"
     },
     {
       "path": "receipts/C4-MATH-MASTER-RECONCILIATION.json",
@@ -3036,6 +3776,702 @@
     {
       "path": "runs/lean-2026-09-28-c3-center/VERIFICATION-REPORT.md",
       "sha256": "fa0b6e83b6a3c64ca4529eeff210e7e83540b0062babaeccce170930504cff27"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/.sandbox-tmp/xcrun_db",
+      "sha256": "4d62589acad172d2e1d4c689d2fb2a0c7381614fdf5df35a8bb7cc8fd51b1f64"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/DEPENDENCIES.yaml",
+      "sha256": "f2d29a42fe90c3a2507f3036ce6bb2e6cdf88f979f4c3d6c0becadc179944f32"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/C4-JENSEN-FIDELITY-ATTESTATION.json",
+      "sha256": "147140e318d39ddc5b12aa93fb388c7a69bcbe767009fd7bcd9cdd0f8b8cf7e2"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/INFORMAL-AUDIT.md",
+      "sha256": "7f7635324493514a165016bbc5a17f9965f9cf944c13d3dc46d62779f71399cc"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/axioms.txt",
+      "sha256": "854813aa73d8c6993923b26f1393218e8369ac5e5e10d615bddf3dbbe58222cc"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/build.log",
+      "sha256": "17581c8b35570f75ce8f9ae912d19c0c32abab30c07c35a18918bf2b99e8c343"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/contract-schema-initial-rejection.json",
+      "sha256": "39a156dbc53279ca37ad584b7d26cd3c674453c8d6774db770f9990dc2d5be8e"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/000-e993BlockProduct.log",
+      "sha256": "192c250f016333a3a1bd69e7afb00183cc7420d806229b9806cf91ebdf8c3b1f"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/001-e993BlockMass.log",
+      "sha256": "b4e368de6b7ac5012288e162beb71099da941baf9ca9d8cd00029485aeff85b4"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/002-e993BlockCount.log",
+      "sha256": "d7433e8583fcfeef2b110e0356c7af4b738ab99df9979da3f420e72607b5d837"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/003-e993SubsetAverage.log",
+      "sha256": "8c3b76112ade0060d82a3fba543a7194ca67f8ec661716a86fe9f7106f214fb2"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/004-e993BlockExponent.log",
+      "sha256": "d86cb0e89918b38c0713d4b101e114fc2e8beb75d245b842631592286c85b4c7"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/005-e993ExpTaylor.log",
+      "sha256": "6a126afc56ee31a1bdb9e934989f80c9239bba55de66651977147dcae3db7fa4"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/006-e993Fiber.log",
+      "sha256": "05a8a338de3d51adf03d9766b0d6e18f3b00c7a3bb3370dc22120e38c31a9826"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/007-e993FiberEquiv.log",
+      "sha256": "0c6b6d74f083ecc0626d6cd8cedab47a9a2f0d006dbac6d2736431388be19625"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/008-e993CountVec.log",
+      "sha256": "bea02acaafd08e599c6fdf8583843556e2702aff2611d44d462fadf363ca39a9"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/009-e993CountFiberEquiv.log",
+      "sha256": "47cd94cd54007d13a2ee54535361afa93e1907ec874ce122afa3a4866416f95d"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/010-e993BlockSet.log",
+      "sha256": "d777feae2168975197cf6427d266e61c525db6d66d138be4ea8779daf7f0ba6e"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/011-e993_card_ambient.log",
+      "sha256": "89880ceebfe7a84f793adfb23c4fd4f38b7c113cf8fe4ea0bafb0c302da63101"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/012-e993_card_subsets.log",
+      "sha256": "ce1189d83078948d124210022d2592bb3fdfc7edebf75b1ea483ef9e566b0055"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/013-e993_mass_pos.log",
+      "sha256": "ac29b823994cb12a44fdd74b877a9f87a34a7b860022dd9a542cc44d8177ca36"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/014-e993_taylor_le.log",
+      "sha256": "f6a83ac05292439cc0eefa586cb0d53706f8caf26396f00d2652a47f778237a5"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/015-e993_scalar_log.log",
+      "sha256": "b7483ca2e415fce176fecb6b2eac111c1135f4db452790c48349771842cae918"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/016-e993_exponent_nonneg.log",
+      "sha256": "41977881f576f537a28fe257a6873ebd28b8feabd51adb4e8c8dfdccfe70bea1"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/017-e993_rebuild_fibers.log",
+      "sha256": "3aa1ea2fef139e4496d8b75d77571cbf6c47870936bc1bfbfc3694dec5577105"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/018-e993_fiber_rebuild.log",
+      "sha256": "2a1b048de1596b70840852b26d395774cfb106c86ddea647947e04cccf1bb247"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/019-e993_count_eq_fiber_card.log",
+      "sha256": "0b5d2801a6744a3a9beb1169827c7ce8fba73f3d85f31adf8490e25816688af9"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/020-e993_sum_counts.log",
+      "sha256": "e3af68504ab2a229b372787d682db4bdd0b577df93aa1451d0ecbfe51703de3f"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/021-e993_count_le.log",
+      "sha256": "a114815cb8cec43f95a2d9c796967d66f865176754aabedd90780912a983accd"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/022-e993_prod_monomial.log",
+      "sha256": "5473217ee03fd290e2c99d5e0ef1afe2dfa4d121ae21e8f3547a24510858a137"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/023-e993_coeff_expansion.log",
+      "sha256": "a544f7efea0617d73699f9f8065ef22390fb0490bae043fa503730337b3c619a"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/024-e993_countvec_sum.log",
+      "sha256": "47b7a2fdaee8d709970b116eaaa757f13c8004e7c2651ce00cc533f8195f0442"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/025-e993_finite_jensen.log",
+      "sha256": "9921a738348fa6235bb73cc0cdc8b3b7dee777a215542d407102570ed5f44a6b"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/026-e993_weight_ge_one.log",
+      "sha256": "81a61aa9e4211861593a4cb89fc99d0117ca5a5d66563ea656755d9b47a19b77"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/027-e993_exp_log_product.log",
+      "sha256": "1a26f9a5e2f7b2d88bb47ed9c1f5b6da4453a5dbd1bd66392b5a27123e6aa62e"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/028-e993_pointwise_log.log",
+      "sha256": "d537b9e3165c25748f4025daf882671f20d2f70cf121811dc372a190159690d4"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/029-e993_card_block_fiber.log",
+      "sha256": "94e331b18f631b096621ea3f5c4da56559bdd1ee7da85938917f05cae8f843c0"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/030-e993_card_joint_fiber.log",
+      "sha256": "82d395e4d093c08c7adbbea3f7bb8f28f4b3129491a6f3307a1f145affc9968c"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/031-e993_card_rank_fiber.log",
+      "sha256": "7978b4a03b171a7f1bd1ca12f25c33c4ad315f6cfe052a84e0edcbda8a23276b"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/032-e993_countvec_eq_iff.log",
+      "sha256": "04f5770f50930e93d4844dc1596e35af498d7921b75e20cc7f0b4a74e49f5118"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/033-e993_prod_choose_mul_weight.log",
+      "sha256": "47875bbc899b6ca8b4fc1b930342d8a11e1176d044691dd890d027221f3c3436"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/034-e993_actual_sum_eq_count_sum.log",
+      "sha256": "647edab0be523773934549973287433efa96fe5a5bdb056324ae9e4cb3f743bf"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/035-e993_coeff_actual.log",
+      "sha256": "6344878a664297da755bdb36d27a6bfcf45c638ebcfee8a52b032e4414ef9a42"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/036-e993_coefficient_average.log",
+      "sha256": "047664ceb57982eee9fd69661911fc8c2c9ce51048bafa2fe8e96f33b971e599"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/037-e993_card_inter_fiber.log",
+      "sha256": "be02f5c504f62a7df8c79a05d021d8f20e423dec4dd1447e91aab2abe3bfd6e2"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/038-e993_blockset_card.log",
+      "sha256": "d1981f9fc7c714dd2bbb36afcfbf8672559ec23662645bd2d29a2d341b964707"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/039-e993_fiber_image.log",
+      "sha256": "0cd6cd685dbbc6c756d228cd93798cc44be39eb73303cfc876606e07be7795c1"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/040-e993_count_inter.log",
+      "sha256": "7f680a9074363eb936e8e7ee071fb8fd1bfe7cb22cc08e36380ad37d7666b195"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/041-e993_marginal_count.log",
+      "sha256": "73788f4f532fea1e27a8b305047073301964f82f733fd36e9bb6c9213c33c63e"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/042-e993_marginal_sum.log",
+      "sha256": "4058ddb60f4de24819a4b24cd7ee28b9245de347e9021ed48769de71013cb92b"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/043-e993_exponent_eq_average.log",
+      "sha256": "8a14d4733e018217ec95da3477735fa44e19a72bfcf271a22fe94d61e3430de3"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/controller-registration/044-e993_finite_block_coefficient_jensen.log",
+      "sha256": "d7849bfe96e68a3e16069bacd8fb08ecdf5f7a090f205228e3b02d77d318961d"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/fidelity-audit-input-before-review.json",
+      "sha256": "5a617a139ce704251a2ff3e09ea795b37349bca379df45283f1846354d372e63"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/fidelity-audit-input.json",
+      "sha256": "4639ad0f326eae6479dc92ed77019f7ffb1d5fab4eb415ca10c1a237c2bc7064"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/fidelity-fingerprints-before-review.json",
+      "sha256": "a074c4007544c39f6b7b89e24cb1ac0357663666e4329f64a336530314222865"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/EVIDENCE/lean-verifier.sb",
+      "sha256": "003426cffe27b8d147d7732deb40824269097979c30464f289f1d497bc7a49fe"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/FIDELITY-REVIEW.md",
+      "sha256": "ca279552fb20799c724dc293e2c60037058f99981a183d1c47c274d4d3910fb9"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/FORMALIZATION-STATE.json",
+      "sha256": "96c5cb9f99a521eca12e469d84f0a0de887ec532e239fd828a19c414bd59223d"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LOOP-STATE.json",
+      "sha256": "7973c216ae3c5ecd195d35a524454f593948979976aff075d3e348e87db4cf8e"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LOOP-STATE.md",
+      "sha256": "a99bcc7eed0a0112affd2cea6cdc67b288828d77d10878ea9af9ea606430e6b0"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof.lean",
+      "sha256": "f4dfdef8320a735eab53d24f4b47d3b60bcb474ffd2c84c77f24ae2fc75fcf31"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Main.lean",
+      "sha256": "a0f07019b366cb194ddd031df0f9f963f2a051f548354349e016aceab6d23e3f"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0001-definition-e993BlockProduct.lean.fragment",
+      "sha256": "39a4eb242309917b4cea453273a0d7af6df82205f9ee93706af053180f28a3be"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0002-definition-e993BlockMass.lean.fragment",
+      "sha256": "03b5ac26ac84d45d313e280e700eab748de756da49239900c04dab557dfa650d"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0003-definition-e993BlockCount.lean.fragment",
+      "sha256": "a36ecd60e8394e595db5164ecd8ad3041886a3f761a97cc4dc1f446c50dc1607"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0004-definition-e993SubsetAverage.lean.fragment",
+      "sha256": "f5e3c55955d99a975188d41dc798a971837e255fa7b201ed9423ee0265ff7fb0"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0005-definition-e993BlockExponent.lean.fragment",
+      "sha256": "faceb6209677defc332399b3a244e4ba6b903d27036e54a98615517d013b57e1"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0006-definition-e993ExpTaylor.lean.fragment",
+      "sha256": "df1cf11775b48b32dca39f92d846d6e57e9f4718648cfcfd0131812c72134a37"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0007-definition-e993Fiber.lean.fragment",
+      "sha256": "043c84b335b136423b2f5e69c81953526e7697700ef093d77f2613070222016c"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0008-definition-e993FiberEquiv.lean.fragment",
+      "sha256": "96653fd262a49d271dab14e59126379c801b60fc3228b3f8f0011cffa63fb28e"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0009-definition-e993CountVec.lean.fragment",
+      "sha256": "52b46c179b2f1c98015c0c9d8bdb5f47cec3790e2223a2174aae7fdbfca8a30d"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0010-definition-e993CountFiberEquiv.lean.fragment",
+      "sha256": "a1a167c0fb8854cf85f11a2575f5a4668b7cf92191410931d8ffaeee38251f53"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0011-definition-e993BlockSet.lean.fragment",
+      "sha256": "fef18d07b024a6726479c9d9140f966e5744d95564b9319435e2f809a15b207f"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0012-lemma-e993_card_ambient.lean.fragment",
+      "sha256": "d708ee04400e30935a78f0cba408a971a68080af5f69dd6c271afb19580f6d25"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0013-lemma-e993_card_subsets.lean.fragment",
+      "sha256": "f0539cc57b797b0638d5c9442163444386837d709526c0395f4dc0bad4c4205f"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0014-lemma-e993_mass_pos.lean.fragment",
+      "sha256": "6b3d90955167199ee7653df0e967d4c2f244ffbfad6e42b986811a9868693faf"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0015-lemma-e993_taylor_le.lean.fragment",
+      "sha256": "d33282ff8ec332f896e150a9458f5a8abefa017c790483e30eedf9f2d1ceee83"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0016-lemma-e993_scalar_log.lean.fragment",
+      "sha256": "07e90e165093497955abe6dd85665533e82faeeffe3a041f1356166373e4ea31"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0017-lemma-e993_exponent_nonneg.lean.fragment",
+      "sha256": "382d32f707d14ffa71fe66ca089b62da9c51207efe16c2078e7ba5a49870101e"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0018-lemma-e993_rebuild_fibers.lean.fragment",
+      "sha256": "012104ad43177c02ae5b475ee9eefed1f7f606360d01fc4b3f07705038ae11e8"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0019-lemma-e993_fiber_rebuild.lean.fragment",
+      "sha256": "e522e8a0a0822903a7ae43188b245996a768b54228fd8bb7af9427422df251f8"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0020-lemma-e993_count_eq_fiber_card.lean.fragment",
+      "sha256": "368c51d64851f7f20af77a85f32c11298d612e19a7a7da205e5fb62b6b46c138"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0021-lemma-e993_sum_counts.lean.fragment",
+      "sha256": "d47d582bcc25c153d6e521c62db76b246a951657af47e779123f005b3d2b4eee"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0022-lemma-e993_count_le.lean.fragment",
+      "sha256": "bf48bbb98d098f6fa5e55f516a19f1b04add684626e075f1978a7c782ffe0167"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0023-lemma-e993_prod_monomial.lean.fragment",
+      "sha256": "f547d3d2fd7e41c659166de8b5277caea8771076b9b4eec75eaacfad9ae463ec"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0024-lemma-e993_coeff_expansion.lean.fragment",
+      "sha256": "648534608ba8d2116cbe179ea8a1cb0498d4b48c92e54f16063790751a3f9344"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0025-lemma-e993_countvec_sum.lean.fragment",
+      "sha256": "06511a070f852a2b379a420f8938e4934eca71053ca23fee220a7a0a279e5894"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0026-lemma-e993_finite_jensen.lean.fragment",
+      "sha256": "b562c54e9a86c695cd41f328d309292734653159348828c21c2874b3032e8890"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0027-lemma-e993_weight_ge_one.lean.fragment",
+      "sha256": "b01eb53d9f2cf1883591c30b522458ad76f29f2eb2b84dccf909901e7185bf3c"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0028-lemma-e993_exp_log_product.lean.fragment",
+      "sha256": "f8b9d524dde3bdd09a685cff4c627f3ea57ee9c6a89f37438a670b8965ed90f4"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0029-lemma-e993_pointwise_log.lean.fragment",
+      "sha256": "b01bf4323bcaa9052a4a3c28666def908a62e093cda166cf074f8eb47d35974e"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0030-lemma-e993_card_block_fiber.lean.fragment",
+      "sha256": "80284d71229e0eb059417393db7232026b6ab4ae2d9380dda394ee6f72ec2b65"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0031-lemma-e993_card_joint_fiber.lean.fragment",
+      "sha256": "c0aa6fad5f749760360e5ee1f04c5dd39445462b72694550e60717ba10f43596"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0032-lemma-e993_card_rank_fiber.lean.fragment",
+      "sha256": "2d7d968a3b4831a5bdc2f941ba714399023bba006db0b4762eab8dadd1601daf"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0033-lemma-e993_countvec_eq_iff.lean.fragment",
+      "sha256": "065da4e601598c021782237e5faab1cc504d624669711af55934fd4f361a36db"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0034-lemma-e993_prod_choose_mul_weight.lean.fragment",
+      "sha256": "ac90a34f0372dcab2c8c31ffa631a4661761c1cb8648df1ceb0fd82b9205220b"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0035-lemma-e993_actual_sum_eq_count_sum.lean.fragment",
+      "sha256": "32feeb2d40a84cfd4c4e5390671f9e4eb43d016d1fcd6da30dbd35fca1b4997d"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0036-lemma-e993_coeff_actual.lean.fragment",
+      "sha256": "e74f5f25efce57e6d0171f41d50bfb5fe9a9419f456334b3f26951179c390564"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0037-lemma-e993_coefficient_average.lean.fragment",
+      "sha256": "739048576c7fbba3e0815e300979a8e5f548d3a66e95bcd91898561d1d867fab"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0038-lemma-e993_card_inter_fiber.lean.fragment",
+      "sha256": "d3db140f9a8364abd484ae61a4cd20e3aa5a1d2f4d9af7133e46f9b7be6488ce"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0039-lemma-e993_blockset_card.lean.fragment",
+      "sha256": "54df21fb0ba5ae093cdd6e92ec84508fc2570b0d1e8b00044c24ab0be6e9cb07"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0040-lemma-e993_fiber_image.lean.fragment",
+      "sha256": "5709293a20455b2d4dd2e50648de0f6db8f195eb62f3d7d0dea8b77cec5003a2"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0041-lemma-e993_count_inter.lean.fragment",
+      "sha256": "337a7acc920ad414b4640d57d11f83cdc510c6bac56acc6ca0a412820f2c491f"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0042-lemma-e993_marginal_count.lean.fragment",
+      "sha256": "1fa1cba6fe4b84d64110fc78273976dcb6e94fd10db3796cefcdef0e10cbc2b6"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0043-lemma-e993_marginal_sum.lean.fragment",
+      "sha256": "c55f6b37ff74402d53b60598353887ca1b5d69b7c9d60c3b6265eb982c97dd2a"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0044-lemma-e993_exponent_eq_average.lean.fragment",
+      "sha256": "50f5809fc788b1c09e393425f963d4b8b39d1897ea759798aa13684712a545f8"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Snippets/0045-theorem-e993_finite_block_coefficient_jensen.lean.fragment",
+      "sha256": "b7f83f38971232fc6995bee48ad0db950559143e8ee5857282774c1ebab9a5eb"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/lake-manifest.json",
+      "sha256": "52a4d73cb6d885abcc2669f7eb652c81ce369a8a93ce211894a6e6b9f7d46c7c"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/lakefile.toml",
+      "sha256": "45d0ca58145784d5f29322ff21a1335e350c38e72afe8d5396d9c9910b94ff49"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/LeanProject/lean-toolchain",
+      "sha256": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0001-def-e993BlockProduct.lean",
+      "sha256": "39a4eb242309917b4cea453273a0d7af6df82205f9ee93706af053180f28a3be"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0002-def-e993BlockMass.lean",
+      "sha256": "03b5ac26ac84d45d313e280e700eab748de756da49239900c04dab557dfa650d"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0003-def-e993BlockCount.lean",
+      "sha256": "a36ecd60e8394e595db5164ecd8ad3041886a3f761a97cc4dc1f446c50dc1607"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0004-def-e993SubsetAverage.lean",
+      "sha256": "f5e3c55955d99a975188d41dc798a971837e255fa7b201ed9423ee0265ff7fb0"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0005-def-e993BlockExponent.lean",
+      "sha256": "faceb6209677defc332399b3a244e4ba6b903d27036e54a98615517d013b57e1"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0006-def-e993ExpTaylor.lean",
+      "sha256": "df1cf11775b48b32dca39f92d846d6e57e9f4718648cfcfd0131812c72134a37"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0007-def-e993Fiber.lean",
+      "sha256": "043c84b335b136423b2f5e69c81953526e7697700ef093d77f2613070222016c"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0008-def-e993FiberEquiv.lean",
+      "sha256": "96653fd262a49d271dab14e59126379c801b60fc3228b3f8f0011cffa63fb28e"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0009-def-e993CountVec.lean",
+      "sha256": "52b46c179b2f1c98015c0c9d8bdb5f47cec3790e2223a2174aae7fdbfca8a30d"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0010-def-e993CountFiberEquiv.lean",
+      "sha256": "a1a167c0fb8854cf85f11a2575f5a4668b7cf92191410931d8ffaeee38251f53"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0011-def-e993BlockSet.lean",
+      "sha256": "fef18d07b024a6726479c9d9140f966e5744d95564b9319435e2f809a15b207f"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0012-lemma-e993_card_ambient.lean",
+      "sha256": "d708ee04400e30935a78f0cba408a971a68080af5f69dd6c271afb19580f6d25"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0013-lemma-e993_card_subsets.lean",
+      "sha256": "f0539cc57b797b0638d5c9442163444386837d709526c0395f4dc0bad4c4205f"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0014-lemma-e993_mass_pos.lean",
+      "sha256": "6b3d90955167199ee7653df0e967d4c2f244ffbfad6e42b986811a9868693faf"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0015-lemma-e993_taylor_le.lean",
+      "sha256": "d33282ff8ec332f896e150a9458f5a8abefa017c790483e30eedf9f2d1ceee83"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0016-lemma-e993_scalar_log.lean",
+      "sha256": "07e90e165093497955abe6dd85665533e82faeeffe3a041f1356166373e4ea31"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0017-lemma-e993_exponent_nonneg.lean",
+      "sha256": "382d32f707d14ffa71fe66ca089b62da9c51207efe16c2078e7ba5a49870101e"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0018-lemma-e993_rebuild_fibers.lean",
+      "sha256": "012104ad43177c02ae5b475ee9eefed1f7f606360d01fc4b3f07705038ae11e8"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0019-lemma-e993_fiber_rebuild.lean",
+      "sha256": "e522e8a0a0822903a7ae43188b245996a768b54228fd8bb7af9427422df251f8"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0020-lemma-e993_count_eq_fiber_card.lean",
+      "sha256": "368c51d64851f7f20af77a85f32c11298d612e19a7a7da205e5fb62b6b46c138"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0021-lemma-e993_sum_counts.lean",
+      "sha256": "d47d582bcc25c153d6e521c62db76b246a951657af47e779123f005b3d2b4eee"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0022-lemma-e993_count_le.lean",
+      "sha256": "bf48bbb98d098f6fa5e55f516a19f1b04add684626e075f1978a7c782ffe0167"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0023-lemma-e993_prod_monomial.lean",
+      "sha256": "f547d3d2fd7e41c659166de8b5277caea8771076b9b4eec75eaacfad9ae463ec"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0024-lemma-e993_coeff_expansion.lean",
+      "sha256": "648534608ba8d2116cbe179ea8a1cb0498d4b48c92e54f16063790751a3f9344"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0025-lemma-e993_countvec_sum.lean",
+      "sha256": "06511a070f852a2b379a420f8938e4934eca71053ca23fee220a7a0a279e5894"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0026-lemma-e993_finite_jensen.lean",
+      "sha256": "b562c54e9a86c695cd41f328d309292734653159348828c21c2874b3032e8890"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0027-lemma-e993_weight_ge_one.lean",
+      "sha256": "b01eb53d9f2cf1883591c30b522458ad76f29f2eb2b84dccf909901e7185bf3c"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0028-lemma-e993_exp_log_product.lean",
+      "sha256": "f8b9d524dde3bdd09a685cff4c627f3ea57ee9c6a89f37438a670b8965ed90f4"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0029-lemma-e993_pointwise_log.lean",
+      "sha256": "b01bf4323bcaa9052a4a3c28666def908a62e093cda166cf074f8eb47d35974e"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0030-lemma-e993_card_block_fiber.lean",
+      "sha256": "80284d71229e0eb059417393db7232026b6ab4ae2d9380dda394ee6f72ec2b65"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0031-lemma-e993_card_joint_fiber.lean",
+      "sha256": "c0aa6fad5f749760360e5ee1f04c5dd39445462b72694550e60717ba10f43596"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0032-lemma-e993_card_rank_fiber.lean",
+      "sha256": "2d7d968a3b4831a5bdc2f941ba714399023bba006db0b4762eab8dadd1601daf"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0033-lemma-e993_countvec_eq_iff.lean",
+      "sha256": "065da4e601598c021782237e5faab1cc504d624669711af55934fd4f361a36db"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0034-lemma-e993_prod_choose_mul_weight.lean",
+      "sha256": "ac90a34f0372dcab2c8c31ffa631a4661761c1cb8648df1ceb0fd82b9205220b"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0035-lemma-e993_actual_sum_eq_count_sum.lean",
+      "sha256": "32feeb2d40a84cfd4c4e5390671f9e4eb43d016d1fcd6da30dbd35fca1b4997d"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0036-lemma-e993_coeff_actual.lean",
+      "sha256": "e74f5f25efce57e6d0171f41d50bfb5fe9a9419f456334b3f26951179c390564"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0037-lemma-e993_coefficient_average.lean",
+      "sha256": "739048576c7fbba3e0815e300979a8e5f548d3a66e95bcd91898561d1d867fab"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0038-lemma-e993_card_inter_fiber.lean",
+      "sha256": "d3db140f9a8364abd484ae61a4cd20e3aa5a1d2f4d9af7133e46f9b7be6488ce"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0039-lemma-e993_blockset_card.lean",
+      "sha256": "54df21fb0ba5ae093cdd6e92ec84508fc2570b0d1e8b00044c24ab0be6e9cb07"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0040-lemma-e993_fiber_image.lean",
+      "sha256": "5709293a20455b2d4dd2e50648de0f6db8f195eb62f3d7d0dea8b77cec5003a2"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0041-lemma-e993_count_inter.lean",
+      "sha256": "337a7acc920ad414b4640d57d11f83cdc510c6bac56acc6ca0a412820f2c491f"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0042-lemma-e993_marginal_count.lean",
+      "sha256": "1fa1cba6fe4b84d64110fc78273976dcb6e94fd10db3796cefcdef0e10cbc2b6"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0043-lemma-e993_marginal_sum.lean",
+      "sha256": "c55f6b37ff74402d53b60598353887ca1b5d69b7c9d60c3b6265eb982c97dd2a"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0044-lemma-e993_exponent_eq_average.lean",
+      "sha256": "50f5809fc788b1c09e393425f963d4b8b39d1897ea759798aa13684712a545f8"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/0045-theorem-e993_finite_block_coefficient_jensen.lean",
+      "sha256": "b7f83f38971232fc6995bee48ad0db950559143e8ee5857282774c1ebab9a5eb"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/PROPOSALS/ORDER.json",
+      "sha256": "4bca44c101018e18cf299ecba3323b1eb7e2a3f47115f14ef066cc8eb2cc1b83"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/RECEIPTS/dependency-authority.json",
+      "sha256": "004c968fa1932c85ffdbdbb170a0122a05d7b0ce65f5c0b47da595fa930a4d67"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/RECEIPTS/fidelity-audit.json",
+      "sha256": "de61446a1d59cd1c1a7a43775bfb35795317bc4baca0ae0e69efae1982f32e14"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/RECEIPTS/formalization.json",
+      "sha256": "d7849bfe96e68a3e16069bacd8fb08ecdf5f7a090f205228e3b02d77d318961d"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/RECEIPTS/informal-audit.json",
+      "sha256": "f4e25854f5a3d6eb18604b110d9299691701645ab962644432fdf8ce973b8a58"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/RECEIPTS/kernel-verification.json",
+      "sha256": "63dd892ef289d48dbadc8e5c7c7c9284132387f05874b9e2507f2b59b0a54c29"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/RECEIPTS/reviewer-assignment.json",
+      "sha256": "10042931a2030acf79148193b3387dedc098c3296ddd403ef6dfc7a71be974bf"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/RECEIPTS/theorem-contract.json",
+      "sha256": "d83b43199ba835678a407ec76e39d865f9a38a1113a127b970bdfc9e5999a64e"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/SOURCE/BOUNDARY-CHECK.json",
+      "sha256": "d2a52d5c255df1f46cde3f99166d8f45c55caa152670ed3c799d701cd8d9d1ee"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/SOURCE/BOUNDARY-CHECK.py",
+      "sha256": "53fa5eb5322da463d90f0c6214d1b5abc81ad3c47652979586efeda44076e30e"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/SOURCE/ENCODING-SPEC.lean",
+      "sha256": "9f1b8df57ed1857117c6d9ef0f070f4c35fa0e27a96932c67e9f83fd51e5937f"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/SOURCE/EXPECTED-STATEMENT.txt",
+      "sha256": "10d2489aa22673122b8ad4935d99b51b8b48135910f30402aaa8404c7829be7f"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/SOURCE/INDEPENDENT-PROOF-REVIEW.md",
+      "sha256": "f865747dfea36020505438f989cf23c06d4b124776b9a158ef7ca79eb9bf1c82"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/SOURCE/INTENDED-STATEMENT.txt",
+      "sha256": "ef898c5cddc39cec7fac61e08fc54d6a9f34cd12deb8d663694c95dc1db6639c"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/SOURCE/PROOF-LEAD.md",
+      "sha256": "1ec3e28cee541bb05d7e35da174f11adb3ce8bdafe7cb80b6ee62d1b41053a15"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/THEOREM-CONTRACT.md",
+      "sha256": "3edeffb1e42e5dcbe6a5b7fc05cf3146d534b46592ee89fb68628081cd827b74"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/THEOREM-CONTRACT.yaml",
+      "sha256": "8a2b91971f0ca4348b7155b6b5d99a5d6a2147e5cbd18f39ec60250169aa0ff9"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/VERIFICATION-REPORT.json",
+      "sha256": "72d7d6c49ba2a3666d7723dcb5f513cc864b832e3f0269c9dd3db2ca2a2ea817"
+    },
+    {
+      "path": "runs/lean-2026-09-28-c4-jensen/VERIFICATION-REPORT.md",
+      "sha256": "c3c38956f0e7f140ceab01fb0590bd1d3a7151580c0a970ad902b01547626177"
     },
     {
       "path": "sources/cycle3/C2-ACCEPTED-IDENTITY-REVIEW.md",

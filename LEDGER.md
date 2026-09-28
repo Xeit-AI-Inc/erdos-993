@@ -1,6 +1,14 @@
 # Erdős #993 — Master Proof Ledger
 
-## Active experiment — Cycle4 mathematical reconciliation,2026-09-28
+## Active experiment — Cycle4 closed,2026-09-28
+
+Cycle4 is closed. The complete existing finite-block coefficient/Jensen theorem received a governed formal award. The actual uniform labeled-subset expectation equality, exact guarded hypergeometric exponential lower bound and every Taylor truncation are all included. Empty index types, positive blocks including size1, supported real coefficient floors, k=0, k=M and every natural d are covered. Separate informal audit, kernel and independent semantic fidelity passed. This is a general finite coefficient theorem, not graph/deletion/selector/payment verification.
+
+The registry has513 identities:324 VERIFIED,103 REFUTED,26 CONDITIONAL,60 OPEN at mixed grades. C4 mathematical additions are the informal descent-drift lemma, the guarded E-only mechanism refutation, and the OPEN exact-ratio tip-surplus target. The full guarded shifted comparisons stay OPEN. Literal all-m MASS and exact-ratio payment remain VERIFIED computer-assisted/nonformal for the restricted arity2/3/4 path-star family. The unrestricted conjecture remains OPEN. Cycles5–6 pursue quantitative binomial-deficit compensation, branch-addition guard strips, paired minors and correctly conditioned root-mixture structure. The primary formal stop is unmet; final Astra analysis follows Cycle6.
+
+Evidence: `experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c4-jensen/VERIFICATION-REPORT.json`.
+
+## Cycle4 mathematical reconciliation,2026-09-28
 
 All31 standard Cycle4 seats and a fresh Sol-high identity/proof review are complete. The primary selected compensation, all-m MASS and branchwise three-halves result remain VERIFIED at computer-assisted/nonformal grade. Individual and weighted lower-half shifted comparisons remain OPEN; finite support and their valid conditional selector consequences do not prove the antecedents.
 

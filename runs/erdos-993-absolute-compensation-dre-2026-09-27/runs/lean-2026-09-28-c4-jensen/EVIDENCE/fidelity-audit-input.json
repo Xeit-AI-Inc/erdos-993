@@ -1,0 +1,437 @@
+{
+  "schema_version": "formalization-fidelity-audit-input.v1",
+  "run_id": "lean-2026-09-28-c4-jensen",
+  "artifact_producer_id": "C4-JENSEN-FORMALIZER",
+  "theorem_contract": {
+    "contract_id": "e993-finite-block-coefficient-jensen-v1",
+    "contract_sha256": "8a2b91971f0ca4348b7155b6b5d99a5d6a2147e5cbd18f39ec60250169aa0ff9",
+    "theorem_name": "e993_finite_block_coefficient_jensen",
+    "definitions": [
+      {
+        "name": "def-e993blockproduct",
+        "canonical": "Finite product of the explicitly truncated real polynomials. Exact definition is in SOURCE/ENCODING-SPEC.lean."
+      },
+      {
+        "name": "def-e993blockmass",
+        "canonical": "Real cast of choose(sum_i r_i,k). Exact definition is in SOURCE/ENCODING-SPEC.lean."
+      },
+      {
+        "name": "def-e993blockcount",
+        "canonical": "Actual cardinality of the fiber of S in block i. Exact definition is in SOURCE/ENCODING-SPEC.lean."
+      },
+      {
+        "name": "def-e993subsetaverage",
+        "canonical": "Sum of products f_i(K_i)/choose(r_i,K_i) over actual powersetCard k, divided by its actual cardinality. Exact definition is in SOURCE/ENCODING-SPEC.lean."
+      },
+      {
+        "name": "def-e993blockexponent",
+        "canonical": "Sum of guarded hypergeometric marginal weights times 2(f_i(t)-choose(r_i,t))/(f_i(t)+choose(r_i,t)). Exact definition is in SOURCE/ENCODING-SPEC.lean."
+      },
+      {
+        "name": "def-e993exptaylor",
+        "canonical": "Finite exponential Taylor sum from a=0 through d inclusive. Exact definition is in SOURCE/ENCODING-SPEC.lean."
+      }
+    ],
+    "domains": [
+      {
+        "variable": "I",
+        "lean_type": "Type u",
+        "forbidden_narrowings": []
+      },
+      {
+        "variable": "r",
+        "lean_type": "I → Nat",
+        "forbidden_narrowings": []
+      },
+      {
+        "variable": "f",
+        "lean_type": "I → Nat → Real",
+        "forbidden_narrowings": []
+      },
+      {
+        "variable": "k",
+        "lean_type": "Nat",
+        "forbidden_narrowings": []
+      },
+      {
+        "variable": "d",
+        "lean_type": "Nat",
+        "forbidden_narrowings": []
+      }
+    ],
+    "quantifiers": [
+      {
+        "variable": "I",
+        "kind": "forall",
+        "domain": "Type u"
+      },
+      {
+        "variable": "r",
+        "kind": "forall",
+        "domain": "I → Nat"
+      },
+      {
+        "variable": "f",
+        "kind": "forall",
+        "domain": "I → Nat → Real"
+      },
+      {
+        "variable": "k",
+        "kind": "forall",
+        "domain": "Nat"
+      },
+      {
+        "variable": "d",
+        "kind": "forall",
+        "domain": "Nat"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "hyp-positive-blocks",
+        "canonical": "For every i, 0<r_i; vacuous for empty I."
+      },
+      {
+        "id": "hyp-binomial-floor",
+        "canonical": "For every i and natural t<=r_i, real choose(r_i,t)<=f_i(t)."
+      },
+      {
+        "id": "hyp-rank",
+        "canonical": "Natural k<=sum_i r_i. Natural d is arbitrary."
+      }
+    ],
+    "conclusion": {
+      "canonical": "theorem e993_finite_block_coefficient_jensen\n    {ι : Type*} [Fintype ι] [DecidableEq ι]\n    (r : ι → ℕ) (hr : ∀ i, 0 < r i)\n    (f : ι → ℕ → ℝ)\n    (hf : ∀ i t, t ≤ r i → ((r i).choose t : ℝ) ≤ f i t)\n    (k d : ℕ) (hk : k ≤ ∑ i, r i) :\n    (e993BlockProduct r f).coeff k / e993BlockMass r k =\n        e993SubsetAverage r f k ∧\n    e993BlockMass r k * Real.exp (e993BlockExponent r f k) ≤\n        (e993BlockProduct r f).coeff k ∧\n    e993BlockMass r k * e993ExpTaylor d (e993BlockExponent r f k) ≤\n        e993BlockMass r k * Real.exp (e993BlockExponent r f k)",
+      "clauses": [
+        "theorem e993_finite_block_coefficient_jensen\n    {ι : Type*} [Fintype ι] [DecidableEq ι]\n    (r : ι → ℕ) (hr : ∀ i, 0 < r i)\n    (f : ι → ℕ → ℝ)\n    (hf : ∀ i t, t ≤ r i → ((r i).choose t : ℝ) ≤ f i t)\n    (k d : ℕ) (hk : k ≤ ∑ i, r i) :\n    (e993BlockProduct r f).coeff k / e993BlockMass r k =\n        e993SubsetAverage r f k ∧\n    e993BlockMass r k * Real.exp (e993BlockExponent r f k) ≤\n        (e993BlockProduct r f).coeff k ∧\n    e993BlockMass r k * e993ExpTaylor d (e993BlockExponent r f k) ≤\n        e993BlockMass r k * Real.exp (e993BlockExponent r f k)"
+      ]
+    },
+    "lean_statement": "theorem e993_finite_block_coefficient_jensen\n    {ι : Type*} [Fintype ι] [DecidableEq ι]\n    (r : ι → ℕ) (hr : ∀ i, 0 < r i)\n    (f : ι → ℕ → ℝ)\n    (hf : ∀ i t, t ≤ r i → ((r i).choose t : ℝ) ≤ f i t)\n    (k d : ℕ) (hk : k ≤ ∑ i, r i) :\n    (e993BlockProduct r f).coeff k / e993BlockMass r k =\n        e993SubsetAverage r f k ∧\n    e993BlockMass r k * Real.exp (e993BlockExponent r f k) ≤\n        (e993BlockProduct r f).coeff k ∧\n    e993BlockMass r k * e993ExpTaylor d (e993BlockExponent r f k) ≤\n        e993BlockMass r k * Real.exp (e993BlockExponent r f k)",
+    "permitted_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "constructivity_requirement": "classical_allowed",
+    "dependencies": [
+      {
+        "name": "lean4",
+        "version": "4.32.2",
+        "content_hash": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273"
+      },
+      {
+        "name": "Cli",
+        "version": "88679d088c9720c27ebdf2ba4dafe17341747f94",
+        "content_hash": "00eb810febd1653d824ef47f5704005b0ce0d2a28a0f17fdf40cdf3266af53a8"
+      },
+      {
+        "name": "LeanSearchClient",
+        "version": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843",
+        "content_hash": "8edf3e660ad79b0a7125fda1998ba3730723b4c3ea26bd25f9150667f25f7f14"
+      },
+      {
+        "name": "Qq",
+        "version": "38d591e778f100aec9762bb582f9c7f55f50e9dc",
+        "content_hash": "cff45e094b089ede2175cbe67a33996084bbc149f670ee404006b984a8ee63aa"
+      },
+      {
+        "name": "aesop",
+        "version": "a7dbf0c63b694e47f425f3dcddbc0e178bb432d3",
+        "content_hash": "b8641d27331fd6079574dcd80a08db94ef654b0c474a01d79fd85f9e9a452a9d"
+      },
+      {
+        "name": "batteries",
+        "version": "023ce7d62a0531e22a5331e20b587817a80d49ff",
+        "content_hash": "63358d156317e3a0cccf6f4b8c65e4c78f08349c945d58ebb364813b39f49520"
+      },
+      {
+        "name": "importGraph",
+        "version": "7e9612bf0b9ee66db3cb5b9988a35afc706f5a12",
+        "content_hash": "c7947d0a045357f3d282f044a21c08622b3aca9b7945d24a3ece93a415106adc"
+      },
+      {
+        "name": "mathlib",
+        "version": "905b95818eb32af7874a58b427f50c1711a5e96c",
+        "content_hash": "fa8d16692d86501e39e3e11c017ad30e69d82d5d26401b669239319a409cb4b2"
+      },
+      {
+        "name": "plausible",
+        "version": "e12c1910fe855cbfc38803cd4e55543906d5fa62",
+        "content_hash": "20b5da1cc804153631065aaeb28f8a6d9ee0701ad8466cb283d7b56e6f66b9c2"
+      },
+      {
+        "name": "proofwidgets",
+        "version": "6e311e2a844da9b2cc3971187df2fe0066947b93",
+        "content_hash": "f8afaf13091634f482d98c25234875554a3a880e1a6a75fcba535ab39e96d7d0"
+      }
+    ]
+  },
+  "lean_binding": {
+    "definitions": [
+      {
+        "name": "def-e993blockproduct",
+        "canonical": "Finite product of the explicitly truncated real polynomials. Exact definition is in SOURCE/ENCODING-SPEC.lean."
+      },
+      {
+        "name": "def-e993blockmass",
+        "canonical": "Real cast of choose(sum_i r_i,k). Exact definition is in SOURCE/ENCODING-SPEC.lean."
+      },
+      {
+        "name": "def-e993blockcount",
+        "canonical": "Actual cardinality of the fiber of S in block i. Exact definition is in SOURCE/ENCODING-SPEC.lean."
+      },
+      {
+        "name": "def-e993subsetaverage",
+        "canonical": "Sum of products f_i(K_i)/choose(r_i,K_i) over actual powersetCard k, divided by its actual cardinality. Exact definition is in SOURCE/ENCODING-SPEC.lean."
+      },
+      {
+        "name": "def-e993blockexponent",
+        "canonical": "Sum of guarded hypergeometric marginal weights times 2(f_i(t)-choose(r_i,t))/(f_i(t)+choose(r_i,t)). Exact definition is in SOURCE/ENCODING-SPEC.lean."
+      },
+      {
+        "name": "def-e993exptaylor",
+        "canonical": "Finite exponential Taylor sum from a=0 through d inclusive. Exact definition is in SOURCE/ENCODING-SPEC.lean."
+      }
+    ],
+    "quantifiers": [
+      {
+        "variable": "I",
+        "kind": "forall",
+        "domain": "Type u"
+      },
+      {
+        "variable": "r",
+        "kind": "forall",
+        "domain": "I → Nat"
+      },
+      {
+        "variable": "f",
+        "kind": "forall",
+        "domain": "I → Nat → Real"
+      },
+      {
+        "variable": "k",
+        "kind": "forall",
+        "domain": "Nat"
+      },
+      {
+        "variable": "d",
+        "kind": "forall",
+        "domain": "Nat"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "hyp-positive-blocks",
+        "canonical": "For every i, 0<r_i; vacuous for empty I."
+      },
+      {
+        "id": "hyp-binomial-floor",
+        "canonical": "For every i and natural t<=r_i, real choose(r_i,t)<=f_i(t)."
+      },
+      {
+        "id": "hyp-rank",
+        "canonical": "Natural k<=sum_i r_i. Natural d is arbitrary."
+      }
+    ],
+    "conclusion": {
+      "canonical": "theorem e993_finite_block_coefficient_jensen\n    {ι : Type*} [Fintype ι] [DecidableEq ι]\n    (r : ι → ℕ) (hr : ∀ i, 0 < r i)\n    (f : ι → ℕ → ℝ)\n    (hf : ∀ i t, t ≤ r i → ((r i).choose t : ℝ) ≤ f i t)\n    (k d : ℕ) (hk : k ≤ ∑ i, r i) :\n    (e993BlockProduct r f).coeff k / e993BlockMass r k =\n        e993SubsetAverage r f k ∧\n    e993BlockMass r k * Real.exp (e993BlockExponent r f k) ≤\n        (e993BlockProduct r f).coeff k ∧\n    e993BlockMass r k * e993ExpTaylor d (e993BlockExponent r f k) ≤\n        e993BlockMass r k * Real.exp (e993BlockExponent r f k)",
+      "clauses": [
+        "theorem e993_finite_block_coefficient_jensen\n    {ι : Type*} [Fintype ι] [DecidableEq ι]\n    (r : ι → ℕ) (hr : ∀ i, 0 < r i)\n    (f : ι → ℕ → ℝ)\n    (hf : ∀ i t, t ≤ r i → ((r i).choose t : ℝ) ≤ f i t)\n    (k d : ℕ) (hk : k ≤ ∑ i, r i) :\n    (e993BlockProduct r f).coeff k / e993BlockMass r k =\n        e993SubsetAverage r f k ∧\n    e993BlockMass r k * Real.exp (e993BlockExponent r f k) ≤\n        (e993BlockProduct r f).coeff k ∧\n    e993BlockMass r k * e993ExpTaylor d (e993BlockExponent r f k) ≤\n        e993BlockMass r k * Real.exp (e993BlockExponent r f k)"
+      ]
+    },
+    "dependencies": [
+      {
+        "name": "lean4",
+        "version": "4.32.2",
+        "content_hash": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273"
+      },
+      {
+        "name": "Cli",
+        "version": "88679d088c9720c27ebdf2ba4dafe17341747f94",
+        "content_hash": "00eb810febd1653d824ef47f5704005b0ce0d2a28a0f17fdf40cdf3266af53a8"
+      },
+      {
+        "name": "LeanSearchClient",
+        "version": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843",
+        "content_hash": "8edf3e660ad79b0a7125fda1998ba3730723b4c3ea26bd25f9150667f25f7f14"
+      },
+      {
+        "name": "Qq",
+        "version": "38d591e778f100aec9762bb582f9c7f55f50e9dc",
+        "content_hash": "cff45e094b089ede2175cbe67a33996084bbc149f670ee404006b984a8ee63aa"
+      },
+      {
+        "name": "aesop",
+        "version": "a7dbf0c63b694e47f425f3dcddbc0e178bb432d3",
+        "content_hash": "b8641d27331fd6079574dcd80a08db94ef654b0c474a01d79fd85f9e9a452a9d"
+      },
+      {
+        "name": "batteries",
+        "version": "023ce7d62a0531e22a5331e20b587817a80d49ff",
+        "content_hash": "63358d156317e3a0cccf6f4b8c65e4c78f08349c945d58ebb364813b39f49520"
+      },
+      {
+        "name": "importGraph",
+        "version": "7e9612bf0b9ee66db3cb5b9988a35afc706f5a12",
+        "content_hash": "c7947d0a045357f3d282f044a21c08622b3aca9b7945d24a3ece93a415106adc"
+      },
+      {
+        "name": "mathlib",
+        "version": "905b95818eb32af7874a58b427f50c1711a5e96c",
+        "content_hash": "fa8d16692d86501e39e3e11c017ad30e69d82d5d26401b669239319a409cb4b2"
+      },
+      {
+        "name": "plausible",
+        "version": "e12c1910fe855cbfc38803cd4e55543906d5fa62",
+        "content_hash": "20b5da1cc804153631065aaeb28f8a6d9ee0701ad8466cb283d7b56e6f66b9c2"
+      },
+      {
+        "name": "proofwidgets",
+        "version": "6e311e2a844da9b2cc3971187df2fe0066947b93",
+        "content_hash": "f8afaf13091634f482d98c25234875554a3a880e1a6a75fcba535ab39e96d7d0"
+      }
+    ],
+    "declaration_name": "e993_finite_block_coefficient_jensen",
+    "declaration_source_path": "LeanProject/LeanProof/Main.lean",
+    "declaration_source_sha256": "a0f07019b366cb194ddd031df0f9f963f2a051f548354349e016aceab6d23e3f",
+    "domains": [
+      {
+        "variable": "I",
+        "lean_type": "Type u"
+      },
+      {
+        "variable": "r",
+        "lean_type": "I → Nat"
+      },
+      {
+        "variable": "f",
+        "lean_type": "I → Nat → Real"
+      },
+      {
+        "variable": "k",
+        "lean_type": "Nat"
+      },
+      {
+        "variable": "d",
+        "lean_type": "Nat"
+      }
+    ],
+    "lean_statement": "theorem e993_finite_block_coefficient_jensen\n    {ι : Type*} [Fintype ι] [DecidableEq ι]\n    (r : ι → ℕ) (hr : ∀ i, 0 < r i)\n    (f : ι → ℕ → ℝ)\n    (hf : ∀ i t, t ≤ r i → ((r i).choose t : ℝ) ≤ f i t)\n    (k d : ℕ) (hk : k ≤ ∑ i, r i) :\n    (e993BlockProduct r f).coeff k / e993BlockMass r k =\n        e993SubsetAverage r f k ∧\n    e993BlockMass r k * Real.exp (e993BlockExponent r f k) ≤\n        (e993BlockProduct r f).coeff k ∧\n    e993BlockMass r k * e993ExpTaylor d (e993BlockExponent r f k) ≤\n        e993BlockMass r k * Real.exp (e993BlockExponent r f k)",
+    "declared_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "kernel_evidence": {
+    "receipt_sha256": "63dd892ef289d48dbadc8e5c7c7c9284132387f05874b9e2507f2b59b0a54c29",
+    "verdict": "verified",
+    "reported_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "dependencies": [
+      {
+        "name": "lean4",
+        "version": "4.32.2",
+        "content_hash": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273"
+      },
+      {
+        "name": "Cli",
+        "version": "88679d088c9720c27ebdf2ba4dafe17341747f94",
+        "content_hash": "00eb810febd1653d824ef47f5704005b0ce0d2a28a0f17fdf40cdf3266af53a8"
+      },
+      {
+        "name": "LeanSearchClient",
+        "version": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843",
+        "content_hash": "8edf3e660ad79b0a7125fda1998ba3730723b4c3ea26bd25f9150667f25f7f14"
+      },
+      {
+        "name": "Qq",
+        "version": "38d591e778f100aec9762bb582f9c7f55f50e9dc",
+        "content_hash": "cff45e094b089ede2175cbe67a33996084bbc149f670ee404006b984a8ee63aa"
+      },
+      {
+        "name": "aesop",
+        "version": "a7dbf0c63b694e47f425f3dcddbc0e178bb432d3",
+        "content_hash": "b8641d27331fd6079574dcd80a08db94ef654b0c474a01d79fd85f9e9a452a9d"
+      },
+      {
+        "name": "batteries",
+        "version": "023ce7d62a0531e22a5331e20b587817a80d49ff",
+        "content_hash": "63358d156317e3a0cccf6f4b8c65e4c78f08349c945d58ebb364813b39f49520"
+      },
+      {
+        "name": "importGraph",
+        "version": "7e9612bf0b9ee66db3cb5b9988a35afc706f5a12",
+        "content_hash": "c7947d0a045357f3d282f044a21c08622b3aca9b7945d24a3ece93a415106adc"
+      },
+      {
+        "name": "mathlib",
+        "version": "905b95818eb32af7874a58b427f50c1711a5e96c",
+        "content_hash": "fa8d16692d86501e39e3e11c017ad30e69d82d5d26401b669239319a409cb4b2"
+      },
+      {
+        "name": "plausible",
+        "version": "e12c1910fe855cbfc38803cd4e55543906d5fa62",
+        "content_hash": "20b5da1cc804153631065aaeb28f8a6d9ee0701ad8466cb283d7b56e6f66b9c2"
+      },
+      {
+        "name": "proofwidgets",
+        "version": "6e311e2a844da9b2cc3971187df2fe0066947b93",
+        "content_hash": "f8afaf13091634f482d98c25234875554a3a880e1a6a75fcba535ab39e96d7d0"
+      }
+    ]
+  },
+  "audit_policy": {
+    "require_independent_review": true
+  },
+  "independent_review": {
+    "reviewer_id": "C4-JENSEN-FIDELITY",
+    "reviewer_kind": "independent-mathematical-formalization-fidelity-reviewer",
+    "attestation_id": "e993-c4-jensen-fidelity-ee0f7906-5e8c-47bc-9f0c-a40e105a8fcf",
+    "completed_at": "2026-09-28T11:32:35Z",
+    "contract_projection_sha256": "4833471dc44420a2e238632ecc63d997c5d6a84e1bfa2bb059c1cb40f17eeb53",
+    "binding_projection_sha256": "70fc087c01c3d592cf9172da6f05ab3897ed18e7918a062360079316bf5e3668",
+    "verdict": "match",
+    "findings": [
+      {
+        "category": "sealed-inputs",
+        "severity": "note",
+        "message": "All 125 input-manifest members and both dispatch-manifest members match their sealed SHA-256 hashes."
+      },
+      {
+        "category": "definitions-and-statement",
+        "severity": "note",
+        "message": "The six global definitions match SOURCE/ENCODING-SPEC.lean byte for byte as declaration text; the complete theorem signature matches SOURCE/EXPECTED-STATEMENT.txt and the contract, with all three conjuncts."
+      },
+      {
+        "category": "actual-subset-counting",
+        "severity": "note",
+        "message": "The proof derives count-vector fibers from a Sigma-block subset equivalence, their product-of-binomial cardinality, and the guarded one-block hypergeometric marginal through an inside/outside bijection on actual powersetCard subsets."
+      },
+      {
+        "category": "jensen-and-taylor",
+        "severity": "note",
+        "message": "The final proof applies finite Jensen to the actual uniform subset sum, uses positive supported binomial denominators and the scalar log bound, proves the displayed exponent equals the actual marginal average, and proves every nonnegative Taylor floor for arbitrary d."
+      },
+      {
+        "category": "identity-and-kernel-binding",
+        "severity": "note",
+        "message": "The registered key E993-FINITE-BLOCK-COEFFICIENT-JENSEN-DOMINATION has the same scope; the sealed Main.lean source SHA-256 matches the audit binding and kernel receipt, and the recorded axioms are exactly propext, Classical.choice, Quot.sound with matching dependency revisions."
+      },
+      {
+        "category": "fingerprint-artifact",
+        "severity": "warning",
+        "message": "EVIDENCE/fidelity-fingerprints-before-review.json is absent from the snapshot and input manifest. Both projection digests were independently recomputed from the sealed fidelity-audit-input-before-review.json, but could not be compared with that requested fingerprint artifact."
+      },
+      {
+        "category": "review-limitation",
+        "severity": "note",
+        "message": "No Lean build was run by instruction. Kernel verification is assessed from the sealed source, build and axiom logs, and kernel receipt; this review independently checks formalization meaning rather than rerunning the kernel."
+      }
+    ]
+  }
+}

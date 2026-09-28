@@ -1,0 +1,68 @@
+$ /Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean --version
+cwd: /Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c4-jensen/LeanProject
+returncode: 0
+stdout:
+Lean (version 4.32.2, arm64-apple-darwin24.6.0, commit f3b06c705e6c85f5314019d5d3baab0fec5b580c, Release)
+stderr:
+
+$ /Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lake --version
+cwd: /Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c4-jensen/LeanProject
+returncode: 0
+stdout:
+Lake version 5.0.0-src+f3b06c7 (Lean version 4.32.2)
+stderr:
+
+$ /Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lake build
+cwd: /Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c4-jensen/LeanProject
+returncode: 0
+stdout:
+⚠ [8655/8657] Built LeanProof.Main (4.6s)
+info: LeanProof/Main.lean:168:42: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: LeanProof/Main.lean:738:17: Variable name `hr` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+✔ [8656/8657] Built LeanProof (3.1s)
+Build completed successfully (8657 jobs).
+stderr:
+
+$ /Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lake env /Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean /Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Main.lean
+cwd: /Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c4-jensen/LeanProject
+returncode: 0
+stdout:
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+/Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Main.lean:738:17: warning: Variable name `hr` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+stderr:
+
+$ /Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lake env /Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean /Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c4-jensen/EVIDENCE/axioms-probe-w1i4tms_.lean
+cwd: /Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c4-jensen/LeanProject
+returncode: 0
+stdout:
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+/Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c4-jensen/EVIDENCE/axioms-probe-w1i4tms_.lean:738:17: warning: Variable name `hr` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+'e993_finite_block_coefficient_jensen' depends on axioms: [propext, Classical.choice, Quot.sound]
+stderr:

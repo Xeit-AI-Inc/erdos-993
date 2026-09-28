@@ -1,6 +1,10 @@
 # Open research roadmap
 
-## Current priorities during Cycle4 formalization
+## Current priorities after Cycle4
+
+The general finite-block coefficient/Jensen/Taylor theorem is formally verified. Cycles5–6 focus on quantitative binomial-deficit compensation, branch-addition invariants covering the moving rank guard, paired coefficient minors and correctly conditioned root-mixture structure. The new exact-ratio ULC surplus target remains OPEN; the underlying ULC machinery was already known. The missing graph/marked-deletion/rank/selector bridge must be proved separately. Astra final analysis follows Cycle6.
+
+## Historical priorities during Cycle4 formalization
 
 Pursue an explicit quantitative surplus that compensates the binomial component, a branch-addition invariant that covers changing rank guards, and paired coefficient-minor or conditional root-mixture arguments. The enlarged-order ULC machinery was already in the predecessor tail proof; the new target is its sharper exact-ratio surplus inequality. A crude ratio substitution fails and cannot certify it. Formalize the complete actual-subset coefficient/Jensen/Taylor composite with all clauses retained. Cycles5–6 remain authorized, with Astra final review after6.
 

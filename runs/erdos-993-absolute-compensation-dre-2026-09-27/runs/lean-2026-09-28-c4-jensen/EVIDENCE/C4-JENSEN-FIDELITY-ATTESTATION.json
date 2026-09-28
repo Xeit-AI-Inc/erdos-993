@@ -1,0 +1,46 @@
+{
+  "reviewer_id": "C4-JENSEN-FIDELITY",
+  "reviewer_kind": "independent-mathematical-formalization-fidelity-reviewer",
+  "attestation_id": "e993-c4-jensen-fidelity-ee0f7906-5e8c-47bc-9f0c-a40e105a8fcf",
+  "completed_at": "2026-09-28T11:32:35Z",
+  "contract_projection_sha256": "4833471dc44420a2e238632ecc63d997c5d6a84e1bfa2bb059c1cb40f17eeb53",
+  "binding_projection_sha256": "70fc087c01c3d592cf9172da6f05ab3897ed18e7918a062360079316bf5e3668",
+  "verdict": "match",
+  "findings": [
+    {
+      "category": "sealed-inputs",
+      "severity": "note",
+      "message": "All 125 input-manifest members and both dispatch-manifest members match their sealed SHA-256 hashes."
+    },
+    {
+      "category": "definitions-and-statement",
+      "severity": "note",
+      "message": "The six global definitions match SOURCE/ENCODING-SPEC.lean byte for byte as declaration text; the complete theorem signature matches SOURCE/EXPECTED-STATEMENT.txt and the contract, with all three conjuncts."
+    },
+    {
+      "category": "actual-subset-counting",
+      "severity": "note",
+      "message": "The proof derives count-vector fibers from a Sigma-block subset equivalence, their product-of-binomial cardinality, and the guarded one-block hypergeometric marginal through an inside/outside bijection on actual powersetCard subsets."
+    },
+    {
+      "category": "jensen-and-taylor",
+      "severity": "note",
+      "message": "The final proof applies finite Jensen to the actual uniform subset sum, uses positive supported binomial denominators and the scalar log bound, proves the displayed exponent equals the actual marginal average, and proves every nonnegative Taylor floor for arbitrary d."
+    },
+    {
+      "category": "identity-and-kernel-binding",
+      "severity": "note",
+      "message": "The registered key E993-FINITE-BLOCK-COEFFICIENT-JENSEN-DOMINATION has the same scope; the sealed Main.lean source SHA-256 matches the audit binding and kernel receipt, and the recorded axioms are exactly propext, Classical.choice, Quot.sound with matching dependency revisions."
+    },
+    {
+      "category": "fingerprint-artifact",
+      "severity": "warning",
+      "message": "EVIDENCE/fidelity-fingerprints-before-review.json is absent from the snapshot and input manifest. Both projection digests were independently recomputed from the sealed fidelity-audit-input-before-review.json, but could not be compared with that requested fingerprint artifact."
+    },
+    {
+      "category": "review-limitation",
+      "severity": "note",
+      "message": "No Lean build was run by instruction. Kernel verification is assessed from the sealed source, build and axiom logs, and kernel receipt; this review independently checks formalization meaning rather than rerunning the kernel."
+    }
+  ]
+}

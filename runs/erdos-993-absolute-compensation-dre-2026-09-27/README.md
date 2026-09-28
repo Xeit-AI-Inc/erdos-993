@@ -1,6 +1,14 @@
 # Absolute selected compensation — active six-cycle experiment
 
-## Cycle4 mathematical checkpoint
+## Cycle4 closed: full finite-block formal theorem
+
+Cycle4 is closed. The full finite-block coefficient/Jensen theorem now has a governed Lean award: the actual uniform labeled-subset expectation identity, the exact guarded hypergeometric exponential lower bound, and every nonnegative Taylor floor were all verified. The proof includes empty index types, size-one blocks, arbitrary supported real coefficients above binomial floors, and boundary ranks. Separate informal audit, kernel and fresh semantic fidelity checks passed. This formalizes a reusable coefficient theorem; it does not certify graph deletion, selectors, MASS, payment or Erdős993. The registry remains513 identities at unchanged mathematical statuses; the global conjecture and guarded structural comparisons remain OPEN.
+
+The [governed report](runs/lean-2026-09-28-c4-jensen/VERIFICATION-REPORT.md), [exact Lean source](runs/lean-2026-09-28-c4-jensen/LeanProject/LeanProof/Main.lean), [fresh fidelity review](preparation/C4-JENSEN-FIDELITY/REPORT.md), [controller close](control/C4-CONTROLLER-CLOSE.md), and [terminal513-row ledger](C4-TERMINAL-OBLIGATIONS.csv) give the exact scope and evidence. Forty-five registered declarations passed the pinned project and single-file checks with only propext, Classical.choice and Quot.sound. No governed mathematical repair was needed. Reproduce with Lean4.32.2 and Mathlib revision905b95818eb32af7874a58b427f50c1711a5e96c, using lake build and lake env lean LeanProof/Main.lean inside the included LeanProject. Shared dependency caches are not bundled.
+
+This is the run's third exact-scope formal result, following the coefficient rank bound and center-subset expansion. It upgrades the existing informal composite rather than adding a new truth claim. All-m family MASS/payment retain computer-assisted/nonformal grade; the primary formal stop remains unmet. Cycles5–6 continue in the standard9/18/3/1 topology.
+
+## Historical Cycle4 mathematical checkpoint
 
 Cycle4 search, criticism, adjudication, synthesis and independent mathematical review are complete; its full finite-block Jensen formalization is in progress. Three exact auxiliary records bring the registry to513 identities:324 VERIFIED,103 REFUTED,26 CONDITIONAL,60 OPEN at mixed grades. The additions are an informal actual-descent drift lemma, a guarded counterexample to the isolated binomial-component comparison, and an OPEN exact-ratio ULC surplus condition. The full guarded deletion comparisons remain OPEN. Previously accepted all-m family MASS and payment retain computer-assisted/nonformal grade; Erdős993 remains OPEN. No new formal award is claimed at this checkpoint.
 

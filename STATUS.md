@@ -1,6 +1,10 @@
 # Research Status
 
-## Current checkpoint — Cycle4 mathematics,28 September2026
+## Current checkpoint — Cycle4 closed,28 September2026
+
+Cycle4 is closed. The full finite-block coefficient/Jensen theorem now has a governed Lean award: the actual uniform labeled-subset expectation identity, the exact guarded hypergeometric exponential lower bound, and every nonnegative Taylor floor were all verified. The proof includes empty index types, size-one blocks, arbitrary supported real coefficients above binomial floors, and boundary ranks. Separate informal audit, kernel and fresh semantic fidelity checks passed. This formalizes a reusable coefficient theorem; it does not certify graph deletion, selectors, MASS, payment or Erdős993. The registry remains513 identities at unchanged mathematical statuses; the global conjecture and guarded structural comparisons remain OPEN. See the [experiment checkpoint](docs/experiments/absolute-compensation-dre-2026-09-27.md).
+
+## Historical Cycle4 mathematical checkpoint,28 September2026
 
 Cycle4 search, criticism, adjudication, synthesis and independent mathematical review are complete; its full finite-block Jensen formalization is in progress. Three exact auxiliary records bring the registry to513 identities:324 VERIFIED,103 REFUTED,26 CONDITIONAL,60 OPEN at mixed grades. The additions are an informal actual-descent drift lemma, a guarded counterexample to the isolated binomial-component comparison, and an OPEN exact-ratio ULC surplus condition. The full guarded deletion comparisons remain OPEN. Previously accepted all-m family MASS and payment retain computer-assisted/nonformal grade; Erdős993 remains OPEN. No new formal award is claimed at this checkpoint. See the [experiment checkpoint](docs/experiments/absolute-compensation-dre-2026-09-27.md).
 

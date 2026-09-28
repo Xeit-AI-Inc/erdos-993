@@ -1,6 +1,14 @@
 # Erdős993 research notepad — active absolute compensation,28 September2026
 
-## Active experiment — Cycle4 mathematical reconciliation,2026-09-28
+## Active experiment — Cycle4 closed,2026-09-28
+
+Cycle4 is closed. The complete existing finite-block coefficient/Jensen theorem received a governed formal award. The actual uniform labeled-subset expectation equality, exact guarded hypergeometric exponential lower bound and every Taylor truncation are all included. Empty index types, positive blocks including size1, supported real coefficient floors, k=0, k=M and every natural d are covered. Separate informal audit, kernel and independent semantic fidelity passed. This is a general finite coefficient theorem, not graph/deletion/selector/payment verification.
+
+The registry has513 identities:324 VERIFIED,103 REFUTED,26 CONDITIONAL,60 OPEN at mixed grades. C4 mathematical additions are the informal descent-drift lemma, the guarded E-only mechanism refutation, and the OPEN exact-ratio tip-surplus target. The full guarded shifted comparisons stay OPEN. Literal all-m MASS and exact-ratio payment remain VERIFIED computer-assisted/nonformal for the restricted arity2/3/4 path-star family. The unrestricted conjecture remains OPEN. Cycles5–6 pursue quantitative binomial-deficit compensation, branch-addition guard strips, paired minors and correctly conditioned root-mixture structure. The primary formal stop is unmet; final Astra analysis follows Cycle6.
+
+Evidence: `experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c4-jensen/VERIFICATION-REPORT.json`.
+
+## Cycle4 mathematical reconciliation,2026-09-28
 
 All31 standard Cycle4 seats and a fresh Sol-high identity/proof review are complete. The primary selected compensation, all-m MASS and branchwise three-halves result remain VERIFIED at computer-assisted/nonformal grade. Individual and weighted lower-half shifted comparisons remain OPEN; finite support and their valid conditional selector consequences do not prove the antecedents.
 
@@ -77,7 +85,7 @@ The zero-extended binomial-block sign conjunction also has a governed formal awa
 |---|---|---|
 | 1. Uniform selected compensation | High tail and n<=2p+2 bands are covered; the arbitrary lower region remains open. | Prove the complete D+C budget, preserving original leaves, supports, strict flags and active-tag multiplicity. |
 | 2. Mixed-boundary weighted Hall | r30 is terminal: G_k all eligible ranks formal; spider rank k+3 formal; five CB whole trees, G(8^82,7^2), and ten additional CB ranks computationally certified. | The former rank-448 gap is closed. Prove (L-S)_top on CB(8,m), m>=107, m congruent to 2 mod 3, together with uniform parent descent. Respect capacity already used by non-sector sources; separate sector Hall does not imply union Hall. |
-| 3. Absolute path-star mark mass | All-m local3/2, selected MASS and exact-ratio payment remain VERIFIED computer-assisted/nonformal. C4 adds a universal informal descent-drift correction, not a mass estimate. | Attempt the complete finite-block coefficient/Jensen formal chain; develop E-deficit compensation or a scalable layer remainder to remove finite-prefix dependence. |
+| 3. Absolute path-star mark mass | All-m local3/2, selected MASS and payment remain VERIFIED computer-assisted/nonformal. The full general coefficient/Jensen/Taylor theorem is now formally verified, including the actual subset law. | Connect the coefficient theorem to exact marked-deletion structure, or prove quantitative E-deficit compensation and scalable layer remainders without finite-prefix dependence. |
 | 4. Selector structure | Both guarded shifted comparisons remain OPEN. E-only termwise positivity fails inside the guard; the new exact-ratio curvature-surplus condition is OPEN. Existing ULC orders and tail machinery are reused. | Prove the weaker original-weight deck comparison via branch-addition invariants, paired minors or sharper surplus. One selected branch plus the accepted3/2bound pays the endpoint. |
 | 5. Fixed-profile spread | Exact parent increment is G z^3 L^2 K; finite first-descent and shared-rank tests pass. | Prove nondecreasing first descent and shared-eligible selected-S monotonicity with the complete cofactor. A census-free balanced-family base is also needed for this route. |
 | 6. Conditional covariance | The frozen-selector Stein identity is proved algebraically. Pointwise full-mark drift fails even at eligible all-selected lower-half rows. | Prove a quantitative averaged bound using the favorable negative C slope. A new pointwise counterexample adds little; the mean-level inequality is the live issue. |

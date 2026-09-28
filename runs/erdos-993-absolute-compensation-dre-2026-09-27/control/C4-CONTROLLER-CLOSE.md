@@ -1,0 +1,16 @@
+# Cycle4 controller close
+
+All9 Luna-high search routes,18 Luna-high cross-orientation critics,3 Sol-high neutral origin adjudicators and1 Sol-high synthesis completed and were sealed. A fresh Sol-high claim-identity/proof reviewer independently checked new scopes and mathematical corrections. The standard source barriers and frozen Code r30 intake remain intact. Cycle4 added a verified informal drift result, a precise refuted E-only mechanism and an open quantitative surplus target. The full guarded comparisons remain OPEN; accepted all-m family payment remains computer-assisted/nonformal.
+
+# C4 full Jensen formal-attempt disposition
+
+Cycle4 is closed. The complete existing finite-block coefficient/Jensen theorem received a governed formal award. The actual uniform labeled-subset expectation equality, exact guarded hypergeometric exponential lower bound and every Taylor truncation are all included. Empty index types, positive blocks including size1, supported real coefficient floors, k=0, k=M and every natural d are covered. Separate informal audit, kernel and independent semantic fidelity passed. This is a general finite coefficient theorem, not graph/deletion/selector/payment verification.
+
+The registry has513 identities:324 VERIFIED,103 REFUTED,26 CONDITIONAL,60 OPEN at mixed grades. C4 mathematical additions are the informal descent-drift lemma, the guarded E-only mechanism refutation, and the OPEN exact-ratio tip-surplus target. The full guarded shifted comparisons stay OPEN. Literal all-m MASS and exact-ratio payment remain VERIFIED computer-assisted/nonformal for the restricted arity2/3/4 path-star family. The unrestricted conjecture remains OPEN. Cycles5–6 pursue quantitative binomial-deficit compensation, branch-addition guard strips, paired minors and correctly conditioned root-mixture structure. The primary formal stop is unmet; final Astra analysis follows Cycle6.
+
+Controller metadata preflight corrections are documented in C4-JENSEN-DEPENDENCY-PREFLIGHT.md. They changed no mathematical statement. The broad ecosystem package audit has unrelated historical findings; the active experiment package audit and exact run binding passed. No copied dependency bytes were introduced.
+
+
+Known controls and corrections are retained: common-C positive sums are valid; CF-T2's deleted +z instrument is rejected, with independent corrected evidence; endpoint scan scope is bounded; U1's order typo, AF's packet objection, and the singleton exponent wording are corrected. The n91 E-only obstruction, n122 out-of-guard full-comparison obstruction, n863 singleton payment obstruction, n868 depth1/depth2 control and rejected n203 basis error are distinct. No global minimality claim or unrestricted conjecture resolution is made.
+
+Continue C5 and C6 in the standard topology. The priority is an explicit quantitative surplus that compensates the binomial component, branch-addition invariants including moving guard strips, or paired-minor/conditional-mixture structure. Known enlarged-order ULC machinery is not a new discovery. Original theorem guards, original leaf multiplicities and exact claim identities remain fixed. Primary governed formal stop is unmet. Astra's scheduled final analysis follows C6. No seventh cycle or plateau stop.

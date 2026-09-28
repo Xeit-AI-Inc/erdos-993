@@ -1,0 +1,12 @@
+theorem e993_finite_block_coefficient_jensen
+    {ι : Type*} [Fintype ι] [DecidableEq ι]
+    (r : ι → ℕ) (hr : ∀ i, 0 < r i)
+    (f : ι → ℕ → ℝ)
+    (hf : ∀ i t, t ≤ r i → ((r i).choose t : ℝ) ≤ f i t)
+    (k d : ℕ) (hk : k ≤ ∑ i, r i) :
+    (e993BlockProduct r f).coeff k / e993BlockMass r k =
+        e993SubsetAverage r f k ∧
+    e993BlockMass r k * Real.exp (e993BlockExponent r f k) ≤
+        (e993BlockProduct r f).coeff k ∧
+    e993BlockMass r k * e993ExpTaylor d (e993BlockExponent r f k) ≤
+        e993BlockMass r k * Real.exp (e993BlockExponent r f k)
