@@ -1,0 +1,51 @@
+# Formalization Fidelity Review
+
+- Run: `lean-2026-09-28-c3-la1-cb8-e1-clone-transport`
+- Verdict: `passed`
+- Fail closed: `false`
+- Deterministic precheck: `passed`
+- Independent semantic review: `passed`
+
+## Bound Evidence
+
+- Input SHA-256: `2f63a2db0f32c15da5b261034eae6cd513dc54c55b4a7c9e21753bcfc7a47781`
+- Contract projection SHA-256: `c0edc93207c80d290af2590a897d3970fbefaa70cdb79a7d60f822b4b31fef22`
+- Lean binding projection SHA-256: `b78bee5ba5368cfa4b9a23ccc266bfe5f8227d651f669408f3692e23e49d804b`
+- Contract source SHA-256: `35b5dd525bee32f80f93125922f9933c376a194faea4fe8aa996ea3a542fb26c`
+- Lean source SHA-256: `1388fa52cbb812d120a0c161021538d23e91712b55b62d89f521faa73fa8eb15`
+- Kernel receipt SHA-256: `92e47b55865dd72c13b625332e718450d29aa56de9976f49f722952270c69ed4`
+
+## Check Counts
+
+- Passed checks: 33
+- Failed findings: 0
+- Warnings: 2
+
+## Findings
+
+- `warning` `contract-scope-text` `independent_review` (independent_reviewer, `10b0d0e82ee3ffc6`): Hypothesis rationale is imprecise (concordant with SR-C3-1 finding 3): the contract says hmod makes (16m+4)/3 - 1 = (16m+1)/3 and that hm is load-bearing through the domain 1 <= j <= a+b+1; in fact that floor identity holds for every m and the domain needs only 1 <= q <= m; hm/hmod are load-bearing only through carried entry 20 (rho < 1), and hm supplies 1 <= m. The Lean statement is unaffected (e1Rho_one_eq_cb8R1_ratio assumes only 1 <= m) and INFORMAL-PROOF.md records the correction; the text is quoted from the frozen synthesis. Registration text should use the SR-C3-1 wording. Descriptive only; not a statement mismatch. Expected `"semantic fidelity"`; observed `"match"`.
+- `warning` `contract-scope-text` `independent_review` (independent_reviewer, `d244c3b7817ec906`): formulation_status.evidence says "condition (i) formal as C1-LA3 entry 20"; the registry ruling (SR-C3-1 finding 6) is that E993Transport.cb8_E1_conditionI_topRank is an ungraded companion compiled in C1-LA3 kernel-verified file. The wording is inherited from the synthesis and does not alter the Lean statement; registration should say rho_q < 1 is formally verified only as a conjunct of this terminal. Expected `"semantic fidelity"`; observed `"match"`.
+- `note` `brief-template` `independent_review` (independent_reviewer, `91d5e55851a30e67`): Checklist items of the reviewer brief that do not apply to this award were checked as N/A: no Out/In quantity occurs in C3-LA1 (clone level), and C1-LA3 (BD) entries 19/21 are not carried. The formalizer brief heading reads "Cycle 2 Stage 7" for a C3-LA1 brief (heading typo; content is C3-LA1 and was honoured). Expected `"semantic fidelity"`; observed `"match"`.
+- `note` `carried-fragments` `independent_review` (independent_reviewer, `28d8cabc4bad0943`): Carries checked byte-for-byte against the frozen origin files under sources/c1-results/runs/: C1-LA3 Main.lean c0605e12...3011 (kernel receipt verified, source_sha256_after equal) entries 1-18 and 20 -> new entries 1, 8-25; C1-LA1 Main.lean f0578ed7...8e (verified receipt, equal) entry 11 cb8R1 -> new entry 2. Kind, marker digest and fragment body identical for all 20; every one of the 53 entry-marker digests reproduces as the SHA-256 of its fragment body (tool-computed, R-11). C1-LA3 entry 19 (cb8_gap_block_descent) and entry 21 (origin terminal) are not carried, so no R31-N-15 record arises; entry 20 does not depend on 19. No cross-award import; Main.lean imports only Mathlib. Load-bearing digests 1, 5, 14, 15, 17, 18, 20 and C1-LA1 entry 11 equal the synthesis list. Expected `"semantic fidelity"`; observed `"match"`.
+- `note` `definitions-of-record` `independent_review` (independent_reviewer, `0766d334b6c7b1b8`): The five new definitions e1S, e1T, e1Rho, e1G, e1H (docstring + def) are byte-equal to the synthesis frozen text; the only change is the recorded plumbing split into five registrar fragments each with its own namespace/open wrapper. The face companion e1_cloneTransport is byte-equal to the frozen text apart from the recorded theorem -> lemma edit; its six conjuncts equal the terminal per-(a,b,j) conjuncts. e1S and e1T guard every N-subtraction (j - al under al <= j; j - 1 - al under al + 1 <= j), the T1 truncated-N repair. Expected `"semantic fidelity"`; observed `"match"`.
+- `note` `fences-scope-attribution` `independent_review` (independent_reviewer, `bf6b180c1527e215`): Contract scope text (theorem.informal_statement) carries every fence of the synthesis and formalizer brief section 2 (clone level only; NOT cbGraph m, NOT the E1 flow on the literal network, NOT conjunct 4, NOT (HALL), NOT S(T_m,p*) <= 0, NOT (L-S)_top / (ELIG-top)(a), not a new identity, one rank p*, d = 8, the class, no theta* law, no Newton/Darroch), the excluded conclusions, a no-grade clause for every companion, the canonical run id, and the attribution list of the synthesis verbatim plus the formalizer c3-la1-formalizer-opus-20260928. No fenced object (cbGraph, network, conjunct 4, HALL, S(T_m, p*)) occurs in any Lean declaration. The four synthesis repairs are present: guarded e1S/e1T replace T1 truncated N; T2 of-record label narrowed (DRAFT re-authored); entry 21 not carried; U2 cb8Rho_lt_one_topRank deduplicated (only cb8Rho_lt_one exists). Expected `"semantic fidelity"`; observed `"match"`.
+- `note` `kernel-evidence` `independent_review` (independent_reviewer, `a8e982468ccbfa51`): RECEIPTS/kernel-verification.json (92e47b55...9ed4) verdict verified; source_sha256_before = after = 1388fa52...eb15 = the audited Main.lean; axioms of E993Transport.cb8_E1_cloneTransport_topRank exactly [propext, Classical.choice, Quot.sound] (EVIDENCE/axioms.txt, byte-bound in the receipt); every one of the 53 declarations in EVIDENCE/axioms-all-declarations.txt within that set. Source scan: 0 occurrences of sorry, admit, native_decide, decide, axiom, set_option, maxHeartbeats, maxRecDepth. Expected `"semantic fidelity"`; observed `"match"`.
+- `note` `non-vacuity` `independent_review` (independent_reviewer, `71ea6710550bae42`): m = 107 satisfies 107 <= m and m % 3 = 2 (p* = 572). All inner premises are satisfiable and live: q in {1, 54, 107}; at q = 1 (a = 7, b = 849, j = 571) SumT > 0, cb8R1 denominators > 0, conjunct 1 holds with rho_1 = 1 - 0.00437...; alpha with e1T > 0 exist at every tested q; alpha = a live at q = 1, the degenerate column j-1-alpha = b live at q = 54 and 107, and j <= a live at q = 107 (a = 855, j = 465). The conclusion is not a junk 0 = 0 instance. Expected `"semantic fidelity"`; observed `"match"`.
+- `note` `projection-integrity` `independent_review` (independent_reviewer, `a5217984ea470ed1`): Fingerprints recomputed with audit_fidelity.py fingerprints equal the controller values (binding_projection b78bee5ba5368cfa4b9a23ccc266bfe5f8227d651f669408f3692e23e49d804b, contract_projection c0edc93207c80d290af2590a897d3970fbefaa70cdb79a7d60f822b4b31fef22). The input theorem_contract block equals THEOREM-CONTRACT.yaml (35b5dd52...fb26c) field for field (definitions, domains, quantifiers, hypotheses, conclusion, lean_statement = expected_statement, sha dbfb8411...d935, permitted axioms, classical_allowed); the lean_binding block names the exact declaration, path and source hash; no paraphrase or omission found. Expected `"semantic fidelity"`; observed `"match"`.
+- `note` `semantic-contract` `independent_review` (independent_reviewer, `469183feb0411fa4`): Objects match SEMANTIC-CONTRACT.md section 2: a_q = 8q-1, b_q = 8(m-q)+1, r_q(k) = [y^k](1+y)^a_q(1+2y)^b_q, rho_q = r_q(p*-q)/r_q(p*-q-1), p* = (16m+4)/3. Cross-check by own exact transcription (scratch, a check never proof): rho_1 at m = 95 from cb8R1 equals the recorded 1354839571516225/1361543988640524 exactly. Polynomial.coeff, Nat.choose, Finset.range sums and the Z -> Q / N -> Q casts carry their standard Mathlib meaning. Expected `"semantic fidelity"`; observed `"match"`.
+- `note` `semantic-guards` `independent_review` (independent_reviewer, `28c216bd1d36e066`): Every N-subtraction and x/0 use audited in the Lean: 8*1-1, 8*(m-1)+1 (1 <= m), (16m+4)/3 exact on the class and (16m+4)/3 - 1 = (16m+1)/3 by omega; 8q-1, m-q, p*-q-1 safe under 1 <= q <= m; a-al only under al < a; j-1-al, b-(j-1-al), j-al only under 0 < e1T al (forces al+1 <= j and j-1-al <= b, proved in e1_column_inflow_clone) and the j-1-al < b branch. rho = SumS/SumT with SumT > 0 proved on 1 <= j <= a+b+1 (e1T_sum_pos from carried entry 14), so x/0 = 0 never enters a used branch. rho < 1 is reached through e1Rho_eq_coeff_ratio and carried entry 20 (cb8Rho_lt_one); it is never a hypothesis. Nonnegativity via carried entry 15 (twoBinomCoeffZ_strongLC, factor induction) at a = 0 and b = 0: no Newton, no Darroch fact assumed. (E1i) entries 18/20 are at p* on the class only; (BD) is not carried. Reserved name cb8_topRank_eligible_and_weightedHall: 0 occurrences in Main.lean. Expected `"semantic fidelity"`; observed `"match"`.
+- `note` `statement-fidelity` `independent_review` (independent_reviewer, `c133a5fb0dd7d27d`): The terminal declaration text in Main.lean (entry 53) is byte-equal to the frozen terminal in cycles/cycle-3/stage6/SYNTHESIS.md (## Lean awards, ### C3-LA1) and to the contract expected_statement. Binders (m : N), hypotheses exactly hm : 107 <= m and hmod : m % 3 = 2, no extra hypothesis; all four top-level conjuncts and all six companion conjuncts present; inner quantifiers forall q (1 <= q, q <= m), forall a b j with the three defining equations, forall alpha <= a / alpha < a as frozen. No weakening, no dropped conjunct. Exactly one theorem in the file. Expected `"semantic fidelity"`; observed `"match"`.
+
+## Independent Review
+
+- Reviewer: `c3-la1-opus-fidelity-20260928` (independent-mathematical-formalization-fidelity-reviewer)
+- Attestation: `c3-la1-opus-fidelity-attestation-20260928-7c6a8c5b-06a9-4c35-b405-440b7730f5b1`
+- Completed: `2026-09-28T11:34:58Z`
+- Verdict: `match`
+
+## Interpretation
+
+Only `passed` means the verified Lean declaration faithfully matches the bound
+theorem contract. A kernel pass without a current independent semantic
+attestation is not a fidelity pass. This Markdown file is rendered from the
+canonical JSON receipt and is not an independent source of truth.

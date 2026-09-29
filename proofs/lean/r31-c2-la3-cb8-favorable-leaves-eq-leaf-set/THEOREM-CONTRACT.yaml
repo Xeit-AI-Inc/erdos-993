@@ -1,0 +1,1187 @@
+{
+ "schema_version": "theorem-contract/v1",
+ "contract_id": "erdos-993-r31-c2-la3-cb8-favorable-leaves-eq-leaf-set-v1",
+ "theorem": {
+  "title": "C2-LA3 (r31): graph-level favorability - favorableLeaves (cbGraph m) p* = leafSet (cbGraph m) at p* = (16m+4)/3 on the literal tree CB(8,m), for the class m >= 107, m = 2 (mod 3)",
+  "informal_statement": "Canonical run id erdos-993-math-dre-20260927-r31-cb-uniform-switch; award C2-LA3 (graph-level favorability); Lean run lean-2026-09-28-c2-la3-cb8-favorable-leaves-eq-leaf-set; producer c2-la3-formalizer-opus-20260928. Terminal: for every natural number m with 107 <= m and m % 3 = 2, on the literal tree CB(8,m) = cbGraph m (vertices Fin (17m+3); r = 0, s = 1, v = 2, u_i = 3+17i, b_ij = u_i+1+2j, c_ij = u_i+2+2j), the fixed original strict selector favorableLeaves (cbGraph m) p* at p* = (16m+4)/3 (natural-number floor division, exact on the class) equals the whole leaf set C5LA1.leafSet (cbGraph m); i.e. every original leaf w satisfies Delta_p*(CB - w) = i_(p*+1)(CB - w) - i_p*(CB - w) < 0 (counts over N, difference over Z; C4LA1.IsFavorableAt). Proof DAG (synthesis ### C2-LA3; INFORMAL-PROOF.md): (N1) for every private leaf c_ij (i < m, j < 8), per (i, j) directly, C4LA1.vertexDeletionIndepSetCount (cbGraph m) c_ij k equals the k-th coefficient of (1+2X) G_c G^(m-1) + X(1+X)^2(1+2X)^(8m-1) over N, G = (1+2X)^8 + X(1+X)^8, G_c = (1+2X)^7(1+X) + X(1+X)^7 (synthesis correction 5: G_c, not G'), by the vertex split at r and the branch product with one damaged branch (E993Transport.cb8_indepPoly_isolated_factor, cb8_damagedGadget, cb8_pairs_erase, cb8_privateLeaf_minus_closedNbhd_root, cb8_privateLeaf_minus_root, cb8_privateLeaf_indepPoly_closedForm, cb8_vertexDeletion_privateLeaf_eq_coeff); (N2) the arm leaf v: I(CB - v) = (1+X)G^m + X(1+2X)^(8m) and its count = coefficient (critU3T_cb_gadgets, critU3T_cb_minus_v_closedForm, critU3T_cb_vertexDeletion_v_eq_coeff, re-authored from C-U3-T's draft); (N3) the leaf classification (carried C1-LA2 entries 60 mem_leafSet_cbGraph_iff and 72 cb_leafSet_eq_image); (N4) favorability of each leaf from C2-LA2's two closed-form inequalities (carried C2-LA2 terminal cb8_leafDeletion_closedForms_descent_topRank, rekeyed theorem -> lemma, ruling R31-N-15) through the N -> Z cast of the forward difference (carried C1-LA2 entry 2) (cb8_armLeaf_isFavorableAt_topRank, cb8_privateLeaf_isFavorableAt_topRank), then carried C1-LA2 entry 74 favorableLeaves_eq_leafSet_of_all. Carried fragments (byte-identical, keyed by (origin award, entry, digest), bound to each origin kernel receipt with verdict verified): C1-LA2 Main.lean a906ec179d52c2548ca7026d8c9de532577100308444af2e722db3fd963b5f3f (30 entries), C2-LA2 Main.lean e75c66b2eee237d04354da33ab9fb941c5fb77be98cf8db42720a681361bfaae (28 entries, entry 28 rekeyed), C2-LA1 Main.lean 986b525702a5a0d03f205da6ffbe6faf675ef4841473a498b33ef27e70190c9d (19 entries: the vertex split, the m-ary product and C-U3-T's closed-form machinery). Statement plumbing change recorded (EVIDENCE/terminal-statement-check.json): the frozen fully qualified name is written namespace-relative inside namespace E993Transport, and the Markdown list indentation is removed; binders, hypotheses, types and conclusion are byte-identical. Fences on the face: one rank p* = (16m+4)/3; d = 8; the r31 class m >= 107, m = 2 (mod 3) only; a statement about the literal cbGraph m. Excluded conclusions (not claimed, not implied): (H); conjunct 4 of the terminal; (HALL) at any scope; any aggregate; any TREE, FOREST or TRANSFER status; Erdos #993; any rank other than p*; m < 107; m not = 2 (mod 3); d != 8. No grade is asserted for any companion (every non-terminal declaration, carried or new, is a kernel-checked companion with no grade of its own). On closure the controller registers the formal clause of the r30 favorability key's scope note (d = 8, the r31 class, rank (16m+4)/3); no new key. Attribution (exactly the synthesis ### C2-LA3 list, \"as C2-LA2, plus C-U3-T and U3 for the link machinery\", with the brief's additions): T1 (seat, arm leaf); C-T1-F, C-T1-U (arm-leaf Lean); C-F2-U (both leaves, regrouping, Lean); C-F2-T, C-T2-F, C-T2-U (independent private-leaf proofs); r30 (closed forms, pairing, favorability key); C1-LA3 (G); C-U3-T (critic; closed-form link) and U3 (seat C2-U-03; Node 0) for the link machinery; C2-LA1 and C2-LA2 (r31 Cycle 2 formalizers); plus the formalizer c2-la3-formalizer-opus-20260928 (Claude Opus 5.5; chartered effort high, session-applied; runtime-reported model id claude-opus-5-5). Carry provenance (binding, not an attribution addition): the definition layer and entries 60, 72, 74 are C1-LA2's (r31 C1 formalizer); each carried fragment keeps its origin header."
+ },
+ "formulation_status": {
+  "status": "established",
+  "evidence": [
+   "Informal: X-4 (arm leaf), X-5 (private leaf), X-6 (Pi lemma), X-7 (FAV-TOP) of the Cycle 2 synthesis, proved_informal STATED; isolated second read SR-C2-1 (confirming the per-leaf closed form on the literal tree) filed; closed-form level formally verified as C2-LA2 (kernel receipt verified, closeout formally_verified).",
+   "Link: the vertex split (U3 Node 0) and C-U3-T's closed-form machinery are formally verified inside C2-LA1 (kernel receipt verified, closeout formally_verified); the v closed form was compiled in C-U3-T's scratch; the c_ij closed form is the r30 closed-form node (proved_informal), literal-DP confirmed at small m and class rows (synthesis).",
+   "Frozen Python instruments are checks, never proof, and were not re-run in this seat."
+  ]
+ },
+ "definitions": [
+  {
+   "id": "def-nat-div",
+   "description": "Nat division (16 * m + 4) / 3 : floor division on N; exact on the class (m = 3k+2 gives 48k+36). Standard Lean core.",
+   "lean_name": "HDiv.hDiv",
+   "dependencies": []
+  },
+  {
+   "id": "def-fin",
+   "description": "Fin (17 * m + 3): the vertex type of CB(8,m). Standard Lean core.",
+   "lean_name": "Fin",
+   "dependencies": []
+  },
+  {
+   "id": "def-simplegraph",
+   "description": "SimpleGraph and SimpleGraph.IsIndepSet: Mathlib simple graphs and independent sets. Standard Mathlib.",
+   "lean_name": "SimpleGraph",
+   "dependencies": []
+  },
+  {
+   "id": "def-vertexdeletionindepsetcount",
+   "description": "i_k(G - v): the number of independent k-subsets of V avoiding v (carried C1-LA2 entry 1, from r30).",
+   "lean_name": "C4LA1.vertexDeletionIndepSetCount",
+   "dependencies": [
+    "def-simplegraph"
+   ]
+  },
+  {
+   "id": "def-vertexdeletionforwarddifference",
+   "description": "Delta_p(G - v) = (i_(p+1)(G - v) : Z) - (i_p(G - v) : Z) (carried C1-LA2 entry 2).",
+   "lean_name": "C4LA1.vertexDeletionForwardDifference",
+   "dependencies": [
+    "def-vertexdeletionindepsetcount"
+   ]
+  },
+  {
+   "id": "def-isfavorableat",
+   "description": "Strict favorability of v at rank p: vertexDeletionForwardDifference G v p < 0 (carried C1-LA2 entry 3).",
+   "lean_name": "C4LA1.IsFavorableAt",
+   "dependencies": [
+    "def-vertexdeletionforwarddifference"
+   ]
+  },
+  {
+   "id": "def-isgraphleaf",
+   "description": "A graph leaf: exactly one adjacent vertex (carried C1-LA2 entry 4).",
+   "lean_name": "C4LA1.IsGraphLeaf",
+   "dependencies": [
+    "def-simplegraph"
+   ]
+  },
+  {
+   "id": "def-leafset",
+   "description": "The set of original leaves of G (carried C1-LA2 entry 6).",
+   "lean_name": "C5LA1.leafSet",
+   "dependencies": [
+    "def-isgraphleaf"
+   ]
+  },
+  {
+   "id": "def-indepsetsavoiding",
+   "description": "Independent k-subsets avoiding a finite deletion set D (carried C1-LA2 entry 9).",
+   "lean_name": "C5LA1.indepSetsAvoiding",
+   "dependencies": [
+    "def-simplegraph"
+   ]
+  },
+  {
+   "id": "def-indepsetcount",
+   "description": "i_k(G - D) (carried C1-LA2 entry 10).",
+   "lean_name": "C5LA1.indepSetCount",
+   "dependencies": [
+    "def-indepsetsavoiding"
+   ]
+  },
+  {
+   "id": "def-favorableleaves",
+   "description": "The fixed original strict selector F_p(G) = leafSet G filtered by IsFavorableAt G . p (carried C1-LA2 entry 18, from r30 C1-LA1).",
+   "lean_name": "E993Transport.favorableLeaves",
+   "dependencies": [
+    "def-leafset",
+    "def-isfavorableat"
+   ]
+  },
+  {
+   "id": "def-cbedge",
+   "description": "The edge relation of CB(8,m) on Fin (17m+3): r-s, s-v, r-u_i, u_i-b_ij, b_ij-c_ij (carried C1-LA2 entry 23).",
+   "lean_name": "E993Transport.cbEdge",
+   "dependencies": [
+    "def-fin"
+   ]
+  },
+  {
+   "id": "def-cbgraph",
+   "description": "CB(8,m) = SimpleGraph.fromRel (cbEdge m), the tree of record (carried C1-LA2 entry 24).",
+   "lean_name": "E993Transport.cbGraph",
+   "dependencies": [
+    "def-cbedge",
+    "def-simplegraph"
+   ]
+  },
+  {
+   "id": "def-cbgraph-decadj",
+   "description": "The decidable adjacency instance of cbGraph m, choice-free (carried C1-LA2 entry 25); it is the DecidableRel instance elaborated in the statement.",
+   "lean_name": "E993Transport.cbGraph_decAdj",
+   "dependencies": [
+    "def-cbgraph"
+   ]
+  },
+  {
+   "id": "def-cbvertex",
+   "description": "The vertex of CB(8,m) with label n (carried C1-LA2 entry 26); used in the proof, not in the statement.",
+   "lean_name": "E993Transport.cbVertex",
+   "dependencies": [
+    "def-fin"
+   ]
+  },
+  {
+   "id": "def-polycoeffz",
+   "description": "Integer-indexed coefficient sequence (C1-LA3 via carried C2-LA2 entry 1); used in C2-LA2's carried proof, not in the statement.",
+   "lean_name": "E993Transport.polyCoeffZ",
+   "dependencies": []
+  },
+  {
+   "id": "def-critu3t-indeppoly",
+   "description": "The independent-set generating polynomial of G - D over N (critic C-U3-T; carried C2-LA1 entry 36); used in the proof, not in the statement.",
+   "lean_name": "E993Transport.critU3T_indepPoly",
+   "dependencies": [
+    "def-indepsetcount"
+   ]
+  },
+  {
+   "id": "def-critu3t-cbpart",
+   "description": "The branch parts of CB(8,m) - r (critic C-U3-T; carried C2-LA1 entry 37); used in the proof, not in the statement.",
+   "lean_name": "E993Transport.critU3T_cbPart",
+   "dependencies": [
+    "def-fin"
+   ]
+  }
+ ],
+ "domains": [
+  {
+   "id": "domain-m",
+   "description": "m : N, the CB(8,m) parameter; constrained by hm and hmod to the class m >= 107, m = 2 (mod 3).",
+   "lean_type": "ℕ",
+   "dependencies": []
+  }
+ ],
+ "quantifiers": [
+  {
+   "binder": "m",
+   "kind": "forall",
+   "domain_id": "domain-m"
+  }
+ ],
+ "hypotheses": [
+  {
+   "id": "hyp-m-ge-107",
+   "statement": "hm : 107 ≤ m (verbatim). Used for 0 < m (carried entry 72) and passed to the carried C2-LA2 terminal (where it is unused).",
+   "dependencies": [
+    "domain-m"
+   ]
+  },
+  {
+   "id": "hyp-m-mod-3",
+   "statement": "hmod : m % 3 = 2 (verbatim). Passed to the carried C2-LA2 terminal; makes (16 * m + 4) / 3 = p* exact.",
+   "dependencies": [
+    "domain-m"
+   ]
+  }
+ ],
+ "conclusion": {
+  "id": "conclusion",
+  "statement": "favorableLeaves (cbGraph m) ((16 * m + 4) / 3) = C5LA1.leafSet (cbGraph m) - every original leaf of the literal tree CB(8,m) is strictly favorable at the single rank p* (graph level). Fences on the face: one rank p* = (16m+4)/3; d = 8; the r31 class m >= 107, m = 2 (mod 3) only; a statement about the literal cbGraph m. Excluded conclusions (not claimed, not implied): (H); conjunct 4 of the terminal; (HALL) at any scope; any aggregate; any TREE, FOREST or TRANSFER status; Erdos #993; any rank other than p*; m < 107; m not = 2 (mod 3); d != 8. No grade is asserted for any companion (every non-terminal declaration, carried or new, is a kernel-checked companion with no grade of its own). On closure the controller registers the formal clause of the r30 favorability key's scope note (d = 8, the r31 class, rank (16m+4)/3); no new key.",
+  "dependencies": [
+   "hyp-m-ge-107",
+   "hyp-m-mod-3",
+   "def-nat-div",
+   "def-fin",
+   "def-simplegraph",
+   "def-leafset",
+   "def-favorableleaves",
+   "def-cbgraph",
+   "def-cbgraph-decadj",
+   "def-isfavorableat"
+  ]
+ },
+ "dependency_graph": {
+  "nodes": [
+   {
+    "id": "def-nat-div",
+    "kind": "definition"
+   },
+   {
+    "id": "def-fin",
+    "kind": "definition"
+   },
+   {
+    "id": "def-simplegraph",
+    "kind": "definition"
+   },
+   {
+    "id": "def-vertexdeletionindepsetcount",
+    "kind": "definition"
+   },
+   {
+    "id": "def-vertexdeletionforwarddifference",
+    "kind": "definition"
+   },
+   {
+    "id": "def-isfavorableat",
+    "kind": "definition"
+   },
+   {
+    "id": "def-isgraphleaf",
+    "kind": "definition"
+   },
+   {
+    "id": "def-leafset",
+    "kind": "definition"
+   },
+   {
+    "id": "def-indepsetsavoiding",
+    "kind": "definition"
+   },
+   {
+    "id": "def-indepsetcount",
+    "kind": "definition"
+   },
+   {
+    "id": "def-favorableleaves",
+    "kind": "definition"
+   },
+   {
+    "id": "def-cbedge",
+    "kind": "definition"
+   },
+   {
+    "id": "def-cbgraph",
+    "kind": "definition"
+   },
+   {
+    "id": "def-cbgraph-decadj",
+    "kind": "definition"
+   },
+   {
+    "id": "def-cbvertex",
+    "kind": "definition"
+   },
+   {
+    "id": "def-polycoeffz",
+    "kind": "definition"
+   },
+   {
+    "id": "def-critu3t-indeppoly",
+    "kind": "definition"
+   },
+   {
+    "id": "def-critu3t-cbpart",
+    "kind": "definition"
+   },
+   {
+    "id": "domain-m",
+    "kind": "domain"
+   },
+   {
+    "id": "hyp-m-ge-107",
+    "kind": "hypothesis"
+   },
+   {
+    "id": "hyp-m-mod-3",
+    "kind": "hypothesis"
+   },
+   {
+    "id": "conclusion",
+    "kind": "conclusion"
+   }
+  ],
+  "edges": [
+   {
+    "from": "def-simplegraph",
+    "to": "def-vertexdeletionindepsetcount"
+   },
+   {
+    "from": "def-vertexdeletionindepsetcount",
+    "to": "def-vertexdeletionforwarddifference"
+   },
+   {
+    "from": "def-vertexdeletionforwarddifference",
+    "to": "def-isfavorableat"
+   },
+   {
+    "from": "def-simplegraph",
+    "to": "def-isgraphleaf"
+   },
+   {
+    "from": "def-isgraphleaf",
+    "to": "def-leafset"
+   },
+   {
+    "from": "def-simplegraph",
+    "to": "def-indepsetsavoiding"
+   },
+   {
+    "from": "def-indepsetsavoiding",
+    "to": "def-indepsetcount"
+   },
+   {
+    "from": "def-leafset",
+    "to": "def-favorableleaves"
+   },
+   {
+    "from": "def-isfavorableat",
+    "to": "def-favorableleaves"
+   },
+   {
+    "from": "def-fin",
+    "to": "def-cbedge"
+   },
+   {
+    "from": "def-cbedge",
+    "to": "def-cbgraph"
+   },
+   {
+    "from": "def-simplegraph",
+    "to": "def-cbgraph"
+   },
+   {
+    "from": "def-cbgraph",
+    "to": "def-cbgraph-decadj"
+   },
+   {
+    "from": "def-fin",
+    "to": "def-cbvertex"
+   },
+   {
+    "from": "def-indepsetcount",
+    "to": "def-critu3t-indeppoly"
+   },
+   {
+    "from": "def-fin",
+    "to": "def-critu3t-cbpart"
+   },
+   {
+    "from": "domain-m",
+    "to": "hyp-m-ge-107"
+   },
+   {
+    "from": "domain-m",
+    "to": "hyp-m-mod-3"
+   },
+   {
+    "from": "hyp-m-ge-107",
+    "to": "conclusion"
+   },
+   {
+    "from": "hyp-m-mod-3",
+    "to": "conclusion"
+   },
+   {
+    "from": "def-nat-div",
+    "to": "conclusion"
+   },
+   {
+    "from": "def-fin",
+    "to": "conclusion"
+   },
+   {
+    "from": "def-simplegraph",
+    "to": "conclusion"
+   },
+   {
+    "from": "def-leafset",
+    "to": "conclusion"
+   },
+   {
+    "from": "def-favorableleaves",
+    "to": "conclusion"
+   },
+   {
+    "from": "def-cbgraph",
+    "to": "conclusion"
+   },
+   {
+    "from": "def-cbgraph-decadj",
+    "to": "conclusion"
+   },
+   {
+    "from": "def-isfavorableat",
+    "to": "conclusion"
+   }
+  ]
+ },
+ "permitted_axioms": [
+  "propext",
+  "Classical.choice",
+  "Quot.sound"
+ ],
+ "constructivity": {
+  "required": false,
+  "policy": "explicit_axiom_allowlist",
+  "rationale": "Mathlib Finset/Polynomial APIs, classical leafSet/favorableLeaves filters and omega/ring use classical logic; exactly propext, Classical.choice, Quot.sound are permitted; no sorry, admit, native_decide, axiom, or decide over an enumeration standing in for a universal step (m, i, j, k, t, a are variables; the only finite splits are interval_cases over the gadget edge index j' < 8, each case proved)."
+ },
+ "success_criteria": {
+  "contract_valid": true,
+  "informal_audit_required": true,
+  "kernel_verification_required": true,
+  "fidelity_audit_required": true,
+  "sorry_free": true,
+  "approved_axioms_only": true
+ },
+ "lean_binding": {
+  "project_relpath": "LeanProject",
+  "source_relpath": "LeanProject/LeanProof/Main.lean",
+  "declaration_name": "E993Transport.cb8_favorableLeaves_eq_leafSet_topRank",
+  "expected_declaration_kind": "theorem",
+  "expected_statement": "theorem cb8_favorableLeaves_eq_leafSet_topRank (m : ℕ) (hm : 107 ≤ m) (hmod : m % 3 = 2) :\n    favorableLeaves (cbGraph m) ((16 * m + 4) / 3) = C5LA1.leafSet (cbGraph m)",
+  "expected_statement_sha256": "fcfbc54b0faf6b34a905cb3c5a31975502441694cb38a4aba828d92ae0799b27"
+ },
+ "source_materials": [
+  {
+   "id": "src-informal-proof",
+   "path": "INFORMAL-PROOF.md",
+   "role": "reference",
+   "sha256": "918a9fe43296032c61b0557a1952600ff1487e2833979f00ecba82b198ecc6b7"
+  },
+  {
+   "id": "src-capsule-verification",
+   "path": "CAPSULE-VERIFICATION.json",
+   "role": "reference",
+   "sha256": "90c5ae6141b5488dbec841200d07c30c26737af83bdfc582cef40cb192d6c90e"
+  },
+  {
+   "id": "src-synthesis",
+   "path": "SOURCE/cycle-2-stage6-SYNTHESIS.md",
+   "role": "theorem_intent",
+   "sha256": "260c819571311c8f3538e90fab8f4f577da18626ea888fd0c8fe04198f626024"
+  },
+  {
+   "id": "src-brief",
+   "path": "SOURCE/control-C2-STAGE7-FORMALIZER-BRIEF-LA3.md",
+   "role": "hypothesis_authority",
+   "sha256": "55a3fbb1e4247b6b00cba10297a57b9b03e7104741dfd60998d50b91fb7bb106"
+  },
+  {
+   "id": "src-protocol",
+   "path": "SOURCE/control-C2-STAGE7-PROTOCOL.md",
+   "role": "reference",
+   "sha256": "acc612aedd2fe3a029abefc786c6c0fbba3fdb47e0fc7bf7f2676f4eac985d29"
+  },
+  {
+   "id": "src-semantic-contract",
+   "path": "SOURCE/SEMANTIC-CONTRACT.md",
+   "role": "definition_authority",
+   "sha256": "7cc0bf434d6ea8f8fa2d812caf4e45787c1c06a9dfc6846b6b4d54cb60cf226e"
+  },
+  {
+   "id": "src-terminal-check",
+   "path": "EVIDENCE/terminal-statement-check.json",
+   "role": "reference",
+   "sha256": "cae14ee22b64dcb21b226ea23da6e4faf66b34b963e9263aafa6318acfe41248"
+  },
+  {
+   "id": "src-carry-plan",
+   "path": "DRAFTS/CARRY-PLAN.json",
+   "role": "reference",
+   "sha256": "1c0b700cbcbd4967e7a3f68a861bfd4b58a8556d7c9f2ac28cd577f8897919f5"
+  },
+  {
+   "id": "src-registration-order",
+   "path": "DRAFTS/REGISTRATION-ORDER.json",
+   "role": "reference",
+   "sha256": "b2e847f419f7a5829e644e64d35dd4899300f0c1c40111f3b18212cdd3a048e2"
+  },
+  {
+   "id": "src-carried-c1-la2-0001-definition-c4la1-vertexdeletionindepsetcount-lean-fragment",
+   "path": "SOURCE/carried-c1-la2-0001-definition-C4LA1-vertexDeletionIndepSetCount.lean.fragment",
+   "role": "definition_authority",
+   "sha256": "7e0a588e243735a611c919ea1080816911a3e27e4523478af0c0f560ce1b3b48"
+  },
+  {
+   "id": "src-carried-c1-la2-0002-definition-c4la1-vertexdeletionforwarddifference-lean-fragment",
+   "path": "SOURCE/carried-c1-la2-0002-definition-C4LA1-vertexDeletionForwardDifference.lean.fragment",
+   "role": "definition_authority",
+   "sha256": "c2da50eb16ee788c439b146577efeedd7dd42811c6943fb437585edcf63b5880"
+  },
+  {
+   "id": "src-carried-c1-la2-0003-definition-c4la1-isfavorableat-lean-fragment",
+   "path": "SOURCE/carried-c1-la2-0003-definition-C4LA1-IsFavorableAt.lean.fragment",
+   "role": "definition_authority",
+   "sha256": "25d8f7d274f9080468bf6d46acc6db3d4a469c2e399e7faee6cdcee24290a0db"
+  },
+  {
+   "id": "src-carried-c1-la2-0004-definition-c4la1-isgraphleaf-lean-fragment",
+   "path": "SOURCE/carried-c1-la2-0004-definition-C4LA1-IsGraphLeaf.lean.fragment",
+   "role": "definition_authority",
+   "sha256": "65acd314d3bfd74aca476e00dd8866434c67682b627bce5e105d372a556f7ae5"
+  },
+  {
+   "id": "src-carried-c1-la2-0006-definition-c5la1-leafset-lean-fragment",
+   "path": "SOURCE/carried-c1-la2-0006-definition-C5LA1-leafSet.lean.fragment",
+   "role": "definition_authority",
+   "sha256": "78ec65517bde90cc2fc5e542fc7c60d6a5147b243b74b9ac3de33d4efd1df697"
+  },
+  {
+   "id": "src-carried-c1-la2-0009-definition-c5la1-indepsetsavoiding-lean-fragment",
+   "path": "SOURCE/carried-c1-la2-0009-definition-C5LA1-indepSetsAvoiding.lean.fragment",
+   "role": "definition_authority",
+   "sha256": "ac0e331eec99650eca7a18e9fe98829bb5495850685b8f31936169f0a6d8e368"
+  },
+  {
+   "id": "src-carried-c1-la2-0010-definition-c5la1-indepsetcount-lean-fragment",
+   "path": "SOURCE/carried-c1-la2-0010-definition-C5LA1-indepSetCount.lean.fragment",
+   "role": "definition_authority",
+   "sha256": "e22635d8697e49b38dd521080f34c3eefe56a93964120c70f53ad9899b4a7f71"
+  },
+  {
+   "id": "src-carried-c1-la2-0018-definition-e993transport-favorableleaves-lean-fragment",
+   "path": "SOURCE/carried-c1-la2-0018-definition-E993Transport-favorableLeaves.lean.fragment",
+   "role": "definition_authority",
+   "sha256": "16b0c7672ed66c4cb53ba24d853764df160d6694f63b231346a2eb71c390ec77"
+  },
+  {
+   "id": "src-carried-c1-la2-0023-definition-e993transport-cbedge-lean-fragment",
+   "path": "SOURCE/carried-c1-la2-0023-definition-E993Transport-cbEdge.lean.fragment",
+   "role": "definition_authority",
+   "sha256": "84901458c1f299cbc7a74fca5dec1dec3dea642585242b696d6df7acb8a7fa7b"
+  },
+  {
+   "id": "src-carried-c1-la2-0024-definition-e993transport-cbgraph-lean-fragment",
+   "path": "SOURCE/carried-c1-la2-0024-definition-E993Transport-cbGraph.lean.fragment",
+   "role": "definition_authority",
+   "sha256": "206cd48848e1208041e40cdd238a0c92f341ede8e257629cf468701ba4ebb52f"
+  },
+  {
+   "id": "src-carried-c1-la2-0025-definition-e993transport-cbgraph-decadj-lean-fragment",
+   "path": "SOURCE/carried-c1-la2-0025-definition-E993Transport-cbGraph_decAdj.lean.fragment",
+   "role": "definition_authority",
+   "sha256": "dabf806176a2765b998216113a73e1a57e7137165ce6410e32c38be98f94e52a"
+  },
+  {
+   "id": "src-carried-c1-la2-0026-definition-e993transport-cbvertex-lean-fragment",
+   "path": "SOURCE/carried-c1-la2-0026-definition-E993Transport-cbVertex.lean.fragment",
+   "role": "definition_authority",
+   "sha256": "8a1b06d43ac1f07c0c1b81f814493fb47ff9f2e61b9fa806c80e0ab6c084dffa"
+  },
+  {
+   "id": "src-carried-c1-la2-0033-lemma-e993transport-cbvertex-val-lean-fragment",
+   "path": "SOURCE/carried-c1-la2-0033-lemma-E993Transport-cbVertex_val.lean.fragment",
+   "role": "reference",
+   "sha256": "c6accdf2872bf41acb9ddf524f60282afed933a76da5fdb142a88e29d571e223"
+  },
+  {
+   "id": "src-carried-c1-la2-0034-lemma-e993transport-eq-cbvertex-iff-lean-fragment",
+   "path": "SOURCE/carried-c1-la2-0034-lemma-E993Transport-eq_cbVertex_iff.lean.fragment",
+   "role": "reference",
+   "sha256": "e31d191c4e64507642d9e3cb70b9b13fae338e921de4968c9e69504a4d7ccd66"
+  },
+  {
+   "id": "src-carried-c1-la2-0035-lemma-e993transport-cbgraph-adj-iff-lean-fragment",
+   "path": "SOURCE/carried-c1-la2-0035-lemma-E993Transport-cbGraph_adj_iff.lean.fragment",
+   "role": "reference",
+   "sha256": "b462cedd206638d7cd619f9a0d7ad1ccb6f5e6f1c25e86a2b3814692d9a60d4b"
+  },
+  {
+   "id": "src-carried-c1-la2-0036-lemma-e993transport-cbgraph-adj-iff-val-lean-fragment",
+   "path": "SOURCE/carried-c1-la2-0036-lemma-E993Transport-cbGraph_adj_iff_val.lean.fragment",
+   "role": "reference",
+   "sha256": "0d82fdf8407ffb57f4f7cb4e17f42bd15f2b5db9985cbd802c1f81b624c99912"
+  },
+  {
+   "id": "src-carried-c1-la2-0037-lemma-e993transport-cbgraph-adj-of-val-lean-fragment",
+   "path": "SOURCE/carried-c1-la2-0037-lemma-E993Transport-cbGraph_adj_of_val.lean.fragment",
+   "role": "reference",
+   "sha256": "07d238df818cfdf7b573eaa17c924159094dabe9ef58829817fb4aee955eef21"
+  },
+  {
+   "id": "src-carried-c1-la2-0038-lemma-e993transport-cbgraph-adj-r-s-lean-fragment",
+   "path": "SOURCE/carried-c1-la2-0038-lemma-E993Transport-cbGraph_adj_r_s.lean.fragment",
+   "role": "reference",
+   "sha256": "fe0ea61f6049522a9452bcb38e333e98b92249c2de63e3542335e6f0af2c93ec"
+  },
+  {
+   "id": "src-carried-c1-la2-0039-lemma-e993transport-cbgraph-adj-s-v-lean-fragment",
+   "path": "SOURCE/carried-c1-la2-0039-lemma-E993Transport-cbGraph_adj_s_v.lean.fragment",
+   "role": "reference",
+   "sha256": "79bcebf1d707141783cac3436aaafbe0bf9f778de301fce76c7d572019dff008"
+  },
+  {
+   "id": "src-carried-c1-la2-0040-lemma-e993transport-cbgraph-adj-r-choke-lean-fragment",
+   "path": "SOURCE/carried-c1-la2-0040-lemma-E993Transport-cbGraph_adj_r_choke.lean.fragment",
+   "role": "reference",
+   "sha256": "bf806398b632a71b8a77006b213fa2b9e5db1d44dcb2a400bcd6184162e5a570"
+  },
+  {
+   "id": "src-carried-c1-la2-0041-lemma-e993transport-cbgraph-adj-choke-support-lean-fragment",
+   "path": "SOURCE/carried-c1-la2-0041-lemma-E993Transport-cbGraph_adj_choke_support.lean.fragment",
+   "role": "reference",
+   "sha256": "e9ba1eb05fffafad702a6b31518a800b974e91accd31b55b72d53853d50c3088"
+  },
+  {
+   "id": "src-carried-c1-la2-0042-lemma-e993transport-cbgraph-adj-support-leaf-lean-fragment",
+   "path": "SOURCE/carried-c1-la2-0042-lemma-E993Transport-cbGraph_adj_support_leaf.lean.fragment",
+   "role": "reference",
+   "sha256": "2c41bee31dd97c88dfe6551f3e6fdf9c09c51c05982e37ee1fce58a8a4807859"
+  },
+  {
+   "id": "src-carried-c1-la2-0057-lemma-e993transport-cb-val-cases-lean-fragment",
+   "path": "SOURCE/carried-c1-la2-0057-lemma-E993Transport-cb_val_cases.lean.fragment",
+   "role": "reference",
+   "sha256": "5d74bbd3141e6d8811691fc06303c109616ecb9a372f00bb70e56f9ec54efaa6"
+  },
+  {
+   "id": "src-carried-c1-la2-0058-lemma-e993transport-cb-leaf-cases-lean-fragment",
+   "path": "SOURCE/carried-c1-la2-0058-lemma-E993Transport-cb_leaf_cases.lean.fragment",
+   "role": "reference",
+   "sha256": "c88c5b63b3eeb9356c3783b409f5a19e21bbed79875029585c18c643a7bcc9be"
+  },
+  {
+   "id": "src-carried-c1-la2-0059-lemma-e993transport-cb-isgraphleaf-of-cases-lean-fragment",
+   "path": "SOURCE/carried-c1-la2-0059-lemma-E993Transport-cb_isGraphLeaf_of_cases.lean.fragment",
+   "role": "reference",
+   "sha256": "f138151e922a73bbc05816e8c1246588ac8eb57c0664737dca51575521c5ecb6"
+  },
+  {
+   "id": "src-carried-c1-la2-0060-lemma-e993transport-mem-leafset-cbgraph-iff-lean-fragment",
+   "path": "SOURCE/carried-c1-la2-0060-lemma-E993Transport-mem_leafSet_cbGraph_iff.lean.fragment",
+   "role": "reference",
+   "sha256": "d94a4323f5ed4b636c98e2147b5569f342f03438d92dc635594afede03baa0fd"
+  },
+  {
+   "id": "src-carried-c1-la2-0072-lemma-e993transport-cb-leafset-eq-image-lean-fragment",
+   "path": "SOURCE/carried-c1-la2-0072-lemma-E993Transport-cb_leafSet_eq_image.lean.fragment",
+   "role": "reference",
+   "sha256": "faa4b7f4dfddb4189bad0e8fa5f5993f9342a3529872ebf68f291451dcff4c6e"
+  },
+  {
+   "id": "src-carried-c1-la2-0074-lemma-e993transport-favorableleaves-eq-leafset-of-all-lean-fragment",
+   "path": "SOURCE/carried-c1-la2-0074-lemma-E993Transport-favorableLeaves_eq_leafSet_of_all.lean.fragment",
+   "role": "reference",
+   "sha256": "dd382623d12aa41b616927c1fd5fc78b5f38325e09bae5cb8bbec83c639330a2"
+  },
+  {
+   "id": "src-carried-c1-la2-0075-lemma-e993transport-mem-neighborfinset-choke-iff-lean-fragment",
+   "path": "SOURCE/carried-c1-la2-0075-lemma-E993Transport-mem_neighborFinset_choke_iff.lean.fragment",
+   "role": "reference",
+   "sha256": "1cca2da81fcd6303f0df5590affc964b75473f52991d6b83102d10a27f11c124"
+  },
+  {
+   "id": "src-carried-c1-la2-0076-lemma-e993transport-mem-neighborfinset-root-iff-lean-fragment",
+   "path": "SOURCE/carried-c1-la2-0076-lemma-E993Transport-mem_neighborFinset_root_iff.lean.fragment",
+   "role": "reference",
+   "sha256": "8e28d4f326b15eda940000970abbeb1d3c5e08a32cfb576a5160c81b0a43f436"
+  },
+  {
+   "id": "src-carried-c2-la1-0036-definition-e993transport-critu3t-indeppoly-lean-fragment",
+   "path": "SOURCE/carried-c2-la1-0036-definition-E993Transport-critU3T_indepPoly.lean.fragment",
+   "role": "reference",
+   "sha256": "81c7a11df4dffb0882a43a1a04a0ba5a58188d5f4966a5edfe9b0d7856fbf63f"
+  },
+  {
+   "id": "src-carried-c2-la1-0037-definition-e993transport-critu3t-cbpart-lean-fragment",
+   "path": "SOURCE/carried-c2-la1-0037-definition-E993Transport-critU3T_cbPart.lean.fragment",
+   "role": "reference",
+   "sha256": "6501549155030af35fc7ca1984043ec8754fc5de50beaec2e030412e8cedefad"
+  },
+  {
+   "id": "src-carried-c2-la1-0521-lemma-e993transport-indepsetcount-succ-split-lean-fragment",
+   "path": "SOURCE/carried-c2-la1-0521-lemma-E993Transport-indepSetCount_succ_split.lean.fragment",
+   "role": "reference",
+   "sha256": "11137bef77ff6bfeaabc0f5ef4ed756d8f4d4535b07ef41db4315ac30f617439"
+  },
+  {
+   "id": "src-carried-c2-la1-0522-lemma-e993transport-critu3t-mem-indepsetsavoiding-lean-fragment",
+   "path": "SOURCE/carried-c2-la1-0522-lemma-E993Transport-critU3T_mem_indepSetsAvoiding.lean.fragment",
+   "role": "reference",
+   "sha256": "2a4404c180c92ea7b252d617cfd4a39990552395c8a7651a49f6364e5970c7cf"
+  },
+  {
+   "id": "src-carried-c2-la1-0523-lemma-e993transport-critu3t-indepsetcount-disjoint-split-lean-fragme",
+   "path": "SOURCE/carried-c2-la1-0523-lemma-E993Transport-critU3T_indepSetCount_disjoint_split.lean.fragment",
+   "role": "reference",
+   "sha256": "776fe685c497b24a558a0df2240a3f2a831325403b385fa2aa3f50b417da66b0"
+  },
+  {
+   "id": "src-carried-c2-la1-0524-lemma-e993transport-critu3t-indepsetcount-eq-zero-lean-fragment",
+   "path": "SOURCE/carried-c2-la1-0524-lemma-E993Transport-critU3T_indepSetCount_eq_zero.lean.fragment",
+   "role": "reference",
+   "sha256": "8256ae809488493b3665ffd6aa9c5b4e75552d12db06c4f369abfd3c3e9f0cd9"
+  },
+  {
+   "id": "src-carried-c2-la1-0525-lemma-e993transport-critu3t-coeff-indeppoly-lean-fragment",
+   "path": "SOURCE/carried-c2-la1-0525-lemma-E993Transport-critU3T_coeff_indepPoly.lean.fragment",
+   "role": "reference",
+   "sha256": "5f360f052957fabc018a18506fc5a07555a2c00691c535e4f377a4fe2febc51b"
+  },
+  {
+   "id": "src-carried-c2-la1-0526-lemma-e993transport-critu3t-indeppoly-disjoint-mul-lean-fragment",
+   "path": "SOURCE/carried-c2-la1-0526-lemma-E993Transport-critU3T_indepPoly_disjoint_mul.lean.fragment",
+   "role": "reference",
+   "sha256": "c672d5d5554e0b30e9b964038cca9df7edc670bd30cbb79bedf85cc3f8e6f7eb"
+  },
+  {
+   "id": "src-carried-c2-la1-0527-lemma-e993transport-critu3t-indeppoly-congr-lean-fragment",
+   "path": "SOURCE/carried-c2-la1-0527-lemma-E993Transport-critU3T_indepPoly_congr.lean.fragment",
+   "role": "reference",
+   "sha256": "41508deca9495125882f81136b36aa1ac56f2fce1ebede9c88242c26898e8564"
+  },
+  {
+   "id": "src-carried-c2-la1-0528-lemma-e993transport-critu3t-indeppoly-univ-lean-fragment",
+   "path": "SOURCE/carried-c2-la1-0528-lemma-E993Transport-critU3T_indepPoly_univ.lean.fragment",
+   "role": "reference",
+   "sha256": "322a113cbef4bf7d4ff3880ad82e2f91ef5f139f5d7ee89323f3a7067d335a56"
+  },
+  {
+   "id": "src-carried-c2-la1-0529-lemma-e993transport-critu3t-indeppoly-eq-prod-lean-fragment",
+   "path": "SOURCE/carried-c2-la1-0529-lemma-E993Transport-critU3T_indepPoly_eq_prod.lean.fragment",
+   "role": "reference",
+   "sha256": "a0a302470d1d88c552de4fad556abe11bf8ce283f215e69720ac389cda6bb966"
+  },
+  {
+   "id": "src-carried-c2-la1-0530-lemma-e993transport-critu3t-mem-cbpart-lean-fragment",
+   "path": "SOURCE/carried-c2-la1-0530-lemma-E993Transport-critU3T_mem_cbPart.lean.fragment",
+   "role": "reference",
+   "sha256": "2e916d348906632bfa8c74b1b7cf55d8b41854d80582e05414ffb671fb5bb54d"
+  },
+  {
+   "id": "src-carried-c2-la1-0532-lemma-e993transport-critu3t-indeppoly-vertex-split-lean-fragment",
+   "path": "SOURCE/carried-c2-la1-0532-lemma-E993Transport-critU3T_indepPoly_vertex_split.lean.fragment",
+   "role": "reference",
+   "sha256": "c139b8d0e59a03748a7410798100b9839979cb0fa5123b08840e8f826009db5b"
+  },
+  {
+   "id": "src-carried-c2-la1-0533-lemma-e993transport-critu3t-indeppoly-eq-one-lean-fragment",
+   "path": "SOURCE/carried-c2-la1-0533-lemma-E993Transport-critU3T_indepPoly_eq_one.lean.fragment",
+   "role": "reference",
+   "sha256": "de5b5b1baa0a0627edeb592a283e8646b2dd9c6414befc2730b3f4dab5235b47"
+  },
+  {
+   "id": "src-carried-c2-la1-0534-lemma-e993transport-critu3t-indeppoly-single-lean-fragment",
+   "path": "SOURCE/carried-c2-la1-0534-lemma-E993Transport-critU3T_indepPoly_single.lean.fragment",
+   "role": "reference",
+   "sha256": "cbe40a3a7a2d0b7fbd30a579a904d45a024cd0f6f4ddb48a8183c1d31409c183"
+  },
+  {
+   "id": "src-carried-c2-la1-0535-lemma-e993transport-critu3t-indeppoly-edge-lean-fragment",
+   "path": "SOURCE/carried-c2-la1-0535-lemma-E993Transport-critU3T_indepPoly_edge.lean.fragment",
+   "role": "reference",
+   "sha256": "3fbaef94268b6a66593e7bb08e8b303d353292837bcaa088b71a3a03147c0593"
+  },
+  {
+   "id": "src-carried-c2-la1-0536-lemma-e993transport-critu3t-cb-pendant-lean-fragment",
+   "path": "SOURCE/carried-c2-la1-0536-lemma-E993Transport-critU3T_cb_pendant.lean.fragment",
+   "role": "reference",
+   "sha256": "ea12541e8a53d2efcf30a9b79465a597ca2b67d0f0229e5f07a8c552fd9af218"
+  },
+  {
+   "id": "src-carried-c2-la1-0537-lemma-e993transport-critu3t-cb-gadget-lean-fragment",
+   "path": "SOURCE/carried-c2-la1-0537-lemma-E993Transport-critU3T_cb_gadget.lean.fragment",
+   "role": "reference",
+   "sha256": "a3655aa194901048316dd878d926911c5a07c0f3c527454f3ca0650d530bf901"
+  },
+  {
+   "id": "src-carried-c2-la1-0538-lemma-e993transport-critu3t-cb-pairs-lean-fragment",
+   "path": "SOURCE/carried-c2-la1-0538-lemma-E993Transport-critU3T_cb_pairs.lean.fragment",
+   "role": "reference",
+   "sha256": "3439d84d1d3d799ac679926f500c3c0e84a1c72a2e41a65ed8b080dcf4439a7b"
+  },
+  {
+   "id": "src-carried-c2-la2-0001-definition-e993transport-polycoeffz-lean-fragment",
+   "path": "SOURCE/carried-c2-la2-0001-definition-E993Transport-polyCoeffZ.lean.fragment",
+   "role": "reference",
+   "sha256": "046f659b7d033efef4613b69f6f6192013a62df02806d99ad4013ef00d9a5f9f"
+  },
+  {
+   "id": "src-carried-c2-la2-0002-lemma-e993transport-descent-of-recurrence-logconcave-lean-fragment",
+   "path": "SOURCE/carried-c2-la2-0002-lemma-E993Transport-descent_of_recurrence_logconcave.lean.fragment",
+   "role": "reference",
+   "sha256": "7be63ac8eb845bce953cef4e1c3f1b473c9eb06bea85ba3eb52ca2ad4d95d679"
+  },
+  {
+   "id": "src-carried-c2-la2-0003-lemma-e993transport-twobinom-derivative-identity-lean-fragment",
+   "path": "SOURCE/carried-c2-la2-0003-lemma-E993Transport-twoBinom_derivative_identity.lean.fragment",
+   "role": "reference",
+   "sha256": "63ad7e5309d3418f643650fc656162f808ef36f1c0a0191950a5151d88753b71"
+  },
+  {
+   "id": "src-carried-c2-la2-0004-lemma-e993transport-twobinomcoeff-recurrence-lean-fragment",
+   "path": "SOURCE/carried-c2-la2-0004-lemma-E993Transport-twoBinomCoeff_recurrence.lean.fragment",
+   "role": "reference",
+   "sha256": "d60b214129419ccdf8cd12a466c639c1f83da6cce1f52f3b1d61366905f7b891"
+  },
+  {
+   "id": "src-carried-c2-la2-0005-lemma-e993transport-polycoeffz-natcast-lean-fragment",
+   "path": "SOURCE/carried-c2-la2-0005-lemma-E993Transport-polyCoeffZ_natCast.lean.fragment",
+   "role": "reference",
+   "sha256": "4c3bf9dcf2a367fb88d5a49b18837f0e18768a66d4d5774b7e5a28979ac1c940"
+  },
+  {
+   "id": "src-carried-c2-la2-0006-lemma-e993transport-polycoeffz-of-neg-lean-fragment",
+   "path": "SOURCE/carried-c2-la2-0006-lemma-E993Transport-polyCoeffZ_of_neg.lean.fragment",
+   "role": "reference",
+   "sha256": "3cd1bd212783c3eb57c95fb443c9ea94cfa4ae19f40c37e9d1e83520fe737c08"
+  },
+  {
+   "id": "src-carried-c2-la2-0007-lemma-e993transport-polycoeffz-one-lean-fragment",
+   "path": "SOURCE/carried-c2-la2-0007-lemma-E993Transport-polyCoeffZ_one.lean.fragment",
+   "role": "reference",
+   "sha256": "124ae5c48f85f9b8ae1fe5842db3164f7c6feb80ac516db56dce2bd533cbd456"
+  },
+  {
+   "id": "src-carried-c2-la2-0008-lemma-e993transport-polycoeffz-linear-mul-lean-fragment",
+   "path": "SOURCE/carried-c2-la2-0008-lemma-E993Transport-polyCoeffZ_linear_mul.lean.fragment",
+   "role": "reference",
+   "sha256": "3459fc88eb9ce095b0f01978ec725389ed51de6ad1fd7d21fac1d2f7c5d703ed"
+  },
+  {
+   "id": "src-carried-c2-la2-0009-lemma-e993transport-stronglc-linear-step-lean-fragment",
+   "path": "SOURCE/carried-c2-la2-0009-lemma-E993Transport-strongLC_linear_step.lean.fragment",
+   "role": "reference",
+   "sha256": "d787f5498d99542c3aa877607acadf4da9083888cfad1282baad7d96ef6bcceb"
+  },
+  {
+   "id": "src-carried-c2-la2-0010-lemma-e993transport-twobinom-succ-left-lean-fragment",
+   "path": "SOURCE/carried-c2-la2-0010-lemma-E993Transport-twoBinom_succ_left.lean.fragment",
+   "role": "reference",
+   "sha256": "a661a5422e938a23adf197c83ce03c17d6e749a9313c245a5031a6d5a1a5876c"
+  },
+  {
+   "id": "src-carried-c2-la2-0011-lemma-e993transport-twobinom-succ-right-lean-fragment",
+   "path": "SOURCE/carried-c2-la2-0011-lemma-E993Transport-twoBinom_succ_right.lean.fragment",
+   "role": "reference",
+   "sha256": "2759f45c072c96b98ad9a6be9e94af7e61dd6c2ca2e31d7a55fe3d7235370be0"
+  },
+  {
+   "id": "src-carried-c2-la2-0012-lemma-e993transport-polycoeffz-linear-mul-nonneg-pos-lean-fragment",
+   "path": "SOURCE/carried-c2-la2-0012-lemma-E993Transport-polyCoeffZ_linear_mul_nonneg_pos.lean.fragment",
+   "role": "reference",
+   "sha256": "9b25fa4db728eee090ffbdf7182be9c750e8bf8d07f2a0f8d5d75e865900c12b"
+  },
+  {
+   "id": "src-carried-c2-la2-0013-lemma-e993transport-twobinomcoeffz-nonneg-pos-lean-fragment",
+   "path": "SOURCE/carried-c2-la2-0013-lemma-E993Transport-twoBinomCoeffZ_nonneg_pos.lean.fragment",
+   "role": "reference",
+   "sha256": "8db51d28180bafedd83eb8bca3225379c85c478498b64681f87a0671c7de8a58"
+  },
+  {
+   "id": "src-carried-c2-la2-0014-lemma-e993transport-twobinomcoeff-pos-lean-fragment",
+   "path": "SOURCE/carried-c2-la2-0014-lemma-E993Transport-twoBinomCoeff_pos.lean.fragment",
+   "role": "reference",
+   "sha256": "768f4ab5ed5dd35057de158c05a06727d928906d103861fe4dcd70a6e039a9ac"
+  },
+  {
+   "id": "src-carried-c2-la2-0015-lemma-e993transport-twobinomcoeffz-stronglc-lean-fragment",
+   "path": "SOURCE/carried-c2-la2-0015-lemma-E993Transport-twoBinomCoeffZ_strongLC.lean.fragment",
+   "role": "reference",
+   "sha256": "61e8794fec4ff00b103505614f6cce53efdcf341ae98866fdc89686abaf57dc0"
+  },
+  {
+   "id": "src-carried-c2-la2-0016-lemma-e993transport-twobinomcoeff-logconcave-lean-fragment",
+   "path": "SOURCE/carried-c2-la2-0016-lemma-E993Transport-twoBinomCoeff_logConcave.lean.fragment",
+   "role": "reference",
+   "sha256": "77460852bfb43435d294720f9480f9713283eb6aa46af6491b6c0d8e25255b02"
+  },
+  {
+   "id": "src-carried-c2-la2-0017-lemma-e993transport-twobinom-coeff-strictanti-of-gap-lean-fragment",
+   "path": "SOURCE/carried-c2-la2-0017-lemma-E993Transport-twoBinom_coeff_strictAnti_of_gap.lean.fragment",
+   "role": "reference",
+   "sha256": "b39cd78768d02c83194f21b48717af69a8354afb36719755c5979769c3d6589c"
+  },
+  {
+   "id": "src-carried-c2-la2-0018-lemma-e993transport-cb8-armleaf-blockexpansion-lean-fragment",
+   "path": "SOURCE/carried-c2-la2-0018-lemma-E993Transport-cb8_armLeaf_blockExpansion.lean.fragment",
+   "role": "reference",
+   "sha256": "396116c7558302c70c6a49e9fd7f09907319b89a0dd4d714c53ac211fe6f0b01"
+  },
+  {
+   "id": "src-carried-c2-la2-0019-lemma-e993transport-cb8-armleaf-block-descent-lean-fragment",
+   "path": "SOURCE/carried-c2-la2-0019-lemma-E993Transport-cb8_armLeaf_block_descent.lean.fragment",
+   "role": "reference",
+   "sha256": "8518b8869cb73ee1279d756164a732982f7cce5056afcf4cdf380d9199c22866"
+  },
+  {
+   "id": "src-carried-c2-la2-0020-lemma-e993transport-cb8-armleaf-remainder-descent-lean-fragment",
+   "path": "SOURCE/carried-c2-la2-0020-lemma-E993Transport-cb8_armLeaf_remainder_descent.lean.fragment",
+   "role": "reference",
+   "sha256": "bac7c7df427a94b5088f0ccd8558978e252ceafb5e7cc35e9996ad0569c474a9"
+  },
+  {
+   "id": "src-carried-c2-la2-0021-lemma-e993transport-cb8-armleaf-closedform-descent-toprank-lean-frag",
+   "path": "SOURCE/carried-c2-la2-0021-lemma-E993Transport-cb8_armLeaf_closedForm_descent_topRank.lean.fragment",
+   "role": "reference",
+   "sha256": "62647c33b400eb53bce67a0befcff3454f3bdec57e83c118ae5b29e171faad52"
+  },
+  {
+   "id": "src-carried-c2-la2-0022-lemma-e993transport-cb8-privateleaf-blockexpansion-lean-fragment",
+   "path": "SOURCE/carried-c2-la2-0022-lemma-E993Transport-cb8_privateLeaf_blockExpansion.lean.fragment",
+   "role": "reference",
+   "sha256": "16c3e8cc2e47edd8826fe0cef0a166f9d8ed55c2b6c5d82db4b6bec14065aa23"
+  },
+  {
+   "id": "src-carried-c2-la2-0023-lemma-e993transport-cb8-privateleaf-regroup-lean-fragment",
+   "path": "SOURCE/carried-c2-la2-0023-lemma-E993Transport-cb8_privateLeaf_regroup.lean.fragment",
+   "role": "reference",
+   "sha256": "ef36203e02c94102fef6e961fe39b92a42e0c133dc20f6e81dd9e3ddb700e022"
+  },
+  {
+   "id": "src-carried-c2-la2-0024-lemma-e993transport-cb8-privateleaf-e0-block-descent-lean-fragment",
+   "path": "SOURCE/carried-c2-la2-0024-lemma-E993Transport-cb8_privateLeaf_E0_block_descent.lean.fragment",
+   "role": "reference",
+   "sha256": "90c5bd6f04058f9149d6f11a147b2e8e1626f850cfcdc3497fd5ea8ab394906d"
+  },
+  {
+   "id": "src-carried-c2-la2-0025-lemma-e993transport-cb8-privateleaf-e1-block-descent-lean-fragment",
+   "path": "SOURCE/carried-c2-la2-0025-lemma-E993Transport-cb8_privateLeaf_E1_block_descent.lean.fragment",
+   "role": "reference",
+   "sha256": "2cbf6fa6bc1ee3894a1e847347fc675ff8fbf6ee0e00a769e0425671dd11a3b6"
+  },
+  {
+   "id": "src-carried-c2-la2-0026-lemma-e993transport-cb8-privateleaf-regrouped-descent-lean-fragment",
+   "path": "SOURCE/carried-c2-la2-0026-lemma-E993Transport-cb8_privateLeaf_regrouped_descent.lean.fragment",
+   "role": "reference",
+   "sha256": "7703d38ca821385cae600e2016607165517de6ab00c9a5d28a2fd1586f049dd7"
+  },
+  {
+   "id": "src-carried-c2-la2-0027-lemma-e993transport-cb8-privateleaf-closedform-descent-toprank-lean-",
+   "path": "SOURCE/carried-c2-la2-0027-lemma-E993Transport-cb8_privateLeaf_closedForm_descent_topRank.lean.fragment",
+   "role": "reference",
+   "sha256": "39b8d37276ea43e8d35a2fd508ac3a331efbcbae59e7369cd5fce08defb2808a"
+  },
+  {
+   "id": "src-carried-c2-la2-0028-theorem-e993transport-cb8-leafdeletion-closedforms-descent-toprank-l",
+   "path": "SOURCE/carried-c2-la2-0028-theorem-E993Transport-cb8_leafDeletion_closedForms_descent_topRank.lean.fragment",
+   "role": "reference",
+   "sha256": "93acf3cc7326a0de9b538f3c76ef1425fca0e7789d5d3dc84a2dbfd5de658fc9"
+  },
+  {
+   "id": "src-draft-crit-u3-t-criticu3t-lean",
+   "path": "SOURCE/draft-crit-U3-T-CriticU3T.lean",
+   "role": "reference",
+   "sha256": "b2f134b894d52bb83918132a6ba1d4bb74d471a870defd12ec4e6de1ec5d7aae"
+  },
+  {
+   "id": "src-draft-crit-u3-t-criticu3t2-lean",
+   "path": "SOURCE/draft-crit-U3-T-CriticU3T2.lean",
+   "role": "reference",
+   "sha256": "74a1c05c71bc2606e99ec280ff57ec51464a0118da875210940b206f79498f3c"
+  },
+  {
+   "id": "src-draft-crit-u3-t-u3-lean",
+   "path": "SOURCE/draft-crit-U3-T-U3.lean",
+   "role": "reference",
+   "sha256": "bacc48086c1306548f9757f63b041a0ed2ca8151629509ccd7e0e4cb9f25e9e0"
+  },
+  {
+   "id": "src-origin-c1la2-formalization-state-json",
+   "path": "SOURCE/origin-c1la2-FORMALIZATION-STATE.json",
+   "role": "reference",
+   "sha256": "97722ca72a9ef29ddef53d24079459ee4cb138f26b3c5e8f95dce74cfe1f4ad0"
+  },
+  {
+   "id": "src-origin-c1la2-main-lean",
+   "path": "SOURCE/origin-c1la2-Main.lean",
+   "role": "definition_authority",
+   "sha256": "a906ec179d52c2548ca7026d8c9de532577100308444af2e722db3fd963b5f3f"
+  },
+  {
+   "id": "src-origin-c1la2-kernel-verification-json",
+   "path": "SOURCE/origin-c1la2-kernel-verification.json",
+   "role": "reference",
+   "sha256": "dde486d347ccb497fa345d8e80b5126a3989f844428d55f9653270b8d427e6f6"
+  },
+  {
+   "id": "src-origin-c2la1-formalization-state-json",
+   "path": "SOURCE/origin-c2la1-FORMALIZATION-STATE.json",
+   "role": "reference",
+   "sha256": "848cd7226c1965a5a731059af9d360d0ad0d511d48f80972b85eede32194029b"
+  },
+  {
+   "id": "src-origin-c2la1-formalizer-report-md",
+   "path": "SOURCE/origin-c2la1-FORMALIZER-REPORT.md",
+   "role": "reference",
+   "sha256": "b9a68b25aa39443c65db346fa57123e1cda9da7fbcaaaf2ab0b6f73b5525c39e"
+  },
+  {
+   "id": "src-origin-c2la1-main-lean",
+   "path": "SOURCE/origin-c2la1-Main.lean",
+   "role": "reference",
+   "sha256": "986b525702a5a0d03f205da6ffbe6faf675ef4841473a498b33ef27e70190c9d"
+  },
+  {
+   "id": "src-origin-c2la1-kernel-verification-json",
+   "path": "SOURCE/origin-c2la1-kernel-verification.json",
+   "role": "reference",
+   "sha256": "adb8068403b9cae47d3f9f8d98874698d7c2a7aad009a694e901a28217c3a3ee"
+  },
+  {
+   "id": "src-origin-c2la2-capsule-verification-json",
+   "path": "SOURCE/origin-c2la2-CAPSULE-VERIFICATION.json",
+   "role": "reference",
+   "sha256": "2df87e13ebd5f3f0b940cff223af50402322f0f931ce5894fde298cbf47990e7"
+  },
+  {
+   "id": "src-origin-c2la2-formalization-state-json",
+   "path": "SOURCE/origin-c2la2-FORMALIZATION-STATE.json",
+   "role": "reference",
+   "sha256": "f8b81f9701348b1c766798175270e7400857dde1cb1dffe45a9f5944746d5ae6"
+  },
+  {
+   "id": "src-origin-c2la2-formalizer-report-md",
+   "path": "SOURCE/origin-c2la2-FORMALIZER-REPORT.md",
+   "role": "reference",
+   "sha256": "8103e2510394fc992258e81e65a32e8979e802a2b8badc63525fce98e2cd2ae1"
+  },
+  {
+   "id": "src-origin-c2la2-main-lean",
+   "path": "SOURCE/origin-c2la2-Main.lean",
+   "role": "reference",
+   "sha256": "e75c66b2eee237d04354da33ab9fb941c5fb77be98cf8db42720a681361bfaae"
+  },
+  {
+   "id": "src-origin-c2la2-kernel-verification-json",
+   "path": "SOURCE/origin-c2la2-kernel-verification.json",
+   "role": "reference",
+   "sha256": "4dd32752f8e2aec1cd82b39112d4755cdbcfda9454b5e81ab545c3fb8d9a3de8"
+  },
+  {
+   "id": "src-second-read-sr-c2-1-md",
+   "path": "SOURCE/second-read-SR-C2-1.md",
+   "role": "reference",
+   "sha256": "cec5302f7bc365b6b7be0265d4bd0198b04d9b270f22786ae534820842a49fe3"
+  },
+  {
+   "id": "src-drafts-rekeyed-0028-lemma-e993transport-cb8-leafdeletion-closedforms-descent-toprank-lea",
+   "path": "DRAFTS/rekeyed/0028-lemma-E993Transport-cb8_leafDeletion_closedForms_descent_topRank.lean.fragment",
+   "role": "reference",
+   "sha256": "768c6972f81e81df3e0259f7a75f0c5c255da00af6050c442154878ebec4db38"
+  },
+  {
+   "id": "src-drafts-new-01-critu3t-cb-gadgets-lean",
+   "path": "DRAFTS/new/01-critU3T_cb_gadgets.lean",
+   "role": "reference",
+   "sha256": "6da0a71aafafb206f72925b465b9554e22bd7663fc33402a3aa4ae63b7652200"
+  },
+  {
+   "id": "src-drafts-new-02-critu3t-cb-minus-v-closedform-lean",
+   "path": "DRAFTS/new/02-critU3T_cb_minus_v_closedForm.lean",
+   "role": "reference",
+   "sha256": "96d9eb23689ce40c53a5745a23d609b91cd24828e840c0883153b03fa4a95e68"
+  },
+  {
+   "id": "src-drafts-new-03-critu3t-cb-vertexdeletion-v-eq-coeff-lean",
+   "path": "DRAFTS/new/03-critU3T_cb_vertexDeletion_v_eq_coeff.lean",
+   "role": "reference",
+   "sha256": "2f427993e676c9674714180ddc1450efce849e83f93c25a4e15dcd4f82202976"
+  },
+  {
+   "id": "src-drafts-new-04-cb8-indeppoly-isolated-factor-lean",
+   "path": "DRAFTS/new/04-cb8_indepPoly_isolated_factor.lean",
+   "role": "reference",
+   "sha256": "7f3ed8cdb4957bc1a1614aea5e6fe3cfdd36d1fdd3810fc62b5baf8247d269f3"
+  },
+  {
+   "id": "src-drafts-new-05-cb8-damagedgadget-lean",
+   "path": "DRAFTS/new/05-cb8_damagedGadget.lean",
+   "role": "reference",
+   "sha256": "aebddc49263945ed08363b79fad0b1b390e5b6d574ed43e33b327e3042cad4fb"
+  },
+  {
+   "id": "src-drafts-new-06-cb8-pairs-erase-lean",
+   "path": "DRAFTS/new/06-cb8_pairs_erase.lean",
+   "role": "reference",
+   "sha256": "7ae63d8d6e1cb44d5d2cd8d32f64c13afd7684b0500c3f6625e9d4127b27b379"
+  },
+  {
+   "id": "src-drafts-new-07-cb8-privateleaf-minus-closednbhd-root-lean",
+   "path": "DRAFTS/new/07-cb8_privateLeaf_minus_closedNbhd_root.lean",
+   "role": "reference",
+   "sha256": "c8712394f8028644ff6e4ad4ef1c6652352bf1fa689ae114f7e01e347563ca36"
+  },
+  {
+   "id": "src-drafts-new-08-cb8-privateleaf-minus-root-lean",
+   "path": "DRAFTS/new/08-cb8_privateLeaf_minus_root.lean",
+   "role": "reference",
+   "sha256": "528c799821093f06b04c51e582420916885dfe4d9f61f99fd7e4a7a70c401844"
+  },
+  {
+   "id": "src-drafts-new-09-cb8-privateleaf-indeppoly-closedform-lean",
+   "path": "DRAFTS/new/09-cb8_privateLeaf_indepPoly_closedForm.lean",
+   "role": "reference",
+   "sha256": "b5937c4599e95a120370b14d0344a8a190c87e81a3b4295879058b4615520681"
+  },
+  {
+   "id": "src-drafts-new-10-cb8-vertexdeletion-privateleaf-eq-coeff-lean",
+   "path": "DRAFTS/new/10-cb8_vertexDeletion_privateLeaf_eq_coeff.lean",
+   "role": "reference",
+   "sha256": "94276aca863273367ba48a311eda8967edb861bb5308e7cc06aa3f8edfe0c002"
+  },
+  {
+   "id": "src-drafts-new-11-cb8-armleaf-isfavorableat-toprank-lean",
+   "path": "DRAFTS/new/11-cb8_armLeaf_isFavorableAt_topRank.lean",
+   "role": "reference",
+   "sha256": "b366745d58b798f649d498828df86827a4eb02539d6c6ff81b1185b47f0d52c4"
+  },
+  {
+   "id": "src-drafts-new-12-cb8-privateleaf-isfavorableat-toprank-lean",
+   "path": "DRAFTS/new/12-cb8_privateLeaf_isFavorableAt_topRank.lean",
+   "role": "reference",
+   "sha256": "4a516087f55750bb1c193bac36be9984110801f5a92aaaec644bab694ef13d81"
+  },
+  {
+   "id": "src-drafts-new-13-cb8-favorableleaves-eq-leafset-toprank-lean",
+   "path": "DRAFTS/new/13-cb8_favorableLeaves_eq_leafSet_topRank.lean",
+   "role": "reference",
+   "sha256": "81a0e7bfa18e6339d6eea50dd2fe16e633b2b06784ee376d7b576ac92441de36"
+  },
+  {
+   "id": "src-drafts-assemble-py",
+   "path": "DRAFTS/assemble.py",
+   "role": "reference",
+   "sha256": "3811ee4109d7d3a5da69ba1cee0bfabb4382084ae489c52ae9415fd9c164aa92"
+  },
+  {
+   "id": "src-drafts-capsule-verification-py",
+   "path": "DRAFTS/capsule_verification.py",
+   "role": "reference",
+   "sha256": "eb3ce583a56971d0df3fc8fbd0b8f6ee451e395f5c7aae40ef03fb737de86dde"
+  },
+  {
+   "id": "src-drafts-closure-py",
+   "path": "DRAFTS/closure.py",
+   "role": "reference",
+   "sha256": "b2fa38362e4df9a5b5280b78ba5990942292b4e1c583d9bcbcabe90705a07f1d"
+  },
+  {
+   "id": "src-drafts-make-carries-py",
+   "path": "DRAFTS/make_carries.py",
+   "role": "reference",
+   "sha256": "fb42d4eac9ca8b9bdf66a12203c22a28d10eacf27aea6e87034bae36a595b46f"
+  },
+  {
+   "id": "src-drafts-make-contract-py",
+   "path": "DRAFTS/make_contract.py",
+   "role": "reference",
+   "sha256": "ecbbd3ed3dd382a282c491a863a15d4e12d160fac3357a18f5befd6a966a089b"
+  },
+  {
+   "id": "src-drafts-make-reauthored-py",
+   "path": "DRAFTS/make_reauthored.py",
+   "role": "reference",
+   "sha256": "6f130538a3225e3274f6376425c3e521abbbf99a8027ed955c712f5c1fbc9ed5"
+  },
+  {
+   "id": "src-drafts-register-all-py",
+   "path": "DRAFTS/register_all.py",
+   "role": "reference",
+   "sha256": "256655777c4d42cf3db5b345ba825e81312db6b341f05d9edfe7904adc97f682"
+  },
+  {
+   "id": "src-drafts-terminal-check-py",
+   "path": "DRAFTS/terminal_check.py",
+   "role": "reference",
+   "sha256": "639694eef69de4100d6d64061c3abb90bd69461aebf9add3440af6a01355ac29"
+  },
+  {
+   "id": "src-drafts-token-scan-py",
+   "path": "DRAFTS/token_scan.py",
+   "role": "reference",
+   "sha256": "8c3e0329eca681abae64acb04a0d614a6292874a9a51065f3ed0146883e6aedb"
+  }
+ ]
+}

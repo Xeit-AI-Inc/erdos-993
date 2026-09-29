@@ -1,0 +1,345 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "erdos-993-r31-c1-la3-two-binomial-descent-v1",
+  "theorem": {
+    "title": "C1-LA3 (r31): two-binomial descent — the block descent (BD) at l = (16m+4)/3 - 2 - j for every 5 <= j <= m on the class m >= 107, m = 2 (mod 3), with (E1i) and (G) as lemmas on the face",
+    "informal_statement": "Canonical run id erdos-993-math-dre-20260927-r31-cb-uniform-switch; award C1-LA3 (two-binomial descent: E1(i) at p* and the block-descent node). Terminal (BD): for all natural numbers m and j with 107 <= m, m % 3 = 2, 5 <= j <= m, and l := (16m+4)/3 - 2 - j (natural-number floor division and truncated subtraction, all true values on the domain), the coefficient of X^(l+1) in (1+X)^(8j) (1+2X)^(8(m-j)+1) over Z is strictly less than the coefficient of X^l. Companion lemmas on the face (same Lean file): (G) for a b t : N with 1 <= t, t <= a+b, 3a+4b+2 <= 6t, ((1+X)^a (1+2X)^b).coeff (t+1) < ((1+X)^a (1+2X)^b).coeff t over Z; (E1i) for 107 <= m, m % 3 = 2, 1 <= q <= m: ((1+X)^(8q-1) (1+2X)^(8(m-q)+1)).coeff ((16m+4)/3 - q) < ((1+X)^(8q-1) (1+2X)^(8(m-q)+1)).coeff ((16m+4)/3 - q - 1). Proof DAG (synthesis): (R) the three-term recurrence (k+1) r(k+1) = (a+2b-3k) r(k) + 2(a+b-k+1) r(k-1) from the derivative identity (1+X)(1+2X) P' = (a(1+2X) + 2b(1+X)) P; positivity of r on [0, a+b]; log-concavity by induction on linear factors (two-by-two minor invariant; no Newton, no Darroch); the closing step descent_of_recurrence_logconcave; the gap identities 2q+1 and 2j-8 (omega). Fences on the face: (BD) is a NODE of (ELIG-top)(a), not (ELIG-top)(a), which also needs the S_5 certificate and the block identity; (E1i) (the lemma E993Transport.cb8_E1_conditionI_topRank) is an instance of the registered threshold key's (a) at p* on the class, a Tier 3 dependency reduction, never Tier 2 progress; (G) (the lemma E993Transport.twoBinom_coeff_strictAnti_of_gap) is a companion tool with no certificate of its own and makes no family or tree claim. Excluded conclusions: (ELIG-top)(a) itself; E1-R's flow; favorability; any rank other than p*; the threshold key's (a) off p*; any residue class other than m % 3 = 2; any m < 107; (HALL); any aggregate, TREE, FOREST, TRANSFER or Erdos #993. Repairs carried in: U3's 'any fixed Q_0 immediate' and its section 5.6 are never inputs; U3's degree is 7, not 8; nothing from U3's Lean atoms is on this DAG. No Newton inequality and no Darroch mode theorem is used. No grade is asserted for any companion lemma. Attribution: Lemma A and the closing step: C-U3-T; the q = 1 case: r31 U3; corroboration: C-U3-F; the (BD) instance and its role in (ELIG-top)(a): the r31 Cycle 1 synthesis, from C-U3-T's Lemma B; the E1 criterion, threshold and r_q: r30; the mechanism: Codex GPT-6; Codex's heterogeneous-closure binomial-block mechanisms are cited as templates only, not as carried fragments. Lean text: the C1-LA3 formalizer (producer c1-la3-formalizer-opus-20260928; chartered Claude Opus 5.5; runtime-reported model id claude-opus-5-5)."
+  },
+  "formulation_status": {
+    "status": "established",
+    "evidence": [
+      "Lemma A (recurrence (R), elementary LC factor induction, closing step, gap 2q+1) and Lemma B's j >= 5 case (gap 2j-8): critic C-U3-T, Cycle 1 Stage 4; backed by the U adjudicator (Stage 5), who re-checked the LC expansion and the closing step and recomputed on a grid; STATED at a review stage, isolated second read running concurrently (SR-2 / the matching read).",
+      "The pinned Mathlib has no Newton, Darroch or log-concavity API; the DAG uses none.",
+      "Frozen instruments (adj_lemmaA.py, C-U3-T logs) are checks, never proof, and were not re-run in this seat."
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-polynomial-int",
+      "description": "Polynomial Z (notation Z[X]): Mathlib's univariate polynomials over the integers; all coefficients are taken over Z, exactly as the synthesis states. Standard Mathlib, not re-typed.",
+      "lean_name": "Polynomial",
+      "dependencies": []
+    },
+    {
+      "id": "def-indeterminate-x",
+      "description": "Polynomial.X : the indeterminate X of Z[X]; 1 + X and 1 + 2 * X are the linear factors (the numeral 2 : Z[X] equals C 2). Standard Mathlib.",
+      "lean_name": "Polynomial.X",
+      "dependencies": [
+        "def-polynomial-int"
+      ]
+    },
+    {
+      "id": "def-coeff",
+      "description": "Polynomial.coeff p n : the coefficient of X^n in p (n : N). Standard Mathlib.",
+      "lean_name": "Polynomial.coeff",
+      "dependencies": [
+        "def-polynomial-int"
+      ]
+    },
+    {
+      "id": "def-poly-coeff-z",
+      "description": "Auxiliary, NEW, authored in-run, proof-internal only (does not occur in the terminal statement): polyCoeffZ p i := if i < 0 then 0 else p.coeff i.toNat, the zero-extended integer-indexed coefficient sequence used for the positivity and log-concavity factor inductions.",
+      "lean_name": "E993Transport.polyCoeffZ",
+      "dependencies": [
+        "def-coeff"
+      ]
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-m",
+      "description": "m : N, the CB(8,m) parameter; constrained by hm and hmod to the class m >= 107, m = 2 (mod 3).",
+      "lean_type": "ℕ",
+      "dependencies": []
+    },
+    {
+      "id": "domain-j",
+      "description": "j : N, the block index; constrained by hj and hjm to 5 <= j <= m.",
+      "lean_type": "ℕ",
+      "dependencies": []
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "m",
+      "kind": "forall",
+      "domain_id": "domain-m"
+    },
+    {
+      "binder": "j",
+      "kind": "forall",
+      "domain_id": "domain-j"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-m-ge-107",
+      "statement": "hm : 107 ≤ m (verbatim).",
+      "dependencies": [
+        "domain-m"
+      ]
+    },
+    {
+      "id": "hyp-m-mod-3",
+      "statement": "hmod : m % 3 = 2 (verbatim). Makes (16 * m + 4) / 3 = p* exact.",
+      "dependencies": [
+        "domain-m"
+      ]
+    },
+    {
+      "id": "hyp-j-ge-5",
+      "statement": "hj : 5 ≤ j (verbatim). Gives the gap 2j - 8 >= 2.",
+      "dependencies": [
+        "domain-j"
+      ]
+    },
+    {
+      "id": "hyp-j-le-m",
+      "statement": "hjm : j ≤ m (verbatim). Makes m - j a true value.",
+      "dependencies": [
+        "domain-j",
+        "domain-m"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "((1 + X) ^ (8 * j) * (1 + 2 * X) ^ (8 * (m - j) + 1) : ℤ[X]).coeff ((16 * m + 4) / 3 - 2 - j + 1) < ((1 + X) ^ (8 * j) * (1 + 2 * X) ^ (8 * (m - j) + 1) : ℤ[X]).coeff ((16 * m + 4) / 3 - 2 - j) — (BD): the block descent B_j(l+1) < B_j(l) at l = p* - 2 - j, p* = (16m+4)/3, over Z. A node of (ELIG-top)(a), not (ELIG-top)(a).",
+    "dependencies": [
+      "hyp-m-ge-107",
+      "hyp-m-mod-3",
+      "hyp-j-ge-5",
+      "hyp-j-le-m",
+      "def-polynomial-int",
+      "def-indeterminate-x",
+      "def-coeff",
+      "def-poly-coeff-z"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "def-polynomial-int",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indeterminate-x",
+        "kind": "definition"
+      },
+      {
+        "id": "def-coeff",
+        "kind": "definition"
+      },
+      {
+        "id": "def-poly-coeff-z",
+        "kind": "definition"
+      },
+      {
+        "id": "domain-m",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-j",
+        "kind": "domain"
+      },
+      {
+        "id": "hyp-m-ge-107",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-m-mod-3",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-j-ge-5",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-j-le-m",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "def-polynomial-int",
+        "to": "def-indeterminate-x"
+      },
+      {
+        "from": "def-polynomial-int",
+        "to": "def-coeff"
+      },
+      {
+        "from": "def-coeff",
+        "to": "def-poly-coeff-z"
+      },
+      {
+        "from": "domain-m",
+        "to": "hyp-m-ge-107"
+      },
+      {
+        "from": "domain-m",
+        "to": "hyp-m-mod-3"
+      },
+      {
+        "from": "domain-j",
+        "to": "hyp-j-ge-5"
+      },
+      {
+        "from": "domain-j",
+        "to": "hyp-j-le-m"
+      },
+      {
+        "from": "domain-m",
+        "to": "hyp-j-le-m"
+      },
+      {
+        "from": "hyp-m-ge-107",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-m-mod-3",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-j-ge-5",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-j-le-m",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-polynomial-int",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-indeterminate-x",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-coeff",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-poly-coeff-z",
+        "to": "conclusion"
+      }
+    ]
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "explicit_axiom_allowlist",
+    "rationale": "Mathlib's Polynomial API (coeff, derivative, ring normalization) and omega/linarith/nlinarith use classical logic; exactly the three standard axioms propext, Classical.choice, Quot.sound are permitted; no sorry, admit, native_decide, axiom, or decide over an enumeration for a universal step (m, q, j, t, a, b are variables)."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "E993Transport.cb8_block_descent_topRank",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem cb8_block_descent_topRank (m j : ℕ) (hm : 107 ≤ m) (hmod : m % 3 = 2) (hj : 5 ≤ j)\n    (hjm : j ≤ m) :\n    ((1 + X) ^ (8 * j) * (1 + 2 * X) ^ (8 * (m - j) + 1) : ℤ[X]).coeff\n        ((16 * m + 4) / 3 - 2 - j + 1) <\n      ((1 + X) ^ (8 * j) * (1 + 2 * X) ^ (8 * (m - j) + 1) : ℤ[X]).coeff\n        ((16 * m + 4) / 3 - 2 - j)",
+    "expected_statement_sha256": "40d79e5b5b80cf51af08966cba8015869a1816516d5dbd1b361bcfe72fa7b5ed"
+  },
+  "source_materials": [
+    {
+      "id": "src-brief",
+      "path": "SOURCE/C1-STAGE7-FORMALIZER-BRIEF-LA3.md",
+      "sha256": "8a5a8e7df77a43cbb4626a404f0afd8e937b7d46162c8c64bac7d35607203284",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-synthesis",
+      "path": "SOURCE/cycle-1-SYNTHESIS.md",
+      "sha256": "d70e6ce23c712d0983df64afa2fdc07d6018ab62e57597e74f95cb43dfd23d44",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-protocol",
+      "path": "SOURCE/C1-STAGE7-PROTOCOL.md",
+      "sha256": "e4b9e5984fc6c8c1a804f165074530089f843b3a4c1aac78fef6dbf0f3287052",
+      "role": "reference"
+    },
+    {
+      "id": "src-semantic-contract",
+      "path": "SOURCE/SEMANTIC-CONTRACT.md",
+      "sha256": "7cc0bf434d6ea8f8fa2d812caf4e45787c1c06a9dfc6846b6b4d54cb60cf226e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-solution-contract",
+      "path": "SOURCE/SOLUTION-CONTRACT.md",
+      "sha256": "480ba2ddda557be50b2d8249feb733be7e3c947d2e0a9dd4e7fee1427a7ef719",
+      "role": "reference"
+    },
+    {
+      "id": "src-c-u3-t-critique",
+      "path": "SOURCE/cycle-1-C-U3-T-CRITIQUE.md",
+      "sha256": "1f52a5fd21c7d9fb96104c92aaad3b496b58523ec2c7b0b14d8e7431440e36f6",
+      "role": "reference"
+    },
+    {
+      "id": "src-u-adjudication",
+      "path": "SOURCE/cycle-1-U-ADJUDICATION.md",
+      "sha256": "cbe1f222cc2c6e48e2d31300a930730ba37fbcf1ba38b72226027b800349ba9e",
+      "role": "reference"
+    },
+    {
+      "id": "src-c-u3-t-critic-lean",
+      "path": "SOURCE/C-U3-T-Critic.lean",
+      "sha256": "435eb4a195ba836833bf6eb291782cc76b710900bcd62c1c469bc7c57cae23de",
+      "role": "reference"
+    },
+    {
+      "id": "src-capsule-manifest",
+      "path": "SOURCE/C1-LA3-PACKET-MANIFEST.json",
+      "sha256": "8d24127d1b05e5369796344a626ae53a11f8546fb0f5f0fda8a7e561bce7e9ca",
+      "role": "reference"
+    },
+    {
+      "id": "src-path-check",
+      "path": "SOURCE/PATH-CHECK-C1-LA3.json",
+      "sha256": "92c7a48ddb79cd1105469a6c5120379c126bba7f37121fdded632eb962fd8703",
+      "role": "reference"
+    },
+    {
+      "id": "src-r30-c6-la2-contract-format",
+      "path": "SOURCE/r30-C6-LA2-THEOREM-CONTRACT.yaml",
+      "sha256": "dc2fc2a0ecf623fb1fa916a17c73e3fdd965563db8cbf7b0a4d608f59d417651",
+      "role": "reference"
+    },
+    {
+      "id": "src-r30-c1-la1-main-format",
+      "path": "SOURCE/r30-C1-LA1-Main.lean",
+      "sha256": "86b59c6cc7f85590f387730718599ad3112ba607495ea08c1b4a2617a6e5e0cb",
+      "role": "reference"
+    },
+    {
+      "id": "src-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "sha256": "a8bbf4f52a9599bf7a99d3ef8febd893a94e74e250b9fe6738f0dc6e188c1166",
+      "role": "reference"
+    },
+    {
+      "id": "src-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "sha256": "cdcd34bd93f42587cea29c45d68b31fb33667c30f1fe2d73b7914fb816e14418",
+      "role": "reference"
+    }
+  ]
+}

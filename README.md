@@ -61,6 +61,10 @@ of size `k`. The problem asks whether
 is weakly unimodal whenever `G` is a finite tree, and likewise whenever `G` is
 a finite forest.
 
+## 2026-09-29: r31 — (HALL) with load-bearing switch arcs formally verified on the infinite family CB(8,m), m ≥ 107, m ≡ 2 (mod 3), at the top sector-deficient rank; full scope open
+
+The [r31 run](experiments/r31-cb-uniform-switch.md) (chartered from the Code-successor prompt) ended at Cycle 4 by decisive event (a): for every `m ≥ 107` with `m ≡ 2 (mod 3)`, the rank `p* = (16m+4)/3` of `CB(8,m)` is eligible and the literal active-tag two-for-one network at `p*`, with the favorable-leaf selector derived on the tree, satisfies (HALL) — formally verified in Lean as one theorem (award C4-LA1), the first infinite Hall family in the programme whose certificate uses load-bearing switch arcs. Eight governed Lean packages in all. One rank per tree, this family only; full (HALL), the aggregates, TREE, FOREST, TRANSFER and Erdős #993 stay open. A residue-0 successor is recommended. See the [verification record](evidence/verification-2026-09-29-r31.md).
+
 ## 2026-09-27: r30 — the weighted transport mechanism: identity and reductions in Lean, (HALL) on two infinite families and at fifteen recorded switch-necessary CB rows; full scope open
 
 The [r30 run](experiments/r30-weighted-transport.md) (chartered from a Codex prompt) closed after six cycles (the charter's ceiling) with seven governed Lean awards — the active-tag weight identity `supply − capacity = S(G,p)`, weighted Hall ⇒ `S ≤ 0`, the `Aut`-invariant deficient family, the orbit-quotient reduction, a deletion-only saturating flow on `G_k` at every rank `p ≥ k+3`, (HALL) at every eligible rank of every `G_k`, and (HALL) at rank `k+3` of the spider `S(1,2,3^k)` — plus `computer_assisted` whole-row (HALL) at fifteen switch-necessary CB rows and the 1427-vertex `G(8^82,7^2)`. The mechanism key stays open at full scope: no uniform proof and no deficient cut anywhere on record (every free tree of order ≤ 23 saturates with deletion arcs alone). The smallest uniform object left is a closed-form choke-local sector certificate at the top sector-deficient rank of `CB(8,m)` with a conjectured `1/m²` margin for the recorded residue-2 local template, together with a uniform parent-descent proof; a successor run is recommended. See the [verification record](evidence/verification-2026-09-27-r30.md).
@@ -259,6 +263,15 @@ The expected transitive axioms are `propext`, `Classical.choice`, and
 - [r24 top-rank selector collapse Lean package](proofs/lean/r24-c4-top-rank-selector-collapse/README.md)
 - [r24 top-rank residual identity Lean package](proofs/lean/r24-c5-top-rank-residual-identity/README.md)
 - [r25 uniform residual no-recovery DRE (six cycles, terminal)](experiments/r25-uniform-residual-no-recovery.md)
+- [2026-09-29 r31 verification record](evidence/verification-2026-09-29-r31.md)
+- [r31-c1-la1-cb8-sector-template-feasible Lean package](proofs/lean/r31-c1-la1-cb8-sector-template-feasible/README.md)
+- [r31-c1-la2-cb8-definition-layer Lean package](proofs/lean/r31-c1-la2-cb8-definition-layer/README.md)
+- [r31-c1-la3-two-binomial-descent Lean package](proofs/lean/r31-c1-la3-two-binomial-descent/README.md)
+- [r31-c2-la1-cb8-parent-descent-and-eligibility Lean package](proofs/lean/r31-c2-la1-cb8-parent-descent-and-eligibility/README.md)
+- [r31-c2-la2-cb8-leaf-deletion-closed-forms-descent Lean package](proofs/lean/r31-c2-la2-cb8-leaf-deletion-closed-forms-descent/README.md)
+- [r31-c2-la3-cb8-favorable-leaves-eq-leaf-set Lean package](proofs/lean/r31-c2-la3-cb8-favorable-leaves-eq-leaf-set/README.md)
+- [r31-c3-la1-cb8-e1-clone-transport Lean package](proofs/lean/r31-c3-la1-cb8-e1-clone-transport/README.md)
+- [r31-c4-la1-cb8-top-rank-eligible-and-weighted-hall Lean package](proofs/lean/r31-c4-la1-cb8-top-rank-eligible-and-weighted-hall/README.md)
 - [2026-09-27 r30 verification record](evidence/verification-2026-09-27-r30.md)
 - [r30-c1-la1-active-tag-weight-identity Lean package](proofs/lean/r30-c1-la1-active-tag-weight-identity/README.md)
 - [r30-c1-la2-weighted-hall-implies-nonpositive-aggregate Lean package](proofs/lean/r30-c1-la2-weighted-hall-implies-nonpositive-aggregate/README.md)

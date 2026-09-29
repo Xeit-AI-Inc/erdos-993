@@ -1,5 +1,7 @@
 # Erdős #993 — Master Proof Ledger
 
+**Updated 2026-09-29 — r31 (a parameter-uniform switch-using Hall certificate on CB(8,m) at the top sector-deficient rank, `erdos-993-cb-uniform-switch-dre-2026-09-27`; chartered from the Code-successor prompt) closed at Cycle 4 by decisive event (a):** Tier 1 is formally verified — for every m ≥ 107 with m ≡ 2 (mod 3), p* = (16m+4)/3 is eligible on CB(8,m) and the literal active-tag two-for-one network at p* satisfies (HALL) (award C4-LA1, Lean; one rank per tree, this family only); eight governed awards; six E993-R31 keys; full (HALL), the aggregates and #993 stay OPEN. See the r31 section at the end of this ledger.
+
 ## Terminal absolute-compensation experiment — six cycles complete,2026-09-29
 
 The six-cycle absolute-compensation experiment is complete. For ordinary path-stars whose branch arities are2,3,4, three existing claims are now VERIFIED at computer-assisted/nonformal grade: the exact-ratio tip surplus, the guarded comparison for every original leaf deletion, and the same-C original-multiplicity weighted-tip-deck comparison. Their scope is every nonempty mixed/repeated profile and every natural k>=1 with2k<=N+2, without an actual-descent or selector filter.
@@ -1648,3 +1650,28 @@ controller errata R30-E-a … R30-E-w and incidents R30-I-1..3 recorded in `CONT
 canonical-JSON SHA-256 manifest; the integrity sweep at the close recomputed every manifest. Master registry 457 → 491 identities
 (CONDITIONAL 26, OPEN 58, REFUTED 98, VERIFIED 309). Additive: every earlier claim object preserved; r30's keys carry the `E993-R30-` prefix; the master keys touched carry only
 scope notes.
+
+## r31 — a parameter-uniform switch-using Hall certificate on CB(8,m) at the top sector-deficient rank (erdos-993-cb-uniform-switch-dre-2026-09-27), CLOSED 2026-09-29
+
+Chartered by Ashton on 2026-09-27 from the Code-successor prompt of the 2026-09-27 joint assessment (priority 1): a DRE + governed-Lean
+run on the family `𝒞_8 = {(CB(8,m), p* = (16m+4)/3) : m ≥ 107, m ≡ 2 (mod 3)}` — eligibility of `p*` by the actual first descent and
+(HALL) at `p*` on the literal active-tag weighted deletion / two-for-one switch network, one rank per tree, by a uniform residual-capacity
+choke-local sector allocation composed with the registered E1 deletion flow. Topology 9 routes / 18 cross-orientation critics / 3
+isolated adjudicators / 1 neutral synthesis / governed Stage 7 / isolated second reads (routes Claude Sonnet 5 high; critics Claude
+Opus 5.5 medium; adjudicators, synthesis, formalizers, reviewers and readers Claude Opus 5.5 high; independent checkpoint analyses
+Claude Fable 5.1 high after Cycle 3 and at the terminal; controller Claude Opus 5.5). **Stop gate: decisive event (a) at Cycle 4 of the six-cycle ceiling — Tier 1 formally verified at full scope (award C4-LA1); the run ended at that Stage 7 close** (terminal manifest
+`d2e90c374b4b3ca389c571f8ebc9ae6af26b365efef7a7f5efefd59a8984d9be`; controller review `CONTROLLER-REVIEW-R31.md`).
+
+**Headline.** For every integer `m ≥ 107` with `m ≡ 2 (mod 3)`, the rank `p* = (16m+4)/3` of the tree `CB(8,m)` is eligible under the actual first-descent definition, and the literal active-tag weighted deletion/two-for-one transport network at `p*`, with the favorable-leaf selector derived on the tree, satisfies the weighted Hall condition — a family theorem formally verified in Lean 4 (Mathlib pinned; axioms `propext`, `Classical.choice`, `Quot.sound`) as award C4-LA1 of run r31, at one rank per tree, on this one family only, and the first infinite Hall family in this programme's record whose certificate carries load-bearing switch arcs; full (HALL), the aggregate keys, TREE, FOREST, TRANSFER and Erdős #993 remain OPEN. By composition with r30's formally verified FLOW ⇒ SIGN award, `S(CB(8,m), p*) ≤ 0` on these rows only; no status transfers to any aggregate.
+
+**Certified (each by its own governed award — frozen contract, independent informal audit, kernel/axiom receipt, independent
+statement-fidelity review; every carried definition byte-identical, receipt-bound).** 8 governed Lean packages closed `formally_verified`: `r31-c1-la1-cb8-sector-template-feasible` (`E993Transport.cb8_topRank_sectorTemplate_feasible` — E993-R31-CB-8-TOP-RANK-CLOSED-FORM-SECTOR-ALLOCATION-SATISFIES-OUT-IN-SWITCH-AND-RESIDUAL-CAPACITY-ON-THE-RESIDUE-2-CLASS-FROM-107 (new; VERIFIED formally_verified)); `r31-c1-la2-cb8-definition-layer` (`E993Transport.cb8_topRank_of_descent_and_flow` — ledger record R31-C1-LA2 (the CB(8,m) layer and the terminal reduction; no key)); `r31-c1-la3-two-binomial-descent` (`E993Transport.cb8_block_descent_topRank` — E993-R31-CB-8-M-AT-LEAST-107-CONGRUENT-2-MOD-3-BLOCK-PRODUCT-1-PLUS-X-TO-8J-TIMES-1-PLUS-2X-TO-8M-MINUS-8J-PLUS-1-COEFFICIENTS-STRICTLY-DESCEND-AT-INDEX-16M-MINUS-2-OVER-3-MINUS-J-FOR-5-LE-J-LE-M (new; VERIFIED formally_verified)); `r31-c2-la1-cb8-parent-descent-and-eligibility` (`E993Transport.cb8_topRank_parentDescent_and_conjuncts_1_2_3` — E993-R31-CB-8-M-AT-LEAST-107-CONGRUENT-2-MOD-3-INDEPENDENCE-COEFFICIENT-STRICTLY-DESCENDS-AT-INDEX-16M-MINUS-2-OVER-3-AND-RANK-16M-PLUS-4-OVER-3-IS-ELIGIBLE (new; VERIFIED formally_verified)); `r31-c2-la2-cb8-leaf-deletion-closed-forms-descent` (`E993Transport.cb8_leafDeletion_closedForms_descent_topRank` — formal closed-form clause (scope note) on E993-R30-CB-D-AT-LEAST-6-EVERY-LEAF-FAVORABLE-AT-RANK-FLOOR-2DM-PLUS-4-OVER-3-WHEN-DM-NOT-2-MOD-3); `r31-c2-la3-cb8-favorable-leaves-eq-leaf-set` (`E993Transport.cb8_favorableLeaves_eq_leafSet_topRank` — formal graph-level clause (scope note) on E993-R30-CB-D-AT-LEAST-6-EVERY-LEAF-FAVORABLE-AT-RANK-FLOOR-2DM-PLUS-4-OVER-3-WHEN-DM-NOT-2-MOD-3); `r31-c3-la1-cb8-e1-clone-transport` (`E993Transport.cb8_E1_cloneTransport_topRank` — formal clone-level clause (scope note) on E993-R30-CB-MARK-CLONE-CRITERION-IMPLIES-NON-SECTOR-DELETION-WEIGHTED-HALL); `r31-c4-la1-cb8-top-rank-eligible-and-weighted-hall` (`E993Transport.cb8_topRank_eligible_and_weightedHall` — E993-R31-CB-8-M-AT-LEAST-107-CONGRUENT-2-MOD-3-RANK-16M-PLUS-4-OVER-3-IS-ELIGIBLE-AND-LITERAL-NETWORK-SATISFIES-WEIGHTED-HALL (new; VERIFIED formally_verified; TIER 1, decisive event (a))).
+
+**Registry.** The master grows 515 → 521 identities (CONDITIONAL 26, OPEN 57, REFUTED 104, VERIFIED 334): six `E993-R31-` keys, four `formally_verified` (the sector
+template, the block descent, eligibility on the literal tree, and Tier 1) and two `proved_informal` (the sector-certificate composition;
+the infeasibility of leg-type-only rate allocations). Seven master keys receive `[r31 …]` scope notes only: the mechanism key and the
+primary aggregate (the class rows at `p*` only; no status transfer; both stay OPEN), the r30 mark-clone criterion, favorability,
+condition-(i), sector-deficit and `m = 95..107` row keys. 8 governed Lean packages; 22 isolated second reads, 0 rejected.
+
+**Stays OPEN.** (HALL) at full scope; the lower-region favorable-leaf aggregate; `E993-BETA-AGG`; FOREST; TREE; TRANSFER; Erdős #993.
+**Successor recommended** (terminal checkpoint): the residue-0 sibling `CB(8,m)`, `m ≡ 0 (mod 3)`, at `⌊(16m+4)/3⌋` — the same switch-using mechanism with a new closed-form per-state sector table and a new eligibility certificate; the smallest warm-up is the deletion-only lemma pair at `p* + 1` on this class.

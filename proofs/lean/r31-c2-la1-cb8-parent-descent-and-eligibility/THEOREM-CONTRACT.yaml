@@ -1,0 +1,1615 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "erdos-993-r31-c2-la1-cb8-parent-descent-and-eligibility-on-the-tree-v1",
+  "theorem": {
+    "title": "C2-LA1 (r31): (ELIG-top)(a) on the literal tree CB(8,m) and conjuncts 1-3 of the terminal, at p* = (16m+4)/3, for every m >= 107 with m % 3 = 2",
+    "informal_statement": "Canonical run id erdos-993-math-dre-20260927-r31-cb-uniform-switch; award C2-LA1 (r31 Cycle 2; (ELIG-top)(a) on the literal tree and conjuncts 1-3 of the terminal; the U adjudicator's group U-A plus the synthesis's added descent conjunct); governed run lean-2026-09-28-c2-la1-cb8-parent-descent-and-eligibility-on-the-tree; key on closure: none new — the synthesis ## Registrations names the scope update this award enables (the ELIG key to formally_verified at its exact scope; the controller applies it after the award closes and the matching isolated second read SR-C2-4 passes). OBJECT: for every natural m with 107 <= m and m % 3 = 2, at the one rank p* = (16m+4)/3: (1) cbGraph m is a tree; (2) the literal parent descent C5LA1.indepSetCount (cbGraph m) ∅ (p*−1) < C5LA1.indepSetCount (cbGraph m) ∅ (p*−2); (3) conjunct 2, C5LA1.crossingIndex (cbGraph m) + 2 <= p*; (4) conjunct 3, the low window 3p* < 2·indepNum + 1. FACE COMPANIONS (ungraded; no grade is asserted for any companion): CriticU1T.cb8_elig_top_a ((cb8I m).coeff (p*−1) < (cb8I m).coeff (p*−2)); the ℕ closed form critU3T_cb_indepPoly_closedForm (I(cbGraph m) = (1+2X)·G^m + X·((1+X)(1+2X)^(8m)) over ℕ) with critU3T_cb_indepSetCount_eq_coeff (count = coefficient); AdjU.cb8_topRank_of_flow (the SOLUTION-CONTRACT §2 terminal from conjunct 4 alone, via carried C1-LA2 entry 78). FENCES: one rank p*; the class only; (H) not claimed; conjunct 4 not claimed; no FLOW => SIGN; no aggregate or (HALL) status; not a new E993-R31- identity (it formalizes the registered ELIG key and the r30 closed-form node). EXCLUDED CONCLUSIONS: (H); conjunct 4; favorability; (HALL) at any scope; S(T_m, p*) <= 0; any rank other than p*; m < 107; m ≢ 2 (mod 3); d ≠ 8. REPAIRS CARRIED: U1's \"(E)\" wording narrowed; U3's import edit (P4) replaced by a clean import (single source, import Mathlib only); the extra descent conjunct added. CARRIES: C1-LA3 entries 1-21 (Main.lean c0605e12…3011) and C1-LA2 entries 1-78 (Main.lean a906ec17…5f3f), merged into one Main.lean with re-keyed entry markers, bound to each origin's kernel receipt (CAPSULE-VERIFICATION.json); 97 byte-identical; the two origin TERMINALS (C1-LA3 21, C1-LA2 78) carried keyword-rekeyed (theorem -> lemma only; reverse substitution reproduces the origin digest) because the registrar and R7 admit exactly one theorem — recorded for controller ruling. All other declarations are DRAFT text re-authored under attribution (origin named on each). ATTRIBUTION: U1 (Sonnet 5, seat C2-U-01); C-U1-T (Opus 5.5, critic; node 2); U3 (C2-U-03; Node 0); C-U3-T (critic; closed-form link); the U adjudicator (composition, cast bridge); C-U1-F (independent symbolic derivation of N_5, not in the DAG); SR-4 (the certificate method of record); C1-LA2 and C1-LA3 (r31 C1 formalizers); r30 (closed forms, T1 of r30 Cycle 6; network definitions, named seats); Codex GPT-6's lower-region run (mechanism, weight, relation, (HALL)); Codex's heterogeneous-closure run as C1-LA3's face cites it (C1-LA3 face line: \"Codex's heterogeneous-closure binomial-block mechanisms are cited as templates only, not as carried fragments (none was opened as a Lean source in this run).\"); plus the formalizer c2-la1-formalizer-opus-20260928 (Claude Opus 5.5)."
+  },
+  "formulation_status": {
+    "status": "established",
+    "evidence": [
+      "The U adjudicator (r31 Cycle 2 Stage 5, Claude Opus 5.5) replayed the compiled scratch: P1 (U1 + C-U1-T CriticS5.lean, 395 s), P2 (U3 + C-U3-T), P4 composition (AdjCompose.lean fc8d40bc…): cb8_topRank_conjuncts_1_2_3 and cb8_topRank_of_flow on the three standard axioms; 0 errors (SOURCE/governing/ADJUDICATION-U.md, Lean readiness: CONTRACT-READY, open nodes none).",
+      "The added descent conjunct follows in one step from compiled nodes (critU3T_cb_indepSetCount_eq_coeff, AdjU.cb8I_coeff_cast, cb8_elig_top_a), as the synthesis states.",
+      "The S_5 polynomial Poly(u) (51 coefficients, all positive) is checked against crit_u1t_Poly_u.json f75d2f19… by the shipped generator (EVIDENCE/s5-generator/assertion.json); Python is a check, never proof."
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-vdel-count",
+      "description": "i_k(G - v) as a Nat count over the original vertex type. CARRIED (C6-LA2 entry 1). [Carried here from C1-LA2 (byte-identical fragment; C1-LA2 contract entry reused).]",
+      "lean_name": "C4LA1.vertexDeletionIndepSetCount",
+      "dependencies": []
+    },
+    {
+      "id": "def-vdel-fwd",
+      "description": "i_(p+1)(G-v) - i_p(G-v) in Int. CARRIED (C6-LA2 entry 2). [Carried here from C1-LA2 (byte-identical fragment; C1-LA2 contract entry reused).]",
+      "lean_name": "C4LA1.vertexDeletionForwardDifference",
+      "dependencies": [
+        "def-vdel-count"
+      ]
+    },
+    {
+      "id": "def-is-favorable",
+      "description": "Strict favorability of v at rank p: vertexDeletionForwardDifference G v p < 0. CARRIED (C6-LA2 entry 3). [Carried here from C1-LA2 (byte-identical fragment; C1-LA2 contract entry reused).]",
+      "lean_name": "C4LA1.IsFavorableAt",
+      "dependencies": [
+        "def-vdel-fwd"
+      ]
+    },
+    {
+      "id": "def-is-graph-leaf",
+      "description": "A graph leaf: exactly one adjacent vertex (exists unique). CARRIED (C6-LA2 entry 4). [Carried here from C1-LA2 (byte-identical fragment; C1-LA2 contract entry reused).]",
+      "lean_name": "C4LA1.IsGraphLeaf",
+      "dependencies": []
+    },
+    {
+      "id": "def-support",
+      "description": "The unique support (neighbour) of a leaf, by Classical.choose. CARRIED (C6-LA2 entry 5). [Carried here from C1-LA2 (byte-identical fragment; C1-LA2 contract entry reused).]",
+      "lean_name": "C5LA1.support",
+      "dependencies": [
+        "def-is-graph-leaf"
+      ]
+    },
+    {
+      "id": "def-leaf-set",
+      "description": "The original leaves: univ.filter IsGraphLeaf. CARRIED (C6-LA2 entry 6). [Carried here from C1-LA2 (byte-identical fragment; C1-LA2 contract entry reused).]",
+      "lean_name": "C5LA1.leafSet",
+      "dependencies": [
+        "def-is-graph-leaf"
+      ]
+    },
+    {
+      "id": "def-h",
+      "description": "H_v = {v, s_v}. CARRIED (C6-LA2 entry 7); carried with the frozen 1-21 set, not in the statement. [Carried here from C1-LA2 (byte-identical fragment; C1-LA2 contract entry reused).]",
+      "lean_name": "C5LA1.H",
+      "dependencies": [
+        "def-support"
+      ]
+    },
+    {
+      "id": "def-r",
+      "description": "R_v = N[s_v]. CARRIED (C6-LA2 entry 8); carried with the frozen 1-21 set, not in the statement. [Carried here from C1-LA2 (byte-identical fragment; C1-LA2 contract entry reused).]",
+      "lean_name": "C5LA1.R",
+      "dependencies": [
+        "def-support"
+      ]
+    },
+    {
+      "id": "def-indep-avoiding",
+      "description": "Independent k-subsets avoiding D. CARRIED (C6-LA2 entry 9). [Carried here from C1-LA2 (byte-identical fragment; C1-LA2 contract entry reused).]",
+      "lean_name": "C5LA1.indepSetsAvoiding",
+      "dependencies": []
+    },
+    {
+      "id": "def-indep-count",
+      "description": "i_k(G - D). CARRIED (C6-LA2 entry 10). [Carried here from C1-LA2 (byte-identical fragment; C1-LA2 contract entry reused).]",
+      "lean_name": "C5LA1.indepSetCount",
+      "dependencies": [
+        "def-indep-avoiding"
+      ]
+    },
+    {
+      "id": "def-fwd-del",
+      "description": "Delta_k(G - D) in Int. CARRIED (C6-LA2 entry 11). [Carried here from C1-LA2 (byte-identical fragment; C1-LA2 contract entry reused).]",
+      "lean_name": "C5LA1.forwardDifferenceDel",
+      "dependencies": [
+        "def-indep-count"
+      ]
+    },
+    {
+      "id": "def-aggregate",
+      "description": "S(G,p). CARRIED (C6-LA2 entry 12); carried with the frozen 1-21 set, not in the statement. [Carried here from C1-LA2 (byte-identical fragment; C1-LA2 contract entry reused).]",
+      "lean_name": "C5LA1.aggregate",
+      "dependencies": [
+        "def-leaf-set",
+        "def-is-favorable",
+        "def-h",
+        "def-r",
+        "def-fwd-del"
+      ]
+    },
+    {
+      "id": "def-tagged-family",
+      "description": "Tagged family. CARRIED (C6-LA2 entry 13); carried with the frozen 1-21 set, not in the statement. [Carried here from C1-LA2 (byte-identical fragment; C1-LA2 contract entry reused).]",
+      "lean_name": "E993Interior.taggedFamily",
+      "dependencies": []
+    },
+    {
+      "id": "def-indep-family",
+      "description": "I_j(G): independent j-subsets. CARRIED (C6-LA2 entry 14). [Carried here from C1-LA2 (byte-identical fragment; C1-LA2 contract entry reused).]",
+      "lean_name": "E993Transport.indepFamily",
+      "dependencies": []
+    },
+    {
+      "id": "def-tag-witnesses",
+      "description": "W_v = N(s_v) minus {v}. CARRIED (C6-LA2 entry 15). [Carried here from C1-LA2 (byte-identical fragment; C1-LA2 contract entry reused).]",
+      "lean_name": "E993Transport.tagWitnesses",
+      "dependencies": [
+        "def-support"
+      ]
+    },
+    {
+      "id": "def-active-weight",
+      "description": "Active-tag weight w_F(B). CARRIED (C6-LA2 entry 16). [Carried here from C1-LA2 (byte-identical fragment; C1-LA2 contract entry reused).]",
+      "lean_name": "E993Transport.activeWeight",
+      "dependencies": [
+        "def-tag-witnesses"
+      ]
+    },
+    {
+      "id": "def-layer-weight",
+      "description": "Layer weight. CARRIED (C6-LA2 entry 17); carried with the frozen 1-21 set, not in the statement. [Carried here from C1-LA2 (byte-identical fragment; C1-LA2 contract entry reused).]",
+      "lean_name": "E993Transport.layerWeight",
+      "dependencies": [
+        "def-indep-family",
+        "def-active-weight"
+      ]
+    },
+    {
+      "id": "def-favorable-leaves",
+      "description": "The derived original strict selector F_p(G) = leafSet.filter IsFavorableAt. CARRIED (C6-LA2 entry 18). [Carried here from C1-LA2 (byte-identical fragment; C1-LA2 contract entry reused).]",
+      "lean_name": "E993Transport.favorableLeaves",
+      "dependencies": [
+        "def-leaf-set",
+        "def-is-favorable"
+      ]
+    },
+    {
+      "id": "def-transport-rel",
+      "description": "The relation (D) deletion union (S) two-for-one switch. CARRIED (C6-LA2 entry 19). [Carried here from C1-LA2 (byte-identical fragment; C1-LA2 contract entry reused).]",
+      "lean_name": "E993Transport.transportRel",
+      "dependencies": []
+    },
+    {
+      "id": "def-saturating-flow",
+      "description": "A saturating integral flow at rank p with tag set F: support on transportRel arcs between I_(p+1) and I_p, every source sends exactly its activeWeight, every target receives at most its activeWeight. CARRIED (C6-LA2 entry 20). [Carried here from C1-LA2 (byte-identical fragment; C1-LA2 contract entry reused).]",
+      "lean_name": "E993Transport.IsSaturatingFlow",
+      "dependencies": [
+        "def-indep-family",
+        "def-transport-rel",
+        "def-active-weight"
+      ]
+    },
+    {
+      "id": "def-weighted-hall",
+      "description": "(HALL) as a Hall condition. CARRIED (C6-LA2 entry 21); carried with the frozen 1-21 set, not in the statement. [Carried here from C1-LA2 (byte-identical fragment; C1-LA2 contract entry reused).]",
+      "lean_name": "E993Transport.WeightedHall",
+      "dependencies": [
+        "def-indep-family",
+        "def-transport-rel",
+        "def-active-weight"
+      ]
+    },
+    {
+      "id": "def-crossing-index",
+      "description": "x(G): the least k with Delta_k(G) < 0 (first strict descent). CARRIED (C6-LA2 entry 35; byte-identical to first-interior entry 14). [Carried here from C1-LA2 (byte-identical fragment; C1-LA2 contract entry reused).]",
+      "lean_name": "C5LA1.crossingIndex",
+      "dependencies": [
+        "def-fwd-del",
+        "def-indep-avoiding",
+        "def-indep-count"
+      ]
+    },
+    {
+      "id": "def-cb-edge",
+      "description": "NEW. The directed edge relation of CB(8,m) on Fin (17*m+3) with the FROZEN labelling 0 = r, 1 = s, 2 = v, u_i = 3+17i, b_ij = u_i+1+2j, c_ij = u_i+2+2j (i < m, j < 8): pairs (0,1), (1,2), (0,3+17i), (3+17i, 3+17i+1+2j), (3+17i+1+2j, 3+17i+2+2j). Seed: U1 (via C-U1-T CriticAdvance.lean). [Carried here from C1-LA2 (byte-identical fragment; C1-LA2 contract entry reused).]",
+      "lean_name": "E993Transport.cbEdge",
+      "dependencies": []
+    },
+    {
+      "id": "def-cb-graph",
+      "description": "NEW. CB(8,m) := SimpleGraph.fromRel (cbEdge m). [Carried here from C1-LA2 (byte-identical fragment; C1-LA2 contract entry reused).]",
+      "lean_name": "E993Transport.cbGraph",
+      "dependencies": [
+        "def-cb-edge"
+      ]
+    },
+    {
+      "id": "def-cb-decadj",
+      "description": "NEW. @[reducible, instance] computable DecidableRel (cbGraph m).Adj (bounded existentials; no classical choice). [Carried here from C1-LA2 (byte-identical fragment; C1-LA2 contract entry reused).]",
+      "lean_name": "E993Transport.cbGraph_decAdj",
+      "dependencies": [
+        "def-cb-graph",
+        "def-cb-edge"
+      ]
+    },
+    {
+      "id": "def-cb-vertex",
+      "description": "NEW. The vertex with label n: n % (17*m+3). Proof-internal naming helper (not in the terminal statement). [Carried here from C1-LA2 (byte-identical fragment; C1-LA2 contract entry reused).]",
+      "lean_name": "E993Transport.cbVertex",
+      "dependencies": []
+    },
+    {
+      "id": "def-cb-parent-val",
+      "description": "NEW. Parent label map (1 -> 0, 2 -> 1, choke -> 0, support -> its choke, private leaf -> its support). Proof-internal helper for the tree layer. [Carried here from C1-LA2 (byte-identical fragment; C1-LA2 contract entry reused).]",
+      "lean_name": "E993Transport.cbParentVal",
+      "dependencies": []
+    },
+    {
+      "id": "def-cb-parent",
+      "description": "NEW. cbVertex m (cbParentVal v.val). Proof-internal helper. [Carried here from C1-LA2 (byte-identical fragment; C1-LA2 contract entry reused).]",
+      "lean_name": "E993Transport.cbParent",
+      "dependencies": [
+        "def-cb-vertex",
+        "def-cb-parent-val"
+      ]
+    },
+    {
+      "id": "def-cb-child-edge",
+      "description": "NEW. The child-parent edge s(v, parent v) of a non-root vertex. Proof-internal helper (edge bijection). [Carried here from C1-LA2 (byte-identical fragment; C1-LA2 contract entry reused).]",
+      "lean_name": "E993Transport.cbChildEdge",
+      "dependencies": [
+        "def-cb-parent"
+      ]
+    },
+    {
+      "id": "def-cb-lower-witness",
+      "description": "NEW. The independent witness {s} u {u_i} u {c_ij} of size 9m+1. Proof-internal helper (alpha lower bound). [Carried here from C1-LA2 (byte-identical fragment; C1-LA2 contract entry reused).]",
+      "lean_name": "E993Transport.cbLowerWitness",
+      "dependencies": [
+        "def-cb-vertex"
+      ]
+    },
+    {
+      "id": "def-is-tree",
+      "description": "Mathlib: a connected acyclic simple graph. [Standard Mathlib.]",
+      "lean_name": "SimpleGraph.IsTree",
+      "dependencies": []
+    },
+    {
+      "id": "def-indep-num",
+      "description": "Mathlib: the independence number alpha(G). [Standard Mathlib.]",
+      "lean_name": "SimpleGraph.indepNum",
+      "dependencies": []
+    },
+    {
+      "id": "def-polynomial-int",
+      "description": "Polynomial Z (notation Z[X]): Mathlib's univariate polynomials over the integers; all coefficients are taken over Z, exactly as the synthesis states. Standard Mathlib, not re-typed. [From the C1-LA3 contract.]",
+      "lean_name": "Polynomial",
+      "dependencies": []
+    },
+    {
+      "id": "def-indeterminate-x",
+      "description": "Polynomial.X : the indeterminate X of Z[X]; 1 + X and 1 + 2 * X are the linear factors (the numeral 2 : Z[X] equals C 2). Standard Mathlib. [From the C1-LA3 contract.]",
+      "lean_name": "Polynomial.X",
+      "dependencies": [
+        "def-polynomial-int"
+      ]
+    },
+    {
+      "id": "def-coeff",
+      "description": "Polynomial.coeff p n : the coefficient of X^n in p (n : N). Standard Mathlib. [From the C1-LA3 contract.]",
+      "lean_name": "Polynomial.coeff",
+      "dependencies": [
+        "def-polynomial-int"
+      ]
+    },
+    {
+      "id": "def-poly-coeff-z",
+      "description": "CARRIED byte-identically from C1-LA3 entry 1 (046f659b...): polyCoeffZ p i := if i < 0 then 0 else p.coeff i.toNat; proof-internal only (used by the carried (BD) chain); not in the terminal statement.",
+      "lean_name": "E993Transport.polyCoeffZ",
+      "dependencies": [
+        "def-coeff"
+      ]
+    },
+    {
+      "id": "def-polynomial-nat",
+      "description": "Polynomial ℕ: Mathlib's univariate polynomials over ℕ (the carrier of C-U3-T's closed form). Standard Mathlib.",
+      "lean_name": "Polynomial",
+      "dependencies": []
+    },
+    {
+      "id": "def-cb8-g",
+      "description": "NEW (U1, re-authored): cb8G : ℤ[X] := X * (1 + X) ^ 8 + (1 + 2 * X) ^ 8, the CB(8,m) block polynomial G (SEMANTIC-CONTRACT §2, d = 8, summands commuted). Proof-internal; not in the terminal statement.",
+      "lean_name": "E993Transport.cb8G",
+      "dependencies": [
+        "def-polynomial-int",
+        "def-indeterminate-x"
+      ]
+    },
+    {
+      "id": "def-cb8-i",
+      "description": "NEW (U1, re-authored): cb8I m : ℤ[X] := (1 + 2 * X) * cb8G ^ m + X * (1 + X) * (1 + 2 * X) ^ (8 * m), the closed form of record over ℤ. Proof-internal (face companion cb8_elig_top_a is stated with it); identified with the literal counts by the cast bridge AdjU.cb8I_coeff_cast and critU3T_cb_indepSetCount_eq_coeff.",
+      "lean_name": "E993Transport.cb8I",
+      "dependencies": [
+        "def-cb8-g"
+      ]
+    },
+    {
+      "id": "def-cb8-p",
+      "description": "NEW (U1, re-authored): cb8P m j : ℤ[X] := (1 + X) ^ (8 * j) * (1 + 2 * X) ^ (8 * (m - j) + 1), the block polynomial P_j (same form as C1-LA3 entry 21's statement). Proof-internal.",
+      "lean_name": "E993Transport.cb8P",
+      "dependencies": [
+        "def-polynomial-int",
+        "def-indeterminate-x"
+      ]
+    },
+    {
+      "id": "def-cb8-s5",
+      "description": "NEW (U1, re-authored): cb8S5 m : ℤ := Σ_{j<6} C(m,j)·(P_j[L−j] − P_j[L−j+1]) + (T[L] − T[L+1]), L = (16m+4)/3 − 2, T = X(1+X)(1+2X)^(8m) — SR-4's pooled certificate quantity. Proof-internal.",
+      "lean_name": "E993Transport.cb8S5",
+      "dependencies": [
+        "def-cb8-p",
+        "def-coeff"
+      ]
+    },
+    {
+      "id": "def-indep-poly",
+      "description": "NEW (C-U3-T, re-authored): critU3T_indepPoly G D : ℕ[X] := Σ_{k ≤ |V|} monomial k (i_k(G − D)); its k-th coefficient is i_k(G − D) for every k. Proof-internal.",
+      "lean_name": "E993Transport.critU3T_indepPoly",
+      "dependencies": [
+        "def-indep-count",
+        "def-polynomial-nat"
+      ]
+    },
+    {
+      "id": "def-cb-part",
+      "description": "NEW (C-U3-T, re-authored): critU3T_cbPart m i : Finset (Fin (17m+3)) — part 0 = {s, v} (labels 1, 2); part i+1 = the choke gadget of u_i (labels 3+17i .. 3+17i+16). Proof-internal.",
+      "lean_name": "E993Transport.critU3T_cbPart",
+      "dependencies": []
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-m",
+      "description": "m : ℕ, the number of chokes of CB(8,m); the vertex type is Fin (17*m+3) (finite).",
+      "lean_type": "ℕ",
+      "dependencies": []
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "m",
+      "kind": "forall",
+      "domain_id": "domain-m"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-m-ge-107",
+      "statement": "hm : 107 ≤ m (verbatim). Used by the S_5 certificate (m = 3u+107), by the cast bridge / conjunct-2 link (p* ≥ 2), and through 0 < m for cb_lowWindow.",
+      "dependencies": [
+        "domain-m"
+      ]
+    },
+    {
+      "id": "hyp-residue",
+      "statement": "hmod : m % 3 = 2 (verbatim). Used: p* = (16m+4)/3 is exact and m = 3u+107 with u : ℕ.",
+      "dependencies": [
+        "domain-m"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "(cbGraph m).IsTree ∧ C5LA1.indepSetCount (cbGraph m) ∅ ((16 * m + 4) / 3 - 1) < C5LA1.indepSetCount (cbGraph m) ∅ ((16 * m + 4) / 3 - 2) ∧ C5LA1.crossingIndex (cbGraph m) + 2 ≤ (16 * m + 4) / 3 ∧ 3 * ((16 * m + 4) / 3) < 2 * (cbGraph m).indepNum + 1 -- the synthesis's frozen C2-LA1 terminal body verbatim: tree; the literal parent descent i_(p*-1) < i_(p*-2) of the independent-set counts of cbGraph m; conjunct 2 (crossing index + 2 ≤ p*); conjunct 3 (low window). ALL FOUR ASSERTED, for every m in the class. Conjunct 4 (the flow) is NOT part of this statement.",
+    "dependencies": [
+      "hyp-m-ge-107",
+      "hyp-residue",
+      "def-is-tree",
+      "def-indep-num",
+      "def-cb-graph",
+      "def-cb-decadj",
+      "def-indep-count",
+      "def-crossing-index"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "def-vdel-count",
+        "kind": "definition"
+      },
+      {
+        "id": "def-vdel-fwd",
+        "kind": "definition"
+      },
+      {
+        "id": "def-is-favorable",
+        "kind": "definition"
+      },
+      {
+        "id": "def-is-graph-leaf",
+        "kind": "definition"
+      },
+      {
+        "id": "def-support",
+        "kind": "definition"
+      },
+      {
+        "id": "def-leaf-set",
+        "kind": "definition"
+      },
+      {
+        "id": "def-h",
+        "kind": "definition"
+      },
+      {
+        "id": "def-r",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indep-avoiding",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indep-count",
+        "kind": "definition"
+      },
+      {
+        "id": "def-fwd-del",
+        "kind": "definition"
+      },
+      {
+        "id": "def-aggregate",
+        "kind": "definition"
+      },
+      {
+        "id": "def-tagged-family",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indep-family",
+        "kind": "definition"
+      },
+      {
+        "id": "def-tag-witnesses",
+        "kind": "definition"
+      },
+      {
+        "id": "def-active-weight",
+        "kind": "definition"
+      },
+      {
+        "id": "def-layer-weight",
+        "kind": "definition"
+      },
+      {
+        "id": "def-favorable-leaves",
+        "kind": "definition"
+      },
+      {
+        "id": "def-transport-rel",
+        "kind": "definition"
+      },
+      {
+        "id": "def-saturating-flow",
+        "kind": "definition"
+      },
+      {
+        "id": "def-weighted-hall",
+        "kind": "definition"
+      },
+      {
+        "id": "def-crossing-index",
+        "kind": "definition"
+      },
+      {
+        "id": "def-cb-edge",
+        "kind": "definition"
+      },
+      {
+        "id": "def-cb-graph",
+        "kind": "definition"
+      },
+      {
+        "id": "def-cb-decadj",
+        "kind": "definition"
+      },
+      {
+        "id": "def-cb-vertex",
+        "kind": "definition"
+      },
+      {
+        "id": "def-cb-parent-val",
+        "kind": "definition"
+      },
+      {
+        "id": "def-cb-parent",
+        "kind": "definition"
+      },
+      {
+        "id": "def-cb-child-edge",
+        "kind": "definition"
+      },
+      {
+        "id": "def-cb-lower-witness",
+        "kind": "definition"
+      },
+      {
+        "id": "def-is-tree",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indep-num",
+        "kind": "definition"
+      },
+      {
+        "id": "def-polynomial-int",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indeterminate-x",
+        "kind": "definition"
+      },
+      {
+        "id": "def-coeff",
+        "kind": "definition"
+      },
+      {
+        "id": "def-poly-coeff-z",
+        "kind": "definition"
+      },
+      {
+        "id": "def-polynomial-nat",
+        "kind": "definition"
+      },
+      {
+        "id": "def-cb8-g",
+        "kind": "definition"
+      },
+      {
+        "id": "def-cb8-i",
+        "kind": "definition"
+      },
+      {
+        "id": "def-cb8-p",
+        "kind": "definition"
+      },
+      {
+        "id": "def-cb8-s5",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indep-poly",
+        "kind": "definition"
+      },
+      {
+        "id": "def-cb-part",
+        "kind": "definition"
+      },
+      {
+        "id": "domain-m",
+        "kind": "domain"
+      },
+      {
+        "id": "hyp-m-ge-107",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-residue",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "def-vdel-count",
+        "to": "def-vdel-fwd"
+      },
+      {
+        "from": "def-vdel-fwd",
+        "to": "def-is-favorable"
+      },
+      {
+        "from": "def-is-graph-leaf",
+        "to": "def-support"
+      },
+      {
+        "from": "def-is-graph-leaf",
+        "to": "def-leaf-set"
+      },
+      {
+        "from": "def-support",
+        "to": "def-h"
+      },
+      {
+        "from": "def-support",
+        "to": "def-r"
+      },
+      {
+        "from": "def-indep-avoiding",
+        "to": "def-indep-count"
+      },
+      {
+        "from": "def-indep-count",
+        "to": "def-fwd-del"
+      },
+      {
+        "from": "def-leaf-set",
+        "to": "def-aggregate"
+      },
+      {
+        "from": "def-is-favorable",
+        "to": "def-aggregate"
+      },
+      {
+        "from": "def-h",
+        "to": "def-aggregate"
+      },
+      {
+        "from": "def-r",
+        "to": "def-aggregate"
+      },
+      {
+        "from": "def-fwd-del",
+        "to": "def-aggregate"
+      },
+      {
+        "from": "def-support",
+        "to": "def-tag-witnesses"
+      },
+      {
+        "from": "def-tag-witnesses",
+        "to": "def-active-weight"
+      },
+      {
+        "from": "def-indep-family",
+        "to": "def-layer-weight"
+      },
+      {
+        "from": "def-active-weight",
+        "to": "def-layer-weight"
+      },
+      {
+        "from": "def-leaf-set",
+        "to": "def-favorable-leaves"
+      },
+      {
+        "from": "def-is-favorable",
+        "to": "def-favorable-leaves"
+      },
+      {
+        "from": "def-indep-family",
+        "to": "def-saturating-flow"
+      },
+      {
+        "from": "def-transport-rel",
+        "to": "def-saturating-flow"
+      },
+      {
+        "from": "def-active-weight",
+        "to": "def-saturating-flow"
+      },
+      {
+        "from": "def-indep-family",
+        "to": "def-weighted-hall"
+      },
+      {
+        "from": "def-transport-rel",
+        "to": "def-weighted-hall"
+      },
+      {
+        "from": "def-active-weight",
+        "to": "def-weighted-hall"
+      },
+      {
+        "from": "def-fwd-del",
+        "to": "def-crossing-index"
+      },
+      {
+        "from": "def-indep-avoiding",
+        "to": "def-crossing-index"
+      },
+      {
+        "from": "def-indep-count",
+        "to": "def-crossing-index"
+      },
+      {
+        "from": "def-cb-edge",
+        "to": "def-cb-graph"
+      },
+      {
+        "from": "def-cb-graph",
+        "to": "def-cb-decadj"
+      },
+      {
+        "from": "def-cb-edge",
+        "to": "def-cb-decadj"
+      },
+      {
+        "from": "def-cb-vertex",
+        "to": "def-cb-parent"
+      },
+      {
+        "from": "def-cb-parent-val",
+        "to": "def-cb-parent"
+      },
+      {
+        "from": "def-cb-parent",
+        "to": "def-cb-child-edge"
+      },
+      {
+        "from": "def-cb-vertex",
+        "to": "def-cb-lower-witness"
+      },
+      {
+        "from": "def-polynomial-int",
+        "to": "def-indeterminate-x"
+      },
+      {
+        "from": "def-polynomial-int",
+        "to": "def-coeff"
+      },
+      {
+        "from": "def-coeff",
+        "to": "def-poly-coeff-z"
+      },
+      {
+        "from": "def-polynomial-int",
+        "to": "def-cb8-g"
+      },
+      {
+        "from": "def-indeterminate-x",
+        "to": "def-cb8-g"
+      },
+      {
+        "from": "def-cb8-g",
+        "to": "def-cb8-i"
+      },
+      {
+        "from": "def-polynomial-int",
+        "to": "def-cb8-p"
+      },
+      {
+        "from": "def-indeterminate-x",
+        "to": "def-cb8-p"
+      },
+      {
+        "from": "def-cb8-p",
+        "to": "def-cb8-s5"
+      },
+      {
+        "from": "def-coeff",
+        "to": "def-cb8-s5"
+      },
+      {
+        "from": "def-indep-count",
+        "to": "def-indep-poly"
+      },
+      {
+        "from": "def-polynomial-nat",
+        "to": "def-indep-poly"
+      },
+      {
+        "from": "domain-m",
+        "to": "hyp-m-ge-107"
+      },
+      {
+        "from": "domain-m",
+        "to": "hyp-residue"
+      },
+      {
+        "from": "hyp-m-ge-107",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-residue",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-is-tree",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-indep-num",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-cb-graph",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-cb-decadj",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-indep-count",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-crossing-index",
+        "to": "conclusion"
+      }
+    ]
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "explicit_axiom_allowlist",
+    "rationale": "The carried definitions of record (C5LA1.support via Classical.choose; leafSet, favorableLeaves and crossingIndex under open Classical) and Mathlib's Finset/Polynomial/indepNum API use classical logic; exactly the three standard axioms propext, Classical.choice, Quot.sound are permitted; no sorry, admit, native_decide, axiom, or decide over an enumeration standing in for a universal step (m, u, j, k are variables; the only finite case splits are fixed numeral binomials C(8j, i), j <= 5, and the fixed 6-block/tail certificate, each case proved)."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "E993Transport.cb8_topRank_parentDescent_and_conjuncts_1_2_3",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem cb8_topRank_parentDescent_and_conjuncts_1_2_3 (m : ℕ) (hm : 107 ≤ m) (hmod : m % 3 = 2) :\n    (cbGraph m).IsTree ∧\n    C5LA1.indepSetCount (cbGraph m) ∅ ((16 * m + 4) / 3 - 1) <\n      C5LA1.indepSetCount (cbGraph m) ∅ ((16 * m + 4) / 3 - 2) ∧\n    C5LA1.crossingIndex (cbGraph m) + 2 ≤ (16 * m + 4) / 3 ∧\n    3 * ((16 * m + 4) / 3) < 2 * (cbGraph m).indepNum + 1",
+    "expected_statement_sha256": "c8809d8e499c3c210c138f3119dcaaa70570c6cffa0ae694230fb8bae3de5b7c"
+  },
+  "source_materials": [
+    {
+      "id": "src-brief",
+      "path": "SOURCE/governing/C2-STAGE7-FORMALIZER-BRIEF-LA1.md",
+      "sha256": "966e56f1bb248ee79ad00f70325b0a460fd2e2ea012ba65170fed83325614401",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-synthesis",
+      "path": "SOURCE/governing/SYNTHESIS.md",
+      "sha256": "260c819571311c8f3538e90fab8f4f577da18626ea888fd0c8fe04198f626024",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-solution-contract",
+      "path": "SOURCE/governing/SOLUTION-CONTRACT.md",
+      "sha256": "480ba2ddda557be50b2d8249feb733be7e3c947d2e0a9dd4e7fee1427a7ef719",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-semantic-contract",
+      "path": "SOURCE/governing/SEMANTIC-CONTRACT.md",
+      "sha256": "7cc0bf434d6ea8f8fa2d812caf4e45787c1c06a9dfc6846b6b4d54cb60cf226e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-u-adjudication",
+      "path": "SOURCE/governing/ADJUDICATION-U.md",
+      "sha256": "013c139803b66194036dce42020602535da96f82cab09bfa9845a010c226fcfc",
+      "role": "reference"
+    },
+    {
+      "id": "src-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "sha256": "952ac16792bcaa20c866265b738133d134dbbedfa789c9ef688ba92b5d7ee64a",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "sha256": "c5d72805c6f2900af041cfc1ef1afef9200dd2634eef602c41ecc3927041eb2a",
+      "role": "reference"
+    },
+    {
+      "id": "src-c1-la3-state",
+      "path": "SOURCE/origin-records/c1-la3-FORMALIZATION-STATE.json",
+      "sha256": "6d59d4c30c3cc4d3ff58775156e77f842adaad49708cd5831afb88803d4cea78",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-c1-la3-kernel-receipt",
+      "path": "SOURCE/origin-records/c1-la3-kernel-verification.json",
+      "sha256": "717a0830f98026711cd5714cf2f1e109364ed35b8a8dabdb6911cdcc82a6fb72",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-c1-la3-main",
+      "path": "SOURCE/origin-records/c1-la3-Main.lean",
+      "sha256": "c0605e12b91375ede9fb72cb9af428a96d9b6a7d678b856b0131f9c7b10f3011",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-c1-la2-state",
+      "path": "SOURCE/origin-records/c1-la2-FORMALIZATION-STATE.json",
+      "sha256": "97722ca72a9ef29ddef53d24079459ee4cb138f26b3c5e8f95dce74cfe1f4ad0",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-c1-la2-kernel-receipt",
+      "path": "SOURCE/origin-records/c1-la2-kernel-verification.json",
+      "sha256": "dde486d347ccb497fa345d8e80b5126a3989f844428d55f9653270b8d427e6f6",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-c1-la2-main",
+      "path": "SOURCE/origin-records/c1-la2-Main.lean",
+      "sha256": "a906ec179d52c2548ca7026d8c9de532577100308444af2e722db3fd963b5f3f",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la3-0001",
+      "path": "SOURCE/carried-c1-la3/0001-definition-E993Transport-polyCoeffZ.lean.fragment",
+      "sha256": "046f659b7d033efef4613b69f6f6192013a62df02806d99ad4013ef00d9a5f9f",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la3-0002",
+      "path": "SOURCE/carried-c1-la3/0002-lemma-E993Transport-descent_of_recurrence_logconcave.lean.fragment",
+      "sha256": "7be63ac8eb845bce953cef4e1c3f1b473c9eb06bea85ba3eb52ca2ad4d95d679",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la3-0003",
+      "path": "SOURCE/carried-c1-la3/0003-lemma-E993Transport-twoBinom_derivative_identity.lean.fragment",
+      "sha256": "63ad7e5309d3418f643650fc656162f808ef36f1c0a0191950a5151d88753b71",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la3-0004",
+      "path": "SOURCE/carried-c1-la3/0004-lemma-E993Transport-twoBinomCoeff_recurrence.lean.fragment",
+      "sha256": "d60b214129419ccdf8cd12a466c639c1f83da6cce1f52f3b1d61366905f7b891",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la3-0005",
+      "path": "SOURCE/carried-c1-la3/0005-lemma-E993Transport-polyCoeffZ_natCast.lean.fragment",
+      "sha256": "4c3bf9dcf2a367fb88d5a49b18837f0e18768a66d4d5774b7e5a28979ac1c940",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la3-0006",
+      "path": "SOURCE/carried-c1-la3/0006-lemma-E993Transport-polyCoeffZ_of_neg.lean.fragment",
+      "sha256": "3cd1bd212783c3eb57c95fb443c9ea94cfa4ae19f40c37e9d1e83520fe737c08",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la3-0007",
+      "path": "SOURCE/carried-c1-la3/0007-lemma-E993Transport-polyCoeffZ_one.lean.fragment",
+      "sha256": "124ae5c48f85f9b8ae1fe5842db3164f7c6feb80ac516db56dce2bd533cbd456",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la3-0008",
+      "path": "SOURCE/carried-c1-la3/0008-lemma-E993Transport-polyCoeffZ_linear_mul.lean.fragment",
+      "sha256": "3459fc88eb9ce095b0f01978ec725389ed51de6ad1fd7d21fac1d2f7c5d703ed",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la3-0009",
+      "path": "SOURCE/carried-c1-la3/0009-lemma-E993Transport-strongLC_linear_step.lean.fragment",
+      "sha256": "d787f5498d99542c3aa877607acadf4da9083888cfad1282baad7d96ef6bcceb",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la3-0010",
+      "path": "SOURCE/carried-c1-la3/0010-lemma-E993Transport-twoBinom_succ_left.lean.fragment",
+      "sha256": "a661a5422e938a23adf197c83ce03c17d6e749a9313c245a5031a6d5a1a5876c",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la3-0011",
+      "path": "SOURCE/carried-c1-la3/0011-lemma-E993Transport-twoBinom_succ_right.lean.fragment",
+      "sha256": "2759f45c072c96b98ad9a6be9e94af7e61dd6c2ca2e31d7a55fe3d7235370be0",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la3-0012",
+      "path": "SOURCE/carried-c1-la3/0012-lemma-E993Transport-polyCoeffZ_linear_mul_nonneg_pos.lean.fragment",
+      "sha256": "9b25fa4db728eee090ffbdf7182be9c750e8bf8d07f2a0f8d5d75e865900c12b",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la3-0013",
+      "path": "SOURCE/carried-c1-la3/0013-lemma-E993Transport-twoBinomCoeffZ_nonneg_pos.lean.fragment",
+      "sha256": "8db51d28180bafedd83eb8bca3225379c85c478498b64681f87a0671c7de8a58",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la3-0014",
+      "path": "SOURCE/carried-c1-la3/0014-lemma-E993Transport-twoBinomCoeff_pos.lean.fragment",
+      "sha256": "768f4ab5ed5dd35057de158c05a06727d928906d103861fe4dcd70a6e039a9ac",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la3-0015",
+      "path": "SOURCE/carried-c1-la3/0015-lemma-E993Transport-twoBinomCoeffZ_strongLC.lean.fragment",
+      "sha256": "61e8794fec4ff00b103505614f6cce53efdcf341ae98866fdc89686abaf57dc0",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la3-0016",
+      "path": "SOURCE/carried-c1-la3/0016-lemma-E993Transport-twoBinomCoeff_logConcave.lean.fragment",
+      "sha256": "77460852bfb43435d294720f9480f9713283eb6aa46af6491b6c0d8e25255b02",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la3-0017",
+      "path": "SOURCE/carried-c1-la3/0017-lemma-E993Transport-twoBinom_coeff_strictAnti_of_gap.lean.fragment",
+      "sha256": "b39cd78768d02c83194f21b48717af69a8354afb36719755c5979769c3d6589c",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la3-0018",
+      "path": "SOURCE/carried-c1-la3/0018-lemma-E993Transport-cb8_gap_E1_conditionI.lean.fragment",
+      "sha256": "c905770686d71203599336a24e247a5da6369676badeab131842c644d3687df5",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la3-0019",
+      "path": "SOURCE/carried-c1-la3/0019-lemma-E993Transport-cb8_gap_block_descent.lean.fragment",
+      "sha256": "1c8c67c5617a91f7a76b0473afc00a32464c6d9b83882fec5a296d82ab04bf1e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la3-0020",
+      "path": "SOURCE/carried-c1-la3/0020-lemma-E993Transport-cb8_E1_conditionI_topRank.lean.fragment",
+      "sha256": "8da112b4d0a8c184e9ea9d8c749c1342d53211159d575679999b3d73c7db6a3a",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la3-0021",
+      "path": "SOURCE/carried-c1-la3/0021-theorem-E993Transport-cb8_block_descent_topRank.lean.fragment",
+      "sha256": "1afd4f7df25576b0bef0f3fafe2624b8f231691ca46c2c37ee0f2eec62a1b92f",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0001",
+      "path": "SOURCE/carried-c1-la2/0001-definition-C4LA1-vertexDeletionIndepSetCount.lean.fragment",
+      "sha256": "7e0a588e243735a611c919ea1080816911a3e27e4523478af0c0f560ce1b3b48",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0002",
+      "path": "SOURCE/carried-c1-la2/0002-definition-C4LA1-vertexDeletionForwardDifference.lean.fragment",
+      "sha256": "c2da50eb16ee788c439b146577efeedd7dd42811c6943fb437585edcf63b5880",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0003",
+      "path": "SOURCE/carried-c1-la2/0003-definition-C4LA1-IsFavorableAt.lean.fragment",
+      "sha256": "25d8f7d274f9080468bf6d46acc6db3d4a469c2e399e7faee6cdcee24290a0db",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0004",
+      "path": "SOURCE/carried-c1-la2/0004-definition-C4LA1-IsGraphLeaf.lean.fragment",
+      "sha256": "65acd314d3bfd74aca476e00dd8866434c67682b627bce5e105d372a556f7ae5",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0005",
+      "path": "SOURCE/carried-c1-la2/0005-definition-C5LA1-support.lean.fragment",
+      "sha256": "8e1e1a689393f555eb5c216207b1368c7415a8543c569884b2fc86954b7bc2b4",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0006",
+      "path": "SOURCE/carried-c1-la2/0006-definition-C5LA1-leafSet.lean.fragment",
+      "sha256": "78ec65517bde90cc2fc5e542fc7c60d6a5147b243b74b9ac3de33d4efd1df697",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0007",
+      "path": "SOURCE/carried-c1-la2/0007-definition-C5LA1-H.lean.fragment",
+      "sha256": "55f37d9161901d6006e571cf548c4e56675c9d786a1aba83e7889ad9d443224d",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0008",
+      "path": "SOURCE/carried-c1-la2/0008-definition-C5LA1-R.lean.fragment",
+      "sha256": "a0407d82ab112a65a0f9d85970e9d6217b66201680cc079a4ba13751e53dc6b8",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0009",
+      "path": "SOURCE/carried-c1-la2/0009-definition-C5LA1-indepSetsAvoiding.lean.fragment",
+      "sha256": "ac0e331eec99650eca7a18e9fe98829bb5495850685b8f31936169f0a6d8e368",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0010",
+      "path": "SOURCE/carried-c1-la2/0010-definition-C5LA1-indepSetCount.lean.fragment",
+      "sha256": "e22635d8697e49b38dd521080f34c3eefe56a93964120c70f53ad9899b4a7f71",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0011",
+      "path": "SOURCE/carried-c1-la2/0011-definition-C5LA1-forwardDifferenceDel.lean.fragment",
+      "sha256": "60bd8efcc88e8e511a7caacac5867f7845243ccab08f1660e8c3962af544dd8f",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0012",
+      "path": "SOURCE/carried-c1-la2/0012-definition-C5LA1-aggregate.lean.fragment",
+      "sha256": "d66e776c5cf49b2a78a2d9713e4a41de2cbaf5de0af7b6d580075064d1daea8b",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0013",
+      "path": "SOURCE/carried-c1-la2/0013-definition-E993Interior-taggedFamily.lean.fragment",
+      "sha256": "cb43feebd48bdf3a82d95db4c0475a34a83acdd8c55f13ac44433ea26141fa1e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0014",
+      "path": "SOURCE/carried-c1-la2/0014-definition-E993Transport-indepFamily.lean.fragment",
+      "sha256": "73df20a8511ea67885d45631688cf693e58cebe9cfd5413ee67e782c1030ef9e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0015",
+      "path": "SOURCE/carried-c1-la2/0015-definition-E993Transport-tagWitnesses.lean.fragment",
+      "sha256": "113d952167528dfc045eb79961e8fbff0326da8f04277799436d6c8962022025",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0016",
+      "path": "SOURCE/carried-c1-la2/0016-definition-E993Transport-activeWeight.lean.fragment",
+      "sha256": "074ed034729850d34722d0b1ceeb96d8362beaebf3b7a409cb3fab28a9850b93",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0017",
+      "path": "SOURCE/carried-c1-la2/0017-definition-E993Transport-layerWeight.lean.fragment",
+      "sha256": "5ca5792309be23276583ac42cef294618e2471c97d3f58e67f0ab7980a3a83c3",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0018",
+      "path": "SOURCE/carried-c1-la2/0018-definition-E993Transport-favorableLeaves.lean.fragment",
+      "sha256": "16b0c7672ed66c4cb53ba24d853764df160d6694f63b231346a2eb71c390ec77",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0019",
+      "path": "SOURCE/carried-c1-la2/0019-definition-E993Transport-transportRel.lean.fragment",
+      "sha256": "b1b9ac6c8de56fa740a37e5bac0fa628f1d817c2e33625ca34dcab33a1100d95",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0020",
+      "path": "SOURCE/carried-c1-la2/0020-definition-E993Transport-IsSaturatingFlow.lean.fragment",
+      "sha256": "a9d81c260914024d38f46ff5b564749d34f640674f9e9116685b4e7c631a48ac",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0021",
+      "path": "SOURCE/carried-c1-la2/0021-definition-E993Transport-WeightedHall.lean.fragment",
+      "sha256": "63534ffbfcc4bb1297228e598da165dcf98732939cd51a5d7fda3e62bc518478",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0022",
+      "path": "SOURCE/carried-c1-la2/0022-definition-C5LA1-crossingIndex.lean.fragment",
+      "sha256": "378868ab2e660af8a36ea0b1045c55bc60f8383dca3d31dd85c4b52fa8a898fb",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0023",
+      "path": "SOURCE/carried-c1-la2/0023-definition-E993Transport-cbEdge.lean.fragment",
+      "sha256": "84901458c1f299cbc7a74fca5dec1dec3dea642585242b696d6df7acb8a7fa7b",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0024",
+      "path": "SOURCE/carried-c1-la2/0024-definition-E993Transport-cbGraph.lean.fragment",
+      "sha256": "206cd48848e1208041e40cdd238a0c92f341ede8e257629cf468701ba4ebb52f",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0025",
+      "path": "SOURCE/carried-c1-la2/0025-definition-E993Transport-cbGraph_decAdj.lean.fragment",
+      "sha256": "dabf806176a2765b998216113a73e1a57e7137165ce6410e32c38be98f94e52a",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0026",
+      "path": "SOURCE/carried-c1-la2/0026-definition-E993Transport-cbVertex.lean.fragment",
+      "sha256": "8a1b06d43ac1f07c0c1b81f814493fb47ff9f2e61b9fa806c80e0ab6c084dffa",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0027",
+      "path": "SOURCE/carried-c1-la2/0027-definition-E993Transport-cbParentVal.lean.fragment",
+      "sha256": "e262e5fafb047d648488e86957cc09f15369a3dce16c8ee2e1561583bea70a28",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0028",
+      "path": "SOURCE/carried-c1-la2/0028-definition-E993Transport-cbParent.lean.fragment",
+      "sha256": "0be56aa750a0050af1eb4f29ae549f14ffeed044869ef45071b2d4053cd80880",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0029",
+      "path": "SOURCE/carried-c1-la2/0029-definition-E993Transport-cbChildEdge.lean.fragment",
+      "sha256": "a6e14fbf86c38e0894188a49ae5ce5a8166227922b8074a0b3d037f40a4633ce",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0030",
+      "path": "SOURCE/carried-c1-la2/0030-definition-E993Transport-cbLowerWitness.lean.fragment",
+      "sha256": "63cd89899c73f61092910ade4cd119cc6fb4dc0934846afcbf13e9a314c3fdeb",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0031",
+      "path": "SOURCE/carried-c1-la2/0031-lemma-E993Transport-support_eq_of_isGraphLeaf_of_adj.lean.fragment",
+      "sha256": "16687f86fa9b55f6996ffb8d02fcf3cf1af6129033605d60c019f33c360b620d",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0032",
+      "path": "SOURCE/carried-c1-la2/0032-lemma-E993Transport-mem_tagWitnesses_iff_of_adj.lean.fragment",
+      "sha256": "772a13c0522f1c4b7c8d93dc3920688ea5649302271cbd8799d1c575e8773de5",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0033",
+      "path": "SOURCE/carried-c1-la2/0033-lemma-E993Transport-cbVertex_val.lean.fragment",
+      "sha256": "c6accdf2872bf41acb9ddf524f60282afed933a76da5fdb142a88e29d571e223",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0034",
+      "path": "SOURCE/carried-c1-la2/0034-lemma-E993Transport-eq_cbVertex_iff.lean.fragment",
+      "sha256": "e31d191c4e64507642d9e3cb70b9b13fae338e921de4968c9e69504a4d7ccd66",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0035",
+      "path": "SOURCE/carried-c1-la2/0035-lemma-E993Transport-cbGraph_adj_iff.lean.fragment",
+      "sha256": "b462cedd206638d7cd619f9a0d7ad1ccb6f5e6f1c25e86a2b3814692d9a60d4b",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0036",
+      "path": "SOURCE/carried-c1-la2/0036-lemma-E993Transport-cbGraph_adj_iff_val.lean.fragment",
+      "sha256": "0d82fdf8407ffb57f4f7cb4e17f42bd15f2b5db9985cbd802c1f81b624c99912",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0037",
+      "path": "SOURCE/carried-c1-la2/0037-lemma-E993Transport-cbGraph_adj_of_val.lean.fragment",
+      "sha256": "07d238df818cfdf7b573eaa17c924159094dabe9ef58829817fb4aee955eef21",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0038",
+      "path": "SOURCE/carried-c1-la2/0038-lemma-E993Transport-cbGraph_adj_r_s.lean.fragment",
+      "sha256": "fe0ea61f6049522a9452bcb38e333e98b92249c2de63e3542335e6f0af2c93ec",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0039",
+      "path": "SOURCE/carried-c1-la2/0039-lemma-E993Transport-cbGraph_adj_s_v.lean.fragment",
+      "sha256": "79bcebf1d707141783cac3436aaafbe0bf9f778de301fce76c7d572019dff008",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0040",
+      "path": "SOURCE/carried-c1-la2/0040-lemma-E993Transport-cbGraph_adj_r_choke.lean.fragment",
+      "sha256": "bf806398b632a71b8a77006b213fa2b9e5db1d44dcb2a400bcd6184162e5a570",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0041",
+      "path": "SOURCE/carried-c1-la2/0041-lemma-E993Transport-cbGraph_adj_choke_support.lean.fragment",
+      "sha256": "e9ba1eb05fffafad702a6b31518a800b974e91accd31b55b72d53853d50c3088",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0042",
+      "path": "SOURCE/carried-c1-la2/0042-lemma-E993Transport-cbGraph_adj_support_leaf.lean.fragment",
+      "sha256": "2c41bee31dd97c88dfe6551f3e6fdf9c09c51c05982e37ee1fce58a8a4807859",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0043",
+      "path": "SOURCE/carried-c1-la2/0043-lemma-E993Transport-cbGraph_reachable_zero.lean.fragment",
+      "sha256": "c4e279c449d558c4636739a04710049980ff27b9f048950bf725494bc4efeab2",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0044",
+      "path": "SOURCE/carried-c1-la2/0044-lemma-E993Transport-cbGraph_connected.lean.fragment",
+      "sha256": "508223f9174f8bfbc7f4927978d8bc9dd17534700ea4bc762a0673cd9bc16416",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0045",
+      "path": "SOURCE/carried-c1-la2/0045-lemma-E993Transport-cbParentVal_lt.lean.fragment",
+      "sha256": "501c91a17802e752fe9c3762f566940a6afa2ea6e809a4cda0d5bb484e8a249a",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0046",
+      "path": "SOURCE/carried-c1-la2/0046-lemma-E993Transport-cbParentVal_le.lean.fragment",
+      "sha256": "421fb390e1f4c7a6fa2dc4213318a7503c530547f523cbfe3cda13967108fac1",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0047",
+      "path": "SOURCE/carried-c1-la2/0047-lemma-E993Transport-cbParentVal_at_s.lean.fragment",
+      "sha256": "3ea49306762a577be10400b933443d17e34b862a7fa6e996958ebdd2494c9e7f",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0048",
+      "path": "SOURCE/carried-c1-la2/0048-lemma-E993Transport-cbParentVal_at_v.lean.fragment",
+      "sha256": "fd9229837bb6a65af3795d41ae0513ccfb1c00c7586ee1b489e00fd190a3c7cf",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0049",
+      "path": "SOURCE/carried-c1-la2/0049-lemma-E993Transport-cbParentVal_at_choke.lean.fragment",
+      "sha256": "58bd58dafde280648cbcc9048fa449f7bf39cb58177743054b4ecb0731614412",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0050",
+      "path": "SOURCE/carried-c1-la2/0050-lemma-E993Transport-cbParentVal_at_support.lean.fragment",
+      "sha256": "d8efdcd551f714f53d4719460141f03abda91e4058f52a1c02deae049e631e53",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0051",
+      "path": "SOURCE/carried-c1-la2/0051-lemma-E993Transport-cbParentVal_at_leaf.lean.fragment",
+      "sha256": "78dbece94f5d5e67628023d91bf19d0ef3928f0d37454ecdae5f387921aabe4e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0052",
+      "path": "SOURCE/carried-c1-la2/0052-lemma-E993Transport-cbGraph_adj_parent.lean.fragment",
+      "sha256": "1de7991c6ee87d14be65af77fb6ed42c06945305778dbde333bdab5810bb85f7",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0053",
+      "path": "SOURCE/carried-c1-la2/0053-lemma-E993Transport-cbChildEdge_injective.lean.fragment",
+      "sha256": "e5f898ec988338d2487469c332aad8ebb61e03c035b43e016b467dde11751989",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0054",
+      "path": "SOURCE/carried-c1-la2/0054-lemma-E993Transport-cbChildEdge_range.lean.fragment",
+      "sha256": "9f54fb3c0abc7ddc4656d244f20caec0fb48685a23e2fcbb496f514ccb29c30f",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0055",
+      "path": "SOURCE/carried-c1-la2/0055-lemma-E993Transport-cbGraph_card_nonroot.lean.fragment",
+      "sha256": "d510e038b70eb857d4e88c26a8b6a3df65c22d4f8ce4051afc1d4c360582e7d3",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0056",
+      "path": "SOURCE/carried-c1-la2/0056-lemma-E993Transport-cbGraph_isTree.lean.fragment",
+      "sha256": "020d263c597356d1073aa3644a3da2cac204a3011fdbc512111813c893e6afa4",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0057",
+      "path": "SOURCE/carried-c1-la2/0057-lemma-E993Transport-cb_val_cases.lean.fragment",
+      "sha256": "5d74bbd3141e6d8811691fc06303c109616ecb9a372f00bb70e56f9ec54efaa6",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0058",
+      "path": "SOURCE/carried-c1-la2/0058-lemma-E993Transport-cb_leaf_cases.lean.fragment",
+      "sha256": "c88c5b63b3eeb9356c3783b409f5a19e21bbed79875029585c18c643a7bcc9be",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0059",
+      "path": "SOURCE/carried-c1-la2/0059-lemma-E993Transport-cb_isGraphLeaf_of_cases.lean.fragment",
+      "sha256": "f138151e922a73bbc05816e8c1246588ac8eb57c0664737dca51575521c5ecb6",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0060",
+      "path": "SOURCE/carried-c1-la2/0060-lemma-E993Transport-mem_leafSet_cbGraph_iff.lean.fragment",
+      "sha256": "d94a4323f5ed4b636c98e2147b5569f342f03438d92dc635594afede03baa0fd",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0061",
+      "path": "SOURCE/carried-c1-la2/0061-lemma-E993Transport-mem_cbLowerWitness_iff.lean.fragment",
+      "sha256": "319200e9ebb6f7d803bd80ff9f5ff7985f2c6a41a32e424d4f4b99ba60d2f558",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0062",
+      "path": "SOURCE/carried-c1-la2/0062-lemma-E993Transport-cbLowerWitness_card.lean.fragment",
+      "sha256": "81eb43e5d08e28a05864c8f97796e1cc447167fb12f3d2795ec974c9df7335d7",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0063",
+      "path": "SOURCE/carried-c1-la2/0063-lemma-E993Transport-cbLowerWitness_isIndepSet.lean.fragment",
+      "sha256": "fba0ec3ac22a72f983f562fcd18c1e7e57508825c81e5a579a17cc912ad66fa8",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0064",
+      "path": "SOURCE/carried-c1-la2/0064-lemma-E993Transport-cbGraph_indepNum_ge.lean.fragment",
+      "sha256": "bf927ff0d6741dfc9ba9b5cdd67289d0e30ce5c7e7a67878ee99a7984ad4b79e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0065",
+      "path": "SOURCE/carried-c1-la2/0065-lemma-E993Transport-cbGraph_indepNum_le.lean.fragment",
+      "sha256": "7ad8cddfaefe335d060cf135661a92fe017181e48292d11778bef7809e4d3afa",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0066",
+      "path": "SOURCE/carried-c1-la2/0066-lemma-E993Transport-cbGraph_indepNum_eq.lean.fragment",
+      "sha256": "8ee971212cd8f3f6a5d6c4de8be5c30164846ccb835b2d0520e8bc80b4d6589e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0067",
+      "path": "SOURCE/carried-c1-la2/0067-lemma-E993Transport-cb_isGraphLeaf_v.lean.fragment",
+      "sha256": "e49f1a84103beba2d285fc4efd8392f22de144fe0001be4ecfc310bc11bd75cc",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0068",
+      "path": "SOURCE/carried-c1-la2/0068-lemma-E993Transport-cb_isGraphLeaf_leaf.lean.fragment",
+      "sha256": "1ff1b6171b81dfe6ccb4ca414f26fd7a1586a8ca9e85be7eef4c2c7ecf904ec9",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0069",
+      "path": "SOURCE/carried-c1-la2/0069-lemma-E993Transport-mem_cb_tagWitnesses_v_iff.lean.fragment",
+      "sha256": "8804e7929fd5f35670ec76606845bdecf3a8296c4874da5577ed4c86a8105c7e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0070",
+      "path": "SOURCE/carried-c1-la2/0070-lemma-E993Transport-mem_cb_tagWitnesses_leaf_iff.lean.fragment",
+      "sha256": "0760cb8c5f8d72481f0ddcaa8f6086dbd59e62adb6379126acb9c6942f749945",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0071",
+      "path": "SOURCE/carried-c1-la2/0071-lemma-E993Transport-cb_lowWindow.lean.fragment",
+      "sha256": "dc760df487315f1b58101f378894c5f517ed2e6f7462e2abf39945a34af90d0b",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0072",
+      "path": "SOURCE/carried-c1-la2/0072-lemma-E993Transport-cb_leafSet_eq_image.lean.fragment",
+      "sha256": "faa4b7f4dfddb4189bad0e8fa5f5993f9342a3529872ebf68f291451dcff4c6e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0073",
+      "path": "SOURCE/carried-c1-la2/0073-lemma-E993Transport-cb_leafSet_card.lean.fragment",
+      "sha256": "a9128bd9ebf100d728c42691cf45362c0ee2abf8ef1ce2f39d8012e2eaa1ded4",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0074",
+      "path": "SOURCE/carried-c1-la2/0074-lemma-E993Transport-favorableLeaves_eq_leafSet_of_all.lean.fragment",
+      "sha256": "dd382623d12aa41b616927c1fd5fc78b5f38325e09bae5cb8bbec83c639330a2",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0075",
+      "path": "SOURCE/carried-c1-la2/0075-lemma-E993Transport-mem_neighborFinset_choke_iff.lean.fragment",
+      "sha256": "1cca2da81fcd6303f0df5590affc964b75473f52991d6b83102d10a27f11c124",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0076",
+      "path": "SOURCE/carried-c1-la2/0076-lemma-E993Transport-mem_neighborFinset_root_iff.lean.fragment",
+      "sha256": "8e28d4f326b15eda940000970abbeb1d3c5e08a32cfb576a5160c81b0a43f436",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0077",
+      "path": "SOURCE/carried-c1-la2/0077-lemma-E993Transport-choke_degree.lean.fragment",
+      "sha256": "65e31c48b81b8ee78c9b042ff74e06cfe31c46c4c4a5a624dae84ed2a8b4db7b",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c1-la2-0078",
+      "path": "SOURCE/carried-c1-la2/0078-theorem-E993Transport-cb8_topRank_of_descent_and_flow.lean.fragment",
+      "sha256": "df7623e2a304e4ddb27ad2af312142983c465836366f8fd95c09e39cd038fea9",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-rekeyed-0057",
+      "path": "DRAFTS/fragments/0057-lemma-E993Transport-cb8_block_descent_topRank.lean",
+      "sha256": "627ab80ffff8f73dc93d8afaf5a742c8b0f5726d2cac22d524c981dc1658e742",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-rekeyed-0105",
+      "path": "DRAFTS/fragments/0105-lemma-E993Transport-cb8_topRank_of_descent_and_flow.lean",
+      "sha256": "6f483ba95fb9af9f774d8f832aa008f47eae8ceaa77a46c06d5a4f44b33a0ff8",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-seed-adjcompose",
+      "path": "SOURCE/draft-seeds/AdjCompose.lean",
+      "sha256": "fc8d40bc2e1cad0e40ddd68dfc5018a48280920f5420e21de58264b501f39fb8",
+      "role": "reference"
+    },
+    {
+      "id": "src-seed-critics5",
+      "path": "SOURCE/draft-seeds/CriticS5.lean",
+      "sha256": "300b6bd8c28d37c1310449d513a0f7a57da8a80c35c1afe620be9c529c438745",
+      "role": "reference"
+    },
+    {
+      "id": "src-seed-criticu3t",
+      "path": "SOURCE/draft-seeds/CriticU3T.lean",
+      "sha256": "b2f134b894d52bb83918132a6ba1d4bb74d471a870defd12ec4e6de1ec5d7aae",
+      "role": "reference"
+    },
+    {
+      "id": "src-seed-criticu3t2",
+      "path": "SOURCE/draft-seeds/CriticU3T2.lean",
+      "sha256": "74a1c05c71bc2606e99ec280ff57ec51464a0118da875210940b206f79498f3c",
+      "role": "reference"
+    },
+    {
+      "id": "src-seed-u1-main",
+      "path": "SOURCE/draft-seeds/U1-Main.lean",
+      "sha256": "40789438145a68c3aaa84659437cd07f29bf575dd20a9b563ff4644dc067dcbe",
+      "role": "reference"
+    },
+    {
+      "id": "src-seed-u3",
+      "path": "SOURCE/draft-seeds/U3.lean",
+      "sha256": "bacc48086c1306548f9757f63b041a0ed2ca8151629509ccd7e0e4cb9f25e9e0",
+      "role": "reference"
+    },
+    {
+      "id": "src-seed-crit-u1t-poly-u",
+      "path": "SOURCE/draft-seeds/crit_u1t_Poly_u.json",
+      "sha256": "f75d2f198decd410a274f7630a04f14d85709251454405330120a8d265ae4bac",
+      "role": "reference"
+    },
+    {
+      "id": "src-seed-gen-lean-s5",
+      "path": "SOURCE/draft-seeds/gen_lean_s5.py",
+      "sha256": "53d4731bf5f772325e96d7d1fd59822c75b04bb593c0f6539b0f8fb7debb940f",
+      "role": "reference"
+    },
+    {
+      "id": "src-fragment-builder",
+      "path": "DRAFTS/make_fragments.py",
+      "sha256": "bf8ac4549ec5be8acb68ee7763d3c963b68bfb5498afe46940bb3f5e0c24ff01",
+      "role": "reference"
+    },
+    {
+      "id": "src-registration-plan",
+      "path": "DRAFTS/REGISTRATION-PLAN.json",
+      "sha256": "0f05a6f5ef62175c6e20152f1c65d2a6f7263ddef35810eeb3a3b94a9f84ae74",
+      "role": "reference"
+    },
+    {
+      "id": "src-s5-generator-shipped",
+      "path": "EVIDENCE/s5-generator/gen_lean_s5.py",
+      "sha256": "53d4731bf5f772325e96d7d1fd59822c75b04bb593c0f6539b0f8fb7debb940f",
+      "role": "reference"
+    },
+    {
+      "id": "src-s5-poly",
+      "path": "EVIDENCE/s5-generator/crit_u1t_Poly_u.json",
+      "sha256": "f75d2f198decd410a274f7630a04f14d85709251454405330120a8d265ae4bac",
+      "role": "reference"
+    },
+    {
+      "id": "src-s5-assertion-script",
+      "path": "EVIDENCE/s5-generator/assert_s5_generator.py",
+      "sha256": "d07621e9c982ea56f2dad223f8411254e22cca50b369835e9379b188b28e186a",
+      "role": "reference"
+    },
+    {
+      "id": "src-s5-assertion",
+      "path": "EVIDENCE/s5-generator/assertion.json",
+      "sha256": "aab064611acdf5936f0e0f00c94c1537461d8d87d299ef6583f1b82e3399a79f",
+      "role": "reference"
+    }
+  ]
+}

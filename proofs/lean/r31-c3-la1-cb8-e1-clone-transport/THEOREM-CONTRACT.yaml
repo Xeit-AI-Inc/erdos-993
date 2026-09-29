@@ -1,0 +1,704 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "erdos-993-r31-c3-la1-cb8-e1-clone-transport-v1",
+  "theorem": {
+    "title": "C3-LA1 (r31): the E1 clone-level transport at the class and its rho-links - at p* = (16m+4)/3 for every 1 <= q <= m on the class m >= 107, m = 2 (mod 3), d = 8, clone level only",
+    "informal_statement": "Canonical run id erdos-993-math-dre-20260927-r31-cb-uniform-switch; award C3-LA1 (the E1 clone-level transport at the class and its rho-links), Lean run lean-2026-09-28-c3-la1-cb8-e1-clone-transport. Definitions (frozen synthesis text): e1S a b j al = [al <= j] C(a,al) C(b,j-al) 2^(j-al) in Q; e1T a b j al = [al+1 <= j] C(a,al) C(b,j-1-al) 2^(j-1-al); e1Rho a b j = (sum_{al<=a} e1S)/(sum_{al<=a} e1T); e1G a b j al = e1Rho * (sum_{i<al} e1T) - sum_{i<al} e1S; e1H = e1S - e1G. Terminal: for all m : N with 107 <= m and m % 3 = 2 (p* = (16m+4)/3 exact): (1) e1Rho (8*1-1) (8*(m-1)+1) ((16m+4)/3-1) = cb8R1 m ((16m+1)/3) / cb8R1 m ((16m+1)/3-1) over Q (C1-LA1's cb8R1); (2) for all q with 1 <= q <= m, writing a = 8q-1, b = 8(m-q)+1, j = (16m+4)/3-q: (2a) e1Rho a b j equals the ratio of the Z-coefficients of X^j and X^(j-1) in (1+X)^a (1+2X)^b cast to Q; (2b) e1Rho a b j < 1; (2c) for all a b j equal to those values: every G_al, H_al (al <= a) is >= 0; G_(al+1) + H_al = rho T_al for al < a; H_a = rho T_a; G_0 = 0; j <= a implies G_j = S_j and H_j = 0; and for every al <= a with T_al > 0 the column sum [al<a](a-al) G_(al+1)/((al+1) S_(al+1)) + [j-1-al<b] 2(b-(j-1-al)) H_al/((j-al) S_al) = rho. Lean conventions: N truncated subtraction and floor division (all true values on the domain; audited in INFORMAL-PROOF.md), x/0 = 0 (never reached in a used branch). Proof DAG (synthesis steps 1-9): coefficient bridge; domain Sum T > 0 from carried C1-LA3 entry 14; rho < 1 from carried entry 20 through the bridge (never a hypothesis); the q = 1 link to cb8R1; in-balance/top telescoping; G_0 = 0 and saturation; absorption identities; columns incl. degenerate l = b; nonnegativity by the minor inequalities of carried entry 15 at a = 0 and b = 0 (TP-g/TP-h; no Newton, no Darroch). Fences: clone level only - NOT a statement about cbGraph m; NOT the E1 flow on the literal network; NOT conjunct 4; NOT (HALL) at any scope; NOT S(T_m, p*) <= 0; NOT progress on (L-S)_top or (ELIG-top)(a); not a new identity (a new key would be an alias, SR-C2-2 finding 5); one rank p*, d = 8, the class only; no theta* law; no Newton or Darroch. Excluded conclusions: the E1 flow on cbGraph m, the graph lift, conjunct 4, (HALL), favorability; any rank other than p*, m < 107, m not 2 mod 3, d != 8; any optimality of the template. On closure the controller registers the formal scope-note clause G-1 on the homogeneous criterion key (restricted scope); ledger row R31-C3-LA1; no key. No grade is asserted for any companion (e1_cloneTransport, e1Rho_eq_coeff_ratio, the two absorption identities, and every other lemma). Attribution (synthesis section, verbatim to the fidelity reviewer): T1 (Sonnet 5, seat C3-T-01): double counts, in-balance; T2 (seat C3-T-02): coefficient bridge, node (d), TP-g, zero-extended vocabulary; C-T1-F, C-T1-U (Opus 5.5 critics): node-(a) repair; rows, columns, g_zero; C-T2-F, C-T2-U: TP-h, nonnegativity, rho_1 link; C-F3-T, C-F3-U: E-1 exact domain, boundary closures, per-target load; U2 (seat C3-U-02): the duplicate rho_q < 1; the T adjudicator: T-A draft, degenerate-case instrument; the F adjudicator: G-F-A/G-F-B guard discipline; this synthesis: statement freeze, merged form, degenerate-case paragraph; r31 C2 T3 and critics (X-8/X-9); r30 (criterion key, CD-2, network; named seats as registered); Codex GPT-6's lower-region run (mechanism, weight, relation, (HALL)); Codex's heterogeneous-closure run (coefficient mechanisms, as C1-LA3's face cites them); the C1-LA1 and C1-LA3 formalizers; plus the formalizer c3-la1-formalizer-opus-20260928 (chartered Claude Opus 5.5, effort high, session-applied; runtime-reported model id claude-opus-5-5)."
+  },
+  "formulation_status": {
+    "status": "established",
+    "evidence": [
+      "Cycle 3 synthesis ### C3-LA1: every open node is Lean engineering over proved mathematics (X-8/X-9, SR-C2-2 concordant; condition (i) formal as C1-LA3 entry 20; the degenerate cases proved in the synthesis paragraph).",
+      "Statement shape checked under Lean conventions by the synthesis's instrument at eight class rows, every q and every alpha, 0 failures (B-1 (vii)); the companion on all 2,197 triples a, b <= 12, 1 <= j <= a+b+1, 0 failures - checks, never proof, not re-run in this seat.",
+      "SR-C3-1 (isolated second read) runs concurrently; a precondition of registration, not of the attempt."
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-polynomial-int",
+      "description": "Polynomial Z (notation Z[X]): Mathlib's univariate integer polynomials. Standard Mathlib, not re-typed.",
+      "lean_name": "Polynomial",
+      "dependencies": []
+    },
+    {
+      "id": "def-indeterminate-x",
+      "description": "Polynomial.X, the indeterminate; 1 + X and 1 + 2 * X are the linear factors. Standard Mathlib.",
+      "lean_name": "Polynomial.X",
+      "dependencies": [
+        "def-polynomial-int"
+      ]
+    },
+    {
+      "id": "def-coeff",
+      "description": "Polynomial.coeff p n: coefficient of X^n (n : N). Standard Mathlib.",
+      "lean_name": "Polynomial.coeff",
+      "dependencies": [
+        "def-polynomial-int"
+      ]
+    },
+    {
+      "id": "def-choose",
+      "description": "Nat.choose: binomial coefficients on N (C(n,k) = 0 for k > n). Standard Mathlib.",
+      "lean_name": "Nat.choose",
+      "dependencies": []
+    },
+    {
+      "id": "def-finset-sum",
+      "description": "Finset.sum over Finset.range n = {0,...,n-1}. Standard Mathlib.",
+      "lean_name": "Finset.sum",
+      "dependencies": []
+    },
+    {
+      "id": "def-poly-coeff-z",
+      "description": "CARRIED byte-identical (C1-LA3 entry 1, digest 046f659b...f9f recomputed in CAPSULE-VERIFICATION.json): polyCoeffZ p i := if i < 0 then 0 else p.coeff i.toNat; proof-internal only (does not occur in the terminal statement).",
+      "lean_name": "E993Transport.polyCoeffZ",
+      "dependencies": [
+        "def-coeff"
+      ]
+    },
+    {
+      "id": "def-cb8r1",
+      "description": "CARRIED byte-identical (C1-LA1 entry 11): cb8R1 m k := sum_{i in range (min 7 k + 1)} C(7,i) C(8m-7,k-i) 2^(k-i) : N. Occurs in conjunct 1.",
+      "lean_name": "E993Transport.cb8R1",
+      "dependencies": [
+        "def-choose",
+        "def-finset-sum"
+      ]
+    },
+    {
+      "id": "def-e1s",
+      "description": "NEW, frozen synthesis text verbatim: e1S a b j al : Q := if al <= j then ((a.choose al * b.choose (j - al) * 2 ^ (j - al) : N) : Q) else 0 (zero-extended source clone count).",
+      "lean_name": "E993Transport.e1S",
+      "dependencies": [
+        "def-choose"
+      ]
+    },
+    {
+      "id": "def-e1t",
+      "description": "NEW, frozen synthesis text verbatim: e1T a b j al : Q := if al + 1 <= j then ((a.choose al * b.choose (j - 1 - al) * 2 ^ (j - 1 - al) : N) : Q) else 0 (zero-extended target clone count).",
+      "lean_name": "E993Transport.e1T",
+      "dependencies": [
+        "def-choose"
+      ]
+    },
+    {
+      "id": "def-e1rho",
+      "description": "NEW, frozen synthesis text verbatim: e1Rho a b j : Q := (sum over range (a+1) of e1S a b j) / (sum over range (a+1) of e1T a b j).",
+      "lean_name": "E993Transport.e1Rho",
+      "dependencies": [
+        "def-e1s",
+        "def-e1t",
+        "def-finset-sum"
+      ]
+    },
+    {
+      "id": "def-e1g",
+      "description": "NEW, frozen synthesis text verbatim: e1G a b j al : Q := e1Rho a b j * (sum_{i in range al} e1T a b j i) - sum_{i in range al} e1S a b j i (Boolean transport mass).",
+      "lean_name": "E993Transport.e1G",
+      "dependencies": [
+        "def-e1rho",
+        "def-e1s",
+        "def-e1t",
+        "def-finset-sum"
+      ]
+    },
+    {
+      "id": "def-e1h",
+      "description": "NEW, frozen synthesis text verbatim: e1H a b j al : Q := e1S a b j al - e1G a b j al (ternary transport mass).",
+      "lean_name": "E993Transport.e1H",
+      "dependencies": [
+        "def-e1s",
+        "def-e1g"
+      ]
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-m",
+      "description": "m : N, the CB(8,m) parameter; the class via hm, hmod.",
+      "lean_type": "ℕ",
+      "dependencies": []
+    },
+    {
+      "id": "domain-q",
+      "description": "q : N (inner binder), 1 <= q <= m (premises inside the conclusion).",
+      "lean_type": "ℕ",
+      "dependencies": []
+    },
+    {
+      "id": "domain-abj",
+      "description": "a b j : N (inner binders), constrained inside the conclusion by a = 8 * q - 1, b = 8 * (m - q) + 1, j = (16 * m + 4) / 3 - q.",
+      "lean_type": "ℕ",
+      "dependencies": []
+    },
+    {
+      "id": "domain-alpha",
+      "description": "α : N (inner binder of the companion conjuncts), α <= a or α < a as stated.",
+      "lean_type": "ℕ",
+      "dependencies": []
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "m",
+      "kind": "forall",
+      "domain_id": "domain-m"
+    },
+    {
+      "binder": "q",
+      "kind": "forall",
+      "domain_id": "domain-q"
+    },
+    {
+      "binder": "a",
+      "kind": "forall",
+      "domain_id": "domain-abj"
+    },
+    {
+      "binder": "b",
+      "kind": "forall",
+      "domain_id": "domain-abj"
+    },
+    {
+      "binder": "j",
+      "kind": "forall",
+      "domain_id": "domain-abj"
+    },
+    {
+      "binder": "α",
+      "kind": "forall",
+      "domain_id": "domain-alpha"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-m-ge-107",
+      "statement": "hm : 107 ≤ m (verbatim). Load-bearing through carried entry 20 (rho < 1) and the domain 1 <= j <= a + b + 1.",
+      "dependencies": [
+        "domain-m"
+      ]
+    },
+    {
+      "id": "hyp-m-mod-3",
+      "statement": "hmod : m % 3 = 2 (verbatim). Makes (16 * m + 4) / 3 = p* exact and (16 * m + 4) / 3 - 1 = (16 * m + 1) / 3 in conjunct 1.",
+      "dependencies": [
+        "domain-m"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "e1Rho (8 * 1 - 1) (8 * (m - 1) + 1) ((16 * m + 4) / 3 - 1) =\n        (cb8R1 m ((16 * m + 1) / 3) : ℚ) / (cb8R1 m ((16 * m + 1) / 3 - 1) : ℚ) ∧\n    ∀ q : ℕ, 1 ≤ q → q ≤ m →\n      e1Rho (8 * q - 1) (8 * (m - q) + 1) ((16 * m + 4) / 3 - q) =\n          ((((1 + X) ^ (8 * q - 1) * (1 + 2 * X) ^ (8 * (m - q) + 1) : ℤ[X]).coeff\n              ((16 * m + 4) / 3 - q) : ℤ) : ℚ) /\n            ((((1 + X) ^ (8 * q - 1) * (1 + 2 * X) ^ (8 * (m - q) + 1) : ℤ[X]).coeff\n              ((16 * m + 4) / 3 - q - 1) : ℤ) : ℚ) ∧\n      e1Rho (8 * q - 1) (8 * (m - q) + 1) ((16 * m + 4) / 3 - q) < 1 ∧\n      ∀ a b j : ℕ, a = 8 * q - 1 → b = 8 * (m - q) + 1 → j = (16 * m + 4) / 3 - q →\n        (∀ α ≤ a, 0 ≤ e1G a b j α ∧ 0 ≤ e1H a b j α) ∧\n        (∀ α < a, e1G a b j (α + 1) + e1H a b j α = e1Rho a b j * e1T a b j α) ∧\n        e1H a b j a = e1Rho a b j * e1T a b j a ∧\n        e1G a b j 0 = 0 ∧\n        (j ≤ a → e1G a b j j = e1S a b j j ∧ e1H a b j j = 0) ∧\n        (∀ α ≤ a, 0 < e1T a b j α →\n          (if α < a then ((a - α : ℕ) : ℚ) * e1G a b j (α + 1) /\n              (((α + 1 : ℕ) : ℚ) * e1S a b j (α + 1)) else 0) +\n          (if j - 1 - α < b then ((2 * (b - (j - 1 - α)) : ℕ) : ℚ) * e1H a b j α /\n              (((j - α : ℕ) : ℚ) * e1S a b j α) else 0) = e1Rho a b j)",
+    "dependencies": [
+      "hyp-m-ge-107",
+      "hyp-m-mod-3",
+      "domain-q",
+      "domain-abj",
+      "domain-alpha",
+      "def-polynomial-int",
+      "def-indeterminate-x",
+      "def-coeff",
+      "def-cb8r1",
+      "def-e1s",
+      "def-e1t",
+      "def-e1rho",
+      "def-e1g",
+      "def-e1h",
+      "def-poly-coeff-z"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "def-polynomial-int",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indeterminate-x",
+        "kind": "definition"
+      },
+      {
+        "id": "def-coeff",
+        "kind": "definition"
+      },
+      {
+        "id": "def-choose",
+        "kind": "definition"
+      },
+      {
+        "id": "def-finset-sum",
+        "kind": "definition"
+      },
+      {
+        "id": "def-poly-coeff-z",
+        "kind": "definition"
+      },
+      {
+        "id": "def-cb8r1",
+        "kind": "definition"
+      },
+      {
+        "id": "def-e1s",
+        "kind": "definition"
+      },
+      {
+        "id": "def-e1t",
+        "kind": "definition"
+      },
+      {
+        "id": "def-e1rho",
+        "kind": "definition"
+      },
+      {
+        "id": "def-e1g",
+        "kind": "definition"
+      },
+      {
+        "id": "def-e1h",
+        "kind": "definition"
+      },
+      {
+        "id": "domain-m",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-q",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-abj",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-alpha",
+        "kind": "domain"
+      },
+      {
+        "id": "hyp-m-ge-107",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-m-mod-3",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "def-polynomial-int",
+        "to": "def-indeterminate-x"
+      },
+      {
+        "from": "def-polynomial-int",
+        "to": "def-coeff"
+      },
+      {
+        "from": "def-coeff",
+        "to": "def-poly-coeff-z"
+      },
+      {
+        "from": "def-choose",
+        "to": "def-cb8r1"
+      },
+      {
+        "from": "def-finset-sum",
+        "to": "def-cb8r1"
+      },
+      {
+        "from": "def-choose",
+        "to": "def-e1s"
+      },
+      {
+        "from": "def-choose",
+        "to": "def-e1t"
+      },
+      {
+        "from": "def-e1s",
+        "to": "def-e1rho"
+      },
+      {
+        "from": "def-e1t",
+        "to": "def-e1rho"
+      },
+      {
+        "from": "def-finset-sum",
+        "to": "def-e1rho"
+      },
+      {
+        "from": "def-e1rho",
+        "to": "def-e1g"
+      },
+      {
+        "from": "def-e1s",
+        "to": "def-e1g"
+      },
+      {
+        "from": "def-e1t",
+        "to": "def-e1g"
+      },
+      {
+        "from": "def-finset-sum",
+        "to": "def-e1g"
+      },
+      {
+        "from": "def-e1s",
+        "to": "def-e1h"
+      },
+      {
+        "from": "def-e1g",
+        "to": "def-e1h"
+      },
+      {
+        "from": "domain-m",
+        "to": "hyp-m-ge-107"
+      },
+      {
+        "from": "domain-m",
+        "to": "hyp-m-mod-3"
+      },
+      {
+        "from": "hyp-m-ge-107",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-m-mod-3",
+        "to": "conclusion"
+      },
+      {
+        "from": "domain-q",
+        "to": "conclusion"
+      },
+      {
+        "from": "domain-abj",
+        "to": "conclusion"
+      },
+      {
+        "from": "domain-alpha",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-polynomial-int",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-indeterminate-x",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-coeff",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-cb8r1",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-e1s",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-e1t",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-e1rho",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-e1g",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-e1h",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-poly-coeff-z",
+        "to": "conclusion"
+      }
+    ]
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "explicit_axiom_allowlist",
+    "rationale": "Mathlib's Polynomial and rational-field API, Finset sums and omega/linarith use classical logic; exactly propext, Classical.choice, Quot.sound are permitted; no sorry, admit, native_decide, axiom, or decide over an enumeration standing in for a universal step (m, q, j, a, b, alpha are variables). No non-default options (no set_option, no maxHeartbeats/maxRecDepth override)."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "E993Transport.cb8_E1_cloneTransport_topRank",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem cb8_E1_cloneTransport_topRank (m : ℕ) (hm : 107 ≤ m) (hmod : m % 3 = 2) :\n    e1Rho (8 * 1 - 1) (8 * (m - 1) + 1) ((16 * m + 4) / 3 - 1) =\n        (cb8R1 m ((16 * m + 1) / 3) : ℚ) / (cb8R1 m ((16 * m + 1) / 3 - 1) : ℚ) ∧\n    ∀ q : ℕ, 1 ≤ q → q ≤ m →\n      e1Rho (8 * q - 1) (8 * (m - q) + 1) ((16 * m + 4) / 3 - q) =\n          ((((1 + X) ^ (8 * q - 1) * (1 + 2 * X) ^ (8 * (m - q) + 1) : ℤ[X]).coeff\n              ((16 * m + 4) / 3 - q) : ℤ) : ℚ) /\n            ((((1 + X) ^ (8 * q - 1) * (1 + 2 * X) ^ (8 * (m - q) + 1) : ℤ[X]).coeff\n              ((16 * m + 4) / 3 - q - 1) : ℤ) : ℚ) ∧\n      e1Rho (8 * q - 1) (8 * (m - q) + 1) ((16 * m + 4) / 3 - q) < 1 ∧\n      ∀ a b j : ℕ, a = 8 * q - 1 → b = 8 * (m - q) + 1 → j = (16 * m + 4) / 3 - q →\n        (∀ α ≤ a, 0 ≤ e1G a b j α ∧ 0 ≤ e1H a b j α) ∧\n        (∀ α < a, e1G a b j (α + 1) + e1H a b j α = e1Rho a b j * e1T a b j α) ∧\n        e1H a b j a = e1Rho a b j * e1T a b j a ∧\n        e1G a b j 0 = 0 ∧\n        (j ≤ a → e1G a b j j = e1S a b j j ∧ e1H a b j j = 0) ∧\n        (∀ α ≤ a, 0 < e1T a b j α →\n          (if α < a then ((a - α : ℕ) : ℚ) * e1G a b j (α + 1) /\n              (((α + 1 : ℕ) : ℚ) * e1S a b j (α + 1)) else 0) +\n          (if j - 1 - α < b then ((2 * (b - (j - 1 - α)) : ℕ) : ℚ) * e1H a b j α /\n              (((j - α : ℕ) : ℚ) * e1S a b j α) else 0) = e1Rho a b j)",
+    "expected_statement_sha256": "dbfb841103b661707e67104284d8dd9e87c7dc6310d9ea12e5101d34354cd935"
+  },
+  "source_materials": [
+    {
+      "id": "src-brief",
+      "path": "SOURCE/C3-STAGE7-FORMALIZER-BRIEF-LA1.md",
+      "sha256": "929f145d331ef8babb1c41f958ad725b39954c9b56b195653734e6413188e7c8",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-synthesis",
+      "path": "SOURCE/cycle-3-SYNTHESIS.md",
+      "sha256": "ca5d99c6c5beda747fbb329791843735b47d2ba35caeb933cd1bd977715a0354",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-protocol",
+      "path": "SOURCE/C3-STAGE7-PROTOCOL.md",
+      "sha256": "df3f7d09af5f06d8a3e4c04b5dad2e33691186ba9f2f18f7a182977d756bd8f7",
+      "role": "reference"
+    },
+    {
+      "id": "src-semantic-contract",
+      "path": "SOURCE/SEMANTIC-CONTRACT.md",
+      "sha256": "7cc0bf434d6ea8f8fa2d812caf4e45787c1c06a9dfc6846b6b4d54cb60cf226e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-solution-contract",
+      "path": "SOURCE/SOLUTION-CONTRACT.md",
+      "sha256": "480ba2ddda557be50b2d8249feb733be7e3c947d2e0a9dd4e7fee1427a7ef719",
+      "role": "reference"
+    },
+    {
+      "id": "src-capsule-manifest",
+      "path": "SOURCE/C3-LA1-PACKET-MANIFEST.json",
+      "sha256": "81948c902d8cffdbc8612f9fc9fcb42e4a09e00794873f02d1bb10433ff4b0bc",
+      "role": "reference"
+    },
+    {
+      "id": "src-path-check",
+      "path": "SOURCE/PATH-CHECK-C3-LA1.json",
+      "sha256": "df19766dec25013a7daf546f0b0e0656f26b8f8c039dfbe74d81af8994ca0c78",
+      "role": "reference"
+    },
+    {
+      "id": "src-c1-la3-main",
+      "path": "SOURCE/C1-LA3-Main.lean",
+      "sha256": "c0605e12b91375ede9fb72cb9af428a96d9b6a7d678b856b0131f9c7b10f3011",
+      "role": "reference"
+    },
+    {
+      "id": "src-c1-la3-kernel-receipt",
+      "path": "SOURCE/C1-LA3-kernel-verification.json",
+      "sha256": "717a0830f98026711cd5714cf2f1e109364ed35b8a8dabdb6911cdcc82a6fb72",
+      "role": "reference"
+    },
+    {
+      "id": "src-c1-la3-state",
+      "path": "SOURCE/C1-LA3-FORMALIZATION-STATE.json",
+      "sha256": "6d59d4c30c3cc4d3ff58775156e77f842adaad49708cd5831afb88803d4cea78",
+      "role": "reference"
+    },
+    {
+      "id": "src-c1-la1-main",
+      "path": "SOURCE/C1-LA1-Main.lean",
+      "sha256": "f0578ed7ce7f51f695d410cdbd1265d7071d40f40832635ed12d3dade6c9b78e",
+      "role": "reference"
+    },
+    {
+      "id": "src-c1-la1-kernel-receipt",
+      "path": "SOURCE/C1-LA1-kernel-verification.json",
+      "sha256": "d77284a70c98afb49f43dc622cd910d6bb01710e3924a345a2f37ec241ff5397",
+      "role": "reference"
+    },
+    {
+      "id": "src-c1-la1-state",
+      "path": "SOURCE/C1-LA1-FORMALIZATION-STATE.json",
+      "sha256": "a43e382580674b06c3c5aed90a3c8929ea2a2dc0c788c4f06b2202f8af003588",
+      "role": "reference"
+    },
+    {
+      "id": "src-draft-t2-main",
+      "path": "SOURCE/T2-Main.lean",
+      "sha256": "c11f62aa26e237ecd3ab8fdbb7dc2c762a388c479d7a08b09e7577f1d4b5b9d0",
+      "role": "reference"
+    },
+    {
+      "id": "src-draft-c-t2-f",
+      "path": "SOURCE/C-T2-F-Critic.lean",
+      "sha256": "cbed43aaf3beee5d912d1df79bc04f10d46819759b5418c491863bbb7a7fba4f",
+      "role": "reference"
+    },
+    {
+      "id": "src-draft-c-t2-u",
+      "path": "SOURCE/C-T2-U-CriticSection.lean.part",
+      "sha256": "983599e5d473909151492c69bdbbddc8df274c5f49934918bdc4511ad323e732",
+      "role": "reference"
+    },
+    {
+      "id": "src-draft-t1",
+      "path": "SOURCE/T1-CloneQuotient.lean",
+      "sha256": "0fe7575368dcdafe547bc2928c25b027072b9be4cfe340a8cdb82abb4b0b0a48",
+      "role": "reference"
+    },
+    {
+      "id": "src-draft-c-t1-u",
+      "path": "SOURCE/C-T1-U-CriticT1U.lean",
+      "sha256": "95e8cc1e86556d596a07b872a4877800c34d6f14139281b1e0129add9c3fabe1",
+      "role": "reference"
+    },
+    {
+      "id": "src-draft-c-t1-u-column",
+      "path": "SOURCE/C-T1-U-CriticT1UColumn.lean",
+      "sha256": "beae6a8d3b934cdbfae6ba01b5facb658832a0fdfc57d0b1ca907f63d4984e58",
+      "role": "reference"
+    },
+    {
+      "id": "src-draft-adj-t-advance",
+      "path": "SOURCE/ADJ-T-t1-Advance.lean",
+      "sha256": "d7ff84f18964e13936b848dde4433ddfc32ce44e1fc5a6fc5751b4bd75845fb4",
+      "role": "reference"
+    },
+    {
+      "id": "src-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "sha256": "09021349c1abe67700791316258d327e4a57c3df713db5e4129460db76ab98d4",
+      "role": "reference"
+    },
+    {
+      "id": "src-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "sha256": "c5fdc44a290981f4a044b7019732b72a388a69915945297aaeaa8f947b9d4d02",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-0001",
+      "path": "LeanProject/LeanProof/Snippets/0001-definition-E993Transport-polyCoeffZ.lean.fragment",
+      "sha256": "046f659b7d033efef4613b69f6f6192013a62df02806d99ad4013ef00d9a5f9f",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-0002",
+      "path": "LeanProject/LeanProof/Snippets/0002-definition-E993Transport-cb8R1.lean.fragment",
+      "sha256": "2efd2823db1ce7d8069b38dd96b9bc3bc2899c6d22733a8066e5ba0fa5e74e9c",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carried-0008",
+      "path": "LeanProject/LeanProof/Snippets/0008-lemma-E993Transport-descent_of_recurrence_logconcave.lean.fragment",
+      "sha256": "7be63ac8eb845bce953cef4e1c3f1b473c9eb06bea85ba3eb52ca2ad4d95d679",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-0009",
+      "path": "LeanProject/LeanProof/Snippets/0009-lemma-E993Transport-twoBinom_derivative_identity.lean.fragment",
+      "sha256": "63ad7e5309d3418f643650fc656162f808ef36f1c0a0191950a5151d88753b71",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-0010",
+      "path": "LeanProject/LeanProof/Snippets/0010-lemma-E993Transport-twoBinomCoeff_recurrence.lean.fragment",
+      "sha256": "d60b214129419ccdf8cd12a466c639c1f83da6cce1f52f3b1d61366905f7b891",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-0011",
+      "path": "LeanProject/LeanProof/Snippets/0011-lemma-E993Transport-polyCoeffZ_natCast.lean.fragment",
+      "sha256": "4c3bf9dcf2a367fb88d5a49b18837f0e18768a66d4d5774b7e5a28979ac1c940",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-0012",
+      "path": "LeanProject/LeanProof/Snippets/0012-lemma-E993Transport-polyCoeffZ_of_neg.lean.fragment",
+      "sha256": "3cd1bd212783c3eb57c95fb443c9ea94cfa4ae19f40c37e9d1e83520fe737c08",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-0013",
+      "path": "LeanProject/LeanProof/Snippets/0013-lemma-E993Transport-polyCoeffZ_one.lean.fragment",
+      "sha256": "124ae5c48f85f9b8ae1fe5842db3164f7c6feb80ac516db56dce2bd533cbd456",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-0014",
+      "path": "LeanProject/LeanProof/Snippets/0014-lemma-E993Transport-polyCoeffZ_linear_mul.lean.fragment",
+      "sha256": "3459fc88eb9ce095b0f01978ec725389ed51de6ad1fd7d21fac1d2f7c5d703ed",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-0015",
+      "path": "LeanProject/LeanProof/Snippets/0015-lemma-E993Transport-strongLC_linear_step.lean.fragment",
+      "sha256": "d787f5498d99542c3aa877607acadf4da9083888cfad1282baad7d96ef6bcceb",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-0016",
+      "path": "LeanProject/LeanProof/Snippets/0016-lemma-E993Transport-twoBinom_succ_left.lean.fragment",
+      "sha256": "a661a5422e938a23adf197c83ce03c17d6e749a9313c245a5031a6d5a1a5876c",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-0017",
+      "path": "LeanProject/LeanProof/Snippets/0017-lemma-E993Transport-twoBinom_succ_right.lean.fragment",
+      "sha256": "2759f45c072c96b98ad9a6be9e94af7e61dd6c2ca2e31d7a55fe3d7235370be0",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-0018",
+      "path": "LeanProject/LeanProof/Snippets/0018-lemma-E993Transport-polyCoeffZ_linear_mul_nonneg_pos.lean.fragment",
+      "sha256": "9b25fa4db728eee090ffbdf7182be9c750e8bf8d07f2a0f8d5d75e865900c12b",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-0019",
+      "path": "LeanProject/LeanProof/Snippets/0019-lemma-E993Transport-twoBinomCoeffZ_nonneg_pos.lean.fragment",
+      "sha256": "8db51d28180bafedd83eb8bca3225379c85c478498b64681f87a0671c7de8a58",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-0020",
+      "path": "LeanProject/LeanProof/Snippets/0020-lemma-E993Transport-twoBinomCoeff_pos.lean.fragment",
+      "sha256": "768f4ab5ed5dd35057de158c05a06727d928906d103861fe4dcd70a6e039a9ac",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-0021",
+      "path": "LeanProject/LeanProof/Snippets/0021-lemma-E993Transport-twoBinomCoeffZ_strongLC.lean.fragment",
+      "sha256": "61e8794fec4ff00b103505614f6cce53efdcf341ae98866fdc89686abaf57dc0",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-0022",
+      "path": "LeanProject/LeanProof/Snippets/0022-lemma-E993Transport-twoBinomCoeff_logConcave.lean.fragment",
+      "sha256": "77460852bfb43435d294720f9480f9713283eb6aa46af6491b6c0d8e25255b02",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-0023",
+      "path": "LeanProject/LeanProof/Snippets/0023-lemma-E993Transport-twoBinom_coeff_strictAnti_of_gap.lean.fragment",
+      "sha256": "b39cd78768d02c83194f21b48717af69a8354afb36719755c5979769c3d6589c",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-0024",
+      "path": "LeanProject/LeanProof/Snippets/0024-lemma-E993Transport-cb8_gap_E1_conditionI.lean.fragment",
+      "sha256": "c905770686d71203599336a24e247a5da6369676badeab131842c644d3687df5",
+      "role": "reference"
+    },
+    {
+      "id": "src-carried-0025",
+      "path": "LeanProject/LeanProof/Snippets/0025-lemma-E993Transport-cb8_E1_conditionI_topRank.lean.fragment",
+      "sha256": "8da112b4d0a8c184e9ea9d8c749c1342d53211159d575679999b3d73c7db6a3a",
+      "role": "reference"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+# r31-c4-la1-cb8-top-rank-eligible-and-weighted-hall
+
+Declaration `E993Transport.cb8_topRank_eligible_and_weightedHall`, exported byte-for-byte from the sealed internal run `erdos-993-cb-uniform-switch-dre-2026-09-27` (`runs/lean-2026-09-29-c4-la1-cb8-top-rank-eligible-and-weighted-hall`; r31 — see
+[`experiments/r31-cb-uniform-switch.md`](../../../experiments/r31-cb-uniform-switch.md)). Award `C4-LA1`; registry effect `E993-R31-CB-8-M-AT-LEAST-107-CONGRUENT-2-MOD-3-RANK-16M-PLUS-4-OVER-3-IS-ELIGIBLE-AND-LITERAL-NETWORK-SATISFIES-WEIGHTED-HALL (new; VERIFIED formally_verified; TIER 1, decisive event (a))`.
+
+Statement (the contract's `expected_statement`, namespace-relative):
+
+```lean
+theorem cb8_topRank_eligible_and_weightedHall (m : ℕ) (hm : 107 ≤ m) (hres : m % 3 = 2) :
+    (cbGraph m).IsTree ∧
+    C5LA1.crossingIndex (cbGraph m) + 2 ≤ (16 * m + 4) / 3 ∧
+    3 * ((16 * m + 4) / 3) < 2 * (cbGraph m).indepNum + 1 ∧
+    ∃ f, IsSaturatingFlow (cbGraph m) (favorableLeaves (cbGraph m) ((16 * m + 4) / 3)) ((16 * m + 4) / 3) f
+```
+
+Informal statement of record (the contract's `informal_statement`, verbatim; the scope fences and attribution are part of it):
+
+> Canonical run id erdos-993-math-dre-20260927-r31-cb-uniform-switch; award C4-LA1 (the Tier 1 family theorem, SOLUTION-CONTRACT section 2, reserved name authorized for this award only, R31-N-22/R31-N-30); Lean run lean-2026-09-29-c4-la1-cb8-top-rank-eligible-and-weighted-hall. For every natural m with 107 <= m and m % 3 = 2, with T = cbGraph m (the literal CB(8,m) on Fin (17m+3)) and p* = (16m+4)/3: T is a tree; crossingIndex T + 2 <= p*; 3 p* < 2 alpha(T) + 1; and there is a saturating integral flow for favorableLeaves T p* at rank p* (IsSaturatingFlow), all definitions being the carried definitions of record (r31 C1-LA2 network layer, first-interior crossingIndex). Proof (INFORMAL-PROOF.md): the explicit rational flow g = cb8E1Arc + cb8GSec satisfies nonnegativity, transportRel support, Out >= weight at every source of I_(p*+1) and In <= weight at every target of I_p* (N1-N7), Part A turns this into WeightedHall and r30's (HALL => FLOW) into an integral saturating flow (N8), and C2-LA1's AdjU.cb8_topRank_of_flow supplies conjuncts 1-3. Lean conventions: N floor division exact on the class; every N subtraction audited (INFORMAL-PROOF.md section 5); x/0 = 0 only inside the in-file E1 definition. Fences: one rank p* = (16m+4)/3 per tree; d = 8; the class m >= 107, m = 2 (mod 3) only; the selector derived (favorableLeaves), never assumed; x through rank alpha (the carried crossingIndex); no Newton or Darroch input; the theta* law never used (cb8Theta enters only as a definition); no LP optimality. Excluded conclusions: (HALL) at any other rank, at m < 107, at m = 0, 1 (mod 3), for d != 8, for heterogeneous CB patterns and for arbitrary trees; any aggregate status - full (HALL), the primary aggregate, TREE, FOREST, TRANSFER and Erdos #993 stay OPEN; LP optimality or the theta* law; any Newton or Darroch input. S(T_m, p*) <= 0 is NOT claimed (not composed in this file) and would transfer no status. No grade is asserted for any companion or intermediate declaration (the frozen nodes N1-N8, the E1 layer, ChokeState, Part A, every helper): SOLUTION-CONTRACT section 4. Attribution: Codex GPT-6's lower-region run (mechanism, weight, relation, (HALL)); r30, named seats as registered (the network definitions, the awards C1-LA2 entries 30-31, the criterion, threshold, favorability and closed forms, and the certificate method); Codex's heterogeneous-closure run (the coefficient mechanisms, as C1-LA3's face cites them); r31 Cycles 1-3: the award attributions as carried (C1-LA1, C1-LA2, C1-LA3, C2-LA1, C2-LA2, C2-LA3, C3-LA1); r31 Cycle 4: frozen texts, controller staff (R31-N-23); N1 companion seat T1 (independent: U1), B1/B2/B3 critics C-T1-F / C-T1-U (B3 also C-U1-F); N2 companion seat U1, main critic C-U1-F (clauses 2 and 5: U1 on base scratch); N3 seat T2, binding C-T2-F / C-T2-U; N4 zero_classes seat T3, in_eq and in_le_one critic C-T3-U; N5 critics C-T3-F / C-T3-U; N6 seat U2; N7 companion seat U2, main critics C-U2-F / C-U2-T; N8 seat U3 (alternative: C-U3-T); helper blocks T2's, T3's Sections 0-3, C-T3-U's crit_*, the N1 critics' helpers, C-U1-F's sections 1-5 helpers and crit_* for N2, U1's cb8N_eq_e1S_natCast; the terminal stitch seat U3 (conditional form C-U3-F, C-U3-T); the integration merges, adjudicators T and U; the single-file integration, hosting and repairs, the formalizer c4-la1-formalizer-opus-20260929 (chartered Claude Opus 5.5, effort high; runtime-reported model id claude-opus-5-5).
+
+Toolchain: Lean `leanprover/lean4:v4.32.2`, Mathlib `905b95818eb32af7874a58b427f50c1711a5e96c` (pinned in `source/`; the package cache is not shipped —
+bind a local Mathlib checkout at that revision, never `lake update`). Axioms exactly `[propext, Classical.choice, Quot.sound]`; no
+`sorry`/`admit`/`native_decide`. Governed workflow: frozen theorem contract, independent informal proof-integrity audit, kernel/axiom receipt,
+independent statement-fidelity attestation (verdict `passed`), canonical close (`formally_verified`). Digests in
+`receipts/RECEIPT-SUMMARY.json`; full receipts stay in the sealed internal run. Internal grade `formally_verified`; published as `verified`.
+Claim boundary: Lean kernel validity plus independent statement fidelity for exactly the stated declaration — a statement about the
+caterpillar-broom trees `CB(8,m)` for `m ≥ 107`, `m ≡ 2 (mod 3)` at the single rank `(16m+4)/3` (or a component of it); nothing about (HALL)
+at full scope or at any other rank, residue class or `d`, the lower-region aggregate beyond these rows, `E993-BETA-AGG`, FOREST, TREE, TRANSFER,
+or Erdős #993.

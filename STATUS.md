@@ -44,7 +44,7 @@ The master registry contains **491 identities: 309 VERIFIED, 98 REFUTED, 26 COND
 
 See the [current research notepad](docs/research-notepad-2026-09-25.md) and [Code successor prompt](docs/prompts/code-cb-uniform-switch-2026-09-27.md). Earlier dated sections retain their historical scopes.
 
-Last updated: 2026-09-27 (r30: the weighted transport mechanism (HALL) is formally verified on two infinite tree families and certified at fifteen of 223 recorded switch-necessary CB rows and at G(8^82,7^2); its full scope stays open with a named smallest uniform object)
+Last updated: 2026-09-29 (r31: (HALL) with load-bearing switch arcs is formally verified on the infinite family CB(8,m), m ≥ 107, m ≡ 2 (mod 3), at p* = (16m+4)/3; full scope open)
 
 ## Headline Problems
 
@@ -60,6 +60,10 @@ The consolidated orientation document — the conjecture, the full proof path
 with per-step status, the claim/fence/obligation tables, strategy verdicts,
 and next-phase priorities — is the
 [master proof ledger (2026-09-04)](docs/master-proof-ledger-2026-09-04.md).
+
+## r31, 2026-09-29
+
+r31 (`erdos-993-cb-uniform-switch-dre-2026-09-27`) closed at Cycle 4 by decisive event (a). Tier 1 is formally verified: for every `m ≥ 107` with `m ≡ 2 (mod 3)`, `CB(8,m)` is a tree, `p* = (16m+4)/3` is eligible by the actual first descent, and the literal active-tag two-for-one network at `p*` with the derived selector carries a saturating flow ((HALL)) — award C4-LA1, Lean, axioms `propext`, `Classical.choice`, `Quot.sound`. Eight governed awards; six `E993-R31-` keys (four `formally_verified`); the mechanism key `E993-LOWER-REGION-TWO-FOR-ONE-WEIGHTED-HALL` and the primary aggregate stay OPEN (scope-noted only). Successor recommended: the residue-0 sibling.
 
 ## r30, 2026-09-27
 

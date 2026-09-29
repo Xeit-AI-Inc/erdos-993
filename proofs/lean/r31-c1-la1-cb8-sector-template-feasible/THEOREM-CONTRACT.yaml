@@ -1,0 +1,565 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "e993-r31-c1-la1-cb8-toprank-sector-template-feasible-v1",
+  "theorem": {
+    "title": "C1-LA1 (r31): (L-S)_top template arithmetic, E993Transport.cb8_topRank_sectorTemplate_feasible (key on closure: named by the synthesis ## Registrations, R-1, registered by the controller after the award closes and SR-1 passes)",
+    "informal_statement": "Run erdos-993-math-dre-20260927-r31-cb-uniform-switch (r31), Cycle 1 Stage 7, award group C1-LA1; Lean run root runs/lean-2026-09-28-c1-la1-cb8-sector-template-feasible; producer c1-la1-formalizer-opus-20260928 (chartered Claude Opus 5.5, high; runtime-reported model id claude-opus-5-5). For every natural m with 107 <= m and m % 3 = 2, put K := (16m+1)/3 (exact on the class), L := 200m^2+82m+5, D := L/3 over Q, State8 := {(b,g) : N x N // b+g <= 8}; pb m (b,g) := (25m/2 + B_pb(b,g))/D, pc m (b,g) := (25m/2 + B_pc(b,g))/D with the 72 intercepts of the table of record (adj_alloc_out.json, 7d635805...4b13) entered literally (0 on cells outside the table, which never enter Out/In with nonzero weight), theta m := 288/L, sigma m g := c_g theta m with c = (1/7,1/3,3/5,1,5/3,3,7/2); Out m (b,g) := b pb + g pc + [b = 1 and 1 <= g] sigma(g); In m (b,g) := (8-b-g)(pb(b+1,g) + pc(b,g+1)) for b+g <= 7 and 0 at b+g = 8; r1 m k := sum_{i=0}^{min(7,k)} C(7,i) C(8m-7,k-i) 2^(k-i). Then (i) 0 <= pb, 0 <= pc, 0 <= sigma on every state; (ii) for every c : Fin m -> State8 with sum_i (b_i+g_i) = K, 1 <= sum_i Out m (c i); (iii) for every c with sum_i (b_i+g_i) = K-1, sum_i In m (c i) <= 1; (iv) (8-g) sigma m g <= theta m g for g = 1..7; (v) theta m <= 1 - r1 m K / r1 m (K-1) (= 1 - rho_1, K = p*-1). Hypotheses: the class only. Fences: template level only - NOT a flow on the literal network, NO (HALL) claim (the network bridge S3 is informal and not formalized here), NO eligibility; one rank p*, the class only (m >= 107, m % 3 = 2); no optimality; the theta* law is never a hypothesis. Excluded conclusions: (H), (HALL), eligibility, any statement at other m, residues, ranks or d, and uniqueness or optimality of the allocation. Grades: this contract asserts no grade for any companion lemma or helper definition (cb8OutConst, cb8InConst and every lemma other than the terminal); on the award's governed close only the terminal statement is the certified object. Attribution (the synthesis section's list, verbatim in substance): allocation: r31 T1 (seat of origin), independently C-F2-U and C-F1-T; Residual: C-T1-F and C-T1-U, with C-F1-T, C-F2-T and C-F2-U; table shipped by C-T1-U and the T adjudicator; template method and certificate: r30, the Cycle 6 certificate method of record and its named seats as registered; mechanism, weight, relation and (HALL): Codex GPT-6's lower-region run; Lean: the Stage 7 seat, formalizer c1-la1-formalizer-opus-20260928 (Claude Opus 5.5)."
+  },
+  "formulation_status": {
+    "status": "established",
+    "evidence": [
+      "Cycle 1 synthesis, Exact established results S1 and S2: proved_informal, STATED (T1; C-F2-U, C-F1-T; C-T1-F, C-T1-U, C-F1-T, C-F2-T, C-F2-U; the T and F adjudicators).",
+      "Informal proof at statement level following the synthesis DAG: INFORMAL-PROOF.md (this run root).",
+      "Canonical run id erdos-993-math-dre-20260927-r31-cb-uniform-switch. This contract makes no truth or grade claim beyond structural validity; the award requires the independent informal audit, the kernel receipt and the fidelity receipt."
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-state8",
+      "lean_name": "E993Transport.State8",
+      "dependencies": [],
+      "description": "Choke states: subtype of ℕ×ℕ with β+γ ≤ 8 (45 states). NEW in r31 (authored in-run, no carried fragment). Registrar fragment SHA-256 884fdd9e379f185b40bfdaf38a618d127a913f453bb2a996dd9b51c951c2f32f. Lean text of record:\n/-- Choke states at the template level: pairs `(β, γ)` of naturals with `β + γ ≤ 8`. -/\nabbrev State8 : Type := {s : ℕ × ℕ // s.1 + s.2 ≤ 8}"
+    },
+    {
+      "id": "def-bpb",
+      "lean_name": "E993Transport.cb8Bpb",
+      "dependencies": [],
+      "description": "The 36 intercepts B_pb(β,γ), β ≥ 1, of the T adjudicator's table of record adj_alloc_out.json (7d635805…4b13), entered literally by DRAFTS/gen_table.py and byte-checked against the JSON; value 0 on every other cell (never enters Out/In with nonzero weight). Never T1's generator output. NEW in r31 (authored in-run, no carried fragment). Registrar fragment SHA-256 73870f47921e5341c4d65de84325c367a35d963bb636883af86487062559ed9a. Lean text of record:\n/-- The 36 intercepts `B_pb(β,γ)` (cells with `β ≥ 1`) of the T adjudicator's table of record\n`adj_alloc_out.json` (sha256 `7d635805…4b13`), entered literally; every other cell is `0` (a `pb` cell with\n`β = 0` never enters `Out` or `In` with a nonzero weight). -/\ndef cb8Bpb : ℕ × ℕ → ℚ\n  | (1, 0) => 3/2\n  | (1, 1) => (-197/28)\n  | (1, 2) => (-44/3)\n  | (1, 3) => (-753/40)\n  | (1, 4) => (-76/5)\n  | (1, 5) => (-7/12)\n  | (1, 6) => 0\n  | (1, 7) => 31/16\n  | (2, 0) => 13/4\n  | (2, 1) => 73/12\n  | (2, 2) => 429/40\n  | (2, 3) => 733/40\n  | (2, 4) => 365/12\n  | (2, 5) => 189/4\n  | (2, 6) => 793/16\n  | (3, 0) => 23/6\n  | (3, 1) => 231/40\n  | (3, 2) => 171/20\n  | (3, 3) => 149/12\n  | (3, 4) => 171/10\n  | (3, 5) => 271/16\n  | (4, 0) => 33/8\n  | (4, 1) => 223/40\n  | (4, 2) => 89/12\n  | (4, 3) => 189/20\n  | (4, 4) => 749/80\n  | (5, 0) => 43/10\n  | (5, 1) => 65/12\n  | (5, 2) => 33/5\n  | (5, 3) => 539/80\n  | (6, 0) => 53/12\n  | (6, 1) => 21/4\n  | (6, 2) => 89/16\n  | (7, 0) => 9/2\n  | (7, 1) => 79/16\n  | (8, 0) => 73/16\n  | _ => 0"
+    },
+    {
+      "id": "def-bpc",
+      "lean_name": "E993Transport.cb8Bpc",
+      "dependencies": [],
+      "description": "The 36 intercepts B_pc(β,γ), γ ≥ 1, of the table of record, entered literally and byte-checked; value 0 on every other cell (never enters Out/In with nonzero weight). NEW in r31 (authored in-run, no carried fragment). Registrar fragment SHA-256 07124dbb5fa985c1e9185939152a3e0936e621bf97dd1d1190b1a7f0b7fe4347. Lean text of record:\n/-- The 36 intercepts `B_pc(β,γ)` (cells with `γ ≥ 1`) of the T adjudicator's table of record\n`adj_alloc_out.json` (sha256 `7d635805…4b13`), entered literally; every other cell is `0` (a `pc` cell with\n`γ = 0` never enters `Out` or `In` with a nonzero weight). -/\ndef cb8Bpc : ℕ × ℕ → ℚ\n  | (0, 1) => 3/2\n  | (0, 2) => 283/28\n  | (0, 3) => 107/6\n  | (0, 4) => 177/8\n  | (0, 5) => 187/10\n  | (0, 6) => 53/12\n  | (0, 7) => 9/2\n  | (0, 8) => 73/16\n  | (1, 1) => (-5/28)\n  | (1, 2) => (-35/12)\n  | (1, 3) => (-297/40)\n  | (1, 4) => (-593/40)\n  | (1, 5) => (-319/12)\n  | (1, 6) => (-171/4)\n  | (1, 7) => (-689/16)\n  | (2, 1) => (-2/3)\n  | (2, 2) => (-99/40)\n  | (2, 3) => (-101/20)\n  | (2, 4) => (-103/12)\n  | (2, 5) => (-63/5)\n  | (2, 6) => (-167/16)\n  | (3, 1) => (-33/40)\n  | (3, 2) => (-83/40)\n  | (3, 3) => (-43/12)\n  | (3, 4) => (-99/20)\n  | (3, 5) => (-229/80)\n  | (4, 1) => (-4/5)\n  | (4, 2) => (-19/12)\n  | (4, 3) => (-21/10)\n  | (4, 4) => (-19/80)\n  | (5, 1) => (-7/12)\n  | (5, 2) => (-3/4)\n  | (5, 3) => 15/16\n  | (6, 1) => 0\n  | (6, 2) => 25/16\n  | (7, 1) => 31/16\n  | _ => 0"
+    },
+    {
+      "id": "def-cgamma",
+      "lean_name": "E993Transport.cb8CGamma",
+      "dependencies": [],
+      "description": "c = (1/7,1/3,3/5,1,5/3,3,7/2) for γ = 1..7; 0 elsewhere. NEW in r31 (authored in-run, no carried fragment). Registrar fragment SHA-256 627ca793f9410d1b7f66b8c2428ca941bf08ab315604546c5aadc63d94146589. Lean text of record:\n/-- The switch coefficients `c = (1/7, 1/3, 3/5, 1, 5/3, 3, 7/2)` for `γ = 1..7` (table of record); `0` elsewhere. -/\ndef cb8CGamma : ℕ → ℚ\n  | 1 => 1/7\n  | 2 => 1/3\n  | 3 => 3/5\n  | 4 => 1\n  | 5 => 5/3\n  | 6 => 3\n  | 7 => 7/2\n  | _ => 0"
+    },
+    {
+      "id": "def-pb",
+      "lean_name": "E993Transport.cb8Pb",
+      "dependencies": [
+        "def-bpb"
+      ],
+      "description": "pb m (β,γ) := (25m/2 + B_pb(β,γ))/D, D = L/3, L = 200m²+82m+5 (over ℚ). NEW in r31 (authored in-run, no carried fragment). Registrar fragment SHA-256 8e4e560141ead78800b1d5b0981503de7ca00f2f3f38b1d8501887dc8c9d0d45. Lean text of record:\n/-- `pb m (β,γ) := (25m/2 + B_pb(β,γ)) / D` with `D = L/3`, `L = 200m²+82m+5`. -/\ndef cb8Pb (m : ℕ) (s : ℕ × ℕ) : ℚ :=\n  (25 * (m : ℚ) / 2 + cb8Bpb s) / ((200 * (m : ℚ) ^ 2 + 82 * m + 5) / 3)"
+    },
+    {
+      "id": "def-pc",
+      "lean_name": "E993Transport.cb8Pc",
+      "dependencies": [
+        "def-bpc"
+      ],
+      "description": "pc m (β,γ) := (25m/2 + B_pc(β,γ))/D. NEW in r31 (authored in-run, no carried fragment). Registrar fragment SHA-256 2da72be6e685c0b8f9ea94120ef227a6bc36c06df1aed9db493855f00490ccee. Lean text of record:\n/-- `pc m (β,γ) := (25m/2 + B_pc(β,γ)) / D` with `D = L/3`, `L = 200m²+82m+5`. -/\ndef cb8Pc (m : ℕ) (s : ℕ × ℕ) : ℚ :=\n  (25 * (m : ℚ) / 2 + cb8Bpc s) / ((200 * (m : ℚ) ^ 2 + 82 * m + 5) / 3)"
+    },
+    {
+      "id": "def-theta",
+      "lean_name": "E993Transport.cb8Theta",
+      "dependencies": [],
+      "description": "θ m := 288/L. NEW in r31 (authored in-run, no carried fragment). Registrar fragment SHA-256 f456a9f01abef92b189afb8d804718d947bcbf366a50052902843a7d397403c2. Lean text of record:\n/-- `θ m := 288 / L`, `L = 200m²+82m+5`. -/\ndef cb8Theta (m : ℕ) : ℚ := 288 / (200 * (m : ℚ) ^ 2 + 82 * m + 5)"
+    },
+    {
+      "id": "def-sigma",
+      "lean_name": "E993Transport.cb8Sigma",
+      "dependencies": [
+        "def-cgamma",
+        "def-theta"
+      ],
+      "description": "σ m γ := c_γ·θ m. NEW in r31 (authored in-run, no carried fragment). Registrar fragment SHA-256 11e625fb114e7c4f7332a76946647544dc55c381c1ede1099455aad462bb2b8a. Lean text of record:\n/-- `σ m γ := c_γ · θ m`. -/\ndef cb8Sigma (m γ : ℕ) : ℚ := cb8CGamma γ * cb8Theta m"
+    },
+    {
+      "id": "def-out",
+      "lean_name": "E993Transport.cb8Out",
+      "dependencies": [
+        "def-state8",
+        "def-pb",
+        "def-pc",
+        "def-sigma"
+      ],
+      "description": "Out m (β,γ) := β·pb + γ·pc + [β = 1 ∧ 1 ≤ γ]·σ(γ). NEW in r31 (authored in-run, no carried fragment). Registrar fragment SHA-256 ad9aff9b44daab634598e28d1e065376a4348fff1dca6b5951e5865fc48d6026. Lean text of record:\n/-- `Out m (β,γ) := β·pb + γ·pc + [β = 1 ∧ 1 ≤ γ]·σ(γ)`. -/\ndef cb8Out (m : ℕ) (s : State8) : ℚ :=\n  (s.1.1 : ℚ) * cb8Pb m s.1 + (s.1.2 : ℚ) * cb8Pc m s.1 +\n    if s.1.1 = 1 ∧ 1 ≤ s.1.2 then cb8Sigma m s.1.2 else 0"
+    },
+    {
+      "id": "def-in",
+      "lean_name": "E993Transport.cb8In",
+      "dependencies": [
+        "def-state8",
+        "def-pb",
+        "def-pc"
+      ],
+      "description": "In m (β,γ) := (8−β−γ)·(pb(β+1,γ) + pc(β,γ+1)) for β+γ ≤ 7 (rational subtraction), 0 at β+γ = 8. NEW in r31 (authored in-run, no carried fragment). Registrar fragment SHA-256 ade7ff5f7bb722fbf4e9e8156fcbb26fc43c8b3daaba3739bf4e1bd6931c064b. Lean text of record:\n/-- `In m (β,γ) := (8−β−γ)·(pb(β+1,γ) + pc(β,γ+1))` for `β+γ ≤ 7`, and `0` at `β+γ = 8`. -/\ndef cb8In (m : ℕ) (s : State8) : ℚ :=\n  if s.1.1 + s.1.2 ≤ 7 then\n    (8 - (s.1.1 : ℚ) - s.1.2) * (cb8Pb m (s.1.1 + 1, s.1.2) + cb8Pc m (s.1.1, s.1.2 + 1))\n  else 0"
+    },
+    {
+      "id": "def-r1",
+      "lean_name": "E993Transport.cb8R1",
+      "dependencies": [],
+      "description": "r1 m k := Σ_{i=0}^{min(7,k)} C(7,i)·C(8m−7,k−i)·2^{k−i} = [y^k](1+y)^7(1+2y)^{8m−7} (ℕ-valued; ℕ subtractions audited in INFORMAL-PROOF.md). NEW in r31 (authored in-run, no carried fragment). Registrar fragment SHA-256 2efd2823db1ce7d8069b38dd96b9bc3bc2899c6d22733a8066e5ba0fa5e74e9c. Lean text of record:\n/-- `r1 m k := Σ_{i=0}^{min(7,k)} C(7,i)·C(8m−7, k−i)·2^{k−i}`. -/\ndef cb8R1 (m k : ℕ) : ℕ :=\n  ∑ i ∈ Finset.range (min 7 k + 1), Nat.choose 7 i * Nat.choose (8 * m - 7) (k - i) * 2 ^ (k - i)"
+    },
+    {
+      "id": "def-outconst",
+      "lean_name": "E993Transport.cb8OutConst",
+      "dependencies": [
+        "def-bpb",
+        "def-bpc",
+        "def-cgamma"
+      ],
+      "description": "PROOF-ONLY helper (not in the terminal statement): the m-free part C(β,γ) of D·Out. NEW in r31 (authored in-run, no carried fragment). Registrar fragment SHA-256 d08ab96d7fed27027c5cb035091d8f9d7dffe8f2ec7c751b70aae1faa2aaa84b. Lean text of record:\n/-- m-free part of `D·Out`. -/\ndef cb8OutConst (s : ℕ × ℕ) : ℚ :=\n  (s.1 : ℚ) * cb8Bpb s + (s.2 : ℚ) * cb8Bpc s + if s.1 = 1 ∧ 1 ≤ s.2 then 96 * cb8CGamma s.2 else 0"
+    },
+    {
+      "id": "def-inconst",
+      "lean_name": "E993Transport.cb8InConst",
+      "dependencies": [
+        "def-bpb",
+        "def-bpc"
+      ],
+      "description": "PROOF-ONLY helper (not in the terminal statement): the m-free part E(β,γ) of D·In. NEW in r31 (authored in-run, no carried fragment). Registrar fragment SHA-256 73aff8aed2068bcf4edb3995cd34d91ed5767b8aa0b4c5aeb1583a02d36c3bd7. Lean text of record:\n/-- m-free part of `D·In`. -/\ndef cb8InConst (s : ℕ × ℕ) : ℚ :=\n  if s.1 + s.2 ≤ 7 then (8 - (s.1 : ℚ) - s.2) * (cb8Bpb (s.1 + 1, s.2) + cb8Bpc (s.1, s.2 + 1)) else 0"
+    }
+  ],
+  "domains": [
+    {
+      "id": "dom-m",
+      "lean_type": "m : ℕ",
+      "description": "The CB(8,m) parameter; the class is carved out by the two hypotheses only.",
+      "dependencies": []
+    },
+    {
+      "id": "dom-state",
+      "lean_type": "s : State8",
+      "description": "Every choke state (β,γ) with β+γ ≤ 8.",
+      "dependencies": [
+        "def-state8"
+      ]
+    },
+    {
+      "id": "dom-assignment",
+      "lean_type": "c : Fin m → State8",
+      "description": "EVERY assignment of a choke state to each of the m chokes (no enumeration; universal).",
+      "dependencies": [
+        "dom-m",
+        "def-state8"
+      ]
+    },
+    {
+      "id": "dom-gamma",
+      "lean_type": "γ : ℕ with 1 ≤ γ ≤ 7",
+      "description": "The switch index.",
+      "dependencies": []
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "m",
+      "kind": "forall",
+      "domain_id": "dom-m"
+    },
+    {
+      "binder": "s (conclusion i)",
+      "kind": "forall",
+      "domain_id": "dom-state"
+    },
+    {
+      "binder": "c (conclusion ii)",
+      "kind": "forall",
+      "domain_id": "dom-assignment"
+    },
+    {
+      "binder": "c (conclusion iii)",
+      "kind": "forall",
+      "domain_id": "dom-assignment"
+    },
+    {
+      "binder": "γ (conclusion iv)",
+      "kind": "forall",
+      "domain_id": "dom-gamma"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-m-ge-107",
+      "statement": "(hm : 107 ≤ m) (verbatim binder).",
+      "dependencies": [
+        "dom-m"
+      ]
+    },
+    {
+      "id": "hyp-m-mod-3",
+      "statement": "(hm3 : m % 3 = 2) (verbatim binder). Makes (16*m+1)/3 exact: 3·((16m+1)/3) = 16m+1.",
+      "dependencies": [
+        "dom-m"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "(∀ s : State8, 0 ≤ cb8Pb m s.1 ∧ 0 ≤ cb8Pc m s.1 ∧ 0 ≤ cb8Sigma m s.1.2) ∧ (∀ c : Fin m → State8, ∑ i, ((c i).1.1 + (c i).1.2) = (16 * m + 1) / 3 → 1 ≤ ∑ i, cb8Out m (c i)) ∧ (∀ c : Fin m → State8, ∑ i, ((c i).1.1 + (c i).1.2) = (16 * m + 1) / 3 - 1 → ∑ i, cb8In m (c i) ≤ 1) ∧ (∀ γ : ℕ, 1 ≤ γ → γ ≤ 7 → (8 - (γ : ℚ)) * cb8Sigma m γ ≤ cb8Theta m * γ) ∧ cb8Theta m ≤ 1 - (cb8R1 m ((16 * m + 1) / 3) : ℚ) / (cb8R1 m ((16 * m + 1) / 3 - 1) : ℚ). In words: conclusions (i)-(v) of the synthesis section at template level; (v) is θ ≤ 1 − ρ_1.",
+    "dependencies": [
+      "hyp-m-ge-107",
+      "hyp-m-mod-3",
+      "dom-state",
+      "dom-assignment",
+      "dom-gamma",
+      "def-pb",
+      "def-pc",
+      "def-sigma",
+      "def-theta",
+      "def-out",
+      "def-in",
+      "def-r1"
+    ]
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "explicit_axiom_allowlist",
+    "rationale": "Mathlib's ℚ field tactics (field_simp, linarith, positivity) and Finset sums rest on the three standard axioms; exactly propext, Classical.choice and Quot.sound are permitted. No sorry, admit, native_decide, axiom, or decide over an enumeration for a universal step."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "E993Transport.cb8_topRank_sectorTemplate_feasible",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem cb8_topRank_sectorTemplate_feasible (m : ℕ) (hm : 107 ≤ m) (hm3 : m % 3 = 2) :\n    (∀ s : State8, 0 ≤ cb8Pb m s.1 ∧ 0 ≤ cb8Pc m s.1 ∧ 0 ≤ cb8Sigma m s.1.2) ∧\n    (∀ c : Fin m → State8, ∑ i, ((c i).1.1 + (c i).1.2) = (16 * m + 1) / 3 →\n        1 ≤ ∑ i, cb8Out m (c i)) ∧\n    (∀ c : Fin m → State8, ∑ i, ((c i).1.1 + (c i).1.2) = (16 * m + 1) / 3 - 1 →\n        ∑ i, cb8In m (c i) ≤ 1) ∧\n    (∀ γ : ℕ, 1 ≤ γ → γ ≤ 7 → (8 - (γ : ℚ)) * cb8Sigma m γ ≤ cb8Theta m * γ) ∧\n    cb8Theta m ≤ 1 - (cb8R1 m ((16 * m + 1) / 3) : ℚ) / (cb8R1 m ((16 * m + 1) / 3 - 1) : ℚ)",
+    "expected_statement_sha256": "f9b5bcf5596caa39995ea99d5880e937be3afecf28f6dd190eaf37ce854e17d5"
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "def-state8",
+        "kind": "definition"
+      },
+      {
+        "id": "def-bpb",
+        "kind": "definition"
+      },
+      {
+        "id": "def-bpc",
+        "kind": "definition"
+      },
+      {
+        "id": "def-cgamma",
+        "kind": "definition"
+      },
+      {
+        "id": "def-pb",
+        "kind": "definition"
+      },
+      {
+        "id": "def-pc",
+        "kind": "definition"
+      },
+      {
+        "id": "def-theta",
+        "kind": "definition"
+      },
+      {
+        "id": "def-sigma",
+        "kind": "definition"
+      },
+      {
+        "id": "def-out",
+        "kind": "definition"
+      },
+      {
+        "id": "def-in",
+        "kind": "definition"
+      },
+      {
+        "id": "def-r1",
+        "kind": "definition"
+      },
+      {
+        "id": "def-outconst",
+        "kind": "definition"
+      },
+      {
+        "id": "def-inconst",
+        "kind": "definition"
+      },
+      {
+        "id": "dom-m",
+        "kind": "domain"
+      },
+      {
+        "id": "dom-state",
+        "kind": "domain"
+      },
+      {
+        "id": "dom-assignment",
+        "kind": "domain"
+      },
+      {
+        "id": "dom-gamma",
+        "kind": "domain"
+      },
+      {
+        "id": "hyp-m-ge-107",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-m-mod-3",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "def-bpb",
+        "to": "def-pb"
+      },
+      {
+        "from": "def-bpc",
+        "to": "def-pc"
+      },
+      {
+        "from": "def-cgamma",
+        "to": "def-sigma"
+      },
+      {
+        "from": "def-theta",
+        "to": "def-sigma"
+      },
+      {
+        "from": "def-state8",
+        "to": "def-out"
+      },
+      {
+        "from": "def-pb",
+        "to": "def-out"
+      },
+      {
+        "from": "def-pc",
+        "to": "def-out"
+      },
+      {
+        "from": "def-sigma",
+        "to": "def-out"
+      },
+      {
+        "from": "def-state8",
+        "to": "def-in"
+      },
+      {
+        "from": "def-pb",
+        "to": "def-in"
+      },
+      {
+        "from": "def-pc",
+        "to": "def-in"
+      },
+      {
+        "from": "def-bpb",
+        "to": "def-outconst"
+      },
+      {
+        "from": "def-bpc",
+        "to": "def-outconst"
+      },
+      {
+        "from": "def-cgamma",
+        "to": "def-outconst"
+      },
+      {
+        "from": "def-bpb",
+        "to": "def-inconst"
+      },
+      {
+        "from": "def-bpc",
+        "to": "def-inconst"
+      },
+      {
+        "from": "def-state8",
+        "to": "dom-state"
+      },
+      {
+        "from": "dom-m",
+        "to": "dom-assignment"
+      },
+      {
+        "from": "def-state8",
+        "to": "dom-assignment"
+      },
+      {
+        "from": "dom-m",
+        "to": "hyp-m-ge-107"
+      },
+      {
+        "from": "dom-m",
+        "to": "hyp-m-mod-3"
+      },
+      {
+        "from": "hyp-m-ge-107",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-m-mod-3",
+        "to": "conclusion"
+      },
+      {
+        "from": "dom-state",
+        "to": "conclusion"
+      },
+      {
+        "from": "dom-assignment",
+        "to": "conclusion"
+      },
+      {
+        "from": "dom-gamma",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-pb",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-pc",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-sigma",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-theta",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-out",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-in",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-r1",
+        "to": "conclusion"
+      }
+    ]
+  },
+  "source_materials": [
+    {
+      "id": "src-formalizer-brief",
+      "path": "SOURCE/C1-STAGE7-FORMALIZER-BRIEF-LA1.md",
+      "sha256": "d16e65a92d9668f12bf7d3f4d14903d6d655f70625471352d87b14488b5fbf3f",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-c1-synthesis",
+      "path": "SOURCE/C1-STAGE6-SYNTHESIS.md",
+      "sha256": "d70e6ce23c712d0983df64afa2fdc07d6018ab62e57597e74f95cb43dfd23d44",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-solution-contract",
+      "path": "SOURCE/SOLUTION-CONTRACT.md",
+      "sha256": "480ba2ddda557be50b2d8249feb733be7e3c947d2e0a9dd4e7fee1427a7ef719",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-semantic-contract",
+      "path": "SOURCE/SEMANTIC-CONTRACT.md",
+      "sha256": "7cc0bf434d6ea8f8fa2d812caf4e45787c1c06a9dfc6846b6b4d54cb60cf226e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-stage7-protocol",
+      "path": "SOURCE/C1-STAGE7-PROTOCOL.md",
+      "sha256": "e4b9e5984fc6c8c1a804f165074530089f843b3a4c1aac78fef6dbf0f3287052",
+      "role": "reference"
+    },
+    {
+      "id": "src-capsule-manifest",
+      "path": "SOURCE/C1-LA1-PACKET-MANIFEST.json",
+      "sha256": "21f283f20818fb882518e7d67178a81329fe16a23c99ab67a31a71e8e1f49407",
+      "role": "reference"
+    },
+    {
+      "id": "src-table-of-record",
+      "path": "SOURCE/ADJ-T-adj_alloc_out.json",
+      "sha256": "7d63580526f84c48434b832353298bdba97c6a9cdce2a1bb95be9540870d4b13",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-adj-alloc-instrument",
+      "path": "SOURCE/ADJ-T-adj_alloc.py",
+      "sha256": "10a9af5e37bd2b8d750c37ab59ea4a9eb7f543638a14765937f6bebca1a17ee9",
+      "role": "reference"
+    },
+    {
+      "id": "src-ct1u-table",
+      "path": "SOURCE/C-T1-U-crit_alloc_out.json",
+      "sha256": "da76863dd0d9dcc27c83271f6648e0f1396fcf964b7b923b1a7493f1c26f8f1d",
+      "role": "reference"
+    },
+    {
+      "id": "src-ct1f-residual-instrument",
+      "path": "SOURCE/C-T1-F-crit_t1f_residual.py",
+      "sha256": "1d1334d7007d2d87fe8e360a8127154a842af8b73bcc768eee949bad774a59e0",
+      "role": "reference"
+    },
+    {
+      "id": "src-ct1f-residual-output",
+      "path": "SOURCE/C-T1-F-crit_t1f_residual_out.json",
+      "sha256": "8d6ca1aab400863b72cb29f7ffa978d9fa0a7eb89864eb0de9ddd8b538fff6df",
+      "role": "reference"
+    },
+    {
+      "id": "src-stage7-source-digests",
+      "path": "SOURCE/c1-stage7-sources-SOURCE-DIGESTS.json",
+      "sha256": "d5fa08440ddca0baf2dfb5a85159ddd6e450750bff7ad079c9a0edc2dcdd8c8e",
+      "role": "reference"
+    },
+    {
+      "id": "src-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "sha256": "16209c9b720b231e6a5026361af4fb0ff9cb90a6efb13c6717d2c1222cc534c3",
+      "role": "reference"
+    },
+    {
+      "id": "src-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "sha256": "d7b823502613c2240b390d84c60692ba59ae49d54864ac1551d4fc6f741f120c",
+      "role": "reference"
+    },
+    {
+      "id": "src-table-generator",
+      "path": "DRAFTS/gen_table.py",
+      "sha256": "ed37999793b83078a363036b03bdcd8ffb7a2b591ba3e670a16ce4f337d7cb63",
+      "role": "reference"
+    },
+    {
+      "id": "src-table-generated",
+      "path": "DRAFTS/table.lean.txt",
+      "sha256": "d163de13b881b19ae077eb7130d3f83808919110ae389b3e1f1aac3e0441e5c0",
+      "role": "reference"
+    },
+    {
+      "id": "src-residual-generator",
+      "path": "DRAFTS/gen_residual.py",
+      "sha256": "f1ae8823eb668848198bf90d1be35f15a28184e6950490f3255384fd778e96ed",
+      "role": "reference"
+    },
+    {
+      "id": "src-residual-generated",
+      "path": "DRAFTS/residual.lean.txt",
+      "sha256": "d92e799cd26693c3e7b18e981fec709d134da9bc4aee078154a3bf07efba65d7",
+      "role": "reference"
+    }
+  ]
+}

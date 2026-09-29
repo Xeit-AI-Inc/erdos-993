@@ -1,0 +1,1128 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "erdos-993-r31-c1-la2-cb8-definition-layer-v1",
+  "theorem": {
+    "title": "C1-LA2 (r31): the CB(8,m) definition layer; the SOLUTION-CONTRACT section 2 terminal reduced to its conjuncts 2 and 4 (tree and low window discharged)",
+    "informal_statement": "Canonical run id erdos-993-math-dre-20260927-r31-cb-uniform-switch; award C1-LA2 (r31 Cycle 1; the U adjudicator's AG-U-A); governed run lean-2026-09-28-c1-la2-cb8-definition-layer; key on closure: named by the synthesis ## Registrations (the controller registers it after the award closes and the matching second read passes). OBJECT: the CB(8,m) structural layer over the carried definitions of record: cbGraph m : SimpleGraph (Fin (17*m+3)) = SimpleGraph.fromRel (cbEdge m) with the FROZEN labelling 0 = r, 1 = s, 2 = v, u_i = 3+17i, b_ij = u_i+1+2j, c_ij = u_i+2+2j (i < m, j < 8; edges r-s, s-v, r-u_i, u_i-b_ij, b_ij-c_ij), with the computable instance cbGraph_decAdj. STRUCTURAL FACTS (lemmas on the face, companions with no certificate of their own): cbGraph_isTree (every m); cbGraph_indepNum_eq (0 < m): indepNum = 9m+1; mem_leafSet_cbGraph_iff (0 < m): leafSet = {v} u {c_ij}; cb_leafSet_card (0 < m): card = 8m+1; mem_cb_tagWitnesses_v_iff: W_v = {r} (the unused hm dropped); mem_cb_tagWitnesses_leaf_iff: W_{c_ij} = {u_i}; cb_lowWindow (0 < m): 3*((16m+4)/3) < 2*indepNum+1; favorableLeaves_eq_leafSet_of_all (graph-generic, conditional on its all-favorable hypothesis); mem_neighborFinset_choke_iff: N(u_i) = {r} u {b_ij}; mem_neighborFinset_root_iff: N(r) = {s} u {u_i}; choke_degree: deg u_i = 9. TERMINAL (the one theorem): for every natural m with 107 <= m and m % 3 = 2, IF (hE) C5LA1.crossingIndex (cbGraph m) + 2 <= (16m+4)/3 AND (hH) there is a saturating flow of the transport network of cbGraph m at rank (16m+4)/3 with the derived selector favorableLeaves (cbGraph m) ((16m+4)/3), THEN the SOLUTION-CONTRACT section 2 terminal body holds: IsTree AND the descent conjunct AND the low window AND the flow conjunct. That is, the section 2 terminal reduces to its conjuncts 2 and 4: conjunct 1 (tree) and conjunct 3 (low window) are discharged; conjuncts 2 and 4 are HYPOTHESES and are NOT asserted. hres is carried for the class shape and is not used. FENCES: structural facts only; no rank claim beyond the low window; no (HALL); no favorability; no descent; the terminal asserts neither conjunct 2 nor conjunct 4. EXCLUDED CONCLUSIONS: everything beyond the listed structural facts, in particular Tier 1, (HALL) at any scope, the favorability key, E1, (ELIG-top)(a), any aggregate, TREE, FOREST, TRANSFER and Erdos #993. INFRASTRUCTURE, NOT Tier 2 progress. No grade is asserted for any companion lemma; a compiled declaration has no grade until the governed award closes. Carried definitions of record: r30 C6-LA2 Snippets entries 1-21 (identical to r30 C1-LA1), 0035 C5LA1.crossingIndex, 0123 support_eq_of_isGraphLeaf_of_adj, 0124 mem_tagWitnesses_iff_of_adj, byte-identical and bound to the C6-LA2 kernel receipt (CAPSULE-VERIFICATION.json); never r30 C1-LA2 0014-0021 (pre-freeze bytes, synthesis R-8); never U1's own file. Attribution (the synthesis section's list, verbatim, plus the formalizer): structural content: r30's CB record (R30-CB-RECORD) and its seats; Lean layer: r31 U1; leaf-card and terminal reduction: C-U1-T; interface lemmas: C-U1-F; the integration check: the U adjudicator; the network definitions: r30 awards; Lean text of record, assembly, registration and verification: the formalizer c1-la2-formalizer-opus-20260928 (Claude Opus 5.5; chartered Claude Opus 5.5 effort high on dispatch-record authority; runtime-reported model id claude-opus-5-5)."
+  },
+  "formulation_status": {
+    "status": "established",
+    "evidence": [
+      "The U adjudicator (r31 Cycle 1 Stage 5, Claude Opus 5.5) replayed the compiled scratch: U1 Main.lean exit 0; C-U1-T CriticAdvance.lean (c94ef3bd...) compiles with cb_leafSet_card and cb8_topRank_of_descent_and_flow on the three standard axioms; C-U1-F Audit.lean compiles (interface lemmas). Scratch carries no grade.",
+      "Structural content (tree, alpha(CB(d,m)) = m(d+1)+1, leafSet = {v} u C, W_v = {r}, W_{c_ij} = {u_i}) is r30 record R30-CB-RECORD (SEMANTIC-CONTRACT section 2).",
+      "The terminal is an implication whose conjuncts 2 and 4 are hypotheses; conjuncts 1 and 3 are the structural facts above. Python instruments are checks, never proof."
+    ]
+  },
+  "definitions": [
+    {
+      "id": "def-vdel-count",
+      "description": "i_k(G - v) as a Nat count over the original vertex type. CARRIED (C6-LA2 entry 1).",
+      "lean_name": "C4LA1.vertexDeletionIndepSetCount",
+      "dependencies": []
+    },
+    {
+      "id": "def-vdel-fwd",
+      "description": "i_(p+1)(G-v) - i_p(G-v) in Int. CARRIED (C6-LA2 entry 2).",
+      "lean_name": "C4LA1.vertexDeletionForwardDifference",
+      "dependencies": [
+        "def-vdel-count"
+      ]
+    },
+    {
+      "id": "def-is-favorable",
+      "description": "Strict favorability of v at rank p: vertexDeletionForwardDifference G v p < 0. CARRIED (C6-LA2 entry 3).",
+      "lean_name": "C4LA1.IsFavorableAt",
+      "dependencies": [
+        "def-vdel-fwd"
+      ]
+    },
+    {
+      "id": "def-is-graph-leaf",
+      "description": "A graph leaf: exactly one adjacent vertex (exists unique). CARRIED (C6-LA2 entry 4).",
+      "lean_name": "C4LA1.IsGraphLeaf",
+      "dependencies": []
+    },
+    {
+      "id": "def-support",
+      "description": "The unique support (neighbour) of a leaf, by Classical.choose. CARRIED (C6-LA2 entry 5).",
+      "lean_name": "C5LA1.support",
+      "dependencies": [
+        "def-is-graph-leaf"
+      ]
+    },
+    {
+      "id": "def-leaf-set",
+      "description": "The original leaves: univ.filter IsGraphLeaf. CARRIED (C6-LA2 entry 6).",
+      "lean_name": "C5LA1.leafSet",
+      "dependencies": [
+        "def-is-graph-leaf"
+      ]
+    },
+    {
+      "id": "def-h",
+      "description": "H_v = {v, s_v}. CARRIED (C6-LA2 entry 7); carried with the frozen 1-21 set, not in the statement.",
+      "lean_name": "C5LA1.H",
+      "dependencies": [
+        "def-support"
+      ]
+    },
+    {
+      "id": "def-r",
+      "description": "R_v = N[s_v]. CARRIED (C6-LA2 entry 8); carried with the frozen 1-21 set, not in the statement.",
+      "lean_name": "C5LA1.R",
+      "dependencies": [
+        "def-support"
+      ]
+    },
+    {
+      "id": "def-indep-avoiding",
+      "description": "Independent k-subsets avoiding D. CARRIED (C6-LA2 entry 9).",
+      "lean_name": "C5LA1.indepSetsAvoiding",
+      "dependencies": []
+    },
+    {
+      "id": "def-indep-count",
+      "description": "i_k(G - D). CARRIED (C6-LA2 entry 10).",
+      "lean_name": "C5LA1.indepSetCount",
+      "dependencies": [
+        "def-indep-avoiding"
+      ]
+    },
+    {
+      "id": "def-fwd-del",
+      "description": "Delta_k(G - D) in Int. CARRIED (C6-LA2 entry 11).",
+      "lean_name": "C5LA1.forwardDifferenceDel",
+      "dependencies": [
+        "def-indep-count"
+      ]
+    },
+    {
+      "id": "def-aggregate",
+      "description": "S(G,p). CARRIED (C6-LA2 entry 12); carried with the frozen 1-21 set, not in the statement.",
+      "lean_name": "C5LA1.aggregate",
+      "dependencies": [
+        "def-leaf-set",
+        "def-is-favorable",
+        "def-h",
+        "def-r",
+        "def-fwd-del"
+      ]
+    },
+    {
+      "id": "def-tagged-family",
+      "description": "Tagged family. CARRIED (C6-LA2 entry 13); carried with the frozen 1-21 set, not in the statement.",
+      "lean_name": "E993Interior.taggedFamily",
+      "dependencies": []
+    },
+    {
+      "id": "def-indep-family",
+      "description": "I_j(G): independent j-subsets. CARRIED (C6-LA2 entry 14).",
+      "lean_name": "E993Transport.indepFamily",
+      "dependencies": []
+    },
+    {
+      "id": "def-tag-witnesses",
+      "description": "W_v = N(s_v) minus {v}. CARRIED (C6-LA2 entry 15).",
+      "lean_name": "E993Transport.tagWitnesses",
+      "dependencies": [
+        "def-support"
+      ]
+    },
+    {
+      "id": "def-active-weight",
+      "description": "Active-tag weight w_F(B). CARRIED (C6-LA2 entry 16).",
+      "lean_name": "E993Transport.activeWeight",
+      "dependencies": [
+        "def-tag-witnesses"
+      ]
+    },
+    {
+      "id": "def-layer-weight",
+      "description": "Layer weight. CARRIED (C6-LA2 entry 17); carried with the frozen 1-21 set, not in the statement.",
+      "lean_name": "E993Transport.layerWeight",
+      "dependencies": [
+        "def-indep-family",
+        "def-active-weight"
+      ]
+    },
+    {
+      "id": "def-favorable-leaves",
+      "description": "The derived original strict selector F_p(G) = leafSet.filter IsFavorableAt. CARRIED (C6-LA2 entry 18).",
+      "lean_name": "E993Transport.favorableLeaves",
+      "dependencies": [
+        "def-leaf-set",
+        "def-is-favorable"
+      ]
+    },
+    {
+      "id": "def-transport-rel",
+      "description": "The relation (D) deletion union (S) two-for-one switch. CARRIED (C6-LA2 entry 19).",
+      "lean_name": "E993Transport.transportRel",
+      "dependencies": []
+    },
+    {
+      "id": "def-saturating-flow",
+      "description": "A saturating integral flow at rank p with tag set F: support on transportRel arcs between I_(p+1) and I_p, every source sends exactly its activeWeight, every target receives at most its activeWeight. CARRIED (C6-LA2 entry 20).",
+      "lean_name": "E993Transport.IsSaturatingFlow",
+      "dependencies": [
+        "def-indep-family",
+        "def-transport-rel",
+        "def-active-weight"
+      ]
+    },
+    {
+      "id": "def-weighted-hall",
+      "description": "(HALL) as a Hall condition. CARRIED (C6-LA2 entry 21); carried with the frozen 1-21 set, not in the statement.",
+      "lean_name": "E993Transport.WeightedHall",
+      "dependencies": [
+        "def-indep-family",
+        "def-transport-rel",
+        "def-active-weight"
+      ]
+    },
+    {
+      "id": "def-crossing-index",
+      "description": "x(G): the least k with Delta_k(G) < 0 (first strict descent). CARRIED (C6-LA2 entry 35; byte-identical to first-interior entry 14).",
+      "lean_name": "C5LA1.crossingIndex",
+      "dependencies": [
+        "def-fwd-del",
+        "def-indep-avoiding",
+        "def-indep-count"
+      ]
+    },
+    {
+      "id": "def-cb-edge",
+      "description": "NEW. The directed edge relation of CB(8,m) on Fin (17*m+3) with the FROZEN labelling 0 = r, 1 = s, 2 = v, u_i = 3+17i, b_ij = u_i+1+2j, c_ij = u_i+2+2j (i < m, j < 8): pairs (0,1), (1,2), (0,3+17i), (3+17i, 3+17i+1+2j), (3+17i+1+2j, 3+17i+2+2j). Seed: U1 (via C-U1-T CriticAdvance.lean).",
+      "lean_name": "E993Transport.cbEdge",
+      "dependencies": []
+    },
+    {
+      "id": "def-cb-graph",
+      "description": "NEW. CB(8,m) := SimpleGraph.fromRel (cbEdge m).",
+      "lean_name": "E993Transport.cbGraph",
+      "dependencies": [
+        "def-cb-edge"
+      ]
+    },
+    {
+      "id": "def-cb-decadj",
+      "description": "NEW. @[reducible, instance] computable DecidableRel (cbGraph m).Adj (bounded existentials; no classical choice).",
+      "lean_name": "E993Transport.cbGraph_decAdj",
+      "dependencies": [
+        "def-cb-graph",
+        "def-cb-edge"
+      ]
+    },
+    {
+      "id": "def-cb-vertex",
+      "description": "NEW. The vertex with label n: n % (17*m+3). Proof-internal naming helper (not in the terminal statement).",
+      "lean_name": "E993Transport.cbVertex",
+      "dependencies": []
+    },
+    {
+      "id": "def-cb-parent-val",
+      "description": "NEW. Parent label map (1 -> 0, 2 -> 1, choke -> 0, support -> its choke, private leaf -> its support). Proof-internal helper for the tree layer.",
+      "lean_name": "E993Transport.cbParentVal",
+      "dependencies": []
+    },
+    {
+      "id": "def-cb-parent",
+      "description": "NEW. cbVertex m (cbParentVal v.val). Proof-internal helper.",
+      "lean_name": "E993Transport.cbParent",
+      "dependencies": [
+        "def-cb-vertex",
+        "def-cb-parent-val"
+      ]
+    },
+    {
+      "id": "def-cb-child-edge",
+      "description": "NEW. The child-parent edge s(v, parent v) of a non-root vertex. Proof-internal helper (edge bijection).",
+      "lean_name": "E993Transport.cbChildEdge",
+      "dependencies": [
+        "def-cb-parent"
+      ]
+    },
+    {
+      "id": "def-cb-lower-witness",
+      "description": "NEW. The independent witness {s} u {u_i} u {c_ij} of size 9m+1. Proof-internal helper (alpha lower bound).",
+      "lean_name": "E993Transport.cbLowerWitness",
+      "dependencies": [
+        "def-cb-vertex"
+      ]
+    },
+    {
+      "id": "def-is-tree",
+      "description": "Mathlib: a connected acyclic simple graph.",
+      "lean_name": "SimpleGraph.IsTree",
+      "dependencies": []
+    },
+    {
+      "id": "def-indep-num",
+      "description": "Mathlib: the independence number alpha(G).",
+      "lean_name": "SimpleGraph.indepNum",
+      "dependencies": []
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-m",
+      "description": "m : Nat, the number of chokes of CB(8,m); the vertex type is Fin (17*m+3) (finite).",
+      "lean_type": "ℕ",
+      "dependencies": []
+    },
+    {
+      "id": "domain-flow",
+      "description": "Flows f : Finset (Fin (17*m+3)) -> Finset (Fin (17*m+3)) -> Nat (the witness type of the existential in hH and in conjunct 4).",
+      "lean_type": "Finset (Fin (17 * m + 3)) → Finset (Fin (17 * m + 3)) → ℕ",
+      "dependencies": [
+        "domain-m"
+      ]
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "m",
+      "kind": "forall",
+      "domain_id": "domain-m"
+    },
+    {
+      "binder": "f",
+      "kind": "exists",
+      "domain_id": "domain-flow"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-m-ge-107",
+      "statement": "hm : 107 ≤ m (verbatim). Used only through its consequence 0 < m (for cb_lowWindow).",
+      "dependencies": [
+        "domain-m"
+      ]
+    },
+    {
+      "id": "hyp-residue",
+      "statement": "hres : m % 3 = 2 (verbatim). Carried for the class shape of the SOLUTION-CONTRACT section 2 terminal; not used by the proof.",
+      "dependencies": [
+        "domain-m"
+      ]
+    },
+    {
+      "id": "hyp-descent",
+      "statement": "hE : C5LA1.crossingIndex (cbGraph m) + 2 ≤ (16 * m + 4) / 3 (verbatim; terminal conjunct 2 as a HYPOTHESIS, not asserted).",
+      "dependencies": [
+        "domain-m",
+        "def-crossing-index",
+        "def-cb-graph",
+        "def-cb-decadj"
+      ]
+    },
+    {
+      "id": "hyp-flow",
+      "statement": "hH : ∃ f, IsSaturatingFlow (cbGraph m) (favorableLeaves (cbGraph m) ((16 * m + 4) / 3)) ((16 * m + 4) / 3) f (verbatim; terminal conjunct 4 as a HYPOTHESIS, not asserted; the selector is derived, never hard-coded).",
+      "dependencies": [
+        "domain-m",
+        "domain-flow",
+        "def-saturating-flow",
+        "def-favorable-leaves",
+        "def-cb-graph",
+        "def-cb-decadj"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "(cbGraph m).IsTree ∧ C5LA1.crossingIndex (cbGraph m) + 2 ≤ (16 * m + 4) / 3 ∧ 3 * ((16 * m + 4) / 3) < 2 * (cbGraph m).indepNum + 1 ∧ ∃ f, IsSaturatingFlow (cbGraph m) (favorableLeaves (cbGraph m) ((16 * m + 4) / 3)) ((16 * m + 4) / 3) f -- the SOLUTION-CONTRACT section 2 terminal body verbatim; conjuncts 1 and 3 discharged by cbGraph_isTree and cb_lowWindow, conjuncts 2 and 4 returned from hE and hH.",
+    "dependencies": [
+      "hyp-m-ge-107",
+      "hyp-residue",
+      "hyp-descent",
+      "hyp-flow",
+      "def-is-tree",
+      "def-indep-num",
+      "def-cb-graph",
+      "def-cb-decadj",
+      "def-crossing-index",
+      "def-saturating-flow",
+      "def-favorable-leaves",
+      "domain-flow"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "def-vdel-count",
+        "kind": "definition"
+      },
+      {
+        "id": "def-vdel-fwd",
+        "kind": "definition"
+      },
+      {
+        "id": "def-is-favorable",
+        "kind": "definition"
+      },
+      {
+        "id": "def-is-graph-leaf",
+        "kind": "definition"
+      },
+      {
+        "id": "def-support",
+        "kind": "definition"
+      },
+      {
+        "id": "def-leaf-set",
+        "kind": "definition"
+      },
+      {
+        "id": "def-h",
+        "kind": "definition"
+      },
+      {
+        "id": "def-r",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indep-avoiding",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indep-count",
+        "kind": "definition"
+      },
+      {
+        "id": "def-fwd-del",
+        "kind": "definition"
+      },
+      {
+        "id": "def-aggregate",
+        "kind": "definition"
+      },
+      {
+        "id": "def-tagged-family",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indep-family",
+        "kind": "definition"
+      },
+      {
+        "id": "def-tag-witnesses",
+        "kind": "definition"
+      },
+      {
+        "id": "def-active-weight",
+        "kind": "definition"
+      },
+      {
+        "id": "def-layer-weight",
+        "kind": "definition"
+      },
+      {
+        "id": "def-favorable-leaves",
+        "kind": "definition"
+      },
+      {
+        "id": "def-transport-rel",
+        "kind": "definition"
+      },
+      {
+        "id": "def-saturating-flow",
+        "kind": "definition"
+      },
+      {
+        "id": "def-weighted-hall",
+        "kind": "definition"
+      },
+      {
+        "id": "def-crossing-index",
+        "kind": "definition"
+      },
+      {
+        "id": "def-cb-edge",
+        "kind": "definition"
+      },
+      {
+        "id": "def-cb-graph",
+        "kind": "definition"
+      },
+      {
+        "id": "def-cb-decadj",
+        "kind": "definition"
+      },
+      {
+        "id": "def-cb-vertex",
+        "kind": "definition"
+      },
+      {
+        "id": "def-cb-parent-val",
+        "kind": "definition"
+      },
+      {
+        "id": "def-cb-parent",
+        "kind": "definition"
+      },
+      {
+        "id": "def-cb-child-edge",
+        "kind": "definition"
+      },
+      {
+        "id": "def-cb-lower-witness",
+        "kind": "definition"
+      },
+      {
+        "id": "def-is-tree",
+        "kind": "definition"
+      },
+      {
+        "id": "def-indep-num",
+        "kind": "definition"
+      },
+      {
+        "id": "domain-m",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-flow",
+        "kind": "domain"
+      },
+      {
+        "id": "hyp-m-ge-107",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-residue",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-descent",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-flow",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "def-vdel-count",
+        "to": "def-vdel-fwd"
+      },
+      {
+        "from": "def-vdel-fwd",
+        "to": "def-is-favorable"
+      },
+      {
+        "from": "def-is-graph-leaf",
+        "to": "def-support"
+      },
+      {
+        "from": "def-is-graph-leaf",
+        "to": "def-leaf-set"
+      },
+      {
+        "from": "def-support",
+        "to": "def-h"
+      },
+      {
+        "from": "def-support",
+        "to": "def-r"
+      },
+      {
+        "from": "def-indep-avoiding",
+        "to": "def-indep-count"
+      },
+      {
+        "from": "def-indep-count",
+        "to": "def-fwd-del"
+      },
+      {
+        "from": "def-leaf-set",
+        "to": "def-aggregate"
+      },
+      {
+        "from": "def-is-favorable",
+        "to": "def-aggregate"
+      },
+      {
+        "from": "def-h",
+        "to": "def-aggregate"
+      },
+      {
+        "from": "def-r",
+        "to": "def-aggregate"
+      },
+      {
+        "from": "def-fwd-del",
+        "to": "def-aggregate"
+      },
+      {
+        "from": "def-support",
+        "to": "def-tag-witnesses"
+      },
+      {
+        "from": "def-tag-witnesses",
+        "to": "def-active-weight"
+      },
+      {
+        "from": "def-indep-family",
+        "to": "def-layer-weight"
+      },
+      {
+        "from": "def-active-weight",
+        "to": "def-layer-weight"
+      },
+      {
+        "from": "def-leaf-set",
+        "to": "def-favorable-leaves"
+      },
+      {
+        "from": "def-is-favorable",
+        "to": "def-favorable-leaves"
+      },
+      {
+        "from": "def-indep-family",
+        "to": "def-saturating-flow"
+      },
+      {
+        "from": "def-transport-rel",
+        "to": "def-saturating-flow"
+      },
+      {
+        "from": "def-active-weight",
+        "to": "def-saturating-flow"
+      },
+      {
+        "from": "def-indep-family",
+        "to": "def-weighted-hall"
+      },
+      {
+        "from": "def-transport-rel",
+        "to": "def-weighted-hall"
+      },
+      {
+        "from": "def-active-weight",
+        "to": "def-weighted-hall"
+      },
+      {
+        "from": "def-fwd-del",
+        "to": "def-crossing-index"
+      },
+      {
+        "from": "def-indep-avoiding",
+        "to": "def-crossing-index"
+      },
+      {
+        "from": "def-indep-count",
+        "to": "def-crossing-index"
+      },
+      {
+        "from": "def-cb-edge",
+        "to": "def-cb-graph"
+      },
+      {
+        "from": "def-cb-graph",
+        "to": "def-cb-decadj"
+      },
+      {
+        "from": "def-cb-edge",
+        "to": "def-cb-decadj"
+      },
+      {
+        "from": "def-cb-vertex",
+        "to": "def-cb-parent"
+      },
+      {
+        "from": "def-cb-parent-val",
+        "to": "def-cb-parent"
+      },
+      {
+        "from": "def-cb-parent",
+        "to": "def-cb-child-edge"
+      },
+      {
+        "from": "def-cb-vertex",
+        "to": "def-cb-lower-witness"
+      },
+      {
+        "from": "domain-m",
+        "to": "domain-flow"
+      },
+      {
+        "from": "domain-m",
+        "to": "hyp-m-ge-107"
+      },
+      {
+        "from": "domain-m",
+        "to": "hyp-residue"
+      },
+      {
+        "from": "domain-m",
+        "to": "hyp-descent"
+      },
+      {
+        "from": "def-crossing-index",
+        "to": "hyp-descent"
+      },
+      {
+        "from": "def-cb-graph",
+        "to": "hyp-descent"
+      },
+      {
+        "from": "def-cb-decadj",
+        "to": "hyp-descent"
+      },
+      {
+        "from": "domain-m",
+        "to": "hyp-flow"
+      },
+      {
+        "from": "domain-flow",
+        "to": "hyp-flow"
+      },
+      {
+        "from": "def-saturating-flow",
+        "to": "hyp-flow"
+      },
+      {
+        "from": "def-favorable-leaves",
+        "to": "hyp-flow"
+      },
+      {
+        "from": "def-cb-graph",
+        "to": "hyp-flow"
+      },
+      {
+        "from": "def-cb-decadj",
+        "to": "hyp-flow"
+      },
+      {
+        "from": "hyp-m-ge-107",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-residue",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-descent",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-flow",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-is-tree",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-indep-num",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-cb-graph",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-cb-decadj",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-crossing-index",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-saturating-flow",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-favorable-leaves",
+        "to": "conclusion"
+      },
+      {
+        "from": "domain-flow",
+        "to": "conclusion"
+      }
+    ]
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "explicit_axiom_allowlist",
+    "rationale": "The carried definitions of record (C5LA1.support via Classical.choose; leafSet, favorableLeaves and crossingIndex under open Classical) and Mathlib's Finset/indepNum API use classical logic; exactly the three standard axioms propext, Classical.choice, Quot.sound are permitted; no sorry, admit, native_decide, axiom, or decide over an enumeration standing in for a universal step (m, i, j are variables throughout)."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "E993Transport.cb8_topRank_of_descent_and_flow",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem cb8_topRank_of_descent_and_flow (m : ℕ) (hm : 107 ≤ m) (hres : m % 3 = 2)\n    (hE : C5LA1.crossingIndex (cbGraph m) + 2 ≤ (16 * m + 4) / 3)\n    (hH : ∃ f, IsSaturatingFlow (cbGraph m)\n      (favorableLeaves (cbGraph m) ((16 * m + 4) / 3)) ((16 * m + 4) / 3) f) :\n    (cbGraph m).IsTree ∧\n    C5LA1.crossingIndex (cbGraph m) + 2 ≤ (16 * m + 4) / 3 ∧\n    3 * ((16 * m + 4) / 3) < 2 * (cbGraph m).indepNum + 1 ∧\n    ∃ f, IsSaturatingFlow (cbGraph m) (favorableLeaves (cbGraph m) ((16 * m + 4) / 3)) ((16 * m + 4) / 3) f",
+    "expected_statement_sha256": "daf8342302bc281a91de21368a7cf01fb028d383fcdce9ee489258496f70a538"
+  },
+  "source_materials": [
+    {
+      "id": "src-brief",
+      "path": "SOURCE/C1-STAGE7-FORMALIZER-BRIEF-LA2.md",
+      "sha256": "2a60ea0bf9f59d70f5b7b94ecfc86408266d85993b7fa14b7c6b7f3d25ea2f2f",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-synthesis",
+      "path": "SOURCE/cycle-1-SYNTHESIS.md",
+      "sha256": "d70e6ce23c712d0983df64afa2fdc07d6018ab62e57597e74f95cb43dfd23d44",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-solution-contract",
+      "path": "SOURCE/SOLUTION-CONTRACT.md",
+      "sha256": "480ba2ddda557be50b2d8249feb733be7e3c947d2e0a9dd4e7fee1427a7ef719",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-semantic-contract",
+      "path": "SOURCE/SEMANTIC-CONTRACT.md",
+      "sha256": "7cc0bf434d6ea8f8fa2d812caf4e45787c1c06a9dfc6846b6b4d54cb60cf226e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-stage7-protocol",
+      "path": "SOURCE/C1-STAGE7-PROTOCOL.md",
+      "sha256": "e4b9e5984fc6c8c1a804f165074530089f843b3a4c1aac78fef6dbf0f3287052",
+      "role": "reference"
+    },
+    {
+      "id": "src-capsule-manifest",
+      "path": "SOURCE/C1-LA2-PACKET-MANIFEST.json",
+      "sha256": "34992c71d62dc67907cded9514d3454d21402886315042b9701f9b3f43b1dcf3",
+      "role": "reference"
+    },
+    {
+      "id": "src-path-check",
+      "path": "SOURCE/PATH-CHECK-C1-LA2.json",
+      "sha256": "b0efa01c8179d4e2f03636250271d4609448e4dc8f2183684d707dad1dbdb237",
+      "role": "reference"
+    },
+    {
+      "id": "src-u1-return",
+      "path": "SOURCE/cycle-1-U1-RETURN.md",
+      "sha256": "bed1e714c440ae9fc2e6c347854c2de15a956e0aab5c1dd678f72e5638446b0d",
+      "role": "reference"
+    },
+    {
+      "id": "src-c-u1-t-critique",
+      "path": "SOURCE/cycle-1-C-U1-T-CRITIQUE.md",
+      "sha256": "76d8fda2465aca1c4bce8c83f593bd17d44d5b57e26736b24e112f29fbbd6631",
+      "role": "reference"
+    },
+    {
+      "id": "src-c-u1-f-critique",
+      "path": "SOURCE/cycle-1-C-U1-F-CRITIQUE.md",
+      "sha256": "c9a684ee29dae8903be7d75c76892ce9a8d79facd1b203e3dc2ecff0a61f0ef4",
+      "role": "reference"
+    },
+    {
+      "id": "src-u-adjudication",
+      "path": "SOURCE/cycle-1-U-ADJUDICATION.md",
+      "sha256": "cbe1f222cc2c6e48e2d31300a930730ba37fbcf1ba38b72226027b800349ba9e",
+      "role": "reference"
+    },
+    {
+      "id": "src-seed-criticadvance",
+      "path": "SOURCE/C-U1-T-CriticAdvance.lean",
+      "sha256": "c94ef3bd983fbd939d1591a4c1b66204d40071bfdd35bdcaf1ce82468175d1dc",
+      "role": "reference"
+    },
+    {
+      "id": "src-c-u1-t-assemble",
+      "path": "SOURCE/C-U1-T-assemble.py",
+      "sha256": "c2d41bd883b679e589babc42ee9526a5c4354bf3e38a72c5dc0070a8ad688f51",
+      "role": "reference"
+    },
+    {
+      "id": "src-c-u1-t-axioms",
+      "path": "SOURCE/C-U1-T-axioms.txt",
+      "sha256": "e95f741179bfe75260a385ed03da7c459e59fc428080db9a88128a83b03d24b6",
+      "role": "reference"
+    },
+    {
+      "id": "src-c-u1-t-carry-check",
+      "path": "SOURCE/C-U1-T-carry_check.out.txt",
+      "sha256": "32bcb7b0266da8b68b0de67e8dbc70c3e30f114edcf59da50e8aca7b9aec8455",
+      "role": "reference"
+    },
+    {
+      "id": "src-c-u1-t-build",
+      "path": "SOURCE/C-U1-T-critic_advance_build.txt",
+      "sha256": "205f6c4005e4322849cb71f45ce7d2a25a32fd372a20ba83127f0766172a2f0c",
+      "role": "reference"
+    },
+    {
+      "id": "src-seed-audit",
+      "path": "SOURCE/C-U1-F-Audit.lean",
+      "sha256": "f285a9e1f5c9ea595e0fe25a54b7342afb4e600481e109e1f6889a3b2ef10710",
+      "role": "reference"
+    },
+    {
+      "id": "src-c-u1-f-audit-out",
+      "path": "SOURCE/C-U1-F-audit_out.txt",
+      "sha256": "6c2abf128654d742d6d24c50cbde4ff53de9af20784beba9548efd36dab6598e",
+      "role": "reference"
+    },
+    {
+      "id": "src-source-digests",
+      "path": "SOURCE/sources-SOURCE-DIGESTS.json",
+      "sha256": "1508f7dd7468dad96ae6d3edfbfc2b402b3dac40513911291a9684561835c703",
+      "role": "reference"
+    },
+    {
+      "id": "src-c1-source-digests",
+      "path": "SOURCE/c1-stage7-sources-SOURCE-DIGESTS.json",
+      "sha256": "d5fa08440ddca0baf2dfb5a85159ddd6e450750bff7ad079c9a0edc2dcdd8c8e",
+      "role": "reference"
+    },
+    {
+      "id": "src-c6la2-state",
+      "path": "SOURCE/r30-C6-LA2-FORMALIZATION-STATE.json",
+      "sha256": "e78d4bcf8cb5c09805046d058a6f7dc7c6982a871faf8346cad282f0139aeae7",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-c6la2-kernel-receipt",
+      "path": "SOURCE/r30-C6-LA2-kernel-verification.json",
+      "sha256": "ce9dbc1993dc5538493848a39124d00612aad6c7800c89b4a426a8d36b24e219",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-c6la2-main",
+      "path": "SOURCE/r30-C6-LA2-Main.lean",
+      "sha256": "df5e287022083ad3b61c2efa3ce53953da22896145fb90046f871a082a4c60fc",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-c6la2-contract",
+      "path": "SOURCE/r30-C6-LA2-THEOREM-CONTRACT.yaml",
+      "sha256": "dc2fc2a0ecf623fb1fa916a17c73e3fdd965563db8cbf7b0a4d608f59d417651",
+      "role": "reference"
+    },
+    {
+      "id": "src-c6la2-report",
+      "path": "SOURCE/r30-C6-LA2-VERIFICATION-REPORT.json",
+      "sha256": "a95cd59ff1ceafe28ddc3bd60a28b44741b78ee87b7fd5ac0f36ebd8310369e8",
+      "role": "reference"
+    },
+    {
+      "id": "src-c6la2-axioms",
+      "path": "SOURCE/r30-C6-LA2-axioms.txt",
+      "sha256": "8ca319ac1b8a61c29554ec9def08a80bfdbe8427652aa65f4f5f30d33489a29f",
+      "role": "reference"
+    },
+    {
+      "id": "src-c1la1-state",
+      "path": "SOURCE/r30-C1-LA1-FORMALIZATION-STATE.json",
+      "sha256": "a126fbd39d6f2de9f236dd414166a721710e642123a045f222383eab0f4fbe21",
+      "role": "reference"
+    },
+    {
+      "id": "src-c1la1-kernel-receipt",
+      "path": "SOURCE/r30-C1-LA1-kernel-verification.json",
+      "sha256": "9e7334914b8ea5a4532d89d2f039aacc13b3be92a98b09685d8a7f1cb5c5d00a",
+      "role": "reference"
+    },
+    {
+      "id": "src-c1la1-main",
+      "path": "SOURCE/r30-C1-LA1-Main.lean",
+      "sha256": "86b59c6cc7f85590f387730718599ad3112ba607495ea08c1b4a2617a6e5e0cb",
+      "role": "reference"
+    },
+    {
+      "id": "src-first-interior-0014",
+      "path": "SOURCE/first-interior-0014-definition-C5LA1-crossingIndex.lean.fragment",
+      "sha256": "378868ab2e660af8a36ea0b1045c55bc60f8383dca3d31dd85c4b52fa8a898fb",
+      "role": "reference"
+    },
+    {
+      "id": "src-carry-c6la2-0001",
+      "path": "SOURCE/carried-c6-la2/0001-definition-C4LA1-vertexDeletionIndepSetCount.lean.fragment",
+      "sha256": "7e0a588e243735a611c919ea1080816911a3e27e4523478af0c0f560ce1b3b48",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c6la2-0002",
+      "path": "SOURCE/carried-c6-la2/0002-definition-C4LA1-vertexDeletionForwardDifference.lean.fragment",
+      "sha256": "c2da50eb16ee788c439b146577efeedd7dd42811c6943fb437585edcf63b5880",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c6la2-0003",
+      "path": "SOURCE/carried-c6-la2/0003-definition-C4LA1-IsFavorableAt.lean.fragment",
+      "sha256": "25d8f7d274f9080468bf6d46acc6db3d4a469c2e399e7faee6cdcee24290a0db",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c6la2-0004",
+      "path": "SOURCE/carried-c6-la2/0004-definition-C4LA1-IsGraphLeaf.lean.fragment",
+      "sha256": "65acd314d3bfd74aca476e00dd8866434c67682b627bce5e105d372a556f7ae5",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c6la2-0005",
+      "path": "SOURCE/carried-c6-la2/0005-definition-C5LA1-support.lean.fragment",
+      "sha256": "8e1e1a689393f555eb5c216207b1368c7415a8543c569884b2fc86954b7bc2b4",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c6la2-0006",
+      "path": "SOURCE/carried-c6-la2/0006-definition-C5LA1-leafSet.lean.fragment",
+      "sha256": "78ec65517bde90cc2fc5e542fc7c60d6a5147b243b74b9ac3de33d4efd1df697",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c6la2-0007",
+      "path": "SOURCE/carried-c6-la2/0007-definition-C5LA1-H.lean.fragment",
+      "sha256": "55f37d9161901d6006e571cf548c4e56675c9d786a1aba83e7889ad9d443224d",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c6la2-0008",
+      "path": "SOURCE/carried-c6-la2/0008-definition-C5LA1-R.lean.fragment",
+      "sha256": "a0407d82ab112a65a0f9d85970e9d6217b66201680cc079a4ba13751e53dc6b8",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c6la2-0009",
+      "path": "SOURCE/carried-c6-la2/0009-definition-C5LA1-indepSetsAvoiding.lean.fragment",
+      "sha256": "ac0e331eec99650eca7a18e9fe98829bb5495850685b8f31936169f0a6d8e368",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c6la2-0010",
+      "path": "SOURCE/carried-c6-la2/0010-definition-C5LA1-indepSetCount.lean.fragment",
+      "sha256": "e22635d8697e49b38dd521080f34c3eefe56a93964120c70f53ad9899b4a7f71",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c6la2-0011",
+      "path": "SOURCE/carried-c6-la2/0011-definition-C5LA1-forwardDifferenceDel.lean.fragment",
+      "sha256": "60bd8efcc88e8e511a7caacac5867f7845243ccab08f1660e8c3962af544dd8f",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c6la2-0012",
+      "path": "SOURCE/carried-c6-la2/0012-definition-C5LA1-aggregate.lean.fragment",
+      "sha256": "d66e776c5cf49b2a78a2d9713e4a41de2cbaf5de0af7b6d580075064d1daea8b",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c6la2-0013",
+      "path": "SOURCE/carried-c6-la2/0013-definition-E993Interior-taggedFamily.lean.fragment",
+      "sha256": "cb43feebd48bdf3a82d95db4c0475a34a83acdd8c55f13ac44433ea26141fa1e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c6la2-0014",
+      "path": "SOURCE/carried-c6-la2/0014-definition-E993Transport-indepFamily.lean.fragment",
+      "sha256": "73df20a8511ea67885d45631688cf693e58cebe9cfd5413ee67e782c1030ef9e",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c6la2-0015",
+      "path": "SOURCE/carried-c6-la2/0015-definition-E993Transport-tagWitnesses.lean.fragment",
+      "sha256": "113d952167528dfc045eb79961e8fbff0326da8f04277799436d6c8962022025",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c6la2-0016",
+      "path": "SOURCE/carried-c6-la2/0016-definition-E993Transport-activeWeight.lean.fragment",
+      "sha256": "074ed034729850d34722d0b1ceeb96d8362beaebf3b7a409cb3fab28a9850b93",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c6la2-0017",
+      "path": "SOURCE/carried-c6-la2/0017-definition-E993Transport-layerWeight.lean.fragment",
+      "sha256": "5ca5792309be23276583ac42cef294618e2471c97d3f58e67f0ab7980a3a83c3",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c6la2-0018",
+      "path": "SOURCE/carried-c6-la2/0018-definition-E993Transport-favorableLeaves.lean.fragment",
+      "sha256": "16b0c7672ed66c4cb53ba24d853764df160d6694f63b231346a2eb71c390ec77",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c6la2-0019",
+      "path": "SOURCE/carried-c6-la2/0019-definition-E993Transport-transportRel.lean.fragment",
+      "sha256": "b1b9ac6c8de56fa740a37e5bac0fa628f1d817c2e33625ca34dcab33a1100d95",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c6la2-0020",
+      "path": "SOURCE/carried-c6-la2/0020-definition-E993Transport-IsSaturatingFlow.lean.fragment",
+      "sha256": "a9d81c260914024d38f46ff5b564749d34f640674f9e9116685b4e7c631a48ac",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c6la2-0021",
+      "path": "SOURCE/carried-c6-la2/0021-definition-E993Transport-WeightedHall.lean.fragment",
+      "sha256": "63534ffbfcc4bb1297228e598da165dcf98732939cd51a5d7fda3e62bc518478",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c6la2-0035",
+      "path": "SOURCE/carried-c6-la2/0035-definition-C5LA1-crossingIndex.lean.fragment",
+      "sha256": "378868ab2e660af8a36ea0b1045c55bc60f8383dca3d31dd85c4b52fa8a898fb",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c6la2-0123",
+      "path": "SOURCE/carried-c6-la2/0123-lemma-E993Transport-support_eq_of_isGraphLeaf_of_adj.lean.fragment",
+      "sha256": "16687f86fa9b55f6996ffb8d02fcf3cf1af6129033605d60c019f33c360b620d",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-carry-c6la2-0124",
+      "path": "SOURCE/carried-c6-la2/0124-lemma-E993Transport-mem_tagWitnesses_iff_of_adj.lean.fragment",
+      "sha256": "772a13c0522f1c4b7c8d93dc3920688ea5649302271cbd8799d1c575e8773de5",
+      "role": "definition_authority"
+    },
+    {
+      "id": "src-informal-proof",
+      "path": "INFORMAL-PROOF.md",
+      "sha256": "f24936502db79f8f3eaf654d09fd902cb49eef19e3048d74182af68db44d4c80",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "src-capsule-verification",
+      "path": "CAPSULE-VERIFICATION.json",
+      "sha256": "6b1d56c9cd56ec4f19d8acbcacad6bda15be0e37feb619357fe60d6c3b954825",
+      "role": "reference"
+    },
+    {
+      "id": "src-fragment-generator",
+      "path": "DRAFTS/make_fragments.py",
+      "sha256": "1b2435a8ed396a03abf6c3f6fb047e19dfee36931dfb51b1c869de6a86ac2ca0",
+      "role": "reference"
+    },
+    {
+      "id": "src-fragment-plan",
+      "path": "DRAFTS/new-plan.json",
+      "sha256": "cbd26da0e4cd7fb8d9ee4118267a74af0b1bb19b1f8a6feca95e21dfed63c099",
+      "role": "reference"
+    }
+  ]
+}
