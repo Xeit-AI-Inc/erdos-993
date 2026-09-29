@@ -1,0 +1,70 @@
+{
+  "worker_id": "C5-CF-T2",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C5-T2-ACTIVITY-BASIS-NEGATIVE-LAYER",
+      "statement": "For the ordinary path-star with counts (a2,a3,a4)=(0,0,3), the proposed coefficientwise-nonnegative center-activity minor certificate fails: with C_t=G B4(L^4+tz)^2, A_{i,t}=G B3(L^4+tz)^2+zL^12, and k=7, A_{i,t}[k]C_t[k]-A_{i,t}[k+1]C_t[k-1]=1898616+171542t+6175t^2-66t^3, although its t=1 value is positive 2076267.",
+      "scope": "Retained narrowly as a finite obstruction to coefficientwise positivity in this activity basis only. Here N=12 and 1<=k with 2k<=N+2, but the actual parent first strict descent is x=7 and no actual eligible lower-half p exists; this refutes neither the t=1 guarded individual comparison nor selected payment.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CF-T2/REPORT.md",
+        "cycles/cycle-5/C5-CF-T2/independent_audit.py",
+        "cycles/cycle-5/C5-CF-T2/independent_audit.json"
+      ],
+      "reason": "Independent monomial-z exact arithmetic gives activity coefficients (1898616,171542,6175,-66,0), while their t=1 sum and the direct full minor are 2076267>0. The source mechanism obstruction is valid at this exact profile and rank, but has no target-predicate force."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, every original leaf deletion polynomial A_v, and every natural k with 1<=k and 2k<=N+2, integer-zero-extended coefficients satisfy A_v[k+1] C[k-1]<=A_v[k] C[k].",
+      "scope": "All nonempty ordinary arity-2,3,4 path-stars and every original endpoint/private-tip deletion, for every integer k>=1 with 2k<=N+2. Retain the first-descent and selector/rank guards if applying it to actual selections; this registered inequality itself has no actual-eligibility premise.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CF-T2/REPORT.md",
+        "cycles/cycle-5/C5-CF-T2/independent_audit.py",
+        "cycles/cycle-5/C5-CF-T2/independent_audit.json"
+      ],
+      "reason": "No universal proof or guarded full-minor counterexample was found. Negative isolated-E evidence does not refute the full comparison; bounded exact tests are not universal."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, put W(X)=sum_i r_i A_i(X), counting each original private-tip deletion with its original multiplicity. For every natural k with 1<=k and 2k<=N+2, integer-zero-extended coefficients satisfy W[k+1] C[k-1]<=W[k] C[k].",
+      "scope": "All nonempty ordinary arity-2,3,4 path-stars; W retains every original private-tip multiplicity r_i; for every integer k>=1 with 2k<=N+2. This is separate from individual deletion and current-p strict-selector claims.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CF-T2/REPORT.md",
+        "cycles/cycle-5/C5-CF-T2/independent_audit.py",
+        "cycles/cycle-5/C5-CF-T2/independent_audit.json"
+      ],
+      "reason": "No universal weighted-minor proof or exact guarded counterexample was obtained. Exact small-profile tests use the original multiplicities and remain bounded evidence."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, set N=sum_i r_i, a_r=#arity-r branches, h=1+2a_2+4a_3+7a_4, C=(1+2z)product_i B_{r_i}, E=z(1+z)^N, U_i=(1+2z)B_{r_i-1}product_{ell!=i}B_{r_ell}, and M_k(E)=E[k]C[k]-E[k+1]C[k-1]. For every represented original tip branch i and every natural 1<=k with 2k<=N+2, (h+1)U_i[k]C[k]+(k+1)(h-k+1)M_k(E)>=0. Coefficients are integer-zero-extended.",
+      "scope": "Tip-only exact-ratio surplus on all profiles and every integer 1<=k with 2k<=N+2, with no actual-eligibility premise. It does not cover endpoint A0. Any use to derive full tip comparison depends on the separate ULC-curvature and main-product lower bound.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CF-T2/REPORT.md",
+        "cycles/cycle-5/C5-CF-T2/independent_audit.py",
+        "cycles/cycle-5/C5-CF-T2/independent_audit.json"
+      ],
+      "reason": "The finite exact controls are positive but prove no all-profile result. The denominator factors (k+1)(h-k+1) are strictly positive on the guarded domain, so the sufficient-condition reduction preserves inequality direction; the missing universal surplus remains unproved."
+    }
+  ],
+  "covered_claim_ids": [
+    "C5-T2-ACTIVITY-BASIS-NEGATIVE-LAYER",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+    "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS"
+  ],
+  "report_path": "cycles/cycle-5/C5-CF-T2/REPORT.md",
+  "limitations": [
+    "No universal proof or guarded full-predicate counterexample was obtained.",
+    "Exact arithmetic checks and profile horizon are bounded evidence only.",
+    "The activity-layer failure concerns a proof shortcut; it does not refute the evaluated target minor.",
+    "No formal verification or authoritative status change is claimed."
+  ],
+  "status_authority": "proposed_worker_only"
+}

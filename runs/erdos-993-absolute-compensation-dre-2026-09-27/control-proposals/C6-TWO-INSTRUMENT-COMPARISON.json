@@ -1,0 +1,32 @@
+{
+  "kind": "controller comparison of two independently authored finite-prefix methods; no formal or universal award",
+  "scope": "all m1..99, all represented arities, all guarded ranks",
+  "profiles_per_implementation": 171699,
+  "tests_per_implementation": 56245000,
+  "per_m_rows_compared": 99,
+  "all_counts_minima_and_shared_witness_coefficients_match": true,
+  "minimum_surplus": "98",
+  "negative_rows": 0,
+  "A": {
+    "method": "exact monomial arrays and constant-one cofactor division; complete protocol-repaired replay",
+    "source_sha256": "c6ef6fe9f2a97ca4225482d1b0ef35f9e5a81cdead1cf9322771ed200f987d69",
+    "result_sha256": "2ecbb7423531e718241d831ef08078b0f3ccdc8ce2d05645b62b0325316c7dcb",
+    "cumulative_seconds_including_original": 1398.7614196250215
+  },
+  "B": {
+    "method": "direct integer Kronecker evaluation and no-carry digit extraction",
+    "source_sha256": "d29ebed0281db22daaa6c1780c69bb962f67b45cb61cc64102e44d5714094166",
+    "result_sha256": "251b74de0d21cd20e3d7cdb78c148f44ca99fd8c6d3bd3ffc331644d3b0e6730",
+    "final_seconds": 1101.478227125015
+  },
+  "runtime_caps_passed": true,
+  "control_values_and_source_hashes_verified": true,
+  "full_census_rerun_in_this_comparison": false,
+  "next_gate": "standard criticisms, adjudications and synthesis; fresh final code/identity review and exact tail proof disposition",
+  "report_corrections": [
+    "U2 prose says E[j]=choose(N,j), but code correctly uses E[j]=choose(N,j-1).",
+    "U2 coefficient-sum display must retain all m-1 unmarked branches, including r-type copies; actual code decrements exactly one marked exponent.",
+    "U2 published replay command needs a fresh output directory because the shared runner correctly refuses overwrite.",
+    "Producer validate_results.py trusts receipt source_unchanged and does not rehash all source/result files or check distinct m rows; this comparison performs those extra actual-byte and exact-index checks."
+  ]
+}

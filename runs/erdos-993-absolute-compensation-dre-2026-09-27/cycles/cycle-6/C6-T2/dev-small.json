@@ -1,0 +1,102 @@
+{
+  "elapsed_seconds": 0.013520041946321726,
+  "evidence_grade": "bounded_computation",
+  "expected_totals_if_full": {
+    "profiles": 171699,
+    "represented_tip_rank_tests": 56245000
+  },
+  "failures": [],
+  "instrument": "C6-T2 independently authored exact monomial arrays + constant-one cofactor division",
+  "platform": "macOS-27.0-arm64-arm-64bit",
+  "python_version": "3.11.2 (v3.11.2:878ead1ac1, Feb  7 2023, 10:02:41) [Clang 13.0.0 (clang-1300.0.29.30)]",
+  "rows": [
+    {
+      "elapsed_seconds": 6.550003308802843e-05,
+      "failures": [],
+      "m": 1,
+      "minimum_signed_surplus": {
+        "C_k": "5",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "2",
+        "N": 2,
+        "U_k": "4",
+        "U_kp1": "4",
+        "counts": [
+          1,
+          0,
+          0
+        ],
+        "h": 3,
+        "k": 1,
+        "margin": "98",
+        "r": 2
+      },
+      "profiles": 3,
+      "represented_tip_rank_tests": 7
+    },
+    {
+      "elapsed_seconds": 0.00013708299957215786,
+      "failures": [],
+      "m": 2,
+      "minimum_signed_surplus": {
+        "C_k": "8",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "4",
+        "N": 4,
+        "U_k": "7",
+        "U_kp1": "17",
+        "counts": [
+          2,
+          0,
+          0
+        ],
+        "h": 5,
+        "k": 1,
+        "margin": "376",
+        "r": 2
+      },
+      "profiles": 6,
+      "represented_tip_rank_tests": 34
+    },
+    {
+      "elapsed_seconds": 0.00034787505865097046,
+      "failures": [],
+      "m": 3,
+      "minimum_signed_surplus": {
+        "C_k": "11",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "6",
+        "N": 6,
+        "U_k": "10",
+        "U_kp1": "39",
+        "counts": [
+          3,
+          0,
+          0
+        ],
+        "h": 7,
+        "k": 1,
+        "margin": "950",
+        "r": 2
+      },
+      "profiles": 10,
+      "represented_tip_rank_tests": 95
+    }
+  ],
+  "scope": {
+    "all_count_profiles": true,
+    "all_guarded_ranks": true,
+    "all_represented_arities": true,
+    "max_m": 3,
+    "min_m": 1,
+    "no_descent_or_eligibility_filter": true
+  },
+  "status": "partial_scope",
+  "totals": {
+    "profiles": 19,
+    "represented_tip_rank_tests": 136
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "worker_id": "C6-CF-U2",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C6-U2-prefix-surplus-1-99",
+      "statement": "For every arity profile (a2,a3,a4) with 1<=m=a2+a3+a4<=99, every represented r in {2,3,4}, and every 1<=k<=floor((N+2)/2), the exact zero-extended surplus S_r(k)=(h+1)U_r[k]C[k]+(k+1)(h-k+1)(E[k]C[k]-E[k+1]C[k-1]) is positive, with N=2a2+3a3+4a4, h=1+2a2+4a3+7a4, C=(1+2z)product_r B_r^a_r, E=z(1+z)^N, and U_r=(1+2z)B_(r-1)B_r^(a_r-1)product_(s!=r)B_s^a_s.",
+      "scope": "Exact finite prefix m=1..99, all represented types and all guarded ranks, with no first-descent or eligibility filter. Bounded computation only; no universal surplus or selected-payment implication is awarded.",
+      "status": "proposed_bounded_evidence",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CF-U2/REPORT.md",
+        "cycles/cycle-6/C6-CF-U2/independent_audit.py",
+        "cycles/cycle-6/C6-CF-U2/independent_audit.json",
+        "cycles/cycle-6/C6-CF-U2/review_case/final-run-1-99/RESULT.json",
+        "cycles/cycle-6/C6-CF-U2/review_case/final-run-1-99/TRANSPORT-RECEIPT.json"
+      ],
+      "reason": "Hash-verified source/result/receipt; coverage agrees at all 99 m values with an independent direct count; copied validator and small convolution cross-check pass; an independent direct-convolution audit confirms all recorded row minima are positive (minimum 98) and recomputes controls. The full finite computation is a single packed-digit instrument in this case, not the protocol's two-method promotion by itself."
+    },
+    {
+      "claim_id": "C6-U2-radix-carry-free-bound",
+      "statement": "For every finite nonempty arity-2/3/4 profile with m branches and total N, beta=2^(N+m+4) exceeds the coefficient sums C(1) and U_i(1) of C=(1+2z)product_i B_(r_i) and every represented U_i=(1+2z)B_(r_i-1)product_(l!=i)B_(r_l). Since these polynomials have nonnegative coefficients, every coefficient is less than beta and evaluating at beta followed by base-beta digit extraction recovers their exact monomial coefficients without carries or cancellation.",
+      "scope": "All finite nonempty branch profiles with arities 2,3,4; coefficient extraction only, with no surplus or selected-payment conclusion.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CF-U2/REPORT.md",
+        "cycles/cycle-6/C6-CF-U2/census_b_review_copy.py",
+        "cycles/cycle-6/C6-CF-U2/independent_audit.py"
+      ],
+      "reason": "The evaluation-at-one bounds are strict and lie below beta; nonnegative coefficients are individually bounded by their sum. The packed polynomial factors and support decoding match the defining monomial polynomials, including B1=G."
+    },
+    {
+      "claim_id": "C6-CF-U2-validator-strictness",
+      "statement": "The supplied validate_results.py does not independently enforce the source report's strict finite conclusion S_r(k)>0: its per-m assertion accepts minimum_signed_surplus=0 via >=0, and it lacks a positive assertion for the aggregate minimum.",
+      "scope": "Validator behavior only; this does not refute the finite mathematical statement because the retained result and independent audit report minimum 98.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CF-U2/REPORT.md",
+        "cycles/cycle-6/C6-CF-U2/validate_results_review_copy.py",
+        "cycles/cycle-6/C6-CF-U2/independent_audit.py",
+        "cycles/cycle-6/C6-CF-U2/independent_audit.json"
+      ],
+      "reason": "The validator checks int(row['minimum_signed_surplus']) >= 0, which would accept a zero minimum despite the strict-positive claim. Change it to >0 and assert the aggregate minimum is positive."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CF-U2/REPORT.md",
+  "limitations": [
+    "The m=1..99 signs are bounded computation; the m>=100 tail is outside this case.",
+    "The full finite sign run uses one packed-digit instrument here; the small convolution check covers only m<=8, so this return does not satisfy the two-method requirement for all-m promotion.",
+    "The finite surplus has no actual-first-descent or strict-selector premise and does not prove selected payment, MASS, endpoint, individual, or weighted comparisons.",
+    "The radix lemma is informal mathematics, not Lean-verified."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-U2-prefix-surplus-1-99",
+    "C6-U2-radix-carry-free-bound"
+  ]
+}

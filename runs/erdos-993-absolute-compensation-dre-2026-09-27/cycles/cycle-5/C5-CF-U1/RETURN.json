@@ -1,0 +1,44 @@
+{
+  "worker_id": "C5-CF-U1",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "F",
+  "covered_claim_ids": [
+    "C5-U1-ELIGIBLE-ROOT-MIXTURE-MONOTONICITY",
+    "C5-U1-UNRESTRICTED-ROOT-MIXTURE-COUNTEREXAMPLE"
+  ],
+  "claims": [
+    {
+      "claim_id": "C5-U1-ELIGIBLE-ROOT-MIXTURE-MONOTONICITY",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile with N=sum_i r_i, q=N+1, alpha=N+2, C=(1+2z) product_i((1+z)^r_i+z), d=z(1+z)^q, P=C+d, and x the first strict descent of P under zero-extended coefficients, for every p satisfying x+2<=p, 3p<2alpha+1, and 2p<=alpha, j=p-2 has d[j+1]C[j]-d[j]C[j+1]>0. Thus d[j]/C[j] and d[j]/(C[j]+d[j]) strictly increase from j to j+1.",
+      "scope": "Universal informal root-mixture lemma only on actual first-descent eligible lower-half ranks. The 3p guard is retained though unused in the proof. No deletion, selector, MASS, or payment conclusion follows.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CF-U1/REPORT.md",
+        "cycles/cycle-5/C5-CF-U1/independent_check.py",
+        "cycles/cycle-5/C5-CF-U1/independent_check.out"
+      ],
+      "reason": "The first-descent and binomial-rise argument gives Delta_x C<0; log-concavity and positive support propagate Delta_j C<0; the exact signed-minor identity then has a strictly positive first term and a nonnegative second contribution. The probability map preserves strict order. Informal proof only."
+    },
+    {
+      "claim_id": "C5-U1-UNRESTRICTED-ROOT-MIXTURE-COUNTEREXAMPLE",
+      "statement": "For profile (a2,a3,a4)=(10,0,0), N=20, n=33, alpha=22 and first strict descent x=11, the unrestricted minor at k=4 is -3549105 with (d[4],d[5],C[4],C[5])=(1330,5985,27315,125586). At p=6 the current-p endpoint and each represented arity-2 tip strict flag are zero, but x+2<=p fails.",
+      "scope": "Exact finite counterexample to unrestricted/all-rank root-mixture monotonicity only. It is outside actual first-descent eligibility and does not refute the guarded lemma or primary payment.",
+      "status": "proposed_bounded_evidence",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CF-U1/REPORT.md",
+        "cycles/cycle-5/C5-CF-U1/independent_check.py",
+        "cycles/cycle-5/C5-CF-U1/independent_check.out",
+        "cycles/cycle-5/C5-CF-U1/replay_r2m10.json"
+      ],
+      "reason": "Independent exact convolution and binomial arithmetic reproduce every displayed coefficient, minor, first descent, selector difference, and guard check; the required first-descent guard fails."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CF-U1/REPORT.md",
+  "limitations": [
+    "The eligible root-mixture lemma is informal and has no governed formal award.",
+    "Finite profile checks are bounded evidence, not proof of a universal claim.",
+    "No guarded deletion comparison, selector consequence, selected MASS, or primary payment is proved."
+  ],
+  "status_authority": "proposed_worker_only"
+}

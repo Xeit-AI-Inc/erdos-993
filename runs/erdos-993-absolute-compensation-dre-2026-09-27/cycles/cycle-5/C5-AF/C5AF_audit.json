@@ -1,0 +1,275 @@
+{
+  "input_integrity": {
+    "common_members": 237,
+    "packet_sources": 59,
+    "mismatches": []
+  },
+  "basis_cross_check": {
+    "F4_L_basis": [
+      1,
+      1,
+      1
+    ],
+    "F4_z_basis": [
+      3,
+      3,
+      1
+    ],
+    "GF4_z_basis": [
+      3,
+      9,
+      7,
+      2
+    ],
+    "B4_z_basis": [
+      1,
+      5,
+      6,
+      4,
+      1
+    ]
+  },
+  "F1_controls": {
+    "isolated_E": {
+      "counts": [
+        0,
+        22,
+        0
+      ],
+      "m": 22,
+      "n": 91,
+      "N": 66,
+      "alpha": 68,
+      "x": 32,
+      "p": 34,
+      "k": 27,
+      "guards": [
+        true,
+        true,
+        true,
+        true,
+        true
+      ],
+      "selectors": {
+        "e0": 1,
+        "e3": 1
+      },
+      "original_tip_tags": 66,
+      "E_minor": "-518620474811633289768751398606375936",
+      "A0_minor": "745097444696166793706461153834912453824",
+      "A3_minor": "777419068009671422357461955841645743808"
+    },
+    "activity": {
+      "counts": [
+        0,
+        0,
+        3
+      ],
+      "n": 18,
+      "N": 12,
+      "k": 7,
+      "guard": true,
+      "partial_activity_layer_minors": [
+        1898616,
+        171542,
+        6175,
+        -66,
+        0
+      ],
+      "sum": 2076267,
+      "direct_tip_minor": 2076267,
+      "correct_original_weighted_minor": 24915204
+    },
+    "outside_guard": {
+      "counts": [
+        38,
+        0,
+        1
+      ],
+      "n": 122,
+      "N": 80,
+      "alpha": 82,
+      "x": 41,
+      "k": 77,
+      "guard": false,
+      "A4_minor": -49239834336
+    }
+  },
+  "F1_weighted_scan": {
+    "profiles": 1770,
+    "guarded_ranks": 41205,
+    "minimum": {
+      "counts": [
+        1,
+        0,
+        0
+      ],
+      "N": 2,
+      "k": 1,
+      "margin": 38
+    },
+    "negative_rows": []
+  },
+  "F2_controls": {
+    "different_denominator": {
+      "input_minors": [
+        -10,
+        -80
+      ],
+      "sum_minor": 909
+    },
+    "root_mixture": {
+      "counts": [
+        10,
+        0,
+        0
+      ],
+      "m": 10,
+      "n": 33,
+      "N": 20,
+      "alpha": 22,
+      "x": 11,
+      "k": 4,
+      "coefficients": [
+        1330,
+        5985,
+        27315,
+        125586
+      ],
+      "signed_monotonicity_minor": -3549105,
+      "simple_guard": true,
+      "actual_eligible": false
+    }
+  },
+  "F3_control": {
+    "r": 2,
+    "M": 2,
+    "f_z_basis": [
+      1,
+      2,
+      100
+    ],
+    "baseline_z_basis": [
+      1,
+      2,
+      1
+    ],
+    "actual_uniform_subset_weight_averages": [
+      "1",
+      "1",
+      "100"
+    ],
+    "jensen_y": [
+      "0",
+      "0",
+      "198/101"
+    ],
+    "k1_guard": true,
+    "k1_minor": -96,
+    "k2_boundary_minor": 100
+  },
+  "surplus_spots": [
+    {
+      "counts": [
+        1,
+        0,
+        0
+      ],
+      "r": 2,
+      "N": 2,
+      "h": 3,
+      "k": 1,
+      "g": 6,
+      "M_U": "16",
+      "M_E": "3",
+      "M_A": "19",
+      "exact_surplus": "98",
+      "crude_margin": "96"
+    },
+    {
+      "counts": [
+        1,
+        0,
+        0
+      ],
+      "r": 2,
+      "N": 2,
+      "h": 3,
+      "k": 2,
+      "g": 6,
+      "M_U": "28",
+      "M_E": "9",
+      "M_A": "37",
+      "exact_surplus": "166",
+      "crude_margin": "76"
+    },
+    {
+      "counts": [
+        0,
+        0,
+        1
+      ],
+      "r": 4,
+      "N": 4,
+      "h": 8,
+      "k": 3,
+      "g": 24,
+      "M_U": "80",
+      "M_E": "32",
+      "M_A": "112",
+      "exact_surplus": "1776",
+      "crude_margin": "378"
+    },
+    {
+      "counts": [
+        0,
+        0,
+        4
+      ],
+      "r": 4,
+      "N": 16,
+      "h": 29,
+      "k": 8,
+      "g": 198,
+      "M_U": "362138040",
+      "M_E": "41418520",
+      "M_A": "403556560",
+      "exact_surplus": "45380234160",
+      "crude_margin": "-87840"
+    },
+    {
+      "counts": [
+        0,
+        22,
+        0
+      ],
+      "r": 3,
+      "N": 66,
+      "h": 89,
+      "k": 17,
+      "g": 1314,
+      "M_U": "527015669864440631253896238366414",
+      "M_E": "6511286623332189136823756956728",
+      "M_A": "533526956487772820390719995323142",
+      "exact_surplus": "474410108670739888214632699588893192",
+      "crude_margin": "533052814643054490708"
+    },
+    {
+      "counts": [
+        0,
+        22,
+        0
+      ],
+      "r": 3,
+      "N": 66,
+      "h": 89,
+      "k": 34,
+      "g": 1960,
+      "M_U": "3604758065393234943081397013651908846644",
+      "M_E": "-85111086883338642368416989977171170980",
+      "M_A": "3519646978509896300712980023674737675664",
+      "exact_surplus": "3444840812830598299434221356221482345528160",
+      "crude_margin": "454773678903824538143760"
+    }
+  ]
+}

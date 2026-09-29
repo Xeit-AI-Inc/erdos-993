@@ -1,0 +1,33 @@
+{
+  "worker_id": "C5-CU-T1",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, W=\u03a3_i r_i A_i with each original private-tip deletion counted at multiplicity r_i satisfies W[k+1]C[k-1] <= W[k]C[k] for every integer k with 1 <= k and 2k <= N+2, under integer zero extension.",
+      "scope": "Only the registered guarded coefficient comparison. It has no actual first-descent or selector hypotheses. Any application to selected payment must separately retain the actual first descent x of P including terminal zero extension, x+2<=p, 3p<2alpha+1, 2p<=alpha, strict current-p selectors Delta_p A_i<0 and Delta_p A_0<0, and original multiplicities r_i.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CU-T1/REPORT.md",
+        "cycles/cycle-5/C5-CU-T1/independent_weighted_lr_check.py",
+        "cycles/cycle-5/C5-CU-T1/independent_weighted_lr_evidence.json",
+        "cycles/cycle-5/C5-CU-T1/producer_recurrence_audit_copy.py",
+        "cycles/cycle-5/C5-CU-T1/producer_recurrence_audit_replay.json"
+      ],
+      "reason": "The source recurrence identities are valid, but the recombined state has a signed correction and each branch addition opens one or two guarded boundary ranks with no universal estimate supplied. Independent exact checks found no guarded failure in 61 profiles and 430 ranks; this is bounded support, not proof. A negative E-only minor at a guarded rank refutes only a naive positivity shortcut, while the full W margin there is positive."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CU-T1/REPORT.md",
+  "limitations": [
+    "The direct exact scan is finite and does not prove the universal guarded comparison.",
+    "No guarded counterexample, universal invariant, or profile-uniform bound on newly admitted branch-addition ranks was found.",
+    "No conclusion is made about actual first descent, strict selectors, selected payment, or selected MASS.",
+    "No Lean build, external literature search, source edit, or controller operation was performed."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR"
+  ]
+}

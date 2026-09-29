@@ -1,0 +1,418 @@
+{
+  "schema_version": "formalization-fidelity-audit-input.v1",
+  "run_id": "lean-2026-09-28-c6-surplus-tail",
+  "artifact_producer_id": "C6-TAIL-FORMALIZER",
+  "theorem_contract": {
+    "contract_id": "e993-guarded-tip-surplus-tail-m100-v1",
+    "contract_sha256": "01cdacd246c3f41d099eba4e7b88ecd72c8442ca20f1cf7ff4940a0f0771699d",
+    "theorem_name": "e993_guarded_tip_surplus_tail",
+    "definitions": [
+      {
+        "name": "def-e993tailb",
+        "canonical": "Literal polynomial (1+X)^a+X. Exact source definition in SOURCE/ENCODING-SPEC.lean."
+      },
+      {
+        "name": "def-e993tailn",
+        "canonical": "Sum of the m branch arities. Exact source definition in SOURCE/ENCODING-SPEC.lean."
+      },
+      {
+        "name": "def-e993tailh",
+        "canonical": "One plus the sum of orders2,4,7 for arities2,3,4. The fallback7 applies only to4 under the hypothesis. Exact source definition in SOURCE/ENCODING-SPEC.lean."
+      },
+      {
+        "name": "def-e993tailc",
+        "canonical": "B1 times all original branch factors. Exact source definition in SOURCE/ENCODING-SPEC.lean."
+      },
+      {
+        "name": "def-e993tailu",
+        "canonical": "B1 times marked B_(ri-1) times the product over all j distinct from i. Exact source definition in SOURCE/ENCODING-SPEC.lean."
+      },
+      {
+        "name": "def-e993taile",
+        "canonical": "X times (1+X)^N. Exact source definition in SOURCE/ENCODING-SPEC.lean."
+      }
+    ],
+    "domains": [
+      {
+        "variable": "m",
+        "lean_type": "Nat",
+        "forbidden_narrowings": []
+      },
+      {
+        "variable": "r",
+        "lean_type": "Fin m → Nat",
+        "forbidden_narrowings": []
+      },
+      {
+        "variable": "i",
+        "lean_type": "Fin m",
+        "forbidden_narrowings": []
+      },
+      {
+        "variable": "k",
+        "lean_type": "Nat",
+        "forbidden_narrowings": []
+      }
+    ],
+    "quantifiers": [
+      {
+        "variable": "m",
+        "kind": "forall",
+        "domain": "Nat"
+      },
+      {
+        "variable": "r",
+        "kind": "forall",
+        "domain": "Fin m → Nat"
+      },
+      {
+        "variable": "i",
+        "kind": "forall",
+        "domain": "Fin m"
+      },
+      {
+        "variable": "k",
+        "kind": "forall",
+        "domain": "Nat"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "hyp-tail",
+        "canonical": "100<=m."
+      },
+      {
+        "id": "hyp-arity",
+        "canonical": "Every r_i equals2,3 or4."
+      },
+      {
+        "id": "hyp-rank",
+        "canonical": "1<=k and2k<=N+2."
+      }
+    ],
+    "conclusion": {
+      "canonical": "theorem e993_guarded_tip_surplus_tail\n    (m : ℕ) (hm : 100 ≤ m) (r : Fin m → ℕ)\n    (hr : ∀ i, r i = 2 ∨ r i = 3 ∨ r i = 4)\n    (i : Fin m) (k : ℕ) (hk : 1 ≤ k) (hguard : 2 * k ≤ e993TailN r + 2) :\n    0 < ((e993TailH r : ℝ) + 1) * (e993TailU r i).coeff k * (e993TailC r).coeff k +\n      ((k : ℝ) + 1) * ((e993TailH r : ℝ) - (k : ℝ) + 1) *\n        ((e993TailE r).coeff k * (e993TailC r).coeff k -\n          (e993TailE r).coeff (k + 1) * (e993TailC r).coeff (k - 1))",
+      "clauses": [
+        "theorem e993_guarded_tip_surplus_tail\n    (m : ℕ) (hm : 100 ≤ m) (r : Fin m → ℕ)\n    (hr : ∀ i, r i = 2 ∨ r i = 3 ∨ r i = 4)\n    (i : Fin m) (k : ℕ) (hk : 1 ≤ k) (hguard : 2 * k ≤ e993TailN r + 2) :\n    0 < ((e993TailH r : ℝ) + 1) * (e993TailU r i).coeff k * (e993TailC r).coeff k +\n      ((k : ℝ) + 1) * ((e993TailH r : ℝ) - (k : ℝ) + 1) *\n        ((e993TailE r).coeff k * (e993TailC r).coeff k -\n          (e993TailE r).coeff (k + 1) * (e993TailC r).coeff (k - 1))"
+      ]
+    },
+    "lean_statement": "theorem e993_guarded_tip_surplus_tail\n    (m : ℕ) (hm : 100 ≤ m) (r : Fin m → ℕ)\n    (hr : ∀ i, r i = 2 ∨ r i = 3 ∨ r i = 4)\n    (i : Fin m) (k : ℕ) (hk : 1 ≤ k) (hguard : 2 * k ≤ e993TailN r + 2) :\n    0 < ((e993TailH r : ℝ) + 1) * (e993TailU r i).coeff k * (e993TailC r).coeff k +\n      ((k : ℝ) + 1) * ((e993TailH r : ℝ) - (k : ℝ) + 1) *\n        ((e993TailE r).coeff k * (e993TailC r).coeff k -\n          (e993TailE r).coeff (k + 1) * (e993TailC r).coeff (k - 1))",
+    "permitted_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "constructivity_requirement": "classical_allowed",
+    "dependencies": [
+      {
+        "name": "lean4",
+        "version": "4.32.2",
+        "content_hash": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273"
+      },
+      {
+        "name": "Cli",
+        "version": "88679d088c9720c27ebdf2ba4dafe17341747f94",
+        "content_hash": "00eb810febd1653d824ef47f5704005b0ce0d2a28a0f17fdf40cdf3266af53a8"
+      },
+      {
+        "name": "LeanSearchClient",
+        "version": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843",
+        "content_hash": "8edf3e660ad79b0a7125fda1998ba3730723b4c3ea26bd25f9150667f25f7f14"
+      },
+      {
+        "name": "Qq",
+        "version": "38d591e778f100aec9762bb582f9c7f55f50e9dc",
+        "content_hash": "cff45e094b089ede2175cbe67a33996084bbc149f670ee404006b984a8ee63aa"
+      },
+      {
+        "name": "aesop",
+        "version": "a7dbf0c63b694e47f425f3dcddbc0e178bb432d3",
+        "content_hash": "b8641d27331fd6079574dcd80a08db94ef654b0c474a01d79fd85f9e9a452a9d"
+      },
+      {
+        "name": "batteries",
+        "version": "023ce7d62a0531e22a5331e20b587817a80d49ff",
+        "content_hash": "63358d156317e3a0cccf6f4b8c65e4c78f08349c945d58ebb364813b39f49520"
+      },
+      {
+        "name": "importGraph",
+        "version": "7e9612bf0b9ee66db3cb5b9988a35afc706f5a12",
+        "content_hash": "c7947d0a045357f3d282f044a21c08622b3aca9b7945d24a3ece93a415106adc"
+      },
+      {
+        "name": "mathlib",
+        "version": "905b95818eb32af7874a58b427f50c1711a5e96c",
+        "content_hash": "fa8d16692d86501e39e3e11c017ad30e69d82d5d26401b669239319a409cb4b2"
+      },
+      {
+        "name": "plausible",
+        "version": "e12c1910fe855cbfc38803cd4e55543906d5fa62",
+        "content_hash": "20b5da1cc804153631065aaeb28f8a6d9ee0701ad8466cb283d7b56e6f66b9c2"
+      },
+      {
+        "name": "proofwidgets",
+        "version": "6e311e2a844da9b2cc3971187df2fe0066947b93",
+        "content_hash": "f8afaf13091634f482d98c25234875554a3a880e1a6a75fcba535ab39e96d7d0"
+      }
+    ]
+  },
+  "lean_binding": {
+    "definitions": [
+      {
+        "name": "def-e993tailb",
+        "canonical": "Literal polynomial (1+X)^a+X. Exact source definition in SOURCE/ENCODING-SPEC.lean."
+      },
+      {
+        "name": "def-e993tailn",
+        "canonical": "Sum of the m branch arities. Exact source definition in SOURCE/ENCODING-SPEC.lean."
+      },
+      {
+        "name": "def-e993tailh",
+        "canonical": "One plus the sum of orders2,4,7 for arities2,3,4. The fallback7 applies only to4 under the hypothesis. Exact source definition in SOURCE/ENCODING-SPEC.lean."
+      },
+      {
+        "name": "def-e993tailc",
+        "canonical": "B1 times all original branch factors. Exact source definition in SOURCE/ENCODING-SPEC.lean."
+      },
+      {
+        "name": "def-e993tailu",
+        "canonical": "B1 times marked B_(ri-1) times the product over all j distinct from i. Exact source definition in SOURCE/ENCODING-SPEC.lean."
+      },
+      {
+        "name": "def-e993taile",
+        "canonical": "X times (1+X)^N. Exact source definition in SOURCE/ENCODING-SPEC.lean."
+      }
+    ],
+    "quantifiers": [
+      {
+        "variable": "m",
+        "kind": "forall",
+        "domain": "Nat"
+      },
+      {
+        "variable": "r",
+        "kind": "forall",
+        "domain": "Fin m → Nat"
+      },
+      {
+        "variable": "i",
+        "kind": "forall",
+        "domain": "Fin m"
+      },
+      {
+        "variable": "k",
+        "kind": "forall",
+        "domain": "Nat"
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "hyp-tail",
+        "canonical": "100<=m."
+      },
+      {
+        "id": "hyp-arity",
+        "canonical": "Every r_i equals2,3 or4."
+      },
+      {
+        "id": "hyp-rank",
+        "canonical": "1<=k and2k<=N+2."
+      }
+    ],
+    "conclusion": {
+      "canonical": "theorem e993_guarded_tip_surplus_tail\n    (m : ℕ) (hm : 100 ≤ m) (r : Fin m → ℕ)\n    (hr : ∀ i, r i = 2 ∨ r i = 3 ∨ r i = 4)\n    (i : Fin m) (k : ℕ) (hk : 1 ≤ k) (hguard : 2 * k ≤ e993TailN r + 2) :\n    0 < ((e993TailH r : ℝ) + 1) * (e993TailU r i).coeff k * (e993TailC r).coeff k +\n      ((k : ℝ) + 1) * ((e993TailH r : ℝ) - (k : ℝ) + 1) *\n        ((e993TailE r).coeff k * (e993TailC r).coeff k -\n          (e993TailE r).coeff (k + 1) * (e993TailC r).coeff (k - 1))",
+      "clauses": [
+        "theorem e993_guarded_tip_surplus_tail\n    (m : ℕ) (hm : 100 ≤ m) (r : Fin m → ℕ)\n    (hr : ∀ i, r i = 2 ∨ r i = 3 ∨ r i = 4)\n    (i : Fin m) (k : ℕ) (hk : 1 ≤ k) (hguard : 2 * k ≤ e993TailN r + 2) :\n    0 < ((e993TailH r : ℝ) + 1) * (e993TailU r i).coeff k * (e993TailC r).coeff k +\n      ((k : ℝ) + 1) * ((e993TailH r : ℝ) - (k : ℝ) + 1) *\n        ((e993TailE r).coeff k * (e993TailC r).coeff k -\n          (e993TailE r).coeff (k + 1) * (e993TailC r).coeff (k - 1))"
+      ]
+    },
+    "dependencies": [
+      {
+        "name": "lean4",
+        "version": "4.32.2",
+        "content_hash": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273"
+      },
+      {
+        "name": "Cli",
+        "version": "88679d088c9720c27ebdf2ba4dafe17341747f94",
+        "content_hash": "00eb810febd1653d824ef47f5704005b0ce0d2a28a0f17fdf40cdf3266af53a8"
+      },
+      {
+        "name": "LeanSearchClient",
+        "version": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843",
+        "content_hash": "8edf3e660ad79b0a7125fda1998ba3730723b4c3ea26bd25f9150667f25f7f14"
+      },
+      {
+        "name": "Qq",
+        "version": "38d591e778f100aec9762bb582f9c7f55f50e9dc",
+        "content_hash": "cff45e094b089ede2175cbe67a33996084bbc149f670ee404006b984a8ee63aa"
+      },
+      {
+        "name": "aesop",
+        "version": "a7dbf0c63b694e47f425f3dcddbc0e178bb432d3",
+        "content_hash": "b8641d27331fd6079574dcd80a08db94ef654b0c474a01d79fd85f9e9a452a9d"
+      },
+      {
+        "name": "batteries",
+        "version": "023ce7d62a0531e22a5331e20b587817a80d49ff",
+        "content_hash": "63358d156317e3a0cccf6f4b8c65e4c78f08349c945d58ebb364813b39f49520"
+      },
+      {
+        "name": "importGraph",
+        "version": "7e9612bf0b9ee66db3cb5b9988a35afc706f5a12",
+        "content_hash": "c7947d0a045357f3d282f044a21c08622b3aca9b7945d24a3ece93a415106adc"
+      },
+      {
+        "name": "mathlib",
+        "version": "905b95818eb32af7874a58b427f50c1711a5e96c",
+        "content_hash": "fa8d16692d86501e39e3e11c017ad30e69d82d5d26401b669239319a409cb4b2"
+      },
+      {
+        "name": "plausible",
+        "version": "e12c1910fe855cbfc38803cd4e55543906d5fa62",
+        "content_hash": "20b5da1cc804153631065aaeb28f8a6d9ee0701ad8466cb283d7b56e6f66b9c2"
+      },
+      {
+        "name": "proofwidgets",
+        "version": "6e311e2a844da9b2cc3971187df2fe0066947b93",
+        "content_hash": "f8afaf13091634f482d98c25234875554a3a880e1a6a75fcba535ab39e96d7d0"
+      }
+    ],
+    "declaration_name": "e993_guarded_tip_surplus_tail",
+    "declaration_source_path": "LeanProject/LeanProof/Main.lean",
+    "declaration_source_sha256": "5cb8504d9461fec67f54f045c184c34d4896c14b8fa0e62ce1effcefaf433bfc",
+    "domains": [
+      {
+        "variable": "m",
+        "lean_type": "Nat"
+      },
+      {
+        "variable": "r",
+        "lean_type": "Fin m → Nat"
+      },
+      {
+        "variable": "i",
+        "lean_type": "Fin m"
+      },
+      {
+        "variable": "k",
+        "lean_type": "Nat"
+      }
+    ],
+    "lean_statement": "theorem e993_guarded_tip_surplus_tail\n    (m : ℕ) (hm : 100 ≤ m) (r : Fin m → ℕ)\n    (hr : ∀ i, r i = 2 ∨ r i = 3 ∨ r i = 4)\n    (i : Fin m) (k : ℕ) (hk : 1 ≤ k) (hguard : 2 * k ≤ e993TailN r + 2) :\n    0 < ((e993TailH r : ℝ) + 1) * (e993TailU r i).coeff k * (e993TailC r).coeff k +\n      ((k : ℝ) + 1) * ((e993TailH r : ℝ) - (k : ℝ) + 1) *\n        ((e993TailE r).coeff k * (e993TailC r).coeff k -\n          (e993TailE r).coeff (k + 1) * (e993TailC r).coeff (k - 1))",
+    "declared_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "kernel_evidence": {
+    "receipt_sha256": "839743e9d51ee55dfd326cdad134cf1676c434e701c8753814d514574ea12e64",
+    "verdict": "verified",
+    "reported_axioms": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "dependencies": [
+      {
+        "name": "lean4",
+        "version": "4.32.2",
+        "content_hash": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273"
+      },
+      {
+        "name": "Cli",
+        "version": "88679d088c9720c27ebdf2ba4dafe17341747f94",
+        "content_hash": "00eb810febd1653d824ef47f5704005b0ce0d2a28a0f17fdf40cdf3266af53a8"
+      },
+      {
+        "name": "LeanSearchClient",
+        "version": "c5d5b8fe6e5158def25cd28eb94e4141ad97c843",
+        "content_hash": "8edf3e660ad79b0a7125fda1998ba3730723b4c3ea26bd25f9150667f25f7f14"
+      },
+      {
+        "name": "Qq",
+        "version": "38d591e778f100aec9762bb582f9c7f55f50e9dc",
+        "content_hash": "cff45e094b089ede2175cbe67a33996084bbc149f670ee404006b984a8ee63aa"
+      },
+      {
+        "name": "aesop",
+        "version": "a7dbf0c63b694e47f425f3dcddbc0e178bb432d3",
+        "content_hash": "b8641d27331fd6079574dcd80a08db94ef654b0c474a01d79fd85f9e9a452a9d"
+      },
+      {
+        "name": "batteries",
+        "version": "023ce7d62a0531e22a5331e20b587817a80d49ff",
+        "content_hash": "63358d156317e3a0cccf6f4b8c65e4c78f08349c945d58ebb364813b39f49520"
+      },
+      {
+        "name": "importGraph",
+        "version": "7e9612bf0b9ee66db3cb5b9988a35afc706f5a12",
+        "content_hash": "c7947d0a045357f3d282f044a21c08622b3aca9b7945d24a3ece93a415106adc"
+      },
+      {
+        "name": "mathlib",
+        "version": "905b95818eb32af7874a58b427f50c1711a5e96c",
+        "content_hash": "fa8d16692d86501e39e3e11c017ad30e69d82d5d26401b669239319a409cb4b2"
+      },
+      {
+        "name": "plausible",
+        "version": "e12c1910fe855cbfc38803cd4e55543906d5fa62",
+        "content_hash": "20b5da1cc804153631065aaeb28f8a6d9ee0701ad8466cb283d7b56e6f66b9c2"
+      },
+      {
+        "name": "proofwidgets",
+        "version": "6e311e2a844da9b2cc3971187df2fe0066947b93",
+        "content_hash": "f8afaf13091634f482d98c25234875554a3a880e1a6a75fcba535ab39e96d7d0"
+      }
+    ]
+  },
+  "audit_policy": {
+    "require_independent_review": true
+  },
+  "independent_review": {
+    "reviewer_id": "C6-TAIL-FIDELITY",
+    "reviewer_kind": "independent-mathematical-formalization-fidelity-reviewer",
+    "attestation_id": "c6-tail-fidelity-a6dffc7a-953d-471a-a0c3-e493a33ff4be",
+    "completed_at": "2026-09-29T05:02:42Z",
+    "contract_projection_sha256": "67ea0d7341fdff6f44428166547bb7a59cdc3c2ed13119804f0f41ee794ccc21",
+    "binding_projection_sha256": "fa1e4fad7afcfdccacca514ed178ee0aa5b819eda1088e6edaaa7daee8273d17",
+    "verdict": "match",
+    "findings": [
+      {
+        "category": "input_integrity",
+        "severity": "note",
+        "message": "All 331 sealed input hashes match; both independently recomputed audit projection digests match the immutable fingerprints."
+      },
+      {
+        "category": "claim_binding",
+        "severity": "note",
+        "message": "The six literal real-polynomial definitions, exact theorem statement, elaborated terminal type, and registered declaration bind to the m>=100 guarded tip surplus without extra hypotheses."
+      },
+      {
+        "category": "proof_fidelity",
+        "severity": "note",
+        "message": "All 138 entry bodies match their registered snippets and proposals; the 42 reused Jensen bodies match the sealed source, and real-ring ratio and center bridges are explicit."
+      },
+      {
+        "category": "mathematical_coverage",
+        "severity": "note",
+        "message": "The full finite-block specialization, strict high-band payment, low-band zero-extended minor proof, support and denominator checks, and even/odd inclusive endpoints cover every allowed labeled profile and marked branch."
+      },
+      {
+        "category": "kernel_evidence",
+        "severity": "note",
+        "message": "Sealed kernel evidence binds the unchanged Main.lean source, reports build and single-file success, and prints only propext, Classical.choice, and Quot.sound."
+      },
+      {
+        "category": "scope",
+        "severity": "warning",
+        "message": "The theorem covers only m>=100. It does not formally verify the registered all-m key or the endpoint, shifted comparison, MASS, payment, arbitrary-tree, or Erdos993 claims."
+      },
+      {
+        "category": "review_limit",
+        "severity": "note",
+        "message": "Lean was not rerun and external canonical run and package files were not read, as required by the dispatch; this review uses the immutable sealed snapshot and its kernel evidence."
+      }
+    ]
+  }
+}

@@ -1,0 +1,80 @@
+{
+  "worker_id": "C6-CU-F3",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "U",
+  "covered_claim_ids": ["C6-F3-ENDPOINT-BRIDGE-TAIL", "C6-F3-ULC-EXACT-RATIO-SURPLUS-TAIL", "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR", "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR", "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS"],
+  "claims": [
+    {
+      "claim_id": "C6-F3-ENDPOINT-BRIDGE-TAIL",
+      "statement": "For m>=100 and every ordinary arity-2,3,4 path-star profile, the exact-ratio tip surplus on every natural 1<=k with 2k<=N+2 transfers to U0=LQ, where U0-Ui=z^2(L^{ri-1}-1)Hi>=0 coefficientwise. Together with the separate nonincreasing main-product ratio U0/C and the order-h ULC curvature of C, this proves A0[k+1]C[k-1]<=A0[k]C[k] on that whole guarded band.",
+      "scope": "Conditional informal proof for the endpoint comparison on m>=100 and the entire guard 1<=k, 2k<=N+2. Requires the restricted tip-surplus result, main-product LR and order-h ULC; coefficient dominance alone is insufficient. No actual first-descent premise.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CU-F3/REPORT.md",
+        "cycles/cycle-6/C6-CU-F3/independent_sign_checks.py",
+        "cycles/cycle-6/C6-CU-F3/f3_boundary_audit.py",
+        "cycles/cycle-6/C6-CU-F3/tail_constants_replay.py"
+      ],
+      "reason": "The identity and transfer are valid with positive coefficient factors, separate LR and ULC curvature. The consequence is only an informal restricted tail; m<100 remains uncovered."
+    },
+    {
+      "claim_id": "C6-F3-ULC-EXACT-RATIO-SURPLUS-TAIL",
+      "statement": "For every m>=100 ordinary arity-2,3,4 path-star profile, every represented tip branch i, and every natural k with 1<=k and 2k<=N+2, (h+1)Ui[k]C[k]+(k+1)(h-k+1)(E[k]C[k]-E[k+1]C[k-1])>0, with h=1+2a2+4a3+7a4, N=sum_i ri, C=(1+2z)product_i((1+z)^ri+z), E=z(1+z)^N, and Ui=(1+2z)((1+z)^(ri-1)+z)product_{ell!=i}((1+z)^r_ell+z). Coefficients are integer-zero-extended.",
+      "scope": "Restricted universal tail m>=100 on the entire guard 1<=k, 2k<=N+2; no actual first-descent premise. Conditional on the admitted full finite-block Jensen theorem and established order-h ULC, coefficient-ratio floor and main-product LR lemmas. Informal proof only.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CU-F3/REPORT.md",
+        "cycles/cycle-6/C6-CU-F3/independent_sign_checks.py",
+        "cycles/cycle-6/C6-CU-F3/f3_boundary_audit.py",
+        "cycles/cycle-6/C6-CU-F3/tail_constants_replay.py"
+      ],
+      "reason": "The low-rank normalization, complementary-band singleton exponents, size-one Jensen block, strict Taylor constants and positive denominator clearing check. Exact bounded replays corroborate but do not supply the universal proof; the proof is informal and restricted to m>=100."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, every original leaf deletion polynomial Av (A0 for the endpoint or Ai for a tip of branch i), and every natural k with 1<=k and 2k<=N+2, integer-zero-extended coefficients satisfy Av[k+1]C[k-1]<=Av[k]C[k], where C=GQ.",
+      "scope": "Registered all-m individual comparison remains unresolved. The reviewed tail argument supports it conditionally for m>=100, including the endpoint bridge; no conclusion for m<100. Actual descent, guards and strict selectors are a separate application.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CU-F3/REPORT.md",
+        "cycles/cycle-6/C6-CU-F3/independent_sign_checks.py",
+        "cycles/cycle-6/C6-CU-F3/f3_boundary_audit.py"
+      ],
+      "reason": "No guarded counterexample found. The restricted tail proof and endpoint transfer narrow but do not establish the all-m quantifier."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, W=sum_i ri Ai, counting each original private-tip deletion with its original multiplicity. For every natural k with 1<=k and 2k<=N+2, integer-zero-extended coefficients satisfy W[k+1]C[k-1]<=W[k]C[k].",
+      "scope": "Registered all-m weighted-tip comparison remains unresolved. The restricted tail comparison follows by summing tip minors against the common C with positive original multiplicities ri for m>=100. No endpoint comparison is needed or implied by this weighted sum; m<100 remains uncovered.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CU-F3/REPORT.md",
+        "cycles/cycle-6/C6-CU-F3/independent_sign_checks.py",
+        "cycles/cycle-6/C6-CU-F3/f3_boundary_audit.py"
+      ],
+      "reason": "The multiplicity-preserving sum is valid on the conditional informal tail, but no all-m proof or guarded counterexample was found."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, set N=sum_i ri, a_r=#arity-r branches, h=1+2a2+4a3+7a4, C=(1+2z)product_i B_ri, E=z(1+z)^N, Ui=(1+2z)B_(ri-1)product_{ell!=i}B_ri, and M_k(E)=E[k]C[k]-E[k+1]C[k-1]. For every represented original tip branch i and every natural 1<=k with 2k<=N+2, (h+1)Ui[k]C[k]+(k+1)(h-k+1)M_k(E)>=0. Coefficients are integer-zero-extended.",
+      "scope": "Registered all-m statement remains unresolved. The reviewed informal proof supports a strict m>=100 tail on the entire guard; the full m=1..99 prefix is not established here.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CU-F3/REPORT.md",
+        "cycles/cycle-6/C6-CU-F3/independent_sign_checks.py",
+        "cycles/cycle-6/C6-CU-F3/f3_boundary_audit.py",
+        "cycles/cycle-6/C6-CU-F3/tail_constants_replay.py"
+      ],
+      "reason": "No counterexample found. The m>=100 tail is supported by an informal universal argument conditional on admitted lemmas, with finite exact replays as corroboration only; the registered all-m quantifier remains open."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CU-F3/REPORT.md",
+  "limitations": [
+    "No census-free proof or complete independent finite certificate for m=1 through 99 was produced.",
+    "The tail composition is informal and depends on the admitted Jensen, ULC, ratio-floor and main-product LR results; no Lean build or formal award occurred.",
+    "Bounded exact computations corroborate algebra but do not establish universal claims.",
+    "The primary selected exact-ratio payment and MASS are not proved anew; no arbitrary-tree or Erdős 993 conclusion follows."
+  ],
+  "status_authority": "proposed_worker_only"
+}

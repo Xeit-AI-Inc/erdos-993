@@ -1,0 +1,107 @@
+{
+  "worker_id": "C5-AF",
+  "cycle": 5,
+  "stage": "adjudication",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "C5-F1-MIXED-MINOR-SHORTCUT-CONTROLS",
+      "statement": "Three exact controls show a negative isolated E minor despite positive full endpoint/tip minors, a negative partial-activity coefficient despite a positive full tip minor, and a negative full tip minor outside the registered guard.",
+      "scope": "Counts (0,22,0): m=22,N=66,n=91,alpha=68,x=32,p=34,k=27, all actual-p guards, strict e0=e3=1, original endpoint weight 1 and tip weight 66. Counts (0,0,3): N=12,n=18,k=7, partial activity in the other two centers, full tip minor 2076267. Counts (38,0,1): N=80,n=122,x=41,k=77, 2k=154>N+2=82. The producer's ancillary weighted activity value is rejected and corrected to 24915204; no full guarded or payment failure is claimed.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-AF/REPORT.md",
+        "cycles/cycle-5/C5-AF/C5AF_audit.py",
+        "cycles/cycle-5/C5-AF/C5AF_audit.json"
+      ],
+      "reason": "Independent exact monomial-coefficient replay verifies each control, actual first descent, rank guards, strict flags and original tag weights. The source's weighted activity number used a stale C and U+12E instead of 12(U+E); its narrow single-tip activity obstruction survives. Evidence grade: exact finite mechanism counterexamples only."
+    },
+    {
+      "claim_id": "C5-F1-WEIGHTED-GUARDED-SHIFTED-BOUNDED-CHECK",
+      "statement": "For every nonempty arity-count profile with m<=20 and every 1<=k with 2k<=N+2, the original-weighted tip deck W=sum_i r_i A_i has M_k(W)=W[k]C[k]-W[k+1]C[k-1]>=0.",
+      "scope": "Exactly 1770 count profiles and 41205 guarded profile-rank pairs, integer-zero-extended, no actual first-descent or current-p selector premise. Minimum margin 38 at counts (1,0,0),N=2,k=1. This is bounded evidence, not the universal registered weighted comparison.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-AF/REPORT.md",
+        "cycles/cycle-5/C5-AF/C5AF_audit.py",
+        "cycles/cycle-5/C5-AF/C5AF_audit.json"
+      ],
+      "reason": "A separate exact polynomial enumeration reproduces the source horizon, rank count, minimum and no-failure result, retaining each original r_i multiplicity. Finite success cannot prove the all-profile claim."
+    },
+    {
+      "claim_id": "C5-F2-DIFFERENT-DENOMINATOR-SUM-OBSTRUCTION",
+      "statement": "Two positive-denominator ratio pairs can each decrease from rank 0 to 1 while their componentwise numerator/denominator sum increases: (A1,C1)=((1,90),(1,100)), (A2,C2)=((80,0),(100,1)) give input minors -10,-80 and sum minor 909.",
+      "scope": "Exact abstract two-rank counterexample to arbitrary different-denominator pair-sum closure. It is not an ordinary path-star or selected-payment witness.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-AF/REPORT.md",
+        "cycles/cycle-5/C5-AF/C5AF_audit.py",
+        "cycles/cycle-5/C5-AF/C5AF_audit.json"
+      ],
+      "reason": "Direct independent integer arithmetic proves the obstruction; positive denominator products preserve its ratio signs. The producer RETURN's proposed_rejected label contradicts its valid obstruction statement. Evidence grade: conclusive exact counterexample to the abstract closure premise."
+    },
+    {
+      "claim_id": "C5-F2-ROOT-MIXTURE-ALL-RANK-MONOTONICITY-OBSTRUCTION",
+      "statement": "For the ordinary all-arity-2 profile m=10,N=20,n=33, C=GB2^10 and d=zL^21, d[5]C[4]-d[4]C[5]=-3549105, so d/(C+d) decreases from coefficient rank 4 to 5.",
+      "scope": "Exact coefficient-step obstruction to all-rank root-mixture monotonicity. The simple rank guard 1<=4,2*4<=N+2 holds, but actual first strict parent descent is x=11; p=4 fails x+2<=p and this profile has no eligible p under 2p<=alpha=22. No deletion, selector, payment or primary counterexample.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-AF/REPORT.md",
+        "cycles/cycle-5/C5-AF/C5AF_audit.py",
+        "cycles/cycle-5/C5-AF/C5AF_audit.json"
+      ],
+      "reason": "Independent coefficient construction gives (d4,d5,C4,C5)=(1330,5985,27315,125586), the negative minor and x=11. Division by positive C4*C5 and the increasing map u/(1+u) preserve its direction. The producer RETURN's proposed_rejected label is inappropriate for this obstruction statement. Evidence grade: conclusive exact narrow coefficient-rank counterexample."
+    },
+    {
+      "claim_id": "C5-F3-COEFFICIENT-FLOOR-DOES-NOT-IMPLY-SHIFTED-MINOR",
+      "statement": "The formally verified generic finite-block coefficient/Jensen hypotheses and conclusion alone do not imply nonnegative shifted minor against a binomial baseline: one block r=M=2 with f=(1,2,100), H=(1,2,100), C=(1,2,1), k=1 gives H[1]C[1]-H[2]C[0]=-96.",
+      "scope": "Exact abstract finite-block obstruction at guarded k=1, with coefficient floors, actual uniform-subset averages (1,1,100), Jensen exponents (0,0,198/101), and positive upper boundary minor 100 at k=2. It is not an ordinary path-star marked deletion, actual first-descent, strict-selector or payment witness.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-AF/REPORT.md",
+        "cycles/cycle-5/C5-AF/C5AF_audit.py",
+        "cycles/cycle-5/C5-AF/C5AF_audit.json"
+      ],
+      "reason": "Independent exact rational/integer evaluation checks the theorem hypotheses and negative minor. The generic theorem's governed formal award has no graph transfer; a counterexample to the proposed implication does not refute any registered graph comparison. Evidence grade: conclusive abstract implication counterexample."
+    },
+    {
+      "claim_id": "C5-CU-F2-SAME-DENOMINATOR-WEIGHTED-CLOSURE",
+      "statement": "For any common sequence C, finite sequences X_i and fixed nonnegative weights w_i, M_k(sum_i w_i X_i,C)=sum_i w_i M_k(X_i,C); hence nonnegative individual minors imply a nonnegative weighted minor at the same rank.",
+      "scope": "Universal cross-multiplied algebraic identity with zero extension. A ratio interpretation requires positive C[k-1] and C[k]. At an actual eligible p, original selector weights r_i e_i(p) are fixed nonnegative numbers; this closure does not establish individual signs or the exact selected payment.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-AF/REPORT.md"
+      ],
+      "reason": "Expanding both sides gives exact linearity in X; multiplication by nonnegative weights preserves each minor's sign, while division for ratios uses positive denominators. Evidence grade: elementary universal informal proof, already implicit in the F2 route."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, every represented original tip branch i and every integer-zero-extended rank 1<=k with 2k<=N+2, (h+1)U_i[k]C[k]+(k+1)(h-k+1)(E[k]C[k]-E[k+1]C[k-1])>=0, where h=1+2a2+4a3+7a4, C=G product B_r, U_i=G B_(r_i-1)H_i and E=zL^N.",
+      "scope": "Registered full-guard exact-ratio surplus without actual-eligibility premise. The existing source-dependent main-product LR and enlarged-order ULC yield a valid sufficient implication to each full tip M_k(A_i)>=0, but not endpoint A0. The surplus itself remains OPEN; bounded checks and the crude-ratio-floor failure supply no universal proof or counterexample.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-AF/REPORT.md",
+        "cycles/cycle-5/C5-AF/C5AF_audit.py",
+        "cycles/cycle-5/C5-AF/C5AF_audit.json"
+      ],
+      "reason": "The conditional reduction is independently direction-checked with positive factors g and C coefficients and tested at exact boundary/interior ranks. At counts (0,0,4),r=4,N=16,h=29,k=8, the crude sufficient margin is -87840 while exact surplus is 45380234160; this rejects only the crude proof. Evidence grade: conditional informal reduction plus finite exact checks, no proof of the universal OPEN predicate."
+    }
+  ],
+  "covered_claim_ids": [
+    "C5-CU-F2-SAME-DENOMINATOR-WEIGHTED-CLOSURE",
+    "C5-F1-MIXED-MINOR-SHORTCUT-CONTROLS",
+    "C5-F1-WEIGHTED-GUARDED-SHIFTED-BOUNDED-CHECK",
+    "C5-F2-DIFFERENT-DENOMINATOR-SUM-OBSTRUCTION",
+    "C5-F2-ROOT-MIXTURE-ALL-RANK-MONOTONICITY-OBSTRUCTION",
+    "C5-F3-COEFFICIENT-FLOOR-DOES-NOT-IMPLY-SHIFTED-MINOR",
+    "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS"
+  ],
+  "report_path": "cycles/cycle-5/C5-AF/REPORT.md",
+  "limitations": [
+    "The weighted shifted-comparison scan is bounded to m<=20 and does not prove the registered universal comparison.",
+    "The exact-ratio tip surplus remains OPEN; its valid sufficient reduction does not cover endpoint A0 or itself certify selected payment.",
+    "The F2 different-denominator and F3 coefficient-floor obstructions are abstract, and the F2 root-mixture witness is not actual first-descent eligible.",
+    "No governed formal verification, universal new proof, or eligible primary counterexample was produced."
+  ],
+  "status_authority": "proposed_worker_only"
+}

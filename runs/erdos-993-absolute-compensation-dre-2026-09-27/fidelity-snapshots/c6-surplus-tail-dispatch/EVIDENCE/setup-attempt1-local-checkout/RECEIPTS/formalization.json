@@ -1,0 +1,73 @@
+{
+  "entries": [],
+  "files": [
+    {
+      "bytes": 837,
+      "path": "DEPENDENCIES.yaml",
+      "sha256": "ab248f9a83400f2dc9b8a88bb00132a244e01a141bef9c575e4ed24d8e6f1212"
+    },
+    {
+      "bytes": 1356,
+      "path": "FORMALIZATION-STATE.json",
+      "sha256": "9fee68dc893392bc37061d3f2c2af53ddb2f61bf1993463c6a141c4773123ed7"
+    },
+    {
+      "bytes": 22,
+      "path": "LeanProject/LeanProof.lean",
+      "sha256": "f4dfdef8320a735eab53d24f4b47d3b60bcb474ffd2c84c77f24ae2fc75fcf31"
+    },
+    {
+      "bytes": 167,
+      "path": "LeanProject/LeanProof/Main.lean",
+      "sha256": "c5f5538a85f311fda480ec5d34a97619bd9ca54ecba5c79aa7ac73c609d9c255"
+    },
+    {
+      "bytes": 234,
+      "path": "LeanProject/lakefile.toml",
+      "sha256": "4f82e7199f1b35f3be524363422c3ac1d30cd939e146025521ba7b77f074a9fc"
+    },
+    {
+      "bytes": 25,
+      "path": "LeanProject/lean-toolchain",
+      "sha256": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273"
+    }
+  ],
+  "limitations": [
+    "This receipt records prepared source and pins, not Lean kernel verification.",
+    "The formalization may be false, incomplete, or fail to compile until independently verified.",
+    "A git_manifest_only Mathlib dependency is pinned but is not fetched by this skill."
+  ],
+  "mathlib": {
+    "identity_sha256": "a1e1951e2781d2a24c6ed6ab2372cefd21b6716f40734ca14cacfa3387f89563",
+    "mode": "local_checkout",
+    "revision": "905b95818eb32af7874a58b427f50c1711a5e96c",
+    "source": "/Users/ashtonsperry/.local/share/verityos/lean/mathlib-v4.32.2-project/.lake/packages/mathlib",
+    "url": "https://github.com/leanprover-community/mathlib4"
+  },
+  "network": {
+    "allowed": false,
+    "used": false
+  },
+  "operation": "initial_creation",
+  "project_root": "/Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c6-surplus-tail/LeanProject",
+  "project_sha256": "2ac6f8e7ce71ab2e959faf4b11ff0eb39e50a00ab74d6828692d5a5e4e6f6af4",
+  "receipt_id": "lean-formalization:2ac6f8e7ce71ab2e959faf4b11ff0eb39e50a00ab74d6828692d5a5e4e6f6af4",
+  "receipt_sha256": "53b9f0f0ddab8f6c38ce72d94a6c1240aac013bafdb3843d6a1535e6493e086b",
+  "run_id": "lean-2026-09-28-c6-surplus-tail",
+  "run_root": "/Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c6-surplus-tail",
+  "schema_version": "verityos.lean-formalization-receipt.v1",
+  "state_revision": 0,
+  "state_sha256": "9fee68dc893392bc37061d3f2c2af53ddb2f61bf1993463c6a141c4773123ed7",
+  "status": "prepared_not_verified",
+  "toolchain": {
+    "bin_dir": "/Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin",
+    "lake_path": "/Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lake",
+    "lake_sha256": "58261a1a2fa1a362376c71e02ca854a093e71cc5e6ea64b287a931cb2565273d",
+    "lake_version": "Lake version 5.0.0-src+f3b06c7 (Lean version 4.32.2)",
+    "lean_path": "/Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean",
+    "lean_sha256": "1b370cfcbf44e80d1b004ab1b1ab9a4c73951f9f7c242140bcff9bc577576554",
+    "lean_version": "Lean (version 4.32.2, arm64-apple-darwin24.6.0, commit f3b06c705e6c85f5314019d5d3baab0fec5b580c, Release)",
+    "pin": "leanprover/lean4:v4.32.2"
+  },
+  "verdict": "FORMALIZATION_PREPARED_NOT_KERNEL_VERIFIED"
+}

@@ -1,0 +1,470 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "e993-guarded-tip-surplus-tail-m100-v1",
+  "theorem": {
+    "title": "Exact guarded tip-surplus tail for every arity2/3/4 profile with at least100 branches",
+    "informal_statement": "For every natural m>=100, every function r from Fin m to the natural numbers with r_i in {2,3,4}, every i in Fin m, and every natural k with 1<=k and 2k<=N+2, put N=sum_j r_j, h=1+sum_j w(r_j), where w(2)=2,w(3)=4,w(4)=7. In the real polynomial ring let L=1+X, B_a=L^a+X, C=B_1 product_j B_(r_j), U_i=B_1 B_(r_i-1) product_(j!=i) B_(r_j), and E=X L^N. Then (h+1)U_i[k]C[k]+(k+1)(h-k+1)(E[k]C[k]-E[k+1]C[k-1]) is strictly positive. Brackets mean actual monomial coefficients with zero extension. The subtraction h-k+1 in the expression is real subtraction; k>=1 guards the natural coefficient index k-1. All repeated and mixed arity profiles and both parity endpoints are included. There is no actual-first-descent, selector, assumed ULC, main-product LR or numerical-prefix hypothesis. No assertion is made for m<100, for the endpoint deletion, for a full shifted-comparison minor, for selected payment, or for arbitrary trees."
+  },
+  "formulation_status": {
+    "status": "open",
+    "evidence": []
+  },
+  "definitions": [
+    {
+      "id": "def-e993tailb",
+      "description": "Literal polynomial (1+X)^a+X. Exact source definition in SOURCE/ENCODING-SPEC.lean.",
+      "lean_name": "e993TailB",
+      "dependencies": [
+        "domain-natural",
+        "domain-profile",
+        "domain-polynomial"
+      ]
+    },
+    {
+      "id": "def-e993tailn",
+      "description": "Sum of the m branch arities. Exact source definition in SOURCE/ENCODING-SPEC.lean.",
+      "lean_name": "e993TailN",
+      "dependencies": [
+        "domain-natural",
+        "domain-profile",
+        "domain-polynomial"
+      ]
+    },
+    {
+      "id": "def-e993tailh",
+      "description": "One plus the sum of orders2,4,7 for arities2,3,4. The fallback7 applies only to4 under the hypothesis. Exact source definition in SOURCE/ENCODING-SPEC.lean.",
+      "lean_name": "e993TailH",
+      "dependencies": [
+        "domain-natural",
+        "domain-profile",
+        "domain-polynomial"
+      ]
+    },
+    {
+      "id": "def-e993tailc",
+      "description": "B1 times all original branch factors. Exact source definition in SOURCE/ENCODING-SPEC.lean.",
+      "lean_name": "e993TailC",
+      "dependencies": [
+        "domain-natural",
+        "domain-profile",
+        "domain-polynomial"
+      ]
+    },
+    {
+      "id": "def-e993tailu",
+      "description": "B1 times marked B_(ri-1) times the product over all j distinct from i. Exact source definition in SOURCE/ENCODING-SPEC.lean.",
+      "lean_name": "e993TailU",
+      "dependencies": [
+        "domain-natural",
+        "domain-profile",
+        "domain-polynomial",
+        "domain-index"
+      ]
+    },
+    {
+      "id": "def-e993taile",
+      "description": "X times (1+X)^N. Exact source definition in SOURCE/ENCODING-SPEC.lean.",
+      "lean_name": "e993TailE",
+      "dependencies": [
+        "domain-natural",
+        "domain-profile",
+        "domain-polynomial"
+      ]
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-natural",
+      "description": "Natural numbers including zero.",
+      "lean_type": "Nat",
+      "dependencies": []
+    },
+    {
+      "id": "domain-profile",
+      "description": "Labeled finite profile r indexed by Fin m.",
+      "lean_type": "Fin m → Nat",
+      "dependencies": [
+        "domain-natural"
+      ]
+    },
+    {
+      "id": "domain-polynomial",
+      "description": "Real univariate polynomials with zero-extended natural-index monomial coefficients.",
+      "lean_type": "Polynomial Real",
+      "dependencies": []
+    },
+    {
+      "id": "domain-index",
+      "description": "A marked branch index in Fin m.",
+      "lean_type": "Fin m",
+      "dependencies": [
+        "domain-natural"
+      ]
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "m",
+      "kind": "forall",
+      "domain_id": "domain-natural"
+    },
+    {
+      "binder": "r",
+      "kind": "forall",
+      "domain_id": "domain-profile"
+    },
+    {
+      "binder": "i",
+      "kind": "forall",
+      "domain_id": "domain-index"
+    },
+    {
+      "binder": "k",
+      "kind": "forall",
+      "domain_id": "domain-natural"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-tail",
+      "statement": "100<=m.",
+      "dependencies": [
+        "domain-natural"
+      ]
+    },
+    {
+      "id": "hyp-arity",
+      "statement": "Every r_i equals2,3 or4.",
+      "dependencies": [
+        "domain-profile"
+      ]
+    },
+    {
+      "id": "hyp-rank",
+      "statement": "1<=k and2k<=N+2.",
+      "dependencies": [
+        "domain-natural",
+        "def-e993tailn"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "theorem e993_guarded_tip_surplus_tail\n    (m : ℕ) (hm : 100 ≤ m) (r : Fin m → ℕ)\n    (hr : ∀ i, r i = 2 ∨ r i = 3 ∨ r i = 4)\n    (i : Fin m) (k : ℕ) (hk : 1 ≤ k) (hguard : 2 * k ≤ e993TailN r + 2) :\n    0 < ((e993TailH r : ℝ) + 1) * (e993TailU r i).coeff k * (e993TailC r).coeff k +\n      ((k : ℝ) + 1) * ((e993TailH r : ℝ) - (k : ℝ) + 1) *\n        ((e993TailE r).coeff k * (e993TailC r).coeff k -\n          (e993TailE r).coeff (k + 1) * (e993TailC r).coeff (k - 1))",
+    "dependencies": [
+      "def-e993tailb",
+      "def-e993tailn",
+      "def-e993tailh",
+      "def-e993tailc",
+      "def-e993tailu",
+      "def-e993taile",
+      "hyp-tail",
+      "hyp-arity",
+      "hyp-rank"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "domain-natural",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-profile",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-polynomial",
+        "kind": "domain"
+      },
+      {
+        "id": "def-e993tailb",
+        "kind": "definition"
+      },
+      {
+        "id": "def-e993tailn",
+        "kind": "definition"
+      },
+      {
+        "id": "def-e993tailh",
+        "kind": "definition"
+      },
+      {
+        "id": "def-e993tailc",
+        "kind": "definition"
+      },
+      {
+        "id": "def-e993tailu",
+        "kind": "definition"
+      },
+      {
+        "id": "def-e993taile",
+        "kind": "definition"
+      },
+      {
+        "id": "hyp-tail",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-arity",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-rank",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      },
+      {
+        "id": "domain-index",
+        "kind": "domain"
+      }
+    ],
+    "edges": [
+      {
+        "from": "domain-natural",
+        "to": "domain-profile"
+      },
+      {
+        "from": "domain-natural",
+        "to": "def-e993tailb"
+      },
+      {
+        "from": "domain-profile",
+        "to": "def-e993tailb"
+      },
+      {
+        "from": "domain-polynomial",
+        "to": "def-e993tailb"
+      },
+      {
+        "from": "domain-natural",
+        "to": "def-e993tailn"
+      },
+      {
+        "from": "domain-profile",
+        "to": "def-e993tailn"
+      },
+      {
+        "from": "domain-polynomial",
+        "to": "def-e993tailn"
+      },
+      {
+        "from": "domain-natural",
+        "to": "def-e993tailh"
+      },
+      {
+        "from": "domain-profile",
+        "to": "def-e993tailh"
+      },
+      {
+        "from": "domain-polynomial",
+        "to": "def-e993tailh"
+      },
+      {
+        "from": "domain-natural",
+        "to": "def-e993tailc"
+      },
+      {
+        "from": "domain-profile",
+        "to": "def-e993tailc"
+      },
+      {
+        "from": "domain-polynomial",
+        "to": "def-e993tailc"
+      },
+      {
+        "from": "domain-natural",
+        "to": "def-e993tailu"
+      },
+      {
+        "from": "domain-profile",
+        "to": "def-e993tailu"
+      },
+      {
+        "from": "domain-polynomial",
+        "to": "def-e993tailu"
+      },
+      {
+        "from": "domain-natural",
+        "to": "def-e993taile"
+      },
+      {
+        "from": "domain-profile",
+        "to": "def-e993taile"
+      },
+      {
+        "from": "domain-polynomial",
+        "to": "def-e993taile"
+      },
+      {
+        "from": "domain-natural",
+        "to": "hyp-tail"
+      },
+      {
+        "from": "domain-profile",
+        "to": "hyp-arity"
+      },
+      {
+        "from": "domain-natural",
+        "to": "hyp-rank"
+      },
+      {
+        "from": "def-e993tailn",
+        "to": "hyp-rank"
+      },
+      {
+        "from": "def-e993tailb",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-e993tailn",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-e993tailh",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-e993tailc",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-e993tailu",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-e993taile",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-tail",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-arity",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-rank",
+        "to": "conclusion"
+      },
+      {
+        "from": "domain-natural",
+        "to": "domain-index"
+      },
+      {
+        "from": "domain-index",
+        "to": "def-e993tailu"
+      }
+    ]
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "classical_allowed",
+    "rationale": "Standard Mathlib foundations only; no mathematical target or auxiliary axioms."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "e993_guarded_tip_surplus_tail",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem e993_guarded_tip_surplus_tail\n    (m : ℕ) (hm : 100 ≤ m) (r : Fin m → ℕ)\n    (hr : ∀ i, r i = 2 ∨ r i = 3 ∨ r i = 4)\n    (i : Fin m) (k : ℕ) (hk : 1 ≤ k) (hguard : 2 * k ≤ e993TailN r + 2) :\n    0 < ((e993TailH r : ℝ) + 1) * (e993TailU r i).coeff k * (e993TailC r).coeff k +\n      ((k : ℝ) + 1) * ((e993TailH r : ℝ) - (k : ℝ) + 1) *\n        ((e993TailE r).coeff k * (e993TailC r).coeff k -\n          (e993TailE r).coeff (k + 1) * (e993TailC r).coeff (k - 1))",
+    "expected_statement_sha256": "4dd33af0ac00b5ff9b9421bf9910116355b29019fa3652755c220c0e6da2cd82"
+  },
+  "source_materials": [
+    {
+      "id": "source-c6-synthesis-md",
+      "path": "SOURCE/C6-SYNTHESIS.md",
+      "sha256": "624ff008419d5b2551a16ca92797fc5882ca8805b232184dbbd0bf461f47370a",
+      "role": "reference"
+    },
+    {
+      "id": "source-center-verification-report-json",
+      "path": "SOURCE/CENTER-VERIFICATION-REPORT.json",
+      "sha256": "462d2cdd95cbb6a77944e4de79585402857ad8185a67dbc6ab28a15443ce705e",
+      "role": "reference"
+    },
+    {
+      "id": "source-center-verified-source-lean",
+      "path": "SOURCE/CENTER-VERIFIED-SOURCE.lean",
+      "sha256": "87eb9956b3385b9d26d66c25b9a2707de43d1d789e04eeb0beb9102717825dcb",
+      "role": "reference"
+    },
+    {
+      "id": "source-encoding-spec-lean",
+      "path": "SOURCE/ENCODING-SPEC.lean",
+      "sha256": "b5670830cd3a7173b60d1f53491383d72378a3df99d018d9ab8270987564a4b3",
+      "role": "reference"
+    },
+    {
+      "id": "source-expected-statement-txt",
+      "path": "SOURCE/EXPECTED-STATEMENT.txt",
+      "sha256": "0f09f5693c567de8ee82018d369209d1dd287e5640391831824be46194b6e698",
+      "role": "reference"
+    },
+    {
+      "id": "source-intended-statement-txt",
+      "path": "SOURCE/INTENDED-STATEMENT.txt",
+      "sha256": "7e434587375f2eaeee40c92b9ad6eea5f7d4dbd98fe471fa0f5397e73e3efb0c",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "source-jensen-verification-report-json",
+      "path": "SOURCE/JENSEN-VERIFICATION-REPORT.json",
+      "sha256": "72d7d6c49ba2a3666d7723dcb5f513cc864b832e3f0269c9dd3db2ca2a2ea817",
+      "role": "reference"
+    },
+    {
+      "id": "source-jensen-verified-source-lean",
+      "path": "SOURCE/JENSEN-VERIFIED-SOURCE.lean",
+      "sha256": "a0f07019b366cb194ddd031df0f9f963f2a051f548354349e016aceab6d23e3f",
+      "role": "reference"
+    },
+    {
+      "id": "source-preliminary-independent-review-md",
+      "path": "SOURCE/PRELIMINARY-INDEPENDENT-REVIEW.md",
+      "sha256": "d2e991aa83bdae320abf90b0d2581f0228448044bf51f7424e7c13cb286c7934",
+      "role": "reference"
+    },
+    {
+      "id": "source-proof-dag-md",
+      "path": "SOURCE/PROOF-DAG.md",
+      "sha256": "0343afc236cfecc012ab02d5178a3594e2a6bc51f754e1363d6d81803ebe517c",
+      "role": "reference"
+    },
+    {
+      "id": "source-ratio-verification-report-json",
+      "path": "SOURCE/RATIO-VERIFICATION-REPORT.json",
+      "sha256": "38b9453313a4627ada0e68a239c602536e1f356c6e98771cb0ca6029b3fb3806",
+      "role": "reference"
+    },
+    {
+      "id": "source-ratio-verified-source-lean",
+      "path": "SOURCE/RATIO-VERIFIED-SOURCE.lean",
+      "sha256": "2ca135236c2178f88235e54163a1ed09fee051e20075a8d901ac10cde76888d2",
+      "role": "reference"
+    },
+    {
+      "id": "source-reviewed-proof-candidate-md",
+      "path": "SOURCE/REVIEWED-PROOF-CANDIDATE.md",
+      "sha256": "1284054ea8011a31c3b03708d9d58afba24943cc65604bed94dd3b080497bbbd",
+      "role": "reference"
+    }
+  ]
+}

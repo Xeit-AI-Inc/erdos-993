@@ -1,0 +1,170 @@
+{
+  "schema": "c6-identity-independent-review-proposals-v1",
+  "authority": "review proposal only; no canonical registry or formal-status change",
+  "manifest_verification": {
+    "manifest": "manifests/C6-IDENTITY-INPUTS.json",
+    "member_count": 879,
+    "unique_paths": 879,
+    "before_review": {"present": 879, "missing": 0, "sha256_mismatches": 0},
+    "after_review": {"present": 879, "missing": 0, "sha256_mismatches": 0}
+  },
+  "registry_review": {
+    "frozen_registry": "control/C6-REGISTERED-CLAIM-IDENTITY.json",
+    "keys_scanned": 515,
+    "unique_keys": 515,
+    "alias_entries_scanned": 724,
+    "alias_patterns_scanned": 206,
+    "genuinely_nonduplicate_new_claims": [],
+    "identity_decision": "Attach finite-prefix, tail, strictness and bridge evidence to the three existing exact all-m keys; do not register threshold, prefix, implication, midpoint, coverage, or local-arithmetic duplicates."
+  },
+  "reviewed_existing_claim_keys": [
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "dispatch_status": "OPEN",
+      "proposed_disposition": "VERIFIED at original all-m, all-represented-tip, full guarded-rank scope; strict evidence proves registered nonnegative statement",
+      "proposed_grade": "computer_assisted_exact_complete_prefix_plus_informal_universal_tail_nonformal_no_C6_Lean_award",
+      "dependencies": ["A_repaired_complete_m1_99", "B_independent_complete_m1_99", "low_rank_support_and_binomial_LC", "actual_C4_full_finite_block_Jensen", "m_ge_100_exponent_Taylor_ratio_floor_denominator_proof"],
+      "exclusions": ["no actual-first-descent premise", "not all-rank", "not arbitrary-tree"]
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+      "dispatch_status": "OPEN",
+      "proposed_disposition": "VERIFIED at original all-m, endpoint-and-every-tip, full guarded-rank scope",
+      "proposed_grade": "computer_assisted_surplus_plus_informal_LR_ULC_bridge_nonformal_no_C6_Lean_award",
+      "dependencies": ["E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS", "correct_local_pair_B_rminus1_B_r_and_common_GH_i_TP2", "separate_endpoint_Q_logconcavity_determinant", "order_h_ULC_curvature_of_C", "endpoint_surplus_dominance"],
+      "exclusions": ["no parent_P_LR inference", "not all-rank", "not arbitrary-tree"]
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "dispatch_status": "OPEN",
+      "proposed_disposition": "VERIFIED at original all-m, full guarded-rank scope with W=sum_i r_i A_i",
+      "proposed_grade": "computer_assisted_surplus_plus_informal_same_C_positive_weight_bridge_nonformal_no_C6_Lean_award",
+      "dependencies": ["E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR", "same_C_for_every_tip", "positive_original_r_i_weights"],
+      "exclusions": ["weighted sign does not imply every individual sign", "not arbitrary-tree"]
+    },
+    {
+      "claim_key": "E993-FINITE-BLOCK-COEFFICIENT-JENSEN-DOMINATION",
+      "dispatch_status": "VERIFIED",
+      "proposed_disposition": "retain existing formally verified abstract theorem; use its actual labeled-subset exponential conclusion at total block size N and coefficient rank k",
+      "proposed_grade": "unchanged_formally_verified",
+      "dependencies": []
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-ALL-M-ACTUAL-ELIGIBLE-BRANCHWISE-THREE-HALVES-MASS",
+      "dispatch_status": "VERIFIED",
+      "proposed_disposition": "retain as downstream conditional dependency at exact eligible x,p,j,delta and strict current-p selectors",
+      "proposed_grade": "unchanged_computer_assisted_nonformal",
+      "dependencies": []
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-ALL-M-LOWER-HALF-FULL-SELECTION",
+      "dispatch_status": "VERIFIED",
+      "proposed_disposition": "retain; corrected k=p comparison supplies an alternative proof route at actual eligible p",
+      "proposed_grade": "unchanged_computer_assisted_nonformal",
+      "dependencies": ["E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR", "strict_C_ratio_after_actual_first_descent"]
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION",
+      "dispatch_status": "VERIFIED",
+      "proposed_disposition": "retain original selected MASS status; weighted comparison plus strict C ratio and local 3/2 lemma gives an alternative conditional route",
+      "proposed_grade": "unchanged_computer_assisted_nonformal",
+      "dependencies": ["E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR", "E993-PATH-STAR-ARITY-2-4-ALL-M-ACTUAL-ELIGIBLE-BRANCHWISE-THREE-HALVES-MASS"]
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+      "dispatch_status": "VERIFIED",
+      "proposed_disposition": "retain original selected payment status; MASS and accepted relative margin supply an alternative conditional route",
+      "proposed_grade": "unchanged_computer_assisted_nonformal_not_Lean",
+      "dependencies": ["E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION", "existing_formally_verified_relative_margin"]
+    },
+    {
+      "claim_key": "E993-ORDINARY-PATH-STAR-ARITY-2-4-ALL-M-LOWER-REGION-AGGREGATE",
+      "dispatch_status": "VERIFIED",
+      "proposed_disposition": "retain original family aggregate scope and grade; no redundant award",
+      "proposed_grade": "unchanged_computer_assisted_nonformal",
+      "dependencies": []
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ORIGINAL-DELETIONS-P-LR",
+      "dispatch_status": "OPEN",
+      "proposed_disposition": "remain OPEN; denominator P and same-rank parent descent are distinct",
+      "proposed_grade": "unchanged_open",
+      "dependencies": []
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-ALL-RANK-SHIFTED-C-DELETION-LR",
+      "dispatch_status": "REFUTED",
+      "proposed_disposition": "remain REFUTED; no unguarded extrapolation",
+      "proposed_grade": "unchanged_exact_refutation",
+      "dependencies": []
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-COMMON-BINOMIAL-SHIFTED-C-LR",
+      "dispatch_status": "REFUTED",
+      "proposed_disposition": "remain REFUTED; the negative E-only control does not refute the paid full surplus",
+      "proposed_grade": "unchanged_exact_refutation",
+      "dependencies": []
+    }
+  ],
+  "reviewed_nonregistry_claims": [
+    {"identifiers": ["C6-AF-ALL-M-LOW-BAND-STRICT-TIP-SURPLUS"], "disposition": "retain as informal all-m low-rank sublemma, no new key"},
+    {"identifiers": ["C6-T1-M100-ULC-EXACT-RATIO-TIP-SURPLUS", "C6-F3-ULC-EXACT-RATIO-SURPLUS-TAIL"], "disposition": "retain as strict informal m>=100 subcase, no new key or Lean award"},
+    {"identifiers": ["C6-U2-prefix-surplus-1-99"], "disposition": "retain bounded exact prefix evidence jointly with repaired A, no new key"},
+    {"identifiers": ["C6-T3-CONDITIONAL-ALL-LEAF-SHIFTED-C-COMPARISON", "C6-T3-CONDITIONAL-SAME-C-WEIGHTED-TIP-DECK", "C6-CU-T3-LOCALIZED-CONDITIONAL-BRIDGE", "C6-F3-ENDPOINT-BRIDGE-TAIL"], "disposition": "retain only with corrected tip pair and separate endpoint LR; implication lemmas for existing keys"},
+    {"identifiers": ["C6-U3-WEIGHTED-TIP-DECK-TO-MASS", "C6-U3-RELATIVE-MARGIN-TO-AGGREGATE"], "disposition": "retain conditional implications with actual x,p,j,delta,current-p strict flags and original weights; no new key"},
+    {"identifiers": ["C6-U1-ARITY2-MIDPOINT-E-MINOR"], "disposition": "retain at homogeneous arity-2 midpoint only; duplicate instance of shared structural lead"},
+    {"identifiers": ["C6-F2-PREFIX-COVERAGE-CLOSED-FORM", "C6-F2-KRONECKER-NO-CARRY-BOUND", "C6-U2-radix-carry-free-bound"], "disposition": "retain arithmetic and implementation facts; counts are coverage only"},
+    {"identifiers": ["C6-CF-U2-validator-strictness", "C6-F2-PREFIX-TELEMETRY-FORMAT-CONFLICT"], "disposition": "retain as nonmathematical validation and format observations"}
+  ],
+  "rejected_or_corrected": [
+    {"source": "C6-T3 and C6-CU-T3", "error": "(F_r,B_r) is the wrong local pair for U_i=G B_(r-1)H_i", "repair": "(B_(r-1),B_r), common GH_i, supported ratios and zero cross-products"},
+    {"source": "C6-F3 prose", "error": "singleton coefficient excess described as a", "repair": "excess is 1; the hypergeometric marginal supplies factor a, giving the displayed correct g_a"},
+    {"source": "historical consolidated draft", "error": "selector application used k=p-1", "repair": "forward Delta_p requires k=p; dispatched consolidated candidate has this correction"},
+    {"source": "C6-AF, C6-CU-F3 and synthesis prose", "error": "deficit bound >-1/2 claimed equivalent to 2k<N+3", "repair": "difference from -1/2 is exactly 3/(2(N+2-k))>0"},
+    {"source": "C6-U2 report", "error": "E[j] index and displayed factor-count prose", "repair": "E[j]=choose(N,j-1); code retains every unmarked factor"},
+    {"source": "C6-U2 validator", "error": "checks >=0 and trusts receipt source flags without distinct-index/full-byte checks", "repair": "independent actual-byte, exact-index and >0-minimum checks passed"},
+    {"source": "C6-CU-F3 RETURN", "error": "malformed mixed-profile cofactor repeats marked arity", "repair": "use H_i=product_(ell!=i)B_(r_ell) as in report and registry"},
+    {"source": "several critic/adjudication reports", "error": "undefined terminal 0/0 ratio for L/G, unnecessary ULC dependency in surplus, or stale primary/MASS OPEN wording", "repair": "use supported ratios/cross-products, tail-only dependency list, and current frozen registry grades"},
+    {"source": "C6-T2 original invocation", "error": "required invocation controls absent from RESULT", "repair": "whole new same-scope repaired A replay, unchanged mathematical loop, controls embedded"}
+  ],
+  "computation_checks": {
+    "scope": "each implementation: all profiles 1<=m<=99, all represented arities, all 1<=k<=floor((N+2)/2), no other filter",
+    "profiles_per_implementation": 171699,
+    "tip_rank_rows_per_implementation": 56245000,
+    "layers_per_implementation": 99,
+    "distinct_exact_m_indices": true,
+    "aggregate_checkpoint_equalities_checked": 198,
+    "cross_method_minima_and_witness_layers_checked": 99,
+    "independently_recomputed_attaining_witnesses": 99,
+    "controls_recomputed": 3,
+    "negative_rows_reported": 0,
+    "all_stored_layer_minima_strictly_positive": true,
+    "global_minimum": "98",
+    "global_minimum_witness": {"counts": [1, 0, 0], "r": 2, "k": 1, "N": 2, "h": 3},
+    "protocol_sha256": "a17ba0bcd412765b7dc1a91b283df816f41ad5173047067c94661d6991aff4ba",
+    "runner_sha256": "f188a54eeca2e0b1c0b487c665a82cb6a97ca05e44b2638e36393017c17a8bd7",
+    "A_original": {"source_sha256": "4af03154bc71bbfbdd6e638e1570b3cc512ddcb8934d23bca9efb5de2b8d8842", "result_sha256": "a94c2b1b011e982a65d3a79aa872717350ce116bedee6408ef754af15b354eef", "receipt_elapsed_seconds": 695.6182332499884, "protocol_complete": false},
+    "A_repaired": {"source_sha256": "c6ef6fe9f2a97ca4225482d1b0ef35f9e5a81cdead1cf9322771ed200f987d69", "result_sha256": "2ecbb7423531e718241d831ef08078b0f3ccdc8ce2d05645b62b0325316c7dcb", "receipt_elapsed_seconds": 703.1431863750331, "protocol_complete": true, "patch_exact": true, "mathematical_loop_unchanged": true},
+    "A_cumulative_seconds": 1398.7614196250215,
+    "B": {"source_sha256": "d29ebed0281db22daaa6c1780c69bb962f67b45cb61cc64102e44d5714094166", "result_sha256": "251b74de0d21cd20e3d7cdb78c148f44ca99fd8c6d3bd3ffc331644d3b0e6730", "receipt_elapsed_seconds": 1101.478227125015, "protocol_complete": true},
+    "per_invocation_cap_seconds": 1800,
+    "cumulative_cap_per_method_seconds": 3600,
+    "caps_passed": true,
+    "source_drift_or_timeout": false,
+    "independent_methods": 2,
+    "full_census_rerun_by_this_reviewer": false
+  },
+  "formal_candidate": {
+    "source": "control-proposals/C6-TAIL-ENCODING-DRAFT.lean",
+    "declaration": "e993_guarded_tip_surplus_tail",
+    "exact_scope": "For every natural m>=100, r:Fin m->Nat with each r_i in {2,3,4}, every i:Fin m and natural k>=1 with 2k<=N+2, prove 0<(h+1)U_i[k]C[k]+(k+1)(h-k+1)(E[k]C[k]-E[k+1]C[k-1]) for the literal Real-polynomial C,U,E,h in the draft; coefficient rank k is unchanged and zero-extension is explicit.",
+    "centrality": "high as a restricted infinite-tail lemma for the existing global surplus key",
+    "dependencies": ["governed C4 actual finite-block Jensen theorem", "literal B-factor coefficient floors and root/marked factorization", "low-band support and binomial log-concavity", "g2>=g3>=g4>=1/20 including both parity midpoints", "exact E8/E7 Taylor bounds", "C coefficient-ratio operator floor", "positive denominator clearing and 2m<=N<=4m"],
+    "excluded_premises": ["ULC of C", "main-product LR", "first descent", "finite m<=99 certificate", "selector or payment"],
+    "compiled": false,
+    "formal_award_now": false,
+    "global_key_formally_covered_by_tail_only": false,
+    "remaining_for_global_formal_grade": ["governed formal finite m<=99 certificate", "formal union with tail", "formal LR/ULC bridge for comparison keys", "separate actual-selector/payment composition"]
+  },
+  "remaining_obligations": ["canonical controller disposition of these proposals", "no current C6 tail Lean award", "formal finite-prefix reflection if formal all-m grade is sought", "parent/deletion P-LR remains separate", "arbitrary-tree lower-region aggregate and governed beta/ordinary transfer remain separate", "Erdos 993 remains unresolved by this family review"]
+}

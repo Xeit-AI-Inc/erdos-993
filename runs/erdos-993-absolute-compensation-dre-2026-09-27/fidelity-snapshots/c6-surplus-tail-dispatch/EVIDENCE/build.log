@@ -1,0 +1,188 @@
+$ /Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean --version
+cwd: /Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c6-surplus-tail/LeanProject
+returncode: 0
+stdout:
+Lean (version 4.32.2, arm64-apple-darwin24.6.0, commit f3b06c705e6c85f5314019d5d3baab0fec5b580c, Release)
+stderr:
+
+$ /Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lake --version
+cwd: /Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c6-surplus-tail/LeanProject
+returncode: 0
+stdout:
+Lake version 5.0.0-src+f3b06c7 (Lean version 4.32.2)
+stderr:
+
+$ /Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lake build
+cwd: /Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c6-surplus-tail/LeanProject
+returncode: 0
+stdout:
+⚠ [8655/8657] Built LeanProof.Main (13s)
+info: LeanProof/Main.lean:582:42: Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+warning: LeanProof/Main.lean:1137:17: Variable name `hr` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LeanProof/Main.lean:1248:15: This simp argument is unused:
+  if_pos rfl
+
+Hint: Omit it from the simp argument list.
+  simp only ̵[̵i̵f̵_̵p̵o̵s̵ ̵r̵f̵l̵]̵
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanProof/Main.lean:1278:15: This simp argument is unused:
+  if_pos rfl
+
+Hint: Omit it from the simp argument list.
+  simp only ̵[̵i̵f̵_̵p̵o̵s̵ ̵r̵f̵l̵]̵
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanProof/Main.lean:1556:26: This simp argument is unused:
+  Nat.sub_self
+
+Hint: Omit it from the simp argument list.
+  simp only [if_pos hk, N̵a̵t̵.̵s̵u̵b̵_̵s̵e̵l̵f̵,̵ ̵hchoose, hcoeff]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LeanProof/Main.lean:1599:5: Variable name `hkN` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LeanProof/Main.lean:1677:26: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: LeanProof/Main.lean:1677:26: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: LeanProof/Main.lean:1790:5: Variable name `hk` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LeanProof/Main.lean:2173:22: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+✔ [8656/8657] Built LeanProof (3.8s)
+Build completed successfully (8657 jobs).
+stderr:
+
+$ /Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lake env /Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean /Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c6-surplus-tail/LeanProject/LeanProof/Main.lean
+cwd: /Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c6-surplus-tail/LeanProject
+returncode: 0
+stdout:
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+/Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c6-surplus-tail/LeanProject/LeanProof/Main.lean:1137:17: warning: Variable name `hr` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+/Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c6-surplus-tail/LeanProject/LeanProof/Main.lean:1248:15: warning: This simp argument is unused:
+  if_pos rfl
+
+Hint: Omit it from the simp argument list.
+  simp only ̵[̵i̵f̵_̵p̵o̵s̵ ̵r̵f̵l̵]̵
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c6-surplus-tail/LeanProject/LeanProof/Main.lean:1278:15: warning: This simp argument is unused:
+  if_pos rfl
+
+Hint: Omit it from the simp argument list.
+  simp only ̵[̵i̵f̵_̵p̵o̵s̵ ̵r̵f̵l̵]̵
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c6-surplus-tail/LeanProject/LeanProof/Main.lean:1556:26: warning: This simp argument is unused:
+  Nat.sub_self
+
+Hint: Omit it from the simp argument list.
+  simp only [if_pos hk, N̵a̵t̵.̵s̵u̵b̵_̵s̵e̵l̵f̵,̵ ̵hchoose, hcoeff]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c6-surplus-tail/LeanProject/LeanProof/Main.lean:1599:5: warning: Variable name `hkN` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+/Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c6-surplus-tail/LeanProject/LeanProof/Main.lean:1677:26: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c6-surplus-tail/LeanProject/LeanProof/Main.lean:1677:26: warning: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c6-surplus-tail/LeanProject/LeanProof/Main.lean:1790:5: warning: Variable name `hk` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+/Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c6-surplus-tail/LeanProject/LeanProof/Main.lean:2173:22: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+stderr:
+
+$ /Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lake env /Users/ashtonsperry/.elan/toolchains/leanprover--lean4---v4.32.2/bin/lean /Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c6-surplus-tail/EVIDENCE/axioms-probe-eoqks_fl.lean
+cwd: /Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c6-surplus-tail/LeanProject
+returncode: 0
+stdout:
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+/Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c6-surplus-tail/EVIDENCE/axioms-probe-eoqks_fl.lean:1137:17: warning: Variable name `hr` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+/Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c6-surplus-tail/EVIDENCE/axioms-probe-eoqks_fl.lean:1248:15: warning: This simp argument is unused:
+  if_pos rfl
+
+Hint: Omit it from the simp argument list.
+  simp only ̵[̵i̵f̵_̵p̵o̵s̵ ̵r̵f̵l̵]̵
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c6-surplus-tail/EVIDENCE/axioms-probe-eoqks_fl.lean:1278:15: warning: This simp argument is unused:
+  if_pos rfl
+
+Hint: Omit it from the simp argument list.
+  simp only ̵[̵i̵f̵_̵p̵o̵s̵ ̵r̵f̵l̵]̵
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c6-surplus-tail/EVIDENCE/axioms-probe-eoqks_fl.lean:1556:26: warning: This simp argument is unused:
+  Nat.sub_self
+
+Hint: Omit it from the simp argument list.
+  simp only [if_pos hk, N̵a̵t̵.̵s̵u̵b̵_̵s̵e̵l̵f̵,̵ ̵hchoose, hcoeff]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c6-surplus-tail/EVIDENCE/axioms-probe-eoqks_fl.lean:1599:5: warning: Variable name `hkN` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+/Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c6-surplus-tail/EVIDENCE/axioms-probe-eoqks_fl.lean:1677:26: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c6-surplus-tail/EVIDENCE/axioms-probe-eoqks_fl.lean:1677:26: warning: 'ring' tactic does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+/Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c6-surplus-tail/EVIDENCE/axioms-probe-eoqks_fl.lean:1790:5: warning: Variable name `hk` is not explicitly referenced.
+
+The binding can be removed (if unused) or named `_` (if used implicitly).
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+/Users/ashtonsperry/VerityOS/experiments/erdos-993-absolute-compensation-dre-2026-09-27/runs/lean-2026-09-28-c6-surplus-tail/EVIDENCE/axioms-probe-eoqks_fl.lean:2173:22: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+'e993_guarded_tip_surplus_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+stderr:

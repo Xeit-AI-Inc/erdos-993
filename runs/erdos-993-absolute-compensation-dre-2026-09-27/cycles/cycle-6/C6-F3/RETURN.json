@@ -1,0 +1,56 @@
+{
+  "worker_id": "C6-F3",
+  "cycle": 6,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, put N=sum_i r_i, a_r=#arity-r branches, h=1+2a_2+4a_3+7a_4, C=(1+2z)product_i B_{r_i}, E=z(1+z)^N, U_i=(1+2z)B_{r_i-1}product_{ell!=i}B_{r_ell}, and M_k(E)=E[k]C[k]-E[k+1]C[k-1]. For every represented original tip branch i and every natural 1<=k with 2k<=N+2, (h+1)U_i[k]C[k]+(k+1)(h-k+1)M_k(E)>=0. Coefficients are integer-zero-extended.",
+      "scope": "Registered all-m statement remains OPEN. This review supports only the restricted m>=100 tail; the complete m=1..99 prefix is not proved here.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-6/C6-F3/REPORT.md", "cycles/cycle-6/C6-F3/f3_boundary_audit.py", "cycles/cycle-6/C6-F3/f3_boundary_audit.json", "cycles/cycle-6/C6-F3/tail_constants_replay.py", "cycles/cycle-6/C6-F3/tail_constants_replay.json"],
+      "reason": "No counterexample found. The all-guard tail proof is independently reconstructed for m>=100 from the admitted Jensen theorem and established ULC/ratio facts, but this does not settle the registered all-m scope."
+    },
+    {
+      "claim_id": "C6-F3-ULC-EXACT-RATIO-SURPLUS-TAIL",
+      "statement": "For every m>=100 ordinary arity-2,3,4 path-star profile, every represented tip branch i, and every natural k with 1<=k and 2k<=N+2, (h+1)U_i[k]C[k]+(k+1)(h-k+1)(E[k]C[k]-E[k+1]C[k-1])>0, with h=1+2a_2+4a_3+7a_4, N=sum_i r_i, C=(1+2z)product_i((1+z)^{r_i}+z), E=z(1+z)^N, and U_i=(1+2z)((1+z)^{r_i-1}+z)product_{ell!=i}((1+z)^{r_ell}+z). Coefficients are integer-zero-extended.",
+      "scope": "Restricted universal tail m>=100 on the entire guarded band 1<=k, 2k<=N+2; no actual first-descent premise. Depends on the full finite-block Jensen theorem and the established order-h ULC, coefficient-ratio floor, and main-product LR lemmas. Informal proof only.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": ["cycles/cycle-6/C6-F3/REPORT.md", "cycles/cycle-6/C6-F3/f3_boundary_audit.py", "cycles/cycle-6/C6-F3/f3_boundary_audit.json", "cycles/cycle-6/C6-F3/tail_constants_replay.py", "cycles/cycle-6/C6-F3/tail_constants_replay.json"],
+      "reason": "Low-rank center-choice normalization, complementary-band singleton exponents, the size-one Jensen block, strict Taylor constants, and positive denominator clearing all check; exact bounded boundary replays found no failure. No formal award is claimed."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, every original leaf deletion polynomial A_v (A0 for the endpoint or Ai for a tip of branch i), and every natural k with 1<=k and 2k<=N+2, integer-zero-extended coefficients satisfy A_v[k+1]C[k-1]<=A_v[k]C[k], where C=GQ.",
+      "scope": "Registered all-m guarded lower-half shifted C-to-each-deletion comparison. The reviewed surplus plus the main-product LR and order-h ULC lemmas establishes the comparison only for m>=100; m<100 remains open. The actual first-descent and current-p selector implication is a separate application.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-6/C6-F3/REPORT.md", "cycles/cycle-6/C6-F3/f3_boundary_audit.py", "cycles/cycle-6/C6-F3/f3_boundary_audit.json"],
+      "reason": "No guarded counterexample found. The proposed tail proof and endpoint transfer narrow the unresolved scope but do not establish the registered all-m quantifier."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, put W=sum_i r_i A_i, counting each original private-tip deletion with its original multiplicity. For every natural k with 1<=k and 2k<=N+2, integer-zero-extended coefficients satisfy W[k+1]C[k-1]<=W[k]C[k].",
+      "scope": "Registered all-m guarded weighted-tip comparison. The reviewed tail gives this for m>=100 by summing the tip minors against common C with weights r_i; m<100 remains open. Endpoint selection is not implied.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-6/C6-F3/REPORT.md", "cycles/cycle-6/C6-F3/f3_boundary_audit.py", "cycles/cycle-6/C6-F3/f3_boundary_audit.json"],
+      "reason": "No guarded counterexample found. The multiplicity-preserving sum is valid on the reviewed tail, but not for the unproved finite prefix."
+    },
+    {
+      "claim_id": "C6-F3-ENDPOINT-BRIDGE-TAIL",
+      "statement": "For m>=100 and every ordinary arity-2,3,4 path-star profile, the exact-ratio tip surplus on every natural 1<=k with 2k<=N+2 transfers to U0=LQ, where U0-Ui=z^2(L^{r_i-1}-1)H_i>=0 coefficientwise. Together with the separate nonincreasing main-product ratio U0/C and the order-h ULC curvature of C, this proves A0[k+1]C[k-1]<=A0[k]C[k] on that whole guarded band.",
+      "scope": "Conditional on the restricted m>=100 tip-surplus tail and established main-product LR/order-h ULC facts. Endpoint transfer uses both coefficient dominance and the separate LR argument; coefficient dominance alone is insufficient. Informal proof only.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": ["cycles/cycle-6/C6-F3/REPORT.md", "cycles/cycle-6/C6-F3/f3_boundary_audit.py", "cycles/cycle-6/C6-F3/f3_boundary_audit.json"],
+      "reason": "The polynomial identity and positive common-curvature transfer preserve the exact guard and zero extension. It gives no all-m endpoint conclusion because m<100 is not covered."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-F3/REPORT.md",
+  "limitations": [
+    "No census-free argument for m=1..99 and no complete finite prefix certificate were produced.",
+    "The analytic composition is informal and relies on admitted Jensen, ULC, coefficient-ratio, and main-product LR results; no Lean build or formal award occurred.",
+    "Finite exact replays are bounded evidence only and are not the universal proof.",
+    "No primary selected-payment or MASS result is proved anew, and nothing here implies arbitrary-tree Erdős 993."
+  ],
+  "status_authority": "proposed_worker_only"
+}

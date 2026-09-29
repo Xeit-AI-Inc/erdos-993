@@ -1,0 +1,462 @@
+{
+  "scope": "Exact finite replay of branch-addition polynomial identities on five profiles; the symbolic identities follow by multiplication and are proved in REPORT.md. Not evidence for the guarded comparison.",
+  "profiles": 5,
+  "branch_steps": 19,
+  "guarded_ranks_checked": 32,
+  "all_exact": true,
+  "all_sample_surpluses_nonnegative": true,
+  "all_sample_shifted_minors_nonnegative": true,
+  "rows": [
+    {
+      "counts": [
+        1,
+        0,
+        0
+      ],
+      "steps": [
+        {
+          "added_r": 2,
+          "N_before": 0,
+          "N_after": 2,
+          "guard_before": 1,
+          "guard_after": 2,
+          "new_guard_ranks": [
+            2
+          ],
+          "component_recurrences_exact": true,
+          "weighted_recurrence_exact": true
+        }
+      ],
+      "guarded_margins": [
+        {
+          "k": 1,
+          "weighted_shifted_minor": 38,
+          "weighted_surplus_margin": 196
+        },
+        {
+          "k": 2,
+          "weighted_shifted_minor": 74,
+          "weighted_surplus_margin": 332
+        }
+      ]
+    },
+    {
+      "counts": [
+        0,
+        1,
+        0
+      ],
+      "steps": [
+        {
+          "added_r": 3,
+          "N_before": 0,
+          "N_after": 3,
+          "guard_before": 1,
+          "guard_after": 2,
+          "new_guard_ranks": [
+            2
+          ],
+          "component_recurrences_exact": true,
+          "weighted_recurrence_exact": true
+        }
+      ],
+      "guarded_margins": [
+        {
+          "k": 1,
+          "weighted_shifted_minor": 78,
+          "weighted_surplus_margin": 630
+        },
+        {
+          "k": 2,
+          "weighted_shifted_minor": 240,
+          "weighted_surplus_margin": 1926
+        }
+      ]
+    },
+    {
+      "counts": [
+        0,
+        0,
+        1
+      ],
+      "steps": [
+        {
+          "added_r": 4,
+          "N_before": 0,
+          "N_after": 4,
+          "guard_before": 1,
+          "guard_after": 3,
+          "new_guard_ranks": [
+            2,
+            3
+          ],
+          "component_recurrences_exact": true,
+          "weighted_recurrence_exact": true
+        }
+      ],
+      "guarded_margins": [
+        {
+          "k": 1,
+          "weighted_shifted_minor": 136,
+          "weighted_surplus_margin": 1704
+        },
+        {
+          "k": 2,
+          "weighted_shifted_minor": 596,
+          "weighted_surplus_margin": 8184
+        },
+        {
+          "k": 3,
+          "weighted_shifted_minor": 448,
+          "weighted_surplus_margin": 7104
+        }
+      ]
+    },
+    {
+      "counts": [
+        2,
+        3,
+        4
+      ],
+      "steps": [
+        {
+          "added_r": 2,
+          "N_before": 0,
+          "N_after": 2,
+          "guard_before": 1,
+          "guard_after": 2,
+          "new_guard_ranks": [
+            2
+          ],
+          "component_recurrences_exact": true,
+          "weighted_recurrence_exact": true
+        },
+        {
+          "added_r": 2,
+          "N_before": 2,
+          "N_after": 4,
+          "guard_before": 2,
+          "guard_after": 3,
+          "new_guard_ranks": [
+            3
+          ],
+          "component_recurrences_exact": true,
+          "weighted_recurrence_exact": true
+        },
+        {
+          "added_r": 3,
+          "N_before": 4,
+          "N_after": 7,
+          "guard_before": 3,
+          "guard_after": 4,
+          "new_guard_ranks": [
+            4
+          ],
+          "component_recurrences_exact": true,
+          "weighted_recurrence_exact": true
+        },
+        {
+          "added_r": 3,
+          "N_before": 7,
+          "N_after": 10,
+          "guard_before": 4,
+          "guard_after": 6,
+          "new_guard_ranks": [
+            5,
+            6
+          ],
+          "component_recurrences_exact": true,
+          "weighted_recurrence_exact": true
+        },
+        {
+          "added_r": 3,
+          "N_before": 10,
+          "N_after": 13,
+          "guard_before": 6,
+          "guard_after": 7,
+          "new_guard_ranks": [
+            7
+          ],
+          "component_recurrences_exact": true,
+          "weighted_recurrence_exact": true
+        },
+        {
+          "added_r": 4,
+          "N_before": 13,
+          "N_after": 17,
+          "guard_before": 7,
+          "guard_after": 9,
+          "new_guard_ranks": [
+            8,
+            9
+          ],
+          "component_recurrences_exact": true,
+          "weighted_recurrence_exact": true
+        },
+        {
+          "added_r": 4,
+          "N_before": 17,
+          "N_after": 21,
+          "guard_before": 9,
+          "guard_after": 11,
+          "new_guard_ranks": [
+            10,
+            11
+          ],
+          "component_recurrences_exact": true,
+          "weighted_recurrence_exact": true
+        },
+        {
+          "added_r": 4,
+          "N_before": 21,
+          "N_after": 25,
+          "guard_before": 11,
+          "guard_after": 13,
+          "new_guard_ranks": [
+            12,
+            13
+          ],
+          "component_recurrences_exact": true,
+          "weighted_recurrence_exact": true
+        },
+        {
+          "added_r": 4,
+          "N_before": 25,
+          "N_after": 29,
+          "guard_before": 13,
+          "guard_after": 15,
+          "new_guard_ranks": [
+            14,
+            15
+          ],
+          "component_recurrences_exact": true,
+          "weighted_recurrence_exact": true
+        }
+      ],
+      "guarded_margins": [
+        {
+          "k": 1,
+          "weighted_shifted_minor": 24911,
+          "weighted_surplus_margin": 2109750
+        },
+        {
+          "k": 2,
+          "weighted_shifted_minor": 6251430,
+          "weighted_surplus_margin": 733448280
+        },
+        {
+          "k": 3,
+          "weighted_shifted_minor": 682584075,
+          "weighted_surplus_margin": 98901719550
+        },
+        {
+          "k": 4,
+          "weighted_shifted_minor": 38780888544,
+          "weighted_surplus_margin": 6522237126198
+        },
+        {
+          "k": 5,
+          "weighted_shifted_minor": 1271490950840,
+          "weighted_surplus_margin": 238852557442520
+        },
+        {
+          "k": 6,
+          "weighted_shifted_minor": 25751790578715,
+          "weighted_surplus_margin": 5265526603758000
+        },
+        {
+          "k": 7,
+          "weighted_shifted_minor": 338273142086829,
+          "weighted_surplus_margin": 73914400667907954
+        },
+        {
+          "k": 8,
+          "weighted_shifted_minor": 2991216625680186,
+          "weighted_surplus_margin": 688839593491416288
+        },
+        {
+          "k": 9,
+          "weighted_shifted_minor": 18343301596575609,
+          "weighted_surplus_margin": 4402679050839187632
+        },
+        {
+          "k": 10,
+          "weighted_shifted_minor": 79948664615585979,
+          "weighted_surplus_margin": 19808114593748462730
+        },
+        {
+          "k": 11,
+          "weighted_shifted_minor": 252762281207960581,
+          "weighted_surplus_margin": 64078383765192544116
+        },
+        {
+          "k": 12,
+          "weighted_shifted_minor": 589516003903781607,
+          "weighted_surplus_margin": 151648794477063259050
+        },
+        {
+          "k": 13,
+          "weighted_shifted_minor": 1028197535878450413,
+          "weighted_surplus_margin": 266259920856498160824
+        },
+        {
+          "k": 14,
+          "weighted_shifted_minor": 1355470382142516211,
+          "weighted_surplus_margin": 350712717945154660378
+        },
+        {
+          "k": 15,
+          "weighted_shifted_minor": 1361417131354976574,
+          "weighted_surplus_margin": 349572291549233155260
+        }
+      ]
+    },
+    {
+      "counts": [
+        4,
+        1,
+        2
+      ],
+      "steps": [
+        {
+          "added_r": 2,
+          "N_before": 0,
+          "N_after": 2,
+          "guard_before": 1,
+          "guard_after": 2,
+          "new_guard_ranks": [
+            2
+          ],
+          "component_recurrences_exact": true,
+          "weighted_recurrence_exact": true
+        },
+        {
+          "added_r": 2,
+          "N_before": 2,
+          "N_after": 4,
+          "guard_before": 2,
+          "guard_after": 3,
+          "new_guard_ranks": [
+            3
+          ],
+          "component_recurrences_exact": true,
+          "weighted_recurrence_exact": true
+        },
+        {
+          "added_r": 2,
+          "N_before": 4,
+          "N_after": 6,
+          "guard_before": 3,
+          "guard_after": 4,
+          "new_guard_ranks": [
+            4
+          ],
+          "component_recurrences_exact": true,
+          "weighted_recurrence_exact": true
+        },
+        {
+          "added_r": 2,
+          "N_before": 6,
+          "N_after": 8,
+          "guard_before": 4,
+          "guard_after": 5,
+          "new_guard_ranks": [
+            5
+          ],
+          "component_recurrences_exact": true,
+          "weighted_recurrence_exact": true
+        },
+        {
+          "added_r": 3,
+          "N_before": 8,
+          "N_after": 11,
+          "guard_before": 5,
+          "guard_after": 6,
+          "new_guard_ranks": [
+            6
+          ],
+          "component_recurrences_exact": true,
+          "weighted_recurrence_exact": true
+        },
+        {
+          "added_r": 4,
+          "N_before": 11,
+          "N_after": 15,
+          "guard_before": 6,
+          "guard_after": 8,
+          "new_guard_ranks": [
+            7,
+            8
+          ],
+          "component_recurrences_exact": true,
+          "weighted_recurrence_exact": true
+        },
+        {
+          "added_r": 4,
+          "N_before": 15,
+          "N_after": 19,
+          "guard_before": 8,
+          "guard_after": 10,
+          "new_guard_ranks": [
+            9,
+            10
+          ],
+          "component_recurrences_exact": true,
+          "weighted_recurrence_exact": true
+        }
+      ],
+      "guarded_margins": [
+        {
+          "k": 1,
+          "weighted_shifted_minor": 8227,
+          "weighted_surplus_margin": 411426
+        },
+        {
+          "k": 2,
+          "weighted_shifted_minor": 984086,
+          "weighted_surplus_margin": 66216140
+        },
+        {
+          "k": 3,
+          "weighted_shifted_minor": 48122540,
+          "weighted_surplus_margin": 3884515800
+        },
+        {
+          "k": 4,
+          "weighted_shifted_minor": 1145075915,
+          "weighted_surplus_margin": 104185940864
+        },
+        {
+          "k": 5,
+          "weighted_shifted_minor": 14635320509,
+          "weighted_surplus_margin": 1443913226468
+        },
+        {
+          "k": 6,
+          "weighted_shifted_minor": 107082193905,
+          "weighted_surplus_margin": 11162085201960
+        },
+        {
+          "k": 7,
+          "weighted_shifted_minor": 469350839035,
+          "weighted_surplus_margin": 50731597961940
+        },
+        {
+          "k": 8,
+          "weighted_shifted_minor": 1276495616335,
+          "weighted_surplus_margin": 140912285002420
+        },
+        {
+          "k": 9,
+          "weighted_shifted_minor": 2215438876543,
+          "weighted_surplus_margin": 246255685818760
+        },
+        {
+          "k": 10,
+          "weighted_shifted_minor": 2504940435570,
+          "weighted_surplus_margin": 276461183665404
+        }
+      ]
+    }
+  ]
+}

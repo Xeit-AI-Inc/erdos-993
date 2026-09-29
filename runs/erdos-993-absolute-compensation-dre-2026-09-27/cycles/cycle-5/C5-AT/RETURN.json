@@ -1,0 +1,69 @@
+{
+  "worker_id": "C5-AT",
+  "cycle": 5,
+  "stage": "adjudication",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "C5-T2-ACTIVITY-BASIS-NEGATIVE-LAYER",
+      "statement": "For the ordinary profile (a2,a3,a4)=(0,0,3), with N=12, C_t=G B4(L^4+tz)^2, A_{i,t}=G B3(L^4+tz)^2+zL^12, and guarded k=7, the t^3 coefficient of A_{i,t}[k]C_t[k]-A_{i,t}[k+1]C_t[k-1] is -66; the full polynomial is 1898616+171542t+6175t^2-66t^3.",
+      "scope": "Exact finite obstruction to coefficientwise positivity in this center-activity basis only. At t=1 the minor is 2076267>0. The actual parent first strict descent is x=7 and no lower-half eligible p exists because p>=9 conflicts with 2p<=alpha=14. It does not refute either guarded LR predicate or selected payment.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-AT/REPORT.md",
+        "cycles/cycle-5/C5-AT/C5_AT_independent_audit.py",
+        "cycles/cycle-5/C5-AT/C5_AT_independent_audit.json"
+      ],
+      "reason": "Independent exact bivariate monomial expansion reproduces the negative layer and positive evaluated minor. Evidence grade: exact finite refutation of this certificate only; dependency: ordinary path-star polynomial identities."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+      "statement": "For every nonempty ordinary path-star with distinct branches r_i in {2,3,4}, every original endpoint or private-tip deletion A_v, and every natural k with 1<=k and 2k<=N+2, zero-extended coefficients satisfy A_v[k+1]C[k-1]<=A_v[k]C[k], where C=(1+2z) product_i ((1+z)^{r_i}+z).",
+      "scope": "Registered all-profile guarded shifted-C individual deletion predicate, retained as OPEN. It has no actual first-descent premise. Any selected-payment use separately retains x as actual first strict descent, x+2<=p, 3p<2alpha+1, 2p<=alpha, strict current-p flags, and original tag multiplicities.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-AT/REPORT.md",
+        "cycles/cycle-5/C5-AT/C5_AT_independent_audit.py",
+        "cycles/cycle-5/C5-AT/C5_AT_independent_audit.json"
+      ],
+      "reason": "The negative E-only minor and negative activity layer do not refute the full deletion minor; independent boundary/interior checks are positive but bounded. Tip implication depends on main-product LR, enlarged-order ULC, and the still-OPEN exact-ratio surplus; endpoint needs separate proof. Evidence grade: conditional informal reduction and bounded exact diagnostics, no universal proof or guarded counterexample."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "For every nonempty ordinary path-star with distinct branches r_i in {2,3,4}, put W=sum_i r_i A_i with each original private-tip tag counted r_i times. For every natural k with 1<=k and 2k<=N+2, zero-extended coefficients satisfy W[k+1]C[k-1]<=W[k]C[k].",
+      "scope": "Registered all-profile guarded weighted tip-deck predicate, retained as OPEN; no actual-eligibility premise. Any application to selected payment separately keeps the actual x, all three p guards, current-p strict selectors, and original multiplicities.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-AT/REPORT.md",
+        "cycles/cycle-5/C5-AT/C5_AT_independent_audit.py",
+        "cycles/cycle-5/C5-AT/C5_AT_independent_audit.json"
+      ],
+      "reason": "Branch-addition recurrence is exact but contains signed (rL^r-Nz)E and creates new guarded ranks. Positive r_i summation of individual minors is valid only in that direction. Missing uniform compensation and guard-strip proof; exact tested rows are bounded. Evidence grade: exact algebra and bounded diagnostics, no universal proof or guarded counterexample."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star, every represented original tip branch i, and every natural 1<=k with 2k<=N+2, (h+1)U_i[k]C[k]+(k+1)(h-k+1)(E[k]C[k]-E[k+1]C[k-1])>=0, where h=1+2a2+4a3+7a4, U_i=G B_(r_i-1)H_i, E=z(1+z)^N, and coefficients are integer-zero-extended.",
+      "scope": "Registered exact-ratio tip surplus on the full guarded band, retained as OPEN without an actual-eligibility premise; it does not include endpoint A0 or itself assert selected payment.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-AT/REPORT.md",
+        "cycles/cycle-5/C5-AT/C5_AT_independent_audit.py",
+        "cycles/cycle-5/C5-AT/C5_AT_independent_audit.json"
+      ],
+      "reason": "With separately sourced main-product LR and enlarged-order ULC, positive d=(k+1)(h-k+1) makes the surplus sufficient for each full tip minor. The universal surplus premise is unproved; negative coarse-floor margins, including at an actual eligible rank, are inconclusive for the positive exact margins. Evidence grade: conditional informal implication and bounded exact diagnostics, no formal or universal award."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-AT/REPORT.md",
+  "limitations": [
+    "Three registered guarded universal predicates remain OPEN; no all-profile structural proof or guarded counterexample is provided.",
+    "Finite exact computations and replays have bounded scope; no Lean build or governed formal award was performed.",
+    "The T2 activity obstruction concerns a stronger layerwise certificate, and the T2 report has one corrected positive full-tip integer transcription."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-T2-ACTIVITY-BASIS-NEGATIVE-LAYER",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+    "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS"
+  ]
+}

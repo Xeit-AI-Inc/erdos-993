@@ -1,0 +1,30 @@
+{
+  "worker_id": "C5-CT-U2",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "T",
+  "covered_claim_ids": [
+    "C5-U2-ACTIVITY-LAYER-COEFFICIENTWISE-OBSTRUCTION"
+  ],
+  "claims": [
+    {
+      "claim_id": "C5-U2-ACTIVITY-LAYER-COEFFICIENTWISE-OBSTRUCTION",
+      "statement": "For homogeneous arity-4 profiles with m>=3, distinguishing one tip and replacing the other m-1 B4 factors by L^4+t z gives coefficient -33(m-1) at t^(2m-3) in the shifted individual minor at k=m+4.",
+      "scope": "Retained exactly as an obstruction to coefficientwise nonnegativity in this activity basis, for the guarded band 1<=k and 2k<=N+2 with N=4m. It does not refute the t=1 shifted comparison or any actual-first-descent strict-selector/payment claim; original distinguished-tip multiplicity is one.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CT-U2/REPORT.md",
+        "cycles/cycle-5/C5-CT-U2/independent_activity_audit.py",
+        "cycles/cycle-5/C5-CT-U2/independent_activity_audit.json"
+      ],
+      "reason": "The two possible activity-degree splits each carry the positive factor m-1. Exact ordinary-z coefficients give 51*2+0*142-15*9-0*205=-33. The guard is equivalent to m>=3. At m=3, the separate full t=1 minor is positive and no actual eligible p exists, confirming the mechanism-specific scope."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CT-U2/REPORT.md",
+  "limitations": [
+    "The coefficient obstruction does not determine the sign at t=1; cancellation remains possible.",
+    "No uniform paired-layer or remainder proof for the actual shifted comparison is established.",
+    "The checked m=3 parent has no actual eligible lower-half p and is not a payment counterexample."
+  ],
+  "status_authority": "proposed_worker_only"
+}

@@ -1,0 +1,32 @@
+{
+  "worker_id": "C5-CU-T3",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "U",
+  "covered_claim_ids": [
+    "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS"
+  ],
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, with N=sum_i r_i, a_r the number of arity-r branches, h=1+2a_2+4a_3+7a_4, C=(1+2z)product_i B_{r_i}, E=z(1+z)^N, U_i=(1+2z)B_{r_i-1}product_{ell!=i}B_{r_ell}, and M_k(E)=E[k]C[k]-E[k+1]C[k-1], every represented original tip branch i and natural 1<=k with 2k<=N+2 satisfy (h+1)U_i[k]C[k]+(k+1)(h-k+1)M_k(E)>=0, with integer-zero-extended coefficients.",
+      "scope": "Exact-ratio sufficient surplus for individual represented-tip shifted comparison on the entire registered guarded band, without actual eligibility. It does not include endpoint A_0, assert selector values, or establish selected payment; original branch profile and guard are retained.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CU-T3/REPORT.md",
+        "cycles/cycle-5/C5-CU-T3/independent_check.py",
+        "cycles/cycle-5/C5-CU-T3/independent_check.json",
+        "cycles/cycle-5/C5-CU-T3/producer_surplus.json",
+        "cycles/cycle-5/C5-CU-T3/producer_controls.json"
+      ],
+      "reason": "The ULC-curvature plus main-product LR argument validly reduces the full tip minor to this exact surplus inequality, with positive factors on the guarded band. Producer replays and independent exact spots find no guarded failure, but they are finite only. No universal compensation proof or guarded counterexample is supplied. The crude C2-ratio substitution is correctly inconclusive at exact examples and cannot replace the exact condition."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CU-T3/REPORT.md",
+  "limitations": [
+    "The universal exact-ratio compensation remains unproved; bounded scans do not establish it.",
+    "The conditional sufficiency uses the already scoped informal enlarged-order ULC and main-product LR results; this review awards no formal proof.",
+    "The tip condition omits endpoint A_0 and does not by itself prove a selector or payment claim."
+  ],
+  "status_authority": "proposed_worker_only"
+}

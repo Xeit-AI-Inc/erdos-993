@@ -1,0 +1,30 @@
+{
+  "worker_id": "C5-CF-U2",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C5-U2-ACTIVITY-LAYER-COEFFICIENTWISE-OBSTRUCTION",
+      "statement": "For every homogeneous arity-4 profile with m>=3, with one distinguished tip and t marking the z choice in the other m-1 B4 factors, the coefficient of t^(2m-3) in A_{i,t}[k]C_t[k]-A_{i,t}[k+1]C_t[k-1] at k=m+4 equals -33(m-1).",
+      "scope": "Exact coefficientwise obstruction for the distinguished-tip shifted minor at 1<=k and 2k<=N+2, where N=4m. It refutes coefficientwise nonnegativity in this activity basis. It does not refute the t=1 shifted comparison, actual first-descent strict-selector eligibility, selected payment, or the primary predicate.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CF-U2/REPORT.md",
+        "cycles/cycle-5/C5-CF-U2/independent_check.py",
+        "cycles/cycle-5/C5-CF-U2/independent_check.json"
+      ],
+      "reason": "Independent monomial expansion gives local signed combination 51*2+0*142-15*9-0*205=-33. The only splits at degree 2m-3 contribute the positive factor m-1, so the coefficient is -33(m-1)<0. Exact guard verification holds for all m>=3."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CF-U2/REPORT.md",
+  "limitations": [
+    "The negative coefficient rules out only termwise positivity in this activity basis; cancellation at t=1 can remain.",
+    "No actual-eligible payment witness or primary counterexample is established; at m=3 the full t=1 minor is positive and no eligible p exists.",
+    "No universal selected-payment proof or Lean result is obtained."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-U2-ACTIVITY-LAYER-COEFFICIENTWISE-OBSTRUCTION"
+  ]
+}

@@ -1,0 +1,231 @@
+{
+  "E8_99over20": "2162945642595007/16384000000000",
+  "E7_99over20": "88220922596671/716800000000",
+  "operator_monomial_coefficients": {
+    "G=B1": [
+      4
+    ],
+    "B2": [
+      5
+    ],
+    "B3": [
+      6,
+      2,
+      3
+    ],
+    "B4": [
+      7,
+      6,
+      12,
+      4
+    ]
+  },
+  "boundary_interior_rows": [
+    {
+      "N": 200,
+      "k": 50,
+      "guard_max": 101,
+      "low_band": true,
+      "g4": "1102600/11643291",
+      "g4_ge_1_20": true,
+      "ratio_floor": "152/75",
+      "normalized_M_lower": "-149/304",
+      "normalized_M_gt_minus_half": true
+    },
+    {
+      "N": 200,
+      "k": 51,
+      "guard_max": 101,
+      "low_band": false,
+      "g4": "9184658/97027425",
+      "g4_ge_1_20": true,
+      "ratio_floor": "302/153",
+      "normalized_M_lower": "-74/151",
+      "normalized_M_gt_minus_half": true
+    },
+    {
+      "N": 200,
+      "k": 100,
+      "guard_max": 101,
+      "low_band": false,
+      "g4": "19600/352827",
+      "g4_ge_1_20": true,
+      "ratio_floor": "17/25",
+      "normalized_M_lower": "-33/68",
+      "normalized_M_gt_minus_half": true
+    },
+    {
+      "N": 200,
+      "k": 101,
+      "guard_max": 101,
+      "low_band": false,
+      "g4": "480053/8820675",
+      "g4_ge_1_20": true,
+      "ratio_floor": "2/3",
+      "normalized_M_lower": "-49/101",
+      "normalized_M_gt_minus_half": true
+    },
+    {
+      "N": 201,
+      "k": 50,
+      "guard_max": 101,
+      "low_band": true,
+      "g4": "1124950/11879703",
+      "g4_ge_1_20": true,
+      "ratio_floor": "51/25",
+      "normalized_M_lower": "-25/51",
+      "normalized_M_gt_minus_half": true
+    },
+    {
+      "N": 201,
+      "k": 51,
+      "guard_max": 101,
+      "low_band": false,
+      "g4": "374884/3959901",
+      "g4_ge_1_20": true,
+      "ratio_floor": "304/153",
+      "normalized_M_lower": "-149/304",
+      "normalized_M_gt_minus_half": true
+    },
+    {
+      "N": 201,
+      "k": 101,
+      "guard_max": 101,
+      "low_band": false,
+      "g4": "19796/359991",
+      "g4_ge_1_20": true,
+      "ratio_floor": "68/101",
+      "normalized_M_lower": "-33/68",
+      "normalized_M_gt_minus_half": true
+    },
+    {
+      "N": 202,
+      "k": 51,
+      "guard_max": 102,
+      "low_band": false,
+      "g4": "382483/4039899",
+      "g4_ge_1_20": true,
+      "ratio_floor": "2",
+      "normalized_M_lower": "-25/51",
+      "normalized_M_gt_minus_half": true
+    },
+    {
+      "N": 202,
+      "k": 52,
+      "guard_max": 102,
+      "low_band": false,
+      "g4": "1146704/12119697",
+      "g4_ge_1_20": true,
+      "ratio_floor": "76/39",
+      "normalized_M_lower": "-149/304",
+      "normalized_M_gt_minus_half": true
+    },
+    {
+      "N": 202,
+      "k": 101,
+      "guard_max": 102,
+      "low_band": false,
+      "g4": "2222/39999",
+      "g4_ge_1_20": true,
+      "ratio_floor": "206/303",
+      "normalized_M_lower": "-50/103",
+      "normalized_M_gt_minus_half": true
+    },
+    {
+      "N": 202,
+      "k": 102,
+      "guard_max": 102,
+      "low_band": false,
+      "g4": "73304/1346633",
+      "g4_ge_1_20": true,
+      "ratio_floor": "2/3",
+      "normalized_M_lower": "-33/68",
+      "normalized_M_gt_minus_half": true
+    },
+    {
+      "N": 203,
+      "k": 51,
+      "guard_max": 102,
+      "low_band": true,
+      "g4": "390184/4121103",
+      "g4_ge_1_20": true,
+      "ratio_floor": "308/153",
+      "normalized_M_lower": "-151/308",
+      "normalized_M_gt_minus_half": true
+    },
+    {
+      "N": 203,
+      "k": 52,
+      "guard_max": 102,
+      "low_band": false,
+      "g4": "1169948/12363309",
+      "g4_ge_1_20": true,
+      "ratio_floor": "51/26",
+      "normalized_M_lower": "-25/51",
+      "normalized_M_gt_minus_half": true
+    },
+    {
+      "N": 203,
+      "k": 102,
+      "guard_max": 102,
+      "low_band": false,
+      "g4": "748/13601",
+      "g4_ge_1_20": true,
+      "ratio_floor": "103/153",
+      "normalized_M_lower": "-50/103",
+      "normalized_M_gt_minus_half": true
+    }
+  ],
+  "parity_formula_checks": [
+    {
+      "N": 200,
+      "s": 100,
+      "k": 101,
+      "g4": "480053/8820675",
+      "parity_numerator": 3121540
+    },
+    {
+      "N": 201,
+      "s": 100,
+      "k": 101,
+      "g4": "19796/359991",
+      "parity_numerator": 35929
+    },
+    {
+      "N": 202,
+      "s": 101,
+      "k": 102,
+      "g4": "73304/1346633",
+      "parity_numerator": 3225069
+    },
+    {
+      "N": 203,
+      "s": 101,
+      "k": 102,
+      "g4": "748/13601",
+      "parity_numerator": 36693
+    },
+    {
+      "N": 400,
+      "s": 200,
+      "k": 201,
+      "g4": "145189/2640050",
+      "parity_numerator": 28482840
+    },
+    {
+      "N": 401,
+      "s": 200,
+      "k": 201,
+      "g4": "2948/53333",
+      "parity_numerator": 151929
+    }
+  ],
+  "inequality_direction_control": {
+    "sample_rho": "3/2",
+    "sample_b": "2/3",
+    "inverse_ratio_upper": "2/3",
+    "negative_multiplier_reverses": true,
+    "resulting_lower_bound": "5/9"
+  },
+  "scope": "exact arithmetic spot checks only; universal steps are justified in REPORT.md"
+}

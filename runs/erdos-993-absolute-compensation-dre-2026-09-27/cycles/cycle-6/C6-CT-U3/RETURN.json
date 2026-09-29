@@ -1,0 +1,43 @@
+{
+  "worker_id": "C6-CT-U3",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "T",
+  "covered_claim_ids": [
+    "C6-U3-RELATIVE-MARGIN-TO-AGGREGATE",
+    "C6-U3-WEIGHTED-TIP-DECK-TO-MASS"
+  ],
+  "claims": [
+    {
+      "claim_id": "C6-U3-WEIGHTED-TIP-DECK-TO-MASS",
+      "statement": "For the exact ordinary arity-2,3,4 path-star family and every actual lower-half eligible p with x+2<=p, 3p<2alpha+1, 2p<=alpha, if W[p+1]C[p-1]<=W[p]C[p] for W=sum_i r_i A_i, then the actual strict current-p selectors include a tip and selected MASS A=sum_i r_i e_i T_i[p-2]>=b delta D_j. Here x is the actual first strict descent, coefficients are integer zero-extended, j=p-2, delta=q-j, b=e0+sum_i r_i e_i, and original tag multiplicities are retained. No weighted-deck instance or arbitrary-tree extension is proved.",
+      "scope": "Conditional universal implication for m>=1 and r_i in {2,3,4}, retaining the actual first strict descent, all three eligibility guards, current-p strict selectors, original tip multiplicities r_i, endpoint multiplicity one, and integer zero extension.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CT-U3/REPORT.md",
+        "cycles/cycle-6/C6-CT-U3/audit.py",
+        "cycles/cycle-6/C6-CT-U3/audit-evidence.json"
+      ],
+      "reason": "The guards make the added binomial summand strictly rise at x; log-concavity then gives C[p]/C[p-1]<1. Positive support gives W[p]>0, so the assumed weighted comparison forces Delta_p W<0 and an active tip. Since its original multiplicity B is at least 2, the established 3/2 branchwise bound pays b=B+e0. The weighted-deck premise remains open."
+    },
+    {
+      "claim_id": "C6-U3-RELATIVE-MARGIN-TO-AGGREGATE",
+      "statement": "On the exact contract's actual eligible lower-half rows, the accepted relative margin implies S<=bD_j-(1-t+t/delta)A. Consequently exact-ratio payment implies S<=0, and selected MASS A>=b delta D_j implies that payment.",
+      "scope": "Only the exact path-star selected aggregate at actual eligible lower-half p, retaining the actual first strict descent, all three guards, current-p strict selectors, integer zero extension, and original multiplicities. No converse or arbitrary-tree conclusion.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CT-U3/REPORT.md",
+        "cycles/cycle-6/C6-CT-U3/audit.py",
+        "cycles/cycle-6/C6-CT-U3/audit-evidence.json"
+      ],
+      "reason": "Division by positive delta*C[j] preserves the accepted margin's direction and yields Delta_j T_i<=-kappa*T_i[j]. Summing with nonnegative original weights proves the aggregate upper bound. Since kappa*delta=1+(delta-1)(1-t)>=1, MASS implies payment. The aggregate bound cannot be reversed."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CT-U3/REPORT.md",
+  "limitations": [
+    "The weighted-tip-deck comparison itself is not proved; the first claim is conditional on that open premise.",
+    "No full-family census, path-star counterexample, Lean verification, or arbitrary-tree residual-aggregate bridge was produced.",
+    "Finite exact scalar checks audit inequality direction and boundary arithmetic only; they are not universal evidence."
+  ],
+  "status_authority": "proposed_worker_only"
+}

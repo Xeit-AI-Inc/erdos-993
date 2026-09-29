@@ -1,0 +1,29 @@
+{
+  "worker_id": "C6-CF-U1",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "F",
+  "covered_claim_ids": [
+    "C6-U1-ARITY2-MIDPOINT-E-MINOR"
+  ],
+  "claims": [
+    {
+      "claim_id": "C6-U1-ARITY2-MIDPOINT-E-MINOR",
+      "statement": "For every homogeneous arity-2 path-star profile with m>=1, N=2m, Q=(1+3z+z^2)^m, C=(1+2z)Q, and E=z(1+z)^(2m), the shifted E minor M_k(E)=E[k]C[k]-E[k+1]C[k-1] is strictly positive at k=m+1, with M_(m+1)(E)/binom(2m,m)=((m+2)Q[m]-(m-1)Q[m-1])/(m+1)>0. This is a component/rank lemma only.",
+      "scope": "Homogeneous arity-2 profiles, rank k=m+1 only; this is the outer boundary 2k=N+2. No actual first descent x or eligibility guards x+2<=p, 3p<2alpha+1, 2p<=alpha are hypotheses; no current-p strict selectors e0,ei or original-tag weighted selected sum occur. It does not cover other guarded ranks, mixed profiles, the exact-ratio payment, selected MASS, or aggregate.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CF-U1/REPORT.md",
+        "cycles/cycle-6/C6-CF-U1/midpoint_check.py"
+      ],
+      "reason": "Palindromicity gives Q[m+1]=Q[m-1]; direct coefficient substitution yields the claimed identity. Positive-interval log-concavity of Q and symmetry imply Q[m]>=Q[m-1]>0, so the numerator equals 3Q[m]+(m-1)(Q[m]-Q[m-1])>0. Positive denominators preserve the sign. Independent monomial-z integer convolution cross-checks m=1..8; those checks are bounded evidence, while the argument is universal."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CF-U1/REPORT.md",
+  "limitations": [
+    "The review retains one homogeneous-arity-2 E-component minor at one rank and does not establish the full E-only condition, selected payment, selected MASS, or aggregate.",
+    "The finite script checks m=1..8 only; no census, Lean build, producer-script execution, or formal award was performed.",
+    "All conclusions are proposed worker dispositions; status_authority is proposed_worker_only."
+  ],
+  "status_authority": "proposed_worker_only"
+}

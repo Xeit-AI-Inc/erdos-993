@@ -1,0 +1,85 @@
+{
+  "schema": "C5-F1-adversarial.v1",
+  "arithmetic": "exact Python integers; zero-extended coefficients",
+  "mandatory_controls": {
+    "E_only": {
+      "counts": [
+        0,
+        22,
+        0
+      ],
+      "m": 22,
+      "n": 91,
+      "N": 66,
+      "alpha": 68,
+      "x": 32,
+      "p": 34,
+      "guarded_k": 27,
+      "guard_1_le_k": true,
+      "guard_2k_le_N_plus_2": true,
+      "E_only_signed_margin": "-518620474811633289768751398606375936",
+      "full_endpoint_signed_margin": "745097444696166793706461153834912453824",
+      "full_tip_r3_signed_margin": "777419068009671422357461955841645743808",
+      "original_tag_multiplicities": {
+        "endpoint": 1,
+        "arity3_tip_tags": 66,
+        "total": 67
+      },
+      "strict_selectors_at_p": {
+        "p": 34,
+        "e0": 1,
+        "e3": 1
+      },
+      "meaning": "E-only comparison fails; full endpoint and represented-tip comparisons are positive. The primary selectors use strict Delta_p<0."
+    },
+    "activity_layer": {
+      "profile": "all arity 4, m=3",
+      "N": 12,
+      "n": 18,
+      "k": 7,
+      "guard_1_le_k": true,
+      "guard_2k_le_N_plus_2": true,
+      "negative_layer_degree": 3,
+      "layer_degree_3_margin": "-66",
+      "sum_of_all_layer_margins": "2076267",
+      "direct_full_tip_margin": "2076267",
+      "full_weighted_tip_margin": "60331105741071",
+      "meaning": "A negative formal-layer coefficient does not imply a negative t=1 total."
+    },
+    "n122_out_of_guard": {
+      "counts": [
+        38,
+        0,
+        1
+      ],
+      "m": 39,
+      "N": 80,
+      "n": 122,
+      "alpha": 82,
+      "x_actual_first_strict_descent": 41,
+      "k": 77,
+      "guard_1_le_k": true,
+      "guard_2k_le_N_plus_2": false,
+      "guard_failure": "2k=154>N+2=82",
+      "full_tip_shifted_margin": "-49239834336",
+      "meaning": "Negative shifted margin lies outside the registered guarded band; it refutes no guarded target."
+    }
+  },
+  "weighted_guarded_shifted_C_focused_scan": {
+    "profile_horizon_m_le": 20,
+    "profiles": 1770,
+    "guarded_profile_rank_tests": 41205,
+    "observed_failures": [],
+    "minimum_margin_row": {
+      "counts": [
+        1,
+        0,
+        0
+      ],
+      "N": 2,
+      "k": 1,
+      "margin": "38"
+    },
+    "scope": "bounded falsification evidence only; not a universal proof and not a census beyond this horizon"
+  }
+}

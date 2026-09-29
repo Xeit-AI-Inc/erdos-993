@@ -1,0 +1,39 @@
+{
+  "worker_id": "C5-U1",
+  "cycle": 5,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C5-U1-ELIGIBLE-ROOT-MIXTURE-MONOTONICITY",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, set N=sum_i r_i, q=N+1, alpha=N+2, C=(1+2z) product_i((1+z)^r_i+z), d=z(1+z)^q, P=C+d, and x=min{k in N: Delta_k P<0} with zero-extended coefficients. For every natural p satisfying x+2<=p, 3p<2alpha+1, and 2p<=alpha, with j=p-2, d[j+1]C[j]-d[j]C[j+1]>0. Thus d[j]/C[j] and d[j]/(C[j]+d[j]) strictly increase from j to j+1.",
+      "scope": "Universal informal lemma on the actual first-descent eligible lower-half ranks of the ordinary family. It does not assert a deletion comparison, selector consequence, selected payment, or MASS inequality; all current-p strict flags and original tag multiplicities remain as defined by the solution contract.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-U1/REPORT.md",
+        "cycles/cycle-5/C5-U1/root_mixture_probe.py",
+        "cycles/cycle-5/C5-U1/root_mixture_actual_rank.json"
+      ],
+      "reason": "The proof uses the strict actual descent, positivity/log-concavity of C, and the strictly rising binomial d throughout the full guarded j-range. The 3p guard is included in scope though not needed by this lemma's proof."
+    },
+    {
+      "claim_id": "C5-U1-UNRESTRICTED-ROOT-MIXTURE-COUNTEREXAMPLE",
+      "statement": "For the ordinary profile (a2,a3,a4)=(10,0,0), N=20, n=33, alpha=22 and actual first strict descent x=11, the unrestricted root-mixture minor at k=4 is d[5]C[4]-d[4]C[5]=-3549105, with (d[4],d[5],C[4],C[5])=(1330,5985,27315,125586). Taking p=6,j=4 gives e0=0 and ei=0 for every arity-2 branch, but fails x+2<=p; this is not an actual eligible witness.",
+      "scope": "One exact finite witness against all-rank monotonicity of d[k]/(C[k]+d[k]); no claim about the guarded eligible interval or the primary payment.",
+      "status": "proposed_bounded_evidence",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-U1/REPORT.md",
+        "cycles/cycle-5/C5-U1/root_mixture_probe.py",
+        "cycles/cycle-5/C5-U1/root_mixture_r2m10.json"
+      ],
+      "reason": "Exact integer convolution replay. The witness rank satisfies the two numerical rank guards but not the required first-descent guard, so its scope is restricted to the unrestricted shortcut."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-U1/REPORT.md",
+  "limitations": [
+    "No universal deletion LR, selector, selected payment, MASS, or primary claim is proved.",
+    "The all-profile root-mixture lemma is informal and has no Lean or governed formal award.",
+    "Finite outputs are bounded evidence and do not independently establish the universal lemma."
+  ],
+  "status_authority": "proposed_worker_only"
+}

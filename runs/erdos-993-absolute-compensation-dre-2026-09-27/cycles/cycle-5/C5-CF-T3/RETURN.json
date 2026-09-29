@@ -1,0 +1,33 @@
+{
+  "worker_id": "C5-CF-T3",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "F",
+  "covered_claim_ids": [
+    "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS"
+  ],
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "For every nonempty ordinary arity-2/3/4 path-star profile, every represented original tip branch i, and every integer 1<=k with 2k<=N+2, (h+1)U_i[k]C[k]+(k+1)(h-k+1)M_k(E)>=0, using monomial coefficients with integer zero extension; h=1+2a2+4a3+7a4, C=G product_i B_(r_i), E=z(1+z)^N, U_i=G B_(r_i-1)H_i, and M_k(E)=E[k]C[k]-E[k+1]C[k-1].",
+      "scope": "Exact registered guarded band without an actual-eligibility premise; this sufficient condition plus the sourced ULC and main-product LR bounds implies the full individual tip minor, but does not prove endpoint, weighted, selected-payment, or aggregate claims.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CF-T3/REPORT.md",
+        "cycles/cycle-5/C5-CF-T3/independent_check.py",
+        "cycles/cycle-5/C5-CF-T3/independent_check.json",
+        "cycles/cycle-5/C5-CF-T3/copied/producer_surplus.py",
+        "cycles/cycle-5/C5-CF-T3/copied/producer_controls.py"
+      ],
+      "reason": "The implication from the surplus condition to the full tip minor is directionally valid with positive guarded denominators. Exact independent checks found no guarded counterexample and confirmed bounded source horizons, but neither finite evidence nor the source-dependent ULC/LR reduction proves the universal surplus premise. The crude ratio-floor simplification has exact negative margins and is too weak; it does not refute this claim."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CF-T3/REPORT.md",
+  "limitations": [
+    "No all-profile proof or guarded counterexample was found; proposed_open is the disposition.",
+    "Finite exact checks are bounded evidence, not a universal theorem or formal award.",
+    "The claim has no actual-eligibility premise; first descent, strict selectors, and original multiplicities were checked only in a separately identified eligible diagnostic and do not alter claim scope.",
+    "Endpoint A0, weighted selected payment, and the primary aggregate are outside this claim."
+  ],
+  "status_authority": "proposed_worker_only"
+}

@@ -1,0 +1,47 @@
+{
+  "worker_id": "C6-F2",
+  "cycle": 6,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C6-F2-PREFIX-COVERAGE-CLOSED-FORM",
+      "statement": "For each 1<=m<=99, the number of profiles (a2,a3,a4)>=0 with sum m is binom(m+2,2), and the represented-type/rank count under all represented r and 1<=k<=floor((N+2)/2), N=2a2+3a3+4a4, is ((3m+2)S_m-O_m)/2 where S_m=3*binom(m+1,2), O_(2u)=3u^2+u and O_(2u+1)=(u+1)(3u+1). Summed counts are 171699 profiles and 56245000 rows through m=99.",
+      "scope": "Exact finite coverage arithmetic only; no coefficient or sign claim. Each represented arity is counted once per profile and every guarded rank is included, with no descent or eligibility filter.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-F2/REPORT.md",
+        "cycles/cycle-6/C6-F2/coverage_audit.py",
+        "cycles/cycle-6/C6-F2/coverage_audit.json"
+      ],
+      "reason": "Proof and direct exact enumeration cross-check are in the report and replay script; the per-layer values agree with the sealed expected-count table."
+    },
+    {
+      "claim_id": "C6-F2-KRONECKER-NO-CARRY-BOUND",
+      "statement": "For direct positive-factor Kronecker encoding of Q, C, U_i, and E at radix 2^(N+m+2), each coefficient digit is strictly less than the radix; exact digit extraction therefore has no carry, provided products are evaluated as nonnegative integers and all positions through the known degree are extracted.",
+      "scope": "Arithmetic implementation bound for the proposed finite-prefix Instrument B, for m>=1 and branch arities in {2,3,4}; it proves neither the surplus inequality nor any census outcome.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-F2/REPORT.md"
+      ],
+      "reason": "Coefficient-sum bounds for each encoded polynomial are derived explicitly in the report."
+    },
+    {
+      "claim_id": "C6-F2-PREFIX-TELEMETRY-FORMAT-CONFLICT",
+      "statement": "The general worker artifact rule forbidding wall-clock fields conflicts with the C6 prefix protocol requirement for per-m elapsed times and the shared runner's started_at_utc and elapsed_seconds receipt fields.",
+      "scope": "Artifact-format compliance only; does not affect mathematical coverage or results.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-F2/REPORT.md"
+      ],
+      "reason": "Both incompatible requirements are quoted by reference to the common worker protocol, C6 prefix protocol, and transport runner; a dispatch-level format distinction is needed."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-F2/REPORT.md",
+  "limitations": [
+    "No bounded-prefix coefficient or sign census was run.",
+    "The tail, selected comparisons, exact-ratio payment, MASS, and arbitrary-tree claims were not proved or tested by this audit.",
+    "No claim status is authoritative; all dispositions are worker proposals."
+  ],
+  "status_authority": "proposed_worker_only"
+}

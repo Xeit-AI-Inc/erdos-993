@@ -1,0 +1,55 @@
+{
+  "worker_id": "C6-CT-F2",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C6-F2-PREFIX-COVERAGE-CLOSED-FORM",
+      "statement": "For each 1<=m<=99, the number of profiles (a2,a3,a4)>=0 with sum m is binom(m+2,2), and the represented-type/rank count under all represented r and 1<=k<=floor((N+2)/2), N=2a2+3a3+4a4, is ((3m+2)S_m-O_m)/2 where S_m=3*binom(m+1,2), O_(2u)=3u^2+u and O_(2u+1)=(u+1)(3u+1). The complete totals are 171699 profiles and 56245000 rows through m=99.",
+      "scope": "Exact finite coverage arithmetic only; each represented arity is counted once per profile, with every guarded rank included and no first-descent, eligibility, or selector filter. No coefficient sign is asserted.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CT-F2/REPORT.md",
+        "cycles/cycle-6/C6-CT-F2/independent_checks.py",
+        "cycles/cycle-6/C6-CT-F2/independent_checks.json"
+      ],
+      "reason": "The layer formula follows by composition counts, coordinate symmetry, and parity summation. Independent exact layer calculations match the expected-count table and reproduce all three totals."
+    },
+    {
+      "claim_id": "C6-F2-KRONECKER-NO-CARRY-BOUND",
+      "statement": "For Q,C,U_i,E in the C6 finite-prefix instrument and radix 2^(N+m+2), each monomial coefficient is strictly below the radix, so positive-factor evaluation and complete base-radix digit extraction recover exact coefficients without carry.",
+      "scope": "Arithmetic encoding bound for m>=1 and arities in {2,3,4}; it proves no surplus sign, finite census result, tail statement, selected comparison, or primary payment.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CT-F2/REPORT.md",
+        "cycles/cycle-6/C6-CT-F2/independent_checks.py",
+        "cycles/cycle-6/C6-CT-F2/independent_checks.json"
+      ],
+      "reason": "The final coefficient-bound claim is correct, but the source derivation has a strictness defect for the empty cofactor at m=1: ||H_i||_1=1, not strictly below its bound. Replacing that intermediate < by <= yields ||U_i||_1<=3*2^(N+m-1)<2^(N+m+1), which proves the needed radix bound. Small exact boundary cases were also checked."
+    },
+    {
+      "claim_id": "C6-F2-PREFIX-TELEMETRY-FORMAT-CONFLICT",
+      "statement": "The general no-wall-clock-fields artifact rule overlaps textually with the C6-specific requirement to retain per-m elapsed times and transport receipt timestamps; timing should be kept in the required execution records, outside RETURN.json and the narrative report.",
+      "scope": "Artifact-format compliance only; no effect on mathematical coverage, coefficient calculations, or target status.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CT-F2/REPORT.md"
+      ],
+      "reason": "The textual collision is real, but the specific C6 execution record requirement can be applied to per-m data and transport receipts while the worker return/report remain clock-free; a separate controller exception is not necessary under this reading."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CT-F2/REPORT.md",
+  "limitations": [
+    "No surplus coefficient signs or m>=100 tail values were recomputed.",
+    "No actual first-descent rank, selector, original-tag payment, selected comparison, or MASS conclusion was verified.",
+    "No polynomial basis conversion or full census outcome was evaluated; the small radix checks cover only m=1 arities 2, 3, and 4.",
+    "All dispositions are proposed worker judgments and have no authoritative status."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-F2-KRONECKER-NO-CARRY-BOUND",
+    "C6-F2-PREFIX-COVERAGE-CLOSED-FORM",
+    "C6-F2-PREFIX-TELEMETRY-FORMAT-CONFLICT"
+  ]
+}

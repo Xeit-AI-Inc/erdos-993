@@ -1,0 +1,72 @@
+{
+  "worker_id": "C6-AU",
+  "cycle": 6,
+  "stage": "adjudication",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "C6-U1-ARITY2-MIDPOINT-E-MINOR",
+      "statement": "For every m>=1 in the homogeneous arity-2 path-star, Q=(1+3z+z^2)^m, C=(1+2z)Q, E=z(1+z)^(2m), and k=m+1, the shifted E minor E[k]C[k]-E[k+1]C[k-1] is strictly positive, with the displayed exact normalized formula in REPORT.md.",
+      "scope": "Universal informal component proof at only the guarded boundary 2k=N+2, N=2m. No actual first descent, eligibility, current-p strict selector, original-tag selected sum, other rank, mixed profile, MASS, or primary payment conclusion.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-6/C6-AU/REPORT.md", "cycles/cycle-6/C6-AU/C6-AU-audit.py", "cycles/cycle-6/C6-AU/C6-AU-evidence.json"],
+      "reason": "Palindromic log-concavity gives Q[m]>=Q[m-1]>0; exact substitution yields a numerator 3Q[m]+(m-1)(Q[m]-Q[m-1])>0 over positive m+1. Independent monomial checks cover m=1..12 as corroboration."
+    },
+    {
+      "claim_id": "C6-U2-prefix-surplus-1-99",
+      "statement": "For every profile (a2,a3,a4) with 1<=m=a2+a3+a4<=99, each represented arity r, and every 1<=k<=floor((N+2)/2), the exact zero-extended surplus (h+1)U_r[k]C[k]+(k+1)(h-k+1)(E[k]C[k]-E[k+1]C[k-1]) is strictly positive, where N=2a2+3a3+4a4, h=1+2a2+4a3+7a4, C=(1+2z) product_s B_s^a_s, E=z(1+z)^N, and U_r=(1+2z)B_(r-1)B_r^(a_r-1) product_(s!=r)B_s^a_s.",
+      "scope": "Complete finite m=1..99 prefix, all represented arities and every guarded surplus rank without actual-descent or eligibility filtering. Bounded computation only; no all-m surplus, individual or weighted comparison, actual strict-selector payment, or arbitrary-tree result.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-6/C6-AU/REPORT.md", "cycles/cycle-6/C6-AU/C6-AU-audit.py", "cycles/cycle-6/C6-AU/C6-AU-evidence.json"],
+      "reason": "Hash-verified frozen exact run reports 171699 profiles, 56245000 rows and minimum 98. Independent direct monomial convolution recomputed all 99 stored minima, all coverage counts and obstruction controls. Full individual-row positivity still depends on the frozen U2 instrument, so the grade is bounded computation."
+    },
+    {
+      "claim_id": "C6-U2-radix-carry-free-bound",
+      "statement": "For every nonempty arity-2/3/4 profile with total N and m branches, beta=2^(N+m+4) exceeds every coefficient of C and each represented U_i, so evaluation at beta and base-beta extraction recover exact monomial-z coefficients without carries or cancellation.",
+      "scope": "Universal informal implementation lemma for nonnegative coefficient extraction only. It proves no surplus sign, selected payment, or universal all-m compensation.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-6/C6-AU/REPORT.md", "cycles/cycle-6/C6-AU/C6-AU-audit.py"],
+      "reason": "Positive factorwise bounds give C(1)<3*2^(N+m)<beta and U_i(1)<3*2^(N+m-1)<beta. Every nonnegative coefficient is at most its coefficient sum. Boundary B1=G and all B_r were independently expanded in z."
+    },
+    {
+      "claim_id": "C6-CF-U2-validator-strictness",
+      "statement": "The supplied U2 validate_results.py accepts a zero per-m minimum through its >=0 assertion and has no explicit positive assertion for the aggregate minimum, although the finite source claim asserts strict positivity.",
+      "scope": "Exact behavior of the supplied validator only; the frozen result's 99 reported minima are all positive, so this does not refute the finite mathematical result.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-6/C6-AU/REPORT.md", "cycles/cycle-6/C6-AU/C6-AU-audit.py", "cycles/cycle-6/C6-AU/C6-AU-evidence.json"],
+      "reason": "Source inspection finds >=0 on per-m minimum and only equality to the minimum at aggregate level. Independent replay explicitly asserts every retained minimum >0 and finds least 98."
+    },
+    {
+      "claim_id": "C6-U3-WEIGHTED-TIP-DECK-TO-MASS",
+      "statement": "For an ordinary arity-2/3/4 path-star at every actual eligible lower-half p, if W[p+1]C[p-1]<=W[p]C[p] for W=sum_i r_i A_i, then at least one actual current-p strict tip selector is active and selected MASS A=sum_i r_i e_i T_i[p-2]>=b delta D_j holds, b=e0+sum_i r_i e_i, j=p-2, delta=q-j.",
+      "scope": "Conditional universal implication with actual first strict descent x of P, guards x+2<=p, 3p<2alpha+1, 2p<=alpha, integer zero extension, strict current-p flags and original tip multiplicities. Weighted-tip premise remains OPEN; branchwise 3/2 lemma is a separate nonformal dependency.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-6/C6-AU/REPORT.md", "cycles/cycle-6/C6-AU/C6-AU-audit.py", "cycles/cycle-6/C6-AU/C6-AU-evidence.json"],
+      "reason": "Actual descent and rising binomial term force C ratio below 1; positive W[p] and the assumed weighted comparison force a strict tip descent. Original selected tip mass B>=2 and the separate 2T_i[j]>=3delta D_j bound pay b=B+e0. Positive divisions preserve direction."
+    },
+    {
+      "claim_id": "C6-U3-RELATIVE-MARGIN-TO-AGGREGATE",
+      "statement": "On every actual eligible lower-half path-star row, the formally verified relative margin implies S<=bD_j-(1-t+t/delta)A, t=C[j+1]/C[j] in (0,1). Hence exact-ratio payment implies S<=0, and selected MASS A>=b delta D_j implies that payment.",
+      "scope": "Conditional universal implication retaining actual first strict descent, all three eligibility guards, integer zero extension, current-p strict selectors and original r_i multiplicities. No converse from aggregate sign and no arbitrary-tree result.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-6/C6-AU/REPORT.md", "cycles/cycle-6/C6-AU/C6-AU-audit.py", "cycles/cycle-6/C6-AU/C6-AU-evidence.json"],
+      "reason": "Divide the formal margin by positive delta*C[j], sum with nonnegative original weights, and use (1-t+t/delta)*delta=1+(delta-1)(1-t)>1. An upper bound on S cannot be reversed."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-AU/REPORT.md",
+  "limitations": [
+    "U1 proves one homogeneous component boundary only.",
+    "U2's 56,245,000-row sign result is a finite frozen computation; this adjudication independently replayed all 99 minima but not every sign row and did not run the second full instrument.",
+    "U3's MASS implication assumes the still-open weighted-tip comparison and a separately accepted nonformal branchwise lemma.",
+    "No new governed formal award or arbitrary-tree bridge is established."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-CF-U2-validator-strictness",
+    "C6-U1-ARITY2-MIDPOINT-E-MINOR",
+    "C6-U2-prefix-surplus-1-99",
+    "C6-U2-radix-carry-free-bound",
+    "C6-U3-RELATIVE-MARGIN-TO-AGGREGATE",
+    "C6-U3-WEIGHTED-TIP-DECK-TO-MASS"
+  ]
+}

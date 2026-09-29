@@ -1,0 +1,39 @@
+{
+  "worker_id": "C6-T3",
+  "cycle": 6,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, with N=sum_i r_i, h=1+2a_2+4a_3+7a_4, C=G product_i B_(r_i), E=zL^N, U_i=G B_(r_i-1) product_{u!=i}B_(r_u), and M_k(E)=E[k]C[k]-E[k+1]C[k-1], for every represented branch i and every integer 1<=k with 2k<=N+2, (h+1)U_i[k]C[k]+(k+1)(h-k+1)M_k(E)>=0, using integer zero extension.",
+      "scope": "The all-profile, all-guard tip-surplus premise remains OPEN. This worker proves only its conditional endpoint and comparison consequences; no actual-first-descent restriction is added to the registered premise.",
+      "status": "proposed_open",
+      "evidence_paths": ["cycles/cycle-6/C6-T3/REPORT.md"],
+      "reason": "The bridge is conditional on the premise; no universal proof or counterexample to the full tip-surplus predicate was established."
+    },
+    {
+      "claim_id": "C6-T3-CONDITIONAL-ALL-LEAF-SHIFTED-C-COMPARISON",
+      "statement": "If the exact-ratio tip-surplus inequalities hold for a nonempty ordinary arity-2,3,4 path-star at each represented tip and every integer 1<=k with 2k<=N+2, then for every such k and every represented tip i and endpoint 0, A_v[k+1]C[k-1]<=A_v[k]C[k], where A_i=G B_(r_i-1)H_i+zL^N, A_0=LQ+zL^N, and C=GQ; all coefficients are integer-zero-extended.",
+      "scope": "Conditional informal all-profile implication on the exact registered guard; retains the ordinary path-star definitions and does not assert that the premise holds universally.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": ["cycles/cycle-6/C6-T3/REPORT.md", "cycles/cycle-6/C6-T3/bridge_checks.py"],
+      "reason": "Tip minors follow by the common order-h ULC curvature bound and tip main-product LR; the endpoint follows additionally from U_0-U_i=z^2(L^(r_i-1)-1)H_i>=0 and its separate endpoint main-product LR."
+    },
+    {
+      "claim_id": "C6-T3-CONDITIONAL-SAME-C-WEIGHTED-TIP-DECK",
+      "statement": "Under the same exact-ratio tip-surplus premise, W=sum_i r_i A_i satisfies W[k+1]C[k-1]<=W[k]C[k] for every integer 1<=k with 2k<=N+2, with the original private-tip multiplicities r_i.",
+      "scope": "Conditional informal consequence for the same common C and exact registered lower-half guard; this is not the unconditional registered weighted-tip-deck claim.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": ["cycles/cycle-6/C6-T3/REPORT.md"],
+      "reason": "The shifted-minor operator is linear in the deletion polynomial and each tip minor is nonnegative, so summation uses the unchanged positive weights r_i."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-T3/REPORT.md",
+  "limitations": [
+    "The universal tip-surplus premise, and therefore the unconditional registered individual and weighted comparisons, remain open.",
+    "No primary selected-payment, selected-MASS, arbitrary-tree, or Erdős993 conclusion follows from this conditional bridge.",
+    "The finite script verifies local coefficient arithmetic only; the convolution implications are proved informally and were not formalized in Lean."
+  ],
+  "status_authority": "proposed_worker_only"
+}

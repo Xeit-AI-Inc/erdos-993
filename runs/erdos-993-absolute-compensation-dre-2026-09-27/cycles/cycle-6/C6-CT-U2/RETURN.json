@@ -1,0 +1,44 @@
+{
+  "worker_id": "C6-CT-U2",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "T",
+  "covered_claim_ids": [
+    "C6-U2-prefix-surplus-1-99",
+    "C6-U2-radix-carry-free-bound"
+  ],
+  "claims": [
+    {
+      "claim_id": "C6-U2-prefix-surplus-1-99",
+      "statement": "The exact ULC tip-surplus inequality holds strictly for every profile with 1<=m<=99, every represented arity r, and every integer 1<=k<=floor((N+2)/2), with no first-descent or eligibility filter; this is a bounded-computation result only.",
+      "scope": "Finite prefix m=1..99, all profiles, represented arities, and guarded ranks exactly as the registered surplus restriction; no inference to m>=100, actual selectors, payment, endpoint, or Erdős993.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CT-U2/REPORT.md",
+        "cycles/cycle-6/C6-CT-U2/independent-replay.json",
+        "cycles/cycle-6/C6-CT-U2/audit_replay.py",
+        "cycles/cycle-6/C6-CT-U2/hash-audit.json"
+      ],
+      "reason": "The sealed complete run and counts validate, all 99 per-m reported minima and required controls independently replay under direct exact monomial convolution, and the prefix result is bounded evidence. Every row was not recomputed by this critic, so this is not a universal or independently full-row proof."
+    },
+    {
+      "claim_id": "C6-U2-radix-carry-free-bound",
+      "statement": "For any nonempty profile with branch arities 2,3,4, evaluation at beta=2^(N+m+4) encodes the exact monomial coefficients of C and each represented U_i as carry-free base-beta digits.",
+      "scope": "Coefficient extraction implementation lemma for all finite nonempty arity-2/3/4 profiles; no inequality sign result or selected-payment conclusion.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CT-U2/REPORT.md",
+        "cycles/cycle-6/C6-CT-U2/audit_replay.py",
+        "cycles/cycle-6/C6-CT-U2/independent-replay.json"
+      ],
+      "reason": "The z=1 coefficient sums are strictly below beta by factorwise positive inequalities, and coefficients are nonnegative, so each coefficient is below beta and no carries or cancellation occur. The complete argument and endpoint arity checks are in REPORT.md."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CT-U2/REPORT.md",
+  "limitations": [
+    "Critic replay recomputes every reported layer-minimum witness and the controls but does not independently reevaluate all 56,245,000 certificate rows.",
+    "The finite prefix is not an all-m theorem and does not satisfy actual first-descent, strict-selector, original-multiplicity payment, or other registered payment/endpoint claims.",
+    "The radix lemma proves coefficient extraction only; it does not prove surplus positivity."
+  ],
+  "status_authority": "proposed_worker_only"
+}

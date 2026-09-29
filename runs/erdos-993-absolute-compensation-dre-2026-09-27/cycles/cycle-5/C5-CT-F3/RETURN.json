@@ -1,0 +1,29 @@
+{
+  "worker_id": "C5-CT-F3",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C5-F3-COEFFICIENT-FLOOR-DOES-NOT-IMPLY-SHIFTED-MINOR",
+      "statement": "The generic finite-block coefficient-floor/Jensen theorem alone does not imply a nonnegative analogous shifted cross-minor, even at a guarded lower-half rank: with one block of size 2, f=(1,2,100), H=1+2z+100z^2, C=(1+z)^2 and k=1, H[k]C[k]-H[k+1]C[k-1]=-96.",
+      "scope": "Exact generic finite-block obstruction. The coefficient floor and actual uniform-subset/Jensen hypotheses hold. This is not an ordinary path-star, marked-leaf-deletion, first-descent, strict-selector or payment witness, and refutes no registered graph claim.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CT-F3/REPORT.md",
+        "cycles/cycle-5/C5-CT-F3/independent_coefficient_floor_audit.py"
+      ],
+      "reason": "Independent exact reconstruction verifies the finite-block hypotheses and computes the guarded minor as -96. The example establishes only failure of the generic implication at the stated abstract scope."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CT-F3/REPORT.md",
+  "limitations": [
+    "The counterexample is abstract and is not realized by the path-star marked-deletion factors.",
+    "No universal factorization or compensation lemma and no graph-level counterexample were established.",
+    "Finite exact evidence here is not a universal graph proof or governed formal result."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-F3-COEFFICIENT-FLOOR-DOES-NOT-IMPLY-SHIFTED-MINOR"
+  ]
+}

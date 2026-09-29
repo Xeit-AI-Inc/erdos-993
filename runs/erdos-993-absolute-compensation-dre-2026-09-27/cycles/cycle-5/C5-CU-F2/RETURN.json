@@ -1,0 +1,56 @@
+{
+  "worker_id": "C5-CU-F2",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C5-F2-DIFFERENT-DENOMINATOR-SUM-OBSTRUCTION",
+      "statement": "Separate nonincreasing ratio pairs need not retain nonincreasing ratio after componentwise numerator and denominator addition: C1=(1,100), A1=(1,90), C2=(100,1), A2=(80,0) have component minors -10 and -80, while the sum minor is +909.",
+      "scope": "Exact abstract two-rank example with positive denominators and nonnegative numerators; refutes arbitrary different-denominator pair-sum closure only, and is not a path-star witness.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CU-F2/REPORT.md",
+        "cycles/cycle-5/C5-CU-F2/independent_review.py",
+        "cycles/cycle-5/C5-CU-F2/independent_review.json"
+      ],
+      "reason": "Independent exact arithmetic reproduces both nonpositive input minors and the positive sum minor. The producer RETURN's proposed_rejected label conflicts with the obstruction statement and its supporting calculation."
+    },
+    {
+      "claim_id": "C5-F2-ROOT-MIXTURE-ALL-RANK-MONOTONICITY-OBSTRUCTION",
+      "statement": "For the ordinary homogeneous arity-2 path-star profile (a2,a3,a4)=(10,0,0), m=10, N=20, C=(1+2z)B_2^10 and d=z(1+z)^21, the all-rank root-mixture weight d_k/(C_k+d_k) decreases from k=4 to k=5 because d_5 C_4-d_4 C_5=-3549105.",
+      "scope": "One exact all-rank monotonicity obstruction at coefficient rank 4. It satisfies 1<=k and 2k<=N+2, but actual first descent is x=11, so k is not actual-eligible; it does not refute any guarded actual-eligibility implication, deletion comparison, selector, payment, or primary claim.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CU-F2/REPORT.md",
+        "cycles/cycle-5/C5-CU-F2/independent_review.py",
+        "cycles/cycle-5/C5-CU-F2/independent_review.json"
+      ],
+      "reason": "Independent exact coefficient replay gives the negative signed minor. Dividing by positive C_4 C_5 preserves its direction, and u/(1+u) preserves order for nonnegative u. The actual guards fail since p>=13 and p<=11 would both be required."
+    },
+    {
+      "claim_id": "C5-CU-F2-SAME-DENOMINATOR-WEIGHTED-CLOSURE",
+      "statement": "For any common denominator sequence C, adjacent cross-minors satisfy M(sum_i w_i X_i,C)=sum_i w_i M(X_i,C) for fixed nonnegative weights w_i; hence nonpositive summand minors imply a nonpositive sum minor.",
+      "scope": "Universal algebraic adjacent-minor identity for finite sums at fixed ranks. A ratio interpretation requires the two relevant coefficients of C to be positive. This supplies only a closure rule, not the individual comparisons or a selected-payment result.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CU-F2/REPORT.md",
+        "cycles/cycle-5/C5-CU-F2/independent_review.py",
+        "cycles/cycle-5/C5-CU-F2/independent_review.json"
+      ],
+      "reason": "Expand both sides by bilinearity in X; nonnegative weights preserve each nonpositive minor's direction."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CU-F2/REPORT.md",
+  "limitations": [
+    "The root-mixture obstruction is all-rank only; its witness rank is not actual first-descent eligible.",
+    "The different-denominator example is abstract and has no path-star interpretation.",
+    "The ULC replay is bounded to m<=20 and checks the simple rank band, not actual first-descent eligibility.",
+    "No universal selected-payment proof or full-target counterexample is proposed."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-F2-DIFFERENT-DENOMINATOR-SUM-OBSTRUCTION",
+    "C5-F2-ROOT-MIXTURE-ALL-RANK-MONOTONICITY-OBSTRUCTION"
+  ]
+}

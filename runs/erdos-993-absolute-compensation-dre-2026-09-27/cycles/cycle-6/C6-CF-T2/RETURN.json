@@ -1,0 +1,31 @@
+{
+  "worker_id": "C6-CF-T2",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "F",
+  "covered_claim_ids": [
+    "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS"
+  ],
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, every represented original tip branch i, and every integer 1<=k with 2k<=N+2, (h+1)U_i[k]C[k]+(k+1)(h-k+1)(E[k]C[k]-E[k+1]C[k-1])>=0, with the registered definitions and zero extension.",
+      "scope": "Proposed narrowed disposition: independently checked informal proof for all profiles with m>=100 on the complete guarded band, without an actual-descent premise. The all-m claim remains open at this seat: m=1..99 has one authorized exact instrument report, but I did not independently duplicate the full prefix computation with a second implementation.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CF-T2/REPORT.md",
+        "cycles/cycle-6/C6-CF-T2/audit_tail_arithmetic.py",
+        "cycles/cycle-6/C6-CF-T2/audit_tail_arithmetic.json"
+      ],
+      "reason": "The low-rank center-subset comparison, full finite-block Jensen specialization, singleton exponent floor, Taylor bound, positive coefficient-ratio floor, and final deficit payment all hold with the stated supports and signs. Exact rational boundary checks found no defect. The bounded prefix is not independently duplicated here, so the original universal all-m predicate is not established by this critique."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CF-T2/REPORT.md",
+  "limitations": [
+    "The analytic proof reviewed here covers m>=100; it does not alone establish the all-m claim.",
+    "The m=1..99 prefix is reported by one exact instrument; this critic did not run a second independent full-prefix implementation.",
+    "The tip-surplus predicate does not by itself prove actual eligible deletion comparisons, selected MASS, exact-ratio payment, endpoint comparison, or an arbitrary-tree statement.",
+    "The tail proof is informal and composes a formal full Jensen theorem; it is not a Lean award for the exact-ratio surplus."
+  ],
+  "status_authority": "proposed_worker_only"
+}

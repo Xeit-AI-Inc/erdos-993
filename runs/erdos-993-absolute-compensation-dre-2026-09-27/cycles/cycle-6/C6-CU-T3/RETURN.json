@@ -1,0 +1,67 @@
+{
+  "worker_id": "C6-CU-T3",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "U",
+  "covered_claim_ids": [
+    "C6-T3-CONDITIONAL-ALL-LEAF-SHIFTED-C-COMPARISON",
+    "C6-T3-CONDITIONAL-SAME-C-WEIGHTED-TIP-DECK",
+    "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS"
+  ],
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, with N=sum_i r_i, h=1+2a_2+4a_3+7a_4, C=G product_i B_(r_i), E=zL^N, U_i=G B_(r_i-1) product_(u!=i)B_(r_u), and M_k(E)=E[k]C[k]-E[k+1]C[k-1], for every represented branch i and every integer 1<=k with 2k<=N+2, (h+1)U_i[k]C[k]+(k+1)(h-k+1)M_k(E)>=0, using integer zero extension.",
+      "scope": "All-m tip-surplus remains open. The m>=100 tail argument is independently supported informally conditional on the accepted full Jensen theorem; the m<100 universal base is not established here. No actual-first-descent restriction is added.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CU-T3/REPORT.md",
+        "cycles/cycle-6/C6-CU-T3/tail_check_copy.py",
+        "cycles/cycle-6/C6-CU-T3/tail_check_copy.json"
+      ],
+      "reason": "The tail derivation survives direction, basis, denominator, and boundary review, but does not cover m<100. Finite arithmetic checks are corroborative only; no all-m proof or counterexample was established."
+    },
+    {
+      "claim_id": "C6-T3-CONDITIONAL-ALL-LEAF-SHIFTED-C-COMPARISON",
+      "statement": "If the exact-ratio tip-surplus inequalities hold for a nonempty ordinary arity-2,3,4 path-star at each represented tip and every integer 1<=k with 2k<=N+2, then for every such k and every represented tip i and endpoint 0, A_v[k+1]C[k-1]<=A_v[k]C[k], where A_i=G B_(r_i-1)H_i+zL^N, A_0=LQ+zL^N, and C=GQ; all coefficients are integer-zero-extended.",
+      "scope": "Exact conditional all-profile implication on the full registered lower-half guard. The endpoint proof requires its own main-product LR fact as well as coefficientwise U0>=Ui. No unconditional comparison is claimed.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CU-T3/REPORT.md",
+        "cycles/cycle-6/C6-CU-T3/independent_checks.py"
+      ],
+      "reason": "Positive order-h ULC curvature and common-convolution main-product LR imply M_k(U)>=lambda_k U[k]C[k]. The surplus pays the E minor. The endpoint uses separate (L,G) LR in addition to U0-Ui>=0."
+    },
+    {
+      "claim_id": "C6-T3-CONDITIONAL-SAME-C-WEIGHTED-TIP-DECK",
+      "statement": "Under the same exact-ratio tip-surplus premise, W=sum_i r_i A_i satisfies W[k+1]C[k-1]<=W[k]C[k] for every integer 1<=k with 2k<=N+2, with the original private-tip multiplicities r_i.",
+      "scope": "Conditional informal implication with the same C, exact lower-half guard, and unchanged original r_i multiplicities; not an unconditional registered weighted-deck result.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CU-T3/REPORT.md",
+        "cycles/cycle-6/C6-CU-T3/independent_checks.py"
+      ],
+      "reason": "M_k is linear in its first argument and all weights r_i are positive, so individual tip minors sum without changing multiplicities."
+    },
+    {
+      "claim_id": "C6-CU-T3-LOCALIZED-CONDITIONAL-BRIDGE",
+      "statement": "At any fixed profile and guarded rank k, the tip-surplus premise for one represented branch i suffices for the endpoint shifted comparison; the premise for each branch separately suffices for its tip comparison, and hence for the original-r_i weighted tip deck.",
+      "scope": "Conditional rank-by-rank strengthening of the bridge dependency, using U0[k]>=Ui[k], separate endpoint LR, and positive original multiplicities.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CU-T3/REPORT.md",
+        "cycles/cycle-6/C6-CU-T3/independent_checks.py"
+      ],
+      "reason": "Only the endpoint inequality transports one branch's surplus using coefficientwise dominance; each tip conclusion still needs that tip's own surplus."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CU-T3/REPORT.md",
+  "limitations": [
+    "The all-m tip-surplus remains open here because the m<100 base is unproved.",
+    "The accepted Jensen theorem is a dependency of the reviewed m>=100 analytic tail.",
+    "Finite spot checks are not universal proof.",
+    "No unconditional individual or weighted shifted comparison, selected MASS/payment, arbitrary-tree993, or Erd\u0151s993 conclusion is established.",
+    "The convolution minor arguments are informal and receive no Lean award from this review."
+  ],
+  "status_authority": "proposed_worker_only"
+}

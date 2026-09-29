@@ -1,0 +1,30 @@
+{
+  "worker_id": "C6-CU-F1",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, every represented tip branch i, and every natural 1<=k with 2k<=N+2, the registered exact-ratio tip-surplus expression is nonnegative.",
+      "scope": "Propose retaining only the universally proved tail m>=100: for each such profile, represented branch i, and 1<=k with 2k<=N+2, the exact registered expression is strictly positive. Coefficients are in z and zero-extended. The registered m=1..99 scope remains unresolved; no first-descent or selector premise is added. Any later application to an eligible deletion must retain the actual least strict descent, all original rank guards, current-p strict selectors, and original r_i tip multiplicities. This does not establish selected payment or arbitrary-tree claims.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CU-F1/REPORT.md",
+        "cycles/cycle-6/C6-CU-F1/audit_arithmetic.py",
+        "cycles/cycle-6/C6-CU-F1/verify_dispatch.py"
+      ],
+      "reason": "The symbolic tail argument checks: low-band support and cross-product signs, high-band singleton exponent ordering and parity midpoint bounds, direct Jensen specialization including size-one factors, exact Taylor constants, and positive denominator/ratio-floor steps for paying the curvature deficit. Independent exact arithmetic reproduces the quoted constants and boundary values. No defect was found in m>=100; this does not resolve m<=99."
+    }
+  ],
+  "covered_claim_ids": [
+    "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS"
+  ],
+  "report_path": "cycles/cycle-6/C6-CU-F1/REPORT.md",
+  "limitations": [
+    "The all-profile claim includes m=1..99, which this review does not prove or refute.",
+    "The composed m>=100 proof is informal even though it uses an independently formally verified finite-block Jensen theorem.",
+    "No endpoint, weighted comparison, actual selector, selected payment, selected MASS, or arbitrary-tree conclusion follows from this claim review."
+  ],
+  "status_authority": "proposed_worker_only"
+}

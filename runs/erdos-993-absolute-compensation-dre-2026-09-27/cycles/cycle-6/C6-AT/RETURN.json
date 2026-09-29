@@ -1,0 +1,62 @@
+{
+  "worker_id": "C6-AT",
+  "cycle": 6,
+  "stage": "adjudication",
+  "orientation": "N",
+  "covered_claim_ids": [
+    "C6-CU-T3-LOCALIZED-CONDITIONAL-BRIDGE",
+    "C6-T1-M100-ULC-EXACT-RATIO-TIP-SURPLUS",
+    "C6-T3-CONDITIONAL-ALL-LEAF-SHIFTED-C-COMPARISON",
+    "C6-T3-CONDITIONAL-SAME-C-WEIGHTED-TIP-DECK",
+    "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS"
+  ],
+  "claims": [
+    {
+      "claim_id": "C6-T1-M100-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "For every ordinary arity-2,3,4 path-star with m>=100, each represented original tip branch i and each integer 1<=k with 2k<=N+2, (h+1)U_i[k]C[k]+(k+1)(h-k+1)(E[k]C[k]-E[k+1]C[k-1])>0, with the report's exact zero-extended monomial definitions.",
+      "scope": "Strict informal universal tail theorem on the entire guarded band; no actual-first-descent, eligibility, selector or endpoint premise. Depends on the governed full finite-block Jensen theorem and the report's analytic composition, not on sampled successes or the selected aggregate.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-6/C6-AT/REPORT.md", "cycles/cycle-6/C6-AT/C6-AT-audit.py", "cycles/cycle-6/C6-AT/C6-AT-audit.json"],
+      "reason": "The low-band support proof with binomial log-concavity and the complementary-band Jensen, parity, Taylor and positive-denominator estimates cover all ranks. Exact boundary/interior arithmetic agrees; this composition has no Lean award."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "The registered all-m per-tip nonnegative surplus has a strict informal proof for m>=100 and one complete exact bounded instrument for m=1..99; the full all-m predicate is not certified by this adjudication.",
+      "scope": "All ordinary arity-2,3,4 path-star profiles, every represented original tip and every 1<=k with 2k<=N+2, without actual-descent or eligibility filtering. The proven universal subcase is m>=100; the m=1..99 component is one bounded exact computation, not a second independent certificate or formal verification.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": ["cycles/cycle-6/C6-AT/REPORT.md", "cycles/cycle-6/C6-AT/C6-AT-audit.py", "cycles/cycle-6/C6-AT/C6-AT-audit.json", "cycles/cycle-6/C6-AT/C6-AT-integrity.json"],
+      "reason": "The tail proof is valid; T2's complete 171699-profile, 56245000-row result and all 99 checkpoints match coverage, with targeted direct-product replay. The assigned inputs lack the protocol's independent second complete implementation, so no all-m promotion follows."
+    },
+    {
+      "claim_id": "C6-T3-CONDITIONAL-ALL-LEAF-SHIFTED-C-COMPARISON",
+      "statement": "If every represented tip has the exact nonnegative surplus at a guarded rank k, then each original deletion A0 and Ai satisfies A_v[k+1]C[k-1]<=A_v[k]C[k] at that same rank.",
+      "scope": "Conditional informal implication for every nonempty ordinary arity-2,3,4 path-star and 1<=k with 2k<=N+2; no assertion that the premise holds all-m. For application at p retain least strict zero-extended parent descent x, x+2<=p, 3p<2(N+2)+1, 2p<=N+2 and strict current-p selectors. Endpoint original multiplicity is one, branch-tip multiplicity r_i.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-6/C6-AT/REPORT.md", "cycles/cycle-6/C6-AT/C6-AT-audit.py", "cycles/cycle-6/C6-AT/C6-AT-audit.json"],
+      "reason": "Reject the displayed F_r/B_r tip LR step because U_i uses B_(r_i-1). The exact B_(r_i-1)/B_(r_i) ordered minors, common-factor TP2, C ULC, and separate endpoint LR repair the conditional conclusion."
+    },
+    {
+      "claim_id": "C6-T3-CONDITIONAL-SAME-C-WEIGHTED-TIP-DECK",
+      "statement": "Under every represented tip's guarded surplus premise at k, W=sum_i r_i A_i satisfies W[k+1]C[k-1]<=W[k]C[k].",
+      "scope": "Conditional informal same-C weighted-tip comparison for ordinary arity-2,3,4 path-stars at all 1<=k with 2k<=N+2, retaining each original r_i multiplicity. Any actual-p application retains the least strict zero-extended first descent, all three rank guards and current-p strict selectors.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-6/C6-AT/REPORT.md", "cycles/cycle-6/C6-AT/C6-AT-audit.py", "cycles/cycle-6/C6-AT/C6-AT-audit.json"],
+      "reason": "With the repaired individual tip comparison, linearity of M_k and positive original r_i weights give the claim. An aggregate bound alone is never used to infer a branchwise inequality."
+    },
+    {
+      "claim_id": "C6-CU-T3-LOCALIZED-CONDITIONAL-BRIDGE",
+      "statement": "At a fixed guarded rank k, the exact surplus of one represented tip implies the endpoint shifted comparison A0[k+1]C[k-1]<=A0[k]C[k], using separate endpoint LR; each tip still needs its own premise for the all-tip or weighted conclusion.",
+      "scope": "Rankwise conditional informal consequence for nonempty ordinary arity-2,3,4 path-stars, 1<=k with 2k<=N+2. No actual-descent or selector premise is added to the guarded theorem; actual-p use retains the least strict zero-extended x, x+2<=p, 3p<2(N+2)+1, 2p<=N+2, current-p strict flags and original r_i multiplicities.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-6/C6-AT/REPORT.md", "cycles/cycle-6/C6-AT/C6-AT-audit.py", "cycles/cycle-6/C6-AT/C6-AT-audit.json"],
+      "reason": "U0-Ui=z^2(L^(r_i-1)-1)H_i has nonnegative coefficients and lambda C[k]>0, so one surplus pays the common E deficit for the endpoint. C6-CU-T3's F_r tip LR proof is invalid as displayed; the endpoint transfer itself is repaired by the separate L/G LR."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-AT/REPORT.md",
+  "limitations": [
+    "Only one complete independently authored m=1..99 prefix instrument is among this packet's assigned cases; the 56,245,000 sign decisions were not independently recomputed here.",
+    "The C6 tail composition and conditional bridge have informal proof grade, not a governed Lean award; the C4 Jensen theorem alone is formally verified.",
+    "The all-m exact tip surplus, unconditional guarded individual and weighted comparisons, and arbitrary-tree conclusions receive no authoritative status change from this case."
+  ],
+  "status_authority": "proposed_worker_only"
+}

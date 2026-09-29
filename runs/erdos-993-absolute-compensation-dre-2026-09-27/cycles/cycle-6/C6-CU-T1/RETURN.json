@@ -1,0 +1,33 @@
+{
+  "worker_id": "C6-CU-T1",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C6-T1-M100-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "For every m>=100 ordinary path-star with r_i in {2,3,4}, every represented tip branch i and every integer 1<=k with 2k<=N+2, the registered exact-ratio tip-surplus expression is strictly positive, with N=sum_i r_i, h=1+2a_2+4a_3+7a_4, C=(1+2z)product_i B_(r_i), E=z(1+z)^N, U_i=(1+2z)B_(r_i-1)product_(ell!=i)B_(r_ell), and integer zero-extended coefficients.",
+      "scope": "Proposed m>=100 subcase only of the registered all-m exact-ratio tip-surplus claim; the surplus statement itself has no first-descent or selector premise. If applied to the primary route, preserve x as the least natural k with Delta_k P<0 under zero extension (including terminal rank), p with x+2<=p, 3p<2alpha+1, 2p<=alpha, and strict current-p flags Delta_p A0<0 and Delta_p Ai<0; retain one original endpoint tag and all r_i original tips. This review does not cover m<100, endpoint surplus, or an all-original-leaf, payment, MASS, arbitrary-tree, or Erd\u0151s993 conclusion.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CU-T1/REPORT.md",
+        "cycles/cycle-6/C6-CU-T1/independent_tail_audit.py",
+        "cycles/cycle-6/C6-CU-T1/independent_exact_replay.py",
+        "cycles/cycle-6/C6-CU-T1/independent_exact_replay.json"
+      ],
+      "reason": "Independent algebraic audit validates the m>=100 proof after explicitly supplying binomial log-concavity in the second low-rank curvature bracket. The exact finite checks corroborate constants and boundaries only. The registered m<100 base remains unproved, so the all-m predicate stays open; no formal award is proposed for this composition."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CU-T1/REPORT.md",
+  "limitations": [
+    "No proof supplied for m<100; no all-m surplus conclusion.",
+    "No endpoint surplus or all-original-leaf comparison proved here.",
+    "Finite exact checks are diagnostic and do not establish the universal theorem.",
+    "The C4 finite-block Jensen theorem has its own formal verification; this tail composition is an informal proof and has no separate Lean award.",
+    "No implication from this stronger all-guard tip surplus to the registered primary payment or selected MASS is claimed."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-T1-M100-ULC-EXACT-RATIO-TIP-SURPLUS"
+  ]
+}

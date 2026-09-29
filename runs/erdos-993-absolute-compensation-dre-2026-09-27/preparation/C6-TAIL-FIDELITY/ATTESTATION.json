@@ -1,0 +1,46 @@
+{
+  "reviewer_id": "C6-TAIL-FIDELITY",
+  "reviewer_kind": "independent-mathematical-formalization-fidelity-reviewer",
+  "attestation_id": "c6-tail-fidelity-a6dffc7a-953d-471a-a0c3-e493a33ff4be",
+  "completed_at": "2026-09-29T05:02:42Z",
+  "contract_projection_sha256": "67ea0d7341fdff6f44428166547bb7a59cdc3c2ed13119804f0f41ee794ccc21",
+  "binding_projection_sha256": "fa1e4fad7afcfdccacca514ed178ee0aa5b819eda1088e6edaaa7daee8273d17",
+  "verdict": "match",
+  "findings": [
+    {
+      "category": "input_integrity",
+      "severity": "note",
+      "message": "All 331 sealed input hashes match; both independently recomputed audit projection digests match the immutable fingerprints."
+    },
+    {
+      "category": "claim_binding",
+      "severity": "note",
+      "message": "The six literal real-polynomial definitions, exact theorem statement, elaborated terminal type, and registered declaration bind to the m>=100 guarded tip surplus without extra hypotheses."
+    },
+    {
+      "category": "proof_fidelity",
+      "severity": "note",
+      "message": "All 138 entry bodies match their registered snippets and proposals; the 42 reused Jensen bodies match the sealed source, and real-ring ratio and center bridges are explicit."
+    },
+    {
+      "category": "mathematical_coverage",
+      "severity": "note",
+      "message": "The full finite-block specialization, strict high-band payment, low-band zero-extended minor proof, support and denominator checks, and even/odd inclusive endpoints cover every allowed labeled profile and marked branch."
+    },
+    {
+      "category": "kernel_evidence",
+      "severity": "note",
+      "message": "Sealed kernel evidence binds the unchanged Main.lean source, reports build and single-file success, and prints only propext, Classical.choice, and Quot.sound."
+    },
+    {
+      "category": "scope",
+      "severity": "warning",
+      "message": "The theorem covers only m>=100. It does not formally verify the registered all-m key or the endpoint, shifted comparison, MASS, payment, arbitrary-tree, or Erdos993 claims."
+    },
+    {
+      "category": "review_limit",
+      "severity": "note",
+      "message": "Lean was not rerun and external canonical run and package files were not read, as required by the dispatch; this review uses the immutable sealed snapshot and its kernel evidence."
+    }
+  ]
+}

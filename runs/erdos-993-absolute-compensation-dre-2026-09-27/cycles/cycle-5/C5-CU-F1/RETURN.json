@@ -1,0 +1,57 @@
+{
+  "worker_id": "C5-CU-F1",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C5-F1-MIXED-MINOR-SHORTCUT-CONTROLS",
+      "statement": "The n=91 guarded E-only minor is negative while the full endpoint and tip minors are positive; the all-arity-4 m=3 activity degree-3 minor is negative while the full single-tip margin is positive; the n=122 negative full-tip minor is outside the registered guard.",
+      "scope": "Exact finite controls only. For n=91, counts (0,22,0), x=32, p=34, k=27, e0=e3=1, original tag weights 1 and 66. For n=18, counts (0,0,3), k=7. For n=122, counts (38,0,1), x=41, k=77 with 2k>N+2. These do not refute the full guarded target or payment.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CU-F1/REPORT.md",
+        "cycles/cycle-5/C5-CU-F1/own-evidence/independent_audit.py",
+        "cycles/cycle-5/C5-CU-F1/own-evidence/independent_audit.json"
+      ],
+      "reason": "Independent exact replay validates the required controls. The producer's ancillary weighted activity-margin number is invalid because its helper uses a stale C and an underweighted U term; the corrected weighted margin is 24915204>0, which does not change the required single-tip control."
+    },
+    {
+      "claim_id": "C5-F1-WEIGHTED-GUARDED-SHIFTED-BOUNDED-CHECK",
+      "statement": "The weighted original-tip-deck margin W[k]C[k]-W[k+1]C[k-1] is nonnegative for every guarded rank 1<=k, 2k<=N+2, across all nonempty arity-count profiles with m<=20.",
+      "scope": "Finite exact scan of 1770 profiles and 41205 guarded profile-rank pairs, with W=sum_i r_i A_i and original multiplicities retained. No actual eligibility or selector premise; not an all-profile theorem.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CU-F1/REPORT.md",
+        "cycles/cycle-5/C5-CU-F1/own-evidence/independent_audit.py",
+        "cycles/cycle-5/C5-CU-F1/own-evidence/independent_audit.json"
+      ],
+      "reason": "Independent exact convolution scan reproduces the horizon, rank count, no-failure result, and minimum margin 38 at counts (1,0,0), N=2, k=1. The evidence remains bounded."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, every represented tip branch i, and every zero-extended guarded rank 1<=k with 2k<=N+2, (h+1)U_i[k]C[k]+(k+1)(h-k+1)(E[k]C[k]-E[k+1]C[k-1])>=0, where h=1+2a2+4a3+7a4, N=sum_i r_i, C=G product_i B_(r_i), E=z(1+z)^N, and U_i=G B_(r_i-1) product_(ell!=i)B_(r_ell).",
+      "scope": "Universal guarded exact-ratio sufficient condition for each represented tip, without actual-eligibility premise; endpoint A0 is outside its scope. The reduction from main-product LR and order-h ULC curvature is valid, but this critique supplies no universal proof or guarded counterexample. The crude C2 ratio-floor substitution is separately refuted at counts (0,0,4), r=4, N=16, h=29, k=8, with margin -87840 while the exact-ratio margin is 45380234160.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CU-F1/REPORT.md",
+        "cycles/cycle-5/C5-CU-F1/own-evidence/independent_audit.py",
+        "cycles/cycle-5/C5-CU-F1/own-evidence/independent_audit.json"
+      ],
+      "reason": "Positive-factor direction checks and exact boundary/interior samples support the stated reduction and refute only the crude replacement. Finite successes cannot prove the registered all-profile condition."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CU-F1/REPORT.md",
+  "limitations": [
+    "No universal proof or guarded counterexample was found for the exact-ratio tip-surplus or weighted shifted-comparison claims.",
+    "The weighted scan covers only profiles with at most 20 branches; exact-surplus evaluations are samples, not a universal theorem.",
+    "The ULC/convolution ingredient remains source-dependent informal evidence here; no Lean build or status promotion was performed.",
+    "The producer's ancillary weighted activity-control number is erroneous; the required single-tip activity result and the corrected positive weighted margin are independently recorded."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-F1-MIXED-MINOR-SHORTCUT-CONTROLS",
+    "C5-F1-WEIGHTED-GUARDED-SHIFTED-BOUNDED-CHECK",
+    "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "status": "controller bounded evidence review passed; no universal or formal award",
+  "source_sha256": "4af03154bc71bbfbdd6e638e1570b3cc512ddcb8934d23bca9efb5de2b8d8842",
+  "result_sha256": "a94c2b1b011e982a65d3a79aa872717350ce116bedee6408ef754af15b354eef",
+  "verified_checkpoint_rows": 99,
+  "witnesses_independently_recomputed": 99,
+  "totals": {
+    "profiles": 171699,
+    "represented_tip_rank_tests": 56245000
+  },
+  "minimum_reported": 98,
+  "controls": [
+    {
+      "U_k": 74794640630224420080,
+      "U_kp1": 100639981455566817018,
+      "C_k": 116461439672085416832,
+      "C_km1": 78823085262292775712,
+      "E_k": 1654284096099796392,
+      "E_kp1": 2450791253481179840,
+      "margin": 783047390962129386096766512578362723639296,
+      "full_minor": 777419068009671422357461955841645743808,
+      "E_minor": -518620474811633289768751398606375936,
+      "N": 66,
+      "h": 89,
+      "m": 22
+    },
+    {
+      "U_k": 509795,
+      "U_kp1": 13539,
+      "C_k": 14606561,
+      "C_km1": 319721589,
+      "E_k": 1581580,
+      "E_kp1": 82160,
+      "margin": -1343193847632065,
+      "full_minor": -49239834336,
+      "E_minor": -3166881005860,
+      "N": 80,
+      "h": 84,
+      "m": 39
+    },
+    {
+      "U_k": 4,
+      "U_kp1": 4,
+      "C_k": 5,
+      "C_km1": 1,
+      "E_k": 1,
+      "E_kp1": 2,
+      "margin": 98,
+      "full_minor": 19,
+      "E_minor": 3,
+      "N": 2,
+      "h": 3,
+      "m": 1
+    }
+  ],
+  "transport_seconds": 695.6182332499884,
+  "full_census_rerun": false,
+  "protocol_deviations": [
+    "The frozen census source does not execute the three controls on each invocation or embed controls in aggregate RESULT.json. Producer provides a separate control_replay.py and controls.json. Controller independently recomputes controls and witnesses here; retain this distinction for final review rather than claiming exact original protocol compliance.",
+    "Product arrays are reconstructed for each profile rather than incrementally reused; this affects efficiency only and the run stayed within the cap."
+  ]
+}

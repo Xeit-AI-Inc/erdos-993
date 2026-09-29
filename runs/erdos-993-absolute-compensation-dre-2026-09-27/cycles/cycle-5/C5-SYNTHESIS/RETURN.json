@@ -1,0 +1,210 @@
+{
+  "worker_id": "C5-SYNTHESIS",
+  "cycle": 5,
+  "stage": "synthesis",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "C5-AU-ROOT-MIXTURE-EXTENDED-BAND",
+      "statement": "For every nonempty ordinary arity-2/3/4 path-star, with d=z(1+z)^(N+1), P=C+d and x the actual first strict zero-extended descent of P, every x<=j<=floor((N+1)/2) has d[j+1]C[j]-d[j]C[j+1]>0.",
+      "scope": "Universal informal root-odds and mixture-order lemma on the stated band; no deletion, strict-selector or payment consequence.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-SYNTHESIS/REPORT.md",
+        "cycles/cycle-5/C5-SYNTHESIS/math_audit.py",
+        "cycles/cycle-5/C5-SYNTHESIS/math_audit.json"
+      ],
+      "reason": "Binomial rise, C log-concavity and actual descent yield a positive exact cross minor; boundary and interior integers independently replayed."
+    },
+    {
+      "claim_id": "C5-CU-F2-SAME-DENOMINATOR-WEIGHTED-CLOSURE",
+      "statement": "For fixed nonnegative weights w_i and the same sequence C, M_k(sum_i w_i X_i)=sum_i w_i M_k(X_i,C), so nonnegative individual minors imply a nonnegative weighted minor at that rank.",
+      "scope": "Universal cross-multiplied algebra with zero extension; ratio wording requires positive C denominator coefficients. Actual-p weights r_i e_i(p) remain fixed nonnegative values.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Direct linear expansion and nonnegative-weight summation prove the one-way statement; no individual sign or selected payment follows."
+    },
+    {
+      "claim_id": "C5-F1-MIXED-MINOR-SHORTCUT-CONTROLS",
+      "statement": "For exact ordinary profiles, an isolated E minor can be negative on guard while full deletion minors are positive; an activity coefficient can be negative while its sum is positive; the (38,0,1), k=77 negative full-tip minor lies outside guard.",
+      "scope": "Exact finite obstructions to those three proof shortcuts, with actual first-descent and current-p flags recorded when applicable; no guarded full-target failure.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-SYNTHESIS/REPORT.md",
+        "cycles/cycle-5/C5-SYNTHESIS/math_audit.py",
+        "cycles/cycle-5/C5-SYNTHESIS/math_audit.json"
+      ],
+      "reason": "Independent monomial replay verifies n=91, n=18 and n=122 controls. F1's ancillary weighted activity integer is invalid; the correct original-weighted minor is 24915204."
+    },
+    {
+      "claim_id": "C5-F1-WEIGHTED-GUARDED-SHIFTED-BOUNDED-CHECK",
+      "statement": "For every nonempty count profile (a2,a3,a4) with m<=20 and every 1<=k,2k<=N+2, the original-multiplicity weighted deck W has M_k(W)>=0; the minimum is 38 at (1,0,0),k=1.",
+      "scope": "Exact bounded enumeration of 1770 profiles and 41205 guarded profile-rank pairs only; no universal all-m or actual selected-payment inference.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-SYNTHESIS/REPORT.md",
+        "cycles/cycle-5/C5-SYNTHESIS/math_audit.py",
+        "cycles/cycle-5/C5-SYNTHESIS/math_audit.json"
+      ],
+      "reason": "Independent exact integer scan reproduces horizon, counts and minimum while preserving W=sum_i r_i A_i."
+    },
+    {
+      "claim_id": "C5-F2-DIFFERENT-DENOMINATOR-SUM-OBSTRUCTION",
+      "statement": "Two positive denominator pairs can each have negative adjacent numerator-denominator cross minor while their sums have positive minor: the displayed abstract pairs give -10,-80 and +909.",
+      "scope": "Exact abstract counterexample to arbitrary different-denominator sum closure; it is not an ordinary path-star witness.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-SYNTHESIS/REPORT.md",
+        "cycles/cycle-5/C5-SYNTHESIS/math_audit.py",
+        "cycles/cycle-5/C5-SYNTHESIS/math_audit.json"
+      ],
+      "reason": "Direct integer expansion verifies the three signs; positive denominator products preserve ratio direction. The source rejected label concerns the false closure premise."
+    },
+    {
+      "claim_id": "C5-F2-ROOT-MIXTURE-ALL-RANK-MONOTONICITY-OBSTRUCTION",
+      "statement": "For the all-arity-2 m=10 ordinary profile, N=20,n=33,x=11, at p=6,j=4 the root-mixture cross minor d[5]C[4]-d[4]C[5] equals -3549105.",
+      "scope": "Exact finite obstruction to unrestricted rank monotonicity; x+2<=p fails and current strict selector flags are zero, so no eligible selected-payment witness.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-SYNTHESIS/REPORT.md",
+        "cycles/cycle-5/C5-SYNTHESIS/math_audit.py",
+        "cycles/cycle-5/C5-SYNTHESIS/math_audit.json"
+      ],
+      "reason": "Independent coefficients (1330,5985,27315,125586), first descent, flags and signed margin reproduce the example."
+    },
+    {
+      "claim_id": "C5-F3-COEFFICIENT-FLOOR-DOES-NOT-IMPLY-SHIFTED-MINOR",
+      "statement": "In the one-block generic finite-block model with f=(1,2,100)>=(1,2,1), H=f and C=(1,2,1), the guarded k=1 shifted minor H[1]C[1]-H[2]C[0] is -96.",
+      "scope": "Exact abstract obstruction to deriving a shifted minor solely from the formally verified generic coefficient/Jensen floor; no marked path-star deletion, actual selection or payment witness.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-SYNTHESIS/REPORT.md",
+        "cycles/cycle-5/C5-SYNTHESIS/math_audit.py",
+        "cycles/cycle-5/C5-SYNTHESIS/math_audit.json"
+      ],
+      "reason": "The actual subset averages (1,1,100), Jensen exponents (0,0,198/101), negative interior and positive k=2 boundary are checked."
+    },
+    {
+      "claim_id": "C5-T2-ACTIVITY-BASIS-NEGATIVE-LAYER",
+      "statement": "For all-arity-4 m=3, C_t=GB4(L^4+tz)^2 and A_t=GB3(L^4+tz)^2+zL^12, the guarded k=7 minor has t coefficients (1898616,171542,6175,-66,0).",
+      "scope": "Exact finite obstruction to coefficientwise activity positivity; evaluated t=1 minor is 2076267>0 and x=7 makes actual p=7 ineligible.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-SYNTHESIS/REPORT.md",
+        "cycles/cycle-5/C5-SYNTHESIS/math_audit.py",
+        "cycles/cycle-5/C5-SYNTHESIS/math_audit.json"
+      ],
+      "reason": "Independent bivariate z-basis expansion confirms -66; the origin's large-profile printed positive tip integer is corrected in the report."
+    },
+    {
+      "claim_id": "C5-U1-ELIGIBLE-ROOT-MIXTURE-MONOTONICITY",
+      "statement": "For every ordinary profile and every p with actual first descent x satisfying x+2<=p, 3p<2(N+2)+1 and 2p<=N+2, j=p-2 has d[j+1]C[j]-d[j]C[j+1]>0.",
+      "scope": "Universal informal eligible-rank root-mixture lemma, retaining all p guards; it gives no deletion comparison or exact selected payment.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-SYNTHESIS/REPORT.md",
+        "cycles/cycle-5/C5-SYNTHESIS/math_audit.py",
+        "cycles/cycle-5/C5-SYNTHESIS/math_audit.json"
+      ],
+      "reason": "The stronger extended-band proof applies since x<=j and 2j<=N-2; exact eligible boundary replay supports but does not prove it."
+    },
+    {
+      "claim_id": "C5-U1-UNRESTRICTED-ROOT-MIXTURE-COUNTEREXAMPLE",
+      "statement": "At (a2,a3,a4)=(10,0,0), N=20,n=33,alpha=22,x=11,p=6,j=4, the root minor is -3549105 and both current-p strict deletion flags are zero.",
+      "scope": "Exact finite counterexample to all-rank monotonicity only; x+2=13>p despite both numerical p rank guards.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-SYNTHESIS/REPORT.md",
+        "cycles/cycle-5/C5-SYNTHESIS/math_audit.py",
+        "cycles/cycle-5/C5-SYNTHESIS/math_audit.json"
+      ],
+      "reason": "Independent actual-descent, exact coefficients, current selector differences and negative cross product confirm the scope."
+    },
+    {
+      "claim_id": "C5-U2-ACTIVITY-LAYER-COEFFICIENTWISE-OBSTRUCTION",
+      "statement": "For every homogeneous arity-4 profile m>=3, A_t=GB3(L^4+tz)^(m-1)+zL^(4m), C_t=GB4(L^4+tz)^(m-1), k=m+4, the t^(2m-3) coefficient of M_k(A_t,C_t) is -33(m-1)<0.",
+      "scope": "Universal exact algebraic obstruction to this layerwise certificate on the full guarded k=m+4 band; no sign inference for evaluated t=1 minor or selected payment.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-SYNTHESIS/REPORT.md",
+        "cycles/cycle-5/C5-SYNTHESIS/math_audit.py",
+        "cycles/cycle-5/C5-SYNTHESIS/math_audit.json"
+      ],
+      "reason": "Only two top activity choices contribute; local z-coefficients yield -33 times positive m-1, with m=3 boundary and m=4 interior replay."
+    },
+    {
+      "claim_id": "C5-U3-BRANCH-RECURRENCE-COEFFICIENT-OBSTRUCTION",
+      "statement": "Under branch addition W'=B_rW+rB_(r-1)C+(rL^r-Nz)E; from 150 old arity-2 branches then r=2, the correction at guarded k=4 is -4364800 while the complete weighted minor is 185586251584170562390>0.",
+      "scope": "Exact algebra and finite obstruction to assuming coefficientwise nonnegative branch correction; x'=152 and p=4 is not actual eligible. Original 302 tip tags are retained.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-SYNTHESIS/REPORT.md",
+        "cycles/cycle-5/C5-SYNTHESIS/math_audit.py",
+        "cycles/cycle-5/C5-SYNTHESIS/math_audit.json"
+      ],
+      "reason": "Substitution U=W-NE derives recurrence; exact binomial subtraction and independent full deck check verify signed control."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+      "statement": "For every nonempty ordinary arity-2/3/4 profile, every original endpoint or tip deletion A_v, and every 1<=k,2k<=N+2, M_k(A_v)>=0 with integer zero extension.",
+      "scope": "Registered all-profile guarded structural predicate without actual eligibility premise; retained OPEN. Any selected use must keep actual x, all p guards, current strict flags and original multiplicities.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-SYNTHESIS/REPORT.md",
+        "cycles/cycle-5/C5-SYNTHESIS/math_audit.py",
+        "cycles/cycle-5/C5-SYNTHESIS/math_audit.json"
+      ],
+      "reason": "Negative isolated E and activity layer do not refute full minors; bounded replays are positive. Universal tip compensation and separate endpoint proof remain absent."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "For every nonempty ordinary arity-2/3/4 profile, W=sum_i r_i A_i with original tip multiplicities, and every 1<=k,2k<=N+2, M_k(W)>=0 with integer zero extension.",
+      "scope": "Registered all-profile guarded weighted structural predicate without actual eligibility premise; retained OPEN. Selected application retains actual x, all p guards and current-p strict selectors.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-SYNTHESIS/REPORT.md",
+        "cycles/cycle-5/C5-SYNTHESIS/math_audit.py",
+        "cycles/cycle-5/C5-SYNTHESIS/math_audit.json"
+      ],
+      "reason": "Independent m<=20 scan is bounded; exact recurrence contains signed E correction and admits new guard strips. No uniform invariant or counterexample is supplied."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "For every ordinary arity-2/3/4 profile, represented tip i and 1<=k,2k<=N+2, (h+1)U_i[k]C[k]+(k+1)(h-k+1)M_k(E)>=0, h=1+2a2+4a3+7a4.",
+      "scope": "Registered full-guard tip-only exact-ratio condition without actual eligibility premise; retained OPEN. It excludes endpoint A0 and does not alone assert selected payment.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-SYNTHESIS/REPORT.md",
+        "cycles/cycle-5/C5-SYNTHESIS/math_audit.py",
+        "cycles/cycle-5/C5-SYNTHESIS/math_audit.json"
+      ],
+      "reason": "Sourced main-product LR and enlarged-order ULC give a valid sufficient implication to M_k(A_i)>=0, but the universal signed-E compensation is unproved. Crude-floor negative margins do not refute exact surplus."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-SYNTHESIS/REPORT.md",
+  "limitations": [
+    "The three registered guarded all-profile structural propositions remain OPEN; no universal proof or guarded counterexample is supplied.",
+    "The accepted selected payment remains computer-assisted/nonformal and lacks its governed primary formal award.",
+    "The finite m<=20 scan and all exact numerical controls have bounded scope; universal root-mixture and activity arguments are informal, not Lean checked."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-AU-ROOT-MIXTURE-EXTENDED-BAND",
+    "C5-CU-F2-SAME-DENOMINATOR-WEIGHTED-CLOSURE",
+    "C5-F1-MIXED-MINOR-SHORTCUT-CONTROLS",
+    "C5-F1-WEIGHTED-GUARDED-SHIFTED-BOUNDED-CHECK",
+    "C5-F2-DIFFERENT-DENOMINATOR-SUM-OBSTRUCTION",
+    "C5-F2-ROOT-MIXTURE-ALL-RANK-MONOTONICITY-OBSTRUCTION",
+    "C5-F3-COEFFICIENT-FLOOR-DOES-NOT-IMPLY-SHIFTED-MINOR",
+    "C5-T2-ACTIVITY-BASIS-NEGATIVE-LAYER",
+    "C5-U1-ELIGIBLE-ROOT-MIXTURE-MONOTONICITY",
+    "C5-U1-UNRESTRICTED-ROOT-MIXTURE-COUNTEREXAMPLE",
+    "C5-U2-ACTIVITY-LAYER-COEFFICIENTWISE-OBSTRUCTION",
+    "C5-U3-BRANCH-RECURRENCE-COEFFICIENT-OBSTRUCTION",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+    "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS"
+  ]
+}

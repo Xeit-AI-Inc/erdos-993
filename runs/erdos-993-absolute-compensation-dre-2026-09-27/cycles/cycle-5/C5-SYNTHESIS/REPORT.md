@@ -1,0 +1,72 @@
+# C5 synthesis: proposed mathematical assessment
+
+This is an independent synthesis of the three sealed C5-AT, C5-AF and C5-AU adjudications and neutral sources. It is not an authoritative registry decision. I read no raw search or critique case. `hash_audit.py` checked actual SHA-256 bytes of all 237 common-dispatch members and all 14 packet additions: zero missing or mismatched. `math_audit.py` constructs the ordinary polynomials independently in the monomial `z` basis using exact integers. Its complete stated `m<=20` weighted scan and focused replays are finite evidence, never a universal proof. No source script was executed.
+
+## Status and mathematical scope
+
+The literal selected exact-ratio payment, selected MASS, full selection and branchwise three-halves result remain **VERIFIED at computer-assisted/nonformal grade**, as specified by the neutral handoff and targeted registry. The primary governed formal stop is unmet. The three registered all-profile propositions below remain **OPEN** as structural propositions, with no guarded counterexample found here:
+
+* `E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR`;
+* `E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR`;
+* `E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS`.
+
+Here `m>=1`, `r_i in {2,3,4}`, `N=sum r_i`, `alpha=N+2`, `L=1+z`, `G=1+2z`, `B_r=L^r+z`, `Q=prod B_{r_i}`, `H_i=prod_{h!=i}B_{r_h}`, `C=GQ`, `E=zL^N`, `U_i=GB_{r_i-1}H_i`, `A_i=U_i+E`, `A_0=LQ+E`, `U=sum_i r_iU_i`, and `W=U+NE=sum_i r_iA_i`. Every coefficient is integer-zero-extended. The comparison rank is **every** `1<=k, 2k<=N+2`, without an actual-eligibility premise. Write `M_k(V)=V[k]C[k]-V[k+1]C[k-1]`. The individual claim includes `A_0` and all represented `A_i`; the weighted claim concerns `W`, with original multiplicity `r_i`; the surplus claim is `(h+1)U_i[k]C[k]+(k+1)(h-k+1)M_k(E)>=0`, `h=1+2a_2+4a_3+7a_4`, and concerns tips only. An aggregate selected result cannot certify any of these stronger branchwise or all-guard claims.
+
+## Dispositions of all packet claims
+
+| Required ID | Proposed disposition and evidence grade | Exact conclusion |
+| --- | --- | --- |
+| `C5-AU-ROOT-MIXTURE-EXTENDED-BAND` | retained; universal informal proof | Strict root odds rise for `x<=j<=floor((N+1)/2)`, where `x` is actual first descent. This does not compare deletions. |
+| `C5-CU-F2-SAME-DENOMINATOR-WEIGHTED-CLOSURE` | retained; universal elementary identity | Fixed nonnegative weights and the same `C` preserve nonnegative minors at one rank. |
+| `C5-F1-MIXED-MINOR-SHORTCUT-CONTROLS` | retained_narrowed; exact finite obstructions | Isolated `E` is negative at guarded `k=27`; an activity layer is negative; the `n=122,k=77` full-tip failure is outside guard. Reject F1's ancillary printed weighted activity value. |
+| `C5-F1-WEIGHTED-GUARDED-SHIFTED-BOUNDED-CHECK` | retained; bounded exact enumeration | For all 1770 count triples with `1<=m<=20`, 41205 guarded profile-rank pairs have `M_k(W)>=0`, minimum 38 at `(1,0,0),k=1`. No all-m inference. |
+| `C5-F2-DIFFERENT-DENOMINATOR-SUM-OBSTRUCTION` | retained; exact abstract counterexample | Pairwise ratio signs need not survive summing numerator and denominator pairs. The origin's `proposed_rejected` label applies to the false closure premise, not this true obstruction. |
+| `C5-F2-ROOT-MIXTURE-ALL-RANK-MONOTONICITY-OBSTRUCTION` | retained; exact finite path-star example | Unrestricted rank monotonicity fails at all-r2 `m=10,j=4`; actual first-descent eligibility fails. |
+| `C5-F3-COEFFICIENT-FLOOR-DOES-NOT-IMPLY-SHIFTED-MINOR` | retained; exact abstract counterexample | The formally verified generic coefficient/Jensen floor alone does not give a shifted minor; no marked path-star counterexample follows. |
+| `C5-T2-ACTIVITY-BASIS-NEGATIVE-LAYER` | retained_narrowed; exact finite obstruction | At all-r4 `m=3,k=7`, the activity `t^3` coefficient is `-66` while the full tip minor is positive. The origin's printed large-profile full-tip integer is rejected; the corrected value is below. |
+| `C5-U1-ELIGIBLE-ROOT-MIXTURE-MONOTONICITY` | retained; universal informal proof | Follows from the stronger extended-band lemma with all original eligible guards; no selector/payment consequence. |
+| `C5-U1-UNRESTRICTED-ROOT-MIXTURE-COUNTEREXAMPLE` | retained; exact finite example | At `(10,0,0),j=4`, root minor `-3549105`, but `x+2<=p` fails. |
+| `C5-U2-ACTIVITY-LAYER-COEFFICIENTWISE-OBSTRUCTION` | retained; universal exact algebra | For every all-r4 `m>=3`, the indicated guarded layer is `-33(m-1)`. The origin's `proposed_rejected` label rejects a positivity method, not the valid obstruction. |
+| `C5-U3-BRANCH-RECURRENCE-COEFFICIENT-OBSTRUCTION` | retained; exact algebra and finite example | The signed correction in branch addition can be negative at guarded `k`, although the full `W` minor is positive. |
+| `E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR` | retained as OPEN | No all-profile proof or guarded counterexample; tip surplus, if established, leaves endpoint `A_0` separate. |
+| `E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR` | retained as OPEN | Exact recurrence and same-`C` summation do not prove its signed compensation or new guard strips. |
+| `E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS` | retained as OPEN | Valid sufficient condition for each tip comparison, conditional on sourced main-product LR and enlarged-order ULC; no universal surplus proof. |
+
+## Proof checks and repairs
+
+**Root mixture.** Let `d=zL^(N+1)`, `P=C+d`, and `x=min{k>=0: Delta_kP<0}`, including terminal zero extension. Each `G,B_2,B_3,B_4` has positive interval support and directly checked log-concave coefficients: `B_2=(1,3,1)`, `B_3=(1,4,3,1)`, `B_4=(1,5,6,4,1)`. Convolution preserves this property, so `C[k+1]/C[k]` is nonincreasing on positive support. For `0<=j<=floor((N+1)/2)`, `Delta_j d=binom(N+1,j)-binom(N+1,j-1)>0`: for `j>0` the ratio of those binomials is `(N+2-j)/j>1`, and at `j=0` it is 1 versus 0. Thus `Delta_x C=Delta_x P-Delta_x d<0` whenever the interval `x<=j<=floor((N+1)/2)` is nonempty. Ratio monotonicity propagates `Delta_j C<0` for every subsequent `j` in that interval. The exact identity
+
+`d[j+1]C[j]-d[j]C[j+1]=C[j]Delta_j d-d[j]Delta_j C>0`
+
+then proves the extended claim. Multiplying the negative `Delta_j C` by `-d[j]<=0` reverses its sign; the first term is strictly positive. All denominators in root odds `d/C` and mixture probability `d/(C+d)` are positive, so division preserves the order. At an eligible `p`, `j=p-2` satisfies `x<=j` and `2j<=N-2`, hence lies inside the extended interval. Exact boundary/interior replay at `(a_2,a_3,a_4)=(0,12,10)`, `n=101,N=76,x=37`, gives root minors `213545270520198687231356881755419118232819740` at eligible `p=39,j=37` and `226392114664217074296074723522548726747489840` at `p=40,j=38`; the latter fails `2p<=alpha`. The all-r2 `m=10` counterexample has `n=33,N=20,alpha=22,x=11,p=6,j=4`, `(d_4,d_5,C_4,C_5)=(1330,5985,27315,125586)`, root minor `-3549105`, `Delta_p(A_0)=577440`, `Delta_p(A_2)=567414`, flags zero, and `x+2=13>6`. It rejects only the unrestricted shortcut.
+
+**Same denominator and abstract obstructions.** Expanding definitions gives `M_k(sum_i w_iX_i)=sum_i w_iM_k(X_i)` for one common `C`; `w_i>=0` preserves each nonnegative summand. At an actual `p`, `w_i=r_ie_i(p)` is a fixed nonnegative integer, but its sign conclusion still needs each individual premise. It cannot be inferred from an aggregate bound. With different denominators, `C_1=(1,100), A_1=(1,90), C_2=(100,1), A_2=(80,0)`, the separate adjacent `J(A,C)=A[1]C[0]-A[0]C[1]` are `-10,-80`, while `J(A_1+A_2,C_1+C_2)=909`; all denominator coefficients are positive, so dividing preserves those signs. For the generic floor example `f=(1,2,100)>=(1,2,1)`, actual one-block uniform-subset averages are `(1,1,100)`, Jensen exponents `(0,0,198/101)`, and `H=f` has shifted minor `H[1]C[1]-H[2]C[0]=-96` for `C=(1,2,1),k=1`, while the upper boundary `k=2` gives `100`. This is an abstract transfer obstruction, not a marked deletion or selected witness.
+
+**Activity and recurrence.** The all-r4 partial deformation is `A_t=GB_3(L^4+tz)^(m-1)+E`, `C_t=GB_4(L^4+tz)^(m-1)`, `k=m+4`. At `t^(2m-3)`, `E` contributes nothing because it has activity degree zero and `C_t` degree at most `m-1`. The only factor choices are `(m-2,m-1)` and `(m-1,m-2)`. In the `z` basis, their local signed product is `51*2+0*142-15*9-0*205=-33`; the positive choice multiplicity `m-1` gives `-33(m-1)`. The guard becomes `2(m+4)<=4m+2`, exactly `m>=3`. Replays give `-66` at the upper guard boundary `m=3,k=7` and `-99` at interior `m=4,k=8`. At `m=3`, the whole `t=1` minor is `2076267>0` and the correct original-weighted minor is `12*2076267=24915204`, rejecting F1's printed `60331105741071`. Here `n=18,N=12,alpha=14,x=7,p=7,j=5`, current flags are `e_0=e_4=1`, but `x+2=9>p`; the negative activity layer is no eligible payment failure. The monomial check `F_4=1+L+L^2=(3,3,1)` and `GF_4=(3,9,7,2)` rejects use of the `L`-basis list `(1,1,1)` as `z` coefficients.
+
+Appending arity `r` gives `C'=B_rC`, `U'=B_rU+rB_{r-1}C`, `E'=L^rE`, and, by substituting `U=W-NE`, `W'=B_rW+rB_{r-1}C+(rL^r-Nz)E`. The negative term is real. For 150 old arity-2 branches (`N=300`) then one new arity-2 branch, `n'=456,N'=302,alpha'=304,x'=152`, the guarded `k=4` correction is `2 binom(302,3)-300 binom(300,2)=-4364800`; the full original-weighted minor is `185586251584170562390>0`. The correction at lower `k=1` is `+2` and interior `k=2` is `+304`. At `p=4,j=2`, both current deletion differences are positive and flags zero, while `x'+2>p`. The old upper guard `floor((N+2)/2)` grows by one rank for `r=2`, by one or two for `r=3` according to parity, and by two for `r=4`; an induction must handle these newly admitted strips. A negative correction cannot be omitted in a lower-bound proof. Positive factors preserve order; multiplying a proposed lower bound by a negative correction would reverse it.
+
+**The signed binomial deficit.** At `(0,22,0)`, `n=91,N=66,alpha=68,x=32`, actual `p=34,j=32` obeys `x+2=p`, `3p=102<137`, `2p=68=alpha`, and current flags `e_0=e_3=1`, so `b=67` with original 66 tip tags. The exact payment margin at that eligible rank is positive (`2348398634845436222199118708110999411248850`). At a separate guarded comparison rank `k=27`, `M_k(E)=-518620474811633289768751398606375936`, while `M_k(A_0)=745097444696166793706461153834912453824`, `M_k(A_3)=777419068009671422357461955841645743808`, and `M_k(W)=51309658488638313875592489085548619091328`. The last tip integer corrects T2's printed positive transcription. Direct replay also tests `k=1,32,34` with positive full-tip minors. Conversely, `(38,0,1)` has `n=122,N=80,alpha=82,x=41,k=77` and `M_{77}(A_4)=-49239834336`, but `2k=154>82`; the full guarded proposition is untouched.
+
+**ULC surplus direction.** On `1<=k,2k<=N+2`, `h>=N+1`, `g=(k+1)(h-k+1)>0`, and all used `C` coefficients are positive. The sourced main-product ratio gives `U_i[k+1]C[k]<=U_i[k]C[k+1]`. Multiplication by `C[k-1]/C[k]>=0` preserves its direction. The sourced order-`h` ULC curvature gives `C[k-1]C[k+1]/C[k]^2<=k(h-k)/g`. Multiplying by `U_i[k]C[k]>=0`, then subtracting the upper bound, yields
+
+`M_k(U_i) >= ((h+1)/g) U_i[k]C[k]`.
+
+The algebra is `g-k(h-k)=h+1`; multiplying by positive `g` preserves order. Therefore a nonnegative registered surplus implies `M_k(A_i)=M_k(U_i)+M_k(E)>=0`. It supplies no proof of the surplus itself and no endpoint statement. If `M_k(E)<0`, replacing it by zero in a lower bound is invalid. The coarse `C[k]/C[k-1]>=2(N+2-k)/(3k)` reverses when reciprocated because both sides are positive. It gives only the sufficient lower margin `2(N+2-k)(h+1)U_i[k]-E[k](N-k-1)g`, not an equivalent test. At `(0,0,4),N=16,k=8`, this coarse margin is `-87840` but exact surplus `45380234160>0`. More decisively, `(0,0,24),n=123,N=96,alpha=98,x=47,p=k=49,j=47` obeys all eligible guards, has `e_0=e_4=1,b=97`, a positive exact surplus `416966184785614418980331915462512401919889476953795417377960`, but coarse margin `-1134884788104385426929377214036680`. A negative lower bound cannot refute a positive exact target. Exact small boundary tests at `(1,0,0),k=1,2` give surplus `98,166`, and `(2,0,0),k=3` gives `3600`; their main-product and curvature cross margins are nonnegative. The predecessor's `217(j+1)epsilon<1` tail certificate does not imply this full-guard exact surplus; no such bridge was supplied.
+
+## Remaining obligations and formal candidate
+
+For a census-free structural route, prove a full-guard compensation for signed `E` in each represented tip or directly in original-weighted `W`; prove the endpoint `A_0` separately if targeting individual deletion; and handle every new branch-addition guard strip. A proof of selected payment must then retain `P=C+zL^(N+1)`, the *actual first* strict descent `x`, all `x+2<=p`, `3p<2alpha+1`, `2p<=alpha`, strict selectors evaluated at that same `p`, and original weights `r_i`. It cannot substitute the known aggregate, a finite scan, or a branchwise claim from an aggregate claim. The existing accepted hybrid payment remains without its governed primary formal award.
+
+One self-contained formal candidate is the extended root-mixture lemma. Its closed dependency DAG is: finite `z`-coefficient and local LC checks for `G,B_2,B_3,B_4` → general positive-interval LC convolution → ratio monotonicity of `C` → binomial rise for `d` on the exact band → actual-first-descent transfer to `C` → positive cross minor → odds/mixture order. It is useful but does not discharge deletion or payment. The surplus and guarded comparisons are **not** ready as theorem conclusions for a governed gate; their universal signed-compensation premises remain open.
+
+## Replay and limits
+
+From `cycles/cycle-5/C5-SYNTHESIS/` after admission (or this scratch directory):
+
+```sh
+PYTHONDONTWRITEBYTECODE=1 python3 hash_audit.py > hash_audit.json
+PYTHONDONTWRITEBYTECODE=1 python3 math_audit.py > math_audit.json
+```
+
+The script asserts exact central integers and scans the stated finite horizon. Its `eligible_diagnostic` fields at ranks failing a guard are diagnostics only; their payment arithmetic has no theorem status. The universal arguments above are informal, not Lean checked. No governed Lean build, controller operation, source edit, installation, agent or message was used; no background process remains.

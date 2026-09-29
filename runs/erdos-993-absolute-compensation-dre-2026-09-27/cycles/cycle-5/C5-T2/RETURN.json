@@ -1,0 +1,63 @@
+{
+  "worker_id": "C5-T2",
+  "cycle": 5,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C5-T2-ACTIVITY-BASIS-NEGATIVE-LAYER",
+      "statement": "For the ordinary path-star with counts (a2,a3,a4)=(0,0,3), the proposed coefficientwise-nonnegative center-activity minor certificate fails: with C_t=G B4(L^4+tz)^2, A_{i,t}=G B3(L^4+tz)^2+zL^12, and k=7, A_{i,t}[k]C_t[k]-A_{i,t}[k+1]C_t[k-1]=1898616+171542t+6175t^2-66t^3, although its t=1 value is positive.",
+      "scope": "Exact finite obstruction to coefficientwise positivity in this activity basis only. Here N=12, n=18, the shifted-comparison guard 1<=k and 2k<=N+2 holds, but the actual parent first strict descent is x=7 and no actual eligible lower-half p exists. It refutes neither the t=1 guarded individual comparison nor the selected payment.",
+      "status": "proposed_bounded_evidence",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-T2/REPORT.md",
+        "cycles/cycle-5/C5-T2/paired_minor_audit.py",
+        "cycles/cycle-5/C5-T2/paired_minor_audit.json"
+      ],
+      "reason": "Independent exact integer replay shows a negative t^3 layer (-66) while the full t=1 minor equals 2076267. This is a proof that the stronger layerwise certificate fails at this instance, not a full-predicate witness."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, every original leaf deletion polynomial A_v, and every natural k with 1<=k and 2k<=N+2, integer-zero-extended coefficients satisfy A_v[k+1] C[k-1]<=A_v[k] C[k].",
+      "scope": "Retain the registered guard 1<=k and 2k<=N+2 and the original endpoint/private-tip deletion polynomials. The predicate has no actual first-descent eligibility premise; using it at selectors additionally needs the exact first-descent and rank guards.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-T2/REPORT.md",
+        "cycles/cycle-5/C5-T2/paired_minor_audit.py",
+        "cycles/cycle-5/C5-T2/paired_minor_audit.json"
+      ],
+      "reason": "The negative activity layer is not a failure at t=1. The exact controls include positive full tip minors and provide neither a universal proof nor a guarded counterexample."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, put W(X)=sum_i r_i A_i(X), counting each original private-tip deletion with its original multiplicity. For every natural k with 1<=k and 2k<=N+2, integer-zero-extended coefficients satisfy W[k+1] C[k-1]<=W[k] C[k].",
+      "scope": "Retain every branch's original multiplicity r_i and the registered guard 1<=k and 2k<=N+2. The shifted-deck predicate is distinct from individual comparisons and from current-p strict selector claims.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-T2/REPORT.md",
+        "cycles/cycle-5/C5-T2/paired_minor_audit.py",
+        "cycles/cycle-5/C5-T2/paired_minor_audit.json"
+      ],
+      "reason": "No universal paired-minor cancellation or proof was obtained. The finite controls do not contradict the weighted inequality."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, set N=sum_i r_i, a_r=#arity-r branches, h=1+2a_2+4a_3+7a_4, C=(1+2z)product_i B_{r_i}, E=z(1+z)^N, U_i=(1+2z)B_{r_i-1}product_{ell!=i}B_{r_ell}, and M_k(E)=E[k]C[k]-E[k+1]C[k-1]. For every represented original tip branch i and every natural 1<=k with 2k<=N+2, (h+1)U_i[k]C[k]+(k+1)(h-k+1)M_k(E)>=0.",
+      "scope": "Exact-ratio sufficient surplus condition for represented tips on the full guarded band, without actual eligibility. It does not cover the endpoint and depends on the enlarged-order ULC curvature and main-product LR reductions.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-T2/REPORT.md",
+        "cycles/cycle-5/C5-T2/paired_minor_audit.py",
+        "cycles/cycle-5/C5-T2/paired_minor_audit.json"
+      ],
+      "reason": "The exact controls neither prove nor refute this all-profile surplus condition; the proposed activity-layer obstruction is a different, stronger proof mechanism."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-T2/REPORT.md",
+  "limitations": [
+    "No universal paired switching, exact-ratio compensation estimate, or census-free proof was found.",
+    "All fresh calculations are finite exact evidence; no full registered target is refuted.",
+    "The common dispatch manifest's 237 member hashes matched. The packet contains no source hash fields and authorizes no additional source files."
+  ],
+  "status_authority": "proposed_worker_only"
+}

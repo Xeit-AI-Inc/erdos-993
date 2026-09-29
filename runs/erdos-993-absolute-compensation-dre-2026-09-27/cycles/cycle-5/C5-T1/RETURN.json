@@ -1,0 +1,28 @@
+{
+  "worker_id": "C5-T1",
+  "cycle": 5,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, put W(X)=sum_i r_i A_i(X), counting each original private-tip deletion with its original multiplicity. For every natural k with 1<=k and 2k<=N+2, integer-zero-extended coefficients satisfy W[k+1] C[k-1]<=W[k] C[k].",
+      "scope": "Guarded lower-half shifted C-to-weighted-tip-deck comparison. A strict descent of W at actual eligible p gives at least one selected branch and, with the reviewed branchwise 3/2 bound, pays MASS. It does not assert that every tip or the endpoint is selected. Profile and polynomial definitions: Ordinary tree formed from path 0-1-2 and m>=1 distinct centers at 0, each with r_i in {2,3,4} private tips. N=sum_i r_i, L=1+z, G=1+2z, B_r=L^r+z, Q=product_i B_(r_i), H_i=product_(h!=i)B_(r_h), C=GQ, A0=LQ+zL^N, Ai=G B_(r_i-1)H_i+zL^N. Coefficients are integer zero-extended. These LR claims impose only their stated k guards, not actual first-descent eligibility. Any payment application separately retains actual first descent x, eligibility x+2<=p, 3p<2alpha+1, 2p<=alpha, current-p strict selectors Delta_p A_i<0 and Delta_p A0<0, and original multiplicities r_i; this search makes no such application.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-T1/REPORT.md",
+        "cycles/cycle-5/C5-T1/recurrence_audit.py",
+        "cycles/cycle-5/C5-T1/recurrence_audit.json"
+      ],
+      "reason": "Exact state recurrences and guard growth identify a missing induction-strip estimate and a genuine signed -N z E term. Independent exact replay found no failure in five profiles and 32 guarded ranks, but this is bounded evidence and supplies no universal invariant or counterexample; the registered weighted comparison remains OPEN."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-T1/REPORT.md",
+  "limitations": [
+    "The branch-addition replay covers five profiles and 19 additions; finite success is not a universal proof.",
+    "No profile-uniform bound is proved for the one or two new guarded ranks after each branch addition, and the signed E contribution is not controlled.",
+    "No new result is proved about actual first-descent eligibility, current-p strict selectors, the primary selected payment, or the stronger MASS statement.",
+    "No Lean build or external literature search was performed."
+  ],
+  "status_authority": "proposed_worker_only"
+}

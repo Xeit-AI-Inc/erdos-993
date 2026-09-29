@@ -1,0 +1,54 @@
+{
+  "worker_id": "C6-CU-F2",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C6-F2-PREFIX-COVERAGE-CLOSED-FORM",
+      "statement": "For each 1<=m<=99, profiles (a2,a3,a4)>=0 with sum m number binom(m+2,2), and represented-type/rank rows for each represented r and every 1<=k<=floor((N+2)/2), N=2a2+3a3+4a4, total 56,245,000; the layer formula is ((3m+2)S_m-O_m)/2 with S_m=3*binom(m+1,2), O_(2u)=3u^2+u, O_(2u+1)=(u+1)(3u+1).",
+      "scope": "Exact finite coverage arithmetic for m=1..99 only. Each represented arity is counted once per profile; no selector, first-descent, eligibility, coefficient-sign, or surplus-outcome claim.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CU-F2/REPORT.md",
+        "cycles/cycle-6/C6-CU-F2/independent_audit.py",
+        "cycles/cycle-6/C6-CU-F2/independent_audit.json"
+      ],
+      "reason": "The layer formula is derived from the represented-count sum and parity split, then independently cross-checked by exact profile enumeration at every m."
+    },
+    {
+      "claim_id": "C6-F2-KRONECKER-NO-CARRY-BOUND",
+      "statement": "For m>=1 and arities in {2,3,4}, direct positive-factor Kronecker encoding of Q,C,U_i,E at radix 2^(N+m+2) has every coefficient digit strictly below the radix; exact digit extraction has no carry when all known-degree positions are extracted before signed expressions are formed.",
+      "scope": "Arithmetic encoding bound for finite-prefix implementation only; no surplus sign, census result, or universal target theorem.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CU-F2/REPORT.md",
+        "cycles/cycle-6/C6-CU-F2/independent_audit.py",
+        "cycles/cycle-6/C6-CU-F2/independent_audit.json"
+      ],
+      "reason": "Coefficient-sum bounds prove the universal no-carry condition, and exact monomial-z examples check the B1/B2 boundary and radix extraction."
+    },
+    {
+      "claim_id": "C6-F2-PREFIX-TELEMETRY-FORMAT-CONFLICT",
+      "statement": "The general artifact ban and C6 timing requirements have a narrowed format ambiguity: required per-m elapsed durations are distinct from the runner's absolute started_at_utc timestamp; the timestamp conflicts if runner transport receipts count as worker artifacts.",
+      "scope": "Artifact-format compliance only; does not affect coverage arithmetic, coefficient signs, or the mathematical surplus claim.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CU-F2/REPORT.md"
+      ],
+      "reason": "The cited instructions separately require elapsed duration, ban wall-clock fields, and emit an absolute UTC start field; clarify the receipt boundary or strip timestamps."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CU-F2/REPORT.md",
+  "limitations": [
+    "No bounded-prefix surplus census or full certificate implementation was run.",
+    "Coverage and sample coefficient/radix checks are not universal surplus or selected-payment proofs.",
+    "No claim status is authoritative; dispositions are proposed worker findings only."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-F2-KRONECKER-NO-CARRY-BOUND",
+    "C6-F2-PREFIX-COVERAGE-CLOSED-FORM",
+    "C6-F2-PREFIX-TELEMETRY-FORMAT-CONFLICT"
+  ]
+}

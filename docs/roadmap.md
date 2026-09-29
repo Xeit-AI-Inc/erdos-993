@@ -1,6 +1,10 @@
 # Open research roadmap
 
-## Current priorities after Cycle4
+## Current priorities after the six-cycle experiment
+
+The three bounded-arity guarded surplus/individual/weighted-comparison keys are now VERIFIED at computer-assisted/nonformal grade. Priority 1 is a compositional marked compensation interface beyond this family, preserving the actual rank and original deletion marks. Priority 2 connects that same deficit to Code r30 Hall/cover capacity sharing and its unresolved uniform parent-descent obligations. Priority 3 completes full-scope formalization of finite-prefix and corrected LR/ULC/selector bridges. More finite examples inside the settled family are lower priority. No seventh cycle is active. See the [final Astra analysis](../runs/erdos-993-absolute-compensation-dre-2026-09-27/control/C6-ASTRA-FINAL-ANALYSIS.md).
+
+## Historical priorities after Cycle4
 
 The general finite-block coefficient/Jensen/Taylor theorem is formally verified. Cycles5–6 focus on quantitative binomial-deficit compensation, branch-addition invariants covering the moving rank guard, paired coefficient minors and correctly conditioned root-mixture structure. The new exact-ratio ULC surplus target remains OPEN; the underlying ULC machinery was already known. The missing graph/marked-deletion/rank/selector bridge must be proved separately. Astra final analysis follows Cycle6.
 

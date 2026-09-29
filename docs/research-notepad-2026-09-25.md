@@ -1,6 +1,35 @@
-# Erdős993 research notepad — active absolute compensation,28 September2026
+# Erdős993 research notepad — six-cycle terminal assessment,29 September2026
 
-## Active experiment — Cycle4 closed,2026-09-28
+## Terminal absolute-compensation experiment — six cycles complete,2026-09-29
+
+The six-cycle absolute-compensation experiment is complete. For ordinary path-stars whose branch arities are2,3,4, three existing claims are now VERIFIED at computer-assisted/nonformal grade: the exact-ratio tip surplus, the guarded comparison for every original leaf deletion, and the same-C original-multiplicity weighted-tip-deck comparison. Their scope is every nonempty mixed/repeated profile and every natural k>=1 with2k<=N+2, without an actual-descent or selector filter.
+
+Two separately authored exact computations each checked all171699 count profiles and56245000 represented-tip/rank tests for m1..99. Both report strictly positive minimum98, and all99layer summaries match. A separately reviewed analytic proof covers allm>=100. These finite computations plus the analytic tail and corrected LR/ULC/endpoint bridges establish the full domain at the stated grade; finite agreement alone is not an infinite proof. Original protocol/proof errors and their repairs remain documented.
+
+The exact strict m>=100 tip-surplus subcase received a governed Lean award after kernel and fresh semantic fidelity verification. This is a restricted tail award; it does not formally certify the all-m finite prefix, full deletion comparisons, selectors, MASS or payment.
+
+The registry has515identities:328 VERIFIED,104 REFUTED,26 CONDITIONAL and57 OPEN at mixed evidence grades. C6 adds no identities and changes only three existing statuses; C5's root-mixture theorem and activity-positivity refutation are included in this publication. All-m selected MASS/payment were already computer-assisted inC3 and retain that grade. These counts are not a percentage of a solution. Erdős993, the arbitrary-tree aggregate and the governed representation/transfer obligations remain OPEN.
+
+Astra's final priorities are compositional marked compensation beyond this bounded-arity family, an exact shared-deficit interface to Code r30 Hall/cover capacity sharing, and full-scope formalization of the finite-prefix and corrected selector/comparison chain. Code mathematical intake remained frozen at r30. No seventh cycle is active.
+
+
+Evidence: `experiments/erdos-993-absolute-compensation-dre-2026-09-27/control/C6-ASTRA-FINAL-ANALYSIS.md`, `experiments/erdos-993-absolute-compensation-dre-2026-09-27/control/C6-CONTROLLER-CLOSE.md` and `experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C6-IDENTITY/REPORT.md`.
+
+## Historical Cycle5 checkpoint,2026-09-28
+
+All31 standard Cycle5 seats and a fresh Sol-high identity/proof review are complete. The registry now has515identities:325 VERIFIED,104 REFUTED,26 CONDITIONAL,60 OPEN, at mixed evidence grades. These counts are not a measure of progress toward solving the conjecture.
+
+One extended-band root-mixture identity is VERIFIED informally; the actual-eligible version is its corollary. One precise activity coefficientwise-positivity mechanism is REFUTED by the all-m formula -33(m-1), not by a negative evaluated full minor. The three guarded structural targets remain OPEN at C5 close. Existing selected payment, MASS, full selection and local3/2 retain computer-assisted/nonformal grade. Existing formal awards are unchanged. The surplus statement's mismatched cofactor index is explicitly repaired; its predicate is unchanged.
+
+Corrections retain sealed originals: T2 n91full-tip report integer, F1 stale-C/wrong-multiplicity ancillary weighted output, false producer coverage objection by CU-F3, rank-label and packet-hash provenance mistakes, and source RETURN labels for true obstructions. The correct full-tip n91margin is777419068009671422357461955841645743808; the m3activity full weighted margin is24915204. Negative components or sufficient lower bounds do not refute full targets.
+
+After synthesis, the independent reviewer validates a new proposed strict surplus tail for m>=100 over the whole guarded band, plus a conditional endpoint bridge. These are C6 preparation, not retrospective C5 results or new formal awards. The reviewed finite base would cover171699profiles and56245000represented-tip/ranktests throughm99, using two separately authored exact instruments; no full base has yet run. Partial computation cannot close a universal claim.
+
+The C5 root-mixture Lean candidate is deferred on obligation centrality. A newly located pinned predecessor LR source may reduce future implementation cost, but does not change its peripheral role in payment. No conditional surrogate or easy obstruction award is substituted. C6 will target the exact m100polynomial surplus, reusing C2ratio-operator, C3center-expansion and C4full-Jensen formal sources with explicit coefficient-ring bridges. The tail surplus itself does not need ULC; ULC/main-LR enter the later full-minor implication. An exact tail award cannot upgrade the all-m key. Primary formal stop remains unmet; no seventh cycle is authorized. Frozen mathematical Code intake remains r30.
+
+Evidence: `experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C5-IDENTITY/REPORT.md` and `experiments/erdos-993-absolute-compensation-dre-2026-09-27/control/C5-CONTROLLER-CLOSE.md`.
+
+## Historical Cycle4 closed,2026-09-28
 
 Cycle4 is closed. The complete existing finite-block coefficient/Jensen theorem received a governed formal award. The actual uniform labeled-subset expectation equality, exact guarded hypergeometric exponential lower bound and every Taylor truncation are all included. Empty index types, positive blocks including size1, supported real coefficient floors, k=0, k=M and every natural d are covered. Separate informal audit, kernel and independent semantic fidelity passed. This is a general finite coefficient theorem, not graph/deletion/selector/payment verification.
 
@@ -73,6 +102,8 @@ The master registry contains **491 identities: 309 VERIFIED, 98 REFUTED, 26 COND
 
 ## Current proof boundary
 
+C6 additionally establishes the all-m guarded tip surplus and individual/weighted shifted-C comparisons at computer-assisted/nonformal grade. The actual forward-selector application is at k=p; selected MASS/payment were already accepted inC3. The remaining all-m formal dependency and the arbitrary-tree composition boundary are distinct. The exact tail formal outcome is formally_verified.
+
 The ordinary high-tail and first-shell order-band results remain established at their exact certificate scopes. The heterogeneous arity-2,3,4 path-star aggregate now holds for every number of branches at computer-assisted, nonformal grade. Its proof combines the complete finite prefix through 265 branches, a uniform analytic tail from 266, and the high-half pointwise sign theorem. This closes that family's former finite gap. It does not close the arbitrary-tree lower-region aggregate, governed beta aggregate, TREE, FOREST, TRANSFER, or Erdős 993.
 
 The new arbitrary-profile main-mark relative-binomial margin is formally verified. It follows from the degree-down derivative qC-zC', fifteen fixed local comparisons, log-concave convolution and summation. This is a reusable structural mechanism on products with branch arities 2,3,4. It does not contain an absolute bound paying for the positive binomial term or establish deletion selectors.
@@ -85,12 +116,12 @@ The zero-extended binomial-block sign conjunction also has a governed formal awa
 |---|---|---|
 | 1. Uniform selected compensation | High tail and n<=2p+2 bands are covered; the arbitrary lower region remains open. | Prove the complete D+C budget, preserving original leaves, supports, strict flags and active-tag multiplicity. |
 | 2. Mixed-boundary weighted Hall | r30 is terminal: G_k all eligible ranks formal; spider rank k+3 formal; five CB whole trees, G(8^82,7^2), and ten additional CB ranks computationally certified. | The former rank-448 gap is closed. Prove (L-S)_top on CB(8,m), m>=107, m congruent to 2 mod 3, together with uniform parent descent. Respect capacity already used by non-sector sources; separate sector Hall does not imply union Hall. |
-| 3. Absolute path-star mark mass | All-m local3/2, selected MASS and payment remain VERIFIED computer-assisted/nonformal. The full general coefficient/Jensen/Taylor theorem is now formally verified, including the actual subset law. | Connect the coefficient theorem to exact marked-deletion structure, or prove quantitative E-deficit compensation and scalable layer remainders without finite-prefix dependence. |
-| 4. Selector structure | Both guarded shifted comparisons remain OPEN. E-only termwise positivity fails inside the guard; the new exact-ratio curvature-surplus condition is OPEN. Existing ULC orders and tail machinery are reused. | Prove the weaker original-weight deck comparison via branch-addition invariants, paired minors or sharper surplus. One selected branch plus the accepted3/2bound pays the endpoint. |
+| 3. Absolute path-star mark mass | All-m selected MASS/payment remain computer-assisted. C6 exact-ratio tip surplus is now VERIFIED at that grade from two complete m1..99 methods and the analytic m100tail. | Cross a composition or arity boundary with the actual marked deficit. More finite examples in the settled family are lower priority. Full-scope formal verification remains separate. |
+| 4. Selector structure | C6 guarded individual and original-multiplicity weighted-tip-deck shifted-C comparisons are VERIFIED computer-assisted/nonformal. The actual forward-selector implication uses k=p. Separate endpoint LR is essential. | Develop an exact residual or rooted-composition analogue preserving ranks and original marks. Do not infer arbitrary-tree selectors from the restricted family. |
 | 5. Fixed-profile spread | Exact parent increment is G z^3 L^2 K; finite first-descent and shared-rank tests pass. | Prove nondecreasing first descent and shared-eligible selected-S monotonicity with the complete cofactor. A census-free balanced-family base is also needed for this route. |
 | 6. Conditional covariance | The frozen-selector Stein identity is proved algebraically. Pointwise full-mark drift fails even at eligible all-selected lower-half rows. | Prove a quantitative averaged bound using the favorable negative C slope. A new pointwise counterexample adds little; the mean-level inequality is the live issue. |
 | 7. Quantitative descent and concentration | Elementary lower bounds x>(N-d)/2 and the homogeneous arity-4 refinement hold, but are insufficient for mark mass. | Use both adjacent first-descent inequalities, exact coefficient curvature or a checked anti-concentration theorem. Do not replace actual first descent by a coarse bound. |
-| 8. Rooted composition beyond this family | The arity-2..4 aggregate is settled by a hybrid proof; the new formal margin is structural but family-specific. | Find an invariant surviving one more branching depth or a broader class of branch polynomials, with exact marked and parent components. |
+| 8. Rooted composition beyond the family | Finite-block Jensen is formally verified; the bounded-arity marked surplus/comparison mechanism now has complete computer-assisted evidence. | Derive a product/sum interface carrying marked deletion, negative common-term deficit and rank guards through one non-star rooted child or unbounded arity. Uniform singleton amplification1/20 does not automatically survive. |
 | 9. Residual matching/cover route | Fixed r25 bands and forest degree/extension bounds remain useful; parameter-uniform Region II is open. | Control unbounded excess while retaining overlap and both relevant trajectories. Do not conflate ordinary and governed representations. |
 | 10. Algebraic and topological alternatives | Schur/stable-partition techniques offer comparison tools, but names or unverified analogies supply no selected sign. | Produce the exact marked rank inequality with all hypotheses checked; coefficient-pairing and unsigned cross-tag operators are plausible concrete objects. |
 | 11. Descent/order-shell frontier | Formal coverage through n<=2p+2 and computational low-rank exclusions remain at distinct grades. | Code reports deletion-Hall coverage of every eligible row through order 23, so p=8 orders 19..22 no longer need a discovery census. A formal new-shell lemma remains distinct; search beyond the computational range only with a specific structural question. |
@@ -104,7 +135,7 @@ Empty-plus-singleton center-choice truncation is insufficient to pay MASS univer
 
 The 24-branch all-arity-4 witness has x=47,p=49,all 97 leaf tags selected and positive pointwise drift 1132684/1171875, while the full selected aggregate is negative. Keep this distinction explicit. Coarse-rank mass failures are below their actual parent descents and hence are not eligible counterexamples.
 
-## Priorities and assessment
+## Historical priorities before the absolute-compensation experiment
 
 1. **Code: a parameter-uniform switch certificate.** Target CB(8,m), m>=107 with m congruent to 2 modulo 3, at p*=(16m+4)/3. Prove a choke-local sector allocation compatible with the remaining capacity after the E1 non-sector flow, and the actual parent-descent eligibility bound. This would certify one rank per tree in an infinite switch-using family; it would not certify every eligible rank or arbitrary trees.
 2. **Astra/Codex: absolute selected compensation.** On the already covered arity-2,3,4 path-star family, seek a census-free exact-ratio payment from actual parent descent and strict selectors. The formal relative margin is available; the missing step is a quantitative amount of selected mass. Adaptive center-choice layers or an averaged coefficient estimate should add that information. Failure of a sufficient payment inequality would not refute the known family aggregate.

@@ -1,0 +1,8 @@
+theorem e993_guarded_tip_surplus_tail
+    (m : ℕ) (hm : 100 ≤ m) (r : Fin m → ℕ)
+    (hr : ∀ i, r i = 2 ∨ r i = 3 ∨ r i = 4)
+    (i : Fin m) (k : ℕ) (hk : 1 ≤ k) (hguard : 2 * k ≤ e993TailN r + 2) :
+    0 < ((e993TailH r : ℝ) + 1) * (e993TailU r i).coeff k * (e993TailC r).coeff k +
+      ((k : ℝ) + 1) * ((e993TailH r : ℝ) - (k : ℝ) + 1) *
+        ((e993TailE r).coeff k * (e993TailC r).coeff k -
+          (e993TailE r).coeff (k + 1) * (e993TailC r).coeff (k - 1))

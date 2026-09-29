@@ -1,0 +1,3 @@
+# C6 Stage1 freeze
+
+C5 all31 standard seats, independent identity/tail/protocol review, canonical reconciliation and candidate formal gate are complete.515 registry identities. Primary formal stop unmet. This final cycle focuses on the reviewed m>=100 exact-surplus argument, isolated finite base instruments, conditional endpoint and selector bridges, and structural alternatives. The standard workflow, frozen r30 intake, original contract and six-cycle cap remain unchanged. Three transport-only runner checks passed; none constitutes mathematical census evidence. Formal scope must be fixed before formal dispatch. Final Astra analysis and canonical/public documentation reconciliation follow disposition of C6.

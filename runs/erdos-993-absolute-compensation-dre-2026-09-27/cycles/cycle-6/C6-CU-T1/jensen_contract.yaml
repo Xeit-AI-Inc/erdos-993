@@ -1,0 +1,495 @@
+{
+  "schema_version": "theorem-contract/v1",
+  "contract_id": "e993-finite-block-coefficient-jensen-v1",
+  "theorem": {
+    "title": "Full actual finite-subset coefficient expectation and Jensen-Taylor bound",
+    "informal_statement": "For every finite index type I, including the empty type, positive natural block sizes r_i, and real coefficients f_i(t) satisfying f_i(t) >= binomial(r_i,t) for every natural t <= r_i, put M=sum_i r_i, F_i(X)=sum_(t=0..r_i) f_i(t) X^t, and H=product_i F_i. For every natural k <= M let S be uniform among the actual k-element subsets of the labeled disjoint union V=Sigma_(i:I) Fin(r_i), and K_i its number of elements in block i. Put c=binomial(M,k), w_i(t)=f_i(t)/binomial(r_i,t), and y=sum_i sum_(t=0..r_i) p_i(t) * 2(f_i(t)-binomial(r_i,t))/(f_i(t)+binomial(r_i,t)), where p_i(t)=binomial(r_i,t)*binomial(M-r_i,k-t)/c if t<=k, and zero otherwise. Then, for every natural d, H[k]/c equals the actual uniform-subset average of product_i w_i(K_i), H[k] >= c*exp(y), and c*exp(y) >= c*sum_(a=0..d) y^a/a!. Binomial coefficients above their upper support are zero; the guard t<=k precedes natural subtraction. All three conclusions are required. Empty I, k=0, k=M, repeated sizes, blocks of size one, and d=0 are included. No independence of the conditioned block counts is assumed. No graph, deletion, first-descent, selector, or payment conclusion is asserted."
+  },
+  "formulation_status": {
+    "status": "open",
+    "evidence": []
+  },
+  "definitions": [
+    {
+      "id": "def-e993blockproduct",
+      "description": "Finite product of the explicitly truncated real polynomials. Exact definition is in SOURCE/ENCODING-SPEC.lean.",
+      "lean_name": "e993BlockProduct",
+      "dependencies": [
+        "domain-index",
+        "domain-r",
+        "domain-f",
+        "domain-subsets"
+      ]
+    },
+    {
+      "id": "def-e993blockmass",
+      "description": "Real cast of choose(sum_i r_i,k). Exact definition is in SOURCE/ENCODING-SPEC.lean.",
+      "lean_name": "e993BlockMass",
+      "dependencies": [
+        "domain-index",
+        "domain-r",
+        "domain-f",
+        "domain-subsets"
+      ]
+    },
+    {
+      "id": "def-e993blockcount",
+      "description": "Actual cardinality of the fiber of S in block i. Exact definition is in SOURCE/ENCODING-SPEC.lean.",
+      "lean_name": "e993BlockCount",
+      "dependencies": [
+        "domain-index",
+        "domain-r",
+        "domain-f",
+        "domain-subsets"
+      ]
+    },
+    {
+      "id": "def-e993subsetaverage",
+      "description": "Sum of products f_i(K_i)/choose(r_i,K_i) over actual powersetCard k, divided by its actual cardinality. Exact definition is in SOURCE/ENCODING-SPEC.lean.",
+      "lean_name": "e993SubsetAverage",
+      "dependencies": [
+        "domain-index",
+        "domain-r",
+        "domain-f",
+        "domain-subsets"
+      ]
+    },
+    {
+      "id": "def-e993blockexponent",
+      "description": "Sum of guarded hypergeometric marginal weights times 2(f_i(t)-choose(r_i,t))/(f_i(t)+choose(r_i,t)). Exact definition is in SOURCE/ENCODING-SPEC.lean.",
+      "lean_name": "e993BlockExponent",
+      "dependencies": [
+        "domain-index",
+        "domain-r",
+        "domain-f",
+        "domain-subsets"
+      ]
+    },
+    {
+      "id": "def-e993exptaylor",
+      "description": "Finite exponential Taylor sum from a=0 through d inclusive. Exact definition is in SOURCE/ENCODING-SPEC.lean.",
+      "lean_name": "e993ExpTaylor",
+      "dependencies": [
+        "domain-index",
+        "domain-r",
+        "domain-f",
+        "domain-subsets"
+      ]
+    }
+  ],
+  "domains": [
+    {
+      "id": "domain-index",
+      "description": "Arbitrary finite index type, possibly empty, with decidable equality.",
+      "lean_type": "Type u",
+      "dependencies": []
+    },
+    {
+      "id": "domain-natural",
+      "description": "Natural numbers including zero.",
+      "lean_type": "Nat",
+      "dependencies": []
+    },
+    {
+      "id": "domain-r",
+      "description": "Natural block size function.",
+      "lean_type": "I → Nat",
+      "dependencies": [
+        "domain-index",
+        "domain-natural"
+      ]
+    },
+    {
+      "id": "domain-f",
+      "description": "Real coefficient arrays; values above block support are unused.",
+      "lean_type": "I → Nat → Real",
+      "dependencies": [
+        "domain-index",
+        "domain-natural"
+      ]
+    },
+    {
+      "id": "domain-subsets",
+      "description": "Actual finite subsets of the labeled sigma type Sigma i, Fin(r i).",
+      "lean_type": "Finset (Sigma (fun i => Fin (r i)))",
+      "dependencies": [
+        "domain-r"
+      ]
+    }
+  ],
+  "quantifiers": [
+    {
+      "binder": "I",
+      "kind": "forall",
+      "domain_id": "domain-index"
+    },
+    {
+      "binder": "r",
+      "kind": "forall",
+      "domain_id": "domain-r"
+    },
+    {
+      "binder": "f",
+      "kind": "forall",
+      "domain_id": "domain-f"
+    },
+    {
+      "binder": "k",
+      "kind": "forall",
+      "domain_id": "domain-natural"
+    },
+    {
+      "binder": "d",
+      "kind": "forall",
+      "domain_id": "domain-natural"
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "hyp-positive-blocks",
+      "statement": "For every i, 0<r_i; vacuous for empty I.",
+      "dependencies": [
+        "domain-r"
+      ]
+    },
+    {
+      "id": "hyp-binomial-floor",
+      "statement": "For every i and natural t<=r_i, real choose(r_i,t)<=f_i(t).",
+      "dependencies": [
+        "domain-r",
+        "domain-f"
+      ]
+    },
+    {
+      "id": "hyp-rank",
+      "statement": "Natural k<=sum_i r_i. Natural d is arbitrary.",
+      "dependencies": [
+        "domain-r",
+        "domain-natural"
+      ]
+    }
+  ],
+  "conclusion": {
+    "id": "conclusion",
+    "statement": "theorem e993_finite_block_coefficient_jensen\n    {ι : Type*} [Fintype ι] [DecidableEq ι]\n    (r : ι → ℕ) (hr : ∀ i, 0 < r i)\n    (f : ι → ℕ → ℝ)\n    (hf : ∀ i t, t ≤ r i → ((r i).choose t : ℝ) ≤ f i t)\n    (k d : ℕ) (hk : k ≤ ∑ i, r i) :\n    (e993BlockProduct r f).coeff k / e993BlockMass r k =\n        e993SubsetAverage r f k ∧\n    e993BlockMass r k * Real.exp (e993BlockExponent r f k) ≤\n        (e993BlockProduct r f).coeff k ∧\n    e993BlockMass r k * e993ExpTaylor d (e993BlockExponent r f k) ≤\n        e993BlockMass r k * Real.exp (e993BlockExponent r f k)",
+    "dependencies": [
+      "def-e993blockproduct",
+      "def-e993blockmass",
+      "def-e993blockcount",
+      "def-e993subsetaverage",
+      "def-e993blockexponent",
+      "def-e993exptaylor",
+      "hyp-positive-blocks",
+      "hyp-binomial-floor",
+      "hyp-rank"
+    ]
+  },
+  "dependency_graph": {
+    "nodes": [
+      {
+        "id": "domain-index",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-natural",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-r",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-f",
+        "kind": "domain"
+      },
+      {
+        "id": "domain-subsets",
+        "kind": "domain"
+      },
+      {
+        "id": "def-e993blockproduct",
+        "kind": "definition"
+      },
+      {
+        "id": "def-e993blockmass",
+        "kind": "definition"
+      },
+      {
+        "id": "def-e993blockcount",
+        "kind": "definition"
+      },
+      {
+        "id": "def-e993subsetaverage",
+        "kind": "definition"
+      },
+      {
+        "id": "def-e993blockexponent",
+        "kind": "definition"
+      },
+      {
+        "id": "def-e993exptaylor",
+        "kind": "definition"
+      },
+      {
+        "id": "hyp-positive-blocks",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-binomial-floor",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "hyp-rank",
+        "kind": "hypothesis"
+      },
+      {
+        "id": "conclusion",
+        "kind": "conclusion"
+      }
+    ],
+    "edges": [
+      {
+        "from": "domain-index",
+        "to": "domain-r"
+      },
+      {
+        "from": "domain-natural",
+        "to": "domain-r"
+      },
+      {
+        "from": "domain-index",
+        "to": "domain-f"
+      },
+      {
+        "from": "domain-natural",
+        "to": "domain-f"
+      },
+      {
+        "from": "domain-r",
+        "to": "domain-subsets"
+      },
+      {
+        "from": "domain-index",
+        "to": "def-e993blockproduct"
+      },
+      {
+        "from": "domain-r",
+        "to": "def-e993blockproduct"
+      },
+      {
+        "from": "domain-f",
+        "to": "def-e993blockproduct"
+      },
+      {
+        "from": "domain-subsets",
+        "to": "def-e993blockproduct"
+      },
+      {
+        "from": "domain-index",
+        "to": "def-e993blockmass"
+      },
+      {
+        "from": "domain-r",
+        "to": "def-e993blockmass"
+      },
+      {
+        "from": "domain-f",
+        "to": "def-e993blockmass"
+      },
+      {
+        "from": "domain-subsets",
+        "to": "def-e993blockmass"
+      },
+      {
+        "from": "domain-index",
+        "to": "def-e993blockcount"
+      },
+      {
+        "from": "domain-r",
+        "to": "def-e993blockcount"
+      },
+      {
+        "from": "domain-f",
+        "to": "def-e993blockcount"
+      },
+      {
+        "from": "domain-subsets",
+        "to": "def-e993blockcount"
+      },
+      {
+        "from": "domain-index",
+        "to": "def-e993subsetaverage"
+      },
+      {
+        "from": "domain-r",
+        "to": "def-e993subsetaverage"
+      },
+      {
+        "from": "domain-f",
+        "to": "def-e993subsetaverage"
+      },
+      {
+        "from": "domain-subsets",
+        "to": "def-e993subsetaverage"
+      },
+      {
+        "from": "domain-index",
+        "to": "def-e993blockexponent"
+      },
+      {
+        "from": "domain-r",
+        "to": "def-e993blockexponent"
+      },
+      {
+        "from": "domain-f",
+        "to": "def-e993blockexponent"
+      },
+      {
+        "from": "domain-subsets",
+        "to": "def-e993blockexponent"
+      },
+      {
+        "from": "domain-index",
+        "to": "def-e993exptaylor"
+      },
+      {
+        "from": "domain-r",
+        "to": "def-e993exptaylor"
+      },
+      {
+        "from": "domain-f",
+        "to": "def-e993exptaylor"
+      },
+      {
+        "from": "domain-subsets",
+        "to": "def-e993exptaylor"
+      },
+      {
+        "from": "domain-r",
+        "to": "hyp-positive-blocks"
+      },
+      {
+        "from": "domain-r",
+        "to": "hyp-binomial-floor"
+      },
+      {
+        "from": "domain-f",
+        "to": "hyp-binomial-floor"
+      },
+      {
+        "from": "domain-r",
+        "to": "hyp-rank"
+      },
+      {
+        "from": "domain-natural",
+        "to": "hyp-rank"
+      },
+      {
+        "from": "def-e993blockproduct",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-e993blockmass",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-e993blockcount",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-e993subsetaverage",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-e993blockexponent",
+        "to": "conclusion"
+      },
+      {
+        "from": "def-e993exptaylor",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-positive-blocks",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-binomial-floor",
+        "to": "conclusion"
+      },
+      {
+        "from": "hyp-rank",
+        "to": "conclusion"
+      }
+    ]
+  },
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "constructivity": {
+    "required": false,
+    "policy": "classical_allowed",
+    "rationale": "Only standard Mathlib foundations; no target or auxiliary mathematical axiom."
+  },
+  "success_criteria": {
+    "contract_valid": true,
+    "informal_audit_required": true,
+    "kernel_verification_required": true,
+    "fidelity_audit_required": true,
+    "sorry_free": true,
+    "approved_axioms_only": true
+  },
+  "lean_binding": {
+    "project_relpath": "LeanProject",
+    "source_relpath": "LeanProject/LeanProof/Main.lean",
+    "declaration_name": "e993_finite_block_coefficient_jensen",
+    "expected_declaration_kind": "theorem",
+    "expected_statement": "theorem e993_finite_block_coefficient_jensen\n    {ι : Type*} [Fintype ι] [DecidableEq ι]\n    (r : ι → ℕ) (hr : ∀ i, 0 < r i)\n    (f : ι → ℕ → ℝ)\n    (hf : ∀ i t, t ≤ r i → ((r i).choose t : ℝ) ≤ f i t)\n    (k d : ℕ) (hk : k ≤ ∑ i, r i) :\n    (e993BlockProduct r f).coeff k / e993BlockMass r k =\n        e993SubsetAverage r f k ∧\n    e993BlockMass r k * Real.exp (e993BlockExponent r f k) ≤\n        (e993BlockProduct r f).coeff k ∧\n    e993BlockMass r k * e993ExpTaylor d (e993BlockExponent r f k) ≤\n        e993BlockMass r k * Real.exp (e993BlockExponent r f k)",
+    "expected_statement_sha256": "c044c8911cc997346d0295442122d98ae5a222aa0a50a6800214f62d51a3f396"
+  },
+  "source_materials": [
+    {
+      "id": "source-boundary-check-json",
+      "path": "SOURCE/BOUNDARY-CHECK.json",
+      "sha256": "d2a52d5c255df1f46cde3f99166d8f45c55caa152670ed3c799d701cd8d9d1ee",
+      "role": "reference"
+    },
+    {
+      "id": "source-boundary-check-py",
+      "path": "SOURCE/BOUNDARY-CHECK.py",
+      "sha256": "53fa5eb5322da463d90f0c6214d1b5abc81ad3c47652979586efeda44076e30e",
+      "role": "reference"
+    },
+    {
+      "id": "source-encoding-spec-lean",
+      "path": "SOURCE/ENCODING-SPEC.lean",
+      "sha256": "9f1b8df57ed1857117c6d9ef0f070f4c35fa0e27a96932c67e9f83fd51e5937f",
+      "role": "reference"
+    },
+    {
+      "id": "source-expected-statement-txt",
+      "path": "SOURCE/EXPECTED-STATEMENT.txt",
+      "sha256": "10d2489aa22673122b8ad4935d99b51b8b48135910f30402aaa8404c7829be7f",
+      "role": "reference"
+    },
+    {
+      "id": "source-independent-proof-review-md",
+      "path": "SOURCE/INDEPENDENT-PROOF-REVIEW.md",
+      "sha256": "f865747dfea36020505438f989cf23c06d4b124776b9a158ef7ca79eb9bf1c82",
+      "role": "reference"
+    },
+    {
+      "id": "source-intended-statement-txt",
+      "path": "SOURCE/INTENDED-STATEMENT.txt",
+      "sha256": "ef898c5cddc39cec7fac61e08fc54d6a9f34cd12deb8d663694c95dc1db6639c",
+      "role": "theorem_intent"
+    },
+    {
+      "id": "source-proof-lead-md",
+      "path": "SOURCE/PROOF-LEAD.md",
+      "sha256": "1ec3e28cee541bb05d7e35da174f11adb3ce8bdafe7cb80b6ee62d1b41053a15",
+      "role": "reference"
+    }
+  ]
+}

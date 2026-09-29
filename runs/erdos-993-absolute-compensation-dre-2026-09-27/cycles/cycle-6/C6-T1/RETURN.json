@@ -1,0 +1,29 @@
+{
+  "worker_id": "C6-T1",
+  "cycle": 6,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C6-T1-M100-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "For every ordinary arity-2,3,4 path-star with m>=100, N=sum_i r_i, h=1+2a2+4a3+7a4, C=G product_i B_(r_i), E=zL^N, and U_i=G B_(r_i-1) product_(ell!=i) B_(r_ell), every represented tip branch i and every integer 1<=k with 2k<=N+2 satisfy (h+1)U_i[k]C[k]+(k+1)(h-k+1)(E[k]C[k]-E[k+1]C[k-1])>0, with integer zero-extended coefficients.",
+      "scope": "Census-free informal tail theorem for m>=100 on the registered ordinary path-star family, for every represented tip and the full guarded band 1<=k<=floor((N+2)/2); no first-descent, eligibility, or selector premise. This does not cover m<100, the endpoint shifted comparison without its separate LR bridge, an arbitrary tree, or a formal award.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-T1/REPORT.md",
+        "cycles/cycle-6/C6-T1/independent_tail_audit.py",
+        "cycles/cycle-6/C6-T1/producer_check_copy.py",
+        "cycles/cycle-6/C6-T1/verify_dispatch.py"
+      ],
+      "reason": "The report gives a full two-band proof, including exact low-rank support handling, the binomial-log-concavity repair for the second curvature bracket, direct full-Jensen specialization to the factors of U_i, even/odd midpoint bounds, exact Taylor constants, and positive denominator clearing. The retained exact arithmetic is targeted bounded corroboration only."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-T1/REPORT.md",
+  "limitations": [
+    "The complete m<100 surplus base remains unproved here.",
+    "This surplus composition has no C6 governed Lean award.",
+    "The endpoint shifted comparison still requires the separate main-product LR bridge; coefficientwise endpoint dominance alone is insufficient.",
+    "The result is a stronger sufficient tip condition and does not change the distinct selected payment or MASS grades, the family aggregate scope, or any arbitrary-tree Erdős993 claim."
+  ],
+  "status_authority": "proposed_worker_only"
+}

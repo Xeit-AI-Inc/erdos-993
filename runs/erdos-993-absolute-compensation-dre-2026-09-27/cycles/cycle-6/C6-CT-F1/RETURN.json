@@ -1,0 +1,32 @@
+{
+  "worker_id": "C6-CT-F1",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "T",
+  "covered_claim_ids": [
+    "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS"
+  ],
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "For every arity-2,3,4 path-star profile with m>=100, every represented original tip branch i, and every natural k with 1<=k and 2k<=N+2, the exact strict surplus (h+1)U_i[k]C[k]+(k+1)(h-k+1)(E[k]C[k]-E[k+1]C[k-1])>0, using monomial-z coefficients with zero extension.",
+      "scope": "Proposed retained_narrowed informal proof for the m>=100 tail only. The registered all-m scope remains open for m=1..99. The surplus claim has no actual-first-descent or selector premise; a downstream application must preserve the actual least strict descent, every original rank guard, current-p strict selectors, and original branch multiplicities r_i. No endpoint, selected-payment, MASS, arbitrary-tree, or Lean conclusion is included.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CT-F1/REPORT.md",
+        "cycles/cycle-6/C6-CT-F1/independent_tail_arithmetic.py",
+        "cycles/cycle-6/C6-CT-F1/producer_tail_check_copy.py",
+        "cycles/cycle-6/C6-CT-F1/independent_profile_check.py",
+        "cycles/cycle-6/C6-CT-F1/independent_profile_evidence.json"
+      ],
+      "reason": "The low-rank coefficient comparison handles support boundaries; the high-band singleton exponent, full Jensen specialization including size-one marked blocks, strict Taylor estimate, and positively cleared ratio-floor deficit payment close the exact strict predicate for m>=100. Independent rational checks at parity boundaries and exact monomial-z profile checks found no failure. No proof or complete base was provided for m<=99, so the all-m registered scope is not retained here."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CT-F1/REPORT.md",
+  "limitations": [
+    "Universal proof scope is m>=100; the registered all-m surplus remains open pending m=1..99.",
+    "The surplus has no first-descent or selector premise and does not itself prove selected payment, MASS, endpoint, or arbitrary-tree statements.",
+    "No Lean build was run; finite exact checks are bounded corroboration only."
+  ],
+  "status_authority": "proposed_worker_only"
+}

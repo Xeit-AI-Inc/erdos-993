@@ -1,0 +1,61 @@
+{
+  "worker_id": "C5-AU",
+  "cycle": 5,
+  "stage": "adjudication",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "C5-U1-ELIGIBLE-ROOT-MIXTURE-MONOTONICITY",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, put N=sum r_i, alpha=N+2, C=(1+2z) product_i((1+z)^r_i+z), d=z(1+z)^(N+1), P=C+d, and x the first strict forward descent of P with zero extension. At every natural p with x+2<=p, 3p<2alpha+1, and 2p<=alpha, j=p-2 satisfies d[j+1]C[j]-d[j]C[j+1]>0; consequently root odds and mixture probability strictly increase from j to j+1.",
+      "scope": "Retained universal informal root-mixture lemma at the exact actual-first-descent eligible scope. It has no deletion comparison, strict-selector, original-tip-multiplicity payment, or MASS consequence and no governed formal award.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-5/C5-AU/REPORT.md", "cycles/cycle-5/C5-AU/C5-AU-audit.py", "cycles/cycle-5/C5-AU/C5-AU-audit.json"],
+      "reason": "Independent binomial-rise and log-concavity proof checks the direction of every substituted inequality; exact eligible boundary replay is supporting finite evidence only. The two assigned critics restate the same claim and add no separate mathematical identity."
+    },
+    {
+      "claim_id": "C5-U1-UNRESTRICTED-ROOT-MIXTURE-COUNTEREXAMPLE",
+      "statement": "For (a2,a3,a4)=(10,0,0), n=33,N=20,alpha=22,x=11, the unrestricted root-mixture minor at j=4,p=6 is -3549105, with (d[4],d[5],C[4],C[5])=(1330,5985,27315,125586); all current-p strict deletion flags are zero, and x+2<=p fails.",
+      "scope": "Retained exact finite counterexample to unrestricted all-rank root-mixture monotonicity only. The actual first-descent guard fails, so it is no selected-payment or eligible-root-mixture witness.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-5/C5-AU/REPORT.md", "cycles/cycle-5/C5-AU/C5-AU-audit.py", "cycles/cycle-5/C5-AU/C5-AU-audit.json"],
+      "reason": "Independent integer convolution verifies coefficients, first descent, current-p strict flags, all guards, and signed minor. Evidence grade is exact bounded counterexample to the unrestricted shortcut."
+    },
+    {
+      "claim_id": "C5-U2-ACTIVITY-LAYER-COEFFICIENTWISE-OBSTRUCTION",
+      "statement": "For every homogeneous arity-4 profile with m>=3, A_(i,t)=G B_3(L^4+tz)^(m-1)+zL^(4m), C_t=G B_4(L^4+tz)^(m-1), and k=m+4, the coefficient of t^(2m-3) in A_(i,t)[k]C_t[k]-A_(i,t)[k+1]C_t[k-1] equals -33(m-1)<0.",
+      "scope": "Retained exact nonformal all-m>=3 algebraic obstruction to coefficientwise positivity in this activity basis at guarded 1<=k,2k<=N+2,N=4m. This individual distinguished-tip coefficient has no sign implication for the full t=1 minor, actual first-descent selection, or original-multiplicity payment.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-5/C5-AU/REPORT.md", "cycles/cycle-5/C5-AU/C5-AU-audit.py", "cycles/cycle-5/C5-AU/C5-AU-audit.json"],
+      "reason": "Independent z-basis expansion and two-layer algebra give -33 times the positive factor m-1; the m=3 boundary and m=4 interior replay. The source RETURN's proposed_rejected label refers to rejection of the positivity method, not rejection of the true obstruction statement."
+    },
+    {
+      "claim_id": "C5-U3-BRANCH-RECURRENCE-COEFFICIENT-OBSTRUCTION",
+      "statement": "For W=U+NE under arity-r branch addition, W'=B_rW+rB_(r-1)C+(rL^r-Nz)E. With 150 old arity-2 branches, N=300, append r=2; at k=4 in the new guard, the correction coefficient is -4364800 while the complete weighted shifted minor is +185586251584170562390.",
+      "scope": "Retained exact finite mechanism counterexample to coefficientwise nonnegativity of the recurrence correction. All original 300 old tip tags and the new two tags are counted. It does not refute the full guarded weighted-deck comparison or any actual-eligible strict-selector payment.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-5/C5-AU/REPORT.md", "cycles/cycle-5/C5-AU/C5-AU-audit.py", "cycles/cycle-5/C5-AU/C5-AU-audit.json"],
+      "reason": "The recurrence is derived and independently checked against the direct deck; exact binomial subtraction yields the negative correction, and full minors at boundary and interior ranks remain positive. Evidence grade is bounded obstruction, not universal target resolution."
+    },
+    {
+      "claim_id": "C5-AU-ROOT-MIXTURE-EXTENDED-BAND",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile with C,d,P and first strict descent x as above, every natural j satisfying x<=j<=floor((N+1)/2) has d[j+1]C[j]-d[j]C[j+1]>0, hence increasing root odds and mixture probability from j to j+1.",
+      "scope": "New stronger universal informal root-mixture lemma, extending the eligible-rank source claim beyond both numerical p guards while retaining the actual first descent. No deletion, selector, original-multiplicity payment, or MASS result and no formal award.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": ["cycles/cycle-5/C5-AU/REPORT.md", "cycles/cycle-5/C5-AU/C5-AU-audit.py", "cycles/cycle-5/C5-AU/C5-AU-audit.json"],
+      "reason": "The binomial increment stays strictly positive through j=floor((N+1)/2), and log-concavity propagates the actual parent descent to C through this band. The exact minor identity then has positive sign. A replay at j=38 outside 2p<=alpha checks the extension but is not its proof."
+    }
+  ],
+  "covered_claim_ids": [
+    "C5-U1-ELIGIBLE-ROOT-MIXTURE-MONOTONICITY",
+    "C5-U1-UNRESTRICTED-ROOT-MIXTURE-COUNTEREXAMPLE",
+    "C5-U2-ACTIVITY-LAYER-COEFFICIENTWISE-OBSTRUCTION",
+    "C5-U3-BRANCH-RECURRENCE-COEFFICIENT-OBSTRUCTION"
+  ],
+  "report_path": "cycles/cycle-5/C5-AU/REPORT.md",
+  "limitations": [
+    "No governed formal award or new proof of the primary exact-ratio payment is supplied.",
+    "Finite positive full shifted minors do not prove the OPEN guarded individual or weighted-deck comparisons.",
+    "The activity and recurrence negative components invalidate only their specified coefficientwise positivity premises."
+  ],
+  "status_authority": "proposed_worker_only"
+}

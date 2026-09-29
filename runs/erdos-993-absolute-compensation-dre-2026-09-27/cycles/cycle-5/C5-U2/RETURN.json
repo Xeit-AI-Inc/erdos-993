@@ -1,0 +1,28 @@
+{
+  "worker_id": "C5-U2",
+  "cycle": 5,
+  "stage": "search",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C5-U2-ACTIVITY-LAYER-COEFFICIENTWISE-OBSTRUCTION",
+      "statement": "For homogeneous arity-4 profiles with m>=3, distinguish one tip and define A_{i,t}=G B_3 (L^4+t z)^(m-1)+E and C_t=G B_4 (L^4+t z)^(m-1), with E=z L^(4m). At k=m+4, the coefficient of t^(2m-3) in A_{i,t}[k]C_t[k]-A_{i,t}[k+1]C_t[k-1] equals -33(m-1).",
+      "scope": "Exact obstruction to coefficientwise nonnegativity in this activity basis for the guarded shifted tip comparison, at 1<=k and 2k<=N+2 with N=4m. This coefficient does not refute the t=1 shifted comparison, the actual first-descent strict-selector mechanism, or any payment claim. Original tip multiplicity is one for the distinguished tip; the conclusion is only about its individual shifted minor.",
+      "status": "proposed_rejected",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-U2/REPORT.md",
+        "cycles/cycle-5/C5-U2/layer_replay.py",
+        "cycles/cycle-5/C5-U2/layer_replay.json"
+      ],
+      "reason": "Exact layer extraction leaves only activity-degree splits (m-2,m-1) and (m-1,m-2); their local coefficient combination is -33 times the binomial factor m-1. The guard holds for every m>=3. The m=3 exact full t=1 margin is positive, and its k is not actual-eligible, so the obstruction is mechanism-specific."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-U2/REPORT.md",
+  "limitations": [
+    "No adaptive activity window, omitted-tail bound, or positive paired-layer certificate was found.",
+    "The negative coefficient invalidates only coefficientwise positivity in this activity basis; cancellation at t=1 may still prove the registered comparison.",
+    "The m=3 example has actual first descent x=7 and no eligible lower-half p; it is not a full-payment or primary counterexample.",
+    "No universal resolution of the registered individual or weighted shifted comparisons, or the ULC exact-ratio surplus condition, is claimed."
+  ],
+  "status_authority": "proposed_worker_only"
+}

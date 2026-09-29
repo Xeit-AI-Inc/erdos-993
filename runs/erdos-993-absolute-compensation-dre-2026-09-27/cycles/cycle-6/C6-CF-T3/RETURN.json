@@ -1,0 +1,54 @@
+{
+  "worker_id": "C6-CF-T3",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "F",
+  "covered_claim_ids": [
+    "C6-T3-CONDITIONAL-ALL-LEAF-SHIFTED-C-COMPARISON",
+    "C6-T3-CONDITIONAL-SAME-C-WEIGHTED-TIP-DECK",
+    "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS"
+  ],
+  "claims": [
+    {
+      "claim_id": "C6-T3-CONDITIONAL-ALL-LEAF-SHIFTED-C-COMPARISON",
+      "statement": "If the exact registered tip-surplus inequality holds for every represented branch of a nonempty ordinary arity-2,3,4 path-star and every integer k>=1 with 2k<=N+2, then each tip deletion A_i=G B_(r_i-1)H_i+zL^N and endpoint deletion A_0=LQ+zL^N satisfy A_v[k+1]C[k-1]<=A_v[k]C[k], with integer zero extension and C=GQ.",
+      "scope": "Conditional all-profile comparison on the exact registered lower-half guard. The proof needs the repaired local tip pair (B_(r_i-1),B_(r_i)); this does not assert the surplus premise universally and adds no actual-first-descent eligibility filter. In an actual-rank application, x is the least natural k (including terminal zero extension) with Delta_k P<0 for P=C+zL^(N+1); retain x+2<=p, 3p<2(N+2)+1, and 2p<=N+2, set j=p-2, and evaluate e_0=1[Delta_p A_0<0], e_i=1[Delta_p A_i<0] at that same current p, with b=e_0+sum_i r_i e_i and original tag multiplicities.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CF-T3/REPORT.md",
+        "cycles/cycle-6/C6-CF-T3/local_audit.py"
+      ],
+      "reason": "ULC curvature plus main-product LR and the exact surplus premise imply each shifted minor. The source's displayed tip pair and script use F_r instead of the B_(r-1) present in the deletion polynomial; exact checks establish the required replacement pair for r=2,3,4. Endpoint transfer uses its own (L,G) LR comparison and U_0-U_i coefficient dominance."
+    },
+    {
+      "claim_id": "C6-T3-CONDITIONAL-SAME-C-WEIGHTED-TIP-DECK",
+      "statement": "Under the same exact tip-surplus premise, W=sum_i r_i A_i satisfies W[k+1]C[k-1]<=W[k]C[k] for every integer k>=1 with 2k<=N+2, with original private-tip multiplicities r_i and integer-zero-extended coefficients.",
+      "scope": "Conditional comparison for ordinary arity-2,3,4 path-stars on the same lower-half guard and common C; not the unconditional registered weighted-deck claim. In an actual-rank application, x is the least natural k (including terminal zero extension) with Delta_k P<0 for P=C+zL^(N+1); retain x+2<=p, 3p<2(N+2)+1, and 2p<=N+2, set j=p-2, and evaluate e_0=1[Delta_p A_0<0], e_i=1[Delta_p A_i<0] at that same current p, with b=e_0+sum_i r_i e_i and original tag multiplicities.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CF-T3/REPORT.md",
+        "cycles/cycle-6/C6-CF-T3/local_audit.py"
+      ],
+      "reason": "The repaired individual tip comparison and linearity of M_k give the result after summing with positive original multiplicities r_i. The universal premise remains OPEN."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star, with N=sum_i r_i, h=1+2a_2+4a_3+7a_4, C=(1+2z)product_i B_(r_i), E=z(1+z)^N, U_i=(1+2z)B_(r_i-1)product_{ell!=i}B_(r_ell), and M_k(E)=E[k]C[k]-E[k+1]C[k-1], every represented branch i and integer k>=1 with 2k<=N+2 satisfy (h+1)U_i[k]C[k]+(k+1)(h-k+1)M_k(E)>=0, with integer zero extension.",
+      "scope": "Universal exact-ratio tip-surplus premise on the full registered guard, with no actual-first-descent restriction. It remains distinct from selected payment/MASS and from either unconditional shifted-comparison claim. In an actual-rank application, x is the least natural k (including terminal zero extension) with Delta_k P<0 for P=C+zL^(N+1); retain x+2<=p, 3p<2(N+2)+1, and 2p<=N+2, set j=p-2, and evaluate e_0=1[Delta_p A_0<0], e_i=1[Delta_p A_i<0] at that same current p, with b=e_0+sum_i r_i e_i and original tag multiplicities.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CF-T3/REPORT.md",
+        "cycles/cycle-6/C6-CF-T3/local_audit.py"
+      ],
+      "reason": "The conditional bridge is not a proof of the premise. Boundary and interior checks are bounded arithmetic only; no universal proof or realizable guarded counterexample was established."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CF-T3/REPORT.md",
+  "limitations": [
+    "The universal tip-surplus predicate remains OPEN; finite checks do not establish it.",
+    "The local pair defect is repairable for the allowed arities, but the producer script itself does not check that repaired pair.",
+    "The conditional bridge does not prove actual selector behavior, selected payment, selected MASS, arbitrary-tree claims, or Erd\u0151s993.",
+    "The conditional convolution and TP2 arguments are informal and were not formalized in Lean."
+  ],
+  "status_authority": "proposed_worker_only"
+}

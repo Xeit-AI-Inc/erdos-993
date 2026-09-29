@@ -1,0 +1,303 @@
+{
+  "scope": "Exact integer spot checks at lower/interior/boundary guarded ranks on eight profiles; plus handoff controls. Not a universal proof.",
+  "profile_count": 8,
+  "rank_checks": 21,
+  "all_weighted_checks_nonnegative": true,
+  "all_ulc_sufficient_checks_nonnegative": true,
+  "rows": [
+    {
+      "counts": [
+        1,
+        0,
+        0
+      ],
+      "N": 2,
+      "guard": 2,
+      "h": 3,
+      "checks": [
+        {
+          "k": 1,
+          "is_boundary": false,
+          "M_W": 38,
+          "M_U": 32,
+          "M_E": 3,
+          "ulc_sufficient_margin": 196
+        },
+        {
+          "k": 2,
+          "is_boundary": true,
+          "M_W": 74,
+          "M_U": 56,
+          "M_E": 9,
+          "ulc_sufficient_margin": 332
+        }
+      ]
+    },
+    {
+      "counts": [
+        0,
+        1,
+        0
+      ],
+      "N": 3,
+      "guard": 2,
+      "h": 5,
+      "checks": [
+        {
+          "k": 1,
+          "is_boundary": false,
+          "M_W": 78,
+          "M_U": 69,
+          "M_E": 3,
+          "ulc_sufficient_margin": 630
+        },
+        {
+          "k": 2,
+          "is_boundary": true,
+          "M_W": 240,
+          "M_U": 195,
+          "M_E": 15,
+          "ulc_sufficient_margin": 1926
+        }
+      ]
+    },
+    {
+      "counts": [
+        0,
+        0,
+        1
+      ],
+      "N": 4,
+      "guard": 3,
+      "h": 8,
+      "checks": [
+        {
+          "k": 1,
+          "is_boundary": false,
+          "M_W": 136,
+          "M_U": 124,
+          "M_E": 3,
+          "ulc_sufficient_margin": 1704
+        },
+        {
+          "k": 3,
+          "is_boundary": true,
+          "M_W": 448,
+          "M_U": 320,
+          "M_E": 32,
+          "ulc_sufficient_margin": 7104
+        }
+      ]
+    },
+    {
+      "counts": [
+        2,
+        3,
+        4
+      ],
+      "N": 29,
+      "guard": 15,
+      "h": 45,
+      "checks": [
+        {
+          "k": 1,
+          "is_boundary": false,
+          "M_W": 24911,
+          "M_U": 24592,
+          "M_E": 11,
+          "ulc_sufficient_margin": 2109750
+        },
+        {
+          "k": 7,
+          "is_boundary": false,
+          "M_W": 338273142086829,
+          "M_U": 323068241361009,
+          "M_E": 524306921580,
+          "ulc_sufficient_margin": 73914400667907954
+        },
+        {
+          "k": 15,
+          "is_boundary": true,
+          "M_W": 1361417131354976574,
+          "M_U": 1318292379815887014,
+          "M_E": 1487060397899640,
+          "ulc_sufficient_margin": 349572291549233155260
+        }
+      ]
+    },
+    {
+      "counts": [
+        4,
+        1,
+        2
+      ],
+      "N": 19,
+      "guard": 10,
+      "h": 27,
+      "checks": [
+        {
+          "k": 1,
+          "is_boundary": false,
+          "M_W": 8227,
+          "M_U": 8056,
+          "M_E": 9,
+          "ulc_sufficient_margin": 411426
+        },
+        {
+          "k": 5,
+          "is_boundary": false,
+          "M_W": 14635320509,
+          "M_U": 13772286473,
+          "M_E": 45422844,
+          "ulc_sufficient_margin": 1443913226468
+        },
+        {
+          "k": 10,
+          "is_boundary": true,
+          "M_W": 2504940435570,
+          "M_U": 2356831157682,
+          "M_E": 7795225152,
+          "ulc_sufficient_margin": 276461183665404
+        }
+      ]
+    },
+    {
+      "counts": [
+        0,
+        1,
+        1
+      ],
+      "N": 7,
+      "guard": 4,
+      "h": 12,
+      "checks": [
+        {
+          "k": 1,
+          "is_boundary": false,
+          "M_W": 532,
+          "M_U": 504,
+          "M_E": 4,
+          "ulc_sufficient_margin": 10682
+        },
+        {
+          "k": 2,
+          "is_boundary": false,
+          "M_W": 7765,
+          "M_U": 7079,
+          "M_E": 98,
+          "ulc_sufficient_margin": 185164
+        },
+        {
+          "k": 4,
+          "is_boundary": true,
+          "M_W": 39640,
+          "M_U": 33270,
+          "M_E": 910,
+          "ulc_sufficient_margin": 1110330
+        }
+      ]
+    },
+    {
+      "counts": [
+        1,
+        1,
+        1
+      ],
+      "N": 9,
+      "guard": 5,
+      "h": 14,
+      "checks": [
+        {
+          "k": 1,
+          "is_boundary": false,
+          "M_W": 1062,
+          "M_U": 1017,
+          "M_E": 5,
+          "ulc_sufficient_margin": 25830
+        },
+        {
+          "k": 2,
+          "is_boundary": false,
+          "M_W": 27784,
+          "M_U": 25759,
+          "M_E": 225,
+          "ulc_sufficient_margin": 833490
+        },
+        {
+          "k": 5,
+          "is_boundary": true,
+          "M_W": 923123,
+          "M_U": 801785,
+          "M_E": 13482,
+          "ulc_sufficient_margin": 33643260
+        }
+      ]
+    },
+    {
+      "counts": [
+        3,
+        0,
+        2
+      ],
+      "N": 14,
+      "guard": 8,
+      "h": 21,
+      "checks": [
+        {
+          "k": 1,
+          "is_boundary": false,
+          "M_W": 3514,
+          "M_U": 3416,
+          "M_E": 7,
+          "ulc_sufficient_margin": 133476
+        },
+        {
+          "k": 4,
+          "is_boundary": false,
+          "M_W": 60875048,
+          "M_U": 56507776,
+          "M_E": 311948,
+          "ulc_sufficient_margin": 3870747952
+        },
+        {
+          "k": 8,
+          "is_boundary": true,
+          "M_W": 1401854374,
+          "M_U": 1263602260,
+          "M_E": 9875151,
+          "ulc_sufficient_margin": 98798101204
+        }
+      ]
+    }
+  ],
+  "controls": [
+    {
+      "counts": [
+        0,
+        22,
+        0
+      ],
+      "N": 66,
+      "vertices_n": 91,
+      "k": 27,
+      "guard": 34,
+      "guarded": true,
+      "M_E": -518620474811633289768751398606375936,
+      "M_W": 51309658488638313875592489085548619091328
+    },
+    {
+      "counts": [
+        38,
+        0,
+        1
+      ],
+      "N": 80,
+      "vertices_n": 122,
+      "k": 77,
+      "guard": 41,
+      "guarded": false,
+      "M_E": -3166881005860,
+      "M_W": 206294799744024
+    }
+  ]
+}

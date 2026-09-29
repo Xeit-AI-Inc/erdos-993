@@ -1,0 +1,46 @@
+--- sealed-original-prefix_A.py
++++ frozen-protocol-repair1.py
+@@ -85,8 +85,30 @@
+         os.close(fd)
+ 
+ 
++def invocation_controls() -> list[dict]:
++    """Controller protocol repair1: run exact required controls in every invocation."""
++    cases = [((0, 22, 0), 3, 27), ((38, 0, 1), 4, 77), ((1, 0, 0), 2, 1)]
++    out = []
++    for counts, r, k in cases:
++        n, h, m, q, c, e = profile(counts)
++        u = mul(mul([1, 2], bpoly(r - 1)), divide_monic_constant_one(q, bpoly(r)))
++        em = coeff(e, k) * coeff(c, k) - coeff(e, k + 1) * coeff(c, k - 1)
++        full = (coeff(u, k) + coeff(e, k)) * coeff(c, k) - (coeff(u, k + 1) + coeff(e, k + 1)) * coeff(c, k - 1)
++        surplus = (h + 1) * coeff(u, k) * coeff(c, k) + (k + 1) * (h - k + 1) * em
++        out.append({"counts": list(counts), "m": m, "N": n, "n": n + m + 3, "h": h, "r": r, "k": k,
++                    "guarded": 1 <= k and 2 * k <= n + 2, "E_minor": str(em), "full_tip_minor": str(full),
++                    "surplus": str(surplus), "coefficients": {"U_k": str(coeff(u, k)), "U_kp1": str(coeff(u, k + 1)),
++                    "C_k": str(coeff(c, k)), "C_km1": str(coeff(c, k - 1)), "E_k": str(coeff(e, k)), "E_kp1": str(coeff(e, k + 1))}})
++    assert out[0]["E_minor"] == "-518620474811633289768751398606375936"
++    assert out[0]["full_tip_minor"] == "777419068009671422357461955841645743808" and out[0]["guarded"]
++    assert out[1]["full_tip_minor"] == "-49239834336" and not out[1]["guarded"]
++    assert out[2]["surplus"] == "98" and out[2]["full_tip_minor"] == "19" and out[2]["guarded"]
++    return out
++
++
+ def run(lo: int, hi: int, output: Path) -> None:
+     started = time.monotonic()
++    controls = invocation_controls()
+     rows = []
+     total_profiles = total_tests = 0
+     all_failures = []
+@@ -152,7 +174,11 @@
+         print(f"m={m} profiles={profile_count} tests={tests} min={layer_min['margin']} failures={len(failures)}", flush=True)
+ 
+     result = {
+-        "instrument": "C6-T2 independently authored exact monomial arrays + constant-one cofactor division",
++        "instrument": "C6-T2 exact arrays; controller protocol repair1, same mathematical algorithm",
++        "controls": controls,
++        "protocol_sha256": "a17ba0bcd412765b7dc1a91b283df816f41ad5173047067c94661d6991aff4ba",
++        "expected_counts_sha256": "e5de145a9c6872352a2a2b51d92a82a7d70745b2adf18a09e2dde66f4729ab6f",
++        "executed_source_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
+         "status": "complete" if lo == 1 and hi == 99 else "partial_scope",
+         "evidence_grade": "bounded_computation",
+         "scope": {"min_m": lo, "max_m": hi, "all_count_profiles": True,

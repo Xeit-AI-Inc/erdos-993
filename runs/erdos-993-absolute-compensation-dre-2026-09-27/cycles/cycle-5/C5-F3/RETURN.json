@@ -1,0 +1,26 @@
+{
+  "worker_id": "C5-F3",
+  "cycle": 5,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C5-F3-COEFFICIENT-FLOOR-DOES-NOT-IMPLY-SHIFTED-MINOR",
+      "statement": "The generic finite-block coefficient-floor/Jensen theorem alone does not imply a nonnegative shifted cross-minor against the binomial baseline, even at a rank satisfying the analogous lower-half guard: for one block r=2, f=(1,2,100), H=1+2z+100z^2, C=(1+z)^2 and k=1, H[k]C[k]-H[k+1]C[k-1]=-96.",
+      "scope": "Exact generic finite-block obstruction only. The coefficients satisfy f(t)>=binom(2,t), and the example is within the formally verified theorem's actual-subset domain. It is not an ordinary path-star, marked-leaf deletion, actual first-descent or strict-selector witness, and does not refute any registered graph comparison or payment claim.",
+      "status": "proposed_bounded_evidence",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-F3/REPORT.md",
+        "cycles/cycle-5/C5-F3/coefficient_floor_obstruction.py"
+      ],
+      "reason": "The exact minor is -96 although the full finite-block coefficient-floor/Jensen hypotheses hold. This isolates the missing application bridge: a graph result must preserve the actual marked-deletion factorization and bound its signed minor against the shared denominator, including any common additive term. The calculation establishes no universal graph theorem."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-F3/REPORT.md",
+  "limitations": [
+    "The obstruction uses an abstract one-block coefficient sequence and is not realized by an ordinary path-star or a marked vertex deletion.",
+    "No universal factorization/compensation lemma, actual-target counterexample, or formal result was established.",
+    "No required covered claim IDs were assigned in the packet."
+  ],
+  "status_authority": "proposed_worker_only"
+}

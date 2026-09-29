@@ -1,0 +1,29 @@
+{
+  "worker_id": "C5-T3",
+  "cycle": 5,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "For every nonempty ordinary arity-2/3/4 path-star profile, every represented original tip branch i, and every integer 1 <= k with 2k <= N+2, (h+1)U_i[k]C[k] + (k+1)(h-k+1)(E[k]C[k]-E[k+1]C[k-1]) >= 0, with h=1+2a2+4a3+7a4 and integer zero-extended coefficients.",
+      "scope": "Full registered guarded band without actual eligibility. If true, the already established enlarged-order ULC curvature and main-product LR imply each full tip deletion shifted minor is nonnegative. It does not cover endpoint A_0 or independently prove the open individual/weighted comparisons.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-T3/REPORT.md",
+        "cycles/cycle-5/C5-T3/independent_audit.py",
+        "cycles/cycle-5/C5-T3/independent_audit.json",
+        "cycles/cycle-5/C5-T3/producer_surplus.py",
+        "cycles/cycle-5/C5-T3/producer_controls.py"
+      ],
+      "reason": "The sufficient-condition reduction checks algebraically from the admitted ULC curvature and main-product likelihood-ratio bounds. Independent exact arithmetic confirms the stated bounded diagnostics and an actually eligible failure of the proposed coarse C2-ratio substitution, but provides neither an all-profile proof nor a guarded counterexample to the exact-ratio condition. The older 217(j+1)epsilon<1 tail certificate has no established implication to this exact pointwise surplus, and its finite prefix is not discharged by these checks."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-T3/REPORT.md",
+  "limitations": [
+    "No universal proof or guarded counterexample to the exact-ratio tip-surplus condition was found.",
+    "Finite profile checks are bounded evidence only; no Lean build or formal award was attempted.",
+    "The exact-ratio tip condition is sufficient, not necessary, for the full tip shifted minor and does not address endpoint A_0."
+  ],
+  "status_authority": "proposed_worker_only"
+}

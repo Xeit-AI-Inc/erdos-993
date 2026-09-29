@@ -1,0 +1,30 @@
+{
+  "worker_id": "C6-T2",
+  "cycle": 6,
+  "stage": "search",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "For every count profile with 1 <= m <= 99, every represented tip arity r, and every guarded rank 1 <= k <= floor((N+2)/2), the exact integer tip-surplus expression S_r(k) is nonnegative.",
+      "scope": "Bounded computation only: all 171699 arity-count profiles with m=1..99, all represented arities, and all 56245000 represented-tip/rank rows; no actual-descent or eligibility filter.",
+      "status": "proposed_bounded_evidence",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-T2/REPORT.md",
+        "cycles/cycle-6/C6-T2/prefix_A.py",
+        "cycles/cycle-6/C6-T2/control_replay.py",
+        "cycles/cycle-6/C6-T2/run-full/RESULT.json",
+        "cycles/cycle-6/C6-T2/run-full/TRANSPORT-RECEIPT.json",
+        "cycles/cycle-6/C6-T2/controls.json"
+      ],
+      "reason": "The frozen exact-array instrument completed the entire finite prefix, matched each expected per-m coverage count, and found zero negative rows. The global minimum is 98 with an exact coefficient witness. This evidence does not cover m>=100 or imply a universal surplus theorem."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-T2/REPORT.md",
+  "limitations": [
+    "Finite exact arithmetic covers only m=1..99; it cannot establish the all-m surplus predicate.",
+    "The analytic m>=100 tail, endpoint bridge, guarded comparisons, selected MASS, exact-ratio payment, primary aggregate, and arbitrary-tree claims are outside this computation.",
+    "This is bounded computation, not formal verification or a Lean award."
+  ],
+  "status_authority": "proposed_worker_only"
+}

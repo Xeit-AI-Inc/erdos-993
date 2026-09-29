@@ -1,0 +1,32 @@
+{
+  "worker_id": "C5-CF-T1",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "F",
+  "covered_claim_ids": [
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR"
+  ],
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, put W(X)=sum_i r_i A_i(X), counting each original private-tip deletion with its original multiplicity. For every natural k with 1<=k and 2k<=N+2, integer-zero-extended coefficients satisfy W[k+1] C[k-1]<=W[k] C[k].",
+      "scope": "Guarded lower-half shifted C-to-weighted-tip-deck comparison only; zero-extended coefficient predicate with 1<=k and 2k<=N+2. It does not itself impose actual first-descent eligibility or current-p strict selectors, nor assert selected payment or MASS. Any payment application must separately retain actual least first descent x, x+2<=p, 3p<2alpha+1, 2p<=alpha, current-p strict selectors, and original tip multiplicities r_i.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CF-T1/REPORT.md",
+        "cycles/cycle-5/C5-CF-T1/independent_guard_audit.py",
+        "cycles/cycle-5/C5-CF-T1/independent_guard_audit.json",
+        "cycles/cycle-5/C5-CF-T1/dispatch_hash_audit.py",
+        "cycles/cycle-5/C5-CF-T1/dispatch_hash_audit.json"
+      ],
+      "reason": "The branch-addition recurrence is correct, including its signed -NzE term, and the ULC surplus is a correctly directed sufficient condition with positive denominator. Independent exact boundary/interior checks and handoff controls are bounded evidence; no universal surplus estimate or guarded failure was established. Keep the registered weighted comparison OPEN."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CF-T1/REPORT.md",
+  "limitations": [
+    "The exact checks cover eight profiles at selected guarded ranks plus two focused controls; they are not an exhaustive census or universal proof.",
+    "No profile-uniform compensation estimate for the signed E minor or induction-boundary strips is proved, and no guarded counterexample is found.",
+    "No claim is made about actual first-descent eligibility, current-p selector flags, selected payment, or the stronger MASS predicate."
+  ],
+  "status_authority": "proposed_worker_only"
+}

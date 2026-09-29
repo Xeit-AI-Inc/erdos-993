@@ -1,0 +1,15 @@
+{
+  "kind": "controller protocol repair1, not another independent implementation",
+  "original_source_sha256": "4af03154bc71bbfbdd6e638e1570b3cc512ddcb8934d23bca9efb5de2b8d8842",
+  "repaired_source_sha256": "c6ef6fe9f2a97ca4225482d1b0ef35f9e5a81cdead1cf9322771ed200f987d69",
+  "changes": [
+    "execute required controls before profile loop on every invocation",
+    "include controls and source/protocol/count-table hashes in aggregate result"
+  ],
+  "mathematical_loop_changed": false,
+  "original_transport_seconds": 695.6182332499884,
+  "cumulative_budget_seconds": 3600,
+  "repair_timeout_seconds": 1800,
+  "no_other_implementation_source_read": true,
+  "certificate_policy": "Keep original sealed record. The new complete same-scope run supersedes its protocol-incomplete packaging; do not combine differently hashed source shards."
+}

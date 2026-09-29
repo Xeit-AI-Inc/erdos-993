@@ -1,0 +1,98 @@
+{
+  "worker_id": "C6-AF",
+  "cycle": 6,
+  "stage": "adjudication",
+  "orientation": "N",
+  "claims": [
+    {
+      "claim_id": "C6-F2-KRONECKER-NO-CARRY-BOUND",
+      "statement": "For every m>=1 arity-2/3/4 profile, each monomial-z coefficient of Q,C,U_i,E is strictly below radix 2^(N+m+2); positive-polynomial evaluation and complete digit extraction therefore have no carry.",
+      "scope": "Exact arithmetic implementation lemma only. Signed surplus is formed after extraction. The empty cofactor at m=1 needs the strict marked-factor norm bound; no prefix outcome follows.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-6/C6-AF/REPORT.md", "cycles/cycle-6/C6-AF/C6-AF-audit.py", "cycles/cycle-6/C6-AF/C6-AF-audit.json"],
+      "reason": "The source's final inequality is true, but its immediate strictness justification is incomplete at m=1. The report rejects that displayed argument and supplies a valid repair via ||B_(r-1)||_1<2^r; CT-F2's empty-cofactor concern is preserved without treating the inequality as false."
+    },
+    {
+      "claim_id": "C6-F2-PREFIX-COVERAGE-CLOSED-FORM",
+      "statement": "For each 1<=m<=99, profile count is binom(m+2,2) and represented-type/guarded-rank rows equal ((3m+2)S_m-O_m)/2 with S_m=3 binom(m+1,2), O_(2u)=3u^2+u, O_(2u+1)=(u+1)(3u+1); totals are 171699 profiles and 56245000 rows.",
+      "scope": "Finite coverage arithmetic: one row for each represented arity and every 1<=k<=floor((N+2)/2); no first-descent, eligibility, or selector filter and no coefficient-sign assertion. Original tip multiplicities are retained in later weighted comparisons, not in this per-type count.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-6/C6-AF/REPORT.md", "cycles/cycle-6/C6-AF/C6-AF-audit.py", "cycles/cycle-6/C6-AF/C6-AF-audit.json"],
+      "reason": "A combinatorial derivation and independent exact enumeration agree at every layer and both parity endpoints. No completed finite surplus certificate is inferred."
+    },
+    {
+      "claim_id": "C6-F2-PREFIX-TELEMETRY-FORMAT-CONFLICT",
+      "statement": "The general no-wall-clock-field artifact rule overlaps the C6 requirement for per-m elapsed durations and a runner receipt with an absolute UTC start timestamp.",
+      "scope": "Narrow artifact-governance ambiguity only: an elapsed duration differs from an absolute timestamp, and any absolute receipt field requires an authoritative determination of receipt scope. No mathematical or prefix-coverage consequence.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": ["cycles/cycle-6/C6-AF/REPORT.md"],
+      "reason": "F2 and both critics identify the textual overlap; CT-F2's permissive reading cannot itself grant governance, while CU-F2 correctly distinguishes durations and absolute UTC fields."
+    },
+    {
+      "claim_id": "C6-F3-ENDPOINT-BRIDGE-TAIL",
+      "statement": "For m>=100 and every 1<=k with 2k<=N+2, the strict tip surplus transfers to endpoint U_0=LQ and yields A_0[k+1]C[k-1]<A_0[k]C[k] using separate main-product LR and order-h ULC.",
+      "scope": "Conditional informal endpoint consequence on the entire guarded tail; original endpoint tag is vertex 2. Coefficient dominance U_0-U_i=z^2(L^(r_i-1)-1)H_i alone does not establish LR, and m<=99 remains unresolved.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-6/C6-AF/REPORT.md", "cycles/cycle-6/C6-AF/C6-AF-audit.py", "cycles/cycle-6/C6-AF/C6-AF-audit.json"],
+      "reason": "The identity is coefficientwise nonnegative; independently checked local endpoint ratios, common-cofactor convolution LR, and established curvature yield the shifted minor. Both F3 critics retain these separate dependencies."
+    },
+    {
+      "claim_id": "C6-F3-ULC-EXACT-RATIO-SURPLUS-TAIL",
+      "statement": "For every m>=100 arity-2/3/4 ordinary profile, represented original tip i, and 1<=k with 2k<=N+2, (h+1)U_i[k]C[k]+(k+1)(h-k+1)(E[k]C[k]-E[k+1]C[k-1])>0 with zero-extended monomial-z coefficients.",
+      "scope": "Universal informal tail over the entire surplus guard, no actual first-descent or selector premise; depends on full finite-block Jensen, binomial low-band proof, positive ratio floor, and exact Taylor bounds. Not an all-m or formal award.",
+      "status": "proposed_retained",
+      "evidence_paths": ["cycles/cycle-6/C6-AF/REPORT.md", "cycles/cycle-6/C6-AF/C6-AF-audit.py", "cycles/cycle-6/C6-AF/C6-AF-audit.json"],
+      "reason": "Independent algebra checks low-band support, both parity midpoints, arity ordering, size-one Jensen specialization, reciprocal inequality directions, and positive denominator clearing. Exact boundary/interior checks corroborate but do not prove universality."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+      "statement": "Registered all-m claim: for every original leaf deletion A_v and each 1<=k, 2k<=N+2, A_v[k+1]C[k-1]<=A_v[k]C[k] with integer-zero-extended coefficients.",
+      "scope": "Evidence retained only for m>=100, including tip and endpoint; registered all-m scope remains unresolved for m<=99. Application to payment retains actual first strict descent x, x+2<=p, 3p<2(N+2)+1, 2p<=N+2, current-p strict flags, and original tag multiplicities.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": ["cycles/cycle-6/C6-AF/REPORT.md", "cycles/cycle-6/C6-AF/C6-AF-audit.py", "cycles/cycle-6/C6-AF/C6-AF-audit.json"],
+      "reason": "Tail surplus plus separately established main-product LR and order-h ULC yields strict tail comparisons; coefficient dominance alone is insufficient. The finite base was not certified in this case."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "Registered all-m claim: W=sum_i r_i A_i with original tip multiplicities satisfies W[k+1]C[k-1]<=W[k]C[k] for every 1<=k, 2k<=N+2.",
+      "scope": "Evidence retained only for m>=100; all-m registered claim remains unresolved. No endpoint consequence from weighted sum, no inference from an aggregate sign to individual tip signs, and actual selected use retains x, every p guard, current-p strict flags and original r_i.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": ["cycles/cycle-6/C6-AF/REPORT.md", "cycles/cycle-6/C6-AF/C6-AF-audit.py", "cycles/cycle-6/C6-AF/C6-AF-audit.json"],
+      "reason": "Every tail tip minor is strictly positive against the same C; linearity and positive original r_i preserve the inequality. Missing m<=99 prevents an all-m conclusion."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "Registered all-m nonnegative exact-ratio tip surplus for every represented original tip and every natural 1<=k, 2k<=N+2, with integer-zero-extended coefficients.",
+      "scope": "Narrowed evidence consists of the strict all-m low band 4k<=N+1 and strict m>=100 full guarded band. The complementary m<=99 band is not completely certified here. No actual eligibility premise belongs to this stronger auxiliary predicate.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": ["cycles/cycle-6/C6-AF/REPORT.md", "cycles/cycle-6/C6-AF/C6-AF-audit.py", "cycles/cycle-6/C6-AF/C6-AF-audit.json"],
+      "reason": "The universal tail and low-band proofs are retained, but F2 supplies counts only, not signs; all-m status cannot be promoted from this case. CU-F3 RETURN's literal same-arity cofactor in U_i is rejected as a formula error; its report and corrected H_i argument are retained. Formal Jensen is only a dependency, not formal verification of this composition."
+    },
+    {
+      "claim_id": "C6-AF-ALL-M-LOW-BAND-STRICT-TIP-SURPLUS",
+      "statement": "For every nonempty arity-2/3/4 ordinary profile, represented original tip i, and every 1<=k with 2k<=N+2 and 4k<=N+1, the exact registered surplus (h+1)U_i[k]C[k]+(k+1)(h-k+1)(E[k]C[k]-E[k+1]C[k-1]) is strictly positive.",
+      "scope": "All m>=1 on the stated low band only, with monomial-z zero-extended coefficients and no actual first-descent or selector premise; it is a subcase of the registered stronger auxiliary, not the selected payment.",
+      "status": "proposed_informal_proof",
+      "evidence_paths": ["cycles/cycle-6/C6-AF/REPORT.md", "cycles/cycle-6/C6-AF/C6-AF-audit.py", "cycles/cycle-6/C6-AF/C6-AF-audit.json"],
+      "reason": "The subset expansion gives normalized adjacent cross-product sign s(N+1)-kR>=0, support cannot disappear in the low band, and binomial log-concavity makes M_k(E)>=0; the U_i[k]C[k] term is strictly positive."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-AF/REPORT.md",
+  "limitations": [
+    "No complete m=1..99 surplus certificate or two independent frozen instruments were reviewed in this case.",
+    "No Lean build or governed formal award for the composed tail, endpoint, all-m auxiliary, or primary was performed.",
+    "Finite coefficient and obstruction replays are exact bounded checks, not universal sign proofs.",
+    "The three registered all-m guarded auxiliary claims remain unresolved at their registered scopes in this adjudication."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-F2-KRONECKER-NO-CARRY-BOUND",
+    "C6-F2-PREFIX-COVERAGE-CLOSED-FORM",
+    "C6-F2-PREFIX-TELEMETRY-FORMAT-CONFLICT",
+    "C6-F3-ENDPOINT-BRIDGE-TAIL",
+    "C6-F3-ULC-EXACT-RATIO-SURPLUS-TAIL",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+    "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS"
+  ]
+}

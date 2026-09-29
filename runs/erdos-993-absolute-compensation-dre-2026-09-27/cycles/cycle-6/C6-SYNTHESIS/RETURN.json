@@ -1,0 +1,260 @@
+{
+  "worker_id": "C6-SYNTHESIS",
+  "cycle": 6,
+  "stage": "synthesis",
+  "orientation": "N",
+  "covered_claim_ids": [
+    "C6-AF-ALL-M-LOW-BAND-STRICT-TIP-SURPLUS",
+    "C6-CF-U2-validator-strictness",
+    "C6-CU-T3-LOCALIZED-CONDITIONAL-BRIDGE",
+    "C6-F2-KRONECKER-NO-CARRY-BOUND",
+    "C6-F2-PREFIX-COVERAGE-CLOSED-FORM",
+    "C6-F2-PREFIX-TELEMETRY-FORMAT-CONFLICT",
+    "C6-F3-ENDPOINT-BRIDGE-TAIL",
+    "C6-F3-ULC-EXACT-RATIO-SURPLUS-TAIL",
+    "C6-T1-M100-ULC-EXACT-RATIO-TIP-SURPLUS",
+    "C6-T3-CONDITIONAL-ALL-LEAF-SHIFTED-C-COMPARISON",
+    "C6-T3-CONDITIONAL-SAME-C-WEIGHTED-TIP-DECK",
+    "C6-U1-ARITY2-MIDPOINT-E-MINOR",
+    "C6-U2-prefix-surplus-1-99",
+    "C6-U2-radix-carry-free-bound",
+    "C6-U3-RELATIVE-MARGIN-TO-AGGREGATE",
+    "C6-U3-WEIGHTED-TIP-DECK-TO-MASS",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+    "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS"
+  ],
+  "claims": [
+    {
+      "claim_id": "C6-AF-ALL-M-LOW-BAND-STRICT-TIP-SURPLUS",
+      "statement": "The exact tip surplus S_i(k)>0 whenever 4k<=N+1.",
+      "scope": "Every nonempty arity-2/3/4 ordinary profile, represented original tip and guarded 1<=k, 2k<=N+2; no actual-descent or selector filter.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.py",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.json"
+      ],
+      "reason": "Subset support and normalized binomial comparisons give M_k(E)>=0; positive U_i[k]C[k] makes strictness. The omitted binomial log-concavity step is supplied."
+    },
+    {
+      "claim_id": "C6-CF-U2-validator-strictness",
+      "statement": "The reported U2 validator accepts zero per-m minima through a >=0 assertion.",
+      "scope": "Code-validation observation only; all 99 retained minima are positive and the finite mathematical result is not refuted.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "The sealed adjudication identifies the validator gap; separate positive per-m minima repair the strict reported outcome."
+    },
+    {
+      "claim_id": "C6-CU-T3-LOCALIZED-CONDITIONAL-BRIDGE",
+      "statement": "At one guarded rank, one represented tip surplus S_i>=0 implies the endpoint shifted C minor M_k(A0)>=0.",
+      "scope": "Conditional ordinary arity-2/3/4 path-star rank 1<=k, 2k<=N+2; actual-p applications keep least strict zero-extended x, all three p guards, current-p flags and original multiplicities.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.py",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.json"
+      ],
+      "reason": "U0-Ui=z^2(L^(r_i-1)-1)H_i>=0 and lambda C[k]>0 transfer the deficit; separate L/G LR supplies endpoint main-product comparison. The displayed F_r tip step is invalid and rejected."
+    },
+    {
+      "claim_id": "C6-F2-KRONECKER-NO-CARRY-BOUND",
+      "statement": "Every nonnegative monomial coefficient of Q,C,U_i,E is below 2^(N+m+2), so digit extraction at that radix is carry-free.",
+      "scope": "Exact positive-polynomial arithmetic lemma for all nonempty arity-2/3/4 profiles; signed surplus is formed after extraction; no sign outcome.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.py",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.json"
+      ],
+      "reason": "The marked-factor strict norm B_(r-1)(1)<2^r repairs the displayed empty-cofactor m=1 gap."
+    },
+    {
+      "claim_id": "C6-F2-PREFIX-COVERAGE-CLOSED-FORM",
+      "statement": "Per-m represented-type/rank rows equal ((3m+2)S_m-O_m)/2; totals for m1..99 are 171699 profiles and 56245000 rows.",
+      "scope": "One row per represented arity and every 1<=k<=floor((N+2)/2), with no descent or selector filtering; coverage only.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.py",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.json"
+      ],
+      "reason": "Independent combinatorial derivation and exact enumeration agree at every m."
+    },
+    {
+      "claim_id": "C6-F2-PREFIX-TELEMETRY-FORMAT-CONFLICT",
+      "statement": "The artifact rule concerning wall-clock fields overlaps the runner receipt absolute UTC timestamp requirement.",
+      "scope": "Narrow format ambiguity only; elapsed durations are distinct and no mathematical or coverage inference follows.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md"
+      ],
+      "reason": "Sealed F2 adjudication distinguishes absolute receipt fields from durations; controller governs receipt scope."
+    },
+    {
+      "claim_id": "C6-F3-ENDPOINT-BRIDGE-TAIL",
+      "statement": "The strict m>=100 tip surplus implies M_k(A0)>0 at every guarded rank.",
+      "scope": "Ordinary arity-2/3/4 path-star endpoint original vertex-2 tag, m>=100, 1<=k, 2k<=N+2; separate endpoint LR and order-h ULC required.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.py",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.json"
+      ],
+      "reason": "Coefficientwise U0>=Ui pays the E deficit, while L/G LR and ULC separately supply the endpoint main-product minor."
+    },
+    {
+      "claim_id": "C6-F3-ULC-EXACT-RATIO-SURPLUS-TAIL",
+      "statement": "S_i(k)>0 for every represented tip when m>=100 throughout 1<=k, 2k<=N+2.",
+      "scope": "Universal informal composition for ordinary arity-2/3/4 profiles, with zero-extended z coefficients; no actual-descent or selector premise; no C6 Lean award.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.py",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.json"
+      ],
+      "reason": "All-m low band plus direct formal-Jensen specialization in the complement, exact parity/Taylor constants and positive-denominator ratio payment cover the full guard."
+    },
+    {
+      "claim_id": "C6-T1-M100-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "S_i(k)>0 for every represented tip when m>=100 throughout 1<=k, 2k<=N+2.",
+      "scope": "Universal informal composition for ordinary arity-2/3/4 profiles, with zero-extended z coefficients; no actual-descent or selector premise; no C6 Lean award.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.py",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.json"
+      ],
+      "reason": "All-m low band plus direct formal-Jensen specialization in the complement, exact parity/Taylor constants and positive-denominator ratio payment cover the full guard."
+    },
+    {
+      "claim_id": "C6-T3-CONDITIONAL-ALL-LEAF-SHIFTED-C-COMPARISON",
+      "statement": "If each represented tip has S_i(k)>=0 at a guarded rank, then M_k(A_v)>=0 for every original endpoint and tip deletion.",
+      "scope": "Conditional all-m ordinary arity-2/3/4 profile, 1<=k, 2k<=N+2; actual-p use retains actual first strict descent, all three guards, current-p selectors and original tag multiplicities.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.py",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.json"
+      ],
+      "reason": "Reject displayed F_r/B_r tip LR step: U_i uses B_(r_i-1). Correct B_(r-1)/B_r minors, common-factor TP2, ULC and separate endpoint LR repair the conclusion."
+    },
+    {
+      "claim_id": "C6-T3-CONDITIONAL-SAME-C-WEIGHTED-TIP-DECK",
+      "statement": "If each represented tip has S_i(k)>=0, W=sum_i r_i A_i has M_k(W)>=0 against the same C.",
+      "scope": "Conditional all-m guarded ordinary profile; original r_i tip multiplicities, actual descent/guards/current-p selectors retained for any payment use.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.py",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.json"
+      ],
+      "reason": "Repaired branchwise tip minors sum with positive original r_i weights against the same C; no aggregate-to-branch inference."
+    },
+    {
+      "claim_id": "C6-U1-ARITY2-MIDPOINT-E-MINOR",
+      "statement": "For all m>=1 homogeneous arity-2 profiles, M_(m+1)(E)>0.",
+      "scope": "Only midpoint boundary k=m+1, N=2m; no other rank, mixed profile, actual descent, selector or payment conclusion.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.py",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.json"
+      ],
+      "reason": "Palindromic log-concavity and exact substitution give positive numerator 3Q[m]+(m-1)(Q[m]-Q[m-1]) over positive m+1."
+    },
+    {
+      "claim_id": "C6-U2-prefix-surplus-1-99",
+      "statement": "The exact S_r(k)>0 on every represented-type/guarded-rank row of all profiles m1..99; reported minimum is 98.",
+      "scope": "Complete finite bounded computation: 171699 arity-count profiles and 56245000 rows, no actual-descent or selector filter; not a universal theorem alone.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.py",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.json"
+      ],
+      "reason": "Sealed C6-AU independently adjudicates the frozen packed-digit run and all 99 positive stored minima; C6-AT independently adjudicates a separately authored complete array run. Validator strictness gap is repaired by positive minima."
+    },
+    {
+      "claim_id": "C6-U2-radix-carry-free-bound",
+      "statement": "Base 2^(N+m+4) exceeds every nonnegative coefficient of C and U_i.",
+      "scope": "Universal exact digit-extraction lemma only, all nonempty arity-2/3/4 profiles; no surplus sign follows.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.py",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.json"
+      ],
+      "reason": "Positive coefficient sums obey C(1)<2^(N+m+2), U_i(1)<2^(N+m+1), including B1=G and m=1."
+    },
+    {
+      "claim_id": "C6-U3-RELATIVE-MARGIN-TO-AGGREGATE",
+      "statement": "The exact selected payment gives S<=0 via the formal relative margin; selected MASS implies payment.",
+      "scope": "Actual first strict zero-extended parent descent x; every x+2<=p, 3p<2(N+2)+1, 2p<=N+2; current-p strict e0,ei and original r_i weights.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.py",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.json"
+      ],
+      "reason": "With positive C[j], delta>1, D_j>0 and 0<t<1, S<=bD_j-(1-t+t/delta)A; kappa delta>1. An aggregate sign cannot reverse this upper bound."
+    },
+    {
+      "claim_id": "C6-U3-WEIGHTED-TIP-DECK-TO-MASS",
+      "statement": "The guarded weighted-tip comparison plus the branch-local 3/2 lemma imply selected MASS.",
+      "scope": "Conditional all-m actual eligible lower-half rank, least strict zero-extended x, all three p guards, current-p strict selectors, endpoint multiplicity one and original tip multiplicities r_i.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.py",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.json"
+      ],
+      "reason": "W[p+1]<W[p] forces selected tip weight B>=2; summing positive branch-local bounds gives A>=3B delta D_j/2>=(B+e0)delta D_j. Comparison premise is separate."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+      "statement": "For every original endpoint or tip deletion and every guarded rank, A_v[k+1]C[k-1]<=A_v[k]C[k].",
+      "scope": "Full all-m ordinary arity-2/3/4 path-star, 1<=k, 2k<=N+2, integer zero extension; actual-p selector use retains least strict x and all three p guards.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.py",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.json"
+      ],
+      "reason": "Proposed computer-assisted/nonformal composition: two sealed independent complete m1..99 surplus instruments plus analytic m>=100 tail, corrected local LR, ULC and endpoint bridge; controller acceptance and formal award pending."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "W=sum_i r_i A_i satisfies W[k+1]C[k-1]<=W[k]C[k] at every guarded rank.",
+      "scope": "Full all-m ordinary arity-2/3/4 profile, original r_i tip multiplicities, 1<=k, 2k<=N+2; actual-p use retains least strict x, all guards and current-p strict flags.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.py",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.json"
+      ],
+      "reason": "Proposed computer-assisted/nonformal composition of all individual tip minors against the same C; no inference from aggregate sign or coefficient dominance alone."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "For every m>=1, represented original tip and guarded rank, the exact integer surplus S_i(k)>=0; available evidence supports the stronger S_i(k)>0.",
+      "scope": "Full ordinary arity-2/3/4 path-star, 1<=k, 2k<=N+2, zero-extended z coefficients, no descent/selector filter.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-SYNTHESIS/REPORT.md",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.py",
+        "cycles/cycle-6/C6-SYNTHESIS/C6-SYNTHESIS-audit.json"
+      ],
+      "reason": "Proposed computer-assisted/nonformal all-m grade: strict analytic m>=100 proof joined to two separately authored complete exact m1..99 instruments with positive minima; not a governed formal award or authoritative registry change."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-SYNTHESIS/REPORT.md",
+  "limitations": [
+    "The all-m surplus and guarded comparison grade is proposed computer-assisted/nonformal and depends on controller acceptance of the two sealed complete frozen finite instruments; this seat did not inspect raw producer rows or rerun their 56-million-row computations.",
+    "Only the abstract finite-block Jensen theorem and the separate relative margin have governed formal awards; no C6 global surplus, bridge or payment Lean award exists.",
+    "No ordinary-family result here proves an arbitrary-tree or forest instance of Erd\u0151s 993."
+  ],
+  "status_authority": "proposed_worker_only"
+}

@@ -1,0 +1,83 @@
+{
+  "root_mixture": {
+    "profile": {
+      "a2": 10,
+      "a3": 0,
+      "a4": 0
+    },
+    "m": 10,
+    "N": 20,
+    "n": 33,
+    "alpha": 22,
+    "p": 4,
+    "x": 11,
+    "d_p_d_p1": [
+      1330,
+      5985
+    ],
+    "C_p_C_p1": [
+      27315,
+      125586
+    ],
+    "signed_minor": -3549105,
+    "simple_guard_1_le_p_2p_le_alpha": true,
+    "actual_eligibility_x_plus_2_le_p_and_lower_half": false,
+    "guard_failure": {
+      "x_plus_2": 13,
+      "2p_le_alpha_implies_p_le": 11
+    },
+    "direction": "The negative minor divided by positive C[p]C[p+1] makes d/C decrease. Since u/(1+u) is increasing for u>=0, d/(C+d) decreases too."
+  },
+  "different_denominators": {
+    "C1": [
+      1,
+      100
+    ],
+    "A1": [
+      1,
+      90
+    ],
+    "C2": [
+      100,
+      1
+    ],
+    "A2": [
+      80,
+      0
+    ],
+    "input_signed_minors": [
+      -10,
+      -80
+    ],
+    "sum_C": [
+      101,
+      101
+    ],
+    "sum_A": [
+      81,
+      90
+    ],
+    "sum_signed_minor": 909,
+    "sum_ratio_ranks": [
+      "81/101",
+      "90/101"
+    ]
+  },
+  "common_denominator_fixed_weights": {
+    "identity": "(sum w_i X_i[1])C[0]-(sum w_i X_i[0])C[1]=sum w_i(X_i[1]C[0]-X_i[0]C[1])",
+    "tested_weights": [
+      [
+        0,
+        0
+      ],
+      [
+        2,
+        3
+      ]
+    ],
+    "denominator": [
+      7,
+      11
+    ]
+  }
+}

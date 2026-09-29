@@ -1,0 +1,22 @@
+e993_guarded_tip_surplus_tail : ∀ (m : ℕ),
+  LE.le.{0} 100 m →
+    ∀ (r : Fin m → ℕ),
+      (∀ (i : Fin m), Eq.{1} (r i) 2 ∨ Eq.{1} (r i) 3 ∨ Eq.{1} (r i) 4) →
+        ∀ (i : Fin m) (k : ℕ),
+          LE.le.{0} 1 k →
+            LE.le.{0} (HMul.hMul.{0, 0, 0} 2 k) (HAdd.hAdd.{0, 0, 0} (e993TailN r) 2) →
+              LT.lt.{0} 0
+                (HAdd.hAdd.{0, 0, 0}
+                  (HMul.hMul.{0, 0, 0}
+                    (HMul.hMul.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} (↑(e993TailH r)) 1)
+                      (Polynomial.coeff.{0} (e993TailU r i) k))
+                    (Polynomial.coeff.{0} (e993TailC r) k))
+                  (HMul.hMul.{0, 0, 0}
+                    (HMul.hMul.{0, 0, 0} (HAdd.hAdd.{0, 0, 0} (↑k) 1)
+                      (HAdd.hAdd.{0, 0, 0} (HSub.hSub.{0, 0, 0} ↑(e993TailH r) ↑k) 1))
+                    (HSub.hSub.{0, 0, 0}
+                      (HMul.hMul.{0, 0, 0} (Polynomial.coeff.{0} (e993TailE r) k)
+                        (Polynomial.coeff.{0} (e993TailC r) k))
+                      (HMul.hMul.{0, 0, 0} (Polynomial.coeff.{0} (e993TailE r) (HAdd.hAdd.{0, 0, 0} k 1))
+                        (Polynomial.coeff.{0} (e993TailC r) (HSub.hSub.{0, 0, 0} k 1))))))
+'e993_guarded_tip_surplus_tail' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]

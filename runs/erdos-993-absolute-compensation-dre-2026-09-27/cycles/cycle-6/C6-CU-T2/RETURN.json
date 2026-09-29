@@ -1,0 +1,30 @@
+{
+  "worker_id": "C6-CU-T2",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, every represented original tip branch i, and every integer 1<=k with 2k<=N+2, (h+1)U_i[k]C[k]+(k+1)(h-k+1)(E[k]C[k]-E[k+1]C[k-1])>=0, with integer zero-extended coefficients.",
+      "scope": "Proposed retained_narrowed: strict universal proof for m>=100 on the complete registered guard; m=1..99 has one complete reported bounded exact instrument plus independent spot checks, not a second full implementation, so all-m computer-assisted verification is not certified here. No actual-descent or eligibility premise, endpoint, selector, payment, or primary aggregate is concluded.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CU-T2/REPORT.md",
+        "cycles/cycle-6/C6-CU-T2/analytic_tail_checks.py",
+        "cycles/cycle-6/C6-CU-T2/independent_spotcheck.py",
+        "cycles/cycle-6/C6-CU-T2/independent_spotcheck_result.json"
+      ],
+      "reason": "The m>=100 proof checks out at exact scope after positive-denominator division and the negative deficit multiplier reversal are accounted for. The required m<=99 prefix is reported complete by one exact instrument, but this critique did not independently replay the entire census or checkpoint set; protocol-required two-implementation evidence is therefore absent from this review."
+    }
+  ],
+  "covered_claim_ids": [
+    "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS"
+  ],
+  "report_path": "cycles/cycle-6/C6-CU-T2/REPORT.md",
+  "limitations": [
+    "No independent full m=1..99 replay; finite prefix remains bounded evidence from the authorized C6-T2 instrument and exact spot checks.",
+    "No Lean build, endpoint theorem, guarded comparison, primary payment proof, arbitrary-tree theorem, or Erdős993 conclusion was attempted or established."
+  ],
+  "status_authority": "proposed_worker_only"
+}

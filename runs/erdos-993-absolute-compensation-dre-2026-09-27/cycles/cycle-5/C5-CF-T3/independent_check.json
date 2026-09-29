@@ -1,0 +1,210 @@
+{
+  "basis_check": {
+    "2": {
+      "monomial_from_binomial_expansion": [
+        1,
+        3,
+        1
+      ],
+      "L_basis_plus_z": [
+        [
+          2,
+          1
+        ]
+      ]
+    },
+    "3": {
+      "monomial_from_binomial_expansion": [
+        1,
+        4,
+        3,
+        1
+      ],
+      "L_basis_plus_z": [
+        [
+          3,
+          1
+        ]
+      ]
+    },
+    "4": {
+      "monomial_from_binomial_expansion": [
+        1,
+        5,
+        6,
+        4,
+        1
+      ],
+      "L_basis_plus_z": [
+        [
+          4,
+          1
+        ]
+      ]
+    }
+  },
+  "cases": [
+    {
+      "counts": [
+        0,
+        0,
+        1
+      ],
+      "r": 4,
+      "N": 4,
+      "h": 8,
+      "k": 1,
+      "guard": true,
+      "Ck": 7,
+      "Ckm1": 1,
+      "Ckp1": 16,
+      "Uk": 6,
+      "Ukp1": 11,
+      "M_E": 3,
+      "M_U": 31,
+      "lambda_den": 16,
+      "ULC_LR_cross_margin": 118,
+      "exact_surplus": 426,
+      "full_tip_minor": 34,
+      "x": 3,
+      "n": 8,
+      "actual_guards": {
+        "x+2<=k": false,
+        "3k<2alpha+1": true,
+        "2k<=alpha": true
+      }
+    },
+    {
+      "counts": [
+        0,
+        0,
+        1
+      ],
+      "r": 4,
+      "N": 4,
+      "h": 8,
+      "k": 2,
+      "guard": true,
+      "Ck": 16,
+      "Ckm1": 7,
+      "Ckp1": 16,
+      "Uk": 11,
+      "Ukp1": 7,
+      "M_E": 22,
+      "M_U": 127,
+      "lambda_den": 21,
+      "ULC_LR_cross_margin": 1083,
+      "exact_surplus": 2046,
+      "full_tip_minor": 149,
+      "x": 3,
+      "n": 8,
+      "actual_guards": {
+        "x+2<=k": false,
+        "3k<2alpha+1": true,
+        "2k<=alpha": true
+      }
+    },
+    {
+      "counts": [
+        0,
+        0,
+        4
+      ],
+      "r": 4,
+      "N": 16,
+      "h": 29,
+      "k": 8,
+      "guard": true,
+      "Ck": 47158,
+      "Ckm1": 38700,
+      "Ckp1": 45880,
+      "Uk": 26280,
+      "Ukp1": 22666,
+      "M_E": 41418520,
+      "M_U": 362138040,
+      "lambda_den": 198,
+      "ULC_LR_cross_margin": 34523964720,
+      "exact_surplus": 45380234160,
+      "full_tip_minor": 403556560,
+      "x": 9,
+      "n": 23,
+      "actual_guards": {
+        "x+2<=k": false,
+        "3k<2alpha+1": true,
+        "2k<=alpha": true
+      }
+    },
+    {
+      "counts": [
+        0,
+        22,
+        0
+      ],
+      "r": 3,
+      "N": 66,
+      "h": 89,
+      "k": 27,
+      "guard": true,
+      "Ck": 116461439672085416832,
+      "Ckm1": 78823085262292775712,
+      "Ckp1": 160602175952431155690,
+      "Uk": 74794640630224420080,
+      "Ukp1": 100639981455566817018,
+      "M_E": -518620474811633289768751398606375936,
+      "M_U": 777937688484483055647230707240252119744,
+      "lambda_den": 1764,
+      "ULC_LR_cross_margin": 588319845006931002941796377526300368438016,
+      "exact_surplus": 783047390962129386096766512578362723639296,
+      "full_tip_minor": 777419068009671422357461955841645743808,
+      "x": 32,
+      "n": 91,
+      "actual_guards": {
+        "x+2<=k": false,
+        "3k<2alpha+1": true,
+        "2k<=alpha": true
+      }
+    },
+    {
+      "counts": [
+        0,
+        0,
+        24
+      ],
+      "r": 4,
+      "N": 96,
+      "h": 169,
+      "k": 49,
+      "guard": true,
+      "Ck": 77148160806457673767169219494,
+      "Ckm1": 81363068072659051666991758595,
+      "Ckp1": 70237868849582710047109451664,
+      "Uk": 39375411876026744254763201002,
+      "Ukp1": 35082151766704029440849698254,
+      "M_E": -16437969990720999207505849333920393369132273492687432600,
+      "M_U": 183349104902518534134198590624632501503830226986817739858,
+      "lambda_den": 6050,
+      "ULC_LR_cross_margin": 592846181430760667326159169346295852295033141685692941532940,
+      "exact_surplus": 416966184785614418980331915462512401919889476953795417377960,
+      "full_tip_minor": 166911134911797534926692741290712108134697953494130307258,
+      "x": 47,
+      "n": 123,
+      "actual_guards": {
+        "x+2<=k": true,
+        "3k<2alpha+1": true,
+        "2k<=alpha": true
+      },
+      "actual_strict_selectors_at_p49": {
+        "e0_delta": -4984819922319926098360122575,
+        "e0": 1,
+        "tips": {
+          "4": {
+            "delta": -4424588007564884179391494648,
+            "e": 1,
+            "multiplicity": 96
+          }
+        }
+      }
+    }
+  ],
+  "denominator_guard": "positive in all asserted checked ranges"
+}

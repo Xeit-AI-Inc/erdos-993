@@ -1,0 +1,43 @@
+{
+  "worker_id": "C5-CT-F2",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C5-F2-DIFFERENT-DENOMINATOR-SUM-OBSTRUCTION",
+      "statement": "Nonincreasing two-rank ratios need not remain nonincreasing after componentwise numerator and denominator addition when denominators differ: C1=(1,100), A1=(1,90), C2=(100,1), A2=(80,0) have input minors -10 and -80 but the sum minor is +909.",
+      "scope": "Exact abstract two-rank example with positive denominators and nonnegative numerators. Refutes arbitrary different-denominator pair-sum closure only; it is not a path-star or selected-claim witness. Same-denominator fixed nonnegative weighted sums preserve the cross-multiplied inequality by linearity.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CT-F2/REPORT.md",
+        "cycles/cycle-5/C5-CT-F2/independent_audit.py",
+        "cycles/cycle-5/C5-CT-F2/independent_audit.json"
+      ],
+      "reason": "Independent exact reconstruction gives component minors -10,-80 and summed minor +909; positive denominator products preserve these ratio directions. The report states the valid same-denominator repair and its limits."
+    },
+    {
+      "claim_id": "C5-F2-ROOT-MIXTURE-ALL-RANK-MONOTONICITY-OBSTRUCTION",
+      "statement": "For the ordinary homogeneous arity-2 path-star with m=10, N=20, C=(1+2z)B2^10, d=z(1+z)^21, the root-mixture weight d_k/(C_k+d_k) decreases from k=4 to 5, with signed minor d[5]C[4]-d[4]C[5]=-3549105.",
+      "scope": "Exact coefficient-rank obstruction to all-rank root-mixture monotonicity. k=4 satisfies 1<=k and 2k<=N+2, but the full parent has first strict descent x=11, so k is not actual eligible p. Does not refute an actual-eligibility implication, deletion comparison, selector, payment, or primary claim.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CT-F2/REPORT.md",
+        "cycles/cycle-5/C5-CT-F2/independent_audit.py",
+        "cycles/cycle-5/C5-CT-F2/independent_audit.json"
+      ],
+      "reason": "Independent exact polynomial reconstruction confirms coefficients (1330,5985,27315,125586), the negative minor, positive denominators and first descent x=11. The mixture map u/(1+u) preserves the ratio ordering because it is strictly increasing for u>=0; actual eligibility fails at this rank."
+    }
+  ],
+  "covered_claim_ids": [
+    "C5-F2-DIFFERENT-DENOMINATOR-SUM-OBSTRUCTION",
+    "C5-F2-ROOT-MIXTURE-ALL-RANK-MONOTONICITY-OBSTRUCTION"
+  ],
+  "report_path": "cycles/cycle-5/C5-CT-F2/REPORT.md",
+  "limitations": [
+    "The two required claims are worker-local and absent from the targeted current identity snapshot; no canonical status is assigned.",
+    "The mixture obstruction lies outside actual first-descent eligibility and is not a full path-star counterexample.",
+    "The ULC replay is finite through m<=20 and is diagnostic only; no Lean verification or universal proof was produced."
+  ],
+  "status_authority": "proposed_worker_only"
+}

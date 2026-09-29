@@ -1,0 +1,29 @@
+{
+  "worker_id": "C5-CT-U3",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C5-U3-BRANCH-RECURRENCE-COEFFICIENT-OBSTRUCTION",
+      "statement": "For the branch-addition weighted-deck recurrence W'=B_r W+r B_(r-1)C+(rL^r-Nz)E, the signed correction is not coefficientwise nonnegative even at a rank in the new guarded band: with 150 arity-2 branches (N=300), append r=2 and k=4, the correction coefficient is -4364800.",
+      "scope": "Exact bounded obstruction to coefficientwise positivity of the correction term only. The profile is an ordinary path-star with all 300 original tip tags counted, one additional arity-2 branch, N'=302, and 1<=k with 2k=8<=N'+2. No actual first-descent eligibility or strict selector premise is asserted; the full weighted minor at this rank is positive.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CT-U3/REPORT.md",
+        "cycles/cycle-5/C5-CT-U3/independent_recurrence_check.py"
+      ],
+      "reason": "An independent exact monomial-basis computation confirms the recurrence and the in-guard coefficient -4364800. The full weighted minor is +185586251584170562390, so the evidence supports only the stated correction-term obstruction and leaves the guarded weighted-deck comparison open."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CT-U3/REPORT.md",
+  "limitations": [
+    "This is a finite mechanism-level obstruction, not a counterexample to the guarded weighted-deck comparison.",
+    "No actual first descent, current-p strict selectors, or selected-payment statement is checked.",
+    "No universal recurrence invariant paying the signed correction is established."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-U3-BRANCH-RECURRENCE-COEFFICIENT-OBSTRUCTION"
+  ]
+}

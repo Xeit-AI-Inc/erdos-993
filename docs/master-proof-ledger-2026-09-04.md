@@ -1,6 +1,35 @@
 # Erdős #993 — Master Proof Ledger
 
-## Active experiment — Cycle4 closed,2026-09-28
+## Terminal absolute-compensation experiment — six cycles complete,2026-09-29
+
+The six-cycle absolute-compensation experiment is complete. For ordinary path-stars whose branch arities are2,3,4, three existing claims are now VERIFIED at computer-assisted/nonformal grade: the exact-ratio tip surplus, the guarded comparison for every original leaf deletion, and the same-C original-multiplicity weighted-tip-deck comparison. Their scope is every nonempty mixed/repeated profile and every natural k>=1 with2k<=N+2, without an actual-descent or selector filter.
+
+Two separately authored exact computations each checked all171699 count profiles and56245000 represented-tip/rank tests for m1..99. Both report strictly positive minimum98, and all99layer summaries match. A separately reviewed analytic proof covers allm>=100. These finite computations plus the analytic tail and corrected LR/ULC/endpoint bridges establish the full domain at the stated grade; finite agreement alone is not an infinite proof. Original protocol/proof errors and their repairs remain documented.
+
+The exact strict m>=100 tip-surplus subcase received a governed Lean award after kernel and fresh semantic fidelity verification. This is a restricted tail award; it does not formally certify the all-m finite prefix, full deletion comparisons, selectors, MASS or payment.
+
+The registry has515identities:328 VERIFIED,104 REFUTED,26 CONDITIONAL and57 OPEN at mixed evidence grades. C6 adds no identities and changes only three existing statuses; C5's root-mixture theorem and activity-positivity refutation are included in this publication. All-m selected MASS/payment were already computer-assisted inC3 and retain that grade. These counts are not a percentage of a solution. Erdős993, the arbitrary-tree aggregate and the governed representation/transfer obligations remain OPEN.
+
+Astra's final priorities are compositional marked compensation beyond this bounded-arity family, an exact shared-deficit interface to Code r30 Hall/cover capacity sharing, and full-scope formalization of the finite-prefix and corrected selector/comparison chain. Code mathematical intake remained frozen at r30. No seventh cycle is active.
+
+
+Evidence: `experiments/erdos-993-absolute-compensation-dre-2026-09-27/control/C6-ASTRA-FINAL-ANALYSIS.md`, `experiments/erdos-993-absolute-compensation-dre-2026-09-27/control/C6-CONTROLLER-CLOSE.md` and `experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C6-IDENTITY/REPORT.md`.
+
+## Historical Cycle5 checkpoint,2026-09-28
+
+All31 standard Cycle5 seats and a fresh Sol-high identity/proof review are complete. The registry now has515identities:325 VERIFIED,104 REFUTED,26 CONDITIONAL,60 OPEN, at mixed evidence grades. These counts are not a measure of progress toward solving the conjecture.
+
+One extended-band root-mixture identity is VERIFIED informally; the actual-eligible version is its corollary. One precise activity coefficientwise-positivity mechanism is REFUTED by the all-m formula -33(m-1), not by a negative evaluated full minor. The three guarded structural targets remain OPEN at C5 close. Existing selected payment, MASS, full selection and local3/2 retain computer-assisted/nonformal grade. Existing formal awards are unchanged. The surplus statement's mismatched cofactor index is explicitly repaired; its predicate is unchanged.
+
+Corrections retain sealed originals: T2 n91full-tip report integer, F1 stale-C/wrong-multiplicity ancillary weighted output, false producer coverage objection by CU-F3, rank-label and packet-hash provenance mistakes, and source RETURN labels for true obstructions. The correct full-tip n91margin is777419068009671422357461955841645743808; the m3activity full weighted margin is24915204. Negative components or sufficient lower bounds do not refute full targets.
+
+After synthesis, the independent reviewer validates a new proposed strict surplus tail for m>=100 over the whole guarded band, plus a conditional endpoint bridge. These are C6 preparation, not retrospective C5 results or new formal awards. The reviewed finite base would cover171699profiles and56245000represented-tip/ranktests throughm99, using two separately authored exact instruments; no full base has yet run. Partial computation cannot close a universal claim.
+
+The C5 root-mixture Lean candidate is deferred on obligation centrality. A newly located pinned predecessor LR source may reduce future implementation cost, but does not change its peripheral role in payment. No conditional surrogate or easy obstruction award is substituted. C6 will target the exact m100polynomial surplus, reusing C2ratio-operator, C3center-expansion and C4full-Jensen formal sources with explicit coefficient-ring bridges. The tail surplus itself does not need ULC; ULC/main-LR enter the later full-minor implication. An exact tail award cannot upgrade the all-m key. Primary formal stop remains unmet; no seventh cycle is authorized. Frozen mathematical Code intake remains r30.
+
+Evidence: `experiments/erdos-993-absolute-compensation-dre-2026-09-27/preparation/C5-IDENTITY/REPORT.md` and `experiments/erdos-993-absolute-compensation-dre-2026-09-27/control/C5-CONTROLLER-CLOSE.md`.
+
+## Historical Cycle4 closed,2026-09-28
 
 Cycle4 is closed. The complete existing finite-block coefficient/Jensen theorem received a governed formal award. The actual uniform labeled-subset expectation equality, exact guarded hypergeometric exponential lower bound and every Taylor truncation are all included. Empty index types, positive blocks including size1, supported real coefficient floors, k=0, k=M and every natural d are covered. Separate informal audit, kernel and independent semantic fidelity passed. This is a general finite coefficient theorem, not graph/deletion/selector/payment verification.
 

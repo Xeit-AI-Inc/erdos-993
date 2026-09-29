@@ -1,0 +1,10 @@
+name = "leanProof"
+version = "0.1.0"
+defaultTargets = ["LeanProof"]
+
+[[lean_lib]]
+name = "LeanProof"
+
+[[require]]
+name = "mathlib"
+path = "/Users/ashtonsperry/.local/share/verityos/lean/mathlib-v4.32.2-project/.lake/packages/mathlib"

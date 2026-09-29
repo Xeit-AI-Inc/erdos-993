@@ -1,6 +1,20 @@
 # Problem And Status
 
-## Current checkpoint — Cycle4 closed,28 September2026
+## Current checkpoint — six-cycle experiment complete, 29 September 2026
+
+The six-cycle absolute-compensation experiment is complete. For ordinary path-stars whose branch arities are 2, 3, or 4, three existing claims are now VERIFIED at computer-assisted/nonformal grade: the exact-ratio tip surplus, the guarded comparison for every original leaf deletion, and the same-C original-multiplicity weighted-tip-deck comparison. Their scope is every nonempty mixed/repeated profile and every natural k>=1 with 2k<=N+2, without an actual-descent or selector filter.
+
+Two separately authored exact computations each checked all 171,699 count profiles and 56,245,000 represented-tip/rank tests for m = 1..99. Both report strictly positive minimum 98, and all 99 layer summaries match. A separately reviewed analytic proof covers all m >= 100. These finite computations plus the analytic tail and corrected LR/ULC/endpoint bridges establish the full domain at the stated grade; finite agreement alone is not an infinite proof. Original protocol/proof errors and their repairs remain documented.
+
+The exact strict m>=100 tip-surplus subcase received a governed Lean award after kernel and fresh semantic fidelity verification. This is a restricted tail award; it does not formally certify the all-m finite prefix, full deletion comparisons, selectors, MASS or payment.
+
+The registry has 515 identities: 328 VERIFIED, 104 REFUTED, 26 CONDITIONAL and 57 OPEN at mixed evidence grades. C6 adds no identities and changes only three existing statuses; C5's root-mixture theorem and activity-positivity refutation are included in this publication. All-m selected MASS/payment were already computer-assisted in C3 and retain that grade. These counts are not a percentage of a solution. Erdős 993, the arbitrary-tree aggregate and the governed representation/transfer obligations remain OPEN.
+
+Astra's final priorities are compositional marked compensation beyond this bounded-arity family, an exact shared-deficit interface to Code r30 Hall/cover capacity sharing, and full-scope formalization of the finite-prefix and corrected selector/comparison chain. Code mathematical intake remained frozen at r30. No seventh cycle is active.
+
+See the [terminal experiment record](experiments/absolute-compensation-dre-2026-09-27.md).
+
+## Historical Cycle4 checkpoint,28 September2026
 
 Cycle4 is closed. The full finite-block coefficient/Jensen theorem now has a governed Lean award: the actual uniform labeled-subset expectation identity, the exact guarded hypergeometric exponential lower bound, and every nonnegative Taylor floor were all verified. The proof includes empty index types, size-one blocks, arbitrary supported real coefficients above binomial floors, and boundary ranks. Separate informal audit, kernel and fresh semantic fidelity checks passed. This formalizes a reusable coefficient theorem; it does not certify graph deletion, selectors, MASS, payment or Erdős993. The registry remains513 identities at unchanged mathematical statuses; the global conjecture and guarded structural comparisons remain OPEN. See the [experiment checkpoint](experiments/absolute-compensation-dre-2026-09-27.md).
 

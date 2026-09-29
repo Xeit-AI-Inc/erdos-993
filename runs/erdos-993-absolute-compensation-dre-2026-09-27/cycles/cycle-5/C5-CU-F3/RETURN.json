@@ -1,0 +1,30 @@
+{
+  "worker_id": "C5-CU-F3",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C5-F3-COEFFICIENT-FLOOR-DOES-NOT-IMPLY-SHIFTED-MINOR",
+      "statement": "The generic finite-block coefficient-floor/Jensen theorem alone does not imply a nonnegative shifted cross-minor against the binomial baseline, even at a guarded lower-half rank: for one block r=M=2, f=(1,2,100), H=(1,2,100), C=(1,2,1), and k=1, H[k]C[k]-H[k+1]C[k-1]=-96.",
+      "scope": "Exact generic finite-block obstruction only. All supported coefficient floors hold and the exact theorem's actual-subset hypotheses apply. This is not an ordinary path-star, marked-deletion, actual-first-descent, strict-selector, or payment witness; it refutes no registered graph comparison or payment claim.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CU-F3/REPORT.md",
+        "cycles/cycle-5/C5-CU-F3/evidence/independent_coefficient_floor_audit.py",
+        "cycles/cycle-5/C5-CU-F3/evidence/input_integrity.json"
+      ],
+      "reason": "Independent exact arithmetic confirms the floor hypotheses, actual subset averages and Jensen exponent values, the rank guards, and the negative shifted minor. The source's narrow generic obstruction is valid; its lack of a graph-level witness is an explicit scope limitation."
+    }
+  ],
+  "report_path": "cycles/cycle-5/C5-CU-F3/REPORT.md",
+  "limitations": [
+    "The example is an abstract one-block coefficient sequence and is not realized by an ordinary path-star or marked vertex deletion.",
+    "No universal graph-specific factorization or compensation lemma, actual-target counterexample, or formal result was established.",
+    "Finite exact arithmetic establishes this obstruction to the generic implication only."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C5-F3-COEFFICIENT-FLOOR-DOES-NOT-IMPLY-SHIFTED-MINOR"
+  ]
+}

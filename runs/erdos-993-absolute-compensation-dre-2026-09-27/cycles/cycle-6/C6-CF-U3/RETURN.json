@@ -1,0 +1,43 @@
+{
+  "worker_id": "C6-CF-U3",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "C6-U3-WEIGHTED-TIP-DECK-TO-MASS",
+      "statement": "For an ordinary arity-2,3,4 path-star with the contract polynomials and original tip multiplicities, at every actual eligible lower-half p (x+2<=p, 3p<2alpha+1, 2p<=alpha), the guarded weighted-tip inequality W[p+1]C[p-1]<=W[p]C[p], W=sum_i r_i A_i, implies the actual strict selectors include a tip and imply selected MASS A=sum_i r_i e_i T_i[p-2]>=b delta D_j, with b=e0+sum_i r_i e_i, j=p-2, delta=q-j, D_j=Delta_j L^N. The implication uses the actual first strict parent descent, positive log-concave C=GQ, and the branchwise bound 2T_i[j]>=3delta D_j; it does not assume endpoint selection.",
+      "scope": "Conditional universal implication on the exact contract family and all actual eligible lower-half ranks, retaining integer zero extension, strict current-p selectors and original tag multiplicities. It proves no weighted-tip LR instance and has no arbitrary-tree extension.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CF-U3/REPORT.md",
+        "cycles/cycle-6/C6-CF-U3/audit.py",
+        "cycles/cycle-6/C6-CF-U3/audit-output.txt"
+      ],
+      "reason": "Under the actual guards, p<=N and every tip deletion polynomial has positive coefficients through degree N, so W[p]>0. The strict first descent plus the rising binomial summand gives C[p]<C[p-1]. The assumed weighted comparison then forces Delta_p W<0, hence a selected tip. Original multiplicity gives B>=2; the separate branchwise 3/2 bound pays b=B+e0, with or without the endpoint flag."
+    },
+    {
+      "claim_id": "C6-U3-RELATIVE-MARGIN-TO-AGGREGATE",
+      "statement": "On the contract's actual eligible lower-half path-star rows, with t=C[j+1]/C[j] in (0,1), delta=q-j and kappa=1-t+t/delta, the accepted relative margin Delta_j T_i<=-kappa T_i[j] implies S=bD_j+sum_i r_i e_i Delta_j T_i<=bD_j-kappa A. Hence the exact-ratio payment kappa A>=bD_j implies S<=0, and the stronger selected MASS A>=b delta D_j implies that payment.",
+      "scope": "Only the exact path-star selected aggregate expression at actual eligible lower-half ranks, with the contract's first strict descent, all three guards, strict current-p selectors, zero extension and original multiplicities. No converse, arbitrary-tree, forest, or Erdős993 implication is claimed.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CF-U3/REPORT.md",
+        "cycles/cycle-6/C6-CF-U3/audit.py",
+        "cycles/cycle-6/C6-CF-U3/audit-output.txt"
+      ],
+      "reason": "Divide the formal margin by positive delta*C[j], rearrange without reversing direction, and sum with nonnegative r_i e_i. Since kappa*delta=1+(delta-1)(1-t)>=1, MASS implies exact-ratio payment. The implication cannot be reversed from this upper bound on S."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CF-U3/REPORT.md",
+  "limitations": [
+    "The weighted-tip LR premise remains open; this critique proves only its conditional implication.",
+    "The branchwise 3/2 payment is an independently registered informal universal dependency, not a Lean award; this seat's exact replay is bounded.",
+    "No counterexample, new universal theorem, broad census, or arbitrary-tree bridge is claimed."
+  ],
+  "status_authority": "proposed_worker_only",
+  "covered_claim_ids": [
+    "C6-U3-RELATIVE-MARGIN-TO-AGGREGATE",
+    "C6-U3-WEIGHTED-TIP-DECK-TO-MASS"
+  ]
+}

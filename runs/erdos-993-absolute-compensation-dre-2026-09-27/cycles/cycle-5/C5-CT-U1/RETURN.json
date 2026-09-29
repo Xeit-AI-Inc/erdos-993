@@ -1,0 +1,44 @@
+{
+  "worker_id": "C5-CT-U1",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "T",
+  "claims": [
+    {
+      "claim_id": "C5-U1-ELIGIBLE-ROOT-MIXTURE-MONOTONICITY",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, put N=sum_i r_i, q=N+1, alpha=N+2, C=(1+2z) product_i((1+z)^r_i+z), d=z(1+z)^q, P=C+d, and x=min{k in N: Delta_k P<0} with zero-extended coefficients. At each natural p with x+2<=p, 3p<2alpha+1, and 2p<=alpha, put j=p-2. Then d[j+1]C[j]-d[j]C[j+1]>0, so d[j]/C[j] and d[j]/(C[j]+d[j]) strictly increase from rank j to j+1.",
+      "scope": "Retained as a universal informal lemma on the actual first-descent eligible lower-half ranks. The proof uses the first strict descent and 2p<=alpha; the 3p guard remains in scope though unnecessary to this lemma. It does not imply deletion LR, selector consequences, selected payment, or MASS. The primary and stronger MASS identities remain at their registered scopes.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CT-U1/REPORT.md",
+        "cycles/cycle-5/C5-CT-U1/independent_audit.py",
+        "cycles/cycle-5/C5-CT-U1/independent_audit.json"
+      ],
+      "reason": "The strict first descent gives Delta_x C=Delta_x P-Delta_x d<0 because Delta_x d>0. Positive-interval log-concavity of the monomial coefficient factors makes C's adjacent ratios nonincreasing, so Delta_j C<0 for j>=x. Substitution yields C[j]Delta_j d-d[j]Delta_j C>0; all multipliers have the stated nonnegative/positive signs. This is an informal proof, not a formal award."
+    },
+    {
+      "claim_id": "C5-U1-UNRESTRICTED-ROOT-MIXTURE-COUNTEREXAMPLE",
+      "statement": "For the ordinary profile (a2,a3,a4)=(10,0,0), N=20, n=33, alpha=22, and actual first strict descent x=11, the unrestricted minor at k=4 is d[5]C[4]-d[4]C[5]=-3549105, with (d[4],d[5],C[4],C[5])=(1330,5985,27315,125586). At p=6,j=4 the strict deletion selectors are all zero, but x+2<=p fails.",
+      "scope": "Retained as one exact finite witness against unrestricted all-rank monotonicity of d[k]/(C[k]+d[k]). It is not an actual eligible witness and makes no claim about the guarded interval or the primary payment.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CT-U1/REPORT.md",
+        "cycles/cycle-5/C5-CT-U1/independent_audit.py",
+        "cycles/cycle-5/C5-CT-U1/independent_audit.json",
+        "cycles/cycle-5/C5-CT-U1/producer_root_mixture_probe.py"
+      ],
+      "reason": "Independent exact-integer convolution reproduces the negative minor and the p=6 deletion differences. The comparison rank fails the actual first-descent guard (13<=6 is false), so the witness is restricted to the unrestricted shortcut."
+    }
+  ],
+  "covered_claim_ids": [
+    "C5-U1-ELIGIBLE-ROOT-MIXTURE-MONOTONICITY",
+    "C5-U1-UNRESTRICTED-ROOT-MIXTURE-COUNTEREXAMPLE"
+  ],
+  "report_path": "cycles/cycle-5/C5-CT-U1/REPORT.md",
+  "limitations": [
+    "The universal eligible-rank lemma is informal and has no Lean or governed formal award.",
+    "Exact profile computations are bounded checks only.",
+    "No deletion LR, selected aggregate, MASS, or exact-ratio payment follows from these claims."
+  ],
+  "status_authority": "proposed_worker_only"
+}

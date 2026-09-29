@@ -1,0 +1,169 @@
+{
+  "scope": "Independent exact-integer replay of the two packet claims; examples are bounded checks, not proof of the universal lemma.",
+  "cases": {
+    "r2m10": {
+      "counts": [
+        10,
+        0,
+        0
+      ],
+      "N": 20,
+      "m": 10,
+      "n": 33,
+      "alpha": 22,
+      "x": 11,
+      "first_descent_delta_P": -974427,
+      "delta_d_at_x": 0,
+      "delta_C_at_x": -974427,
+      "eligible": [],
+      "off_window": {
+        "k": 4,
+        "minor": "-3549105",
+        "d_k": 1330,
+        "d_k1": 5985,
+        "C_k": 27315,
+        "C_k1": 125586,
+        "selector_deltas_at_p6": {
+          "A0": 577440,
+          "2": 567414
+        },
+        "p6_actual_guard": false
+      }
+    },
+    "r3m12r4m10": {
+      "counts": [
+        0,
+        12,
+        10
+      ],
+      "N": 76,
+      "m": 22,
+      "n": 101,
+      "alpha": 78,
+      "x": 37,
+      "first_descent_delta_P": -17732619710165234294,
+      "delta_d_at_x": 1261276298816540508040,
+      "delta_C_at_x": -1279008918526705742334,
+      "eligible": [
+        {
+          "p": 39,
+          "j": 37,
+          "x": 37,
+          "first_guard_slack": 0,
+          "lower_guard_slack": 0,
+          "minor": "213545270520198687231356881755419118232819740",
+          "components": [
+            "12928082062869540207410",
+            "157478041951335331301454",
+            "11666805764052999699370",
+            "156199033032808625559120"
+          ],
+          "selectors_delta": {
+            "A0": -11319302108154726892710,
+            "3": -10424062636794201349994,
+            "4": -10078464575583477845814
+          }
+        }
+      ]
+    }
+  },
+  "guard_examples": {
+    "interior": null,
+    "lower_half_boundary": {
+      "counts": [
+        0,
+        0,
+        24
+      ],
+      "N": 96,
+      "p": 49,
+      "j": 47,
+      "x": 47,
+      "first_guard_slack": 0,
+      "lower_guard_slack": 0,
+      "minor": "90457573058318270618566422304842298158322537265813859744",
+      "components": [
+        "12229253884310811313310605728",
+        "82378469606758702901842675488",
+        "11270096716913884935796048416",
+        "81363068072659051666991758595"
+      ],
+      "selectors_delta": {
+        "A0": -4984819922319926098360122575,
+        "4": -4424588007564884179391494648
+      }
+    },
+    "j_zero_boundary": null
+  },
+  "local_factors": {
+    "G": {
+      "coefficients_z": [
+        1,
+        2
+      ],
+      "positive_interval": true,
+      "log_concavity_gaps": []
+    },
+    "B2": {
+      "coefficients_z": [
+        1,
+        3,
+        1
+      ],
+      "positive_interval": true,
+      "log_concavity_gaps": [
+        8
+      ]
+    },
+    "B3": {
+      "coefficients_z": [
+        1,
+        4,
+        3,
+        1
+      ],
+      "positive_interval": true,
+      "log_concavity_gaps": [
+        13,
+        5
+      ]
+    },
+    "B4": {
+      "coefficients_z": [
+        1,
+        5,
+        6,
+        4,
+        1
+      ],
+      "positive_interval": true,
+      "log_concavity_gaps": [
+        19,
+        16,
+        10
+      ]
+    }
+  },
+  "minor_sign_checks": {
+    "r4m24_boundary_j0": {
+      "N": 96,
+      "k": 0,
+      "Delta_d": 1,
+      "C_k": 1,
+      "d_k": 0,
+      "Delta_C": 121,
+      "minor": "1",
+      "identity_rhs": "1"
+    },
+    "r4m24_interior_k24": {
+      "N": 96,
+      "k": 24,
+      "Delta_d": 23434530546569372392500,
+      "C_k": 505026467085031219055637,
+      "d_k": 11248574662353298748400,
+      "Delta_C": 978801145552443310004445,
+      "minor": "824940404386578781399393693759588012364884500",
+      "identity_rhs": "824940404386578781399393693759588012364884500"
+    }
+  }
+}

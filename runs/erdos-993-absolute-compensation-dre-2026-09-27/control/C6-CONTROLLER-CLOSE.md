@@ -1,0 +1,18 @@
+# Cycle6 and experiment controller close
+
+All9Luna-high searches,18Luna-high cross-orientation critics,3Sol-high origin adjudicators and1Sol-high synthesis completed. The fresh independent identity/code/proof review is accepted; its879input hashes remain unchanged. Root read every standard report and the final independent review.
+
+The six-cycle absolute-compensation experiment is complete. For ordinary path-stars whose branch arities are2,3,4, three existing claims are now VERIFIED at computer-assisted/nonformal grade: the exact-ratio tip surplus, the guarded comparison for every original leaf deletion, and the same-C original-multiplicity weighted-tip-deck comparison. Their scope is every nonempty mixed/repeated profile and every natural k>=1 with2k<=N+2, without an actual-descent or selector filter.
+
+Two separately authored exact computations each checked all171699 count profiles and56245000 represented-tip/rank tests for m1..99. Both report strictly positive minimum98, and all99layer summaries match. A separately reviewed analytic proof covers allm>=100. These finite computations plus the analytic tail and corrected LR/ULC/endpoint bridges establish the full domain at the stated grade; finite agreement alone is not an infinite proof. Original protocol/proof errors and their repairs remain documented.
+
+The exact strict m>=100 tip-surplus subcase received a governed Lean award after kernel and fresh semantic fidelity verification. This is a restricted tail award; it does not formally certify the all-m finite prefix, full deletion comparisons, selectors, MASS or payment.
+
+The registry has515identities:328 VERIFIED,104 REFUTED,26 CONDITIONAL and57 OPEN at mixed evidence grades. C6 adds no identities and changes only three existing statuses; C5's root-mixture theorem and activity-positivity refutation are included in this publication. All-m selected MASS/payment were already computer-assisted inC3 and retain that grade. These counts are not a percentage of a solution. Erdős993, the arbitrary-tree aggregate and the governed representation/transfer obligations remain OPEN.
+
+Astra's final priorities are compositional marked compensation beyond this bounded-arity family, an exact shared-deficit interface to Code r30 Hall/cover capacity sharing, and full-scope formalization of the finite-prefix and corrected selector/comparison chain. Code mathematical intake remained frozen at r30. No seventh cycle is active.
+
+
+The exact primary formal stopping condition remains unmet. The experiment closes at its authorized six-cycle limit, not by a seventh cycle or an early plateau stop. Astra completed the final analysis. Code mathematical intake remains frozen at r30. All source mistakes and failed/limited mechanisms are preserved with explicit corrections. The three accepted structural global keys retain computer-assisted/nonformal grade even if a restricted tail formal award exists.
+
+The actual tail workflow report controls its formal status: formally_verified. Kernel compilation, if any, must not be substituted for a source-bound semantic fidelity award. See the exact run report for completed gates and remaining obligations.

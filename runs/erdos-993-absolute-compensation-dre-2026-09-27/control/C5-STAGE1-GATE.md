@@ -1,0 +1,7 @@
+# C5 Stage1 freeze
+
+C4 standard31 seats, independent identity/proof review, canonical mathematical reconciliation and full Jensen formal-attempt disposition are complete. Exact claim statuses are in the current registry and ledger. New sharp ULC tip-surplus is registered OPEN before this search; known ULC orders are not new claims. The E-only guarded mechanism is REFUTED while actual deletion comparisons remain OPEN. The new drift result is informal and does not imply selector-weighted mass. Original all-m primary and MASS retain their exact accepted grade.
+
+The source packet preserves all known controls, polynomial corrections, positive common-C summation, boundary guards, original multiplicities and frozen r30 sibling intake. No source from live sibling work is admitted. Next-cycle drafts were reviewed after C4, and no proposed narrowing substitutes for the original primary. Governing formal stop remains unmet. Standard9 Luna-high searches,18 Luna-high cross-orientation critics,3 Sol-high neutral origin adjudicators and1 Sol-high synthesis, all high effort; at most3 concurrent workers. Candidate-dependent separate Sol-high formal stages. Astra final analysis after Cycle6; no seventh cycle or plateau stop.
+
+Private full-paper copies are excluded from this dispatch and publication. Primary source references and our own mathematical notes remain available. Exact literature hypotheses must be verified before any theorem application.

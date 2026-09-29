@@ -1,0 +1,181 @@
+{
+  "review_kind": "auxiliary_post_C5_identity_and_formal_scope_proposal",
+  "authority": "controller_review_required; no canonical status or formal award",
+  "manifest": {
+    "path": "manifests/C5-IDENTITY-INPUTS.json",
+    "members_verified": 499,
+    "missing_or_hash_mismatch": 0,
+    "common_dispatch_members": 237,
+    "registry_path": "control/C5-REGISTERED-CLAIM-IDENTITY.json",
+    "registry_claims_reviewed": 513,
+    "explicit_aliases_reviewed": 721,
+    "unique_registry_keys": 513,
+    "exact_casefold_cross_key_alias_duplicates": 0
+  },
+  "c5_dispositions": [
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-EXACT-RATIO-PAYMENT",
+      "statement": "The selected original-leaf exact-ratio payment holds for every actual eligible lower-half arity-2/3/4 path-star profile, with actual first descent, current-p strict flags and original tag multiplicities.",
+      "scope": "All m>=1; x+2<=p, 3p<2(N+2)+1, 2p<=N+2; original endpoint and tips.",
+      "status_recommendation": "retain VERIFIED",
+      "evidence_grade": "computer-assisted/nonformal, unchanged",
+      "dependencies": ["accepted selected MASS and relative-binomial margin; exact selector and polynomial contract"],
+      "evidence_paths": ["control/C5-REGISTERED-CLAIM-IDENTITY.json", "control/C5-NEUTRAL-HANDOFF.md", "cycles/cycle-5/C5-SYNTHESIS/REPORT.md"],
+      "identity_comparison": "Primary selected payment is weaker than all-guard branchwise deletion or surplus; no finite-test formal upgrade.",
+      "witness_minimality": "No counterexample or new minimality claim."
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-SELECTED-LOWER-MARK-MASS-COMPENSATION",
+      "statement": "At each actual eligible lower-half rank, selected original-tip main-mark mass pays the complete original selected-tag binomial deficit.",
+      "scope": "All m>=1 with actual x, all three guards, current-p e0/ei and original r_i weights.",
+      "status_recommendation": "retain VERIFIED",
+      "evidence_grade": "computer-assisted/nonformal, unchanged",
+      "dependencies": ["accepted branch-local and bounded-base composition"],
+      "evidence_paths": ["control/C5-REGISTERED-CLAIM-IDENTITY.json", "cycles/cycle-5/C5-SYNTHESIS/REPORT.md"],
+      "identity_comparison": "Does not imply every guarded individual or weighted shifted minor.",
+      "witness_minimality": "No counterexample or new minimality claim."
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+      "statement": "M_k(A_v)=A_v[k]C[k]-A_v[k+1]C[k-1]>=0 for endpoint and every original tip.",
+      "scope": "Every m>=1 arity-2/3/4 profile and 1<=k,2k<=N+2; no actual-eligibility premise.",
+      "status_recommendation": "retain OPEN at C5 close",
+      "evidence_grade": "conditional informal reduction and bounded exact checks only",
+      "dependencies": ["all-m tip surplus", "old main-product LR", "old enlarged-order ULC", "separate endpoint bridge"],
+      "evidence_paths": ["control/C5-REGISTERED-CLAIM-IDENTITY.json", "cycles/cycle-5/C5-AT/REPORT.md", "cycles/cycle-5/C5-SYNTHESIS/REPORT.md"],
+      "identity_comparison": "Stronger than selected payment, selected MASS and weighted-tip deck; distinct from REFUTED unguarded key.",
+      "witness_minimality": "n122,k77 negative full tip is outside guard; no guarded witness established."
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "M_k(W)>=0 for W=sum_i r_i A_i with each original tip tag counted.",
+      "scope": "Every m>=1 profile and 1<=k,2k<=N+2; no actual-eligibility premise.",
+      "status_recommendation": "retain OPEN at C5 close",
+      "evidence_grade": "bounded exact checks and conditional same-C summation only",
+      "dependencies": ["tip individual comparison or independent weighted compensation"],
+      "evidence_paths": ["control/C5-REGISTERED-CLAIM-IDENTITY.json", "cycles/cycle-5/C5-AF/REPORT.md", "cycles/cycle-5/C5-AT/REPORT.md"],
+      "identity_comparison": "Positive sum of tip minors implies this; reverse implication does not hold. Endpoint is not part of W.",
+      "witness_minimality": "m<=20 scan has 1770 profiles, 41205 guarded profile-rank pairs, minimum 38; finite only."
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "For each represented tip i, (h+1)U_i[k]C[k]+(k+1)(h-k+1)M_k(E)>=0, where U_i=G B_(r_i-1) product_(ell!=i)B_(r_ell).",
+      "scope": "Every m>=1 profile and 1<=k,2k<=N+2; tips only; no actual-eligibility premise.",
+      "status_recommendation": "retain OPEN at C5 close; proposed strict m>=100 subcase awaits controller review",
+      "evidence_grade": "C5 bounded checks and old conditional reductions; new C6 universal informal tail proof is post-synthesis only",
+      "dependencies": ["old h-order ULC and main-product LR only for transfer to full minors; not for surplus statement itself"],
+      "evidence_paths": ["control/C5-REGISTERED-CLAIM-IDENTITY.json", "cycles/cycle-5/C5-SYNTHESIS/REPORT.md", "control-proposals/C6-ULC-SURPLUS-TAIL-DRAFT.md", "REPORT.md"],
+      "identity_comparison": "Registry's B_(r_h) under product_(ell!=i) is a bound-index transcription error; correct to B_(r_ell), preserving predicate. h remains scalar ULC order. Tail is a restriction of this key, not a new all-m identity.",
+      "witness_minimality": "No negative guarded surplus witness established; coarse sufficient margin failures at m4 and m24 are not surplus failures."
+    },
+    {
+      "claim_key": "C5-AU-ROOT-MIXTURE-EXTENDED-BAND",
+      "statement": "With d=zL^(N+1), P=C+d and x the actual first strict zero-extended descent, d[j+1]C[j]-d[j]C[j+1]>0 for every natural x<=j<=floor((N+1)/2); odds d/C and probability d/(C+d) strictly increase.",
+      "scope": "Every nonempty arity-2/3/4 profile; exact extended band, including even/odd midpoint and terminal first-descent convention; no p guards.",
+      "status_recommendation": "propose one retained identity, universal informal proof; controller registration pending",
+      "evidence_grade": "informal algebra from positive-support LC convolution, binomial strict rise, actual first descent",
+      "dependencies": ["local LC of G,B2,B3,B4", "LC convolution", "P=C+d", "positive C support"],
+      "evidence_paths": ["cycles/cycle-5/C5-AU/REPORT.md", "cycles/cycle-5/C5-SYNTHESIS/REPORT.md", "cycles/cycle-5/C5-U1/REPORT.md"],
+      "identity_comparison": "C5-U1-ELIGIBLE-ROOT-MIXTURE-MONOTONICITY is its direct corollary, not a second identity; accepted E993-PATH-STAR-ARITY-2-4-DESCENT-BINOMIAL-OCCUPANCY-DRIFT has a different conditioned-drift predicate.",
+      "witness_minimality": "At (0,12,10), x37,j38 is inside extended band but p40 violates 2p<=alpha; no minimality asserted."
+    },
+    {
+      "claim_key": "C5-U2-ACTIVITY-LAYER-COEFFICIENTWISE-OBSTRUCTION",
+      "statement": "For homogeneous arity-4 m>=3, C_t=GB4(L^4+tz)^(m-1), A_t=GB3(L^4+tz)^(m-1)+zL^(4m), k=m+4, the t^(2m-3) coefficient of M_k(A_t,C_t) equals -33(m-1).",
+      "scope": "Specified partial activity deformation on unmarked branches only; k is guarded for all m>=3; no assertion on evaluated t=1 sign or eligibility.",
+      "status_recommendation": "propose one retained obstruction identity; equivalently mark coefficientwise positivity of this specified mechanism REFUTED, without a separate duplicate key",
+      "evidence_grade": "universal exact nonformal algebra, finite integer cross-checks",
+      "dependencies": ["literal marked B3 factor", "two activity-degree splits", "monomial z coefficients"],
+      "evidence_paths": ["cycles/cycle-5/C5-U2/REPORT.md", "cycles/cycle-5/C5-CF-U2/REPORT.md", "cycles/cycle-5/C5-CT-U2/REPORT.md", "cycles/cycle-5/C5-AU/REPORT.md"],
+      "identity_comparison": "C5-T2-ACTIVITY-BASIS-NEGATIVE-LAYER is the m3 instance; distinct from OPEN full shifted comparisons and from the older REFUTED E-only shortcut.",
+      "witness_minimality": "m=3 is the least m satisfying the specified guard; coefficient -66, but full t=1 minor +2076267 and no eligible p."
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-COMMON-BINOMIAL-SHIFTED-C-LR",
+      "statement": "The isolated E=zL^N component has nonnegative guarded shifted minor against C.",
+      "scope": "All profiles and 1<=k,2k<=N+2; E only.",
+      "status_recommendation": "retain REFUTED",
+      "evidence_grade": "exact finite integer witness, nonformal",
+      "dependencies": ["contract polynomials"],
+      "evidence_paths": ["control/C5-REGISTERED-CLAIM-IDENTITY.json", "cycles/cycle-5/C5-AF/REPORT.md", "REPORT.md"],
+      "identity_comparison": "Negative E component does not determine a full deletion minor; optional homogeneous arity-2 E positivity is a narrower true subcase.",
+      "witness_minimality": "Recorded order-91 (0,22,0), k27 E minor -518620474811633289768751398606375936; recorded smallest witness order 91 is not independently re-proved minimal here."
+    },
+    {
+      "claim_key": "E993-PATH-STAR-ARITY-2-4-ALL-RANK-SHIFTED-C-DELETION-LR",
+      "statement": "Every original deletion has a nonnegative shifted C minor at every rank k>=1, without a lower-half guard.",
+      "scope": "All ranks, all nonempty arity-2/3/4 profiles.",
+      "status_recommendation": "retain REFUTED",
+      "evidence_grade": "exact finite integer witness, nonformal",
+      "dependencies": ["contract polynomials"],
+      "evidence_paths": ["control/C5-REGISTERED-CLAIM-IDENTITY.json", "cycles/cycle-5/C5-AF/REPORT.md"],
+      "identity_comparison": "Does not refute the guarded individual key.",
+      "witness_minimality": "Recorded order-122 (38,0,1), k77 full tip minor -49239834336 but 2k=154>N+2=82; recorded smallest order is not independently re-proved minimal here."
+    }
+  ],
+  "c5_mechanism_notes_not_new_identities": [
+    {
+      "claim_keys": ["C5-U1-ELIGIBLE-ROOT-MIXTURE-MONOTONICITY", "C5-U1-UNRESTRICTED-ROOT-MIXTURE-COUNTEREXAMPLE", "C5-F2-ROOT-MIXTURE-ALL-RANK-MONOTONICITY-OBSTRUCTION"],
+      "disposition": "eligible statement is corollary of extended band; unrestricted failure -3549105 at all-r2 m10,j4 is an outside-eligibility control, with no proven global minimality"
+    },
+    {
+      "claim_keys": ["C5-T2-ACTIVITY-BASIS-NEGATIVE-LAYER", "C5-F1-MIXED-MINOR-SHORTCUT-CONTROLS", "C5-U3-BRANCH-RECURRENCE-COEFFICIENT-OBSTRUCTION"],
+      "disposition": "retain exact scoped obstruction evidence as notes; T2 m3 is U2 instance; negative component or recurrence term does not refute full target"
+    },
+    {
+      "claim_keys": ["C5-F1-WEIGHTED-GUARDED-SHIFTED-BOUNDED-CHECK", "C5-F2-DIFFERENT-DENOMINATOR-SUM-OBSTRUCTION", "C5-F3-COEFFICIENT-FLOOR-DOES-NOT-IMPLY-SHIFTED-MINOR", "C5-CU-F2-SAME-DENOMINATOR-WEIGHTED-CLOSURE"],
+      "disposition": "bounded scan, abstract counterexamples, and elementary same-C linearity retained at their exact scopes; no additional microclaim registration or universal target upgrade"
+    }
+  ],
+  "c6_proposal_review": {
+    "separation": "controller drafts unreviewed by active C5 workers; conclusions here are post-synthesis proposals only",
+    "tail_scope": "strict surplus S_i(k)>0 only for m>=100, represented tips, entire 1<=k,2k<=N+2 guard",
+    "proof_steps": [
+      {"step": "low_band", "disposition": "valid", "scope": "all m, 4k<=N+1", "checks": "center-subset term cross sign s(N+1)-kR>=0, newly appearing support helps, disappearing support contradicts N+4<=4k<=N+1, k1 Q[-1]=0; M_k(E)>=0"},
+      {"step": "complement_singleton_floor", "disposition": "valid", "scope": "N>=200, 4k>N+1, k<=floor((N+2)/2)", "checks": "g2>=g3>=g4>=1/20; even K=s+1 and odd K=s+1 formulas and positive denominator clearing verified"},
+      {"step": "direct_full_jensen", "disposition": "valid informal specialization of accepted theorem", "scope": "U_i blocks have sizes 1,r_i-1,other r, total N; every size positive", "checks": "U_i[k]>=choose(N,k)exp((m-1)/20); exact E7(99/20)>20 and E8(99/20)>102"},
+      {"step": "ratio_floor_and_deficit", "disposition": "valid", "scope": "tail only", "checks": "reciprocal bound reversed correctly; M(E)/(E[k]C[k])>-1/2; lambda U_i[k]/E[k]>1/2 using N<=4m and N>=200; all cleared factors positive"},
+      {"step": "endpoint_bridge", "disposition": "valid conditional implication", "scope": "same path-star profile and same guarded rank", "checks": "U0-Ui=z^2(L^(r_i-1)-1)H_i>=0; separately prove U0/C LR via LC Q and use same h-order C curvature and E deficit; coefficient dominance alone is insufficient"},
+      {"step": "arity2_structural_base", "disposition": "valid optional lemma, no new key", "scope": "homogeneous arity-2 only", "checks": "low band through k=m; palindrome and LC at k=m+1; include m1; cannot repair all-profile E-only refutation"},
+      {"step": "bounded_arity_local_leads", "disposition": "useful qualified C6-U3 input only", "scope": "fixed bounded arities r>=2, no target extension", "checks": "H_r=choose(r,2)+1 index2 equality for r>=3, index1 cleared numerator r(r-1)(3r-1)/2, higher binomial positions; universal ratio-floor operator has z coefficient (r-1)(r-2); marked block fails positive-size requirement at r1"}
+    ],
+    "bounded_check_json_role": "corroboration only, never a universal theorem"
+  },
+  "protocol_review": {
+    "scope": "all triples with 1<=m<=99; all represented r and every guarded k; no eligibility filter",
+    "independent_coverage": {"profiles": 171699, "represented_type_rank_tests": 56245000, "formula": "S_m=3*choose(m+1,2); 2T_m=(3m+2)S_m-O_m; O_(2u)=3u^2+u, O_(2u+1)=(u+1)(3u+1)"},
+    "disposition": "mathematically ready after controller freeze; no full run performed; practical runtime requires staged checkpointed execution and two independent completed implementations",
+    "instrument_requirements": ["independently authored and different coefficient construction methods", "exact integers and monomial basis", "literal B_(r-1)=L^(r-1)+z including B1=(1,2)", "zero extension and complete per-m counts/minima/failure witnesses", "frozen protocol, source hashes, interpreter/compiler versions and exact argv", "n91 negative E with positive full tip, n122 outside guard, and m1,r2,k1 controls", "no source-copy replay counted as independence"],
+    "transport_runner": "Instrumentation only. Snapshot, argv, interpreter, runner and result hashes, timeout and child-group termination are useful. Add original-source after-hash and durable per-m partial progress; validate output schema/coverage separately. No harness execution occurred.",
+    "partial_run_rule": "A timeout, excluded row, or incomplete second implementation remains partial."
+  },
+  "next_cycle_recommendations": {
+    "allocation": {"searches": 9, "critics": 18, "adjudicators": 3, "synthesis": 1, "search_critic_model": "Luna-high", "other_stage_model": "Sol-high", "maximum_concurrent_workers": 3, "post_C6_review": "Astra"},
+    "lenses": ["analytic tail proof", "independent exact finite-base instrument A", "independent exact finite-base instrument B", "endpoint main-product bridge", "low-rank support audit", "adversarial full-guard search", "alternate structural base", "formal specialization fidelity", "proof DAG and status-grade audit"],
+    "instrument_isolation": "Do not supply one census author's source to the other independent implementer.",
+    "primary_contract": "unchanged; no seventh cycle and no plateau stop",
+    "minimal_weighted_route": "all-m tip surplus -> old LR/ULC tip minors -> same-C weighted tip minor -> actual-descent strict W fall -> at least one selected tip -> accepted branch-local 3/2 mass with R>=2 and e0<=1 -> selected MASS -> exact-ratio payment; endpoint LR is not needed for this route",
+    "stronger_route": "endpoint bridge plus tip minors -> all-original-leaf guarded individual comparison"
+  },
+  "lean_recommendation": {
+    "c5_root_candidate_disposition": "defer: complete informal DAG but peripheral to primary; do not formalize only a conditional LC/descent lemma and call it the family theorem",
+    "c5_root_exact_statement": "For every nonempty arity-2/3/4 profile, C=G product B_r, d=zL^(N+1), P=C+d, and x the least strict zero-extended descent of P, every natural x<=j<=floor((N+1)/2) has d[j+1]C[j]-d[j]C[j+1]>0 and strictly increasing defined odds/probability.",
+    "preferred_c6_candidate": "exact strict m>=100 polynomial tip surplus",
+    "exact_statement": "For every nonempty list of r_i in {2,3,4} with m>=100, N=sum r_i, a_r counts, h=1+2a2+4a3+7a4, C=(1+2X) product_i((1+X)^(r_i)+X), E=X(1+X)^N, U_i=(1+2X)((1+X)^(r_i-1)+X) product_(ell!=i)((1+X)^(r_ell)+X), every represented i and natural k with 1<=k and 2k<=N+2 satisfies (h+1)U_i[k]C[k]+(k+1)(h-k+1)(E[k]C[k]-E[k+1]C[k-1])>0, with zero-extended coefficients.",
+    "closed_informal_DAG": ["accepted C3 Nat center-subset expansion -> low-band binomial/support comparison -> M_k(E)>=0", "accepted C4 full Real finite-block Jensen -> literal U_i block coefficient bridge -> g_r bounds -> rational Taylor -> U_i[k]>choose(N,k)(m+2)", "accepted C2 Rat e993D/e993NN operator ingredients -> C ratio floor", "Nat/Rat/Real coefficient bridges and exact positive denominator clearing -> strict tail surplus"],
+    "later_comparison_dependencies_not_in_tail_surplus": ["old enlarged-order ULC of C", "old main-product LR for Ui/C and U0/C"],
+    "formal_status": "no Lean build or award here; tail-only proof cannot upgrade all-m key; accepted full Jensen and other helper declarations are reused, not re-awarded"
+  },
+  "unresolved_errors": [
+    {"source": "cycles/cycle-5/C5-T2/REPORT.md", "issue": "n91,k27 full tip integer miscopied", "correction": "777419068009671422357461955841645743808 independently reconstructed by integer convolution; preserve sealed source"},
+    {"source": "cycles/cycle-5/C5-F1/REPORT.md", "issue": "activity-control weighted value uses stale C and incorrect E multiplicity", "correction": "original weighted minor 24915204=12*2076267"},
+    {"source": "cycles/cycle-5/C5-T2/REPORT.md and cycles/cycle-5/C5-F2/REPORT.md", "issue": "packet expected hash described as unavailable", "correction": "own-case four-member DISPATCH manifests hash packet separately from common 237 members"},
+    {"source": "cycles/cycle-5/C5-U2/REPORT.md", "issue": "packet described as having no separate hash list", "correction": "its packet is separately sealed by manifests/C5-U2-DISPATCH.json even though allowed_source_files is empty"},
+    {"source": "cycles/cycle-5/C5-F2/RETURN.json", "issue": "proposed_rejected labels attach to two true obstruction statements", "correction": "retain exact obstruction predicates; reject only the shortcut premises they refute"},
+    {"source": "cycles/cycle-5/C5-CU-F3/REPORT.md", "issue": "critic coverage requirement transferred backward to F3 search; k0 called guarded", "correction": "producer packet requires no covered IDs and search schema does not require field; critic packet requires new ID; k0 outside k>=1, negative k1 and positive k2 stand"},
+    {"source": "control/C5-REGISTERED-CLAIM-IDENTITY.json", "issue": "free h in product_(ell!=i)B_(r_h)", "correction": "record B_(r_ell) index-transcription repair without changing frozen file or predicate; scalar h remains ULC order"},
+    {"source": "cycles/cycle-5/C5-CF-T2/REPORT.md", "issue": "coarse ratio lower margin read as potential exact-surplus failure by some discussions", "correction": "negative sufficient lower bound is inconclusive; exact surplus remains positive in cited m4/m24 controls"},
+    {"source": "cycles/cycle-5/C5-CT-F2/REPORT.md", "issue": "root coefficient rank k4 conflated with U1 payment rank p4", "correction": "U1 correspondence is j4,p6; x11 makes it ineligible"},
+    {"source": "control-proposals/C6-PREFIX-RUNNER-DRAFT.py", "issue": "transport receipt checks frozen snapshot after execution but not original source after execution, and a single final result may lose per-m progress on timeout", "correction": "record original after-hash and require durable per-m checkpoints before protocol freeze"}
+  ]
+}

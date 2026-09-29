@@ -1,0 +1,69 @@
+{
+  "worker_id": "C5-CU-T2",
+  "cycle": 5,
+  "stage": "critique",
+  "orientation": "U",
+  "claims": [
+    {
+      "claim_id": "C5-T2-ACTIVITY-BASIS-NEGATIVE-LAYER",
+      "statement": "For the ordinary profile (a2,a3,a4)=(0,0,3), the guarded k=7 activity-basis minor for a distinguished tip has t^3 coefficient -66, while its value at t=1 is positive; this refutes coefficientwise nonnegativity of this proof mechanism only.",
+      "scope": "Exact finite mechanism obstruction at N=12,n=18,k=7 in the specified activity basis. The actual parent first descent is x=7 and no p satisfies both actual lower-half eligibility bounds. It is not a failure of the registered LR predicates or payment.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CU-T2/REPORT.md",
+        "cycles/cycle-5/C5-CU-T2/independent_audit.py",
+        "cycles/cycle-5/C5-CU-T2/independent_audit.json"
+      ],
+      "reason": "Independent integer monomial-basis replay confirms coefficients (1898616,171542,6175,-66,0) and positive t=1 value 2076267. The scope is limited to the coefficientwise mechanism."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+      "statement": "For every nonempty ordinary arity-2/3/4 path-star profile, every original leaf deletion A_v (endpoint A0 or tip Ai), and every natural k with 1<=k and 2k<=N+2, A_v[k+1]C[k-1]<=A_v[k]C[k], using integer-zero-extended coefficients.",
+      "scope": "Full registered guarded all-profile comparison, with no actual-eligibility premise; original leaf tags and deletion polynomials are retained. The exact checks in this review are bounded examples only.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CU-T2/REPORT.md",
+        "cycles/cycle-5/C5-CU-T2/independent_audit.py",
+        "cycles/cycle-5/C5-CU-T2/independent_audit.json"
+      ],
+      "reason": "A guarded negative E-only minor is compensated by a positive full tip minor in the checked profile, but finitely many positive values provide no universal proof. No guarded full-target counterexample was found."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+      "statement": "For every nonempty ordinary arity-2/3/4 path-star, W=sum_i r_i Ai with original private-tip multiplicities satisfies W[k+1]C[k-1]<=W[k]C[k] for every natural k with 1<=k and 2k<=N+2, using integer-zero-extended coefficients.",
+      "scope": "Full registered guarded all-profile weighted comparison. This review checks an exact homogeneous profile and the valid implication from all individual minors by positive multiplicity-weighted summation only.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CU-T2/REPORT.md",
+        "cycles/cycle-5/C5-CU-T2/independent_audit.py",
+        "cycles/cycle-5/C5-CU-T2/independent_audit.json"
+      ],
+      "reason": "The exact homogeneous sample has positive weighted minor, and individual nonnegative minors imply the weighted result because every r_i is positive. This does not prove the universal weighted predicate or infer individual minors from it."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "For every ordinary arity-2/3/4 path-star, represented tip i, and guarded natural k with 1<=k and 2k<=N+2, (h+1)Ui[k]C[k]+(k+1)(h-k+1)(E[k]C[k]-E[k+1]C[k-1])>=0, where h=1+2a2+4a3+7a4, C=G product_i B_ri, E=zL^N and Ui=G B_(ri-1) product_{ell!=i}B_rh.",
+      "scope": "Full registered all-profile exact-ratio sufficient condition for individual tips. It does not include the endpoint A0 and needs the existing enlarged-order ULC curvature and main-product LR lemmas for its consequence.",
+      "status": "proposed_open",
+      "evidence_paths": [
+        "cycles/cycle-5/C5-CU-T2/REPORT.md",
+        "cycles/cycle-5/C5-CU-T2/independent_audit.py",
+        "cycles/cycle-5/C5-CU-T2/independent_audit.json"
+      ],
+      "reason": "The algebraic sufficiency direction is valid because its multiplying denominator (k+1)(h-k+1) is positive on the guards, but the universal surplus inequality remains unproved. Exact checks at k=1,27,34 in one profile are bounded evidence only."
+    }
+  ],
+  "covered_claim_ids": [
+    "C5-T2-ACTIVITY-BASIS-NEGATIVE-LAYER",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-INDIVIDUAL-DELETION-LR",
+    "E993-PATH-STAR-ARITY-2-4-LOWER-HALF-SHIFTED-C-WEIGHTED-TIP-DECK-LR",
+    "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS"
+  ],
+  "report_path": "cycles/cycle-5/C5-CU-T2/REPORT.md",
+  "limitations": [
+    "No universal proof or guarded full-target counterexample was obtained for either shifted-C LR claim or the ULC exact-ratio surplus.",
+    "Exact computations are bounded evidence and do not upgrade status or satisfy a governed formal stop.",
+    "The producer report has one positive full-tip minor transcription error; the producer JSON and independent replays agree on the corrected value."
+  ],
+  "status_authority": "proposed_worker_only"
+}

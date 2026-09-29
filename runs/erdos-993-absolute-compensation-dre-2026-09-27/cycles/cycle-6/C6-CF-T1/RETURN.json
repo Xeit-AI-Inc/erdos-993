@@ -1,0 +1,43 @@
+{
+  "worker_id": "C6-CF-T1",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "F",
+  "covered_claim_ids": [
+    "C6-T1-M100-ULC-EXACT-RATIO-TIP-SURPLUS"
+  ],
+  "claims": [
+    {
+      "claim_id": "C6-T1-M100-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "For every ordinary arity-2,3,4 path-star profile with m>=100, N=sum_i r_i, h=1+2a2+4a3+7a4, C=G product_i B_(r_i), E=zL^N, and U_i=G B_(r_i-1) product_(ell!=i)B_(r_ell), every represented tip branch i and every integer 1<=k<=floor((N+2)/2) satisfy (h+1)U_i[k]C[k]+(k+1)(h-k+1)(E[k]C[k]-E[k+1]C[k-1])>0, with integer zero-extended monomial-z coefficients.",
+      "scope": "Retained exactly for the m>=100 tail, every represented tip and the full guarded rank band. It has no actual-first-descent, eligibility, or selector premise; it does not cover m<100, endpoint comparison without the separate LR bridge, a formal award, or any aggregate/arbitrary-tree claim.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CF-T1/REPORT.md",
+        "cycles/cycle-6/C6-CF-T1/independent_audit.py",
+        "cycles/cycle-6/C6-CF-T1/independent_evidence.json"
+      ],
+      "reason": "Independent algebraic audit finds the two-band proof valid, including zero-extension boundaries, direct same-rank application of the full finite-block Jensen theorem, monomial-z operator coefficients, positive denominator clearing, and exact midpoint/Taylor constants. Exact computations are bounded diagnostics only; the universal result is an informal proof, not a Lean award."
+    },
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "For every nonempty ordinary arity-2,3,4 path-star profile, with N=sum_i r_i, h=1+2a2+4a3+7a4, C=(1+2z)product_i B_(r_i), E=z(1+z)^N, U_i=(1+2z)B_(r_i-1)product_(ell!=i)B_(r_ell), and M_k(E)=E[k]C[k]-E[k+1]C[k-1], every represented original tip branch i and every natural 1<=k with 2k<=N+2 satisfy (h+1)U_i[k]C[k]+(k+1)(h-k+1)M_k(E)>=0, with integer zero-extended coefficients.",
+      "scope": "Only the m>=100 strict subcase is supported by this critique. The canonical all-m predicate retains its full scope and remains OPEN because profiles m<100 are not proved here. No formal award or selected-payment conclusion follows.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CF-T1/REPORT.md",
+        "cycles/cycle-6/C6-CF-T1/independent_audit.py",
+        "cycles/cycle-6/C6-CF-T1/independent_evidence.json"
+      ],
+      "reason": "The valid strict m>=100 theorem implies the registered non-strict surplus on that tail. It does not settle m<100, so the all-m identity remains OPEN at its existing scope and status authority."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CF-T1/REPORT.md",
+  "limitations": [
+    "The universal surplus for m<100 is not proved or refuted here.",
+    "The C6 m>=100 composition is an informal proof; no Lean build or governed award was performed.",
+    "No actual-descent, eligibility, strict-selector, endpoint, weighted-deck, primary-payment, MASS, family-aggregate, or arbitrary-tree conclusion is established by this tail result.",
+    "Exact arithmetic checks are bounded diagnostics and do not replace the algebraic universal proof."
+  ],
+  "status_authority": "proposed_worker_only"
+}

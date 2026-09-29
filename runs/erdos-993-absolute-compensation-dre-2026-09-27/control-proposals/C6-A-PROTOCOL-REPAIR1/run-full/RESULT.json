@@ -1,0 +1,2582 @@
+{
+  "controls": [
+    {
+      "E_minor": "-518620474811633289768751398606375936",
+      "N": 66,
+      "coefficients": {
+        "C_k": "116461439672085416832",
+        "C_km1": "78823085262292775712",
+        "E_k": "1654284096099796392",
+        "E_kp1": "2450791253481179840",
+        "U_k": "74794640630224420080",
+        "U_kp1": "100639981455566817018"
+      },
+      "counts": [
+        0,
+        22,
+        0
+      ],
+      "full_tip_minor": "777419068009671422357461955841645743808",
+      "guarded": true,
+      "h": 89,
+      "k": 27,
+      "m": 22,
+      "n": 91,
+      "r": 3,
+      "surplus": "783047390962129386096766512578362723639296"
+    },
+    {
+      "E_minor": "-3166881005860",
+      "N": 80,
+      "coefficients": {
+        "C_k": "14606561",
+        "C_km1": "319721589",
+        "E_k": "1581580",
+        "E_kp1": "82160",
+        "U_k": "509795",
+        "U_kp1": "13539"
+      },
+      "counts": [
+        38,
+        0,
+        1
+      ],
+      "full_tip_minor": "-49239834336",
+      "guarded": false,
+      "h": 84,
+      "k": 77,
+      "m": 39,
+      "n": 122,
+      "r": 4,
+      "surplus": "-1343193847632065"
+    },
+    {
+      "E_minor": "3",
+      "N": 2,
+      "coefficients": {
+        "C_k": "5",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "2",
+        "U_k": "4",
+        "U_kp1": "4"
+      },
+      "counts": [
+        1,
+        0,
+        0
+      ],
+      "full_tip_minor": "19",
+      "guarded": true,
+      "h": 3,
+      "k": 1,
+      "m": 1,
+      "n": 6,
+      "r": 2,
+      "surplus": "98"
+    }
+  ],
+  "elapsed_seconds": 703.06550908403,
+  "evidence_grade": "bounded_computation",
+  "executed_source_sha256": "c6ef6fe9f2a97ca4225482d1b0ef35f9e5a81cdead1cf9322771ed200f987d69",
+  "expected_counts_sha256": "e5de145a9c6872352a2a2b51d92a82a7d70745b2adf18a09e2dde66f4729ab6f",
+  "expected_totals_if_full": {
+    "profiles": 171699,
+    "represented_tip_rank_tests": 56245000
+  },
+  "failures": [],
+  "instrument": "C6-T2 exact arrays; controller protocol repair1, same mathematical algorithm",
+  "platform": "macOS-27.0-arm64-arm-64bit",
+  "protocol_sha256": "a17ba0bcd412765b7dc1a91b283df816f41ad5173047067c94661d6991aff4ba",
+  "python_version": "3.11.2 (v3.11.2:878ead1ac1, Feb  7 2023, 10:02:41) [Clang 13.0.0 (clang-1300.0.29.30)]",
+  "rows": [
+    {
+      "elapsed_seconds": 5.566701292991638e-05,
+      "failures": [],
+      "m": 1,
+      "minimum_signed_surplus": {
+        "C_k": "5",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "2",
+        "N": 2,
+        "U_k": "4",
+        "U_kp1": "4",
+        "counts": [
+          1,
+          0,
+          0
+        ],
+        "h": 3,
+        "k": 1,
+        "margin": "98",
+        "r": 2
+      },
+      "profiles": 3,
+      "represented_tip_rank_tests": 7
+    },
+    {
+      "elapsed_seconds": 0.0001966669224202633,
+      "failures": [],
+      "m": 2,
+      "minimum_signed_surplus": {
+        "C_k": "8",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "4",
+        "N": 4,
+        "U_k": "7",
+        "U_kp1": "17",
+        "counts": [
+          2,
+          0,
+          0
+        ],
+        "h": 5,
+        "k": 1,
+        "margin": "376",
+        "r": 2
+      },
+      "profiles": 6,
+      "represented_tip_rank_tests": 34
+    },
+    {
+      "elapsed_seconds": 0.0003368330653756857,
+      "failures": [],
+      "m": 3,
+      "minimum_signed_surplus": {
+        "C_k": "11",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "6",
+        "N": 6,
+        "U_k": "10",
+        "U_kp1": "39",
+        "counts": [
+          3,
+          0,
+          0
+        ],
+        "h": 7,
+        "k": 1,
+        "margin": "950",
+        "r": 2
+      },
+      "profiles": 10,
+      "represented_tip_rank_tests": 95
+    },
+    {
+      "elapsed_seconds": 0.000712707987986505,
+      "failures": [],
+      "m": 4,
+      "minimum_signed_surplus": {
+        "C_k": "14",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "8",
+        "N": 8,
+        "U_k": "13",
+        "U_kp1": "70",
+        "counts": [
+          4,
+          0,
+          0
+        ],
+        "h": 9,
+        "k": 1,
+        "margin": "1928",
+        "r": 2
+      },
+      "profiles": 15,
+      "represented_tip_rank_tests": 203
+    },
+    {
+      "elapsed_seconds": 0.001325917080976069,
+      "failures": [],
+      "m": 5,
+      "minimum_signed_surplus": {
+        "C_k": "17",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "10",
+        "N": 10,
+        "U_k": "16",
+        "U_kp1": "110",
+        "counts": [
+          5,
+          0,
+          0
+        ],
+        "h": 11,
+        "k": 1,
+        "margin": "3418",
+        "r": 2
+      },
+      "profiles": 21,
+      "represented_tip_rank_tests": 372
+    },
+    {
+      "elapsed_seconds": 0.0022009999956935644,
+      "failures": [],
+      "m": 6,
+      "minimum_signed_surplus": {
+        "C_k": "20",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "12",
+        "N": 12,
+        "U_k": "19",
+        "U_kp1": "159",
+        "counts": [
+          6,
+          0,
+          0
+        ],
+        "h": 13,
+        "k": 1,
+        "margin": "5528",
+        "r": 2
+      },
+      "profiles": 28,
+      "represented_tip_rank_tests": 615
+    },
+    {
+      "elapsed_seconds": 0.0034412910463288426,
+      "failures": [],
+      "m": 7,
+      "minimum_signed_surplus": {
+        "C_k": "23",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "14",
+        "N": 14,
+        "U_k": "22",
+        "U_kp1": "217",
+        "counts": [
+          7,
+          0,
+          0
+        ],
+        "h": 15,
+        "k": 1,
+        "margin": "8366",
+        "r": 2
+      },
+      "profiles": 36,
+      "represented_tip_rank_tests": 946
+    },
+    {
+      "elapsed_seconds": 0.005013708025217056,
+      "failures": [],
+      "m": 8,
+      "minimum_signed_surplus": {
+        "C_k": "26",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "16",
+        "N": 16,
+        "U_k": "25",
+        "U_kp1": "284",
+        "counts": [
+          8,
+          0,
+          0
+        ],
+        "h": 17,
+        "k": 1,
+        "margin": "12040",
+        "r": 2
+      },
+      "profiles": 45,
+      "represented_tip_rank_tests": 1378
+    },
+    {
+      "elapsed_seconds": 0.007146375020965934,
+      "failures": [],
+      "m": 9,
+      "minimum_signed_surplus": {
+        "C_k": "29",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "18",
+        "N": 18,
+        "U_k": "28",
+        "U_kp1": "360",
+        "counts": [
+          9,
+          0,
+          0
+        ],
+        "h": 19,
+        "k": 1,
+        "margin": "16658",
+        "r": 2
+      },
+      "profiles": 55,
+      "represented_tip_rank_tests": 1925
+    },
+    {
+      "elapsed_seconds": 0.009998125024139881,
+      "failures": [],
+      "m": 10,
+      "minimum_signed_surplus": {
+        "C_k": "32",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "20",
+        "N": 20,
+        "U_k": "31",
+        "U_kp1": "445",
+        "counts": [
+          10,
+          0,
+          0
+        ],
+        "h": 21,
+        "k": 1,
+        "margin": "22328",
+        "r": 2
+      },
+      "profiles": 66,
+      "represented_tip_rank_tests": 2600
+    },
+    {
+      "elapsed_seconds": 0.013403874938376248,
+      "failures": [],
+      "m": 11,
+      "minimum_signed_surplus": {
+        "C_k": "35",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "22",
+        "N": 22,
+        "U_k": "34",
+        "U_kp1": "539",
+        "counts": [
+          11,
+          0,
+          0
+        ],
+        "h": 23,
+        "k": 1,
+        "margin": "29158",
+        "r": 2
+      },
+      "profiles": 78,
+      "represented_tip_rank_tests": 3417
+    },
+    {
+      "elapsed_seconds": 0.018030250095762312,
+      "failures": [],
+      "m": 12,
+      "minimum_signed_surplus": {
+        "C_k": "38",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "24",
+        "N": 24,
+        "U_k": "37",
+        "U_kp1": "642",
+        "counts": [
+          12,
+          0,
+          0
+        ],
+        "h": 25,
+        "k": 1,
+        "margin": "37256",
+        "r": 2
+      },
+      "profiles": 91,
+      "represented_tip_rank_tests": 4389
+    },
+    {
+      "elapsed_seconds": 0.02416124998126179,
+      "failures": [],
+      "m": 13,
+      "minimum_signed_surplus": {
+        "C_k": "41",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "26",
+        "N": 26,
+        "U_k": "40",
+        "U_kp1": "754",
+        "counts": [
+          13,
+          0,
+          0
+        ],
+        "h": 27,
+        "k": 1,
+        "margin": "46730",
+        "r": 2
+      },
+      "profiles": 105,
+      "represented_tip_rank_tests": 5530
+    },
+    {
+      "elapsed_seconds": 0.03271408402360976,
+      "failures": [],
+      "m": 14,
+      "minimum_signed_surplus": {
+        "C_k": "44",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "28",
+        "N": 28,
+        "U_k": "43",
+        "U_kp1": "875",
+        "counts": [
+          14,
+          0,
+          0
+        ],
+        "h": 29,
+        "k": 1,
+        "margin": "57688",
+        "r": 2
+      },
+      "profiles": 120,
+      "represented_tip_rank_tests": 6853
+    },
+    {
+      "elapsed_seconds": 0.037233083974570036,
+      "failures": [],
+      "m": 15,
+      "minimum_signed_surplus": {
+        "C_k": "47",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "30",
+        "N": 30,
+        "U_k": "46",
+        "U_kp1": "1005",
+        "counts": [
+          15,
+          0,
+          0
+        ],
+        "h": 31,
+        "k": 1,
+        "margin": "70238",
+        "r": 2
+      },
+      "profiles": 136,
+      "represented_tip_rank_tests": 8372
+    },
+    {
+      "elapsed_seconds": 0.04561391705647111,
+      "failures": [],
+      "m": 16,
+      "minimum_signed_surplus": {
+        "C_k": "50",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "32",
+        "N": 32,
+        "U_k": "49",
+        "U_kp1": "1144",
+        "counts": [
+          16,
+          0,
+          0
+        ],
+        "h": 33,
+        "k": 1,
+        "margin": "84488",
+        "r": 2
+      },
+      "profiles": 153,
+      "represented_tip_rank_tests": 10100
+    },
+    {
+      "elapsed_seconds": 0.057152000023052096,
+      "failures": [],
+      "m": 17,
+      "minimum_signed_surplus": {
+        "C_k": "53",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "34",
+        "N": 34,
+        "U_k": "52",
+        "U_kp1": "1292",
+        "counts": [
+          17,
+          0,
+          0
+        ],
+        "h": 35,
+        "k": 1,
+        "margin": "100546",
+        "r": 2
+      },
+      "profiles": 171,
+      "represented_tip_rank_tests": 12051
+    },
+    {
+      "elapsed_seconds": 0.0704473340883851,
+      "failures": [],
+      "m": 18,
+      "minimum_signed_surplus": {
+        "C_k": "56",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "36",
+        "N": 36,
+        "U_k": "55",
+        "U_kp1": "1449",
+        "counts": [
+          18,
+          0,
+          0
+        ],
+        "h": 37,
+        "k": 1,
+        "margin": "118520",
+        "r": 2
+      },
+      "profiles": 190,
+      "represented_tip_rank_tests": 14238
+    },
+    {
+      "elapsed_seconds": 0.08285329199861735,
+      "failures": [],
+      "m": 19,
+      "minimum_signed_surplus": {
+        "C_k": "59",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "38",
+        "N": 38,
+        "U_k": "58",
+        "U_kp1": "1615",
+        "counts": [
+          19,
+          0,
+          0
+        ],
+        "h": 39,
+        "k": 1,
+        "margin": "138518",
+        "r": 2
+      },
+      "profiles": 210,
+      "represented_tip_rank_tests": 16675
+    },
+    {
+      "elapsed_seconds": 0.09773966704960912,
+      "failures": [],
+      "m": 20,
+      "minimum_signed_surplus": {
+        "C_k": "62",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "40",
+        "N": 40,
+        "U_k": "61",
+        "U_kp1": "1790",
+        "counts": [
+          20,
+          0,
+          0
+        ],
+        "h": 41,
+        "k": 1,
+        "margin": "160648",
+        "r": 2
+      },
+      "profiles": 231,
+      "represented_tip_rank_tests": 19375
+    },
+    {
+      "elapsed_seconds": 0.11872349993791431,
+      "failures": [],
+      "m": 21,
+      "minimum_signed_surplus": {
+        "C_k": "65",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "42",
+        "N": 42,
+        "U_k": "64",
+        "U_kp1": "1974",
+        "counts": [
+          21,
+          0,
+          0
+        ],
+        "h": 43,
+        "k": 1,
+        "margin": "185018",
+        "r": 2
+      },
+      "profiles": 253,
+      "represented_tip_rank_tests": 22352
+    },
+    {
+      "elapsed_seconds": 0.1378869169857353,
+      "failures": [],
+      "m": 22,
+      "minimum_signed_surplus": {
+        "C_k": "68",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "44",
+        "N": 44,
+        "U_k": "67",
+        "U_kp1": "2167",
+        "counts": [
+          22,
+          0,
+          0
+        ],
+        "h": 45,
+        "k": 1,
+        "margin": "211736",
+        "r": 2
+      },
+      "profiles": 276,
+      "represented_tip_rank_tests": 25619
+    },
+    {
+      "elapsed_seconds": 0.16290245903655887,
+      "failures": [],
+      "m": 23,
+      "minimum_signed_surplus": {
+        "C_k": "71",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "46",
+        "N": 46,
+        "U_k": "70",
+        "U_kp1": "2369",
+        "counts": [
+          23,
+          0,
+          0
+        ],
+        "h": 47,
+        "k": 1,
+        "margin": "240910",
+        "r": 2
+      },
+      "profiles": 300,
+      "represented_tip_rank_tests": 29190
+    },
+    {
+      "elapsed_seconds": 0.18995016696862876,
+      "failures": [],
+      "m": 24,
+      "minimum_signed_surplus": {
+        "C_k": "74",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "48",
+        "N": 48,
+        "U_k": "73",
+        "U_kp1": "2580",
+        "counts": [
+          24,
+          0,
+          0
+        ],
+        "h": 49,
+        "k": 1,
+        "margin": "272648",
+        "r": 2
+      },
+      "profiles": 325,
+      "represented_tip_rank_tests": 33078
+    },
+    {
+      "elapsed_seconds": 0.2114588749827817,
+      "failures": [],
+      "m": 25,
+      "minimum_signed_surplus": {
+        "C_k": "77",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "50",
+        "N": 50,
+        "U_k": "76",
+        "U_kp1": "2800",
+        "counts": [
+          25,
+          0,
+          0
+        ],
+        "h": 51,
+        "k": 1,
+        "margin": "307058",
+        "r": 2
+      },
+      "profiles": 351,
+      "represented_tip_rank_tests": 37297
+    },
+    {
+      "elapsed_seconds": 0.24270845903083682,
+      "failures": [],
+      "m": 26,
+      "minimum_signed_surplus": {
+        "C_k": "80",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "52",
+        "N": 52,
+        "U_k": "79",
+        "U_kp1": "3029",
+        "counts": [
+          26,
+          0,
+          0
+        ],
+        "h": 53,
+        "k": 1,
+        "margin": "344248",
+        "r": 2
+      },
+      "profiles": 378,
+      "represented_tip_rank_tests": 41860
+    },
+    {
+      "elapsed_seconds": 0.2753202919848263,
+      "failures": [],
+      "m": 27,
+      "minimum_signed_surplus": {
+        "C_k": "83",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "54",
+        "N": 54,
+        "U_k": "82",
+        "U_kp1": "3267",
+        "counts": [
+          27,
+          0,
+          0
+        ],
+        "h": 55,
+        "k": 1,
+        "margin": "384326",
+        "r": 2
+      },
+      "profiles": 406,
+      "represented_tip_rank_tests": 46781
+    },
+    {
+      "elapsed_seconds": 0.3871175000676885,
+      "failures": [],
+      "m": 28,
+      "minimum_signed_surplus": {
+        "C_k": "86",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "56",
+        "N": 56,
+        "U_k": "85",
+        "U_kp1": "3514",
+        "counts": [
+          28,
+          0,
+          0
+        ],
+        "h": 57,
+        "k": 1,
+        "margin": "427400",
+        "r": 2
+      },
+      "profiles": 435,
+      "represented_tip_rank_tests": 52073
+    },
+    {
+      "elapsed_seconds": 0.35961141693405807,
+      "failures": [],
+      "m": 29,
+      "minimum_signed_surplus": {
+        "C_k": "89",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "58",
+        "N": 58,
+        "U_k": "88",
+        "U_kp1": "3770",
+        "counts": [
+          29,
+          0,
+          0
+        ],
+        "h": 59,
+        "k": 1,
+        "margin": "473578",
+        "r": 2
+      },
+      "profiles": 465,
+      "represented_tip_rank_tests": 57750
+    },
+    {
+      "elapsed_seconds": 0.4060970420250669,
+      "failures": [],
+      "m": 30,
+      "minimum_signed_surplus": {
+        "C_k": "92",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "60",
+        "N": 60,
+        "U_k": "91",
+        "U_kp1": "4035",
+        "counts": [
+          30,
+          0,
+          0
+        ],
+        "h": 61,
+        "k": 1,
+        "margin": "522968",
+        "r": 2
+      },
+      "profiles": 496,
+      "represented_tip_rank_tests": 63825
+    },
+    {
+      "elapsed_seconds": 0.438210874912329,
+      "failures": [],
+      "m": 31,
+      "minimum_signed_surplus": {
+        "C_k": "95",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "62",
+        "N": 62,
+        "U_k": "94",
+        "U_kp1": "4309",
+        "counts": [
+          31,
+          0,
+          0
+        ],
+        "h": 63,
+        "k": 1,
+        "margin": "575678",
+        "r": 2
+      },
+      "profiles": 528,
+      "represented_tip_rank_tests": 70312
+    },
+    {
+      "elapsed_seconds": 0.4849611659301445,
+      "failures": [],
+      "m": 32,
+      "minimum_signed_surplus": {
+        "C_k": "98",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "64",
+        "N": 64,
+        "U_k": "97",
+        "U_kp1": "4592",
+        "counts": [
+          32,
+          0,
+          0
+        ],
+        "h": 65,
+        "k": 1,
+        "margin": "631816",
+        "r": 2
+      },
+      "profiles": 561,
+      "represented_tip_rank_tests": 77224
+    },
+    {
+      "elapsed_seconds": 0.5471038330579177,
+      "failures": [],
+      "m": 33,
+      "minimum_signed_surplus": {
+        "C_k": "101",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "66",
+        "N": 66,
+        "U_k": "100",
+        "U_kp1": "4884",
+        "counts": [
+          33,
+          0,
+          0
+        ],
+        "h": 67,
+        "k": 1,
+        "margin": "691490",
+        "r": 2
+      },
+      "profiles": 595,
+      "represented_tip_rank_tests": 84575
+    },
+    {
+      "elapsed_seconds": 0.6111810830188915,
+      "failures": [],
+      "m": 34,
+      "minimum_signed_surplus": {
+        "C_k": "104",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "68",
+        "N": 68,
+        "U_k": "103",
+        "U_kp1": "5185",
+        "counts": [
+          34,
+          0,
+          0
+        ],
+        "h": 69,
+        "k": 1,
+        "margin": "754808",
+        "r": 2
+      },
+      "profiles": 630,
+      "represented_tip_rank_tests": 92378
+    },
+    {
+      "elapsed_seconds": 0.7296659579733387,
+      "failures": [],
+      "m": 35,
+      "minimum_signed_surplus": {
+        "C_k": "107",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "70",
+        "N": 70,
+        "U_k": "106",
+        "U_kp1": "5495",
+        "counts": [
+          35,
+          0,
+          0
+        ],
+        "h": 71,
+        "k": 1,
+        "margin": "821878",
+        "r": 2
+      },
+      "profiles": 666,
+      "represented_tip_rank_tests": 100647
+    },
+    {
+      "elapsed_seconds": 0.7400919999927282,
+      "failures": [],
+      "m": 36,
+      "minimum_signed_surplus": {
+        "C_k": "110",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "72",
+        "N": 72,
+        "U_k": "109",
+        "U_kp1": "5814",
+        "counts": [
+          36,
+          0,
+          0
+        ],
+        "h": 73,
+        "k": 1,
+        "margin": "892808",
+        "r": 2
+      },
+      "profiles": 703,
+      "represented_tip_rank_tests": 109395
+    },
+    {
+      "elapsed_seconds": 0.8137869590427727,
+      "failures": [],
+      "m": 37,
+      "minimum_signed_surplus": {
+        "C_k": "113",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "74",
+        "N": 74,
+        "U_k": "112",
+        "U_kp1": "6142",
+        "counts": [
+          37,
+          0,
+          0
+        ],
+        "h": 75,
+        "k": 1,
+        "margin": "967706",
+        "r": 2
+      },
+      "profiles": 741,
+      "represented_tip_rank_tests": 118636
+    },
+    {
+      "elapsed_seconds": 0.9039136250503361,
+      "failures": [],
+      "m": 38,
+      "minimum_signed_surplus": {
+        "C_k": "116",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "76",
+        "N": 76,
+        "U_k": "115",
+        "U_kp1": "6479",
+        "counts": [
+          38,
+          0,
+          0
+        ],
+        "h": 77,
+        "k": 1,
+        "margin": "1046680",
+        "r": 2
+      },
+      "profiles": 780,
+      "represented_tip_rank_tests": 128383
+    },
+    {
+      "elapsed_seconds": 0.9910221670288593,
+      "failures": [],
+      "m": 39,
+      "minimum_signed_surplus": {
+        "C_k": "119",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "78",
+        "N": 78,
+        "U_k": "118",
+        "U_kp1": "6825",
+        "counts": [
+          39,
+          0,
+          0
+        ],
+        "h": 79,
+        "k": 1,
+        "margin": "1129838",
+        "r": 2
+      },
+      "profiles": 820,
+      "represented_tip_rank_tests": 138650
+    },
+    {
+      "elapsed_seconds": 1.0834631660254672,
+      "failures": [],
+      "m": 40,
+      "minimum_signed_surplus": {
+        "C_k": "122",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "80",
+        "N": 80,
+        "U_k": "121",
+        "U_kp1": "7180",
+        "counts": [
+          40,
+          0,
+          0
+        ],
+        "h": 81,
+        "k": 1,
+        "margin": "1217288",
+        "r": 2
+      },
+      "profiles": 861,
+      "represented_tip_rank_tests": 149450
+    },
+    {
+      "elapsed_seconds": 1.1870904160896316,
+      "failures": [],
+      "m": 41,
+      "minimum_signed_surplus": {
+        "C_k": "125",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "82",
+        "N": 82,
+        "U_k": "124",
+        "U_kp1": "7544",
+        "counts": [
+          41,
+          0,
+          0
+        ],
+        "h": 83,
+        "k": 1,
+        "margin": "1309138",
+        "r": 2
+      },
+      "profiles": 903,
+      "represented_tip_rank_tests": 160797
+    },
+    {
+      "elapsed_seconds": 1.2956777079962194,
+      "failures": [],
+      "m": 42,
+      "minimum_signed_surplus": {
+        "C_k": "128",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "84",
+        "N": 84,
+        "U_k": "127",
+        "U_kp1": "7917",
+        "counts": [
+          42,
+          0,
+          0
+        ],
+        "h": 85,
+        "k": 1,
+        "margin": "1405496",
+        "r": 2
+      },
+      "profiles": 946,
+      "represented_tip_rank_tests": 172704
+    },
+    {
+      "elapsed_seconds": 1.4984892080537975,
+      "failures": [],
+      "m": 43,
+      "minimum_signed_surplus": {
+        "C_k": "131",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "86",
+        "N": 86,
+        "U_k": "130",
+        "U_kp1": "8299",
+        "counts": [
+          43,
+          0,
+          0
+        ],
+        "h": 87,
+        "k": 1,
+        "margin": "1506470",
+        "r": 2
+      },
+      "profiles": 990,
+      "represented_tip_rank_tests": 185185
+    },
+    {
+      "elapsed_seconds": 1.5801743749761954,
+      "failures": [],
+      "m": 44,
+      "minimum_signed_surplus": {
+        "C_k": "134",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "88",
+        "N": 88,
+        "U_k": "133",
+        "U_kp1": "8690",
+        "counts": [
+          44,
+          0,
+          0
+        ],
+        "h": 89,
+        "k": 1,
+        "margin": "1612168",
+        "r": 2
+      },
+      "profiles": 1035,
+      "represented_tip_rank_tests": 198253
+    },
+    {
+      "elapsed_seconds": 1.717686792020686,
+      "failures": [],
+      "m": 45,
+      "minimum_signed_surplus": {
+        "C_k": "137",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "90",
+        "N": 90,
+        "U_k": "136",
+        "U_kp1": "9090",
+        "counts": [
+          45,
+          0,
+          0
+        ],
+        "h": 91,
+        "k": 1,
+        "margin": "1722698",
+        "r": 2
+      },
+      "profiles": 1081,
+      "represented_tip_rank_tests": 211922
+    },
+    {
+      "elapsed_seconds": 1.9155258329119533,
+      "failures": [],
+      "m": 46,
+      "minimum_signed_surplus": {
+        "C_k": "140",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "92",
+        "N": 92,
+        "U_k": "139",
+        "U_kp1": "9499",
+        "counts": [
+          46,
+          0,
+          0
+        ],
+        "h": 93,
+        "k": 1,
+        "margin": "1838168",
+        "r": 2
+      },
+      "profiles": 1128,
+      "represented_tip_rank_tests": 226205
+    },
+    {
+      "elapsed_seconds": 2.0158578329719603,
+      "failures": [],
+      "m": 47,
+      "minimum_signed_surplus": {
+        "C_k": "143",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "94",
+        "N": 94,
+        "U_k": "142",
+        "U_kp1": "9917",
+        "counts": [
+          47,
+          0,
+          0
+        ],
+        "h": 95,
+        "k": 1,
+        "margin": "1958686",
+        "r": 2
+      },
+      "profiles": 1176,
+      "represented_tip_rank_tests": 241116
+    },
+    {
+      "elapsed_seconds": 2.1671361250337213,
+      "failures": [],
+      "m": 48,
+      "minimum_signed_surplus": {
+        "C_k": "146",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "96",
+        "N": 96,
+        "U_k": "145",
+        "U_kp1": "10344",
+        "counts": [
+          48,
+          0,
+          0
+        ],
+        "h": 97,
+        "k": 1,
+        "margin": "2084360",
+        "r": 2
+      },
+      "profiles": 1225,
+      "represented_tip_rank_tests": 256668
+    },
+    {
+      "elapsed_seconds": 2.2969120839843526,
+      "failures": [],
+      "m": 49,
+      "minimum_signed_surplus": {
+        "C_k": "149",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "98",
+        "N": 98,
+        "U_k": "148",
+        "U_kp1": "10780",
+        "counts": [
+          49,
+          0,
+          0
+        ],
+        "h": 99,
+        "k": 1,
+        "margin": "2215298",
+        "r": 2
+      },
+      "profiles": 1275,
+      "represented_tip_rank_tests": 272875
+    },
+    {
+      "elapsed_seconds": 2.4691022919723764,
+      "failures": [],
+      "m": 50,
+      "minimum_signed_surplus": {
+        "C_k": "152",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "100",
+        "N": 100,
+        "U_k": "151",
+        "U_kp1": "11225",
+        "counts": [
+          50,
+          0,
+          0
+        ],
+        "h": 101,
+        "k": 1,
+        "margin": "2351608",
+        "r": 2
+      },
+      "profiles": 1326,
+      "represented_tip_rank_tests": 289750
+    },
+    {
+      "elapsed_seconds": 2.7035133749013767,
+      "failures": [],
+      "m": 51,
+      "minimum_signed_surplus": {
+        "C_k": "155",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "102",
+        "N": 102,
+        "U_k": "154",
+        "U_kp1": "11679",
+        "counts": [
+          51,
+          0,
+          0
+        ],
+        "h": 103,
+        "k": 1,
+        "margin": "2493398",
+        "r": 2
+      },
+      "profiles": 1378,
+      "represented_tip_rank_tests": 307307
+    },
+    {
+      "elapsed_seconds": 2.9351362079614773,
+      "failures": [],
+      "m": 52,
+      "minimum_signed_surplus": {
+        "C_k": "158",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "104",
+        "N": 104,
+        "U_k": "157",
+        "U_kp1": "12142",
+        "counts": [
+          52,
+          0,
+          0
+        ],
+        "h": 105,
+        "k": 1,
+        "margin": "2640776",
+        "r": 2
+      },
+      "profiles": 1431,
+      "represented_tip_rank_tests": 325559
+    },
+    {
+      "elapsed_seconds": 3.220901667024009,
+      "failures": [],
+      "m": 53,
+      "minimum_signed_surplus": {
+        "C_k": "161",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "106",
+        "N": 106,
+        "U_k": "160",
+        "U_kp1": "12614",
+        "counts": [
+          53,
+          0,
+          0
+        ],
+        "h": 107,
+        "k": 1,
+        "margin": "2793850",
+        "r": 2
+      },
+      "profiles": 1485,
+      "represented_tip_rank_tests": 344520
+    },
+    {
+      "elapsed_seconds": 3.374490667018108,
+      "failures": [],
+      "m": 54,
+      "minimum_signed_surplus": {
+        "C_k": "164",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "108",
+        "N": 108,
+        "U_k": "163",
+        "U_kp1": "13095",
+        "counts": [
+          54,
+          0,
+          0
+        ],
+        "h": 109,
+        "k": 1,
+        "margin": "2952728",
+        "r": 2
+      },
+      "profiles": 1540,
+      "represented_tip_rank_tests": 364203
+    },
+    {
+      "elapsed_seconds": 3.6448202499886975,
+      "failures": [],
+      "m": 55,
+      "minimum_signed_surplus": {
+        "C_k": "167",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "110",
+        "N": 110,
+        "U_k": "166",
+        "U_kp1": "13585",
+        "counts": [
+          55,
+          0,
+          0
+        ],
+        "h": 111,
+        "k": 1,
+        "margin": "3117518",
+        "r": 2
+      },
+      "profiles": 1596,
+      "represented_tip_rank_tests": 384622
+    },
+    {
+      "elapsed_seconds": 3.7616985409986228,
+      "failures": [],
+      "m": 56,
+      "minimum_signed_surplus": {
+        "C_k": "170",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "112",
+        "N": 112,
+        "U_k": "169",
+        "U_kp1": "14084",
+        "counts": [
+          56,
+          0,
+          0
+        ],
+        "h": 113,
+        "k": 1,
+        "margin": "3288328",
+        "r": 2
+      },
+      "profiles": 1653,
+      "represented_tip_rank_tests": 405790
+    },
+    {
+      "elapsed_seconds": 4.019339625025168,
+      "failures": [],
+      "m": 57,
+      "minimum_signed_surplus": {
+        "C_k": "173",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "114",
+        "N": 114,
+        "U_k": "172",
+        "U_kp1": "14592",
+        "counts": [
+          57,
+          0,
+          0
+        ],
+        "h": 115,
+        "k": 1,
+        "margin": "3465266",
+        "r": 2
+      },
+      "profiles": 1711,
+      "represented_tip_rank_tests": 427721
+    },
+    {
+      "elapsed_seconds": 4.427414166042581,
+      "failures": [],
+      "m": 58,
+      "minimum_signed_surplus": {
+        "C_k": "176",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "116",
+        "N": 116,
+        "U_k": "175",
+        "U_kp1": "15109",
+        "counts": [
+          58,
+          0,
+          0
+        ],
+        "h": 117,
+        "k": 1,
+        "margin": "3648440",
+        "r": 2
+      },
+      "profiles": 1770,
+      "represented_tip_rank_tests": 450428
+    },
+    {
+      "elapsed_seconds": 4.768680791021325,
+      "failures": [],
+      "m": 59,
+      "minimum_signed_surplus": {
+        "C_k": "179",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "118",
+        "N": 118,
+        "U_k": "178",
+        "U_kp1": "15635",
+        "counts": [
+          59,
+          0,
+          0
+        ],
+        "h": 119,
+        "k": 1,
+        "margin": "3837958",
+        "r": 2
+      },
+      "profiles": 1830,
+      "represented_tip_rank_tests": 473925
+    },
+    {
+      "elapsed_seconds": 4.921793292043731,
+      "failures": [],
+      "m": 60,
+      "minimum_signed_surplus": {
+        "C_k": "182",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "120",
+        "N": 120,
+        "U_k": "181",
+        "U_kp1": "16170",
+        "counts": [
+          60,
+          0,
+          0
+        ],
+        "h": 121,
+        "k": 1,
+        "margin": "4033928",
+        "r": 2
+      },
+      "profiles": 1891,
+      "represented_tip_rank_tests": 498225
+    },
+    {
+      "elapsed_seconds": 5.161025833920576,
+      "failures": [],
+      "m": 61,
+      "minimum_signed_surplus": {
+        "C_k": "185",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "122",
+        "N": 122,
+        "U_k": "184",
+        "U_kp1": "16714",
+        "counts": [
+          61,
+          0,
+          0
+        ],
+        "h": 123,
+        "k": 1,
+        "margin": "4236458",
+        "r": 2
+      },
+      "profiles": 1953,
+      "represented_tip_rank_tests": 523342
+    },
+    {
+      "elapsed_seconds": 5.6353981249267235,
+      "failures": [],
+      "m": 62,
+      "minimum_signed_surplus": {
+        "C_k": "188",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "124",
+        "N": 124,
+        "U_k": "187",
+        "U_kp1": "17267",
+        "counts": [
+          62,
+          0,
+          0
+        ],
+        "h": 125,
+        "k": 1,
+        "margin": "4445656",
+        "r": 2
+      },
+      "profiles": 2016,
+      "represented_tip_rank_tests": 549289
+    },
+    {
+      "elapsed_seconds": 6.154198584030382,
+      "failures": [],
+      "m": 63,
+      "minimum_signed_surplus": {
+        "C_k": "191",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "126",
+        "N": 126,
+        "U_k": "190",
+        "U_kp1": "17829",
+        "counts": [
+          63,
+          0,
+          0
+        ],
+        "h": 127,
+        "k": 1,
+        "margin": "4661630",
+        "r": 2
+      },
+      "profiles": 2080,
+      "represented_tip_rank_tests": 576080
+    },
+    {
+      "elapsed_seconds": 6.295690916944295,
+      "failures": [],
+      "m": 64,
+      "minimum_signed_surplus": {
+        "C_k": "194",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "128",
+        "N": 128,
+        "U_k": "193",
+        "U_kp1": "18400",
+        "counts": [
+          64,
+          0,
+          0
+        ],
+        "h": 129,
+        "k": 1,
+        "margin": "4884488",
+        "r": 2
+      },
+      "profiles": 2145,
+      "represented_tip_rank_tests": 603728
+    },
+    {
+      "elapsed_seconds": 6.742681208997965,
+      "failures": [],
+      "m": 65,
+      "minimum_signed_surplus": {
+        "C_k": "197",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "130",
+        "N": 130,
+        "U_k": "196",
+        "U_kp1": "18980",
+        "counts": [
+          65,
+          0,
+          0
+        ],
+        "h": 131,
+        "k": 1,
+        "margin": "5114338",
+        "r": 2
+      },
+      "profiles": 2211,
+      "represented_tip_rank_tests": 632247
+    },
+    {
+      "elapsed_seconds": 7.226980542065576,
+      "failures": [],
+      "m": 66,
+      "minimum_signed_surplus": {
+        "C_k": "200",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "132",
+        "N": 132,
+        "U_k": "199",
+        "U_kp1": "19569",
+        "counts": [
+          66,
+          0,
+          0
+        ],
+        "h": 133,
+        "k": 1,
+        "margin": "5351288",
+        "r": 2
+      },
+      "profiles": 2278,
+      "represented_tip_rank_tests": 661650
+    },
+    {
+      "elapsed_seconds": 7.366471291985363,
+      "failures": [],
+      "m": 67,
+      "minimum_signed_surplus": {
+        "C_k": "203",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "134",
+        "N": 134,
+        "U_k": "202",
+        "U_kp1": "20167",
+        "counts": [
+          67,
+          0,
+          0
+        ],
+        "h": 135,
+        "k": 1,
+        "margin": "5595446",
+        "r": 2
+      },
+      "profiles": 2346,
+      "represented_tip_rank_tests": 691951
+    },
+    {
+      "elapsed_seconds": 8.097646375070326,
+      "failures": [],
+      "m": 68,
+      "minimum_signed_surplus": {
+        "C_k": "206",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "136",
+        "N": 136,
+        "U_k": "205",
+        "U_kp1": "20774",
+        "counts": [
+          68,
+          0,
+          0
+        ],
+        "h": 137,
+        "k": 1,
+        "margin": "5846920",
+        "r": 2
+      },
+      "profiles": 2415,
+      "represented_tip_rank_tests": 723163
+    },
+    {
+      "elapsed_seconds": 8.46951554203406,
+      "failures": [],
+      "m": 69,
+      "minimum_signed_surplus": {
+        "C_k": "209",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "138",
+        "N": 138,
+        "U_k": "208",
+        "U_kp1": "21390",
+        "counts": [
+          69,
+          0,
+          0
+        ],
+        "h": 139,
+        "k": 1,
+        "margin": "6105818",
+        "r": 2
+      },
+      "profiles": 2485,
+      "represented_tip_rank_tests": 755300
+    },
+    {
+      "elapsed_seconds": 8.736639166949317,
+      "failures": [],
+      "m": 70,
+      "minimum_signed_surplus": {
+        "C_k": "212",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "140",
+        "N": 140,
+        "U_k": "211",
+        "U_kp1": "22015",
+        "counts": [
+          70,
+          0,
+          0
+        ],
+        "h": 141,
+        "k": 1,
+        "margin": "6372248",
+        "r": 2
+      },
+      "profiles": 2556,
+      "represented_tip_rank_tests": 788375
+    },
+    {
+      "elapsed_seconds": 9.552511375048198,
+      "failures": [],
+      "m": 71,
+      "minimum_signed_surplus": {
+        "C_k": "215",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "142",
+        "N": 142,
+        "U_k": "214",
+        "U_kp1": "22649",
+        "counts": [
+          71,
+          0,
+          0
+        ],
+        "h": 143,
+        "k": 1,
+        "margin": "6646318",
+        "r": 2
+      },
+      "profiles": 2628,
+      "represented_tip_rank_tests": 822402
+    },
+    {
+      "elapsed_seconds": 9.745484540937468,
+      "failures": [],
+      "m": 72,
+      "minimum_signed_surplus": {
+        "C_k": "218",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "144",
+        "N": 144,
+        "U_k": "217",
+        "U_kp1": "23292",
+        "counts": [
+          72,
+          0,
+          0
+        ],
+        "h": 145,
+        "k": 1,
+        "margin": "6928136",
+        "r": 2
+      },
+      "profiles": 2701,
+      "represented_tip_rank_tests": 857394
+    },
+    {
+      "elapsed_seconds": 10.654943209025078,
+      "failures": [],
+      "m": 73,
+      "minimum_signed_surplus": {
+        "C_k": "221",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "146",
+        "N": 146,
+        "U_k": "220",
+        "U_kp1": "23944",
+        "counts": [
+          73,
+          0,
+          0
+        ],
+        "h": 147,
+        "k": 1,
+        "margin": "7217810",
+        "r": 2
+      },
+      "profiles": 2775,
+      "represented_tip_rank_tests": 893365
+    },
+    {
+      "elapsed_seconds": 10.88883991597686,
+      "failures": [],
+      "m": 74,
+      "minimum_signed_surplus": {
+        "C_k": "224",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "148",
+        "N": 148,
+        "U_k": "223",
+        "U_kp1": "24605",
+        "counts": [
+          74,
+          0,
+          0
+        ],
+        "h": 149,
+        "k": 1,
+        "margin": "7515448",
+        "r": 2
+      },
+      "profiles": 2850,
+      "represented_tip_rank_tests": 930328
+    },
+    {
+      "elapsed_seconds": 11.787105625029653,
+      "failures": [],
+      "m": 75,
+      "minimum_signed_surplus": {
+        "C_k": "227",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "150",
+        "N": 150,
+        "U_k": "226",
+        "U_kp1": "25275",
+        "counts": [
+          75,
+          0,
+          0
+        ],
+        "h": 151,
+        "k": 1,
+        "margin": "7821158",
+        "r": 2
+      },
+      "profiles": 2926,
+      "represented_tip_rank_tests": 968297
+    },
+    {
+      "elapsed_seconds": 12.227059333003126,
+      "failures": [],
+      "m": 76,
+      "minimum_signed_surplus": {
+        "C_k": "230",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "152",
+        "N": 152,
+        "U_k": "229",
+        "U_kp1": "25954",
+        "counts": [
+          76,
+          0,
+          0
+        ],
+        "h": 153,
+        "k": 1,
+        "margin": "8135048",
+        "r": 2
+      },
+      "profiles": 3003,
+      "represented_tip_rank_tests": 1007285
+    },
+    {
+      "elapsed_seconds": 12.710851790965535,
+      "failures": [],
+      "m": 77,
+      "minimum_signed_surplus": {
+        "C_k": "233",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "154",
+        "N": 154,
+        "U_k": "232",
+        "U_kp1": "26642",
+        "counts": [
+          77,
+          0,
+          0
+        ],
+        "h": 155,
+        "k": 1,
+        "margin": "8457226",
+        "r": 2
+      },
+      "profiles": 3081,
+      "represented_tip_rank_tests": 1047306
+    },
+    {
+      "elapsed_seconds": 13.75780466699507,
+      "failures": [],
+      "m": 78,
+      "minimum_signed_surplus": {
+        "C_k": "236",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "156",
+        "N": 156,
+        "U_k": "235",
+        "U_kp1": "27339",
+        "counts": [
+          78,
+          0,
+          0
+        ],
+        "h": 157,
+        "k": 1,
+        "margin": "8787800",
+        "r": 2
+      },
+      "profiles": 3160,
+      "represented_tip_rank_tests": 1088373
+    },
+    {
+      "elapsed_seconds": 14.112620999920182,
+      "failures": [],
+      "m": 79,
+      "minimum_signed_surplus": {
+        "C_k": "239",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "158",
+        "N": 158,
+        "U_k": "238",
+        "U_kp1": "28045",
+        "counts": [
+          79,
+          0,
+          0
+        ],
+        "h": 159,
+        "k": 1,
+        "margin": "9126878",
+        "r": 2
+      },
+      "profiles": 3240,
+      "represented_tip_rank_tests": 1130500
+    },
+    {
+      "elapsed_seconds": 14.837839708081447,
+      "failures": [],
+      "m": 80,
+      "minimum_signed_surplus": {
+        "C_k": "242",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "160",
+        "N": 160,
+        "U_k": "241",
+        "U_kp1": "28760",
+        "counts": [
+          80,
+          0,
+          0
+        ],
+        "h": 161,
+        "k": 1,
+        "margin": "9474568",
+        "r": 2
+      },
+      "profiles": 3321,
+      "represented_tip_rank_tests": 1173700
+    },
+    {
+      "elapsed_seconds": 16.144551416975446,
+      "failures": [],
+      "m": 81,
+      "minimum_signed_surplus": {
+        "C_k": "245",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "162",
+        "N": 162,
+        "U_k": "244",
+        "U_kp1": "29484",
+        "counts": [
+          81,
+          0,
+          0
+        ],
+        "h": 163,
+        "k": 1,
+        "margin": "9830978",
+        "r": 2
+      },
+      "profiles": 3403,
+      "represented_tip_rank_tests": 1217987
+    },
+    {
+      "elapsed_seconds": 15.992432874976657,
+      "failures": [],
+      "m": 82,
+      "minimum_signed_surplus": {
+        "C_k": "248",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "164",
+        "N": 164,
+        "U_k": "247",
+        "U_kp1": "30217",
+        "counts": [
+          82,
+          0,
+          0
+        ],
+        "h": 165,
+        "k": 1,
+        "margin": "10196216",
+        "r": 2
+      },
+      "profiles": 3486,
+      "represented_tip_rank_tests": 1263374
+    },
+    {
+      "elapsed_seconds": 16.834750332986005,
+      "failures": [],
+      "m": 83,
+      "minimum_signed_surplus": {
+        "C_k": "251",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "166",
+        "N": 166,
+        "U_k": "250",
+        "U_kp1": "30959",
+        "counts": [
+          83,
+          0,
+          0
+        ],
+        "h": 167,
+        "k": 1,
+        "margin": "10570390",
+        "r": 2
+      },
+      "profiles": 3570,
+      "represented_tip_rank_tests": 1309875
+    },
+    {
+      "elapsed_seconds": 17.543219041079283,
+      "failures": [],
+      "m": 84,
+      "minimum_signed_surplus": {
+        "C_k": "254",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "168",
+        "N": 168,
+        "U_k": "253",
+        "U_kp1": "31710",
+        "counts": [
+          84,
+          0,
+          0
+        ],
+        "h": 169,
+        "k": 1,
+        "margin": "10953608",
+        "r": 2
+      },
+      "profiles": 3655,
+      "represented_tip_rank_tests": 1357503
+    },
+    {
+      "elapsed_seconds": 18.385653417091817,
+      "failures": [],
+      "m": 85,
+      "minimum_signed_surplus": {
+        "C_k": "257",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "170",
+        "N": 170,
+        "U_k": "256",
+        "U_kp1": "32470",
+        "counts": [
+          85,
+          0,
+          0
+        ],
+        "h": 171,
+        "k": 1,
+        "margin": "11345978",
+        "r": 2
+      },
+      "profiles": 3741,
+      "represented_tip_rank_tests": 1406272
+    },
+    {
+      "elapsed_seconds": 19.24051062494982,
+      "failures": [],
+      "m": 86,
+      "minimum_signed_surplus": {
+        "C_k": "260",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "172",
+        "N": 172,
+        "U_k": "259",
+        "U_kp1": "33239",
+        "counts": [
+          86,
+          0,
+          0
+        ],
+        "h": 173,
+        "k": 1,
+        "margin": "11747608",
+        "r": 2
+      },
+      "profiles": 3828,
+      "represented_tip_rank_tests": 1456195
+    },
+    {
+      "elapsed_seconds": 20.10010695795063,
+      "failures": [],
+      "m": 87,
+      "minimum_signed_surplus": {
+        "C_k": "263",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "174",
+        "N": 174,
+        "U_k": "262",
+        "U_kp1": "34017",
+        "counts": [
+          87,
+          0,
+          0
+        ],
+        "h": 175,
+        "k": 1,
+        "margin": "12158606",
+        "r": 2
+      },
+      "profiles": 3916,
+      "represented_tip_rank_tests": 1507286
+    },
+    {
+      "elapsed_seconds": 21.000542209018022,
+      "failures": [],
+      "m": 88,
+      "minimum_signed_surplus": {
+        "C_k": "266",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "176",
+        "N": 176,
+        "U_k": "265",
+        "U_kp1": "34804",
+        "counts": [
+          88,
+          0,
+          0
+        ],
+        "h": 177,
+        "k": 1,
+        "margin": "12579080",
+        "r": 2
+      },
+      "profiles": 4005,
+      "represented_tip_rank_tests": 1559558
+    },
+    {
+      "elapsed_seconds": 22.048025666968897,
+      "failures": [],
+      "m": 89,
+      "minimum_signed_surplus": {
+        "C_k": "269",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "178",
+        "N": 178,
+        "U_k": "268",
+        "U_kp1": "35600",
+        "counts": [
+          89,
+          0,
+          0
+        ],
+        "h": 179,
+        "k": 1,
+        "margin": "13009138",
+        "r": 2
+      },
+      "profiles": 4095,
+      "represented_tip_rank_tests": 1613025
+    },
+    {
+      "elapsed_seconds": 23.00975995801855,
+      "failures": [],
+      "m": 90,
+      "minimum_signed_surplus": {
+        "C_k": "272",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "180",
+        "N": 180,
+        "U_k": "271",
+        "U_kp1": "36405",
+        "counts": [
+          90,
+          0,
+          0
+        ],
+        "h": 181,
+        "k": 1,
+        "margin": "13448888",
+        "r": 2
+      },
+      "profiles": 4186,
+      "represented_tip_rank_tests": 1667700
+    },
+    {
+      "elapsed_seconds": 23.917609540978447,
+      "failures": [],
+      "m": 91,
+      "minimum_signed_surplus": {
+        "C_k": "275",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "182",
+        "N": 182,
+        "U_k": "274",
+        "U_kp1": "37219",
+        "counts": [
+          91,
+          0,
+          0
+        ],
+        "h": 183,
+        "k": 1,
+        "margin": "13898438",
+        "r": 2
+      },
+      "profiles": 4278,
+      "represented_tip_rank_tests": 1723597
+    },
+    {
+      "elapsed_seconds": 25.077577125048265,
+      "failures": [],
+      "m": 92,
+      "minimum_signed_surplus": {
+        "C_k": "278",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "184",
+        "N": 184,
+        "U_k": "277",
+        "U_kp1": "38042",
+        "counts": [
+          92,
+          0,
+          0
+        ],
+        "h": 185,
+        "k": 1,
+        "margin": "14357896",
+        "r": 2
+      },
+      "profiles": 4371,
+      "represented_tip_rank_tests": 1780729
+    },
+    {
+      "elapsed_seconds": 26.080625624977984,
+      "failures": [],
+      "m": 93,
+      "minimum_signed_surplus": {
+        "C_k": "281",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "186",
+        "N": 186,
+        "U_k": "280",
+        "U_kp1": "38874",
+        "counts": [
+          93,
+          0,
+          0
+        ],
+        "h": 187,
+        "k": 1,
+        "margin": "14827370",
+        "r": 2
+      },
+      "profiles": 4465,
+      "represented_tip_rank_tests": 1839110
+    },
+    {
+      "elapsed_seconds": 27.19038866693154,
+      "failures": [],
+      "m": 94,
+      "minimum_signed_surplus": {
+        "C_k": "284",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "188",
+        "N": 188,
+        "U_k": "283",
+        "U_kp1": "39715",
+        "counts": [
+          94,
+          0,
+          0
+        ],
+        "h": 189,
+        "k": 1,
+        "margin": "15306968",
+        "r": 2
+      },
+      "profiles": 4560,
+      "represented_tip_rank_tests": 1898753
+    },
+    {
+      "elapsed_seconds": 28.403557167039253,
+      "failures": [],
+      "m": 95,
+      "minimum_signed_surplus": {
+        "C_k": "287",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "190",
+        "N": 190,
+        "U_k": "286",
+        "U_kp1": "40565",
+        "counts": [
+          95,
+          0,
+          0
+        ],
+        "h": 191,
+        "k": 1,
+        "margin": "15796798",
+        "r": 2
+      },
+      "profiles": 4656,
+      "represented_tip_rank_tests": 1959672
+    },
+    {
+      "elapsed_seconds": 29.60529920901172,
+      "failures": [],
+      "m": 96,
+      "minimum_signed_surplus": {
+        "C_k": "290",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "192",
+        "N": 192,
+        "U_k": "289",
+        "U_kp1": "41424",
+        "counts": [
+          96,
+          0,
+          0
+        ],
+        "h": 193,
+        "k": 1,
+        "margin": "16296968",
+        "r": 2
+      },
+      "profiles": 4753,
+      "represented_tip_rank_tests": 2021880
+    },
+    {
+      "elapsed_seconds": 30.815951957949437,
+      "failures": [],
+      "m": 97,
+      "minimum_signed_surplus": {
+        "C_k": "293",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "194",
+        "N": 194,
+        "U_k": "292",
+        "U_kp1": "42292",
+        "counts": [
+          97,
+          0,
+          0
+        ],
+        "h": 195,
+        "k": 1,
+        "margin": "16807586",
+        "r": 2
+      },
+      "profiles": 4851,
+      "represented_tip_rank_tests": 2085391
+    },
+    {
+      "elapsed_seconds": 31.91907616693061,
+      "failures": [],
+      "m": 98,
+      "minimum_signed_surplus": {
+        "C_k": "296",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "196",
+        "N": 196,
+        "U_k": "295",
+        "U_kp1": "43169",
+        "counts": [
+          98,
+          0,
+          0
+        ],
+        "h": 197,
+        "k": 1,
+        "margin": "17328760",
+        "r": 2
+      },
+      "profiles": 4950,
+      "represented_tip_rank_tests": 2150218
+    },
+    {
+      "elapsed_seconds": 33.249910666025244,
+      "failures": [],
+      "m": 99,
+      "minimum_signed_surplus": {
+        "C_k": "299",
+        "C_km1": "1",
+        "E_k": "1",
+        "E_kp1": "198",
+        "N": 198,
+        "U_k": "298",
+        "U_kp1": "44055",
+        "counts": [
+          99,
+          0,
+          0
+        ],
+        "h": 199,
+        "k": 1,
+        "margin": "17860598",
+        "r": 2
+      },
+      "profiles": 5050,
+      "represented_tip_rank_tests": 2216375
+    }
+  ],
+  "scope": {
+    "all_count_profiles": true,
+    "all_guarded_ranks": true,
+    "all_represented_arities": true,
+    "max_m": 99,
+    "min_m": 1,
+    "no_descent_or_eligibility_filter": true
+  },
+  "status": "complete",
+  "totals": {
+    "profiles": 171699,
+    "represented_tip_rank_tests": 56245000
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "root_mixture": {
+    "profile": {
+      "a2": 10,
+      "a3": 0,
+      "a4": 0
+    },
+    "m": 10,
+    "N": 20,
+    "n": 33,
+    "alpha": 22,
+    "k": 4,
+    "simple_guard_1_le_k_2k_le_N_plus_2": true,
+    "actual_first_strict_descent_x": 11,
+    "is_actual_eligible_p": false,
+    "d_k": 1330,
+    "d_k1": 5985,
+    "C_k": 27315,
+    "C_k1": 125586,
+    "signed_minor_d_k1_C_k_minus_d_k_C_k1": -3549105,
+    "interpretation": "d/C and d/(C+d) decrease across this coefficient step; this refutes all-rank mixture monotonicity only, not a selected/deletion claim"
+  },
+  "different_denominators_sum": {
+    "C1": [
+      1,
+      100
+    ],
+    "A1": [
+      1,
+      90
+    ],
+    "C2": [
+      100,
+      1
+    ],
+    "A2": [
+      80,
+      0
+    ],
+    "individual_nondecreasing_ratio_minors": [
+      -10,
+      -80
+    ],
+    "sum_denominator": [
+      101,
+      101
+    ],
+    "sum_numerator": [
+      81,
+      90
+    ],
+    "signed_sum_minor": 909,
+    "interpretation": "both input minors are nonpositive, while the sum minor is positive"
+  },
+  "same_denominator_weighted_sum": "valid by linearity of the cross-multiplied minor for fixed nonnegative weights"
+}

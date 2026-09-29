@@ -1,0 +1,29 @@
+{
+  "worker_id": "C6-F1",
+  "cycle": 6,
+  "stage": "search",
+  "orientation": "F",
+  "claims": [
+    {
+      "claim_id": "E993-PATH-STAR-ARITY-2-4-ULC-EXACT-RATIO-TIP-SURPLUS",
+      "statement": "For every arity-2/3/4 ordinary path-star with m >= 100, every represented tip branch i, and every integer k with 1 <= k and 2k <= N+2, (h+1) U_i[k] C[k] + (k+1)(h-k+1)(E[k]C[k]-E[k+1]C[k-1]) > 0, with zero-extended coefficients.",
+      "scope": "Proposed retained subcase only: m >= 100, the full registered guarded k band, and represented tip branches. No actual first-descent or selector premise. This does not cover m <= 99, the endpoint, selected payment, or arbitrary trees.",
+      "status": "proposed_retained_narrowed",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-F1/REPORT.md",
+        "cycles/cycle-6/C6-F1/independent_tail_arithmetic.py",
+        "cycles/cycle-6/C6-F1/producer_tail_check_copy.py",
+        "cycles/cycle-6/C6-F1/verify_common_manifest.py"
+      ],
+      "reason": "Adversarial review found no hidden premise in the m >= 100 analytic proof. The low-rank support boundary, high-band arity ordering and parity midpoint constants, positive size-one Jensen block, strict Taylor bound, C ratio-floor sign, positive denominator clearing, and final deficit margin all check. Independent exact arithmetic replay confirms the rational constants. The composed family-specific tail remains informal; the formal Jensen theorem and C2/C3 lemmas are ingredients, not a formal award for this claim."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-F1/REPORT.md",
+  "limitations": [
+    "The universal analytic composition has not been Lean-verified; only cited component theorems have formal verification.",
+    "The all-m registered surplus remains unresolved for m <= 99.",
+    "This claim does not by itself establish endpoint comparisons, selected payment, the primary predicate, or any arbitrary-tree conclusion.",
+    "Finite exact scripts validate constants and bounded checks only; they are not the universal proof."
+  ],
+  "status_authority": "proposed_worker_only"
+}

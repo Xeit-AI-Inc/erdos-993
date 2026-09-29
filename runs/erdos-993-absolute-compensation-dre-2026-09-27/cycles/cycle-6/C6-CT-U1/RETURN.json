@@ -1,0 +1,29 @@
+{
+  "worker_id": "C6-CT-U1",
+  "cycle": 6,
+  "stage": "critique",
+  "orientation": "T",
+  "covered_claim_ids": [
+    "C6-U1-ARITY2-MIDPOINT-E-MINOR"
+  ],
+  "claims": [
+    {
+      "claim_id": "C6-U1-ARITY2-MIDPOINT-E-MINOR",
+      "statement": "For every homogeneous arity-2 path-star profile with m>=1, N=2m, Q=(1+3z+z^2)^m, C=(1+2z)Q, E=z(1+z)^(2m), the shifted E minor M_k(E)=E[k]C[k]-E[k+1]C[k-1] is strictly positive at k=m+1, where 2k=N+2. This is a component/rank lemma only.",
+      "scope": "Homogeneous arity-2 profiles only, at k=m+1 in the guard 2k<=N+2. No actual first-descent or deletion-selector premise; no conclusion for other guarded ranks, mixed arities, selected original-tag aggregation, MASS, or the exact-ratio payment.",
+      "status": "proposed_retained",
+      "evidence_paths": [
+        "cycles/cycle-6/C6-CT-U1/REPORT.md",
+        "cycles/cycle-6/C6-CT-U1/midpoint_check.py"
+      ],
+      "reason": "Symmetry and positive-interval log-concavity give Q[m]>=Q[m-1]>0. Exact coefficient substitution gives M_(m+1)(E)/binom(2m,m)=((m+2)Q[m]-(m-1)Q[m-1])/(m+1)>0; the independent integer replay checks the identity for m=1..12."
+    }
+  ],
+  "report_path": "cycles/cycle-6/C6-CT-U1/REPORT.md",
+  "limitations": [
+    "The claim ID was not found in the targeted registered-claim identity snapshot; this return assesses the packet's proposed claim only.",
+    "The exact script replay is bounded to m=1..12; the all-m conclusion follows from the written symmetric log-concavity proof.",
+    "No primary-payment, MASS, mixed-profile, other-rank, formal-verification, or arbitrary-tree conclusion is established."
+  ],
+  "status_authority": "proposed_worker_only"
+}

@@ -1,0 +1,38 @@
+{
+  "hash_audit": {
+    "common_member_count": 237,
+    "common_all_match": true,
+    "packet_source_count": 3,
+    "packet_all_match": true
+  },
+  "profile_old": {
+    "r2": 150,
+    "r3": 0,
+    "r4": 0,
+    "N": 300
+  },
+  "appended_r": 2,
+  "profile_new_N": 302,
+  "rank_k": 4,
+  "guard_1_le_k": true,
+  "guard_2k_le_Nnew_plus2": true,
+  "correction_coefficient_by_closed_form": {
+    "1": "2",
+    "2": "304",
+    "4": "-4364800",
+    "152": "-27380316910401320254097164210231588654534060832786672867265886524710947664126083672442287104"
+  },
+  "correction_k_formula": "2*binom(302,3)-300*binom(300,2)",
+  "correction_k_parts": [
+    "9090200",
+    "13455000"
+  ],
+  "correction_k": "-4364800",
+  "polynomial_recurrence_exact": true,
+  "full_weighted_minor_at_guard_and_interior": {
+    "1": "31466588",
+    "4": "185586251584170562390",
+    "152": "1139138224461256564683574466197511498740299890746960348128063361019852231220964462215128057935137429100485657947248955907087033906045371182144809974378572903899635692926889011374753832476843860180227564707450724"
+  },
+  "classification": "coefficientwise-correction positivity fails; full guarded minor remains positive"
+}
