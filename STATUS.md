@@ -1,6 +1,14 @@
 # Research Status
 
-## Current checkpoint — six-cycle experiment complete, 29 September 2026
+## Current status - apparent external solution, 30 September 2026
+
+Erdős #993 seems solved by an independently reproduced external all-forest computer-assisted proof, under its disclosed native-computation trust. This repository's own stronger marked/aggregate/transport claims remain at their exact recorded scopes; we have not completed a competing proof or awarded the external headline our ordinary-three-axiom grade. Human/community acceptance is not established by our audit.
+
+Sources: [announcement](https://github.com/google-deepmind/formal-conjectures/issues/1058#issuecomment-5896420564), [frozen proof](https://github.com/selfreferencing/erdos993-lean/tree/c524aa28565dbde8b9b685c4c45511a6b434f3b5), [statement bridge](https://github.com/selfreferencing/erdos993-lean/blob/c524aa28565dbde8b9b685c4c45511a6b434f3b5/docs/FORMAL_CONJECTURES_BRIDGE.md).
+
+See the [detailed solution/continuation guide](docs/external-solution-and-continuation-2026-09-30.md). Historical OPEN summaries below concern our own research record, not a denial of the external result. This documentation update does not start another experiment.
+
+## Historical checkpoint - six-cycle experiment complete, 29 September 2026
 
 The six-cycle absolute-compensation experiment is complete. For ordinary path-stars whose branch arities are 2, 3, or 4, three existing claims are now VERIFIED at computer-assisted/nonformal grade: the exact-ratio tip surplus, the guarded comparison for every original leaf deletion, and the same-C original-multiplicity weighted-tip-deck comparison. Their scope is every nonempty mixed/repeated profile and every natural k>=1 with 2k<=N+2, without an actual-descent or selector filter.
 

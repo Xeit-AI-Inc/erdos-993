@@ -1,6 +1,12 @@
 # Problem And Status
 
-## Current checkpoint — six-cycle experiment complete, 29 September 2026
+## Current status - apparent external solution, 30 September 2026
+
+The problem seems solved externally by a complete all-forest computer-assisted proof. Our reproduction passed for the pinned full Lean target and statement bridge; the large branch includes `Lean.ofReduceBool` and `Lean.trustCompiler`. This is not a new ordinary-three-axiom award for our programme, nor a claim of confirmed community acceptance. Our own stronger auxiliary route remains incomplete.
+
+Primary links: [announcement](https://github.com/google-deepmind/formal-conjectures/issues/1058#issuecomment-5896420564), [frozen proof](https://github.com/selfreferencing/erdos993-lean/tree/c524aa28565dbde8b9b685c4c45511a6b434f3b5), [bridge](https://github.com/selfreferencing/erdos993-lean/blob/c524aa28565dbde8b9b685c4c45511a6b434f3b5/docs/FORMAL_CONJECTURES_BRIDGE.md). Read the [detailed solution/continuation guide](external-solution-and-continuation-2026-09-30.md) before further work.
+
+## Historical checkpoint - six-cycle experiment complete, 29 September 2026
 
 The six-cycle absolute-compensation experiment is complete. For ordinary path-stars whose branch arities are 2, 3, or 4, three existing claims are now VERIFIED at computer-assisted/nonformal grade: the exact-ratio tip surplus, the guarded comparison for every original leaf deletion, and the same-C original-multiplicity weighted-tip-deck comparison. Their scope is every nonempty mixed/repeated profile and every natural k>=1 with 2k<=N+2, without an actual-descent or selector filter.
 

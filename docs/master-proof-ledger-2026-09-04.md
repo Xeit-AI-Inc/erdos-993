@@ -1,5 +1,13 @@
 # Erdős #993 — Master Proof Ledger
 
+## External solution status - 2026-09-30
+
+**The problem seems solved by others:** an independently reproduced, pinned all-forest computer-assisted proof covers TREE and FOREST. The large branch discloses `Lean.ofReduceBool` and `Lean.trustCompiler`; independent community acceptance and exhaustive human review are not established by our audit. This is an external solution assessment, not a new ordinary-three-axiom award or a change to our claim identities. Our unfinished marked/aggregate/transport route and its stronger auxiliaries retain their exact recorded statuses.
+
+Sources: [announcement](https://github.com/google-deepmind/formal-conjectures/issues/1058#issuecomment-5896420564), [frozen proof repository](https://github.com/selfreferencing/erdos993-lean/tree/c524aa28565dbde8b9b685c4c45511a6b434f3b5), [statement bridge](https://github.com/selfreferencing/erdos993-lean/blob/c524aa28565dbde8b9b685c4c45511a6b434f3b5/docs/FORMAL_CONJECTURES_BRIDGE.md).
+
+Read the [detailed solution/continuation guide](https://github.com/Xeit-AI-Inc/erdos-993/blob/main/docs/external-solution-and-continuation-2026-09-30.md) before allocating further research. It explains the alternative proof, our contributions, exact non-implications, and how to use their invariants to investigate our remaining joins. Historical OPEN headlines below describe our programme at their dates; they do not override this external-status assessment. No new proof cycle is launched by this update.
+
 **Updated 2026-09-29 — r31 (a parameter-uniform switch-using Hall certificate on CB(8,m) at the top sector-deficient rank, `erdos-993-cb-uniform-switch-dre-2026-09-27`; chartered from the Code-successor prompt) closed at Cycle 4 by decisive event (a):** Tier 1 is formally verified — for every m ≥ 107 with m ≡ 2 (mod 3), p* = (16m+4)/3 is eligible on CB(8,m) and the literal active-tag two-for-one network at p* satisfies (HALL) (award C4-LA1, Lean; one rank per tree, this family only); eight governed awards; six E993-R31 keys; full (HALL), the aggregates and #993 stay OPEN. See the r31 section at the end of this ledger.
 
 ## Terminal absolute-compensation experiment — six cycles complete,2026-09-29

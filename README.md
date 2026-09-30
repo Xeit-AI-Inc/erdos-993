@@ -1,6 +1,14 @@
 # Erdős Problem #993
 
-## Current checkpoint — six-cycle experiment complete, 29 September 2026
+## Current status - apparent external solution, 30 September 2026
+
+**Erdős #993 seems solved by others through a complete computer-assisted proof.** We reproduced the full pinned all-forest Lean theorem and its tree-statement bridge. The large-forest branch relies on disclosed native-computation trust (`Lean.ofReduceBool`, `Lean.trustCompiler`); independent community acceptance and a complete human re-review are not claimed. Our own marked-leaf/aggregate/transport route remains unfinished and is not presented as a competing complete proof.
+
+Sources: [public announcement](https://github.com/google-deepmind/formal-conjectures/issues/1058#issuecomment-5896420564), [frozen proof repository](https://github.com/selfreferencing/erdos993-lean/tree/c524aa28565dbde8b9b685c4c45511a6b434f3b5), and [statement-bridge report](https://github.com/selfreferencing/erdos993-lean/blob/c524aa28565dbde8b9b685c4c45511a6b434f3b5/docs/FORMAL_CONJECTURES_BRIDGE.md).
+
+Read the [solution and continuation guide](docs/external-solution-and-continuation-2026-09-30.md) for the proof architecture, reproduction scope, our different contributions, and ways to pursue our remaining gaps with their work as guidance. Existing stronger auxiliary claims keep their recorded statuses; no external proof is silently promoted to our ordinary-three-axiom award tier. Historical checkpoints below describe our programme, not the current absence of a solution elsewhere.
+
+## Historical checkpoint - six-cycle experiment complete, 29 September 2026
 
 The six-cycle absolute-compensation experiment is complete. For ordinary path-stars whose branch arities are 2, 3, or 4, three existing claims are now VERIFIED at computer-assisted/nonformal grade: the exact-ratio tip surplus, the guarded comparison for every original leaf deletion, and the same-C original-multiplicity weighted-tip-deck comparison. Their scope is every nonempty mixed/repeated profile and every natural k>=1 with 2k<=N+2, without an actual-descent or selector filter.
 
