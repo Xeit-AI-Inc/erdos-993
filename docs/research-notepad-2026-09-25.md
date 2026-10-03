@@ -1,5 +1,23 @@
 # Erdős993 research notepad — six-cycle terminal assessment,29 September2026
 
+## Stable-release unification cycle: terminal, documented 3 October 2026
+
+The [1 October trial](../experiments/stable-release-unification-cycle-2026-10-01.md)
+completed one real 18/36/3/1 cycle and Stage 7. Its scalar weighted-adjacent
+identity has a governed Lean award; the four `E993-UNIFY-*` targets remain OPEN.
+The cycle supplied no size-independent forest sign certificate or automatic
+transition certification. This update changes no registry status or prior grade.
+
+For a future authorized sibling, first restore correctly centered diagnostics:
+one producer's 105 checks used `x^2 Z'-kZ`, not `xZ'-kZ`. Carry the joint `(Y,M)`
+law, both root conditions, occupation-weighted selector ties and conditioning
+loss, low-free-count states and exterior kernel terms. Unmarked-only state
+fails a concrete rooted `P4` join; one chosen `P6` maximizer fails conditional
+inheritance, but not every tie-break. These narrow the interface requirements,
+not the possibility of a unified proof. Preserve diverse faithful state and
+bypass routes; do not assume an invariant exists merely because exact counting
+and local algebra are available. No new cycle is authorized by this note.
+
 ## External solution and revised continuation frame - 2026-09-30
 
 **Erdős #993 seems solved by an external all-forest computer-assisted proof**, independently reproduced at its pinned commit with its native-computation trust disclosed. Our route remains incomplete. Future work may continue our marked-leaf/aggregate/transport approach, using the external conditional-binomial representation, rooted variance reserve and exact coverage architecture to challenge or improve our stuck interfaces. The objective should be an alternative proof, stronger combinatorial result, or assurance task, not an assumption that no competing solution exists.

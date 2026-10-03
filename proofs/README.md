@@ -9,6 +9,11 @@ citing it.
 
 Current packages:
 
+- [`stable-cycle-weighted-adjacent`](lean/stable-cycle-weighted-adjacent/README.md):
+  the governed exact scalar weighted-adjacent identity from the completed
+  1 October unification cycle. Equality only; no forest positivity or unification
+  award. Published 3 October 2026 with original source/receipt hashes.
+
 - [`gap-bridge`](lean/gap-bridge/README.md): the large-order rank-four tree
   theorem and dependencies.
 - [`rooted-residual-profile`](lean/rooted-residual-profile/README.md): two

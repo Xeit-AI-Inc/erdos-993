@@ -1,5 +1,10 @@
 # Public Experiments
 
+Latest publication: [one stable-release unification cycle, 1 October 2026](stable-release-unification-cycle-2026-10-01.md)
+(documented 3 October). All eight stages completed; one exact scalar Lean
+auxiliary, four OPEN unification targets. This curated summary does not publish
+raw worker returns or reopen its terminal lineage.
+
 Current assignments and retired recommendations are tracked in the [25 September research notepad](../docs/research-notepad-2026-09-25.md). Code's r28 has completed; the completed order-24 census and r27 review are separate follow-ups, not additional DRE cycles.
 
 This directory is reserved for bounded, replayable experiments that are safe

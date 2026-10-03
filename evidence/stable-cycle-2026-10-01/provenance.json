@@ -1,0 +1,100 @@
+{
+  "accepted_stages": [
+    {
+      "accepted_attempt": "v2",
+      "manifest": "receipts/stage-0-v2/MANIFEST.json",
+      "sha256": "d8e82aa83e93c67d321fb9f1e29c199621bc3c21cbc38cd70012656785a2cf21",
+      "stage": 0
+    },
+    {
+      "accepted_attempt": "v1",
+      "manifest": "receipts/stage-1-v1/MANIFEST.json",
+      "sha256": "db17290e59431cd71424edde6b05b65e4641d2f52ebc747e27ad2a1f5501c970",
+      "stage": 1
+    },
+    {
+      "accepted_attempt": "v1",
+      "manifest": "receipts/stage-2-v1/MANIFEST.json",
+      "sha256": "21b7fb5aaab4d2180ad48fbd184d894e4215c4fa06df324391f69aa2bddfcc3e",
+      "stage": 2
+    },
+    {
+      "accepted_attempt": "v2",
+      "manifest": "receipts/stage-3-v2/MANIFEST.json",
+      "sha256": "bfbe5e6e7e594acd9acac4c20e100e0d049aa892fc427b526880004fb223c975",
+      "stage": 3
+    },
+    {
+      "accepted_attempt": "v1",
+      "manifest": "receipts/stage-4-v1/MANIFEST.json",
+      "sha256": "893baad7db36c712a33b045d69a87af5478b8c7f183a8f201d5523d6e898888f",
+      "stage": 4
+    },
+    {
+      "accepted_attempt": "v2",
+      "manifest": "receipts/stage-5-v2/MANIFEST.json",
+      "sha256": "5b47bd2b09872fc9bb2324d059bbae75fab51a587395c8ad5f3414c3259585a2",
+      "stage": 5
+    },
+    {
+      "accepted_attempt": "v2",
+      "manifest": "receipts/stage-6-v2/MANIFEST.json",
+      "sha256": "7883c36c0b7c84dfc85c33b6a74cbb54f35f6f95721e9e112ce705a309650c3b",
+      "stage": 6
+    },
+    {
+      "accepted_attempt": "v1",
+      "manifest": "receipts/stage-7-v1/MANIFEST.json",
+      "sha256": "a371f0a156717af7e43a29e1d74ded2cb27ee58ea175891073b2dddaf16d2c05",
+      "stage": 7
+    }
+  ],
+  "closeout_manifest_sha256": "d3f1b634ce8f24a7db075149b36015b39c30a9324fb20d25ea1ba01c1495f95b",
+  "closeout_members_checked": 483,
+  "completed_cycles": 1,
+  "native_workflow_report_sha256": "4a6bd762a476678648c2c53cd8d09c5b2b914ac63c3dd816e890f4cc8795d0ee",
+  "obligations": [
+    {
+      "claim_id": "E993-UNIFY-MEANCENTERED-WEIGHTED-KERNEL-ALL-INTERIOR",
+      "scope": "Optional sufficient candidate, stronger than ordinary unimodality; all interior ranks. Not implied by unimodality. A refutation does not refute the unification objective or Erdos 993.",
+      "statement": "For every finite forest F and every integer 0 < k < alpha(F), at the unique activity lambda > 0 with E_lambda K = k, D_lambda(k) = (lambda + 1/lambda) P_lambda(K=k) - P_lambda(K=k-1) - P_lambda(K=k+1) is strictly positive.",
+      "status": "OPEN"
+    },
+    {
+      "claim_id": "E993-UNIFY-MEANCENTERED-WEIGHTED-KERNEL-MIDDLE-WINDOW",
+      "scope": "Candidate sufficient lemma at the public analytic rank window, with no vertex floor. Existing public n>=61 branch is guidance, not a new ordinary-axiom award. Distinct from the all-interior claim.",
+      "statement": "For every finite forest F on n vertices, every integer ceil(n/4) < k < h_beta(F), at activity lambda > 0 with E_lambda K = k, D_lambda(k) > 0; beta(x)=(1+2x)^nu(1+x)^(n-2nu), nu the maximum matching size, and h_beta the first mode.",
+      "status": "OPEN"
+    },
+    {
+      "claim_id": "E993-UNIFY-ROOTED-CONDITIONAL-STATE-PRESERVATION",
+      "scope": "Open construction/bridge obligation, not a theorem with a yet-unspecified invariant. State must preserve the occupation-weight maximizing selector interface or supply a proved replacement. No arbitrary-unimodal convolution assumption.",
+      "statement": "Determine an explicitly specified quantitative rooted conditional-distribution state whose base and arbitrary-child joining rules, together with an exact noncircular transfer, certify the middle-window weighted no-valley expression without a vertex-count threshold.",
+      "status": "OPEN"
+    },
+    {
+      "claim_id": "E993-UNIFY-EXACT-SMALL-SIZE-CORRECTION",
+      "scope": "Open method-discovery obligation; not an asserted universal inequality or existence theorem. Public O1-O6 hypotheses and trusted computation remain separately scoped.",
+      "statement": "Determine whether an exact correction omitted by the public conditional-binomial estimates can be retained and proved composition-stable so that it covers the deficit below the current mean/vertex floor.",
+      "status": "OPEN"
+    }
+  ],
+  "projection_note": "Curated publication metadata; originals retained in the sealed research run. No raw model returns, host-private paths or shared dependency copies.",
+  "proof_package": "proofs/lean/stable-cycle-weighted-adjacent",
+  "proof_package_summary_sha256": "8d6d8e8c6a778cd553caf853501f0fa622e19ec2ae5164150baece4ba735bd45",
+  "publication_date": "2026-10-03",
+  "publication_readback_drift": [],
+  "research_run": "erdos-993-unified-binomial-stable-release-trial-2026-10-01",
+  "run_date": "2026-10-01",
+  "schema": "e993.public-cycle-provenance.v1",
+  "scope_boundary": "One semantic cycle and one exact auxiliary award; four target claims OPEN; no new mathematical cycle, M-13 or installation.",
+  "source_records": {
+    "FINAL-RECONCILIATION.md": "ef02df933c2b3d4c543683acf2a93c8d5d8c1d2fc52afe587cbebb7788676075",
+    "README.md": "9b98bea3b99f203083e960f0780b5fdcc463726670528adfb5907a6a02073b49",
+    "SYSTEM-EVALUATION.md": "af43f210061406434e632bc83fb00ce653f14b1ae0b0986cec624af7564df19e",
+    "TERMINAL-CHECKPOINT.md": "1260e80363a0a766c22b997d28174a532925a6f0cce6651ab40bf8ee35660ff8",
+    "cycles/cycle-1/stage-6/REPORT.md": "4be1bc0b0894bdff9fbb4a963f55dceeb50431d6fe3c368b6df762bea03964d4"
+  },
+  "source_seal": "bf2603540b7493570a73ff458b87d808698e86539d876ccc62c1594cfc9f8d68",
+  "terminal_ledger_sha256": "24ffb252b902af3c65671194708ba5b40cded87070fe2dab2936b277afd0c209"
+}

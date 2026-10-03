@@ -1,0 +1,92 @@
+{
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "contract_sha256": "4e6bfa7b749834811870c897275baaf0f6ed2c1f8b6d0246cc866118ee27fc28",
+  "kernel_checks": {
+    "axiom_policy": {
+      "details": "all reported axioms are explicitly allowed",
+      "status": "passed"
+    },
+    "axiom_probe": {
+      "details": "#print axioms executed cleanly",
+      "status": "passed"
+    },
+    "execution_sandbox": {
+      "details": "all Lean/Lake subprocesses use a no-network, run-local-write sandbox",
+      "status": "passed"
+    },
+    "incomplete_proof_scan": {
+      "details": "no executable sorry or admit tokens found",
+      "status": "passed"
+    },
+    "path_containment": {
+      "details": "project and source resolve inside the authorized run",
+      "status": "passed"
+    },
+    "pinned_project": {
+      "details": "Lean toolchain and local Mathlib Git revision are pinned",
+      "status": "passed"
+    },
+    "project_build": {
+      "details": "lake build passed",
+      "status": "passed"
+    },
+    "single_file": {
+      "details": "explicit single-file Lean check passed",
+      "status": "passed"
+    },
+    "source_immutable": {
+      "details": "source hash is unchanged",
+      "status": "passed"
+    },
+    "toolchain": {
+      "details": "Lean and Lake are executable and the Lean version matches the project pin",
+      "status": "passed"
+    },
+    "unsafe_execution_scan": {
+      "details": "no disallowed compile-time or host-effect surfaces found",
+      "status": "passed"
+    }
+  },
+  "main_sha256": "f57f3407e12084861bd740e7bce3b893e547690cad848c23e46e91144e4f0241",
+  "mathlib_revision": "905b95818eb32af7874a58b427f50c1711a5e96c",
+  "nonblocking_lint_warning": "unnecessarySeqFocus on the existing field_simp/ring proof",
+  "original_kernel_command_returncodes": [
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "projection_note": "Public projection of sealed original receipts; not a new kernel/fidelity receipt. Private paths and raw model returns omitted.",
+  "receipt_sha256": {
+    "dependency-authority": "09ad085d4d1a0336f96ced6502b14142ce34544b27d98d45ee0d320a1081458b",
+    "fidelity-audit": "be705a89d25c56421a0ee084aee34357b6f9591a70afea7b9bf7baca3e3cd72e",
+    "formalization": "ea074288d7701e189493bf2ed703317d0881be9e78d80be31eae34920dd2c3a4",
+    "informal-audit": "f5386105da3b2d474e6b6f892957c60533052c20b403b57c8b342fc7294c15e5",
+    "kernel-verification": "0b2c7bff1650294a1129c0f6d0a4b5a176324646639978bf5b2a211b37540f3a",
+    "reviewer-assignment": "4c3e560d480b6a2dffd4ce5037797af244e750c7916e4534c1ce560b88592770",
+    "theorem-contract": "c35920dcaebf5813a6f5b0b0d79327b56e77dc31169ee630eba811b2a430d073"
+  },
+  "research_run": "erdos-993-unified-binomial-stable-release-trial-2026-10-01",
+  "run": "lean-2026-10-01",
+  "schema": "e993.public-formal-receipt-summary.v1",
+  "scope_boundary": "Scalar equality only at k=n+1, including n=0; no positivity, forest, centering, composition, selector or unimodality award.",
+  "source": "LeanProof/Main.lean",
+  "source_files": {
+    "LeanProof.lean": "f4dfdef8320a735eab53d24f4b47d3b60bcb474ffd2c84c77f24ae2fc75fcf31",
+    "LeanProof/Main.lean": "f57f3407e12084861bd740e7bce3b893e547690cad848c23e46e91144e4f0241",
+    "lake-manifest.json": "52a4d73cb6d885abcc2669f7eb652c81ce369a8a93ce211894a6e6b9f7d46c7c",
+    "lakefile.toml": "45d0ca58145784d5f29322ff21a1335e350c38e72afe8d5396d9c9910b94ff49",
+    "lean-toolchain": "2bdc48adfa58d0017e538a0ad117c5d73d35deec879978f909406a80c8037273"
+  },
+  "statement_sha256": "11a95cf00e7ed718b71bf16c2d83fe17e7ef0fe578b827d0a4f70fdcda103456",
+  "status": "formally_verified",
+  "theorem": "StableTrial.weighted_adjacent_identity",
+  "toolchain": "leanprover/lean4:v4.32.2",
+  "workflow_failures": [],
+  "workflow_report_sha256": "4a6bd762a476678648c2c53cd8d09c5b2b914ac63c3dd816e890f4cc8795d0ee"
+}

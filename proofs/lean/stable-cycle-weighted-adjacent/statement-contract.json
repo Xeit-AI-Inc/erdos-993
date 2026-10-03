@@ -1,0 +1,15 @@
+{
+  "contract_id": "stable-trial-weighted-conversion-v1",
+  "declaration_name": "StableTrial.weighted_adjacent_identity",
+  "expected_statement": "theorem weighted_adjacent_identity\n    (a : Nat -> Real) (lam Z : Real)\n    (hLam : lam \u2260 0) (hZ : Z \u2260 0) (n : Nat) :\n    (lam + lam\u207b\u00b9) * (a (n + 1) * lam ^ (n + 1) / Z)\n      - (a n * lam ^ n / Z)\n      - (a (n + 2) * lam ^ (n + 2) / Z) =\n    (lam ^ n / Z) *\n      ((a (n + 1) - a n) + lam ^ 2 * (a (n + 1) - a (n + 2)))",
+  "expected_statement_sha256": "11a95cf00e7ed718b71bf16c2d83fe17e7ef0fe578b827d0a4f70fdcda103456",
+  "informal_statement": "For every sequence a:Nat->Real, all nonzero real lam and Z, and every n:Nat, (lam + lam^(-1))*(a(n+1)*lam^(n+1)/Z) - a(n)*lam^n/Z - a(n+2)*lam^(n+2)/Z = (lam^n/Z)*((a(n+1)-a(n)) + lam^2*(a(n+1)-a(n+2))). This is a scalar equality only; it asserts no forest positivity, mean-centering, recursive preservation, or unimodality.",
+  "original_contract_sha256": "4e6bfa7b749834811870c897275baaf0f6ed2c1f8b6d0246cc866118ee27fc28",
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "projection_note": "Exact statement projection, not the complete native theorem contract or a replacement award.",
+  "schema": "e993.public-statement-projection.v1"
+}

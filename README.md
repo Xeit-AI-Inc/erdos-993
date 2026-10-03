@@ -1,5 +1,19 @@
 # Erdős Problem #993
 
+## 3 October 2026: one complete conditional-binomial unification cycle
+
+The [stable-release trial](experiments/stable-release-unification-cycle-2026-10-01.md)
+completed one real DRE cycle, Stages 0–7, at 18 research routes, 36 critics,
+three adjudicators and one neutral synthesis, followed by the governed Lean
+workflow. Its exact weighted-adjacent scalar identity is formally verified;
+the [byte-identical Lean package](proofs/lean/stable-cycle-weighted-adjacent/README.md)
+is now published with [provenance and verification](evidence/verification-2026-10-03-stable-cycle.md).
+All four size-independent unification targets remain OPEN. The cycle corrected
+wrong-center diagnostics and exposed selector-inheritance and unmarked-state
+limitations; none is a new proof of the conjecture. Installed controller v0.10
+was unchanged. This supports conducting experiments on that operating path,
+not a claim of frictionless operation, automatic transitions or M-13 certification.
+
 ## Current status - apparent external solution, 30 September 2026
 
 **Erdős #993 seems solved by others through a complete computer-assisted proof.** We reproduced the full pinned all-forest Lean theorem and its tree-statement bridge. The large-forest branch relies on disclosed native-computation trust (`Lean.ofReduceBool`, `Lean.trustCompiler`); independent community acceptance and a complete human re-review are not claimed. Our own marked-leaf/aggregate/transport route remains unfinished and is not presented as a competing complete proof.

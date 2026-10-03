@@ -1,5 +1,21 @@
 # Current Results
 
+## Latest scoped update: one complete unification cycle, 3 October 2026
+
+The 1 October [stable-release cycle](../experiments/stable-release-unification-cycle-2026-10-01.md)
+completed all DRE stages and formally verified the exact scalar equality
+`StableTrial.weighted_adjacent_identity`. This is elementary algebra, not a
+forest positivity or unification theorem. Its [source and exact scope](../proofs/lean/stable-cycle-weighted-adjacent/README.md)
+and [original receipt hashes](../evidence/verification-2026-10-03-stable-cycle.md)
+are published. Full-configuration conditional-binomial counting, marked joins
+and plateau-safe transfer remain informal in this cycle. Wrong-center
+computational checks were rejected as support for centered positivity.
+
+All four `E993-UNIFY-*` targets remain OPEN; no registry identity or existing
+status changed. The original problem's apparent external solution is described
+in the [continuation guide](external-solution-and-continuation-2026-09-30.md).
+Historical programme headlines below keep their dated internal scopes.
+
 ## Current checkpoint — six-cycle experiment complete, 29 September 2026
 
 The six-cycle absolute-compensation experiment is complete. For ordinary path-stars whose branch arities are 2, 3, or 4, three existing claims are now VERIFIED at computer-assisted/nonformal grade: the exact-ratio tip surplus, the guarded comparison for every original leaf deletion, and the same-C original-multiplicity weighted-tip-deck comparison. Their scope is every nonempty mixed/repeated profile and every natural k>=1 with 2k<=N+2, without an actual-descent or selector filter.
