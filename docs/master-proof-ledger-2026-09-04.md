@@ -1,5 +1,56 @@
 # Erdős #993 — Master Proof Ledger
 
+## External proof gap reconciliation — 2026-10-03
+
+Read [the source-pinned gap-by-gap amendment](proof-gap-reconciliation-2026-10-03.md).
+It credits Tong Zhang and Wei Li's paper/representation and Kevin Vallier's
+formalization and replacement large-order project. The complete public
+argument supplies all-forest unimodality at its disclosed computation-trust
+tier; it does not prove our stronger common-leaf, selected aggregate or
+all-subset Hall targets. Those gaps are bypassed, not silently closed.
+
+Current public source: `dd1580fcbb533a5d64e3d97beb2e5ee1653ba883`. All 623
+local headline-closure modules are byte-identical to the previously reproduced
+baseline `c524aa28565dbde8b9b685c4c45511a6b434f3b5`. The statement bridge
+remains on the separate `formal-conjectures-bridge` branch; its absence from
+current main is not a linear deletion history. Prior receipt hashes were
+rechecked; no fresh current-checkout build or new formal award is claimed.
+
+All 525 canonical claim objects and grades are unchanged (334 VERIFIED,
+104 REFUTED, 26 CONDITIONAL, 61 OPEN). A documentary source annotation was
+added outside those objects in the registrar. Historical source-seal receipts
+continue to bind their original bytes; use the dated pre-amendment copies for
+historical hash checks rather than rewriting old receipts. Future research
+requires an exact producer/consumer bridge, not a union of two ledgers.
+
+## Stable-release unification cycle complete — documentation update 2026-10-03
+
+One real installed R15/controller v0.10 cycle completed Stages 0–7 in
+`experiments/erdos-993-unified-binomial-stable-release-trial-2026-10-01/`.
+The exact scalar equality `StableTrial.weighted_adjacent_identity` received a
+governed Lean award; it proves no positive forest functional or unification
+claim. The four existing `E993-UNIFY-*` identities remain OPEN. No canonical
+registration, old verdict or evidence grade changes in this documentation update.
+
+Read [the exact result and receipt map](../experiments/stable-release-unification-cycle-2026-10-01.md) for
+the corrected centering computation, scoped selector/unmarked-state obstructions,
+and formal/informal boundaries. All 483 closeout members and 112 fixed-source
+pins matched publication-time readback. The optional stage-finalizer repair
+remains paused and uninstalled; the completed cycle used unchanged v0.10.
+The 2026-09-30 direction below is historical intake context, not current execution
+status. No new cycle is launched by this update.
+
+## New direction - size-independent conditional-binomial unification, 2026-09-30
+
+Ashton authorized a NEW six-cycle sibling, `experiments/erdos-993-unified-binomial-recursive-dre-2026-09-30/`. The aim is a simpler unified proof: seek a quantitative rooted conditional-distribution certificate that survives arbitrary branching and excludes coefficient recovery without a vertex floor. The public proof is guidance, not an ordinary-three-axiom premise or permission to reuse its compiler-trusted certificates as our awards. Private newer 26/21-vertex simplifications are unavailable and are not assumed.
+
+Four new OPEN identities separate the optional all-interior weighted-positivity candidate, the exact middle-window candidate, the arbitrary-child preservation/interface debt, and the exact small-size correction search. No old claim, refutation or evidence grade changes. In particular the refuted pointwise beta, unrestricted TRS2/log-concavity and arbitrary unimodal-convolution mechanisms remain refuted. This direction does not abandon our marked/residual/compensation identities or require them to fit the public architecture unchanged.
+
+The requested portfolio is 6 distinct Luna-high routes per T/F/U (18), 36 Luna-high cross-orientation critics, 3 Sol-6.1-high origin adjudicators and one Sol-6.1-high neutral synthesis; Astra-high independent analyses follow Cycles 3 and 6. The default nine-seat skill is overridden only by this run-local authorization/decision record. The stage flow, three state layers, isolation and theorem trust standards remain unchanged. Architecture-light alternatives and retained counterexample survivors remain live.
+
+Status: PRE-DISPATCH. Contract/source hashes and the first claim lint must pass before Stage 1. Read the run's README and current CHECKPOINT for exact execution state; this direction note is not a completion claim or proof award.
+
+
 ## External solution status - 2026-09-30
 
 **The problem seems solved by others:** an independently reproduced, pinned all-forest computer-assisted proof covers TREE and FOREST. The large branch discloses `Lean.ofReduceBool` and `Lean.trustCompiler`; independent community acceptance and exhaustive human review are not established by our audit. This is an external solution assessment, not a new ordinary-three-axiom award or a change to our claim identities. Our unfinished marked/aggregate/transport route and its stronger auxiliaries retain their exact recorded statuses.

@@ -1,5 +1,16 @@
 # Erdős Problem #993
 
+## 3 October 2026: source-pinned comparison with the complete public proof
+
+[The gap-by-gap amendment](docs/proof-gap-reconciliation-2026-10-03.md)
+credits Tong Zhang, Wei Li and Kevin Vallier and explains which of our gaps
+the complete external argument closes by another route, and which stronger
+Hall/leaf claims it does not imply. All 623 local headline-closure modules at
+the current public source are identical to our previously reproduced baseline.
+The bridge is on a separate branch. No fresh build or new theorem award is
+claimed in this source refresh; all 525 existing claim objects retain their
+statuses/grades. This update contains public sources only.
+
 ## 3 October 2026: one complete conditional-binomial unification cycle
 
 The [stable-release trial](experiments/stable-release-unification-cycle-2026-10-01.md)
@@ -70,8 +81,10 @@ Formal and computational research by [Xeit AI, Inc.](https://xeit.ai) on the
 unimodality of independent-set sequences of finite trees and forests.
 
 > [!IMPORTANT]
-> Erdős Problem #993 remains open. This repository does not claim a proof,
-> counterexample, or independence result.
+> Our research programme does not claim its own complete proof, counterexample,
+> or independence result. A separate all-forest computer-assisted proof has
+> been reproduced at its disclosed trust tier; see the current external-status
+> assessment above. Historical OPEN statements below concern our programme.
 
 For a finite graph `G`, let `i_k(G)` be the number of independent vertex sets
 of size `k`. The problem asks whether

@@ -1,22 +1,51 @@
 # Erdős993 research notepad — six-cycle terminal assessment,29 September2026
 
-## Stable-release unification cycle: terminal, documented 3 October 2026
+## Public-proof comparison refresh — 2026-10-03
 
-The [1 October trial](../experiments/stable-release-unification-cycle-2026-10-01.md)
-completed one real 18/36/3/1 cycle and Stage 7. Its scalar weighted-adjacent
-identity has a governed Lean award; the four `E993-UNIFY-*` targets remain OPEN.
-The cycle supplied no size-independent forest sign certificate or automatic
-transition certification. This update changes no registry status or prior grade.
+The [gap-by-gap reconciliation](proof-gap-reconciliation-2026-10-03.md)
+separates what the complete public proof supplies from our stronger open
+claims. In particular, the public strict no-valley theorem uses n >= 61 and
+ceil(n/4) < k < the matching-envelope first mode; its small-order branch is
+separate. Do not import a global centered-positivity or common-leaf theorem
+from it. Keep the joint conditional law and occupation-weighted selector.
 
-For a future authorized sibling, first restore correctly centered diagnostics:
-one producer's 105 checks used `x^2 Z'-kZ`, not `xZ'-kZ`. Carry the joint `(Y,M)`
-law, both root conditions, occupation-weighted selector ties and conditioning
-loss, low-free-count states and exterior kernel terms. Unmarked-only state
-fails a concrete rooted `P4` join; one chosen `P6` maximizer fails conditional
-inheritance, but not every tie-break. These narrow the interface requirements,
-not the possibility of a unified proof. Preserve diverse faithful state and
-bypass routes; do not assume an invariant exists merely because exact counting
-and local algebra are available. No new cycle is authorized by this note.
+For recursive work, distinguish a conditional window consumer, an actual
+inequality/book producer, compatible child choices and a self-regenerating
+record. A successful finite placement does not establish arbitrary depth or
+arbitrary branching. Exact boundary/rank/marking/ownership adapters remain
+necessary even where our counting identities and their proof are compatible.
+No existing refutation, mathematical status or evidence grade changes here.
+
+## Stable-release one-cycle result — current readback 2026-10-03
+
+The one-cycle trial
+`experiments/erdos-993-unified-binomial-stable-release-trial-2026-10-01/`
+is terminal at Stage 7, with the governed scalar equality
+`StableTrial.weighted_adjacent_identity` and all four `E993-UNIFY-*` targets OPEN.
+This updates the execution frame of the September 30 direction below; it does
+not retroactively complete the earlier source-drift lineage or authorize another
+cycle. Detailed sources and exact hashes:
+[STABLE-CYCLE-RESULTS-2026-10-03.md](../experiments/stable-release-unification-cycle-2026-10-01.md).
+
+For a future sibling, use the correct `xZ'(x)-kZ(x)` centering equation;
+the cycle's 105 wrong-center checks are not support for centered positivity.
+Carry the full joint `(Y,M)` law, marked root pairs, selector ties/conditioning
+loss, low-M states and exterior signed contributions. The `P6` and rooted `P4`
+witnesses rule out specific shortcuts, not every tie-break or state representation.
+The remaining bridge is a quantitative forest sign/preservation inequality,
+not another scalar identity. Preserve alternative mechanisms and faithful
+representations rather than fixing a proof structure prematurely.
+
+## New direction - size-independent conditional-binomial unification, 2026-09-30
+
+Ashton authorized a NEW six-cycle sibling, `experiments/erdos-993-unified-binomial-recursive-dre-2026-09-30/`. The aim is a simpler unified proof: seek a quantitative rooted conditional-distribution certificate that survives arbitrary branching and excludes coefficient recovery without a vertex floor. The public proof is guidance, not an ordinary-three-axiom premise or permission to reuse its compiler-trusted certificates as our awards. Private newer 26/21-vertex simplifications are unavailable and are not assumed.
+
+Four new OPEN identities separate the optional all-interior weighted-positivity candidate, the exact middle-window candidate, the arbitrary-child preservation/interface debt, and the exact small-size correction search. No old claim, refutation or evidence grade changes. In particular the refuted pointwise beta, unrestricted TRS2/log-concavity and arbitrary unimodal-convolution mechanisms remain refuted. This direction does not abandon our marked/residual/compensation identities or require them to fit the public architecture unchanged.
+
+The requested portfolio is 6 distinct Luna-high routes per T/F/U (18), 36 Luna-high cross-orientation critics, 3 Sol-6.1-high origin adjudicators and one Sol-6.1-high neutral synthesis; Astra-high independent analyses follow Cycles 3 and 6. The default nine-seat skill is overridden only by this run-local authorization/decision record. The stage flow, three state layers, isolation and theorem trust standards remain unchanged. Architecture-light alternatives and retained counterexample survivors remain live.
+
+Status: PRE-DISPATCH. Contract/source hashes and the first claim lint must pass before Stage 1. Read the run's README and current CHECKPOINT for exact execution state; this direction note is not a completion claim or proof award.
+
 
 ## External solution and revised continuation frame - 2026-09-30
 

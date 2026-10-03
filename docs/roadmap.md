@@ -1,6 +1,17 @@
 # Open research roadmap
 
-## Current priorities after the six-cycle experiment
+## Current frame — 3 October 2026
+
+The complete external all-forest argument is our public source guide, not a
+proof of every stronger invariant in this repository. Read the
+[gap-by-gap comparison](proof-gap-reconciliation-2026-10-03.md) before assigning
+new research. A simplification or alternative recursion needs an actual
+producer with stable ranks, boundaries, markings and compatibility, distinct
+from a consumer that assumes its desired inequality. Existing scoped Hall,
+residual and compensation results may help only through an explicit adapter.
+No new proof-search cycle starts in this documentation refresh.
+
+## Historical priorities after the six-cycle experiment — 29 September 2026
 
 The three bounded-arity guarded surplus/individual/weighted-comparison keys are now VERIFIED at computer-assisted/nonformal grade. Priority 1 is a compositional marked compensation interface beyond this family, preserving the actual rank and original deletion marks. Priority 2 connects that same deficit to Code r30 Hall/cover capacity sharing and its unresolved uniform parent-descent obligations. Priority 3 completes full-scope formalization of finite-prefix and corrected LR/ULC/selector bridges. More finite examples inside the settled family are lower priority. No seventh cycle is active. See the [final Astra analysis](../runs/erdos-993-absolute-compensation-dre-2026-09-27/control/C6-ASTRA-FINAL-ANALYSIS.md).
 

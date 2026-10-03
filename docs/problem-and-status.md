@@ -1,5 +1,16 @@
 # Problem And Status
 
+## Source reconciliation — 3 October 2026
+
+[The new gap map](proof-gap-reconciliation-2026-10-03.md) records the current
+public proof source, authorship, exact strict-window scope and computational
+trust. Its 623 local headline modules match our previously reproduced baseline;
+the Formal Conjectures bridge is retained on its separate branch. No fresh
+build or new award is claimed. All 525 canonical claim objects retain their
+statuses/grades. External unimodality does not imply our stronger selected-leaf
+aggregate or all-subset Hall claims. Dated OPEN statements below concern our
+own historical programme, not the absence of the external proof.
+
 ## Current status - apparent external solution, 30 September 2026
 
 The problem seems solved externally by a complete all-forest computer-assisted proof. Our reproduction passed for the pinned full Lean target and statement bridge; the large branch includes `Lean.ofReduceBool` and `Lean.trustCompiler`. This is not a new ordinary-three-axiom award for our programme, nor a claim of confirmed community acceptance. Our own stronger auxiliary route remains incomplete.
